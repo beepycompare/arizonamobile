@@ -10,7 +10,7 @@ public final class Sa extends R2 {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f644a;
+            int i2 = this.f648a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;

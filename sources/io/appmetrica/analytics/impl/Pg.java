@@ -8,11 +8,11 @@ import com.adjust.sdk.Constants;
 public final class Pg extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bg f622a;
+    public final Bg f626a;
 
     public Pg(Handler handler, Bg bg) {
         super(handler);
-        this.f622a = bg;
+        this.f626a = bg;
     }
 
     public static void a(ResultReceiver resultReceiver, Jg jg) {
@@ -34,7 +34,7 @@ public final class Pg extends ResultReceiver {
                 }
             } catch (Throwable unused) {
             }
-            this.f622a.a(jg);
+            this.f626a.a(jg);
         }
     }
 }

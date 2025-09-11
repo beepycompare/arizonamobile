@@ -109,121 +109,121 @@ public final class Menu extends SAMPUIElement {
         this.donateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$1(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$0(Menu.this, view);
             }
         });
         this.helpButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$2(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$1(Menu.this, view);
             }
         });
         this.personStatisticButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$3(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$2(Menu.this, view);
             }
         });
         this.skillsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$4(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$3(Menu.this, view);
             }
         });
         this.awardsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$5(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$4(Menu.this, view);
             }
         });
         this.animationsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$6(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$5(Menu.this, view);
             }
         });
         this.navigatorButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$7(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$6(Menu.this, view);
             }
         });
         this.employmentHistoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$8(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$7(Menu.this, view);
             }
         });
         this.questsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$9(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$8(Menu.this, view);
             }
         });
         this.settingsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu.setupButtonsNavigation$lambda$10(Menu.this, view);
+                Menu.setupButtonsNavigation$lambda$9(Menu.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$1(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$0(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(8, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$2(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$1(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(9, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$3(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$2(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(7, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$4(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$3(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(4, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$5(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$4(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(2, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$6(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$5(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(3, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$7(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$6(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(0, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$8(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$7(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(1, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$9(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$8(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(6, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupButtonsNavigation$lambda$10(Menu menu, View view) {
+    public static final void setupButtonsNavigation$lambda$9(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(10, view);
     }

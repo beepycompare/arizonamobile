@@ -59,7 +59,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class NewsItemKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NewsItem$lambda$5(NewsModel newsModel, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit NewsItem$lambda$2(NewsModel newsModel, Function1 function1, int i, Composer composer, int i2) {
         NewsItem(newsModel, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -87,16 +87,16 @@ public final class NewsItemKt {
                 ComposerKt.traceEventStart(168788816, i2, -1, "com.miami.game.feature.home.ui.compose.NewsItem (NewsItem.kt:44)");
             }
             Modifier m256backgroundbw27NRU = BackgroundKt.m256backgroundbw27NRU(SizeKt.m870height3ABfNKs(SizeKt.m889width3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(160)), Dp.m7251constructorimpl(97)), Color.Companion.m4572getTransparent0d7_KjU(), new NewsShape());
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1002696455, "CC(remember):NewsItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1002696839, "CC(remember):NewsItem.kt#9igjgp");
             boolean changedInstance = ((i2 & 112) == 32) | startRestartGroup.changedInstance(newsModel);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.home.ui.compose.NewsItemKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit NewsItem$lambda$1$lambda$0;
-                        NewsItem$lambda$1$lambda$0 = NewsItemKt.NewsItem$lambda$1$lambda$0(Function1.this, newsModel);
-                        return NewsItem$lambda$1$lambda$0;
+                        Unit NewsItem$lambda$0$0;
+                        NewsItem$lambda$0$0 = NewsItemKt.NewsItem$lambda$0$0(Function1.this, newsModel);
+                        return NewsItem$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -164,7 +164,7 @@ public final class NewsItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1397241035, "C61@2381L28:NewsItem.kt#dswm0d");
-            AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(30), null, startRestartGroup, 54, 4);
+            AnimatedLoadingKt.m8929AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(30), null, startRestartGroup, 54, 4);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -204,9 +204,9 @@ public final class NewsItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 241766860, "C88@3248L10,90@3337L13,91@3381L13,86@3153L430,100@3690L10,102@3776L13,103@3820L13,98@3596L336:NewsItem.kt#dswm0d");
             float f2 = 16;
             float f3 = 2;
-            TextKt.m2804Text4IGK_g(String.valueOf(newsModel.getTitle()), OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f3)), 1, null), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), (FontStyle) null, FontWeight.Companion.getBold(), (FontFamily) null, TextUnitKt.getSp(-0.0d), (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 197040, 3072, 56144);
+            TextKt.m2804Text4IGK_g(String.valueOf(newsModel.getTitle()), OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f3)), 1, null), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), (FontStyle) null, FontWeight.Companion.getBold(), (FontFamily) null, TextUnitKt.getSp(-0.0d), (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getDisplaySmall(), startRestartGroup, 197040, 3072, 56144);
             float f4 = 12;
-            TextKt.m2804Text4IGK_g(String.valueOf(newsModel.getDate()), OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f3)), 1, null), Color.Companion.m4567getGray0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 3072, 56304);
+            TextKt.m2804Text4IGK_g(String.valueOf(newsModel.getDate()), OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f3)), 1, null), Color.Companion.m4567getGray0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelSmall(), startRestartGroup, 432, 3072, 56304);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -231,16 +231,16 @@ public final class NewsItemKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.NewsItemKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NewsItem$lambda$5;
-                    NewsItem$lambda$5 = NewsItemKt.NewsItem$lambda$5(NewsModel.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NewsItem$lambda$5;
+                    Unit NewsItem$lambda$2;
+                    NewsItem$lambda$2 = NewsItemKt.NewsItem$lambda$2(NewsModel.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NewsItem$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NewsItem$lambda$1$lambda$0(Function1 function1, NewsModel newsModel) {
+    public static final Unit NewsItem$lambda$0$0(Function1 function1, NewsModel newsModel) {
         function1.invoke(String.valueOf(newsModel.getUrl()));
         return Unit.INSTANCE;
     }

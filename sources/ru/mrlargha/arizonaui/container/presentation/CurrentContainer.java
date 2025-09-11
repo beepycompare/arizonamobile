@@ -80,7 +80,7 @@ public final class CurrentContainer extends SAMPUIElement {
         this.auctionCurrentContainerBinding.acSetBetButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CurrentContainer.createCurrentContainerItems$lambda$5(CurrentContainer.this, view);
+                CurrentContainer.createCurrentContainerItems$lambda$3(CurrentContainer.this, view);
             }
         });
         this.auctionCurrentContainerBinding.ccRcView.setLayoutManager(new GridLayoutManager(this.currentContainer.getContext(), 6));
@@ -131,7 +131,7 @@ public final class CurrentContainer extends SAMPUIElement {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void createCurrentContainerItems$lambda$5(CurrentContainer currentContainer, View view) {
+    public static final void createCurrentContainerItems$lambda$3(CurrentContainer currentContainer, View view) {
         int parseInt;
         String str;
         int parseInt2;
@@ -259,7 +259,7 @@ public final class CurrentContainer extends SAMPUIElement {
             getTargetActivity().runOnUiThread(new Runnable() { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CurrentContainer.addContainer$lambda$6(CurrentContainer.this, time);
+                    CurrentContainer.addContainer$lambda$0(CurrentContainer.this, time);
                 }
             });
             return;
@@ -269,7 +269,7 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addContainer$lambda$6(final CurrentContainer currentContainer, final long j) {
+    public static final void addContainer$lambda$0(final CurrentContainer currentContainer, final long j) {
         CountDownTimer countDownTimer = new CountDownTimer(j) { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$addContainer$1$1
             @Override // android.os.CountDownTimer
             public void onTick(long j2) {

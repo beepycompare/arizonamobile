@@ -74,9 +74,9 @@ public final class StreamsKt {
         Stream<T> stream = StreamSupport.stream(new Supplier() { // from class: kotlin.streams.jdk8.StreamsKt$$ExternalSyntheticLambda0
             @Override // java.util.function.Supplier
             public final Object get() {
-                Spliterator asStream$lambda$4;
-                asStream$lambda$4 = StreamsKt.asStream$lambda$4(Sequence.this);
-                return asStream$lambda$4;
+                Spliterator asStream$lambda$0;
+                asStream$lambda$0 = StreamsKt.asStream$lambda$0(Sequence.this);
+                return asStream$lambda$0;
             }
         }, 16, false);
         Intrinsics.checkNotNullExpressionValue(stream, "stream(...)");
@@ -84,7 +84,7 @@ public final class StreamsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Spliterator asStream$lambda$4(Sequence sequence) {
+    public static final Spliterator asStream$lambda$0(Sequence sequence) {
         return Spliterators.spliteratorUnknownSize(sequence.iterator(), 16);
     }
 

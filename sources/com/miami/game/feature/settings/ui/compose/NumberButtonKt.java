@@ -49,13 +49,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class NumberButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardButton$lambda$9(String str, Function0 function0, boolean z, int i, Composer composer, int i2) {
+    public static final Unit KeyboardButton$lambda$2(String str, Function0 function0, boolean z, int i, Composer composer, int i2) {
         KeyboardButton(str, function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NumberButton$lambda$4(String str, Function1 function1, boolean z, int i, Composer composer, int i2) {
+    public static final Unit NumberButton$lambda$2(String str, Function1 function1, boolean z, int i, Composer composer, int i2) {
         NumberButton(str, function1, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -84,16 +84,16 @@ public final class NumberButtonKt {
                 ComposerKt.traceEventStart(1369453397, i2, -1, "com.miami.game.feature.settings.ui.compose.NumberButton (NumberButton.kt:22)");
             }
             final int i3 = z ? R.drawable.nubmer_button_active : R.drawable.number_button_png;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1784729096, "CC(remember):NumberButton.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1784728712, "CC(remember):NumberButton.kt#9igjgp");
             boolean z2 = ((i2 & 112) == 32) | ((i2 & 14) == 4);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit NumberButton$lambda$1$lambda$0;
-                        NumberButton$lambda$1$lambda$0 = NumberButtonKt.NumberButton$lambda$1$lambda$0(Function1.this, number);
-                        return NumberButton$lambda$1$lambda$0;
+                        Unit NumberButton$lambda$0$0;
+                        NumberButton$lambda$0$0 = NumberButtonKt.NumberButton$lambda$0$0(Function1.this, number);
+                        return NumberButton$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -102,9 +102,9 @@ public final class NumberButtonKt {
             ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(-1282204736, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit NumberButton$lambda$3;
-                    NumberButton$lambda$3 = NumberButtonKt.NumberButton$lambda$3(number, i3, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return NumberButton$lambda$3;
+                    Unit NumberButton$lambda$1;
+                    NumberButton$lambda$1 = NumberButtonKt.NumberButton$lambda$1(number, i3, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return NumberButton$lambda$1;
                 }
             }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -116,22 +116,22 @@ public final class NumberButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NumberButton$lambda$4;
-                    NumberButton$lambda$4 = NumberButtonKt.NumberButton$lambda$4(number, onClick, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NumberButton$lambda$4;
+                    Unit NumberButton$lambda$2;
+                    NumberButton$lambda$2 = NumberButtonKt.NumberButton$lambda$2(number, onClick, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NumberButton$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NumberButton$lambda$1$lambda$0(Function1 function1, String str) {
+    public static final Unit NumberButton$lambda$0$0(Function1 function1, String str) {
         function1.invoke(str);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NumberButton$lambda$3(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
+    public static final Unit NumberButton$lambda$1(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C27@1111L271,38@1438L10,40@1517L13,37@1391L197:NumberButton.kt#1gr92h");
@@ -183,7 +183,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2804Text4IGK_g(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(16), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65520);
+            TextKt.m2804Text4IGK_g(str, ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(16), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65520);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -215,16 +215,16 @@ public final class NumberButtonKt {
                 ComposerKt.traceEventStart(2013669460, i2, -1, "com.miami.game.feature.settings.ui.compose.KeyboardButton (NumberButton.kt:46)");
             }
             final int i3 = z ? R.drawable.keyboard_button_active : R.drawable.keyboard_button;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1893892462, "CC(remember):NumberButton.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1893892846, "CC(remember):NumberButton.kt#9igjgp");
             boolean z2 = ((i2 & 896) == 256) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit KeyboardButton$lambda$6$lambda$5;
-                        KeyboardButton$lambda$6$lambda$5 = NumberButtonKt.KeyboardButton$lambda$6$lambda$5(z, onClick);
-                        return KeyboardButton$lambda$6$lambda$5;
+                        Unit KeyboardButton$lambda$0$0;
+                        KeyboardButton$lambda$0$0 = NumberButtonKt.KeyboardButton$lambda$0$0(z, onClick);
+                        return KeyboardButton$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -233,9 +233,9 @@ public final class NumberButtonKt {
             ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(685810175, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit KeyboardButton$lambda$8;
-                    KeyboardButton$lambda$8 = NumberButtonKt.KeyboardButton$lambda$8(text, i3, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return KeyboardButton$lambda$8;
+                    Unit KeyboardButton$lambda$1;
+                    KeyboardButton$lambda$1 = NumberButtonKt.KeyboardButton$lambda$1(text, i3, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return KeyboardButton$lambda$1;
                 }
             }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -247,16 +247,16 @@ public final class NumberButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.NumberButtonKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit KeyboardButton$lambda$9;
-                    KeyboardButton$lambda$9 = NumberButtonKt.KeyboardButton$lambda$9(text, onClick, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return KeyboardButton$lambda$9;
+                    Unit KeyboardButton$lambda$2;
+                    KeyboardButton$lambda$2 = NumberButtonKt.KeyboardButton$lambda$2(text, onClick, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return KeyboardButton$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardButton$lambda$6$lambda$5(boolean z, Function0 function0) {
+    public static final Unit KeyboardButton$lambda$0$0(boolean z, Function0 function0) {
         if (!z) {
             function0.invoke();
         }
@@ -264,7 +264,7 @@ public final class NumberButtonKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardButton$lambda$8(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
+    public static final Unit KeyboardButton$lambda$1(String str, int i, BoxScope ScalingButton, Composer composer, int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C51@1862L271,62@2187L10,64@2266L13,61@2142L248:NumberButton.kt#1gr92h");
@@ -316,7 +316,7 @@ public final class NumberButtonKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
-            TextKt.m2804Text4IGK_g(str, OffsetKt.m787offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(2)), 1, null), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(18), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65520);
+            TextKt.m2804Text4IGK_g(str, OffsetKt.m787offsetVpY3zN4$default(ScalingButton.align(Modifier.Companion, Alignment.Companion.getCenter()), 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(2)), 1, null), Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(18), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getLabelSmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65520);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

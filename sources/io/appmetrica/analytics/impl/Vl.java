@@ -5,14 +5,14 @@ import android.os.Bundle;
 public final class Vl implements Z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Xl f713a;
+    public final /* synthetic */ Xl f717a;
 
     public Vl(Xl xl) {
-        this.f713a = xl;
+        this.f717a = xl;
     }
 
     @Override // io.appmetrica.analytics.impl.Z6
     public final void a(int i, Bundle bundle) {
-        this.f713a.b(bundle);
+        this.f717a.b(bundle);
     }
 }

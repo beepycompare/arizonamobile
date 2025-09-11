@@ -28,14 +28,14 @@ public final class MobilePhoneCallAdapter extends RecyclerView.Adapter<MobilePho
         void callback(String str);
     }
 
-    public final Activity getTargetActivity() {
-        return this.targetActivity;
-    }
-
     public MobilePhoneCallAdapter(Activity targetActivity) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.targetActivity = targetActivity;
         this.listButtons = CollectionsKt.listOf((Object[]) new String[]{"1", ExifInterface.GPS_MEASUREMENT_2D, ExifInterface.GPS_MEASUREMENT_3D, "4", "5", "6", "7", "8", "9", NotificationCompat.CATEGORY_CALL, "0", "decline"});
+    }
+
+    public final Activity getTargetActivity() {
+        return this.targetActivity;
     }
 
     public final void setOnCallButtonClickListener(OnCallButtonClickListener onCallButtonClickListener) {

@@ -12,6 +12,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class MapBuilderEntries<K, V> extends AbstractMapBuilderEntrySet<Map.Entry<K, V>, K, V> {
     private final MapBuilder<K, V> backing;
 
+    public MapBuilderEntries(MapBuilder<K, V> backing) {
+        Intrinsics.checkNotNullParameter(backing, "backing");
+        this.backing = backing;
+    }
+
     @Override // kotlin.collections.AbstractMutableSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((Map.Entry) ((Map.Entry) obj));
@@ -19,11 +24,6 @@ public final class MapBuilderEntries<K, V> extends AbstractMapBuilderEntrySet<Ma
 
     public final MapBuilder<K, V> getBacking() {
         return this.backing;
-    }
-
-    public MapBuilderEntries(MapBuilder<K, V> backing) {
-        Intrinsics.checkNotNullParameter(backing, "backing");
-        this.backing = backing;
     }
 
     @Override // kotlin.collections.AbstractMutableSet

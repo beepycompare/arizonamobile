@@ -13,7 +13,7 @@ public final class C0528q6 extends MessageNano {
     public static volatile C0528q6[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0752z6 f1042a;
+    public C0752z6 f1046a;
     public C0752z6[] b;
     public String c;
 
@@ -33,7 +33,7 @@ public final class C0528q6 extends MessageNano {
     }
 
     public final C0528q6 a() {
-        this.f1042a = null;
+        this.f1046a = null;
         this.b = C0752z6.b();
         this.c = "";
         this.cachedSize = -1;
@@ -43,7 +43,7 @@ public final class C0528q6 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0752z6 c0752z6 = this.f1042a;
+        C0752z6 c0752z6 = this.f1046a;
         if (c0752z6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0752z6);
         }
@@ -67,7 +67,7 @@ public final class C0528q6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0752z6 c0752z6 = this.f1042a;
+        C0752z6 c0752z6 = this.f1046a;
         if (c0752z6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0752z6);
         }
@@ -100,10 +100,10 @@ public final class C0528q6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f1042a == null) {
-                    this.f1042a = new C0752z6();
+                if (this.f1046a == null) {
+                    this.f1046a = new C0752z6();
                 }
-                codedInputByteBufferNano.readMessage(this.f1042a);
+                codedInputByteBufferNano.readMessage(this.f1046a);
             } else if (readTag == 18) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
                 C0752z6[] c0752z6Arr = this.b;

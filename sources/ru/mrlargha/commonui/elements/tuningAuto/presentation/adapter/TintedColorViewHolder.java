@@ -37,13 +37,13 @@ public final class TintedColorViewHolder extends RecyclerView.ViewHolder {
         itemTuningSelectColorBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.adapter.TintedColorViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TintedColorViewHolder.bind$lambda$1$lambda$0(TintedColorViewHolder.this, item, view);
+                TintedColorViewHolder.bind$lambda$0$0(TintedColorViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(TintedColorViewHolder tintedColorViewHolder, SelectedColors selectedColors, View view) {
+    public static final void bind$lambda$0$0(TintedColorViewHolder tintedColorViewHolder, SelectedColors selectedColors, View view) {
         tintedColorViewHolder.onItemClicked.invoke(selectedColors, Integer.valueOf(tintedColorViewHolder.getAdapterPosition()));
     }
 }

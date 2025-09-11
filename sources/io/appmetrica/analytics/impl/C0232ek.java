@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0232ek implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ U f862a;
+    public final /* synthetic */ U f866a;
 
     public C0232ek(U u) {
-        this.f862a = u;
+        this.f866a = u;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.a(this.f862a);
+        interfaceC0557rb.a(this.f866a);
     }
 }

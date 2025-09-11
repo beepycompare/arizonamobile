@@ -54,13 +54,13 @@ public final class NewsAdapter extends RecyclerView.Adapter<NewsViewHolder> {
         binding.authorizationNewsItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.adapter.NewsAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NewsAdapter.onBindViewHolder$lambda$1$lambda$0(News.this, this, view);
+                NewsAdapter.onBindViewHolder$lambda$0$0(News.this, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(News news, NewsAdapter newsAdapter, View view) {
+    public static final void onBindViewHolder$lambda$0$0(News news, NewsAdapter newsAdapter, View view) {
         try {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(news.getUrl()));
             if (newsAdapter.targetActivity.getPackageManager().resolveActivity(intent, 65536) != null) {

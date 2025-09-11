@@ -10,14 +10,14 @@ import java.util.Iterator;
 public final class C0392l implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f955a = new HashSet();
+    public final HashSet f959a = new HashSet();
 
     public C0392l(C0444n c0444n) {
         c0444n.registerListener(this, new ActivityEvent[0]);
     }
 
     public final synchronized void a(InterfaceC0366k interfaceC0366k) {
-        this.f955a.add(interfaceC0366k);
+        this.f959a.add(interfaceC0366k);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
@@ -28,7 +28,7 @@ public final class C0392l implements ActivityLifecycleListener {
     public final void a(Activity activity) {
         HashSet hashSet;
         synchronized (this) {
-            hashSet = new HashSet(this.f955a);
+            hashSet = new HashSet(this.f959a);
         }
         Iterator it = hashSet.iterator();
         while (it.hasNext()) {

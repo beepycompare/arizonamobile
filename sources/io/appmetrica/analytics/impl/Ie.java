@@ -10,7 +10,7 @@ public final class Ie extends ECommerceEvent {
     public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f493a;
+    public final int f497a;
     public final Ke b;
     public final A8 c;
 
@@ -33,11 +33,11 @@ public final class Ie extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "OrderInfoEvent{eventType=" + this.f493a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "OrderInfoEvent{eventType=" + this.f497a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Ie(int i, Ke ke, A8 a8) {
-        this.f493a = i;
+        this.f497a = i;
         this.b = ke;
         this.c = a8;
     }

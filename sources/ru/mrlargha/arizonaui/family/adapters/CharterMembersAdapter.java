@@ -92,7 +92,7 @@ public final class CharterMembersAdapter extends RecyclerView.Adapter<CharterMem
         binding.button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.CharterMembersAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CharterMembersAdapter.onBindViewHolder$lambda$1$lambda$0(CharterMembersAdapter.this, charterItem, view);
+                CharterMembersAdapter.onBindViewHolder$lambda$0$0(CharterMembersAdapter.this, charterItem, view);
             }
         });
         if (i + 1 != this.itemsList.size() || this.isRequestSend || i <= 20) {
@@ -105,7 +105,7 @@ public final class CharterMembersAdapter extends RecyclerView.Adapter<CharterMem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(CharterMembersAdapter charterMembersAdapter, CharterItem charterItem, View view) {
+    public static final void onBindViewHolder$lambda$0$0(CharterMembersAdapter charterMembersAdapter, CharterItem charterItem, View view) {
         charterMembersAdapter.onClick.invoke(charterItem);
     }
 

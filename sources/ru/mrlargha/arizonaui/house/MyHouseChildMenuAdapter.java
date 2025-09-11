@@ -57,9 +57,9 @@ public final class MyHouseChildMenuAdapter extends RecyclerView.Adapter<ViewHold
         EasyAnimation.animateClick$default(easyAnimation, myHouseChildMenuItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHouseChildMenuAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = MyHouseChildMenuAdapter.onBindViewHolder$lambda$2$lambda$1(MyHouseChildMenuAdapter.this, subMenuItem2);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyHouseChildMenuAdapter.onBindViewHolder$lambda$0$0(MyHouseChildMenuAdapter.this, subMenuItem2);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         if (subMenuItem2.isPressed()) {
@@ -70,7 +70,7 @@ public final class MyHouseChildMenuAdapter extends RecyclerView.Adapter<ViewHold
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(MyHouseChildMenuAdapter myHouseChildMenuAdapter, MyHouseScreen.Companion.SubMenuItem subMenuItem) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyHouseChildMenuAdapter myHouseChildMenuAdapter, MyHouseScreen.Companion.SubMenuItem subMenuItem) {
         OnChildItemClickListener onChildItemClickListener = myHouseChildMenuAdapter.onChildItemClickListener;
         if (onChildItemClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onChildItemClickListener");

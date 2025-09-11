@@ -9,10 +9,10 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 public final class C0549r3 implements IBinaryDataHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X6 f1055a;
+    public final X6 f1059a;
 
     public C0549r3(C0767zl c0767zl) {
-        this.f1055a = c0767zl;
+        this.f1059a = c0767zl;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
@@ -20,7 +20,7 @@ public final class C0549r3 implements IBinaryDataHelper {
         Cursor cursor;
         SQLiteDatabase sQLiteDatabase;
         try {
-            sQLiteDatabase = this.f1055a.a();
+            sQLiteDatabase = this.f1059a.a();
         } catch (Throwable unused) {
             cursor = null;
             sQLiteDatabase = null;
@@ -33,7 +33,7 @@ public final class C0549r3 implements IBinaryDataHelper {
                         if (cursor.getCount() == 1 && cursor.moveToFirst()) {
                             byte[] blob = cursor.getBlob(cursor.getColumnIndexOrThrow("value"));
                             ro.a(cursor);
-                            this.f1055a.a(sQLiteDatabase);
+                            this.f1059a.a(sQLiteDatabase);
                             return blob;
                         }
                     } catch (Throwable unused2) {
@@ -45,12 +45,12 @@ public final class C0549r3 implements IBinaryDataHelper {
             } catch (Throwable unused3) {
             }
             ro.a(cursor);
-            this.f1055a.a(sQLiteDatabase);
+            this.f1059a.a(sQLiteDatabase);
             return null;
         }
         cursor = null;
         ro.a(cursor);
-        this.f1055a.a(sQLiteDatabase);
+        this.f1059a.a(sQLiteDatabase);
         return null;
     }
 
@@ -59,7 +59,7 @@ public final class C0549r3 implements IBinaryDataHelper {
         SQLiteDatabase sQLiteDatabase;
         SQLiteDatabase sQLiteDatabase2 = null;
         try {
-            sQLiteDatabase = this.f1055a.a();
+            sQLiteDatabase = this.f1059a.a();
             if (sQLiteDatabase != null) {
                 try {
                     ContentValues contentValues = new ContentValues();
@@ -69,19 +69,19 @@ public final class C0549r3 implements IBinaryDataHelper {
                 } catch (Throwable unused) {
                     sQLiteDatabase2 = sQLiteDatabase;
                     sQLiteDatabase = sQLiteDatabase2;
-                    this.f1055a.a(sQLiteDatabase);
+                    this.f1059a.a(sQLiteDatabase);
                 }
             }
         } catch (Throwable unused2) {
         }
-        this.f1055a.a(sQLiteDatabase);
+        this.f1059a.a(sQLiteDatabase);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
     public final void remove(String str) {
         SQLiteDatabase sQLiteDatabase;
         try {
-            sQLiteDatabase = this.f1055a.a();
+            sQLiteDatabase = this.f1059a.a();
             if (sQLiteDatabase != null) {
                 try {
                     new ContentValues().put("data_key", str);
@@ -92,6 +92,6 @@ public final class C0549r3 implements IBinaryDataHelper {
         } catch (Throwable unused2) {
             sQLiteDatabase = null;
         }
-        this.f1055a.a(sQLiteDatabase);
+        this.f1059a.a(sQLiteDatabase);
     }
 }

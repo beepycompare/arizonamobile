@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 public final class C0406ld implements InterfaceC0719xn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f966a;
+    public final Context f970a;
     public final PermissionResolutionStrategy b;
     public final CellularNetworkTypeExtractor c;
     public final CachedDataProvider.CachedData d;
 
     public C0406ld(Context context) {
         PermissionResolutionStrategy alwaysAllowPermissionStrategy;
-        this.f966a = context;
+        this.f970a = context;
         if (AndroidUtils.isApiAchieved(29)) {
             alwaysAllowPermissionStrategy = new SinglePermissionStrategy(Na.j().i(), "android.permission.READ_PHONE_STATE");
         } else {
@@ -39,7 +39,7 @@ public final class C0406ld implements InterfaceC0719xn {
         String str;
         c0380kd = (C0380kd) this.d.getData();
         if (c0380kd == null || this.d.shouldUpdateData()) {
-            if (this.b.hasNecessaryPermissions(this.f966a)) {
+            if (this.b.hasNecessaryPermissions(this.f970a)) {
                 str = this.c.getNetworkType();
             } else {
                 str = "unknown";

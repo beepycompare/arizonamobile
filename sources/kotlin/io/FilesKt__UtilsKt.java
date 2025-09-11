@@ -239,9 +239,9 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
             Iterator<File> it = FilesKt.walkTopDown(file).onFail(new Function2() { // from class: kotlin.io.FilesKt__UtilsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit copyRecursively$lambda$4$FilesKt__UtilsKt;
-                    copyRecursively$lambda$4$FilesKt__UtilsKt = FilesKt__UtilsKt.copyRecursively$lambda$4$FilesKt__UtilsKt(Function2.this, (File) obj, (IOException) obj2);
-                    return copyRecursively$lambda$4$FilesKt__UtilsKt;
+                    Unit copyRecursively$lambda$0$FilesKt__UtilsKt;
+                    copyRecursively$lambda$0$FilesKt__UtilsKt = FilesKt__UtilsKt.copyRecursively$lambda$0$FilesKt__UtilsKt(Function2.this, (File) obj, (IOException) obj2);
+                    return copyRecursively$lambda$0$FilesKt__UtilsKt;
                 }
             }).iterator();
             while (it.hasNext()) {
@@ -282,7 +282,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit copyRecursively$lambda$4$FilesKt__UtilsKt(Function2 function2, File f, IOException e) {
+    public static final Unit copyRecursively$lambda$0$FilesKt__UtilsKt(Function2 function2, File f, IOException e) {
         Intrinsics.checkNotNullParameter(f, "f");
         Intrinsics.checkNotNullParameter(e, "e");
         if (function2.invoke(f, e) != OnErrorAction.TERMINATE) {

@@ -28,7 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class NewsContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NewsContent$lambda$3(HomeUiState homeUiState, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit NewsContent$lambda$1(HomeUiState homeUiState, Function1 function1, int i, Composer composer, int i2) {
         NewsContent(homeUiState, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -57,16 +57,16 @@ public final class NewsContentKt {
             Arrangement.HorizontalOrVertical m691spacedBy0680j_4 = Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(8));
             Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(4)), 1, null);
             Arrangement.HorizontalOrVertical horizontalOrVertical = m691spacedBy0680j_4;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468470925, "CC(remember):NewsContent.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468470253, "CC(remember):NewsContent.kt#9igjgp");
             boolean z = ((i2 & 14) == 4) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit NewsContent$lambda$2$lambda$1;
-                        NewsContent$lambda$2$lambda$1 = NewsContentKt.NewsContent$lambda$2$lambda$1(HomeUiState.this, onClickNews, (LazyListScope) obj);
-                        return NewsContent$lambda$2$lambda$1;
+                        Unit NewsContent$lambda$0$0;
+                        NewsContent$lambda$0$0 = NewsContentKt.NewsContent$lambda$0$0(HomeUiState.this, onClickNews, (LazyListScope) obj);
+                        return NewsContent$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -82,19 +82,19 @@ public final class NewsContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NewsContent$lambda$3;
-                    NewsContent$lambda$3 = NewsContentKt.NewsContent$lambda$3(HomeUiState.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NewsContent$lambda$3;
+                    Unit NewsContent$lambda$1;
+                    NewsContent$lambda$1 = NewsContentKt.NewsContent$lambda$1(HomeUiState.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NewsContent$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NewsContent$lambda$2$lambda$1(HomeUiState homeUiState, final Function1 function1, LazyListScope LazyColumn) {
+    public static final Unit NewsContent$lambda$0$0(HomeUiState homeUiState, final Function1 function1, LazyListScope LazyColumn) {
         Intrinsics.checkNotNullParameter(LazyColumn, "$this$LazyColumn");
         final List<NewsModel> newsList = homeUiState.getNewsList();
-        final NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$1 newsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$1
+        final NewsContentKt$NewsContent$lambda$0$0$$inlined$items$default$1 newsContentKt$NewsContent$lambda$0$0$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$0$0$$inlined$items$default$1
             @Override // kotlin.jvm.functions.Function1
             public final Void invoke(NewsModel newsModel) {
                 return null;
@@ -105,7 +105,7 @@ public final class NewsContentKt {
                 return invoke((NewsModel) obj);
             }
         };
-        LazyColumn.items(newsList.size(), null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$3
+        LazyColumn.items(newsList.size(), null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$0$0$$inlined$items$default$3
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Object invoke(Integer num) {
                 return invoke(num.intValue());
@@ -114,7 +114,7 @@ public final class NewsContentKt {
             public final Object invoke(int i) {
                 return Function1.this.invoke(newsList.get(i));
             }
-        }, ComposableLambdaKt.composableLambdaInstance(802480018, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$4
+        }, ComposableLambdaKt.composableLambdaInstance(802480018, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$NewsContent$lambda$0$0$$inlined$items$default$4
             @Override // kotlin.jvm.functions.Function4
             public /* bridge */ /* synthetic */ Unit invoke(LazyItemScope lazyItemScope, Integer num, Composer composer, Integer num2) {
                 invoke(lazyItemScope, num.intValue(), composer, num2.intValue());

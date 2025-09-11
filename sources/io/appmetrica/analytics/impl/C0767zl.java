@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 public final class C0767zl implements X6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0703x7 f1190a;
+    public final C0703x7 f1194a;
 
     public C0767zl(C0703x7 c0703x7) {
-        this.f1190a = c0703x7;
+        this.f1194a = c0703x7;
     }
 
     @Override // io.appmetrica.analytics.impl.X6
@@ -19,7 +19,7 @@ public final class C0767zl implements X6 {
     @Override // io.appmetrica.analytics.impl.X6
     public final SQLiteDatabase a() {
         try {
-            return this.f1190a.getWritableDatabase();
+            return this.f1194a.getWritableDatabase();
         } catch (Throwable unused) {
             return null;
         }

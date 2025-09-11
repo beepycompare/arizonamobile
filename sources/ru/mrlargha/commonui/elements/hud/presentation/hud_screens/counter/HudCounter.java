@@ -410,7 +410,7 @@ public final class HudCounter {
         hudTaximeterContainerBinding3.btnNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HudCounter.setTaximeterType$lambda$15$lambda$14$lambda$11(HudCounter.this, view);
+                HudCounter.setTaximeterType$lambda$0$0$0(HudCounter.this, view);
             }
         });
         LinearLayout root = hudTaximeterContainerBinding3.getRoot();
@@ -601,7 +601,7 @@ public final class HudCounter {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setTaximeterType$lambda$15$lambda$14$lambda$11(HudCounter hudCounter, View view) {
+    public static final void setTaximeterType$lambda$0$0$0(HudCounter hudCounter, View view) {
         hudCounter.backendNotifier.clickedWrapper(hudCounter.backendID, 10, 8);
     }
 

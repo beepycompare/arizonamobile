@@ -30,14 +30,14 @@ public final class Cd extends AbstractC0462nh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0462nh
     public final boolean a(C0477o6 c0477o6) {
-        if (this.f1001a.t.c()) {
+        if (this.f1005a.t.c()) {
             ArrayList arrayList = this.b;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     C0609td c0609td = (C0609td) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0684wd(c0609td.b, c0609td.f1090a, new C0659vd(c0609td.d, c0609td.c, c0477o6)), c0477o6)) {
+                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0684wd(c0609td.b, c0609td.f1094a, new C0659vd(c0609td.d, c0609td.c, c0477o6)), c0477o6)) {
                         return true;
                     }
                 }

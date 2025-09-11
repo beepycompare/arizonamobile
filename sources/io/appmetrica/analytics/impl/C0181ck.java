@@ -6,16 +6,16 @@ import io.appmetrica.analytics.AdRevenue;
 public final class C0181ck implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f823a;
+    public final /* synthetic */ AdRevenue f827a;
     public final /* synthetic */ boolean b;
 
     public C0181ck(AdRevenue adRevenue, boolean z) {
-        this.f823a = adRevenue;
+        this.f827a = adRevenue;
         this.b = z;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.reportAdRevenue(this.f823a, this.b);
+        interfaceC0557rb.reportAdRevenue(this.f827a, this.b);
     }
 }

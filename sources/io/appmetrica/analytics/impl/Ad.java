@@ -7,10 +7,10 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycl
 public final class Ad implements ModuleServiceLifecycleController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final S1 f345a;
+    public final S1 f349a;
 
     public Ad(S1 s1) {
-        this.f345a = s1;
+        this.f349a = s1;
     }
 
     public static final void a(ModuleServiceLifecycleObserver moduleServiceLifecycleObserver, Intent intent) {
@@ -23,13 +23,13 @@ public final class Ad implements ModuleServiceLifecycleController {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceLifecycleController
     public final void registerObserver(final ModuleServiceLifecycleObserver moduleServiceLifecycleObserver) {
-        this.f345a.b(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda0
+        this.f349a.b(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.R1
             public final void a(Intent intent) {
                 Ad.a(ModuleServiceLifecycleObserver.this, intent);
             }
         });
-        this.f345a.a(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda1
+        this.f349a.a(new R1() { // from class: io.appmetrica.analytics.impl.Ad$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.R1
             public final void a(Intent intent) {
                 Ad.b(ModuleServiceLifecycleObserver.this, intent);

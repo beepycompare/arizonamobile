@@ -159,15 +159,15 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                     this.videoBackgroundBinding.videoBg.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda1
                         @Override // android.media.MediaPlayer.OnErrorListener
                         public final boolean onError(MediaPlayer mediaPlayer, int i2, int i3) {
-                            boolean selectVideoMode$lambda$3$lambda$1;
-                            selectVideoMode$lambda$3$lambda$1 = RegistrationVideoBackground.selectVideoMode$lambda$3$lambda$1(RegistrationVideoBackground.this, mediaPlayer, i2, i3);
-                            return selectVideoMode$lambda$3$lambda$1;
+                            boolean selectVideoMode$lambda$0$0;
+                            selectVideoMode$lambda$0$0 = RegistrationVideoBackground.selectVideoMode$lambda$0$0(RegistrationVideoBackground.this, mediaPlayer, i2, i3);
+                            return selectVideoMode$lambda$0$0;
                         }
                     });
                     this.videoBackgroundBinding.videoBg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda2
                         @Override // android.media.MediaPlayer.OnPreparedListener
                         public final void onPrepared(MediaPlayer mediaPlayer) {
-                            RegistrationVideoBackground.selectVideoMode$lambda$3$lambda$2(mediaPlayer);
+                            RegistrationVideoBackground.selectVideoMode$lambda$0$1(mediaPlayer);
                         }
                     });
                 } else {
@@ -218,7 +218,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                     this.videoBackgroundBinding.videoBg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda3
                         @Override // android.media.MediaPlayer.OnPreparedListener
                         public final void onPrepared(MediaPlayer mediaPlayer) {
-                            RegistrationVideoBackground.selectVideoMode$lambda$4(mediaPlayer);
+                            RegistrationVideoBackground.selectVideoMode$lambda$1(mediaPlayer);
                         }
                     });
                 } else {
@@ -234,21 +234,21 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean selectVideoMode$lambda$3$lambda$1(RegistrationVideoBackground registrationVideoBackground, MediaPlayer mediaPlayer, int i, int i2) {
+    public static final boolean selectVideoMode$lambda$0$0(RegistrationVideoBackground registrationVideoBackground, MediaPlayer mediaPlayer, int i, int i2) {
         Log.e("VideoPlayer", "Ошибка при воспроизведении видео: what=" + i + ", extra=" + i2);
         Toast.makeText(registrationVideoBackground.getTargetActivity(), "Ошибка загрузки видео", 0).show();
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void selectVideoMode$lambda$3$lambda$2(MediaPlayer mediaPlayer) {
+    public static final void selectVideoMode$lambda$0$1(MediaPlayer mediaPlayer) {
         mediaPlayer.setVolume(0.2f, 0.2f);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void selectVideoMode$lambda$4(MediaPlayer mediaPlayer) {
+    public static final void selectVideoMode$lambda$1(MediaPlayer mediaPlayer) {
         mediaPlayer.setVolume(0.2f, 0.2f);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();

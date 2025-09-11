@@ -5,16 +5,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class Id extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f492a;
+    public final /* synthetic */ String f496a;
 
     public Id(String str) {
-        this.f492a = str;
+        this.f496a = str;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
         C0671w0 c0671w0 = A4.l().p;
-        String str = this.f492a;
+        String str = this.f496a;
         c0671w0.getClass();
         C0646v0.c().a(str);
     }

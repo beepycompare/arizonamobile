@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f478a = "rp";
+    public final String f482a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public volatile AskForPermissionStrategyModuleProvider c = new C0117a8();
 
@@ -64,7 +64,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
             } catch (Throwable th) {
                 hashSet.add(moduleServiceEntryPoint);
                 String identifier = moduleServiceEntryPoint.getIdentifier();
-                C0413lk c0413lk = Kj.f538a;
+                C0413lk c0413lk = Kj.f542a;
                 Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier, MapsKt.mapOf(TuplesKt.to("db", ExceptionsKt.stackTraceToString(th)))));
                 c0413lk.getClass();
                 c0413lk.a(new C0387kk("service_module_errors", mapOf));
@@ -192,7 +192,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
 
     public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
         this.b.add(moduleServiceEntryPoint);
-        if (Intrinsics.areEqual(this.f478a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+        if (Intrinsics.areEqual(this.f482a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
             this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
         }
     }
@@ -203,18 +203,18 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new Gk(new SdkIdentifiers(c0493om.d, c0493om.f1020a, c0493om.b), new C0281gh(c0493om.v, c0493om.u), c0493om.B.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new Gk(new SdkIdentifiers(c0493om.d, c0493om.f1024a, c0493om.b), new C0281gh(c0493om.v, c0493om.u), c0493om.B.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
                     C0634ud c0634ud = Na.F.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
                     synchronized (c0634ud) {
-                        c0634ud.f1105a.put(identifier, moduleEventServiceHandlerFactory);
+                        c0634ud.f1109a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {
                 String identifier2 = moduleServiceEntryPoint.getIdentifier();
-                C0413lk c0413lk = Kj.f538a;
+                C0413lk c0413lk = Kj.f542a;
                 Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier2, MapsKt.mapOf(TuplesKt.to("init", ExceptionsKt.stackTraceToString(th)))));
                 c0413lk.getClass();
                 c0413lk.a(new C0387kk("service_module_errors", mapOf));

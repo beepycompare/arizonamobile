@@ -81,13 +81,13 @@ public final class ToggleSwitchListAdapter extends ListAdapter<CarsScreen.Compan
         binding.carSwitch.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.cars.ToggleSwitchListAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ToggleSwitchListAdapter.onBindViewHolder$lambda$1$lambda$0(CarsSwitchableItemBinding.this, item, this, view);
+                ToggleSwitchListAdapter.onBindViewHolder$lambda$0$0(CarsSwitchableItemBinding.this, item, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(CarsSwitchableItemBinding carsSwitchableItemBinding, CarsScreen.Companion.ToggleSwitchInfo toggleSwitchInfo, ToggleSwitchListAdapter toggleSwitchListAdapter, View view) {
+    public static final void onBindViewHolder$lambda$0$0(CarsSwitchableItemBinding carsSwitchableItemBinding, CarsScreen.Companion.ToggleSwitchInfo toggleSwitchInfo, ToggleSwitchListAdapter toggleSwitchListAdapter, View view) {
         carsSwitchableItemBinding.carSwitch.setChecked(toggleSwitchInfo.getValue() == 1);
         OnSwitchClickListener onSwitchClickListener = toggleSwitchListAdapter.switchClickListener;
         if (onSwitchClickListener == null) {

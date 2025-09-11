@@ -38,7 +38,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class SettingsBottomBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsBottomBar$lambda$3(Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
+    public static final Unit SettingsBottomBar$lambda$1(Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
         SettingsBottomBar(function0, function02, function03, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -162,11 +162,11 @@ public final class SettingsBottomBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1974234326, "C55@1979L300,62@2296L299,69@2612L307:SettingsBottomBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9026getLambda$13006014$settings_release(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9031getLambda$13006014$settings_release(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             function0 = onBugsReport;
             ScalingButtonKt.ScalingButton(onShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$983320313$settings_release(), startRestartGroup, ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             function02 = onPrivacyPolicy;
-            ScalingButtonKt.ScalingButton(function02, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9027getLambda$473092742$settings_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(function02, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9032getLambda$473092742$settings_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -195,9 +195,9 @@ public final class SettingsBottomBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsBottomBarKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsBottomBar$lambda$3;
-                    SettingsBottomBar$lambda$3 = SettingsBottomBarKt.SettingsBottomBar$lambda$3(Function0.this, onShareLogs, function02, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsBottomBar$lambda$3;
+                    Unit SettingsBottomBar$lambda$1;
+                    SettingsBottomBar$lambda$1 = SettingsBottomBarKt.SettingsBottomBar$lambda$1(Function0.this, onShareLogs, function02, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsBottomBar$lambda$1;
                 }
             });
         }

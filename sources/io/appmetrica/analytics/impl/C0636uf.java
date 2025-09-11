@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public final class C0636uf implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Jf f1107a;
+    public final Jf f1111a;
 
     public C0636uf() {
         this(new Jf());
@@ -18,32 +18,32 @@ public final class C0636uf implements ProtobufConverter {
     /* renamed from: a */
     public final Gf fromModel(C0686wf c0686wf) {
         Gf gf = new Gf();
-        if (!TextUtils.isEmpty(c0686wf.f1135a)) {
-            gf.f457a = c0686wf.f1135a;
+        if (!TextUtils.isEmpty(c0686wf.f1139a)) {
+            gf.f461a = c0686wf.f1139a;
         }
         gf.b = c0686wf.b.toString();
-        gf.c = this.f1107a.fromModel(c0686wf.c).intValue();
+        gf.c = this.f1111a.fromModel(c0686wf.c).intValue();
         return gf;
     }
 
     public C0636uf(Jf jf) {
-        this.f1107a = jf;
+        this.f1111a = jf;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0686wf toModel(Gf gf) {
         JSONObject jSONObject;
-        String str = gf.f457a;
+        String str = gf.f461a;
         String str2 = gf.b;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 jSONObject = new JSONObject(str2);
             } catch (Throwable unused) {
             }
-            return new C0686wf(str, jSONObject, this.f1107a.toModel(Integer.valueOf(gf.c)));
+            return new C0686wf(str, jSONObject, this.f1111a.toModel(Integer.valueOf(gf.c)));
         }
         jSONObject = new JSONObject();
-        return new C0686wf(str, jSONObject, this.f1107a.toModel(Integer.valueOf(gf.c)));
+        return new C0686wf(str, jSONObject, this.f1111a.toModel(Integer.valueOf(gf.c)));
     }
 }

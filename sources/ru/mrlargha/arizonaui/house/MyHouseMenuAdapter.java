@@ -59,9 +59,9 @@ public final class MyHouseMenuAdapter extends RecyclerView.Adapter<ViewHolder> {
         EasyAnimation.animateClick$default(easyAnimation, menuItem3, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHouseMenuAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$4$lambda$3;
-                onBindViewHolder$lambda$4$lambda$3 = MyHouseMenuAdapter.onBindViewHolder$lambda$4$lambda$3(MyHouseScreen.Companion.MenuItem.this, this);
-                return onBindViewHolder$lambda$4$lambda$3;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyHouseMenuAdapter.onBindViewHolder$lambda$0$0(MyHouseScreen.Companion.MenuItem.this, this);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         MyHouseChildMenuAdapter myHouseChildMenuAdapter = new MyHouseChildMenuAdapter();
@@ -93,7 +93,7 @@ public final class MyHouseMenuAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$4$lambda$3(MyHouseScreen.Companion.MenuItem menuItem, MyHouseMenuAdapter myHouseMenuAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyHouseScreen.Companion.MenuItem menuItem, MyHouseMenuAdapter myHouseMenuAdapter) {
         menuItem.setPressed(!menuItem.isPressed());
         for (MyHouseScreen.Companion.MenuItem menuItem2 : myHouseMenuAdapter.menuItemList) {
             if (menuItem2.getId() != menuItem.getId()) {

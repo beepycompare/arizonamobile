@@ -65,15 +65,15 @@ public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
         EasyAnimation.animateClick$default(easyAnimation, fishingItem, 0L, new Function0() { // from class: ru.mrlargha.arizonaui.fishing.FishingAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$1$lambda$0;
-                onBindViewHolder$lambda$1$lambda$0 = FishingAdapter.onBindViewHolder$lambda$1$lambda$0(FishingScreen.Companion.FishInfo.this, binding, this);
-                return onBindViewHolder$lambda$1$lambda$0;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = FishingAdapter.onBindViewHolder$lambda$0$0(FishingScreen.Companion.FishInfo.this, binding, this);
+                return onBindViewHolder$lambda$0$0;
             }
         }, null, 5, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$1$lambda$0(FishingScreen.Companion.FishInfo fishInfo, FishingItemBinding fishingItemBinding, FishingAdapter fishingAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$0(FishingScreen.Companion.FishInfo fishInfo, FishingItemBinding fishingItemBinding, FishingAdapter fishingAdapter) {
         fishInfo.setPressed(true);
         if (Intrinsics.areEqual(fishInfo.getType(), "fish")) {
             fishingItemBinding.acceptMask.setVisibility(0);

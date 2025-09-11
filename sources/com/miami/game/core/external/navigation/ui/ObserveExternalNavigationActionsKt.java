@@ -30,13 +30,13 @@ import timber.log.Timber;
 /* loaded from: classes4.dex */
 public final class ObserveExternalNavigationActionsKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit collectWithLifecycle$lambda$6(Flow flow, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit collectWithLifecycle$lambda$2(Flow flow, Function1 function1, int i, Composer composer, int i2) {
         collectWithLifecycle(flow, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit observeExternalNavigationActions$lambda$3(Flow flow, int i, Composer composer, int i2) {
+    public static final Unit observeExternalNavigationActions$lambda$1(Flow flow, int i, Composer composer, int i2) {
         observeExternalNavigationActions(flow, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -61,16 +61,16 @@ public final class ObserveExternalNavigationActionsKt {
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final Context context = (Context) consume;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 694704273, "CC(remember):ObserveExternalNavigationActions.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 694703889, "CC(remember):ObserveExternalNavigationActions.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(context);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit observeExternalNavigationActions$lambda$2$lambda$1;
-                        observeExternalNavigationActions$lambda$2$lambda$1 = ObserveExternalNavigationActionsKt.observeExternalNavigationActions$lambda$2$lambda$1(context, (ExternalNavigationAction) obj);
-                        return observeExternalNavigationActions$lambda$2$lambda$1;
+                        Unit observeExternalNavigationActions$lambda$0$0;
+                        observeExternalNavigationActions$lambda$0$0 = ObserveExternalNavigationActionsKt.observeExternalNavigationActions$lambda$0$0(context, (ExternalNavigationAction) obj);
+                        return observeExternalNavigationActions$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -86,16 +86,16 @@ public final class ObserveExternalNavigationActionsKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit observeExternalNavigationActions$lambda$3;
-                    observeExternalNavigationActions$lambda$3 = ObserveExternalNavigationActionsKt.observeExternalNavigationActions$lambda$3(Flow.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return observeExternalNavigationActions$lambda$3;
+                    Unit observeExternalNavigationActions$lambda$1;
+                    observeExternalNavigationActions$lambda$1 = ObserveExternalNavigationActionsKt.observeExternalNavigationActions$lambda$1(Flow.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return observeExternalNavigationActions$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit observeExternalNavigationActions$lambda$2$lambda$1(Context context, ExternalNavigationAction event) {
+    public static final Unit observeExternalNavigationActions$lambda$0$0(Context context, ExternalNavigationAction event) {
         Intrinsics.checkNotNullParameter(event, "event");
         Activity activity = context instanceof Activity ? (Activity) context : null;
         if (activity == null) {
@@ -145,7 +145,7 @@ public final class ObserveExternalNavigationActionsKt {
             LifecycleOwner lifecycleOwner = (LifecycleOwner) consume;
             State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function1, startRestartGroup, (i2 >> 3) & 14);
             Lifecycle lifecycle = lifecycleOwner.getLifecycle();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1033023436, "CC(remember):ObserveExternalNavigationActions.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1033024076, "CC(remember):ObserveExternalNavigationActions.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(lifecycleOwner) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
             ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -163,16 +163,16 @@ public final class ObserveExternalNavigationActionsKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit collectWithLifecycle$lambda$6;
-                    collectWithLifecycle$lambda$6 = ObserveExternalNavigationActionsKt.collectWithLifecycle$lambda$6(Flow.this, function1, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return collectWithLifecycle$lambda$6;
+                    Unit collectWithLifecycle$lambda$2;
+                    collectWithLifecycle$lambda$2 = ObserveExternalNavigationActionsKt.collectWithLifecycle$lambda$2(Flow.this, function1, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return collectWithLifecycle$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final <T> Function1<T, Unit> collectWithLifecycle$lambda$4(State<? extends Function1<? super T, Unit>> state) {
+    public static final <T> Function1<T, Unit> collectWithLifecycle$lambda$0(State<? extends Function1<? super T, Unit>> state) {
         return (Function1) ((Function1<? super T, Unit>) state.getValue());
     }
 }

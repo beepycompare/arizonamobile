@@ -12,7 +12,7 @@ import java.util.Iterator;
 public final class C0215e3 implements Bk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f851a;
+    public final ArrayList f855a;
     public Intent b;
     public final Context c;
     public final C0244f6 d;
@@ -22,7 +22,7 @@ public final class C0215e3 implements Bk {
     }
 
     public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f851a.add(consumer);
+        this.f855a.add(consumer);
         return this.b;
     }
 
@@ -33,7 +33,7 @@ public final class C0215e3 implements Bk {
         synchronized (c0244f6) {
             if (c0244f6.b) {
                 try {
-                    context.unregisterReceiver(c0244f6.f869a);
+                    context.unregisterReceiver(c0244f6.f873a);
                     c0244f6.b = false;
                 } catch (Throwable unused) {
                 }
@@ -45,7 +45,7 @@ public final class C0215e3 implements Bk {
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
-        Iterator it = this.f851a.iterator();
+        Iterator it = this.f855a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(a2);
         }
@@ -55,14 +55,14 @@ public final class C0215e3 implements Bk {
     public final synchronized void onDestroy() {
         this.b = null;
         b();
-        Iterator it = this.f851a.iterator();
+        Iterator it = this.f855a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(null);
         }
     }
 
     public C0215e3(Context context, ICommonExecutor iCommonExecutor, int i) {
-        this.f851a = new ArrayList();
+        this.f855a = new ArrayList();
         this.b = null;
         this.c = context;
         this.d = AbstractC0218e6.a(new I2(new C0190d3(this), iCommonExecutor));
@@ -75,7 +75,7 @@ public final class C0215e3 implements Bk {
         Context context = this.c;
         synchronized (c0244f6) {
             try {
-                intent = context.registerReceiver(c0244f6.f869a, intentFilter);
+                intent = context.registerReceiver(c0244f6.f873a, intentFilter);
                 try {
                     c0244f6.b = true;
                 } catch (Throwable unused) {

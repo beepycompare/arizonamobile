@@ -91,7 +91,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
 
         public final void resume(long j) {
             CancellableContinuation<? super R> cancellableContinuation;
-            Object m9084constructorimpl;
+            Object m9091constructorimpl;
             Function1<? super Long, ? extends R> function1 = this.onFrame;
             if (function1 == null || (cancellableContinuation = this.continuation) == null) {
                 return;
@@ -99,19 +99,19 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             try {
                 Result.Companion companion = Result.Companion;
                 FrameAwaiter<R> frameAwaiter = this;
-                m9084constructorimpl = Result.m9084constructorimpl(function1.invoke(Long.valueOf(j)));
+                m9091constructorimpl = Result.m9091constructorimpl(function1.invoke(Long.valueOf(j)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
+                m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
             }
-            cancellableContinuation.resumeWith(m9084constructorimpl);
+            cancellableContinuation.resumeWith(m9091constructorimpl);
         }
 
         public final void resumeWithException(Throwable th) {
             CancellableContinuation<? super R> cancellableContinuation = this.continuation;
             if (cancellableContinuation != null) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9084constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuation.resumeWith(Result.m9091constructorimpl(ResultKt.createFailure(th)));
             }
         }
     }
@@ -368,7 +368,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
                 }
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9084constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9091constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

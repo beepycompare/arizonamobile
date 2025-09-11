@@ -80,7 +80,7 @@ public final class DebugKt {
     }
 
     /* renamed from: assert  reason: not valid java name */
-    private static final void m10582assert(Function0<Boolean> function0) {
+    private static final void m10594assert(Function0<Boolean> function0) {
         if (getASSERTIONS_ENABLED() && !function0.invoke().booleanValue()) {
             throw new AssertionError();
         }

@@ -22,13 +22,13 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
         	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     /* JADX INFO: Access modifiers changed from: private */
-    public static final java.lang.String getIndentFunction$lambda$8$StringsKt__IndentKt(java.lang.String r1) {
+    public static final java.lang.String getIndentFunction$lambda$0$StringsKt__IndentKt(java.lang.String r1) {
         /*
             java.lang.String r0 = "line"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r0)
             return r1
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.text.StringsKt__IndentKt.getIndentFunction$lambda$8$StringsKt__IndentKt(java.lang.String):java.lang.String");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.text.StringsKt__IndentKt.getIndentFunction$lambda$0$StringsKt__IndentKt(java.lang.String):java.lang.String");
     }
 
     public static /* synthetic */ String trimMargin$default(String str, String str2, int i, Object obj) {
@@ -187,15 +187,15 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
         return SequencesKt.joinToString$default(SequencesKt.map(StringsKt.lineSequence(str), new Function1() { // from class: kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String prependIndent$lambda$5$StringsKt__IndentKt;
-                prependIndent$lambda$5$StringsKt__IndentKt = StringsKt__IndentKt.prependIndent$lambda$5$StringsKt__IndentKt(indent, (String) obj);
-                return prependIndent$lambda$5$StringsKt__IndentKt;
+                String prependIndent$lambda$0$StringsKt__IndentKt;
+                prependIndent$lambda$0$StringsKt__IndentKt = StringsKt__IndentKt.prependIndent$lambda$0$StringsKt__IndentKt(indent, (String) obj);
+                return prependIndent$lambda$0$StringsKt__IndentKt;
             }
         }), "\n", null, null, 0, null, null, 62, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String prependIndent$lambda$5$StringsKt__IndentKt(String str, String it) {
+    public static final String prependIndent$lambda$0$StringsKt__IndentKt(String str, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (StringsKt.isBlank(it)) {
             return it.length() < str.length() ? str : it;
@@ -224,20 +224,20 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
         return str.length() == 0 ? new Function1() { // from class: kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return StringsKt__IndentKt.getIndentFunction$lambda$8$StringsKt__IndentKt((String) obj);
+                return StringsKt__IndentKt.getIndentFunction$lambda$0$StringsKt__IndentKt((String) obj);
             }
         } : new Function1() { // from class: kotlin.text.StringsKt__IndentKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String indentFunction$lambda$9$StringsKt__IndentKt;
-                indentFunction$lambda$9$StringsKt__IndentKt = StringsKt__IndentKt.getIndentFunction$lambda$9$StringsKt__IndentKt(str, (String) obj);
-                return indentFunction$lambda$9$StringsKt__IndentKt;
+                String indentFunction$lambda$1$StringsKt__IndentKt;
+                indentFunction$lambda$1$StringsKt__IndentKt = StringsKt__IndentKt.getIndentFunction$lambda$1$StringsKt__IndentKt(str, (String) obj);
+                return indentFunction$lambda$1$StringsKt__IndentKt;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String getIndentFunction$lambda$9$StringsKt__IndentKt(String str, String line) {
+    public static final String getIndentFunction$lambda$1$StringsKt__IndentKt(String str, String line) {
         Intrinsics.checkNotNullParameter(line, "line");
         return str + line;
     }

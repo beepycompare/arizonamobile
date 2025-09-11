@@ -24,53 +24,53 @@ public enum ActivityKind {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f126a;
+        public static final /* synthetic */ int[] f130a;
 
         static {
             int[] iArr = new int[ActivityKind.values().length];
-            f126a = iArr;
+            f130a = iArr;
             try {
                 iArr[ActivityKind.SESSION.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f126a[ActivityKind.EVENT.ordinal()] = 2;
+                f130a[ActivityKind.EVENT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f126a[ActivityKind.CLICK.ordinal()] = 3;
+                f130a[ActivityKind.CLICK.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f126a[ActivityKind.ATTRIBUTION.ordinal()] = 4;
+                f130a[ActivityKind.ATTRIBUTION.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f126a[ActivityKind.INFO.ordinal()] = 5;
+                f130a[ActivityKind.INFO.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f126a[ActivityKind.GDPR.ordinal()] = 6;
+                f130a[ActivityKind.GDPR.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f126a[ActivityKind.AD_REVENUE.ordinal()] = 7;
+                f130a[ActivityKind.AD_REVENUE.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                f126a[ActivityKind.SUBSCRIPTION.ordinal()] = 8;
+                f130a[ActivityKind.SUBSCRIPTION.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                f126a[ActivityKind.THIRD_PARTY_SHARING.ordinal()] = 9;
+                f130a[ActivityKind.THIRD_PARTY_SHARING.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                f126a[ActivityKind.MEASUREMENT_CONSENT.ordinal()] = 10;
+                f130a[ActivityKind.MEASUREMENT_CONSENT.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                f126a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 11;
+                f130a[ActivityKind.PURCHASE_VERIFICATION.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
             }
         }
@@ -115,7 +115,7 @@ public enum ActivityKind {
 
     @Override // java.lang.Enum
     public String toString() {
-        switch (AnonymousClass1.f126a[ordinal()]) {
+        switch (AnonymousClass1.f130a[ordinal()]) {
             case 1:
                 return "session";
             case 2:

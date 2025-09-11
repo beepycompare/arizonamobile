@@ -12,13 +12,13 @@ public final class Ui implements InterfaceC0641uk {
     public static final long f = TimeUnit.SECONDS.toMillis(4);
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0471o0 f697a;
+    public final C0471o0 f701a;
     public final C0566rk b;
     public final TimeProvider c;
     public final ICommonExecutor d;
 
     public Ui(C0471o0 c0471o0, C0566rk c0566rk, TimeProvider timeProvider) {
-        this.f697a = c0471o0;
+        this.f701a = c0471o0;
         this.b = c0566rk;
         this.c = timeProvider;
         this.d = A4.l().g().b();
@@ -29,7 +29,7 @@ public final class Ui implements InterfaceC0641uk {
         ICommonExecutor iCommonExecutor = this.d;
         if (rh.b) {
             C0566rk c0566rk = this.b;
-            c0410lh = new B6(c0566rk.f1065a, c0566rk.b, c0566rk.c, rh);
+            c0410lh = new B6(c0566rk.f1069a, c0566rk.b, c0566rk.c, rh);
         } else {
             C0566rk c0566rk2 = this.b;
             c0410lh = new C0410lh(c0566rk2.b, c0566rk2.c, rh);
@@ -40,8 +40,8 @@ public final class Ui implements InterfaceC0641uk {
     public final void b(Rh rh) {
         long uptimeMillis = this.c.uptimeMillis();
         C0566rk c0566rk = this.b;
-        B6 b6 = new B6(c0566rk.f1065a, c0566rk.b, c0566rk.c, rh);
-        if (this.f697a.a()) {
+        B6 b6 = new B6(c0566rk.f1069a, c0566rk.b, c0566rk.c, rh);
+        if (this.f701a.a()) {
             try {
                 this.d.submit(b6).get(f, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {

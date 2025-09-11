@@ -44,13 +44,13 @@ public final class SubCategoriesMenuViewHolder extends RecyclerView.ViewHolder {
         itemTuningSubmenuBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.viewHolder.SubCategoriesMenuViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SubCategoriesMenuViewHolder.bind$lambda$1$lambda$0(SubCategoriesMenuViewHolder.this, item, view);
+                SubCategoriesMenuViewHolder.bind$lambda$0$0(SubCategoriesMenuViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(SubCategoriesMenuViewHolder subCategoriesMenuViewHolder, CategoryInfo categoryInfo, View view) {
+    public static final void bind$lambda$0$0(SubCategoriesMenuViewHolder subCategoriesMenuViewHolder, CategoryInfo categoryInfo, View view) {
         subCategoriesMenuViewHolder.onItemClicked.invoke(categoryInfo, Integer.valueOf(subCategoriesMenuViewHolder.getAdapterPosition()));
     }
 }

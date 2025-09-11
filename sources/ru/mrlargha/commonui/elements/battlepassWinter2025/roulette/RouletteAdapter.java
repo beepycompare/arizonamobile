@@ -192,7 +192,7 @@ public final class RouletteAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 linearLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteAdapter$InfoPriseViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        RouletteAdapter.InfoPriseViewHolder.bind$lambda$1$lambda$0(RouletteAdapter.this, linearLayout, linearLayout2, view);
+                        RouletteAdapter.InfoPriseViewHolder.bind$lambda$0$0(RouletteAdapter.this, linearLayout, linearLayout2, view);
                     }
                 });
                 TextView textView = (TextView) this.itemView.findViewById(R.id.tv_prise_name);
@@ -205,7 +205,7 @@ public final class RouletteAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$1$lambda$0(RouletteAdapter rouletteAdapter, LinearLayout linearLayout, LinearLayout linearLayout2, View view) {
+        public static final void bind$lambda$0$0(RouletteAdapter rouletteAdapter, LinearLayout linearLayout, LinearLayout linearLayout2, View view) {
             rouletteAdapter.onSellPrise.invoke();
             linearLayout.setVisibility(8);
             linearLayout2.setVisibility(0);

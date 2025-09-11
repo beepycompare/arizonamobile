@@ -6,14 +6,14 @@ import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
 public final class B4 implements ClientStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dl f358a;
+    public final Dl f362a;
 
     public B4(Dl dl) {
-        this.f358a = dl;
+        this.f362a = dl;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider
     public final ModulePreferences modulePreferences(String str) {
-        return new C0709xd(str, this.f358a);
+        return new C0709xd(str, this.f362a);
     }
 }

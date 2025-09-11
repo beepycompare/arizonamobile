@@ -8,16 +8,16 @@ public final class C0776g implements Converter {
     /* renamed from: a */
     public final K fromModel(C0774e c0774e) {
         K k = new K();
-        k.f1295a = c0774e.f1314a;
+        k.f1299a = c0774e.f1318a;
         return k;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C0774e(((K) obj).f1295a);
+        return new C0774e(((K) obj).f1299a);
     }
 
     public final C0774e a(K k) {
-        return new C0774e(k.f1295a);
+        return new C0774e(k.f1299a);
     }
 }

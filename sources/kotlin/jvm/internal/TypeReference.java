@@ -171,8 +171,7 @@ public final class TypeReference implements KType {
         if (typeReference == null || (valueOf = typeReference.asString(true)) == null) {
             valueOf = String.valueOf(kTypeProjection.getType());
         }
-        KVariance variance = kTypeProjection.getVariance();
-        int i = variance == null ? -1 : WhenMappings.$EnumSwitchMapping$0[variance.ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[kTypeProjection.getVariance().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

@@ -107,16 +107,16 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         LavkaTypeAdapter lavkaTypeAdapter = new LavkaTypeAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit lavkaAdapter$lambda$3;
-                lavkaAdapter$lambda$3 = LavkaTypeScreen.lavkaAdapter$lambda$3(LavkaTypeScreen.this, (InventoryItem) obj);
-                return lavkaAdapter$lambda$3;
+                Unit lavkaAdapter$lambda$0;
+                lavkaAdapter$lambda$0 = LavkaTypeScreen.lavkaAdapter$lambda$0(LavkaTypeScreen.this, (InventoryItem) obj);
+                return lavkaAdapter$lambda$0;
             }
         }, new Function0() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit lavkaAdapter$lambda$4;
-                lavkaAdapter$lambda$4 = LavkaTypeScreen.lavkaAdapter$lambda$4(targetActivity, i, this);
-                return lavkaAdapter$lambda$4;
+                Unit lavkaAdapter$lambda$1;
+                lavkaAdapter$lambda$1 = LavkaTypeScreen.lavkaAdapter$lambda$1(targetActivity, i, this);
+                return lavkaAdapter$lambda$1;
             }
         }, activity);
         this.lavkaAdapter = lavkaTypeAdapter;
@@ -140,13 +140,13 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         bind.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LavkaTypeScreen._init_$lambda$6(LavkaTypeScreen.this, view);
+                LavkaTypeScreen._init_$lambda$1(LavkaTypeScreen.this, view);
             }
         });
         bind.btnSell.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LavkaTypeScreen._init_$lambda$7(LavkaTypeScreen.this, view);
+                LavkaTypeScreen._init_$lambda$2(LavkaTypeScreen.this, view);
             }
         });
         bind.tvScreenTitle.setText(targetActivity.getString(R.string.trade_shop) + " —");
@@ -184,7 +184,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lavkaAdapter$lambda$3(LavkaTypeScreen lavkaTypeScreen, InventoryItem it) {
+    public static final Unit lavkaAdapter$lambda$0(LavkaTypeScreen lavkaTypeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         int slot = it.getSlot();
         int inventoryType = it.getInventoryType();
@@ -196,7 +196,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lavkaAdapter$lambda$4(Activity activity, int i, LavkaTypeScreen lavkaTypeScreen) {
+    public static final Unit lavkaAdapter$lambda$1(Activity activity, int i, LavkaTypeScreen lavkaTypeScreen) {
         Toast.makeText(activity.getApplicationContext(), "Ошибка в интерфейсе : " + i, 1).show();
         lavkaTypeScreen.getNotifier().setUIElementVisible(i, false);
         return Unit.INSTANCE;
@@ -218,7 +218,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(LavkaTypeScreen lavkaTypeScreen, View view) {
+    public static final void _init_$lambda$1(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(0)));
         lavkaTypeScreen.currentPage = 0;
         if (lavkaTypeScreen.isArizonaType) {
@@ -229,7 +229,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(LavkaTypeScreen lavkaTypeScreen, View view) {
+    public static final void _init_$lambda$2(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(1)));
         lavkaTypeScreen.currentPage = 1;
         if (lavkaTypeScreen.isArizonaType) {

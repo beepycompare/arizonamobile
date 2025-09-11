@@ -114,7 +114,7 @@ public final class MyHouseScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, backButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHouseScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return MyHouseScreen.lambda$3$lambda$0(MyHouseScreen.this);
+                return MyHouseScreen.lambda$0$0(MyHouseScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -123,25 +123,25 @@ public final class MyHouseScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, exitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHouseScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return MyHouseScreen.lambda$3$lambda$1(MyHouseScreenBinding.this, this);
+                return MyHouseScreen.lambda$0$1(MyHouseScreenBinding.this, this);
             }
         }, 3, null);
         bind.switchBiz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: ru.mrlargha.arizonaui.house.MyHouseScreen$$ExternalSyntheticLambda2
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                MyHouseScreen.lambda$3$lambda$2(MyHouseScreen.this, compoundButton, z);
+                MyHouseScreen.lambda$0$2(MyHouseScreen.this, compoundButton, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$0(MyHouseScreen myHouseScreen) {
+    public static final Unit lambda$0$0(MyHouseScreen myHouseScreen) {
         SAMPUIElement.notifyClick$default(myHouseScreen, 0, 5, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$1(MyHouseScreenBinding myHouseScreenBinding, MyHouseScreen myHouseScreen) {
+    public static final Unit lambda$0$1(MyHouseScreenBinding myHouseScreenBinding, MyHouseScreen myHouseScreen) {
         myHouseScreenBinding.housesRc.getRecycledViewPool().clear();
         myHouseScreen.houseListAdapter.clearHouses();
         SAMPUIElement.notifyClick$default(myHouseScreen, 1, 5, null, 4, null);
@@ -149,7 +149,7 @@ public final class MyHouseScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$2(MyHouseScreen myHouseScreen, CompoundButton compoundButton, boolean z) {
+    public static final void lambda$0$2(MyHouseScreen myHouseScreen, CompoundButton compoundButton, boolean z) {
         Intrinsics.checkNotNullParameter(compoundButton, "<unused var>");
         Log.e("check", "isChecked");
         myHouseScreen.setCheckInfo(z);

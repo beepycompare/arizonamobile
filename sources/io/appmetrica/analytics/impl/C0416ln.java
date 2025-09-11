@@ -4,16 +4,16 @@ package io.appmetrica.analytics.impl;
 public final class C0416ln implements Rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rn f975a;
+    public final Rn f979a;
     public final Object b;
 
     public C0416ln(Rn rn, Object obj) {
-        this.f975a = rn;
+        this.f979a = rn;
         this.b = obj;
     }
 
     @Override // io.appmetrica.analytics.impl.Rn
     public final Object a(Object obj) {
-        return obj != this.f975a.a(obj) ? this.b : obj;
+        return obj != this.f979a.a(obj) ? this.b : obj;
     }
 }

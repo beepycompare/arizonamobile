@@ -9,6 +9,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
@@ -16,7 +17,7 @@ import ru.mrlargha.arizonaui.databinding.GhettoMainBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GhettoScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$loadMapRetrofit$1", f = "GhettoScreen.kt", i = {}, l = {164}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$loadMapRetrofit$1", f = "GhettoScreen.kt", i = {}, l = {164}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 public final class GhettoScreen$loadMapRetrofit$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -57,7 +58,9 @@ public final class GhettoScreen$loadMapRetrofit$1 extends SuspendLambda implemen
             ResultKt.throwOnFailure(obj);
         }
         ghettoMainBinding = this.this$0.binding;
-        GridOverlayView.setDataAndTryToDraw$default(ghettoMainBinding.map.overlayView, (List) obj, null, 2, null);
+        GridOverlayView overlayView = ghettoMainBinding.map.overlayView;
+        Intrinsics.checkNotNullExpressionValue(overlayView, "overlayView");
+        GridOverlayView.setDataAndTryToDraw$default(overlayView, (List) obj, null, 2, null);
         return Unit.INSTANCE;
     }
 }

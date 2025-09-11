@@ -7,13 +7,13 @@ import java.util.List;
 public final class C0655v9 extends AbstractC0680w9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1118a;
+    public final List f1122a;
 
     public C0655v9(List<Object> list) {
-        this.f1118a = CollectionUtils.unmodifiableListCopy(list);
+        this.f1122a = CollectionUtils.unmodifiableListCopy(list);
     }
 
     public final List<Object> a() {
-        return this.f1118a;
+        return this.f1122a;
     }
 }

@@ -35,7 +35,7 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
     private int page;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3$lambda$2(View view) {
+    public static final void onBindViewHolder$lambda$0$2(View view) {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -103,14 +103,14 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
             binding.actions.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.MembersAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MembersAdapter.onBindViewHolder$lambda$3$lambda$1(MembersAdapter.this, memberItem, view);
+                    MembersAdapter.onBindViewHolder$lambda$0$1(MembersAdapter.this, memberItem, view);
                 }
             });
         } else {
             binding.actions.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.MembersAdapter$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MembersAdapter.onBindViewHolder$lambda$3$lambda$2(view);
+                    MembersAdapter.onBindViewHolder$lambda$0$2(view);
                 }
             });
             binding.actions.setVisibility(8);
@@ -125,7 +125,7 @@ public final class MembersAdapter extends RecyclerView.Adapter<MembersViewHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3$lambda$1(MembersAdapter membersAdapter, MemberItem memberItem, View view) {
+    public static final void onBindViewHolder$lambda$0$1(MembersAdapter membersAdapter, MemberItem memberItem, View view) {
         membersAdapter.onClick.invoke(memberItem);
     }
 

@@ -57,13 +57,13 @@ public final class VipLevelAdapter extends RecyclerView.Adapter<VipLevelViewHold
         binding.documentsVipLevelButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.VipLevelAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                VipLevelAdapter.onBindViewHolder$lambda$1$lambda$0(VipLevelAdapter.this, i, view);
+                VipLevelAdapter.onBindViewHolder$lambda$0$0(VipLevelAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(VipLevelAdapter vipLevelAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(VipLevelAdapter vipLevelAdapter, int i, View view) {
         vipLevelAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

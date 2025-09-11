@@ -57,9 +57,9 @@ public final class MyBusinessChildMenuAdapter extends RecyclerView.Adapter<Busin
         EasyAnimation.animateClick$default(easyAnimation, myBusinessChildMenuItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessChildMenuAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = MyBusinessChildMenuAdapter.onBindViewHolder$lambda$2$lambda$1(MyBusinessChildMenuAdapter.this, subMenuItem2);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyBusinessChildMenuAdapter.onBindViewHolder$lambda$0$0(MyBusinessChildMenuAdapter.this, subMenuItem2);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         if (subMenuItem2.isPressed()) {
@@ -70,7 +70,7 @@ public final class MyBusinessChildMenuAdapter extends RecyclerView.Adapter<Busin
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(MyBusinessChildMenuAdapter myBusinessChildMenuAdapter, MyBusinessScreen.Companion.SubMenuItem subMenuItem) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyBusinessChildMenuAdapter myBusinessChildMenuAdapter, MyBusinessScreen.Companion.SubMenuItem subMenuItem) {
         OnChildItemClickListener onChildItemClickListener = myBusinessChildMenuAdapter.onChildItemClickListener;
         if (onChildItemClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onChildItemClickListener");

@@ -8,22 +8,22 @@ import kotlin.comparisons.UComparisonsKt;
 /* loaded from: classes5.dex */
 public final class UMathKt {
     /* renamed from: min-J1ME1BU  reason: not valid java name */
-    private static final int m10309minJ1ME1BU(int i, int i2) {
-        return UComparisonsKt.m10288minOfJ1ME1BU(i, i2);
+    private static final int m10322minJ1ME1BU(int i, int i2) {
+        return UComparisonsKt.m10302minOfJ1ME1BU(i, i2);
     }
 
     /* renamed from: min-eb3DHEI  reason: not valid java name */
-    private static final long m10310mineb3DHEI(long j, long j2) {
-        return UComparisonsKt.m10296minOfeb3DHEI(j, j2);
+    private static final long m10323mineb3DHEI(long j, long j2) {
+        return UComparisonsKt.m10310minOfeb3DHEI(j, j2);
     }
 
     /* renamed from: max-J1ME1BU  reason: not valid java name */
-    private static final int m10307maxJ1ME1BU(int i, int i2) {
-        return UComparisonsKt.m10276maxOfJ1ME1BU(i, i2);
+    private static final int m10320maxJ1ME1BU(int i, int i2) {
+        return UComparisonsKt.m10290maxOfJ1ME1BU(i, i2);
     }
 
     /* renamed from: max-eb3DHEI  reason: not valid java name */
-    private static final long m10308maxeb3DHEI(long j, long j2) {
-        return UComparisonsKt.m10284maxOfeb3DHEI(j, j2);
+    private static final long m10321maxeb3DHEI(long j, long j2) {
+        return UComparisonsKt.m10298maxOfeb3DHEI(j, j2);
     }
 }

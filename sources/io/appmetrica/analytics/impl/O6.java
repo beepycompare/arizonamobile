@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESRSAEncrypter;
 public final class O6 implements CryptoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESRSAEncrypter f599a = new AESRSAEncrypter();
+    public final AESRSAEncrypter f603a = new AESRSAEncrypter();
 
     @Override // io.appmetrica.analytics.coreapi.internal.crypto.CryptoProvider
     public final Encrypter getAesRsaEncrypter() {
-        return this.f599a;
+        return this.f603a;
     }
 }

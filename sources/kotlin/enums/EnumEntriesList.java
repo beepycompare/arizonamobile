@@ -18,6 +18,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EnumEntriesList<T extends Enum<T>> extends AbstractList<T> implements EnumEntries<T>, Serializable {
     private final T[] entries;
 
+    public EnumEntriesList(T[] entries) {
+        Intrinsics.checkNotNullParameter(entries, "entries");
+        this.entries = entries;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
@@ -43,11 +48,6 @@ public final class EnumEntriesList<T extends Enum<T>> extends AbstractList<T> im
             return lastIndexOf((EnumEntriesList<T>) ((Enum) obj));
         }
         return -1;
-    }
-
-    public EnumEntriesList(T[] entries) {
-        Intrinsics.checkNotNullParameter(entries, "entries");
-        this.entries = entries;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection

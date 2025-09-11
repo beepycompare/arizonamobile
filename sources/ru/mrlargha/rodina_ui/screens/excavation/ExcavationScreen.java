@@ -60,7 +60,7 @@ public final class ExcavationScreen extends SAMPUIElement {
                 excavationScreenBinding.rodinaExcavationProgressDoneButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.rodina_ui.screens.excavation.ExcavationScreen$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ExcavationScreen.onBackendMessage$lambda$3$lambda$2(ExcavationScreen.this, view);
+                        ExcavationScreen.onBackendMessage$lambda$0$0(ExcavationScreen.this, view);
                     }
                 });
             } else {
@@ -72,7 +72,7 @@ public final class ExcavationScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$3$lambda$2(ExcavationScreen excavationScreen, View view) {
+    public static final void onBackendMessage$lambda$0$0(ExcavationScreen excavationScreen, View view) {
         SAMPUIElement.notifyClick$default(excavationScreen, 1, -1, null, 4, null);
     }
 

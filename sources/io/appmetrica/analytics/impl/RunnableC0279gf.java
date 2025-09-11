@@ -6,18 +6,18 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class RunnableC0279gf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f892a;
+    public final /* synthetic */ PluginErrorDetails f896a;
     public final /* synthetic */ String b;
     public final /* synthetic */ Cif c;
 
     public RunnableC0279gf(Cif cif, PluginErrorDetails pluginErrorDetails, String str) {
         this.c = cif;
-        this.f892a = pluginErrorDetails;
+        this.f896a = pluginErrorDetails;
         this.b = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ((InterfaceC0557rb) this.c.d.get()).getPluginExtension().reportError(this.f892a, this.b);
+        ((InterfaceC0557rb) this.c.d.get()).getPluginExtension().reportError(this.f896a, this.b);
     }
 }

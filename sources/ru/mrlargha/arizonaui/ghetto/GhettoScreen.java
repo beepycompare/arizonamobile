@@ -116,9 +116,9 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         WarsAdapter warsAdapter = new WarsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warsAdapter$lambda$1;
-                warsAdapter$lambda$1 = GhettoScreen.warsAdapter$lambda$1(GhettoScreen.this, ((Integer) obj).intValue());
-                return warsAdapter$lambda$1;
+                Unit warsAdapter$lambda$0;
+                warsAdapter$lambda$0 = GhettoScreen.warsAdapter$lambda$0(GhettoScreen.this, ((Integer) obj).intValue());
+                return warsAdapter$lambda$0;
             }
         });
         this.warsAdapter = warsAdapter;
@@ -132,7 +132,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit warsAdapter$lambda$1(GhettoScreen ghettoScreen, int i) {
+    public static final Unit warsAdapter$lambda$0(GhettoScreen ghettoScreen, int i) {
         if (i == 4) {
             ghettoScreen.navigateTo(Navigation.Map);
         }
@@ -189,69 +189,69 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         this.binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$2(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$0(GhettoScreen.this, view);
             }
         });
         this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$3(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$1(GhettoScreen.this, view);
             }
         });
         this.binding.map.button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$4(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$2(GhettoScreen.this, view);
             }
         });
         GhettoTopbarBinding ghettoTopbarBinding = this.binding.topbar;
         ghettoTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$7$lambda$5(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$3$0(GhettoScreen.this, view);
             }
         });
         ghettoTopbarBinding.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$7$lambda$6(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$3$1(GhettoScreen.this, view);
             }
         });
         this.binding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setupNavigation$lambda$9$lambda$8(GhettoScreen.this, view);
+                GhettoScreen.setupNavigation$lambda$4$0(GhettoScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupNavigation$lambda$0(GhettoScreen ghettoScreen, View view) {
+        ghettoScreen.binding.frameMap.getRoot().setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupNavigation$lambda$1(GhettoScreen ghettoScreen, View view) {
+        ghettoScreen.binding.frameMap.getRoot().setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public static final void setupNavigation$lambda$2(GhettoScreen ghettoScreen, View view) {
-        ghettoScreen.binding.frameMap.getRoot().setVisibility(8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$3(GhettoScreen ghettoScreen, View view) {
-        ghettoScreen.binding.frameMap.getRoot().setVisibility(8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$4(GhettoScreen ghettoScreen, View view) {
         SAMPUIElement.notifyClick$default(ghettoScreen, 0, 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$7$lambda$5(GhettoScreen ghettoScreen, View view) {
+    public static final void setupNavigation$lambda$3$0(GhettoScreen ghettoScreen, View view) {
         SAMPUIElement.notifyClick$default(ghettoScreen, 0, 0, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$7$lambda$6(GhettoScreen ghettoScreen, View view) {
+    public static final void setupNavigation$lambda$3$1(GhettoScreen ghettoScreen, View view) {
         ghettoScreen.navigateTo(Navigation.War);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$9$lambda$8(GhettoScreen ghettoScreen, View view) {
+    public static final void setupNavigation$lambda$4$0(GhettoScreen ghettoScreen, View view) {
         ghettoScreen.binding.frameMap.getRoot().setVisibility(8);
     }
 
@@ -267,7 +267,9 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
 
     private final void setUniqCells(List<UniqData> list) {
         Log.d("setDataAndTryToDraw", "FRONTEND: " + list);
-        GridOverlayView.setDataAndTryToDraw$default(this.binding.map.overlayView, null, list, 1, null);
+        GridOverlayView overlayView = this.binding.map.overlayView;
+        Intrinsics.checkNotNullExpressionValue(overlayView, "overlayView");
+        GridOverlayView.setDataAndTryToDraw$default(overlayView, null, list, 1, null);
     }
 
     private final void setMap() {
@@ -284,9 +286,9 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         subsamplingScaleImageView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean map$lambda$13$lambda$12;
-                map$lambda$13$lambda$12 = GhettoScreen.setMap$lambda$13$lambda$12(Ref.FloatRef.this, floatRef2, scaledTouchSlop, subsamplingScaleImageView, this, view, motionEvent);
-                return map$lambda$13$lambda$12;
+                boolean map$lambda$0$0;
+                map$lambda$0$0 = GhettoScreen.setMap$lambda$0$0(Ref.FloatRef.this, floatRef2, scaledTouchSlop, subsamplingScaleImageView, this, view, motionEvent);
+                return map$lambda$0$0;
             }
         });
         GridOverlayView gridOverlayView = this.binding.map.overlayView;
@@ -312,7 +314,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setMap$lambda$13$lambda$12(Ref.FloatRef floatRef, Ref.FloatRef floatRef2, int i, SubsamplingScaleImageView subsamplingScaleImageView, GhettoScreen ghettoScreen, View view, MotionEvent motionEvent) {
+    public static final boolean setMap$lambda$0$0(Ref.FloatRef floatRef, Ref.FloatRef floatRef2, int i, SubsamplingScaleImageView subsamplingScaleImageView, GhettoScreen ghettoScreen, View view, MotionEvent motionEvent) {
         PointF viewToSourceCoord;
         Object obj;
         Object obj2;
@@ -400,24 +402,24 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
             ghettoMapFrameBinding.containerRespect.setVisibility(8);
         } else {
             ghettoMapFrameBinding.containerRespect.setVisibility(0);
-            ghettoMapFrameBinding.respect.setText(String.valueOf(frameMapData.getResp()));
+            ghettoMapFrameBinding.respect.setText(String.valueOf(frameMapData.getResp().intValue()));
         }
         if (frameMapData.getPlant() == null) {
             ghettoMapFrameBinding.containerPlantCount.setVisibility(8);
         } else {
             ghettoMapFrameBinding.containerPlantCount.setVisibility(0);
-            ghettoMapFrameBinding.plantCount.setText(String.valueOf(frameMapData.getPlant()));
+            ghettoMapFrameBinding.plantCount.setText(String.valueOf(frameMapData.getPlant().intValue()));
         }
         if (frameMapData.getBalance() == null) {
             ghettoMapFrameBinding.containerPlantBalance.setVisibility(8);
         } else {
             ghettoMapFrameBinding.containerPlantBalance.setVisibility(0);
-            ghettoMapFrameBinding.plantBalance.setText(String.valueOf(frameMapData.getBalance()));
+            ghettoMapFrameBinding.plantBalance.setText(String.valueOf(frameMapData.getBalance().intValue()));
         }
         ghettoMapFrameBinding.buttonEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GhettoScreen.setFrameMap$lambda$16$lambda$15(GhettoScreen.this, frameMapData, view);
+                GhettoScreen.setFrameMap$lambda$0$1(GhettoScreen.this, frameMapData, view);
             }
         });
         TextView textView = ghettoMapFrameBinding.buttonEventText;
@@ -433,7 +435,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMap$lambda$16$lambda$15(GhettoScreen ghettoScreen, FrameMapData frameMapData, View view) {
+    public static final void setFrameMap$lambda$0$1(GhettoScreen ghettoScreen, FrameMapData frameMapData, View view) {
         SAMPUIElement.notifyClick$default(ghettoScreen, frameMapData.getTerritoryId(), 2, null, 4, null);
     }
 
@@ -471,7 +473,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
             ghettoTopbarBinding.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.ghetto.GhettoScreen$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GhettoScreen.navigateTo$lambda$19$lambda$18(GhettoScreen.this, view);
+                    GhettoScreen.navigateTo$lambda$1$0(GhettoScreen.this, view);
                 }
             });
             setMap();
@@ -479,7 +481,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$19$lambda$18(GhettoScreen ghettoScreen, View view) {
+    public static final void navigateTo$lambda$1$0(GhettoScreen ghettoScreen, View view) {
         ghettoScreen.navigateTo(Navigation.War);
     }
 

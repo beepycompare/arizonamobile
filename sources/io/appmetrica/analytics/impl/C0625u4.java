@@ -7,7 +7,7 @@ import android.util.SparseArray;
 public final class C0625u4 extends AbstractC0354jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0512pf f1100a;
+    public final C0512pf f1104a;
 
     public C0625u4(Context context) {
         this(new C0512pf(C0728y7.a(context).b()));
@@ -15,12 +15,12 @@ public final class C0625u4 extends AbstractC0354jd {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
     public final void a(int i) {
-        this.f1100a.c(i);
+        this.f1104a.c(i);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
     public final int b() {
-        return (int) this.f1100a.a(-1L);
+        return (int) this.f1104a.a(-1L);
     }
 
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
@@ -29,6 +29,6 @@ public final class C0625u4 extends AbstractC0354jd {
     }
 
     public C0625u4(C0512pf c0512pf) {
-        this.f1100a = c0512pf;
+        this.f1104a = c0512pf;
     }
 }

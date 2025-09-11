@@ -5,14 +5,14 @@ import android.os.ResultReceiver;
 public final class U4 implements Bg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ResultReceiver f689a;
+    public final /* synthetic */ ResultReceiver f693a;
 
     public U4(ResultReceiver resultReceiver) {
-        this.f689a = resultReceiver;
+        this.f693a = resultReceiver;
     }
 
     @Override // io.appmetrica.analytics.impl.Bg
     public final void a(Jg jg) {
-        Pg.a(this.f689a, jg);
+        Pg.a(this.f693a, jg);
     }
 }

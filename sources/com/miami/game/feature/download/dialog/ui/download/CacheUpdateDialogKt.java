@@ -62,7 +62,7 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes4.dex */
 public final class CacheUpdateDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogContent$lambda$12(String str, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit CacheUpdateDialogContent$lambda$1(String str, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         CacheUpdateDialogContent(str, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -74,7 +74,7 @@ public final class CacheUpdateDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogScreen$lambda$5(CommonDialogUiState commonDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit CacheUpdateDialogScreen$lambda$0(CommonDialogUiState commonDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         CacheUpdateDialogScreen(commonDialogUiState, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -107,7 +107,7 @@ public final class CacheUpdateDialogKt {
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821637995, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821638379, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean z = (i3 == 32) | ((i2 & 896) == 256);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -118,7 +118,7 @@ public final class CacheUpdateDialogKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             startRestartGroup = startRestartGroup;
             CommonDialogUiState CacheUpdateDialogRoute$lambda$1 = CacheUpdateDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821627165, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821627549, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -127,7 +127,7 @@ public final class CacheUpdateDialogKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821625821, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -821626205, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             CacheUpdateDialogKt$CacheUpdateDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -187,9 +187,9 @@ public final class CacheUpdateDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CacheUpdateDialogScreen$lambda$5;
-                    CacheUpdateDialogScreen$lambda$5 = CacheUpdateDialogKt.CacheUpdateDialogScreen$lambda$5(CommonDialogUiState.this, onConfirm, onDismiss, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CacheUpdateDialogScreen$lambda$5;
+                    Unit CacheUpdateDialogScreen$lambda$0;
+                    CacheUpdateDialogScreen$lambda$0 = CacheUpdateDialogKt.CacheUpdateDialogScreen$lambda$0(CommonDialogUiState.this, onConfirm, onDismiss, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return CacheUpdateDialogScreen$lambda$0;
                 }
             });
         }
@@ -225,9 +225,9 @@ public final class CacheUpdateDialogKt {
             DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, ComposableLambdaKt.rememberComposableLambda(-1885731162, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CacheUpdateDialogContent$lambda$11;
-                    CacheUpdateDialogContent$lambda$11 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11(updateSize, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return CacheUpdateDialogContent$lambda$11;
+                    Unit CacheUpdateDialogContent$lambda$0;
+                    CacheUpdateDialogContent$lambda$0 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$0(updateSize, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return CacheUpdateDialogContent$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -239,16 +239,16 @@ public final class CacheUpdateDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CacheUpdateDialogContent$lambda$12;
-                    CacheUpdateDialogContent$lambda$12 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$12(updateSize, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CacheUpdateDialogContent$lambda$12;
+                    Unit CacheUpdateDialogContent$lambda$1;
+                    CacheUpdateDialogContent$lambda$1 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$1(updateSize, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return CacheUpdateDialogContent$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogContent$lambda$11(String str, final Function0 function0, final Function0 function02, Composer composer, int i) {
+    public static final Unit CacheUpdateDialogContent$lambda$0(String str, final Function0 function0, final Function0 function02, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C72@2640L10,72@2613L87,75@2728L85,74@2709L217,82@2935L97,83@3041L419:CacheUpdateDialog.kt#as3uag");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -293,9 +293,9 @@ public final class CacheUpdateDialogKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6;
-                        CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6(Function0.this);
-                        return CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6;
+                        Unit CacheUpdateDialogContent$lambda$0$0$0$0;
+                        CacheUpdateDialogContent$lambda$0$0$0$0 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$0$0$0$0(Function0.this);
+                        return CacheUpdateDialogContent$lambda$0$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -309,9 +309,9 @@ public final class CacheUpdateDialogKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8;
-                        CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8(Function0.this);
-                        return CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8;
+                        Unit CacheUpdateDialogContent$lambda$0$0$1$0;
+                        CacheUpdateDialogContent$lambda$0$0$1$0 = CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$0$0$1$0(Function0.this);
+                        return CacheUpdateDialogContent$lambda$0$0$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue2);
@@ -334,13 +334,13 @@ public final class CacheUpdateDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$7$lambda$6(Function0 function0) {
+    public static final Unit CacheUpdateDialogContent$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CacheUpdateDialogContent$lambda$11$lambda$10$lambda$9$lambda$8(Function0 function0) {
+    public static final Unit CacheUpdateDialogContent$lambda$0$0$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

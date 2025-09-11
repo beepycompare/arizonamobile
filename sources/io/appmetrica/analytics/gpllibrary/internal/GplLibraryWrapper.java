@@ -13,7 +13,7 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
     public static final String FUSED_PROVIDER = "fused";
 
     /* renamed from: a  reason: collision with root package name */
-    private final FusedLocationProviderClient f316a;
+    private final FusedLocationProviderClient f320a;
     private final LocationListener b;
     private final LocationCallback c;
     private final Looper d;
@@ -25,21 +25,21 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f317a;
+        static final /* synthetic */ int[] f321a;
 
         static {
             int[] iArr = new int[Priority.values().length];
-            f317a = iArr;
+            f321a = iArr;
             try {
                 iArr[Priority.PRIORITY_LOW_POWER.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f317a[Priority.PRIORITY_BALANCED_POWER_ACCURACY.ordinal()] = 2;
+                f321a[Priority.PRIORITY_BALANCED_POWER_ACCURACY.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f317a[Priority.PRIORITY_HIGH_ACCURACY.ordinal()] = 3;
+                f321a[Priority.PRIORITY_HIGH_ACCURACY.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
         }
@@ -49,14 +49,14 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
     public static class ClientProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f318a;
+        private final Context f322a;
 
         ClientProvider(Context context) {
-            this.f318a = context;
+            this.f322a = context;
         }
 
         final FusedLocationProviderClient a() {
-            return LocationServices.getFusedLocationProviderClient(this.f318a);
+            return LocationServices.getFusedLocationProviderClient(this.f322a);
         }
     }
 
@@ -74,24 +74,24 @@ public class GplLibraryWrapper implements IGplLibraryWrapper {
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void startLocationUpdates(Priority priority) throws Throwable {
-        FusedLocationProviderClient fusedLocationProviderClient = this.f316a;
+        FusedLocationProviderClient fusedLocationProviderClient = this.f320a;
         LocationRequest interval = LocationRequest.create().setInterval(this.f);
-        int i = AnonymousClass1.f317a[priority.ordinal()];
+        int i = AnonymousClass1.f321a[priority.ordinal()];
         fusedLocationProviderClient.requestLocationUpdates(interval.setPriority(i != 1 ? i != 2 ? i != 3 ? 105 : 100 : 102 : 104), this.c, this.d);
     }
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void stopLocationUpdates() throws Throwable {
-        this.f316a.removeLocationUpdates(this.c);
+        this.f320a.removeLocationUpdates(this.c);
     }
 
     @Override // io.appmetrica.analytics.gpllibrary.internal.IGplLibraryWrapper
     public void updateLastKnownLocation() throws Throwable {
-        this.f316a.getLastLocation().addOnSuccessListener(this.e, new GplOnSuccessListener(this.b));
+        this.f320a.getLastLocation().addOnSuccessListener(this.e, new GplOnSuccessListener(this.b));
     }
 
     GplLibraryWrapper(ClientProvider clientProvider, LocationListener locationListener, Looper looper, Executor executor, long j) {
-        this.f316a = clientProvider.a();
+        this.f320a = clientProvider.a();
         this.b = locationListener;
         this.d = looper;
         this.e = executor;

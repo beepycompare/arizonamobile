@@ -119,19 +119,19 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
         holder.getAnimationItemBinding().aiBackground.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationAdapter.onBindViewHolder$lambda$2(AnimationAdapter.this, i, holder, view);
+                AnimationAdapter.onBindViewHolder$lambda$0(AnimationAdapter.this, i, holder, view);
             }
         });
         holder.getAnimationItemBinding().aiFavorite.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationAdapter.onBindViewHolder$lambda$3(AnimationAdapter.this, i, view);
+                AnimationAdapter.onBindViewHolder$lambda$1(AnimationAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(AnimationAdapter animationAdapter, int i, AnimationHolder animationHolder, View view) {
+    public static final void onBindViewHolder$lambda$0(AnimationAdapter animationAdapter, int i, AnimationHolder animationHolder, View view) {
         OnAnimationClickListener onAnimationClickListener;
         Object obj;
         Iterator<T> it = animationAdapter.animationList.iterator();
@@ -171,7 +171,7 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3(AnimationAdapter animationAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$1(AnimationAdapter animationAdapter, int i, View view) {
         if (animationAdapter.animationList.get(i).getFavorited() == 0) {
             animationAdapter.sendServerEvent.clickedWrapper(UIElementID.ANIMATION_MENU.getId(), animationAdapter.animationList.get(i).getId(), 2);
         } else {

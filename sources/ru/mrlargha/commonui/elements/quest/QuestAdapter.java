@@ -95,13 +95,13 @@ public final class QuestAdapter extends RecyclerView.Adapter<QuestViewHolder> {
         binding.rodinaQuestItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestAdapter.onBindViewHolder$lambda$1$lambda$0(QuestAdapter.this, questLine2, view);
+                QuestAdapter.onBindViewHolder$lambda$0$0(QuestAdapter.this, questLine2, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(QuestAdapter questAdapter, QuestLine questLine, View view) {
+    public static final void onBindViewHolder$lambda$0$0(QuestAdapter questAdapter, QuestLine questLine, View view) {
         OnQuestClickListener onQuestClickListener = questAdapter.onQuestClickListener;
         if (onQuestClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onQuestClickListener");

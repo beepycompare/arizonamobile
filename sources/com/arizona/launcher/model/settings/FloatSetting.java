@@ -15,10 +15,6 @@ public class FloatSetting extends AbstractSetting {
     private boolean isValid;
     private final FloatSettingValidator validator;
 
-    public /* synthetic */ FloatSetting(String str, String str2, float f, SharedPreferences sharedPreferences, FloatSettingValidator floatSettingValidator, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2, f, sharedPreferences, (i & 16) != 0 ? null : floatSettingValidator);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FloatSetting(String settingVisibleName, String settingKey, float f, SharedPreferences sharedPreferences, FloatSettingValidator floatSettingValidator) {
         super(settingVisibleName, settingKey, sharedPreferences, null);
@@ -29,6 +25,10 @@ public class FloatSetting extends AbstractSetting {
         this.validator = floatSettingValidator;
         this.isValid = true;
         this.currentValue = readValueFromPreferences();
+    }
+
+    public /* synthetic */ FloatSetting(String str, String str2, float f, SharedPreferences sharedPreferences, FloatSettingValidator floatSettingValidator, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, str2, f, sharedPreferences, (i & 16) != 0 ? null : floatSettingValidator);
     }
 
     public final boolean isValid() {

@@ -114,7 +114,7 @@ public final class DownloaderSyncDbRepository {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
                 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-                @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2", f = "DownloaderSyncDbRepository.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"})
+                @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2", f = "DownloaderSyncDbRepository.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
                 /* renamed from: com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository$getAllFlow$$inlined$map$1$2$1  reason: invalid class name */
                 /* loaded from: classes4.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {

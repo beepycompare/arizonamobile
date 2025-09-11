@@ -54,7 +54,7 @@ public final class RegistrationPedSettings implements InterfaceController {
     private final BackgroundVideoBinding videoBinding;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$11(View view) {
+    public static final void _init_$lambda$5(View view) {
     }
 
     public RegistrationPedSettings(Activity targetActivity, int i) {
@@ -115,7 +115,7 @@ public final class RegistrationPedSettings implements InterfaceController {
             value.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    RegistrationPedSettings.lambda$3$lambda$2(RegistrationPedSettings.this, key, view);
+                    RegistrationPedSettings.lambda$0$0(RegistrationPedSettings.this, key, view);
                 }
             });
         }
@@ -126,20 +126,20 @@ public final class RegistrationPedSettings implements InterfaceController {
             value2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    RegistrationPedSettings.lambda$7$lambda$6(RegistrationPedSettings.this, key2, view);
+                    RegistrationPedSettings.lambda$1$0(RegistrationPedSettings.this, key2, view);
                 }
             });
         }
         this.registrationPedSettingsBinding.registrationPedClothesLeftButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RegistrationPedSettings._init_$lambda$8(RegistrationPedSettings.this, view);
+                RegistrationPedSettings._init_$lambda$2(RegistrationPedSettings.this, view);
             }
         });
         this.registrationPedSettingsBinding.registrationPedClothesRightButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RegistrationPedSettings._init_$lambda$9(RegistrationPedSettings.this, view);
+                RegistrationPedSettings._init_$lambda$3(RegistrationPedSettings.this, view);
             }
         });
         this.registrationPedSettingsBinding.registrationPedStartGameButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda4
@@ -151,7 +151,7 @@ public final class RegistrationPedSettings implements InterfaceController {
         this.registrationPedSettingsBinding.registrationPedSettings.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationPedSettings$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RegistrationPedSettings._init_$lambda$11(view);
+                RegistrationPedSettings._init_$lambda$5(view);
             }
         });
     }
@@ -165,7 +165,7 @@ public final class RegistrationPedSettings implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$2(RegistrationPedSettings registrationPedSettings, String str, View view) {
+    public static final void lambda$0$0(RegistrationPedSettings registrationPedSettings, String str, View view) {
         registrationPedSettings.clotheListPosition = 0;
         registrationPedSettings.choseSkin = !Intrinsics.areEqual(str, "white") ? 1 : 0;
         byte[] bytes = StringKt.toStringJson(new RegistrationArizonaPedSettingsData(registrationPedSettings.getGender(registrationPedSettings.choseGender), registrationPedSettings.choseSkin, registrationPedSettings.clotheListPosition)).getBytes(Charsets.UTF_8);
@@ -192,7 +192,7 @@ public final class RegistrationPedSettings implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$7$lambda$6(RegistrationPedSettings registrationPedSettings, String str, View view) {
+    public static final void lambda$1$0(RegistrationPedSettings registrationPedSettings, String str, View view) {
         registrationPedSettings.clotheListPosition = 0;
         registrationPedSettings.choseGender = str;
         if (Intrinsics.areEqual(str, "Мужской")) {
@@ -225,7 +225,7 @@ public final class RegistrationPedSettings implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(RegistrationPedSettings registrationPedSettings, View view) {
+    public static final void _init_$lambda$2(RegistrationPedSettings registrationPedSettings, View view) {
         int i;
         view.startAnimation(AnimationUtils.loadAnimation(registrationPedSettings.targetActivity, R.anim.bounce));
         String str = registrationPedSettings.choseGender;
@@ -253,7 +253,7 @@ public final class RegistrationPedSettings implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(RegistrationPedSettings registrationPedSettings, View view) {
+    public static final void _init_$lambda$3(RegistrationPedSettings registrationPedSettings, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(registrationPedSettings.targetActivity, R.anim.bounce));
         String str = registrationPedSettings.choseGender;
         if (Intrinsics.areEqual(str, "Мужской")) {

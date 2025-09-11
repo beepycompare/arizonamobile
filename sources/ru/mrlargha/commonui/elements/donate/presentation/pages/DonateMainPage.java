@@ -40,15 +40,7 @@ public final class DonateMainPage extends DonatePage {
     private Job scrollThroughViewPagerJob;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initialize$lambda$5$lambda$2() {
-    }
-
-    public final DonateMainPageBinding getBinding() {
-        return this.binding;
-    }
-
-    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
-        return this.openDialog;
+    public static final void initialize$lambda$0$0() {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -79,6 +71,14 @@ public final class DonateMainPage extends DonatePage {
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
     }
 
+    public final DonateMainPageBinding getBinding() {
+        return this.binding;
+    }
+
+    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
+        return this.openDialog;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit mainItemsAdapter$lambda$1(DonateMainPage donateMainPage, DonateItemModelUi donateItemModelUi) {
         donateMainPage.openDialog.invoke(donateItemModelUi);
@@ -102,22 +102,22 @@ public final class DonateMainPage extends DonatePage {
         this.mainItemsAdapter.submitList(sortItemList.getFirst(), new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DonateMainPage.initialize$lambda$5$lambda$2();
+                DonateMainPage.initialize$lambda$0$0();
             }
         });
         donateMainPageBinding.viewPager.setAdapter(new DonateBottomItemsAdapter(sortItemList.getSecond(), new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initialize$lambda$5$lambda$3;
-                initialize$lambda$5$lambda$3 = DonateMainPage.initialize$lambda$5$lambda$3(DonateMainPage.this, ((Integer) obj).intValue());
-                return initialize$lambda$5$lambda$3;
+                Unit initialize$lambda$0$1;
+                initialize$lambda$0$1 = DonateMainPage.initialize$lambda$0$1(DonateMainPage.this, ((Integer) obj).intValue());
+                return initialize$lambda$0$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initialize$lambda$5$lambda$4;
-                initialize$lambda$5$lambda$4 = DonateMainPage.initialize$lambda$5$lambda$4(DonateMainPage.this, (DonateItemModelUi) obj);
-                return initialize$lambda$5$lambda$4;
+                Unit initialize$lambda$0$2;
+                initialize$lambda$0$2 = DonateMainPage.initialize$lambda$0$2(DonateMainPage.this, (DonateItemModelUi) obj);
+                return initialize$lambda$0$2;
             }
         }));
         DotsIndicator dotsIndicator = donateMainPageBinding.dotsIndicator;
@@ -130,13 +130,13 @@ public final class DonateMainPage extends DonatePage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initialize$lambda$5$lambda$3(DonateMainPage donateMainPage, int i) {
+    public static final Unit initialize$lambda$0$1(DonateMainPage donateMainPage, int i) {
         donateMainPage.onClick(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initialize$lambda$5$lambda$4(DonateMainPage donateMainPage, DonateItemModelUi donateItemModelUi) {
+    public static final Unit initialize$lambda$0$2(DonateMainPage donateMainPage, DonateItemModelUi donateItemModelUi) {
         donateMainPage.openDialog.invoke(donateItemModelUi);
         return Unit.INSTANCE;
     }

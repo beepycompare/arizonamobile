@@ -21,7 +21,7 @@ public final class FontListFontFamilyTypefaceAdapterKt {
     public static final Pair<List<Font>, Object> firstImmediatelyAvailable(List<? extends Font> list, TypefaceRequest typefaceRequest, AsyncTypefaceCache asyncTypefaceCache, PlatformFontLoader platformFontLoader, Function1<? super TypefaceRequest, ? extends Object> function1) {
         Object invoke;
         Object obj;
-        Object m9084constructorimpl;
+        Object m9091constructorimpl;
         Object obj2;
         int size = list.size();
         List list2 = null;
@@ -57,12 +57,12 @@ public final class FontListFontFamilyTypefaceAdapterKt {
                             Unit unit = Unit.INSTANCE;
                             try {
                                 Result.Companion companion = Result.Companion;
-                                m9084constructorimpl = Result.m9084constructorimpl(platformFontLoader.loadBlocking(font));
+                                m9091constructorimpl = Result.m9091constructorimpl(platformFontLoader.loadBlocking(font));
                             } catch (Throwable th) {
                                 Result.Companion companion2 = Result.Companion;
-                                m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
+                                m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
                             }
-                            Object obj3 = Result.m9090isFailureimpl(m9084constructorimpl) ? null : m9084constructorimpl;
+                            Object obj3 = Result.m9097isFailureimpl(m9091constructorimpl) ? null : m9091constructorimpl;
                             AsyncTypefaceCache.put$default(asyncTypefaceCache, font, platformFontLoader, obj3, false, 8, null);
                             obj2 = obj3;
                         }

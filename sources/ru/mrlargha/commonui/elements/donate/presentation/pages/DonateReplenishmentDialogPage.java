@@ -82,15 +82,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$3$lambda$0(View view) {
-    }
-
-    public final DonateReplenishmentDialogBinding getBinding() {
-        return this.binding;
-    }
-
-    public final Function0<Unit> getClosePage() {
-        return this.closePage;
+    public static final void setupListeners$lambda$0$0(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,6 +100,14 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         this.rateType = DonateRateType.BUY_AZ;
     }
 
+    public final DonateReplenishmentDialogBinding getBinding() {
+        return this.binding;
+    }
+
+    public final Function0<Unit> getClosePage() {
+        return this.closePage;
+    }
+
     @Override // ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePage
     public void onBackendMessage(int i, String data) {
         Intrinsics.checkNotNullParameter(data, "data");
@@ -123,7 +123,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         donateReplenishmentDialogBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$3$lambda$0(view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$0(view);
             }
         });
         donateReplenishmentDialogBinding.etReplenishmentSum.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2
@@ -166,24 +166,24 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         donateReplenishmentDialogBinding.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$3$lambda$1(DonateReplenishmentDialogPage.this, view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$1(DonateReplenishmentDialogPage.this, view);
             }
         });
         donateReplenishmentDialogBinding.btnUpp.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$3$lambda$2(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$2(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$3$lambda$1(DonateReplenishmentDialogPage donateReplenishmentDialogPage, View view) {
+    public static final void setupListeners$lambda$0$1(DonateReplenishmentDialogPage donateReplenishmentDialogPage, View view) {
         donateReplenishmentDialogPage.closePage.invoke();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$3$lambda$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, View view) {
+    public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, View view) {
         long j = donateReplenishmentDialogPage.getAmount;
         if (j <= 0) {
             Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), "Введите сумму больше нуля", 0).show();

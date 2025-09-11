@@ -14,13 +14,13 @@ public final class C0293h3 implements ChargeTypeProvider {
     public static final ChargeType d = ChargeType.UNKNOWN;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f901a;
+    public final ICommonExecutor f905a;
     public volatile BatteryInfo b;
     public final ArrayList c = new ArrayList();
 
     public C0293h3(ICommonExecutor iCommonExecutor, C0215e3 c0215e3) {
         C0267g3 c0267g3 = new C0267g3(this);
-        this.f901a = iCommonExecutor;
+        this.f905a = iCommonExecutor;
         this.b = a(c0215e3.a(c0267g3));
     }
 

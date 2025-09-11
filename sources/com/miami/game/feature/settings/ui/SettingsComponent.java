@@ -130,27 +130,27 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
     private final void observeLifecycle() {
         getLifecycle().subscribe(new Lifecycle.Callbacks() { // from class: com.miami.game.feature.settings.ui.SettingsComponent$observeLifecycle$1
             @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
-            public void onCreate() {
+            public /* bridge */ void onCreate() {
                 Lifecycle.Callbacks.DefaultImpls.onCreate(this);
             }
 
             @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
-            public void onDestroy() {
+            public /* bridge */ void onDestroy() {
                 Lifecycle.Callbacks.DefaultImpls.onDestroy(this);
             }
 
             @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
-            public void onPause() {
+            public /* bridge */ void onPause() {
                 Lifecycle.Callbacks.DefaultImpls.onPause(this);
             }
 
             @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
-            public void onStart() {
+            public /* bridge */ void onStart() {
                 Lifecycle.Callbacks.DefaultImpls.onStart(this);
             }
 
             @Override // com.arkivanov.essenty.lifecycle.Lifecycle.Callbacks
-            public void onStop() {
+            public /* bridge */ void onStop() {
                 Lifecycle.Callbacks.DefaultImpls.onStop(this);
             }
 

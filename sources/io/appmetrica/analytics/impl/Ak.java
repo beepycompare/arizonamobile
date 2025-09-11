@@ -9,7 +9,7 @@ import java.util.concurrent.Executor;
 public final class Ak {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0766zk f349a;
+    public final C0766zk f353a;
     public volatile Z9 b;
     public volatile Z9 c;
     public volatile Z9 d;
@@ -26,7 +26,7 @@ public final class Ak {
         if (this.g == null) {
             synchronized (this) {
                 if (this.g == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     Cb a2 = Z9.a("IAA-SDE");
                     this.g = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -39,7 +39,7 @@ public final class Ak {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     Cb a2 = Z9.a("IAA-SC");
                     this.b = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -52,7 +52,7 @@ public final class Ak {
         if (this.d == null) {
             synchronized (this) {
                 if (this.d == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     Cb a2 = Z9.a("IAA-SMH-1");
                     this.d = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -65,7 +65,7 @@ public final class Ak {
         if (this.e == null) {
             synchronized (this) {
                 if (this.e == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     Cb a2 = Z9.a("IAA-SNTPE");
                     this.e = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -78,7 +78,7 @@ public final class Ak {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     Cb a2 = Z9.a("IAA-STE");
                     this.c = new Z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -91,7 +91,7 @@ public final class Ak {
         if (this.h == null) {
             synchronized (this) {
                 if (this.h == null) {
-                    this.f349a.getClass();
+                    this.f353a.getClass();
                     this.h = new ExecutorC0741yk(new Handler(Looper.getMainLooper()));
                 }
             }
@@ -101,6 +101,6 @@ public final class Ak {
 
     public Ak(C0766zk c0766zk) {
         new HashMap();
-        this.f349a = c0766zk;
+        this.f353a = c0766zk;
     }
 }

@@ -34,7 +34,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
     private List<UniqCellItem> uniqData;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$5$lambda$0(View view) {
+    public static final void onBindViewHolder$lambda$0$0(View view) {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -73,7 +73,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
         binding.infoBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.TerritoryAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TerritoryAdapter.onBindViewHolder$lambda$5$lambda$0(view);
+                TerritoryAdapter.onBindViewHolder$lambda$0$0(view);
             }
         });
         Iterator<T> it = this.uniqData.iterator();
@@ -94,7 +94,7 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
             binding.infoBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.TerritoryAdapter$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TerritoryAdapter.onBindViewHolder$lambda$5$lambda$3$lambda$2(GangZoneItem.this, uniqCellItem, this, view);
+                    TerritoryAdapter.onBindViewHolder$lambda$0$2$0(GangZoneItem.this, uniqCellItem, this, view);
                 }
             });
         }
@@ -104,18 +104,18 @@ public final class TerritoryAdapter extends RecyclerView.Adapter<TerritoriesItem
         binding.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.TerritoryAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TerritoryAdapter.onBindViewHolder$lambda$5$lambda$4(TerritoryAdapter.this, gangZoneItem, view);
+                TerritoryAdapter.onBindViewHolder$lambda$0$3(TerritoryAdapter.this, gangZoneItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$5$lambda$3$lambda$2(GangZoneItem gangZoneItem, UniqCellItem uniqCellItem, TerritoryAdapter territoryAdapter, View view) {
+    public static final void onBindViewHolder$lambda$0$2$0(GangZoneItem gangZoneItem, UniqCellItem uniqCellItem, TerritoryAdapter territoryAdapter, View view) {
         territoryAdapter.onClick.invoke(new FrameMapData(gangZoneItem.getId(), gangZoneItem != null ? gangZoneItem.getFamily_name() : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_flag()) : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_logo()) : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_money()) : null, gangZoneItem != null ? Integer.valueOf(gangZoneItem.getFamily_moneta()) : null, uniqCellItem != null ? uniqCellItem.getName() : null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$5$lambda$4(TerritoryAdapter territoryAdapter, GangZoneItem gangZoneItem, View view) {
+    public static final void onBindViewHolder$lambda$0$3(TerritoryAdapter territoryAdapter, GangZoneItem gangZoneItem, View view) {
         territoryAdapter.onGPS.invoke(gangZoneItem);
     }
 

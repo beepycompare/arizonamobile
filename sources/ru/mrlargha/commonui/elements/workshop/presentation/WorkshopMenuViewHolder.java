@@ -40,13 +40,13 @@ public final class WorkshopMenuViewHolder extends RecyclerView.ViewHolder {
         itemMenuBtnBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.presentation.WorkshopMenuViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopMenuViewHolder.bind$lambda$1$lambda$0(WorkshopMenuViewHolder.this, view);
+                WorkshopMenuViewHolder.bind$lambda$0$0(WorkshopMenuViewHolder.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(WorkshopMenuViewHolder workshopMenuViewHolder, View view) {
+    public static final void bind$lambda$0$0(WorkshopMenuViewHolder workshopMenuViewHolder, View view) {
         workshopMenuViewHolder.onItemClicked.invoke(Integer.valueOf(workshopMenuViewHolder.getAdapterPosition()));
     }
 }

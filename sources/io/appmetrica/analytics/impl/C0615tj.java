@@ -15,7 +15,7 @@ public final class C0615tj extends AbstractC0462nh {
     public final boolean a(C0477o6 c0477o6) {
         Object remove;
         for (Map.Entry entry : c0477o6.p.entrySet()) {
-            Tk tk = this.f1001a.u;
+            Tk tk = this.f1005a.u;
             String str = (String) entry.getKey();
             byte[] bArr = (byte[]) entry.getValue();
             if (bArr != null) {
@@ -23,10 +23,10 @@ public final class C0615tj extends AbstractC0462nh {
                 if (bArr.length != 0) {
                     remove = tk.b.put(str, bArr);
                     byte[] bArr2 = (byte[]) remove;
-                    Xk xk = tk.f685a;
+                    Xk xk = tk.f689a;
                     Map<String, byte[]> map = tk.b;
                     IBinaryDataHelper iBinaryDataHelper = xk.d;
-                    String str2 = xk.f742a;
+                    String str2 = xk.f746a;
                     Wk wk = xk.c;
                     Uk fromModel = xk.b.fromModel(map);
                     wk.getClass();
@@ -35,10 +35,10 @@ public final class C0615tj extends AbstractC0462nh {
             }
             remove = tk.b.remove(str);
             byte[] bArr22 = (byte[]) remove;
-            Xk xk2 = tk.f685a;
+            Xk xk2 = tk.f689a;
             Map<String, byte[]> map2 = tk.b;
             IBinaryDataHelper iBinaryDataHelper2 = xk2.d;
-            String str22 = xk2.f742a;
+            String str22 = xk2.f746a;
             Wk wk2 = xk2.c;
             Uk fromModel2 = xk2.b.fromModel(map2);
             wk2.getClass();

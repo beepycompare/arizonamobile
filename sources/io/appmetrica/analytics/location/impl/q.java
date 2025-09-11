@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class q implements LastKnownLocationExtractorProvider, LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1212a = "location-passive-provider";
+    public final String f1216a = "location-passive-provider";
     public r b;
 
     public final r a(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
@@ -45,7 +45,7 @@ public final class q implements LastKnownLocationExtractorProvider, LocationRece
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
     public final String getIdentifier() {
-        return this.f1212a;
+        return this.f1216a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider

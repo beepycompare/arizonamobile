@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class I0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f480a = A4.l().g().a();
+    public final IHandlerExecutor f484a = A4.l().g().a();
     public final C0671w0 b;
     public final C0382kf c;
     public final C0460nf d;
@@ -22,12 +22,12 @@ public final class I0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails) {
         C0382kf c0382kf = this.c;
-        c0382kf.f950a.a(null);
+        c0382kf.f954a.a(null);
         c0382kf.b.a(pluginErrorDetails);
         C0460nf c0460nf = this.d;
         Intrinsics.checkNotNull(pluginErrorDetails);
         c0460nf.getClass();
-        this.f480a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda2
+        this.f484a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 I0.a(I0.this, pluginErrorDetails);
@@ -37,13 +37,13 @@ public final class I0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails, final String str) {
         C0382kf c0382kf = this.c;
-        c0382kf.f950a.a(null);
+        c0382kf.f954a.a(null);
         c0382kf.b.a(pluginErrorDetails);
-        if (c0382kf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1141a) {
+        if (c0382kf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1145a) {
             C0460nf c0460nf = this.d;
             Intrinsics.checkNotNull(pluginErrorDetails);
             c0460nf.getClass();
-            this.f480a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda1
+            this.f484a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     I0.a(I0.this, pluginErrorDetails, str);
@@ -54,12 +54,12 @@ public final class I0 {
 
     public final void a(final String str, final String str2, final PluginErrorDetails pluginErrorDetails) {
         C0382kf c0382kf = this.c;
-        c0382kf.f950a.a(null);
+        c0382kf.f954a.a(null);
         c0382kf.c.a(str);
         C0460nf c0460nf = this.d;
         Intrinsics.checkNotNull(str);
         c0460nf.getClass();
-        this.f480a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda0
+        this.f484a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.I0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 I0.a(I0.this, str, str2, pluginErrorDetails);
@@ -73,7 +73,7 @@ public final class I0 {
         Intrinsics.checkNotNull(c0646v0);
         Jc i = c0646v0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f512a.getPluginExtension().reportError(pluginErrorDetails, str);
+        i.f516a.getPluginExtension().reportError(pluginErrorDetails, str);
     }
 
     public static final void a(I0 i0, String str, String str2, PluginErrorDetails pluginErrorDetails) {
@@ -82,7 +82,7 @@ public final class I0 {
         Intrinsics.checkNotNull(c0646v0);
         Jc i = c0646v0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f512a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
+        i.f516a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
     }
 
     public static final void a(I0 i0, PluginErrorDetails pluginErrorDetails) {
@@ -91,6 +91,6 @@ public final class I0 {
         Intrinsics.checkNotNull(c0646v0);
         Jc i = c0646v0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f512a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
+        i.f516a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
     }
 }

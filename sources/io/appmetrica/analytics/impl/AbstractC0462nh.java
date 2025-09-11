@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0462nh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0651v5 f1001a;
+    public final C0651v5 f1005a;
 
     public AbstractC0462nh(C0651v5 c0651v5) {
-        this.f1001a = c0651v5;
+        this.f1005a = c0651v5;
     }
 
     public final C0651v5 a() {
-        return this.f1001a;
+        return this.f1005a;
     }
 
     public abstract boolean a(C0477o6 c0477o6);

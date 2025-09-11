@@ -8,16 +8,16 @@ import java.util.concurrent.TimeUnit;
 public final class C0542qk {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile long f1049a;
+    public volatile long f1053a;
     public C0611tf b;
     public TimeProvider c;
 
     public static C0542qk c() {
-        return AbstractC0517pk.f1033a;
+        return AbstractC0517pk.f1037a;
     }
 
     public final synchronized long a() {
-        return (System.currentTimeMillis() / 1000) + this.f1049a;
+        return (System.currentTimeMillis() / 1000) + this.f1053a;
     }
 
     public final synchronized void b() {
@@ -26,7 +26,7 @@ public final class C0542qk {
     }
 
     public final synchronized long d() {
-        return this.f1049a;
+        return this.f1053a;
     }
 
     public final synchronized void e() {
@@ -38,7 +38,7 @@ public final class C0542qk {
     }
 
     public final synchronized void a(long j, Long l) {
-        this.f1049a = (j - this.c.currentTimeMillis()) / 1000;
+        this.f1053a = (j - this.c.currentTimeMillis()) / 1000;
         boolean z = true;
         if (this.b.b(true)) {
             if (l != null) {
@@ -52,13 +52,13 @@ public final class C0542qk {
                 this.b.d(false);
             }
         }
-        this.b.d(this.f1049a);
+        this.b.d(this.f1053a);
         this.b.b();
     }
 
     public final void a(C0611tf c0611tf, TimeProvider timeProvider) {
         this.b = c0611tf;
-        this.f1049a = c0611tf.a(0);
+        this.f1053a = c0611tf.a(0);
         this.c = timeProvider;
     }
 }

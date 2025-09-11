@@ -15,10 +15,6 @@ public class IntSetting extends AbstractSetting {
     private boolean isValid;
     private final IntSettingValidator validator;
 
-    public /* synthetic */ IntSetting(String str, String str2, int i, SharedPreferences sharedPreferences, IntSettingValidator intSettingValidator, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2, i, sharedPreferences, (i2 & 16) != 0 ? null : intSettingValidator);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public IntSetting(String settingVisibleName, String settingKey, int i, SharedPreferences sharedPreferences, IntSettingValidator intSettingValidator) {
         super(settingVisibleName, settingKey, sharedPreferences, null);
@@ -29,6 +25,10 @@ public class IntSetting extends AbstractSetting {
         this.validator = intSettingValidator;
         this.isValid = true;
         this.currentValue = readValueFromPreferences();
+    }
+
+    public /* synthetic */ IntSetting(String str, String str2, int i, SharedPreferences sharedPreferences, IntSettingValidator intSettingValidator, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, str2, i, sharedPreferences, (i2 & 16) != 0 ? null : intSettingValidator);
     }
 
     public final boolean isValid() {

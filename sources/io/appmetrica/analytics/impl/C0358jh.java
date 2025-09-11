@@ -10,7 +10,7 @@ public final class C0358jh extends Oa {
 
     @Override // io.appmetrica.analytics.impl.Oa
     public final void a(List<AbstractC0462nh> list) {
-        list.add(this.f603a.l);
-        list.add(this.f603a.b);
+        list.add(this.f607a.l);
+        list.add(this.f607a.b);
     }
 }

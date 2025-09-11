@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncApiRepository.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository$downloadFile$2", f = "DownloaderSyncApiRepository.kt", i = {1}, l = {73, 74}, m = "invokeSuspend", n = {"url"}, s = {"L$0"})
+@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.api.DownloaderSyncApiRepository$downloadFile$2", f = "DownloaderSyncApiRepository.kt", i = {1}, l = {73, 74}, m = "invokeSuspend", n = {"url"}, s = {"L$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class DownloaderSyncApiRepository$downloadFile$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super DownloaderInfoDbModel>, Object> {
     final /* synthetic */ long $currentTime;

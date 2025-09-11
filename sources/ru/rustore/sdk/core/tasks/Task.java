@@ -60,7 +60,7 @@ public final class Task<T> {
         }
         Result<? extends T> result = this.taskResult;
         if (result != null) {
-            T t = (T) result.m9093unboximpl();
+            T t = (T) result.m9100unboximpl();
             ResultKt.throwOnFailure(t);
             return t;
         }
@@ -117,7 +117,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m9083boximpl(Result.m9084constructorimpl(t));
+            this.taskResult = Result.m9090boximpl(Result.m9091constructorimpl(t));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$1$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -173,7 +173,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m9083boximpl(Result.m9084constructorimpl(ResultKt.createFailure(th)));
+            this.taskResult = Result.m9090boximpl(Result.m9091constructorimpl(ResultKt.createFailure(th)));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$2$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -279,7 +279,7 @@ public final class Task<T> {
             if (result == null) {
                 this.completionHandlers.add(new CompletionHandler(onCompletionListener, executor));
             } else {
-                final Throwable m9087exceptionOrNullimpl = Result.m9087exceptionOrNullimpl(result.m9093unboximpl());
+                final Throwable m9094exceptionOrNullimpl = Result.m9094exceptionOrNullimpl(result.m9100unboximpl());
                 runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addCompletionListener$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -295,7 +295,7 @@ public final class Task<T> {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2() {
-                        OnCompletionListener.this.onComplete(m9087exceptionOrNullimpl);
+                        OnCompletionListener.this.onComplete(m9094exceptionOrNullimpl);
                     }
                 });
             }
@@ -323,12 +323,12 @@ public final class Task<T> {
             if (result == null) {
                 this.listenerHandlers.add(new ListenerHandler<>(onSuccessListener, onFailureListener, executor));
             } else {
-                final Object m9093unboximpl = result.m9093unboximpl();
-                if (Result.m9090isFailureimpl(m9093unboximpl)) {
-                    m9093unboximpl = null;
+                final Object m9100unboximpl = result.m9100unboximpl();
+                if (Result.m9097isFailureimpl(m9100unboximpl)) {
+                    m9100unboximpl = null;
                 }
-                final Throwable m9087exceptionOrNullimpl = Result.m9087exceptionOrNullimpl(result.m9093unboximpl());
-                if (m9093unboximpl != null && onSuccessListener != null) {
+                final Throwable m9094exceptionOrNullimpl = Result.m9094exceptionOrNullimpl(result.m9100unboximpl());
+                if (m9100unboximpl != null && onSuccessListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -344,11 +344,11 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            onSuccessListener.onSuccess(m9093unboximpl);
+                            onSuccessListener.onSuccess(m9100unboximpl);
                         }
                     });
                 }
-                if (m9087exceptionOrNullimpl != null && onFailureListener != null) {
+                if (m9094exceptionOrNullimpl != null && onFailureListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -364,7 +364,7 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            OnFailureListener.this.onFailure(m9087exceptionOrNullimpl);
+                            OnFailureListener.this.onFailure(m9094exceptionOrNullimpl);
                         }
                     });
                 }

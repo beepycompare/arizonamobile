@@ -7,18 +7,18 @@ import java.util.Map;
 public final class K6 implements InterfaceC0632ub {
 
     /* renamed from: a  reason: collision with root package name */
-    public final L6 f529a;
+    public final L6 f533a;
     public final C0153bi b;
 
     public K6(L6 l6) {
-        this.f529a = l6;
+        this.f533a = l6;
         this.b = l6.a();
         A4.l().getClass();
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0632ub
     public final void a(Wn wn) {
-        Si si = this.f529a.f549a;
+        Si si = this.f533a.f553a;
         Rh a2 = si.a(wn, this.b);
         C0153bi c0153bi = a2.e;
         Yl yl = si.e;
@@ -40,7 +40,7 @@ public final class K6 implements InterfaceC0632ub {
                 String value = entry.getValue();
                 synchronized (c0153bi) {
                     C0144b9 c0144b9 = c0153bi.c;
-                    c0144b9.b.b(c0144b9.f803a, key, value);
+                    c0144b9.b.b(c0144b9.f807a, key, value);
                 }
             }
         }

@@ -41,8 +41,8 @@ public final class ConflatedBroadcastChannel<E> implements BroadcastChannel<E> {
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo10679invokeOnClose(Function1<? super Throwable, Unit> function1) {
-        this.broadcast.mo10679invokeOnClose(function1);
+    public void mo10691invokeOnClose(Function1<? super Throwable, Unit> function1) {
+        this.broadcast.mo10691invokeOnClose(function1);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel

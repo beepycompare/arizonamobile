@@ -47,7 +47,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ImagesKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit AccountImage$lambda$12(int i, Composer composer, int i2) {
+    public static final Unit AccountImage$lambda$0(int i, Composer composer, int i2) {
         AccountImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -59,61 +59,61 @@ public final class ImagesKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DiscordImage$lambda$16(int i, Composer composer, int i2) {
+    public static final Unit DiscordImage$lambda$0(int i, Composer composer, int i2) {
         DiscordImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ForumImage$lambda$8(int i, Composer composer, int i2) {
+    public static final Unit ForumImage$lambda$0(int i, Composer composer, int i2) {
         ForumImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NotificationsImage$lambda$11(State state, int i, Composer composer, int i2) {
+    public static final Unit NotificationsImage$lambda$1(State state, int i, Composer composer, int i2) {
         NotificationsImage(state, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit PlayImage$lambda$3(boolean z, int i, Composer composer, int i2) {
+    public static final Unit PlayImage$lambda$1(boolean z, int i, Composer composer, int i2) {
         PlayImage(z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsImage$lambda$1(int i, Composer composer, int i2) {
+    public static final Unit SettingsImage$lambda$0(int i, Composer composer, int i2) {
         SettingsImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupImage$lambda$7(int i, Composer composer, int i2) {
+    public static final Unit SetupImage$lambda$1(int i, Composer composer, int i2) {
         SetupImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ShopImage$lambda$15(int i, boolean z, int i2, Composer composer, int i3) {
+    public static final Unit ShopImage$lambda$1(int i, boolean z, int i2, Composer composer, int i3) {
         ShopImage(i, z, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit TelegramImage$lambda$17(int i, Composer composer, int i2) {
+    public static final Unit TelegramImage$lambda$0(int i, Composer composer, int i2) {
         TelegramImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit UpdateImage$lambda$5(int i, Composer composer, int i2) {
+    public static final Unit UpdateImage$lambda$1(int i, Composer composer, int i2) {
         UpdateImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit VkImage$lambda$18(int i, Composer composer, int i2) {
+    public static final Unit VkImage$lambda$0(int i, Composer composer, int i2) {
         VkImage(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -170,9 +170,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsImage$lambda$1;
-                    SettingsImage$lambda$1 = ImagesKt.SettingsImage$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsImage$lambda$1;
+                    Unit SettingsImage$lambda$0;
+                    SettingsImage$lambda$0 = ImagesKt.SettingsImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsImage$lambda$0;
                 }
             });
         }
@@ -238,9 +238,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PlayImage$lambda$3;
-                    PlayImage$lambda$3 = ImagesKt.PlayImage$lambda$3(z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return PlayImage$lambda$3;
+                    Unit PlayImage$lambda$1;
+                    PlayImage$lambda$1 = ImagesKt.PlayImage$lambda$1(z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return PlayImage$lambda$1;
                 }
             });
         }
@@ -300,9 +300,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit UpdateImage$lambda$5;
-                    UpdateImage$lambda$5 = ImagesKt.UpdateImage$lambda$5(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return UpdateImage$lambda$5;
+                    Unit UpdateImage$lambda$1;
+                    UpdateImage$lambda$1 = ImagesKt.UpdateImage$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return UpdateImage$lambda$1;
                 }
             });
         }
@@ -362,9 +362,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SetupImage$lambda$7;
-                    SetupImage$lambda$7 = ImagesKt.SetupImage$lambda$7(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SetupImage$lambda$7;
+                    Unit SetupImage$lambda$1;
+                    SetupImage$lambda$1 = ImagesKt.SetupImage$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SetupImage$lambda$1;
                 }
             });
         }
@@ -389,9 +389,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ForumImage$lambda$8;
-                    ForumImage$lambda$8 = ImagesKt.ForumImage$lambda$8(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ForumImage$lambda$8;
+                    Unit ForumImage$lambda$0;
+                    ForumImage$lambda$0 = ImagesKt.ForumImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ForumImage$lambda$0;
                 }
             });
         }
@@ -486,7 +486,7 @@ public final class ImagesKt {
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_notification_count, startRestartGroup, 0), (String) null, (Modifier) null, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 24624, 108);
                 String valueOf = String.valueOf(notificationState.getValue().intValue());
                 Modifier.Companion companion = Modifier.Companion;
-                TextKt.m2804Text4IGK_g(valueOf, (Modifier) companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 130032);
+                TextKt.m2804Text4IGK_g(valueOf, (Modifier) companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 130032);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -511,9 +511,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NotificationsImage$lambda$11;
-                    NotificationsImage$lambda$11 = ImagesKt.NotificationsImage$lambda$11(State.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NotificationsImage$lambda$11;
+                    Unit NotificationsImage$lambda$1;
+                    NotificationsImage$lambda$1 = ImagesKt.NotificationsImage$lambda$1(State.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NotificationsImage$lambda$1;
                 }
             });
         }
@@ -538,9 +538,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda11
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit AccountImage$lambda$12;
-                    AccountImage$lambda$12 = ImagesKt.AccountImage$lambda$12(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return AccountImage$lambda$12;
+                    Unit AccountImage$lambda$0;
+                    AccountImage$lambda$0 = ImagesKt.AccountImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return AccountImage$lambda$0;
                 }
             });
         }
@@ -633,7 +633,7 @@ public final class ImagesKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -493011394, "C181@5328L100,178@5211L283,189@5674L13,190@5720L13,193@5868L10,186@5511L397:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.shop_notificaiotns_bg, startRestartGroup, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(20)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 432, (int) MenuKt.InTransitionDuration);
                 float f2 = 12;
-                TextKt.m2804Text4IGK_g("АКЦИЯ Х" + i + " ДОНАТ", (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), (FontStyle) null, FontWeight.Companion.getW900(), (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 197040, 0, 64464);
+                TextKt.m2804Text4IGK_g("АКЦИЯ Х" + i + " ДОНАТ", (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), (FontStyle) null, FontWeight.Companion.getW900(), (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 197040, 0, 64464);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -658,9 +658,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ShopImage$lambda$15;
-                    ShopImage$lambda$15 = ImagesKt.ShopImage$lambda$15(i, z, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ShopImage$lambda$15;
+                    Unit ShopImage$lambda$1;
+                    ShopImage$lambda$1 = ImagesKt.ShopImage$lambda$1(i, z, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return ShopImage$lambda$1;
                 }
             });
         }
@@ -685,9 +685,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DiscordImage$lambda$16;
-                    DiscordImage$lambda$16 = ImagesKt.DiscordImage$lambda$16(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DiscordImage$lambda$16;
+                    Unit DiscordImage$lambda$0;
+                    DiscordImage$lambda$0 = ImagesKt.DiscordImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DiscordImage$lambda$0;
                 }
             });
         }
@@ -712,9 +712,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TelegramImage$lambda$17;
-                    TelegramImage$lambda$17 = ImagesKt.TelegramImage$lambda$17(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TelegramImage$lambda$17;
+                    Unit TelegramImage$lambda$0;
+                    TelegramImage$lambda$0 = ImagesKt.TelegramImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return TelegramImage$lambda$0;
                 }
             });
         }
@@ -739,9 +739,9 @@ public final class ImagesKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ImagesKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit VkImage$lambda$18;
-                    VkImage$lambda$18 = ImagesKt.VkImage$lambda$18(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return VkImage$lambda$18;
+                    Unit VkImage$lambda$0;
+                    VkImage$lambda$0 = ImagesKt.VkImage$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return VkImage$lambda$0;
                 }
             });
         }

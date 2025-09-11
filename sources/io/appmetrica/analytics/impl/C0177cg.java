@@ -6,9 +6,9 @@ import io.appmetrica.analytics.billinginterface.internal.ProductInfo;
 public final class C0177cg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProductInfo f821a;
+    public final ProductInfo f825a;
 
     public C0177cg(ProductInfo productInfo) {
-        this.f821a = productInfo;
+        this.f825a = productInfo;
     }
 }

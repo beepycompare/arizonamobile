@@ -62,7 +62,7 @@ public final class FailDownloadDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FailDownloadErrorDialogScreen$lambda$9(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit FailDownloadErrorDialogScreen$lambda$1(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         FailDownloadErrorDialogScreen(str, errorDialogUiState, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -87,7 +87,7 @@ public final class FailDownloadDialogKt {
                 ComposerKt.traceEventStart(2025743521, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadErrorDialogRoot (FailDownloadDialog.kt:27)");
             }
             ErrorDialogUiState FailDownloadErrorDialogRoot$lambda$0 = FailDownloadErrorDialogRoot$lambda$0(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1119348470, "CC(remember):FailDownloadDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1119348086, "CC(remember):FailDownloadDialog.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             FailDownloadDialogKt$FailDownloadErrorDialogRoot$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -144,9 +144,9 @@ public final class FailDownloadDialogKt {
             DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(-50143882, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit FailDownloadErrorDialogScreen$lambda$8;
-                    FailDownloadErrorDialogScreen$lambda$8 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$8(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
-                    return FailDownloadErrorDialogScreen$lambda$8;
+                    Unit FailDownloadErrorDialogScreen$lambda$0;
+                    FailDownloadErrorDialogScreen$lambda$0 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$0(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
+                    return FailDownloadErrorDialogScreen$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             function0 = onDismiss;
@@ -159,16 +159,16 @@ public final class FailDownloadDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit FailDownloadErrorDialogScreen$lambda$9;
-                    FailDownloadErrorDialogScreen$lambda$9 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$9(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return FailDownloadErrorDialogScreen$lambda$9;
+                    Unit FailDownloadErrorDialogScreen$lambda$1;
+                    FailDownloadErrorDialogScreen$lambda$1 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$1(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return FailDownloadErrorDialogScreen$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FailDownloadErrorDialogScreen$lambda$8(final Function0 function0, Composer composer, int i) {
+    public static final Unit FailDownloadErrorDialogScreen$lambda$0(final Function0 function0, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C51@1954L10,51@1927L87,54@2042L86,53@2023L218,61@2250L419:FailDownloadDialog.kt#d3gn1w");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -212,9 +212,9 @@ public final class FailDownloadDialogKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
-                        FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0.this);
-                        return FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
+                        Unit FailDownloadErrorDialogScreen$lambda$0$0$0$0;
+                        FailDownloadErrorDialogScreen$lambda$0$0$0$0 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$0$0$0$0(Function0.this);
+                        return FailDownloadErrorDialogScreen$lambda$0$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -228,15 +228,15 @@ public final class FailDownloadDialogKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
-                        FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0.this);
-                        return FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
+                        Unit FailDownloadErrorDialogScreen$lambda$0$0$1$0;
+                        FailDownloadErrorDialogScreen$lambda$0$0$1$0 = FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$0$0$1$0(Function0.this);
+                        return FailDownloadErrorDialogScreen$lambda$0$0$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m8959getLambda$1143154327$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m8966getLambda$1143154327$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -253,13 +253,13 @@ public final class FailDownloadDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0 function0) {
+    public static final Unit FailDownloadErrorDialogScreen$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FailDownloadErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0 function0) {
+    public static final Unit FailDownloadErrorDialogScreen$lambda$0$0$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

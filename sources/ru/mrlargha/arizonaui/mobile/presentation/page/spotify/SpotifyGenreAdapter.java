@@ -67,13 +67,13 @@ public final class SpotifyGenreAdapter extends RecyclerView.Adapter<SpotifyGenre
         genreBinding.spotifyGenreContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyGenreAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyGenreAdapter.onBindViewHolder$lambda$1$lambda$0(SpotifyGenreAdapter.this, i, view);
+                SpotifyGenreAdapter.onBindViewHolder$lambda$0$0(SpotifyGenreAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(SpotifyGenreAdapter spotifyGenreAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(SpotifyGenreAdapter spotifyGenreAdapter, int i, View view) {
         OnGenreClickListener onGenreClickListener = spotifyGenreAdapter.onGenreClickListener;
         if (onGenreClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onGenreClickListener");

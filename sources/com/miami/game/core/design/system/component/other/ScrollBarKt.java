@@ -31,7 +31,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ScrollBarKt {
     /* renamed from: verticalColumnScrollbar-osbwsH8  reason: not valid java name */
-    public static final Modifier m8928verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
+    public static final Modifier m8931verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
         Intrinsics.checkNotNullParameter(verticalColumnScrollbar, "$this$verticalColumnScrollbar");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
         ComposerKt.sourceInformationMarkerStart(composer, 2015743295, "C(verticalColumnScrollbar)N(scrollState,width:c#ui.unit.Dp,showScrollBarTrack,scrollBarCornerRadius,endPadding)27@975L1364:ScrollBar.kt#8aq8qr");
@@ -43,7 +43,7 @@ public final class ScrollBarKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2015743295, i, -1, "com.miami.game.core.design.system.component.other.verticalColumnScrollbar (ScrollBar.kt:26)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, 99065363, "CC(remember):ScrollBar.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, 99064979, "CC(remember):ScrollBar.kt#9igjgp");
         boolean z4 = ((((i & 112) ^ 48) > 32 && composer.changed(scrollState)) || (i & 48) == 32) | ((((i & 7168) ^ 3072) > 2048 && composer.changed(z3)) || (i & 3072) == 2048) | ((((57344 & i) ^ 24576) > 16384 && composer.changed(f4)) || (i & 24576) == 16384) | ((((458752 & i) ^ ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) > 131072 && composer.changed(f5)) || (i & ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE) == 131072);
         if ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 || !composer.changed(m7251constructorimpl)) && (i & RendererCapabilities.DECODER_SUPPORT_MASK) != 256) {
             z2 = false;
@@ -54,9 +54,9 @@ public final class ScrollBarKt {
             Function1 function1 = new Function1() { // from class: com.miami.game.core.design.system.component.other.ScrollBarKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit verticalColumnScrollbar_osbwsH8$lambda$1$lambda$0;
-                    verticalColumnScrollbar_osbwsH8$lambda$1$lambda$0 = ScrollBarKt.verticalColumnScrollbar_osbwsH8$lambda$1$lambda$0(ScrollState.this, z3, f4, f5, m7251constructorimpl, (ContentDrawScope) obj);
-                    return verticalColumnScrollbar_osbwsH8$lambda$1$lambda$0;
+                    Unit verticalColumnScrollbar_osbwsH8$lambda$0$0;
+                    verticalColumnScrollbar_osbwsH8$lambda$0$0 = ScrollBarKt.verticalColumnScrollbar_osbwsH8$lambda$0$0(ScrollState.this, z3, f4, f5, m7251constructorimpl, (ContentDrawScope) obj);
+                    return verticalColumnScrollbar_osbwsH8$lambda$0$0;
                 }
             };
             composer.updateRememberedValue(function1);
@@ -72,7 +72,7 @@ public final class ScrollBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit verticalColumnScrollbar_osbwsH8$lambda$1$lambda$0(ScrollState scrollState, boolean z, float f, float f2, float f3, ContentDrawScope drawWithContent) {
+    public static final Unit verticalColumnScrollbar_osbwsH8$lambda$0$0(ScrollState scrollState, boolean z, float f, float f2, float f3, ContentDrawScope drawWithContent) {
         char c;
         long j;
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
@@ -117,15 +117,15 @@ public final class ScrollBarKt {
         return DrawModifierKt.drawWithContent(GraphicsLayerModifierKt.m4703graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, CompositingStrategy.Companion.m4629getOffscreenNrFUSI(), 0, null, 458751, null), new Function1() { // from class: com.miami.game.core.design.system.component.other.ScrollBarKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit fadingTopBottomEdgesSimplified$lambda$2;
-                fadingTopBottomEdgesSimplified$lambda$2 = ScrollBarKt.fadingTopBottomEdgesSimplified$lambda$2(ScrollState.this, f, f2, (ContentDrawScope) obj);
-                return fadingTopBottomEdgesSimplified$lambda$2;
+                Unit fadingTopBottomEdgesSimplified$lambda$0;
+                fadingTopBottomEdgesSimplified$lambda$0 = ScrollBarKt.fadingTopBottomEdgesSimplified$lambda$0(ScrollState.this, f, f2, (ContentDrawScope) obj);
+                return fadingTopBottomEdgesSimplified$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit fadingTopBottomEdgesSimplified$lambda$2(ScrollState scrollState, float f, float f2, ContentDrawScope drawWithContent) {
+    public static final Unit fadingTopBottomEdgesSimplified$lambda$0(ScrollState scrollState, float f, float f2, ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
         float intBitsToFloat = Float.intBitsToFloat((int) (drawWithContent.mo5116getSizeNHjbRc() & 4294967295L));

@@ -6,5 +6,5 @@ import java.util.List;
 public final class C0224ec {
 
     /* renamed from: a  reason: collision with root package name */
-    public List f854a;
+    public List f858a;
 }

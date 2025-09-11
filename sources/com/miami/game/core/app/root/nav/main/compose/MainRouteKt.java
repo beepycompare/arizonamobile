@@ -49,7 +49,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes4.dex */
 public final class MainRouteKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Children$lambda$35(MainComponent mainComponent, WindowSizeClass windowSizeClass, Modifier modifier, int i, int i2, Composer composer, int i3) {
+    public static final Unit Children$lambda$1(MainComponent mainComponent, WindowSizeClass windowSizeClass, Modifier modifier, int i, int i2, Composer composer, int i3) {
         Children(mainComponent, windowSizeClass, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -128,12 +128,12 @@ public final class MainRouteKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1274878273, i3, -1, "com.miami.game.core.app.root.nav.main.compose.Children (MainRoute.kt:39)");
             }
-            MainScaffoldKt.MainScaffold(WindowInsetsPadding_androidKt.imePadding(modifier), null, null, null, ComposableLambdaKt.rememberComposableLambda(-254427970, true, new Function3() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda2
+            MainScaffoldKt.MainScaffold(WindowInsetsPadding_androidKt.imePadding(modifier), null, null, null, ComposableLambdaKt.rememberComposableLambda(-254427970, true, new Function3() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit Children$lambda$34;
-                    Children$lambda$34 = MainRouteKt.Children$lambda$34(MainComponent.this, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return Children$lambda$34;
+                    Unit Children$lambda$0;
+                    Children$lambda$0 = MainRouteKt.Children$lambda$0(MainComponent.this, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return Children$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, 24576, 14);
             if (ComposerKt.isTraceInProgress()) {
@@ -143,19 +143,19 @@ public final class MainRouteKt {
         final Modifier modifier2 = modifier;
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda3
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Children$lambda$35;
-                    Children$lambda$35 = MainRouteKt.Children$lambda$35(MainComponent.this, windowSizeClass, modifier2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return Children$lambda$35;
+                    Unit Children$lambda$1;
+                    Children$lambda$1 = MainRouteKt.Children$lambda$1(MainComponent.this, windowSizeClass, modifier2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return Children$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Children$lambda$34(final MainComponent mainComponent, PaddingValues it, Composer composer, int i) {
+    public static final Unit Children$lambda$0(final MainComponent mainComponent, PaddingValues it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
         ComposerKt.sourceInformation(composer, "CN(it)48@1881L2310,44@1760L2431,102@4328L2146,98@4201L2273:MainRoute.kt#v8698m");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -167,17 +167,17 @@ public final class MainRouteKt {
             ChildrenKt.Children(mainComponent.getStack(), SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (StackAnimation) null, ComposableLambdaKt.rememberComposableLambda(-1130363621, true, new Function3() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit Children$lambda$34$lambda$15;
-                    Children$lambda$34$lambda$15 = MainRouteKt.Children$lambda$34$lambda$15(MainComponent.this, (Child.Created) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return Children$lambda$34$lambda$15;
+                    Unit Children$lambda$0$0;
+                    Children$lambda$0$0 = MainRouteKt.Children$lambda$0$0(MainComponent.this, (Child.Created) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return Children$lambda$0$0;
                 }
             }, composer, 54), composer, 3120, 4);
             ChildrenKt.Children(mainComponent.getStackDialog(), SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (StackAnimation) null, ComposableLambdaKt.rememberComposableLambda(-326115246, true, new Function3() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit Children$lambda$34$lambda$33;
-                    Children$lambda$34$lambda$33 = MainRouteKt.Children$lambda$34$lambda$33(MainComponent.this, (Child.Created) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return Children$lambda$34$lambda$33;
+                    Unit Children$lambda$0$1;
+                    Children$lambda$0$1 = MainRouteKt.Children$lambda$0$1(MainComponent.this, (Child.Created) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return Children$lambda$0$1;
                 }
             }, composer, 54), composer, 3120, 4);
             if (ComposerKt.isTraceInProgress()) {
@@ -188,7 +188,7 @@ public final class MainRouteKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Children$lambda$34$lambda$15(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
+    public static final Unit Children$lambda$0$0(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
         ComposerKt.sourceInformation(composer, "CN(it):MainRoute.kt#v8698m");
         if (ComposerKt.isTraceInProgress()) {
@@ -196,7 +196,7 @@ public final class MainRouteKt {
         }
         MainComponent.Child child = (MainComponent.Child) it.getInstance();
         if (child instanceof MainComponent.Child.Home) {
-            composer.startReplaceGroup(-2118916536);
+            composer.startReplaceGroup(-2118895952);
             ComposerKt.sourceInformation(composer, "53@2106L29,54@2187L34,55@2274L35,56@2359L32,57@2444L35,58@2536L44,59@2631L39,51@1997L695");
             HomeComponent component = ((MainComponent.Child.Home) child).getComponent();
             ComposerKt.sourceInformationMarkerStart(composer, 347293336, "CC(remember):MainRoute.kt#9igjgp");
@@ -264,7 +264,7 @@ public final class MainRouteKt {
             HomeScreenKt.HomeRoute(component, (Function0) kFunction, (Function0) kFunction2, (Function0) kFunction6, (Function1) kFunction3, (Function0) kFunction5, (Function2) kFunction4, (Function0) ((KFunction) rememberedValue7), composer, HomeComponent.$stable);
             composer.endReplaceGroup();
         } else if (child instanceof MainComponent.Child.SelectServer) {
-            composer.startReplaceGroup(-2118147519);
+            composer.startReplaceGroup(-2118126935);
             ComposerKt.sourceInformation(composer, "66@2900L25,64@2789L158");
             SelectServerComponent component2 = ((MainComponent.Child.SelectServer) child).getComponent();
             ComposerKt.sourceInformationMarkerStart(composer, 347318740, "CC(remember):MainRoute.kt#9igjgp");
@@ -278,7 +278,7 @@ public final class MainRouteKt {
             SelectServerScreenKt.SelectServerRoute((Function0) ((KFunction) rememberedValue8), component2, composer, SelectServerComponent.$stable << 3);
             composer.endReplaceGroup();
         } else if (child instanceof MainComponent.Child.Settings) {
-            composer.startReplaceGroup(-2117888018);
+            composer.startReplaceGroup(-2117867434);
             ComposerKt.sourceInformation(composer, "73@3146L23,74@3216L35,75@3299L44,76@3389L42,77@3478L37,71@3040L497");
             SettingsComponent component3 = ((MainComponent.Child.Settings) child).getComponent();
             ComposerKt.sourceInformationMarkerStart(composer, 347326610, "CC(remember):MainRoute.kt#9igjgp");
@@ -337,7 +337,7 @@ public final class MainRouteKt {
             composer.endReplaceGroup();
             throw new NoWhenBranchMatchedException();
         } else {
-            composer.startReplaceGroup(-2116958018);
+            composer.startReplaceGroup(-2116937434);
             ComposerKt.sourceInformation(composer, "92@4102L25,90@3988L161");
             NotificationsComponent component4 = ((MainComponent.Child.Notification) child).getComponent();
             ComposerKt.sourceInformationMarkerStart(composer, 347357204, "CC(remember):MainRoute.kt#9igjgp");
@@ -358,7 +358,7 @@ public final class MainRouteKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit Children$lambda$34$lambda$33(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
+    public static final Unit Children$lambda$0$1(MainComponent mainComponent, Child.Created it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
         ComposerKt.sourceInformation(composer, "CN(it):MainRoute.kt#v8698m");
         if (ComposerKt.isTraceInProgress()) {
@@ -444,7 +444,7 @@ public final class MainRouteKt {
             ComposerKt.sourceInformationMarkerStart(composer, 135906132, "CC(remember):MainRoute.kt#9igjgp");
             Object rememberedValue7 = composer.rememberedValue();
             if (rememberedValue7 == Composer.Companion.getEmpty()) {
-                rememberedValue7 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda4
+                rememberedValue7 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit unit;
@@ -491,7 +491,7 @@ public final class MainRouteKt {
             ComposerKt.sourceInformationMarkerStart(composer, 135920020, "CC(remember):MainRoute.kt#9igjgp");
             Object rememberedValue11 = composer.rememberedValue();
             if (rememberedValue11 == Composer.Companion.getEmpty()) {
-                rememberedValue11 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda5
+                rememberedValue11 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit unit;
@@ -515,7 +515,7 @@ public final class MainRouteKt {
             ComposerKt.sourceInformationMarkerStart(composer, 135927157, "CC(remember):MainRoute.kt#9igjgp");
             Object rememberedValue12 = composer.rememberedValue();
             if (rememberedValue12 == Composer.Companion.getEmpty()) {
-                rememberedValue12 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda6
+                rememberedValue12 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit unit;
@@ -530,7 +530,7 @@ public final class MainRouteKt {
             ComposerKt.sourceInformationMarkerStart(composer, 135928405, "CC(remember):MainRoute.kt#9igjgp");
             Object rememberedValue13 = composer.rememberedValue();
             if (rememberedValue13 == Composer.Companion.getEmpty()) {
-                rememberedValue13 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda7
+                rememberedValue13 = new Function0() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         Unit unit;

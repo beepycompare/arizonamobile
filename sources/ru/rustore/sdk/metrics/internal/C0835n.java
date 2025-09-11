@@ -8,7 +8,7 @@ import ru.rustore.sdk.reactive.core.Dispatcher;
 public final class C0835n {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f1458a;
+    public final U f1462a;
     public final C0824c b;
     public final V c;
     public final Dispatcher d;
@@ -21,7 +21,7 @@ public final class C0835n {
         Intrinsics.checkNotNullParameter(sendMetricsEventJobScheduler, "sendMetricsEventJobScheduler");
         Intrinsics.checkNotNullParameter(singleThreadDispatcher, "singleThreadDispatcher");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1458a = sendMetricsEventInteractor;
+        this.f1462a = sendMetricsEventInteractor;
         this.b = enqueueMetricsEventUseCase;
         this.c = sendMetricsEventJobScheduler;
         this.d = singleThreadDispatcher;

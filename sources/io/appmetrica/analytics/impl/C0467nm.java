@@ -7,11 +7,11 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 public final class C0467nm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f1004a;
+    public final ProtobufStateStorage f1008a;
     public final Co b;
 
     public C0467nm(ProtobufStateStorage protobufStateStorage, Co co) {
-        this.f1004a = protobufStateStorage;
+        this.f1008a = protobufStateStorage;
         this.b = co;
     }
 

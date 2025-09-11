@@ -28,10 +28,6 @@ public final class ArizonaGradientTextView extends AppCompatTextView {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ ArizonaGradientTextView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i & 2) != 0 ? null : attributeSet);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ArizonaGradientTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -43,6 +39,10 @@ public final class ArizonaGradientTextView extends AppCompatTextView {
         } finally {
             obtainStyledAttributes.recycle();
         }
+    }
+
+    public /* synthetic */ ArizonaGradientTextView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i & 2) != 0 ? null : attributeSet);
     }
 
     @Override // android.widget.TextView, android.view.View

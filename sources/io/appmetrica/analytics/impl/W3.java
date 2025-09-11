@@ -16,7 +16,7 @@ public final class W3 extends MessageNano {
     public static volatile W3[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public T3 f717a;
+    public T3 f721a;
     public T3[] b;
 
     public W3() {
@@ -35,7 +35,7 @@ public final class W3 extends MessageNano {
     }
 
     public final W3 a() {
-        this.f717a = null;
+        this.f721a = null;
         this.b = T3.b();
         this.cachedSize = -1;
         return this;
@@ -44,7 +44,7 @@ public final class W3 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        T3 t3 = this.f717a;
+        T3 t3 = this.f721a;
         if (t3 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, t3);
         }
@@ -68,7 +68,7 @@ public final class W3 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        T3 t3 = this.f717a;
+        T3 t3 = this.f721a;
         if (t3 != null) {
             codedOutputByteBufferNano.writeMessage(1, t3);
         }
@@ -98,10 +98,10 @@ public final class W3 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f717a == null) {
-                    this.f717a = new T3();
+                if (this.f721a == null) {
+                    this.f721a = new T3();
                 }
-                codedInputByteBufferNano.readMessage(this.f717a);
+                codedInputByteBufferNano.readMessage(this.f721a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

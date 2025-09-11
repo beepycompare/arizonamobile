@@ -10,13 +10,13 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0331ig implements ProtobufStateStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f919a;
+    public final String f923a;
     public final IBinaryDataHelper b;
     public final ProtobufStateSerializer c;
     public final ProtobufConverter d;
 
     public C0331ig(String str, IBinaryDataHelper iBinaryDataHelper, ProtobufStateSerializer<MessageNano> protobufStateSerializer, ProtobufConverter<Object, MessageNano> protobufConverter) {
-        this.f919a = str;
+        this.f923a = str;
         this.b = iBinaryDataHelper;
         this.c = protobufStateSerializer;
         this.d = protobufConverter;
@@ -24,13 +24,13 @@ public final class C0331ig implements ProtobufStateStorage {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
     public final void delete() {
-        this.b.remove(this.f919a);
+        this.b.remove(this.f923a);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
     public final Object read() {
         try {
-            byte[] bArr = this.b.get(this.f919a);
+            byte[] bArr = this.b.get(this.f923a);
             if (bArr != null && bArr.length != 0) {
                 return this.d.toModel((MessageNano) this.c.toState(bArr));
             }
@@ -42,6 +42,6 @@ public final class C0331ig implements ProtobufStateStorage {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
     public final void save(Object obj) {
-        this.b.insert(this.f919a, this.c.toByteArray((MessageNano) this.d.fromModel(obj)));
+        this.b.insert(this.f923a, this.c.toByteArray((MessageNano) this.d.fromModel(obj)));
     }
 }

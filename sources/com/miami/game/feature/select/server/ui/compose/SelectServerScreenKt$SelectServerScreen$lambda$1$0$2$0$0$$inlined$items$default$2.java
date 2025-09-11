@@ -1,4 +1,4 @@
-package com.miami.game.feature.notifications.presentation;
+package com.miami.game.feature.select.server.ui.compose;
 
 import java.util.List;
 import kotlin.Metadata;
@@ -6,11 +6,11 @@ import kotlin.jvm.functions.Function1;
 /* compiled from: LazyGridDsl.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
-public final class NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$2 implements Function1<Integer, Object> {
+public final class SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$2 implements Function1<Integer, Object> {
     final /* synthetic */ List $items;
     final /* synthetic */ Function1 $key;
 
-    public NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$2(Function1 function1, List list) {
+    public SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$2(Function1 function1, List list) {
         this.$key = function1;
         this.$items = list;
     }

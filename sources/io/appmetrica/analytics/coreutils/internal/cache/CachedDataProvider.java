@@ -8,14 +8,14 @@ public interface CachedDataProvider {
     public static class CachedData<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f276a;
+        private final String f280a;
         private volatile long b;
         private volatile long c;
         private long d = 0;
         private Object e = null;
 
         public CachedData(long j, long j2, String str) {
-            this.f276a = String.format("[CachedData-%s]", str);
+            this.f280a = String.format("[CachedData-%s]", str);
             this.b = j;
             this.c = j2;
         }
@@ -60,7 +60,7 @@ public interface CachedDataProvider {
         }
 
         public String toString() {
-            return "CachedData{tag='" + this.f276a + "', refreshTime=" + this.b + ", expiryTime=" + this.c + ", mCachedTime=" + this.d + ", mCachedData=" + this.e + AbstractJsonLexerKt.END_OBJ;
+            return "CachedData{tag='" + this.f280a + "', refreshTime=" + this.b + ", expiryTime=" + this.c + ", mCachedTime=" + this.d + ", mCachedData=" + this.e + AbstractJsonLexerKt.END_OBJ;
         }
     }
 }

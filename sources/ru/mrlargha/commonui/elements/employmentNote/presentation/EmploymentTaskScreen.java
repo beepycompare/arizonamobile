@@ -111,19 +111,19 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         bind.btnMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$1(EmploymentTaskScreen.this, targetActivity, view);
+                EmploymentTaskScreen._init_$lambda$0(EmploymentTaskScreen.this, targetActivity, view);
             }
         });
         bind.btnHistory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$2(EmploymentTaskScreen.this, targetActivity, view);
+                EmploymentTaskScreen._init_$lambda$1(EmploymentTaskScreen.this, targetActivity, view);
             }
         });
         bind.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$3(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$2(EmploymentTaskScreen.this, view);
             }
         });
         bind.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda9
@@ -135,43 +135,43 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         bind.btnUpdate.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$5(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$4(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$6(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$5(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemRespect.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$7(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$6(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemLevelInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$8(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$7(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemBonus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$9(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$8(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemBlacklist.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$10(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$9(EmploymentTaskScreen.this, view);
             }
         });
         bind.itemTaskInfo.itemPension.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EmploymentTaskScreen._init_$lambda$11(EmploymentTaskScreen.this, view);
+                EmploymentTaskScreen._init_$lambda$10(EmploymentTaskScreen.this, view);
             }
         });
     }
@@ -187,7 +187,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
+    public static final void _init_$lambda$0(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
         employmentTaskScreen.screenButtonStatus(0);
         employmentTaskScreen.isVisibleHistoryLayout(false);
         ConstraintLayout parentLayout = employmentTaskScreen.binding.itemTaskInfo.parentLayout;
@@ -228,7 +228,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
+    public static final void _init_$lambda$1(EmploymentTaskScreen employmentTaskScreen, Activity activity, View view) {
         ConstraintLayout parentLayout = employmentTaskScreen.binding.itemTaskInfo.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
         parentLayout.setVisibility(8);
@@ -254,43 +254,43 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$2(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(""), 3);
         employmentTaskScreen.screenButtonStatus(2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$4(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(""), 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$5(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(0)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$6(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(1)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$7(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(2)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$8(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(3)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$10(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$9(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(4)), 4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$11(EmploymentTaskScreen employmentTaskScreen, View view) {
+    public static final void _init_$lambda$10(EmploymentTaskScreen employmentTaskScreen, View view) {
         employmentTaskScreen.sendData(StringKt.toStringJson(new DataRequest(5)), 4);
     }
 
@@ -316,16 +316,16 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         this.taskAdapter = new TaskAdapter(getTargetActivity(), new Function2() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$12;
-                initAdapters$lambda$12 = EmploymentTaskScreen.initAdapters$lambda$12(EmploymentTaskScreen.this, (TaskInfo) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$12;
+                Unit initAdapters$lambda$0;
+                initAdapters$lambda$0 = EmploymentTaskScreen.initAdapters$lambda$0(EmploymentTaskScreen.this, (TaskInfo) obj, ((Integer) obj2).intValue());
+                return initAdapters$lambda$0;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initAdapters$lambda$13;
-                initAdapters$lambda$13 = EmploymentTaskScreen.initAdapters$lambda$13(EmploymentTaskScreen.this, (FractionTasks) obj);
-                return initAdapters$lambda$13;
+                Unit initAdapters$lambda$1;
+                initAdapters$lambda$1 = EmploymentTaskScreen.initAdapters$lambda$1(EmploymentTaskScreen.this, (FractionTasks) obj);
+                return initAdapters$lambda$1;
             }
         });
         RecyclerView recyclerView = this.binding.rvEmploymentTasks;
@@ -346,7 +346,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Unit initAdapters$lambda$12(EmploymentTaskScreen employmentTaskScreen, TaskInfo item, int i) {
+    public static final Unit initAdapters$lambda$0(EmploymentTaskScreen employmentTaskScreen, TaskInfo item, int i) {
         TaskAdapter taskAdapter;
         TaskAdapter taskAdapter2;
         TaskAdapter taskAdapter3;
@@ -426,7 +426,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initAdapters$lambda$13(EmploymentTaskScreen employmentTaskScreen, FractionTasks it) {
+    public static final Unit initAdapters$lambda$1(EmploymentTaskScreen employmentTaskScreen, FractionTasks it) {
         Intrinsics.checkNotNullParameter(it, "it");
         employmentTaskScreen.sendData(StringKt.toStringJson(String.valueOf(it.getId())), 1);
         return Unit.INSTANCE;
@@ -630,7 +630,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
             layoutEmploymentInfoBinding.progressBarThunder.setMax(taskStats.getPrivilegeStatusMax().intValue());
             layoutEmploymentInfoBinding.progressBarThunder.setProgress(taskStats.getPrivilegeStatusCurrent().intValue());
             layoutEmploymentInfoBinding.progressBarThunder.setVisibility(0);
-            layoutEmploymentInfoBinding.tvLevelThunder.setText(taskStats.getPrivilegeStatusCurrent().toString());
+            layoutEmploymentInfoBinding.tvLevelThunder.setText(String.valueOf(taskStats.getPrivilegeStatusCurrent().intValue()));
             layoutEmploymentInfoBinding.tvLevelMaxThunder.setText("/ " + taskStats.getPrivilegeStatusMax());
             layoutEmploymentInfoBinding.tvThunderDescription.setText("Состояние моей льготы");
             layoutEmploymentInfoBinding.ivEllipseThunder.setVisibility(8);

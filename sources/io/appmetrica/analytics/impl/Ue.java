@@ -12,7 +12,7 @@ import kotlin.text.StringsKt;
 public final class Ue {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f696a;
+    public final Context f700a;
     public final uo b;
     public final vo c;
 
@@ -27,7 +27,7 @@ public final class Ue {
                 this.b.getClass();
                 str = StringsKt.replace$default(UUID.randomUUID().toString(), Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.US);
             }
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f696a, "uuid.dat");
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f700a, "uuid.dat");
             if (fileFromSdkStorage != null && str != null) {
                 AbstractC0352jb.a(str, new FileOutputStream(fileFromSdkStorage));
             }
@@ -38,15 +38,15 @@ public final class Ue {
     }
 
     public Ue(Context context, uo uoVar, vo voVar) {
-        this.f696a = context;
+        this.f700a = context;
         this.b = uoVar;
         this.c = voVar;
     }
 
     public final void a() {
         File fileFromAppStorage;
-        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f696a, "uuid.dat");
-        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f696a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
+        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f700a, "uuid.dat");
+        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f700a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
             return;
         }
         FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);

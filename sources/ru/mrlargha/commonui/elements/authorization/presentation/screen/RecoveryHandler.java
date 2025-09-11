@@ -95,7 +95,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(View view) {
+    public static final void _init_$lambda$5(View view) {
     }
 
     public RecoveryHandler(Activity targetActivity, int i) {
@@ -136,7 +136,7 @@ public final class RecoveryHandler implements InterfaceController {
         editText.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda2
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                RecoveryHandler.lambda$3$lambda$2(RecoveryHandler.this, editText);
+                RecoveryHandler.lambda$1$0(RecoveryHandler.this, editText);
             }
         });
         EditText accountRecoveryTypePlaceholder = bind.accountRecoveryTypePlaceholder;
@@ -192,19 +192,19 @@ public final class RecoveryHandler implements InterfaceController {
         bind.accountRecoveryHandlerMethod.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryHandler._init_$lambda$5(RecoveryHandler.this, view);
+                RecoveryHandler._init_$lambda$3(RecoveryHandler.this, view);
             }
         });
         bind.accountRecoveryHandlerExistButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryHandler._init_$lambda$6(RecoveryHandler.this, view);
+                RecoveryHandler._init_$lambda$4(RecoveryHandler.this, view);
             }
         });
         bind.accountRecoveryHandler.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryHandler._init_$lambda$7(view);
+                RecoveryHandler._init_$lambda$5(view);
             }
         });
     }
@@ -234,7 +234,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$2(RecoveryHandler recoveryHandler, EditText editText) {
+    public static final void lambda$1$0(RecoveryHandler recoveryHandler, EditText editText) {
         Insets insets;
         WindowInsetsCompat rootWindowInsets = ViewCompat.getRootWindowInsets(recoveryHandler.targetActivity.getWindow().getDecorView());
         Integer valueOf = (rootWindowInsets == null || (insets = rootWindowInsets.getInsets(WindowInsetsCompat.Type.ime())) == null) ? null : Integer.valueOf(insets.bottom);
@@ -253,7 +253,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(RecoveryHandler recoveryHandler, View view) {
+    public static final void _init_$lambda$3(RecoveryHandler recoveryHandler, View view) {
         recoveryHandler.resetRecoveryHandler();
         InterfaceController orCreateInterface = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.RECOVERY_METHOD.getId(), recoveryHandler.targetActivity, recoveryHandler.backendID);
         Intrinsics.checkNotNull(orCreateInterface, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryMethod");
@@ -262,7 +262,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(RecoveryHandler recoveryHandler, View view) {
+    public static final void _init_$lambda$4(RecoveryHandler recoveryHandler, View view) {
         recoveryHandler.resetRecoveryHandler();
         recoveryHandler.setVisible(false);
         InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.AUTH_INIT.getId(), recoveryHandler.targetActivity, recoveryHandler.backendID).setVisible(true);
@@ -349,12 +349,12 @@ public final class RecoveryHandler implements InterfaceController {
                     accountRecoveryHandlerBinding.accountRecoveryHandlerUpdateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda6
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            RecoveryHandler.onServerRecoveryResponse$lambda$11$lambda$9(RecoveryHandler.this, view);
+                            RecoveryHandler.onServerRecoveryResponse$lambda$0$1(RecoveryHandler.this, view);
                         }
                     });
                     EditText accountRecoveryTypePlaceholder = accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder;
                     Intrinsics.checkNotNullExpressionValue(accountRecoveryTypePlaceholder, "accountRecoveryTypePlaceholder");
-                    accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$onServerRecoveryResponse$lambda$11$$inlined$addTextChangedListener$default$1
+                    accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$onServerRecoveryResponse$lambda$0$$inlined$addTextChangedListener$default$1
                         @Override // android.text.TextWatcher
                         public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
                         }
@@ -388,7 +388,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onServerRecoveryResponse$lambda$11$lambda$9(RecoveryHandler recoveryHandler, View view) {
+    public static final void onServerRecoveryResponse$lambda$0$1(RecoveryHandler recoveryHandler, View view) {
         int i = WhenMappings.$EnumSwitchMapping$0[recoveryHandler.requestState.ordinal()];
         if (i == 1) {
             recoveryHandler.sendRecoveryCode();
@@ -546,13 +546,13 @@ public final class RecoveryHandler implements InterfaceController {
         this.recoveryHandlerBinding.accountRecoveryHandlerUpdateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryHandler.resetRecoveryHandler$lambda$13(RecoveryHandler.this, view);
+                RecoveryHandler.resetRecoveryHandler$lambda$0(RecoveryHandler.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void resetRecoveryHandler$lambda$13(RecoveryHandler recoveryHandler, View view) {
+    public static final void resetRecoveryHandler$lambda$0(RecoveryHandler recoveryHandler, View view) {
         int i = WhenMappings.$EnumSwitchMapping$0[recoveryHandler.requestState.ordinal()];
         if (i == 1) {
             recoveryHandler.sendRecoveryInfo();

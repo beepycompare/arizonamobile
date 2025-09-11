@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class K7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gh f530a;
+    public final Gh f534a;
 
     public K7(Gh gh) {
-        this.f530a = gh;
+        this.f534a = gh;
     }
 }

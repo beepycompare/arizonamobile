@@ -7,14 +7,14 @@ import java.util.concurrent.Executor;
 public final class ExecutorC0741yk implements Executor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Handler f1170a;
+    public final /* synthetic */ Handler f1174a;
 
     public ExecutorC0741yk(Handler handler) {
-        this.f1170a = handler;
+        this.f1174a = handler;
     }
 
     @Override // java.util.concurrent.Executor
     public final void execute(Runnable runnable) {
-        this.f1170a.post(runnable);
+        this.f1174a.post(runnable);
     }
 }

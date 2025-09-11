@@ -300,14 +300,14 @@ public final class EstateAdapter extends RecyclerView.Adapter<EstateItemViewHold
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.EstateAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EstateAdapter.onBindViewHolder$lambda$1$lambda$0(intValue, this, view);
+                    EstateAdapter.onBindViewHolder$lambda$0$0(intValue, this, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(int i, EstateAdapter estateAdapter, View view) {
+    public static final void onBindViewHolder$lambda$0$0(int i, EstateAdapter estateAdapter, View view) {
         if (i >= 4) {
             estateAdapter.onClick.invoke(Integer.valueOf(i - 4));
         }

@@ -77,7 +77,7 @@ public final class RewardsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, exitButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.rewards_screen.RewardsScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return RewardsScreen.lambda$2$lambda$0(RewardsScreen.this, i);
+                return RewardsScreen.lambda$0$0(RewardsScreen.this, i);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -86,7 +86,7 @@ public final class RewardsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.rewards_screen.RewardsScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return RewardsScreen.lambda$2$lambda$1(RewardsScreen.this, i);
+                return RewardsScreen.lambda$0$1(RewardsScreen.this, i);
             }
         }, 3, null);
     }
@@ -109,13 +109,13 @@ public final class RewardsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$0(RewardsScreen rewardsScreen, int i) {
+    public static final Unit lambda$0$0(RewardsScreen rewardsScreen, int i) {
         rewardsScreen.getNotifier().clickedWrapper(i, 0, 0);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$1(RewardsScreen rewardsScreen, int i) {
+    public static final Unit lambda$0$1(RewardsScreen rewardsScreen, int i) {
         rewardsScreen.getNotifier().clickedWrapper(i, 0, 1);
         return Unit.INSTANCE;
     }

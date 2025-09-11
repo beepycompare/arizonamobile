@@ -33,25 +33,25 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class SettingsRowsKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$11(Function1 function1, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
+    public static final Unit ChatFontSize$lambda$1(Function1 function1, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
         ChatFontSize(function1, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$21(Function1 function1, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
+    public static final Unit FontsCount$lambda$1(Function1 function1, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
         FontsCount(function1, i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardSwitch$lambda$29(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
+    public static final Unit KeyboardSwitch$lambda$1(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
         KeyboardSwitch(function0, z, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StreamerSwitch$lambda$37(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
+    public static final Unit StreamerSwitch$lambda$1(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
         StreamerSwitch(function0, z, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -201,9 +201,9 @@ public final class SettingsRowsKt {
                     rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ChatFontSize$lambda$10$lambda$9$lambda$2$lambda$1;
-                            ChatFontSize$lambda$10$lambda$9$lambda$2$lambda$1 = SettingsRowsKt.ChatFontSize$lambda$10$lambda$9$lambda$2$lambda$1(Function1.this, (String) obj2);
-                            return ChatFontSize$lambda$10$lambda$9$lambda$2$lambda$1;
+                            Unit ChatFontSize$lambda$0$1$0$0;
+                            ChatFontSize$lambda$0$1$0$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$0$0(Function1.this, (String) obj2);
+                            return ChatFontSize$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -218,9 +218,9 @@ public final class SettingsRowsKt {
                     rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ChatFontSize$lambda$10$lambda$9$lambda$4$lambda$3;
-                            ChatFontSize$lambda$10$lambda$9$lambda$4$lambda$3 = SettingsRowsKt.ChatFontSize$lambda$10$lambda$9$lambda$4$lambda$3(Function1.this, (String) obj2);
-                            return ChatFontSize$lambda$10$lambda$9$lambda$4$lambda$3;
+                            Unit ChatFontSize$lambda$0$1$1$0;
+                            ChatFontSize$lambda$0$1$1$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$1$0(Function1.this, (String) obj2);
+                            return ChatFontSize$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -235,9 +235,9 @@ public final class SettingsRowsKt {
                     rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ChatFontSize$lambda$10$lambda$9$lambda$6$lambda$5;
-                            ChatFontSize$lambda$10$lambda$9$lambda$6$lambda$5 = SettingsRowsKt.ChatFontSize$lambda$10$lambda$9$lambda$6$lambda$5(Function1.this, (String) obj2);
-                            return ChatFontSize$lambda$10$lambda$9$lambda$6$lambda$5;
+                            Unit ChatFontSize$lambda$0$1$2$0;
+                            ChatFontSize$lambda$0$1$2$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$2$0(Function1.this, (String) obj2);
+                            return ChatFontSize$lambda$0$1$2$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -252,9 +252,9 @@ public final class SettingsRowsKt {
                     rememberedValue4 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ChatFontSize$lambda$10$lambda$9$lambda$8$lambda$7;
-                            ChatFontSize$lambda$10$lambda$9$lambda$8$lambda$7 = SettingsRowsKt.ChatFontSize$lambda$10$lambda$9$lambda$8$lambda$7(Function1.this, (String) obj2);
-                            return ChatFontSize$lambda$10$lambda$9$lambda$8$lambda$7;
+                            Unit ChatFontSize$lambda$0$1$3$0;
+                            ChatFontSize$lambda$0$1$3$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$3$0(Function1.this, (String) obj2);
+                            return ChatFontSize$lambda$0$1$3$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -284,9 +284,9 @@ public final class SettingsRowsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit ChatFontSize$lambda$11;
-                        ChatFontSize$lambda$11 = SettingsRowsKt.ChatFontSize$lambda$11(Function1.this, f, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ChatFontSize$lambda$11;
+                        Unit ChatFontSize$lambda$1;
+                        ChatFontSize$lambda$1 = SettingsRowsKt.ChatFontSize$lambda$1(Function1.this, f, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return ChatFontSize$lambda$1;
                     }
                 });
                 return;
@@ -302,28 +302,28 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$10$lambda$9$lambda$2$lambda$1(Function1 function1, String it) {
+    public static final Unit ChatFontSize$lambda$0$1$0$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(Float.valueOf(0.5f));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$10$lambda$9$lambda$4$lambda$3(Function1 function1, String it) {
+    public static final Unit ChatFontSize$lambda$0$1$1$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(Float.valueOf(1.0f));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$10$lambda$9$lambda$6$lambda$5(Function1 function1, String it) {
+    public static final Unit ChatFontSize$lambda$0$1$2$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(Float.valueOf(1.5f));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$10$lambda$9$lambda$8$lambda$7(Function1 function1, String it) {
+    public static final Unit ChatFontSize$lambda$0$1$3$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(Float.valueOf(2.0f));
         return Unit.INSTANCE;
@@ -474,9 +474,9 @@ public final class SettingsRowsKt {
                     rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$20$lambda$19$lambda$14$lambda$13;
-                            FontsCount$lambda$20$lambda$19$lambda$14$lambda$13 = SettingsRowsKt.FontsCount$lambda$20$lambda$19$lambda$14$lambda$13(Function1.this, (String) obj2);
-                            return FontsCount$lambda$20$lambda$19$lambda$14$lambda$13;
+                            Unit FontsCount$lambda$0$1$0$0;
+                            FontsCount$lambda$0$1$0$0 = SettingsRowsKt.FontsCount$lambda$0$1$0$0(Function1.this, (String) obj2);
+                            return FontsCount$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -491,9 +491,9 @@ public final class SettingsRowsKt {
                     rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda6
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$20$lambda$19$lambda$16$lambda$15;
-                            FontsCount$lambda$20$lambda$19$lambda$16$lambda$15 = SettingsRowsKt.FontsCount$lambda$20$lambda$19$lambda$16$lambda$15(Function1.this, (String) obj2);
-                            return FontsCount$lambda$20$lambda$19$lambda$16$lambda$15;
+                            Unit FontsCount$lambda$0$1$1$0;
+                            FontsCount$lambda$0$1$1$0 = SettingsRowsKt.FontsCount$lambda$0$1$1$0(Function1.this, (String) obj2);
+                            return FontsCount$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -508,9 +508,9 @@ public final class SettingsRowsKt {
                     rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$20$lambda$19$lambda$18$lambda$17;
-                            FontsCount$lambda$20$lambda$19$lambda$18$lambda$17 = SettingsRowsKt.FontsCount$lambda$20$lambda$19$lambda$18$lambda$17(Function1.this, (String) obj2);
-                            return FontsCount$lambda$20$lambda$19$lambda$18$lambda$17;
+                            Unit FontsCount$lambda$0$1$2$0;
+                            FontsCount$lambda$0$1$2$0 = SettingsRowsKt.FontsCount$lambda$0$1$2$0(Function1.this, (String) obj2);
+                            return FontsCount$lambda$0$1$2$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -540,9 +540,9 @@ public final class SettingsRowsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda8
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit FontsCount$lambda$21;
-                        FontsCount$lambda$21 = SettingsRowsKt.FontsCount$lambda$21(Function1.this, i, modifier2, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                        return FontsCount$lambda$21;
+                        Unit FontsCount$lambda$1;
+                        FontsCount$lambda$1 = SettingsRowsKt.FontsCount$lambda$1(Function1.this, i, modifier2, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
+                        return FontsCount$lambda$1;
                     }
                 });
                 return;
@@ -558,21 +558,21 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$20$lambda$19$lambda$14$lambda$13(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$0$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(5);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$20$lambda$19$lambda$16$lambda$15(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$1$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(8);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$20$lambda$19$lambda$18$lambda$17(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$2$0(Function1 function1, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(10);
         return Unit.INSTANCE;
@@ -725,9 +725,9 @@ public final class SettingsRowsKt {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda9
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit KeyboardSwitch$lambda$28$lambda$27$lambda$24$lambda$23;
-                            KeyboardSwitch$lambda$28$lambda$27$lambda$24$lambda$23 = SettingsRowsKt.KeyboardSwitch$lambda$28$lambda$27$lambda$24$lambda$23(Function0.this);
-                            return KeyboardSwitch$lambda$28$lambda$27$lambda$24$lambda$23;
+                            Unit KeyboardSwitch$lambda$0$1$0$0;
+                            KeyboardSwitch$lambda$0$1$0$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$0$0(Function0.this);
+                            return KeyboardSwitch$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -741,9 +741,9 @@ public final class SettingsRowsKt {
                     rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda10
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit KeyboardSwitch$lambda$28$lambda$27$lambda$26$lambda$25;
-                            KeyboardSwitch$lambda$28$lambda$27$lambda$26$lambda$25 = SettingsRowsKt.KeyboardSwitch$lambda$28$lambda$27$lambda$26$lambda$25(Function0.this);
-                            return KeyboardSwitch$lambda$28$lambda$27$lambda$26$lambda$25;
+                            Unit KeyboardSwitch$lambda$0$1$1$0;
+                            KeyboardSwitch$lambda$0$1$1$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$1$0(Function0.this);
+                            return KeyboardSwitch$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -772,9 +772,9 @@ public final class SettingsRowsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda11
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit KeyboardSwitch$lambda$29;
-                        KeyboardSwitch$lambda$29 = SettingsRowsKt.KeyboardSwitch$lambda$29(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return KeyboardSwitch$lambda$29;
+                        Unit KeyboardSwitch$lambda$1;
+                        KeyboardSwitch$lambda$1 = SettingsRowsKt.KeyboardSwitch$lambda$1(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return KeyboardSwitch$lambda$1;
                     }
                 });
                 return;
@@ -790,13 +790,13 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardSwitch$lambda$28$lambda$27$lambda$24$lambda$23(Function0 function0) {
+    public static final Unit KeyboardSwitch$lambda$0$1$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardSwitch$lambda$28$lambda$27$lambda$26$lambda$25(Function0 function0) {
+    public static final Unit KeyboardSwitch$lambda$0$1$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
@@ -948,9 +948,9 @@ public final class SettingsRowsKt {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda12
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit StreamerSwitch$lambda$36$lambda$35$lambda$32$lambda$31;
-                            StreamerSwitch$lambda$36$lambda$35$lambda$32$lambda$31 = SettingsRowsKt.StreamerSwitch$lambda$36$lambda$35$lambda$32$lambda$31(Function0.this);
-                            return StreamerSwitch$lambda$36$lambda$35$lambda$32$lambda$31;
+                            Unit StreamerSwitch$lambda$0$1$0$0;
+                            StreamerSwitch$lambda$0$1$0$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$0$0(Function0.this);
+                            return StreamerSwitch$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -964,9 +964,9 @@ public final class SettingsRowsKt {
                     rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda13
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit StreamerSwitch$lambda$36$lambda$35$lambda$34$lambda$33;
-                            StreamerSwitch$lambda$36$lambda$35$lambda$34$lambda$33 = SettingsRowsKt.StreamerSwitch$lambda$36$lambda$35$lambda$34$lambda$33(Function0.this);
-                            return StreamerSwitch$lambda$36$lambda$35$lambda$34$lambda$33;
+                            Unit StreamerSwitch$lambda$0$1$1$0;
+                            StreamerSwitch$lambda$0$1$1$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$1$0(Function0.this);
+                            return StreamerSwitch$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -995,9 +995,9 @@ public final class SettingsRowsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda14
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit StreamerSwitch$lambda$37;
-                        StreamerSwitch$lambda$37 = SettingsRowsKt.StreamerSwitch$lambda$37(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return StreamerSwitch$lambda$37;
+                        Unit StreamerSwitch$lambda$1;
+                        StreamerSwitch$lambda$1 = SettingsRowsKt.StreamerSwitch$lambda$1(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return StreamerSwitch$lambda$1;
                     }
                 });
                 return;
@@ -1013,13 +1013,13 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StreamerSwitch$lambda$36$lambda$35$lambda$32$lambda$31(Function0 function0) {
+    public static final Unit StreamerSwitch$lambda$0$1$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StreamerSwitch$lambda$36$lambda$35$lambda$34$lambda$33(Function0 function0) {
+    public static final Unit StreamerSwitch$lambda$0$1$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

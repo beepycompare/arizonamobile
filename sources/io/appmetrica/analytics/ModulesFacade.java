@@ -21,23 +21,23 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Jd f196a = new Jd();
+    private static Jd f200a = new Jd();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         Bd bd = jd.b;
         bd.b.a(context);
         bd.d.a(str);
-        jd.c.f621a.a(context.getApplicationContext().getApplicationContext());
-        return Ji.f516a.a(context.getApplicationContext(), str);
+        jd.c.f625a.a(context.getApplicationContext().getApplicationContext());
+        return Ji.f520a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
         boolean z;
-        Jd jd = f196a;
+        Jd jd = f200a;
         jd.b.getClass();
         jd.c.getClass();
-        jd.f513a.getClass();
+        jd.f517a.getClass();
         synchronized (C0646v0.class) {
             z = C0646v0.f;
         }
@@ -49,55 +49,55 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        Jd jd = f196a;
-        jd.b.f366a.a(null);
+        Jd jd = f200a;
+        jd.b.f370a.a(null);
         jd.c.getClass();
         jd.d.execute(new Ed(jd, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         jd.b.getClass();
         jd.c.getClass();
         jd.d.execute(new Fd(jd, i, str));
     }
 
     public static void sendEventsBuffer() {
-        Jd jd = f196a;
+        Jd jd = f200a;
         jd.b.getClass();
         jd.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         jd.b.getClass();
         jd.c.getClass();
         jd.d.execute(new Gd(jd, z));
     }
 
     public static void setProxy(Jd jd) {
-        f196a = jd;
+        f200a = jd;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         jd.b.c.a(str);
         jd.c.getClass();
         jd.d.execute(new Hd(jd, str, bArr));
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         Bd bd = jd.b;
         bd.b.a(context);
         bd.d.a(str);
-        jd.c.f621a.a(context.getApplicationContext());
+        jd.c.f625a.a(context.getApplicationContext());
         jd.d.execute(new Id(str));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        Jd jd = f196a;
+        Jd jd = f200a;
         boolean booleanValue = bool.booleanValue();
         jd.b.getClass();
         jd.c.getClass();

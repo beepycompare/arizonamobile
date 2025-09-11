@@ -10,7 +10,7 @@ import java.util.Iterator;
 public final class C0750z4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f1178a;
+    public final Object f1182a;
     public final B5 b;
     public final HashMap c;
     public final Pa d;
@@ -23,7 +23,7 @@ public final class C0750z4 {
 
     public final D4 a(C0475o4 c0475o4, N4 n4) {
         D4 d4;
-        synchronized (this.f1178a) {
+        synchronized (this.f1182a) {
             d4 = (D4) this.c.get(c0475o4);
             if (d4 == null) {
                 this.f.getClass();
@@ -36,7 +36,7 @@ public final class C0750z4 {
     }
 
     public C0750z4(Context context, B5 b5, G4 g4) {
-        this.f1178a = new Object();
+        this.f1182a = new Object();
         this.c = new HashMap();
         this.d = new Pa();
         this.e = context.getApplicationContext();
@@ -45,9 +45,9 @@ public final class C0750z4 {
     }
 
     public final void a(String str, Integer num, String str2) {
-        synchronized (this.f1178a) {
+        synchronized (this.f1182a) {
             Pa pa = this.d;
-            Collection<C0475o4> collection = (Collection) pa.f619a.remove(new C0725y4(str, num, str2));
+            Collection<C0475o4> collection = (Collection) pa.f623a.remove(new C0725y4(str, num, str2));
             if (!ro.a(collection)) {
                 collection.size();
                 ArrayList arrayList = new ArrayList(collection.size());

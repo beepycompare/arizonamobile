@@ -97,7 +97,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
             EasyAnimation.animateClick$default(easyAnimation, exitButton, 0L, new Function0() { // from class: ru.mrlargha.feature.calendar.DailyRewardsScreen$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    return DailyRewardsScreen.lambda$2$lambda$1$lambda$0(DailyRewardsScreen.this);
+                    return DailyRewardsScreen.lambda$0$0$0(DailyRewardsScreen.this);
                 }
             }, null, 5, null);
         }
@@ -108,7 +108,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$1$lambda$0(DailyRewardsScreen dailyRewardsScreen) {
+    public static final Unit lambda$0$0$0(DailyRewardsScreen dailyRewardsScreen) {
         SAMPUIElement.notifyClick$default(dailyRewardsScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }

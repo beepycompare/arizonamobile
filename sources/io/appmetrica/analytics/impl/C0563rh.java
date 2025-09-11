@@ -31,10 +31,10 @@ public final class C0563rh extends AbstractC0462nh {
     public final boolean a(C0477o6 c0477o6) {
         HashSet hashSet;
         ArrayList b;
-        C0651v5 c0651v5 = this.f1001a;
+        C0651v5 c0651v5 = this.f1005a;
         if (c0651v5.t.c() && c0651v5.y()) {
             C0537qf c0537qf = c0651v5.c;
-            String e = this.f1001a.c.e();
+            String e = this.f1005a.c.e();
             try {
                 if (!TextUtils.isEmpty(e)) {
                     try {
@@ -51,14 +51,14 @@ public final class C0563rh extends AbstractC0462nh {
                         K9 k9 = c0651v5.n;
                         int i2 = k9.k;
                         k9.m = i2;
-                        k9.f532a.a(i2).b();
+                        k9.f536a.a(i2).b();
                     } else {
                         JSONArray jSONArray2 = new JSONArray();
                         Iterator it = b.iterator();
                         while (it.hasNext()) {
                             C0556ra c0556ra = (C0556ra) it.next();
                             c0556ra.getClass();
-                            JSONObject put = new JSONObject().put("name", c0556ra.f1060a).put("required", c0556ra.c);
+                            JSONObject put = new JSONObject().put("name", c0556ra.f1064a).put("required", c0556ra.c);
                             int i3 = c0556ra.b;
                             if (i3 != -1) {
                                 put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
@@ -70,7 +70,7 @@ public final class C0563rh extends AbstractC0462nh {
                         k92.a(a2, C0156bl.a(k92.c.b(a2), a2.i));
                         int i4 = k92.k;
                         k92.m = i4;
-                        k92.f532a.a(i4).b();
+                        k92.f536a.a(i4).b();
                         c0537qf.i(jSONArray2.toString());
                     }
                 }
@@ -88,9 +88,9 @@ public final class C0563rh extends AbstractC0462nh {
         AbstractC0532qa c0507pa;
         FeatureInfo[] featureInfoArr;
         try {
-            C0651v5 c0651v5 = this.f1001a;
+            C0651v5 c0651v5 = this.f1005a;
             SafePackageManager safePackageManager = this.b;
-            Context context = c0651v5.f1115a;
+            Context context = c0651v5.f1119a;
             PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
             ArrayList arrayList = new ArrayList();
             if (AndroidUtils.isApiAchieved(24)) {

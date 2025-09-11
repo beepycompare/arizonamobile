@@ -11,7 +11,7 @@ import java.util.List;
 public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f705a;
+    public final Context f709a;
     public final C0476o5 b;
     public final Km c;
     public final Vh d;
@@ -36,7 +36,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
     @Override // io.appmetrica.analytics.impl.InterfaceC0223eb
     public final void a(M4 m4) {
         Vh vh = this.d;
-        vh.f710a = vh.f710a.mergeFrom(m4);
+        vh.f714a = vh.f714a.mergeFrom(m4);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0223eb
@@ -45,7 +45,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
     }
 
     public final M4 d() {
-        return this.d.f710a;
+        return this.d.f714a;
     }
 
     public final Hg e() {
@@ -54,20 +54,20 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0223eb
     public final Context getContext() {
-        return this.f705a;
+        return this.f709a;
     }
 
     public V4(Context context, Ql ql, C0476o5 c0476o5, N4 n4, Vh vh, Hg hg, C0502p5 c0502p5, X4 x4, Mg mg) {
         this.g = new ArrayList();
         this.l = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f705a = applicationContext;
+        this.f709a = applicationContext;
         this.b = c0476o5;
         this.d = vh;
         this.h = c0502p5;
         this.e = X4.a(this);
         b(n4);
-        Km a2 = ql.a(applicationContext, c0476o5, n4.f584a);
+        Km a2 = ql.a(applicationContext, c0476o5, n4.f588a);
         this.c = a2;
         this.j = AbstractC0600t4.a(a2, Na.j().b());
         this.f = x4.a(this, a2);
@@ -77,12 +77,12 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
     }
 
     public final synchronized void a(S4 s4) {
-        this.h.f1027a.add(s4);
+        this.h.f1031a.add(s4);
         ResultReceiverC0116a7.a(s4.c, this.j.a(Pm.a(this.c.e().l)));
     }
 
     public final synchronized void b(S4 s4) {
-        this.h.f1027a.remove(s4);
+        this.h.f1031a.remove(s4);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0223eb
@@ -102,7 +102,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
                 C0707xb c0707xb = (C0707xb) it.next();
-                ResultReceiverC0116a7.a(c0707xb.f1149a, sl, this.j.a(c0707xb.c));
+                ResultReceiverC0116a7.a(c0707xb.f1153a, sl, this.j.a(c0707xb.c));
             }
             this.g.clear();
         }
@@ -111,7 +111,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
     @Override // io.appmetrica.analytics.impl.Zl
     public final void a(C0493om c0493om) {
         synchronized (this.l) {
-            Iterator it = this.h.f1027a.iterator();
+            Iterator it = this.h.f1031a.iterator();
             while (it.hasNext()) {
                 ResultReceiverC0116a7.a(((S4) it.next()).c, this.j.a(Pm.a(c0493om.l)));
             }
@@ -120,7 +120,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
             while (it2.hasNext()) {
                 C0707xb c0707xb = (C0707xb) it2.next();
                 if (AbstractC0415lm.a(c0493om, c0707xb.b, c0707xb.c, new C0657vb())) {
-                    ResultReceiverC0116a7.a(c0707xb.f1149a, this.j.a(c0707xb.c));
+                    ResultReceiverC0116a7.a(c0707xb.f1153a, this.j.a(c0707xb.c));
                 } else {
                     arrayList.add(c0707xb);
                 }
@@ -140,7 +140,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
         HashMap hashMap2 = new HashMap();
         if (c0707xb != null) {
             list = c0707xb.b;
-            resultReceiver = c0707xb.f1149a;
+            resultReceiver = c0707xb.f1153a;
             hashMap = c0707xb.c;
         } else {
             resultReceiver = null;
@@ -176,7 +176,7 @@ public final class V4 implements InterfaceC0223eb, Zl, InterfaceC0275gb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0275gb
     public final void a(N4 n4) {
-        this.c.a(n4.f584a);
+        this.c.a(n4.f588a);
         a(n4.b);
     }
 }

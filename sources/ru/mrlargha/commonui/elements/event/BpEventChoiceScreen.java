@@ -57,35 +57,35 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
         bpEasterChoiceBinding.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.event.BpEventChoiceScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BpEventChoiceScreen.setupNavigation$lambda$3$lambda$0(BpEventChoiceScreen.this, view);
+                BpEventChoiceScreen.setupNavigation$lambda$0$0(BpEventChoiceScreen.this, view);
             }
         });
         bpEasterChoiceBinding.item1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.event.BpEventChoiceScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BpEventChoiceScreen.setupNavigation$lambda$3$lambda$1(BpEventChoiceScreen.this, view);
+                BpEventChoiceScreen.setupNavigation$lambda$0$1(BpEventChoiceScreen.this, view);
             }
         });
         bpEasterChoiceBinding.item2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.event.BpEventChoiceScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BpEventChoiceScreen.setupNavigation$lambda$3$lambda$2(BpEventChoiceScreen.this, view);
+                BpEventChoiceScreen.setupNavigation$lambda$0$2(BpEventChoiceScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$3$lambda$0(BpEventChoiceScreen bpEventChoiceScreen, View view) {
+    public static final void setupNavigation$lambda$0$0(BpEventChoiceScreen bpEventChoiceScreen, View view) {
         SAMPUIElement.notifyClick$default(bpEventChoiceScreen, 0, 0, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$3$lambda$1(BpEventChoiceScreen bpEventChoiceScreen, View view) {
+    public static final void setupNavigation$lambda$0$1(BpEventChoiceScreen bpEventChoiceScreen, View view) {
         SAMPUIElement.notifyClick$default(bpEventChoiceScreen, 0, 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$3$lambda$2(BpEventChoiceScreen bpEventChoiceScreen, View view) {
+    public static final void setupNavigation$lambda$0$2(BpEventChoiceScreen bpEventChoiceScreen, View view) {
         SAMPUIElement.notifyClick$default(bpEventChoiceScreen, 1, 1, null, 4, null);
     }
 

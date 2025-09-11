@@ -63,7 +63,7 @@ public final class ErrorDialogScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogScreen$lambda$9(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit ErrorDialogScreen$lambda$1(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         ErrorDialogScreen(str, errorDialogUiState, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -89,7 +89,7 @@ public final class ErrorDialogScreenKt {
             }
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i2 & 112, 1);
             ErrorDialogUiState ErrorDialogRoute$lambda$0 = ErrorDialogRoute$lambda$0(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2065378273, "CC(remember):ErrorDialogScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2065377889, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             ErrorDialogScreenKt$ErrorDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -149,9 +149,9 @@ public final class ErrorDialogScreenKt {
             DialogFrameKt.DialogFrame(null, onDismiss, ComposableLambdaKt.rememberComposableLambda(-59434296, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogScreen$lambda$8;
-                    ErrorDialogScreen$lambda$8 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$8(errorMessage, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogScreen$lambda$8;
+                    Unit ErrorDialogScreen$lambda$0;
+                    ErrorDialogScreen$lambda$0 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$0(errorMessage, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return ErrorDialogScreen$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 390, 0);
             function0 = onDismiss;
@@ -164,16 +164,16 @@ public final class ErrorDialogScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogScreen$lambda$9;
-                    ErrorDialogScreen$lambda$9 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$9(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogScreen$lambda$9;
+                    Unit ErrorDialogScreen$lambda$1;
+                    ErrorDialogScreen$lambda$1 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$1(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ErrorDialogScreen$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogScreen$lambda$8(String str, final Function0 function0, final Function0 function02, Composer composer, int i) {
+    public static final Unit ErrorDialogScreen$lambda$0(String str, final Function0 function0, final Function0 function02, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C55@1961L10,55@1934L82,58@2044L85,57@2025L217,65@2251L420:ErrorDialogScreen.kt#d3gn1w");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -217,15 +217,15 @@ public final class ErrorDialogScreenKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
-                        ErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0.this);
-                        return ErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
+                        Unit ErrorDialogScreen$lambda$0$0$0$0;
+                        ErrorDialogScreen$lambda$0$0$0$0 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$0$0$0$0(Function0.this);
+                        return ErrorDialogScreen$lambda$0$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m8958getLambda$1032883188$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m8965getLambda$1032883188$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -1354242697, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
@@ -233,9 +233,9 @@ public final class ErrorDialogScreenKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
-                        ErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0.this);
-                        return ErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
+                        Unit ErrorDialogScreen$lambda$0$0$1$0;
+                        ErrorDialogScreen$lambda$0$0$1$0 = ErrorDialogScreenKt.ErrorDialogScreen$lambda$0$0$1$0(Function0.this);
+                        return ErrorDialogScreen$lambda$0$0$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue2);
@@ -258,13 +258,13 @@ public final class ErrorDialogScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0 function0) {
+    public static final Unit ErrorDialogScreen$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0 function0) {
+    public static final Unit ErrorDialogScreen$lambda$0$0$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

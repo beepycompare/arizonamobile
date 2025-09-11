@@ -7,10 +7,10 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class C0683wc implements LocationReceiverProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0708xc f1132a = new C0708xc();
+    public final C0708xc f1136a = new C0708xc();
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory
     public final LocationReceiverProvider getPassiveLocationReceiverProvider() {
-        return this.f1132a;
+        return this.f1136a;
     }
 }

@@ -32,7 +32,7 @@ public final class SituationScreen extends SAMPUIElement {
     private final StatsAdapter statsAdapter;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setAlertInfo$lambda$9$lambda$8(View view) {
+    public static final void setAlertInfo$lambda$0$2(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -67,7 +67,7 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, chooseRolePageBackButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return SituationScreen.lambda$5$lambda$0(SituationScreenBinding.this);
+                return SituationScreen.lambda$0$0(SituationScreenBinding.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -76,7 +76,7 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, chooseRolePageExitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return SituationScreen.lambda$5$lambda$1(SituationScreen.this);
+                return SituationScreen.lambda$0$1(SituationScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -85,7 +85,7 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation3, successRolePageExitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return SituationScreen.lambda$5$lambda$2(SituationScreen.this);
+                return SituationScreen.lambda$0$2(SituationScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation4 = EasyAnimation.INSTANCE;
@@ -94,7 +94,7 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation4, lastPageExitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return SituationScreen.lambda$5$lambda$3(SituationScreen.this);
+                return SituationScreen.lambda$0$3(SituationScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation5 = EasyAnimation.INSTANCE;
@@ -103,13 +103,13 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation5, moreInfoButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return SituationScreen.lambda$5$lambda$4(SituationScreen.this, bind);
+                return SituationScreen.lambda$0$4(SituationScreen.this, bind);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$5$lambda$0(SituationScreenBinding situationScreenBinding) {
+    public static final Unit lambda$0$0(SituationScreenBinding situationScreenBinding) {
         situationScreenBinding.lastPage.setVisibility(8);
         situationScreenBinding.chooseRolePage.setVisibility(8);
         situationScreenBinding.successRolePage.setVisibility(8);
@@ -118,25 +118,25 @@ public final class SituationScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$5$lambda$1(SituationScreen situationScreen) {
+    public static final Unit lambda$0$1(SituationScreen situationScreen) {
         SAMPUIElement.notifyClick$default(situationScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$5$lambda$2(SituationScreen situationScreen) {
+    public static final Unit lambda$0$2(SituationScreen situationScreen) {
         SAMPUIElement.notifyClick$default(situationScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$5$lambda$3(SituationScreen situationScreen) {
+    public static final Unit lambda$0$3(SituationScreen situationScreen) {
         SAMPUIElement.notifyClick$default(situationScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$5$lambda$4(SituationScreen situationScreen, SituationScreenBinding situationScreenBinding) {
+    public static final Unit lambda$0$4(SituationScreen situationScreen, SituationScreenBinding situationScreenBinding) {
         boolean z = situationScreen.isMoreInfoOpened;
         situationScreen.isMoreInfoOpened = !z;
         if (!z) {
@@ -164,9 +164,9 @@ public final class SituationScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, mainPageCloseButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit alertInfo$lambda$9$lambda$6;
-                alertInfo$lambda$9$lambda$6 = SituationScreen.setAlertInfo$lambda$9$lambda$6(SituationScreen.this);
-                return alertInfo$lambda$9$lambda$6;
+                Unit alertInfo$lambda$0$0;
+                alertInfo$lambda$0$0 = SituationScreen.setAlertInfo$lambda$0$0(SituationScreen.this);
+                return alertInfo$lambda$0$0;
             }
         }, 3, null);
         if (alertInfo.getJoinable()) {
@@ -177,9 +177,9 @@ public final class SituationScreen extends SAMPUIElement {
             EasyAnimation.animateClick$default(easyAnimation2, mainPageActionButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit alertInfo$lambda$9$lambda$7;
-                    alertInfo$lambda$9$lambda$7 = SituationScreen.setAlertInfo$lambda$9$lambda$7(SituationScreen.this);
-                    return alertInfo$lambda$9$lambda$7;
+                    Unit alertInfo$lambda$0$1;
+                    alertInfo$lambda$0$1 = SituationScreen.setAlertInfo$lambda$0$1(SituationScreen.this);
+                    return alertInfo$lambda$0$1;
                 }
             }, 3, null);
             return;
@@ -188,19 +188,19 @@ public final class SituationScreen extends SAMPUIElement {
         situationScreenBinding.mainPageActionButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SituationScreen.setAlertInfo$lambda$9$lambda$8(view);
+                SituationScreen.setAlertInfo$lambda$0$2(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setAlertInfo$lambda$9$lambda$6(SituationScreen situationScreen) {
+    public static final Unit setAlertInfo$lambda$0$0(SituationScreen situationScreen) {
         SAMPUIElement.notifyClick$default(situationScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setAlertInfo$lambda$9$lambda$7(SituationScreen situationScreen) {
+    public static final Unit setAlertInfo$lambda$0$1(SituationScreen situationScreen) {
         SAMPUIElement.notifyClick$default(situationScreen, 0, 1, null, 4, null);
         return Unit.INSTANCE;
     }

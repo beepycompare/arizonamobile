@@ -163,9 +163,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         ComponentActivityKt.setContent$default(updateActivity, null, ComposableLambdaKt.composableLambdaInstance(-1020785817, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit onCreate$lambda$2;
-                onCreate$lambda$2 = UpdateActivity.onCreate$lambda$2(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
-                return onCreate$lambda$2;
+                Unit onCreate$lambda$0;
+                onCreate$lambda$0 = UpdateActivity.onCreate$lambda$0(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
+                return onCreate$lambda$0;
             }
         }), 1, null);
         String stringExtra = getIntent().getStringExtra(UPDATE_MODE);
@@ -179,7 +179,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onCreate$lambda$2(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
+    public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C104@3886L175,104@3861L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -190,9 +190,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[0], ComposableLambdaKt.rememberComposableLambda(-413695961, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit onCreate$lambda$2$lambda$1;
-                    onCreate$lambda$2$lambda$1 = UpdateActivity.onCreate$lambda$2$lambda$1(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
-                    return onCreate$lambda$2$lambda$1;
+                    Unit onCreate$lambda$0$0;
+                    onCreate$lambda$0$0 = UpdateActivity.onCreate$lambda$0$0(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
+                    return onCreate$lambda$0$0;
                 }
             }, composer, 54), composer, 48);
             if (ComposerKt.isTraceInProgress()) {
@@ -203,7 +203,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onCreate$lambda$2$lambda$1(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
+    public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C105@3923L124,105@3904L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -214,9 +214,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(-298306341, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit onCreate$lambda$2$lambda$1$lambda$0;
-                    onCreate$lambda$2$lambda$1$lambda$0 = UpdateActivity.onCreate$lambda$2$lambda$1$lambda$0(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
-                    return onCreate$lambda$2$lambda$1$lambda$0;
+                    Unit onCreate$lambda$0$0$0;
+                    onCreate$lambda$0$0$0 = UpdateActivity.onCreate$lambda$0$0$0(DownloadScreenComponent.this, (Composer) obj, ((Integer) obj2).intValue());
+                    return onCreate$lambda$0$0$0;
                 }
             }, composer, 54), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 3);
             if (ComposerKt.isTraceInProgress()) {
@@ -227,7 +227,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onCreate$lambda$2$lambda$1$lambda$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
+    public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C106@3945L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -372,9 +372,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$5;
-                                    handleMessage$lambda$5 = UpdateActivity.IncomingHandler.handleMessage$lambda$5(UpdateActivity.this);
-                                    return handleMessage$lambda$5;
+                                    Unit handleMessage$lambda$4;
+                                    handleMessage$lambda$4 = UpdateActivity.IncomingHandler.handleMessage$lambda$4(UpdateActivity.this);
+                                    return handleMessage$lambda$4;
                                 }
                             });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore2 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -386,17 +386,17 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda4
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$7;
-                                    handleMessage$lambda$7 = UpdateActivity.IncomingHandler.handleMessage$lambda$7(UpdateActivity.this);
-                                    return handleMessage$lambda$7;
+                                    Unit handleMessage$lambda$6;
+                                    handleMessage$lambda$6 = UpdateActivity.IncomingHandler.handleMessage$lambda$6(UpdateActivity.this);
+                                    return handleMessage$lambda$6;
                                 }
                             });
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda5
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$8;
-                                    handleMessage$lambda$8 = UpdateActivity.IncomingHandler.handleMessage$lambda$8(UpdateActivity.this);
-                                    return handleMessage$lambda$8;
+                                    Unit handleMessage$lambda$7;
+                                    handleMessage$lambda$7 = UpdateActivity.IncomingHandler.handleMessage$lambda$7(UpdateActivity.this);
+                                    return handleMessage$lambda$7;
                                 }
                             });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore3 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -408,9 +408,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda6
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$10;
-                                    handleMessage$lambda$10 = UpdateActivity.IncomingHandler.handleMessage$lambda$10(UpdateActivity.this);
-                                    return handleMessage$lambda$10;
+                                    Unit handleMessage$lambda$9;
+                                    handleMessage$lambda$9 = UpdateActivity.IncomingHandler.handleMessage$lambda$9(UpdateActivity.this);
+                                    return handleMessage$lambda$9;
                                 }
                             });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore4 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -492,17 +492,17 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda7
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$17;
-                                    handleMessage$lambda$17 = UpdateActivity.IncomingHandler.handleMessage$lambda$17(UpdateActivity.this);
-                                    return handleMessage$lambda$17;
+                                    Unit handleMessage$lambda$16;
+                                    handleMessage$lambda$16 = UpdateActivity.IncomingHandler.handleMessage$lambda$16(UpdateActivity.this);
+                                    return handleMessage$lambda$16;
                                 }
                             });
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda8
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit handleMessage$lambda$18;
-                                    handleMessage$lambda$18 = UpdateActivity.IncomingHandler.handleMessage$lambda$18(UpdateActivity.this);
-                                    return handleMessage$lambda$18;
+                                    Unit handleMessage$lambda$17;
+                                    handleMessage$lambda$17 = UpdateActivity.IncomingHandler.handleMessage$lambda$17(UpdateActivity.this);
+                                    return handleMessage$lambda$17;
                                 }
                             });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore9 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -548,7 +548,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$5(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$4(UpdateActivity updateActivity) {
             DownloadExternalUiState value;
             if (!updateActivity.isOnline()) {
                 updateActivity.mIsStartingUpdate = false;
@@ -568,14 +568,14 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$7(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$6(UpdateActivity updateActivity) {
             updateActivity.setUpdateServiceAsBackground();
             updateActivity.finishAffinity();
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$8(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$7(UpdateActivity updateActivity) {
             updateActivity.mIsStartingUpdate = false;
             updateActivity.requestUpdateGameData();
             updateActivity.hideDialog();
@@ -583,20 +583,20 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$10(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$9(UpdateActivity updateActivity) {
             updateActivity.setUpdateServiceAsBackground();
             updateActivity.finishAffinity();
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$17(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$16(UpdateActivity updateActivity) {
             updateActivity.finishAffinity();
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit handleMessage$lambda$18(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$17(UpdateActivity updateActivity) {
             updateActivity.startDownloadLauncherUpdate();
             updateActivity.hideDialog();
             return Unit.INSTANCE;
@@ -612,9 +612,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit checkFreeSpace$lambda$3;
-                    checkFreeSpace$lambda$3 = UpdateActivity.checkFreeSpace$lambda$3(UpdateActivity.this);
-                    return checkFreeSpace$lambda$3;
+                    Unit checkFreeSpace$lambda$0;
+                    checkFreeSpace$lambda$0 = UpdateActivity.checkFreeSpace$lambda$0(UpdateActivity.this);
+                    return checkFreeSpace$lambda$0;
                 }
             });
             MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
@@ -626,7 +626,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkFreeSpace$lambda$3(UpdateActivity updateActivity) {
+    public static final Unit checkFreeSpace$lambda$0(UpdateActivity updateActivity) {
         updateActivity.finishAffinity();
         return Unit.INSTANCE;
     }

@@ -212,14 +212,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m8670x91f594d8(colorStateList, materialShapeDrawable, colorOrNull, valueAnimator);
+                AppBarLayout.this.m8679x91f594d8(colorStateList, materialShapeDrawable, colorOrNull, valueAnimator);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithColor$0$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m8670x91f594d8(ColorStateList colorStateList, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8679x91f594d8(ColorStateList colorStateList, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
         Integer num2;
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         int layer = MaterialColors.layer(this.backgroundOriginalColor, colorStateList.getDefaultColor(), floatValue);
@@ -248,14 +248,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m8671x84b6053(materialShapeDrawable, valueAnimator);
+                AppBarLayout.this.m8680x84b6053(materialShapeDrawable, valueAnimator);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithElevation$1$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m8671x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8680x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         materialShapeDrawable.setElevation(floatValue);
         Drawable drawable = this.statusBarForeground;

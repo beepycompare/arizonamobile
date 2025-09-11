@@ -13,7 +13,7 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class C0431mc implements InterfaceC0379kc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Pe f987a = new Pe();
+    public final Pe f991a = new Pe();
     public final Ub b = new Ub();
     public final C0683wc c = new C0683wc();
 
@@ -45,7 +45,7 @@ public final class C0431mc implements InterfaceC0379kc {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi
     public final PermissionExtractor getPermissionExtractor() {
-        return this.f987a;
+        return this.f991a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider

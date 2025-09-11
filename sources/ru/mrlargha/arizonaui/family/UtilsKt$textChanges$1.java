@@ -17,7 +17,7 @@ import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.family.UtilsKt$textChanges$1", f = "Utils.kt", i = {0, 0}, l = {26}, m = "invokeSuspend", n = {"$this$callbackFlow", "watcher"}, s = {"L$0", "L$1"})
+@DebugMetadata(c = "ru.mrlargha.arizonaui.family.UtilsKt$textChanges$1", f = "Utils.kt", i = {0, 0}, l = {26}, m = "invokeSuspend", n = {"$this$callbackFlow", "watcher"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes5.dex */
 final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<ProducerScope<? super String>, Continuation<? super Unit>, Object> {
     final /* synthetic */ EditText $this_textChanges;

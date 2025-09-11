@@ -62,7 +62,7 @@ public final class PlayerListDialog extends AbstractDialog {
         bind.rvPLayerList.setScrollBarFadeDuration(0);
         TextInputEditText userInput = bind.userInput;
         Intrinsics.checkNotNullExpressionValue(userInput, "userInput");
-        userInput.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$_init_$lambda$8$$inlined$addTextChangedListener$default$1
+        userInput.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$_init_$lambda$0$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i3, int i4, int i5) {
             }
@@ -98,25 +98,25 @@ public final class PlayerListDialog extends AbstractDialog {
         bind.userInput.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                PlayerListDialog.lambda$8$lambda$2(targetActivity, view, z);
+                PlayerListDialog.lambda$0$1(targetActivity, view, z);
             }
         });
         bind.textInputLayout.setEndIconOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PlayerListDialog.lambda$8$lambda$4(PlayerListDialog.this, bind, view);
+                PlayerListDialog.lambda$0$2(PlayerListDialog.this, bind, view);
             }
         });
         bind.userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$$ExternalSyntheticLambda2
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-                return PlayerListDialog.lambda$8$lambda$5(targetActivity, bind, textView, i3, keyEvent);
+                return PlayerListDialog.lambda$0$3(targetActivity, bind, textView, i3, keyEvent);
             }
         });
         bind.rvPLayerList.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                return PlayerListDialog.lambda$8$lambda$6(targetActivity, view, motionEvent);
+                return PlayerListDialog.lambda$0$4(targetActivity, view, motionEvent);
             }
         });
         bind.header.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog$$ExternalSyntheticLambda4
@@ -129,7 +129,7 @@ public final class PlayerListDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$8$lambda$2(Activity activity, View view, boolean z) {
+    public static final void lambda$0$1(Activity activity, View view, boolean z) {
         if (z) {
             return;
         }
@@ -137,7 +137,7 @@ public final class PlayerListDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$8$lambda$4(PlayerListDialog playerListDialog, PlayerListDialogBinding playerListDialogBinding, View view) {
+    public static final void lambda$0$2(PlayerListDialog playerListDialog, PlayerListDialogBinding playerListDialogBinding, View view) {
         Editable text;
         PlayersListAdapter playersListAdapter = playerListDialog.playerListAdapter;
         ArrayList arrayList = new ArrayList();
@@ -155,7 +155,7 @@ public final class PlayerListDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$8$lambda$5(Activity activity, PlayerListDialogBinding playerListDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean lambda$0$3(Activity activity, PlayerListDialogBinding playerListDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
             Object systemService = activity.getSystemService("input_method");
             Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
@@ -166,7 +166,7 @@ public final class PlayerListDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$8$lambda$6(Activity activity, View view, MotionEvent motionEvent) {
+    public static final boolean lambda$0$4(Activity activity, View view, MotionEvent motionEvent) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         return false;
     }

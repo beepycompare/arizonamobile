@@ -25,6 +25,13 @@ public final class MobilePhoneMessengerEmojiAdapter extends RecyclerView.Adapter
         this(null, 1, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public MobilePhoneMessengerEmojiAdapter(Function1<? super EmojiItem, Unit> onEmojiSelect) {
+        Intrinsics.checkNotNullParameter(onEmojiSelect, "onEmojiSelect");
+        this.onEmojiSelect = onEmojiSelect;
+        this.emojiList = new ArrayList();
+    }
+
     public /* synthetic */ MobilePhoneMessengerEmojiAdapter(Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerEmojiAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -46,13 +53,6 @@ public final class MobilePhoneMessengerEmojiAdapter extends RecyclerView.Adapter
         return this.onEmojiSelect;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public MobilePhoneMessengerEmojiAdapter(Function1<? super EmojiItem, Unit> onEmojiSelect) {
-        Intrinsics.checkNotNullParameter(onEmojiSelect, "onEmojiSelect");
-        this.onEmojiSelect = onEmojiSelect;
-        this.emojiList = new ArrayList();
-    }
-
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MobilePhoneMessengerEmojiViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
@@ -69,13 +69,13 @@ public final class MobilePhoneMessengerEmojiAdapter extends RecyclerView.Adapter
         holder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerEmojiAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhoneMessengerEmojiAdapter.onBindViewHolder$lambda$2(MobilePhoneMessengerEmojiAdapter.this, emojiItem, view);
+                MobilePhoneMessengerEmojiAdapter.onBindViewHolder$lambda$1(MobilePhoneMessengerEmojiAdapter.this, emojiItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(MobilePhoneMessengerEmojiAdapter mobilePhoneMessengerEmojiAdapter, EmojiItem emojiItem, View view) {
+    public static final void onBindViewHolder$lambda$1(MobilePhoneMessengerEmojiAdapter mobilePhoneMessengerEmojiAdapter, EmojiItem emojiItem, View view) {
         mobilePhoneMessengerEmojiAdapter.onEmojiSelect.invoke(emojiItem);
     }
 

@@ -56,6 +56,7 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
     public void onBindViewHolder(MenuItemViewHolder holder, int i) {
         int i2;
         String str;
+        int parseColor;
         Intrinsics.checkNotNullParameter(holder, "holder");
         final Integer num = (Integer) CollectionsKt.getOrNull(this.items, i);
         FamilyMenuItemBinding binding = holder.getBinding();
@@ -64,71 +65,114 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
             return;
         }
         binding.getRoot().setVisibility(0);
-        if (num.intValue() == 0) {
-            i2 = R.drawable.family_menu_ic_home;
-        } else if (num.intValue() == 1) {
-            i2 = R.drawable.family_menu_ic_members;
-        } else if (num.intValue() == 2) {
-            i2 = R.drawable.family_menu_ic_wars;
-        } else if (num.intValue() == 3) {
-            i2 = R.drawable.family_menu_ic_shop;
-        } else if (num.intValue() == 4) {
-            i2 = R.drawable.family_menu_ic_settings;
-        } else if (num.intValue() == 5) {
-            i2 = R.drawable.family_menu_ic_apart;
-        } else if (num.intValue() == 6) {
-            i2 = R.drawable.family_menu_ic_estate;
-        } else if (num.intValue() == 7) {
-            i2 = R.drawable.family_menu_ic_charter;
-        } else if (num.intValue() == 8) {
-            i2 = R.drawable.family_menu_ic_info;
-        } else {
-            i2 = num.intValue() == 9 ? R.drawable.family_menu_ic_leave : R.drawable.family_menu_ic_info;
+        switch (num.intValue()) {
+            case 0:
+                i2 = R.drawable.family_menu_ic_home;
+                break;
+            case 1:
+                i2 = R.drawable.family_menu_ic_members;
+                break;
+            case 2:
+                i2 = R.drawable.family_menu_ic_wars;
+                break;
+            case 3:
+                i2 = R.drawable.family_menu_ic_shop;
+                break;
+            case 4:
+                i2 = R.drawable.family_menu_ic_settings;
+                break;
+            case 5:
+                i2 = R.drawable.family_menu_ic_apart;
+                break;
+            case 6:
+                i2 = R.drawable.family_menu_ic_estate;
+                break;
+            case 7:
+                i2 = R.drawable.family_menu_ic_charter;
+                break;
+            case 8:
+                i2 = R.drawable.family_menu_ic_info;
+                break;
+            case 9:
+                i2 = R.drawable.family_menu_ic_leave;
+                break;
+            default:
+                i2 = R.drawable.family_menu_ic_info;
+                break;
         }
         String str2 = "???";
-        if (num.intValue() == 0) {
-            str = "Главный раздел";
-        } else if (num.intValue() == 1) {
-            str = "Участники";
-        } else if (num.intValue() == 2) {
-            str = "Войны за территории";
-        } else if (num.intValue() == 3) {
-            str = "Семейный магазин";
-        } else if (num.intValue() == 4) {
-            str = "Управление семьей";
-        } else if (num.intValue() == 5) {
-            str = "Семейная квартира";
-        } else if (num.intValue() == 6) {
-            str = "Семейное поместье";
-        } else if (num.intValue() == 7) {
-            str = "Частная фракция";
-        } else if (num.intValue() == 8) {
-            str = "Доп. информация";
+        switch (num.intValue()) {
+            case 0:
+                str = "Главный раздел";
+                break;
+            case 1:
+                str = "Участники";
+                break;
+            case 2:
+                str = "Войны за территории";
+                break;
+            case 3:
+                str = "Семейный магазин";
+                break;
+            case 4:
+                str = "Управление семьей";
+                break;
+            case 5:
+                str = "Семейная квартира";
+                break;
+            case 6:
+                str = "Семейное поместье";
+                break;
+            case 7:
+                str = "Частная фракция";
+                break;
+            case 8:
+                str = "Доп. информация";
+                break;
+            case 9:
+                str = "Покинуть";
+                break;
+            default:
+                str = "???";
+                break;
+        }
+        switch (num.intValue()) {
+            case 0:
+                str2 = "Информация о вашей\nсемье";
+                break;
+            case 1:
+                str2 = "Члены вашей семьи";
+                break;
+            case 2:
+                str2 = "Список встреч и информация о ваших территориях";
+                break;
+            case 3:
+                str2 = "Магазин аксессуаров за семейные монеты";
+                break;
+            case 4:
+                str2 = "Общие элементы управления и настроек";
+                break;
+            case 5:
+                str2 = "Информация о квартире и улучшениях";
+                break;
+            case 6:
+                str2 = "Информация о поместье и улучшениях";
+                break;
+            case 7:
+                str2 = "Управление частной фракцией";
+                break;
+            case 8:
+                str2 = "Улучшения, бонусы, список команд, ограничения заместителей";
+                break;
+            case 9:
+                str2 = "Покинуть состав семьи";
+                break;
+        }
+        if (num.intValue() == 6) {
+            parseColor = Color.parseColor("#1AE1AA33");
         } else {
-            str = num.intValue() == 9 ? "Покинуть" : "???";
+            parseColor = Color.parseColor("#0DFFFFFF");
         }
-        if (num.intValue() == 0) {
-            str2 = "Информация о вашей\nсемье";
-        } else if (num.intValue() == 1) {
-            str2 = "Члены вашей семьи";
-        } else if (num.intValue() == 2) {
-            str2 = "Список встреч и информация о ваших территориях";
-        } else if (num.intValue() == 3) {
-            str2 = "Магазин аксессуаров за семейные монеты";
-        } else if (num.intValue() == 4) {
-            str2 = "Общие элементы управления и настроек";
-        } else if (num.intValue() == 5) {
-            str2 = "Информация о квартире и улучшениях";
-        } else if (num.intValue() == 6) {
-            str2 = "Информация о поместье и улучшениях";
-        } else if (num.intValue() == 7) {
-            str2 = "Управление частной фракцией";
-        } else if (num.intValue() == 8) {
-            str2 = "Улучшения, бонусы, список команд, ограничения заместителей";
-        } else if (num.intValue() == 9) {
-            str2 = "Покинуть состав семьи";
-        }
-        int parseColor = num.intValue() == 6 ? Color.parseColor("#1AE1AA33") : Color.parseColor("#0DFFFFFF");
         if (num.intValue() == 6) {
             binding.stroke.setVisibility(0);
             binding.itemTitle.setTextColor(this.estateColor);
@@ -151,13 +195,13 @@ public final class MainMenuAdapter extends RecyclerView.Adapter<MenuItemViewHold
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.MainMenuAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainMenuAdapter.onBindViewHolder$lambda$1$lambda$0(MainMenuAdapter.this, num, view);
+                MainMenuAdapter.onBindViewHolder$lambda$0$0(MainMenuAdapter.this, num, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(MainMenuAdapter mainMenuAdapter, Integer num, View view) {
+    public static final void onBindViewHolder$lambda$0$0(MainMenuAdapter mainMenuAdapter, Integer num, View view) {
         mainMenuAdapter.onClick.invoke(num);
     }
 

@@ -204,14 +204,14 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.CharterAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CharterAdapter.onBindViewHolder$lambda$1$lambda$0(CharterAdapter.this, intValue, view);
+                    CharterAdapter.onBindViewHolder$lambda$0$0(CharterAdapter.this, intValue, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(CharterAdapter charterAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(CharterAdapter charterAdapter, int i, View view) {
         charterAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

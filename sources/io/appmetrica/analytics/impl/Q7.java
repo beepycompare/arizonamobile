@@ -8,23 +8,23 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Q7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final P7 f633a;
+    public final P7 f637a;
 
     public Q7() {
         this(null, 1, null);
     }
 
     public final byte[] a(R7 r7) {
-        return MessageNano.toByteArray(this.f633a.fromModel(r7));
+        return MessageNano.toByteArray(this.f637a.fromModel(r7));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f633a.fromModel((R7) obj));
+        return MessageNano.toByteArray(this.f637a.fromModel((R7) obj));
     }
 
     public Q7(P7 p7) {
-        this.f633a = p7;
+        this.f637a = p7;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x000d, code lost:
@@ -45,7 +45,7 @@ public final class Q7 implements Converter {
             }
         }
         o7 = new O7();
-        return this.f633a.toModel(o7);
+        return this.f637a.toModel(o7);
     }
 
     public /* synthetic */ Q7(P7 p7, int i, DefaultConstructorMarker defaultConstructorMarker) {

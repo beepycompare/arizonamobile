@@ -4,21 +4,21 @@ package io.appmetrica.analytics.impl;
 public final class C0612tg implements Og {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ag f1092a;
+    public final /* synthetic */ Ag f1096a;
 
     public C0612tg(Ag ag) {
-        this.f1092a = ag;
+        this.f1096a = ag;
     }
 
     @Override // io.appmetrica.analytics.impl.Og
     public final void a(Jg jg) {
-        Ag ag = this.f1092a;
+        Ag ag = this.f1096a;
         Ag.a(ag, jg, (InterfaceC0587sg) ag.d.getValue());
     }
 
     @Override // io.appmetrica.analytics.impl.Og
     public final void a(Throwable th) {
-        Ag ag = this.f1092a;
+        Ag ag = this.f1096a;
         Ag.a(ag, null, (InterfaceC0587sg) ag.d.getValue());
     }
 }

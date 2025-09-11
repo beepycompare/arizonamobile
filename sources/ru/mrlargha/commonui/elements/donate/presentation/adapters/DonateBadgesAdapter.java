@@ -139,15 +139,15 @@ public final class DonateBadgesAdapter extends ListAdapter<DonateBadgesModelUi, 
             return new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBadgesAdapter$DonateBadgesTimeViewHolder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onBind$lambda$2$lambda$1;
-                    onBind$lambda$2$lambda$1 = DonateBadgesAdapter.DonateBadgesTimeViewHolder.onBind$lambda$2$lambda$1(DonateBadgesTimeItemBinding.this);
-                    return onBind$lambda$2$lambda$1;
+                    Unit onBind$lambda$0$1;
+                    onBind$lambda$0$1 = DonateBadgesAdapter.DonateBadgesTimeViewHolder.onBind$lambda$0$1(DonateBadgesTimeItemBinding.this);
+                    return onBind$lambda$0$1;
                 }
             };
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit onBind$lambda$2$lambda$1(DonateBadgesTimeItemBinding donateBadgesTimeItemBinding) {
+        public static final Unit onBind$lambda$0$1(DonateBadgesTimeItemBinding donateBadgesTimeItemBinding) {
             LinearLayout root = donateBadgesTimeItemBinding.getRoot();
             Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
             root.setVisibility(8);

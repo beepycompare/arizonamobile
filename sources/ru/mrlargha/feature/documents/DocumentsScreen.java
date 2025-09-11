@@ -106,11 +106,11 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$7(View view) {
+    public static final void setNavigation$lambda$0$0(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setTabsVisibility$lambda$5$lambda$3(View view) {
+    public static final void setTabsVisibility$lambda$0$0(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,9 +138,9 @@ public final class DocumentsScreen extends SAMPUIElement {
         this.vipTypeAdapter = new VipTypeAdapter(new Function1() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vipTypeAdapter$lambda$1;
-                vipTypeAdapter$lambda$1 = DocumentsScreen.vipTypeAdapter$lambda$1(DocumentsScreen.this, ((Integer) obj).intValue());
-                return vipTypeAdapter$lambda$1;
+                Unit vipTypeAdapter$lambda$0;
+                vipTypeAdapter$lambda$0 = DocumentsScreen.vipTypeAdapter$lambda$0(DocumentsScreen.this, ((Integer) obj).intValue());
+                return vipTypeAdapter$lambda$0;
             }
         });
         this.transportAdapter = new TransportAdapter(targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._6sdp), targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._10sdp));
@@ -162,7 +162,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vipTypeAdapter$lambda$1(DocumentsScreen documentsScreen, int i) {
+    public static final Unit vipTypeAdapter$lambda$0(DocumentsScreen documentsScreen, int i) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         documentsScreen.notifyClick(0, 1, String.valueOf(i));
         return Unit.INSTANCE;
@@ -302,7 +302,7 @@ public final class DocumentsScreen extends SAMPUIElement {
         documentsLayoutBinding.btnVip.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setTabsVisibility$lambda$5$lambda$3(view);
+                DocumentsScreen.setTabsVisibility$lambda$0$0(view);
             }
         });
         Integer num = (Integer) CollectionsKt.getOrNull(intToBitArrayMSB, 0);
@@ -336,14 +336,14 @@ public final class DocumentsScreen extends SAMPUIElement {
             documentsLayoutBinding.btnVip.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DocumentsScreen.setTabsVisibility$lambda$5$lambda$4(DocumentsScreen.this, view);
+                    DocumentsScreen.setTabsVisibility$lambda$0$1(DocumentsScreen.this, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setTabsVisibility$lambda$5$lambda$4(DocumentsScreen documentsScreen, View view) {
+    public static final void setTabsVisibility$lambda$0$1(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Vip.getValue(), 3, null, 4, null);
     }
 
@@ -360,85 +360,85 @@ public final class DocumentsScreen extends SAMPUIElement {
         documentsLayoutBinding.documents.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$7(view);
+                DocumentsScreen.setNavigation$lambda$0$0(view);
             }
         });
         documentsLayoutBinding.btnMain.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$8(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$1(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnLicenses.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$9(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$2(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnHealth.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$10(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$3(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnArmy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$11(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$4(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnProperty.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$12(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$5(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnTransport.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$13(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$6(DocumentsScreen.this, view);
             }
         });
         documentsLayoutBinding.btnEsc.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DocumentsScreen.setNavigation$lambda$15$lambda$14(DocumentsScreen.this, view);
+                DocumentsScreen.setNavigation$lambda$0$7(DocumentsScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$8(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$1(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Main.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$9(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$2(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Licenses.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$10(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$3(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Health.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$11(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$4(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Army.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$12(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$5(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Property.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$13(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$6(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, DocumentsBites.Transport.getValue(), 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setNavigation$lambda$15$lambda$14(DocumentsScreen documentsScreen, View view) {
+    public static final void setNavigation$lambda$0$7(DocumentsScreen documentsScreen, View view) {
         SAMPUIElement.notifyClick$default(documentsScreen, 0, 0, null, 4, null);
     }
 
@@ -495,7 +495,7 @@ public final class DocumentsScreen extends SAMPUIElement {
             documentsLayoutBinding.main.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DocumentsScreen.setMainInfo$lambda$18$lambda$17(DocumentsScreen.this, view);
+                    DocumentsScreen.setMainInfo$lambda$0$0(DocumentsScreen.this, view);
                 }
             });
             return;
@@ -532,7 +532,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setMainInfo$lambda$18$lambda$17(DocumentsScreen documentsScreen, View view) {
+    public static final void setMainInfo$lambda$0$0(DocumentsScreen documentsScreen, View view) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         SAMPUIElement.notifyClick$default(documentsScreen, 0, 2, null, 4, null);
     }
@@ -1193,7 +1193,7 @@ public final class DocumentsScreen extends SAMPUIElement {
             documentsLayoutBinding.health.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DocumentsScreen.setHealthInfo$lambda$62$lambda$61(DocumentsScreen.this, view);
+                    DocumentsScreen.setHealthInfo$lambda$0$0(DocumentsScreen.this, view);
                 }
             });
             return;
@@ -1285,7 +1285,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setHealthInfo$lambda$62$lambda$61(DocumentsScreen documentsScreen, View view) {
+    public static final void setHealthInfo$lambda$0$0(DocumentsScreen documentsScreen, View view) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         SAMPUIElement.notifyClick$default(documentsScreen, 1, 2, null, 4, null);
     }
@@ -1364,13 +1364,13 @@ public final class DocumentsScreen extends SAMPUIElement {
                 documentsLayoutBinding.vip.documentsButton1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DocumentsScreen.setVipInfo$lambda$78$lambda$73(DocumentsScreen.this, view);
+                        DocumentsScreen.setVipInfo$lambda$0$0(DocumentsScreen.this, view);
                     }
                 });
                 documentsLayoutBinding.vip.documentsButton2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DocumentsScreen.setVipInfo$lambda$78$lambda$74(DocumentsScreen.this, view);
+                        DocumentsScreen.setVipInfo$lambda$0$1(DocumentsScreen.this, view);
                     }
                 });
                 documentsLayoutBinding.vip.vipInfo.setVisibility(8);
@@ -1421,13 +1421,13 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setVipInfo$lambda$78$lambda$73(DocumentsScreen documentsScreen, View view) {
+    public static final void setVipInfo$lambda$0$0(DocumentsScreen documentsScreen, View view) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         documentsScreen.notifyClick(1, 1, String.valueOf(view));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setVipInfo$lambda$78$lambda$74(DocumentsScreen documentsScreen, View view) {
+    public static final void setVipInfo$lambda$0$1(DocumentsScreen documentsScreen, View view) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         documentsScreen.notifyClick(2, 1, String.valueOf(view));
     }

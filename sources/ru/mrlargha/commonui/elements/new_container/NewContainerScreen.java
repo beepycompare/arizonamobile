@@ -74,7 +74,7 @@ public final class NewContainerScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.new_container.NewContainerScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return NewContainerScreen.lambda$2$lambda$0(NewContainerScreen.this);
+                return NewContainerScreen.lambda$0$0(NewContainerScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -83,19 +83,19 @@ public final class NewContainerScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, exitButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.new_container.NewContainerScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return NewContainerScreen.lambda$2$lambda$1(NewContainerScreen.this);
+                return NewContainerScreen.lambda$0$1(NewContainerScreen.this);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$0(NewContainerScreen newContainerScreen) {
+    public static final Unit lambda$0$0(NewContainerScreen newContainerScreen) {
         SAMPUIElement.notifyClick$default(newContainerScreen, 0, 1, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$1(NewContainerScreen newContainerScreen) {
+    public static final Unit lambda$0$1(NewContainerScreen newContainerScreen) {
         SAMPUIElement.notifyClick$default(newContainerScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }

@@ -60,7 +60,7 @@ public final class NotificationItemKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M997.9,14.8C995.6,6.1 987.7,0 978.6,0H20.1C6.9,0 -2.6,12.5 0.8,25.2L92.1,364.2C94.4,372.9 102.3,379 111.4,379H1069.9C1083.1,379 1092.6,366.5 1089.2,353.8L997.9,14.8Z"), null, 1, null);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NotificationItem$lambda$9(NotificationModel notificationModel, int i, Composer composer, int i2) {
+    public static final Unit NotificationItem$lambda$2(NotificationModel notificationModel, int i, Composer composer, int i2) {
         NotificationItem(notificationModel, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -80,7 +80,7 @@ public final class NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-753000446, i2, -1, "com.miami.game.feature.notifications.presentation.NotificationItem (NotificationItem.kt:42)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2078919806, "CC(remember):NotificationItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2078920190, "CC(remember):NotificationItem.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new NotificationShape();
@@ -126,9 +126,9 @@ public final class NotificationItemKt {
                 rememberedValue2 = new Function1() { // from class: com.miami.game.feature.notifications.presentation.NotificationItemKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit NotificationItem$lambda$8$lambda$3$lambda$2;
-                        NotificationItem$lambda$8$lambda$3$lambda$2 = NotificationItemKt.NotificationItem$lambda$8$lambda$3$lambda$2((ContentDrawScope) obj);
-                        return NotificationItem$lambda$8$lambda$3$lambda$2;
+                        Unit NotificationItem$lambda$1$0$0;
+                        NotificationItem$lambda$1$0$0 = NotificationItemKt.NotificationItem$lambda$1$0$0((ContentDrawScope) obj);
+                        return NotificationItem$lambda$1$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -165,7 +165,7 @@ public final class NotificationItemKt {
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1889896846, "C56@2172L78,57@2264L255:NotificationItem.kt#21zkme");
             float f3 = 32;
-            AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(40), OffsetKt.m786offsetVpY3zN4(Modifier.Companion, Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f3)), startRestartGroup, 438, 0);
+            AnimatedLoadingKt.m8929AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(40), OffsetKt.m786offsetVpY3zN4(Modifier.Companion, Dp.m7251constructorimpl(f3), Dp.m7251constructorimpl(f3)), startRestartGroup, 438, 0);
             SingletonAsyncImageKt.m8334AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -265,9 +265,9 @@ public final class NotificationItemKt {
             SpacerKt.Spacer(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(2)), startRestartGroup, 6);
             float f4 = 24;
             composer2 = startRestartGroup;
-            TextKt.m2804Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2804Text4IGK_g(notificationModel.getTitle(), (Modifier) null, ColorKt.Color(4294046193L), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             float f5 = 11;
-            TextKt.m2804Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2804Text4IGK_g(notificationModel.getText(), (Modifier) null, ColorKt.Color(4291150552L), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f5), composer2, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -304,16 +304,16 @@ public final class NotificationItemKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.notifications.presentation.NotificationItemKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NotificationItem$lambda$9;
-                    NotificationItem$lambda$9 = NotificationItemKt.NotificationItem$lambda$9(NotificationModel.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NotificationItem$lambda$9;
+                    Unit NotificationItem$lambda$2;
+                    NotificationItem$lambda$2 = NotificationItemKt.NotificationItem$lambda$2(NotificationModel.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NotificationItem$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NotificationItem$lambda$8$lambda$3$lambda$2(ContentDrawScope drawWithContent) {
+    public static final Unit NotificationItem$lambda$1$0$0(ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         Path path2 = path;
         int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();

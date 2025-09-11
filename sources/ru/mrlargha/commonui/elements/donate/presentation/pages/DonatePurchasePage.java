@@ -30,14 +30,6 @@ public final class DonatePurchasePage extends DonatePage {
     private final Function1<DonateBoostModelUi, Unit> openDialog;
     private final DonatePurchaseAdapter purchaseAdapter;
 
-    public final DonatePurchasePageBinding getBinding() {
-        return this.binding;
-    }
-
-    public final Function1<DonateBoostModelUi, Unit> getOpenDialog() {
-        return this.openDialog;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public DonatePurchasePage(int i, Activity targetActivity, DonateOnItemCompleteListeners onItemCompleteListeners, DonatePurchasePageBinding binding, Function1<? super DonateBoostModelUi, Unit> openDialog) {
@@ -53,6 +45,14 @@ public final class DonatePurchasePage extends DonatePage {
         binding.rvPurchaseItems.setAdapter(donatePurchaseAdapter);
         binding.rvPurchaseItems.setHorizontalScrollBarEnabled(true);
         binding.rvPurchaseItems.setScrollbarFadingEnabled(false);
+    }
+
+    public final DonatePurchasePageBinding getBinding() {
+        return this.binding;
+    }
+
+    public final Function1<DonateBoostModelUi, Unit> getOpenDialog() {
+        return this.openDialog;
     }
 
     @Override // ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePage
@@ -79,13 +79,13 @@ public final class DonatePurchasePage extends DonatePage {
         this.purchaseAdapter.submitList(arrayList, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DonatePurchasePage.setPurchaseList$lambda$3(DonatePurchasePage.this);
+                DonatePurchasePage.setPurchaseList$lambda$2(DonatePurchasePage.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setPurchaseList$lambda$3(DonatePurchasePage donatePurchasePage) {
+    public static final void setPurchaseList$lambda$2(DonatePurchasePage donatePurchasePage) {
         donatePurchasePage.getOnItemCompleteListeners().itemReadyToShow();
     }
 

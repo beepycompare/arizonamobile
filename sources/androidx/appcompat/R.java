@@ -605,9 +605,9 @@ public final class R {
         public static int btn_radio_off_to_on_mtrl_animation = 0x7f0804a8;
         public static int btn_radio_on_mtrl = 0x7f0804a9;
         public static int btn_radio_on_to_off_mtrl_animation = 0x7f0804aa;
-        public static int test_level_drawable = 0x7f080d08;
-        public static int tooltip_frame_dark = 0x7f080d0b;
-        public static int tooltip_frame_light = 0x7f080d0c;
+        public static int test_level_drawable = 0x7f080d0f;
+        public static int tooltip_frame_dark = 0x7f080d12;
+        public static int tooltip_frame_light = 0x7f080d13;
 
         private drawable() {
         }

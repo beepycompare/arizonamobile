@@ -67,7 +67,7 @@ public final class NoNetworkErrorDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoNetworkErrorDialogScreen$lambda$8(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit NoNetworkErrorDialogScreen$lambda$1(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         NoNetworkErrorDialogScreen(str, errorDialogUiState, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -97,7 +97,7 @@ public final class NoNetworkErrorDialogKt {
             }
             SharedEventFlow<ErrorDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019175311, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019174927, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
             boolean z = (i2 & 896) == 256;
             NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -108,7 +108,7 @@ public final class NoNetworkErrorDialogKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             startRestartGroup = startRestartGroup;
             ErrorDialogUiState NoNetworkErrorDialogRoute$lambda$1 = NoNetworkErrorDialogRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7));
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019183603, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1019183219, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             NoNetworkErrorDialogKt$NoNetworkErrorDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -165,9 +165,9 @@ public final class NoNetworkErrorDialogKt {
             DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(1984279206, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NoNetworkErrorDialogScreen$lambda$7;
-                    NoNetworkErrorDialogScreen$lambda$7 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$7(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
-                    return NoNetworkErrorDialogScreen$lambda$7;
+                    Unit NoNetworkErrorDialogScreen$lambda$0;
+                    NoNetworkErrorDialogScreen$lambda$0 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$0(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
+                    return NoNetworkErrorDialogScreen$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             function0 = onDismiss;
@@ -180,16 +180,16 @@ public final class NoNetworkErrorDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NoNetworkErrorDialogScreen$lambda$8;
-                    NoNetworkErrorDialogScreen$lambda$8 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$8(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NoNetworkErrorDialogScreen$lambda$8;
+                    Unit NoNetworkErrorDialogScreen$lambda$1;
+                    NoNetworkErrorDialogScreen$lambda$1 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$1(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NoNetworkErrorDialogScreen$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoNetworkErrorDialogScreen$lambda$7(final Function0 function0, Composer composer, int i) {
+    public static final Unit NoNetworkErrorDialogScreen$lambda$0(final Function0 function0, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C59@2274L10,59@2247L87,62@2362L86,61@2343L218,69@2570L75,70@2654L219:NoNetworkErrorDialog.kt#d3gn1w");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -236,9 +236,9 @@ public final class NoNetworkErrorDialogKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit NoNetworkErrorDialogScreen$lambda$7$lambda$6$lambda$5$lambda$4;
-                        NoNetworkErrorDialogScreen$lambda$7$lambda$6$lambda$5$lambda$4 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$7$lambda$6$lambda$5$lambda$4(Function0.this);
-                        return NoNetworkErrorDialogScreen$lambda$7$lambda$6$lambda$5$lambda$4;
+                        Unit NoNetworkErrorDialogScreen$lambda$0$0$0$0;
+                        NoNetworkErrorDialogScreen$lambda$0$0$0$0 = NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$0$0$0$0(Function0.this);
+                        return NoNetworkErrorDialogScreen$lambda$0$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -259,7 +259,7 @@ public final class NoNetworkErrorDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoNetworkErrorDialogScreen$lambda$7$lambda$6$lambda$5$lambda$4(Function0 function0) {
+    public static final Unit NoNetworkErrorDialogScreen$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

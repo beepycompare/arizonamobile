@@ -19,12 +19,12 @@ import kotlin.random.Random;
 /* loaded from: classes5.dex */
 public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object flatten$lambda$4$SequencesKt__SequencesKt(Object obj) {
+    public static final Object flatten$lambda$2$SequencesKt__SequencesKt(Object obj) {
         return obj;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object generateSequence$lambda$6$SequencesKt__SequencesKt(Object obj) {
+    public static final Object generateSequence$lambda$1$SequencesKt__SequencesKt(Object obj) {
         return obj;
     }
 
@@ -86,21 +86,21 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return flatten$SequencesKt__SequencesKt(sequence, new Function1() { // from class: kotlin.sequences.SequencesKt__SequencesKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Iterator flatten$lambda$2$SequencesKt__SequencesKt;
-                flatten$lambda$2$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$2$SequencesKt__SequencesKt((Sequence) obj);
-                return flatten$lambda$2$SequencesKt__SequencesKt;
+                Iterator flatten$lambda$0$SequencesKt__SequencesKt;
+                flatten$lambda$0$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$0$SequencesKt__SequencesKt((Sequence) obj);
+                return flatten$lambda$0$SequencesKt__SequencesKt;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Iterator flatten$lambda$2$SequencesKt__SequencesKt(Sequence it) {
+    public static final Iterator flatten$lambda$0$SequencesKt__SequencesKt(Sequence it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.iterator();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Iterator flatten$lambda$3$SequencesKt__SequencesKt(Iterable it) {
+    public static final Iterator flatten$lambda$1$SequencesKt__SequencesKt(Iterable it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.iterator();
     }
@@ -110,9 +110,9 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return flatten$SequencesKt__SequencesKt(sequence, new Function1() { // from class: kotlin.sequences.SequencesKt__SequencesKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Iterator flatten$lambda$3$SequencesKt__SequencesKt;
-                flatten$lambda$3$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$3$SequencesKt__SequencesKt((Iterable) obj);
-                return flatten$lambda$3$SequencesKt__SequencesKt;
+                Iterator flatten$lambda$1$SequencesKt__SequencesKt;
+                flatten$lambda$1$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$1$SequencesKt__SequencesKt((Iterable) obj);
+                return flatten$lambda$1$SequencesKt__SequencesKt;
             }
         });
     }
@@ -124,9 +124,9 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return new FlatteningSequence(sequence, new Function1() { // from class: kotlin.sequences.SequencesKt__SequencesKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object flatten$lambda$4$SequencesKt__SequencesKt;
-                flatten$lambda$4$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$4$SequencesKt__SequencesKt(obj);
-                return flatten$lambda$4$SequencesKt__SequencesKt;
+                Object flatten$lambda$2$SequencesKt__SequencesKt;
+                flatten$lambda$2$SequencesKt__SequencesKt = SequencesKt__SequencesKt.flatten$lambda$2$SequencesKt__SequencesKt(obj);
+                return flatten$lambda$2$SequencesKt__SequencesKt;
             }
         }, function1);
     }
@@ -171,15 +171,15 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return SequencesKt.constrainOnce(new GeneratorSequence(nextFunction, new Function1() { // from class: kotlin.sequences.SequencesKt__SequencesKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object generateSequence$lambda$5$SequencesKt__SequencesKt;
-                generateSequence$lambda$5$SequencesKt__SequencesKt = SequencesKt__SequencesKt.generateSequence$lambda$5$SequencesKt__SequencesKt(Function0.this, obj);
-                return generateSequence$lambda$5$SequencesKt__SequencesKt;
+                Object generateSequence$lambda$0$SequencesKt__SequencesKt;
+                generateSequence$lambda$0$SequencesKt__SequencesKt = SequencesKt__SequencesKt.generateSequence$lambda$0$SequencesKt__SequencesKt(Function0.this, obj);
+                return generateSequence$lambda$0$SequencesKt__SequencesKt;
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Object generateSequence$lambda$5$SequencesKt__SequencesKt(Function0 function0, Object it) {
+    public static final Object generateSequence$lambda$0$SequencesKt__SequencesKt(Function0 function0, Object it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return function0.invoke();
     }
@@ -192,9 +192,9 @@ public class SequencesKt__SequencesKt extends SequencesKt__SequencesJVMKt {
         return new GeneratorSequence(new Function0() { // from class: kotlin.sequences.SequencesKt__SequencesKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object generateSequence$lambda$6$SequencesKt__SequencesKt;
-                generateSequence$lambda$6$SequencesKt__SequencesKt = SequencesKt__SequencesKt.generateSequence$lambda$6$SequencesKt__SequencesKt(t);
-                return generateSequence$lambda$6$SequencesKt__SequencesKt;
+                Object generateSequence$lambda$1$SequencesKt__SequencesKt;
+                generateSequence$lambda$1$SequencesKt__SequencesKt = SequencesKt__SequencesKt.generateSequence$lambda$1$SequencesKt__SequencesKt(t);
+                return generateSequence$lambda$1$SequencesKt__SequencesKt;
             }
         }, nextFunction);
     }

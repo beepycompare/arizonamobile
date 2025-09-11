@@ -4,12 +4,12 @@ package io.appmetrica.analytics.impl;
 public final class C0400l7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0653v7 f962a;
+    public final C0653v7 f966a;
     public final U7 b;
     public final C0520pn c;
 
     public C0400l7(C0653v7 c0653v7, U7 u7, C0520pn c0520pn) {
-        this.f962a = c0653v7;
+        this.f966a = c0653v7;
         this.b = u7;
         this.c = c0520pn;
     }

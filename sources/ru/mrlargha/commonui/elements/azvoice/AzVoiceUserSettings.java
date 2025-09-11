@@ -60,7 +60,7 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
         appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AzVoiceUserSettings._init_$lambda$1(AzVoiceUserSettings.this, i, view);
+                AzVoiceUserSettings._init_$lambda$0(AzVoiceUserSettings.this, i, view);
             }
         });
         setVisibility(false);
@@ -73,7 +73,7 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(AzVoiceUserSettings azVoiceUserSettings, int i, View view) {
+    public static final void _init_$lambda$0(AzVoiceUserSettings azVoiceUserSettings, int i, View view) {
         azVoiceUserSettings.getNotifier().clickedWrapper(i, 1, -1);
         azVoiceUserSettings.setVisibility(false);
         azVoiceUserSettings.clearSliders();
@@ -106,17 +106,17 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
         final Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean removeSliderByPlayerId$lambda$2;
-                removeSliderByPlayerId$lambda$2 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$2(i, (SoundSliderData) obj);
-                return Boolean.valueOf(removeSliderByPlayerId$lambda$2);
+                boolean removeSliderByPlayerId$lambda$0;
+                removeSliderByPlayerId$lambda$0 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$0(i, (SoundSliderData) obj);
+                return Boolean.valueOf(removeSliderByPlayerId$lambda$0);
             }
         };
         Boolean.valueOf(currentList.removeIf(new Predicate() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda1
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean removeSliderByPlayerId$lambda$3;
-                removeSliderByPlayerId$lambda$3 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$3(Function1.this, obj);
-                return removeSliderByPlayerId$lambda$3;
+                boolean removeSliderByPlayerId$lambda$1;
+                removeSliderByPlayerId$lambda$1 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$1(Function1.this, obj);
+                return removeSliderByPlayerId$lambda$1;
             }
         }));
         this.sliderAdapter.submitList(currentList);
@@ -124,12 +124,12 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeSliderByPlayerId$lambda$2(int i, SoundSliderData soundSliderData) {
+    public static final boolean removeSliderByPlayerId$lambda$0(int i, SoundSliderData soundSliderData) {
         return soundSliderData.getSliderUId() == i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeSliderByPlayerId$lambda$3(Function1 function1, Object obj) {
+    public static final boolean removeSliderByPlayerId$lambda$1(Function1 function1, Object obj) {
         return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 

@@ -49,7 +49,7 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
             itemInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.presentation.WorkshopViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WorkshopViewHolder.bind$lambda$2$lambda$0(InventoryItem.this, intValue, this, view);
+                    WorkshopViewHolder.bind$lambda$0$0(InventoryItem.this, intValue, this, view);
                 }
             });
         }
@@ -109,7 +109,7 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
         itemInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.presentation.WorkshopViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopViewHolder.bind$lambda$2$lambda$1(WorkshopViewHolder.this, itemVal, view);
+                WorkshopViewHolder.bind$lambda$0$1(WorkshopViewHolder.this, itemVal, view);
             }
         });
         Job job = this.loadImageJob;
@@ -139,7 +139,7 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$0(InventoryItem inventoryItem, int i, WorkshopViewHolder workshopViewHolder, View view) {
+    public static final void bind$lambda$0$0(InventoryItem inventoryItem, int i, WorkshopViewHolder workshopViewHolder, View view) {
         Integer available = inventoryItem.getAvailable();
         if (available != null && available.intValue() == 0 && i >= 100) {
             return;
@@ -148,7 +148,7 @@ public final class WorkshopViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$1(WorkshopViewHolder workshopViewHolder, InventoryItem inventoryItem, View view) {
+    public static final void bind$lambda$0$1(WorkshopViewHolder workshopViewHolder, InventoryItem inventoryItem, View view) {
         workshopViewHolder.onItemClicked.invoke(inventoryItem);
     }
 }

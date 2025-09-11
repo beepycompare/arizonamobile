@@ -70,13 +70,13 @@ public final class SpawnMenu implements InterfaceController {
         bind.spawnSelectorStartGameButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.SpawnMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpawnMenu.lambda$3$lambda$2(SpawnMenu.this, targetActivity, i, view);
+                SpawnMenu.lambda$1$0(SpawnMenu.this, targetActivity, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$2(SpawnMenu spawnMenu, Activity activity, int i, View view) {
+    public static final void lambda$1$0(SpawnMenu spawnMenu, Activity activity, int i, View view) {
         Integer num = spawnMenu.selectedLocation;
         if (num != null) {
             num.intValue();

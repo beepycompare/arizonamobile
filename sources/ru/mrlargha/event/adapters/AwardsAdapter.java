@@ -29,6 +29,14 @@ public final class AwardsAdapter extends RecyclerView.Adapter<LevelItemViewHolde
         this(null, 1, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public AwardsAdapter(Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
+        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
+        this.onClaimItem = onClaimItem;
+        this.items = new ArrayList();
+        this.isArizonaType = true;
+    }
+
     public /* synthetic */ AwardsAdapter(Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function2() { // from class: ru.mrlargha.event.adapters.AwardsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
@@ -43,14 +51,6 @@ public final class AwardsAdapter extends RecyclerView.Adapter<LevelItemViewHolde
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit _init_$lambda$0(boolean z, int i) {
         return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public AwardsAdapter(Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
-        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
-        this.onClaimItem = onClaimItem;
-        this.items = new ArrayList();
-        this.isArizonaType = true;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

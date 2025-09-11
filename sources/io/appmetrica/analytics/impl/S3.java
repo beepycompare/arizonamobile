@@ -15,7 +15,7 @@ public final class S3 implements ProtobufConverter {
     /* renamed from: a */
     public final W3 fromModel(R3 r3) {
         W3 w3 = new W3();
-        w3.f717a = a(r3.f645a);
+        w3.f721a = a(r3.f649a);
         int size = r3.b.size();
         T3[] t3Arr = new T3[size];
         for (int i = 0; i < size; i++) {
@@ -28,7 +28,7 @@ public final class S3 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final R3 toModel(W3 w3) {
-        T3 t3 = w3.f717a;
+        T3 t3 = w3.f721a;
         if (t3 == null) {
             t3 = new T3();
         }
@@ -44,7 +44,7 @@ public final class S3 implements ProtobufConverter {
     public static T3 a(Q3 q3) {
         V3 v3;
         T3 t3 = new T3();
-        Map map = q3.f630a;
+        Map map = q3.f634a;
         int i = 0;
         if (map != null) {
             v3 = new V3();
@@ -53,18 +53,18 @@ public final class S3 implements ProtobufConverter {
             for (int i2 = 0; i2 < size; i2++) {
                 u3Arr[i2] = new U3();
             }
-            v3.f704a = u3Arr;
+            v3.f708a = u3Arr;
             int i3 = 0;
             for (Map.Entry entry : map.entrySet()) {
-                U3 u3 = v3.f704a[i3];
-                u3.f688a = (String) entry.getKey();
+                U3 u3 = v3.f708a[i3];
+                u3.f692a = (String) entry.getKey();
                 u3.b = (String) entry.getValue();
                 i3++;
             }
         } else {
             v3 = null;
         }
-        t3.f674a = v3;
+        t3.f678a = v3;
         int ordinal = q3.b.ordinal();
         if (ordinal != 0) {
             if (ordinal != 1) {
@@ -86,12 +86,12 @@ public final class S3 implements ProtobufConverter {
     public static Q3 a(T3 t3) {
         LinkedHashMap linkedHashMap;
         EnumC0530q8 enumC0530q8;
-        V3 v3 = t3.f674a;
+        V3 v3 = t3.f678a;
         if (v3 != null) {
-            U3[] u3Arr = v3.f704a;
+            U3[] u3Arr = v3.f708a;
             linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(u3Arr.length), 16));
             for (U3 u3 : u3Arr) {
-                Pair pair = TuplesKt.to(u3.f688a, u3.b);
+                Pair pair = TuplesKt.to(u3.f692a, u3.b);
                 linkedHashMap.put(pair.getFirst(), pair.getSecond());
             }
         } else {

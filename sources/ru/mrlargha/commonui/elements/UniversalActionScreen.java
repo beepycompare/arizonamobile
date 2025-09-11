@@ -35,7 +35,7 @@ public final class UniversalActionScreen extends SAMPUIElement {
         bind.rodinaProgressTouchContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.UniversalActionScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UniversalActionScreen.lambda$1$lambda$0(UniversalActionScreenBinding.this, this, view);
+                UniversalActionScreen.lambda$0$0(UniversalActionScreenBinding.this, this, view);
             }
         });
     }
@@ -47,7 +47,7 @@ public final class UniversalActionScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$1$lambda$0(UniversalActionScreenBinding universalActionScreenBinding, UniversalActionScreen universalActionScreen, View view) {
+    public static final void lambda$0$0(UniversalActionScreenBinding universalActionScreenBinding, UniversalActionScreen universalActionScreen, View view) {
         ProgressBar progressBar = universalActionScreenBinding.rodinaProgressBar;
         progressBar.setProgress(progressBar.getProgress() + 1);
         SAMPUIElement.notifyClick$default(universalActionScreen, 0, -1, null, 4, null);

@@ -7,16 +7,16 @@ import kotlin.jvm.internal.Lambda;
 public final class Md extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Fb f572a;
+    public final /* synthetic */ Fb f576a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Md(Fb fb) {
         super(1);
-        this.f572a = fb;
+        this.f576a = fb;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        return ((C0734yd) ((Map.Entry) obj).getValue()).b.parse(this.f572a);
+        return ((C0734yd) ((Map.Entry) obj).getValue()).b.parse(this.f576a);
     }
 }

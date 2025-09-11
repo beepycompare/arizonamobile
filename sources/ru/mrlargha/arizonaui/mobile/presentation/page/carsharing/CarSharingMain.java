@@ -75,13 +75,13 @@ public final class CarSharingMain implements MobileController {
         bind.mpArizonaMobileMyRent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingMain$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CarSharingMain._init_$lambda$2(CarSharingMain.this, view);
+                CarSharingMain._init_$lambda$1(CarSharingMain.this, view);
             }
         });
         bind.mpArizonamobileHeaderBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.carsharing.CarSharingMain$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CarSharingMain._init_$lambda$3(view);
+                CarSharingMain._init_$lambda$2(view);
             }
         });
     }
@@ -96,7 +96,7 @@ public final class CarSharingMain implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(CarSharingMain carSharingMain, View view) {
+    public static final void _init_$lambda$1(CarSharingMain carSharingMain, View view) {
         CharSequence text = carSharingMain.arizonaMobilBinding.mpArizonamobileBalanceCount.getText();
         Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
         StringBuilder sb = new StringBuilder();
@@ -120,7 +120,7 @@ public final class CarSharingMain implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(View view) {
+    public static final void _init_$lambda$2(View view) {
         HistoryManager.Companion.previousPage();
     }
 

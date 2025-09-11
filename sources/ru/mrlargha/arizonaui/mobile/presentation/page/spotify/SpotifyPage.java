@@ -129,20 +129,20 @@ public final class SpotifyPage implements MobileController {
         bind.mpSpotifyBackArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyPage.lambda$4$lambda$0(SpotifyPage.this, view);
+                SpotifyPage.lambda$0$0(SpotifyPage.this, view);
             }
         });
         iBackendNotifier.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), 0, 22);
         bind.mpSpotifyLogoBackArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyPage.lambda$4$lambda$1(SpotifyPage.this, view);
+                SpotifyPage.lambda$0$1(SpotifyPage.this, view);
             }
         });
         bind.mpSpotifyPlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyPage.lambda$4$lambda$3(MobilePhoneSpotifyPageBinding.this, this, view);
+                SpotifyPage.lambda$0$2(MobilePhoneSpotifyPageBinding.this, this, view);
             }
         });
         spotifyTrackListAdapter.setOnFavouriteClickListener(new SpotifyTrackListAdapter.OnFavouriteClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$1$4
@@ -338,7 +338,7 @@ public final class SpotifyPage implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$4$lambda$0(SpotifyPage spotifyPage, View view) {
+    public static final void lambda$0$0(SpotifyPage spotifyPage, View view) {
         if (spotifyPage.stateMachine.get(0).intValue() != SpotifyState.INIT.getStateId()) {
             spotifyPage.stateMachine.set(0, Integer.valueOf(SpotifyState.INIT.getStateId()));
             spotifyPage.spotifyState(spotifyPage.stateMachine.get(0).intValue());
@@ -346,7 +346,7 @@ public final class SpotifyPage implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$4$lambda$1(SpotifyPage spotifyPage, View view) {
+    public static final void lambda$0$1(SpotifyPage spotifyPage, View view) {
         if (spotifyPage.stateMachine.get(0).intValue() != SpotifyState.INIT.getStateId()) {
             spotifyPage.stateMachine.set(0, Integer.valueOf(SpotifyState.INIT.getStateId()));
             spotifyPage.spotifyState(spotifyPage.stateMachine.get(0).intValue());
@@ -354,7 +354,7 @@ public final class SpotifyPage implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$4$lambda$3(MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, SpotifyPage spotifyPage, View view) {
+    public static final void lambda$0$2(MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, SpotifyPage spotifyPage, View view) {
         mobilePhoneSpotifyPageBinding.mpSpotifyPlay.setImageResource(isTrackPlaying ? R.drawable.spotify_play_on : R.drawable.spotify_play_off);
         Integer num = spotifyPage.playingTrackId;
         if (num != null) {
@@ -443,7 +443,7 @@ public final class SpotifyPage implements MobileController {
             mobilePhoneSpotifyPageBinding.mpSpotifyZoom.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SpotifyPage.spotifyState$lambda$6$lambda$5(SpotifyPage.this, view);
+                    SpotifyPage.spotifyState$lambda$0$0(SpotifyPage.this, view);
                 }
             });
             ViewGroup.LayoutParams layoutParams2 = mobilePhoneSpotifyPageBinding.mpSpotifyFoundTrackListContainer.getLayoutParams();
@@ -457,7 +457,7 @@ public final class SpotifyPage implements MobileController {
             mobilePhoneSpotifyPageBinding2.mpSpotifyBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SpotifyPage.spotifyState$lambda$10$lambda$7(SpotifyPage.this, view);
+                    SpotifyPage.spotifyState$lambda$1$0(SpotifyPage.this, view);
                 }
             });
             ViewGroup.LayoutParams layoutParams3 = mobilePhoneSpotifyPageBinding2.spotifyTrackList.getLayoutParams();
@@ -469,15 +469,15 @@ public final class SpotifyPage implements MobileController {
             mobilePhoneSpotifyPageBinding2.mpSpotifySearchClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SpotifyPage.spotifyState$lambda$10$lambda$8(MobilePhoneSpotifyPageBinding.this, view);
+                    SpotifyPage.spotifyState$lambda$1$1(MobilePhoneSpotifyPageBinding.this, view);
                 }
             });
             mobilePhoneSpotifyPageBinding2.mpSpotifySearchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda3
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                    boolean spotifyState$lambda$10$lambda$9;
-                    spotifyState$lambda$10$lambda$9 = SpotifyPage.spotifyState$lambda$10$lambda$9(SpotifyPage.this, mobilePhoneSpotifyPageBinding2, textView, i2, keyEvent);
-                    return spotifyState$lambda$10$lambda$9;
+                    boolean spotifyState$lambda$1$2;
+                    spotifyState$lambda$1$2 = SpotifyPage.spotifyState$lambda$1$2(SpotifyPage.this, mobilePhoneSpotifyPageBinding2, textView, i2, keyEvent);
+                    return spotifyState$lambda$1$2;
                 }
             });
         } else if (i == SpotifyState.TRACK_LIST.getStateId()) {
@@ -515,24 +515,24 @@ public final class SpotifyPage implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void spotifyState$lambda$6$lambda$5(SpotifyPage spotifyPage, View view) {
+    public static final void spotifyState$lambda$0$0(SpotifyPage spotifyPage, View view) {
         spotifyPage.stateMachine.set(0, Integer.valueOf(SpotifyState.SEARCH.getStateId()));
         spotifyPage.spotifyState(spotifyPage.stateMachine.get(0).intValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void spotifyState$lambda$10$lambda$7(SpotifyPage spotifyPage, View view) {
+    public static final void spotifyState$lambda$1$0(SpotifyPage spotifyPage, View view) {
         spotifyPage.spotifyState(SpotifyState.INIT.getStateId());
         spotifyPage.stateMachine.set(0, Integer.valueOf(SpotifyState.INIT.getStateId()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void spotifyState$lambda$10$lambda$8(MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, View view) {
+    public static final void spotifyState$lambda$1$1(MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, View view) {
         mobilePhoneSpotifyPageBinding.mpSpotifySearchInput.getText().clear();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean spotifyState$lambda$10$lambda$9(final SpotifyPage spotifyPage, final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean spotifyState$lambda$1$2(final SpotifyPage spotifyPage, final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
             spotifyPage.api.searchTrackListByParam(textView.getText().toString()).enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyPage$spotifyState$2$3$1
                 @Override // retrofit2.Callback

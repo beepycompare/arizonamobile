@@ -8,27 +8,27 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class C0772c implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0773d f1310a;
+    public final /* synthetic */ C0773d f1314a;
 
     public C0772c(C0773d c0773d) {
-        this.f1310a = c0773d;
+        this.f1314a = c0773d;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = AbstractC0771b.f1308a[activityEvent.ordinal()];
+        int i = AbstractC0771b.f1312a[activityEvent.ordinal()];
         try {
             if (i != 1) {
                 if (i == 2) {
-                    activity.unregisterScreenCaptureCallback(C0773d.d(this.f1310a));
+                    activity.unregisterScreenCaptureCallback(C0773d.d(this.f1314a));
                     return;
                 }
             }
-            C0778i c0778i = this.f1310a.c;
-            if (c0778i == null || !c0778i.f1319a) {
+            C0778i c0778i = this.f1314a.c;
+            if (c0778i == null || !c0778i.f1323a) {
                 return;
             }
-            activity.registerScreenCaptureCallback(this.f1310a.f1312a.getContext().getMainExecutor(), C0773d.d(this.f1310a));
+            activity.registerScreenCaptureCallback(this.f1314a.f1316a.getContext().getMainExecutor(), C0773d.d(this.f1314a));
         } catch (Throwable unused) {
         }
     }

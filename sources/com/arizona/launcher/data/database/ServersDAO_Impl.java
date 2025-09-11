@@ -116,15 +116,15 @@ public final class ServersDAO_Impl implements ServersDAO {
         return RxRoom.Companion.createObservable(this.__db, false, new String[]{"allservers"}, new Function1() { // from class: com.arizona.launcher.data.database.ServersDAO_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allServers$lambda$1;
-                allServers$lambda$1 = ServersDAO_Impl.getAllServers$lambda$1(r1, this, (SQLiteConnection) obj);
-                return allServers$lambda$1;
+                List allServers$lambda$0;
+                allServers$lambda$0 = ServersDAO_Impl.getAllServers$lambda$0(r1, this, (SQLiteConnection) obj);
+                return allServers$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllServers$lambda$1(String str, ServersDAO_Impl serversDAO_Impl, SQLiteConnection _connection) {
+    public static final List getAllServers$lambda$0(String str, ServersDAO_Impl serversDAO_Impl, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -183,15 +183,15 @@ public final class ServersDAO_Impl implements ServersDAO {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.ServersDAO_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteTable$lambda$2;
-                deleteTable$lambda$2 = ServersDAO_Impl.deleteTable$lambda$2(r1, (SQLiteConnection) obj);
-                return deleteTable$lambda$2;
+                Unit deleteTable$lambda$0;
+                deleteTable$lambda$0 = ServersDAO_Impl.deleteTable$lambda$0(r1, (SQLiteConnection) obj);
+                return deleteTable$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit deleteTable$lambda$2(String str, SQLiteConnection _connection) {
+    public static final Unit deleteTable$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

@@ -292,14 +292,14 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.SettingsAdapter$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SettingsAdapter.onBindViewHolder$lambda$1$lambda$0(SettingsAdapter.this, intValue, view);
+                    SettingsAdapter.onBindViewHolder$lambda$0$0(SettingsAdapter.this, intValue, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(SettingsAdapter settingsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(SettingsAdapter settingsAdapter, int i, View view) {
         settingsAdapter.onClick.invoke(Integer.valueOf(i));
     }
 
@@ -316,17 +316,17 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
             final Function1 function1 = new Function1() { // from class: ru.mrlargha.arizonaui.family.adapters.SettingsAdapter$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean info$lambda$2;
-                    info$lambda$2 = SettingsAdapter.setInfo$lambda$2((Integer) obj);
-                    return Boolean.valueOf(info$lambda$2);
+                    boolean info$lambda$0;
+                    info$lambda$0 = SettingsAdapter.setInfo$lambda$0((Integer) obj);
+                    return Boolean.valueOf(info$lambda$0);
                 }
             };
             mutableList.removeIf(new Predicate() { // from class: ru.mrlargha.arizonaui.family.adapters.SettingsAdapter$$ExternalSyntheticLambda1
                 @Override // java.util.function.Predicate
                 public final boolean test(Object obj) {
-                    boolean info$lambda$3;
-                    info$lambda$3 = SettingsAdapter.setInfo$lambda$3(Function1.this, obj);
-                    return info$lambda$3;
+                    boolean info$lambda$1;
+                    info$lambda$1 = SettingsAdapter.setInfo$lambda$1(Function1.this, obj);
+                    return info$lambda$1;
                 }
             });
         }
@@ -336,13 +336,13 @@ public final class SettingsAdapter extends RecyclerView.Adapter<SettingsItemView
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setInfo$lambda$2(Integer it) {
+    public static final boolean setInfo$lambda$0(Integer it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.intValue() == 17;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setInfo$lambda$3(Function1 function1, Object obj) {
+    public static final boolean setInfo$lambda$1(Function1 function1, Object obj) {
         return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 

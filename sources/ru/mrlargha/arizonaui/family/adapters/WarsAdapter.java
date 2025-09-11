@@ -285,14 +285,14 @@ public final class WarsAdapter extends RecyclerView.Adapter<WarItemViewHolder> {
             binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.WarsAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WarsAdapter.onBindViewHolder$lambda$10$lambda$9(WarsAdapter.this, intValue, view);
+                    WarsAdapter.onBindViewHolder$lambda$0$6(WarsAdapter.this, intValue, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$10$lambda$9(WarsAdapter warsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$6(WarsAdapter warsAdapter, int i, View view) {
         warsAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

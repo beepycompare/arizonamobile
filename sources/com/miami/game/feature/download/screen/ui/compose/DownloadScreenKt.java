@@ -32,13 +32,13 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes4.dex */
 public final class DownloadScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DownloadScreen$lambda$9(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
+    public static final Unit DownloadScreen$lambda$0(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
         DownloadScreen(downloadScreenUiState, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DownloadScreenRoute$lambda$8(DownloadScreenComponent downloadScreenComponent, int i, Composer composer, int i2) {
+    public static final Unit DownloadScreenRoute$lambda$6(DownloadScreenComponent downloadScreenComponent, int i, Composer composer, int i2) {
         DownloadScreenRoute(downloadScreenComponent, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -61,7 +61,7 @@ public final class DownloadScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1785886338, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadScreenRoute (DownloadScreen.kt:23)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750155456, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750155072, "CC(remember):DownloadScreen.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda1
@@ -78,7 +78,7 @@ public final class DownloadScreenKt {
             BackHandlerKt.BackHandler(false, (Function0) rememberedValue, startRestartGroup, 48, 1);
             SharedEventFlow<DownloadScreenUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750157954, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750157570, "CC(remember):DownloadScreen.kt#9igjgp");
             DownloadScreenKt$DownloadScreenRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new DownloadScreenKt$DownloadScreenRoute$2$1(null);
@@ -91,7 +91,7 @@ public final class DownloadScreenKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Context context = (Context) consume;
             Unit unit = Unit.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750168286, "CC(remember):DownloadScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1750167902, "CC(remember):DownloadScreen.kt#9igjgp");
             DownloadScreenKt$DownloadScreenRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (rememberedValue3 == Composer.Companion.getEmpty()) {
                 rememberedValue3 = new DownloadScreenKt$DownloadScreenRoute$3$1(null);
@@ -101,8 +101,8 @@ public final class DownloadScreenKt {
             EffectsKt.LaunchedEffect(unit, (Function2) rememberedValue3, startRestartGroup, 6);
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             composer2 = startRestartGroup;
-            DownloadScreenUiState DownloadScreenRoute$lambda$4 = DownloadScreenRoute$lambda$4(collectAsStateWithLifecycle);
-            ComposerKt.sourceInformationMarkerStart(composer2, 1750181269, "CC(remember):DownloadScreen.kt#9igjgp");
+            DownloadScreenUiState DownloadScreenRoute$lambda$3 = DownloadScreenRoute$lambda$3(collectAsStateWithLifecycle);
+            ComposerKt.sourceInformationMarkerStart(composer2, 1750180885, "CC(remember):DownloadScreen.kt#9igjgp");
             boolean changedInstance = composer2.changedInstance(component);
             DownloadScreenKt$DownloadScreenRoute$4$1 rememberedValue4 = composer2.rememberedValue();
             if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
@@ -110,13 +110,13 @@ public final class DownloadScreenKt {
                 composer2.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            DownloadScreen(DownloadScreenRoute$lambda$4, (Function0) ((KFunction) rememberedValue4), composer2, 0);
-            if (!DownloadScreenRoute$lambda$4(collectAsStateWithLifecycle).isDialogVisible()) {
-                composer2.startReplaceGroup(-1580926332);
+            DownloadScreen(DownloadScreenRoute$lambda$3, (Function0) ((KFunction) rememberedValue4), composer2, 0);
+            if (!DownloadScreenRoute$lambda$3(collectAsStateWithLifecycle).isDialogVisible()) {
+                composer2.startReplaceGroup(-1580938236);
             } else {
-                composer2.startReplaceGroup(-1578892794);
+                composer2.startReplaceGroup(-1578904698);
                 ComposerKt.sourceInformation(composer2, "54@2100L2,54@2057L46");
-                ComposerKt.sourceInformationMarkerStart(composer2, 1750184928, "CC(remember):DownloadScreen.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer2, 1750184544, "CC(remember):DownloadScreen.kt#9igjgp");
                 Object rememberedValue5 = composer2.rememberedValue();
                 if (rememberedValue5 == Composer.Companion.getEmpty()) {
                     rememberedValue5 = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda2
@@ -143,9 +143,9 @@ public final class DownloadScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadScreenRoute$lambda$8;
-                    DownloadScreenRoute$lambda$8 = DownloadScreenKt.DownloadScreenRoute$lambda$8(DownloadScreenComponent.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadScreenRoute$lambda$8;
+                    Unit DownloadScreenRoute$lambda$6;
+                    DownloadScreenRoute$lambda$6 = DownloadScreenKt.DownloadScreenRoute$lambda$6(DownloadScreenComponent.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DownloadScreenRoute$lambda$6;
                 }
             });
         }
@@ -181,15 +181,15 @@ public final class DownloadScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadScreen$lambda$9;
-                    DownloadScreen$lambda$9 = DownloadScreenKt.DownloadScreen$lambda$9(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadScreen$lambda$9;
+                    Unit DownloadScreen$lambda$0;
+                    DownloadScreen$lambda$0 = DownloadScreenKt.DownloadScreen$lambda$0(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DownloadScreen$lambda$0;
                 }
             });
         }
     }
 
-    private static final DownloadScreenUiState DownloadScreenRoute$lambda$4(State<DownloadScreenUiState> state) {
+    private static final DownloadScreenUiState DownloadScreenRoute$lambda$3(State<DownloadScreenUiState> state) {
         return state.getValue();
     }
 }

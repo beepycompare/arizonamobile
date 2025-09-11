@@ -8,8 +8,8 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class C0344j3 implements ProtobufConverter {
     public static B2 a(BillingInfo billingInfo) {
         B2 b2 = new B2();
-        int i = AbstractC0319i3.f913a[billingInfo.type.ordinal()];
-        b2.f356a = i != 1 ? i != 2 ? 1 : 3 : 2;
+        int i = AbstractC0319i3.f917a[billingInfo.type.ordinal()];
+        b2.f360a = i != 1 ? i != 2 ? 1 : 3 : 2;
         b2.b = billingInfo.productId;
         b2.c = billingInfo.purchaseToken;
         b2.d = billingInfo.purchaseTime;
@@ -26,7 +26,7 @@ public final class C0344j3 implements ProtobufConverter {
     public final Object toModel(Object obj) {
         ProductType productType;
         B2 b2 = (B2) obj;
-        int i = b2.f356a;
+        int i = b2.f360a;
         if (i == 2) {
             productType = ProductType.INAPP;
         } else if (i != 3) {

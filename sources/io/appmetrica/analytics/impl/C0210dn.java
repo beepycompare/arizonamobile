@@ -11,7 +11,7 @@ public final class C0210dn extends AbstractC0164c3 {
     }
 
     public final int b() {
-        return this.f815a;
+        return this.f819a;
     }
 
     public C0210dn(int i, String str, PublicLogger publicLogger) {
@@ -30,11 +30,11 @@ public final class C0210dn extends AbstractC0164c3 {
         try {
             byte[] bytes = str.getBytes("UTF-8");
             int length = bytes.length;
-            int i = this.f815a;
+            int i = this.f819a;
             if (length > i) {
                 String str2 = new String(bytes, 0, i, "UTF-8");
                 try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f815a));
+                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f819a));
                 } catch (UnsupportedEncodingException unused) {
                 }
                 return str2;

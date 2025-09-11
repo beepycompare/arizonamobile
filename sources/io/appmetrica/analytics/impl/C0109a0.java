@@ -11,13 +11,13 @@ import java.util.concurrent.TimeUnit;
 public final class C0109a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0671w0 f777a;
+    public final C0671w0 f781a;
     public final C0285gl b;
     public final C0526q4 c;
     public final long d = TimeUnit.SECONDS.toMillis(10);
 
     public C0109a0(C0671w0 c0671w0, C0285gl c0285gl, C0526q4 c0526q4) {
-        this.f777a = c0671w0;
+        this.f781a = c0671w0;
         this.b = c0285gl;
         this.c = c0526q4;
     }
@@ -25,7 +25,7 @@ public final class C0109a0 {
     public final void a(final Context context, final AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         boolean z;
         PublicLogger mainPublicOrAnonymousLogger = LoggerStorage.getMainPublicOrAnonymousLogger();
-        this.f777a.getClass();
+        this.f781a.getClass();
         synchronized (C0646v0.class) {
             z = C0646v0.f;
         }
@@ -33,7 +33,7 @@ public final class C0109a0 {
             mainPublicOrAnonymousLogger.info("Session autotracking enabled", new Object[0]);
             this.b.a();
         }
-        this.f777a.getClass();
+        this.f781a.getClass();
         C0646v0 a2 = C0646v0.a(context);
         a2.d.a(null, a2);
         IHandlerExecutor a3 = this.c.a();
@@ -43,14 +43,14 @@ public final class C0109a0 {
                 C0109a0.a(C0109a0.this, context, appMetricaLibraryAdapterConfig);
             }
         });
-        this.f777a.getClass();
+        this.f781a.getClass();
         C0671w0.a();
     }
 
     public static final void a(C0109a0 c0109a0, Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        c0109a0.f777a.getClass();
+        c0109a0.f781a.getClass();
         C0646v0 a2 = C0646v0.a(context);
         a2.f().a(appMetricaLibraryAdapterConfig);
-        A4.l().c.a().execute(new RunnableC0622u1(a2.f1113a));
+        A4.l().c.a().execute(new RunnableC0622u1(a2.f1117a));
     }
 }

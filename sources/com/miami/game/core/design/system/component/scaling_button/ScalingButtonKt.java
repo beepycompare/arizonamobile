@@ -38,13 +38,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ScalingButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ScalingButton$lambda$8(Function0 function0, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
+    public static final Unit ScalingButton$lambda$7(Function0 function0, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
         ScalingButton(function0, modifier, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ScalingButtonLong$lambda$15(Function0 function0, Function0 function02, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
+    public static final Unit ScalingButtonLong$lambda$6(Function0 function0, Function0 function02, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
         ScalingButtonLong(function0, function02, modifier, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -90,7 +90,7 @@ public final class ScalingButtonKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1580402014, i3, -1, "com.miami.game.core.design.system.component.scaling_button.ScalingButton (ScalingButton.kt:20)");
                 }
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652092004, "CC(remember):ScalingButton.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652091620, "CC(remember):ScalingButton.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -101,7 +101,7 @@ public final class ScalingButtonKt {
                 Modifier modifier3 = companion;
                 Modifier scale = ScaleKt.scale(modifier3, ScalingButton$lambda$3(AnimateAsStateKt.animateFloatAsState(ScalingButton$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22)));
                 Unit unit = Unit.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652098934, "CC(remember):ScalingButton.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652098550, "CC(remember):ScalingButton.kt#9igjgp");
                 ScalingButtonKt$ScalingButton$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
                 if (rememberedValue2 == Composer.Companion.getEmpty()) {
                     rememberedValue2 = new ScalingButtonKt$ScalingButton$1$1(mutableState);
@@ -110,16 +110,16 @@ public final class ScalingButtonKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(scale, unit, (PointerInputEventHandler) rememberedValue2);
                 ClickIndicationType clickIndicationType = ClickIndicationType.NO_INDICATION;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652112082, "CC(remember):ScalingButton.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1652111698, "CC(remember):ScalingButton.kt#9igjgp");
                 boolean z = (i3 & 14) == 4;
                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                 if (z || rememberedValue3 == Composer.Companion.getEmpty()) {
                     rememberedValue3 = new Function0() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ScalingButton$lambda$6$lambda$5;
-                            ScalingButton$lambda$6$lambda$5 = ScalingButtonKt.ScalingButton$lambda$6$lambda$5(Function0.this);
-                            return ScalingButton$lambda$6$lambda$5;
+                            Unit ScalingButton$lambda$5$0;
+                            ScalingButton$lambda$5$0 = ScalingButtonKt.ScalingButton$lambda$5$0(Function0.this);
+                            return ScalingButton$lambda$5$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -171,9 +171,9 @@ public final class ScalingButtonKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit ScalingButton$lambda$8;
-                        ScalingButton$lambda$8 = ScalingButtonKt.ScalingButton$lambda$8(Function0.this, modifier2, content, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ScalingButton$lambda$8;
+                        Unit ScalingButton$lambda$7;
+                        ScalingButton$lambda$7 = ScalingButtonKt.ScalingButton$lambda$7(Function0.this, modifier2, content, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return ScalingButton$lambda$7;
                     }
                 });
                 return;
@@ -200,7 +200,7 @@ public final class ScalingButtonKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ScalingButton$lambda$6$lambda$5(Function0 function0) {
+    public static final Unit ScalingButton$lambda$5$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
@@ -250,7 +250,7 @@ public final class ScalingButtonKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-160934982, i3, -1, "com.miami.game.core.design.system.component.scaling_button.ScalingButtonLong (ScalingButton.kt:48)");
                 }
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -39689508, "CC(remember):ScalingButton.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -39689892, "CC(remember):ScalingButton.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -259,9 +259,9 @@ public final class ScalingButtonKt {
                 MutableState mutableState = (MutableState) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier modifier3 = companion;
-                Modifier scale = ScaleKt.scale(modifier3, ScalingButtonLong$lambda$12(AnimateAsStateKt.animateFloatAsState(ScalingButtonLong$lambda$10(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22)));
+                Modifier scale = ScaleKt.scale(modifier3, ScalingButtonLong$lambda$3(AnimateAsStateKt.animateFloatAsState(ScalingButtonLong$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22)));
                 Unit unit = Unit.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -39682230, "CC(remember):ScalingButton.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -39682614, "CC(remember):ScalingButton.kt#9igjgp");
                 boolean z = ((i3 & 112) == 32) | ((i3 & 14) == 4);
                 ScalingButtonKt$ScalingButtonLong$1$1 rememberedValue2 = startRestartGroup.rememberedValue();
                 if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -315,9 +315,9 @@ public final class ScalingButtonKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit ScalingButtonLong$lambda$15;
-                        ScalingButtonLong$lambda$15 = ScalingButtonKt.ScalingButtonLong$lambda$15(Function0.this, onLongClick, modifier2, content, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ScalingButtonLong$lambda$15;
+                        Unit ScalingButtonLong$lambda$6;
+                        ScalingButtonLong$lambda$6 = ScalingButtonKt.ScalingButtonLong$lambda$6(Function0.this, onLongClick, modifier2, content, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return ScalingButtonLong$lambda$6;
                     }
                 });
                 return;
@@ -334,12 +334,12 @@ public final class ScalingButtonKt {
         }
     }
 
-    private static final boolean ScalingButtonLong$lambda$10(MutableState<Boolean> mutableState) {
+    private static final boolean ScalingButtonLong$lambda$1(MutableState<Boolean> mutableState) {
         return mutableState.getValue().booleanValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void ScalingButtonLong$lambda$11(MutableState<Boolean> mutableState, boolean z) {
+    public static final void ScalingButtonLong$lambda$2(MutableState<Boolean> mutableState, boolean z) {
         mutableState.setValue(Boolean.valueOf(z));
     }
 
@@ -347,7 +347,7 @@ public final class ScalingButtonKt {
         return state.getValue().floatValue();
     }
 
-    private static final float ScalingButtonLong$lambda$12(State<Float> state) {
+    private static final float ScalingButtonLong$lambda$3(State<Float> state) {
         return state.getValue().floatValue();
     }
 }

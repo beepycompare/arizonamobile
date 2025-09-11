@@ -36,7 +36,7 @@ final class SingleDoOnSubscribe<T> extends Single<T> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSubscribe(Disposable d) {
-                Object m9084constructorimpl;
+                Object m9091constructorimpl;
                 Function1 function1;
                 Intrinsics.checkNotNullParameter(d, "d");
                 SingleDoOnSubscribe<T> singleDoOnSubscribe = this.this$0;
@@ -45,21 +45,21 @@ final class SingleDoOnSubscribe<T> extends Single<T> {
                     SingleDoOnSubscribe$subscribe$wrappedObserver$1<T> singleDoOnSubscribe$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleDoOnSubscribe) singleDoOnSubscribe).onSubscribe;
                     function1.invoke(d);
-                    m9084constructorimpl = Result.m9084constructorimpl(Unit.INSTANCE);
+                    m9091constructorimpl = Result.m9091constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9084constructorimpl = Result.m9084constructorimpl(ResultKt.createFailure(th));
+                    m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<T> singleObserver = downstream;
-                Throwable m9087exceptionOrNullimpl = Result.m9087exceptionOrNullimpl(m9084constructorimpl);
-                if (m9087exceptionOrNullimpl != null) {
+                Throwable m9094exceptionOrNullimpl = Result.m9094exceptionOrNullimpl(m9091constructorimpl);
+                if (m9094exceptionOrNullimpl != null) {
                     d.dispose();
                     singleObserver.onSubscribe(d);
-                    singleObserver.onError(m9087exceptionOrNullimpl);
+                    singleObserver.onError(m9094exceptionOrNullimpl);
                 }
                 SingleObserver<T> singleObserver2 = downstream;
-                if (Result.m9091isSuccessimpl(m9084constructorimpl)) {
-                    Unit unit = (Unit) m9084constructorimpl;
+                if (Result.m9098isSuccessimpl(m9091constructorimpl)) {
+                    Unit unit = (Unit) m9091constructorimpl;
                     singleObserver2.onSubscribe(d);
                 }
             }

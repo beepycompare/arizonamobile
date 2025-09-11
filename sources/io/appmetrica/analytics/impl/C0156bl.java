@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class C0156bl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0651v5 f810a;
+    public final C0651v5 f814a;
     public final C0130al b;
     public final C0626u5 c;
     public final AbstractC0263g d;
@@ -22,7 +22,7 @@ public final class C0156bl {
     public int g = 0;
 
     public C0156bl(C0651v5 c0651v5, C0130al c0130al, C0626u5 c0626u5, Ha ha, O2 o2) {
-        this.f810a = c0651v5;
+        this.f814a = c0651v5;
         this.c = c0626u5;
         this.d = ha;
         this.e = o2;
@@ -40,15 +40,15 @@ public final class C0156bl {
             C0626u5 c0626u5 = this.c;
             C0477o6 a2 = C0477o6.a(c0477o6, Bb.EVENT_TYPE_ALIVE);
             C0208dl c0208dl = new C0208dl();
-            c0208dl.f845a = nk.d;
-            c0208dl.d = nk.c.f639a;
+            c0208dl.f849a = nk.d;
+            c0208dl.d = nk.c.f643a;
             long andIncrement = nk.f.getAndIncrement();
             C0233el c0233el = nk.b;
             c0233el.a(C0233el.g, Long.valueOf(nk.f.get()));
             c0233el.b();
             c0208dl.b = andIncrement;
             c0208dl.c = TimeUnit.MILLISECONDS.toSeconds(Math.max(nk.i - nk.e, nk.j));
-            c0626u5.f1101a.n.a(a2, c0208dl);
+            c0626u5.f1105a.n.a(a2, c0208dl);
             if (nk.g) {
                 nk.g = false;
                 C0233el c0233el2 = nk.b;
@@ -56,8 +56,8 @@ public final class C0156bl {
                 c0233el2.b();
             }
         }
-        PublicLogger publicLogger = this.f810a.m;
-        int ordinal = nk.c.f639a.ordinal();
+        PublicLogger publicLogger = this.f814a.m;
+        int ordinal = nk.c.f643a.ordinal();
         if (ordinal == 0) {
             publicLogger.info("Finish foreground session", new Object[0]);
         } else if (ordinal == 1) {
@@ -110,22 +110,22 @@ public final class C0156bl {
     }
 
     public final Nk a(C0477o6 c0477o6) {
-        this.f810a.m.info("Start foreground session", new Object[0]);
+        this.f814a.m.info("Start foreground session", new Object[0]);
         long j = c0477o6.i;
         AbstractC0263g abstractC0263g = this.d;
         Ok ok = new Ok(j, c0477o6.j);
         abstractC0263g.getClass();
         Nk a2 = abstractC0263g.a(ok);
         this.g = 3;
-        ((I5) this.f810a.p).e();
+        ((I5) this.f814a.p).e();
         C0626u5 c0626u5 = this.c;
-        c0626u5.f1101a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a2, j));
+        c0626u5.f1105a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a2, j));
         return a2;
     }
 
     public static C0208dl a(Nk nk, long j) {
         C0208dl c0208dl = new C0208dl();
-        c0208dl.f845a = nk.d;
+        c0208dl.f849a = nk.d;
         long andIncrement = nk.f.getAndIncrement();
         C0233el c0233el = nk.b;
         c0233el.a(C0233el.g, Long.valueOf(nk.f.get()));
@@ -136,7 +136,7 @@ public final class C0156bl {
         nk.j = j2;
         c0233el2.a(C0233el.e, Long.valueOf(j2));
         c0208dl.c = TimeUnit.MILLISECONDS.toSeconds(nk.j);
-        c0208dl.d = nk.c.f639a;
+        c0208dl.d = nk.c.f643a;
         return c0208dl;
     }
 
@@ -171,24 +171,24 @@ public final class C0156bl {
             c0233el.b();
             return this.f;
         } else if (a2 != 2) {
-            this.f810a.m.info("Start background session", new Object[0]);
+            this.f814a.m.info("Start background session", new Object[0]);
             this.g = 2;
             long j2 = c0477o6.i;
             AbstractC0263g abstractC0263g = this.e;
             Ok ok = new Ok(j2, c0477o6.j);
             abstractC0263g.getClass();
             Nk a3 = abstractC0263g.a(ok);
-            if (this.f810a.t.c()) {
+            if (this.f814a.t.c()) {
                 C0626u5 c0626u5 = this.c;
-                c0626u5.f1101a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a3, c0477o6.i));
+                c0626u5.f1105a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a3, c0477o6.i));
             } else {
                 int i = c0477o6.d;
                 Bb bb = Bb.EVENT_TYPE_UNDEFINED;
                 if (i == 6145) {
                     C0626u5 c0626u52 = this.c;
-                    c0626u52.f1101a.n.a(c0477o6, a(a3, j2));
+                    c0626u52.f1105a.n.a(c0477o6, a(a3, j2));
                     C0626u5 c0626u53 = this.c;
-                    c0626u53.f1101a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a3, j2));
+                    c0626u53.f1105a.n.a(C0477o6.a(c0477o6, Na.F.h()), a(a3, j2));
                 }
             }
             this.f = a3;
@@ -210,7 +210,7 @@ public final class C0156bl {
             synchronized (nk) {
                 if (nk.h == null) {
                     try {
-                        String asString = nk.f595a.e.a(nk.d, nk.c.f639a).getAsString("report_request_parameters");
+                        String asString = nk.f599a.e.a(nk.d, nk.c.f643a).getAsString("report_request_parameters");
                         if (!TextUtils.isEmpty(asString)) {
                             nk.h = new C0182cl(new JSONObject(asString));
                         }
@@ -224,9 +224,9 @@ public final class C0156bl {
             z = false;
             break;
         }
-        Gh gh = (Gh) nk.f595a.k.a();
+        Gh gh = (Gh) nk.f599a.k.a();
         Boolean[] boolArr = new Boolean[7];
-        boolArr[0] = Boolean.valueOf(TextUtils.equals(gh.getAnalyticsSdkVersionName(), c0182cl.f824a));
+        boolArr[0] = Boolean.valueOf(TextUtils.equals(gh.getAnalyticsSdkVersionName(), c0182cl.f828a));
         boolArr[1] = Boolean.valueOf(TextUtils.equals(gh.getAnalyticsSdkBuildNumber(), c0182cl.b));
         boolArr[2] = Boolean.valueOf(TextUtils.equals(gh.getAppVersion(), c0182cl.c));
         boolArr[3] = Boolean.valueOf(TextUtils.equals(gh.getAppBuildNumber(), c0182cl.d));
@@ -251,12 +251,12 @@ public final class C0156bl {
         if (!z4) {
             TimeUnit timeUnit = TimeUnit.SECONDS;
             Qk qk = nk.c;
-            int i = ((Gh) nk.f595a.k.a()).f;
+            int i = ((Gh) nk.f599a.k.a()).f;
             Integer num = qk.d;
             if (num != null) {
                 i = num.intValue();
             }
-            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Rk.f655a)) {
+            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Rk.f659a)) {
                 z2 = false;
                 if (z3 || !z || z2) {
                     b(nk, c0477o6);

@@ -19,18 +19,18 @@ import kotlin.text.StringsKt;
 public final class C0375k8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final T f947a;
+    public final T f951a;
     public final C0318i2 b;
 
     public C0375k8(T t, C0318i2 c0318i2) {
-        this.f947a = t;
+        this.f951a = t;
         this.b = c0318i2;
     }
 
     public final String a() {
         AdvertisingIdsHolder advertisingIdsHolder;
         byte[] bArr;
-        T t = this.f947a;
+        T t = this.f951a;
         Pn pn = new Pn(5, ServiceStarter.ERROR_UNKNOWN);
         synchronized (t) {
             try {

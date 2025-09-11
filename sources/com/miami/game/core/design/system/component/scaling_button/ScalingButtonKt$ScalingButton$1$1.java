@@ -72,7 +72,7 @@ public final class ScalingButtonKt$ScalingButton$1$1 implements PointerInputEven
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ScalingButton.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButton$1$1$1", f = "ScalingButton.kt", i = {0, 1}, l = {31, 33}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "$this$awaitPointerEventScope"}, s = {"L$0", "L$0"})
+    @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButton$1$1$1", f = "ScalingButton.kt", i = {0, 1}, l = {31, 33}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "$this$awaitPointerEventScope"}, s = {"L$0", "L$0"}, v = 1)
     /* renamed from: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButton$1$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {

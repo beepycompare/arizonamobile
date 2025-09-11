@@ -51,13 +51,13 @@ public final class ColorsTypeViewHolder extends RecyclerView.ViewHolder {
         itemColorBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.viewHolder.ColorsTypeViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ColorsTypeViewHolder.bind$lambda$1$lambda$0(ColorsTypeViewHolder.this, item, view);
+                ColorsTypeViewHolder.bind$lambda$0$0(ColorsTypeViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(ColorsTypeViewHolder colorsTypeViewHolder, ItemColor itemColor, View view) {
+    public static final void bind$lambda$0$0(ColorsTypeViewHolder colorsTypeViewHolder, ItemColor itemColor, View view) {
         colorsTypeViewHolder.onItemClicked.invoke(itemColor, Integer.valueOf(colorsTypeViewHolder.getPosition()));
     }
 }

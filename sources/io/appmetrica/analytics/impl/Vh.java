@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Vh {
 
     /* renamed from: a  reason: collision with root package name */
-    public M4 f710a;
+    public M4 f714a;
 
     public Vh(M4 m4) {
-        this.f710a = m4;
+        this.f714a = m4;
     }
 }

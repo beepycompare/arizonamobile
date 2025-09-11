@@ -11,7 +11,7 @@ import java.util.Map;
 public final class C0195d8 implements InterfaceC0303hd {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f835a;
+    public Location f839a;
     public Boolean b;
     public Boolean c;
     public Boolean d;
@@ -54,7 +54,7 @@ public final class C0195d8 implements InterfaceC0303hd {
     }
 
     public final Location k() {
-        return this.f835a;
+        return this.f839a;
     }
 
     public final Boolean l() {
@@ -95,7 +95,7 @@ public final class C0195d8 implements InterfaceC0303hd {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0303hd
     public final void a(Location location) {
-        this.f835a = location;
+        this.f839a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0303hd
@@ -208,7 +208,7 @@ public final class C0195d8 implements InterfaceC0303hd {
         if (appMetricaConfig.locationTracking == null && ro.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f835a;
+        Location location = this.f839a;
         if (appMetricaConfig.location == null && ro.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -224,7 +224,7 @@ public final class C0195d8 implements InterfaceC0303hd {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.j = true;
-        this.f835a = null;
+        this.f839a = null;
         this.b = null;
         this.c = null;
         this.d = null;

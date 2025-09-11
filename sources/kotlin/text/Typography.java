@@ -16,7 +16,7 @@ public final class Typography {
     public static final char copyright = 169;
 
     /* renamed from: dagger  reason: collision with root package name */
-    public static final char f1341dagger = 8224;
+    public static final char f1345dagger = 8224;
     public static final char degree = 176;
     public static final char dollar = '$';
     public static final char doubleDagger = 8225;

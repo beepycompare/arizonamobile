@@ -95,7 +95,7 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
             itemTasksBinding.btnShowClue.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder.TaskViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TaskViewHolder.bind$lambda$4$lambda$2$lambda$1(TaskViewHolder.this, fractionTasks, view);
+                    TaskViewHolder.bind$lambda$0$1$0(TaskViewHolder.this, fractionTasks, view);
                 }
             });
             itemTasksBinding.tvTaskInfo.setText(fractionTasks.getTitle());
@@ -109,7 +109,7 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
         itemTasksBinding.linearItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.viewHolder.TaskViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TaskViewHolder.bind$lambda$4$lambda$3(TaskViewHolder.this, item, i, view);
+                TaskViewHolder.bind$lambda$0$2(TaskViewHolder.this, item, i, view);
             }
         });
         if (i == i2) {
@@ -133,12 +133,12 @@ public final class TaskViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$4$lambda$2$lambda$1(TaskViewHolder taskViewHolder, FractionTasks fractionTasks, View view) {
+    public static final void bind$lambda$0$1$0(TaskViewHolder taskViewHolder, FractionTasks fractionTasks, View view) {
         taskViewHolder.onShowClueClicked.invoke(fractionTasks);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$4$lambda$3(TaskViewHolder taskViewHolder, TaskInfo taskInfo, int i, View view) {
+    public static final void bind$lambda$0$2(TaskViewHolder taskViewHolder, TaskInfo taskInfo, int i, View view) {
         taskViewHolder.onItemClicked.invoke(taskInfo, Integer.valueOf(i));
     }
 }

@@ -58,13 +58,13 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         bind.openCaseButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.roulette.CaseRouletteScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaseRouletteScreen.lambda$4$lambda$0(CaseRouletteScreen.this, bind, view);
+                CaseRouletteScreen.lambda$0$0(CaseRouletteScreen.this, bind, view);
             }
         });
         bind.getPrizeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.roulette.CaseRouletteScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CaseRouletteScreen.lambda$4$lambda$1(CaseRouletteScreen.this, view);
+                CaseRouletteScreen.lambda$0$1(CaseRouletteScreen.this, view);
             }
         });
         bind.exitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.roulette.CaseRouletteScreen$$ExternalSyntheticLambda2
@@ -82,13 +82,13 @@ public final class CaseRouletteScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$4$lambda$0(CaseRouletteScreen caseRouletteScreen, CaseRouletteBinding caseRouletteBinding, View view) {
+    public static final void lambda$0$0(CaseRouletteScreen caseRouletteScreen, CaseRouletteBinding caseRouletteBinding, View view) {
         SAMPUIElement.notifyClick$default(caseRouletteScreen, 0, 0, null, 4, null);
         caseRouletteBinding.casePage.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$4$lambda$1(CaseRouletteScreen caseRouletteScreen, View view) {
+    public static final void lambda$0$1(CaseRouletteScreen caseRouletteScreen, View view) {
         CaseRouletteScreen caseRouletteScreen2 = caseRouletteScreen;
         SAMPUIElement.notifyClick$default(caseRouletteScreen2, 0, 1, null, 4, null);
         SAMPUIElement.notifyClick$default(caseRouletteScreen2, 0, 2, null, 4, null);
@@ -144,13 +144,13 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.roulette.CaseRouletteScreen$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                CaseRouletteScreen.moveToPrize$lambda$7$lambda$6(CaseRouletteBinding.this);
+                CaseRouletteScreen.moveToPrize$lambda$0$0(CaseRouletteBinding.this);
             }
         }, 200L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void moveToPrize$lambda$7$lambda$6(CaseRouletteBinding caseRouletteBinding) {
+    public static final void moveToPrize$lambda$0$0(CaseRouletteBinding caseRouletteBinding) {
         caseRouletteBinding.caseRouletteRc.smoothScrollToPosition(75);
     }
 

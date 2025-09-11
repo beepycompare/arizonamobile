@@ -28,27 +28,27 @@ public final class ComposableSingletons$MenuContentKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f75lambda$989998245 = ComposableLambdaKt.composableLambdaInstance(-989998245, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__989998245$lambda$1;
-            lambda__989998245$lambda$1 = ComposableSingletons$MenuContentKt.lambda__989998245$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__989998245$lambda$1;
+            Unit lambda__989998245$lambda$0;
+            lambda__989998245$lambda$0 = ComposableSingletons$MenuContentKt.lambda__989998245$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda__989998245$lambda$0;
         }
     });
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$1483995263 = ComposableLambdaKt.composableLambdaInstance(1483995263, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$MenuContentKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_1483995263$lambda$2;
-            lambda_1483995263$lambda$2 = ComposableSingletons$MenuContentKt.lambda_1483995263$lambda$2((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_1483995263$lambda$2;
+            Unit lambda_1483995263$lambda$0;
+            lambda_1483995263$lambda$0 = ComposableSingletons$MenuContentKt.lambda_1483995263$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_1483995263$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-432014182$home_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8993getLambda$432014182$home_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9000getLambda$432014182$home_release() {
         return f74lambda$432014182;
     }
 
     /* renamed from: getLambda$-989998245$home_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8994getLambda$989998245$home_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9001getLambda$989998245$home_release() {
         return f75lambda$989998245;
     }
 
@@ -75,7 +75,7 @@ public final class ComposableSingletons$MenuContentKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__989998245$lambda$1(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda__989998245$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C45@1552L12:MenuContent.kt#dswm0d");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -93,7 +93,7 @@ public final class ComposableSingletons$MenuContentKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda_1483995263$lambda$2(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda_1483995263$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C49@1671L15:MenuContent.kt#dswm0d");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

@@ -18,7 +18,7 @@ public class C0153bi extends C0268g4 {
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        Vf vf = this.f884a;
+        Vf vf = this.f888a;
         synchronized (vf) {
             bundle.putParcelable("PROCESS_CFG_OBJ", vf);
         }
@@ -28,7 +28,7 @@ public class C0153bi extends C0268g4 {
     public final synchronized String d() {
         C0144b9 c0144b9;
         c0144b9 = this.c;
-        return c0144b9.f803a.isEmpty() ? null : new JSONObject(c0144b9.f803a).toString();
+        return c0144b9.f807a.isEmpty() ? null : new JSONObject(c0144b9.f807a).toString();
     }
 
     public final synchronized String e() {

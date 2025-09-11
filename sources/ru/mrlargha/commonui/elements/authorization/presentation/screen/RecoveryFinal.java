@@ -28,7 +28,7 @@ public final class RecoveryFinal implements InterfaceController {
     private final BackgroundVideoBinding videoBinding;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(View view) {
+    public static final void _init_$lambda$2(View view) {
     }
 
     public RecoveryFinal(final Activity targetActivity, final int i) {
@@ -55,26 +55,26 @@ public final class RecoveryFinal implements InterfaceController {
         bind.accountRecoveryFinalReplyButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryFinal$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryFinal._init_$lambda$1(RecoveryFinal.this, i, targetActivity, view);
+                RecoveryFinal._init_$lambda$0(RecoveryFinal.this, i, targetActivity, view);
             }
         });
         bind.accountRecoveryFinalLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryFinal$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryFinal._init_$lambda$2(RecoveryFinal.this, targetActivity, i, view);
+                RecoveryFinal._init_$lambda$1(RecoveryFinal.this, targetActivity, i, view);
             }
         });
         bind.accountRecoveryFinal.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryFinal$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryFinal._init_$lambda$3(view);
+                RecoveryFinal._init_$lambda$2(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r2v3, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryFinal$1$2] */
-    public static final void _init_$lambda$1(final RecoveryFinal recoveryFinal, int i, Activity activity, View view) {
+    public static final void _init_$lambda$0(final RecoveryFinal recoveryFinal, int i, Activity activity, View view) {
         if (recoveryFinal.timer != null) {
             Toast.makeText(activity, "Для повторной отправки необходимо дождаться завершения таймера", 0).show();
             return;
@@ -108,7 +108,7 @@ public final class RecoveryFinal implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(RecoveryFinal recoveryFinal, Activity activity, int i, View view) {
+    public static final void _init_$lambda$1(RecoveryFinal recoveryFinal, Activity activity, int i, View view) {
         recoveryFinal.resetRecoveryFinal();
         InterfaceController orCreateInterface = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.AUTH_INIT.getId(), activity, i);
         InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.AUTHORIZATION_NEWS.getId(), activity, i).setVisible(true);

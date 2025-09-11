@@ -6,10 +6,10 @@ import javax.net.ssl.SSLSocketFactory;
 public final class Jl implements InterfaceC0112a3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f519a;
+    public final Context f523a;
 
     public Jl(Context context) {
-        this.f519a = context;
+        this.f523a = context;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0112a3, io.appmetrica.analytics.impl.InterfaceC0618tm
@@ -17,7 +17,7 @@ public final class Jl implements InterfaceC0112a3 {
     }
 
     public final Context b() {
-        return this.f519a;
+        return this.f523a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider

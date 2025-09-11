@@ -26,11 +26,11 @@ public final class C0611tf extends Td implements Ho {
     }
 
     public final long a(int i2) {
-        return this.f1062a.getLong(e.b, i2);
+        return this.f1066a.getLong(e.b, i2);
     }
 
     public final boolean b(boolean z) {
-        return this.f1062a.getBoolean(f.b, z);
+        return this.f1066a.getBoolean(f.b, z);
     }
 
     public final C0611tf c(boolean z) {
@@ -42,7 +42,7 @@ public final class C0611tf extends Td implements Ho {
     }
 
     public final boolean e() {
-        return this.f1062a.getBoolean(d.b, false);
+        return this.f1066a.getBoolean(d.b, false);
     }
 
     public final void f(boolean z) {
@@ -58,15 +58,15 @@ public final class C0611tf extends Td implements Ho {
     }
 
     public final boolean i() {
-        return this.f1062a.getBoolean(o.b, false);
+        return this.f1066a.getBoolean(o.b, false);
     }
 
     public final boolean j() {
-        return this.f1062a.getBoolean(p.b, false);
+        return this.f1066a.getBoolean(p.b, false);
     }
 
     public final long a(long j2) {
-        return this.f1062a.getLong(h.b, j2);
+        return this.f1066a.getLong(h.b, j2);
     }
 
     public final C0611tf b(long j2) {
@@ -86,12 +86,12 @@ public final class C0611tf extends Td implements Ho {
     }
 
     public final long f() {
-        return this.f1062a.getLong(r.b, 0L);
+        return this.f1066a.getLong(r.b, 0L);
     }
 
     @Override // io.appmetrica.analytics.impl.Ho
     public final String a() {
-        return this.f1062a.getString(q.b, null);
+        return this.f1066a.getString(q.b, null);
     }
 
     public final C0611tf b(EnumC0485oe enumC0485oe, int i2) {
@@ -109,13 +109,13 @@ public final class C0611tf extends Td implements Ho {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0561rf
     public final Set<String> c() {
-        return this.f1062a.a();
+        return this.f1066a.a();
     }
 
     public final Boolean d() {
         C0586sf c0586sf = g;
-        if (this.f1062a.a(c0586sf.b)) {
-            return Boolean.valueOf(this.f1062a.getBoolean(c0586sf.b, true));
+        if (this.f1066a.a(c0586sf.b)) {
+            return Boolean.valueOf(this.f1066a.getBoolean(c0586sf.b, true));
         }
         return null;
     }
@@ -131,7 +131,7 @@ public final class C0611tf extends Td implements Ho {
     }
 
     public final boolean a(boolean z) {
-        return this.f1062a.getBoolean(s.b, z);
+        return this.f1066a.getBoolean(s.b, z);
     }
 
     public final int a(EnumC0485oe enumC0485oe, int i2) {
@@ -147,7 +147,7 @@ public final class C0611tf extends Td implements Ho {
         if (c0586sf == null) {
             return i2;
         }
-        return this.f1062a.getInt(c0586sf.b, i2);
+        return this.f1066a.getInt(c0586sf.b, i2);
     }
 
     public final C0611tf b(EnumC0485oe enumC0485oe, long j2) {
@@ -176,6 +176,6 @@ public final class C0611tf extends Td implements Ho {
         if (c0586sf == null) {
             return j2;
         }
-        return this.f1062a.getLong(c0586sf.b, j2);
+        return this.f1066a.getLong(c0586sf.b, j2);
     }
 }

@@ -9,12 +9,12 @@ public final class C0794z implements Parcelable {
     public static final C0793y CREATOR = new C0793y();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1333a;
+    public final boolean f1337a;
     public final List b;
     public final long c;
 
     public C0794z(boolean z, List list, long j) {
-        this.f1333a = z;
+        this.f1337a = z;
         this.b = list;
         this.c = j;
     }
@@ -24,7 +24,7 @@ public final class C0794z implements Parcelable {
     }
 
     public final boolean b() {
-        return this.f1333a;
+        return this.f1337a;
     }
 
     public final List c() {
@@ -37,12 +37,12 @@ public final class C0794z implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableContentObserverCaptorConfig(enabled=" + this.f1333a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
+        return "ParcelableContentObserverCaptorConfig(enabled=" + this.f1337a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1333a ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f1337a ? (byte) 1 : (byte) 0);
         parcel.writeStringList(this.b);
         parcel.writeLong(this.c);
     }

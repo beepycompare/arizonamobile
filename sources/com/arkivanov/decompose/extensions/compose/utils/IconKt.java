@@ -26,7 +26,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class IconKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit IconCompat_FNF3uiM$lambda$0(Painter painter, Modifier modifier, long j, int i, int i2, Composer composer, int i3) {
-        m8594IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m8603IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -47,7 +47,7 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m8594IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m8603IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -149,11 +149,11 @@ public final class IconKt {
     }
 
     private static final Modifier defaultSizeFor(Modifier modifier, Painter painter) {
-        return (Size.m4358equalsimpl0(painter.mo5236getIntrinsicSizeNHjbRc(), Size.Companion.m4370getUnspecifiedNHjbRc()) || m8595isInfiniteuvyYCjk(painter.mo5236getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(24))) : modifier;
+        return (Size.m4358equalsimpl0(painter.mo5236getIntrinsicSizeNHjbRc(), Size.Companion.m4370getUnspecifiedNHjbRc()) || m8604isInfiniteuvyYCjk(painter.mo5236getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(24))) : modifier;
     }
 
     /* renamed from: isInfinite-uvyYCjk  reason: not valid java name */
-    private static final boolean m8595isInfiniteuvyYCjk(long j) {
+    private static final boolean m8604isInfiniteuvyYCjk(long j) {
         return Float.isInfinite(Size.m4362getWidthimpl(j)) && Float.isInfinite(Size.m4359getHeightimpl(j));
     }
 }

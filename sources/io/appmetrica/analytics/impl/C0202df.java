@@ -11,10 +11,10 @@ import kotlin.collections.CollectionsKt;
 public final class C0202df {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0429ma f840a;
+    public final C0429ma f844a;
 
     public C0202df(C0429ma c0429ma) {
-        this.f840a = c0429ma;
+        this.f844a = c0429ma;
     }
 
     public final Wn a(PluginErrorDetails pluginErrorDetails) {
@@ -25,8 +25,8 @@ public final class C0202df {
         String platform = pluginErrorDetails.getPlatform();
         String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
         Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f840a.b.a();
-        Boolean bool = (Boolean) this.f840a.c.a();
+        String str = (String) this.f844a.b.a();
+        Boolean bool = (Boolean) this.f844a.c.a();
         if (stacktrace != null) {
             arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
             for (StackTraceItem stackTraceItem : stacktrace) {

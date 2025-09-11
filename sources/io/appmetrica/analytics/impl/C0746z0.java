@@ -25,7 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0746z0 implements InterfaceC0172cb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1175a;
+    public final Context f1179a;
     public final InterfaceC0146bb b;
     public final C0512pf c;
     public final Xl d;
@@ -40,7 +40,7 @@ public final class C0746z0 implements InterfaceC0172cb {
     public boolean m;
 
     public C0746z0(Context context, InterfaceC0146bb interfaceC0146bb) {
-        this.f1175a = context;
+        this.f1179a = context;
         this.b = interfaceC0146bb;
         C0512pf b = A4.l().b(context);
         this.c = b;
@@ -101,7 +101,7 @@ public final class C0746z0 implements InterfaceC0172cb {
     public final InterfaceC0327ib j() {
         Jc jc = this.k;
         Intrinsics.checkNotNull(jc);
-        return jc.f512a;
+        return jc.f516a;
     }
 
     public final Fi k() {
@@ -126,12 +126,12 @@ public final class C0746z0 implements InterfaceC0172cb {
     @Override // io.appmetrica.analytics.impl.InterfaceC0172cb
     public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         C0393l0 c0393l0 = this.l;
-        AppMetricaConfig f = c0393l0.f956a.f();
+        AppMetricaConfig f = c0393l0.f960a.f();
         if (f == null) {
             C0596t0 c0596t0 = c0393l0.b;
             c0596t0.getClass();
             AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-            if (c0596t0.f1083a.b() && Intrinsics.areEqual(c0596t0.b.f383a, Boolean.TRUE)) {
+            if (c0596t0.f1087a.b() && Intrinsics.areEqual(c0596t0.b.f387a, Boolean.TRUE)) {
                 newConfigBuilder.handleFirstActivationAsUpdate(true);
             }
             Boolean bool = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -199,7 +199,7 @@ public final class C0746z0 implements InterfaceC0172cb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0172cb
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, Gb.c(this.f.f708a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, Gb.c(this.f.f712a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
     public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, Wc wc) {
@@ -213,7 +213,7 @@ public final class C0746z0 implements InterfaceC0172cb {
             this.k = jc;
             K5 k5 = this.j.b;
             synchronized (k5) {
-                k5.f528a = a2;
+                k5.f532a = a2;
                 Iterator it = k5.b.iterator();
                 while (it.hasNext()) {
                     ((InterfaceC0660ve) it.next()).consume(a2);
@@ -237,7 +237,7 @@ public final class C0746z0 implements InterfaceC0172cb {
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
         if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue()) {
-            this.b.d().a(this.f1175a, appMetricaConfig, this);
+            this.b.d().a(this.f1179a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
@@ -250,8 +250,8 @@ public final class C0746z0 implements InterfaceC0172cb {
             C0285gl c0285gl = this.j;
             synchronized (c0285gl) {
                 if (c0285gl.g) {
-                    c0285gl.f896a.unregisterListener(c0285gl.c, ActivityEvent.RESUMED);
-                    c0285gl.f896a.unregisterListener(c0285gl.d, ActivityEvent.PAUSED);
+                    c0285gl.f900a.unregisterListener(c0285gl.c, ActivityEvent.RESUMED);
+                    c0285gl.f900a.unregisterListener(c0285gl.d, ActivityEvent.PAUSED);
                     c0285gl.g = false;
                 }
             }

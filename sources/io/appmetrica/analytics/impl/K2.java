@@ -7,19 +7,19 @@ public final class K2 implements ProtobufConverter {
     /* renamed from: a */
     public final C0189d2 fromModel(M2 m2) {
         C0189d2 c0189d2 = new C0189d2();
-        L2 l2 = m2.f565a;
+        L2 l2 = m2.f569a;
         if (l2 != null) {
             int ordinal = l2.ordinal();
             if (ordinal == 1) {
-                c0189d2.f830a = 1;
+                c0189d2.f834a = 1;
             } else if (ordinal == 2) {
-                c0189d2.f830a = 2;
+                c0189d2.f834a = 2;
             } else if (ordinal == 3) {
-                c0189d2.f830a = 3;
+                c0189d2.f834a = 3;
             } else if (ordinal == 4) {
-                c0189d2.f830a = 4;
+                c0189d2.f834a = 4;
             } else if (ordinal == 5) {
-                c0189d2.f830a = 5;
+                c0189d2.f834a = 5;
             }
         }
         Boolean bool = m2.b;
@@ -37,7 +37,7 @@ public final class K2 implements ProtobufConverter {
     /* renamed from: a */
     public final M2 toModel(C0189d2 c0189d2) {
         L2 l2;
-        int i = c0189d2.f830a;
+        int i = c0189d2.f834a;
         Boolean bool = null;
         if (i == 1) {
             l2 = L2.ACTIVE;

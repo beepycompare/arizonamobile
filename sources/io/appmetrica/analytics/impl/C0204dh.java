@@ -10,8 +10,8 @@ public final class C0204dh extends C0178ch {
 
     @Override // io.appmetrica.analytics.impl.C0178ch, io.appmetrica.analytics.impl.Oa
     public final void a(List<AbstractC0462nh> list) {
-        list.add(this.f603a.i);
-        list.add(this.f603a.j);
+        list.add(this.f607a.i);
+        list.add(this.f607a.j);
         super.a(list);
     }
 }

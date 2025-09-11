@@ -118,10 +118,6 @@ public final class HudCaptModel {
         this.territoryId = i2;
     }
 
-    public final String getName() {
-        return this.name;
-    }
-
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -148,6 +144,10 @@ public final class HudCaptModel {
             bool2 = bool;
             list2 = list;
         }
+    }
+
+    public final String getName() {
+        return this.name;
     }
 
     public final long getTime() {

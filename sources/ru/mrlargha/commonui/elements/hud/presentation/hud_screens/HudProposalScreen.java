@@ -205,26 +205,26 @@ public final class HudProposalScreen {
         proposalBinding.proposalAcceptBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudProposalScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HudProposalScreen.showProposalScreen$lambda$2$lambda$0(Function1.this, view);
+                HudProposalScreen.showProposalScreen$lambda$0$0(Function1.this, view);
             }
         });
         proposalBinding.proposalDeclineBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudProposalScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HudProposalScreen.showProposalScreen$lambda$2$lambda$1(Function1.this, view);
+                HudProposalScreen.showProposalScreen$lambda$0$1(Function1.this, view);
             }
         });
         BuildersKt__Builders_commonKt.launch$default(scope, null, null, new HudProposalScreen$showProposalScreen$2(proposalResponse, proposalBinding, null), 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showProposalScreen$lambda$2$lambda$0(Function1 function1, View view) {
+    public static final void showProposalScreen$lambda$0$0(Function1 function1, View view) {
         function1.invoke(16);
         timer.cancel();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showProposalScreen$lambda$2$lambda$1(Function1 function1, View view) {
+    public static final void showProposalScreen$lambda$0$1(Function1 function1, View view) {
         function1.invoke(17);
         timer.cancel();
     }

@@ -46,7 +46,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, exitButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$0(CasinoScreen.this);
+                return CasinoScreen.lambda$0$0(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -55,7 +55,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$1(CasinoScreen.this);
+                return CasinoScreen.lambda$0$1(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -64,7 +64,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation3, minusButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$2(CasinoScreen.this);
+                return CasinoScreen.lambda$0$2(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation4 = EasyAnimation.INSTANCE;
@@ -73,7 +73,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation4, plusButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$3(CasinoScreen.this);
+                return CasinoScreen.lambda$0$3(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation5 = EasyAnimation.INSTANCE;
@@ -82,7 +82,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation5, leftButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$4(CasinoScreen.this);
+                return CasinoScreen.lambda$0$4(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation6 = EasyAnimation.INSTANCE;
@@ -91,7 +91,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation6, rightButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$5(CasinoScreen.this);
+                return CasinoScreen.lambda$0$5(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation7 = EasyAnimation.INSTANCE;
@@ -100,7 +100,7 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation7, upButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$6(CasinoScreen.this);
+                return CasinoScreen.lambda$0$6(CasinoScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation8 = EasyAnimation.INSTANCE;
@@ -109,55 +109,55 @@ public final class CasinoScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation8, bottomButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CasinoScreen.lambda$8$lambda$7(CasinoScreen.this);
+                return CasinoScreen.lambda$0$7(CasinoScreen.this);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$0(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$0(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$1(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$1(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 1, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$2(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$2(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 2, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$3(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$3(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 3, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$4(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$4(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 4, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$5(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$5(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 5, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$6(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$6(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 6, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$8$lambda$7(CasinoScreen casinoScreen) {
+    public static final Unit lambda$0$7(CasinoScreen casinoScreen) {
         SAMPUIElement.notifyClick$default(casinoScreen, 0, 7, null, 4, null);
         return Unit.INSTANCE;
     }

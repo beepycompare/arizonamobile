@@ -4,17 +4,17 @@ package io.appmetrica.analytics.impl;
 public final class RunnableC0639ui implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Wn f1109a;
+    public final /* synthetic */ Wn f1113a;
     public final /* synthetic */ Ci b;
 
     public RunnableC0639ui(Ci ci, Wn wn) {
         this.b = ci;
-        this.f1109a = wn;
+        this.f1113a = wn;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Ci ci = this.b;
-        Ci.a(ci.f388a, ci.d, ci.e).a(this.f1109a);
+        Ci.a(ci.f392a, ci.d, ci.e).a(this.f1113a);
     }
 }

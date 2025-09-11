@@ -5,12 +5,12 @@ import java.util.Objects;
 public final class StartupParamsItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f202a;
+    private final String f206a;
     private final StartupParamsItemStatus b;
     private final String c;
 
     public StartupParamsItem(String str, StartupParamsItemStatus startupParamsItemStatus, String str2) {
-        this.f202a = str;
+        this.f206a = str;
         this.b = startupParamsItemStatus;
         this.c = str2;
     }
@@ -21,7 +21,7 @@ public final class StartupParamsItem {
         }
         if (obj != null && StartupParamsItem.class == obj.getClass()) {
             StartupParamsItem startupParamsItem = (StartupParamsItem) obj;
-            if (Objects.equals(this.f202a, startupParamsItem.f202a) && this.b == startupParamsItem.b && Objects.equals(this.c, startupParamsItem.c)) {
+            if (Objects.equals(this.f206a, startupParamsItem.f206a) && this.b == startupParamsItem.b && Objects.equals(this.c, startupParamsItem.c)) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ public final class StartupParamsItem {
     }
 
     public String getId() {
-        return this.f202a;
+        return this.f206a;
     }
 
     public StartupParamsItemStatus getStatus() {
@@ -41,10 +41,10 @@ public final class StartupParamsItem {
     }
 
     public int hashCode() {
-        return Objects.hash(this.f202a, this.b, this.c);
+        return Objects.hash(this.f206a, this.b, this.c);
     }
 
     public String toString() {
-        return "StartupParamsItem{id='" + this.f202a + "', status=" + this.b + ", errorDetails='" + this.c + "'}";
+        return "StartupParamsItem{id='" + this.f206a + "', status=" + this.b + ", errorDetails='" + this.c + "'}";
     }
 }

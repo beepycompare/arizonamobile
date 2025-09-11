@@ -5,22 +5,22 @@ import io.appmetrica.analytics.ValidationException;
 public class Kn implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final yo f541a;
+    public final yo f545a;
 
     public Kn(yo yoVar) {
-        this.f541a = yoVar;
+        this.f545a = yoVar;
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final wo a(Object obj) {
-        wo a2 = this.f541a.a(obj);
-        if (a2.f1141a) {
+        wo a2 = this.f545a.a(obj);
+        if (a2.f1145a) {
             return a2;
         }
         throw new ValidationException(a2.b);
     }
 
     public final yo a() {
-        return this.f541a;
+        return this.f545a;
     }
 }

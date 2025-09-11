@@ -8,17 +8,17 @@ import java.util.Set;
 public final class Pb implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WeakReference f620a;
+    public final WeakReference f624a;
     public final WeakReference b;
 
     public Pb(Handler handler, Y2 y2) {
-        this.f620a = new WeakReference(handler);
+        this.f624a = new WeakReference(handler);
         this.b = new WeakReference(y2);
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Handler handler = (Handler) this.f620a.get();
+        Handler handler = (Handler) this.f624a.get();
         Y2 y2 = (Y2) this.b.get();
         if (handler == null || y2 == null) {
             return;
@@ -26,7 +26,7 @@ public final class Pb implements Runnable {
         boolean f = y2.b.f();
         if (!f) {
             PublicLogger publicLogger = y2.c;
-            Set set = W9.f721a;
+            Set set = W9.f725a;
             Bb bb = Bb.EVENT_TYPE_UNDEFINED;
             C0397l4 c0397l4 = new C0397l4("", "", 3, 0, publicLogger);
             Si si = y2.h;

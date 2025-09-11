@@ -38,27 +38,27 @@ public final class Action extends SAMPUIElement implements DefaultLifecycleObser
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onCreate(LifecycleOwner lifecycleOwner) {
+    public /* bridge */ void onCreate(LifecycleOwner lifecycleOwner) {
         super.onCreate(lifecycleOwner);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onDestroy(LifecycleOwner lifecycleOwner) {
+    public /* bridge */ void onDestroy(LifecycleOwner lifecycleOwner) {
         super.onDestroy(lifecycleOwner);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onResume(LifecycleOwner lifecycleOwner) {
+    public /* bridge */ void onResume(LifecycleOwner lifecycleOwner) {
         super.onResume(lifecycleOwner);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onStart(LifecycleOwner lifecycleOwner) {
+    public /* bridge */ void onStart(LifecycleOwner lifecycleOwner) {
         super.onStart(lifecycleOwner);
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
-    public void onStop(LifecycleOwner lifecycleOwner) {
+    public /* bridge */ void onStop(LifecycleOwner lifecycleOwner) {
         super.onStop(lifecycleOwner);
     }
 
@@ -91,14 +91,14 @@ public final class Action extends SAMPUIElement implements DefaultLifecycleObser
         getTargetActivity().runOnUiThread(new Runnable() { // from class: ru.mrlargha.arizonaui.action.presentation.Action$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Action.setProgress$lambda$1(j, j2, this, intRef);
+                Action.setProgress$lambda$0(j, j2, this, intRef);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r0v0, types: [ru.mrlargha.arizonaui.action.presentation.Action$setProgress$1$1] */
-    public static final void setProgress$lambda$1(final long j, final long j2, final Action action, final Ref.IntRef intRef) {
+    public static final void setProgress$lambda$0(final long j, final long j2, final Action action, final Ref.IntRef intRef) {
         new CountDownTimer(j, j2) { // from class: ru.mrlargha.arizonaui.action.presentation.Action$setProgress$1$1
             @Override // android.os.CountDownTimer
             public void onTick(long j3) {

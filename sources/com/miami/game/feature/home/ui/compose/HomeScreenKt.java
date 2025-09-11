@@ -52,25 +52,25 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes4.dex */
 public final class HomeScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit HomeContent$lambda$21(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function1 function12, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, int i, int i2, Composer composer, int i3) {
+    public static final Unit HomeContent$lambda$1(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function1 function12, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, int i, int i2, Composer composer, int i3) {
         HomeContent(homeUiState, state, function0, function02, function03, function1, function12, function04, function05, function06, function07, function08, function09, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit HomeRoute$lambda$14(HomeComponent homeComponent, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function0 function04, Function2 function2, Function0 function05, int i, Composer composer, int i2) {
+    public static final Unit HomeRoute$lambda$13(HomeComponent homeComponent, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function0 function04, Function2 function2, Function0 function05, int i, Composer composer, int i2) {
         HomeRoute(homeComponent, function0, function02, function03, function1, function04, function2, function05, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit HomeScreen$lambda$16(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function1 function12, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, int i, int i2, Composer composer, int i3) {
+    public static final Unit HomeScreen$lambda$1(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function1 function1, Function1 function12, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, int i, int i2, Composer composer, int i3) {
         HomeScreen(homeUiState, state, function0, function02, function03, function1, function12, function04, function05, function06, function07, function08, function09, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NewsItemUiPreview$lambda$22(int i, Composer composer, int i2) {
+    public static final Unit NewsItemUiPreview$lambda$0(int i, Composer composer, int i2) {
         NewsItemUiPreview(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -136,7 +136,7 @@ public final class HomeScreenKt {
             State observeAsState = LiveDataAdapterKt.observeAsState(component.getNotificationStateHolder().getViewModel().getNotificationsUnViewed(), 0, startRestartGroup, 48);
             SharedEventFlow<HomeUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 39622537, "CC(remember):HomeScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 39622153, "CC(remember):HomeScreen.kt#9igjgp");
             boolean changed = ((458752 & i2) == 131072) | ((i2 & 112) == 32) | ((i2 & 896) == 256) | ((57344 & i2) == 16384) | startRestartGroup.changed(collectAsStateWithLifecycle) | ((3670016 & i2) == 1048576) | startRestartGroup.changedInstance(component) | ((i2 & 7168) == 2048) | ((29360128 & i2) == 8388608) | startRestartGroup.changedInstance(context2);
             HomeScreenKt$HomeRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -160,7 +160,7 @@ public final class HomeScreenKt {
             ObserveExternalNavigationActionsKt.observeExternalNavigationActions(homeComponent.getExternalNavigationAction(), composer2, i3);
             HomeUiState HomeRoute$lambda$0 = HomeRoute$lambda$0(state);
             String str2 = str;
-            ComposerKt.sourceInformationMarkerStart(composer2, 39657127, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39656743, str2);
             boolean changedInstance = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$2$1 rememberedValue2 = composer2.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -169,7 +169,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function0 = (Function0) ((KFunction) rememberedValue2);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39658665, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39658281, str2);
             boolean changedInstance2 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$3$1 rememberedValue3 = composer2.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -178,23 +178,23 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function02 = (Function0) ((KFunction) rememberedValue3);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39660211, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39659827, str2);
             boolean changedInstance3 = composer2.changedInstance(homeComponent) | composer2.changedInstance(context);
             Object rememberedValue4 = composer2.rememberedValue();
             if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
                 rememberedValue4 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit HomeRoute$lambda$5$lambda$4;
-                        HomeRoute$lambda$5$lambda$4 = HomeScreenKt.HomeRoute$lambda$5$lambda$4(HomeComponent.this, context);
-                        return HomeRoute$lambda$5$lambda$4;
+                        Unit HomeRoute$lambda$4$0;
+                        HomeRoute$lambda$4$0 = HomeScreenKt.HomeRoute$lambda$4$0(HomeComponent.this, context);
+                        return HomeRoute$lambda$4$0;
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue4);
             }
             Function0 function03 = rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39662055, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39661671, str2);
             boolean changedInstance4 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$5$1 rememberedValue5 = composer2.rememberedValue();
             if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -203,7 +203,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function1 function1 = (Function1) ((KFunction) rememberedValue5);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39663593, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39663209, str2);
             boolean changedInstance5 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$6$1 rememberedValue6 = composer2.rememberedValue();
             if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
@@ -212,7 +212,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function1 function12 = (Function1) ((KFunction) rememberedValue6);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39665226, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39664842, str2);
             boolean changedInstance6 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$7$1 rememberedValue7 = composer2.rememberedValue();
             if (changedInstance6 || rememberedValue7 == Composer.Companion.getEmpty()) {
@@ -221,7 +221,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function04 = (Function0) ((KFunction) rememberedValue7);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39666824, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39666440, str2);
             boolean changedInstance7 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$8$1 rememberedValue8 = composer2.rememberedValue();
             if (changedInstance7 || rememberedValue8 == Composer.Companion.getEmpty()) {
@@ -230,7 +230,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function05 = (Function0) ((KFunction) rememberedValue8);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39668459, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39668075, str2);
             boolean changedInstance8 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$9$1 rememberedValue9 = composer2.rememberedValue();
             if (changedInstance8 || rememberedValue9 == Composer.Companion.getEmpty()) {
@@ -239,7 +239,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function06 = (Function0) ((KFunction) rememberedValue9);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39670088, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39669704, str2);
             boolean changedInstance9 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$10$1 rememberedValue10 = composer2.rememberedValue();
             if (changedInstance9 || rememberedValue10 == Composer.Companion.getEmpty()) {
@@ -248,7 +248,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function07 = (Function0) ((KFunction) rememberedValue10);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39671887, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39671503, str2);
             boolean changedInstance10 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$11$1 rememberedValue11 = composer2.rememberedValue();
             if (changedInstance10 || rememberedValue11 == Composer.Companion.getEmpty()) {
@@ -257,7 +257,7 @@ public final class HomeScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             Function0 function08 = (Function0) ((KFunction) rememberedValue11);
-            ComposerKt.sourceInformationMarkerStart(composer2, 39673739, str2);
+            ComposerKt.sourceInformationMarkerStart(composer2, 39673355, str2);
             boolean changedInstance11 = composer2.changedInstance(homeComponent);
             HomeScreenKt$HomeRoute$12$1 rememberedValue12 = composer2.rememberedValue();
             if (changedInstance11 || rememberedValue12 == Composer.Companion.getEmpty()) {
@@ -275,16 +275,16 @@ public final class HomeScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HomeRoute$lambda$14;
-                    HomeRoute$lambda$14 = HomeScreenKt.HomeRoute$lambda$14(HomeComponent.this, navigateToSettings, navigateToSelectServers, navigateTooRepairGameSuccess, navigateToDownloadDialog, navigateToDownloadScreen, navigateToErrorDialog, navigateToNotification, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return HomeRoute$lambda$14;
+                    Unit HomeRoute$lambda$13;
+                    HomeRoute$lambda$13 = HomeScreenKt.HomeRoute$lambda$13(HomeComponent.this, navigateToSettings, navigateToSelectServers, navigateTooRepairGameSuccess, navigateToDownloadDialog, navigateToDownloadScreen, navigateToErrorDialog, navigateToNotification, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return HomeRoute$lambda$13;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit HomeRoute$lambda$5$lambda$4(HomeComponent homeComponent, Context context) {
+    public static final Unit HomeRoute$lambda$4$0(HomeComponent homeComponent, Context context) {
         homeComponent.onClickShop(context);
         return Unit.INSTANCE;
     }
@@ -410,9 +410,9 @@ public final class HomeScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HomeScreen$lambda$16;
-                    HomeScreen$lambda$16 = HomeScreenKt.HomeScreen$lambda$16(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return HomeScreen$lambda$16;
+                    Unit HomeScreen$lambda$1;
+                    HomeScreen$lambda$1 = HomeScreenKt.HomeScreen$lambda$1(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return HomeScreen$lambda$1;
                 }
             });
         }
@@ -652,9 +652,9 @@ public final class HomeScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HomeContent$lambda$21;
-                    HomeContent$lambda$21 = HomeScreenKt.HomeContent$lambda$21(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return HomeContent$lambda$21;
+                    Unit HomeContent$lambda$1;
+                    HomeContent$lambda$1 = HomeScreenKt.HomeContent$lambda$1(HomeUiState.this, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return HomeContent$lambda$1;
                 }
             });
         }
@@ -679,9 +679,9 @@ public final class HomeScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.HomeScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NewsItemUiPreview$lambda$22;
-                    NewsItemUiPreview$lambda$22 = HomeScreenKt.NewsItemUiPreview$lambda$22(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NewsItemUiPreview$lambda$22;
+                    Unit NewsItemUiPreview$lambda$0;
+                    NewsItemUiPreview$lambda$0 = HomeScreenKt.NewsItemUiPreview$lambda$0(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NewsItemUiPreview$lambda$0;
                 }
             });
         }

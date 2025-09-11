@@ -9,7 +9,7 @@ import java.util.Map;
 public final class C0640uj implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Me f1110a;
+    public final Me f1114a;
     public final K3 b;
     public final Sa c;
     public final Sa d;
@@ -23,22 +23,22 @@ public final class C0640uj implements Converter {
     public final Zi fromModel(C0740yj c0740yj) {
         Zi zi;
         P8 p8 = new P8();
-        Sn a2 = this.c.a(c0740yj.f1169a);
-        p8.f618a = StringUtils.getUTF8Bytes((String) a2.f671a);
+        Sn a2 = this.c.a(c0740yj.f1173a);
+        p8.f622a = StringUtils.getUTF8Bytes((String) a2.f675a);
         List<String> list = c0740yj.b;
         Zi zi2 = null;
         if (list != null) {
             zi = this.b.fromModel(list);
-            p8.b = (E8) zi.f772a;
+            p8.b = (E8) zi.f776a;
         } else {
             zi = null;
         }
         Sn a3 = this.d.a(c0740yj.c);
-        p8.c = StringUtils.getUTF8Bytes((String) a3.f671a);
+        p8.c = StringUtils.getUTF8Bytes((String) a3.f675a);
         Map<String, String> map = c0740yj.d;
         if (map != null) {
-            zi2 = this.f1110a.fromModel(map);
-            p8.d = (K8) zi2.f772a;
+            zi2 = this.f1114a.fromModel(map);
+            p8.d = (K8) zi2.f776a;
         }
         return new Zi(p8, new C0749z3(C0749z3.b(a2, zi, a3, zi2)));
     }
@@ -50,7 +50,7 @@ public final class C0640uj implements Converter {
     }
 
     public C0640uj(Me me2, K3 k3, Sa sa, Sa sa2) {
-        this.f1110a = me2;
+        this.f1114a = me2;
         this.b = k3;
         this.c = sa;
         this.d = sa2;

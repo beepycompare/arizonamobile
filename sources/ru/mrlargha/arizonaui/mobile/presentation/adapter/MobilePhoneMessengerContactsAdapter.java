@@ -44,6 +44,17 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
         this(null, null, 3, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public MobilePhoneMessengerContactsAdapter(Function1<? super ContactInfo, Unit> onNewChat, Function1<? super ContactInfo, Unit> onAddOrRemoveUser) {
+        Intrinsics.checkNotNullParameter(onNewChat, "onNewChat");
+        Intrinsics.checkNotNullParameter(onAddOrRemoveUser, "onAddOrRemoveUser");
+        this.onNewChat = onNewChat;
+        this.onAddOrRemoveUser = onAddOrRemoveUser;
+        this.item = 1;
+        this.contacts = new ArrayList<>();
+        this.avatarPlaceholderUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/256/-1.webp";
+    }
+
     public /* synthetic */ MobilePhoneMessengerContactsAdapter(Function1 function1, Function1 function12, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerContactsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -80,17 +91,6 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
 
     public final Function1<ContactInfo, Unit> getOnAddOrRemoveUser() {
         return this.onAddOrRemoveUser;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public MobilePhoneMessengerContactsAdapter(Function1<? super ContactInfo, Unit> onNewChat, Function1<? super ContactInfo, Unit> onAddOrRemoveUser) {
-        Intrinsics.checkNotNullParameter(onNewChat, "onNewChat");
-        Intrinsics.checkNotNullParameter(onAddOrRemoveUser, "onAddOrRemoveUser");
-        this.onNewChat = onNewChat;
-        this.onAddOrRemoveUser = onAddOrRemoveUser;
-        this.item = 1;
-        this.contacts = new ArrayList<>();
-        this.avatarPlaceholderUrl = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/assets/images/inventory/skins/256/-1.webp";
     }
 
     public final ArrayList<ContactInfo> getContacts() {
@@ -164,13 +164,13 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
             binding.addOrRemoveUserBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerContactsAdapter$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$4$lambda$2(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
+                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$0$0(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
                 }
             });
             binding.sendMessageBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerContactsAdapter$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$4$lambda$3(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
+                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$0$1(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
                 }
             });
             AvatarView avatarView = binding.avatar;
@@ -208,7 +208,7 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
             mobilePhoneMessengerMessagesViewHolder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerContactsAdapter$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$5(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
+                    MobilePhoneMessengerContactsAdapter.onBindViewHolder$lambda$1(MobilePhoneMessengerContactsAdapter.this, contactInfo2, view);
                 }
             });
         } else if (itemViewType == this.loading) {
@@ -219,17 +219,17 @@ public final class MobilePhoneMessengerContactsAdapter extends RecyclerView.Adap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$4$lambda$2(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
+    public static final void onBindViewHolder$lambda$0$0(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
         mobilePhoneMessengerContactsAdapter.onAddOrRemoveUser.invoke(contactInfo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$4$lambda$3(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
+    public static final void onBindViewHolder$lambda$0$1(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
         mobilePhoneMessengerContactsAdapter.onNewChat.invoke(contactInfo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$5(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
+    public static final void onBindViewHolder$lambda$1(MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter, ContactInfo contactInfo, View view) {
         if (mobilePhoneMessengerContactsAdapter.isContacts) {
             return;
         }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class C0161c0 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V f812a;
+    public final V f816a;
     public final G6 b;
 
     public C0161c0() {
@@ -17,7 +17,7 @@ public final class C0161c0 implements ProtobufConverter {
     /* renamed from: a */
     public final C0552r6 fromModel(C0135b0 c0135b0) {
         C0552r6 c0552r6 = new C0552r6();
-        c0552r6.f1058a = this.f812a.fromModel(c0135b0.f796a);
+        c0552r6.f1062a = this.f816a.fromModel(c0135b0.f800a);
         String str = c0135b0.b;
         if (str != null) {
             c0552r6.b = str;
@@ -33,7 +33,7 @@ public final class C0161c0 implements ProtobufConverter {
     }
 
     public C0161c0(V v, G6 g6) {
-        this.f812a = v;
+        this.f816a = v;
         this.b = g6;
     }
 

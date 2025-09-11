@@ -122,7 +122,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     private List<Integer> tuningItems;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(View view) {
+    public static final void _init_$lambda$3(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,9 +152,9 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.colorsTypeAdapter = new ColorsTypeAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit colorsTypeAdapter$lambda$1;
-                colorsTypeAdapter$lambda$1 = CraftScreen.colorsTypeAdapter$lambda$1(CraftScreen.this, targetActivity, (ItemColor) obj, ((Integer) obj2).intValue());
-                return colorsTypeAdapter$lambda$1;
+                Unit colorsTypeAdapter$lambda$0;
+                colorsTypeAdapter$lambda$0 = CraftScreen.colorsTypeAdapter$lambda$0(CraftScreen.this, targetActivity, (ItemColor) obj, ((Integer) obj2).intValue());
+                return colorsTypeAdapter$lambda$0;
             }
         });
         this.selectedColorPosition = -1;
@@ -181,37 +181,37 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$2(CraftScreen.this, targetActivity, view);
+                CraftScreen._init_$lambda$0(CraftScreen.this, targetActivity, view);
             }
         });
         bind.btnEnableCreateItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$3(CraftScreen.this, view);
+                CraftScreen._init_$lambda$1(CraftScreen.this, view);
             }
         });
         bind.successLayout.btnAcceptCraft.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$5(CraftScreen.this, view);
+                CraftScreen._init_$lambda$2(CraftScreen.this, view);
             }
         });
         bind.successLayout.ivBgCraftResult.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$6(view);
+                CraftScreen._init_$lambda$3(view);
             }
         });
         bind.btnCancelCraft.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$7(CraftScreen.this, view);
+                CraftScreen._init_$lambda$4(CraftScreen.this, view);
             }
         });
         bind.cvColor.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$8(CraftScreen.this, targetActivity, view);
+                CraftScreen._init_$lambda$5(CraftScreen.this, targetActivity, view);
             }
         });
         bind.ivPlus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda5
@@ -223,39 +223,39 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.ivPlus.setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean _init_$lambda$10;
-                _init_$lambda$10 = CraftScreen._init_$lambda$10(CraftScreen.this, view);
-                return _init_$lambda$10;
+                boolean _init_$lambda$7;
+                _init_$lambda$7 = CraftScreen._init_$lambda$7(CraftScreen.this, view);
+                return _init_$lambda$7;
             }
         });
         bind.ivPlus.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean _init_$lambda$11;
-                _init_$lambda$11 = CraftScreen._init_$lambda$11(CraftScreen.this, view, motionEvent);
-                return _init_$lambda$11;
+                boolean _init_$lambda$8;
+                _init_$lambda$8 = CraftScreen._init_$lambda$8(CraftScreen.this, view, motionEvent);
+                return _init_$lambda$8;
             }
         });
         bind.ivMinus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$12(CraftScreen.this, view);
+                CraftScreen._init_$lambda$9(CraftScreen.this, view);
             }
         });
         bind.ivMinus.setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean _init_$lambda$13;
-                _init_$lambda$13 = CraftScreen._init_$lambda$13(CraftScreen.this, view);
-                return _init_$lambda$13;
+                boolean _init_$lambda$10;
+                _init_$lambda$10 = CraftScreen._init_$lambda$10(CraftScreen.this, view);
+                return _init_$lambda$10;
             }
         });
         bind.ivMinus.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean _init_$lambda$14;
-                _init_$lambda$14 = CraftScreen._init_$lambda$14(CraftScreen.this, view, motionEvent);
-                return _init_$lambda$14;
+                boolean _init_$lambda$11;
+                _init_$lambda$11 = CraftScreen._init_$lambda$11(CraftScreen.this, view, motionEvent);
+                return _init_$lambda$11;
             }
         });
         bind.successChanceField.nameTextView.setText(targetActivity.getString(R.string.success_chance));
@@ -293,16 +293,16 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.ivItemIcon.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$15(CraftScreen.this, view);
+                CraftScreen._init_$lambda$12(CraftScreen.this, view);
             }
         });
         if (!z) {
             bind.etResourcesCount.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda19
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                    boolean _init_$lambda$16;
-                    _init_$lambda$16 = CraftScreen._init_$lambda$16(CraftScreen.this, textView, i2, keyEvent);
-                    return _init_$lambda$16;
+                    boolean _init_$lambda$13;
+                    _init_$lambda$13 = CraftScreen._init_$lambda$13(CraftScreen.this, textView, i2, keyEvent);
+                    return _init_$lambda$13;
                 }
             });
         } else {
@@ -317,7 +317,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit colorsTypeAdapter$lambda$1(CraftScreen craftScreen, Activity activity, ItemColor item, int i) {
+    public static final Unit colorsTypeAdapter$lambda$0(CraftScreen craftScreen, Activity activity, ItemColor item, int i) {
         Intrinsics.checkNotNullParameter(item, "item");
         Group groupCharacter = craftScreen.binding.groupCharacter;
         Intrinsics.checkNotNullExpressionValue(groupCharacter, "groupCharacter");
@@ -336,7 +336,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(CraftScreen craftScreen, Activity activity, View view) {
+    public static final void _init_$lambda$0(CraftScreen craftScreen, Activity activity, View view) {
         craftScreen.isCancelClicked = true;
         Group groupCharacter = craftScreen.binding.groupCharacter;
         Intrinsics.checkNotNullExpressionValue(groupCharacter, "groupCharacter");
@@ -355,7 +355,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(CraftScreen craftScreen, View view) {
+    public static final void _init_$lambda$1(CraftScreen craftScreen, View view) {
         Log.d(CRAFT_SCREEN_TAG, "click on enableCreate item  ");
         craftScreen.isCraftProcess = true;
         CraftItemsAdapter craftItemsAdapter = craftScreen.craftItemsAdapter;
@@ -368,7 +368,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(CraftScreen craftScreen, View view) {
+    public static final void _init_$lambda$2(CraftScreen craftScreen, View view) {
         ConstraintLayout parentLayout = craftScreen.binding.successLayout.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
         parentLayout.setVisibility(8);
@@ -379,7 +379,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(CraftScreen craftScreen, View view) {
+    public static final void _init_$lambda$4(CraftScreen craftScreen, View view) {
         craftScreen.isCancelClicked = true;
         craftScreen.progress = 0;
         Button btnCancelCraft = craftScreen.binding.btnCancelCraft;
@@ -392,7 +392,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(CraftScreen craftScreen, Activity activity, View view) {
+    public static final void _init_$lambda$5(CraftScreen craftScreen, Activity activity, View view) {
         Group groupCharacter = craftScreen.binding.groupCharacter;
         Intrinsics.checkNotNullExpressionValue(groupCharacter, "groupCharacter");
         groupCharacter.setVisibility(8);
@@ -411,8 +411,32 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$10(CraftScreen craftScreen, View view) {
+    public static final boolean _init_$lambda$7(CraftScreen craftScreen, View view) {
         craftScreen.incrementFaster(true);
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean _init_$lambda$8(CraftScreen craftScreen, View view, MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 1) {
+            craftScreen.newHandler.removeCallbacksAndMessages(null);
+            return false;
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void _init_$lambda$9(CraftScreen craftScreen, View view) {
+        if (craftScreen.currentNumber > 1) {
+            craftScreen.editNumber(false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean _init_$lambda$10(CraftScreen craftScreen, View view) {
+        if (craftScreen.currentNumber > 1) {
+            craftScreen.incrementFaster(false);
+        }
         return true;
     }
 
@@ -427,39 +451,15 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void _init_$lambda$12(CraftScreen craftScreen, View view) {
-        if (craftScreen.currentNumber > 1) {
-            craftScreen.editNumber(false);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$13(CraftScreen craftScreen, View view) {
-        if (craftScreen.currentNumber > 1) {
-            craftScreen.incrementFaster(false);
-        }
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$14(CraftScreen craftScreen, View view, MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 1) {
-            craftScreen.newHandler.removeCallbacksAndMessages(null);
-            return false;
-        }
-        return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$15(CraftScreen craftScreen, View view) {
         craftScreen.sendRequest(4, StringKt.toStringJson(new SendDataInfo(craftScreen.currentItem)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$16(CraftScreen craftScreen, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean _init_$lambda$13(CraftScreen craftScreen, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             Integer intOrNull = StringsKt.toIntOrNull(textView.getText().toString());
             if (intOrNull != null) {
-                Log.e("EditText", intOrNull.toString());
+                Log.e("EditText", String.valueOf(intOrNull.intValue()));
                 if (intOrNull.intValue() < 1000) {
                     craftScreen.currentNumber = intOrNull.intValue() > 1 ? intOrNull.intValue() : 1;
                 } else {
@@ -591,7 +591,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
                     this.newHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda13
                         @Override // java.lang.Runnable
                         public final void run() {
-                            CraftScreen.onBackendMessage$lambda$22(CraftScreen.this);
+                            CraftScreen.onBackendMessage$lambda$3(CraftScreen.this);
                         }
                     }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 } else if (success == 1) {
@@ -670,7 +670,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
                     this.newHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda14
                         @Override // java.lang.Runnable
                         public final void run() {
-                            CraftScreen.onBackendMessage$lambda$26(CraftScreen.this);
+                            CraftScreen.onBackendMessage$lambda$7(CraftScreen.this);
                         }
                     }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 }
@@ -679,7 +679,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$22(CraftScreen craftScreen) {
+    public static final void onBackendMessage$lambda$3(CraftScreen craftScreen) {
         Animation fadeDownAnimation = craftScreen.fadeDownAnimation;
         Intrinsics.checkNotNullExpressionValue(fadeDownAnimation, "fadeDownAnimation");
         craftScreen.fadeDownAnimation(fadeDownAnimation);
@@ -687,7 +687,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$26(CraftScreen craftScreen) {
+    public static final void onBackendMessage$lambda$7(CraftScreen craftScreen) {
         Animation fadeDownAnimation = craftScreen.fadeDownAnimation;
         Intrinsics.checkNotNullExpressionValue(fadeDownAnimation, "fadeDownAnimation");
         craftScreen.fadeDownAnimation(fadeDownAnimation);
@@ -839,9 +839,9 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.craftMenuAdapter = new CraftMenuAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initMenuCategories$lambda$29;
-                initMenuCategories$lambda$29 = CraftScreen.initMenuCategories$lambda$29(CraftScreen.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return initMenuCategories$lambda$29;
+                Unit initMenuCategories$lambda$0;
+                initMenuCategories$lambda$0 = CraftScreen.initMenuCategories$lambda$0(CraftScreen.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
+                return initMenuCategories$lambda$0;
             }
         });
         RecyclerView recyclerView = this.binding.rvMenu;
@@ -871,7 +871,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
             this.binding.rvMenu.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CraftScreen.initMenuCategories$lambda$31(CraftScreen.this);
+                    CraftScreen.initMenuCategories$lambda$2(CraftScreen.this);
                 }
             });
         }
@@ -881,7 +881,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initMenuCategories$lambda$29(CraftScreen craftScreen, int i, int i2) {
+    public static final Unit initMenuCategories$lambda$0(CraftScreen craftScreen, int i, int i2) {
         if (craftScreen.isDisableAll) {
             return Unit.INSTANCE;
         }
@@ -919,7 +919,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initMenuCategories$lambda$31(CraftScreen craftScreen) {
+    public static final void initMenuCategories$lambda$2(CraftScreen craftScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = craftScreen.binding.rvMenu.findViewHolderForAdapterPosition(0);
         if (findViewHolderForAdapterPosition == null || (view = findViewHolderForAdapterPosition.itemView) == null) {
@@ -1053,9 +1053,9 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.craftItemsAdapter = new CraftItemsAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initCraftItems$lambda$37;
-                initCraftItems$lambda$37 = CraftScreen.initCraftItems$lambda$37(CraftScreen.this, (CraftItem) obj, ((Integer) obj2).intValue());
-                return initCraftItems$lambda$37;
+                Unit initCraftItems$lambda$0;
+                initCraftItems$lambda$0 = CraftScreen.initCraftItems$lambda$0(CraftScreen.this, (CraftItem) obj, ((Integer) obj2).intValue());
+                return initCraftItems$lambda$0;
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.rvCraft;
@@ -1106,14 +1106,14 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
             this.binding.rvCraft.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CraftScreen.initCraftItems$lambda$39(CraftScreen.this);
+                    CraftScreen.initCraftItems$lambda$2(CraftScreen.this);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initCraftItems$lambda$37(CraftScreen craftScreen, CraftItem item, int i) {
+    public static final Unit initCraftItems$lambda$0(CraftScreen craftScreen, CraftItem item, int i) {
         CraftItemsAdapter craftItemsAdapter;
         Object obj;
         Intrinsics.checkNotNullParameter(item, "item");
@@ -1173,7 +1173,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initCraftItems$lambda$39(CraftScreen craftScreen) {
+    public static final void initCraftItems$lambda$2(CraftScreen craftScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = craftScreen.binding.rvCraft.findViewHolderForAdapterPosition(0);
         if (findViewHolderForAdapterPosition == null || (view = findViewHolderForAdapterPosition.itemView) == null) {

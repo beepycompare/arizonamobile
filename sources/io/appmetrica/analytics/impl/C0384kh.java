@@ -25,7 +25,7 @@ public final class C0384kh extends AbstractC0462nh {
         try {
             JSONObject jSONObject = new JSONObject(value);
             if (TtmlNode.TEXT_EMPHASIS_MARK_OPEN.equals(jSONObject.optString("type"))) {
-                Do r0 = this.f1001a.t;
+                Do r0 = this.f1005a.t;
                 synchronized (r0) {
                     r0.c(r0.b() + 1);
                 }
@@ -43,12 +43,12 @@ public final class C0384kh extends AbstractC0462nh {
     }
 
     public final void b() {
-        Do r0 = this.f1001a.t;
+        Do r0 = this.f1005a.t;
         synchronized (r0) {
             r0.a(r0.a() + 1);
         }
-        this.f1001a.z();
-        C0376k9 c0376k9 = this.f1001a.l;
+        this.f1005a.z();
+        C0376k9 c0376k9 = this.f1005a.l;
         if (c0376k9.c == null) {
             c0376k9.a();
         }
@@ -57,11 +57,11 @@ public final class C0384kh extends AbstractC0462nh {
         c0428m9.b = new HashSet();
         c0428m9.d = 0;
         C0428m9 c0428m92 = c0376k9.c;
-        c0428m92.f985a = true;
+        c0428m92.f989a = true;
         C0506p9 c0506p9 = c0376k9.b;
         IBinaryDataHelper iBinaryDataHelper = c0506p9.c;
         C0480o9 c0480o9 = c0506p9.b;
-        c0506p9.f1029a.getClass();
+        c0506p9.f1033a.getClass();
         U9 a2 = C0454n9.a(c0428m92);
         c0480o9.getClass();
         iBinaryDataHelper.insert("event_hashes", MessageNano.toByteArray(a2));
@@ -72,7 +72,7 @@ public final class C0384kh extends AbstractC0462nh {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter(Constants.REFERRER);
                 if (!TextUtils.isEmpty(queryParameter)) {
-                    C0598t2 c0598t2 = this.f1001a.t().z;
+                    C0598t2 c0598t2 = this.f1005a.t().z;
                     for (String str2 : Uri.decode(queryParameter).split("&")) {
                         String decode = Uri.decode(str2);
                         int indexOf = decode.indexOf("=");
@@ -93,8 +93,8 @@ public final class C0384kh extends AbstractC0462nh {
             return true;
         }
         if (c0598t2 != null) {
-            for (Pair pair : c0598t2.f1085a) {
-                if (ro.a(pair.first, str) && ((obj = pair.second) == null || ((C0573s2) obj).f1071a.equals(str2))) {
+            for (Pair pair : c0598t2.f1089a) {
+                if (ro.a(pair.first, str) && ((obj = pair.second) == null || ((C0573s2) obj).f1075a.equals(str2))) {
                     return true;
                 }
             }

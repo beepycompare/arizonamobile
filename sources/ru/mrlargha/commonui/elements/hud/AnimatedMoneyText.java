@@ -30,7 +30,7 @@ public final class AnimatedMoneyText {
         this.runnable = new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.AnimatedMoneyText$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AnimatedMoneyText.runnable$lambda$1(AnimatedMoneyText.this);
+                AnimatedMoneyText.runnable$lambda$0(AnimatedMoneyText.this);
             }
         };
     }
@@ -52,7 +52,7 @@ public final class AnimatedMoneyText {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void runnable$lambda$1(AnimatedMoneyText animatedMoneyText) {
+    public static final void runnable$lambda$0(AnimatedMoneyText animatedMoneyText) {
         while (animatedMoneyText.currentVisualValue < animatedMoneyText.currentRealValue && !Thread.currentThread().isInterrupted()) {
             int i = animatedMoneyText.currentVisualValue;
             int ceil = i + ((int) Math.ceil(Math.abs(animatedMoneyText.currentRealValue - i) * 0.005d));
@@ -90,13 +90,13 @@ public final class AnimatedMoneyText {
         this.targetActivity.runOnUiThread(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.AnimatedMoneyText$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                AnimatedMoneyText.updateText$lambda$2(AnimatedMoneyText.this, i);
+                AnimatedMoneyText.updateText$lambda$0(AnimatedMoneyText.this, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateText$lambda$2(AnimatedMoneyText animatedMoneyText, int i) {
+    public static final void updateText$lambda$0(AnimatedMoneyText animatedMoneyText, int i) {
         animatedMoneyText.textView.setText(animatedMoneyText.formatter.format(Integer.valueOf(i)));
     }
 

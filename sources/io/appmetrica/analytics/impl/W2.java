@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class W2 implements yo {
     @Override // io.appmetrica.analytics.impl.yo
     public final wo a(Object obj) {
-        C0417lo[] c0417loArr = ((C0495oo) obj).f1022a;
+        C0417lo[] c0417loArr = ((C0495oo) obj).f1026a;
         if (c0417loArr != null && c0417loArr.length != 0) {
             return new wo(this, true, "");
         }

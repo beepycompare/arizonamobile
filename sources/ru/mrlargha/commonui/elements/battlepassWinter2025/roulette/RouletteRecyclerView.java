@@ -40,10 +40,6 @@ public final class RouletteRecyclerView extends RecyclerView {
         return true;
     }
 
-    public /* synthetic */ RouletteRecyclerView(Context context, boolean z, AttributeSet attributeSet, int i, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, z, (i2 & 4) != 0 ? null : attributeSet, (i2 & 8) != 0 ? 0 : i, function0);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RouletteRecyclerView(Context context, boolean z, AttributeSet attributeSet, int i, Function0<Unit> onSellPrise) {
         super(context, attributeSet, i);
@@ -64,6 +60,10 @@ public final class RouletteRecyclerView extends RecyclerView {
                 return _init_$lambda$0;
             }
         });
+    }
+
+    public /* synthetic */ RouletteRecyclerView(Context context, boolean z, AttributeSet attributeSet, int i, Function0 function0, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, z, (i2 & 4) != 0 ? null : attributeSet, (i2 & 8) != 0 ? 0 : i, function0);
     }
 
     public final void notifyAdapter() {

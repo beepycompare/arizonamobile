@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class K4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f527a;
+    public final int f531a;
 
     public K4(int i) {
-        this.f527a = i;
+        this.f531a = i;
     }
 }

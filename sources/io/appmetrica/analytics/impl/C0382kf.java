@@ -4,12 +4,12 @@ package io.appmetrica.analytics.impl;
 public final class C0382kf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0315i f950a;
+    public final C0315i f954a;
     public final Kn b = new Kn(new C0685we("Error details"));
     public final Kn c = new Kn(new C0635ue("Error identifier"));
     public final C0610te d = new C0610te("Stacktrace");
 
     public C0382kf(C0671w0 c0671w0) {
-        this.f950a = new C0315i(c0671w0);
+        this.f954a = new C0315i(c0671w0);
     }
 }

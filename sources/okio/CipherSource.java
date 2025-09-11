@@ -14,7 +14,7 @@ public final class CipherSource implements Source {
     private boolean closed;
 
     /* renamed from: final  reason: not valid java name */
-    private boolean f87final;
+    private boolean f91final;
     private final BufferedSource source;
 
     public CipherSource(BufferedSource source, Cipher cipher) {
@@ -52,9 +52,9 @@ public final class CipherSource implements Source {
     }
 
     private final void refill() {
-        while (this.buffer.size() == 0 && !this.f87final) {
+        while (this.buffer.size() == 0 && !this.f91final) {
             if (this.source.exhausted()) {
-                this.f87final = true;
+                this.f91final = true;
                 doFinal();
                 return;
             }
@@ -71,7 +71,7 @@ public final class CipherSource implements Source {
         while (outputSize > 8192) {
             int i3 = this.blockSize;
             if (i2 <= i3) {
-                this.f87final = true;
+                this.f91final = true;
                 Buffer buffer = this.buffer;
                 byte[] doFinal = this.cipher.doFinal(this.source.readByteArray());
                 Intrinsics.checkNotNullExpressionValue(doFinal, "doFinal(...)");

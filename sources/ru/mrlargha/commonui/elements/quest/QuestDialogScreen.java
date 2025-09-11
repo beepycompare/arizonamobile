@@ -34,7 +34,7 @@ public final class QuestDialogScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBackendMessage$lambda$1$lambda$0(QuestDialogScreen questDialogScreen, int i) {
+    public static final Unit onBackendMessage$lambda$0$0(QuestDialogScreen questDialogScreen, int i) {
         questDialogScreen.getNotifier().clickedWrapper(questDialogScreen.getBackendID(), 1, i);
         return Unit.INSTANCE;
     }
@@ -63,9 +63,9 @@ public final class QuestDialogScreen extends SAMPUIElement {
         rodinaQuestDialogBinding.rodinaQuestDialogRecycler.setAdapter(new QuestAnswerAdapter(questData.getAnswers(), new Function1() { // from class: ru.mrlargha.commonui.elements.quest.QuestDialogScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onBackendMessage$lambda$1$lambda$0;
-                onBackendMessage$lambda$1$lambda$0 = QuestDialogScreen.onBackendMessage$lambda$1$lambda$0(QuestDialogScreen.this, ((Integer) obj).intValue());
-                return onBackendMessage$lambda$1$lambda$0;
+                Unit onBackendMessage$lambda$0$0;
+                onBackendMessage$lambda$0$0 = QuestDialogScreen.onBackendMessage$lambda$0$0(QuestDialogScreen.this, ((Integer) obj).intValue());
+                return onBackendMessage$lambda$0$0;
             }
         }));
     }

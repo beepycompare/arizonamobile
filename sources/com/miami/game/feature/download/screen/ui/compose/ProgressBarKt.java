@@ -41,20 +41,20 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ProgressBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CustomLinerProgressBar$lambda$4(Function0 function0, Modifier modifier, int i, int i2, Composer composer, int i3) {
+    public static final Unit CustomLinerProgressBar$lambda$1(Function0 function0, Modifier modifier, int i, int i2, Composer composer, int i3) {
         CustomLinerProgressBar(function0, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit PreviewCustomProgressBar$lambda$10(int i, Composer composer, int i2) {
-        PreviewCustomProgressBar(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
-        return Unit.INSTANCE;
+    public static final float PreviewCustomProgressBar$lambda$0$0$0() {
+        return 0.12f;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float PreviewCustomProgressBar$lambda$9$lambda$8$lambda$7() {
-        return 0.12f;
+    public static final Unit PreviewCustomProgressBar$lambda$1(int i, Composer composer, int i2) {
+        PreviewCustomProgressBar(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,16 +176,16 @@ public final class ProgressBarKt {
                 }
                 final long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), Dp.m7251constructorimpl(10));
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1755266614, "CC(remember):ProgressBar.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1755266998, "CC(remember):ProgressBar.kt#9igjgp");
                 boolean changed = startRestartGroup.changed(m4536copywmQWz5c$default) | ((i3 & 14) == 4);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.ProgressBarKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit CustomLinerProgressBar$lambda$3$lambda$2;
-                            CustomLinerProgressBar$lambda$3$lambda$2 = ProgressBarKt.CustomLinerProgressBar$lambda$3$lambda$2(Function0.this, m4536copywmQWz5c$default, (DrawScope) obj2);
-                            return CustomLinerProgressBar$lambda$3$lambda$2;
+                            Unit CustomLinerProgressBar$lambda$0$0;
+                            CustomLinerProgressBar$lambda$0$0 = ProgressBarKt.CustomLinerProgressBar$lambda$0$0(Function0.this, m4536copywmQWz5c$default, (DrawScope) obj2);
+                            return CustomLinerProgressBar$lambda$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -201,9 +201,9 @@ public final class ProgressBarKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.ProgressBarKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit CustomLinerProgressBar$lambda$4;
-                        CustomLinerProgressBar$lambda$4 = ProgressBarKt.CustomLinerProgressBar$lambda$4(Function0.this, companion, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return CustomLinerProgressBar$lambda$4;
+                        Unit CustomLinerProgressBar$lambda$1;
+                        CustomLinerProgressBar$lambda$1 = ProgressBarKt.CustomLinerProgressBar$lambda$1(Function0.this, companion, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return CustomLinerProgressBar$lambda$1;
                     }
                 });
                 return;
@@ -219,7 +219,7 @@ public final class ProgressBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CustomLinerProgressBar$lambda$3$lambda$2(Function0 function0, long j, DrawScope Canvas) {
+    public static final Unit CustomLinerProgressBar$lambda$0$0(Function0 function0, long j, DrawScope Canvas) {
         Intrinsics.checkNotNullParameter(Canvas, "$this$Canvas");
         drawCustomLine(Canvas, Brush.Companion.m4487linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), 1.0f);
         try {
@@ -256,7 +256,7 @@ public final class ProgressBarKt {
         Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)));
         Path.lineTo(0.0f, Float.intBitsToFloat((int) (4294967295L & drawScope.mo5116getSizeNHjbRc())));
         Path.close();
-        DrawScope.m5106drawPathLG529CI$default(drawScope, Path, border.m8985getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
+        DrawScope.m5106drawPathLG529CI$default(drawScope, Path, border.m8991getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
         DrawScope.m5105drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
     }
 
@@ -306,9 +306,9 @@ public final class ProgressBarKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.ProgressBarKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        float PreviewCustomProgressBar$lambda$9$lambda$8$lambda$7;
-                        PreviewCustomProgressBar$lambda$9$lambda$8$lambda$7 = ProgressBarKt.PreviewCustomProgressBar$lambda$9$lambda$8$lambda$7();
-                        return Float.valueOf(PreviewCustomProgressBar$lambda$9$lambda$8$lambda$7);
+                        float PreviewCustomProgressBar$lambda$0$0$0;
+                        PreviewCustomProgressBar$lambda$0$0$0 = ProgressBarKt.PreviewCustomProgressBar$lambda$0$0$0();
+                        return Float.valueOf(PreviewCustomProgressBar$lambda$0$0$0);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -330,9 +330,9 @@ public final class ProgressBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.ProgressBarKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PreviewCustomProgressBar$lambda$10;
-                    PreviewCustomProgressBar$lambda$10 = ProgressBarKt.PreviewCustomProgressBar$lambda$10(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return PreviewCustomProgressBar$lambda$10;
+                    Unit PreviewCustomProgressBar$lambda$1;
+                    PreviewCustomProgressBar$lambda$1 = ProgressBarKt.PreviewCustomProgressBar$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return PreviewCustomProgressBar$lambda$1;
                 }
             });
         }

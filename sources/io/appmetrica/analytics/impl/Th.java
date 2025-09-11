@@ -12,12 +12,12 @@ public abstract class Th implements Callable {
     public static final Sh d = new Sh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0471o0 f683a;
+    public final C0471o0 f687a;
     public final InterfaceC0336il b;
     public boolean c;
 
     public Th(C0471o0 c0471o0, InterfaceC0336il interfaceC0336il) {
-        this.f683a = c0471o0;
+        this.f687a = c0471o0;
         this.b = interfaceC0336il;
     }
 
@@ -27,23 +27,23 @@ public abstract class Th implements Callable {
     }
 
     public final C0471o0 b() {
-        return this.f683a;
+        return this.f687a;
     }
 
     public boolean c() {
-        C0471o0 c0471o0 = this.f683a;
+        C0471o0 c0471o0 = this.f687a;
         synchronized (c0471o0) {
             if (c0471o0.d == null) {
                 c0471o0.e = new CountDownLatch(1);
-                Intent a2 = Jk.a(c0471o0.f1008a);
+                Intent a2 = Jk.a(c0471o0.f1012a);
                 try {
-                    c0471o0.g.b(c0471o0.f1008a);
-                    c0471o0.f1008a.bindService(a2, c0471o0.i, 1);
+                    c0471o0.g.b(c0471o0.f1012a);
+                    c0471o0.f1012a.bindService(a2, c0471o0.i, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f683a.a(5000L);
+        this.f687a.a(5000L);
         return true;
     }
 
@@ -70,7 +70,7 @@ public abstract class Th implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0471o0 c0471o0 = this.f683a;
+                C0471o0 c0471o0 = this.f687a;
                 synchronized (c0471o0) {
                     iAppMetricaService = c0471o0.d;
                 }
@@ -79,7 +79,7 @@ public abstract class Th implements Callable {
                         a(iAppMetricaService);
                         InterfaceC0336il interfaceC0336il = this.b;
                         if (interfaceC0336il == null || ((Ei) interfaceC0336il).a()) {
-                            this.f683a.c();
+                            this.f687a.c();
                             return;
                         }
                         return;

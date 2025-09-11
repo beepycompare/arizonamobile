@@ -100,25 +100,25 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
         binding.spotifyTracklistItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, binding, i, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$0$1(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, binding, i, view);
             }
         });
         binding.spotifyPlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$4(ArizonaSpotifyTrackResponse.this, this, binding, i, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$0$2(ArizonaSpotifyTrackResponse.this, this, binding, i, view);
             }
         });
         binding.spotifyFavourite.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.spotify.SpotifyTrackListAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpotifyTrackListAdapter.onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, view);
+                SpotifyTrackListAdapter.onBindViewHolder$lambda$0$3(SpotifyTrackListAdapter.this, arizonaSpotifyTrackResponse2, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$3(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$1(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
         view.getBackground().setTint(Color.parseColor("#FFFFFF"));
         ArrayList<ArizonaSpotifyTrackResponse> arrayList = new ArrayList();
         for (Object obj : spotifyTrackListAdapter.trackList) {
@@ -134,13 +134,13 @@ public final class SpotifyTrackListAdapter extends RecyclerView.Adapter<SpotifyT
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$4(ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$2(ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, SpotifyTrackListAdapter spotifyTrackListAdapter, SpotifyTracklistItemBinding spotifyTracklistItemBinding, int i, View view) {
         arizonaSpotifyTrackResponse.setTrackActive(!arizonaSpotifyTrackResponse.isTrackActive());
         spotifyTrackListAdapter.changePlayingState(spotifyTracklistItemBinding, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$7$lambda$6(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, View view) {
+    public static final void onBindViewHolder$lambda$0$3(SpotifyTrackListAdapter spotifyTrackListAdapter, ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse, View view) {
         try {
             ArrayList<Integer> arrayList = spotifyTrackListAdapter.favouriteList;
             boolean z = false;

@@ -75,13 +75,13 @@ public final class InventoryMenuAdapter extends ListAdapter<InventoryMenuData, I
             itemCategoryMenuBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.adapter.InventoryMenuAdapter$InventoryMenuViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    InventoryMenuAdapter.InventoryMenuViewHolder.bind$lambda$1$lambda$0(InventoryMenuAdapter.this, i, item, view);
+                    InventoryMenuAdapter.InventoryMenuViewHolder.bind$lambda$0$0(InventoryMenuAdapter.this, i, item, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$1$lambda$0(InventoryMenuAdapter inventoryMenuAdapter, int i, InventoryMenuData inventoryMenuData, View view) {
+        public static final void bind$lambda$0$0(InventoryMenuAdapter inventoryMenuAdapter, int i, InventoryMenuData inventoryMenuData, View view) {
             if (inventoryMenuAdapter.selectItemPosition != i) {
                 Log.e("inventory", "click on category " + inventoryMenuAdapter.selectItemPosition + " " + i);
                 inventoryMenuAdapter.onItemClicked.invoke(inventoryMenuData);

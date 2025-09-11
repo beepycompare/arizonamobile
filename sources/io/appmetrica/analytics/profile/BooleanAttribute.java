@@ -12,25 +12,25 @@ import io.appmetrica.analytics.impl.yo;
 public class BooleanAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final S6 f1271a;
+    private final S6 f1275a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BooleanAttribute(String str, yo yoVar, InterfaceC0548r2 interfaceC0548r2) {
-        this.f1271a = new S6(str, yoVar, interfaceC0548r2);
+        this.f1275a = new S6(str, yoVar, interfaceC0548r2);
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValue(boolean z) {
-        S6 s6 = this.f1271a;
-        return new UserProfileUpdate<>(new C0674w3(s6.c, z, s6.f662a, new Q4(s6.b)));
+        S6 s6 = this.f1275a;
+        return new UserProfileUpdate<>(new C0674w3(s6.c, z, s6.f666a, new Q4(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueIfUndefined(boolean z) {
-        S6 s6 = this.f1271a;
-        return new UserProfileUpdate<>(new C0674w3(s6.c, z, s6.f662a, new C0311hl(s6.b)));
+        S6 s6 = this.f1275a;
+        return new UserProfileUpdate<>(new C0674w3(s6.c, z, s6.f666a, new C0311hl(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueReset() {
-        S6 s6 = this.f1271a;
-        return new UserProfileUpdate<>(new Xi(3, s6.c, s6.f662a, s6.b));
+        S6 s6 = this.f1275a;
+        return new UserProfileUpdate<>(new Xi(3, s6.c, s6.f666a, s6.b));
     }
 }

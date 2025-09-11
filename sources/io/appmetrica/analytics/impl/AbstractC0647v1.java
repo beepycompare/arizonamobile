@@ -3,6 +3,6 @@ package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
 public abstract class AbstractC0647v1 {
     public static C0413lk a() {
-        return Kj.f538a;
+        return Kj.f542a;
     }
 }

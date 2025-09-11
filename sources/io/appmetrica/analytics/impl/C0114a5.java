@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public final class C0114a5 extends Zf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Z4 f781a;
+    public final Z4 f785a;
 
     public C0114a5(V4 v4) {
-        this.f781a = new Z4(v4);
+        this.f785a = new Z4(v4);
     }
 
     @Override // io.appmetrica.analytics.impl.Zf
@@ -17,11 +17,11 @@ public final class C0114a5 extends Zf {
         ArrayList arrayList = new ArrayList();
         int ordinal = Bb.a(i).ordinal();
         if (ordinal == 12) {
-            arrayList.add(this.f781a.f764a);
+            arrayList.add(this.f785a.f768a);
         } else if (ordinal == 14) {
-            arrayList.add(this.f781a.b);
+            arrayList.add(this.f785a.b);
         } else if (ordinal == 34) {
-            arrayList.add(this.f781a.c);
+            arrayList.add(this.f785a.c);
         }
         return new C0655v9(arrayList);
     }

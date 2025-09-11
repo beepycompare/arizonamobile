@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class AbstractC0453n8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f998a;
+    public final Context f1002a;
     public final ProtobufStateStorage b;
     public final AbstractC0505p8 c;
     public final InterfaceC0314ho d;
@@ -20,7 +20,7 @@ public abstract class AbstractC0453n8 {
     public InterfaceC0479o8 i;
 
     public AbstractC0453n8(Context context, ProtobufStateStorage protobufStateStorage, AbstractC0505p8 abstractC0505p8, InterfaceC0314ho interfaceC0314ho, Sm sm, InterfaceC0541qj interfaceC0541qj, InterfaceC0490oj interfaceC0490oj, Y6 y6, InterfaceC0479o8 interfaceC0479o8) {
-        this.f998a = context;
+        this.f1002a = context;
         this.b = protobufStateStorage;
         this.c = abstractC0505p8;
         this.d = interfaceC0314ho;
@@ -76,7 +76,7 @@ public abstract class AbstractC0453n8 {
 
     public final InterfaceC0554r8 a(InterfaceC0554r8 interfaceC0554r8) {
         InterfaceC0554r8 c;
-        this.h.a(this.f998a);
+        this.h.a(this.f1002a);
         synchronized (this) {
             b(interfaceC0554r8);
             c = c();
@@ -85,7 +85,7 @@ public abstract class AbstractC0453n8 {
     }
 
     public final InterfaceC0554r8 b() {
-        this.h.a(this.f998a);
+        this.h.a(this.f1002a);
         return c();
     }
 }

@@ -94,13 +94,13 @@ public final class UberChoseTaxi implements MobileController {
         bind.mpUberActionButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberChoseTaxi$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UberChoseTaxi._init_$lambda$2(UberChoseTaxi.this, view);
+                UberChoseTaxi._init_$lambda$1(UberChoseTaxi.this, view);
             }
         });
         bind.mpUberHeaderBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.uber.UberChoseTaxi$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UberChoseTaxi._init_$lambda$3(view);
+                UberChoseTaxi._init_$lambda$2(view);
             }
         });
     }
@@ -111,13 +111,13 @@ public final class UberChoseTaxi implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(UberChoseTaxi uberChoseTaxi, View view) {
+    public static final void _init_$lambda$1(UberChoseTaxi uberChoseTaxi, View view) {
         uberChoseTaxi.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), uberChoseTaxi.priority, 8);
         uberChoseTaxi.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(View view) {
+    public static final void _init_$lambda$2(View view) {
         HistoryManager.Companion.previousPage();
     }
 

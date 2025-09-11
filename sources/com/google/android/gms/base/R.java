@@ -54,8 +54,8 @@ public final class R {
         public static int common_google_signin_btn_text_light_focused = 0x7f080549;
         public static int common_google_signin_btn_text_light_normal = 0x7f08054a;
         public static int common_google_signin_btn_text_light_normal_background = 0x7f08054b;
-        public static int googleg_disabled_color_18 = 0x7f08085e;
-        public static int googleg_standard_color_18 = 0x7f08085f;
+        public static int googleg_disabled_color_18 = 0x7f080865;
+        public static int googleg_standard_color_18 = 0x7f080866;
 
         private drawable() {
         }

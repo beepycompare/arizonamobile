@@ -75,9 +75,9 @@ public final class MyHousesUpgradesAdapter extends RecyclerView.Adapter<ViewHold
             EasyAnimation.animateClick$default(easyAnimation, buyButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHousesUpgradesAdapter$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onBindViewHolder$lambda$2$lambda$0;
-                    onBindViewHolder$lambda$2$lambda$0 = MyHousesUpgradesAdapter.onBindViewHolder$lambda$2$lambda$0(MyHousesUpgradesAdapter.this, upgradeItem2);
-                    return onBindViewHolder$lambda$2$lambda$0;
+                    Unit onBindViewHolder$lambda$0$0;
+                    onBindViewHolder$lambda$0$0 = MyHousesUpgradesAdapter.onBindViewHolder$lambda$0$0(MyHousesUpgradesAdapter.this, upgradeItem2);
+                    return onBindViewHolder$lambda$0$0;
                 }
             }, 3, null);
             binding.buyButton.setImageResource(R.drawable.houses_cart_button);
@@ -88,15 +88,15 @@ public final class MyHousesUpgradesAdapter extends RecyclerView.Adapter<ViewHold
         EasyAnimation.animateClick$default(easyAnimation2, infoButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHousesUpgradesAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = MyHousesUpgradesAdapter.onBindViewHolder$lambda$2$lambda$1(MyHousesUpgradesAdapter.this, upgradeItem2);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$1;
+                onBindViewHolder$lambda$0$1 = MyHousesUpgradesAdapter.onBindViewHolder$lambda$0$1(MyHousesUpgradesAdapter.this, upgradeItem2);
+                return onBindViewHolder$lambda$0$1;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$0(MyHousesUpgradesAdapter myHousesUpgradesAdapter, MyHouseScreen.Companion.UpgradeItem upgradeItem) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyHousesUpgradesAdapter myHousesUpgradesAdapter, MyHouseScreen.Companion.UpgradeItem upgradeItem) {
         OnUpgradeClickListener onUpgradeClickListener = myHousesUpgradesAdapter.onUpgradeClickListener;
         if (onUpgradeClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onUpgradeClickListener");
@@ -107,7 +107,7 @@ public final class MyHousesUpgradesAdapter extends RecyclerView.Adapter<ViewHold
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(MyHousesUpgradesAdapter myHousesUpgradesAdapter, MyHouseScreen.Companion.UpgradeItem upgradeItem) {
+    public static final Unit onBindViewHolder$lambda$0$1(MyHousesUpgradesAdapter myHousesUpgradesAdapter, MyHouseScreen.Companion.UpgradeItem upgradeItem) {
         OnInfoClickListener onInfoClickListener = myHousesUpgradesAdapter.onInfoClickListener;
         if (onInfoClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onInfoClickListener");

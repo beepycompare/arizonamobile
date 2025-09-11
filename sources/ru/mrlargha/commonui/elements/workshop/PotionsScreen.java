@@ -141,31 +141,31 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         bind.btnSharpenItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PotionsScreen._init_$lambda$1(PotionsScreen.this, view);
+                PotionsScreen._init_$lambda$0(PotionsScreen.this, view);
             }
         });
         bind.btnPaintItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PotionsScreen._init_$lambda$2(PotionsScreen.this, view);
+                PotionsScreen._init_$lambda$1(PotionsScreen.this, view);
             }
         });
         bind.mainItemField.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PotionsScreen._init_$lambda$3(PotionsScreen.this, view);
+                PotionsScreen._init_$lambda$2(PotionsScreen.this, view);
             }
         });
         bind.rightItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PotionsScreen._init_$lambda$4(PotionsScreen.this, view);
+                PotionsScreen._init_$lambda$3(PotionsScreen.this, view);
             }
         });
         bind.leftItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PotionsScreen._init_$lambda$5(PotionsScreen.this, view);
+                PotionsScreen._init_$lambda$4(PotionsScreen.this, view);
             }
         });
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda9
@@ -206,7 +206,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(PotionsScreen potionsScreen, View view) {
+    public static final void _init_$lambda$0(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.btnIsClicked) {
             return;
         }
@@ -215,7 +215,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(PotionsScreen potionsScreen, View view) {
+    public static final void _init_$lambda$1(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.isArizonaType && potionsScreen.currentScreenType == 1) {
             potionsScreen.sendData(StringKt.toStringJson(0), 4);
         } else {
@@ -224,7 +224,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(PotionsScreen potionsScreen, View view) {
+    public static final void _init_$lambda$2(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.centerItemIndex == -1) {
             return;
         }
@@ -232,7 +232,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(PotionsScreen potionsScreen, View view) {
+    public static final void _init_$lambda$3(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.rightItemIndex == -1) {
             return;
         }
@@ -251,7 +251,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(PotionsScreen potionsScreen, View view) {
+    public static final void _init_$lambda$4(PotionsScreen potionsScreen, View view) {
         if (potionsScreen.leftItemIndex == -1) {
             return;
         }
@@ -541,9 +541,9 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         this.colorsAdapter = new SelectColorAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initColors$lambda$7;
-                initColors$lambda$7 = PotionsScreen.initColors$lambda$7(PotionsScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
-                return initColors$lambda$7;
+                Unit initColors$lambda$0;
+                initColors$lambda$0 = PotionsScreen.initColors$lambda$0(PotionsScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
+                return initColors$lambda$0;
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.rvColors;
@@ -571,7 +571,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initColors$lambda$7(PotionsScreen potionsScreen, int i, ItemColor itemColor) {
+    public static final Unit initColors$lambda$0(PotionsScreen potionsScreen, int i, ItemColor itemColor) {
         Intrinsics.checkNotNullParameter(itemColor, "<unused var>");
         if (potionsScreen.isDisableAll) {
             return Unit.INSTANCE;
@@ -765,7 +765,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PotionsScreen.onBackendMessage$lambda$16(PotionsScreen.this);
+                        PotionsScreen.onBackendMessage$lambda$0(PotionsScreen.this);
                     }
                 }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
@@ -803,7 +803,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                 this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.workshop.PotionsScreen$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PotionsScreen.onBackendMessage$lambda$17(PotionsScreen.this);
+                        PotionsScreen.onBackendMessage$lambda$1(PotionsScreen.this);
                     }
                 }, 500L);
                 enableStatusButtons(true);
@@ -945,14 +945,14 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$16(PotionsScreen potionsScreen) {
+    public static final void onBackendMessage$lambda$0(PotionsScreen potionsScreen) {
         ImageView ivBgSharpResult = potionsScreen.binding.ivBgSharpResult;
         Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
         ivBgSharpResult.setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$17(PotionsScreen potionsScreen) {
+    public static final void onBackendMessage$lambda$1(PotionsScreen potionsScreen) {
         potionsScreen.refreshData();
         potionsScreen.addLockedItems();
     }

@@ -88,23 +88,23 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
         itemTradeBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean bind$lambda$4$lambda$0;
-                bind$lambda$4$lambda$0 = SendItemsViewHolder.bind$lambda$4$lambda$0(InventoryItem.this, z, view);
-                return bind$lambda$4$lambda$0;
+                boolean bind$lambda$0$0;
+                bind$lambda$0$0 = SendItemsViewHolder.bind$lambda$0$0(InventoryItem.this, z, view);
+                return bind$lambda$0$0;
             }
         });
         itemTradeBinding.getRoot().setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
-                boolean bind$lambda$4$lambda$1;
-                bind$lambda$4$lambda$1 = SendItemsViewHolder.bind$lambda$4$lambda$1(SendItemsViewHolder.this, view, dragEvent);
-                return bind$lambda$4$lambda$1;
+                boolean bind$lambda$0$1;
+                bind$lambda$0$1 = SendItemsViewHolder.bind$lambda$0$1(SendItemsViewHolder.this, view, dragEvent);
+                return bind$lambda$0$1;
             }
         });
         itemTradeBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SendItemsViewHolder.bind$lambda$4$lambda$2(InventoryItem.this, this, view);
+                SendItemsViewHolder.bind$lambda$0$2(InventoryItem.this, this, view);
             }
         });
         Job job = this.loadImageJob;
@@ -145,7 +145,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$4$lambda$0(InventoryItem inventoryItem, boolean z, View view) {
+    public static final boolean bind$lambda$0$0(InventoryItem inventoryItem, boolean z, View view) {
         if (inventoryItem.getItem() == null || !z) {
             return false;
         }
@@ -155,7 +155,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$4$lambda$1(SendItemsViewHolder sendItemsViewHolder, View view, DragEvent dragEvent) {
+    public static final boolean bind$lambda$0$1(SendItemsViewHolder sendItemsViewHolder, View view, DragEvent dragEvent) {
         int action = dragEvent.getAction();
         if (action != 1) {
             if (action == 3) {
@@ -204,7 +204,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$4$lambda$2(InventoryItem inventoryItem, SendItemsViewHolder sendItemsViewHolder, View view) {
+    public static final void bind$lambda$0$2(InventoryItem inventoryItem, SendItemsViewHolder sendItemsViewHolder, View view) {
         Integer available = inventoryItem.getAvailable();
         if ((available != null && available.intValue() == 0) || inventoryItem.getItem() == null) {
             return;

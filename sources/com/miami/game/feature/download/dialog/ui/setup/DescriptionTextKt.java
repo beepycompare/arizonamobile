@@ -35,7 +35,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class DescriptionTextKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DescriptionText$lambda$4(String str, int i, Composer composer, int i2) {
+    public static final Unit DescriptionText$lambda$1(String str, int i, Composer composer, int i2) {
         DescriptionText(str, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -56,21 +56,21 @@ public final class DescriptionTextKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1047179564, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.DescriptionText (DescriptionText.kt:19)");
             }
-            startRestartGroup.startReplaceGroup(1317217607);
+            startRestartGroup.startReplaceGroup(1317217223);
             ComposerKt.sourceInformation(startRestartGroup, "*25@945L13,26@1003L10,27@1079L10,36@1342L11,37@1390L13,38@1448L10,39@1524L10,49@1794L13,50@1852L10,51@1928L10");
             AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
             float f = 16;
-            int pushStyle = builder.pushStyle(new SpanStyle(Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+            int pushStyle = builder.pushStyle(new SpanStyle(Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
             try {
                 builder.append("Вы собираетесь загрузить файлы игры размером ");
                 Unit unit = Unit.INSTANCE;
                 builder.pop(pushStyle);
-                pushStyle = builder.pushStyle(new SpanStyle(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(18), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+                pushStyle = builder.pushStyle(new SpanStyle(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(18), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
                 try {
                     builder.append(updateSize);
                     Unit unit2 = Unit.INSTANCE;
                     builder.pop(pushStyle);
-                    pushStyle = builder.pushStyle(new SpanStyle(Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+                    pushStyle = builder.pushStyle(new SpanStyle(Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
                     try {
                         builder.append(". Вы действительно хотите продолжить?");
                         Unit unit3 = Unit.INSTANCE;
@@ -93,9 +93,9 @@ public final class DescriptionTextKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.DescriptionTextKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DescriptionText$lambda$4;
-                    DescriptionText$lambda$4 = DescriptionTextKt.DescriptionText$lambda$4(updateSize, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DescriptionText$lambda$4;
+                    Unit DescriptionText$lambda$1;
+                    DescriptionText$lambda$1 = DescriptionTextKt.DescriptionText$lambda$1(updateSize, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DescriptionText$lambda$1;
                 }
             });
         }

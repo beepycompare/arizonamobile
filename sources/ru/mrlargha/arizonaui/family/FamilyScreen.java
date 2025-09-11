@@ -203,18 +203,18 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$101$lambda$100(View view) {
+    public static final void navigateTo$lambda$1$0(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$103$lambda$102(View view) {
+    public static final void navigateTo$lambda$2$0(View view) {
     }
 
     private final void selectRatingItem() {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$20(View view) {
+    public static final void setupNavigation$lambda$0(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -238,104 +238,104 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.xMargin = 287.0f;
         this.yMargin = 250.0f;
         this.colorsAdapter = new CreateClanColorAdapter();
-        this.mainMenuItemsAdapter = new MainMenuAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda19
+        this.mainMenuItemsAdapter = new MainMenuAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mainMenuItemsAdapter$lambda$1;
-                mainMenuItemsAdapter$lambda$1 = FamilyScreen.mainMenuItemsAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
-                return mainMenuItemsAdapter$lambda$1;
+                Unit mainMenuItemsAdapter$lambda$0;
+                mainMenuItemsAdapter$lambda$0 = FamilyScreen.mainMenuItemsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
+                return mainMenuItemsAdapter$lambda$0;
             }
         });
-        this.settingsAdapter = new SettingsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda24
+        this.settingsAdapter = new SettingsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit unit;
-                unit = FamilyScreen.settingsAdapter$lambda$2(FamilyScreen.this, ((Integer) obj).intValue());
+                unit = FamilyScreen.settingsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
                 return unit;
             }
         });
-        this.estateAdapter = new EstateAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda25
+        this.estateAdapter = new EstateAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit estateAdapter$lambda$3;
-                estateAdapter$lambda$3 = FamilyScreen.estateAdapter$lambda$3(FamilyScreen.this, ((Integer) obj).intValue());
-                return estateAdapter$lambda$3;
+                Unit estateAdapter$lambda$0;
+                estateAdapter$lambda$0 = FamilyScreen.estateAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
+                return estateAdapter$lambda$0;
             }
         });
-        this.charterAdapter = new CharterAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda26
+        this.charterAdapter = new CharterAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit charterAdapter$lambda$4;
-                charterAdapter$lambda$4 = FamilyScreen.charterAdapter$lambda$4(FamilyScreen.this, ((Integer) obj).intValue());
-                return charterAdapter$lambda$4;
+                Unit charterAdapter$lambda$0;
+                charterAdapter$lambda$0 = FamilyScreen.charterAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
+                return charterAdapter$lambda$0;
             }
         });
-        this.warAdapter = new WarsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda27
+        this.warAdapter = new WarsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warAdapter$lambda$5;
-                warAdapter$lambda$5 = FamilyScreen.warAdapter$lambda$5(FamilyScreen.this, ((Integer) obj).intValue());
-                return warAdapter$lambda$5;
+                Unit warAdapter$lambda$0;
+                warAdapter$lambda$0 = FamilyScreen.warAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
+                return warAdapter$lambda$0;
             }
         });
-        this.membersAdapter = new MembersAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda28
+        this.membersAdapter = new MembersAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit membersAdapter$lambda$6;
-                membersAdapter$lambda$6 = FamilyScreen.membersAdapter$lambda$6(FamilyScreen.this, (MemberItem) obj);
-                return membersAdapter$lambda$6;
+                Unit membersAdapter$lambda$0;
+                membersAdapter$lambda$0 = FamilyScreen.membersAdapter$lambda$0(FamilyScreen.this, (MemberItem) obj);
+                return membersAdapter$lambda$0;
             }
-        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda29
+        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda28
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit membersAdapter$lambda$7;
-                membersAdapter$lambda$7 = FamilyScreen.membersAdapter$lambda$7(FamilyScreen.this, ((Integer) obj).intValue());
-                return membersAdapter$lambda$7;
-            }
-        });
-        this.charterMembersAdapter = new CharterMembersAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda30
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit charterMembersAdapter$lambda$8;
-                charterMembersAdapter$lambda$8 = FamilyScreen.charterMembersAdapter$lambda$8(FamilyScreen.this, (CharterItem) obj);
-                return charterMembersAdapter$lambda$8;
-            }
-        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda31
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit charterMembersAdapter$lambda$9;
-                charterMembersAdapter$lambda$9 = FamilyScreen.charterMembersAdapter$lambda$9(FamilyScreen.this, ((Integer) obj).intValue());
-                return charterMembersAdapter$lambda$9;
+                Unit membersAdapter$lambda$1;
+                membersAdapter$lambda$1 = FamilyScreen.membersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
+                return membersAdapter$lambda$1;
             }
         });
-        this.ratingAdapter = new RatingAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda32
+        this.charterMembersAdapter = new CharterMembersAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda29
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ratingAdapter$lambda$10;
-                ratingAdapter$lambda$10 = FamilyScreen.ratingAdapter$lambda$10(FamilyScreen.this, (RatingItem) obj);
-                return ratingAdapter$lambda$10;
+                Unit charterMembersAdapter$lambda$0;
+                charterMembersAdapter$lambda$0 = FamilyScreen.charterMembersAdapter$lambda$0(FamilyScreen.this, (CharterItem) obj);
+                return charterMembersAdapter$lambda$0;
             }
-        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda20
+        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ratingAdapter$lambda$11;
-                ratingAdapter$lambda$11 = FamilyScreen.ratingAdapter$lambda$11(FamilyScreen.this, ((Integer) obj).intValue());
-                return ratingAdapter$lambda$11;
+                Unit charterMembersAdapter$lambda$1;
+                charterMembersAdapter$lambda$1 = FamilyScreen.charterMembersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
+                return charterMembersAdapter$lambda$1;
             }
         });
-        this.territoryAdapter = new TerritoryAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda21
+        this.ratingAdapter = new RatingAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda31
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit territoryAdapter$lambda$12;
-                territoryAdapter$lambda$12 = FamilyScreen.territoryAdapter$lambda$12(FamilyScreen.this, (FrameMapData) obj);
-                return territoryAdapter$lambda$12;
+                Unit ratingAdapter$lambda$0;
+                ratingAdapter$lambda$0 = FamilyScreen.ratingAdapter$lambda$0(FamilyScreen.this, (RatingItem) obj);
+                return ratingAdapter$lambda$0;
             }
-        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda23
+        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit territoryAdapter$lambda$13;
-                territoryAdapter$lambda$13 = FamilyScreen.territoryAdapter$lambda$13(FamilyScreen.this, (GangZoneItem) obj);
-                return territoryAdapter$lambda$13;
+                Unit ratingAdapter$lambda$1;
+                ratingAdapter$lambda$1 = FamilyScreen.ratingAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
+                return ratingAdapter$lambda$1;
+            }
+        });
+        this.territoryAdapter = new TerritoryAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda20
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit territoryAdapter$lambda$0;
+                territoryAdapter$lambda$0 = FamilyScreen.territoryAdapter$lambda$0(FamilyScreen.this, (FrameMapData) obj);
+                return territoryAdapter$lambda$0;
+            }
+        }, new Function1() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda21
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit territoryAdapter$lambda$1;
+                territoryAdapter$lambda$1 = FamilyScreen.territoryAdapter$lambda$1(FamilyScreen.this, (GangZoneItem) obj);
+                return territoryAdapter$lambda$1;
             }
         });
         this.meetingsAdapter = new MeetingsAdapter();
@@ -363,83 +363,83 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit mainMenuItemsAdapter$lambda$1(FamilyScreen familyScreen, int i) {
+    public static final Unit mainMenuItemsAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectMenuItem(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit settingsAdapter$lambda$2(FamilyScreen familyScreen, int i) {
+    public static final Unit settingsAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectSettingsItem(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit estateAdapter$lambda$3(FamilyScreen familyScreen, int i) {
+    public static final Unit estateAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectEstateItem(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit charterAdapter$lambda$4(FamilyScreen familyScreen, int i) {
+    public static final Unit charterAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectCharterItem(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit warAdapter$lambda$5(FamilyScreen familyScreen, int i) {
+    public static final Unit warAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectWarItem(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit membersAdapter$lambda$6(FamilyScreen familyScreen, MemberItem it) {
+    public static final Unit membersAdapter$lambda$0(FamilyScreen familyScreen, MemberItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectMemberItem(it);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit membersAdapter$lambda$7(FamilyScreen familyScreen, int i) {
+    public static final Unit membersAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestMembers(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit charterMembersAdapter$lambda$8(FamilyScreen familyScreen, CharterItem it) {
+    public static final Unit charterMembersAdapter$lambda$0(FamilyScreen familyScreen, CharterItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectCharterMemberItem(it);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit charterMembersAdapter$lambda$9(FamilyScreen familyScreen, int i) {
+    public static final Unit charterMembersAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestCharterMembers(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ratingAdapter$lambda$10(FamilyScreen familyScreen, RatingItem it) {
+    public static final Unit ratingAdapter$lambda$0(FamilyScreen familyScreen, RatingItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectRatingItem();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ratingAdapter$lambda$11(FamilyScreen familyScreen, int i) {
+    public static final Unit ratingAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestRating(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit territoryAdapter$lambda$12(FamilyScreen familyScreen, FrameMapData it) {
+    public static final Unit territoryAdapter$lambda$0(FamilyScreen familyScreen, FrameMapData it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectTerritoryItem(it);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit territoryAdapter$lambda$13(FamilyScreen familyScreen, GangZoneItem it) {
+    public static final Unit territoryAdapter$lambda$1(FamilyScreen familyScreen, GangZoneItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         SAMPUIElement.notifyClick$default(familyScreen, 8, it.getId(), null, 4, null);
         return Unit.INSTANCE;
@@ -768,107 +768,107 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void setupNavigation() {
-        this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda34
+        this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda32
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$20(view);
+                FamilyScreen.setupNavigation$lambda$0(view);
             }
         });
         FamilyHomePageBinding familyHomePageBinding = this.binding.home;
-        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda39
+        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$24$lambda$21(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$1$0(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda40
+        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$24$lambda$22(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$1$1(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda41
+        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda40
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$24$lambda$23(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$1$2(FamilyScreen.this, view);
             }
         });
         FamilyTopbarBinding familyTopbarBinding = this.binding.topbar;
-        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda42
+        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda41
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$25(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$0(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda43
+        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda42
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$26(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$1(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda45
+        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda43
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$27(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$2(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda46
+        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda45
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$28(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$3(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda47
+        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$29(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$4(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda48
+        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda47
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$30(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$5(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda35
+        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$32$lambda$31(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$2$6(FamilyScreen.this, view);
             }
         });
         FamilyMainBinding familyMainBinding = this.binding;
-        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda36
+        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$36$lambda$33(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$3$0(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda37
+        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda36
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$36$lambda$34(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$3$1(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda38
+        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupNavigation$lambda$36$lambda$35(FamilyScreen.this, view);
+                FamilyScreen.setupNavigation$lambda$3$2(FamilyScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$24$lambda$21(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$1$0(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 4, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$24$lambda$22(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$1$1(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 5, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$24$lambda$23(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$1$2(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 6, null, 4, null);
         Object systemService = familyScreen.getTargetActivity().getSystemService("clipboard");
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.content.ClipboardManager");
@@ -878,53 +878,53 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$25(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$0(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 9, 0, null, 4, null);
         familyScreen.getNotifier().setUIElementVisible(familyScreen.getBackendID(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$26(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$1(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 0, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$27(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$2(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 2, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$28(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$3(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 1, 3, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$29(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$4(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 2, 18, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$30(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$5(FamilyScreen familyScreen, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 2, 19, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$32$lambda$31(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$2$6(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Rating);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$36$lambda$33(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$3$0(FamilyScreen familyScreen, View view) {
         familyScreen.binding.frameMap.getRoot().setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$36$lambda$34(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$3$1(FamilyScreen familyScreen, View view) {
         familyScreen.binding.frameMember.getRoot().setVisibility(8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$36$lambda$35(FamilyScreen familyScreen, View view) {
+    public static final void setupNavigation$lambda$3$2(FamilyScreen familyScreen, View view) {
         familyScreen.binding.frameCharter.getRoot().setVisibility(8);
     }
 
@@ -991,7 +991,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
 
     private final void setUniqCells(List<UniqCellItem> list) {
         this.territoryAdapter.addUniq(list);
-        GridOverlayView.setDataAndTryToDraw$default(this.binding.map.overlayView, null, list, 1, null);
+        GridOverlayView overlayView = this.binding.map.overlayView;
+        Intrinsics.checkNotNullExpressionValue(overlayView, "overlayView");
+        GridOverlayView.setDataAndTryToDraw$default(overlayView, null, list, 1, null);
     }
 
     private final void setMap() {
@@ -1008,9 +1010,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         subsamplingScaleImageView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda55
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean map$lambda$48$lambda$47;
-                map$lambda$48$lambda$47 = FamilyScreen.setMap$lambda$48$lambda$47(Ref.FloatRef.this, floatRef2, scaledTouchSlop, subsamplingScaleImageView, this, view, motionEvent);
-                return map$lambda$48$lambda$47;
+                boolean map$lambda$0$0;
+                map$lambda$0$0 = FamilyScreen.setMap$lambda$0$0(Ref.FloatRef.this, floatRef2, scaledTouchSlop, subsamplingScaleImageView, this, view, motionEvent);
+                return map$lambda$0$0;
             }
         });
         GridOverlayView gridOverlayView = this.binding.map.overlayView;
@@ -1036,7 +1038,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setMap$lambda$48$lambda$47(Ref.FloatRef floatRef, Ref.FloatRef floatRef2, int i, SubsamplingScaleImageView subsamplingScaleImageView, FamilyScreen familyScreen, View view, MotionEvent motionEvent) {
+    public static final boolean setMap$lambda$0$0(Ref.FloatRef floatRef, Ref.FloatRef floatRef2, int i, SubsamplingScaleImageView subsamplingScaleImageView, FamilyScreen familyScreen, View view, MotionEvent motionEvent) {
         PointF viewToSourceCoord;
         Object obj;
         Object obj2;
@@ -1131,7 +1133,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyMapFrameBinding.containerCoins.setVisibility(8);
         } else {
             familyMapFrameBinding.containerCoins.setVisibility(0);
-            familyMapFrameBinding.coins.setText(String.valueOf(frameMapData.getCoins()));
+            familyMapFrameBinding.coins.setText(String.valueOf(frameMapData.getCoins().intValue()));
         }
         if (frameMapData.getUniq() == null) {
             familyMapFrameBinding.containerBusiness.setVisibility(8);
@@ -1142,13 +1144,13 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyMapFrameBinding.buttonEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setFrameMap$lambda$52$lambda$51(FamilyScreen.this, frameMapData, view);
+                FamilyScreen.setFrameMap$lambda$0$2(FamilyScreen.this, frameMapData, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMap$lambda$52$lambda$51(FamilyScreen familyScreen, FrameMapData frameMapData, View view) {
+    public static final void setFrameMap$lambda$0$2(FamilyScreen familyScreen, FrameMapData frameMapData, View view) {
         SAMPUIElement.notifyClick$default(familyScreen, 7, frameMapData.getId(), null, 4, null);
     }
 
@@ -1183,31 +1185,31 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyMembersFrameBinding.buttonPrem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setFrameMember$lambda$58$lambda$54(FamilyMembersFrameBinding.this, this, i, str, view);
+                FamilyScreen.setFrameMember$lambda$0$0(FamilyMembersFrameBinding.this, this, i, str, view);
             }
         });
         familyMembersFrameBinding.buttonRank.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setFrameMember$lambda$58$lambda$55(FamilyMembersFrameBinding.this, this, i, str, view);
+                FamilyScreen.setFrameMember$lambda$0$1(FamilyMembersFrameBinding.this, this, i, str, view);
             }
         });
         familyMembersFrameBinding.buttonWarn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda33
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setFrameMember$lambda$58$lambda$56(FamilyMembersFrameBinding.this, this, i, str, view);
+                FamilyScreen.setFrameMember$lambda$0$2(FamilyMembersFrameBinding.this, this, i, str, view);
             }
         });
         familyMembersFrameBinding.buttonKick.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda44
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setFrameMember$lambda$58$lambda$57(FamilyMembersFrameBinding.this, this, i, str, view);
+                FamilyScreen.setFrameMember$lambda$0$3(FamilyMembersFrameBinding.this, this, i, str, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMember$lambda$58$lambda$54(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
+    public static final void setFrameMember$lambda$0$0(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonPrem.setCardBackgroundColor(-1);
         familyMembersFrameBinding.buttonPremText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
         familyScreen.notifyClick(10, 0, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
@@ -1215,7 +1217,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMember$lambda$58$lambda$55(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
+    public static final void setFrameMember$lambda$0$1(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonRank.setCardBackgroundColor(-1);
         familyMembersFrameBinding.buttonRankText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
         familyScreen.notifyClick(10, 1, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
@@ -1223,7 +1225,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMember$lambda$58$lambda$56(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
+    public static final void setFrameMember$lambda$0$2(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonWarn.setCardBackgroundColor(-1);
         familyMembersFrameBinding.buttonWarnText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
         familyScreen.notifyClick(10, 2, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
@@ -1231,7 +1233,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setFrameMember$lambda$58$lambda$57(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
+    public static final void setFrameMember$lambda$0$3(FamilyMembersFrameBinding familyMembersFrameBinding, FamilyScreen familyScreen, int i, String str, View view) {
         familyMembersFrameBinding.buttonKick.setCardBackgroundColor(-1);
         familyMembersFrameBinding.buttonKickText.setTextColor(ViewCompat.MEASURED_STATE_MASK);
         familyScreen.notifyClick(10, 3, "{\"id\":" + i + ", \"name\":\"" + str + "\" }");
@@ -1247,32 +1249,32 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyCreateClanBinding.logoLeftArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda66
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$59(FamilyScreen.this, familyCreateClanBinding, view);
+                FamilyScreen.setupCreateClanPage$lambda$0$0(FamilyScreen.this, familyCreateClanBinding, view);
             }
         });
         familyCreateClanBinding.logoRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda69
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$60(FamilyScreen.this, familyCreateClanBinding, view);
+                FamilyScreen.setupCreateClanPage$lambda$0$1(FamilyScreen.this, familyCreateClanBinding, view);
             }
         });
         familyCreateClanBinding.colorLeftArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda70
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$61(FamilyCreateClanBinding.this, view);
+                FamilyScreen.setupCreateClanPage$lambda$0$2(FamilyCreateClanBinding.this, view);
             }
         });
         familyCreateClanBinding.colorRightArrow.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda71
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$62(FamilyCreateClanBinding.this, view);
+                FamilyScreen.setupCreateClanPage$lambda$0$3(FamilyCreateClanBinding.this, view);
             }
         });
         familyCreateClanBinding.familyNameEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda1
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 boolean z;
-                z = FamilyScreen.setupCreateClanPage$lambda$68$lambda$63(textView, i, keyEvent);
+                z = FamilyScreen.setupCreateClanPage$lambda$0$4(textView, i, keyEvent);
                 return z;
             }
         });
@@ -1280,26 +1282,26 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 boolean z;
-                z = FamilyScreen.setupCreateClanPage$lambda$68$lambda$64(textView, i, keyEvent);
+                z = FamilyScreen.setupCreateClanPage$lambda$0$5(textView, i, keyEvent);
                 return z;
             }
         });
         familyCreateClanBinding.familyNameEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$65(FamilyCreateClanBinding.this, this, view, z);
+                FamilyScreen.setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding.this, this, view, z);
             }
         });
         familyCreateClanBinding.familySloganEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$67(FamilyCreateClanBinding.this, this, view, z);
+                FamilyScreen.setupCreateClanPage$lambda$0$7(FamilyCreateClanBinding.this, this, view, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$59(FamilyScreen familyScreen, FamilyCreateClanBinding familyCreateClanBinding, View view) {
+    public static final void setupCreateClanPage$lambda$0$0(FamilyScreen familyScreen, FamilyCreateClanBinding familyCreateClanBinding, View view) {
         int i = familyScreen.createSelectedImage;
         familyScreen.createSelectedImage = i <= 0 ? familyScreen.createSelectedImageMax : i - 1;
         familyCreateClanBinding.logoImage.setImageResource(LogoKt.familyLogo(familyScreen.createSelectedImage));
@@ -1308,7 +1310,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$60(FamilyScreen familyScreen, FamilyCreateClanBinding familyCreateClanBinding, View view) {
+    public static final void setupCreateClanPage$lambda$0$1(FamilyScreen familyScreen, FamilyCreateClanBinding familyCreateClanBinding, View view) {
         int i = familyScreen.createSelectedImage;
         familyScreen.createSelectedImage = i >= familyScreen.createSelectedImageMax ? 0 : i + 1;
         familyCreateClanBinding.logoImage.setImageResource(LogoKt.familyLogo(familyScreen.createSelectedImage));
@@ -1317,17 +1319,17 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$61(FamilyCreateClanBinding familyCreateClanBinding, View view) {
+    public static final void setupCreateClanPage$lambda$0$2(FamilyCreateClanBinding familyCreateClanBinding, View view) {
         familyCreateClanBinding.colorsRv.smoothScrollBy(-100, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$62(FamilyCreateClanBinding familyCreateClanBinding, View view) {
+    public static final void setupCreateClanPage$lambda$0$3(FamilyCreateClanBinding familyCreateClanBinding, View view) {
         familyCreateClanBinding.colorsRv.smoothScrollBy(100, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setupCreateClanPage$lambda$68$lambda$63(TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean setupCreateClanPage$lambda$0$4(TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             textView.clearFocus();
             return false;
@@ -1336,7 +1338,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setupCreateClanPage$lambda$68$lambda$64(TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean setupCreateClanPage$lambda$0$5(TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             textView.clearFocus();
             return false;
@@ -1345,7 +1347,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$65(FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
+    public static final void setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
         if (z) {
             return;
         }
@@ -1371,11 +1373,11 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$67(final FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
-        familyCreateClanBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda5
+    public static final void setupCreateClanPage$lambda$0$7(final FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
+        familyCreateClanBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda48
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                FamilyScreen.setupCreateClanPage$lambda$68$lambda$67$lambda$66(FamilyCreateClanBinding.this, view2);
+                FamilyScreen.setupCreateClanPage$lambda$0$7$0(FamilyCreateClanBinding.this, view2);
             }
         });
         if (z) {
@@ -1413,7 +1415,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$68$lambda$67$lambda$66(FamilyCreateClanBinding familyCreateClanBinding, View view) {
+    public static final void setupCreateClanPage$lambda$0$7$0(FamilyCreateClanBinding familyCreateClanBinding, View view) {
         familyCreateClanBinding.familySloganEdit.clearFocus();
     }
 
@@ -1445,14 +1447,14 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda49
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FamilyScreen.checkCreateBntState$lambda$70$lambda$69(FamilyScreen.this, view);
+                    FamilyScreen.checkCreateBntState$lambda$0$0(FamilyScreen.this, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkCreateBntState$lambda$70$lambda$69(FamilyScreen familyScreen, View view) {
+    public static final void checkCreateBntState$lambda$0$0(FamilyScreen familyScreen, View view) {
         int i = familyScreen.createSelectedImage;
         int selectedColorPos = familyScreen.colorsAdapter.getSelectedColorPos();
         Editable text = familyScreen.binding.create.familyNameEdit.getText();
@@ -1523,76 +1525,76 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
 
     private final void setupSort() {
         FamilyTerritoriesBinding familyTerritoriesBinding = this.binding.territories;
-        familyTerritoriesBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda6
+        familyTerritoriesBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortTerritory1();
             }
         });
-        familyTerritoriesBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda9
+        familyTerritoriesBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortTerritory2();
             }
         });
-        familyTerritoriesBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda10
+        familyTerritoriesBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortTerritory3();
             }
         });
         FamilyCharterMembersBinding familyCharterMembersBinding = this.binding.charterMembers;
-        familyCharterMembersBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda12
+        familyCharterMembersBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortcharter1();
             }
         });
-        familyCharterMembersBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda13
+        familyCharterMembersBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortcharter2();
             }
         });
-        familyCharterMembersBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda14
+        familyCharterMembersBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortcharter3();
             }
         });
-        familyCharterMembersBinding.text4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda15
+        familyCharterMembersBinding.text4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortcharter4();
             }
         });
         FamilyMembersBinding familyMembersBinding = this.binding.members;
-        familyMembersBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda16
+        familyMembersBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortMembers1();
             }
         });
-        familyMembersBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda17
+        familyMembersBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortMembers2();
             }
         });
         FamilyMeetingsBinding familyMeetingsBinding = this.binding.meetings;
-        familyMeetingsBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda18
+        familyMeetingsBinding.text1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortMeetings1();
             }
         });
-        familyMeetingsBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda7
+        familyMeetingsBinding.text2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortMeetings2();
             }
         });
-        familyMeetingsBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda8
+        familyMeetingsBinding.text3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.this.sortMeetings3();
@@ -1847,7 +1849,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding2.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda50
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$101$lambda$100(view);
+                        FamilyScreen.navigateTo$lambda$1$0(view);
                     }
                 });
                 familyTopbarBinding2.backButton.setVisibility(4);
@@ -1860,7 +1862,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding3.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda59
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$103$lambda$102(view);
+                        FamilyScreen.navigateTo$lambda$2$0(view);
                     }
                 });
                 familyTopbarBinding3.backButton.setVisibility(8);
@@ -1874,7 +1876,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding4.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda60
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$105$lambda$104(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$3$0(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding4.settingsContainer.setVisibility(0);
@@ -1893,7 +1895,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding5.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda61
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$107$lambda$106(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$4$0(FamilyScreen.this, view);
                     }
                 });
                 Intrinsics.checkNotNull(familyTopbarBinding5);
@@ -1905,7 +1907,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding6.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda62
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$109$lambda$108(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$5$0(FamilyScreen.this, view);
                     }
                 });
                 Intrinsics.checkNotNull(familyTopbarBinding6);
@@ -1918,7 +1920,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding7.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda63
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$111$lambda$110(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$6$0(FamilyScreen.this, view);
                     }
                 });
                 requestMeetings();
@@ -1931,7 +1933,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding8.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda64
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$113$lambda$112(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$7$0(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding8.homeContainer.setVisibility(0);
@@ -1943,7 +1945,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding9.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda65
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$118$lambda$114(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$8$0(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding9.searchContainer.setVisibility(0);
@@ -1951,9 +1953,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding9.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda67
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
-                        boolean navigateTo$lambda$118$lambda$115;
-                        navigateTo$lambda$118$lambda$115 = FamilyScreen.navigateTo$lambda$118$lambda$115(FamilyTopbarBinding.this, textView2, i, keyEvent);
-                        return navigateTo$lambda$118$lambda$115;
+                        boolean navigateTo$lambda$8$1;
+                        navigateTo$lambda$8$1 = FamilyScreen.navigateTo$lambda$8$1(FamilyTopbarBinding.this, textView2, i, keyEvent);
+                        return navigateTo$lambda$8$1;
                     }
                 });
                 familyTopbarBinding9.editText.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$navigateTo$9$3
@@ -1976,7 +1978,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding9.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda68
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$118$lambda$117(FamilyScreen.this, familyTopbarBinding9, view);
+                        FamilyScreen.navigateTo$lambda$8$2(FamilyScreen.this, familyTopbarBinding9, view);
                     }
                 });
                 sortMembers1();
@@ -1993,7 +1995,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding10.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda51
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$124$lambda$120(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$10$0(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding10.searchContainer.setVisibility(0);
@@ -2001,9 +2003,9 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding10.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda52
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView2, int i, KeyEvent keyEvent) {
-                        boolean navigateTo$lambda$124$lambda$121;
-                        navigateTo$lambda$124$lambda$121 = FamilyScreen.navigateTo$lambda$124$lambda$121(FamilyTopbarBinding.this, textView2, i, keyEvent);
-                        return navigateTo$lambda$124$lambda$121;
+                        boolean navigateTo$lambda$10$1;
+                        navigateTo$lambda$10$1 = FamilyScreen.navigateTo$lambda$10$1(FamilyTopbarBinding.this, textView2, i, keyEvent);
+                        return navigateTo$lambda$10$1;
                     }
                 });
                 familyTopbarBinding10.editText.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$navigateTo$11$3
@@ -2026,7 +2028,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding10.searchBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda53
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$124$lambda$123(FamilyScreen.this, familyTopbarBinding10, view);
+                        FamilyScreen.navigateTo$lambda$10$2(FamilyScreen.this, familyTopbarBinding10, view);
                     }
                 });
                 sortcharter1();
@@ -2044,7 +2046,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding11.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda54
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$127$lambda$126(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$12$0(FamilyScreen.this, view);
                     }
                 });
                 familyTopbarBinding11.serverName.setVisibility(0);
@@ -2063,7 +2065,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding12.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda56
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$130$lambda$129(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$14$0(FamilyScreen.this, view);
                     }
                 });
                 setMap();
@@ -2075,7 +2077,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding13.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda57
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$132$lambda$131(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$15$0(FamilyScreen.this, view);
                     }
                 });
                 sortTerritory1();
@@ -2093,7 +2095,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 familyTopbarBinding14.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.FamilyScreen$$ExternalSyntheticLambda58
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FamilyScreen.navigateTo$lambda$135$lambda$134(FamilyScreen.this, view);
+                        FamilyScreen.navigateTo$lambda$17$0(FamilyScreen.this, view);
                     }
                 });
                 sortMeetings1();
@@ -2109,37 +2111,37 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$105$lambda$104(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$3$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$107$lambda$106(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$4$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$109$lambda$108(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$5$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$111$lambda$110(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$6$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$113$lambda$112(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$7$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$118$lambda$114(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$8$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean navigateTo$lambda$118$lambda$115(FamilyTopbarBinding familyTopbarBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean navigateTo$lambda$8$1(FamilyTopbarBinding familyTopbarBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             familyTopbarBinding.searchBtn.performClick();
             return false;
@@ -2148,7 +2150,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$118$lambda$117(FamilyScreen familyScreen, FamilyTopbarBinding familyTopbarBinding, View view) {
+    public static final void navigateTo$lambda$8$2(FamilyScreen familyScreen, FamilyTopbarBinding familyTopbarBinding, View view) {
         familyScreen.membersAdapter.clearList();
         FamilyMembersBinding familyMembersBinding = familyScreen.binding.members;
         familyMembersBinding.loaderBar.setVisibility(0);
@@ -2164,12 +2166,12 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$124$lambda$120(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$10$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Charter);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean navigateTo$lambda$124$lambda$121(FamilyTopbarBinding familyTopbarBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean navigateTo$lambda$10$1(FamilyTopbarBinding familyTopbarBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             familyTopbarBinding.searchBtn.performClick();
             return false;
@@ -2178,7 +2180,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$124$lambda$123(FamilyScreen familyScreen, FamilyTopbarBinding familyTopbarBinding, View view) {
+    public static final void navigateTo$lambda$10$2(FamilyScreen familyScreen, FamilyTopbarBinding familyTopbarBinding, View view) {
         familyScreen.charterMembersAdapter.clearList();
         FamilyCharterMembersBinding familyCharterMembersBinding = familyScreen.binding.charterMembers;
         familyCharterMembersBinding.loaderBar.setVisibility(0);
@@ -2194,22 +2196,22 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$127$lambda$126(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$12$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.Menu);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$130$lambda$129(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$14$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.War);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$132$lambda$131(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$15$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.War);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$135$lambda$134(FamilyScreen familyScreen, View view) {
+    public static final void navigateTo$lambda$17$0(FamilyScreen familyScreen, View view) {
         familyScreen.navigateTo(Navigation.War);
     }
 

@@ -95,13 +95,13 @@ public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.GroupAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GroupAdapter.onBindViewHolder$lambda$3$lambda$2(GroupAdapter.this, groupItem, view);
+                GroupAdapter.onBindViewHolder$lambda$0$2(GroupAdapter.this, groupItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3$lambda$2(GroupAdapter groupAdapter, GroupItem groupItem, View view) {
+    public static final void onBindViewHolder$lambda$0$2(GroupAdapter groupAdapter, GroupItem groupItem, View view) {
         groupAdapter.onClick.invoke(groupItem);
     }
 
@@ -119,13 +119,13 @@ public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean deleteItem$lambda$4(int i, GroupItem it) {
+    public static final boolean deleteItem$lambda$0(int i, GroupItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getId() == i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean deleteItem$lambda$5(Function1 function1, Object obj) {
+    public static final boolean deleteItem$lambda$1(Function1 function1, Object obj) {
         return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 
@@ -134,17 +134,17 @@ public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
         final Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.GroupAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean deleteItem$lambda$4;
-                deleteItem$lambda$4 = GroupAdapter.deleteItem$lambda$4(i, (GroupItem) obj);
-                return Boolean.valueOf(deleteItem$lambda$4);
+                boolean deleteItem$lambda$0;
+                deleteItem$lambda$0 = GroupAdapter.deleteItem$lambda$0(i, (GroupItem) obj);
+                return Boolean.valueOf(deleteItem$lambda$0);
             }
         };
         list.removeIf(new Predicate() { // from class: ru.mrlargha.commonui.elements.hud.presentation.GroupAdapter$$ExternalSyntheticLambda2
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean deleteItem$lambda$5;
-                deleteItem$lambda$5 = GroupAdapter.deleteItem$lambda$5(Function1.this, obj);
-                return deleteItem$lambda$5;
+                boolean deleteItem$lambda$1;
+                deleteItem$lambda$1 = GroupAdapter.deleteItem$lambda$1(Function1.this, obj);
+                return deleteItem$lambda$1;
             }
         });
         notifyDataSetChanged();

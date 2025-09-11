@@ -68,7 +68,7 @@ public class ConfigFetchHandler {
         return this.fetchedConfigsCache.get().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigFetchHandler$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                return ConfigFetchHandler.this.m8888x7459e696(j, hashMap, task);
+                return ConfigFetchHandler.this.m8897x7459e696(j, hashMap, task);
             }
         });
     }
@@ -79,20 +79,20 @@ public class ConfigFetchHandler {
         return this.fetchedConfigsCache.get().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigFetchHandler$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                return ConfigFetchHandler.this.m8891xdbe8963a(hashMap, task);
+                return ConfigFetchHandler.this.m8900xdbe8963a(hashMap, task);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchNowWithTypeAndAttemptNumber$1$com-google-firebase-remoteconfig-internal-ConfigFetchHandler  reason: not valid java name */
-    public /* synthetic */ Task m8891xdbe8963a(Map map, Task task) throws Exception {
-        return m8888x7459e696(task, 0L, map);
+    public /* synthetic */ Task m8900xdbe8963a(Map map, Task task) throws Exception {
+        return m8897x7459e696(task, 0L, map);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: fetchIfCacheExpiredAndNotThrottled */
-    public Task<FetchResponse> m8888x7459e696(Task<ConfigContainer> task, long j, final Map<String, String> map) {
+    public Task<FetchResponse> m8897x7459e696(Task<ConfigContainer> task, long j, final Map<String, String> map) {
         final ConfigFetchHandler configFetchHandler;
         Task continueWithTask;
         final Date date = new Date(this.clock.currentTimeMillis());
@@ -110,21 +110,21 @@ public class ConfigFetchHandler {
             continueWithTask = Tasks.whenAllComplete(id, token).continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigFetchHandler$$ExternalSyntheticLambda1
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task2) {
-                    return ConfigFetchHandler.this.m8889x5d615250(id, token, date, map, task2);
+                    return ConfigFetchHandler.this.m8898x5d615250(id, token, date, map, task2);
                 }
             });
         }
         return continueWithTask.continueWithTask(configFetchHandler.executor, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigFetchHandler$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return ConfigFetchHandler.this.m8890xf19fc1ef(date, task2);
+                return ConfigFetchHandler.this.m8899xf19fc1ef(date, task2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchIfCacheExpiredAndNotThrottled$2$com-google-firebase-remoteconfig-internal-ConfigFetchHandler  reason: not valid java name */
-    public /* synthetic */ Task m8889x5d615250(Task task, Task task2, Date date, Map map, Task task3) throws Exception {
+    public /* synthetic */ Task m8898x5d615250(Task task, Task task2, Date date, Map map, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation ID for fetch.", task.getException()));
         }
@@ -136,7 +136,7 @@ public class ConfigFetchHandler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchIfCacheExpiredAndNotThrottled$3$com-google-firebase-remoteconfig-internal-ConfigFetchHandler  reason: not valid java name */
-    public /* synthetic */ Task m8890xf19fc1ef(Date date, Task task) throws Exception {
+    public /* synthetic */ Task m8899xf19fc1ef(Date date, Task task) throws Exception {
         updateLastFetchStatusAndTime(task, date);
         return task;
     }

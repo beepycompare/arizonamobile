@@ -11,10 +11,10 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorPr
 public final class c implements LastKnownLocationExtractorProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1201a;
+    public final String f1205a;
 
     public c(String str) {
-        this.f1201a = str;
+        this.f1205a = str;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProvider
@@ -24,6 +24,6 @@ public final class c implements LastKnownLocationExtractorProvider {
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
     public final String getIdentifier() {
-        return this.f1201a;
+        return this.f1205a;
     }
 }

@@ -6,7 +6,7 @@ import android.content.ContentValues;
 public final class C0402l9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f964a;
+    public final String f968a;
     public String b;
     public final Long c;
     public final Long d;
@@ -29,7 +29,7 @@ public final class C0402l9 {
 
     public C0402l9(ContentValues contentValues) {
         E7 model = new F7(null, 1, null).toModel(contentValues);
-        this.f964a = model.a().j();
+        this.f968a = model.a().j();
         this.b = model.a().p();
         this.c = model.c();
         this.d = model.b();

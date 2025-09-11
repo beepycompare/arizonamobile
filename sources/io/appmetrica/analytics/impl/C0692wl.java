@@ -14,19 +14,19 @@ public final class C0692wl implements InterfaceC0719xn {
     public static final long d = TimeUnit.SECONDS.toMillis(20);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1139a;
+    public final Context f1143a;
     public final PermissionExtractor b;
     public final CachedDataProvider.CachedData c;
 
     public C0692wl(Context context) {
         long j = d;
         this.c = new CachedDataProvider.CachedData(j, j, "sim-info");
-        this.f1139a = context;
+        this.f1143a = context;
         this.b = Na.j().i();
     }
 
     public final C0567rl b() {
-        return new C0567rl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1139a, "phone", "getting SimMcc", "TelephonyManager", new C0592sl()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1139a, "phone", "getting SimMnc", "TelephonyManager", new C0617tl()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f1139a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new C0667vl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1139a, "phone", "getting SimOperatorName", "TelephonyManager", new C0642ul()));
+        return new C0567rl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1143a, "phone", "getting SimMcc", "TelephonyManager", new C0592sl()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1143a, "phone", "getting SimMnc", "TelephonyManager", new C0617tl()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f1143a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new C0667vl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1143a, "phone", "getting SimOperatorName", "TelephonyManager", new C0642ul()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0017, code lost:
@@ -50,8 +50,8 @@ public final class C0692wl implements InterfaceC0719xn {
         ArrayList arrayList2 = new ArrayList();
         if (Na.F.u.b().n.d) {
             if (AndroidUtils.isApiAchieved(23)) {
-                if (this.b.hasPermission(this.f1139a, "android.permission.READ_PHONE_STATE")) {
-                    arrayList2.addAll(C0717xl.a(this.f1139a));
+                if (this.b.hasPermission(this.f1143a, "android.permission.READ_PHONE_STATE")) {
+                    arrayList2.addAll(C0717xl.a(this.f1143a));
                 }
                 if (arrayList2.size() == 0) {
                     arrayList2.add(b());

@@ -34,9 +34,9 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$983320313 = ComposableLambdaKt.composableLambdaInstance(983320313, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_983320313$lambda$1;
-            lambda_983320313$lambda$1 = ComposableSingletons$SettingsBottomBarKt.lambda_983320313$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_983320313$lambda$1;
+            Unit lambda_983320313$lambda$0;
+            lambda_983320313$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_983320313$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_983320313$lambda$0;
         }
     });
 
@@ -44,19 +44,19 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f80lambda$473092742 = ComposableLambdaKt.composableLambdaInstance(-473092742, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__473092742$lambda$2;
-            lambda__473092742$lambda$2 = ComposableSingletons$SettingsBottomBarKt.lambda__473092742$lambda$2((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__473092742$lambda$2;
+            Unit lambda__473092742$lambda$0;
+            lambda__473092742$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda__473092742$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda__473092742$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-13006014$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9026getLambda$13006014$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9031getLambda$13006014$settings_release() {
         return f79lambda$13006014;
     }
 
     /* renamed from: getLambda$-473092742$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9027getLambda$473092742$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9032getLambda$473092742$settings_release() {
         return f80lambda$473092742;
     }
 
@@ -83,7 +83,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda_983320313$lambda$1(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda_983320313$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C64@2386L38,63@2345L232:SettingsBottomBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -101,7 +101,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__473092742$lambda$2(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda__473092742$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C71@2706L42,70@2665L236:SettingsBottomBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

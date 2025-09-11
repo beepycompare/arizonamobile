@@ -11,27 +11,27 @@ public final class C0633uc implements PermissionStrategy, LocationControllerObse
     public static final List c = CollectionsKt.listOf((Object[]) new String[]{"android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION"});
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f1104a;
+    public volatile boolean f1108a;
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy
     public final boolean forbidUsePermission(String str) {
         if (c.contains(str)) {
-            return !this.f1104a;
+            return !this.f1108a;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void startLocationTracking() {
-        this.f1104a = true;
+        this.f1108a = true;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public final void stopLocationTracking() {
-        this.f1104a = false;
+        this.f1108a = false;
     }
 
     public final String toString() {
-        return "LocationFlagStrategy(enabled=" + this.f1104a + ", locationPermissions=" + c + ')';
+        return "LocationFlagStrategy(enabled=" + this.f1108a + ", locationPermissions=" + c + ')';
     }
 }

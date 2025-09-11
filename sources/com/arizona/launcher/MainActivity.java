@@ -55,28 +55,28 @@ public final class MainActivity extends Hilt_MainActivity {
         activityMainBinding.homeButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizona.launcher.MainActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.onCreate$lambda$3$lambda$0(MainActivity.this, view);
+                MainActivity.onCreate$lambda$0$0(MainActivity.this, view);
             }
         });
         activityMainBinding.playButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizona.launcher.MainActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.onCreate$lambda$3$lambda$1(MainActivity.this, view);
+                MainActivity.onCreate$lambda$0$1(MainActivity.this, view);
             }
         });
         activityMainBinding.settingsButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizona.launcher.MainActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MainActivity.onCreate$lambda$3$lambda$2(MainActivity.this, view);
+                MainActivity.onCreate$lambda$0$2(MainActivity.this, view);
             }
         });
         Context applicationContext = getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
-        UtilsKt.checkItemsName(applicationContext, FlavorUtilKt.isArizona());
+        UtilsKt.checkItemsNameLauncher(applicationContext, FlavorUtilKt.isArizona());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreate$lambda$3$lambda$0(MainActivity mainActivity, View view) {
+    public static final void onCreate$lambda$0$0(MainActivity mainActivity, View view) {
         NavController navController = mainActivity.navController;
         if (navController == null) {
             Intrinsics.throwUninitializedPropertyAccessException("navController");
@@ -89,7 +89,7 @@ public final class MainActivity extends Hilt_MainActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreate$lambda$3$lambda$1(MainActivity mainActivity, View view) {
+    public static final void onCreate$lambda$0$1(MainActivity mainActivity, View view) {
         NavController navController = mainActivity.navController;
         if (navController == null) {
             Intrinsics.throwUninitializedPropertyAccessException("navController");
@@ -102,7 +102,7 @@ public final class MainActivity extends Hilt_MainActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreate$lambda$3$lambda$2(MainActivity mainActivity, View view) {
+    public static final void onCreate$lambda$0$2(MainActivity mainActivity, View view) {
         NavController navController = mainActivity.navController;
         if (navController == null) {
             Intrinsics.throwUninitializedPropertyAccessException("navController");

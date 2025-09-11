@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Jj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0747z1 f517a;
+    public final InterfaceC0747z1 f521a;
 
     public Jj(InterfaceC0747z1 interfaceC0747z1) {
-        this.f517a = interfaceC0747z1;
+        this.f521a = interfaceC0747z1;
     }
 }

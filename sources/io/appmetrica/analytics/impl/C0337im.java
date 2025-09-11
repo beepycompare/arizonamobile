@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0337im extends BaseRequestConfig.BaseRequestArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f923a;
+    public final String f927a;
     public final String b;
     public final Map<String, String> c;
     public final boolean d;
@@ -27,7 +27,7 @@ public final class C0337im extends BaseRequestConfig.BaseRequestArguments {
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
     /* renamed from: b */
     public final C0337im mergeFrom(C0337im c0337im) {
-        return new C0337im((String) WrapUtils.getOrDefaultNullable(this.f923a, c0337im.f923a), (String) WrapUtils.getOrDefaultNullable(this.b, c0337im.b), (Map) WrapUtils.getOrDefaultNullable(this.c, c0337im.c), this.d || c0337im.d, c0337im.d ? c0337im.e : this.e);
+        return new C0337im((String) WrapUtils.getOrDefaultNullable(this.f927a, c0337im.f927a), (String) WrapUtils.getOrDefaultNullable(this.b, c0337im.b), (Map) WrapUtils.getOrDefaultNullable(this.c, c0337im.c), this.d || c0337im.d, c0337im.d ? c0337im.e : this.e);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
@@ -37,11 +37,11 @@ public final class C0337im extends BaseRequestConfig.BaseRequestArguments {
     }
 
     public final String toString() {
-        return "Arguments{distributionReferrer='" + this.f923a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "Arguments{distributionReferrer='" + this.f927a + "', installReferrerSource='" + this.b + "', clientClids=" + this.c + ", hasNewCustomHosts=" + this.d + ", newCustomHosts=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0337im(String str, String str2, Map<String, String> map, boolean z, List<String> list) {
-        this.f923a = str;
+        this.f927a = str;
         this.b = str2;
         this.c = map;
         this.d = z;

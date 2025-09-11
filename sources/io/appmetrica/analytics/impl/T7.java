@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class T7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q7 f677a;
+    public final Q7 f681a;
 
     public T7() {
         this(null, 1, null);
@@ -18,25 +18,25 @@ public final class T7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(S7 s7) {
         ContentValues contentValues = new ContentValues();
-        Long l = s7.f663a;
+        Long l = s7.f667a;
         if (l != null) {
             contentValues.put("id", Long.valueOf(l.longValue()));
         }
         EnumC0259fl enumC0259fl = s7.b;
         if (enumC0259fl != null) {
-            contentValues.put("type", Integer.valueOf(enumC0259fl.f879a));
+            contentValues.put("type", Integer.valueOf(enumC0259fl.f883a));
         }
         String str = s7.c;
         if (str != null) {
             contentValues.put("report_request_parameters", str);
         }
-        Q7 q7 = this.f677a;
-        contentValues.put("session_description", MessageNano.toByteArray(q7.f633a.fromModel(s7.d)));
+        Q7 q7 = this.f681a;
+        contentValues.put("session_description", MessageNano.toByteArray(q7.f637a.fromModel(s7.d)));
         return contentValues;
     }
 
     public T7(Q7 q7) {
-        this.f677a = q7;
+        this.f681a = q7;
     }
 
     public /* synthetic */ T7(Q7 q7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -59,6 +59,6 @@ public final class T7 implements Converter {
         } else {
             enumC0259fl = null;
         }
-        return new S7(asLong, enumC0259fl, contentValues.getAsString("report_request_parameters"), this.f677a.toModel(contentValues.getAsByteArray("session_description")));
+        return new S7(asLong, enumC0259fl, contentValues.getAsString("report_request_parameters"), this.f681a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

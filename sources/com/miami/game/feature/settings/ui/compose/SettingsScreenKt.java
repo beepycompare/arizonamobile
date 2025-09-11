@@ -68,7 +68,7 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes4.dex */
 public final class SettingsScreenKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit BackgroundImage$lambda$29(int i, int i2, Composer composer, int i3) {
+    public static final Unit BackgroundImage$lambda$0(int i, int i2, Composer composer, int i3) {
         BackgroundImage(i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
@@ -80,7 +80,7 @@ public final class SettingsScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsScreen$lambda$28(SettingsUiState settingsUiState, Function0 function0, Function0 function02, Function1 function1, Function1 function12, Function0 function03, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, Function0 function010, Function0 function011, Function0 function012, int i, int i2, Composer composer, int i3) {
+    public static final Unit SettingsScreen$lambda$3(SettingsUiState settingsUiState, Function0 function0, Function0 function02, Function1 function1, Function1 function12, Function0 function03, Function0 function04, Function0 function05, Function0 function06, Function0 function07, Function0 function08, Function0 function09, Function0 function010, Function0 function011, Function0 function012, int i, int i2, Composer composer, int i3) {
         SettingsScreen(settingsUiState, function0, function02, function1, function12, function03, function04, function05, function06, function07, function08, function09, function010, function011, function012, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
         return Unit.INSTANCE;
     }
@@ -115,7 +115,7 @@ public final class SettingsScreenKt {
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             SharedEventFlow<SettingsUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629802762, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629803146, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance = ((458752 & i3) == 131072) | startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -126,7 +126,7 @@ public final class SettingsScreenKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             ObserveExternalNavigationActionsKt.observeExternalNavigationActions(component.getExternalNavigationAction(), startRestartGroup, 0);
             SettingsUiState SettingsRoute$lambda$0 = SettingsRoute$lambda$0(collectAsStateWithLifecycle);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629791025, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629791409, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -135,7 +135,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction = (KFunction) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629788276, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629788660, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance3 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance3 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -144,7 +144,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction2 = (KFunction) rememberedValue3;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629786740, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629787124, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance4 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance4 || rememberedValue4 == Composer.Companion.getEmpty()) {
@@ -153,7 +153,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction3 = (KFunction) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629785142, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629785526, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance5 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance5 || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -162,7 +162,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction4 = (KFunction) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629783709, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629784093, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance6 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
             if (changedInstance6 || rememberedValue6 == Composer.Companion.getEmpty()) {
@@ -171,7 +171,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction5 = (KFunction) rememberedValue6;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629782328, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629782712, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance7 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$7$1 rememberedValue7 = startRestartGroup.rememberedValue();
             if (changedInstance7 || rememberedValue7 == Composer.Companion.getEmpty()) {
@@ -180,7 +180,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction6 = (KFunction) rememberedValue7;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629780854, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629781238, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance8 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$8$1 rememberedValue8 = startRestartGroup.rememberedValue();
             if (changedInstance8 || rememberedValue8 == Composer.Companion.getEmpty()) {
@@ -189,7 +189,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction7 = (KFunction) rememberedValue8;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629779219, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629779603, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance9 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$9$1 rememberedValue9 = startRestartGroup.rememberedValue();
             if (changedInstance9 || rememberedValue9 == Composer.Companion.getEmpty()) {
@@ -198,7 +198,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction8 = (KFunction) rememberedValue9;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629777623, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629778007, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance10 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$10$1 rememberedValue10 = startRestartGroup.rememberedValue();
             if (changedInstance10 || rememberedValue10 == Composer.Companion.getEmpty()) {
@@ -207,7 +207,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction9 = (KFunction) rememberedValue10;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629776316, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629776700, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance11 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$11$1 rememberedValue11 = startRestartGroup.rememberedValue();
             if (changedInstance11 || rememberedValue11 == Composer.Companion.getEmpty()) {
@@ -216,7 +216,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction10 = (KFunction) rememberedValue11;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629775032, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629775416, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance12 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$12$1 rememberedValue12 = startRestartGroup.rememberedValue();
             if (changedInstance12 || rememberedValue12 == Composer.Companion.getEmpty()) {
@@ -225,7 +225,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction11 = (KFunction) rememberedValue12;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629773624, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629774008, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance13 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$13$1 rememberedValue13 = startRestartGroup.rememberedValue();
             if (changedInstance13 || rememberedValue13 == Composer.Companion.getEmpty()) {
@@ -234,7 +234,7 @@ public final class SettingsScreenKt {
             }
             KFunction kFunction12 = (KFunction) rememberedValue13;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629772083, "CC(remember):SettingsScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629772467, "CC(remember):SettingsScreen.kt#9igjgp");
             boolean changedInstance14 = startRestartGroup.changedInstance(component);
             SettingsScreenKt$SettingsRoute$14$1 rememberedValue14 = startRestartGroup.rememberedValue();
             if (changedInstance14 || rememberedValue14 == Composer.Companion.getEmpty()) {
@@ -245,10 +245,10 @@ public final class SettingsScreenKt {
             SettingsScreen(SettingsRoute$lambda$0, (Function0) kFunction, onBackClick, (Function1) kFunction2, (Function1) kFunction3, (Function0) kFunction4, (Function0) kFunction5, (Function0) kFunction6, (Function0) kFunction7, (Function0) kFunction9, (Function0) kFunction8, (Function0) kFunction10, (Function0) kFunction11, (Function0) kFunction12, (Function0) ((KFunction) rememberedValue14), startRestartGroup, (i3 << 3) & 896, 0);
             startRestartGroup = startRestartGroup;
             if (SettingsRoute$lambda$0(collectAsStateWithLifecycle).isConnectionDialogVisible()) {
-                startRestartGroup.startReplaceGroup(1016754418);
+                startRestartGroup.startReplaceGroup(1016742514);
                 ComposerKt.sourceInformation(startRestartGroup, "85@3635L20,86@3681L24,83@3542L173");
                 ConnectionData connectionData = SettingsRoute$lambda$0(collectAsStateWithLifecycle).getConnectionData();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629766329, "CC(remember):SettingsScreen.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629766713, "CC(remember):SettingsScreen.kt#9igjgp");
                 boolean changedInstance15 = startRestartGroup.changedInstance(component);
                 SettingsScreenKt$SettingsRoute$15$1 rememberedValue15 = startRestartGroup.rememberedValue();
                 if (changedInstance15 || rememberedValue15 == Composer.Companion.getEmpty()) {
@@ -257,7 +257,7 @@ public final class SettingsScreenKt {
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Function0 function0 = (Function0) ((KFunction) rememberedValue15);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629764853, "CC(remember):SettingsScreen.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1629765237, "CC(remember):SettingsScreen.kt#9igjgp");
                 boolean changedInstance16 = startRestartGroup.changedInstance(component);
                 SettingsScreenKt$SettingsRoute$16$1 rememberedValue16 = startRestartGroup.rememberedValue();
                 if (changedInstance16 || rememberedValue16 == Composer.Companion.getEmpty()) {
@@ -267,7 +267,7 @@ public final class SettingsScreenKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ConnectionDialogKt.ConnectionDialog(connectionData, function0, (Function1) ((KFunction) rememberedValue16), startRestartGroup, ConnectionData.$stable);
             } else {
-                startRestartGroup.startReplaceGroup(1013243823);
+                startRestartGroup.startReplaceGroup(1013231919);
             }
             startRestartGroup.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
@@ -380,23 +380,23 @@ public final class SettingsScreenKt {
             ScaffoldKt.m2519ScaffoldTvnljyQ(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), ComposableLambdaKt.rememberComposableLambda(255815013, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsScreen$lambda$18;
-                    SettingsScreen$lambda$18 = SettingsScreenKt.SettingsScreen$lambda$18(SettingsUiState.this, onRepairGame, onBackClick, onBugsReport, onTech, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsScreen$lambda$18;
+                    Unit SettingsScreen$lambda$0;
+                    SettingsScreen$lambda$0 = SettingsScreenKt.SettingsScreen$lambda$0(SettingsUiState.this, onRepairGame, onBackClick, onBugsReport, onTech, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsScreen$lambda$0;
                 }
             }, composer2, 54), ComposableLambdaKt.rememberComposableLambda(-1608401818, true, new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsScreenKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsScreen$lambda$19;
-                    SettingsScreen$lambda$19 = SettingsScreenKt.SettingsScreen$lambda$19(Function0.this, onShareLogs, onPrivacyPolicy, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsScreen$lambda$19;
+                    Unit SettingsScreen$lambda$1;
+                    SettingsScreen$lambda$1 = SettingsScreenKt.SettingsScreen$lambda$1(Function0.this, onShareLogs, onPrivacyPolicy, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsScreen$lambda$1;
                 }
             }, composer2, 54), null, null, 0, Color.Companion.m4572getTransparent0d7_KjU(), 0L, null, ComposableLambdaKt.rememberComposableLambda(-1605920976, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsScreenKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SettingsScreen$lambda$27;
-                    SettingsScreen$lambda$27 = SettingsScreenKt.SettingsScreen$lambda$27(SettingsUiState.this, onFontSize, onPageSize, onStreamer, onFullScreen, onShowChatTime, onNotification, onShowFPS, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SettingsScreen$lambda$27;
+                    Unit SettingsScreen$lambda$2;
+                    SettingsScreen$lambda$2 = SettingsScreenKt.SettingsScreen$lambda$2(SettingsUiState.this, onFontSize, onPageSize, onStreamer, onFullScreen, onShowChatTime, onNotification, onShowFPS, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SettingsScreen$lambda$2;
                 }
             }, composer2, 54), composer2, 806879670, 440);
             if (ComposerKt.isTraceInProgress()) {
@@ -408,16 +408,16 @@ public final class SettingsScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsScreen$lambda$28;
-                    SettingsScreen$lambda$28 = SettingsScreenKt.SettingsScreen$lambda$28(SettingsUiState.this, onRepairGame, onBackClick, onFontSize, onPageSize, onFullScreen, onShowFPS, onShowChatTime, onBugsReport, onShareLogs, onPrivacyPolicy, onTech, onKeyboard, onStreamer, onNotification, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsScreen$lambda$28;
+                    Unit SettingsScreen$lambda$3;
+                    SettingsScreen$lambda$3 = SettingsScreenKt.SettingsScreen$lambda$3(SettingsUiState.this, onRepairGame, onBackClick, onFontSize, onPageSize, onFullScreen, onShowFPS, onShowChatTime, onBugsReport, onShareLogs, onPrivacyPolicy, onTech, onKeyboard, onStreamer, onNotification, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsScreen$lambda$3;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsScreen$lambda$18(SettingsUiState settingsUiState, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Composer composer, int i) {
+    public static final Unit SettingsScreen$lambda$0(SettingsUiState settingsUiState, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C120@4468L258:SettingsScreen.kt#1gr92h");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -434,7 +434,7 @@ public final class SettingsScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsScreen$lambda$27(SettingsUiState settingsUiState, Function1 function1, Function1 function12, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, PaddingValues padding, Composer composer, int i) {
+    public static final Unit SettingsScreen$lambda$2(SettingsUiState settingsUiState, Function1 function1, Function1 function12, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, PaddingValues padding, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(padding, "padding");
         ComposerKt.sourceInformation(composer, "CN(padding)131@4782L37,133@4833L3792:SettingsScreen.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -508,7 +508,7 @@ public final class SettingsScreenKt {
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -2072114466, "C156@5693L36,153@5568L3025:SettingsScreen.kt#1gr92h");
-            Modifier verticalScroll$default = ScrollKt.verticalScroll$default(ScrollBarKt.fadingTopBottomEdgesSimplified$default(ScrollBarKt.m8928verticalColumnScrollbarosbwsH8(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), rememberScrollState, 0.0f, false, 0.0f, 0.0f, composer, 6, 30), rememberScrollState, 0.0f, 0.0f, 6, null), rememberScrollState, false, null, false, 14, null);
+            Modifier verticalScroll$default = ScrollKt.verticalScroll$default(ScrollBarKt.fadingTopBottomEdgesSimplified$default(ScrollBarKt.m8931verticalColumnScrollbarosbwsH8(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), rememberScrollState, 0.0f, false, 0.0f, 0.0f, composer, 6, 30), rememberScrollState, 0.0f, 0.0f, 6, null), rememberScrollState, false, null, false, 14, null);
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy2 = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(-Dp.m7251constructorimpl(4))), Alignment.Companion.getStart(), composer, 6);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -714,7 +714,7 @@ public final class SettingsScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsScreen$lambda$19(Function0 function0, Function0 function02, Function0 function03, Composer composer, int i) {
+    public static final Unit SettingsScreen$lambda$1(Function0 function0, Function0 function02, Function0 function03, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C219@8671L171:SettingsScreen.kt#1gr92h");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
@@ -755,9 +755,9 @@ public final class SettingsScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsScreenKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit BackgroundImage$lambda$29;
-                    BackgroundImage$lambda$29 = SettingsScreenKt.BackgroundImage$lambda$29(i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return BackgroundImage$lambda$29;
+                    Unit BackgroundImage$lambda$0;
+                    BackgroundImage$lambda$0 = SettingsScreenKt.BackgroundImage$lambda$0(i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return BackgroundImage$lambda$0;
                 }
             });
         }

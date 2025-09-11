@@ -34,7 +34,7 @@ public final class Db {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        c0119aa.f786a = i;
+        c0119aa.f790a = i;
         c0119aa.b = jSONObject.toString().getBytes(Charsets.UTF_8);
         return c0119aa;
     }

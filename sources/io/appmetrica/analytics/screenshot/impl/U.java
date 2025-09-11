@@ -3,12 +3,12 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class U {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0775f f1302a;
+    public final C0775f f1306a;
     public final Y b;
     public final C0785p c;
 
     public U(C0775f c0775f, Y y, C0785p c0785p) {
-        this.f1302a = c0775f;
+        this.f1306a = c0775f;
         this.b = y;
         this.c = c0785p;
     }

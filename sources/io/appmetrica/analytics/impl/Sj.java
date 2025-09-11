@@ -5,14 +5,14 @@ import io.appmetrica.analytics.Revenue;
 public final class Sj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f669a;
+    public final /* synthetic */ Revenue f673a;
 
     public Sj(Revenue revenue) {
-        this.f669a = revenue;
+        this.f673a = revenue;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.reportRevenue(this.f669a);
+        interfaceC0557rb.reportRevenue(this.f673a);
     }
 }

@@ -39,19 +39,19 @@ public final class ComposableSingletons$RepairGameDialogKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f73lambda$277375600 = ComposableLambdaKt.composableLambdaInstance(-277375600, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__277375600$lambda$1;
-            lambda__277375600$lambda$1 = ComposableSingletons$RepairGameDialogKt.lambda__277375600$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__277375600$lambda$1;
+            Unit lambda__277375600$lambda$0;
+            lambda__277375600$lambda$0 = ComposableSingletons$RepairGameDialogKt.lambda__277375600$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda__277375600$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-1796529959$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8966getLambda$1796529959$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8974getLambda$1796529959$dialogs_release() {
         return f72lambda$1796529959;
     }
 
     /* renamed from: getLambda$-277375600$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8967getLambda$277375600$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8975getLambda$277375600$dialogs_release() {
         return f73lambda$277375600;
     }
 
@@ -74,7 +74,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__277375600$lambda$1(BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit lambda__277375600$lambda$0(BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C81@3146L10,81@3119L81:RepairGameDialog.kt#wxnm6r");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

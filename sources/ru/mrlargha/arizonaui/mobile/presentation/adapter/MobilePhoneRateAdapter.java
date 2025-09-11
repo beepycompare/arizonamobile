@@ -46,13 +46,13 @@ public final class MobilePhoneRateAdapter extends RecyclerView.Adapter<MobilePho
         holder.getUberRate().mpUberRateItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneRateAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhoneRateAdapter.onBindViewHolder$lambda$2(MobilePhoneRateAdapter.this, i, view);
+                MobilePhoneRateAdapter.onBindViewHolder$lambda$0(MobilePhoneRateAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(MobilePhoneRateAdapter mobilePhoneRateAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0(MobilePhoneRateAdapter mobilePhoneRateAdapter, int i, View view) {
         int i2;
         Iterator<T> it = mobilePhoneRateAdapter.rates.iterator();
         while (true) {

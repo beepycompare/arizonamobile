@@ -223,7 +223,9 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         ConveyorGameScreenBinding conveyorGameScreenBinding = this.binding;
         conveyorGameScreenBinding.getRoot().setBackgroundResource(R.drawable.conveyor_game_document_bg);
         conveyorGameScreenBinding.gameTitle.setText("Сортировка документации");
-        CustomCardView.setBackground$default(conveyorGameScreenBinding.leftContainer, Color.parseColor("#FA6E0A"), Color.parseColor("#FFDB0D"), null, null, 12, null);
+        CustomCardView leftContainer = conveyorGameScreenBinding.leftContainer;
+        Intrinsics.checkNotNullExpressionValue(leftContainer, "leftContainer");
+        CustomCardView.setBackground$default(leftContainer, Color.parseColor("#FA6E0A"), Color.parseColor("#FFDB0D"), null, null, 12, null);
         conveyorGameScreenBinding.leftItem.setTextColor(-1);
         conveyorGameScreenBinding.tvHint.setText("Нажимайте на документ и на нужную коробку по цветам");
         conveyorGameScreenBinding.ivDefaultItem.setImageResource(R.drawable.conveyor_game_document_item);
@@ -235,7 +237,9 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         ConveyorGameScreenBinding conveyorGameScreenBinding = this.binding;
         conveyorGameScreenBinding.getRoot().setBackgroundResource(R.drawable.conveyor_game_crystal_bg);
         conveyorGameScreenBinding.gameTitle.setText("Сортировка космических артефактов");
-        CustomCardView.setBackground$default(conveyorGameScreenBinding.leftContainer, Color.parseColor("#009DFF"), 0, null, CustomCardView.GradientType.RADIAL, 4, null);
+        CustomCardView leftContainer = conveyorGameScreenBinding.leftContainer;
+        Intrinsics.checkNotNullExpressionValue(leftContainer, "leftContainer");
+        CustomCardView.setBackground$default(leftContainer, Color.parseColor("#009DFF"), 0, null, CustomCardView.GradientType.RADIAL, 4, null);
         conveyorGameScreenBinding.leftItem.setTextColor(-1);
         conveyorGameScreenBinding.tvHint.setText("Перенестие артефакты по цветам в нужный кейс");
         conveyorGameScreenBinding.ivDefaultItem.setImageResource(R.drawable.conveyor_game_crystal_item_empty);

@@ -325,15 +325,15 @@ public final class MyBusinessListAdapter extends RecyclerView.Adapter<BusinessVi
         EasyAnimation.animateClick$default(easyAnimation, myBusinessItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessListAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = MyBusinessListAdapter.onBindViewHolder$lambda$2$lambda$1(MyBusinessListAdapter.this, businessItemInfo2);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$1;
+                onBindViewHolder$lambda$0$1 = MyBusinessListAdapter.onBindViewHolder$lambda$0$1(MyBusinessListAdapter.this, businessItemInfo2);
+                return onBindViewHolder$lambda$0$1;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(MyBusinessListAdapter myBusinessListAdapter, MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo) {
+    public static final Unit onBindViewHolder$lambda$0$1(MyBusinessListAdapter myBusinessListAdapter, MyBusinessScreen.Companion.BusinessItemInfo businessItemInfo) {
         OnBizClickListener onBizClickListener = myBusinessListAdapter.onBizClickListener;
         if (onBizClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onBizClickListener");

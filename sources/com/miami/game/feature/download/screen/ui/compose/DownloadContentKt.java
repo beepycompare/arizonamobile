@@ -53,12 +53,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class DownloadContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DownloadContent$lambda$5(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
+    public static final Unit DownloadContent$lambda$1(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
         DownloadContent(downloadScreenUiState, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Type inference failed for: r2v10, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r2v39 */
     /* JADX WARN: Type inference failed for: r2v9 */
     /* JADX WARN: Type inference failed for: r6v0 */
@@ -93,7 +93,7 @@ public final class DownloadContentKt {
                 ComposerKt.traceEventStart(-321713629, i2, -1, "com.miami.game.feature.download.screen.ui.compose.DownloadContent (DownloadContent.kt:25)");
             }
             if (uiState.getVideoUri() == null || uiState.isLauncherUpdate()) {
-                startRestartGroup.startReplaceGroup(-2098472090);
+                startRestartGroup.startReplaceGroup(-2098483994);
                 ComposerKt.sourceInformation(startRestartGroup, "29@1234L42,29@1228L169");
                 f = 0.0f;
                 r6 = 0;
@@ -101,7 +101,7 @@ public final class DownloadContentKt {
                 ImageKt.Image(PainterResources_androidKt.painterResource(uiState.getLauncherUpdateRes(), startRestartGroup, 0), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(70852819);
+                startRestartGroup.startReplaceGroup(70852435);
                 ComposerKt.sourceInformation(startRestartGroup, "28@1164L48");
                 VideoPlayerKt.ExoPlayerView(uiState.getVideoUri(), uiState.getSoundOn(), startRestartGroup, 0);
                 startRestartGroup.endReplaceGroup();
@@ -157,9 +157,9 @@ public final class DownloadContentKt {
                 ScalingButtonKt.ScalingButton(onSoundClick, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getTopEnd()), ComposableLambdaKt.rememberComposableLambda(-2005235955, r2, new Function3() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
-                        Unit DownloadContent$lambda$4$lambda$0;
-                        DownloadContent$lambda$4$lambda$0 = DownloadContentKt.DownloadContent$lambda$4$lambda$0(DownloadScreenUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                        return DownloadContent$lambda$4$lambda$0;
+                        Unit DownloadContent$lambda$0$0;
+                        DownloadContent$lambda$0$0 = DownloadContentKt.DownloadContent$lambda$0$0(DownloadScreenUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return DownloadContent$lambda$0$0;
                     }
                 }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             }
@@ -208,9 +208,9 @@ public final class DownloadContentKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        float DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1;
-                        DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1 = DownloadContentKt.DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1(DownloadScreenUiState.this);
-                        return Float.valueOf(DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1);
+                        float DownloadContent$lambda$0$1$0$0;
+                        DownloadContent$lambda$0$1$0$0 = DownloadContentKt.DownloadContent$lambda$0$1$0$0(DownloadScreenUiState.this);
+                        return Float.valueOf(DownloadContent$lambda$0$1$0$0);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -238,16 +238,16 @@ public final class DownloadContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadContentKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadContent$lambda$5;
-                    DownloadContent$lambda$5 = DownloadContentKt.DownloadContent$lambda$5(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadContent$lambda$5;
+                    Unit DownloadContent$lambda$1;
+                    DownloadContent$lambda$1 = DownloadContentKt.DownloadContent$lambda$1(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DownloadContent$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DownloadContent$lambda$4$lambda$0(DownloadScreenUiState downloadScreenUiState, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit DownloadContent$lambda$0$0(DownloadScreenUiState downloadScreenUiState, BoxScope ScalingButton, Composer composer, int i) {
         int i2;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C54@2181L25,53@2154L262:DownloadContent.kt#k3v2wi");
@@ -271,7 +271,7 @@ public final class DownloadContentKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final float DownloadContent$lambda$4$lambda$3$lambda$2$lambda$1(DownloadScreenUiState downloadScreenUiState) {
+    public static final float DownloadContent$lambda$0$1$0$0(DownloadScreenUiState downloadScreenUiState) {
         return (float) downloadScreenUiState.getPercentageProgress();
     }
 }

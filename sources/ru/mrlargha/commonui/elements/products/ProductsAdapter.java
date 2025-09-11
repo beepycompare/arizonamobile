@@ -32,13 +32,13 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
         this(false, 1, null);
     }
 
-    public /* synthetic */ ProductsAdapter(boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? false : z);
-    }
-
     public ProductsAdapter(boolean z) {
         this.isArizonaType = z;
         this.products = new ArrayList();
+    }
+
+    public /* synthetic */ ProductsAdapter(boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? false : z);
     }
 
     public final void setOnProductSelectedClickListener(OnProductSelectedClickListener productSelectedClickListener) {
@@ -97,13 +97,13 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
         binding.productItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.products.ProductsAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProductsAdapter.onBindViewHolder$lambda$2$lambda$1(ProductsAdapter.this, i, view);
+                ProductsAdapter.onBindViewHolder$lambda$0$1(ProductsAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2$lambda$1(ProductsAdapter productsAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$1(ProductsAdapter productsAdapter, int i, View view) {
         OnProductSelectedClickListener onProductSelectedClickListener = productsAdapter.productSelectedClickListener;
         if (onProductSelectedClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("productSelectedClickListener");

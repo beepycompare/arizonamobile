@@ -6,7 +6,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Tg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f682a;
+    public final String f686a;
     public final String b;
     public final C0740yj c;
 
@@ -15,11 +15,11 @@ public final class Tg {
     }
 
     public final String toString() {
-        return "ReferrerWrapper{type='" + this.f682a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerWrapper{type='" + this.f686a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Tg(String str, String str2, C0740yj c0740yj) {
-        this.f682a = str;
+        this.f686a = str;
         this.b = str2;
         this.c = c0740yj;
     }

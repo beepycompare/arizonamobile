@@ -6,14 +6,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Jg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f515a;
+    public final String f519a;
     public final long b;
     public final long c;
     public final Ig d;
 
     public Jg(byte[] bArr) {
         Kg a2 = Kg.a(bArr);
-        this.f515a = a2.f536a;
+        this.f519a = a2.f540a;
         this.b = a2.c;
         this.c = a2.b;
         this.d = a(a2.d);
@@ -21,7 +21,7 @@ public final class Jg {
 
     public final byte[] a() {
         Kg kg = new Kg();
-        kg.f536a = this.f515a;
+        kg.f540a = this.f519a;
         kg.c = this.b;
         kg.b = this.c;
         int ordinal = this.d.ordinal();
@@ -42,7 +42,7 @@ public final class Jg {
         }
         if (obj != null && Jg.class == obj.getClass()) {
             Jg jg = (Jg) obj;
-            if (this.b == jg.b && this.c == jg.c && this.f515a.equals(jg.f515a) && this.d == jg.d) {
+            if (this.b == jg.b && this.c == jg.c && this.f519a.equals(jg.f519a) && this.d == jg.d) {
                 return true;
             }
         }
@@ -52,15 +52,15 @@ public final class Jg {
     public final int hashCode() {
         long j = this.b;
         long j2 = this.c;
-        return this.d.hashCode() + (((((this.f515a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
+        return this.d.hashCode() + (((((this.f519a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
     }
 
     public final String toString() {
-        return "ReferrerInfo{installReferrer='" + this.f515a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerInfo{installReferrer='" + this.f519a + "', referrerClickTimestampSeconds=" + this.b + ", installBeginTimestampSeconds=" + this.c + ", source=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Jg(String str, long j, long j2, Ig ig) {
-        this.f515a = str;
+        this.f519a = str;
         this.b = j;
         this.c = j2;
         this.d = ig;

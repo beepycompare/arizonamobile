@@ -29,6 +29,13 @@ public final class MobilePhoneMessengerChatMenuAdapter extends RecyclerView.Adap
         this(null, 1, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public MobilePhoneMessengerChatMenuAdapter(Function1<? super MenuChatItem, Unit> onClickMenu) {
+        Intrinsics.checkNotNullParameter(onClickMenu, "onClickMenu");
+        this.onClickMenu = onClickMenu;
+        this.menuItems = new ArrayList<>();
+    }
+
     public /* synthetic */ MobilePhoneMessengerChatMenuAdapter(Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerChatMenuAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -48,13 +55,6 @@ public final class MobilePhoneMessengerChatMenuAdapter extends RecyclerView.Adap
 
     public final Function1<MenuChatItem, Unit> getOnClickMenu() {
         return this.onClickMenu;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public MobilePhoneMessengerChatMenuAdapter(Function1<? super MenuChatItem, Unit> onClickMenu) {
-        Intrinsics.checkNotNullParameter(onClickMenu, "onClickMenu");
-        this.onClickMenu = onClickMenu;
-        this.menuItems = new ArrayList<>();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -78,15 +78,15 @@ public final class MobilePhoneMessengerChatMenuAdapter extends RecyclerView.Adap
         holder.getBinding().getRoot().setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerChatMenuAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean onBindViewHolder$lambda$2;
-                onBindViewHolder$lambda$2 = MobilePhoneMessengerChatMenuAdapter.onBindViewHolder$lambda$2(MobilePhoneMessengerChatMenuAdapter.this, menuChatItem2, view, motionEvent);
-                return onBindViewHolder$lambda$2;
+                boolean onBindViewHolder$lambda$1;
+                onBindViewHolder$lambda$1 = MobilePhoneMessengerChatMenuAdapter.onBindViewHolder$lambda$1(MobilePhoneMessengerChatMenuAdapter.this, menuChatItem2, view, motionEvent);
+                return onBindViewHolder$lambda$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onBindViewHolder$lambda$2(MobilePhoneMessengerChatMenuAdapter mobilePhoneMessengerChatMenuAdapter, MenuChatItem menuChatItem, View view, MotionEvent motionEvent) {
+    public static final boolean onBindViewHolder$lambda$1(MobilePhoneMessengerChatMenuAdapter mobilePhoneMessengerChatMenuAdapter, MenuChatItem menuChatItem, View view, MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         if (action == 0) {
             view.setBackgroundColor(Color.parseColor("#ababab"));

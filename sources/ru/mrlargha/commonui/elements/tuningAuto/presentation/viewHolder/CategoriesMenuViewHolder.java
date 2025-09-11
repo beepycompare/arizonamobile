@@ -68,13 +68,13 @@ public final class CategoriesMenuViewHolder extends RecyclerView.ViewHolder {
         itemTuningMenuBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.viewHolder.CategoriesMenuViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CategoriesMenuViewHolder.bind$lambda$1$lambda$0(CategoriesMenuViewHolder.this, item, view);
+                CategoriesMenuViewHolder.bind$lambda$0$0(CategoriesMenuViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(CategoriesMenuViewHolder categoriesMenuViewHolder, CategoryInfo categoryInfo, View view) {
+    public static final void bind$lambda$0$0(CategoriesMenuViewHolder categoriesMenuViewHolder, CategoryInfo categoryInfo, View view) {
         categoriesMenuViewHolder.onItemClicked.invoke(categoryInfo, Integer.valueOf(categoriesMenuViewHolder.getAdapterPosition()));
     }
 }

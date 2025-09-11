@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class a0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b0 f1371a;
+    public final b0 f1375a;
     public final c0 b;
     public final d0 c;
 
@@ -13,7 +13,7 @@ public final class a0 {
         Intrinsics.checkNotNullParameter(sdkNameDataSource, "sdkNameDataSource");
         Intrinsics.checkNotNullParameter(sdkTypeDataSource, "sdkTypeDataSource");
         Intrinsics.checkNotNullParameter(sdkVersionDataSource, "sdkVersionDataSource");
-        this.f1371a = sdkNameDataSource;
+        this.f1375a = sdkNameDataSource;
         this.b = sdkTypeDataSource;
         this.c = sdkVersionDataSource;
     }

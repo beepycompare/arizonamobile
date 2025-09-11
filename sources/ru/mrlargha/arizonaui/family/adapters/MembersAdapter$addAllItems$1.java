@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.arizonaui.family.data.MemberItem;
 /* compiled from: MembersAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.family.adapters.MembersAdapter$addAllItems$1", f = "MembersAdapter.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.arizonaui.family.adapters.MembersAdapter$addAllItems$1", f = "MembersAdapter.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 final class MembersAdapter$addAllItems$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<MemberItem> $items;

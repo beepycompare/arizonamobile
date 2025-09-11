@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0138b3 implements InterfaceC0694wn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0719xn f799a;
+    public final InterfaceC0719xn f803a;
 
     public C0138b3(InterfaceC0719xn interfaceC0719xn) {
-        this.f799a = interfaceC0719xn;
+        this.f803a = interfaceC0719xn;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0694wn
     public final void a(InterfaceC0669vn interfaceC0669vn) {
-        interfaceC0669vn.a(this.f799a.a());
+        interfaceC0669vn.a(this.f803a.a());
     }
 }

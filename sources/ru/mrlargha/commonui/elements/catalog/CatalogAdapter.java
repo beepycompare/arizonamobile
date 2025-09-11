@@ -34,6 +34,14 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
     private final boolean isArizona;
     private final Function2<CatalogItemModel, Integer, Unit> onSelectItem;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public CatalogAdapter(boolean z, Function2<? super CatalogItemModel, ? super Integer, Unit> onSelectItem) {
+        Intrinsics.checkNotNullParameter(onSelectItem, "onSelectItem");
+        this.isArizona = z;
+        this.onSelectItem = onSelectItem;
+        this.catalogItemList = new ArrayList<>();
+    }
+
     public /* synthetic */ CatalogAdapter(boolean z, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(z, (i & 2) != 0 ? new Function2() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
@@ -49,14 +57,6 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
     public static final Unit _init_$lambda$0(CatalogItemModel catalogItemModel, int i) {
         Intrinsics.checkNotNullParameter(catalogItemModel, "<unused var>");
         return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public CatalogAdapter(boolean z, Function2<? super CatalogItemModel, ? super Integer, Unit> onSelectItem) {
-        Intrinsics.checkNotNullParameter(onSelectItem, "onSelectItem");
-        this.isArizona = z;
-        this.onSelectItem = onSelectItem;
-        this.catalogItemList = new ArrayList<>();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -118,13 +118,13 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CatalogAdapter.onBindViewHolder$lambda$3$lambda$2(CatalogAdapter.this, i, catalogItemModel2, view);
+                CatalogAdapter.onBindViewHolder$lambda$0$1(CatalogAdapter.this, i, catalogItemModel2, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3$lambda$2(CatalogAdapter catalogAdapter, int i, CatalogItemModel catalogItemModel, View view) {
+    public static final void onBindViewHolder$lambda$0$1(CatalogAdapter catalogAdapter, int i, CatalogItemModel catalogItemModel, View view) {
         int id = catalogAdapter.isArizona ? i : catalogItemModel.getId();
         catalogAdapter.selectCatalogItem(i);
         catalogAdapter.onSelectItem.invoke(catalogItemModel, Integer.valueOf(id));
@@ -147,7 +147,7 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeItemById$lambda$4(int i, CatalogItemModel it) {
+    public static final boolean removeItemById$lambda$0(int i, CatalogItemModel it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getId() == i;
     }
@@ -156,9 +156,9 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
         boolean removeAll = CollectionsKt.removeAll((List) this.catalogItemList, new Function1() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean removeItemById$lambda$4;
-                removeItemById$lambda$4 = CatalogAdapter.removeItemById$lambda$4(i, (CatalogItemModel) obj);
-                return Boolean.valueOf(removeItemById$lambda$4);
+                boolean removeItemById$lambda$0;
+                removeItemById$lambda$0 = CatalogAdapter.removeItemById$lambda$0(i, (CatalogItemModel) obj);
+                return Boolean.valueOf(removeItemById$lambda$0);
             }
         });
         notifyDataSetChanged();

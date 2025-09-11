@@ -31,6 +31,17 @@ public final class MobilePhoneMessengerChatAdapter extends RecyclerView.Adapter<
         this(null, 1, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public MobilePhoneMessengerChatAdapter(Function1<? super MessageInfo, Unit> onClickMessage) {
+        Intrinsics.checkNotNullParameter(onClickMessage, "onClickMessage");
+        this.onClickMessage = onClickMessage;
+        this.messages = new ArrayList<>();
+        this.friendMessageColor = Color.parseColor("#2F2F2F");
+        this.myMessageColor = Color.parseColor("#4A8EF4");
+        this.friendTimeColor = Color.parseColor("#AAAAAA");
+        this.myTimeColor = Color.parseColor("#A3C8FF");
+    }
+
     public /* synthetic */ MobilePhoneMessengerChatAdapter(Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerChatAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -50,17 +61,6 @@ public final class MobilePhoneMessengerChatAdapter extends RecyclerView.Adapter<
 
     public final Function1<MessageInfo, Unit> getOnClickMessage() {
         return this.onClickMessage;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public MobilePhoneMessengerChatAdapter(Function1<? super MessageInfo, Unit> onClickMessage) {
-        Intrinsics.checkNotNullParameter(onClickMessage, "onClickMessage");
-        this.onClickMessage = onClickMessage;
-        this.messages = new ArrayList<>();
-        this.friendMessageColor = Color.parseColor("#2F2F2F");
-        this.myMessageColor = Color.parseColor("#4A8EF4");
-        this.friendTimeColor = Color.parseColor("#AAAAAA");
-        this.myTimeColor = Color.parseColor("#A3C8FF");
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -90,13 +90,13 @@ public final class MobilePhoneMessengerChatAdapter extends RecyclerView.Adapter<
         holder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerChatAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhoneMessengerChatAdapter.onBindViewHolder$lambda$2(MobilePhoneMessengerChatAdapter.this, messageInfo2, view);
+                MobilePhoneMessengerChatAdapter.onBindViewHolder$lambda$1(MobilePhoneMessengerChatAdapter.this, messageInfo2, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(MobilePhoneMessengerChatAdapter mobilePhoneMessengerChatAdapter, MessageInfo messageInfo, View view) {
+    public static final void onBindViewHolder$lambda$1(MobilePhoneMessengerChatAdapter mobilePhoneMessengerChatAdapter, MessageInfo messageInfo, View view) {
         mobilePhoneMessengerChatAdapter.onClickMessage.invoke(messageInfo);
     }
 

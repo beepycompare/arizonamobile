@@ -6,11 +6,11 @@ import android.content.Context;
 public abstract class AbstractC0237f implements D4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f864a;
+    public final Context f868a;
     public final Xg b;
 
     public AbstractC0237f(Context context, Xg xg) {
-        this.f864a = context.getApplicationContext();
+        this.f868a = context.getApplicationContext();
         this.b = xg;
         xg.a(this);
         Na.j().m().b(this);
@@ -28,7 +28,7 @@ public abstract class AbstractC0237f implements D4 {
     public abstract void b(C0477o6 c0477o6, N4 n4);
 
     public final Context c() {
-        return this.f864a;
+        return this.f868a;
     }
 
     @Override // io.appmetrica.analytics.impl.D4

@@ -50,7 +50,7 @@ public final class RepairGameDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit RepairGameDialogScreen$lambda$9(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit RepairGameDialogScreen$lambda$1(String str, ErrorDialogUiState errorDialogUiState, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         RepairGameDialogScreen(str, errorDialogUiState, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -90,7 +90,7 @@ public final class RepairGameDialogKt {
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i2 & 112, 1);
             SharedEventFlow<ErrorDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 126044394, "CC(remember):RepairGameDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 126044010, "CC(remember):RepairGameDialog.kt#9igjgp");
             boolean z = (i2 & 7168) == 2048;
             RepairGameDialogKt$RepairGameDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -110,7 +110,7 @@ public final class RepairGameDialogKt {
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
             final Function0<Unit> function03 = function0;
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda2
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     Unit RepairGameDialogRoute$lambda$2;
@@ -145,12 +145,12 @@ public final class RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2066583429, i2, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogScreen (RepairGameDialog.kt:67)");
             }
-            DialogFrameKt.DialogFrame(null, onDismiss, ComposableLambdaKt.rememberComposableLambda(-1489415267, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda0
+            DialogFrameKt.DialogFrame(null, onDismiss, ComposableLambdaKt.rememberComposableLambda(-1489415267, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit RepairGameDialogScreen$lambda$8;
-                    RepairGameDialogScreen$lambda$8 = RepairGameDialogKt.RepairGameDialogScreen$lambda$8(Function0.this, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return RepairGameDialogScreen$lambda$8;
+                    Unit RepairGameDialogScreen$lambda$0;
+                    RepairGameDialogScreen$lambda$0 = RepairGameDialogKt.RepairGameDialogScreen$lambda$0(Function0.this, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return RepairGameDialogScreen$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 1);
             function0 = onDismiss;
@@ -160,19 +160,19 @@ public final class RepairGameDialogKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda1
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit RepairGameDialogScreen$lambda$9;
-                    RepairGameDialogScreen$lambda$9 = RepairGameDialogKt.RepairGameDialogScreen$lambda$9(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return RepairGameDialogScreen$lambda$9;
+                    Unit RepairGameDialogScreen$lambda$1;
+                    RepairGameDialogScreen$lambda$1 = RepairGameDialogKt.RepairGameDialogScreen$lambda$1(errorMessage, uiState, onConfirm, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return RepairGameDialogScreen$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit RepairGameDialogScreen$lambda$8(final Function0 function0, final Function0 function02, Composer composer, int i) {
+    public static final Unit RepairGameDialogScreen$lambda$0(final Function0 function0, final Function0 function02, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C69@2677L18,70@2704L102,71@2815L409:RepairGameDialog.kt#wxnm6r");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -213,34 +213,34 @@ public final class RepairGameDialogKt {
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda3
+                rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit RepairGameDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
-                        RepairGameDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3 = RepairGameDialogKt.RepairGameDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0.this);
-                        return RepairGameDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3;
+                        Unit RepairGameDialogScreen$lambda$0$0$0$0;
+                        RepairGameDialogScreen$lambda$0$0$0$0 = RepairGameDialogKt.RepairGameDialogScreen$lambda$0$0$0$0(Function0.this);
+                        return RepairGameDialogScreen$lambda$0$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.m8966getLambda$1796529959$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.m8974getLambda$1796529959$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, -308282812, "CC(remember):RepairGameDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda4
+                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit RepairGameDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
-                        RepairGameDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5 = RepairGameDialogKt.RepairGameDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0.this);
-                        return RepairGameDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5;
+                        Unit RepairGameDialogScreen$lambda$0$0$1$0;
+                        RepairGameDialogScreen$lambda$0$0$1$0 = RepairGameDialogKt.RepairGameDialogScreen$lambda$0$0$1$0(Function0.this);
+                        return RepairGameDialogScreen$lambda$0$0$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m8967getLambda$277375600$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m8975getLambda$277375600$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -257,13 +257,13 @@ public final class RepairGameDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit RepairGameDialogScreen$lambda$8$lambda$7$lambda$4$lambda$3(Function0 function0) {
+    public static final Unit RepairGameDialogScreen$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit RepairGameDialogScreen$lambda$8$lambda$7$lambda$6$lambda$5(Function0 function0) {
+    public static final Unit RepairGameDialogScreen$lambda$0$0$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

@@ -347,15 +347,15 @@ public final class InstantKt {
         }
         sb.append('-');
         StringBuilder sb3 = sb;
-        formatIso$lambda$13$appendTwoDigits(sb3, sb, fromInstant.getMonth());
+        formatIso$lambda$0$appendTwoDigits(sb3, sb, fromInstant.getMonth());
         sb.append('-');
-        formatIso$lambda$13$appendTwoDigits(sb3, sb, fromInstant.getDay());
+        formatIso$lambda$0$appendTwoDigits(sb3, sb, fromInstant.getDay());
         sb.append('T');
-        formatIso$lambda$13$appendTwoDigits(sb3, sb, fromInstant.getHour());
+        formatIso$lambda$0$appendTwoDigits(sb3, sb, fromInstant.getHour());
         sb.append(AbstractJsonLexerKt.COLON);
-        formatIso$lambda$13$appendTwoDigits(sb3, sb, fromInstant.getMinute());
+        formatIso$lambda$0$appendTwoDigits(sb3, sb, fromInstant.getMinute());
         sb.append(AbstractJsonLexerKt.COLON);
-        formatIso$lambda$13$appendTwoDigits(sb3, sb, fromInstant.getSecond());
+        formatIso$lambda$0$appendTwoDigits(sb3, sb, fromInstant.getSecond());
         if (fromInstant.getNanosecond() != 0) {
             sb.append('.');
             while (true) {
@@ -378,7 +378,7 @@ public final class InstantKt {
         return sb.toString();
     }
 
-    private static final void formatIso$lambda$13$appendTwoDigits(Appendable appendable, StringBuilder sb, int i) {
+    private static final void formatIso$lambda$0$appendTwoDigits(Appendable appendable, StringBuilder sb, int i) {
         if (i < 10) {
             appendable.append('0');
         }

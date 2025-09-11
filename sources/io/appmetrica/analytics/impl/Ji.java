@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class Ji {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ki f516a = new Ki(new C0671w0());
+    public static final Ki f520a = new Ki(new C0671w0());
 }

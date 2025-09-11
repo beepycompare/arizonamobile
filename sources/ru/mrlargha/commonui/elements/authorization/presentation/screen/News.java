@@ -77,13 +77,13 @@ public final class News implements InterfaceController {
         bind.authorizationNewsOpenButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.News$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                News.lambda$3$lambda$1(News.this, bind, view);
+                News.lambda$0$1(News.this, bind, view);
             }
         });
         bind.authorizationNewsCloseButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.News$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                News.lambda$3$lambda$2(News.this, bind, view);
+                News.lambda$0$2(News.this, bind, view);
             }
         });
     }
@@ -97,7 +97,7 @@ public final class News implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$1(News news, AuthorizationNewsBinding authorizationNewsBinding, View view) {
+    public static final void lambda$0$1(News news, AuthorizationNewsBinding authorizationNewsBinding, View view) {
         news.offscreen = false;
         ConstraintLayout constraintLayout = authorizationNewsBinding.authorizationNewsContainer;
         Intrinsics.checkNotNull(constraintLayout, "null cannot be cast to non-null type android.view.View");
@@ -118,7 +118,7 @@ public final class News implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$2(News news, AuthorizationNewsBinding authorizationNewsBinding, View view) {
+    public static final void lambda$0$2(News news, AuthorizationNewsBinding authorizationNewsBinding, View view) {
         news.offscreen = true;
         ConstraintLayout constraintLayout = authorizationNewsBinding.authorizationNewsContainer;
         Intrinsics.checkNotNull(constraintLayout, "null cannot be cast to non-null type android.view.View");

@@ -127,14 +127,14 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 DownloaderInfoDbModel downloaderInfoDbModel;
-                downloaderInfoDbModel = DownloaderInfoDao_Impl.get$lambda$1(r1, j, (SQLiteConnection) obj);
+                downloaderInfoDbModel = DownloaderInfoDao_Impl.get$lambda$0(r1, j, (SQLiteConnection) obj);
                 return downloaderInfoDbModel;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DownloaderInfoDbModel get$lambda$1(String str, long j, SQLiteConnection _connection) {
+    public static final DownloaderInfoDbModel get$lambda$0(String str, long j, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         boolean z = true;
@@ -176,15 +176,15 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allNotCompletedTasks$lambda$2;
-                allNotCompletedTasks$lambda$2 = DownloaderInfoDao_Impl.getAllNotCompletedTasks$lambda$2(r1, z, (SQLiteConnection) obj);
-                return allNotCompletedTasks$lambda$2;
+                List allNotCompletedTasks$lambda$0;
+                allNotCompletedTasks$lambda$0 = DownloaderInfoDao_Impl.getAllNotCompletedTasks$lambda$0(r1, z, (SQLiteConnection) obj);
+                return allNotCompletedTasks$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllNotCompletedTasks$lambda$2(String str, boolean z, SQLiteConnection _connection) {
+    public static final List getAllNotCompletedTasks$lambda$0(String str, boolean z, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -204,15 +204,15 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List all$lambda$3;
-                all$lambda$3 = DownloaderInfoDao_Impl.getAll$lambda$3(r1, (SQLiteConnection) obj);
-                return all$lambda$3;
+                List all$lambda$0;
+                all$lambda$0 = DownloaderInfoDao_Impl.getAll$lambda$0(r1, (SQLiteConnection) obj);
+                return all$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAll$lambda$3(String str, SQLiteConnection _connection) {
+    public static final List getAll$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -242,15 +242,15 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         return FlowUtil.createFlow(this.__db, false, new String[]{"downloader_info_table"}, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allFlow$lambda$4;
-                allFlow$lambda$4 = DownloaderInfoDao_Impl.getAllFlow$lambda$4(r1, (SQLiteConnection) obj);
-                return allFlow$lambda$4;
+                List allFlow$lambda$0;
+                allFlow$lambda$0 = DownloaderInfoDao_Impl.getAllFlow$lambda$0(r1, (SQLiteConnection) obj);
+                return allFlow$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllFlow$lambda$4(String str, SQLiteConnection _connection) {
+    public static final List getAllFlow$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -280,15 +280,15 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                long countAllTasks$lambda$5;
-                countAllTasks$lambda$5 = DownloaderInfoDao_Impl.getCountAllTasks$lambda$5(r1, (SQLiteConnection) obj);
-                return Long.valueOf(countAllTasks$lambda$5);
+                long countAllTasks$lambda$0;
+                countAllTasks$lambda$0 = DownloaderInfoDao_Impl.getCountAllTasks$lambda$0(r1, (SQLiteConnection) obj);
+                return Long.valueOf(countAllTasks$lambda$0);
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final long getCountAllTasks$lambda$5(String str, SQLiteConnection _connection) {
+    public static final long getCountAllTasks$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -303,16 +303,16 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit updateCompleted$lambda$6;
-                updateCompleted$lambda$6 = DownloaderInfoDao_Impl.updateCompleted$lambda$6(r1, z, j, (SQLiteConnection) obj);
-                return updateCompleted$lambda$6;
+                Unit updateCompleted$lambda$0;
+                updateCompleted$lambda$0 = DownloaderInfoDao_Impl.updateCompleted$lambda$0(r1, z, j, (SQLiteConnection) obj);
+                return updateCompleted$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit updateCompleted$lambda$6(String str, boolean z, long j, SQLiteConnection _connection) {
+    public static final Unit updateCompleted$lambda$0(String str, boolean z, long j, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -332,15 +332,15 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         return DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                int wipeData$lambda$7;
-                wipeData$lambda$7 = DownloaderInfoDao_Impl.wipeData$lambda$7(r1, (SQLiteConnection) obj);
-                return Integer.valueOf(wipeData$lambda$7);
+                int wipeData$lambda$0;
+                wipeData$lambda$0 = DownloaderInfoDao_Impl.wipeData$lambda$0(r1, (SQLiteConnection) obj);
+                return Integer.valueOf(wipeData$lambda$0);
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int wipeData$lambda$7(String str, SQLiteConnection _connection) {
+    public static final int wipeData$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -356,16 +356,16 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.miami.game.core.downloader.database.dao.DownloaderInfoDao_Impl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteDownloaderInfo$lambda$8;
-                deleteDownloaderInfo$lambda$8 = DownloaderInfoDao_Impl.deleteDownloaderInfo$lambda$8(r1, str, (SQLiteConnection) obj);
-                return deleteDownloaderInfo$lambda$8;
+                Unit deleteDownloaderInfo$lambda$0;
+                deleteDownloaderInfo$lambda$0 = DownloaderInfoDao_Impl.deleteDownloaderInfo$lambda$0(r1, str, (SQLiteConnection) obj);
+                return deleteDownloaderInfo$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit deleteDownloaderInfo$lambda$8(String str, String str2, SQLiteConnection _connection) {
+    public static final Unit deleteDownloaderInfo$lambda$0(String str, String str2, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

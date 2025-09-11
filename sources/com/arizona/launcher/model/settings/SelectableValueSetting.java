@@ -12,14 +12,6 @@ public final class SelectableValueSetting extends IntSetting {
     private final int icon;
     private final Map<Integer, String> variants;
 
-    public final Map<Integer, String> getVariants() {
-        return this.variants;
-    }
-
-    public final int getIcon() {
-        return this.icon;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SelectableValueSetting(String settingVisibleName, String settingKey, int i, Map<Integer, String> variants, int i2, SharedPreferences sharedPreferences) {
         super(settingVisibleName, settingKey, i, sharedPreferences, null, 16, null);
@@ -29,5 +21,13 @@ public final class SelectableValueSetting extends IntSetting {
         Intrinsics.checkNotNullParameter(sharedPreferences, "sharedPreferences");
         this.variants = variants;
         this.icon = i2;
+    }
+
+    public final Map<Integer, String> getVariants() {
+        return this.variants;
+    }
+
+    public final int getIcon() {
+        return this.icon;
     }
 }

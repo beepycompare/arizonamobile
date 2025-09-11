@@ -35,9 +35,9 @@ public final class ComposableSingletons$CacheUpdateDialogKt {
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$1292262873 = ComposableLambdaKt.composableLambdaInstance(1292262873, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.download.ComposableSingletons$CacheUpdateDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_1292262873$lambda$1;
-            lambda_1292262873$lambda$1 = ComposableSingletons$CacheUpdateDialogKt.lambda_1292262873$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_1292262873$lambda$1;
+            Unit lambda_1292262873$lambda$0;
+            lambda_1292262873$lambda$0 = ComposableSingletons$CacheUpdateDialogKt.lambda_1292262873$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_1292262873$lambda$0;
         }
     });
 
@@ -68,7 +68,7 @@ public final class ComposableSingletons$CacheUpdateDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda_1292262873$lambda$1(BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit lambda_1292262873$lambda$0(BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C93@3375L10,93@3348L88:CacheUpdateDialog.kt#as3uag");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

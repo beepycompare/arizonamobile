@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Yn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lb f759a;
+    public final Lb f763a;
 
     public Yn(Lb lb) {
-        this.f759a = lb;
+        this.f763a = lb;
     }
 }

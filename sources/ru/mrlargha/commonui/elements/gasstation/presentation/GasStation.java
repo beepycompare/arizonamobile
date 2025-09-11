@@ -116,19 +116,19 @@ public final class GasStation extends SAMPUIElement {
         bind.gsFuelCountButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.gasstation.presentation.GasStation$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GasStation._init_$lambda$3(GasStation.this, view);
+                GasStation._init_$lambda$1(GasStation.this, view);
             }
         });
         bind.gsCloseButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.gasstation.presentation.GasStation$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GasStation._init_$lambda$4(GasStation.this, view);
+                GasStation._init_$lambda$2(GasStation.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(GasStation gasStation, View view) {
+    public static final void _init_$lambda$1(GasStation gasStation, View view) {
         Integer num = gasStation.fuelType;
         if (num != null) {
             int intValue = num.intValue();
@@ -146,7 +146,7 @@ public final class GasStation extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(GasStation gasStation, View view) {
+    public static final void _init_$lambda$2(GasStation gasStation, View view) {
         SAMPUIElement.notifyClick$default(gasStation, -1, 2, null, 4, null);
         gasStation.resetSettings();
         gasStation.setVisibility(false);

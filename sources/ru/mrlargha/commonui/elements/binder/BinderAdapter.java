@@ -75,13 +75,13 @@ public final class BinderAdapter extends ListAdapter<BindData, BindDataViewHolde
             materialButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.binder.BinderAdapter$BindDataViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    BinderAdapter.BindDataViewHolder.bind$lambda$1$lambda$0(BinderAdapter.BindDataViewHolder.this, item, view2);
+                    BinderAdapter.BindDataViewHolder.bind$lambda$0$0(BinderAdapter.BindDataViewHolder.this, item, view2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$1$lambda$0(BindDataViewHolder bindDataViewHolder, BindData bindData, View view) {
+        public static final void bind$lambda$0$0(BindDataViewHolder bindDataViewHolder, BindData bindData, View view) {
             bindDataViewHolder.listener.clicked(bindData.getId());
         }
 

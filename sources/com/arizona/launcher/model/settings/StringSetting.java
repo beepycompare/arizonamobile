@@ -16,14 +16,6 @@ public final class StringSetting extends AbstractSetting {
     private boolean isValid;
     private final StringSettingValidator validator;
 
-    public /* synthetic */ StringSetting(String str, String str2, String str3, SharedPreferences sharedPreferences, int i, StringSettingValidator stringSettingValidator, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2, str3, sharedPreferences, i, (i2 & 32) != 0 ? null : stringSettingValidator);
-    }
-
-    public final int getIcon() {
-        return this.icon;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StringSetting(String settingVisibleName, String settingKey, String defaultValue, SharedPreferences sharedPreferences, int i, StringSettingValidator stringSettingValidator) {
         super(settingVisibleName, settingKey, sharedPreferences, null);
@@ -36,6 +28,14 @@ public final class StringSetting extends AbstractSetting {
         this.validator = stringSettingValidator;
         this.isValid = true;
         this.currentValue = readValueFromPreferences();
+    }
+
+    public /* synthetic */ StringSetting(String str, String str2, String str3, SharedPreferences sharedPreferences, int i, StringSettingValidator stringSettingValidator, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, str2, str3, sharedPreferences, i, (i2 & 32) != 0 ? null : stringSettingValidator);
+    }
+
+    public final int getIcon() {
+        return this.icon;
     }
 
     public final boolean isValid() {

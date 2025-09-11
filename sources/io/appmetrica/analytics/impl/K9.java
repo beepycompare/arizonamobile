@@ -8,7 +8,7 @@ import java.util.Map;
 public final class K9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0537qf f532a;
+    public final C0537qf f536a;
     public final Do b;
     public final C0156bl c;
     public final C0374k7 d;
@@ -23,7 +23,7 @@ public final class K9 {
     public int m;
 
     public K9(C0537qf c0537qf, Do r2, C0156bl c0156bl, C0374k7 c0374k7, C0316i0 c0316i0, C0247f9 c0247f9, Tk tk, int i, C0701x5 c0701x5, C0555r9 c0555r9, SystemTimeProvider systemTimeProvider) {
-        this.f532a = c0537qf;
+        this.f536a = c0537qf;
         this.b = r2;
         this.c = c0156bl;
         this.d = c0374k7;
@@ -43,7 +43,7 @@ public final class K9 {
         Tk tk = this.f;
         tk.getClass();
         map.putAll(new HashMap(tk.b));
-        c0477o6.c(this.f532a.j());
+        c0477o6.c(this.f536a.j());
         c0477o6.o = Integer.valueOf(this.b.b());
         C0290h0 a2 = this.g.a();
         C0247f9 c0247f9 = this.e;
@@ -54,7 +54,7 @@ public final class K9 {
         int i = c0477o6.d;
         C0555r9 c0555r9 = this.h;
         H7 h7 = new H7(c0374k7.g, c0208dl, i, c0555r9, a4, (Gh) c0374k7.h.k.a(), a2);
-        Long valueOf = Long.valueOf(c0208dl.f845a);
+        Long valueOf = Long.valueOf(c0208dl.f849a);
         EnumC0259fl enumC0259fl = c0208dl.d;
         Long valueOf2 = Long.valueOf(c0208dl.b);
         Bb a5 = Bb.a(h7.h.d);
@@ -62,11 +62,11 @@ public final class K9 {
         if (!W9.g.contains(Bb.a(i))) {
             Do r3 = c0555r9.b;
             synchronized (r3) {
-                j = r3.f413a.a().optLong("global_number", 0L);
+                j = r3.f417a.a().optLong("global_number", 0L);
             }
             c0555r9.b.b(1 + j);
         }
         c0374k7.a(c0374k7.l.fromModel(new E7(valueOf, enumC0259fl, valueOf2, a5, Long.valueOf(j), Long.valueOf(c0208dl.c), h7.a())));
-        this.i.f1145a.h();
+        this.i.f1149a.h();
     }
 }

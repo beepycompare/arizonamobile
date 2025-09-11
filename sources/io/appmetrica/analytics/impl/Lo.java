@@ -6,15 +6,15 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Lo implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f562a;
+    public final /* synthetic */ Throwable f566a;
     public final /* synthetic */ String b = "WebView interface setup failed because of an exception.";
 
     public Lo(Throwable th) {
-        this.f562a = th;
+        this.f566a = th;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     public final void consume(Object obj) {
-        ((PublicLogger) obj).error(this.f562a, this.b, new Object[0]);
+        ((PublicLogger) obj).error(this.f566a, this.b, new Object[0]);
     }
 }

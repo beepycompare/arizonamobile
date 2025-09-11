@@ -13,22 +13,22 @@ import io.appmetrica.analytics.impl.Xi;
 public final class NumberAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final S6 f1275a;
+    private final S6 f1279a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public NumberAttribute(String str, Qb qb, C0276gc c0276gc) {
-        this.f1275a = new S6(str, qb, c0276gc);
+        this.f1279a = new S6(str, qb, c0276gc);
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValue(double d) {
-        return new UserProfileUpdate<>(new Ae(this.f1275a.c, d, new Qb(), new Q4(new C0276gc(new K4(100)))));
+        return new UserProfileUpdate<>(new Ae(this.f1279a.c, d, new Qb(), new Q4(new C0276gc(new K4(100)))));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueIfUndefined(double d) {
-        return new UserProfileUpdate<>(new Ae(this.f1275a.c, d, new Qb(), new C0311hl(new C0276gc(new K4(100)))));
+        return new UserProfileUpdate<>(new Ae(this.f1279a.c, d, new Qb(), new C0311hl(new C0276gc(new K4(100)))));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueReset() {
-        return new UserProfileUpdate<>(new Xi(1, this.f1275a.c, new Qb(), new C0276gc(new K4(100))));
+        return new UserProfileUpdate<>(new Xi(1, this.f1279a.c, new Qb(), new C0276gc(new K4(100))));
     }
 }

@@ -119,7 +119,7 @@ public final class CarsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, secondPageBackButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.CarsScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CarsScreen.lambda$3$lambda$0(CarsScreen.this);
+                return CarsScreen.lambda$0$0(CarsScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -128,7 +128,7 @@ public final class CarsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, secondPageExitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.CarsScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CarsScreen.lambda$3$lambda$1(CarsScreen.this);
+                return CarsScreen.lambda$0$1(CarsScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -137,25 +137,25 @@ public final class CarsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation3, mainPageExitButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.CarsScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CarsScreen.lambda$3$lambda$2(CarsScreen.this);
+                return CarsScreen.lambda$0$2(CarsScreen.this);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$0(CarsScreen carsScreen) {
+    public static final Unit lambda$0$0(CarsScreen carsScreen) {
         SAMPUIElement.notifyClick$default(carsScreen, 0, 3, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$1(CarsScreen carsScreen) {
+    public static final Unit lambda$0$1(CarsScreen carsScreen) {
         SAMPUIElement.notifyClick$default(carsScreen, 0, 4, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$2(CarsScreen carsScreen) {
+    public static final Unit lambda$0$2(CarsScreen carsScreen) {
         SAMPUIElement.notifyClick$default(carsScreen, 0, 4, null, 4, null);
         return Unit.INSTANCE;
     }

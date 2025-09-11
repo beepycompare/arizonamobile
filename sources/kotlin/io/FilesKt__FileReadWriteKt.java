@@ -373,16 +373,16 @@ public class FilesKt__FileReadWriteKt extends FilesKt__FilePathComponentsKt {
         FilesKt.forEachLine(file, charset, new Function1() { // from class: kotlin.io.FilesKt__FileReadWriteKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit readLines$lambda$9$FilesKt__FileReadWriteKt;
-                readLines$lambda$9$FilesKt__FileReadWriteKt = FilesKt__FileReadWriteKt.readLines$lambda$9$FilesKt__FileReadWriteKt(arrayList, (String) obj);
-                return readLines$lambda$9$FilesKt__FileReadWriteKt;
+                Unit readLines$lambda$0$FilesKt__FileReadWriteKt;
+                readLines$lambda$0$FilesKt__FileReadWriteKt = FilesKt__FileReadWriteKt.readLines$lambda$0$FilesKt__FileReadWriteKt(arrayList, (String) obj);
+                return readLines$lambda$0$FilesKt__FileReadWriteKt;
             }
         });
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit readLines$lambda$9$FilesKt__FileReadWriteKt(ArrayList arrayList, String it) {
+    public static final Unit readLines$lambda$0$FilesKt__FileReadWriteKt(ArrayList arrayList, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         arrayList.add(it);
         return Unit.INSTANCE;

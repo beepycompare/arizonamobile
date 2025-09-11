@@ -12,13 +12,13 @@ public final class C0233el {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f863a;
+    public final String f867a;
     protected final C0537qf b;
     public Fb c;
 
     public C0233el(C0537qf c0537qf, String str) {
         this.b = c0537qf;
-        this.f863a = str;
+        this.f867a = str;
         Fb fb = new Fb();
         try {
             String h2 = c0537qf.h(str);
@@ -81,7 +81,7 @@ public final class C0233el {
     }
 
     public final void b() {
-        this.b.e(this.f863a, this.c.toString());
+        this.b.e(this.f867a, this.c.toString());
         this.b.b();
     }
 

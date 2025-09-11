@@ -56,15 +56,15 @@ public abstract class AppError {
             return "ApiError(type=" + this.type + ")";
         }
 
-        public final ApiErrorType getType() {
-            return this.type;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ApiError(ApiErrorType type) {
             super(null);
             Intrinsics.checkNotNullParameter(type, "type");
             this.type = type;
+        }
+
+        public final ApiErrorType getType() {
+            return this.type;
         }
 
         /* compiled from: AppError.kt */
@@ -126,16 +126,16 @@ public abstract class AppError {
             return "ValidationApiError(errors=" + this.errors + ")";
         }
 
-        public final Map<ValidationErrorType, List<ValidationErrorCode>> getErrors() {
-            return this.errors;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
         public ValidationApiError(Map<ValidationErrorType, ? extends List<? extends ValidationErrorCode>> errors) {
             super(null);
             Intrinsics.checkNotNullParameter(errors, "errors");
             this.errors = errors;
+        }
+
+        public final Map<ValidationErrorType, List<ValidationErrorCode>> getErrors() {
+            return this.errors;
         }
     }
 
@@ -205,13 +205,13 @@ public abstract class AppError {
             return "HttpError(httpCode=" + this.httpCode + ")";
         }
 
-        public final int getHttpCode() {
-            return this.httpCode;
-        }
-
         public HttpError(int i) {
             super(null);
             this.httpCode = i;
+        }
+
+        public final int getHttpCode() {
+            return this.httpCode;
         }
     }
 
@@ -252,15 +252,15 @@ public abstract class AppError {
             return "NetworkError(type=" + this.type + ")";
         }
 
-        public final NetworkErrorType getType() {
-            return this.type;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public NetworkError(NetworkErrorType type) {
             super(null);
             Intrinsics.checkNotNullParameter(type, "type");
             this.type = type;
+        }
+
+        public final NetworkErrorType getType() {
+            return this.type;
         }
     }
 
@@ -305,19 +305,19 @@ public abstract class AppError {
             return "ResponseParsingError(fieldName=" + this.fieldName + ")";
         }
 
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public ResponseParsingError(String fieldName) {
+            super(null);
+            Intrinsics.checkNotNullParameter(fieldName, "fieldName");
+            this.fieldName = fieldName;
+        }
+
         public /* synthetic */ ResponseParsingError(String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this((i & 1) != 0 ? "" : str);
         }
 
         public final String getFieldName() {
             return this.fieldName;
-        }
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public ResponseParsingError(String fieldName) {
-            super(null);
-            Intrinsics.checkNotNullParameter(fieldName, "fieldName");
-            this.fieldName = fieldName;
         }
     }
 

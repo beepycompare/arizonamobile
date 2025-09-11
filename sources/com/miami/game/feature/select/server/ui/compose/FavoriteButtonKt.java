@@ -82,12 +82,12 @@ public final class FavoriteButtonKt {
                     ComposerKt.traceEventStart(-932208314, i3, -1, "com.miami.game.feature.select.server.ui.compose.FavoriteButton (FavoriteButton.kt:24)");
                 }
                 if (z) {
-                    startRestartGroup.startReplaceGroup(1795979789);
+                    startRestartGroup.startReplaceGroup(1795979405);
                     ComposerKt.sourceInformation(startRestartGroup, "25@1105L11");
                     m4536copywmQWz5c$default = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU();
                     startRestartGroup.endReplaceGroup();
                 } else {
-                    startRestartGroup.startReplaceGroup(1795980600);
+                    startRestartGroup.startReplaceGroup(1795980216);
                     startRestartGroup.endReplaceGroup();
                     m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 }

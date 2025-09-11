@@ -95,13 +95,13 @@ public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
         itemQuestTaskBinding.parentItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.viewHolder.QuestTaskViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestTaskViewHolder.bind$lambda$2$lambda$0(QuestTaskViewHolder.this, item, i, view);
+                QuestTaskViewHolder.bind$lambda$0$0(QuestTaskViewHolder.this, item, i, view);
             }
         });
         itemQuestTaskBinding.btnShowClue.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.viewHolder.QuestTaskViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestTaskViewHolder.bind$lambda$2$lambda$1(QuestTaskViewHolder.this, item, view);
+                QuestTaskViewHolder.bind$lambda$0$1(QuestTaskViewHolder.this, item, view);
             }
         });
         if (i == i2) {
@@ -125,12 +125,12 @@ public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$0(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, int i, View view) {
+    public static final void bind$lambda$0$0(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, int i, View view) {
         questTaskViewHolder.onItemClicked.invoke(questTask, Integer.valueOf(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$1(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, View view) {
+    public static final void bind$lambda$0$1(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, View view) {
         questTaskViewHolder.onShowClueClicked.invoke(questTask);
     }
 

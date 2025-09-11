@@ -85,23 +85,23 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
         itemInventoryBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.TradeInventoryViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean bind$lambda$4$lambda$0;
-                bind$lambda$4$lambda$0 = TradeInventoryViewHolder.bind$lambda$4$lambda$0(InventoryItem.this, view);
-                return bind$lambda$4$lambda$0;
+                boolean bind$lambda$0$0;
+                bind$lambda$0$0 = TradeInventoryViewHolder.bind$lambda$0$0(InventoryItem.this, view);
+                return bind$lambda$0$0;
             }
         });
         itemInventoryBinding.getRoot().setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.TradeInventoryViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
-                boolean bind$lambda$4$lambda$1;
-                bind$lambda$4$lambda$1 = TradeInventoryViewHolder.bind$lambda$4$lambda$1(TradeInventoryViewHolder.this, view, dragEvent);
-                return bind$lambda$4$lambda$1;
+                boolean bind$lambda$0$1;
+                bind$lambda$0$1 = TradeInventoryViewHolder.bind$lambda$0$1(TradeInventoryViewHolder.this, view, dragEvent);
+                return bind$lambda$0$1;
             }
         });
         itemInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.TradeInventoryViewHolder$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TradeInventoryViewHolder.bind$lambda$4$lambda$2(InventoryItem.this, this, view);
+                TradeInventoryViewHolder.bind$lambda$0$2(InventoryItem.this, this, view);
             }
         });
         Job job = this.loadImageJob;
@@ -176,7 +176,7 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$4$lambda$0(InventoryItem inventoryItem, View view) {
+    public static final boolean bind$lambda$0$0(InventoryItem inventoryItem, View view) {
         if (inventoryItem.getItem() != null) {
             Intrinsics.checkNotNull(view);
             UtilsKt.setDragClick(inventoryItem, view);
@@ -186,7 +186,7 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$4$lambda$1(TradeInventoryViewHolder tradeInventoryViewHolder, View view, DragEvent dragEvent) {
+    public static final boolean bind$lambda$0$1(TradeInventoryViewHolder tradeInventoryViewHolder, View view, DragEvent dragEvent) {
         int action = dragEvent.getAction();
         if (action != 1) {
             if (action == 3) {
@@ -235,7 +235,7 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$4$lambda$2(InventoryItem inventoryItem, TradeInventoryViewHolder tradeInventoryViewHolder, View view) {
+    public static final void bind$lambda$0$2(InventoryItem inventoryItem, TradeInventoryViewHolder tradeInventoryViewHolder, View view) {
         Integer available = inventoryItem.getAvailable();
         if ((available != null && available.intValue() == 0) || inventoryItem.getItem() == null) {
             return;

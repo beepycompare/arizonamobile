@@ -13,7 +13,7 @@ import io.appmetrica.analytics.impl.Xi;
 public class GenderAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final S6 f1273a = new S6("appmetrica_gender", new C0754z8(), new Hl());
+    private final S6 f1277a = new S6("appmetrica_gender", new C0754z8(), new Hl());
 
     /* loaded from: classes4.dex */
     public enum Gender {
@@ -23,35 +23,35 @@ public class GenderAttribute {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f1274a;
+        private final String f1278a;
 
         Gender(String str) {
-            this.f1274a = str;
+            this.f1278a = str;
         }
 
         public String getStringValue() {
-            return this.f1274a;
+            return this.f1278a;
         }
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValue(Gender gender) {
-        String str = this.f1273a.c;
+        String str = this.f1277a.c;
         String stringValue = gender.getStringValue();
         C0729y8 c0729y8 = new C0729y8();
-        S6 s6 = this.f1273a;
-        return new UserProfileUpdate<>(new C0287gn(str, stringValue, c0729y8, s6.f662a, new Q4(s6.b)));
+        S6 s6 = this.f1277a;
+        return new UserProfileUpdate<>(new C0287gn(str, stringValue, c0729y8, s6.f666a, new Q4(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueIfUndefined(Gender gender) {
-        String str = this.f1273a.c;
+        String str = this.f1277a.c;
         String stringValue = gender.getStringValue();
         C0729y8 c0729y8 = new C0729y8();
-        S6 s6 = this.f1273a;
-        return new UserProfileUpdate<>(new C0287gn(str, stringValue, c0729y8, s6.f662a, new C0311hl(s6.b)));
+        S6 s6 = this.f1277a;
+        return new UserProfileUpdate<>(new C0287gn(str, stringValue, c0729y8, s6.f666a, new C0311hl(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueReset() {
-        S6 s6 = this.f1273a;
-        return new UserProfileUpdate<>(new Xi(0, s6.c, s6.f662a, s6.b));
+        S6 s6 = this.f1277a;
+        return new UserProfileUpdate<>(new Xi(0, s6.c, s6.f666a, s6.b));
     }
 }

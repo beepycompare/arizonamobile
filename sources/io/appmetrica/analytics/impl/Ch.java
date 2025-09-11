@@ -6,10 +6,10 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public abstract class Ch implements Dh {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final DataSendingRestrictionController f387a;
+    protected final DataSendingRestrictionController f391a;
 
     public Ch(DataSendingRestrictionController dataSendingRestrictionController) {
-        this.f387a = dataSendingRestrictionController;
+        this.f391a = dataSendingRestrictionController;
     }
 
     @Override // io.appmetrica.analytics.impl.Dh

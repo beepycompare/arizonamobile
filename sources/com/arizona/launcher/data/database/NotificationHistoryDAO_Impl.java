@@ -84,15 +84,15 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.arizona.launcher.data.database.NotificationHistoryDAO_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allNotification$lambda$1;
-                allNotification$lambda$1 = NotificationHistoryDAO_Impl.getAllNotification$lambda$1(r1, this, (SQLiteConnection) obj);
-                return allNotification$lambda$1;
+                List allNotification$lambda$0;
+                allNotification$lambda$0 = NotificationHistoryDAO_Impl.getAllNotification$lambda$0(r1, this, (SQLiteConnection) obj);
+                return allNotification$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllNotification$lambda$1(String str, NotificationHistoryDAO_Impl notificationHistoryDAO_Impl, SQLiteConnection _connection) {
+    public static final List getAllNotification$lambda$0(String str, NotificationHistoryDAO_Impl notificationHistoryDAO_Impl, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -121,16 +121,16 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.NotificationHistoryDAO_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dropTable$lambda$2;
-                dropTable$lambda$2 = NotificationHistoryDAO_Impl.dropTable$lambda$2(r1, (SQLiteConnection) obj);
-                return dropTable$lambda$2;
+                Unit dropTable$lambda$0;
+                dropTable$lambda$0 = NotificationHistoryDAO_Impl.dropTable$lambda$0(r1, (SQLiteConnection) obj);
+                return dropTable$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dropTable$lambda$2(String str, SQLiteConnection _connection) {
+    public static final Unit dropTable$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

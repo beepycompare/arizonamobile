@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class A2 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0344j3 f338a;
+    public final C0344j3 f342a;
 
     public A2() {
         this(new C0344j3());
@@ -18,11 +18,11 @@ public final class A2 implements ProtobufConverter {
     /* renamed from: a */
     public final C2 fromModel(C0748z2 c0748z2) {
         C2 c2 = new C2();
-        c2.f376a = new B2[c0748z2.f1176a.size()];
+        c2.f380a = new B2[c0748z2.f1180a.size()];
         int i = 0;
-        for (BillingInfo billingInfo : c0748z2.f1176a) {
-            B2[] b2Arr = c2.f376a;
-            this.f338a.getClass();
+        for (BillingInfo billingInfo : c0748z2.f1180a) {
+            B2[] b2Arr = c2.f380a;
+            this.f342a.getClass();
             b2Arr[i] = C0344j3.a(billingInfo);
             i++;
         }
@@ -31,7 +31,7 @@ public final class A2 implements ProtobufConverter {
     }
 
     public A2(C0344j3 c0344j3) {
-        this.f338a = c0344j3;
+        this.f342a = c0344j3;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -39,10 +39,10 @@ public final class A2 implements ProtobufConverter {
     public final C0748z2 toModel(C2 c2) {
         B2[] b2Arr;
         ProductType productType;
-        ArrayList arrayList = new ArrayList(c2.f376a.length);
-        for (B2 b2 : c2.f376a) {
-            this.f338a.getClass();
-            int i = b2.f356a;
+        ArrayList arrayList = new ArrayList(c2.f380a.length);
+        for (B2 b2 : c2.f380a) {
+            this.f342a.getClass();
+            int i = b2.f360a;
             if (i == 2) {
                 productType = ProductType.INAPP;
             } else if (i != 3) {

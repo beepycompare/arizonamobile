@@ -6,14 +6,14 @@ import android.os.Process;
 public final class C0149be implements InterfaceC0362jl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f807a;
+    public final int f811a;
 
     public C0149be(int i) {
-        this.f807a = i;
+        this.f811a = i;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0362jl
     public final boolean a(String str) {
-        return this.f807a != Process.myPid();
+        return this.f811a != Process.myPid();
     }
 }

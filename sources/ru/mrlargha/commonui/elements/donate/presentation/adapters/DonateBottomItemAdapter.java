@@ -168,13 +168,13 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
             donateDefaultItemBinding.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBottomItemAdapter$DonateBottomItemViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateBottomItemAdapter.DonateBottomItemViewHolder.initItem$lambda$1$lambda$0(DonateItemModelUi.this, donateBottomItemAdapter, view);
+                    DonateBottomItemAdapter.DonateBottomItemViewHolder.initItem$lambda$0$0(DonateItemModelUi.this, donateBottomItemAdapter, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void initItem$lambda$1$lambda$0(DonateItemModelUi donateItemModelUi, DonateBottomItemAdapter donateBottomItemAdapter, View view) {
+        public static final void initItem$lambda$0$0(DonateItemModelUi donateItemModelUi, DonateBottomItemAdapter donateBottomItemAdapter, View view) {
             if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
                 donateBottomItemAdapter.getOpenDialog().invoke(null);
             } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
@@ -308,7 +308,7 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11204getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11213getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

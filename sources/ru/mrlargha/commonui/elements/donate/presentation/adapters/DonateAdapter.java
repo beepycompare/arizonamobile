@@ -177,14 +177,14 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
         viewGroup.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DonateAdapter.createWiViewHolder$lambda$1(viewGroup, inflate);
+                DonateAdapter.createWiViewHolder$lambda$0(viewGroup, inflate);
             }
         });
         return new DonateDefaultViewHolder(this, inflate);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void createWiViewHolder$lambda$1(ViewGroup viewGroup, DonateDefaultItemBinding donateDefaultItemBinding) {
+    public static final void createWiViewHolder$lambda$0(ViewGroup viewGroup, DonateDefaultItemBinding donateDefaultItemBinding) {
         int dimensionPixelSize = viewGroup.getContext().getResources().getDimensionPixelSize(R.dimen._140sdp);
         ViewGroup.LayoutParams layoutParams = donateDefaultItemBinding.getRoot().getLayoutParams();
         Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
@@ -200,14 +200,14 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
         viewGroup.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateAdapter$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DonateAdapter.createPosterViewHolder$lambda$2(viewGroup, inflate);
+                DonateAdapter.createPosterViewHolder$lambda$0(viewGroup, inflate);
             }
         });
         return new DonatePosterViewHolder(this, inflate);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void createPosterViewHolder$lambda$2(ViewGroup viewGroup, DonatePosterItemBinding donatePosterItemBinding) {
+    public static final void createPosterViewHolder$lambda$0(ViewGroup viewGroup, DonatePosterItemBinding donatePosterItemBinding) {
         ViewGroup.LayoutParams layoutParams = donatePosterItemBinding.getRoot().getLayoutParams();
         Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
@@ -365,13 +365,13 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             donateDefaultItemBinding.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateAdapter$DonateDefaultViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateAdapter.DonateDefaultViewHolder.initItem$lambda$2$lambda$1(DonateItemModelUi.this, donateAdapter, view);
+                    DonateAdapter.DonateDefaultViewHolder.initItem$lambda$0$0(DonateItemModelUi.this, donateAdapter, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void initItem$lambda$2$lambda$1(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
+        public static final void initItem$lambda$0$0(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
             if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
                 donateAdapter.getOpenDialog().invoke(null);
             } else if (donateItemModelUi.getItemType() == DonateItemType.EXP) {
@@ -495,7 +495,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11204getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11213getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
@@ -612,13 +612,13 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             donatePosterItemBinding.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateAdapter$DonatePosterViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateAdapter.DonatePosterViewHolder.initItem$lambda$2$lambda$1(DonateItemModelUi.this, donateAdapter, view);
+                    DonateAdapter.DonatePosterViewHolder.initItem$lambda$0$0(DonateItemModelUi.this, donateAdapter, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void initItem$lambda$2$lambda$1(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
+        public static final void initItem$lambda$0$0(DonateItemModelUi donateItemModelUi, DonateAdapter donateAdapter, View view) {
             Log.i(DonateUtilsKt.DONATE_TAG, "onClick: " + donateItemModelUi.getItemType());
             Log.d(DonateUtilsKt.DONATE_TAG, donateItemModelUi.getItemType().toString());
             if (donateItemModelUi.getItemType() == DonateItemType.RATE) {
@@ -675,7 +675,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11204getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11213getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

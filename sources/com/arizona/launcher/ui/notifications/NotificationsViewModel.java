@@ -71,9 +71,9 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
         this.notificationsLiveDataCompose = Transformations.map(mutableLiveData, new Function1() { // from class: com.arizona.launcher.ui.notifications.NotificationsViewModel$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List notificationsLiveDataCompose$lambda$1;
-                notificationsLiveDataCompose$lambda$1 = NotificationsViewModel.notificationsLiveDataCompose$lambda$1((List) obj);
-                return notificationsLiveDataCompose$lambda$1;
+                List notificationsLiveDataCompose$lambda$0;
+                notificationsLiveDataCompose$lambda$0 = NotificationsViewModel.notificationsLiveDataCompose$lambda$0((List) obj);
+                return notificationsLiveDataCompose$lambda$0;
             }
         });
         this.notificationsUnViewed = mutableLiveData2;
@@ -86,7 +86,7 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List notificationsLiveDataCompose$lambda$1(List list) {
+    public static final List notificationsLiveDataCompose$lambda$0(List list) {
         Intrinsics.checkNotNull(list);
         List<ArizonaNotification> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));

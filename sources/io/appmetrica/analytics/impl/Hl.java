@@ -5,7 +5,7 @@ import java.util.HashMap;
 public final class Hl implements InterfaceC0548r2 {
     @Override // io.appmetrica.analytics.impl.InterfaceC0548r2
     public final C0417lo a(C0365jo c0365jo, C0417lo c0417lo) {
-        ((HashMap) c0365jo.f939a.get(c0417lo.b)).put(new String(c0417lo.f976a), c0417lo);
+        ((HashMap) c0365jo.f943a.get(c0417lo.b)).put(new String(c0417lo.f980a), c0417lo);
         return c0417lo;
     }
 }

@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Lambda;
 public final class C0670w extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ r f1128a;
+    public final /* synthetic */ r f1132a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0670w(r rVar) {
         super(1);
-        this.f1128a = rVar;
+        this.f1132a = rVar;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        this.f1128a.e = (byte[]) obj;
+        this.f1132a.e = (byte[]) obj;
         return Unit.INSTANCE;
     }
 }

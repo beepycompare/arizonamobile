@@ -25,6 +25,20 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
     private Job loadImageJob;
     private final Function2<Boolean, Integer, Unit> onClaimItem;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    public LevelItemViewHolder(View itemView, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
+        super(itemView);
+        Intrinsics.checkNotNullParameter(itemView, "itemView");
+        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
+        this.onClaimItem = onClaimItem;
+        this.levelPassedColor = Color.parseColor("#FFD500");
+        this.levelNotPassedColor = Color.parseColor("#343940");
+        EventAwardItemBinding bind = EventAwardItemBinding.bind(itemView);
+        Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
+        this.binding = bind;
+    }
+
     public /* synthetic */ LevelItemViewHolder(View view, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(view, (i & 2) != 0 ? new Function2() { // from class: ru.mrlargha.event.adapters.LevelItemViewHolder$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
@@ -39,20 +53,6 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit _init_$lambda$0(boolean z, int i) {
         return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public LevelItemViewHolder(View itemView, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
-        super(itemView);
-        Intrinsics.checkNotNullParameter(itemView, "itemView");
-        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
-        this.onClaimItem = onClaimItem;
-        this.levelPassedColor = Color.parseColor("#FFD500");
-        this.levelNotPassedColor = Color.parseColor("#343940");
-        EventAwardItemBinding bind = EventAwardItemBinding.bind(itemView);
-        Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
-        this.binding = bind;
     }
 
     public final void bind(final AwardItemData award, int i, int i2, boolean z) {
@@ -96,7 +96,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
             eventAwardItemBinding.button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.adapters.LevelItemViewHolder$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LevelItemViewHolder.bind$lambda$2$lambda$1(EventAwardItemBinding.this, award, this, i3, view);
+                    LevelItemViewHolder.bind$lambda$0$0(EventAwardItemBinding.this, award, this, i3, view);
                 }
             });
         } else if (i3 > i2) {
@@ -112,7 +112,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$1(EventAwardItemBinding eventAwardItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
+    public static final void bind$lambda$0$0(EventAwardItemBinding eventAwardItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
         eventAwardItemBinding.button.setVisibility(4);
         awardItemData.setWasClicked(true);
         levelItemViewHolder.onClaimItem.invoke(false, Integer.valueOf(i));

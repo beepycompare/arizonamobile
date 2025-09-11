@@ -5,14 +5,14 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Xj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f741a;
+    public final /* synthetic */ PluginErrorDetails f745a;
 
     public Xj(PluginErrorDetails pluginErrorDetails) {
-        this.f741a = pluginErrorDetails;
+        this.f745a = pluginErrorDetails;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.getPluginExtension().reportUnhandledException(this.f741a);
+        interfaceC0557rb.getPluginExtension().reportUnhandledException(this.f745a);
     }
 }

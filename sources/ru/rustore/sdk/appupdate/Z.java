@@ -29,7 +29,7 @@ import ru.rustore.sdk.reactive.subject.Subject;
 public final class Z implements RuStoreAppUpdateManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lazy f1369a;
+    public final Lazy f1373a;
     public final LinkedHashSet b;
     public final C0800e c;
     public AppUpdateOptions d;
@@ -37,7 +37,7 @@ public final class Z implements RuStoreAppUpdateManager {
     public Z(Context applicationContext) {
         e0 e0Var;
         Intrinsics.checkNotNullParameter(applicationContext, "context");
-        this.f1369a = LazyKt.lazy(new U(applicationContext));
+        this.f1373a = LazyKt.lazy(new U(applicationContext));
         this.b = new LinkedHashSet();
         Q q = new Q();
         new e0.a();
@@ -53,12 +53,12 @@ public final class Z implements RuStoreAppUpdateManager {
         this.c = c0800e;
         c0800e.getClass();
         C0804i event = new C0804i("sdkInfo", (Map) c0800e.f.getValue());
-        C0809n c0809n = c0800e.f1376a;
+        C0809n c0809n = c0800e.f1380a;
         c0809n.getClass();
         Intrinsics.checkNotNullParameter(event, "event");
         Single flatMap = SingleFlatMapKt.flatMap(Single.Companion.from(new C0806k(c0809n, event)), new C0807l(c0809n));
         Dispatchers dispatchers = Dispatchers.INSTANCE;
-        SingleSubscribeKt.subscribe$default(SingleOnErrorReturnKt.onErrorReturn(SingleSubscribeOnKt.subscribeOn(flatMap, dispatchers.getIo()), C0808m.f1398a), null, C0803h.f1391a, 1, null);
+        SingleSubscribeKt.subscribe$default(SingleOnErrorReturnKt.onErrorReturn(SingleSubscribeOnKt.subscribeOn(flatMap, dispatchers.getIo()), C0808m.f1402a), null, C0803h.f1395a, 1, null);
         ObservableSubscribeKt.subscribe$default(ObservableObserveOnKt.observeOn$default(Subject.DefaultImpls.observe$default(q.b, null, 1, null), dispatchers.getMain(), null, 2, null), null, null, new V(this), 3, null);
         ContextCompat.registerReceiver(applicationContext, new S(q), new IntentFilter("rustore_app_downloading_state_" + applicationContext.getPackageName()), 2);
     }
@@ -71,15 +71,15 @@ public final class Z implements RuStoreAppUpdateManager {
         c0800e.getClass();
         Single from = Single.Companion.from(new C0796a(c0800e, new C0804i("updateStart.update", c0800e.a(appUpdateType))));
         Dispatchers dispatchers = Dispatchers.INSTANCE;
-        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(from, dispatchers.getIo()), null, C0797b.f1372a, 1, null);
-        C0813r c0813r = (C0813r) this.f1369a.getValue();
+        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(from, dispatchers.getIo()), null, C0797b.f1376a, 1, null);
+        C0813r c0813r = (C0813r) this.f1373a.getValue();
         c0813r.getClass();
         return T.a(SingleSubscribeOnKt.subscribeOn(SingleFlatMapKt.flatMap(c0813r.a(new C0816u(c0813r)), new C0820y(c0813r, appUpdateType)), dispatchers.getIo()));
     }
 
     @Override // ru.rustore.sdk.appupdate.manager.RuStoreAppUpdateManager
     public final Task<AppUpdateInfo> getAppUpdateInfo() {
-        C0813r c0813r = (C0813r) this.f1369a.getValue();
+        C0813r c0813r = (C0813r) this.f1373a.getValue();
         c0813r.getClass();
         return T.a(SingleSubscribeOnKt.subscribeOn(c0813r.a(new B(c0813r)), Dispatchers.INSTANCE.getIo()));
     }
@@ -110,23 +110,23 @@ public final class Z implements RuStoreAppUpdateManager {
             Single.Companion companion = Single.Companion;
             Single from = companion.from(new C0801f(c0800e, c0804i));
             Dispatchers dispatchers = Dispatchers.INSTANCE;
-            SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(from, dispatchers.getIo()), null, C0802g.f1390a, 1, null);
+            SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(from, dispatchers.getIo()), null, C0802g.f1394a, 1, null);
             int appUpdateType2 = appUpdateOptions.getAppUpdateType();
             if (appUpdateType2 == 1) {
-                C0813r c0813r = (C0813r) this.f1369a.getValue();
+                C0813r c0813r = (C0813r) this.f1373a.getValue();
                 c0813r.getClass();
                 Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
                 subscribeOn = SingleSubscribeOnKt.subscribeOn(companion.create(new E(c0813r, appUpdateInfo)), dispatchers.getIo());
             } else if (appUpdateType2 != 2) {
-                C0813r c0813r2 = (C0813r) this.f1369a.getValue();
+                C0813r c0813r2 = (C0813r) this.f1373a.getValue();
                 c0813r2.getClass();
                 Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
                 subscribeOn = SingleSubscribeOnKt.subscribeOn(SingleFlatMapKt.flatMap(c0813r2.a(new C0819x(c0813r2)), new I(c0813r2, appUpdateInfo)), dispatchers.getIo());
             } else {
-                C0813r c0813r3 = (C0813r) this.f1369a.getValue();
+                C0813r c0813r3 = (C0813r) this.f1373a.getValue();
                 c0813r3.getClass();
                 Intrinsics.checkNotNullParameter(appUpdateInfo, "appUpdateInfo");
-                subscribeOn = SingleMapKt.map(SingleSubscribeOnKt.subscribeOn(c0813r3.a(new H(c0813r3, appUpdateInfo)), dispatchers.getIo()), Y.f1368a);
+                subscribeOn = SingleMapKt.map(SingleSubscribeOnKt.subscribeOn(c0813r3.a(new H(c0813r3, appUpdateInfo)), dispatchers.getIo()), Y.f1372a);
             }
         }
         return T.a(subscribeOn);

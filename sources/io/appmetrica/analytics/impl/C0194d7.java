@@ -8,13 +8,13 @@ import java.util.HashSet;
 public final class C0194d7 implements DataSendingRestrictionController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0142b7 f834a;
+    public final InterfaceC0142b7 f838a;
     public Boolean b;
     public final HashSet c = new HashSet();
     public final HashSet d = new HashSet();
 
     public C0194d7(InterfaceC0142b7 interfaceC0142b7) {
-        this.f834a = interfaceC0142b7;
+        this.f838a = interfaceC0142b7;
         this.b = ((C0168c7) interfaceC0142b7).a();
     }
 
@@ -22,8 +22,8 @@ public final class C0194d7 implements DataSendingRestrictionController {
         if (ro.a(bool) || this.b == null) {
             Boolean valueOf = Boolean.valueOf(Boolean.FALSE.equals(bool));
             this.b = valueOf;
-            InterfaceC0142b7 interfaceC0142b7 = this.f834a;
-            ((C0168c7) interfaceC0142b7).f817a.c(valueOf.booleanValue()).b();
+            InterfaceC0142b7 interfaceC0142b7 = this.f838a;
+            ((C0168c7) interfaceC0142b7).f821a.c(valueOf.booleanValue()).b();
         }
     }
 

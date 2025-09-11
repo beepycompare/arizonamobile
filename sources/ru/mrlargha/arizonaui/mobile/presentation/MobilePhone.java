@@ -94,11 +94,11 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     private CountDownTimer timer;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(View view) {
+    public static final void _init_$lambda$2(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(View view) {
+    public static final void _init_$lambda$3(View view) {
     }
 
     @Override // ru.mrlargha.arizonaui.mobile.presentation.MobileController
@@ -152,25 +152,25 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         bind.mpActionBackButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhone._init_$lambda$5(view);
+                MobilePhone._init_$lambda$0(view);
             }
         });
         bind.mpActionCloseButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhone._init_$lambda$6(MobilePhone.this, view);
+                MobilePhone._init_$lambda$1(MobilePhone.this, view);
             }
         });
         bind.phoneCaseContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhone._init_$lambda$7(view);
+                MobilePhone._init_$lambda$2(view);
             }
         });
         bind.phoneBackground.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhone._init_$lambda$8(view);
+                MobilePhone._init_$lambda$3(view);
             }
         });
     }
@@ -482,7 +482,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void _init_$lambda$5(View view) {
+    public static final void _init_$lambda$0(View view) {
         Integer history = HistoryManager.Companion.getHistory();
         Log.e("phone", String.valueOf(history));
         if (history != null) {
@@ -518,7 +518,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(MobilePhone mobilePhone, View view) {
+    public static final void _init_$lambda$1(MobilePhone mobilePhone, View view) {
         HistoryManager.Companion.clearAllHistory();
         HistoryManager.Companion.removeViewsPage(MobilePhonePage.MESSENGER_APP.getId());
         HistoryManager.Companion.removeViewsPage(MobilePhonePage.MESSENGER_CHAT.getId());

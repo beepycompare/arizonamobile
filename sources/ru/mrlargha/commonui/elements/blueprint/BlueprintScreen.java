@@ -115,16 +115,16 @@ public final class BlueprintScreen extends SAMPUIElement {
         } else {
             bind.imgMoney.setImageResource(R.drawable.blueprint_ic_rub);
         }
-        bind.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda14
+        bind.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BlueprintScreen.lambda$1$lambda$0(BlueprintScreen.this, view);
+                BlueprintScreen.lambda$0$0(BlueprintScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$1$lambda$0(BlueprintScreen blueprintScreen, View view) {
+    public static final void lambda$0$0(BlueprintScreen blueprintScreen, View view) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 0, -1, null, 4, null);
         blueprintScreen.closeScreen();
     }
@@ -232,52 +232,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintLayoutAkBinding blueprintLayoutAkBinding = this.blueprintBinding.akContainer;
         RelativeLayout akTouchAreaStage1 = blueprintLayoutAkBinding.akTouchAreaStage1;
         Intrinsics.checkNotNullExpressionValue(akTouchAreaStage1, "akTouchAreaStage1");
-        clickOnWeapon(akTouchAreaStage1, blueprintLayoutAkBinding.akTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda15
+        clickOnWeapon(akTouchAreaStage1, blueprintLayoutAkBinding.akTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$4;
-                showAkWeapon$lambda$10$lambda$4 = BlueprintScreen.showAkWeapon$lambda$10$lambda$4(BlueprintLayoutAkBinding.this);
-                return showAkWeapon$lambda$10$lambda$4;
+                Unit showAkWeapon$lambda$0$0;
+                showAkWeapon$lambda$0$0 = BlueprintScreen.showAkWeapon$lambda$0$0(BlueprintLayoutAkBinding.this);
+                return showAkWeapon$lambda$0$0;
             }
         });
         RelativeLayout akTouchAreaStage2 = blueprintLayoutAkBinding.akTouchAreaStage2;
         Intrinsics.checkNotNullExpressionValue(akTouchAreaStage2, "akTouchAreaStage2");
-        clickOnWeapon(akTouchAreaStage2, blueprintLayoutAkBinding.akTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda16
+        clickOnWeapon(akTouchAreaStage2, blueprintLayoutAkBinding.akTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$5;
-                showAkWeapon$lambda$10$lambda$5 = BlueprintScreen.showAkWeapon$lambda$10$lambda$5(BlueprintLayoutAkBinding.this);
-                return showAkWeapon$lambda$10$lambda$5;
+                Unit showAkWeapon$lambda$0$1;
+                showAkWeapon$lambda$0$1 = BlueprintScreen.showAkWeapon$lambda$0$1(BlueprintLayoutAkBinding.this);
+                return showAkWeapon$lambda$0$1;
             }
         });
         RelativeLayout akTouchAreaStage3 = blueprintLayoutAkBinding.akTouchAreaStage3;
         Intrinsics.checkNotNullExpressionValue(akTouchAreaStage3, "akTouchAreaStage3");
-        clickOnWeapon(akTouchAreaStage3, blueprintLayoutAkBinding.akTouchAreaStage4, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda17
+        clickOnWeapon(akTouchAreaStage3, blueprintLayoutAkBinding.akTouchAreaStage4, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$6;
-                showAkWeapon$lambda$10$lambda$6 = BlueprintScreen.showAkWeapon$lambda$10$lambda$6(BlueprintLayoutAkBinding.this);
-                return showAkWeapon$lambda$10$lambda$6;
+                Unit showAkWeapon$lambda$0$2;
+                showAkWeapon$lambda$0$2 = BlueprintScreen.showAkWeapon$lambda$0$2(BlueprintLayoutAkBinding.this);
+                return showAkWeapon$lambda$0$2;
             }
         });
         RelativeLayout akTouchAreaStage4 = blueprintLayoutAkBinding.akTouchAreaStage4;
         Intrinsics.checkNotNullExpressionValue(akTouchAreaStage4, "akTouchAreaStage4");
-        clickOnWeapon(akTouchAreaStage4, blueprintLayoutAkBinding.akTouchAreaStage5, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda18
+        clickOnWeapon(akTouchAreaStage4, blueprintLayoutAkBinding.akTouchAreaStage5, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$7;
-                showAkWeapon$lambda$10$lambda$7 = BlueprintScreen.showAkWeapon$lambda$10$lambda$7(BlueprintLayoutAkBinding.this);
-                return showAkWeapon$lambda$10$lambda$7;
+                Unit showAkWeapon$lambda$0$3;
+                showAkWeapon$lambda$0$3 = BlueprintScreen.showAkWeapon$lambda$0$3(BlueprintLayoutAkBinding.this);
+                return showAkWeapon$lambda$0$3;
             }
         });
         RelativeLayout akTouchAreaStage5 = blueprintLayoutAkBinding.akTouchAreaStage5;
         Intrinsics.checkNotNullExpressionValue(akTouchAreaStage5, "akTouchAreaStage5");
-        clickOnWeapon$default(this, akTouchAreaStage5, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda19
+        clickOnWeapon$default(this, akTouchAreaStage5, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$9;
-                showAkWeapon$lambda$10$lambda$9 = BlueprintScreen.showAkWeapon$lambda$10$lambda$9(BlueprintLayoutAkBinding.this, this);
-                return showAkWeapon$lambda$10$lambda$9;
+                Unit showAkWeapon$lambda$0$4;
+                showAkWeapon$lambda$0$4 = BlueprintScreen.showAkWeapon$lambda$0$4(BlueprintLayoutAkBinding.this, this);
+                return showAkWeapon$lambda$0$4;
             }
         }, 1, null);
         blueprintLayoutAkBinding.getRoot().setVisibility(0);
@@ -285,45 +285,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$4(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
+    public static final Unit showAkWeapon$lambda$0$0(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
         blueprintLayoutAkBinding.akImage.setImageResource(R.drawable.ak_stage_1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$5(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
+    public static final Unit showAkWeapon$lambda$0$1(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
         blueprintLayoutAkBinding.akImage.setImageResource(R.drawable.ak_stage_2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$6(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
+    public static final Unit showAkWeapon$lambda$0$2(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
         blueprintLayoutAkBinding.akImage.setImageResource(R.drawable.ak_stage_3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$7(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
+    public static final Unit showAkWeapon$lambda$0$3(BlueprintLayoutAkBinding blueprintLayoutAkBinding) {
         blueprintLayoutAkBinding.akImage.setImageResource(R.drawable.ak_stage_4);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$9(BlueprintLayoutAkBinding blueprintLayoutAkBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showAkWeapon$lambda$0$4(BlueprintLayoutAkBinding blueprintLayoutAkBinding, final BlueprintScreen blueprintScreen) {
         blueprintLayoutAkBinding.akImage.setImageResource(R.drawable.ak_stage_5);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda41
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showAkWeapon$lambda$10$lambda$9$lambda$8;
-                showAkWeapon$lambda$10$lambda$9$lambda$8 = BlueprintScreen.showAkWeapon$lambda$10$lambda$9$lambda$8(BlueprintScreen.this);
-                return showAkWeapon$lambda$10$lambda$9$lambda$8;
+                Unit showAkWeapon$lambda$0$4$0;
+                showAkWeapon$lambda$0$4$0 = BlueprintScreen.showAkWeapon$lambda$0$4$0(BlueprintScreen.this);
+                return showAkWeapon$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showAkWeapon$lambda$10$lambda$9$lambda$8(BlueprintScreen blueprintScreen) {
+    public static final Unit showAkWeapon$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -333,42 +333,42 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintLayoutRpgBinding blueprintLayoutRpgBinding = this.blueprintBinding.rpgContainer;
         RelativeLayout rpgTouchAreaStage1 = blueprintLayoutRpgBinding.rpgTouchAreaStage1;
         Intrinsics.checkNotNullExpressionValue(rpgTouchAreaStage1, "rpgTouchAreaStage1");
-        clickOnWeapon(rpgTouchAreaStage1, blueprintLayoutRpgBinding.rpgTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda36
+        clickOnWeapon(rpgTouchAreaStage1, blueprintLayoutRpgBinding.rpgTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda35
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showRpgWeapon$lambda$16$lambda$11;
-                showRpgWeapon$lambda$16$lambda$11 = BlueprintScreen.showRpgWeapon$lambda$16$lambda$11(BlueprintLayoutRpgBinding.this);
-                return showRpgWeapon$lambda$16$lambda$11;
+                Unit showRpgWeapon$lambda$0$0;
+                showRpgWeapon$lambda$0$0 = BlueprintScreen.showRpgWeapon$lambda$0$0(BlueprintLayoutRpgBinding.this);
+                return showRpgWeapon$lambda$0$0;
             }
         });
         RelativeLayout rpgTouchAreaStage2 = blueprintLayoutRpgBinding.rpgTouchAreaStage2;
         Intrinsics.checkNotNullExpressionValue(rpgTouchAreaStage2, "rpgTouchAreaStage2");
-        clickOnWeapon(rpgTouchAreaStage2, blueprintLayoutRpgBinding.rpgTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda37
+        clickOnWeapon(rpgTouchAreaStage2, blueprintLayoutRpgBinding.rpgTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda36
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showRpgWeapon$lambda$16$lambda$12;
-                showRpgWeapon$lambda$16$lambda$12 = BlueprintScreen.showRpgWeapon$lambda$16$lambda$12(BlueprintLayoutRpgBinding.this);
-                return showRpgWeapon$lambda$16$lambda$12;
+                Unit showRpgWeapon$lambda$0$1;
+                showRpgWeapon$lambda$0$1 = BlueprintScreen.showRpgWeapon$lambda$0$1(BlueprintLayoutRpgBinding.this);
+                return showRpgWeapon$lambda$0$1;
             }
         });
         RelativeLayout rpgTouchAreaStage3 = blueprintLayoutRpgBinding.rpgTouchAreaStage3;
         Intrinsics.checkNotNullExpressionValue(rpgTouchAreaStage3, "rpgTouchAreaStage3");
-        clickOnWeapon(rpgTouchAreaStage3, blueprintLayoutRpgBinding.rpgTouchAreaStage4, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda38
+        clickOnWeapon(rpgTouchAreaStage3, blueprintLayoutRpgBinding.rpgTouchAreaStage4, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda37
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showRpgWeapon$lambda$16$lambda$13;
-                showRpgWeapon$lambda$16$lambda$13 = BlueprintScreen.showRpgWeapon$lambda$16$lambda$13(BlueprintLayoutRpgBinding.this);
-                return showRpgWeapon$lambda$16$lambda$13;
+                Unit showRpgWeapon$lambda$0$2;
+                showRpgWeapon$lambda$0$2 = BlueprintScreen.showRpgWeapon$lambda$0$2(BlueprintLayoutRpgBinding.this);
+                return showRpgWeapon$lambda$0$2;
             }
         });
         RelativeLayout rpgTouchAreaStage4 = blueprintLayoutRpgBinding.rpgTouchAreaStage4;
         Intrinsics.checkNotNullExpressionValue(rpgTouchAreaStage4, "rpgTouchAreaStage4");
-        clickOnWeapon$default(this, rpgTouchAreaStage4, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda39
+        clickOnWeapon$default(this, rpgTouchAreaStage4, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda38
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showRpgWeapon$lambda$16$lambda$15;
-                showRpgWeapon$lambda$16$lambda$15 = BlueprintScreen.showRpgWeapon$lambda$16$lambda$15(BlueprintLayoutRpgBinding.this, this);
-                return showRpgWeapon$lambda$16$lambda$15;
+                Unit showRpgWeapon$lambda$0$3;
+                showRpgWeapon$lambda$0$3 = BlueprintScreen.showRpgWeapon$lambda$0$3(BlueprintLayoutRpgBinding.this, this);
+                return showRpgWeapon$lambda$0$3;
             }
         }, 1, null);
         blueprintLayoutRpgBinding.getRoot().setVisibility(0);
@@ -376,39 +376,39 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showRpgWeapon$lambda$16$lambda$11(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
+    public static final Unit showRpgWeapon$lambda$0$0(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
         blueprintLayoutRpgBinding.rpgImage.setImageResource(R.drawable.rpg_stage_1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showRpgWeapon$lambda$16$lambda$12(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
+    public static final Unit showRpgWeapon$lambda$0$1(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
         blueprintLayoutRpgBinding.rpgImage.setImageResource(R.drawable.rpg_stage_2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showRpgWeapon$lambda$16$lambda$13(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
+    public static final Unit showRpgWeapon$lambda$0$2(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding) {
         blueprintLayoutRpgBinding.rpgImage.setImageResource(R.drawable.rpg_stage_3);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showRpgWeapon$lambda$16$lambda$15(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showRpgWeapon$lambda$0$3(BlueprintLayoutRpgBinding blueprintLayoutRpgBinding, final BlueprintScreen blueprintScreen) {
         blueprintLayoutRpgBinding.rpgImage.setImageResource(R.drawable.rpg_stage_4);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda5
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda40
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showRpgWeapon$lambda$16$lambda$15$lambda$14;
-                showRpgWeapon$lambda$16$lambda$15$lambda$14 = BlueprintScreen.showRpgWeapon$lambda$16$lambda$15$lambda$14(BlueprintScreen.this);
-                return showRpgWeapon$lambda$16$lambda$15$lambda$14;
+                Unit showRpgWeapon$lambda$0$3$0;
+                showRpgWeapon$lambda$0$3$0 = BlueprintScreen.showRpgWeapon$lambda$0$3$0(BlueprintScreen.this);
+                return showRpgWeapon$lambda$0$3$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showRpgWeapon$lambda$16$lambda$15$lambda$14(BlueprintScreen blueprintScreen) {
+    public static final Unit showRpgWeapon$lambda$0$3$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -418,32 +418,32 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintLayoutPmBinding blueprintLayoutPmBinding = this.blueprintBinding.pmContainer;
         RelativeLayout pmTouchAreaStage1 = blueprintLayoutPmBinding.pmTouchAreaStage1;
         Intrinsics.checkNotNullExpressionValue(pmTouchAreaStage1, "pmTouchAreaStage1");
-        clickOnWeapon(pmTouchAreaStage1, blueprintLayoutPmBinding.pmTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda27
+        clickOnWeapon(pmTouchAreaStage1, blueprintLayoutPmBinding.pmTouchAreaStage2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPMWeapon$lambda$21$lambda$17;
-                showPMWeapon$lambda$21$lambda$17 = BlueprintScreen.showPMWeapon$lambda$21$lambda$17(BlueprintLayoutPmBinding.this);
-                return showPMWeapon$lambda$21$lambda$17;
+                Unit showPMWeapon$lambda$0$0;
+                showPMWeapon$lambda$0$0 = BlueprintScreen.showPMWeapon$lambda$0$0(BlueprintLayoutPmBinding.this);
+                return showPMWeapon$lambda$0$0;
             }
         });
         RelativeLayout pmTouchAreaStage2 = blueprintLayoutPmBinding.pmTouchAreaStage2;
         Intrinsics.checkNotNullExpressionValue(pmTouchAreaStage2, "pmTouchAreaStage2");
-        clickOnWeapon(pmTouchAreaStage2, blueprintLayoutPmBinding.pmTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda28
+        clickOnWeapon(pmTouchAreaStage2, blueprintLayoutPmBinding.pmTouchAreaStage3, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPMWeapon$lambda$21$lambda$18;
-                showPMWeapon$lambda$21$lambda$18 = BlueprintScreen.showPMWeapon$lambda$21$lambda$18(BlueprintLayoutPmBinding.this);
-                return showPMWeapon$lambda$21$lambda$18;
+                Unit showPMWeapon$lambda$0$1;
+                showPMWeapon$lambda$0$1 = BlueprintScreen.showPMWeapon$lambda$0$1(BlueprintLayoutPmBinding.this);
+                return showPMWeapon$lambda$0$1;
             }
         });
         RelativeLayout pmTouchAreaStage3 = blueprintLayoutPmBinding.pmTouchAreaStage3;
         Intrinsics.checkNotNullExpressionValue(pmTouchAreaStage3, "pmTouchAreaStage3");
-        clickOnWeapon$default(this, pmTouchAreaStage3, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda29
+        clickOnWeapon$default(this, pmTouchAreaStage3, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPMWeapon$lambda$21$lambda$20;
-                showPMWeapon$lambda$21$lambda$20 = BlueprintScreen.showPMWeapon$lambda$21$lambda$20(BlueprintLayoutPmBinding.this, this);
-                return showPMWeapon$lambda$21$lambda$20;
+                Unit showPMWeapon$lambda$0$2;
+                showPMWeapon$lambda$0$2 = BlueprintScreen.showPMWeapon$lambda$0$2(BlueprintLayoutPmBinding.this, this);
+                return showPMWeapon$lambda$0$2;
             }
         }, 1, null);
         blueprintLayoutPmBinding.getRoot().setVisibility(0);
@@ -451,33 +451,33 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPMWeapon$lambda$21$lambda$17(BlueprintLayoutPmBinding blueprintLayoutPmBinding) {
+    public static final Unit showPMWeapon$lambda$0$0(BlueprintLayoutPmBinding blueprintLayoutPmBinding) {
         blueprintLayoutPmBinding.pmImage.setImageResource(R.drawable.pm_stage_1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPMWeapon$lambda$21$lambda$18(BlueprintLayoutPmBinding blueprintLayoutPmBinding) {
+    public static final Unit showPMWeapon$lambda$0$1(BlueprintLayoutPmBinding blueprintLayoutPmBinding) {
         blueprintLayoutPmBinding.pmImage.setImageResource(R.drawable.pm_stage_2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPMWeapon$lambda$21$lambda$20(BlueprintLayoutPmBinding blueprintLayoutPmBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPMWeapon$lambda$0$2(BlueprintLayoutPmBinding blueprintLayoutPmBinding, final BlueprintScreen blueprintScreen) {
         blueprintLayoutPmBinding.pmImage.setImageResource(R.drawable.pm_stage_3);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda20
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPMWeapon$lambda$21$lambda$20$lambda$19;
-                showPMWeapon$lambda$21$lambda$20$lambda$19 = BlueprintScreen.showPMWeapon$lambda$21$lambda$20$lambda$19(BlueprintScreen.this);
-                return showPMWeapon$lambda$21$lambda$20$lambda$19;
+                Unit showPMWeapon$lambda$0$2$0;
+                showPMWeapon$lambda$0$2$0 = BlueprintScreen.showPMWeapon$lambda$0$2$0(BlueprintScreen.this);
+                return showPMWeapon$lambda$0$2$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPMWeapon$lambda$21$lambda$20$lambda$19(BlueprintScreen blueprintScreen) {
+    public static final Unit showPMWeapon$lambda$0$2$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -487,52 +487,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintPipeOneBinding blueprintPipeOneBinding = this.blueprintBinding.pipeOne;
         FrameLayout touchOne = blueprintPipeOneBinding.touchOne;
         Intrinsics.checkNotNullExpressionValue(touchOne, "touchOne");
-        clickOnPipe(touchOne, blueprintPipeOneBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda30
+        clickOnPipe(touchOne, blueprintPipeOneBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda28
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$22;
-                showPipeOne$lambda$28$lambda$22 = BlueprintScreen.showPipeOne$lambda$28$lambda$22(BlueprintPipeOneBinding.this);
-                return showPipeOne$lambda$28$lambda$22;
+                Unit showPipeOne$lambda$0$0;
+                showPipeOne$lambda$0$0 = BlueprintScreen.showPipeOne$lambda$0$0(BlueprintPipeOneBinding.this);
+                return showPipeOne$lambda$0$0;
             }
         });
         FrameLayout touchTwo = blueprintPipeOneBinding.touchTwo;
         Intrinsics.checkNotNullExpressionValue(touchTwo, "touchTwo");
-        clickOnPipe(touchTwo, blueprintPipeOneBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda31
+        clickOnPipe(touchTwo, blueprintPipeOneBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda29
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$23;
-                showPipeOne$lambda$28$lambda$23 = BlueprintScreen.showPipeOne$lambda$28$lambda$23(BlueprintPipeOneBinding.this);
-                return showPipeOne$lambda$28$lambda$23;
+                Unit showPipeOne$lambda$0$1;
+                showPipeOne$lambda$0$1 = BlueprintScreen.showPipeOne$lambda$0$1(BlueprintPipeOneBinding.this);
+                return showPipeOne$lambda$0$1;
             }
         });
         FrameLayout touchThree = blueprintPipeOneBinding.touchThree;
         Intrinsics.checkNotNullExpressionValue(touchThree, "touchThree");
-        clickOnPipe(touchThree, blueprintPipeOneBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda32
+        clickOnPipe(touchThree, blueprintPipeOneBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$24;
-                showPipeOne$lambda$28$lambda$24 = BlueprintScreen.showPipeOne$lambda$28$lambda$24(BlueprintPipeOneBinding.this);
-                return showPipeOne$lambda$28$lambda$24;
+                Unit showPipeOne$lambda$0$2;
+                showPipeOne$lambda$0$2 = BlueprintScreen.showPipeOne$lambda$0$2(BlueprintPipeOneBinding.this);
+                return showPipeOne$lambda$0$2;
             }
         });
         FrameLayout touchFour = blueprintPipeOneBinding.touchFour;
         Intrinsics.checkNotNullExpressionValue(touchFour, "touchFour");
-        clickOnPipe(touchFour, blueprintPipeOneBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda34
+        clickOnPipe(touchFour, blueprintPipeOneBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda31
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$25;
-                showPipeOne$lambda$28$lambda$25 = BlueprintScreen.showPipeOne$lambda$28$lambda$25(BlueprintPipeOneBinding.this);
-                return showPipeOne$lambda$28$lambda$25;
+                Unit showPipeOne$lambda$0$3;
+                showPipeOne$lambda$0$3 = BlueprintScreen.showPipeOne$lambda$0$3(BlueprintPipeOneBinding.this);
+                return showPipeOne$lambda$0$3;
             }
         });
         FrameLayout touchFive = blueprintPipeOneBinding.touchFive;
         Intrinsics.checkNotNullExpressionValue(touchFive, "touchFive");
-        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda35
+        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda32
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$27;
-                showPipeOne$lambda$28$lambda$27 = BlueprintScreen.showPipeOne$lambda$28$lambda$27(BlueprintPipeOneBinding.this, this);
-                return showPipeOne$lambda$28$lambda$27;
+                Unit showPipeOne$lambda$0$4;
+                showPipeOne$lambda$0$4 = BlueprintScreen.showPipeOne$lambda$0$4(BlueprintPipeOneBinding.this, this);
+                return showPipeOne$lambda$0$4;
             }
         }, 1, null);
         ConstraintLayout root = blueprintPipeOneBinding.getRoot();
@@ -544,45 +544,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$22(BlueprintPipeOneBinding blueprintPipeOneBinding) {
+    public static final Unit showPipeOne$lambda$0$0(BlueprintPipeOneBinding blueprintPipeOneBinding) {
         blueprintPipeOneBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_one_stage_one);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$23(BlueprintPipeOneBinding blueprintPipeOneBinding) {
+    public static final Unit showPipeOne$lambda$0$1(BlueprintPipeOneBinding blueprintPipeOneBinding) {
         blueprintPipeOneBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_one_stage_two);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$24(BlueprintPipeOneBinding blueprintPipeOneBinding) {
+    public static final Unit showPipeOne$lambda$0$2(BlueprintPipeOneBinding blueprintPipeOneBinding) {
         blueprintPipeOneBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_one_stage_three);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$25(BlueprintPipeOneBinding blueprintPipeOneBinding) {
+    public static final Unit showPipeOne$lambda$0$3(BlueprintPipeOneBinding blueprintPipeOneBinding) {
         blueprintPipeOneBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_one_stage_four);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$27(BlueprintPipeOneBinding blueprintPipeOneBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeOne$lambda$0$4(BlueprintPipeOneBinding blueprintPipeOneBinding, final BlueprintScreen blueprintScreen) {
         blueprintPipeOneBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_one_stage_five);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda44
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda34
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeOne$lambda$28$lambda$27$lambda$26;
-                showPipeOne$lambda$28$lambda$27$lambda$26 = BlueprintScreen.showPipeOne$lambda$28$lambda$27$lambda$26(BlueprintScreen.this);
-                return showPipeOne$lambda$28$lambda$27$lambda$26;
+                Unit showPipeOne$lambda$0$4$0;
+                showPipeOne$lambda$0$4$0 = BlueprintScreen.showPipeOne$lambda$0$4$0(BlueprintScreen.this);
+                return showPipeOne$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeOne$lambda$28$lambda$27$lambda$26(BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeOne$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -592,52 +592,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintPipeTwoBinding blueprintPipeTwoBinding = this.blueprintBinding.pipeTwo;
         FrameLayout touchOne = blueprintPipeTwoBinding.touchOne;
         Intrinsics.checkNotNullExpressionValue(touchOne, "touchOne");
-        clickOnPipe(touchOne, blueprintPipeTwoBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda21
+        clickOnPipe(touchOne, blueprintPipeTwoBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$29;
-                showPipeTwo$lambda$35$lambda$29 = BlueprintScreen.showPipeTwo$lambda$35$lambda$29(BlueprintPipeTwoBinding.this);
-                return showPipeTwo$lambda$35$lambda$29;
+                Unit showPipeTwo$lambda$0$0;
+                showPipeTwo$lambda$0$0 = BlueprintScreen.showPipeTwo$lambda$0$0(BlueprintPipeTwoBinding.this);
+                return showPipeTwo$lambda$0$0;
             }
         });
         FrameLayout touchTwo = blueprintPipeTwoBinding.touchTwo;
         Intrinsics.checkNotNullExpressionValue(touchTwo, "touchTwo");
-        clickOnPipe(touchTwo, blueprintPipeTwoBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda23
+        clickOnPipe(touchTwo, blueprintPipeTwoBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$30;
-                showPipeTwo$lambda$35$lambda$30 = BlueprintScreen.showPipeTwo$lambda$35$lambda$30(BlueprintPipeTwoBinding.this);
-                return showPipeTwo$lambda$35$lambda$30;
+                Unit showPipeTwo$lambda$0$1;
+                showPipeTwo$lambda$0$1 = BlueprintScreen.showPipeTwo$lambda$0$1(BlueprintPipeTwoBinding.this);
+                return showPipeTwo$lambda$0$1;
             }
         });
         FrameLayout touchThree = blueprintPipeTwoBinding.touchThree;
         Intrinsics.checkNotNullExpressionValue(touchThree, "touchThree");
-        clickOnPipe(touchThree, blueprintPipeTwoBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda24
+        clickOnPipe(touchThree, blueprintPipeTwoBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$31;
-                showPipeTwo$lambda$35$lambda$31 = BlueprintScreen.showPipeTwo$lambda$35$lambda$31(BlueprintPipeTwoBinding.this);
-                return showPipeTwo$lambda$35$lambda$31;
+                Unit showPipeTwo$lambda$0$2;
+                showPipeTwo$lambda$0$2 = BlueprintScreen.showPipeTwo$lambda$0$2(BlueprintPipeTwoBinding.this);
+                return showPipeTwo$lambda$0$2;
             }
         });
         FrameLayout touchFour = blueprintPipeTwoBinding.touchFour;
         Intrinsics.checkNotNullExpressionValue(touchFour, "touchFour");
-        clickOnPipe(touchFour, blueprintPipeTwoBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda25
+        clickOnPipe(touchFour, blueprintPipeTwoBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$32;
-                showPipeTwo$lambda$35$lambda$32 = BlueprintScreen.showPipeTwo$lambda$35$lambda$32(BlueprintPipeTwoBinding.this);
-                return showPipeTwo$lambda$35$lambda$32;
+                Unit showPipeTwo$lambda$0$3;
+                showPipeTwo$lambda$0$3 = BlueprintScreen.showPipeTwo$lambda$0$3(BlueprintPipeTwoBinding.this);
+                return showPipeTwo$lambda$0$3;
             }
         });
         FrameLayout touchFive = blueprintPipeTwoBinding.touchFive;
         Intrinsics.checkNotNullExpressionValue(touchFive, "touchFive");
-        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda26
+        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$34;
-                showPipeTwo$lambda$35$lambda$34 = BlueprintScreen.showPipeTwo$lambda$35$lambda$34(BlueprintPipeTwoBinding.this, this);
-                return showPipeTwo$lambda$35$lambda$34;
+                Unit showPipeTwo$lambda$0$4;
+                showPipeTwo$lambda$0$4 = BlueprintScreen.showPipeTwo$lambda$0$4(BlueprintPipeTwoBinding.this, this);
+                return showPipeTwo$lambda$0$4;
             }
         }, 1, null);
         ConstraintLayout root = blueprintPipeTwoBinding.getRoot();
@@ -649,45 +649,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$29(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
+    public static final Unit showPipeTwo$lambda$0$0(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
         blueprintPipeTwoBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_two_stage_one);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$30(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
+    public static final Unit showPipeTwo$lambda$0$1(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
         blueprintPipeTwoBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_two_stage_two);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$31(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
+    public static final Unit showPipeTwo$lambda$0$2(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
         blueprintPipeTwoBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_two_stage_three);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$32(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
+    public static final Unit showPipeTwo$lambda$0$3(BlueprintPipeTwoBinding blueprintPipeTwoBinding) {
         blueprintPipeTwoBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_two_stage_four);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$34(BlueprintPipeTwoBinding blueprintPipeTwoBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeTwo$lambda$0$4(BlueprintPipeTwoBinding blueprintPipeTwoBinding, final BlueprintScreen blueprintScreen) {
         blueprintPipeTwoBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_two_stage_five);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda45
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeTwo$lambda$35$lambda$34$lambda$33;
-                showPipeTwo$lambda$35$lambda$34$lambda$33 = BlueprintScreen.showPipeTwo$lambda$35$lambda$34$lambda$33(BlueprintScreen.this);
-                return showPipeTwo$lambda$35$lambda$34$lambda$33;
+                Unit showPipeTwo$lambda$0$4$0;
+                showPipeTwo$lambda$0$4$0 = BlueprintScreen.showPipeTwo$lambda$0$4$0(BlueprintScreen.this);
+                return showPipeTwo$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeTwo$lambda$35$lambda$34$lambda$33(BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeTwo$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -697,52 +697,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintPipeThreeBinding blueprintPipeThreeBinding = this.blueprintBinding.pipeThree;
         FrameLayout touchOne = blueprintPipeThreeBinding.touchOne;
         Intrinsics.checkNotNullExpressionValue(touchOne, "touchOne");
-        clickOnPipe(touchOne, blueprintPipeThreeBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda8
+        clickOnPipe(touchOne, blueprintPipeThreeBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$36;
-                showPipeThree$lambda$42$lambda$36 = BlueprintScreen.showPipeThree$lambda$42$lambda$36(BlueprintPipeThreeBinding.this);
-                return showPipeThree$lambda$42$lambda$36;
+                Unit showPipeThree$lambda$0$0;
+                showPipeThree$lambda$0$0 = BlueprintScreen.showPipeThree$lambda$0$0(BlueprintPipeThreeBinding.this);
+                return showPipeThree$lambda$0$0;
             }
         });
         FrameLayout touchTwo = blueprintPipeThreeBinding.touchTwo;
         Intrinsics.checkNotNullExpressionValue(touchTwo, "touchTwo");
-        clickOnPipe(touchTwo, blueprintPipeThreeBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda9
+        clickOnPipe(touchTwo, blueprintPipeThreeBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$37;
-                showPipeThree$lambda$42$lambda$37 = BlueprintScreen.showPipeThree$lambda$42$lambda$37(BlueprintPipeThreeBinding.this);
-                return showPipeThree$lambda$42$lambda$37;
+                Unit showPipeThree$lambda$0$1;
+                showPipeThree$lambda$0$1 = BlueprintScreen.showPipeThree$lambda$0$1(BlueprintPipeThreeBinding.this);
+                return showPipeThree$lambda$0$1;
             }
         });
         FrameLayout touchThree = blueprintPipeThreeBinding.touchThree;
         Intrinsics.checkNotNullExpressionValue(touchThree, "touchThree");
-        clickOnPipe(touchThree, blueprintPipeThreeBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda10
+        clickOnPipe(touchThree, blueprintPipeThreeBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$38;
-                showPipeThree$lambda$42$lambda$38 = BlueprintScreen.showPipeThree$lambda$42$lambda$38(BlueprintPipeThreeBinding.this);
-                return showPipeThree$lambda$42$lambda$38;
+                Unit showPipeThree$lambda$0$2;
+                showPipeThree$lambda$0$2 = BlueprintScreen.showPipeThree$lambda$0$2(BlueprintPipeThreeBinding.this);
+                return showPipeThree$lambda$0$2;
             }
         });
         FrameLayout touchFour = blueprintPipeThreeBinding.touchFour;
         Intrinsics.checkNotNullExpressionValue(touchFour, "touchFour");
-        clickOnPipe(touchFour, blueprintPipeThreeBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda12
+        clickOnPipe(touchFour, blueprintPipeThreeBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$39;
-                showPipeThree$lambda$42$lambda$39 = BlueprintScreen.showPipeThree$lambda$42$lambda$39(BlueprintPipeThreeBinding.this);
-                return showPipeThree$lambda$42$lambda$39;
+                Unit showPipeThree$lambda$0$3;
+                showPipeThree$lambda$0$3 = BlueprintScreen.showPipeThree$lambda$0$3(BlueprintPipeThreeBinding.this);
+                return showPipeThree$lambda$0$3;
             }
         });
         FrameLayout touchFive = blueprintPipeThreeBinding.touchFive;
         Intrinsics.checkNotNullExpressionValue(touchFive, "touchFive");
-        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda13
+        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$41;
-                showPipeThree$lambda$42$lambda$41 = BlueprintScreen.showPipeThree$lambda$42$lambda$41(BlueprintPipeThreeBinding.this, this);
-                return showPipeThree$lambda$42$lambda$41;
+                Unit showPipeThree$lambda$0$4;
+                showPipeThree$lambda$0$4 = BlueprintScreen.showPipeThree$lambda$0$4(BlueprintPipeThreeBinding.this, this);
+                return showPipeThree$lambda$0$4;
             }
         }, 1, null);
         ConstraintLayout root = blueprintPipeThreeBinding.getRoot();
@@ -754,45 +754,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$36(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
+    public static final Unit showPipeThree$lambda$0$0(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
         blueprintPipeThreeBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_three_stage_one);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$37(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
+    public static final Unit showPipeThree$lambda$0$1(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
         blueprintPipeThreeBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_three_stage_two);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$38(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
+    public static final Unit showPipeThree$lambda$0$2(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
         blueprintPipeThreeBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_three_stage_three);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$39(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
+    public static final Unit showPipeThree$lambda$0$3(BlueprintPipeThreeBinding blueprintPipeThreeBinding) {
         blueprintPipeThreeBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_three_stage_four);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$41(BlueprintPipeThreeBinding blueprintPipeThreeBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeThree$lambda$0$4(BlueprintPipeThreeBinding blueprintPipeThreeBinding, final BlueprintScreen blueprintScreen) {
         blueprintPipeThreeBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_three_stage_five);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda6
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda45
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeThree$lambda$42$lambda$41$lambda$40;
-                showPipeThree$lambda$42$lambda$41$lambda$40 = BlueprintScreen.showPipeThree$lambda$42$lambda$41$lambda$40(BlueprintScreen.this);
-                return showPipeThree$lambda$42$lambda$41$lambda$40;
+                Unit showPipeThree$lambda$0$4$0;
+                showPipeThree$lambda$0$4$0 = BlueprintScreen.showPipeThree$lambda$0$4$0(BlueprintScreen.this);
+                return showPipeThree$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeThree$lambda$42$lambda$41$lambda$40(BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeThree$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -802,52 +802,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintPipeFourBinding blueprintPipeFourBinding = this.blueprintBinding.pipeFour;
         FrameLayout touchOne = blueprintPipeFourBinding.touchOne;
         Intrinsics.checkNotNullExpressionValue(touchOne, "touchOne");
-        clickOnPipe(touchOne, blueprintPipeFourBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda47
+        clickOnPipe(touchOne, blueprintPipeFourBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda46
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$43;
-                showPipeFour$lambda$49$lambda$43 = BlueprintScreen.showPipeFour$lambda$49$lambda$43(BlueprintPipeFourBinding.this);
-                return showPipeFour$lambda$49$lambda$43;
+                Unit showPipeFour$lambda$0$0;
+                showPipeFour$lambda$0$0 = BlueprintScreen.showPipeFour$lambda$0$0(BlueprintPipeFourBinding.this);
+                return showPipeFour$lambda$0$0;
             }
         });
         FrameLayout touchTwo = blueprintPipeFourBinding.touchTwo;
         Intrinsics.checkNotNullExpressionValue(touchTwo, "touchTwo");
-        clickOnPipe(touchTwo, blueprintPipeFourBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda1
+        clickOnPipe(touchTwo, blueprintPipeFourBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda47
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$44;
-                showPipeFour$lambda$49$lambda$44 = BlueprintScreen.showPipeFour$lambda$49$lambda$44(BlueprintPipeFourBinding.this);
-                return showPipeFour$lambda$49$lambda$44;
+                Unit showPipeFour$lambda$0$1;
+                showPipeFour$lambda$0$1 = BlueprintScreen.showPipeFour$lambda$0$1(BlueprintPipeFourBinding.this);
+                return showPipeFour$lambda$0$1;
             }
         });
         FrameLayout touchThree = blueprintPipeFourBinding.touchThree;
         Intrinsics.checkNotNullExpressionValue(touchThree, "touchThree");
-        clickOnPipe(touchThree, blueprintPipeFourBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda2
+        clickOnPipe(touchThree, blueprintPipeFourBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$45;
-                showPipeFour$lambda$49$lambda$45 = BlueprintScreen.showPipeFour$lambda$49$lambda$45(BlueprintPipeFourBinding.this);
-                return showPipeFour$lambda$49$lambda$45;
+                Unit showPipeFour$lambda$0$2;
+                showPipeFour$lambda$0$2 = BlueprintScreen.showPipeFour$lambda$0$2(BlueprintPipeFourBinding.this);
+                return showPipeFour$lambda$0$2;
             }
         });
         FrameLayout touchFour = blueprintPipeFourBinding.touchFour;
         Intrinsics.checkNotNullExpressionValue(touchFour, "touchFour");
-        clickOnPipe(touchFour, blueprintPipeFourBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda3
+        clickOnPipe(touchFour, blueprintPipeFourBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$46;
-                showPipeFour$lambda$49$lambda$46 = BlueprintScreen.showPipeFour$lambda$49$lambda$46(BlueprintPipeFourBinding.this);
-                return showPipeFour$lambda$49$lambda$46;
+                Unit showPipeFour$lambda$0$3;
+                showPipeFour$lambda$0$3 = BlueprintScreen.showPipeFour$lambda$0$3(BlueprintPipeFourBinding.this);
+                return showPipeFour$lambda$0$3;
             }
         });
         FrameLayout touchFive = blueprintPipeFourBinding.touchFive;
         Intrinsics.checkNotNullExpressionValue(touchFive, "touchFive");
-        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda4
+        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$48;
-                showPipeFour$lambda$49$lambda$48 = BlueprintScreen.showPipeFour$lambda$49$lambda$48(BlueprintPipeFourBinding.this, this);
-                return showPipeFour$lambda$49$lambda$48;
+                Unit showPipeFour$lambda$0$4;
+                showPipeFour$lambda$0$4 = BlueprintScreen.showPipeFour$lambda$0$4(BlueprintPipeFourBinding.this, this);
+                return showPipeFour$lambda$0$4;
             }
         }, 1, null);
         ConstraintLayout root = blueprintPipeFourBinding.getRoot();
@@ -859,45 +859,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$43(BlueprintPipeFourBinding blueprintPipeFourBinding) {
+    public static final Unit showPipeFour$lambda$0$0(BlueprintPipeFourBinding blueprintPipeFourBinding) {
         blueprintPipeFourBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_four_stage_one);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$44(BlueprintPipeFourBinding blueprintPipeFourBinding) {
+    public static final Unit showPipeFour$lambda$0$1(BlueprintPipeFourBinding blueprintPipeFourBinding) {
         blueprintPipeFourBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_four_stage_two);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$45(BlueprintPipeFourBinding blueprintPipeFourBinding) {
+    public static final Unit showPipeFour$lambda$0$2(BlueprintPipeFourBinding blueprintPipeFourBinding) {
         blueprintPipeFourBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_four_stage_three);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$46(BlueprintPipeFourBinding blueprintPipeFourBinding) {
+    public static final Unit showPipeFour$lambda$0$3(BlueprintPipeFourBinding blueprintPipeFourBinding) {
         blueprintPipeFourBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_four_stage_four);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$48(BlueprintPipeFourBinding blueprintPipeFourBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeFour$lambda$0$4(BlueprintPipeFourBinding blueprintPipeFourBinding, final BlueprintScreen blueprintScreen) {
         blueprintPipeFourBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_four_stage_five);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda46
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFour$lambda$49$lambda$48$lambda$47;
-                showPipeFour$lambda$49$lambda$48$lambda$47 = BlueprintScreen.showPipeFour$lambda$49$lambda$48$lambda$47(BlueprintScreen.this);
-                return showPipeFour$lambda$49$lambda$48$lambda$47;
+                Unit showPipeFour$lambda$0$4$0;
+                showPipeFour$lambda$0$4$0 = BlueprintScreen.showPipeFour$lambda$0$4$0(BlueprintScreen.this);
+                return showPipeFour$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFour$lambda$49$lambda$48$lambda$47(BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeFour$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -907,52 +907,52 @@ public final class BlueprintScreen extends SAMPUIElement {
         final BlueprintPipeFiveBinding blueprintPipeFiveBinding = this.blueprintBinding.pipeFive;
         FrameLayout touchOne = blueprintPipeFiveBinding.touchOne;
         Intrinsics.checkNotNullExpressionValue(touchOne, "touchOne");
-        clickOnPipe(touchOne, blueprintPipeFiveBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda11
+        clickOnPipe(touchOne, blueprintPipeFiveBinding.touchTwo, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$50;
-                showPipeFive$lambda$56$lambda$50 = BlueprintScreen.showPipeFive$lambda$56$lambda$50(BlueprintPipeFiveBinding.this);
-                return showPipeFive$lambda$56$lambda$50;
+                Unit showPipeFive$lambda$0$0;
+                showPipeFive$lambda$0$0 = BlueprintScreen.showPipeFive$lambda$0$0(BlueprintPipeFiveBinding.this);
+                return showPipeFive$lambda$0$0;
             }
         });
         FrameLayout touchTwo = blueprintPipeFiveBinding.touchTwo;
         Intrinsics.checkNotNullExpressionValue(touchTwo, "touchTwo");
-        clickOnPipe(touchTwo, blueprintPipeFiveBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda22
+        clickOnPipe(touchTwo, blueprintPipeFiveBinding.touchThree, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda33
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$51;
-                showPipeFive$lambda$56$lambda$51 = BlueprintScreen.showPipeFive$lambda$56$lambda$51(BlueprintPipeFiveBinding.this);
-                return showPipeFive$lambda$56$lambda$51;
+                Unit showPipeFive$lambda$0$1;
+                showPipeFive$lambda$0$1 = BlueprintScreen.showPipeFive$lambda$0$1(BlueprintPipeFiveBinding.this);
+                return showPipeFive$lambda$0$1;
             }
         });
         FrameLayout touchThree = blueprintPipeFiveBinding.touchThree;
         Intrinsics.checkNotNullExpressionValue(touchThree, "touchThree");
-        clickOnPipe(touchThree, blueprintPipeFiveBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda33
+        clickOnPipe(touchThree, blueprintPipeFiveBinding.touchFour, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda42
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$52;
-                showPipeFive$lambda$56$lambda$52 = BlueprintScreen.showPipeFive$lambda$56$lambda$52(BlueprintPipeFiveBinding.this);
-                return showPipeFive$lambda$56$lambda$52;
+                Unit showPipeFive$lambda$0$2;
+                showPipeFive$lambda$0$2 = BlueprintScreen.showPipeFive$lambda$0$2(BlueprintPipeFiveBinding.this);
+                return showPipeFive$lambda$0$2;
             }
         });
         FrameLayout touchFour = blueprintPipeFiveBinding.touchFour;
         Intrinsics.checkNotNullExpressionValue(touchFour, "touchFour");
-        clickOnPipe(touchFour, blueprintPipeFiveBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda42
+        clickOnPipe(touchFour, blueprintPipeFiveBinding.touchFive, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda43
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$53;
-                showPipeFive$lambda$56$lambda$53 = BlueprintScreen.showPipeFive$lambda$56$lambda$53(BlueprintPipeFiveBinding.this);
-                return showPipeFive$lambda$56$lambda$53;
+                Unit showPipeFive$lambda$0$3;
+                showPipeFive$lambda$0$3 = BlueprintScreen.showPipeFive$lambda$0$3(BlueprintPipeFiveBinding.this);
+                return showPipeFive$lambda$0$3;
             }
         });
         FrameLayout touchFive = blueprintPipeFiveBinding.touchFive;
         Intrinsics.checkNotNullExpressionValue(touchFive, "touchFive");
-        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda43
+        clickOnPipe$default(this, touchFive, null, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda44
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$55;
-                showPipeFive$lambda$56$lambda$55 = BlueprintScreen.showPipeFive$lambda$56$lambda$55(BlueprintPipeFiveBinding.this, this);
-                return showPipeFive$lambda$56$lambda$55;
+                Unit showPipeFive$lambda$0$4;
+                showPipeFive$lambda$0$4 = BlueprintScreen.showPipeFive$lambda$0$4(BlueprintPipeFiveBinding.this, this);
+                return showPipeFive$lambda$0$4;
             }
         }, 1, null);
         ConstraintLayout root = blueprintPipeFiveBinding.getRoot();
@@ -964,45 +964,45 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$50(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
+    public static final Unit showPipeFive$lambda$0$0(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
         blueprintPipeFiveBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_five_stage_one);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$51(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
+    public static final Unit showPipeFive$lambda$0$1(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
         blueprintPipeFiveBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_five_stage_two);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$52(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
+    public static final Unit showPipeFive$lambda$0$2(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
         blueprintPipeFiveBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_five_stage_three);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$53(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
+    public static final Unit showPipeFive$lambda$0$3(BlueprintPipeFiveBinding blueprintPipeFiveBinding) {
         blueprintPipeFiveBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_five_stage_four);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$55(BlueprintPipeFiveBinding blueprintPipeFiveBinding, final BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeFive$lambda$0$4(BlueprintPipeFiveBinding blueprintPipeFiveBinding, final BlueprintScreen blueprintScreen) {
         blueprintPipeFiveBinding.ivDrawing.setImageResource(R.drawable.blueprint_pipe_five_stage_five);
-        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda7
+        blueprintScreen.startLastAreaTimer(new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit showPipeFive$lambda$56$lambda$55$lambda$54;
-                showPipeFive$lambda$56$lambda$55$lambda$54 = BlueprintScreen.showPipeFive$lambda$56$lambda$55$lambda$54(BlueprintScreen.this);
-                return showPipeFive$lambda$56$lambda$55$lambda$54;
+                Unit showPipeFive$lambda$0$4$0;
+                showPipeFive$lambda$0$4$0 = BlueprintScreen.showPipeFive$lambda$0$4$0(BlueprintScreen.this);
+                return showPipeFive$lambda$0$4$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit showPipeFive$lambda$56$lambda$55$lambda$54(BlueprintScreen blueprintScreen) {
+    public static final Unit showPipeFive$lambda$0$4$0(BlueprintScreen blueprintScreen) {
         SAMPUIElement.notifyClick$default(blueprintScreen, 1, -1, null, 4, null);
         blueprintScreen.closeScreen();
         return Unit.INSTANCE;
@@ -1020,15 +1020,15 @@ public final class BlueprintScreen extends SAMPUIElement {
         clickOnWeapon(view, view2, new Function0() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit clickOnPipe$lambda$57;
-                clickOnPipe$lambda$57 = BlueprintScreen.clickOnPipe$lambda$57(Function0.this, this, load);
-                return clickOnPipe$lambda$57;
+                Unit clickOnPipe$lambda$0;
+                clickOnPipe$lambda$0 = BlueprintScreen.clickOnPipe$lambda$0(Function0.this, this, load);
+                return clickOnPipe$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit clickOnPipe$lambda$57(Function0 function0, BlueprintScreen blueprintScreen, int i) {
+    public static final Unit clickOnPipe$lambda$0(Function0 function0, BlueprintScreen blueprintScreen, int i) {
         function0.invoke();
         blueprintScreen.soundPool.play(i, 1.0f, 1.0f, 0, 0, 1.0f);
         return Unit.INSTANCE;
@@ -1042,16 +1042,16 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     private final void clickOnWeapon(View view, final View view2, final Function0<Unit> function0) {
-        view.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda40
+        view.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.blueprint.BlueprintScreen$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                BlueprintScreen.clickOnWeapon$lambda$59(view2, function0, view3);
+                BlueprintScreen.clickOnWeapon$lambda$0(view2, function0, view3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void clickOnWeapon$lambda$59(View view, Function0 function0, View view2) {
+    public static final void clickOnWeapon$lambda$0(View view, Function0 function0, View view2) {
         Intrinsics.checkNotNull(view2);
         view2.setVisibility(8);
         if (view != null) {

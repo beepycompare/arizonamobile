@@ -48,13 +48,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class SwitchButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit CustomToggleSwitch$lambda$4(boolean z, int i, Composer composer, int i2) {
+    public static final Unit CustomToggleSwitch$lambda$1(boolean z, int i, Composer composer, int i2) {
         CustomToggleSwitch(z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SwitchButton$lambda$2(String str, Function0 function0, boolean z, int i, Composer composer, int i2) {
+    public static final Unit SwitchButton$lambda$1(String str, Function0 function0, boolean z, int i, Composer composer, int i2) {
         SwitchButton(str, function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -88,9 +88,9 @@ public final class SwitchButtonKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(-1706652927, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SwitchButton$lambda$1;
-                    SwitchButton$lambda$1 = SwitchButtonKt.SwitchButton$lambda$1(text, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SwitchButton$lambda$1;
+                    Unit SwitchButton$lambda$0;
+                    SwitchButton$lambda$0 = SwitchButtonKt.SwitchButton$lambda$0(text, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SwitchButton$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -102,16 +102,16 @@ public final class SwitchButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SwitchButton$lambda$2;
-                    SwitchButton$lambda$2 = SwitchButtonKt.SwitchButton$lambda$2(text, function0, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SwitchButton$lambda$2;
+                    Unit SwitchButton$lambda$1;
+                    SwitchButton$lambda$1 = SwitchButtonKt.SwitchButton$lambda$1(text, function0, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SwitchButton$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SwitchButton$lambda$1(String str, boolean z, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit SwitchButton$lambda$0(String str, boolean z, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C35@1505L933:SwitchButton.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -243,9 +243,9 @@ public final class SwitchButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CustomToggleSwitch$lambda$4;
-                    CustomToggleSwitch$lambda$4 = SwitchButtonKt.CustomToggleSwitch$lambda$4(z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CustomToggleSwitch$lambda$4;
+                    Unit CustomToggleSwitch$lambda$1;
+                    CustomToggleSwitch$lambda$1 = SwitchButtonKt.CustomToggleSwitch$lambda$1(z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return CustomToggleSwitch$lambda$1;
                 }
             });
         }

@@ -4,9 +4,9 @@ package io.appmetrica.analytics.impl;
 public final class C0380kd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f949a;
+    public final String f953a;
 
     public C0380kd(String str) {
-        this.f949a = str;
+        this.f953a = str;
     }
 }

@@ -10,10 +10,10 @@ public final class C0649v3 extends Yi {
 
     @Override // io.appmetrica.analytics.impl.Yi
     public final Object a(int i) {
-        return Boolean.valueOf(this.f755a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f759a.getResources().getBoolean(i));
     }
 
     public final Boolean b(int i) {
-        return Boolean.valueOf(this.f755a.getResources().getBoolean(i));
+        return Boolean.valueOf(this.f759a.getResources().getBoolean(i));
     }
 }

@@ -24,7 +24,7 @@ public final class Xl implements Yl {
     public static final Map k = Collections.unmodifiableMap(new Ul());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f743a;
+    public final List f747a;
     public final Si b;
     public final C0260fm c;
     public final Handler d;
@@ -171,7 +171,7 @@ public final class Xl implements Yl {
             c0656va = c0606ta.b;
         }
         c0581sa.getClass();
-        Boolean bool = c0656va.f1119a;
+        Boolean bool = c0656va.f1123a;
         return new C0706xa();
     }
 
@@ -208,13 +208,13 @@ public final class Xl implements Yl {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f743a, this.f, this.i, false);
+                a(this.f747a, this.f, this.i, false);
             }
         }
     }
 
     public Xl(Si si, C0260fm c0260fm, Handler handler) {
-        this.f743a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+        this.f747a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
@@ -240,10 +240,10 @@ public final class Xl implements Yl {
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new C0707xb(resultReceiverC0116a7, list, map, z));
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = W9.f721a;
+        Set set = W9.f725a;
         C0397l4 c0397l4 = new C0397l4("", "", 1536, 0, anonymousInstance);
         c0397l4.m = bundle;
-        C0192d5 c0192d5 = si.f668a;
+        C0192d5 c0192d5 = si.f672a;
         si.a(Si.a(c0397l4, c0192d5), c0192d5, 1, null);
     }
 

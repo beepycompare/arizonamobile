@@ -37,14 +37,14 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f71lambda$1143154327 = ComposableLambdaKt.composableLambdaInstance(-1143154327, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$FailDownloadDialogKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__1143154327$lambda$1;
-            lambda__1143154327$lambda$1 = ComposableSingletons$FailDownloadDialogKt.lambda__1143154327$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__1143154327$lambda$1;
+            Unit lambda__1143154327$lambda$0;
+            lambda__1143154327$lambda$0 = ComposableSingletons$FailDownloadDialogKt.lambda__1143154327$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda__1143154327$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-1143154327$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8959getLambda$1143154327$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8966getLambda$1143154327$dialogs_release() {
         return f71lambda$1143154327;
     }
 
@@ -71,7 +71,7 @@ public final class ComposableSingletons$FailDownloadDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__1143154327$lambda$1(BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit lambda__1143154327$lambda$0(BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C71@2584L10,71@2557L88:FailDownloadDialog.kt#d3gn1w");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

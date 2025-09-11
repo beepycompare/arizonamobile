@@ -37,14 +37,14 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$24227829 = ComposableLambdaKt.composableLambdaInstance(24227829, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_24227829$lambda$1;
-            lambda_24227829$lambda$1 = ComposableSingletons$ErrorDialogScreenKt.lambda_24227829$lambda$1((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_24227829$lambda$1;
+            Unit lambda_24227829$lambda$0;
+            lambda_24227829$lambda$0 = ComposableSingletons$ErrorDialogScreenKt.lambda_24227829$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_24227829$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-1032883188$dialogs_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8958getLambda$1032883188$dialogs_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8965getLambda$1032883188$dialogs_release() {
         return f70lambda$1032883188;
     }
 
@@ -71,7 +71,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda_24227829$lambda$1(BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit lambda_24227829$lambda$0(BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C75@2586L10,75@2559L88:ErrorDialogScreen.kt#d3gn1w");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

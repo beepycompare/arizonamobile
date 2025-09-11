@@ -26,7 +26,7 @@ public final class MatcherMatchResult implements MatchResult {
     }
 
     @Override // kotlin.text.MatchResult
-    public MatchResult.Destructured getDestructured() {
+    public /* bridge */ MatchResult.Destructured getDestructured() {
         return MatchResult.DefaultImpls.getDestructured(this);
     }
 

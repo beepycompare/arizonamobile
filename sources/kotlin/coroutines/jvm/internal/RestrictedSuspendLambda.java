@@ -11,14 +11,14 @@ import kotlin.jvm.internal.Reflection;
 public abstract class RestrictedSuspendLambda extends RestrictedContinuationImpl implements FunctionBase<Object>, SuspendFunction {
     private final int arity;
 
-    @Override // kotlin.jvm.internal.FunctionBase
-    public int getArity() {
-        return this.arity;
-    }
-
     public RestrictedSuspendLambda(int i, Continuation<Object> continuation) {
         super(continuation);
         this.arity = i;
+    }
+
+    @Override // kotlin.jvm.internal.FunctionBase
+    public int getArity() {
+        return this.arity;
     }
 
     public RestrictedSuspendLambda(int i) {

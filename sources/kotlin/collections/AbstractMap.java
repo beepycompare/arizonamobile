@@ -183,7 +183,7 @@ public abstract class AbstractMap<K, V> implements Map<K, V>, KMappedMarker {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence toString$lambda$2(AbstractMap abstractMap, Map.Entry it) {
+    public static final CharSequence toString$lambda$0(AbstractMap abstractMap, Map.Entry it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return abstractMap.toString(it);
     }
@@ -192,9 +192,9 @@ public abstract class AbstractMap<K, V> implements Map<K, V>, KMappedMarker {
         return CollectionsKt.joinToString$default(entrySet(), ", ", "{", "}", 0, null, new Function1() { // from class: kotlin.collections.AbstractMap$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence string$lambda$2;
-                string$lambda$2 = AbstractMap.toString$lambda$2(AbstractMap.this, (Map.Entry) obj);
-                return string$lambda$2;
+                CharSequence string$lambda$0;
+                string$lambda$0 = AbstractMap.toString$lambda$0(AbstractMap.this, (Map.Entry) obj);
+                return string$lambda$0;
             }
         }, 24, null);
     }

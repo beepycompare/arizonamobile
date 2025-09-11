@@ -19,7 +19,7 @@ public final class RunnableC0638uh implements Runnable {
         if (timePassedChecker.didTimePassMillis(x.f(), TimeUnit.DAYS.toMillis(1L), "[ReportKotlinVersionTask]")) {
             KotlinVersion kotlinVersion = KotlinVersion.CURRENT;
             Map mapOf = MapsKt.mapOf(TuplesKt.to("major", Integer.valueOf(kotlinVersion.getMajor())), TuplesKt.to("minor", Integer.valueOf(kotlinVersion.getMinor())), TuplesKt.to("patch", Integer.valueOf(kotlinVersion.getPatch())), TuplesKt.to(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, new StringBuilder().append(kotlinVersion.getMajor()).append('.').append(kotlinVersion.getMinor()).append('.').append(kotlinVersion.getPatch()).toString()));
-            C0413lk c0413lk = Kj.f538a;
+            C0413lk c0413lk = Kj.f542a;
             c0413lk.getClass();
             c0413lk.a(new C0387kk("kotlin_version", mapOf));
             x.c(systemTimeProvider.currentTimeMillis()).b();

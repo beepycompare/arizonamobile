@@ -158,47 +158,47 @@ public final class DiceScreen extends SAMPUIElement {
     private final void makeBet() {
         final DiceGameBinding diceGameBinding = this.diceGameBinding;
         if (diceGameBinding.betWhiteButton.getVisibility() == 0) {
-            diceGameBinding.betWhiteButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda5
+            diceGameBinding.betWhiteButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DiceScreen.makeBet$lambda$14$lambda$13(DiceGameBinding.this, this, view);
+                    DiceScreen.makeBet$lambda$0$0(DiceGameBinding.this, this, view);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13(final DiceGameBinding diceGameBinding, final DiceScreen diceScreen, View view) {
+    public static final void makeBet$lambda$0$0(final DiceGameBinding diceGameBinding, final DiceScreen diceScreen, View view) {
         if (Intrinsics.areEqual("Сделать ставку", diceGameBinding.makeBidText.getText())) {
             diceGameBinding.diceBetScreen.setVisibility(0);
-            diceGameBinding.bet50kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda0
+            diceGameBinding.bet50kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    DiceScreen.makeBet$lambda$14$lambda$13$lambda$8(DiceGameBinding.this, view2);
+                    DiceScreen.makeBet$lambda$0$0$0(DiceGameBinding.this, view2);
                 }
             });
-            diceGameBinding.bet100kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda1
+            diceGameBinding.bet100kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    DiceScreen.makeBet$lambda$14$lambda$13$lambda$9(DiceGameBinding.this, view2);
+                    DiceScreen.makeBet$lambda$0$0$1(DiceGameBinding.this, view2);
                 }
             });
-            diceGameBinding.bet500kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda2
+            diceGameBinding.bet500kButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    DiceScreen.makeBet$lambda$14$lambda$13$lambda$10(DiceGameBinding.this, view2);
+                    DiceScreen.makeBet$lambda$0$0$2(DiceGameBinding.this, view2);
                 }
             });
-            diceGameBinding.bet1kkButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda3
+            diceGameBinding.bet1kkButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    DiceScreen.makeBet$lambda$14$lambda$13$lambda$11(DiceGameBinding.this, view2);
+                    DiceScreen.makeBet$lambda$0$0$3(DiceGameBinding.this, view2);
                 }
             });
-            diceGameBinding.betButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda4
+            diceGameBinding.betButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    DiceScreen.makeBet$lambda$14$lambda$13$lambda$12(DiceScreen.this, diceGameBinding, view2);
+                    DiceScreen.makeBet$lambda$0$0$4(DiceScreen.this, diceGameBinding, view2);
                 }
             });
             return;
@@ -207,27 +207,27 @@ public final class DiceScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13$lambda$8(DiceGameBinding diceGameBinding, View view) {
+    public static final void makeBet$lambda$0$0$0(DiceGameBinding diceGameBinding, View view) {
         diceGameBinding.enterBet.setText(diceGameBinding.bet50kButtonText.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13$lambda$9(DiceGameBinding diceGameBinding, View view) {
+    public static final void makeBet$lambda$0$0$1(DiceGameBinding diceGameBinding, View view) {
         diceGameBinding.enterBet.setText(diceGameBinding.bet100kButtonText.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13$lambda$10(DiceGameBinding diceGameBinding, View view) {
+    public static final void makeBet$lambda$0$0$2(DiceGameBinding diceGameBinding, View view) {
         diceGameBinding.enterBet.setText(diceGameBinding.bet500kButtonText.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13$lambda$11(DiceGameBinding diceGameBinding, View view) {
+    public static final void makeBet$lambda$0$0$3(DiceGameBinding diceGameBinding, View view) {
         diceGameBinding.enterBet.setText(diceGameBinding.bet1kkButtonText.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void makeBet$lambda$14$lambda$13$lambda$12(DiceScreen diceScreen, DiceGameBinding diceGameBinding, View view) {
+    public static final void makeBet$lambda$0$0$4(DiceScreen diceScreen, DiceGameBinding diceGameBinding, View view) {
         diceScreen.notifyClick(2, -1, diceGameBinding.enterBet.getText().toString());
         diceGameBinding.diceBetScreen.setVisibility(8);
     }

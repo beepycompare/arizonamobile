@@ -59,10 +59,6 @@ public final class GridOverlayView extends View {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ GridOverlayView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i & 2) != 0 ? null : attributeSet);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GridOverlayView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -78,6 +74,10 @@ public final class GridOverlayView extends View {
         this.uniqColor = Color.parseColor("#FFC500");
         this.strokeColor = Color.parseColor("#303030");
         this.bitmapCache = new LinkedHashMap();
+    }
+
+    public /* synthetic */ GridOverlayView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i & 2) != 0 ? null : attributeSet);
     }
 
     /* compiled from: MapOverlay.kt */
@@ -341,17 +341,17 @@ public final class GridOverlayView extends View {
             final Function1 function1 = new Function1() { // from class: ru.mrlargha.arizonaui.family.GridOverlayView$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean calculateCells$lambda$4$lambda$2;
-                    calculateCells$lambda$4$lambda$2 = GridOverlayView.calculateCells$lambda$4$lambda$2(GangZoneItem.this, (Integer) obj);
-                    return Boolean.valueOf(calculateCells$lambda$4$lambda$2);
+                    boolean calculateCells$lambda$0$0;
+                    calculateCells$lambda$0$0 = GridOverlayView.calculateCells$lambda$0$0(GangZoneItem.this, (Integer) obj);
+                    return Boolean.valueOf(calculateCells$lambda$0$0);
                 }
             };
             mutableSet.removeIf(new Predicate() { // from class: ru.mrlargha.arizonaui.family.GridOverlayView$$ExternalSyntheticLambda1
                 @Override // java.util.function.Predicate
                 public final boolean test(Object obj) {
-                    boolean calculateCells$lambda$4$lambda$3;
-                    calculateCells$lambda$4$lambda$3 = GridOverlayView.calculateCells$lambda$4$lambda$3(Function1.this, obj);
-                    return calculateCells$lambda$4$lambda$3;
+                    boolean calculateCells$lambda$0$1;
+                    calculateCells$lambda$0$1 = GridOverlayView.calculateCells$lambda$0$1(Function1.this, obj);
+                    return calculateCells$lambda$0$1;
                 }
             });
         }
@@ -366,13 +366,13 @@ public final class GridOverlayView extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean calculateCells$lambda$4$lambda$2(GangZoneItem gangZoneItem, Integer it) {
+    public static final boolean calculateCells$lambda$0$0(GangZoneItem gangZoneItem, Integer it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.intValue() == gangZoneItem.getId();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean calculateCells$lambda$4$lambda$3(Function1 function1, Object obj) {
+    public static final boolean calculateCells$lambda$0$1(Function1 function1, Object obj) {
         return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 

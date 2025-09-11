@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 class StandardKt__SynchronizedKt extends StandardKt__StandardKt {
     /* renamed from: synchronized  reason: not valid java name */
-    private static final <R> R m9094synchronized(Object lock, Function0<? extends R> block) {
+    private static final <R> R m9101synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

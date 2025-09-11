@@ -33,13 +33,13 @@ public final class UserCartViewHolder extends RecyclerView.ViewHolder {
         itemUserCartBinding.ivRemoveCart.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.adapter.UserCartViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UserCartViewHolder.bind$lambda$1$lambda$0(UserCartViewHolder.this, item, view);
+                UserCartViewHolder.bind$lambda$0$0(UserCartViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(UserCartViewHolder userCartViewHolder, CategoryComponents categoryComponents, View view) {
+    public static final void bind$lambda$0$0(UserCartViewHolder userCartViewHolder, CategoryComponents categoryComponents, View view) {
         userCartViewHolder.onItemClicked.invoke(categoryComponents);
     }
 }

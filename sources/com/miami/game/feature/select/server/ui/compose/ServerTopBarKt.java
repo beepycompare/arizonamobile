@@ -50,25 +50,25 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ServerTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DesktopButtonTopBar$lambda$16(Function0 function0, boolean z, int i, Composer composer, int i2) {
+    public static final Unit DesktopButtonTopBar$lambda$1(Function0 function0, boolean z, int i, Composer composer, int i2) {
         DesktopButtonTopBar(function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FavoriteButtonTopBar$lambda$10(Function0 function0, boolean z, int i, Composer composer, int i2) {
+    public static final Unit FavoriteButtonTopBar$lambda$1(Function0 function0, boolean z, int i, Composer composer, int i2) {
         FavoriteButtonTopBar(function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MobileButtonTopBar$lambda$14(Function0 function0, boolean z, int i, Composer composer, int i2) {
+    public static final Unit MobileButtonTopBar$lambda$2(Function0 function0, boolean z, int i, Composer composer, int i2) {
         MobileButtonTopBar(function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerTopBar$lambda$8(SelectServerUiState selectServerUiState, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, int i, Composer composer, int i2) {
+    public static final Unit ServerTopBar$lambda$1(SelectServerUiState selectServerUiState, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, int i, Composer composer, int i2) {
         ServerTopBar(selectServerUiState, function0, function02, function03, function04, function05, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -208,15 +208,15 @@ public final class ServerTopBarKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$1$lambda$0;
-                        ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$1$lambda$0 = ServerTopBarKt.ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$1$lambda$0(Function0.this);
-                        return ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$1$lambda$0;
+                        Unit ServerTopBar$lambda$0$0$0$0$0;
+                        ServerTopBar$lambda$0$0$0$0$0 = ServerTopBarKt.ServerTopBar$lambda$0$0$0$0$0(Function0.this);
+                        return ServerTopBar$lambda$0$0$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$ServerTopBarKt.INSTANCE.m9014getLambda$1484463318$select_server_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$ServerTopBarKt.INSTANCE.m9019getLambda$1484463318$select_server_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             Painter painterResource = PainterResources_androidKt.painterResource(R.drawable.select_server_label, startRestartGroup, 0);
             float f = 30;
             float f2 = 12;
@@ -228,9 +228,9 @@ public final class ServerTopBarKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$3$lambda$2;
-                        ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$3$lambda$2 = ServerTopBarKt.ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$3$lambda$2(Function0.this);
-                        return ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$3$lambda$2;
+                        Unit ServerTopBar$lambda$0$0$0$1$0;
+                        ServerTopBar$lambda$0$0$0$1$0 = ServerTopBarKt.ServerTopBar$lambda$0$0$0$1$0(Function0.this);
+                        return ServerTopBar$lambda$0$0$0$1$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -306,22 +306,22 @@ public final class ServerTopBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerTopBar$lambda$8;
-                    ServerTopBar$lambda$8 = ServerTopBarKt.ServerTopBar$lambda$8(SelectServerUiState.this, onBack, onFavorite, onMobile, onDesktop, onLogo, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerTopBar$lambda$8;
+                    Unit ServerTopBar$lambda$1;
+                    ServerTopBar$lambda$1 = ServerTopBarKt.ServerTopBar$lambda$1(SelectServerUiState.this, onBack, onFavorite, onMobile, onDesktop, onLogo, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerTopBar$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$1$lambda$0(Function0 function0) {
+    public static final Unit ServerTopBar$lambda$0$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerTopBar$lambda$7$lambda$6$lambda$4$lambda$3$lambda$2(Function0 function0) {
+    public static final Unit ServerTopBar$lambda$0$0$0$1$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
@@ -349,12 +349,12 @@ public final class ServerTopBarKt {
                 ComposerKt.traceEventStart(-1283483726, i2, -1, "com.miami.game.feature.select.server.ui.compose.FavoriteButtonTopBar (ServerTopBar.kt:95)");
             }
             if (z) {
-                startRestartGroup.startReplaceGroup(-772242439);
+                startRestartGroup.startReplaceGroup(-772242823);
                 ComposerKt.sourceInformation(startRestartGroup, "96@3664L11");
                 m4572getTransparent0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU();
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(-772241827);
+                startRestartGroup.startReplaceGroup(-772242211);
                 startRestartGroup.endReplaceGroup();
                 m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
             }
@@ -362,9 +362,9 @@ public final class ServerTopBarKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(434062301, true, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit FavoriteButtonTopBar$lambda$9;
-                    FavoriteButtonTopBar$lambda$9 = ServerTopBarKt.FavoriteButtonTopBar$lambda$9(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return FavoriteButtonTopBar$lambda$9;
+                    Unit FavoriteButtonTopBar$lambda$0;
+                    FavoriteButtonTopBar$lambda$0 = ServerTopBarKt.FavoriteButtonTopBar$lambda$0(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return FavoriteButtonTopBar$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, (i2 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -376,16 +376,16 @@ public final class ServerTopBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit FavoriteButtonTopBar$lambda$10;
-                    FavoriteButtonTopBar$lambda$10 = ServerTopBarKt.FavoriteButtonTopBar$lambda$10(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return FavoriteButtonTopBar$lambda$10;
+                    Unit FavoriteButtonTopBar$lambda$1;
+                    FavoriteButtonTopBar$lambda$1 = ServerTopBarKt.FavoriteButtonTopBar$lambda$1(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return FavoriteButtonTopBar$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FavoriteButtonTopBar$lambda$9(long j, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit FavoriteButtonTopBar$lambda$0(long j, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C98@3770L47,98@3754L248:ServerTopBar.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -421,25 +421,25 @@ public final class ServerTopBarKt {
                 ComposerKt.traceEventStart(1063932216, i2, -1, "com.miami.game.feature.select.server.ui.compose.MobileButtonTopBar (ServerTopBar.kt:107)");
             }
             if (z) {
-                startRestartGroup.startReplaceGroup(236647359);
+                startRestartGroup.startReplaceGroup(236646975);
                 ComposerKt.sourceInformation(startRestartGroup, "108@4132L11");
                 m4572getTransparent0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU();
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(236647971);
+                startRestartGroup.startReplaceGroup(236647587);
                 startRestartGroup.endReplaceGroup();
                 m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 236649233, "CC(remember):ServerTopBar.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 236648849, "CC(remember):ServerTopBar.kt#9igjgp");
             boolean z2 = (i2 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit MobileButtonTopBar$lambda$12$lambda$11;
-                        MobileButtonTopBar$lambda$12$lambda$11 = ServerTopBarKt.MobileButtonTopBar$lambda$12$lambda$11(Function0.this);
-                        return MobileButtonTopBar$lambda$12$lambda$11;
+                        Unit MobileButtonTopBar$lambda$0$0;
+                        MobileButtonTopBar$lambda$0$0 = ServerTopBarKt.MobileButtonTopBar$lambda$0$0(Function0.this);
+                        return MobileButtonTopBar$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -448,9 +448,9 @@ public final class ServerTopBarKt {
             ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(596446243, true, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit MobileButtonTopBar$lambda$13;
-                    MobileButtonTopBar$lambda$13 = ServerTopBarKt.MobileButtonTopBar$lambda$13(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return MobileButtonTopBar$lambda$13;
+                    Unit MobileButtonTopBar$lambda$1;
+                    MobileButtonTopBar$lambda$1 = ServerTopBarKt.MobileButtonTopBar$lambda$1(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return MobileButtonTopBar$lambda$1;
                 }
             }, startRestartGroup, 54), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -464,22 +464,22 @@ public final class ServerTopBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MobileButtonTopBar$lambda$14;
-                    MobileButtonTopBar$lambda$14 = ServerTopBarKt.MobileButtonTopBar$lambda$14(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MobileButtonTopBar$lambda$14;
+                    Unit MobileButtonTopBar$lambda$2;
+                    MobileButtonTopBar$lambda$2 = ServerTopBarKt.MobileButtonTopBar$lambda$2(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return MobileButtonTopBar$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MobileButtonTopBar$lambda$12$lambda$11(Function0 function0) {
+    public static final Unit MobileButtonTopBar$lambda$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MobileButtonTopBar$lambda$13(long j, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit MobileButtonTopBar$lambda$1(long j, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C114@4317L22,113@4288L231:ServerTopBar.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -519,12 +519,12 @@ public final class ServerTopBarKt {
                 ComposerKt.traceEventStart(420788502, i2, -1, "com.miami.game.feature.select.server.ui.compose.DesktopButtonTopBar (ServerTopBar.kt:124)");
             }
             if (z) {
-                startRestartGroup.startReplaceGroup(650828861);
+                startRestartGroup.startReplaceGroup(650828477);
                 ComposerKt.sourceInformation(startRestartGroup, "125@4651L11");
                 m4572getTransparent0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU();
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(650829473);
+                startRestartGroup.startReplaceGroup(650829089);
                 startRestartGroup.endReplaceGroup();
                 m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
             }
@@ -532,9 +532,9 @@ public final class ServerTopBarKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(-1186374773, true, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit DesktopButtonTopBar$lambda$15;
-                    DesktopButtonTopBar$lambda$15 = ServerTopBarKt.DesktopButtonTopBar$lambda$15(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return DesktopButtonTopBar$lambda$15;
+                    Unit DesktopButtonTopBar$lambda$0;
+                    DesktopButtonTopBar$lambda$0 = ServerTopBarKt.DesktopButtonTopBar$lambda$0(m4572getTransparent0d7_KjU, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return DesktopButtonTopBar$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, (i2 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -546,16 +546,16 @@ public final class ServerTopBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerTopBarKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DesktopButtonTopBar$lambda$16;
-                    DesktopButtonTopBar$lambda$16 = ServerTopBarKt.DesktopButtonTopBar$lambda$16(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DesktopButtonTopBar$lambda$16;
+                    Unit DesktopButtonTopBar$lambda$1;
+                    DesktopButtonTopBar$lambda$1 = ServerTopBarKt.DesktopButtonTopBar$lambda$1(Function0.this, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return DesktopButtonTopBar$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DesktopButtonTopBar$lambda$15(long j, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit DesktopButtonTopBar$lambda$0(long j, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C128@4770L46,127@4741L262:ServerTopBar.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

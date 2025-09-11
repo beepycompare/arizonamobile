@@ -6,7 +6,7 @@ import android.content.Context;
 public final class C0751z5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0476o5 f1179a;
+    public final C0476o5 f1183a;
     public final C0728y7 b;
 
     public C0751z5(Context context, C0476o5 c0476o5) {
@@ -14,11 +14,11 @@ public final class C0751z5 {
     }
 
     public final C0537qf a() {
-        return new C0537qf(this.b.b(this.f1179a));
+        return new C0537qf(this.b.b(this.f1183a));
     }
 
     public C0751z5(C0476o5 c0476o5, C0728y7 c0728y7) {
-        this.f1179a = c0476o5;
+        this.f1183a = c0476o5;
         this.b = c0728y7;
     }
 }

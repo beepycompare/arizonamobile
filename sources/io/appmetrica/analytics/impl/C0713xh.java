@@ -24,20 +24,20 @@ public final class C0713xh extends AbstractC0462nh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0462nh
     public final boolean a(C0477o6 c0477o6) {
-        C0651v5 c0651v5 = this.f1001a;
+        C0651v5 c0651v5 = this.f1005a;
         c0651v5.b.toString();
         if (c0651v5.t.c() && c0651v5.x()) {
             C0137b2 c0137b2 = (C0137b2) this.c.read();
-            List list = c0137b2.f798a;
+            List list = c0137b2.f802a;
             M2 m2 = c0137b2.b;
             N2 n2 = this.d;
             n2.getClass();
             C0137b2 c0137b22 = null;
-            M2 a2 = AndroidUtils.isApiAchieved(28) ? J2.a(n2.f583a, n2.b) : null;
+            M2 a2 = AndroidUtils.isApiAchieved(28) ? J2.a(n2.f587a, n2.b) : null;
             List list2 = c0137b2.c;
-            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f449a, "getting available providers", "location manager", Collections.emptyList(), new F2());
+            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f453a, "getting available providers", "location manager", Collections.emptyList(), new F2());
             Qe qe = this.b;
-            Context context = this.f1001a.f1115a;
+            Context context = this.f1005a.f1119a;
             qe.getClass();
             ArrayList a3 = new C0412lj(context, new SafePackageManager()).a();
             if (CollectionUtils.areCollectionsEqual(a3, list)) {
@@ -52,21 +52,21 @@ public final class C0713xh extends AbstractC0462nh {
             if (c0137b22 == null) {
                 if (c0651v5.A()) {
                     K9 k9 = c0651v5.n;
-                    C0477o6 a4 = C0477o6.a(c0477o6, c0137b2.f798a, c0137b2.b, this.e, c0137b2.c);
+                    C0477o6 a4 = C0477o6.a(c0477o6, c0137b2.f802a, c0137b2.b, this.e, c0137b2.c);
                     k9.a(a4, C0156bl.a(k9.c.b(a4), a4.i));
                     long currentTimeSeconds = k9.j.currentTimeSeconds();
                     k9.l = currentTimeSeconds;
-                    k9.f532a.a(currentTimeSeconds).b();
+                    k9.f536a.a(currentTimeSeconds).b();
                     return false;
                 }
                 return false;
             }
             K9 k92 = c0651v5.n;
-            C0477o6 a5 = C0477o6.a(c0477o6, c0137b22.f798a, c0137b22.b, this.e, c0137b22.c);
+            C0477o6 a5 = C0477o6.a(c0477o6, c0137b22.f802a, c0137b22.b, this.e, c0137b22.c);
             k92.a(a5, C0156bl.a(k92.c.b(a5), a5.i));
             long currentTimeSeconds2 = k92.j.currentTimeSeconds();
             k92.l = currentTimeSeconds2;
-            k92.f532a.a(currentTimeSeconds2).b();
+            k92.f536a.a(currentTimeSeconds2).b();
             this.c.save(c0137b22);
             return false;
         }

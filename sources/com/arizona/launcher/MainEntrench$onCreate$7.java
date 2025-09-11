@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: MainEntrench.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$onCreate$7", f = "MainEntrench.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$onCreate$7", f = "MainEntrench.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 final class MainEntrench$onCreate$7 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -47,7 +47,7 @@ final class MainEntrench$onCreate$7 extends SuspendLambda implements Function2<C
         ResultKt.throwOnFailure(obj);
         Context applicationContext = this.this$0.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
-        UtilsKt.checkItemsName(applicationContext, FlavorUtilKt.isArizona());
+        UtilsKt.checkItemsNameLauncher(applicationContext, FlavorUtilKt.isArizona());
         return Unit.INSTANCE;
     }
 }

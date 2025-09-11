@@ -162,13 +162,13 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
             donatePurshaseItemBinding.btnBuy.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonatePurchaseAdapter$DonatePurchaseViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonatePurchaseAdapter.DonatePurchaseViewHolder.initialize$lambda$1$lambda$0(DonatePurchaseAdapter.this, donateItemModelUi, view);
+                    DonatePurchaseAdapter.DonatePurchaseViewHolder.initialize$lambda$0$0(DonatePurchaseAdapter.this, donateItemModelUi, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void initialize$lambda$1$lambda$0(DonatePurchaseAdapter donatePurchaseAdapter, DonateItemModelUi donateItemModelUi, View view) {
+        public static final void initialize$lambda$0$0(DonatePurchaseAdapter donatePurchaseAdapter, DonateItemModelUi donateItemModelUi, View view) {
             donatePurchaseAdapter.getOnClick().invoke(Integer.valueOf(donateItemModelUi.getId()));
         }
 
@@ -217,7 +217,7 @@ public final class DonatePurchaseAdapter extends ListAdapter<DonateItemModelUi, 
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePurshaseItemBinding donatePurshaseItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11204getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m11213getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePurshaseItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

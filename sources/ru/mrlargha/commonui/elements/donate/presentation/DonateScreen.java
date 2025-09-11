@@ -103,7 +103,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$8(View view) {
+    public static final void setupListeners$lambda$0$0(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -285,42 +285,42 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         donateScreenBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$8(view);
+                DonateScreen.setupListeners$lambda$0$0(view);
             }
         });
         donateScreenBinding.topBar.btnEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$9(DonateScreen.this, view);
+                DonateScreen.setupListeners$lambda$0$1(DonateScreen.this, view);
             }
         });
         donateScreenBinding.topBar.btnAddMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$10(DonateScreenBinding.this, this, view);
+                DonateScreen.setupListeners$lambda$0$2(DonateScreenBinding.this, this, view);
             }
         });
         donateScreenBinding.topBar.btnAddAzCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$11(DonateScreenBinding.this, this, view);
+                DonateScreen.setupListeners$lambda$0$3(DonateScreenBinding.this, this, view);
             }
         });
         donateScreenBinding.topBar.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateScreen.setupListeners$lambda$13$lambda$12(DonateScreen.this, view);
+                DonateScreen.setupListeners$lambda$0$4(DonateScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$9(DonateScreen donateScreen, View view) {
+    public static final void setupListeners$lambda$0$1(DonateScreen donateScreen, View view) {
         donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 0, 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$10(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
+    public static final void setupListeners$lambda$0$2(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         if (pagesContainer.getVisibility() == 0) {
@@ -330,7 +330,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$11(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
+    public static final void setupListeners$lambda$0$3(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         if (pagesContainer.getVisibility() == 0) {
@@ -355,7 +355,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$13$lambda$12(DonateScreen donateScreen, View view) {
+    public static final void setupListeners$lambda$0$4(DonateScreen donateScreen, View view) {
         donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 3, 2);
         if (UtilsKt.getArizonaType(donateScreen.getTargetActivity())) {
             donateScreen.setVisibility(false);
@@ -387,7 +387,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11203getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11212getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {
@@ -513,13 +513,13 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         donateScreenBinding.pagesContainer.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                DonateScreen.itemReadyToShow$lambda$19$lambda$18(DonateScreen.this);
+                DonateScreen.itemReadyToShow$lambda$0$0(DonateScreen.this);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void itemReadyToShow$lambda$19$lambda$18(DonateScreen donateScreen) {
+    public static final void itemReadyToShow$lambda$0$0(DonateScreen donateScreen) {
         ProgressBar pageProgressBar = donateScreen.binding.pageProgressBar;
         Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
         pageProgressBar.setVisibility(8);

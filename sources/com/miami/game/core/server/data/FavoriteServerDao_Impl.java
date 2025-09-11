@@ -89,16 +89,16 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.miami.game.core.server.data.FavoriteServerDao_Impl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit removeFromFavorite$lambda$1;
-                removeFromFavorite$lambda$1 = FavoriteServerDao_Impl.removeFromFavorite$lambda$1(FavoriteServerDao_Impl.this, favoriteServerEntity, (SQLiteConnection) obj);
-                return removeFromFavorite$lambda$1;
+                Unit removeFromFavorite$lambda$0;
+                removeFromFavorite$lambda$0 = FavoriteServerDao_Impl.removeFromFavorite$lambda$0(FavoriteServerDao_Impl.this, favoriteServerEntity, (SQLiteConnection) obj);
+                return removeFromFavorite$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit removeFromFavorite$lambda$1(FavoriteServerDao_Impl favoriteServerDao_Impl, FavoriteServerEntity favoriteServerEntity, SQLiteConnection _connection) {
+    public static final Unit removeFromFavorite$lambda$0(FavoriteServerDao_Impl favoriteServerDao_Impl, FavoriteServerEntity favoriteServerEntity, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         favoriteServerDao_Impl.__deleteAdapterOfFavoriteServerEntity.handle(_connection, favoriteServerEntity);
         return Unit.INSTANCE;
@@ -109,15 +109,15 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
         return FlowUtil.createFlow(this.__db, false, new String[]{"favorite_server_table"}, new Function1() { // from class: com.miami.game.core.server.data.FavoriteServerDao_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allFlowFavoriteServers$lambda$2;
-                allFlowFavoriteServers$lambda$2 = FavoriteServerDao_Impl.getAllFlowFavoriteServers$lambda$2(r1, (SQLiteConnection) obj);
-                return allFlowFavoriteServers$lambda$2;
+                List allFlowFavoriteServers$lambda$0;
+                allFlowFavoriteServers$lambda$0 = FavoriteServerDao_Impl.getAllFlowFavoriteServers$lambda$0(r1, (SQLiteConnection) obj);
+                return allFlowFavoriteServers$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllFlowFavoriteServers$lambda$2(String str, SQLiteConnection _connection) {
+    public static final List getAllFlowFavoriteServers$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -138,15 +138,15 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.miami.game.core.server.data.FavoriteServerDao_Impl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allFavoriteServers$lambda$3;
-                allFavoriteServers$lambda$3 = FavoriteServerDao_Impl.getAllFavoriteServers$lambda$3(r1, (SQLiteConnection) obj);
-                return allFavoriteServers$lambda$3;
+                List allFavoriteServers$lambda$0;
+                allFavoriteServers$lambda$0 = FavoriteServerDao_Impl.getAllFavoriteServers$lambda$0(r1, (SQLiteConnection) obj);
+                return allFavoriteServers$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllFavoriteServers$lambda$3(String str, SQLiteConnection _connection) {
+    public static final List getAllFavoriteServers$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -167,16 +167,16 @@ public final class FavoriteServerDao_Impl implements FavoriteServerDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.miami.game.core.server.data.FavoriteServerDao_Impl$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dropTable$lambda$4;
-                dropTable$lambda$4 = FavoriteServerDao_Impl.dropTable$lambda$4(r1, (SQLiteConnection) obj);
-                return dropTable$lambda$4;
+                Unit dropTable$lambda$0;
+                dropTable$lambda$0 = FavoriteServerDao_Impl.dropTable$lambda$0(r1, (SQLiteConnection) obj);
+                return dropTable$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dropTable$lambda$4(String str, SQLiteConnection _connection) {
+    public static final Unit dropTable$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0518pl implements A8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0640uj f1034a;
+    public final C0640uj f1038a;
 
     public C0518pl() {
         this(new C0640uj());
@@ -17,10 +17,10 @@ public final class C0518pl implements A8 {
     /* renamed from: a */
     public final List<Zi> fromModel(C0492ol c0492ol) {
         T8 t8 = new T8();
-        t8.f678a = 1;
+        t8.f682a = 1;
         t8.b = new S8();
-        Zi fromModel = this.f1034a.fromModel(c0492ol.f1019a);
-        t8.b.f664a = (P8) fromModel.f772a;
+        Zi fromModel = this.f1038a.fromModel(c0492ol.f1023a);
+        t8.b.f668a = (P8) fromModel.f776a;
         C0749z3 c0749z3 = new C0749z3(C0749z3.b(fromModel));
         fromModel.b.getBytesTruncated();
         return Collections.singletonList(new Zi(t8, c0749z3));
@@ -33,7 +33,7 @@ public final class C0518pl implements A8 {
     }
 
     public C0518pl(C0640uj c0640uj) {
-        this.f1034a = c0640uj;
+        this.f1038a = c0640uj;
     }
 
     public final C0492ol a(List<Zi> list) {

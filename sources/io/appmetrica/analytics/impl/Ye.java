@@ -14,7 +14,7 @@ public final class Ye implements FunctionWithThrowable {
         }
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (Ze) AbstractC0124af.f789a.a(Integer.valueOf(activeNetworkInfo.getType()));
+            return (Ze) AbstractC0124af.f793a.a(Integer.valueOf(activeNetworkInfo.getType()));
         }
         return Ze.OFFLINE;
     }

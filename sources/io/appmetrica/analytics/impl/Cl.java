@@ -9,19 +9,19 @@ public final class Cl implements PermissionExtractor {
     public static final String b = "[SimplePermissionExtractor]";
 
     /* renamed from: a  reason: collision with root package name */
-    public final PermissionStrategy f390a;
+    public final PermissionStrategy f394a;
 
     public Cl(PermissionStrategy permissionStrategy) {
-        this.f390a = permissionStrategy;
+        this.f394a = permissionStrategy;
     }
 
     public final PermissionStrategy a() {
-        return this.f390a;
+        return this.f394a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor
     public final boolean hasPermission(Context context, String str) {
-        if (this.f390a.forbidUsePermission(str)) {
+        if (this.f394a.forbidUsePermission(str)) {
             return false;
         }
         return ContextPermissionChecker.hasPermission(context, str);

@@ -67,7 +67,7 @@ public final class FishingScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, exitButton, 0L, new Function0() { // from class: ru.mrlargha.arizonaui.fishing.FishingScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return FishingScreen.lambda$1$lambda$0(FishingScreen.this);
+                return FishingScreen.lambda$0$0(FishingScreen.this);
             }
         }, null, 5, null);
         fishingAdapter.setOnItemClickListener(new FishingAdapter.OnItemClickListener() { // from class: ru.mrlargha.arizonaui.fishing.FishingScreen$1$2
@@ -93,7 +93,7 @@ public final class FishingScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$1$lambda$0(FishingScreen fishingScreen) {
+    public static final Unit lambda$0$0(FishingScreen fishingScreen) {
         SAMPUIElement.notifyClick$default(fishingScreen, 0, 1, null, 4, null);
         return Unit.INSTANCE;
     }

@@ -5,11 +5,11 @@ import java.util.HashMap;
 public final class Zm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f775a;
+    public final HashMap f779a;
 
     public Zm() {
         HashMap hashMap = new HashMap();
-        this.f775a = hashMap;
+        this.f779a = hashMap;
         Tm tm = new Tm();
         Um um = new Um();
         Vm vm = new Vm();
@@ -23,6 +23,6 @@ public final class Zm {
     }
 
     public static AbstractC0132an a(Class cls) {
-        return (AbstractC0132an) Ym.f758a.f775a.get(cls);
+        return (AbstractC0132an) Ym.f762a.f779a.get(cls);
     }
 }

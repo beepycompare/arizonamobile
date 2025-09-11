@@ -66,13 +66,13 @@ public final class SpawnMenuAdapter extends RecyclerView.Adapter<SpawnMenuViewHo
         holder.getSpawnItem().spawnItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.adapter.SpawnMenuAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SpawnMenuAdapter.onBindViewHolder$lambda$3$lambda$2(SpawnMenuAdapter.this, i, view);
+                SpawnMenuAdapter.onBindViewHolder$lambda$0$0(SpawnMenuAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$3$lambda$2(SpawnMenuAdapter spawnMenuAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(SpawnMenuAdapter spawnMenuAdapter, int i, View view) {
         SelectedSpawnListener selectedSpawnListener = spawnMenuAdapter.listener;
         if (selectedSpawnListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException(ServiceSpecificExtraArgs.CastExtraArgs.LISTENER);

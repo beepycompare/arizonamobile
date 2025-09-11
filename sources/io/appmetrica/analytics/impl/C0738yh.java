@@ -12,7 +12,7 @@ public final class C0738yh extends AbstractC0462nh {
     public final boolean a(C0477o6 c0477o6) {
         Nk nk;
         C0208dl c0208dl;
-        K9 k9 = this.f1001a.n;
+        K9 k9 = this.f1005a.n;
         C0156bl c0156bl = k9.c;
         if (c0156bl.g == 0) {
             nk = c0156bl.d.b();
@@ -25,22 +25,22 @@ public final class C0738yh extends AbstractC0462nh {
         }
         if (nk != null) {
             c0208dl = new C0208dl();
-            c0208dl.f845a = nk.d;
+            c0208dl.f849a = nk.d;
             long andIncrement = nk.f.getAndIncrement();
             C0233el c0233el = nk.b;
             c0233el.a(C0233el.g, Long.valueOf(nk.f.get()));
             c0233el.b();
             c0208dl.b = andIncrement;
             c0208dl.c = TimeUnit.MILLISECONDS.toSeconds(nk.j);
-            c0208dl.d = nk.c.f639a;
+            c0208dl.d = nk.c.f643a;
         } else {
             long j = c0477o6.j;
             long a2 = c0156bl.b.a();
-            C0374k7 c0374k7 = c0156bl.f810a.e;
+            C0374k7 c0374k7 = c0156bl.f814a.e;
             EnumC0259fl enumC0259fl = EnumC0259fl.BACKGROUND;
             c0374k7.a(a2, enumC0259fl, j);
             c0208dl = new C0208dl();
-            c0208dl.f845a = a2;
+            c0208dl.f849a = a2;
             c0208dl.d = enumC0259fl;
             c0208dl.b = 0L;
             c0208dl.c = 0L;

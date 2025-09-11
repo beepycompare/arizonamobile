@@ -17,7 +17,7 @@ import ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskAda
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EmploymentTaskScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1", f = "EmploymentTaskScreen.kt", i = {}, l = {182, 183}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1", f = "EmploymentTaskScreen.kt", i = {}, l = {182, 183}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 public final class EmploymentTaskScreen$initRetrofit$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -98,7 +98,7 @@ public final class EmploymentTaskScreen$initRetrofit$1 extends SuspendLambda imp
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: EmploymentTaskScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1$1", f = "EmploymentTaskScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1$1", f = "EmploymentTaskScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

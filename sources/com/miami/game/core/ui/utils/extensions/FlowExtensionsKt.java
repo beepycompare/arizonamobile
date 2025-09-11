@@ -28,7 +28,7 @@ import kotlinx.coroutines.flow.Flow;
 /* loaded from: classes4.dex */
 public final class FlowExtensionsKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit collectInLaunchedEffectWithLifecycle$lambda$3(Flow flow, Object[] objArr, Lifecycle lifecycle, Lifecycle.State state, Function3 function3, int i, int i2, Composer composer, int i3) {
+    public static final Unit collectInLaunchedEffectWithLifecycle$lambda$2(Flow flow, Object[] objArr, Lifecycle lifecycle, Lifecycle.State state, Function3 function3, int i, int i2, Composer composer, int i3) {
         collectInLaunchedEffectWithLifecycle(flow, objArr, lifecycle, state, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -48,7 +48,7 @@ public final class FlowExtensionsKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1523529420, i, -1, "com.miami.game.core.ui.utils.extensions.rememberFlowWithLifecycle (FlowExtensions.kt:21)");
         }
-        ComposerKt.sourceInformationMarkerStart(composer, -472068542, "CC(remember):FlowExtensions.kt#9igjgp");
+        ComposerKt.sourceInformationMarkerStart(composer, -472068926, "CC(remember):FlowExtensions.kt#9igjgp");
         boolean changed = ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(state.ordinal())) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(flow) | composer.changed(lifecycle);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -110,7 +110,7 @@ public final class FlowExtensionsKt {
         if ((i & 24576) == 0) {
             i5 |= startRestartGroup.changedInstance(collector) ? 16384 : 8192;
         }
-        startRestartGroup.startMovableGroup(-1500655973, Integer.valueOf(keys.length));
+        startRestartGroup.startMovableGroup(-1500657317, Integer.valueOf(keys.length));
         ComposerKt.sourceInformation(startRestartGroup, "32@1133L7");
         int i7 = i5 | (startRestartGroup.changed(keys.length) ? 32 : 0);
         for (Object obj2 : keys) {
@@ -149,7 +149,7 @@ public final class FlowExtensionsKt {
                     spreadBuilder.add(state3);
                     spreadBuilder.addSpread(keys);
                     Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
-                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500644853, "CC(remember):FlowExtensions.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500646197, "CC(remember):FlowExtensions.kt#9igjgp");
                     changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
                     rememberedValue = startRestartGroup.rememberedValue();
                     if (!changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -185,7 +185,7 @@ public final class FlowExtensionsKt {
             spreadBuilder2.add(state3);
             spreadBuilder2.addSpread(keys);
             Object[] array2 = spreadBuilder2.toArray(new Object[spreadBuilder2.size()]);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500644853, "CC(remember):FlowExtensions.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500646197, "CC(remember):FlowExtensions.kt#9igjgp");
             changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState2);
             rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance) {
@@ -205,16 +205,16 @@ public final class FlowExtensionsKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit collectInLaunchedEffectWithLifecycle$lambda$3;
-                    collectInLaunchedEffectWithLifecycle$lambda$3 = FlowExtensionsKt.collectInLaunchedEffectWithLifecycle$lambda$3(Flow.this, keys, lifecycle2, state2, collector, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return collectInLaunchedEffectWithLifecycle$lambda$3;
+                    Unit collectInLaunchedEffectWithLifecycle$lambda$2;
+                    collectInLaunchedEffectWithLifecycle$lambda$2 = FlowExtensionsKt.collectInLaunchedEffectWithLifecycle$lambda$2(Flow.this, keys, lifecycle2, state2, collector, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                    return collectInLaunchedEffectWithLifecycle$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final <T> Function3<CoroutineScope, T, Continuation<? super Unit>, Object> collectInLaunchedEffectWithLifecycle$lambda$1(State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state) {
+    public static final <T> Function3<CoroutineScope, T, Continuation<? super Unit>, Object> collectInLaunchedEffectWithLifecycle$lambda$0(State<? extends Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>> state) {
         return (Function3) ((Function3<? super CoroutineScope, ? super T, ? super Continuation<? super Unit>, ? extends Object>) state.getValue());
     }
 }

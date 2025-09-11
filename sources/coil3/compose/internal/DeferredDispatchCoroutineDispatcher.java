@@ -50,8 +50,8 @@ public final class DeferredDispatchCoroutineDispatcher extends CoroutineDispatch
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo10663dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        getCurrentDispatcher().mo10663dispatch(coroutineContext, runnable);
+    public void mo10675dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        getCurrentDispatcher().mo10675dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher

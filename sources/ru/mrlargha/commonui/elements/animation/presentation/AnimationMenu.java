@@ -172,7 +172,7 @@ public final class AnimationMenu extends SAMPUIElement {
         bind.amExitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.AnimationMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationMenu._init_$lambda$7(AnimationMenu.this, view);
+                AnimationMenu._init_$lambda$1(AnimationMenu.this, view);
             }
         });
         bind.categoryList.setAdapter(animationCategoryAdapter);
@@ -185,7 +185,7 @@ public final class AnimationMenu extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(AnimationMenu animationMenu, View view) {
+    public static final void _init_$lambda$1(AnimationMenu animationMenu, View view) {
         animationMenu.getNotifier().clickedWrapper(UIElementID.ANIMATION_MENU.getId(), 0, 1);
         animationMenu.getNotifier().requestRemoveUIElement(animationMenu);
     }

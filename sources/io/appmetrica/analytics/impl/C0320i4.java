@@ -6,6 +6,6 @@ import io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector;
 public final class C0320i4 implements ProcessDetector {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ProcessDetector
     public final boolean isMainProcess() {
-        return A4.l().f339a.b();
+        return A4.l().f343a.b();
     }
 }

@@ -41,11 +41,11 @@ public final class C0512pf extends Td {
     }
 
     public final boolean a(boolean z) {
-        return this.f1062a.getBoolean(t.b, z);
+        return this.f1066a.getBoolean(t.b, z);
     }
 
     public final long b(long j2) {
-        return this.f1062a.getLong(j.f1078a, j2);
+        return this.f1066a.getLong(j.f1082a, j2);
     }
 
     public final C0512pf c(IdentifiersResult identifiersResult) {
@@ -77,7 +77,7 @@ public final class C0512pf extends Td {
     }
 
     public final C0656va k() {
-        String string = this.f1062a.getString(w.b, null);
+        String string = this.f1066a.getString(w.b, null);
         try {
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
@@ -97,7 +97,7 @@ public final class C0512pf extends Td {
     }
 
     public final long n() {
-        return this.f1062a.getLong(p.b, 0L);
+        return this.f1066a.getLong(p.b, 0L);
     }
 
     public final IdentifiersResult o() {
@@ -105,7 +105,7 @@ public final class C0512pf extends Td {
     }
 
     public final ScreenInfo p() {
-        return Gb.e(this.f1062a.getString(u.b, null));
+        return Gb.e(this.f1066a.getString(u.b, null));
     }
 
     public final IdentifiersResult q() {
@@ -117,11 +117,11 @@ public final class C0512pf extends Td {
     }
 
     public final boolean s() {
-        return this.f1062a.getBoolean(n.b, false);
+        return this.f1066a.getBoolean(n.b, false);
     }
 
     public final boolean t() {
-        return this.f1062a.getBoolean(v.b, false);
+        return this.f1066a.getBoolean(v.b, false);
     }
 
     public final C0512pf u() {
@@ -133,7 +133,7 @@ public final class C0512pf extends Td {
     }
 
     public final List<String> g() {
-        String string = this.f1062a.getString(i.b, null);
+        String string = this.f1066a.getString(i.b, null);
         if (TextUtils.isEmpty(string)) {
             return null;
         }
@@ -141,7 +141,7 @@ public final class C0512pf extends Td {
     }
 
     public final long a(long j2) {
-        return this.f1062a.getLong(o.b, j2);
+        return this.f1066a.getLong(o.b, j2);
     }
 
     public final C0512pf b(IdentifiersResult identifiersResult) {
@@ -161,7 +161,7 @@ public final class C0512pf extends Td {
     }
 
     public final AppMetricaConfig f() {
-        String string = this.f1062a.getString(x.b, null);
+        String string = this.f1066a.getString(x.b, null);
         if (string == null) {
             return null;
         }
@@ -177,7 +177,7 @@ public final class C0512pf extends Td {
         IdentifiersResult identifiersResult;
         String string;
         try {
-            string = this.f1062a.getString(str, null);
+            string = this.f1066a.getString(str, null);
         } catch (Throwable unused) {
         }
         if (string != null) {
@@ -219,7 +219,7 @@ public final class C0512pf extends Td {
     }
 
     public final String i(String str) {
-        return this.f1062a.getString(m.b, str);
+        return this.f1066a.getString(m.b, str);
     }
 
     public final C0512pf j(String str) {
@@ -243,7 +243,7 @@ public final class C0512pf extends Td {
         String str = w.b;
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.putOpt("libSslEnabled", c0656va.f1119a).put(DownloadsDB.DownloadColumns.STATUS, c0656va.b.getValue()).putOpt("ERROR_EXPLANATION", c0656va.c);
+            jSONObject.putOpt("libSslEnabled", c0656va.f1123a).put(DownloadsDB.DownloadColumns.STATUS, c0656va.b.getValue()).putOpt("ERROR_EXPLANATION", c0656va.c);
         } catch (Throwable unused) {
         }
         return (C0512pf) b(str, jSONObject.toString());

@@ -94,13 +94,13 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         bind.usaPlateMainButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.lambda$3$lambda$0(AzLicencePlateScreenBinding.this, this, view);
+                LicensePlatesScreen.lambda$0$0(AzLicencePlateScreenBinding.this, this, view);
             }
         });
         bind.sngPlateMainButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.lambda$3$lambda$1(AzLicencePlateScreenBinding.this, this, view);
+                LicensePlatesScreen.lambda$0$1(AzLicencePlateScreenBinding.this, this, view);
             }
         });
         bind.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda3
@@ -112,7 +112,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$0(AzLicencePlateScreenBinding azLicencePlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void lambda$0$0(AzLicencePlateScreenBinding azLicencePlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azLicencePlateScreenBinding.usaPlateMainButton.setAlpha(1.0f);
         azLicencePlateScreenBinding.sngPlateMainButton.setAlpha(0.4f);
         licensePlatesScreen.hideMainScreen();
@@ -121,7 +121,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$3$lambda$1(AzLicencePlateScreenBinding azLicencePlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void lambda$0$1(AzLicencePlateScreenBinding azLicencePlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azLicencePlateScreenBinding.sngPlateMainButton.setAlpha(1.0f);
         azLicencePlateScreenBinding.usaPlateMainButton.setAlpha(0.4f);
         licensePlatesScreen.hideMainScreen();
@@ -134,31 +134,31 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azAmericanPlateNumberScreenBinding.swipeLeftButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.usaPlatesAction$lambda$8$lambda$4(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
+                LicensePlatesScreen.usaPlatesAction$lambda$0$0(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
             }
         });
         azAmericanPlateNumberScreenBinding.swipeRightButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.usaPlatesAction$lambda$8$lambda$5(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
+                LicensePlatesScreen.usaPlatesAction$lambda$0$1(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
             }
         });
         azAmericanPlateNumberScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.usaPlatesAction$lambda$8$lambda$6(LicensePlatesScreen.this, view);
+                LicensePlatesScreen.usaPlatesAction$lambda$0$2(LicensePlatesScreen.this, view);
             }
         });
         azAmericanPlateNumberScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.usaPlatesAction$lambda$8$lambda$7(AzAmericanPlateNumberScreenBinding.this, this, view);
+                LicensePlatesScreen.usaPlatesAction$lambda$0$3(AzAmericanPlateNumberScreenBinding.this, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void usaPlatesAction$lambda$8$lambda$4(LicensePlatesScreen licensePlatesScreen, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, View view) {
+    public static final void usaPlatesAction$lambda$0$0(LicensePlatesScreen licensePlatesScreen, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, View view) {
         int i = licensePlatesScreen.index;
         if (i == 0) {
             azAmericanPlateNumberScreenBinding.swipeLeftButton.setAlpha(0.4f);
@@ -173,7 +173,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void usaPlatesAction$lambda$8$lambda$5(LicensePlatesScreen licensePlatesScreen, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, View view) {
+    public static final void usaPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, View view) {
         int size = licensePlatesScreen.usaPlates.size() - 1;
         int i = licensePlatesScreen.index;
         if (size == i) {
@@ -189,13 +189,13 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void usaPlatesAction$lambda$8$lambda$6(LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void usaPlatesAction$lambda$0$2(LicensePlatesScreen licensePlatesScreen, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_USA;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("usa", String.valueOf(licensePlatesScreen.index))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void usaPlatesAction$lambda$8$lambda$7(AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void usaPlatesAction$lambda$0$3(AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azAmericanPlateNumberScreenBinding.plateNumber.setText((CharSequence) null);
         licensePlatesScreen.hideUSAPlatesScreen();
         licensePlatesScreen.showMainScreen();
@@ -206,43 +206,43 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azChooseRegionScreenBinding.chooseRusNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$9(AzChooseRegionScreenBinding.this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$0(AzChooseRegionScreenBinding.this, view);
             }
         });
         azChooseRegionScreenBinding.chooseByNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$10(AzChooseRegionScreenBinding.this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$1(AzChooseRegionScreenBinding.this, view);
             }
         });
         azChooseRegionScreenBinding.chooseKzNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$11(AzChooseRegionScreenBinding.this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$2(AzChooseRegionScreenBinding.this, view);
             }
         });
         azChooseRegionScreenBinding.chooseUaNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$12(AzChooseRegionScreenBinding.this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$3(AzChooseRegionScreenBinding.this, view);
             }
         });
         azChooseRegionScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$13(AzChooseRegionScreenBinding.this, this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$4(AzChooseRegionScreenBinding.this, this, view);
             }
         });
         azChooseRegionScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.chooseRegionAction$lambda$15$lambda$14(LicensePlatesScreen.this, view);
+                LicensePlatesScreen.chooseRegionAction$lambda$0$5(LicensePlatesScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$9(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
+    public static final void chooseRegionAction$lambda$0$0(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
         azChooseRegionScreenBinding.chooseRusNumbers.setAlpha(1.0f);
         azChooseRegionScreenBinding.chooseKzNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseByNumbers.setAlpha(0.4f);
@@ -250,7 +250,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$10(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
+    public static final void chooseRegionAction$lambda$0$1(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
         azChooseRegionScreenBinding.chooseRusNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseKzNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseByNumbers.setAlpha(1.0f);
@@ -258,7 +258,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$11(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
+    public static final void chooseRegionAction$lambda$0$2(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
         azChooseRegionScreenBinding.chooseRusNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseKzNumbers.setAlpha(1.0f);
         azChooseRegionScreenBinding.chooseByNumbers.setAlpha(0.4f);
@@ -266,7 +266,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$12(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
+    public static final void chooseRegionAction$lambda$0$3(AzChooseRegionScreenBinding azChooseRegionScreenBinding, View view) {
         azChooseRegionScreenBinding.chooseRusNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseKzNumbers.setAlpha(0.4f);
         azChooseRegionScreenBinding.chooseByNumbers.setAlpha(0.4f);
@@ -274,7 +274,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$13(AzChooseRegionScreenBinding azChooseRegionScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void chooseRegionAction$lambda$0$4(AzChooseRegionScreenBinding azChooseRegionScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         if (azChooseRegionScreenBinding.chooseRusNumbers.getAlpha() == 1.0f) {
             licensePlatesScreen.hideChooseRegionScreen();
             licensePlatesScreen.showRusPlatesScreen();
@@ -295,7 +295,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void chooseRegionAction$lambda$15$lambda$14(LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void chooseRegionAction$lambda$0$5(LicensePlatesScreen licensePlatesScreen, View view) {
         licensePlatesScreen.hideChooseRegionScreen();
         licensePlatesScreen.showMainScreen();
     }
@@ -335,7 +335,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda4
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LicensePlatesScreen.installPlateNumber$lambda$17$lambda$16(charArray2, charArray, textView, valueAnimator);
+                    LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray2, charArray, textView, valueAnimator);
                 }
             });
             ofInt.setDuration(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
@@ -365,7 +365,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LicensePlatesScreen.installPlateNumber$lambda$17$lambda$16(charArray22, charArray, textView, valueAnimator);
+                LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray22, charArray, textView, valueAnimator);
             }
         });
         ofInt2.setDuration(ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
@@ -390,7 +390,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void installPlateNumber$lambda$17$lambda$16(char[] cArr, char[] cArr2, TextView textView, ValueAnimator it) {
+    public static final void installPlateNumber$lambda$0$0(char[] cArr, char[] cArr2, TextView textView, ValueAnimator it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Object animatedValue = it.getAnimatedValue();
         Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
@@ -406,19 +406,19 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azRusPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.rusPlatesAction$lambda$20$lambda$18(AzRusPlateScreenBinding.this, this, view);
+                LicensePlatesScreen.rusPlatesAction$lambda$0$0(AzRusPlateScreenBinding.this, this, view);
             }
         });
         azRusPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.rusPlatesAction$lambda$20$lambda$19(LicensePlatesScreen.this, azRusPlateScreenBinding, view);
+                LicensePlatesScreen.rusPlatesAction$lambda$0$1(LicensePlatesScreen.this, azRusPlateScreenBinding, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rusPlatesAction$lambda$20$lambda$18(AzRusPlateScreenBinding azRusPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void rusPlatesAction$lambda$0$0(AzRusPlateScreenBinding azRusPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azRusPlateScreenBinding.plateNumber.setText((CharSequence) null);
         azRusPlateScreenBinding.enterRegion.getText().clear();
         licensePlatesScreen.hideRusPlatesScreen();
@@ -426,7 +426,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void rusPlatesAction$lambda$20$lambda$19(LicensePlatesScreen licensePlatesScreen, AzRusPlateScreenBinding azRusPlateScreenBinding, View view) {
+    public static final void rusPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzRusPlateScreenBinding azRusPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_RUSSIA;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("rus", azRusPlateScreenBinding.enterRegion.getText().toString())));
     }
@@ -436,19 +436,19 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azUaPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.uaPlatesAction$lambda$23$lambda$21(AzUaPlateScreenBinding.this, this, view);
+                LicensePlatesScreen.uaPlatesAction$lambda$0$0(AzUaPlateScreenBinding.this, this, view);
             }
         });
         azUaPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.uaPlatesAction$lambda$23$lambda$22(LicensePlatesScreen.this, azUaPlateScreenBinding, view);
+                LicensePlatesScreen.uaPlatesAction$lambda$0$1(LicensePlatesScreen.this, azUaPlateScreenBinding, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void uaPlatesAction$lambda$23$lambda$21(AzUaPlateScreenBinding azUaPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void uaPlatesAction$lambda$0$0(AzUaPlateScreenBinding azUaPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azUaPlateScreenBinding.plateNumber.setText((CharSequence) null);
         azUaPlateScreenBinding.enterRegion.getText().clear();
         licensePlatesScreen.hideUaPlatesScreen();
@@ -456,7 +456,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void uaPlatesAction$lambda$23$lambda$22(LicensePlatesScreen licensePlatesScreen, AzUaPlateScreenBinding azUaPlateScreenBinding, View view) {
+    public static final void uaPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzUaPlateScreenBinding azUaPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_UKRAINE;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("ua", azUaPlateScreenBinding.enterRegion.getText().toString())));
     }
@@ -466,19 +466,19 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azByPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.byPlatesAction$lambda$26$lambda$24(AzByPlateScreenBinding.this, this, view);
+                LicensePlatesScreen.byPlatesAction$lambda$0$0(AzByPlateScreenBinding.this, this, view);
             }
         });
         azByPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.byPlatesAction$lambda$26$lambda$25(LicensePlatesScreen.this, azByPlateScreenBinding, view);
+                LicensePlatesScreen.byPlatesAction$lambda$0$1(LicensePlatesScreen.this, azByPlateScreenBinding, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void byPlatesAction$lambda$26$lambda$24(AzByPlateScreenBinding azByPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void byPlatesAction$lambda$0$0(AzByPlateScreenBinding azByPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azByPlateScreenBinding.plateNumber.setText((CharSequence) null);
         azByPlateScreenBinding.enterRegion.getText().clear();
         licensePlatesScreen.hideByPlatesScreen();
@@ -486,7 +486,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void byPlatesAction$lambda$26$lambda$25(LicensePlatesScreen licensePlatesScreen, AzByPlateScreenBinding azByPlateScreenBinding, View view) {
+    public static final void byPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzByPlateScreenBinding azByPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_BELARUS;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("by", azByPlateScreenBinding.enterRegion.getText().toString())));
     }
@@ -496,19 +496,19 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         azKzPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.kzPlatesAction$lambda$29$lambda$27(AzKzPlateScreenBinding.this, this, view);
+                LicensePlatesScreen.kzPlatesAction$lambda$0$0(AzKzPlateScreenBinding.this, this, view);
             }
         });
         azKzPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LicensePlatesScreen.kzPlatesAction$lambda$29$lambda$28(LicensePlatesScreen.this, azKzPlateScreenBinding, view);
+                LicensePlatesScreen.kzPlatesAction$lambda$0$1(LicensePlatesScreen.this, azKzPlateScreenBinding, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void kzPlatesAction$lambda$29$lambda$27(AzKzPlateScreenBinding azKzPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
+    public static final void kzPlatesAction$lambda$0$0(AzKzPlateScreenBinding azKzPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azKzPlateScreenBinding.plateNumber.setText((CharSequence) null);
         azKzPlateScreenBinding.enterRegion.getText().clear();
         licensePlatesScreen.hideKzPlatesScreen();
@@ -516,7 +516,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void kzPlatesAction$lambda$29$lambda$28(LicensePlatesScreen licensePlatesScreen, AzKzPlateScreenBinding azKzPlateScreenBinding, View view) {
+    public static final void kzPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzKzPlateScreenBinding azKzPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_KAZAKHSTAN;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("kz", azKzPlateScreenBinding.enterRegion.getText().toString())));
     }

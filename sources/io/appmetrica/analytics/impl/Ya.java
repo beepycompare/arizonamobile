@@ -9,26 +9,26 @@ import java.util.concurrent.Callable;
 public final class Ya implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Za f751a;
+    public final /* synthetic */ Za f755a;
 
     public Ya(Za za) {
-        this.f751a = za;
+        this.f755a = za;
     }
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
         Uri parse = Uri.parse("content://com.huawei.appmarket.commondata/item/5");
-        ContentResolver contentResolver = this.f751a.f768a.getContentResolver();
-        Za za = this.f751a;
-        za.b = contentResolver.query(parse, null, null, new String[]{za.f768a.getPackageName()}, null);
-        Cursor cursor = this.f751a.b;
+        ContentResolver contentResolver = this.f755a.f772a.getContentResolver();
+        Za za = this.f755a;
+        za.b = contentResolver.query(parse, null, null, new String[]{za.f772a.getPackageName()}, null);
+        Cursor cursor = this.f755a.b;
         if (cursor == null || !cursor.moveToFirst()) {
             return null;
         }
-        String string = this.f751a.b.getString(0);
+        String string = this.f755a.b.getString(0);
         if (TextUtils.isEmpty(string)) {
             return null;
         }
-        return new Jg(string, this.f751a.b.getLong(1), this.f751a.b.getLong(2), Ig.d);
+        return new Jg(string, this.f755a.b.getLong(1), this.f755a.b.getLong(2), Ig.d);
     }
 }

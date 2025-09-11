@@ -26,6 +26,13 @@ public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapte
         this(null, 1, null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public MobilePhoneMessengerColorsAdapter(Function1<? super ColorItem, Unit> onColorSelect) {
+        Intrinsics.checkNotNullParameter(onColorSelect, "onColorSelect");
+        this.onColorSelect = onColorSelect;
+        this.colors = new ArrayList();
+    }
+
     public /* synthetic */ MobilePhoneMessengerColorsAdapter(Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerColorsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -45,13 +52,6 @@ public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapte
 
     public final Function1<ColorItem, Unit> getOnColorSelect() {
         return this.onColorSelect;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public MobilePhoneMessengerColorsAdapter(Function1<? super ColorItem, Unit> onColorSelect) {
-        Intrinsics.checkNotNullParameter(onColorSelect, "onColorSelect");
-        this.onColorSelect = onColorSelect;
-        this.colors = new ArrayList();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -76,13 +76,13 @@ public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapte
         holder.getBinding().getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneMessengerColorsAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhoneMessengerColorsAdapter.onBindViewHolder$lambda$2(MobilePhoneMessengerColorsAdapter.this, colorItem, view);
+                MobilePhoneMessengerColorsAdapter.onBindViewHolder$lambda$1(MobilePhoneMessengerColorsAdapter.this, colorItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(MobilePhoneMessengerColorsAdapter mobilePhoneMessengerColorsAdapter, ColorItem colorItem, View view) {
+    public static final void onBindViewHolder$lambda$1(MobilePhoneMessengerColorsAdapter mobilePhoneMessengerColorsAdapter, ColorItem colorItem, View view) {
         mobilePhoneMessengerColorsAdapter.selectColor(colorItem);
         mobilePhoneMessengerColorsAdapter.onColorSelect.invoke(colorItem);
     }

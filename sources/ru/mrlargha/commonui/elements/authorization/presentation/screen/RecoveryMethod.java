@@ -28,7 +28,7 @@ public final class RecoveryMethod implements InterfaceController {
     private final int whiteColor;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(View view) {
+    public static final void _init_$lambda$4(View view) {
     }
 
     public RecoveryMethod(Activity targetActivity, int i) {
@@ -76,13 +76,13 @@ public final class RecoveryMethod implements InterfaceController {
         bind.accountRecoveryMethodNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryMethod$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryMethod._init_$lambda$4(RecoveryMethod.this, view);
+                RecoveryMethod._init_$lambda$3(RecoveryMethod.this, view);
             }
         });
         bind.accountRecoveryMethod.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryMethod$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RecoveryMethod._init_$lambda$5(view);
+                RecoveryMethod._init_$lambda$4(view);
             }
         });
     }
@@ -130,7 +130,7 @@ public final class RecoveryMethod implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(RecoveryMethod recoveryMethod, View view) {
+    public static final void _init_$lambda$3(RecoveryMethod recoveryMethod, View view) {
         String str = recoveryMethod.selectedMethod;
         if (str != null) {
             InterfaceController orCreateInterface = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.RECOVERY_HANDLER.getId(), recoveryMethod.targetActivity, recoveryMethod.backendID);

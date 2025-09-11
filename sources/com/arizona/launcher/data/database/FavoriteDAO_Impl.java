@@ -91,15 +91,15 @@ public final class FavoriteDAO_Impl implements FavoriteDAO {
         return RxRoom.Companion.createCompletable(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.FavoriteDAO_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit removeFromFavorite$lambda$1;
-                removeFromFavorite$lambda$1 = FavoriteDAO_Impl.removeFromFavorite$lambda$1(FavoriteDAO_Impl.this, server, (SQLiteConnection) obj);
-                return removeFromFavorite$lambda$1;
+                Unit removeFromFavorite$lambda$0;
+                removeFromFavorite$lambda$0 = FavoriteDAO_Impl.removeFromFavorite$lambda$0(FavoriteDAO_Impl.this, server, (SQLiteConnection) obj);
+                return removeFromFavorite$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit removeFromFavorite$lambda$1(FavoriteDAO_Impl favoriteDAO_Impl, FavoriteServer favoriteServer, SQLiteConnection _connection) {
+    public static final Unit removeFromFavorite$lambda$0(FavoriteDAO_Impl favoriteDAO_Impl, FavoriteServer favoriteServer, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         favoriteDAO_Impl.__deleteAdapterOfFavoriteServer.handle(_connection, favoriteServer);
         return Unit.INSTANCE;
@@ -110,15 +110,15 @@ public final class FavoriteDAO_Impl implements FavoriteDAO {
         return RxRoom.Companion.createObservable(this.__db, false, new String[]{"favoriteserver"}, new Function1() { // from class: com.arizona.launcher.data.database.FavoriteDAO_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allFavoriteServers$lambda$2;
-                allFavoriteServers$lambda$2 = FavoriteDAO_Impl.getAllFavoriteServers$lambda$2(r1, (SQLiteConnection) obj);
-                return allFavoriteServers$lambda$2;
+                List allFavoriteServers$lambda$0;
+                allFavoriteServers$lambda$0 = FavoriteDAO_Impl.getAllFavoriteServers$lambda$0(r1, (SQLiteConnection) obj);
+                return allFavoriteServers$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAllFavoriteServers$lambda$2(String str, SQLiteConnection _connection) {
+    public static final List getAllFavoriteServers$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -139,15 +139,15 @@ public final class FavoriteDAO_Impl implements FavoriteDAO {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.FavoriteDAO_Impl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dropTable$lambda$3;
-                dropTable$lambda$3 = FavoriteDAO_Impl.dropTable$lambda$3(r1, (SQLiteConnection) obj);
-                return dropTable$lambda$3;
+                Unit dropTable$lambda$0;
+                dropTable$lambda$0 = FavoriteDAO_Impl.dropTable$lambda$0(r1, (SQLiteConnection) obj);
+                return dropTable$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit dropTable$lambda$3(String str, SQLiteConnection _connection) {
+    public static final Unit dropTable$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

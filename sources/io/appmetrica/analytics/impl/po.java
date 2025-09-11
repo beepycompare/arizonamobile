@@ -6,14 +6,14 @@ import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvide
 public final class po implements InterfaceC0618tm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f1036a;
+    public final UtilityServiceProvider f1040a;
 
     public po(UtilityServiceProvider utilityServiceProvider) {
-        this.f1036a = utilityServiceProvider;
+        this.f1040a = utilityServiceProvider;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0618tm
     public final void a(C0493om c0493om) {
-        this.f1036a.updateConfiguration(new UtilityServiceConfiguration(c0493om.v, c0493om.u));
+        this.f1040a.updateConfiguration(new UtilityServiceConfiguration(c0493om.v, c0493om.u));
     }
 }

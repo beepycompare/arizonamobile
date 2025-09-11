@@ -341,13 +341,13 @@ public final class RegistrationAccount implements InterfaceController {
         editText.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RegistrationAccount.checkRaisingContent$lambda$9$lambda$8(RegistrationAccountBinding.this, editText, this, intRef);
+                RegistrationAccount.checkRaisingContent$lambda$0$0(RegistrationAccountBinding.this, editText, this, intRef);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkRaisingContent$lambda$9$lambda$8(final RegistrationAccountBinding registrationAccountBinding, EditText editText, final RegistrationAccount registrationAccount, final Ref.IntRef intRef) {
+    public static final void checkRaisingContent$lambda$0$0(final RegistrationAccountBinding registrationAccountBinding, EditText editText, final RegistrationAccount registrationAccount, final Ref.IntRef intRef) {
         int[] iArr = new int[2];
         registrationAccountBinding.registrationAccountPasswordPlaceholder.getLocationOnScreen(iArr);
         final int height = iArr[1] + registrationAccountBinding.registrationAccountPasswordPlaceholder.getHeight();

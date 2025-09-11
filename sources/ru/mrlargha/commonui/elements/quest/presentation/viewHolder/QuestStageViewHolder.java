@@ -55,13 +55,13 @@ public final class QuestStageViewHolder extends RecyclerView.ViewHolder {
         itemQuestStageBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.viewHolder.QuestStageViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestStageViewHolder.bind$lambda$1$lambda$0(QuestStageViewHolder.this, item, view);
+                QuestStageViewHolder.bind$lambda$0$0(QuestStageViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(QuestStageViewHolder questStageViewHolder, QuestStage questStage, View view) {
+    public static final void bind$lambda$0$0(QuestStageViewHolder questStageViewHolder, QuestStage questStage, View view) {
         questStageViewHolder.onItemClick.invoke(questStage);
     }
 }

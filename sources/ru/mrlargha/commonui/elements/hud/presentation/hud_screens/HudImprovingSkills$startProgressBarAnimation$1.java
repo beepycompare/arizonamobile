@@ -18,7 +18,7 @@ import ru.mrlargha.commonui.databinding.HudImprovingSkillsBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HudImprovingSkills.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudImprovingSkills$startProgressBarAnimation$1", f = "HudImprovingSkills.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudImprovingSkills$startProgressBarAnimation$1", f = "HudImprovingSkills.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 public final class HudImprovingSkills$startProgressBarAnimation$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ HudImprovingSkillsBinding $binding;
@@ -60,16 +60,16 @@ public final class HudImprovingSkills$startProgressBarAnimation$1 extends Suspen
         hudImprovingSkills.animateProgressBar(progressBar, proc, 1000L, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudImprovingSkills$startProgressBarAnimation$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit invokeSuspend$lambda$1$lambda$0;
-                invokeSuspend$lambda$1$lambda$0 = HudImprovingSkills$startProgressBarAnimation$1.invokeSuspend$lambda$1$lambda$0(HudImprovingSkillsModel.this, hudImprovingSkillsBinding);
-                return invokeSuspend$lambda$1$lambda$0;
+                Unit invokeSuspend$lambda$0$0;
+                invokeSuspend$lambda$0$0 = HudImprovingSkills$startProgressBarAnimation$1.invokeSuspend$lambda$0$0(HudImprovingSkillsModel.this, hudImprovingSkillsBinding);
+                return invokeSuspend$lambda$0$0;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$1$lambda$0(HudImprovingSkillsModel hudImprovingSkillsModel, HudImprovingSkillsBinding hudImprovingSkillsBinding) {
+    public static final Unit invokeSuspend$lambda$0$0(HudImprovingSkillsModel hudImprovingSkillsModel, HudImprovingSkillsBinding hudImprovingSkillsBinding) {
         if (hudImprovingSkillsModel.getNextExp() == hudImprovingSkillsModel.getMaxExp()) {
             hudImprovingSkillsBinding.skillToContainer.setBackgroundResource(R.drawable.hud_improving_skills_progress_yellow_bg);
             hudImprovingSkillsBinding.tvSkillsTo.setTextColor(ViewCompat.MEASURED_STATE_MASK);

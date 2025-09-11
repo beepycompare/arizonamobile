@@ -69,9 +69,9 @@ public final class MyBusinessParentStatAdapter extends RecyclerView.Adapter<Busi
         EasyAnimation.animateClick$default(easyAnimation, editButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessParentStatAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = MyBusinessParentStatAdapter.onBindViewHolder$lambda$2$lambda$1(MyBusinessParentStatAdapter.this, i);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyBusinessParentStatAdapter.onBindViewHolder$lambda$0$0(MyBusinessParentStatAdapter.this, i);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         MyBusinessChildStatAdapter myBusinessChildStatAdapter = new MyBusinessChildStatAdapter();
@@ -80,7 +80,7 @@ public final class MyBusinessParentStatAdapter extends RecyclerView.Adapter<Busi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(MyBusinessParentStatAdapter myBusinessParentStatAdapter, int i) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyBusinessParentStatAdapter myBusinessParentStatAdapter, int i) {
         Integer num = myBusinessParentStatAdapter.hMap.get(Integer.valueOf(i));
         if (num != null) {
             int intValue = num.intValue();

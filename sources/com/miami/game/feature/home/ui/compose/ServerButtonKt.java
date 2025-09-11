@@ -72,7 +72,7 @@ public final class ServerButtonKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M 0.5768 25.1032 C -1.3113 11.8522 8.972 0 22.3568 0 H 500.912 C 511.864 0 521.148 8.0548 522.692 18.8967 L 529.423 66.1361 C 531.311 79.387 521.028 91.239 507.643 91.239 H 29.0876 C 18.1362 91.239 8.8523 83.184 7.3075 72.343 L 0.5768 25.1032 Z"), null, 1, null);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerButton$lambda$8(HomeUiState homeUiState, Function0 function0, int i, Composer composer, int i2) {
+    public static final Unit ServerButton$lambda$1(HomeUiState homeUiState, Function0 function0, int i, Composer composer, int i2) {
         ServerButton(homeUiState, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -103,9 +103,9 @@ public final class ServerButtonKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(-1603655072, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ServerButtonKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit ServerButton$lambda$7;
-                    ServerButton$lambda$7 = ServerButtonKt.ServerButton$lambda$7(HomeUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return ServerButton$lambda$7;
+                    Unit ServerButton$lambda$0;
+                    ServerButton$lambda$0 = ServerButtonKt.ServerButton$lambda$0(HomeUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return ServerButton$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -117,16 +117,16 @@ public final class ServerButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ServerButtonKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerButton$lambda$8;
-                    ServerButton$lambda$8 = ServerButtonKt.ServerButton$lambda$8(HomeUiState.this, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerButton$lambda$8;
+                    Unit ServerButton$lambda$1;
+                    ServerButton$lambda$1 = ServerButtonKt.ServerButton$lambda$1(HomeUiState.this, function0, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerButton$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerButton$lambda$7(HomeUiState homeUiState, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit ServerButton$lambda$0(HomeUiState homeUiState, BoxScope ScalingButton, Composer composer, int i) {
         Composer composer2;
         ContentScale fillHeight;
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
@@ -144,9 +144,9 @@ public final class ServerButtonKt {
                 rememberedValue = new Function1() { // from class: com.miami.game.feature.home.ui.compose.ServerButtonKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit ServerButton$lambda$7$lambda$2$lambda$1;
-                        ServerButton$lambda$7$lambda$2$lambda$1 = ServerButtonKt.ServerButton$lambda$7$lambda$2$lambda$1((ContentDrawScope) obj);
-                        return ServerButton$lambda$7$lambda$2$lambda$1;
+                        Unit ServerButton$lambda$0$0$0;
+                        ServerButton$lambda$0$0$0 = ServerButtonKt.ServerButton$lambda$0$0$0((ContentDrawScope) obj);
+                        return ServerButton$lambda$0$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -256,7 +256,7 @@ public final class ServerButtonKt {
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 1583302100, "C82@3445L28,83@3498L273:ServerButton.kt#dswm0d");
                 float f2 = 16;
-                AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(f2), null, composer, 54, 4);
+                AnimatedLoadingKt.m8929AnimatedLoadinguFdPcIQ(true, Dp.m7251constructorimpl(f2), null, composer, 54, 4);
                 SingletonAsyncImageKt.m8334AsyncImage10Xjiaw(homeUiState.getCurrentServer().getIcon(), null, SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
@@ -294,8 +294,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -1442354001, "C100@4318L10,101@4379L13,102@4435L13,96@4104L370,106@4601L11,107@4672L10,108@4733L12,104@4499L272:ServerButton.kt#dswm0d");
-                TextKt.m2804Text4IGK_g(String.valueOf(homeUiState.getCurrentServer().getName()), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(17), composer, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 3072, 56306);
-                TextKt.m2804Text4IGK_g("ВЫБРАТЬ СЕРВЕР", (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(9), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65522);
+                TextKt.m2804Text4IGK_g(String.valueOf(homeUiState.getCurrentServer().getName()), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(17), composer, 6), 0, false, 1, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 3072, 56306);
+                TextKt.m2804Text4IGK_g("ВЫБРАТЬ СЕРВЕР", (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(9), composer, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 65522);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -305,7 +305,7 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endReplaceGroup();
             } else {
-                composer.startReplaceGroup(1175502786);
+                composer.startReplaceGroup(1175523370);
                 ComposerKt.sourceInformation(composer, "115@4980L10,112@4839L368");
                 TextKt.m2804Text4IGK_g("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m4574getWhite0d7_KjU(), TextUnitKt.getSp(12), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, TextAlign.m7128boximpl(TextAlign.Companion.m7135getCentere0LSkKk()), 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 3510, 0, 65008);
                 composer2 = composer;
@@ -332,7 +332,7 @@ public final class ServerButtonKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerButton$lambda$7$lambda$2$lambda$1(ContentDrawScope drawWithContent) {
+    public static final Unit ServerButton$lambda$0$0$0(ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         Path path2 = path;
         int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();

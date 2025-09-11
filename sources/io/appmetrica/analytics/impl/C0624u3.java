@@ -8,7 +8,7 @@ import java.util.Arrays;
 public final class C0624u3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0599t3 f1099a;
+    public final C0599t3 f1103a;
     public final GZIPCompressor b;
 
     public C0624u3() {
@@ -18,7 +18,7 @@ public final class C0624u3 {
     public final byte[] a(byte[] bArr) {
         try {
             byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
-            C0599t3 c0599t3 = this.f1099a;
+            C0599t3 c0599t3 = this.f1103a;
             byte[] bytes = "hBnBQbZrmjPXEWVJ".getBytes();
             c0599t3.getClass();
             AESEncrypter aESEncrypter = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bytes, copyOfRange);
@@ -31,7 +31,7 @@ public final class C0624u3 {
     }
 
     public C0624u3(C0599t3 c0599t3, GZIPCompressor gZIPCompressor) {
-        this.f1099a = c0599t3;
+        this.f1103a = c0599t3;
         this.b = gZIPCompressor;
     }
 }

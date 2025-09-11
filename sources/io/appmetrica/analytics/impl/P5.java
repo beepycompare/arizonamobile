@@ -5,10 +5,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class P5 implements InterfaceC0559rd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f616a;
+    public final String f620a;
 
     public P5(String str) {
-        this.f616a = str;
+        this.f620a = str;
     }
 
     public final P5 a(String str) {
@@ -16,27 +16,27 @@ public final class P5 implements InterfaceC0559rd {
     }
 
     public final String b() {
-        return this.f616a;
+        return this.f620a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof P5) && Intrinsics.areEqual(this.f616a, ((P5) obj).f616a);
+        return (obj instanceof P5) && Intrinsics.areEqual(this.f620a, ((P5) obj).f620a);
     }
 
     public final int hashCode() {
-        return this.f616a.hashCode();
+        return this.f620a.hashCode();
     }
 
     public final String toString() {
-        return "ConstantModuleEntryPointProvider(className=" + this.f616a + ')';
+        return "ConstantModuleEntryPointProvider(className=" + this.f620a + ')';
     }
 
     public static P5 a(P5 p5, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = p5.f616a;
+            str = p5.f620a;
         }
         p5.getClass();
         return new P5(str);
@@ -44,6 +44,6 @@ public final class P5 implements InterfaceC0559rd {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0559rd
     public final String a() {
-        return this.f616a;
+        return this.f620a;
     }
 }

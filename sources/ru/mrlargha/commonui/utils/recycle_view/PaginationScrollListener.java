@@ -16,14 +16,14 @@ public abstract class PaginationScrollListener extends RecyclerView.OnScrollList
 
     protected abstract void loadMoreItems();
 
-    public /* synthetic */ PaginationScrollListener(boolean z, LinearLayoutManager linearLayoutManager, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? false : z, linearLayoutManager);
-    }
-
     public PaginationScrollListener(boolean z, LinearLayoutManager layoutManager) {
         Intrinsics.checkNotNullParameter(layoutManager, "layoutManager");
         this.isReverseScroll = z;
         this.layoutManager = layoutManager;
+    }
+
+    public /* synthetic */ PaginationScrollListener(boolean z, LinearLayoutManager linearLayoutManager, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? false : z, linearLayoutManager);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener

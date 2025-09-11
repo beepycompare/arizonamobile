@@ -5,10 +5,10 @@ import androidx.fragment.app.FragmentTransaction;
 public final class Oc implements Gg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Pc f605a;
+    public final /* synthetic */ Pc f609a;
 
     public Oc(Pc pc) {
-        this.f605a = pc;
+        this.f609a = pc;
     }
 
     @Override // io.appmetrica.analytics.impl.Gg
@@ -20,6 +20,6 @@ public final class Oc implements Gg {
         c0477o6.setValueBytes(jg.a());
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
         c0477o6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f605a.a(c0477o6);
+        this.f609a.a(c0477o6);
     }
 }

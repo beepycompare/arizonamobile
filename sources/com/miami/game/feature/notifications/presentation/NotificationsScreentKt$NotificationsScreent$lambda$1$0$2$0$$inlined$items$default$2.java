@@ -1,16 +1,16 @@
-package com.miami.game.feature.home.ui.compose;
+package com.miami.game.feature.notifications.presentation;
 
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
-/* compiled from: LazyDsl.kt */
+/* compiled from: LazyGridDsl.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
-public final class NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$2 implements Function1<Integer, Object> {
+public final class NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$2 implements Function1<Integer, Object> {
     final /* synthetic */ List $items;
     final /* synthetic */ Function1 $key;
 
-    public NewsContentKt$NewsContent$lambda$2$lambda$1$$inlined$items$default$2(Function1 function1, List list) {
+    public NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$2(Function1 function1, List list) {
         this.$key = function1;
         this.$items = list;
     }

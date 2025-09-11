@@ -107,7 +107,7 @@ public final class LateMotionLayoutKt$LateMotionLayout$2$1 extends SuspendLambda
                     obj = hasNext;
                     if (!((Boolean) obj).booleanValue()) {
                         ConstraintSet next = channelIterator.next();
-                        ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m10615getOrNullimpl(this.$channel.mo10603tryReceivePtdJZtk());
+                        ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m10627getOrNullimpl(this.$channel.mo10615tryReceivePtdJZtk());
                         if (constraintSet != null) {
                             next = constraintSet;
                         }

@@ -93,13 +93,13 @@ public final class ErrorDialogFromActivityKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityRoute$lambda$3(ErrorDialogComponent errorDialogComponent, Function0 function0, Function0 function02, int i, int i2, Composer composer, int i3) {
+    public static final Unit ErrorDialogFromActivityRoute$lambda$2(ErrorDialogComponent errorDialogComponent, Function0 function0, Function0 function02, int i, int i2, Composer composer, int i3) {
         ErrorDialogFromActivityRoute(errorDialogComponent, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$12(ErrorDialogExternalUiState errorDialogExternalUiState, Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$1(ErrorDialogExternalUiState errorDialogExternalUiState, Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
         ErrorDialogFromActivityScreen(errorDialogExternalUiState, function0, function02, function03, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -126,7 +126,7 @@ public final class ErrorDialogFromActivityKt {
         } else {
             ErrorDialogComponent errorDialogComponent3 = (i2 & 1) != 0 ? null : errorDialogComponent;
             if ((i2 & 4) != 0) {
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 502805971, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 502805587, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda0
@@ -149,7 +149,7 @@ public final class ErrorDialogFromActivityKt {
             }
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3 & 112, 1);
             composer2 = startRestartGroup;
-            ErrorDialogFromActivityScreen(ErrorDialogFromActivityRoute$lambda$2(FlowExtKt.collectAsStateWithLifecycle(ErrorDialogExternalUiStateHolder.INSTANCE.getState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, composer2, 0, 7)), ErrorDialogExternalUiStateHolder.INSTANCE.getOnPositive(), ErrorDialogExternalUiStateHolder.INSTANCE.getOnNegative(), onBackClick, composer2, (i3 << 6) & 7168);
+            ErrorDialogFromActivityScreen(ErrorDialogFromActivityRoute$lambda$1(FlowExtKt.collectAsStateWithLifecycle(ErrorDialogExternalUiStateHolder.INSTANCE.getState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, composer2, 0, 7)), ErrorDialogExternalUiStateHolder.INSTANCE.getOnPositive(), ErrorDialogExternalUiStateHolder.INSTANCE.getOnNegative(), onBackClick, composer2, (i3 << 6) & 7168);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -161,9 +161,9 @@ public final class ErrorDialogFromActivityKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityRoute$lambda$3;
-                    ErrorDialogFromActivityRoute$lambda$3 = ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute$lambda$3(ErrorDialogComponent.this, onBackClick, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityRoute$lambda$3;
+                    Unit ErrorDialogFromActivityRoute$lambda$2;
+                    ErrorDialogFromActivityRoute$lambda$2 = ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute$lambda$2(ErrorDialogComponent.this, onBackClick, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return ErrorDialogFromActivityRoute$lambda$2;
                 }
             });
         }
@@ -221,9 +221,9 @@ public final class ErrorDialogFromActivityKt {
             DialogFrameKt.DialogFrame(num2, onClose, ComposableLambdaKt.rememberComposableLambda(-210437023, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityScreen$lambda$11;
-                    ErrorDialogFromActivityScreen$lambda$11 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$11(ErrorDialogExternalUiState.this, j, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityScreen$lambda$11;
+                    Unit ErrorDialogFromActivityScreen$lambda$0;
+                    ErrorDialogFromActivityScreen$lambda$0 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0(ErrorDialogExternalUiState.this, j, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return ErrorDialogFromActivityScreen$lambda$0;
                 }
             }, startRestartGroup, 54), composer2, ((i3 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -235,16 +235,16 @@ public final class ErrorDialogFromActivityKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityScreen$lambda$12;
-                    ErrorDialogFromActivityScreen$lambda$12 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$12(ErrorDialogExternalUiState.this, onConfirm, onDismiss, onClose, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityScreen$lambda$12;
+                    Unit ErrorDialogFromActivityScreen$lambda$1;
+                    ErrorDialogFromActivityScreen$lambda$1 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$1(ErrorDialogExternalUiState.this, onConfirm, onDismiss, onClose, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ErrorDialogFromActivityScreen$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$11(final ErrorDialogExternalUiState errorDialogExternalUiState, long j, final Function0 function0, final Function0 function02, Composer composer, int i) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$0(final ErrorDialogExternalUiState errorDialogExternalUiState, long j, final Function0 function0, final Function0 function02, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "C74@2689L10,74@2662L114,96@3414L54,94@3394L186,103@3589L42,104@3640L710:ErrorDialogFromActivity.kt#11d4x");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -309,9 +309,9 @@ public final class ErrorDialogFromActivityKt {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$5$lambda$4;
-                            ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$5$lambda$4 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$5$lambda$4(Function0.this);
-                            return ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$5$lambda$4;
+                            Unit ErrorDialogFromActivityScreen$lambda$0$0$0$0;
+                            ErrorDialogFromActivityScreen$lambda$0$0$0$0 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0$0$0$0(Function0.this);
+                            return ErrorDialogFromActivityScreen$lambda$0$0$0$0;
                         }
                     };
                     composer.updateRememberedValue(rememberedValue);
@@ -320,9 +320,9 @@ public final class ErrorDialogFromActivityKt {
                 DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableLambdaKt.rememberComposableLambda(-1469251392, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
-                        Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$6;
-                        ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$6 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$6(ErrorDialogExternalUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$6;
+                        Unit ErrorDialogFromActivityScreen$lambda$0$0$1;
+                        ErrorDialogFromActivityScreen$lambda$0$0$1 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0$0$1(ErrorDialogExternalUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return ErrorDialogFromActivityScreen$lambda$0$0$1;
                     }
                 }, composer, 54), composer, 48);
             }
@@ -340,9 +340,9 @@ public final class ErrorDialogFromActivityKt {
                     rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$8$lambda$7;
-                            ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$8$lambda$7 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$8$lambda$7(Function0.this);
-                            return ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$8$lambda$7;
+                            Unit ErrorDialogFromActivityScreen$lambda$0$0$2$0;
+                            ErrorDialogFromActivityScreen$lambda$0$0$2$0 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0$0$2$0(Function0.this);
+                            return ErrorDialogFromActivityScreen$lambda$0$0$2$0;
                         }
                     };
                     composer.updateRememberedValue(rememberedValue2);
@@ -351,9 +351,9 @@ public final class ErrorDialogFromActivityKt {
                 DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableLambdaKt.rememberComposableLambda(1442369824, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
-                        Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$9;
-                        ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$9 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$9(ErrorDialogExternalUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$9;
+                        Unit ErrorDialogFromActivityScreen$lambda$0$0$3;
+                        ErrorDialogFromActivityScreen$lambda$0$0$3 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0$0$3(ErrorDialogExternalUiState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return ErrorDialogFromActivityScreen$lambda$0$0$3;
                     }
                 }, composer, 54), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
                 composer.endReplaceGroup();
@@ -374,13 +374,13 @@ public final class ErrorDialogFromActivityKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$5$lambda$4(Function0 function0) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$6(ErrorDialogExternalUiState errorDialogExternalUiState, BoxScope DialogButtonNo, Composer composer, int i) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$0$0$1(ErrorDialogExternalUiState errorDialogExternalUiState, BoxScope DialogButtonNo, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonNo, "$this$DialogButtonNo");
         ComposerKt.sourceInformation(composer, "C110@3865L10,109@3813L147:ErrorDialogFromActivity.kt#11d4x");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -398,13 +398,13 @@ public final class ErrorDialogFromActivityKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$8$lambda$7(Function0 function0) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$0$0$2$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ErrorDialogFromActivityScreen$lambda$11$lambda$10$lambda$9(ErrorDialogExternalUiState errorDialogExternalUiState, BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit ErrorDialogFromActivityScreen$lambda$0$0$3(ErrorDialogExternalUiState errorDialogExternalUiState, BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C120@4213L10,119@4161L147:ErrorDialogFromActivity.kt#11d4x");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -421,7 +421,7 @@ public final class ErrorDialogFromActivityKt {
         return Unit.INSTANCE;
     }
 
-    private static final ErrorDialogExternalUiState ErrorDialogFromActivityRoute$lambda$2(State<ErrorDialogExternalUiState> state) {
+    private static final ErrorDialogExternalUiState ErrorDialogFromActivityRoute$lambda$1(State<ErrorDialogExternalUiState> state) {
         return state.getValue();
     }
 }

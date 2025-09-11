@@ -28,20 +28,20 @@ public final class PriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder>
     private final Function2<String, View, Unit> onClick;
     private List<EasterItem> priseList;
 
-    public final Function2<String, View, Unit> getOnClick() {
-        return this.onClick;
-    }
-
-    public final boolean isArizona() {
-        return this.isArizona;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public PriseAdapter(boolean z, Function2<? super String, ? super View, Unit> onClick) {
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.isArizona = z;
         this.onClick = onClick;
         this.priseList = new ArrayList();
+    }
+
+    public final Function2<String, View, Unit> getOnClick() {
+        return this.onClick;
+    }
+
+    public final boolean isArizona() {
+        return this.isArizona;
     }
 
     public final void setPriseList(List<EasterItem> list) {

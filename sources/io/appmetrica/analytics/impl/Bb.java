@@ -49,23 +49,23 @@ public enum Bb {
     public static final HashMap K = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f364a;
+    public final int f368a;
     public final String b;
 
     static {
         Bb[] values;
         for (Bb bb : values()) {
-            K.put(Integer.valueOf(bb.f364a), bb);
+            K.put(Integer.valueOf(bb.f368a), bb);
         }
     }
 
     Bb(int i, String str) {
-        this.f364a = i;
+        this.f368a = i;
         this.b = str;
     }
 
     public final int a() {
-        return this.f364a;
+        return this.f368a;
     }
 
     public static Bb a(int i) {

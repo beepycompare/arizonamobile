@@ -26,20 +26,20 @@ public final class RuStoreAppUpdateManagerFactory {
     public static final class a extends Lambda implements Function0<Unit> {
 
         /* renamed from: a */
-        public final /* synthetic */ Context f1399a;
+        public final /* synthetic */ Context f1403a;
         public final /* synthetic */ Map<String, Object> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(Context context, Map<String, ? extends Object> map) {
             super(0);
-            this.f1399a = context;
+            this.f1403a = context;
             this.b = map;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final Unit invoke() {
             AnalyticsEventProvider analyticsEventProvider = AnalyticsEventProvider.INSTANCE;
-            Context context = this.f1399a;
+            Context context = this.f1403a;
             String packageName = context.getPackageName();
             Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
             analyticsEventProvider.postAnalyticsEvent(context, packageName, new SdkInfoAnalyticsEvent("ru.rustore.sdk:appupdate", "7.0.0", RuStoreInternalConfig.Companion.create(this.b).getSdkType().getValue()));
@@ -51,7 +51,7 @@ public final class RuStoreAppUpdateManagerFactory {
     public static final class b extends Lambda implements Function1<Unit, Unit> {
 
         /* renamed from: a */
-        public static final b f1400a = new b();
+        public static final b f1404a = new b();
 
         public b() {
             super(1);
@@ -83,7 +83,7 @@ public final class RuStoreAppUpdateManagerFactory {
 
     public final RuStoreAppUpdateManager create(Context context, Map<String, ? extends Object> map) {
         Intrinsics.checkNotNullParameter(context, "context");
-        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new a(context, map)), Dispatchers.INSTANCE.getIo()), null, b.f1400a, 1, null);
+        SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new a(context, map)), Dispatchers.INSTANCE.getIo()), null, b.f1404a, 1, null);
         return new Z(context);
     }
 }

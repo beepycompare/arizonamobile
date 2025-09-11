@@ -7,16 +7,16 @@ public final class Nm implements ProtobufConverter {
     /* renamed from: a */
     public final Em fromModel(Mm mm) {
         Em em = new Em();
-        em.f427a = mm.f578a;
+        em.f431a = mm.f582a;
         return em;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new Mm(((Em) obj).f427a);
+        return new Mm(((Em) obj).f431a);
     }
 
     public final Mm a(Em em) {
-        return new Mm(em.f427a);
+        return new Mm(em.f431a);
     }
 }

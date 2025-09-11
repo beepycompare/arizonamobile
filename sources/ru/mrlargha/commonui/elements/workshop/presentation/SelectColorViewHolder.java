@@ -37,13 +37,13 @@ public final class SelectColorViewHolder extends RecyclerView.ViewHolder {
         itemWorkbenchColorBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.presentation.SelectColorViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SelectColorViewHolder.bind$lambda$1$lambda$0(SelectColorViewHolder.this, item, view);
+                SelectColorViewHolder.bind$lambda$0$0(SelectColorViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(SelectColorViewHolder selectColorViewHolder, ItemColor itemColor, View view) {
+    public static final void bind$lambda$0$0(SelectColorViewHolder selectColorViewHolder, ItemColor itemColor, View view) {
         selectColorViewHolder.onItemClicked.invoke(Integer.valueOf(selectColorViewHolder.getAdapterPosition()), itemColor);
     }
 }

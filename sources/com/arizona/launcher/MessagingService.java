@@ -75,13 +75,13 @@ public final class MessagingService extends FirebaseMessagingService {
         FirebaseMessaging.getInstance().subscribeToTopic(this.topic).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.launcher.MessagingService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
-                MessagingService.onNewToken$lambda$1(task);
+                MessagingService.onNewToken$lambda$0(task);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onNewToken$lambda$1(Task task) {
+    public static final void onNewToken$lambda$0(Task task) {
         String str;
         Intrinsics.checkNotNullParameter(task, "task");
         if (task.isSuccessful()) {

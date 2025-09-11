@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 public final class M6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Aa f568a;
+    public final Aa f572a;
     public final E6 b;
     public final Context c;
     public final C0756za d;
@@ -49,13 +49,13 @@ public final class M6 {
                     }
                     mkdir = crashesDirectory.mkdir();
                 }
-                str = rh.e.f884a.f708a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f708a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                str = rh.e.f888a.f712a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f712a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
                 b = this.d.b(str);
-                b.f735a.lock();
+                b.f739a.lock();
                 b.b.a();
-                this.f568a.getClass();
+                this.f572a.getClass();
                 printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
-                printWriter.write(new Jb(rh.f653a, rh.e, rh.d).k());
+                printWriter.write(new Jb(rh.f657a, rh.e, rh.d).k());
                 ro.a((Closeable) printWriter);
                 b.c();
                 c0756za = this.d;
@@ -65,7 +65,7 @@ public final class M6 {
                 return;
             }
             mkdir = crashesDirectory.mkdir();
-            printWriter.write(new Jb(rh.f653a, rh.e, rh.d).k());
+            printWriter.write(new Jb(rh.f657a, rh.e, rh.d).k());
             ro.a((Closeable) printWriter);
             b.c();
             c0756za = this.d;
@@ -80,17 +80,17 @@ public final class M6 {
         if (!mkdir) {
             return;
         }
-        str = rh.e.f884a.f708a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f708a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        str = rh.e.f888a.f712a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + vf.f712a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
         b = this.d.b(str);
-        b.f735a.lock();
+        b.f739a.lock();
         b.b.a();
-        this.f568a.getClass();
+        this.f572a.getClass();
         printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
     }
 
     public M6(Context context, Aa aa, E6 e6, C0756za c0756za) {
         this.c = context;
-        this.f568a = aa;
+        this.f572a = aa;
         this.b = e6;
         this.d = c0756za;
     }

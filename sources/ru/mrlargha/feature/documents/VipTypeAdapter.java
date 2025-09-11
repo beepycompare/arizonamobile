@@ -78,7 +78,7 @@ public final class VipTypeAdapter extends RecyclerView.Adapter<VipTypeViewHolder
         binding.documentsVipTypeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.VipTypeAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                VipTypeAdapter.onBindViewHolder$lambda$1$lambda$0(VipTypeAdapter.this, i, view);
+                VipTypeAdapter.onBindViewHolder$lambda$0$0(VipTypeAdapter.this, i, view);
             }
         });
         if (vipStatus2.getAvailable() == 1) {
@@ -91,7 +91,7 @@ public final class VipTypeAdapter extends RecyclerView.Adapter<VipTypeViewHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(VipTypeAdapter vipTypeAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(VipTypeAdapter vipTypeAdapter, int i, View view) {
         vipTypeAdapter.onClick.invoke(Integer.valueOf(i));
     }
 

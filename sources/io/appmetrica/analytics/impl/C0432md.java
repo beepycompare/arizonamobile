@@ -6,9 +6,9 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class C0432md {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufConverter f988a;
+    public final ProtobufConverter f992a;
 
     public C0432md(Xn xn) {
-        this.f988a = xn;
+        this.f992a = xn;
     }
 }

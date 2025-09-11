@@ -28,16 +28,16 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
     private final List<ShopItem> itemsList;
     private final Function1<ShopItem, Unit> onClick;
 
-    public final boolean isArizona() {
-        return this.isArizona;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public ShopAdapter(boolean z, Function1<? super ShopItem, Unit> onClick) {
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.isArizona = z;
         this.onClick = onClick;
         this.itemsList = new ArrayList();
+    }
+
+    public final boolean isArizona() {
+        return this.isArizona;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -74,7 +74,7 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
             binding.buyButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.adapters.ShopAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ShopAdapter.onBindViewHolder$lambda$1$lambda$0(ShopAdapter.this, shopItem, view);
+                    ShopAdapter.onBindViewHolder$lambda$0$0(ShopAdapter.this, shopItem, view);
                 }
             });
             binding.bg.setBackgroundResource(R.drawable.event_prise_item_bg);
@@ -85,7 +85,7 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(ShopAdapter shopAdapter, ShopItem shopItem, View view) {
+    public static final void onBindViewHolder$lambda$0$0(ShopAdapter shopAdapter, ShopItem shopItem, View view) {
         shopAdapter.onClick.invoke(shopItem);
     }
 

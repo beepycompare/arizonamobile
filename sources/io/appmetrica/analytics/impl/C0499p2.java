@@ -15,12 +15,12 @@ public final class C0499p2 extends AbstractC0462nh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0462nh
     public final boolean a(C0477o6 c0477o6) {
-        C0651v5 c0651v5 = this.f1001a;
+        C0651v5 c0651v5 = this.f1005a;
         if (!this.b.c() && !this.b.d()) {
             if (((Gh) c0651v5.k.a()).e) {
                 this.c.b();
             }
-            C0376k9 c0376k9 = this.f1001a.l;
+            C0376k9 c0376k9 = this.f1005a.l;
             if (c0376k9.c == null) {
                 c0376k9.a();
             }
@@ -29,11 +29,11 @@ public final class C0499p2 extends AbstractC0462nh {
             c0428m9.b = new HashSet();
             c0428m9.d = 0;
             C0428m9 c0428m92 = c0376k9.c;
-            c0428m92.f985a = true;
+            c0428m92.f989a = true;
             C0506p9 c0506p9 = c0376k9.b;
             IBinaryDataHelper iBinaryDataHelper = c0506p9.c;
             C0480o9 c0480o9 = c0506p9.b;
-            c0506p9.f1029a.getClass();
+            c0506p9.f1033a.getClass();
             U9 a2 = C0454n9.a(c0428m92);
             c0480o9.getClass();
             iBinaryDataHelper.insert("event_hashes", MessageNano.toByteArray(a2));

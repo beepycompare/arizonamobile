@@ -23,15 +23,15 @@ public final class GradientTextView extends AppCompatTextView {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ GradientTextView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i & 2) != 0 ? null : attributeSet);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GradientTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         Intrinsics.checkNotNullParameter(context, "context");
         this.colorArrayList = new int[]{-1, -1};
+    }
+
+    public /* synthetic */ GradientTextView(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i & 2) != 0 ? null : attributeSet);
     }
 
     @Override // android.view.View

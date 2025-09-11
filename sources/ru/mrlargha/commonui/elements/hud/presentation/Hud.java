@@ -130,11 +130,11 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$15(View view) {
+    public static final void lambda$0$13(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$18$lambda$17(View view, MotionEvent motionEvent) {
+    public static final boolean lambda$0$15(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -210,49 +210,49 @@ public final class Hud extends SAMPUIElement {
         bind.leftMenu.btnOpenRadialMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$3(targetActivity, this, i, view);
+                Hud.lambda$0$2(targetActivity, this, i, view);
             }
         });
         bind.leftMenu.btnOpenQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$4(targetActivity, this, i, view);
+                Hud.lambda$0$3(targetActivity, this, i, view);
             }
         });
         bind.leftMenu.btnOpenBattlePass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$5(targetActivity, this, i, view);
+                Hud.lambda$0$4(targetActivity, this, i, view);
             }
         });
         bind.hudStreamerButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$6(targetActivity, this, i, view);
+                Hud.lambda$0$5(targetActivity, this, i, view);
             }
         });
         bind.hudMenuButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$7(targetActivity, this, i, view);
+                Hud.lambda$0$6(targetActivity, this, i, view);
             }
         });
         bind.hudPhoneButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$8(targetActivity, this, i, view);
+                Hud.lambda$0$7(targetActivity, this, i, view);
             }
         });
         bind.hudInventoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$9(targetActivity, this, view);
+                Hud.lambda$0$8(targetActivity, this, view);
             }
         });
         bind.hudDonateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$10(targetActivity, this, i, view);
+                Hud.lambda$0$9(targetActivity, this, i, view);
             }
         });
         bind.hudServerInfoContainer.setVisibility(8);
@@ -265,7 +265,7 @@ public final class Hud extends SAMPUIElement {
         bind.ivHorn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$13(Hud.this, i, bind, view);
+                Hud.lambda$0$11(Hud.this, i, bind, view);
             }
         });
         bind.imageButtonInteraction.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda17
@@ -277,7 +277,7 @@ public final class Hud extends SAMPUIElement {
         bind.newMessageContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$18$lambda$15(view);
+                Hud.lambda$0$13(view);
             }
         });
         bind.groupButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda19
@@ -289,7 +289,7 @@ public final class Hud extends SAMPUIElement {
         bind.groupRv.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda20
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                return Hud.lambda$18$lambda$17(view, motionEvent);
+                return Hud.lambda$0$15(view, motionEvent);
             }
         });
         bind.groupRv.setAdapter(groupAdapter);
@@ -304,44 +304,44 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$3(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$2(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 9, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$4(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$3(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 4, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$5(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$4(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 5, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$6(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$5(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 8, -1);
         hud.streamerState = !hud.streamerState;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$7(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$6(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 0, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$8(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$7(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 1, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$9(Activity activity, Hud hud, View view) {
+    public static final void lambda$0$8(Activity activity, Hud hud, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         IBackendNotifier iBackendNotifier = hud.backendNotifier;
         int id = UIElementID.INVENTORY.getId();
@@ -351,13 +351,13 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$10(Activity activity, Hud hud, int i, View view) {
+    public static final void lambda$0$9(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 3, -1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$18$lambda$13(Hud hud, int i, final HudPageBinding hudPageBinding, View view) {
+    public static final void lambda$0$11(Hud hud, int i, final HudPageBinding hudPageBinding, View view) {
         hud.backendNotifier.clickedWrapper(i, -1, 2);
         hudPageBinding.ivHornState.setImageResource(R.drawable.ic_switch_off);
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda8
@@ -755,9 +755,9 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit noticeState$lambda$29$lambda$26;
-                    noticeState$lambda$29$lambda$26 = Hud.setNoticeState$lambda$29$lambda$26(Hud.this);
-                    return noticeState$lambda$29$lambda$26;
+                    Unit noticeState$lambda$0$0;
+                    noticeState$lambda$0$0 = Hud.setNoticeState$lambda$0$0(Hud.this);
+                    return noticeState$lambda$0$0;
                 }
             }, 3, null);
         } else if (type == Companion.NoticeType.NOTICE_WITHOUT_DESCRIPTION.getId()) {
@@ -781,9 +781,9 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation.animateClick$default(easyAnimation2, actionNoticeWithoutDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit noticeState$lambda$29$lambda$27;
-                    noticeState$lambda$29$lambda$27 = Hud.setNoticeState$lambda$29$lambda$27(Hud.this);
-                    return noticeState$lambda$29$lambda$27;
+                    Unit noticeState$lambda$0$1;
+                    noticeState$lambda$0$1 = Hud.setNoticeState$lambda$0$1(Hud.this);
+                    return noticeState$lambda$0$1;
                 }
             }, 3, null);
         } else if (type == Companion.NoticeType.ACTION_NOTICE_WITH_DESCRIPTION.getId()) {
@@ -801,9 +801,9 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation.animateClick$default(easyAnimation3, actionNoticeWithDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit noticeState$lambda$29$lambda$28;
-                    noticeState$lambda$29$lambda$28 = Hud.setNoticeState$lambda$29$lambda$28(Hud.this);
-                    return noticeState$lambda$29$lambda$28;
+                    Unit noticeState$lambda$0$2;
+                    noticeState$lambda$0$2 = Hud.setNoticeState$lambda$0$2(Hud.this);
+                    return noticeState$lambda$0$2;
                 }
             }, 3, null);
         } else if (type == Companion.NoticeType.NOTICE_WITH_DESCRIPTION.getId()) {
@@ -818,19 +818,19 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setNoticeState$lambda$29$lambda$26(Hud hud) {
+    public static final Unit setNoticeState$lambda$0$0(Hud hud) {
         hud.backendNotifier.clickedWrapper(hud.getBackendID(), 7, -1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setNoticeState$lambda$29$lambda$27(Hud hud) {
+    public static final Unit setNoticeState$lambda$0$1(Hud hud) {
         hud.backendNotifier.clickedWrapper(hud.getBackendID(), 7, -1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setNoticeState$lambda$29$lambda$28(Hud hud) {
+    public static final Unit setNoticeState$lambda$0$2(Hud hud) {
         hud.backendNotifier.clickedWrapper(hud.getBackendID(), 7, -1);
         return Unit.INSTANCE;
     }
@@ -956,9 +956,9 @@ public final class Hud extends SAMPUIElement {
                         hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                Unit onBackendMessage$lambda$33;
-                                onBackendMessage$lambda$33 = Hud.onBackendMessage$lambda$33(Hud.this, ((Integer) obj).intValue());
-                                return onBackendMessage$lambda$33;
+                                Unit onBackendMessage$lambda$3;
+                                onBackendMessage$lambda$3 = Hud.onBackendMessage$lambda$3(Hud.this, ((Integer) obj).intValue());
+                                return onBackendMessage$lambda$3;
                             }
                         });
                         return;
@@ -1096,7 +1096,7 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBackendMessage$lambda$33(Hud hud, int i) {
+    public static final Unit onBackendMessage$lambda$3(Hud hud, int i) {
         hud.backendNotifier.clickedWrapper(hud.getBackendID(), i, BackendHudIds.PROPOSAL_SCREEN_SEND_STATUS.getSubId());
         return Unit.INSTANCE;
     }
@@ -1342,7 +1342,7 @@ public final class Hud extends SAMPUIElement {
         hudProgressBarContainerBinding.tvNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.showProgressBar$lambda$38$lambda$37(Hud.this, view);
+                Hud.showProgressBar$lambda$0$0(Hud.this, view);
             }
         });
         hudProgressBarContainerBinding.getRoot().setVisibility(0);
@@ -1359,7 +1359,7 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void showProgressBar$lambda$38$lambda$37(Hud hud, View view) {
+    public static final void showProgressBar$lambda$0$0(Hud hud, View view) {
         hud.backendNotifier.clickedWrapper(hud.getBackendID(), 10, 9);
     }
 

@@ -244,7 +244,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
     }
 
     public String toString() {
-        return getJClass() + " (Kotlin reflection is not available)";
+        return getJClass().toString() + " (Kotlin reflection is not available)";
     }
 
     /* compiled from: ClassReference.kt */

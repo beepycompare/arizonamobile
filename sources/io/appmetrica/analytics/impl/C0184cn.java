@@ -10,10 +10,10 @@ public final class C0184cn extends Yi {
 
     @Override // io.appmetrica.analytics.impl.Yi
     public final Object a(int i) {
-        return this.f755a.getResources().getStringArray(i);
+        return this.f759a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f755a.getResources().getStringArray(i);
+        return this.f759a.getResources().getStringArray(i);
     }
 }

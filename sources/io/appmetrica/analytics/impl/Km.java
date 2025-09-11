@@ -27,15 +27,15 @@ import kotlin.text.StringsKt;
 public final class Km {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lm f540a;
+    public final Lm f544a;
     public volatile NetworkTask b;
 
     public Km(Lm lm) {
-        this.f540a = lm;
+        this.f544a = lm;
     }
 
     public final Context b() {
-        return this.f540a.f560a;
+        return this.f544a.f564a;
     }
 
     public final synchronized NetworkTask c() {
@@ -47,11 +47,11 @@ public final class Km {
                     if (networkTask != null && !networkTask.isRemoved()) {
                     }
                     C0389km d = d();
-                    C0536qe c0536qe = C0536qe.f1045a;
+                    C0536qe c0536qe = C0536qe.f1049a;
                     C0286gm c0286gm = new C0286gm(new Be(), Na.F.o());
                     FinalConfigProvider finalConfigProvider = new FinalConfigProvider(d);
                     try {
-                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new N5(this.f540a.f560a), new AllHostsExponentialBackoffPolicy(C0536qe.f1045a.a(EnumC0485oe.STARTUP)), new Im(this, new C0131am(), new FullUrlFormer(c0286gm, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), C0536qe.c);
+                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new N5(this.f544a.f564a), new AllHostsExponentialBackoffPolicy(C0536qe.f1049a.a(EnumC0485oe.STARTUP)), new Im(this, new C0131am(), new FullUrlFormer(c0286gm, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), C0536qe.c);
                         this.b = networkTask2;
                         networkTask = networkTask2;
                     } catch (Throwable th) {
@@ -71,40 +71,40 @@ public final class Km {
     }
 
     public final C0389km d() {
-        return (C0389km) this.f540a.l.a();
+        return (C0389km) this.f544a.l.a();
     }
 
     public final C0493om e() {
         C0493om c0493om;
-        Rl rl = this.f540a.l;
+        Rl rl = this.f544a.l;
         synchronized (rl) {
-            c0493om = rl.c.f945a;
+            c0493om = rl.c.f949a;
         }
         return c0493om;
     }
 
     public final void f() {
         C0493om c0493om;
-        Rl rl = this.f540a.l;
+        Rl rl = this.f544a.l;
         synchronized (rl) {
-            c0493om = rl.c.f945a;
+            c0493om = rl.c.f949a;
         }
         C0593sm c0593sm = c0493om.c;
         C0568rm a2 = c0593sm.a(c0593sm.m);
-        String str = c0493om.f1020a;
+        String str = c0493om.f1024a;
         String str2 = c0493om.b;
-        vo voVar = this.f540a.n;
+        vo voVar = this.f544a.n;
         String str3 = c0493om.d;
         voVar.getClass();
         if (!vo.a(str3)) {
-            a2.f1067a = this.f540a.m.a().id;
+            a2.f1071a = this.f544a.m.a().id;
         }
-        String str4 = c0493om.f1020a;
+        String str4 = c0493om.f1024a;
         if (str4 == null || str4.length() == 0) {
-            str = this.f540a.h.a();
+            str = this.f544a.h.a();
             str2 = "";
         }
-        List<String> list = this.f540a.c.e;
+        List<String> list = this.f544a.c.e;
         a2.g = (list == null || list.isEmpty()) ? null : null;
         C0493om c0493om2 = new C0493om(str, str2, new C0593sm(a2));
         b(c0493om2);
@@ -125,19 +125,19 @@ public final class Km {
             return false;
         }
         C0493om e = e();
-        Set set = AbstractC0415lm.f974a;
+        Set set = AbstractC0415lm.f978a;
         boolean z3 = true;
         if (!e.w) {
-            if (AbstractC0415lm.b.currentTimeSeconds() <= e.o + e.A.f578a) {
+            if (AbstractC0415lm.b.currentTimeSeconds() <= e.o + e.A.f582a) {
                 z = false;
                 if (!z) {
-                    if (AbstractC0415lm.a(e.d) && AbstractC0415lm.a(e.f1020a) && AbstractC0415lm.a(e.b)) {
+                    if (AbstractC0415lm.a(e.d) && AbstractC0415lm.a(e.f1024a) && AbstractC0415lm.a(e.b)) {
                         z2 = true;
                     }
                     z = !z2;
-                    C0139b4 c0139b4 = this.f540a.k;
+                    C0139b4 c0139b4 = this.f544a.k;
                     Map map = d().h;
-                    Y3 y3 = this.f540a.j;
+                    Y3 y3 = this.f544a.j;
                     c0139b4.getClass();
                     boolean a2 = C0139b4.a(map, e, y3);
                     if (z2) {
@@ -159,16 +159,16 @@ public final class Km {
     }
 
     public final C0476o5 a() {
-        return this.f540a.f;
+        return this.f544a.f;
     }
 
     public final synchronized void b(C0493om c0493om) {
-        this.f540a.l.a(c0493om);
-        C0467nm c0467nm = this.f540a.g;
-        c0467nm.b.a(c0493om.f1020a);
+        this.f544a.l.a(c0493om);
+        C0467nm c0467nm = this.f544a.g;
+        c0467nm.b.a(c0493om.f1024a);
         c0467nm.b.b(c0493om.b);
-        c0467nm.f1004a.save(c0493om.c);
-        this.f540a.e.a(c0493om);
+        c0467nm.f1008a.save(c0493om.c);
+        this.f544a.e.a(c0493om);
     }
 
     public final synchronized boolean a(List<String> list, Map<String, String> map) {
@@ -185,21 +185,21 @@ public final class Km {
         String str;
         boolean equals;
         String a2 = Pm.a(c0389km.h);
-        Map map = c0389km.i.f630a;
+        Map map = c0389km.i.f634a;
         String str2 = c0441mm.j;
         String str3 = e().k;
         if (!Pm.a(Pm.a(str2))) {
             str2 = Pm.a(Pm.a(str3)) ? str3 : null;
         }
-        String str4 = e().f1020a;
+        String str4 = e().f1024a;
         if (str4 != null) {
             str = StringsKt.isBlank(str4) ? null : str4;
         }
         str = c0441mm.h;
         C0568rm c0568rm = new C0568rm(c0441mm.b);
         String str5 = c0441mm.i;
-        c0568rm.o = this.f540a.i.currentTimeSeconds();
-        c0568rm.f1067a = e().d;
+        c0568rm.o = this.f544a.i.currentTimeSeconds();
+        c0568rm.f1071a = e().d;
         c0568rm.c = c0441mm.d;
         c0568rm.f = c0441mm.c;
         c0568rm.g = c0389km.e;
@@ -210,7 +210,7 @@ public final class Km {
         c0568rm.i = c0441mm.o;
         c0568rm.j = str2;
         c0568rm.k = a2;
-        this.f540a.k.getClass();
+        this.f544a.k.getClass();
         HashMap a3 = Pm.a(str2);
         if (ro.a(map)) {
             equals = ro.a((Map) a3);
@@ -257,7 +257,7 @@ public final class Km {
                     } catch (Throwable unused) {
                     }
                     long longValue = l == null ? l.longValue() : 0L;
-                    AbstractC0517pk.f1033a.a(longValue, c0441mm.l);
+                    AbstractC0517pk.f1037a.a(longValue, c0441mm.l);
                     a2 = a(c0441mm, c0389km, longValue);
                     h();
                     b(a2);
@@ -267,7 +267,7 @@ public final class Km {
             l = null;
             if (l == null) {
             }
-            AbstractC0517pk.f1033a.a(longValue, c0441mm.l);
+            AbstractC0517pk.f1037a.a(longValue, c0441mm.l);
             a2 = a(c0441mm, c0389km, longValue);
             h();
             b(a2);
@@ -278,13 +278,13 @@ public final class Km {
 
     public final void a(C0493om c0493om) {
         ArrayList arrayList;
-        Lm lm = this.f540a;
+        Lm lm = this.f544a;
         Ol ol = lm.d;
         String str = lm.b;
-        synchronized (ol.f609a.b) {
-            Ql ql = ol.f609a;
+        synchronized (ol.f613a.b) {
+            Ql ql = ol.f613a;
             ql.c = c0493om;
-            Collection collection = (Collection) ql.f640a.f619a.get(str);
+            Collection collection = (Collection) ql.f644a.f623a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
             } else {
@@ -301,12 +301,12 @@ public final class Km {
         synchronized (this) {
             this.b = null;
         }
-        Lm lm = this.f540a;
-        lm.d.a(lm.f.f1012a, sl, e());
+        Lm lm = this.f544a;
+        lm.d.a(lm.f.f1016a, sl, e());
     }
 
     public final synchronized void a(C0337im c0337im) {
-        this.f540a.l.a(c0337im);
+        this.f544a.l.a(c0337im);
         C0389km d = d();
         if (d.k) {
             List list = d.j;
@@ -315,7 +315,7 @@ public final class Km {
                     C0493om e = e();
                     C0593sm c0593sm = e.c;
                     C0568rm a2 = c0593sm.a(c0593sm.m);
-                    String str = e.f1020a;
+                    String str = e.f1024a;
                     String str2 = e.b;
                     a2.g = list;
                     C0493om c0493om = new C0493om(str, str2, new C0593sm(a2));
@@ -328,7 +328,7 @@ public final class Km {
                 C0493om e2 = e();
                 C0593sm c0593sm2 = e2.c;
                 C0568rm a3 = c0593sm2.a(c0593sm2.m);
-                String str3 = e2.f1020a;
+                String str3 = e2.f1024a;
                 String str4 = e2.b;
                 a3.g = null;
                 C0493om c0493om2 = new C0493om(str3, str4, new C0593sm(a3));

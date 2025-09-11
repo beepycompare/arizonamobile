@@ -59,9 +59,9 @@ public final class MyBusinessMenuAdapter extends RecyclerView.Adapter<BusinessVi
         EasyAnimation.animateClick$default(easyAnimation, menuItem3, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.biz.MyBusinessMenuAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$4$lambda$3;
-                onBindViewHolder$lambda$4$lambda$3 = MyBusinessMenuAdapter.onBindViewHolder$lambda$4$lambda$3(MyBusinessScreen.Companion.MenuItem.this, this);
-                return onBindViewHolder$lambda$4$lambda$3;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyBusinessMenuAdapter.onBindViewHolder$lambda$0$0(MyBusinessScreen.Companion.MenuItem.this, this);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         MyBusinessChildMenuAdapter myBusinessChildMenuAdapter = new MyBusinessChildMenuAdapter();
@@ -93,7 +93,7 @@ public final class MyBusinessMenuAdapter extends RecyclerView.Adapter<BusinessVi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$4$lambda$3(MyBusinessScreen.Companion.MenuItem menuItem, MyBusinessMenuAdapter myBusinessMenuAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyBusinessScreen.Companion.MenuItem menuItem, MyBusinessMenuAdapter myBusinessMenuAdapter) {
         menuItem.setPressed(!menuItem.isPressed());
         for (MyBusinessScreen.Companion.MenuItem menuItem2 : myBusinessMenuAdapter.menuItemList) {
             if (menuItem2.getId() != menuItem.getId()) {

@@ -14,7 +14,7 @@ import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {3, 4}, l = {58, 59, 62, 67, 68}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"})
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {3, 4}, l = {58, 59, 62, 67, 68}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -105,7 +105,7 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ServersInteractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$1", f = "ServersInteractor.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$1", f = "ServersInteractor.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: com.miami.game.core.server.ServersInteractor$initial$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -152,7 +152,7 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ServersInteractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$2", f = "ServersInteractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$2", f = "ServersInteractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: com.miami.game.core.server.ServersInteractor$initial$1$2  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

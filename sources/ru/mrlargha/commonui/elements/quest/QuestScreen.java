@@ -117,7 +117,7 @@ public final class QuestScreen extends SAMPUIElement {
                 rodinaQuestScreenBinding.rodinaQuestAwardsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        QuestScreen.installQuestLayout$lambda$5$lambda$3(QuestScreen.this, questLine, view);
+                        QuestScreen.installQuestLayout$lambda$0$1(QuestScreen.this, questLine, view);
                     }
                 });
                 if (this.isArizonaType) {
@@ -128,7 +128,7 @@ public final class QuestScreen extends SAMPUIElement {
                 rodinaQuestScreenBinding.rodinaQuestAwardsCancelButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        QuestScreen.installQuestLayout$lambda$5$lambda$4(QuestScreen.this, questLine, view);
+                        QuestScreen.installQuestLayout$lambda$0$2(QuestScreen.this, questLine, view);
                     }
                 });
                 this.questAdapter.setOnQuestClickListener(new QuestScreen$installQuestLayout$1$4(rodinaQuestScreenBinding, this));
@@ -146,12 +146,12 @@ public final class QuestScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void installQuestLayout$lambda$5$lambda$3(QuestScreen questScreen, QuestLine questLine, View view) {
+    public static final void installQuestLayout$lambda$0$1(QuestScreen questScreen, QuestLine questLine, View view) {
         SAMPUIElement.notifyClick$default(questScreen, 0, questLine.getId(), null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void installQuestLayout$lambda$5$lambda$4(QuestScreen questScreen, QuestLine questLine, View view) {
+    public static final void installQuestLayout$lambda$0$2(QuestScreen questScreen, QuestLine questLine, View view) {
         SAMPUIElement.notifyClick$default(questScreen, 1, questLine.getId(), null, 4, null);
     }
 

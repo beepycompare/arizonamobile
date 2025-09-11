@@ -47,7 +47,7 @@ public final class LinkingScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, exitButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.account_linking.LinkingScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LinkingScreen.lambda$3$lambda$0(LinkingScreen.this);
+                return LinkingScreen.lambda$0$0(LinkingScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -56,7 +56,7 @@ public final class LinkingScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, tgButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.account_linking.LinkingScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LinkingScreen.lambda$3$lambda$1(LinkingScreen.this);
+                return LinkingScreen.lambda$0$1(LinkingScreen.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -65,25 +65,25 @@ public final class LinkingScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation3, vkButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.account_linking.LinkingScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LinkingScreen.lambda$3$lambda$2(LinkingScreen.this);
+                return LinkingScreen.lambda$0$2(LinkingScreen.this);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$0(LinkingScreen linkingScreen) {
+    public static final Unit lambda$0$0(LinkingScreen linkingScreen) {
         SAMPUIElement.notifyClick$default(linkingScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$1(LinkingScreen linkingScreen) {
+    public static final Unit lambda$0$1(LinkingScreen linkingScreen) {
         SAMPUIElement.notifyClick$default(linkingScreen, 0, 1, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$3$lambda$2(LinkingScreen linkingScreen) {
+    public static final Unit lambda$0$2(LinkingScreen linkingScreen) {
         SAMPUIElement.notifyClick$default(linkingScreen, 0, 2, null, 4, null);
         return Unit.INSTANCE;
     }

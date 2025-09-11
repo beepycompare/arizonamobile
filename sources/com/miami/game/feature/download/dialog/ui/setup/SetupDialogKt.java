@@ -61,7 +61,7 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes4.dex */
 public final class SetupDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$20(boolean z, String str, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, int i, Composer composer, int i2) {
+    public static final Unit SetupDialogContent$lambda$2(boolean z, String str, Function0 function0, Function0 function02, Function0 function03, Function0 function04, Function0 function05, int i, Composer composer, int i2) {
         SetupDialogContent(z, str, function0, function02, function03, function04, function05, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -98,7 +98,7 @@ public final class SetupDialogKt {
             BackHandlerKt.BackHandler(false, onBackClick, startRestartGroup, i3, 1);
             SharedEventFlow<CommonDialogUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963960728, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963961112, "CC(remember):SetupDialog.kt#9igjgp");
             boolean z = (i3 == 32) | ((i2 & 896) == 256);
             SetupDialogKt$SetupDialogRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -109,7 +109,7 @@ public final class SetupDialogKt {
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             ObserveExternalNavigationActionsKt.observeExternalNavigationActions(component.getExternalNavigationAction(), startRestartGroup, 0);
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963948490, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963948874, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             SetupDialogKt$SetupDialogRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -118,7 +118,7 @@ public final class SetupDialogKt {
             }
             KFunction kFunction = (KFunction) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963947146, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963947530, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             SetupDialogKt$SetupDialogRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -129,7 +129,7 @@ public final class SetupDialogKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             String descriptionText = SetupDialogRoute$lambda$1(collectAsStateWithLifecycle).getDescriptionText();
             boolean isPrivacyAccepted = SetupDialogRoute$lambda$1(collectAsStateWithLifecycle).isPrivacyAccepted();
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963942601, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963942985, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changedInstance3 = startRestartGroup.changedInstance(component);
             SetupDialogKt$SetupDialogRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
@@ -138,7 +138,7 @@ public final class SetupDialogKt {
             }
             KFunction kFunction3 = (KFunction) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963941290, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963941674, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changedInstance4 = startRestartGroup.changedInstance(component);
             SetupDialogKt$SetupDialogRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -147,7 +147,7 @@ public final class SetupDialogKt {
             }
             KFunction kFunction4 = (KFunction) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963939979, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -963940363, "CC(remember):SetupDialog.kt#9igjgp");
             boolean changedInstance5 = startRestartGroup.changedInstance(component);
             SetupDialogKt$SetupDialogRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
             if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
@@ -165,7 +165,7 @@ public final class SetupDialogKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda2
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     Unit SetupDialogRoute$lambda$7;
@@ -220,7 +220,7 @@ public final class SetupDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1274880745, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.SetupDialogContent (SetupDialog.kt:84)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1094706438, "CC(remember):SetupDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1094708966, "CC(remember):SetupDialog.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -229,12 +229,12 @@ public final class SetupDialogKt {
             final MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(97924095, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda0
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(97924095, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SetupDialogContent$lambda$19;
-                    SetupDialogContent$lambda$19 = SetupDialogKt.SetupDialogContent$lambda$19(updateSize, z2, onPolicy, onTerms, mutableState, onDismiss, onAccept, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return SetupDialogContent$lambda$19;
+                    Unit SetupDialogContent$lambda$1;
+                    SetupDialogContent$lambda$1 = SetupDialogKt.SetupDialogContent$lambda$1(updateSize, z2, onPolicy, onTerms, mutableState, onDismiss, onAccept, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return SetupDialogContent$lambda$1;
                 }
             }, startRestartGroup, 54), composer2, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -243,19 +243,19 @@ public final class SetupDialogKt {
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda1
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SetupDialogContent$lambda$20;
-                    SetupDialogContent$lambda$20 = SetupDialogKt.SetupDialogContent$lambda$20(z, updateSize, onConfirm, onDismiss, onPolicy, onTerms, onAccept, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SetupDialogContent$lambda$20;
+                    Unit SetupDialogContent$lambda$2;
+                    SetupDialogContent$lambda$2 = SetupDialogKt.SetupDialogContent$lambda$2(z, updateSize, onConfirm, onDismiss, onPolicy, onTerms, onAccept, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SetupDialogContent$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19(String str, final boolean z, Function0 function0, Function0 function02, final MutableState mutableState, final Function0 function03, final Function0 function04, final Function0 function05, Composer composer, int i) {
+    public static final Unit SetupDialogContent$lambda$1(String str, final boolean z, Function0 function0, Function0 function02, final MutableState mutableState, final Function0 function03, final Function0 function04, final Function0 function05, Composer composer, int i) {
         String str2;
         String str3;
         int i2;
@@ -273,7 +273,7 @@ public final class SetupDialogKt {
                 i2 = 844473419;
                 composer2.startReplaceGroup(970362851);
             } else {
-                composer2.startReplaceGroup(974034801);
+                composer2.startReplaceGroup(974047945);
                 ComposerKt.sourceInformation(composer2, "91@3696L570");
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                 ComposerKt.sourceInformationMarkerStart(composer2, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -308,12 +308,12 @@ public final class SetupDialogKt {
                 ComposerKt.sourceInformationMarkerStart(composer2, 33792859, "CC(remember):SetupDialog.kt#9igjgp");
                 Object rememberedValue = composer2.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda3
+                    rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit SetupDialogContent$lambda$19$lambda$12$lambda$10$lambda$9;
-                            SetupDialogContent$lambda$19$lambda$12$lambda$10$lambda$9 = SetupDialogKt.SetupDialogContent$lambda$19$lambda$12$lambda$10$lambda$9(MutableState.this);
-                            return SetupDialogContent$lambda$19$lambda$12$lambda$10$lambda$9;
+                            Unit SetupDialogContent$lambda$1$0$0$0;
+                            SetupDialogContent$lambda$1$0$0$0 = SetupDialogKt.SetupDialogContent$lambda$1$0$0$0(MutableState.this);
+                            return SetupDialogContent$lambda$1$0$0$0;
                         }
                     };
                     composer2.updateRememberedValue(rememberedValue);
@@ -322,12 +322,12 @@ public final class SetupDialogKt {
                 str3 = "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo";
                 str2 = "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh";
                 i2 = 844473419;
-                ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(-1817021325, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda4
+                ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(-1817021325, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
-                        Unit SetupDialogContent$lambda$19$lambda$12$lambda$11;
-                        SetupDialogContent$lambda$19$lambda$12$lambda$11 = SetupDialogKt.SetupDialogContent$lambda$19$lambda$12$lambda$11(MutableState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                        return SetupDialogContent$lambda$19$lambda$12$lambda$11;
+                        Unit SetupDialogContent$lambda$1$0$1;
+                        SetupDialogContent$lambda$1$0$1 = SetupDialogKt.SetupDialogContent$lambda$1$0$1(MutableState.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SetupDialogContent$lambda$1$0$1;
                     }
                 }, composer2, 54), composer2, 390, 2);
                 PolicyTextKt.PolicyText("политикой конфиденциальности", "условиями использования", function0, function02, composer, 54);
@@ -373,12 +373,12 @@ public final class SetupDialogKt {
             boolean changed = composer2.changed(function03);
             Object rememberedValue2 = composer2.rememberedValue();
             if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda5
+                rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SetupDialogContent$lambda$19$lambda$18$lambda$14$lambda$13;
-                        SetupDialogContent$lambda$19$lambda$18$lambda$14$lambda$13 = SetupDialogKt.SetupDialogContent$lambda$19$lambda$18$lambda$14$lambda$13(Function0.this);
-                        return SetupDialogContent$lambda$19$lambda$18$lambda$14$lambda$13;
+                        Unit SetupDialogContent$lambda$1$1$0$0;
+                        SetupDialogContent$lambda$1$1$0$0 = SetupDialogKt.SetupDialogContent$lambda$1$1$0$0(Function0.this);
+                        return SetupDialogContent$lambda$1$1$0$0;
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue2);
@@ -390,23 +390,23 @@ public final class SetupDialogKt {
             boolean changed2 = composer2.changed(function04) | composer2.changed(function05);
             Object rememberedValue3 = composer2.rememberedValue();
             if (changed2 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                rememberedValue3 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda6
+                rememberedValue3 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SetupDialogContent$lambda$19$lambda$18$lambda$16$lambda$15;
-                        SetupDialogContent$lambda$19$lambda$18$lambda$16$lambda$15 = SetupDialogKt.SetupDialogContent$lambda$19$lambda$18$lambda$16$lambda$15(Function0.this, function05);
-                        return SetupDialogContent$lambda$19$lambda$18$lambda$16$lambda$15;
+                        Unit SetupDialogContent$lambda$1$1$1$0;
+                        SetupDialogContent$lambda$1$1$1$0 = SetupDialogKt.SetupDialogContent$lambda$1$1$1$0(Function0.this, function05);
+                        return SetupDialogContent$lambda$1$1$1$0;
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue3, z2, ComposableLambdaKt.rememberComposableLambda(-1429769364, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda7
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue3, z2, ComposableLambdaKt.rememberComposableLambda(-1429769364, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.setup.SetupDialogKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SetupDialogContent$lambda$19$lambda$18$lambda$17;
-                    SetupDialogContent$lambda$19$lambda$18$lambda$17 = SetupDialogKt.SetupDialogContent$lambda$19$lambda$18$lambda$17(MutableState.this, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SetupDialogContent$lambda$19$lambda$18$lambda$17;
+                    Unit SetupDialogContent$lambda$1$1$2;
+                    SetupDialogContent$lambda$1$1$2 = SetupDialogKt.SetupDialogContent$lambda$1$1$2(MutableState.this, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SetupDialogContent$lambda$1$1$2;
                 }
             }, composer2, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -425,13 +425,13 @@ public final class SetupDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19$lambda$12$lambda$10$lambda$9(MutableState mutableState) {
+    public static final Unit SetupDialogContent$lambda$1$0$0$0(MutableState mutableState) {
         mutableState.setValue(Boolean.valueOf(!((Boolean) mutableState.getValue()).booleanValue()));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19$lambda$12$lambda$11(MutableState mutableState, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit SetupDialogContent$lambda$1$0$1(MutableState mutableState, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C96@3977L35:SetupDialog.kt#18sjrx");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -449,20 +449,20 @@ public final class SetupDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19$lambda$18$lambda$14$lambda$13(Function0 function0) {
+    public static final Unit SetupDialogContent$lambda$1$1$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19$lambda$18$lambda$16$lambda$15(Function0 function0, Function0 function02) {
+    public static final Unit SetupDialogContent$lambda$1$1$1$0(Function0 function0, Function0 function02) {
         function0.invoke();
         function02.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SetupDialogContent$lambda$19$lambda$18$lambda$17(MutableState mutableState, boolean z, BoxScope DialogButtonYes, Composer composer, int i) {
+    public static final Unit SetupDialogContent$lambda$1$1$2(MutableState mutableState, boolean z, BoxScope DialogButtonYes, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(DialogButtonYes, "$this$DialogButtonYes");
         ComposerKt.sourceInformation(composer, "C117@4704L10,117@4677L206:SetupDialog.kt#18sjrx");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

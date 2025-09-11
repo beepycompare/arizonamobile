@@ -7,7 +7,7 @@ import java.util.Iterator;
 public final class Mg implements Gg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f574a;
+    public final HashSet f578a;
     public boolean b;
     public Jg c;
 
@@ -18,28 +18,28 @@ public final class Mg implements Gg {
     @Override // io.appmetrica.analytics.impl.Gg
     public final synchronized void a(Jg jg) {
         if (jg != null) {
-            LoggerStorage.getMainPublicOrAnonymousLogger().info("Received referrer from source %s: %s", jg.d.f495a, jg.f515a);
+            LoggerStorage.getMainPublicOrAnonymousLogger().info("Received referrer from source %s: %s", jg.d.f499a, jg.f519a);
         }
         this.c = jg;
         this.b = true;
-        Iterator it = this.f574a.iterator();
+        Iterator it = this.f578a.iterator();
         while (it.hasNext()) {
             ((Bg) it.next()).a(this.c);
         }
-        this.f574a.clear();
+        this.f578a.clear();
     }
 
     public Mg(Hg hg) {
-        this.f574a = new HashSet();
+        this.f578a = new HashSet();
         hg.a(new Gl(this));
         hg.a();
     }
 
     public final synchronized void a(Bg bg) {
-        this.f574a.add(bg);
+        this.f578a.add(bg);
         if (this.b) {
             bg.a(this.c);
-            this.f574a.remove(bg);
+            this.f578a.remove(bg);
         }
     }
 }

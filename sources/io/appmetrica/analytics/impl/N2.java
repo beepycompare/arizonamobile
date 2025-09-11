@@ -5,7 +5,7 @@ import android.content.Context;
 public final class N2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f583a;
+    public final Context f587a;
     public final C0369k2 b;
 
     public N2(Context context) {
@@ -13,7 +13,7 @@ public final class N2 {
     }
 
     public N2(Context context, C0369k2 c0369k2) {
-        this.f583a = context;
+        this.f587a = context;
         this.b = c0369k2;
     }
 }

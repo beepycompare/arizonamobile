@@ -12,11 +12,11 @@ public final class Nc extends C0476o5 {
 
     @Override // io.appmetrica.analytics.impl.C0476o5
     public final String e() {
-        return this.f1012a;
+        return this.f1016a;
     }
 
     @Override // io.appmetrica.analytics.impl.C0476o5
     public final String toString() {
-        return this.f1012a;
+        return this.f1016a;
     }
 }

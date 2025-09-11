@@ -5,17 +5,17 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class C4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SystemTimeProvider f378a;
+    public final SystemTimeProvider f382a;
 
     public C4() {
         this(new SystemTimeProvider());
     }
 
     public final void a() {
-        this.f378a.elapsedRealtime();
+        this.f382a.elapsedRealtime();
     }
 
     public C4(SystemTimeProvider systemTimeProvider) {
-        this.f378a = systemTimeProvider;
+        this.f382a = systemTimeProvider;
     }
 }

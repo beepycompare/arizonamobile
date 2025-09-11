@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class SocialContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SocialContent$lambda$7(HomeUiState homeUiState, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit SocialContent$lambda$1(HomeUiState homeUiState, Function1 function1, int i, Composer composer, int i2) {
         SocialContent(homeUiState, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -98,9 +98,9 @@ public final class SocialContentKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.home.ui.compose.SocialContentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SocialContent$lambda$6$lambda$1$lambda$0;
-                        SocialContent$lambda$6$lambda$1$lambda$0 = SocialContentKt.SocialContent$lambda$6$lambda$1$lambda$0(Function1.this, uiState);
-                        return SocialContent$lambda$6$lambda$1$lambda$0;
+                        Unit SocialContent$lambda$0$0$0;
+                        SocialContent$lambda$0$0$0 = SocialContentKt.SocialContent$lambda$0$0$0(Function1.this, uiState);
+                        return SocialContent$lambda$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -114,9 +114,9 @@ public final class SocialContentKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.SocialContentKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SocialContent$lambda$6$lambda$3$lambda$2;
-                        SocialContent$lambda$6$lambda$3$lambda$2 = SocialContentKt.SocialContent$lambda$6$lambda$3$lambda$2(Function1.this, uiState);
-                        return SocialContent$lambda$6$lambda$3$lambda$2;
+                        Unit SocialContent$lambda$0$1$0;
+                        SocialContent$lambda$0$1$0 = SocialContentKt.SocialContent$lambda$0$1$0(Function1.this, uiState);
+                        return SocialContent$lambda$0$1$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -130,15 +130,15 @@ public final class SocialContentKt {
                 rememberedValue3 = new Function0() { // from class: com.miami.game.feature.home.ui.compose.SocialContentKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SocialContent$lambda$6$lambda$5$lambda$4;
-                        SocialContent$lambda$6$lambda$5$lambda$4 = SocialContentKt.SocialContent$lambda$6$lambda$5$lambda$4(Function1.this, uiState);
-                        return SocialContent$lambda$6$lambda$5$lambda$4;
+                        Unit SocialContent$lambda$0$2$0;
+                        SocialContent$lambda$0$2$0 = SocialContentKt.SocialContent$lambda$0$2$0(Function1.this, uiState);
+                        return SocialContent$lambda$0$2$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m8997getLambda$2110633905$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue3, null, ComposableSingletons$SocialContentKt.INSTANCE.m9003getLambda$2110633905$home_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -154,28 +154,28 @@ public final class SocialContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.SocialContentKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SocialContent$lambda$7;
-                    SocialContent$lambda$7 = SocialContentKt.SocialContent$lambda$7(HomeUiState.this, onClickSocial, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SocialContent$lambda$7;
+                    Unit SocialContent$lambda$1;
+                    SocialContent$lambda$1 = SocialContentKt.SocialContent$lambda$1(HomeUiState.this, onClickSocial, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SocialContent$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SocialContent$lambda$6$lambda$1$lambda$0(Function1 function1, HomeUiState homeUiState) {
+    public static final Unit SocialContent$lambda$0$0$0(Function1 function1, HomeUiState homeUiState) {
         function1.invoke(homeUiState.getDiscLink());
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SocialContent$lambda$6$lambda$3$lambda$2(Function1 function1, HomeUiState homeUiState) {
+    public static final Unit SocialContent$lambda$0$1$0(Function1 function1, HomeUiState homeUiState) {
         function1.invoke(homeUiState.getTgLink());
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SocialContent$lambda$6$lambda$5$lambda$4(Function1 function1, HomeUiState homeUiState) {
+    public static final Unit SocialContent$lambda$0$2$0(Function1 function1, HomeUiState homeUiState) {
         function1.invoke(homeUiState.getVkLink());
         return Unit.INSTANCE;
     }

@@ -202,29 +202,29 @@ public final class RadialMenuScreen extends SAMPUIElement {
         itemClickListener(root, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onClickListener$lambda$3;
-                onClickListener$lambda$3 = RadialMenuScreen.setOnClickListener$lambda$3(RadialMenuScreen.this);
-                return onClickListener$lambda$3;
+                Unit onClickListener$lambda$0;
+                onClickListener$lambda$0 = RadialMenuScreen.setOnClickListener$lambda$0(RadialMenuScreen.this);
+                return onClickListener$lambda$0;
             }
         }, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onClickListener$lambda$4;
-                onClickListener$lambda$4 = RadialMenuScreen.setOnClickListener$lambda$4(RadialMenuScreen.this);
-                return onClickListener$lambda$4;
+                Unit onClickListener$lambda$1;
+                onClickListener$lambda$1 = RadialMenuScreen.setOnClickListener$lambda$1(RadialMenuScreen.this);
+                return onClickListener$lambda$1;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setOnClickListener$lambda$3(RadialMenuScreen radialMenuScreen) {
+    public static final Unit setOnClickListener$lambda$0(RadialMenuScreen radialMenuScreen) {
         radialMenuScreen.binding.centerElement.getRoot().setBackgroundResource(R.drawable.radial_menu_center_element_select_bg);
         radialMenuScreen.binding.centerElement.centerIvIcon.setColorFilter(darkColor);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setOnClickListener$lambda$4(RadialMenuScreen radialMenuScreen) {
+    public static final Unit setOnClickListener$lambda$1(RadialMenuScreen radialMenuScreen) {
         radialMenuScreen.binding.centerElement.getRoot().setBackgroundResource(R.drawable.radial_menu_center_element_bg);
         radialMenuScreen.binding.centerElement.centerIvIcon.setColorFilter(whiteColor);
         radialMenuScreen.backendNotifier.clickedWrapper(radialMenuScreen.getBackendID(), 0, RadialMenuId.CLOSE.getSubId());
@@ -238,19 +238,19 @@ public final class RadialMenuScreen extends SAMPUIElement {
         this.binding.bottomItem.btnNextPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RadialMenuScreen.setOnBottomBtnListener$lambda$5(RadialMenuScreen.this, function0, i, view);
+                RadialMenuScreen.setOnBottomBtnListener$lambda$0(RadialMenuScreen.this, function0, i, view);
             }
         });
         this.binding.bottomItem.btnBackPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RadialMenuScreen.setOnBottomBtnListener$lambda$6(RadialMenuScreen.this, function02, i, view);
+                RadialMenuScreen.setOnBottomBtnListener$lambda$1(RadialMenuScreen.this, function02, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setOnBottomBtnListener$lambda$5(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
+    public static final void setOnBottomBtnListener$lambda$0(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
         radialMenuScreen.page++;
         function0.invoke();
         radialMenuScreen.isShowNext(i);
@@ -258,7 +258,7 @@ public final class RadialMenuScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setOnBottomBtnListener$lambda$6(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
+    public static final void setOnBottomBtnListener$lambda$1(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
         int i2 = radialMenuScreen.page;
         if (i2 > 1) {
             radialMenuScreen.page = i2 - 1;
@@ -366,16 +366,16 @@ public final class RadialMenuScreen extends SAMPUIElement {
             itemClickListener(root, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit dataItems$lambda$15$lambda$11;
-                    dataItems$lambda$15$lambda$11 = RadialMenuScreen.setDataItems$lambda$15$lambda$11(RadialMenuItemBinding.this);
-                    return dataItems$lambda$15$lambda$11;
+                    Unit dataItems$lambda$0$0;
+                    dataItems$lambda$0$0 = RadialMenuScreen.setDataItems$lambda$0$0(RadialMenuItemBinding.this);
+                    return dataItems$lambda$0$0;
                 }
             }, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit dataItems$lambda$15$lambda$14;
-                    dataItems$lambda$15$lambda$14 = RadialMenuScreen.setDataItems$lambda$15$lambda$14(RadialMenuItemBinding.this, this, radialMenuItemModel);
-                    return dataItems$lambda$15$lambda$14;
+                    Unit dataItems$lambda$0$1;
+                    dataItems$lambda$0$1 = RadialMenuScreen.setDataItems$lambda$0$1(RadialMenuItemBinding.this, this, radialMenuItemModel);
+                    return dataItems$lambda$0$1;
                 }
             });
             i = i2;
@@ -383,13 +383,13 @@ public final class RadialMenuScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setDataItems$lambda$15$lambda$11(RadialMenuItemBinding radialMenuItemBinding) {
+    public static final Unit setDataItems$lambda$0$0(RadialMenuItemBinding radialMenuItemBinding) {
         radialMenuItemBinding.getRoot().setBackgroundResource(R.drawable.radial_menu_item_select_bg);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit setDataItems$lambda$15$lambda$14(RadialMenuItemBinding radialMenuItemBinding, RadialMenuScreen radialMenuScreen, RadialMenuItemModel radialMenuItemModel) {
+    public static final Unit setDataItems$lambda$0$1(RadialMenuItemBinding radialMenuItemBinding, RadialMenuScreen radialMenuScreen, RadialMenuItemModel radialMenuItemModel) {
         radialMenuItemBinding.getRoot().setBackgroundResource(R.drawable.radial_menu_item_bg);
         radialMenuScreen.isFirst = false;
         if (radialMenuItemModel.getActionModels() != null) {
@@ -416,15 +416,15 @@ public final class RadialMenuScreen extends SAMPUIElement {
         viewGroup.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean itemClickListener$lambda$18;
-                itemClickListener$lambda$18 = RadialMenuScreen.itemClickListener$lambda$18(viewGroup, function0, function02, view, motionEvent);
-                return itemClickListener$lambda$18;
+                boolean itemClickListener$lambda$0;
+                itemClickListener$lambda$0 = RadialMenuScreen.itemClickListener$lambda$0(viewGroup, function0, function02, view, motionEvent);
+                return itemClickListener$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean itemClickListener$lambda$18(ViewGroup viewGroup, Function0 function0, Function0 function02, View view, MotionEvent motionEvent) {
+    public static final boolean itemClickListener$lambda$0(ViewGroup viewGroup, Function0 function0, Function0 function02, View view, MotionEvent motionEvent) {
         int action = motionEvent.getAction();
         if (action == 0) {
             for (View view2 : ViewGroupKt.getChildren(viewGroup)) {

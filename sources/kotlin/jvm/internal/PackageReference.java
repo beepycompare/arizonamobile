@@ -37,6 +37,6 @@ public final class PackageReference implements ClassBasedDeclarationContainer {
     }
 
     public String toString() {
-        return getJClass() + " (Kotlin reflection is not available)";
+        return getJClass().toString() + " (Kotlin reflection is not available)";
     }
 }

@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0691wk implements InterfaceC0678w7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1138a = "service_main.db";
+    public final String f1142a = "service_main.db";
     public final String b = "metrica_data.db";
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
@@ -14,6 +14,6 @@ public final class C0691wk implements InterfaceC0678w7 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
     public final String b() {
-        return this.f1138a;
+        return this.f1142a;
     }
 }

@@ -338,7 +338,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$1$lambda$0(RewardsAdapter rewardsAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$0(RewardsAdapter rewardsAdapter) {
         OnRewardItemClickListener onRewardItemClickListener = rewardsAdapter.rewardItemClickListener;
         if (onRewardItemClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("rewardItemClickListener");

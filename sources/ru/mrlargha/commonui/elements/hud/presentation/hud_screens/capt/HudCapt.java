@@ -44,18 +44,17 @@ public final class HudCapt {
             try {
                 HudCaptModel hudCaptModel = (HudCaptModel) MapperKt.toModel(data, HudCaptModel.class);
                 if (currentModel == null) {
-                    HudCapt hudCapt = INSTANCE;
                     currentModel = hudCaptModel;
                     if (!isOpenCapt) {
                         isOpenCapt = true;
-                        hudCapt.initialize(binding, hudCaptModel);
+                        INSTANCE.initialize(binding, hudCaptModel);
                         return;
                     }
-                    hudCapt.checkListCount(binding, hudCaptModel.getItemList());
+                    INSTANCE.checkListCount(binding, hudCaptModel.getItemList());
                     return;
                 }
-                HudCapt hudCapt2 = INSTANCE;
-                hudCapt2.initialize(binding, hudCapt2.updateCurrentModel(hudCaptModel));
+                HudCapt hudCapt = INSTANCE;
+                hudCapt.initialize(binding, hudCapt.updateCurrentModel(hudCaptModel));
                 return;
             } catch (Exception e) {
                 Log.d("HUD_CAPT_TAG", data + "  " + e.getMessage());
@@ -156,20 +155,19 @@ public final class HudCapt {
         hudCaptBinding.btnOpenList.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HudCapt.setOnClickListeners$lambda$6(HudCaptBinding.this, list, view);
+                HudCapt.setOnClickListeners$lambda$0(HudCaptBinding.this, list, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setOnClickListeners$lambda$6(HudCaptBinding hudCaptBinding, List list, View view) {
-        HudCapt hudCapt = INSTANCE;
+    public static final void setOnClickListeners$lambda$0(HudCaptBinding hudCaptBinding, List list, View view) {
         boolean z = isOpenList;
         isOpenList = !z;
         if (!z) {
-            hudCapt.closeListAfterFiveSecond(hudCaptBinding, list);
+            INSTANCE.closeListAfterFiveSecond(hudCaptBinding, list);
         }
-        hudCapt.checkOpenList(hudCaptBinding, list);
+        INSTANCE.checkOpenList(hudCaptBinding, list);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

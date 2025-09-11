@@ -74,7 +74,7 @@ public final class CatchApp implements MobileController {
         EasyAnimation.animateClick$default(easyAnimation, backButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CatchApp.lambda$4$lambda$0();
+                return CatchApp.lambda$0$0();
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -83,7 +83,7 @@ public final class CatchApp implements MobileController {
         EasyAnimation.animateClick$default(easyAnimation2, infoButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CatchApp.lambda$4$lambda$1(CatchApp.this);
+                return CatchApp.lambda$0$1(CatchApp.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -92,7 +92,7 @@ public final class CatchApp implements MobileController {
         EasyAnimation.animateClick$default(easyAnimation3, permissionButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CatchApp.lambda$4$lambda$2(CatchApp.this);
+                return CatchApp.lambda$0$2(CatchApp.this);
             }
         }, 3, null);
         EasyAnimation easyAnimation4 = EasyAnimation.INSTANCE;
@@ -101,31 +101,31 @@ public final class CatchApp implements MobileController {
         EasyAnimation.animateClick$default(easyAnimation4, catchButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.catch_app.CatchApp$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return CatchApp.lambda$4$lambda$3(CatchApp.this);
+                return CatchApp.lambda$0$3(CatchApp.this);
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$4$lambda$0() {
+    public static final Unit lambda$0$0() {
         HistoryManager.Companion.previousPage();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$4$lambda$1(CatchApp catchApp) {
+    public static final Unit lambda$0$1(CatchApp catchApp) {
         catchApp.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 25);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$4$lambda$2(CatchApp catchApp) {
+    public static final Unit lambda$0$2(CatchApp catchApp) {
         catchApp.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 26);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$4$lambda$3(CatchApp catchApp) {
+    public static final Unit lambda$0$3(CatchApp catchApp) {
         catchApp.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), -1, 27);
         return Unit.INSTANCE;
     }

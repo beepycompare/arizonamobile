@@ -108,24 +108,24 @@ public final class CategoryComponentsViewHolder extends RecyclerView.ViewHolder 
         itemTuningCharacteristicBinding.mainView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.viewHolder.CategoryComponentsViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CategoryComponentsViewHolder.bind$lambda$2$lambda$0(CategoryComponentsViewHolder.this, item, view);
+                CategoryComponentsViewHolder.bind$lambda$0$0(CategoryComponentsViewHolder.this, item, view);
             }
         });
         itemTuningCharacteristicBinding.btnCartTypes.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.viewHolder.CategoryComponentsViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CategoryComponentsViewHolder.bind$lambda$2$lambda$1(CategoryComponentsViewHolder.this, item, view);
+                CategoryComponentsViewHolder.bind$lambda$0$1(CategoryComponentsViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$0(CategoryComponentsViewHolder categoryComponentsViewHolder, CategoryComponents categoryComponents, View view) {
+    public static final void bind$lambda$0$0(CategoryComponentsViewHolder categoryComponentsViewHolder, CategoryComponents categoryComponents, View view) {
         categoryComponentsViewHolder.onItemClicked.invoke(categoryComponents, Integer.valueOf(categoryComponentsViewHolder.getAdapterPosition()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$1(CategoryComponentsViewHolder categoryComponentsViewHolder, CategoryComponents categoryComponents, View view) {
+    public static final void bind$lambda$0$1(CategoryComponentsViewHolder categoryComponentsViewHolder, CategoryComponents categoryComponents, View view) {
         categoryComponentsViewHolder.onCartClicked.invoke(categoryComponents);
     }
 }

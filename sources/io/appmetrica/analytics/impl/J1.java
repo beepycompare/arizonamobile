@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class J1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Bundle f502a;
+    public final /* synthetic */ Bundle f506a;
     public final /* synthetic */ K1 b;
 
     public J1(K1 k1, Bundle bundle) {
         this.b = k1;
-        this.f502a = bundle;
+        this.f506a = bundle;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        this.b.b.pauseUserSession(this.f502a);
+        this.b.b.pauseUserSession(this.f506a);
     }
 }

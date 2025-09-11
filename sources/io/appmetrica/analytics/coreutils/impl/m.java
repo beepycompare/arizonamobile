@@ -5,14 +5,14 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarr
 public final class m implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ActivationBarrierCallback f274a;
+    public final /* synthetic */ ActivationBarrierCallback f278a;
 
     public m(ActivationBarrierCallback activationBarrierCallback) {
-        this.f274a = activationBarrierCallback;
+        this.f278a = activationBarrierCallback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f274a.onWaitFinished();
+        this.f278a.onWaitFinished();
     }
 }

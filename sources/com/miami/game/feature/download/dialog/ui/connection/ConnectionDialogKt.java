@@ -47,7 +47,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ConnectionDialogKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ConnectionDialog$lambda$10(ConnectionData connectionData, Function0 function0, Function1 function1, int i, Composer composer, int i2) {
+    public static final Unit ConnectionDialog$lambda$1(ConnectionData connectionData, Function0 function0, Function1 function1, int i, Composer composer, int i2) {
         ConnectionDialog(connectionData, function0, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -82,9 +82,9 @@ public final class ConnectionDialogKt {
             DialogFrameKt.DialogFrame(null, function0, ComposableLambdaKt.rememberComposableLambda(-137565439, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.connection.ConnectionDialogKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ConnectionDialog$lambda$9;
-                    ConnectionDialog$lambda$9 = ConnectionDialogKt.ConnectionDialog$lambda$9(ConnectionData.this, onClose, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return ConnectionDialog$lambda$9;
+                    Unit ConnectionDialog$lambda$0;
+                    ConnectionDialog$lambda$0 = ConnectionDialogKt.ConnectionDialog$lambda$0(ConnectionData.this, onClose, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
+                    return ConnectionDialog$lambda$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, (i2 & 112) | 390, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -96,16 +96,16 @@ public final class ConnectionDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.connection.ConnectionDialogKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ConnectionDialog$lambda$10;
-                    ConnectionDialog$lambda$10 = ConnectionDialogKt.ConnectionDialog$lambda$10(ConnectionData.this, function0, onConfirm, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ConnectionDialog$lambda$10;
+                    Unit ConnectionDialog$lambda$1;
+                    ConnectionDialog$lambda$1 = ConnectionDialogKt.ConnectionDialog$lambda$1(ConnectionData.this, function0, onConfirm, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ConnectionDialog$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ConnectionDialog$lambda$9(ConnectionData connectionData, final Function0 function0, final Function1 function1, Composer composer, int i) {
+    public static final Unit ConnectionDialog$lambda$0(ConnectionData connectionData, final Function0 function0, final Function1 function1, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C26@1240L10,26@1213L94,29@1331L45,30@1401L47,31@1477L51,32@1537L30,33@1576L357,46@1942L30,47@1981L642:ConnectionDialog.kt#yp5s1q");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -168,9 +168,9 @@ public final class ConnectionDialogKt {
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -967227730, "C36@1651L75,39@1739L81,42@1833L90:ConnectionDialog.kt#yp5s1q");
-            InputFieldKt.m8946InputFieldrAjV9yQ(mutableState, Dp.m7251constructorimpl(140), R.drawable.input, composer, 54);
-            InputFieldKt.m8946InputFieldrAjV9yQ(mutableState2, Dp.m7251constructorimpl(50), R.drawable.input_port, composer, 54);
-            InputFieldKt.m8946InputFieldrAjV9yQ(mutableState3, Dp.m7251constructorimpl((float) MenuKt.InTransitionDuration), R.drawable.input_password, composer, 54);
+            InputFieldKt.m8955InputFieldrAjV9yQ(mutableState, Dp.m7251constructorimpl(140), R.drawable.input, composer, 54);
+            InputFieldKt.m8955InputFieldrAjV9yQ(mutableState2, Dp.m7251constructorimpl(50), R.drawable.input_port, composer, 54);
+            InputFieldKt.m8955InputFieldrAjV9yQ(mutableState3, Dp.m7251constructorimpl((float) MenuKt.InTransitionDuration), R.drawable.input_password, composer, 54);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -214,15 +214,15 @@ public final class ConnectionDialogKt {
                 rememberedValue4 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.connection.ConnectionDialogKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ConnectionDialog$lambda$9$lambda$8$lambda$5$lambda$4;
-                        ConnectionDialog$lambda$9$lambda$8$lambda$5$lambda$4 = ConnectionDialogKt.ConnectionDialog$lambda$9$lambda$8$lambda$5$lambda$4(Function0.this);
-                        return ConnectionDialog$lambda$9$lambda$8$lambda$5$lambda$4;
+                        Unit ConnectionDialog$lambda$0$4$0$0;
+                        ConnectionDialog$lambda$0$4$0$0 = ConnectionDialogKt.ConnectionDialog$lambda$0$4$0$0(Function0.this);
+                        return ConnectionDialog$lambda$0$4$0$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8943getLambda$751471044$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue4, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8950getLambda$751471044$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1965380645, "CC(remember):ConnectionDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function1);
             Object rememberedValue5 = composer.rememberedValue();
@@ -230,15 +230,15 @@ public final class ConnectionDialogKt {
                 rememberedValue5 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.connection.ConnectionDialogKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ConnectionDialog$lambda$9$lambda$8$lambda$7$lambda$6;
-                        ConnectionDialog$lambda$9$lambda$8$lambda$7$lambda$6 = ConnectionDialogKt.ConnectionDialog$lambda$9$lambda$8$lambda$7$lambda$6(Function1.this, mutableState, mutableState2, mutableState3);
-                        return ConnectionDialog$lambda$9$lambda$8$lambda$7$lambda$6;
+                        Unit ConnectionDialog$lambda$0$4$1$0;
+                        ConnectionDialog$lambda$0$4$1$0 = ConnectionDialogKt.ConnectionDialog$lambda$0$4$1$0(Function1.this, mutableState, mutableState2, mutableState3);
+                        return ConnectionDialog$lambda$0$4$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8942getLambda$1711092251$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue5, false, ComposableSingletons$ConnectionDialogKt.INSTANCE.m8949getLambda$1711092251$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();
@@ -255,13 +255,13 @@ public final class ConnectionDialogKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ConnectionDialog$lambda$9$lambda$8$lambda$5$lambda$4(Function0 function0) {
+    public static final Unit ConnectionDialog$lambda$0$4$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ConnectionDialog$lambda$9$lambda$8$lambda$7$lambda$6(Function1 function1, MutableState mutableState, MutableState mutableState2, MutableState mutableState3) {
+    public static final Unit ConnectionDialog$lambda$0$4$1$0(Function1 function1, MutableState mutableState, MutableState mutableState2, MutableState mutableState3) {
         function1.invoke(new ConnectionData((String) mutableState.getValue(), (String) mutableState2.getValue(), (String) mutableState3.getValue()));
         return Unit.INSTANCE;
     }

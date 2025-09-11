@@ -6,10 +6,10 @@ import org.json.JSONObject;
 public final class Do {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Eo f413a;
+    public final Eo f417a;
 
     public Do(C0537qf c0537qf, Ho ho, String str) {
-        this.f413a = new Eo(c0537qf, ho, new Fo() { // from class: io.appmetrica.analytics.impl.Do$$ExternalSyntheticLambda0
+        this.f417a = new Eo(c0537qf, ho, new Fo() { // from class: io.appmetrica.analytics.impl.Do$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Fo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Do.a(jSONObject, jSONObject2);
@@ -35,53 +35,53 @@ public final class Do {
     }
 
     public final synchronized void b(long j) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("global_number", j));
     }
 
     public final synchronized boolean c() {
-        return this.f413a.a().optBoolean("first_event_done", false);
+        return this.f417a.a().optBoolean("first_event_done", false);
     }
 
     public final synchronized boolean d() {
-        return this.f413a.a().optBoolean("init_event_done", false);
+        return this.f417a.a().optBoolean("init_event_done", false);
     }
 
     public final synchronized int b() {
-        return this.f413a.a().optInt("open_id", 1);
+        return this.f417a.a().optInt("open_id", 1);
     }
 
     public final synchronized void c(long j) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("session_id", j));
     }
 
     public final synchronized void b(int i) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("last_migration_api_level", i));
     }
 
     public final synchronized void c(int i) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("open_id", i));
     }
 
     public final synchronized void a(JSONObject jSONObject) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("numbers_of_type", jSONObject));
     }
 
     public final synchronized int a() {
-        return this.f413a.a().optInt("attribution_id", 1);
+        return this.f417a.a().optInt("attribution_id", 1);
     }
 
     public final synchronized void a(int i) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("attribution_id", i));
     }
 
     public final synchronized void a(long j) {
-        Eo eo = this.f413a;
+        Eo eo = this.f417a;
         eo.a(eo.a().put("external_attribution_window_start", j));
     }
 }

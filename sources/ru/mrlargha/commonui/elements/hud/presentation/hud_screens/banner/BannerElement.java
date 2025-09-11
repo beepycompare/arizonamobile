@@ -112,7 +112,7 @@ public final class BannerElement {
         bannerElementBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BannerElement.setBannerInfo$lambda$1$lambda$0(BannerElement.this, view);
+                BannerElement.setBannerInfo$lambda$0$0(BannerElement.this, view);
             }
         });
         bannerElementBinding.title.setText(bannerInfo.getTitle());
@@ -160,7 +160,7 @@ public final class BannerElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setBannerInfo$lambda$1$lambda$0(BannerElement bannerElement, View view) {
+    public static final void setBannerInfo$lambda$0$0(BannerElement bannerElement, View view) {
         SAMPUIElement.notifyClick$default(bannerElement.notifier, 63, 63, null, 4, null);
     }
 

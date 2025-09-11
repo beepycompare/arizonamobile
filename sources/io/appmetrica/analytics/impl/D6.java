@@ -8,13 +8,13 @@ import java.io.File;
 public final class D6 extends FileObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Consumer f399a;
+    public final Consumer f403a;
     public final File b;
     public final Aa c;
 
     public D6(File file, F6 f6, Aa aa) {
         super(file.getAbsolutePath(), 8);
-        this.f399a = f6;
+        this.f403a = f6;
         this.b = file;
         this.c = aa;
     }
@@ -24,7 +24,7 @@ public final class D6 extends FileObserver {
         if (i != 8 || TextUtils.isEmpty(str)) {
             return;
         }
-        Consumer consumer = this.f399a;
+        Consumer consumer = this.f403a;
         Aa aa = this.c;
         File file = this.b;
         aa.getClass();

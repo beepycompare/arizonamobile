@@ -21,12 +21,12 @@ class ComparableOpenEndRange<T extends Comparable<? super T>> implements OpenEnd
     }
 
     @Override // kotlin.ranges.OpenEndRange
-    public boolean contains(T t) {
+    public /* bridge */ boolean contains(T t) {
         return OpenEndRange.DefaultImpls.contains(this, t);
     }
 
     @Override // kotlin.ranges.OpenEndRange
-    public boolean isEmpty() {
+    public /* bridge */ boolean isEmpty() {
         return OpenEndRange.DefaultImpls.isEmpty(this);
     }
 

@@ -1,55 +1,100 @@
 package androidx.compose.material.icons.sharp;
 
-import androidx.compose.material.icons.Icons;
-import androidx.compose.ui.graphics.Color;
-import androidx.compose.ui.graphics.SolidColor;
-import androidx.compose.ui.graphics.StrokeCap;
-import androidx.compose.ui.graphics.StrokeJoin;
 import androidx.compose.ui.graphics.vector.ImageVector;
-import androidx.compose.ui.graphics.vector.PathBuilder;
-import androidx.compose.ui.graphics.vector.VectorKt;
-import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Delete.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\"\u0010\u0010\u0000\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000\"\u0015\u0010\u0002\u001a\u00020\u0001*\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005¨\u0006\u0006"}, d2 = {"_delete", "Landroidx/compose/ui/graphics/vector/ImageVector;", "Delete", "Landroidx/compose/material/icons/Icons$Sharp;", "getDelete", "(Landroidx/compose/material/icons/Icons$Sharp;)Landroidx/compose/ui/graphics/vector/ImageVector;", "material-icons-core_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DeleteKt {
     private static ImageVector _delete;
 
-    public static final ImageVector getDelete(Icons.Sharp sharp) {
-        ImageVector.Builder m5274addPathoIyEayM;
-        ImageVector imageVector = _delete;
-        if (imageVector != null) {
-            Intrinsics.checkNotNull(imageVector);
-            return imageVector;
-        }
-        ImageVector.Builder builder = new ImageVector.Builder("Sharp.Delete", Dp.m7251constructorimpl(24.0f), Dp.m7251constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 96, null);
-        int defaultFillType = VectorKt.getDefaultFillType();
-        SolidColor solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
-        int m4907getButtKaPHkGw = StrokeCap.Companion.m4907getButtKaPHkGw();
-        int m4917getBevelLxFBmk8 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
-        PathBuilder pathBuilder = new PathBuilder();
-        pathBuilder.moveTo(6.0f, 21.0f);
-        pathBuilder.horizontalLineToRelative(12.0f);
-        pathBuilder.verticalLineTo(7.0f);
-        pathBuilder.horizontalLineTo(6.0f);
-        pathBuilder.verticalLineToRelative(14.0f);
-        pathBuilder.close();
-        pathBuilder.moveTo(19.0f, 4.0f);
-        pathBuilder.horizontalLineToRelative(-3.5f);
-        pathBuilder.lineToRelative(-1.0f, -1.0f);
-        pathBuilder.horizontalLineToRelative(-5.0f);
-        pathBuilder.lineToRelative(-1.0f, 1.0f);
-        pathBuilder.horizontalLineTo(5.0f);
-        pathBuilder.verticalLineToRelative(2.0f);
-        pathBuilder.horizontalLineToRelative(14.0f);
-        pathBuilder.verticalLineTo(4.0f);
-        pathBuilder.close();
-        m5274addPathoIyEayM = builder.m5274addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        ImageVector build = m5274addPathoIyEayM.build();
-        _delete = build;
-        Intrinsics.checkNotNull(build);
-        return build;
+    /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+        jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.compose.ui.graphics.vector.ImageVector.Builder.addPath-oIyEayM$default(androidx.compose.ui.graphics.vector.ImageVector$Builder, java.util.List, int, java.lang.String, androidx.compose.ui.graphics.Brush, float, androidx.compose.ui.graphics.Brush, float, float, int, int, float, float, float, float, int, java.lang.Object):androidx.compose.ui.graphics.vector.ImageVector$Builder
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+        	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+        Caused by: java.lang.NullPointerException
+        */
+    public static final androidx.compose.ui.graphics.vector.ImageVector getDelete(androidx.compose.material.icons.Icons.Sharp r18) {
+        /*
+            androidx.compose.ui.graphics.vector.ImageVector r0 = androidx.compose.material.icons.sharp.DeleteKt._delete
+            if (r0 == 0) goto L8
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r0)
+            return r0
+        L8:
+            androidx.compose.ui.graphics.vector.ImageVector$Builder r1 = new androidx.compose.ui.graphics.vector.ImageVector$Builder
+            r0 = 1103101952(0x41c00000, float:24.0)
+            float r3 = androidx.compose.ui.unit.Dp.m7251constructorimpl(r0)
+            float r4 = androidx.compose.ui.unit.Dp.m7251constructorimpl(r0)
+            r11 = 96
+            r12 = 0
+            java.lang.String r2 = "Sharp.Delete"
+            r5 = 1103101952(0x41c00000, float:24.0)
+            r6 = 1103101952(0x41c00000, float:24.0)
+            r7 = 0
+            r9 = 0
+            r10 = 0
+            r1.<init>(r2, r3, r4, r5, r6, r7, r9, r10, r11, r12)
+            int r3 = androidx.compose.ui.graphics.vector.VectorKt.getDefaultFillType()
+            androidx.compose.ui.graphics.SolidColor r0 = new androidx.compose.ui.graphics.SolidColor
+            androidx.compose.ui.graphics.Color$Companion r2 = androidx.compose.ui.graphics.Color.Companion
+            long r4 = r2.m4563getBlack0d7_KjU()
+            r2 = 0
+            r0.<init>(r4, r2)
+            r5 = r0
+            androidx.compose.ui.graphics.Brush r5 = (androidx.compose.ui.graphics.Brush) r5
+            androidx.compose.ui.graphics.StrokeCap$Companion r0 = androidx.compose.ui.graphics.StrokeCap.Companion
+            int r10 = r0.m4907getButtKaPHkGw()
+            androidx.compose.ui.graphics.StrokeJoin$Companion r0 = androidx.compose.ui.graphics.StrokeJoin.Companion
+            int r11 = r0.m4917getBevelLxFBmk8()
+            androidx.compose.ui.graphics.vector.PathBuilder r0 = new androidx.compose.ui.graphics.vector.PathBuilder
+            r0.<init>()
+            r2 = 1101529088(0x41a80000, float:21.0)
+            r4 = 1086324736(0x40c00000, float:6.0)
+            r0.moveTo(r4, r2)
+            r2 = 1094713344(0x41400000, float:12.0)
+            r0.horizontalLineToRelative(r2)
+            r2 = 1088421888(0x40e00000, float:7.0)
+            r0.verticalLineTo(r2)
+            r0.horizontalLineTo(r4)
+            r2 = 1096810496(0x41600000, float:14.0)
+            r0.verticalLineToRelative(r2)
+            r0.close()
+            r4 = 1100480512(0x41980000, float:19.0)
+            r6 = 1082130432(0x40800000, float:4.0)
+            r0.moveTo(r4, r6)
+            r4 = -1067450368(0xffffffffc0600000, float:-3.5)
+            r0.horizontalLineToRelative(r4)
+            r4 = -1082130432(0xffffffffbf800000, float:-1.0)
+            r0.lineToRelative(r4, r4)
+            r7 = -1063256064(0xffffffffc0a00000, float:-5.0)
+            r0.horizontalLineToRelative(r7)
+            r7 = 1065353216(0x3f800000, float:1.0)
+            r0.lineToRelative(r4, r7)
+            r4 = 1084227584(0x40a00000, float:5.0)
+            r0.horizontalLineTo(r4)
+            r4 = 1073741824(0x40000000, float:2.0)
+            r0.verticalLineToRelative(r4)
+            r0.horizontalLineToRelative(r2)
+            r0.verticalLineTo(r6)
+            r0.close()
+            java.util.List r2 = r0.getNodes()
+            r16 = 14336(0x3800, float:2.0089E-41)
+            r17 = 0
+            java.lang.String r4 = ""
+            r6 = 1065353216(0x3f800000, float:1.0)
+            r7 = 0
+            r8 = 1065353216(0x3f800000, float:1.0)
+            r9 = 1065353216(0x3f800000, float:1.0)
+            r12 = 1065353216(0x3f800000, float:1.0)
+            r13 = 0
+            r14 = 0
+            r15 = 0
+            androidx.compose.ui.graphics.vector.ImageVector$Builder r0 = androidx.compose.ui.graphics.vector.ImageVector.Builder.m5273addPathoIyEayM$default(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17)
+            androidx.compose.ui.graphics.vector.ImageVector r0 = r0.build()
+            androidx.compose.material.icons.sharp.DeleteKt._delete = r0
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r0)
+            return r0
+        */
+        throw new UnsupportedOperationException("Method not decompiled: androidx.compose.material.icons.sharp.DeleteKt.getDelete(androidx.compose.material.icons.Icons$Sharp):androidx.compose.ui.graphics.vector.ImageVector");
     }
 }

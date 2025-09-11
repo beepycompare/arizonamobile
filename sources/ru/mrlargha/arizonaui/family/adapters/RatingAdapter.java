@@ -94,7 +94,7 @@ public final class RatingAdapter extends RecyclerView.Adapter<RatingItemViewHold
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.RatingAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RatingAdapter.onBindViewHolder$lambda$1$lambda$0(RatingAdapter.this, ratingItem, view);
+                RatingAdapter.onBindViewHolder$lambda$0$0(RatingAdapter.this, ratingItem, view);
             }
         });
         if (i2 != this.itemsList.size() || this.isRequestSend || i <= 20) {
@@ -107,7 +107,7 @@ public final class RatingAdapter extends RecyclerView.Adapter<RatingItemViewHold
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(RatingAdapter ratingAdapter, RatingItem ratingItem, View view) {
+    public static final void onBindViewHolder$lambda$0$0(RatingAdapter ratingAdapter, RatingItem ratingItem, View view) {
         ratingAdapter.onClick.invoke(ratingItem);
     }
 

@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class Ym {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Zm f758a = new Zm();
+    public static final Zm f762a = new Zm();
 }

@@ -196,15 +196,15 @@ public class ComparisonsKt__ComparisonsKt {
         return new Comparator() { // from class: kotlin.comparisons.ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda2
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int then$lambda$1$ComparisonsKt__ComparisonsKt;
-                then$lambda$1$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.then$lambda$1$ComparisonsKt__ComparisonsKt(comparator, comparator2, obj, obj2);
-                return then$lambda$1$ComparisonsKt__ComparisonsKt;
+                int then$lambda$0$ComparisonsKt__ComparisonsKt;
+                then$lambda$0$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.then$lambda$0$ComparisonsKt__ComparisonsKt(comparator, comparator2, obj, obj2);
+                return then$lambda$0$ComparisonsKt__ComparisonsKt;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int then$lambda$1$ComparisonsKt__ComparisonsKt(Comparator comparator, Comparator comparator2, Object obj, Object obj2) {
+    public static final int then$lambda$0$ComparisonsKt__ComparisonsKt(Comparator comparator, Comparator comparator2, Object obj, Object obj2) {
         int compare = comparator.compare(obj, obj2);
         return compare != 0 ? compare : comparator2.compare(obj, obj2);
     }
@@ -215,15 +215,15 @@ public class ComparisonsKt__ComparisonsKt {
         return new Comparator() { // from class: kotlin.comparisons.ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda1
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int thenDescending$lambda$2$ComparisonsKt__ComparisonsKt;
-                thenDescending$lambda$2$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.thenDescending$lambda$2$ComparisonsKt__ComparisonsKt(comparator, comparator2, obj, obj2);
-                return thenDescending$lambda$2$ComparisonsKt__ComparisonsKt;
+                int thenDescending$lambda$0$ComparisonsKt__ComparisonsKt;
+                thenDescending$lambda$0$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.thenDescending$lambda$0$ComparisonsKt__ComparisonsKt(comparator, comparator2, obj, obj2);
+                return thenDescending$lambda$0$ComparisonsKt__ComparisonsKt;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int thenDescending$lambda$2$ComparisonsKt__ComparisonsKt(Comparator comparator, Comparator comparator2, Object obj, Object obj2) {
+    public static final int thenDescending$lambda$0$ComparisonsKt__ComparisonsKt(Comparator comparator, Comparator comparator2, Object obj, Object obj2) {
         int compare = comparator.compare(obj, obj2);
         return compare != 0 ? compare : comparator2.compare(obj2, obj);
     }
@@ -233,15 +233,15 @@ public class ComparisonsKt__ComparisonsKt {
         return new Comparator() { // from class: kotlin.comparisons.ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda4
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt;
-                nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt(comparator, obj, obj2);
-                return nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt;
+                int nullsFirst$lambda$0$ComparisonsKt__ComparisonsKt;
+                nullsFirst$lambda$0$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.nullsFirst$lambda$0$ComparisonsKt__ComparisonsKt(comparator, obj, obj2);
+                return nullsFirst$lambda$0$ComparisonsKt__ComparisonsKt;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int nullsFirst$lambda$3$ComparisonsKt__ComparisonsKt(Comparator comparator, Object obj, Object obj2) {
+    public static final int nullsFirst$lambda$0$ComparisonsKt__ComparisonsKt(Comparator comparator, Object obj, Object obj2) {
         if (obj == obj2) {
             return 0;
         }
@@ -263,15 +263,15 @@ public class ComparisonsKt__ComparisonsKt {
         return new Comparator() { // from class: kotlin.comparisons.ComparisonsKt__ComparisonsKt$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int nullsLast$lambda$4$ComparisonsKt__ComparisonsKt;
-                nullsLast$lambda$4$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.nullsLast$lambda$4$ComparisonsKt__ComparisonsKt(comparator, obj, obj2);
-                return nullsLast$lambda$4$ComparisonsKt__ComparisonsKt;
+                int nullsLast$lambda$0$ComparisonsKt__ComparisonsKt;
+                nullsLast$lambda$0$ComparisonsKt__ComparisonsKt = ComparisonsKt__ComparisonsKt.nullsLast$lambda$0$ComparisonsKt__ComparisonsKt(comparator, obj, obj2);
+                return nullsLast$lambda$0$ComparisonsKt__ComparisonsKt;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final int nullsLast$lambda$4$ComparisonsKt__ComparisonsKt(Comparator comparator, Object obj, Object obj2) {
+    public static final int nullsLast$lambda$0$ComparisonsKt__ComparisonsKt(Comparator comparator, Object obj, Object obj2) {
         if (obj == obj2) {
             return 0;
         }

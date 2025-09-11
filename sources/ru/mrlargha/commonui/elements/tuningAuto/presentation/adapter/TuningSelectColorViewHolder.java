@@ -37,13 +37,13 @@ public final class TuningSelectColorViewHolder extends RecyclerView.ViewHolder {
         itemTuningSelectColorBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.adapter.TuningSelectColorViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningSelectColorViewHolder.bind$lambda$1$lambda$0(TuningSelectColorViewHolder.this, item, view);
+                TuningSelectColorViewHolder.bind$lambda$0$0(TuningSelectColorViewHolder.this, item, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(TuningSelectColorViewHolder tuningSelectColorViewHolder, SelectedColors selectedColors, View view) {
+    public static final void bind$lambda$0$0(TuningSelectColorViewHolder tuningSelectColorViewHolder, SelectedColors selectedColors, View view) {
         tuningSelectColorViewHolder.onItemClicked.invoke(selectedColors, Integer.valueOf(tuningSelectColorViewHolder.getAdapterPosition()));
     }
 }

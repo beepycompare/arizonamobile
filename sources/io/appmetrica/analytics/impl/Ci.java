@@ -16,7 +16,7 @@ import java.util.Map;
 public final class Ci implements InterfaceC0557rb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0671w0 f388a;
+    public final C0671w0 f392a;
     public final Wh b;
     public final IHandlerExecutor c;
     public final Context d;
@@ -100,7 +100,7 @@ public final class Ci implements InterfaceC0557rb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
-        this.b.f724a.a(str);
+        this.b.f728a.a(str);
         this.f.getClass();
         this.c.execute(new Ai(this, str));
     }
@@ -181,7 +181,7 @@ public final class Ci implements InterfaceC0557rb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
-        this.b.f724a.a(str);
+        this.b.f728a.a(str);
         this.f.getClass();
         this.c.execute(new Bi(this, str, str2));
     }
@@ -213,7 +213,7 @@ public final class Ci implements InterfaceC0557rb {
         this.c = A4.l().g().a();
         this.d = context;
         this.b = wh;
-        this.f388a = c0671w0;
+        this.f392a = c0671w0;
         this.f = mi;
         this.e = reporterConfig;
         this.g = cif;
@@ -221,7 +221,7 @@ public final class Ci implements InterfaceC0557rb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
-        this.b.f724a.a(str);
+        this.b.f728a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0179ci(this, str, CollectionUtils.getListFromMap(map)));
     }

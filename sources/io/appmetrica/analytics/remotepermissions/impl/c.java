@@ -12,14 +12,14 @@ public final class c implements ProtobufConverter {
     /* renamed from: a */
     public final f fromModel(a aVar) {
         f fVar = new f();
-        Set<String> set = aVar.f1280a;
+        Set<String> set = aVar.f1284a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(set, 10));
         for (String str : set) {
             arrayList.add(str.getBytes(Charsets.UTF_8));
         }
         Object[] array = arrayList.toArray(new byte[0]);
         if (array != null) {
-            fVar.f1284a = (byte[][]) array;
+            fVar.f1288a = (byte[][]) array;
             return fVar;
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
@@ -35,7 +35,7 @@ public final class c implements ProtobufConverter {
     */
     public final a toModel(f fVar) {
         Set emptySet;
-        byte[][] bArr = fVar.f1284a;
+        byte[][] bArr = fVar.f1288a;
         if (bArr != null) {
             ArrayList arrayList = new ArrayList(bArr.length);
             for (byte[] bArr2 : bArr) {

@@ -50,10 +50,6 @@ public final class LocatorView extends View {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ LocatorView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LocatorView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
@@ -71,6 +67,10 @@ public final class LocatorView extends View {
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(10.0f);
         this.innerCirclePaint = paint;
+    }
+
+    public /* synthetic */ LocatorView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
     @Override // android.view.View
@@ -112,7 +112,7 @@ public final class LocatorView extends View {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.commonui.elements.metaldetector.LocatorView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LocatorView.onSizeChanged$lambda$2$lambda$1(LocatorView.this, valueAnimator);
+                LocatorView.onSizeChanged$lambda$0$0(LocatorView.this, valueAnimator);
             }
         });
         ofInt.start();
@@ -121,7 +121,7 @@ public final class LocatorView extends View {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onSizeChanged$lambda$2$lambda$1(LocatorView locatorView, ValueAnimator valueAnimator) {
+    public static final void onSizeChanged$lambda$0$0(LocatorView locatorView, ValueAnimator valueAnimator) {
         Intrinsics.checkNotNullParameter(valueAnimator, "valueAnimator");
         Paint paint = locatorView.innerCirclePaint;
         Object animatedValue = valueAnimator.getAnimatedValue();

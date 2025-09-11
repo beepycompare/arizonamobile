@@ -12,7 +12,7 @@ import javax.net.ssl.SSLSocketFactory;
 public final class Im implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Km f499a;
+    public final Km f503a;
     public C0441mm b;
     public Sl c;
     public final RequestDataHolder d;
@@ -27,7 +27,7 @@ public final class Im implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final String description() {
-        return "Startup task for component: " + this.f499a.f540a.f.toString();
+        return "Startup task for component: " + this.f503a.f544a.f.toString();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -59,7 +59,7 @@ public final class Im implements UnderlyingNetworkTask {
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final boolean onCreateTask() {
         this.d.setHeader(HttpHeaders.ACCEPT_ENCODING, "encrypted");
-        return this.f499a.g();
+        return this.f503a.g();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -96,7 +96,7 @@ public final class Im implements UnderlyingNetworkTask {
         if (this.b == null || this.f.getResponseHeaders() == null) {
             return;
         }
-        this.f499a.a(this.b, (C0389km) this.e.getConfig(), this.f.getResponseHeaders());
+        this.f503a.a(this.b, (C0389km) this.e.getConfig(), this.f.getResponseHeaders());
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -116,11 +116,11 @@ public final class Im implements UnderlyingNetworkTask {
         if (this.c == null) {
             this.c = Sl.UNKNOWN;
         }
-        this.f499a.a(this.c);
+        this.f503a.a(this.c);
     }
 
     public Im(Km km, C0131am c0131am, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
-        this.f499a = km;
+        this.f503a = km;
         this.h = c0131am;
         this.d = requestDataHolder;
         this.f = responseDataHolder;

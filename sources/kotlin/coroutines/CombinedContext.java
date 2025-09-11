@@ -20,16 +20,16 @@ public final class CombinedContext implements CoroutineContext, Serializable {
     private final CoroutineContext.Element element;
     private final CoroutineContext left;
 
-    @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
-        return CoroutineContext.DefaultImpls.plus(this, coroutineContext);
-    }
-
     public CombinedContext(CoroutineContext left, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(left, "left");
         Intrinsics.checkNotNullParameter(element, "element");
         this.left = left;
         this.element = element;
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext
+    public /* bridge */ CoroutineContext plus(CoroutineContext coroutineContext) {
+        return CoroutineContext.DefaultImpls.plus(this, coroutineContext);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
@@ -115,15 +115,15 @@ public final class CombinedContext implements CoroutineContext, Serializable {
         return "[" + ((String) fold("", new Function2() { // from class: kotlin.coroutines.CombinedContext$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                String string$lambda$2;
-                string$lambda$2 = CombinedContext.toString$lambda$2((String) obj, (CoroutineContext.Element) obj2);
-                return string$lambda$2;
+                String string$lambda$0;
+                string$lambda$0 = CombinedContext.toString$lambda$0((String) obj, (CoroutineContext.Element) obj2);
+                return string$lambda$0;
             }
         })) + AbstractJsonLexerKt.END_LIST;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String toString$lambda$2(String acc, CoroutineContext.Element element) {
+    public static final String toString$lambda$0(String acc, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(acc, "acc");
         Intrinsics.checkNotNullParameter(element, "element");
         return acc.length() == 0 ? element.toString() : acc + ", " + element;
@@ -136,9 +136,9 @@ public final class CombinedContext implements CoroutineContext, Serializable {
         fold(Unit.INSTANCE, new Function2() { // from class: kotlin.coroutines.CombinedContext$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit writeReplace$lambda$3;
-                writeReplace$lambda$3 = CombinedContext.writeReplace$lambda$3(coroutineContextArr, intRef, (Unit) obj, (CoroutineContext.Element) obj2);
-                return writeReplace$lambda$3;
+                Unit writeReplace$lambda$0;
+                writeReplace$lambda$0 = CombinedContext.writeReplace$lambda$0(coroutineContextArr, intRef, (Unit) obj, (CoroutineContext.Element) obj2);
+                return writeReplace$lambda$0;
             }
         });
         if (intRef.element != size) {
@@ -148,7 +148,7 @@ public final class CombinedContext implements CoroutineContext, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit writeReplace$lambda$3(CoroutineContext[] coroutineContextArr, Ref.IntRef intRef, Unit unit, CoroutineContext.Element element) {
+    public static final Unit writeReplace$lambda$0(CoroutineContext[] coroutineContextArr, Ref.IntRef intRef, Unit unit, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(unit, "<unused var>");
         Intrinsics.checkNotNullParameter(element, "element");
         int i = intRef.element;

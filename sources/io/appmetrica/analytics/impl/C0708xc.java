@@ -11,11 +11,11 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
 public final class C0708xc implements LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1150a = "Location receiver stub";
+    public final String f1154a = "Location receiver stub";
 
     @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
     public final String getIdentifier() {
-        return this.f1150a;
+        return this.f1154a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider

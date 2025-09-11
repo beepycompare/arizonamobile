@@ -47,7 +47,7 @@ public final class ShopViewHolder extends RecyclerView.ViewHolder {
         itemShopBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.viewholder.ShopViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ShopViewHolder.bind$lambda$2$lambda$0(InventoryItem.this, this, view);
+                ShopViewHolder.bind$lambda$0$0(InventoryItem.this, this, view);
             }
         });
         Job job = this.loadImageJob;
@@ -99,7 +99,7 @@ public final class ShopViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$0(InventoryItem inventoryItem, ShopViewHolder shopViewHolder, View view) {
+    public static final void bind$lambda$0$0(InventoryItem inventoryItem, ShopViewHolder shopViewHolder, View view) {
         Integer available = inventoryItem.getAvailable();
         if ((available != null && available.intValue() == 0) || inventoryItem.getItem() == null) {
             return;

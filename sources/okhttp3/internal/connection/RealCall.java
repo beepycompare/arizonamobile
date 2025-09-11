@@ -141,7 +141,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         Iterator<RoutePlanner.Plan> it = this.plansToCancel.iterator();
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
-            it.next().mo10986cancel();
+            it.next().mo10998cancel();
         }
         this.eventListener.canceled(this);
     }

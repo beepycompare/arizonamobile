@@ -104,16 +104,16 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         this.sendItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit sendItemsAdapter$lambda$2;
-                sendItemsAdapter$lambda$2 = TradeScreen.sendItemsAdapter$lambda$2(TradeScreen.this, (DraggedItem) obj);
-                return sendItemsAdapter$lambda$2;
+                Unit sendItemsAdapter$lambda$0;
+                sendItemsAdapter$lambda$0 = TradeScreen.sendItemsAdapter$lambda$0(TradeScreen.this, (DraggedItem) obj);
+                return sendItemsAdapter$lambda$0;
             }
         }, rvSendItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit sendItemsAdapter$lambda$3;
-                sendItemsAdapter$lambda$3 = TradeScreen.sendItemsAdapter$lambda$3(TradeScreen.this, (InventoryItem) obj);
-                return sendItemsAdapter$lambda$3;
+                Unit sendItemsAdapter$lambda$1;
+                sendItemsAdapter$lambda$1 = TradeScreen.sendItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
+                return sendItemsAdapter$lambda$1;
             }
         });
         RecyclerView rvReceiveItems = bind.rvReceiveItems;
@@ -121,16 +121,16 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         this.getItemsAdapter = new SendItemsAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit itemsAdapter$lambda$4;
-                itemsAdapter$lambda$4 = TradeScreen.getItemsAdapter$lambda$4((DraggedItem) obj);
-                return itemsAdapter$lambda$4;
+                Unit itemsAdapter$lambda$0;
+                itemsAdapter$lambda$0 = TradeScreen.getItemsAdapter$lambda$0((DraggedItem) obj);
+                return itemsAdapter$lambda$0;
             }
         }, rvReceiveItems, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit itemsAdapter$lambda$5;
-                itemsAdapter$lambda$5 = TradeScreen.getItemsAdapter$lambda$5(TradeScreen.this, (InventoryItem) obj);
-                return itemsAdapter$lambda$5;
+                Unit itemsAdapter$lambda$1;
+                itemsAdapter$lambda$1 = TradeScreen.getItemsAdapter$lambda$1(TradeScreen.this, (InventoryItem) obj);
+                return itemsAdapter$lambda$1;
             }
         });
         this.sendItemsList = new ArrayList();
@@ -148,7 +148,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TradeScreen._init_$lambda$6(TradeScreen.this, view);
+                TradeScreen._init_$lambda$0(TradeScreen.this, view);
             }
         });
         bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
@@ -160,7 +160,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         bind.etSendItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TradeScreen._init_$lambda$8(TradeScreen.this, view);
+                TradeScreen._init_$lambda$2(TradeScreen.this, view);
             }
         });
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda9
@@ -205,7 +205,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit sendItemsAdapter$lambda$3(TradeScreen tradeScreen, InventoryItem it) {
+    public static final Unit sendItemsAdapter$lambda$1(TradeScreen tradeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (!tradeScreen.isConfirmedClicked) {
             tradeScreen.selectedInventoryItem = it;
@@ -215,14 +215,14 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit sendItemsAdapter$lambda$2(TradeScreen tradeScreen, DraggedItem currentItem) {
+    public static final Unit sendItemsAdapter$lambda$0(TradeScreen tradeScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         tradeScreen.sendDataFromDrop(currentItem.getItemInfo(), tradeScreen.sendItemsList.get(currentItem.getPosition()));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit getItemsAdapter$lambda$5(TradeScreen tradeScreen, InventoryItem it) {
+    public static final Unit getItemsAdapter$lambda$1(TradeScreen tradeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         tradeScreen.selectedInventoryItem = it;
         tradeScreen.sendData(2, StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())));
@@ -230,7 +230,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit getItemsAdapter$lambda$4(DraggedItem draggedItem) {
+    public static final Unit getItemsAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
@@ -247,7 +247,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(TradeScreen tradeScreen, View view) {
+    public static final void _init_$lambda$0(TradeScreen tradeScreen, View view) {
         tradeScreen.isConfirmedClicked = true;
         IBackendNotifier iBackendNotifier = tradeScreen.frontendNotifier;
         int id = UIElementID.TRADE.getId();
@@ -257,7 +257,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(TradeScreen tradeScreen, View view) {
+    public static final void _init_$lambda$2(TradeScreen tradeScreen, View view) {
         tradeScreen.sendData(4, StringKt.toStringJson(0));
     }
 

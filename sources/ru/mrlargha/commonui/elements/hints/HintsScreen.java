@@ -54,7 +54,7 @@ public final class HintsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation, rightHintCloseButton, 0L, new Function0() { // from class: ru.mrlargha.commonui.elements.hints.HintsScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return HintsScreen.lambda$2$lambda$0(HintsScreen.this);
+                return HintsScreen.lambda$0$0(HintsScreen.this);
             }
         }, null, 5, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -63,19 +63,19 @@ public final class HintsScreen extends SAMPUIElement {
         EasyAnimation.animateClick$default(easyAnimation2, leftHintCloseButton, 0L, new Function0() { // from class: ru.mrlargha.commonui.elements.hints.HintsScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return HintsScreen.lambda$2$lambda$1(HintsScreen.this);
+                return HintsScreen.lambda$0$1(HintsScreen.this);
             }
         }, null, 5, null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$0(HintsScreen hintsScreen) {
+    public static final Unit lambda$0$0(HintsScreen hintsScreen) {
         SAMPUIElement.notifyClick$default(hintsScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit lambda$2$lambda$1(HintsScreen hintsScreen) {
+    public static final Unit lambda$0$1(HintsScreen hintsScreen) {
         SAMPUIElement.notifyClick$default(hintsScreen, 0, 0, null, 4, null);
         return Unit.INSTANCE;
     }

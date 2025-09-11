@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Qi implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Ri f637a;
+    public final /* synthetic */ Ri f641a;
 
     public Qi(Ri ri) {
-        this.f637a = ri;
+        this.f641a = ri;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f637a.c();
+        this.f641a.c();
     }
 }

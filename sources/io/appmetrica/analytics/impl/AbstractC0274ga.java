@@ -7,7 +7,7 @@ public abstract class AbstractC0274ga {
     public static final C0119aa a(int i, String str) {
         byte[] bArr;
         C0119aa c0119aa = new C0119aa();
-        c0119aa.f786a = i;
+        c0119aa.f790a = i;
         if (str == null || (bArr = str.getBytes(Charsets.UTF_8)) == null) {
             bArr = c0119aa.b;
         }

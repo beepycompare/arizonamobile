@@ -42,7 +42,7 @@ public final class CraftItemsViewHolder extends RecyclerView.ViewHolder {
         itemBulletBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.viewHolder.CraftItemsViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftItemsViewHolder.bind$lambda$1$lambda$0(CraftItemsViewHolder.this, item, view);
+                CraftItemsViewHolder.bind$lambda$0$0(CraftItemsViewHolder.this, item, view);
             }
         });
         Job job = this.loadImageJob;
@@ -54,7 +54,7 @@ public final class CraftItemsViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(CraftItemsViewHolder craftItemsViewHolder, CraftItem craftItem, View view) {
+    public static final void bind$lambda$0$0(CraftItemsViewHolder craftItemsViewHolder, CraftItem craftItem, View view) {
         craftItemsViewHolder.onItemClicked.invoke(craftItem, Integer.valueOf(craftItemsViewHolder.getAdapterPosition()));
     }
 }

@@ -85,7 +85,7 @@ public final class DonateShop$sendRequest$1 implements Callback<List<? extends D
                     new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$sendRequest$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            DonateShop$sendRequest$1.onResponse$lambda$5$lambda$4(DonateShop.this);
+                            DonateShop$sendRequest$1.onResponse$lambda$0$2(DonateShop.this);
                         }
                     }, 150L);
                     return;
@@ -96,7 +96,7 @@ public final class DonateShop$sendRequest$1 implements Callback<List<? extends D
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onResponse$lambda$5$lambda$4(DonateShop donateShop) {
+    public static final void onResponse$lambda$0$2(DonateShop donateShop) {
         ConcurrentHashMap concurrentHashMap;
         String str;
         ConcurrentHashMap concurrentHashMap2;

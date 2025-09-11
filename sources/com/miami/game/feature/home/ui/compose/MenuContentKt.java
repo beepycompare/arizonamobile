@@ -36,7 +36,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class MenuContentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MenuContent$lambda$3(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+    public static final Unit MenuContent$lambda$1(HomeUiState homeUiState, State state, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         MenuContent(homeUiState, state, function0, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -141,14 +141,14 @@ public final class MenuContentKt {
             ScalingButtonKt.ScalingButton(onClickNotificaions, null, ComposableLambdaKt.rememberComposableLambda(2120753955, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit MenuContent$lambda$2$lambda$1$lambda$0;
-                    MenuContent$lambda$2$lambda$1$lambda$0 = MenuContentKt.MenuContent$lambda$2$lambda$1$lambda$0(State.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return MenuContent$lambda$2$lambda$1$lambda$0;
+                    Unit MenuContent$lambda$0$0$0;
+                    MenuContent$lambda$0$0$0 = MenuContentKt.MenuContent$lambda$0$0$0(State.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return MenuContent$lambda$0$0$0;
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 15) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m8993getLambda$432014182$home_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m8994getLambda$989998245$home_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickAccount, null, ComposableSingletons$MenuContentKt.INSTANCE.m9000getLambda$432014182$home_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onClickForum, null, ComposableSingletons$MenuContentKt.INSTANCE.m9001getLambda$989998245$home_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -171,16 +171,16 @@ public final class MenuContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.MenuContentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MenuContent$lambda$3;
-                    MenuContent$lambda$3 = MenuContentKt.MenuContent$lambda$3(HomeUiState.this, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotificaions, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MenuContent$lambda$3;
+                    Unit MenuContent$lambda$1;
+                    MenuContent$lambda$1 = MenuContentKt.MenuContent$lambda$1(HomeUiState.this, notificationState, onClickAccount, onClickForum, onClickSettings, onClickNotificaions, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return MenuContent$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit MenuContent$lambda$2$lambda$1$lambda$0(State state, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit MenuContent$lambda$0$0$0(State state, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C39@1353L37:MenuContent.kt#dswm0d");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

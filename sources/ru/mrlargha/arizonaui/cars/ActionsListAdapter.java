@@ -132,15 +132,15 @@ public final class ActionsListAdapter extends ListAdapter<CarsScreen.Companion.A
         EasyAnimation.animateClick$default(easyAnimation, carsActionItem, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.ActionsListAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$1$lambda$0;
-                onBindViewHolder$lambda$1$lambda$0 = ActionsListAdapter.onBindViewHolder$lambda$1$lambda$0(ActionsListAdapter.this, item);
-                return onBindViewHolder$lambda$1$lambda$0;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = ActionsListAdapter.onBindViewHolder$lambda$0$0(ActionsListAdapter.this, item);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$1$lambda$0(ActionsListAdapter actionsListAdapter, CarsScreen.Companion.ActionButtonInfo actionButtonInfo) {
+    public static final Unit onBindViewHolder$lambda$0$0(ActionsListAdapter actionsListAdapter, CarsScreen.Companion.ActionButtonInfo actionButtonInfo) {
         OnActionClickListener onActionClickListener = actionsListAdapter.actionClickListener;
         if (onActionClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("actionClickListener");

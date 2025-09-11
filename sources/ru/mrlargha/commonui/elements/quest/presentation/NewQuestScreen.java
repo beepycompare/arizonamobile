@@ -108,9 +108,9 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.questStageAdapter = new QuestStageAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit questStageAdapter$lambda$1;
-                questStageAdapter$lambda$1 = NewQuestScreen.questStageAdapter$lambda$1(NewQuestScreen.this, (QuestStage) obj);
-                return questStageAdapter$lambda$1;
+                Unit questStageAdapter$lambda$0;
+                questStageAdapter$lambda$0 = NewQuestScreen.questStageAdapter$lambda$0(NewQuestScreen.this, (QuestStage) obj);
+                return questStageAdapter$lambda$0;
             }
         });
         this.questTaskList = new ArrayList();
@@ -125,7 +125,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NewQuestScreen._init_$lambda$3(NewQuestScreen.this, view);
+                NewQuestScreen._init_$lambda$1(NewQuestScreen.this, view);
             }
         });
         bind.btnExit.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda7
@@ -137,7 +137,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit questStageAdapter$lambda$1(NewQuestScreen newQuestScreen, QuestStage item) {
+    public static final Unit questStageAdapter$lambda$0(NewQuestScreen newQuestScreen, QuestStage item) {
         Intrinsics.checkNotNullParameter(item, "item");
         ArrayList arrayList = new ArrayList();
         for (Object obj : newQuestScreen.questTaskList) {
@@ -169,7 +169,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(NewQuestScreen newQuestScreen, View view) {
+    public static final void _init_$lambda$1(NewQuestScreen newQuestScreen, View view) {
         newQuestScreen.questTaskList.clear();
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         if (questTaskAdapter == null) {
@@ -186,16 +186,16 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.questTaskAdapter = new QuestTaskAdapter(getTargetActivity(), new Function2() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$5;
-                initAdapters$lambda$5 = NewQuestScreen.initAdapters$lambda$5(NewQuestScreen.this, (QuestTask) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$5;
+                Unit initAdapters$lambda$0;
+                initAdapters$lambda$0 = NewQuestScreen.initAdapters$lambda$0(NewQuestScreen.this, (QuestTask) obj, ((Integer) obj2).intValue());
+                return initAdapters$lambda$0;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initAdapters$lambda$6;
-                initAdapters$lambda$6 = NewQuestScreen.initAdapters$lambda$6(NewQuestScreen.this, (QuestTask) obj);
-                return initAdapters$lambda$6;
+                Unit initAdapters$lambda$1;
+                initAdapters$lambda$1 = NewQuestScreen.initAdapters$lambda$1(NewQuestScreen.this, (QuestTask) obj);
+                return initAdapters$lambda$1;
             }
         });
         RecyclerView recyclerView = this.binding.rvQuestTasks;
@@ -216,7 +216,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Unit initAdapters$lambda$5(NewQuestScreen newQuestScreen, QuestTask item, int i) {
+    public static final Unit initAdapters$lambda$0(NewQuestScreen newQuestScreen, QuestTask item, int i) {
         QuestTaskAdapter questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2;
         QuestTaskAdapter questTaskAdapter3;
@@ -296,7 +296,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initAdapters$lambda$6(NewQuestScreen newQuestScreen, QuestTask item) {
+    public static final Unit initAdapters$lambda$1(NewQuestScreen newQuestScreen, QuestTask item) {
         Intrinsics.checkNotNullParameter(item, "item");
         if (item.getProgress() == item.getMaxProgress() && item.getRewardReceived() == 0) {
             newQuestScreen.sendData(3, StringKt.toStringJson(new QuestTaskRequest(item.getStageId(), item.getId())));
@@ -326,7 +326,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$7(NewQuestScreen newQuestScreen) {
+    public static final void onBackendMessage$lambda$0(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
         if (questTaskAdapter == null) {
@@ -344,7 +344,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$9(NewQuestScreen newQuestScreen) {
+    public static final void onBackendMessage$lambda$2(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
         if (questTaskAdapter == null) {
@@ -378,7 +378,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
             new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewQuestScreen.onBackendMessage$lambda$7(NewQuestScreen.this);
+                    NewQuestScreen.onBackendMessage$lambda$0(NewQuestScreen.this);
                 }
             }, 300L);
         } else if (i == 2) {
@@ -402,7 +402,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
             new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NewQuestScreen.onBackendMessage$lambda$9(NewQuestScreen.this);
+                    NewQuestScreen.onBackendMessage$lambda$2(NewQuestScreen.this);
                 }
             }, 300L);
         } else {

@@ -8,12 +8,12 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public final class Ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Handler f604a;
+    public final Handler f608a;
     public final Y2 b;
     public final Pb c;
 
     public Ob(Handler handler, Y2 y2) {
-        this.f604a = handler;
+        this.f608a = handler;
         this.b = y2;
         this.c = new Pb(handler, y2);
     }

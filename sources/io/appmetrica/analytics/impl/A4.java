@@ -6,7 +6,7 @@ public final class A4 {
     public static volatile A4 u;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q6 f339a;
+    public final Q6 f343a;
     public final C0195d8 b;
     public final C0526q4 c;
     public final P1 d;
@@ -87,7 +87,7 @@ public final class A4 {
     }
 
     public final Q6 i() {
-        return this.f339a;
+        return this.f343a;
     }
 
     public final C0195d8 j() {
@@ -115,7 +115,7 @@ public final class A4 {
     }
 
     public final Q6 n() {
-        return this.f339a;
+        return this.f343a;
     }
 
     public final C0285gl o() {
@@ -139,7 +139,7 @@ public final class A4 {
         this.q = new T1();
         this.r = new Ca();
         new C0169c8();
-        this.f339a = q6;
+        this.f343a = q6;
         this.b = c0195d8;
         this.c = c0526q4;
         this.h = c0392l;

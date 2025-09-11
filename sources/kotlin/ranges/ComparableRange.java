@@ -21,12 +21,12 @@ class ComparableRange<T extends Comparable<? super T>> implements ClosedRange<T>
     }
 
     @Override // kotlin.ranges.ClosedRange
-    public boolean contains(T t) {
+    public /* bridge */ boolean contains(T t) {
         return ClosedRange.DefaultImpls.contains(this, t);
     }
 
     @Override // kotlin.ranges.ClosedRange
-    public boolean isEmpty() {
+    public /* bridge */ boolean isEmpty() {
         return ClosedRange.DefaultImpls.isEmpty(this);
     }
 

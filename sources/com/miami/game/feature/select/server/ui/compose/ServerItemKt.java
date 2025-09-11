@@ -61,19 +61,19 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ServerItemKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerItem$lambda$7(ServerModel serverModel, Function1 function1, Function1 function12, boolean z, int i, Composer composer, int i2) {
+    public static final Unit ServerItem$lambda$2(ServerModel serverModel, Function1 function1, Function1 function12, boolean z, int i, Composer composer, int i2) {
         ServerItem(serverModel, function1, function12, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerName$lambda$9(String str, String str2, Modifier modifier, int i, Composer composer, int i2) {
+    public static final Unit ServerName$lambda$1(String str, String str2, Modifier modifier, int i, Composer composer, int i2) {
         ServerName(str, str2, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerOnline$lambda$11(int i, int i2, Modifier modifier, int i3, Composer composer, int i4) {
+    public static final Unit ServerOnline$lambda$1(int i, int i2, Modifier modifier, int i3, Composer composer, int i4) {
         ServerOnline(i, i2, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
         return Unit.INSTANCE;
     }
@@ -109,26 +109,26 @@ public final class ServerItemKt {
                 ComposerKt.traceEventStart(-2101834417, i2, -1, "com.miami.game.feature.select.server.ui.compose.ServerItem (ServerItem.kt:38)");
             }
             if (z) {
-                startRestartGroup.startReplaceGroup(-1228237802);
+                startRestartGroup.startReplaceGroup(-1228238186);
                 ComposerKt.sourceInformation(startRestartGroup, "39@1690L11");
                 m4572getTransparent0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU();
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(-1228237190);
+                startRestartGroup.startReplaceGroup(-1228237574);
                 startRestartGroup.endReplaceGroup();
                 m4572getTransparent0d7_KjU = Color.Companion.m4572getTransparent0d7_KjU();
             }
             final long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), z ? 0.58f : 0.41f, 0.0f, 0.0f, 0.0f, 14, null);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1228232538, "CC(remember):ServerItem.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1228232922, "CC(remember):ServerItem.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(serverModel) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda2
+                rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ServerItem$lambda$1$lambda$0;
-                        ServerItem$lambda$1$lambda$0 = ServerItemKt.ServerItem$lambda$1$lambda$0(Function1.this, serverModel);
-                        return ServerItem$lambda$1$lambda$0;
+                        Unit ServerItem$lambda$0$0;
+                        ServerItem$lambda$0$0 = ServerItemKt.ServerItem$lambda$0$0(Function1.this, serverModel);
+                        return ServerItem$lambda$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -136,12 +136,12 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final long j = m4572getTransparent0d7_KjU;
             composer2 = startRestartGroup;
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(1759199162, true, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda3
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableLambdaKt.rememberComposableLambda(1759199162, true, new Function3() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit ServerItem$lambda$6;
-                    ServerItem$lambda$6 = ServerItemKt.ServerItem$lambda$6(m4536copywmQWz5c$default, j, serverModel, onFavorite, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return ServerItem$lambda$6;
+                    Unit ServerItem$lambda$1;
+                    ServerItem$lambda$1 = ServerItemKt.ServerItem$lambda$1(m4536copywmQWz5c$default, j, serverModel, onFavorite, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return ServerItem$lambda$1;
                 }
             }, startRestartGroup, 54), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -150,25 +150,25 @@ public final class ServerItemKt {
         }
         ScopeUpdateScope endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda4
+            endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerItem$lambda$7;
-                    ServerItem$lambda$7 = ServerItemKt.ServerItem$lambda$7(ServerModel.this, onSelect, onFavorite, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerItem$lambda$7;
+                    Unit ServerItem$lambda$2;
+                    ServerItem$lambda$2 = ServerItemKt.ServerItem$lambda$2(ServerModel.this, onSelect, onFavorite, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerItem$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerItem$lambda$1$lambda$0(Function1 function1, ServerModel serverModel) {
+    public static final Unit ServerItem$lambda$0$0(Function1 function1, ServerModel serverModel) {
         function1.invoke(serverModel);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerItem$lambda$6(long j, long j2, final ServerModel serverModel, final Function1 function1, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit ServerItem$lambda$1(long j, long j2, final ServerModel serverModel, final Function1 function1, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C43@1902L1527:ServerItem.kt#2ojkxh");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -256,12 +256,12 @@ public final class ServerItemKt {
             boolean changed = composer.changed(function1) | composer.changedInstance(serverModel);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda5
+                rememberedValue = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ServerItem$lambda$6$lambda$5$lambda$4$lambda$3;
-                        ServerItem$lambda$6$lambda$5$lambda$4$lambda$3 = ServerItemKt.ServerItem$lambda$6$lambda$5$lambda$4$lambda$3(Function1.this, serverModel);
-                        return ServerItem$lambda$6$lambda$5$lambda$4$lambda$3;
+                        Unit ServerItem$lambda$1$0$1$0;
+                        ServerItem$lambda$1$0$1$0 = ServerItemKt.ServerItem$lambda$1$0$1$0(Function1.this, serverModel);
+                        return ServerItem$lambda$1$0$1$0;
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -282,7 +282,7 @@ public final class ServerItemKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerItem$lambda$6$lambda$5$lambda$4$lambda$3(Function1 function1, ServerModel serverModel) {
+    public static final Unit ServerItem$lambda$1$0$1$0(Function1 function1, ServerModel serverModel) {
         function1.invoke(serverModel);
         return Unit.INSTANCE;
     }
@@ -342,7 +342,7 @@ public final class ServerItemKt {
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1129284374, "C101@3962L28,104@4077L10,106@4163L13,107@4203L13,102@3999L227:ServerItem.kt#2ojkxh");
             if (str2 != null) {
-                startRestartGroup.startReplaceGroup(-1129276284);
+                startRestartGroup.startReplaceGroup(-1129263140);
                 ComposerKt.sourceInformation(startRestartGroup, "91@3657L200");
                 i3 = i2;
                 i4 = 6;
@@ -362,7 +362,7 @@ public final class ServerItemKt {
             long sp = TextUnitKt.getSp(0.6d);
             TextUnitKt.m7458checkArithmeticR2X_6o(sp);
             str3 = str;
-            TextKt.m2804Text4IGK_g(str3, (Modifier) null, m4574getWhite0d7_KjU, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(21), startRestartGroup, i4), (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(sp), -TextUnit.m7445getValueimpl(sp)), (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64370);
+            TextKt.m2804Text4IGK_g(str3, (Modifier) null, m4574getWhite0d7_KjU, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(21), startRestartGroup, i4), (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(sp), -TextUnit.m7445getValueimpl(sp)), (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(22), startRestartGroup, i4), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, labelMedium, startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64370);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -379,9 +379,9 @@ public final class ServerItemKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerName$lambda$9;
-                    ServerName$lambda$9 = ServerItemKt.ServerName$lambda$9(str3, str2, modifier, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerName$lambda$9;
+                    Unit ServerName$lambda$1;
+                    ServerName$lambda$1 = ServerItemKt.ServerName$lambda$1(str3, str2, modifier, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerName$lambda$1;
                 }
             });
         }
@@ -442,8 +442,8 @@ public final class ServerItemKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 129289880, "C118@4492L10,119@4537L13,120@4577L13,116@4401L190,123@4702L10,124@4747L13,121@4600L212:ServerItem.kt#2ojkxh");
             float f = 21;
             composer2 = startRestartGroup;
-            TextKt.m2804Text4IGK_g(String.valueOf(i), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
-            TextKt.m2804Text4IGK_g(" / " + i2, OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(1)), 1, null), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(15), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 65520);
+            TextKt.m2804Text4IGK_g(String.valueOf(i), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 64498);
+            TextKt.m2804Text4IGK_g(" / " + i2, OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(1)), 1, null), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(15), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, 432, 0, 65520);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -459,9 +459,9 @@ public final class ServerItemKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.ServerItemKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerOnline$lambda$11;
-                    ServerOnline$lambda$11 = ServerItemKt.ServerOnline$lambda$11(i, i2, modifier, i3, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerOnline$lambda$11;
+                    Unit ServerOnline$lambda$1;
+                    ServerOnline$lambda$1 = ServerItemKt.ServerOnline$lambda$1(i, i2, modifier, i3, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerOnline$lambda$1;
                 }
             });
         }

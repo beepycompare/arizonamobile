@@ -10,19 +10,19 @@ import kotlin.jvm.internal.Lambda;
 public final class d extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f265a;
+    public final /* synthetic */ Context f269a;
     public final /* synthetic */ String b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d(Context context, String str) {
         super(0);
-        this.f265a = context;
+        this.f269a = context;
         this.b = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        PackageManager packageManager = this.f265a.getPackageManager();
+        PackageManager packageManager = this.f269a.getPackageManager();
         if (AndroidUtils.isApiAchieved(30)) {
             return SafePackageManagerHelperForR.extractPackageInstaller(packageManager, this.b);
         }

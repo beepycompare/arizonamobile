@@ -5,7 +5,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Al {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0174cd f350a;
+    public final C0174cd f354a;
     public final C0148bd b;
 
     public Al(PublicLogger publicLogger, String str) {
@@ -14,14 +14,14 @@ public final class Al {
 
     public final synchronized boolean a(C0251fd c0251fd, String str, String str2) {
         int size = c0251fd.size();
-        int i = this.f350a.c.f527a;
+        int i = this.f354a.c.f531a;
         if (size >= i && (i != c0251fd.size() || !c0251fd.containsKey(str))) {
-            C0174cd c0174cd = this.f350a;
-            c0174cd.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", c0174cd.e, Integer.valueOf(c0174cd.c.f527a), str);
+            C0174cd c0174cd = this.f354a;
+            c0174cd.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", c0174cd.e, Integer.valueOf(c0174cd.c.f531a), str);
             return false;
         }
         this.b.getClass();
-        int i2 = c0251fd.f873a;
+        int i2 = c0251fd.f877a;
         if (str2 != null) {
             i2 += str2.length();
         }
@@ -35,7 +35,7 @@ public final class Al {
         }
         if (i2 > 4500) {
             C0148bd c0148bd = this.b;
-            c0148bd.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", c0148bd.f806a, 4500, str);
+            c0148bd.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", c0148bd.f810a, 4500, str);
             return false;
         }
         c0251fd.put(str, str2);
@@ -44,8 +44,8 @@ public final class Al {
 
     public final boolean b(C0251fd c0251fd, String str, String str2) {
         if (c0251fd != null) {
-            String a2 = this.f350a.f819a.a(str);
-            String a3 = this.f350a.b.a(str2);
+            String a2 = this.f354a.f823a.a(str);
+            String a3 = this.f354a.b.a(str2);
             if (!c0251fd.containsKey(a2)) {
                 if (a3 != null) {
                     return a(c0251fd, a2, a3);
@@ -62,7 +62,7 @@ public final class Al {
     }
 
     public Al(C0174cd c0174cd, C0148bd c0148bd) {
-        this.f350a = c0174cd;
+        this.f354a = c0174cd;
         this.b = c0148bd;
     }
 }

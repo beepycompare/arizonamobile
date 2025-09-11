@@ -90,7 +90,7 @@ public final class SelectServerScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SelectServerScreen$lambda$23(SelectServerUiState selectServerUiState, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+    public static final Unit SelectServerScreen$lambda$2(SelectServerUiState selectServerUiState, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         SelectServerScreen(selectServerUiState, function0, function1, function12, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -119,7 +119,7 @@ public final class SelectServerScreenKt {
             State collectAsStateWithLifecycle = FlowExtKt.collectAsStateWithLifecycle(component.getUiState(), (LifecycleOwner) null, (Lifecycle.State) null, (CoroutineContext) null, startRestartGroup, 0, 7);
             SharedEventFlow<ServerUiAction> uiAction = component.getUiAction();
             Object[] objArr = new Object[0];
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878700851, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878700467, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean z = (i3 & 14) == 4;
             SelectServerScreenKt$SelectServerRoute$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (z || rememberedValue == Composer.Companion.getEmpty()) {
@@ -129,7 +129,7 @@ public final class SelectServerScreenKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FlowExtensionsKt.collectInLaunchedEffectWithLifecycle(uiAction, objArr, null, null, (Function3) rememberedValue, startRestartGroup, 0, 6);
             SelectServerUiState SelectServerRoute$lambda$0 = SelectServerRoute$lambda$0(collectAsStateWithLifecycle);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878707891, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878707507, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(component);
             SelectServerScreenKt$SelectServerRoute$2$1 rememberedValue2 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -138,7 +138,7 @@ public final class SelectServerScreenKt {
             }
             KFunction kFunction = (KFunction) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878709237, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878708853, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(component);
             SelectServerScreenKt$SelectServerRoute$3$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -147,7 +147,7 @@ public final class SelectServerScreenKt {
             }
             KFunction kFunction2 = (KFunction) rememberedValue3;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878710711, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878710327, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance3 = startRestartGroup.changedInstance(component);
             SelectServerScreenKt$SelectServerRoute$4$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance3 || rememberedValue4 == Composer.Companion.getEmpty()) {
@@ -156,7 +156,7 @@ public final class SelectServerScreenKt {
             }
             KFunction kFunction3 = (KFunction) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878712313, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878711929, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance4 = startRestartGroup.changedInstance(component);
             SelectServerScreenKt$SelectServerRoute$5$1 rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance4 || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -165,7 +165,7 @@ public final class SelectServerScreenKt {
             }
             KFunction kFunction4 = (KFunction) rememberedValue5;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878713944, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 878713560, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance5 = startRestartGroup.changedInstance(component);
             SelectServerScreenKt$SelectServerRoute$6$1 rememberedValue6 = startRestartGroup.rememberedValue();
             if (changedInstance5 || rememberedValue6 == Composer.Companion.getEmpty()) {
@@ -246,7 +246,7 @@ public final class SelectServerScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1256713563, i2, -1, "com.miami.game.feature.select.server.ui.compose.SelectServerScreen (SelectServerScreen.kt:87)");
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 815935511, "CC(remember):SelectServerScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 815932983, "CC(remember):SelectServerScreen.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 ServerModel currentServer = uiState.getCurrentServer();
@@ -333,9 +333,9 @@ public final class SelectServerScreenKt {
                 rememberedValue3 = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SelectServerScreen$lambda$22$lambda$17$lambda$10$lambda$9;
-                        SelectServerScreen$lambda$22$lambda$17$lambda$10$lambda$9 = SelectServerScreenKt.SelectServerScreen$lambda$22$lambda$17$lambda$10$lambda$9(CoroutineScope.this, rememberLazyGridState);
-                        return SelectServerScreen$lambda$22$lambda$17$lambda$10$lambda$9;
+                        Unit SelectServerScreen$lambda$1$0$0$0;
+                        SelectServerScreen$lambda$1$0$0$0 = SelectServerScreenKt.SelectServerScreen$lambda$1$0$0$0(CoroutineScope.this, rememberLazyGridState);
+                        return SelectServerScreen$lambda$1$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -401,9 +401,9 @@ public final class SelectServerScreenKt {
                     rememberedValue4 = new Function1() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14;
-                            SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14 = SelectServerScreenKt.SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14(SelectServerUiState.this, onFavorite, mutableState, (LazyGridScope) obj);
-                            return SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14;
+                            Unit SelectServerScreen$lambda$1$0$2$0$0;
+                            SelectServerScreen$lambda$1$0$2$0$0 = SelectServerScreenKt.SelectServerScreen$lambda$1$0$2$0$0(SelectServerUiState.this, onFavorite, mutableState, (LazyGridScope) obj);
+                            return SelectServerScreen$lambda$1$0$2$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -458,15 +458,15 @@ public final class SelectServerScreenKt {
                 long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                 TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium();
                 float f2 = 32;
-                long m9041dpToSp8Feqmps = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6);
-                long m9041dpToSp8Feqmps2 = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6);
-                long m9041dpToSp8Feqmps3 = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(1), startRestartGroup, 6);
-                TextUnitKt.m7458checkArithmeticR2X_6o(m9041dpToSp8Feqmps3);
-                long pack = TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m9041dpToSp8Feqmps3), -TextUnit.m7445getValueimpl(m9041dpToSp8Feqmps3));
+                long m9048dpToSp8Feqmps = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6);
+                long m9048dpToSp8Feqmps2 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6);
+                long m9048dpToSp8Feqmps3 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(1), startRestartGroup, 6);
+                TextUnitKt.m7458checkArithmeticR2X_6o(m9048dpToSp8Feqmps3);
+                long pack = TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m9048dpToSp8Feqmps3), -TextUnit.m7445getValueimpl(m9048dpToSp8Feqmps3));
                 z = true;
                 boxScopeInstance = boxScopeInstance2;
                 str = "CC(remember):SelectServerScreen.kt#9igjgp";
-                TextKt.m2804Text4IGK_g("НЕТ ИЗБРАННЫХ", (Modifier) null, m4536copywmQWz5c$default, m9041dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, pack, (TextDecoration) null, (TextAlign) null, m9041dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, startRestartGroup, 390, 0, 64370);
+                TextKt.m2804Text4IGK_g("НЕТ ИЗБРАННЫХ", (Modifier) null, m4536copywmQWz5c$default, m9048dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, pack, (TextDecoration) null, (TextAlign) null, m9048dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, startRestartGroup, 390, 0, 64370);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -498,9 +498,9 @@ public final class SelectServerScreenKt {
                 rememberedValue5 = new Function0() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SelectServerScreen$lambda$22$lambda$21$lambda$20;
-                        SelectServerScreen$lambda$22$lambda$21$lambda$20 = SelectServerScreenKt.SelectServerScreen$lambda$22$lambda$21$lambda$20(SelectServerUiState.this, mutableState, function1);
-                        return SelectServerScreen$lambda$22$lambda$21$lambda$20;
+                        Unit SelectServerScreen$lambda$1$1$0;
+                        SelectServerScreen$lambda$1$1$0 = SelectServerScreenKt.SelectServerScreen$lambda$1$1$0(SelectServerUiState.this, mutableState, function1);
+                        return SelectServerScreen$lambda$1$1$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -525,25 +525,25 @@ public final class SelectServerScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SelectServerScreen$lambda$23;
-                    SelectServerScreen$lambda$23 = SelectServerScreenKt.SelectServerScreen$lambda$23(SelectServerUiState.this, navigateHome, function12, onFavorite, onFavoriteList, onMobileList, onDesktopList, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SelectServerScreen$lambda$23;
+                    Unit SelectServerScreen$lambda$2;
+                    SelectServerScreen$lambda$2 = SelectServerScreenKt.SelectServerScreen$lambda$2(SelectServerUiState.this, navigateHome, function12, onFavorite, onFavoriteList, onMobileList, onDesktopList, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SelectServerScreen$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SelectServerScreen$lambda$22$lambda$17$lambda$10$lambda$9(CoroutineScope coroutineScope, LazyGridState lazyGridState) {
+    public static final Unit SelectServerScreen$lambda$1$0$0$0(CoroutineScope coroutineScope, LazyGridState lazyGridState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new SelectServerScreenKt$SelectServerScreen$1$1$1$1$1(lazyGridState, null), 3, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14(SelectServerUiState selectServerUiState, final Function1 function1, final MutableState mutableState, LazyGridScope LazyHorizontalGrid) {
+    public static final Unit SelectServerScreen$lambda$1$0$2$0$0(SelectServerUiState selectServerUiState, final Function1 function1, final MutableState mutableState, LazyGridScope LazyHorizontalGrid) {
         Intrinsics.checkNotNullParameter(LazyHorizontalGrid, "$this$LazyHorizontalGrid");
         final List<ServerModel> serversList = selectServerUiState.getServersList();
-        final SelectServerScreenKt$SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14$$inlined$items$default$1 selectServerScreenKt$SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14$$inlined$items$default$1
+        final SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$1 selectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$1
             @Override // kotlin.jvm.functions.Function1
             public final Void invoke(ServerModel serverModel) {
                 return null;
@@ -554,7 +554,7 @@ public final class SelectServerScreenKt {
                 return invoke((ServerModel) obj);
             }
         };
-        LazyHorizontalGrid.items(serversList.size(), null, null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14$$inlined$items$default$4
+        LazyHorizontalGrid.items(serversList.size(), null, null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$4
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Object invoke(Integer num) {
                 return invoke(num.intValue());
@@ -563,7 +563,7 @@ public final class SelectServerScreenKt {
             public final Object invoke(int i) {
                 return Function1.this.invoke(serversList.get(i));
             }
-        }, ComposableLambdaKt.composableLambdaInstance(-1117249557, true, new Function4<LazyGridItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$22$lambda$17$lambda$16$lambda$15$lambda$14$$inlined$items$default$5
+        }, ComposableLambdaKt.composableLambdaInstance(-1117249557, true, new Function4<LazyGridItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$5
             @Override // kotlin.jvm.functions.Function4
             public /* bridge */ /* synthetic */ Unit invoke(LazyGridItemScope lazyGridItemScope, Integer num, Composer composer, Integer num2) {
                 invoke(lazyGridItemScope, num.intValue(), composer, num2.intValue());
@@ -627,7 +627,7 @@ public final class SelectServerScreenKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SelectServerScreen$lambda$22$lambda$21$lambda$20(SelectServerUiState selectServerUiState, MutableState mutableState, Function1 function1) {
+    public static final Unit SelectServerScreen$lambda$1$1$0(SelectServerUiState selectServerUiState, MutableState mutableState, Function1 function1) {
         Object obj;
         Iterator<T> it = selectServerUiState.getServersList().iterator();
         while (true) {

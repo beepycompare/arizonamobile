@@ -7,11 +7,11 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig;
 public final class C0650v4 implements ModuleServiceConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SdkIdentifiers f1114a;
+    public final SdkIdentifiers f1118a;
     public final Object b;
 
     public C0650v4(SdkIdentifiers sdkIdentifiers, Object obj) {
-        this.f1114a = sdkIdentifiers;
+        this.f1118a = sdkIdentifiers;
         this.b = obj;
     }
 
@@ -22,6 +22,6 @@ public final class C0650v4 implements ModuleServiceConfig {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig
     public final SdkIdentifiers getIdentifiers() {
-        return this.f1114a;
+        return this.f1118a;
     }
 }

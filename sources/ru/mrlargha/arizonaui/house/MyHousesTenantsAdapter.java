@@ -59,15 +59,15 @@ public final class MyHousesTenantsAdapter extends RecyclerView.Adapter<ViewHolde
         EasyAnimation.animateClick$default(easyAnimation, kickTenantButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.house.MyHousesTenantsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$1$lambda$0;
-                onBindViewHolder$lambda$1$lambda$0 = MyHousesTenantsAdapter.onBindViewHolder$lambda$1$lambda$0(MyHousesTenantsAdapter.this, tenantsInformation2);
-                return onBindViewHolder$lambda$1$lambda$0;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = MyHousesTenantsAdapter.onBindViewHolder$lambda$0$0(MyHousesTenantsAdapter.this, tenantsInformation2);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$1$lambda$0(MyHousesTenantsAdapter myHousesTenantsAdapter, MyHouseScreen.Companion.TenantsInformation tenantsInformation) {
+    public static final Unit onBindViewHolder$lambda$0$0(MyHousesTenantsAdapter myHousesTenantsAdapter, MyHouseScreen.Companion.TenantsInformation tenantsInformation) {
         OnTenantClickListener onTenantClickListener = myHousesTenantsAdapter.onTenantClickListener;
         if (onTenantClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onTenantClickListener");

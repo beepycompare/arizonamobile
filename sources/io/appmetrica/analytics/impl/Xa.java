@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public final class Xa {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final HashSet f736a;
+    public static final HashSet f740a;
 
     static {
         HashSet hashSet = new HashSet();
-        f736a = hashSet;
+        f740a = hashSet;
         hashSet.add("get_ad");
         hashSet.add("report");
         hashSet.add("report_ad");

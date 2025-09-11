@@ -12,14 +12,14 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 public abstract class Jk {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SafePackageManager f518a = new SafePackageManager();
+    public static final SafePackageManager f522a = new SafePackageManager();
 
     public static Intent a(Context context) {
         Bundle bundle;
         C0715xj c0715xj;
         Intent addFlags = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme("appmetrica").authority(context.getPackageName()).build()).addFlags(32);
         try {
-            bundle = f518a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
+            bundle = f522a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
             if (bundle == null) {
                 bundle = new Bundle();
             }

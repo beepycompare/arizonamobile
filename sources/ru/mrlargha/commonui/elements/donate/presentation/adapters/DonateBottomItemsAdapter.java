@@ -20,6 +20,16 @@ public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateB
     private final Function1<Integer, Unit> onClick;
     private final Function1<DonateItemModelUi, Unit> openDialog;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public DonateBottomItemsAdapter(List<? extends List<DonateItemModelUi>> list, Function1<? super Integer, Unit> onClick, Function1<? super DonateItemModelUi, Unit> openDialog) {
+        Intrinsics.checkNotNullParameter(list, "list");
+        Intrinsics.checkNotNullParameter(onClick, "onClick");
+        Intrinsics.checkNotNullParameter(openDialog, "openDialog");
+        this.list = list;
+        this.onClick = onClick;
+        this.openDialog = openDialog;
+    }
+
     public final List<List<DonateItemModelUi>> getList() {
         return this.list;
     }
@@ -30,16 +40,6 @@ public final class DonateBottomItemsAdapter extends RecyclerView.Adapter<DonateB
 
     public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
         return this.openDialog;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public DonateBottomItemsAdapter(List<? extends List<DonateItemModelUi>> list, Function1<? super Integer, Unit> onClick, Function1<? super DonateItemModelUi, Unit> openDialog) {
-        Intrinsics.checkNotNullParameter(list, "list");
-        Intrinsics.checkNotNullParameter(onClick, "onClick");
-        Intrinsics.checkNotNullParameter(openDialog, "openDialog");
-        this.list = list;
-        this.onClick = onClick;
-        this.openDialog = openDialog;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

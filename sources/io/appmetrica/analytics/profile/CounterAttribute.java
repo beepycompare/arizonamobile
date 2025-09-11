@@ -9,14 +9,14 @@ import io.appmetrica.analytics.impl.S6;
 public final class CounterAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final S6 f1272a;
+    private final S6 f1276a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CounterAttribute(String str, Qb qb, C0276gc c0276gc) {
-        this.f1272a = new S6(str, qb, c0276gc);
+        this.f1276a = new S6(str, qb, c0276gc);
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withDelta(double d) {
-        return new UserProfileUpdate<>(new C0503p6(this.f1272a.c, d));
+        return new UserProfileUpdate<>(new C0503p6(this.f1276a.c, d));
     }
 }

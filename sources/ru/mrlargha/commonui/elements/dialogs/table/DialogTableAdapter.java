@@ -36,11 +36,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
     private final boolean useFirstRowAsHeader;
     private final List<Float> weightsFormula;
 
-    public /* synthetic */ DialogTableAdapter(List list, boolean z, Activity activity, List list2, LinkedHashMap linkedHashMap, LinkedHashMap linkedHashMap2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(list, z, activity, (i & 8) != 0 ? CollectionsKt.listOf(Float.valueOf(1.0f)) : list2, (i & 16) != 0 ? new LinkedHashMap() : linkedHashMap, (i & 32) != 0 ? new LinkedHashMap() : linkedHashMap2);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x004a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -117,6 +113,10 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
         this.rows = arrayList;
     }
 
+    public /* synthetic */ DialogTableAdapter(List list, boolean z, Activity activity, List list2, LinkedHashMap linkedHashMap, LinkedHashMap linkedHashMap2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(list, z, activity, (i & 8) != 0 ? CollectionsKt.listOf(Float.valueOf(1.0f)) : list2, (i & 16) != 0 ? new LinkedHashMap() : linkedHashMap, (i & 32) != 0 ? new LinkedHashMap() : linkedHashMap2);
+    }
+
     public final int getSelectedItemId() {
         return this.selectedItemId;
     }
@@ -158,10 +158,6 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
         private final DialogTableAdapter adapter;
         private final LinearLayout layout;
 
-        public final DialogTableAdapter getAdapter() {
-            return this.adapter;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public DialogRowViewHolder(final View itemView, DialogTableAdapter adapter) {
             super(itemView);
@@ -173,9 +169,13 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.DialogTableAdapter$DialogRowViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogTableAdapter.DialogRowViewHolder._init_$lambda$1(DialogTableAdapter.DialogRowViewHolder.this, itemView, view);
+                    DialogTableAdapter.DialogRowViewHolder._init_$lambda$0(DialogTableAdapter.DialogRowViewHolder.this, itemView, view);
                 }
             });
+        }
+
+        public final DialogTableAdapter getAdapter() {
+            return this.adapter;
         }
 
         public final LinearLayout getLayout() {
@@ -183,7 +183,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void _init_$lambda$1(DialogRowViewHolder dialogRowViewHolder, View view, View view2) {
+        public static final void _init_$lambda$0(DialogRowViewHolder dialogRowViewHolder, View view, View view2) {
             if (dialogRowViewHolder.adapter.useFirstRowAsHeader && dialogRowViewHolder.getAdapterPosition() == 0) {
                 return;
             }

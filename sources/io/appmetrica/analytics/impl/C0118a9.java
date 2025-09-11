@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0118a9 implements zo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0247f9 f785a;
+    public final C0247f9 f789a;
 
     public C0118a9() {
         this(new C0247f9());
@@ -21,11 +21,11 @@ public final class C0118a9 implements zo {
         } else {
             bArr = new byte[0];
         }
-        C0247f9 c0247f9 = this.f785a;
-        return ((InterfaceC0221e9) c0247f9.f871a.a(c0402l9.o)).a(bArr);
+        C0247f9 c0247f9 = this.f789a;
+        return ((InterfaceC0221e9) c0247f9.f875a.a(c0402l9.o)).a(bArr);
     }
 
     public C0118a9(C0247f9 c0247f9) {
-        this.f785a = c0247f9;
+        this.f789a = c0247f9;
     }
 }

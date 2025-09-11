@@ -141,31 +141,31 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         bind.btnSharpenItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$1(WorkshopScreen.this, view);
+                WorkshopScreen._init_$lambda$0(WorkshopScreen.this, view);
             }
         });
         bind.btnPaintItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$2(WorkshopScreen.this, view);
+                WorkshopScreen._init_$lambda$1(WorkshopScreen.this, view);
             }
         });
         bind.mainItemField.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$3(WorkshopScreen.this, view);
+                WorkshopScreen._init_$lambda$2(WorkshopScreen.this, view);
             }
         });
         bind.rightItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$4(WorkshopScreen.this, view);
+                WorkshopScreen._init_$lambda$3(WorkshopScreen.this, view);
             }
         });
         bind.leftItemField.item.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$5(WorkshopScreen.this, view);
+                WorkshopScreen._init_$lambda$4(WorkshopScreen.this, view);
             }
         });
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda8
@@ -184,7 +184,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             bind.rvMenu.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WorkshopScreen._init_$lambda$7(WorkshopScreen.this);
+                    WorkshopScreen._init_$lambda$6(WorkshopScreen.this);
                 }
             });
         }
@@ -246,12 +246,12 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(WorkshopScreen workshopScreen, View view) {
+    public static final void _init_$lambda$0(WorkshopScreen workshopScreen, View view) {
         workshopScreen.sendData(StringKt.toStringJson(0), 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(WorkshopScreen workshopScreen, View view) {
+    public static final void _init_$lambda$1(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.isArizonaType && workshopScreen.currentScreenType == 1) {
             workshopScreen.sendData(StringKt.toStringJson(0), 4);
         } else {
@@ -260,7 +260,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(WorkshopScreen workshopScreen, View view) {
+    public static final void _init_$lambda$2(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.centerItemIndex == -1) {
             return;
         }
@@ -274,7 +274,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(WorkshopScreen workshopScreen, View view) {
+    public static final void _init_$lambda$3(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.rightItemIndex == -1) {
             return;
         }
@@ -293,7 +293,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(WorkshopScreen workshopScreen, View view) {
+    public static final void _init_$lambda$4(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.leftItemIndex == -1) {
             return;
         }
@@ -306,7 +306,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(WorkshopScreen workshopScreen) {
+    public static final void _init_$lambda$6(WorkshopScreen workshopScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = workshopScreen.binding.rvMenu.findViewHolderForAdapterPosition(0);
         if (findViewHolderForAdapterPosition == null || (view = findViewHolderForAdapterPosition.itemView) == null) {
@@ -496,9 +496,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.workShopMenuAdapter = new WorkshopMenuAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initMenu$lambda$8;
-                initMenu$lambda$8 = WorkshopScreen.initMenu$lambda$8(WorkshopScreen.this, ((Integer) obj).intValue());
-                return initMenu$lambda$8;
+                Unit initMenu$lambda$0;
+                initMenu$lambda$0 = WorkshopScreen.initMenu$lambda$0(WorkshopScreen.this, ((Integer) obj).intValue());
+                return initMenu$lambda$0;
             }
         });
         RecyclerView recyclerView = this.binding.rvMenu;
@@ -530,7 +530,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initMenu$lambda$8(WorkshopScreen workshopScreen, int i) {
+    public static final Unit initMenu$lambda$0(WorkshopScreen workshopScreen, int i) {
         boolean z = i == 1;
         workshopScreen.isFix = z;
         Log.e("workshop", "initMenu:  " + z);
@@ -705,9 +705,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.colorsAdapter = new SelectColorAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initColors$lambda$9;
-                initColors$lambda$9 = WorkshopScreen.initColors$lambda$9(WorkshopScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
-                return initColors$lambda$9;
+                Unit initColors$lambda$0;
+                initColors$lambda$0 = WorkshopScreen.initColors$lambda$0(WorkshopScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
+                return initColors$lambda$0;
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.rvColors;
@@ -735,7 +735,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initColors$lambda$9(WorkshopScreen workshopScreen, int i, ItemColor itemColor) {
+    public static final Unit initColors$lambda$0(WorkshopScreen workshopScreen, int i, ItemColor itemColor) {
         Intrinsics.checkNotNullParameter(itemColor, "<unused var>");
         if (workshopScreen.isDisableAll) {
             return Unit.INSTANCE;
@@ -774,10 +774,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0047, code lost:
         if (r0.intValue() != r1) goto L6;
      */
-    /* JADX WARN: Removed duplicated region for block: B:104:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:107:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0184  */
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -824,7 +824,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                                                 TextView textView = this.binding.tvLeftItemDescription;
                                                 List<ItemsInfo> itemsName = UtilsKt.getItemsName();
                                                 Integer item3 = inventoryItem.getItem();
-                                                textView.setText(itemsName.get(item3 != null ? item3.intValue() : 0).getName() + " ");
+                                                ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item3 != null ? item3.intValue() : -1);
+                                                textView.setText(((itemsInfo == null || (r6 = itemsInfo.getName()) == null) ? "" : "") + " ");
                                                 btnPaintEnableStatus(true);
                                                 return;
                                             }
@@ -931,7 +932,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             TextView textView = this.binding.tvMainItemDescription;
             List<ItemsInfo> itemsName = UtilsKt.getItemsName();
             Integer item2 = inventoryItem.getItem();
-            textView.setText(itemsName.get(item2 != null ? item2.intValue() : 0).getName() + " ");
+            ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item2 != null ? item2.intValue() : -1);
+            textView.setText(((itemsInfo == null || (r4 = itemsInfo.getName()) == null) ? "" : "") + " ");
         }
         if (this.currentScreenType == 0) {
             this.binding.mainItemField.tvTitleText.setText("+" + intValue);
@@ -958,7 +960,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
                 UtilsKt.setImage(ivItemImage, iconFromArchive$default);
             }
-            this.binding.tvRightItemDescription.setText(UtilsKt.getItemsName().get(inventoryItem.getItem().intValue()).getName() + " ");
+            TextView textView = this.binding.tvRightItemDescription;
+            ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(UtilsKt.getItemsName(), inventoryItem.getItem().intValue());
+            textView.setText(((itemsInfo == null || (r1 = itemsInfo.getName()) == null) ? "" : "") + " ");
             this.binding.rightItemField.tvTitleText.setText(inventoryItem.getText());
             return;
         }
@@ -1001,7 +1005,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             UtilsKt.setImage(ivItemImage, iconFromArchive$default);
         }
-        this.binding.tvLeftItemDescription.setText(UtilsKt.getItemsName().get(inventoryItem.getItem().intValue()).getName() + " ");
+        TextView textView = this.binding.tvLeftItemDescription;
+        ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(UtilsKt.getItemsName(), inventoryItem.getItem().intValue());
+        textView.setText(((itemsInfo == null || (r1 = itemsInfo.getName()) == null) ? "" : "") + " ");
         this.binding.leftItemField.tvTitleText.setText(inventoryItem.getText());
     }
 
@@ -1074,7 +1080,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 this.incrementHandler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.workshop.WorkshopScreen$$ExternalSyntheticLambda10
                     @Override // java.lang.Runnable
                     public final void run() {
-                        WorkshopScreen.onBackendMessage$lambda$15(WorkshopScreen.this);
+                        WorkshopScreen.onBackendMessage$lambda$0(WorkshopScreen.this);
                     }
                 }, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 SelectColorAdapter selectColorAdapter = this.colorsAdapter;
@@ -1278,7 +1284,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$15(WorkshopScreen workshopScreen) {
+    public static final void onBackendMessage$lambda$0(WorkshopScreen workshopScreen) {
         ImageView ivBgSharpResult = workshopScreen.binding.ivBgSharpResult;
         Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
         ivBgSharpResult.setVisibility(8);

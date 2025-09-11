@@ -8,14 +8,14 @@ import org.json.JSONObject;
 public final class Of {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Kf f606a;
+    public final Kf f610a;
 
     public Of(PreloadInfo preloadInfo, PublicLogger publicLogger, boolean z) {
         if (preloadInfo != null) {
             if (TextUtils.isEmpty(preloadInfo.getTrackingId())) {
                 publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
             } else {
-                this.f606a = new Kf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0530q8.c);
+                this.f610a = new Kf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0530q8.c);
             }
         }
     }

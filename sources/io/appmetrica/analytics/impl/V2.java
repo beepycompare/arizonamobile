@@ -3,16 +3,16 @@ package io.appmetrica.analytics.impl;
 public abstract class V2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zf f703a;
+    public final Zf f707a;
     public final InterfaceC0223eb b;
 
     public V2(Zf zf, InterfaceC0223eb interfaceC0223eb) {
-        this.f703a = zf;
+        this.f707a = zf;
         this.b = interfaceC0223eb;
     }
 
     public final boolean a(C0477o6 c0477o6, U2 u2) {
-        for (Object obj : ((C0655v9) this.f703a.a(c0477o6.d)).f1118a) {
+        for (Object obj : ((C0655v9) this.f707a.a(c0477o6.d)).f1122a) {
             if (u2.a(obj, c0477o6)) {
                 return true;
             }
@@ -21,7 +21,7 @@ public abstract class V2 {
     }
 
     public final Zf b() {
-        return this.f703a;
+        return this.f707a;
     }
 
     public final InterfaceC0223eb a() {

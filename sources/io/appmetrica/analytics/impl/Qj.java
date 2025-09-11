@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Qj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f638a;
+    public final /* synthetic */ String f642a;
 
     public Qj(String str) {
-        this.f638a = str;
+        this.f642a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.setUserProfileID(this.f638a);
+        interfaceC0557rb.setUserProfileID(this.f642a);
     }
 }

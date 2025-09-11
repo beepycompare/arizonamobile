@@ -93,9 +93,9 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
             itemSubInventoryBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
-                    boolean bind$lambda$3$lambda$0;
-                    bind$lambda$3$lambda$0 = SubInventoryViewHolder.bind$lambda$3$lambda$0(SubInventoryViewHolder.this, itemVal, view);
-                    return bind$lambda$3$lambda$0;
+                    boolean bind$lambda$0$0;
+                    bind$lambda$0$0 = SubInventoryViewHolder.bind$lambda$0$0(SubInventoryViewHolder.this, itemVal, view);
+                    return bind$lambda$0$0;
                 }
             });
         } else {
@@ -136,15 +136,15 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         itemSubInventoryBinding.getRoot().setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$$ExternalSyntheticLambda1
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
-                boolean bind$lambda$3$lambda$1;
-                bind$lambda$3$lambda$1 = SubInventoryViewHolder.bind$lambda$3$lambda$1(SubInventoryViewHolder.this, view, dragEvent);
-                return bind$lambda$3$lambda$1;
+                boolean bind$lambda$0$1;
+                bind$lambda$0$1 = SubInventoryViewHolder.bind$lambda$0$1(SubInventoryViewHolder.this, view, dragEvent);
+                return bind$lambda$0$1;
             }
         });
         itemSubInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SubInventoryViewHolder.bind$lambda$3$lambda$2(SubInventoryViewHolder.this, itemVal, view);
+                SubInventoryViewHolder.bind$lambda$0$2(SubInventoryViewHolder.this, itemVal, view);
             }
         });
         if (itemVal.getBackground() == null) {
@@ -216,14 +216,14 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$3$lambda$0(SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, View view) {
+    public static final boolean bind$lambda$0$0(SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, View view) {
         subInventoryViewHolder.onLongClicked.invoke(inventoryItem);
         Intrinsics.checkNotNull(view);
         return UtilsKt.setDragClick(inventoryItem, view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean bind$lambda$3$lambda$1(SubInventoryViewHolder subInventoryViewHolder, View view, DragEvent dragEvent) {
+    public static final boolean bind$lambda$0$1(SubInventoryViewHolder subInventoryViewHolder, View view, DragEvent dragEvent) {
         switch (dragEvent.getAction()) {
             case 1:
                 return dragEvent.getClipDescription().hasMimeType("text/plain");
@@ -260,7 +260,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$3$lambda$2(SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, View view) {
+    public static final void bind$lambda$0$2(SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, View view) {
         subInventoryViewHolder.onItemClicked.invoke(inventoryItem);
     }
 

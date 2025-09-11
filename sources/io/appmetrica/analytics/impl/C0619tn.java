@@ -6,5 +6,5 @@ import java.util.ArrayList;
 public final class C0619tn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f1095a = new ArrayList();
+    public final ArrayList f1099a = new ArrayList();
 }

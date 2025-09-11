@@ -45,13 +45,13 @@ public final class NeedResourcesViewHolder extends RecyclerView.ViewHolder {
         itemInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.viewHolder.NeedResourcesViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NeedResourcesViewHolder.bind$lambda$2$lambda$1(NeedResourcesViewHolder.this, itemVal, view);
+                NeedResourcesViewHolder.bind$lambda$0$1(NeedResourcesViewHolder.this, itemVal, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$2$lambda$1(NeedResourcesViewHolder needResourcesViewHolder, NeedItemsUi needItemsUi, View view) {
+    public static final void bind$lambda$0$1(NeedResourcesViewHolder needResourcesViewHolder, NeedItemsUi needItemsUi, View view) {
         needResourcesViewHolder.onItemClicked.invoke(Integer.valueOf(needItemsUi.getItem()));
     }
 }

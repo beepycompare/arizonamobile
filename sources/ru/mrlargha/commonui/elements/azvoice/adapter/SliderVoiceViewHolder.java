@@ -38,13 +38,13 @@ public final class SliderVoiceViewHolder extends RecyclerView.ViewHolder {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.google.android.material.slider.Slider.OnChangeListener, com.google.android.material.slider.BaseOnChangeListener
             public final void onValueChange(Slider slider, float f, boolean z) {
-                SliderVoiceViewHolder.bind$lambda$1$lambda$0(SliderVoiceViewHolder.this, item, soundSliderBinding, slider, f, z);
+                SliderVoiceViewHolder.bind$lambda$0$0(SliderVoiceViewHolder.this, item, soundSliderBinding, slider, f, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(SliderVoiceViewHolder sliderVoiceViewHolder, SoundSliderData soundSliderData, SoundSliderBinding soundSliderBinding, Slider slider, float f, boolean z) {
+    public static final void bind$lambda$0$0(SliderVoiceViewHolder sliderVoiceViewHolder, SoundSliderData soundSliderData, SoundSliderBinding soundSliderBinding, Slider slider, float f, boolean z) {
         Intrinsics.checkNotNullParameter(slider, "<unused var>");
         int i = (int) f;
         sliderVoiceViewHolder.listener.invoke(Integer.valueOf(soundSliderData.getPlayerId()), Integer.valueOf(soundSliderData.getSliderUId()), Integer.valueOf(i));

@@ -192,9 +192,9 @@ public class PathsKt__PathRecursiveFunctionsKt extends PathsKt__PathReadWriteKt 
         PathsKt.visitFileTree$default(path, 0, z, new Function1() { // from class: kotlin.io.path.PathsKt__PathRecursiveFunctionsKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit copyToRecursively$lambda$6$PathsKt__PathRecursiveFunctionsKt;
-                copyToRecursively$lambda$6$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$6$PathsKt__PathRecursiveFunctionsKt(arrayList, copyAction, path, target, normalize, onError, (FileVisitorBuilder) obj);
-                return copyToRecursively$lambda$6$PathsKt__PathRecursiveFunctionsKt;
+                Unit copyToRecursively$lambda$3$PathsKt__PathRecursiveFunctionsKt;
+                copyToRecursively$lambda$3$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$3$PathsKt__PathRecursiveFunctionsKt(arrayList, copyAction, path, target, normalize, onError, (FileVisitorBuilder) obj);
+                return copyToRecursively$lambda$3$PathsKt__PathRecursiveFunctionsKt;
             }
         }, 1, (Object) null);
         return target;
@@ -230,14 +230,14 @@ public class PathsKt__PathRecursiveFunctionsKt extends PathsKt__PathReadWriteKt 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit copyToRecursively$lambda$6$PathsKt__PathRecursiveFunctionsKt(final ArrayList arrayList, final Function3 function3, final Path path, final Path path2, final Path path3, final Function3 function32, FileVisitorBuilder visitFileTree) {
+    public static final Unit copyToRecursively$lambda$3$PathsKt__PathRecursiveFunctionsKt(final ArrayList arrayList, final Function3 function3, final Path path, final Path path2, final Path path3, final Function3 function32, FileVisitorBuilder visitFileTree) {
         Intrinsics.checkNotNullParameter(visitFileTree, "$this$visitFileTree");
         visitFileTree.onPreVisitDirectory(new Function2() { // from class: kotlin.io.path.PathsKt__PathRecursiveFunctionsKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                FileVisitResult copyToRecursively$lambda$6$lambda$4$PathsKt__PathRecursiveFunctionsKt;
-                copyToRecursively$lambda$6$lambda$4$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$6$lambda$4$PathsKt__PathRecursiveFunctionsKt(arrayList, function3, path, path2, path3, function32, (Path) obj, (BasicFileAttributes) obj2);
-                return copyToRecursively$lambda$6$lambda$4$PathsKt__PathRecursiveFunctionsKt;
+                FileVisitResult copyToRecursively$lambda$3$0$PathsKt__PathRecursiveFunctionsKt;
+                copyToRecursively$lambda$3$0$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$3$0$PathsKt__PathRecursiveFunctionsKt(arrayList, function3, path, path2, path3, function32, (Path) obj, (BasicFileAttributes) obj2);
+                return copyToRecursively$lambda$3$0$PathsKt__PathRecursiveFunctionsKt;
             }
         });
         visitFileTree.onVisitFile(new PathsKt__PathRecursiveFunctionsKt$copyToRecursively$5$2(arrayList, function3, path, path2, path3, function32));
@@ -245,16 +245,16 @@ public class PathsKt__PathRecursiveFunctionsKt extends PathsKt__PathReadWriteKt 
         visitFileTree.onPostVisitDirectory(new Function2() { // from class: kotlin.io.path.PathsKt__PathRecursiveFunctionsKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                FileVisitResult copyToRecursively$lambda$6$lambda$5$PathsKt__PathRecursiveFunctionsKt;
-                copyToRecursively$lambda$6$lambda$5$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$6$lambda$5$PathsKt__PathRecursiveFunctionsKt(arrayList, function32, path, path2, path3, (Path) obj, (IOException) obj2);
-                return copyToRecursively$lambda$6$lambda$5$PathsKt__PathRecursiveFunctionsKt;
+                FileVisitResult copyToRecursively$lambda$3$1$PathsKt__PathRecursiveFunctionsKt;
+                copyToRecursively$lambda$3$1$PathsKt__PathRecursiveFunctionsKt = PathsKt__PathRecursiveFunctionsKt.copyToRecursively$lambda$3$1$PathsKt__PathRecursiveFunctionsKt(arrayList, function32, path, path2, path3, (Path) obj, (IOException) obj2);
+                return copyToRecursively$lambda$3$1$PathsKt__PathRecursiveFunctionsKt;
             }
         });
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final FileVisitResult copyToRecursively$lambda$6$lambda$4$PathsKt__PathRecursiveFunctionsKt(ArrayList arrayList, Function3 function3, Path path, Path path2, Path path3, Function3 function32, Path directory, BasicFileAttributes attributes) {
+    public static final FileVisitResult copyToRecursively$lambda$3$0$PathsKt__PathRecursiveFunctionsKt(ArrayList arrayList, Function3 function3, Path path, Path path2, Path path3, Function3 function32, Path directory, BasicFileAttributes attributes) {
         Intrinsics.checkNotNullParameter(directory, "directory");
         Intrinsics.checkNotNullParameter(attributes, "attributes");
         FileVisitResult copyToRecursively$copy$PathsKt__PathRecursiveFunctionsKt = copyToRecursively$copy$PathsKt__PathRecursiveFunctionsKt(arrayList, function3, path, path2, path3, function32, directory, attributes);
@@ -265,7 +265,7 @@ public class PathsKt__PathRecursiveFunctionsKt extends PathsKt__PathReadWriteKt 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final FileVisitResult copyToRecursively$lambda$6$lambda$5$PathsKt__PathRecursiveFunctionsKt(ArrayList arrayList, Function3 function3, Path path, Path path2, Path path3, Path directory, IOException iOException) {
+    public static final FileVisitResult copyToRecursively$lambda$3$1$PathsKt__PathRecursiveFunctionsKt(ArrayList arrayList, Function3 function3, Path path, Path path2, Path path3, Path directory, IOException iOException) {
         Intrinsics.checkNotNullParameter(directory, "directory");
         CollectionsKt.removeLast(arrayList);
         if (iOException == null) {

@@ -15,7 +15,7 @@ import java.util.concurrent.Executor;
 public final class C0525q3 implements InterfaceC0618tm {
 
     /* renamed from: a  reason: collision with root package name */
-    public BillingMonitor f1040a;
+    public BillingMonitor f1044a;
     public final Context b;
     public final Executor c;
     public final Executor d;
@@ -42,22 +42,22 @@ public final class C0525q3 implements InterfaceC0618tm {
                 BillingInfoStorage billingInfoStorage = this.f;
                 BillingInfoSender billingInfoSender = this.g;
                 c0474o3.getClass();
-                int i = AbstractC0448n3.f997a[billingType.ordinal()];
+                int i = AbstractC0448n3.f1001a[billingType.ordinal()];
                 if (i == 1) {
                     billingLibraryMonitor = new BillingLibraryMonitor(context, executor, executor2, billingInfoStorage, billingInfoSender, null, null, 96, null);
                 } else if (i != 2) {
                     billingMonitor = new C0604t8();
-                    this.f1040a = billingMonitor;
+                    this.f1044a = billingMonitor;
                 } else {
                     billingLibraryMonitor = new io.appmetrica.analytics.billingv8.internal.BillingLibraryMonitor(context, executor, executor2, billingInfoStorage, billingInfoSender, null, null, 96, null);
                 }
                 billingMonitor = billingLibraryMonitor;
-                this.f1040a = billingMonitor;
+                this.f1044a = billingMonitor;
             }
             billingMonitor.onBillingConfigChanged(c0493om.x);
             if (this.h.registerStickyObserver(new C0500p3(this)) == ApplicationState.VISIBLE) {
                 try {
-                    BillingMonitor billingMonitor2 = this.f1040a;
+                    BillingMonitor billingMonitor2 = this.f1044a;
                     if (billingMonitor2 != null) {
                         billingMonitor2.onSessionResumed();
                     }
@@ -82,7 +82,7 @@ public final class C0525q3 implements InterfaceC0618tm {
     public final synchronized void a(C0493om c0493om) {
         BillingMonitor billingMonitor;
         synchronized (this) {
-            billingMonitor = this.f1040a;
+            billingMonitor = this.f1044a;
         }
         if (billingMonitor != null) {
             billingMonitor.onBillingConfigChanged(c0493om.x);

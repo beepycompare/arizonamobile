@@ -18,7 +18,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSources
 public final class C0405lc implements InterfaceC0379kc, InterfaceC0618tm, LocationProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f965a;
+    public final Context f969a;
     public final InterfaceC0509pc b;
     public final LocationClient c;
     public final Cl d;
@@ -27,7 +27,7 @@ public final class C0405lc implements InterfaceC0379kc, InterfaceC0618tm, Locati
     public final LocationReceiverProviderFactory g;
 
     public C0405lc(Context context, InterfaceC0509pc interfaceC0509pc, LocationClient locationClient) {
-        this.f965a = context;
+        this.f969a = context;
         this.b = interfaceC0509pc;
         this.c = locationClient;
         C0633uc c0633uc = new C0633uc();
@@ -43,7 +43,7 @@ public final class C0405lc implements InterfaceC0379kc, InterfaceC0618tm, Locati
     public final void a(C0493om c0493om) {
         C3 c3 = c0493om.y;
         if (c3 != null) {
-            long j = c3.f377a;
+            long j = c3.f381a;
             this.c.updateCacheArguments(new CacheArguments(j, 2 * j));
         }
     }
@@ -79,7 +79,7 @@ public final class C0405lc implements InterfaceC0379kc, InterfaceC0618tm, Locati
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0379kc, io.appmetrica.analytics.impl.InterfaceC0457nc
     public final void init() {
-        this.c.init(this.f965a, this.d, Na.F.d.c(), this.e.e());
+        this.c.init(this.f969a, this.d, Na.F.d.c(), this.e.e());
         ModuleLocationSourcesServiceController f = this.e.f();
         if (f != null) {
             f.init();

@@ -9,7 +9,7 @@ import java.util.Map;
 public final class Je implements A8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Me f514a;
+    public final Me f518a;
     public final I3 b;
     public final Sa c;
     public final C0254fg d;
@@ -23,29 +23,29 @@ public final class Je implements A8 {
     public final List<Zi> fromModel(Ie ie) {
         Zi zi;
         T8 t8 = new T8();
-        t8.f678a = ie.f493a;
+        t8.f682a = ie.f497a;
         t8.f = new I8();
         Ke ke = ie.b;
         G8 g8 = new G8();
-        g8.f453a = StringUtils.getUTF8Bytes(ke.f534a);
+        g8.f457a = StringUtils.getUTF8Bytes(ke.f538a);
         Sn a2 = this.c.a(ke.b);
-        g8.b = StringUtils.getUTF8Bytes((String) a2.f671a);
+        g8.b = StringUtils.getUTF8Bytes((String) a2.f675a);
         g8.e = ke.c.size();
         Map<String, String> map = ke.d;
         if (map != null) {
-            zi = this.f514a.fromModel(map);
-            g8.c = (K8) zi.f772a;
+            zi = this.f518a.fromModel(map);
+            g8.c = (K8) zi.f776a;
         } else {
             zi = null;
         }
-        t8.f.f488a = g8;
+        t8.f.f492a = g8;
         int i = 0;
         char c = 1;
         C0749z3 c0749z3 = new C0749z3(C0749z3.b(a2, zi));
         List list = ke.c;
         ArrayList arrayList = new ArrayList();
         this.d.getClass();
-        int computeInt32Size = t8.f678a != new T8().f678a ? CodedOutputByteBufferNano.computeInt32Size(1, t8.f678a) : 0;
+        int computeInt32Size = t8.f682a != new T8().f682a ? CodedOutputByteBufferNano.computeInt32Size(1, t8.f682a) : 0;
         S8 s8 = t8.b;
         if (s8 != null) {
             computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(2, s8);
@@ -69,14 +69,14 @@ public final class Je implements A8 {
         }
         ArrayList arrayList2 = new ArrayList();
         T8 t82 = new T8();
-        t82.f678a = t8.f678a;
+        t82.f682a = t8.f682a;
         I8 i82 = new I8();
         t82.f = i82;
-        i82.f488a = new G8();
-        G8 g82 = t82.f.f488a;
-        G8 g83 = t8.f.f488a;
+        i82.f492a = new G8();
+        G8 g82 = t82.f.f492a;
+        G8 g83 = t8.f.f492a;
         g82.b = g83.b;
-        g82.f453a = g83.f453a;
+        g82.f457a = g83.f457a;
         g82.e = g83.e;
         g82.c = g83.c;
         C0749z3 c0749z32 = c0749z3;
@@ -85,29 +85,29 @@ public final class Je implements A8 {
         while (i3 < list.size()) {
             char c2 = c;
             H8 h8 = new H8();
-            h8.f470a = i3;
+            h8.f474a = i3;
             int i5 = i;
             Zi fromModel = this.b.fromModel((J3) list.get(i3));
-            h8.b = (D8) fromModel.f772a;
+            h8.b = (D8) fromModel.f776a;
             fromModel.b.getBytesTruncated();
             Zi zi2 = new Zi(h8, fromModel);
             this.d.getClass();
             int computeTagSize = CodedOutputByteBufferNano.computeTagSize(i2);
-            int computeMessageSizeNoTag = CodedOutputByteBufferNano.computeMessageSizeNoTag((H8) zi2.f772a);
+            int computeMessageSizeNoTag = CodedOutputByteBufferNano.computeMessageSizeNoTag((H8) zi2.f776a);
             int computeRawVarint32Size = computeTagSize + computeMessageSizeNoTag + ((computeMessageSizeNoTag & (-128)) == 0 ? i5 : CodedOutputByteBufferNano.computeRawVarint32Size(computeMessageSizeNoTag));
             if (arrayList2.size() != 0 && i4 + computeRawVarint32Size > 204800) {
-                t82.f.f488a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
+                t82.f.f492a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
                 ArrayList arrayList3 = new ArrayList();
                 arrayList.add(new Zi(t82, c0749z32));
                 T8 t83 = new T8();
-                t83.f678a = t8.f678a;
+                t83.f682a = t8.f682a;
                 I8 i83 = new I8();
                 t83.f = i83;
-                i83.f488a = new G8();
-                G8 g84 = t83.f.f488a;
-                G8 g85 = t8.f.f488a;
+                i83.f492a = new G8();
+                G8 g84 = t83.f.f492a;
+                G8 g85 = t8.f.f492a;
                 g84.b = g85.b;
-                g84.f453a = g85.f453a;
+                g84.f457a = g85.f457a;
                 g84.e = g85.e;
                 g84.c = g85.c;
                 c0749z32 = c0749z3;
@@ -115,7 +115,7 @@ public final class Je implements A8 {
                 t82 = t83;
                 arrayList2 = arrayList3;
             }
-            arrayList2.add((H8) zi2.f772a);
+            arrayList2.add((H8) zi2.f776a);
             A3[] a3Arr = new A3[2];
             a3Arr[i5] = c0749z32;
             a3Arr[c2] = zi2.b;
@@ -126,7 +126,7 @@ public final class Je implements A8 {
             i = i5;
             i2 = 4;
         }
-        t82.f.f488a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
+        t82.f.f492a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
         arrayList.add(new Zi(t82, c0749z32));
         return arrayList;
     }
@@ -138,7 +138,7 @@ public final class Je implements A8 {
     }
 
     public Je(Me me2, I3 i3, Sa sa, C0254fg c0254fg) {
-        this.f514a = me2;
+        this.f518a = me2;
         this.b = i3;
         this.c = sa;
         this.d = c0254fg;

@@ -42,7 +42,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class PolicyTextKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit PolicyText$lambda$7(String str, String str2, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
+    public static final Unit PolicyText$lambda$1(String str, String str2, Function0 function0, Function0 function02, int i, Composer composer, int i2) {
         PolicyText(str, str2, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -111,9 +111,9 @@ public final class PolicyTextKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.PolicyTextKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit PolicyText$lambda$6$lambda$1$lambda$0;
-                        PolicyText$lambda$6$lambda$1$lambda$0 = PolicyTextKt.PolicyText$lambda$6$lambda$1$lambda$0(Function0.this);
-                        return PolicyText$lambda$6$lambda$1$lambda$0;
+                        Unit PolicyText$lambda$0$0$0;
+                        PolicyText$lambda$0$0$0 = PolicyTextKt.PolicyText$lambda$0$0$0(Function0.this);
+                        return PolicyText$lambda$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -151,8 +151,8 @@ public final class PolicyTextKt {
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 686536832, "C23@796L13,24@849L10,21@723L217,29@1027L10,30@1076L13,31@1129L11,27@953L210:PolicyText.kt#18sjrx");
             float f = 14;
-            TextKt.m2804Text4IGK_g("Соглашаюсь с ", (Modifier) null, Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 65522);
-            TextKt.m2804Text4IGK_g(text1, (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, i3 & 14, 0, 65522);
+            TextKt.m2804Text4IGK_g("Соглашаюсь с ", (Modifier) null, Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 390, 0, 65522);
+            TextKt.m2804Text4IGK_g(text1, (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, i3 & 14, 0, 65522);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -167,9 +167,9 @@ public final class PolicyTextKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.download.dialog.ui.setup.PolicyTextKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit PolicyText$lambda$6$lambda$4$lambda$3;
-                        PolicyText$lambda$6$lambda$4$lambda$3 = PolicyTextKt.PolicyText$lambda$6$lambda$4$lambda$3(Function0.this);
-                        return PolicyText$lambda$6$lambda$4$lambda$3;
+                        Unit PolicyText$lambda$0$2$0;
+                        PolicyText$lambda$0$2$0 = PolicyTextKt.PolicyText$lambda$0$2$0(Function0.this);
+                        return PolicyText$lambda$0$2$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -206,8 +206,8 @@ public final class PolicyTextKt {
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1850425310, "C39@1328L13,40@1381L10,37@1266L206,45@1559L10,46@1608L13,47@1661L11,43@1485L210:PolicyText.kt#18sjrx");
             composer2 = startRestartGroup;
-            TextKt.m2804Text4IGK_g("и ", (Modifier) null, Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 65522);
-            TextKt.m2804Text4IGK_g(text2, (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer2, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (i3 >> 3) & 14, 0, 65522);
+            TextKt.m2804Text4IGK_g("и ", (Modifier) null, Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, 390, 0, 65522);
+            TextKt.m2804Text4IGK_g(text2, (Modifier) null, MaterialTheme.INSTANCE.getColorScheme(composer2, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, (i3 >> 3) & 14, 0, 65522);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -232,22 +232,22 @@ public final class PolicyTextKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.setup.PolicyTextKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PolicyText$lambda$7;
-                    PolicyText$lambda$7 = PolicyTextKt.PolicyText$lambda$7(text1, text2, onPolicy, onPrivacy, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return PolicyText$lambda$7;
+                    Unit PolicyText$lambda$1;
+                    PolicyText$lambda$1 = PolicyTextKt.PolicyText$lambda$1(text1, text2, onPolicy, onPrivacy, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return PolicyText$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit PolicyText$lambda$6$lambda$1$lambda$0(Function0 function0) {
+    public static final Unit PolicyText$lambda$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit PolicyText$lambda$6$lambda$4$lambda$3(Function0 function0) {
+    public static final Unit PolicyText$lambda$0$2$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

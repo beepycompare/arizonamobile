@@ -10,19 +10,19 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0544qm implements InterfaceC0618tm {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile C0493om f1051a;
+    public volatile C0493om f1055a;
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0618tm
     public final void a(C0493om c0493om) {
-        this.f1051a = c0493om;
+        this.f1055a = c0493om;
         for (InterfaceC0618tm interfaceC0618tm : this.b) {
             interfaceC0618tm.a(c0493om);
         }
     }
 
     public final C0493om b() {
-        C0493om c0493om = this.f1051a;
+        C0493om c0493om = this.f1055a;
         if (c0493om == null) {
             Intrinsics.throwUninitializedPropertyAccessException("startupState");
             return null;
@@ -36,8 +36,8 @@ public final class C0544qm implements InterfaceC0618tm {
 
     public final void a(InterfaceC0618tm interfaceC0618tm) {
         this.b.add(interfaceC0618tm);
-        if (this.f1051a != null) {
-            C0493om c0493om = this.f1051a;
+        if (this.f1055a != null) {
+            C0493om c0493om = this.f1055a;
             if (c0493om == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("startupState");
                 c0493om = null;
@@ -51,7 +51,7 @@ public final class C0544qm implements InterfaceC0618tm {
         ProtobufStateStorage<Object> a2 = Zm.a(C0593sm.class).a(context);
         Co a3 = Na.j().B().a();
         synchronized (a3) {
-            optStringOrNull = JsonUtils.optStringOrNull(a3.f393a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(a3.f397a.a(), "device_id");
         }
         a(new C0493om(optStringOrNull, a3.a(), (C0593sm) a2.read()));
     }

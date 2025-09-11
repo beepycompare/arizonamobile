@@ -58,8 +58,8 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int isb_indicator_rounded_corners = 0x7f0809ec;
-        public static int isb_indicator_square_corners = 0x7f0809ed;
+        public static int isb_indicator_rounded_corners = 0x7f0809f3;
+        public static int isb_indicator_square_corners = 0x7f0809f4;
 
         private drawable() {
         }

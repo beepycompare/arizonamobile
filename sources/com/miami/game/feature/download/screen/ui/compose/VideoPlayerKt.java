@@ -29,7 +29,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class VideoPlayerKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ExoPlayerView$lambda$11(Uri uri, boolean z, int i, Composer composer, int i2) {
+    public static final Unit ExoPlayerView$lambda$7(Uri uri, boolean z, int i, Composer composer, int i2) {
         ExoPlayerView(uri, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -57,7 +57,7 @@ public final class VideoPlayerKt {
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Context context = (Context) consume;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719456051, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719454803, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new ExoPlayer.Builder(context).build(), null, 2, null);
@@ -65,7 +65,7 @@ public final class VideoPlayerKt {
             }
             final MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719459720, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719458472, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean changed = startRestartGroup.changed(uri);
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -76,7 +76,7 @@ public final class VideoPlayerKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Intrinsics.checkNotNull(mediaItem);
             Boolean valueOf = Boolean.valueOf(z);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719462416, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719461168, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean z2 = (i2 & 112) == 32;
             VideoPlayerKt$ExoPlayerView$1$1 rememberedValue3 = startRestartGroup.rememberedValue();
             if (z2 || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -85,7 +85,7 @@ public final class VideoPlayerKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue3, startRestartGroup, (i2 >> 3) & 14);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719466691, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719465443, "CC(remember):VideoPlayer.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(mediaItem);
             VideoPlayerKt$ExoPlayerView$2$1 rememberedValue4 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue4 == Composer.Companion.getEmpty()) {
@@ -95,30 +95,30 @@ public final class VideoPlayerKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(mediaItem, (Function2) rememberedValue4, startRestartGroup, 0);
             Unit unit = Unit.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719474105, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719472857, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue5 = startRestartGroup.rememberedValue();
             if (rememberedValue5 == Composer.Companion.getEmpty()) {
                 rememberedValue5 = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult ExoPlayerView$lambda$7$lambda$6;
-                        ExoPlayerView$lambda$7$lambda$6 = VideoPlayerKt.ExoPlayerView$lambda$7$lambda$6(MutableState.this, (DisposableEffectScope) obj);
-                        return ExoPlayerView$lambda$7$lambda$6;
+                        DisposableEffectResult ExoPlayerView$lambda$5$0;
+                        ExoPlayerView$lambda$5$0 = VideoPlayerKt.ExoPlayerView$lambda$5$0(MutableState.this, (DisposableEffectScope) obj);
+                        return ExoPlayerView$lambda$5$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.DisposableEffect(unit, (Function1) rememberedValue5, startRestartGroup, 54);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719480242, "CC(remember):VideoPlayer.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 719478994, "CC(remember):VideoPlayer.kt#9igjgp");
             Object rememberedValue6 = startRestartGroup.rememberedValue();
             if (rememberedValue6 == Composer.Companion.getEmpty()) {
                 rememberedValue6 = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        PlayerView ExoPlayerView$lambda$10$lambda$9;
-                        ExoPlayerView$lambda$10$lambda$9 = VideoPlayerKt.ExoPlayerView$lambda$10$lambda$9(MutableState.this, (Context) obj);
-                        return ExoPlayerView$lambda$10$lambda$9;
+                        PlayerView ExoPlayerView$lambda$6$0;
+                        ExoPlayerView$lambda$6$0 = VideoPlayerKt.ExoPlayerView$lambda$6$0(MutableState.this, (Context) obj);
+                        return ExoPlayerView$lambda$6$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue6);
@@ -134,9 +134,9 @@ public final class VideoPlayerKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ExoPlayerView$lambda$11;
-                    ExoPlayerView$lambda$11 = VideoPlayerKt.ExoPlayerView$lambda$11(uri, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ExoPlayerView$lambda$11;
+                    Unit ExoPlayerView$lambda$7;
+                    ExoPlayerView$lambda$7 = VideoPlayerKt.ExoPlayerView$lambda$7(uri, z, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ExoPlayerView$lambda$7;
                 }
             });
         }
@@ -148,7 +148,7 @@ public final class VideoPlayerKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final PlayerView ExoPlayerView$lambda$10$lambda$9(MutableState mutableState, Context ctx) {
+    public static final PlayerView ExoPlayerView$lambda$6$0(MutableState mutableState, Context ctx) {
         Intrinsics.checkNotNullParameter(ctx, "ctx");
         PlayerView playerView = new PlayerView(ctx);
         playerView.setPlayer(ExoPlayerView$lambda$1(mutableState));
@@ -159,9 +159,9 @@ public final class VideoPlayerKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DisposableEffectResult ExoPlayerView$lambda$7$lambda$6(final MutableState mutableState, DisposableEffectScope DisposableEffect) {
+    public static final DisposableEffectResult ExoPlayerView$lambda$5$0(final MutableState mutableState, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
-        return new DisposableEffectResult() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$ExoPlayerView$lambda$7$lambda$6$$inlined$onDispose$1
+        return new DisposableEffectResult() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$ExoPlayerView$lambda$5$0$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult
             public void dispose() {
                 ExoPlayer ExoPlayerView$lambda$1;

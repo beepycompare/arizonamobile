@@ -5,7 +5,7 @@ import android.util.Base64;
 public final class B3 implements zo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0247f9 f357a;
+    public final C0247f9 f361a;
 
     public B3() {
         this(new C0247f9());
@@ -21,11 +21,11 @@ public final class B3 implements zo {
             } catch (Throwable unused) {
             }
         }
-        C0247f9 c0247f9 = this.f357a;
-        return ((InterfaceC0221e9) c0247f9.f871a.a(c0402l9.o)).a(bArr);
+        C0247f9 c0247f9 = this.f361a;
+        return ((InterfaceC0221e9) c0247f9.f875a.a(c0402l9.o)).a(bArr);
     }
 
     public B3(C0247f9 c0247f9) {
-        this.f357a = c0247f9;
+        this.f361a = c0247f9;
     }
 }

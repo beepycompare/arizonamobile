@@ -169,25 +169,25 @@ public final class MessengerChat implements MobileController {
         this.chatAdapter = new MobilePhoneMessengerChatAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit chatAdapter$lambda$1;
-                chatAdapter$lambda$1 = MessengerChat.chatAdapter$lambda$1((MessageInfo) obj);
-                return chatAdapter$lambda$1;
+                Unit chatAdapter$lambda$0;
+                chatAdapter$lambda$0 = MessengerChat.chatAdapter$lambda$0((MessageInfo) obj);
+                return chatAdapter$lambda$0;
             }
         });
         this.menuAdapter = new MobilePhoneMessengerChatMenuAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit menuAdapter$lambda$2;
-                menuAdapter$lambda$2 = MessengerChat.menuAdapter$lambda$2(MessengerChat.this, (MenuChatItem) obj);
-                return menuAdapter$lambda$2;
+                Unit menuAdapter$lambda$0;
+                menuAdapter$lambda$0 = MessengerChat.menuAdapter$lambda$0(MessengerChat.this, (MenuChatItem) obj);
+                return menuAdapter$lambda$0;
             }
         });
         this.emojiAdapter = new MobilePhoneMessengerEmojiAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit emojiAdapter$lambda$3;
-                emojiAdapter$lambda$3 = MessengerChat.emojiAdapter$lambda$3(MessengerChat.this, (EmojiItem) obj);
-                return emojiAdapter$lambda$3;
+                Unit emojiAdapter$lambda$0;
+                emojiAdapter$lambda$0 = MessengerChat.emojiAdapter$lambda$0(MessengerChat.this, (EmojiItem) obj);
+                return emojiAdapter$lambda$0;
             }
         });
         sendChatId();
@@ -210,20 +210,20 @@ public final class MessengerChat implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit chatAdapter$lambda$1(MessageInfo it) {
+    public static final Unit chatAdapter$lambda$0(MessageInfo it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit menuAdapter$lambda$2(MessengerChat messengerChat, MenuChatItem it) {
+    public static final Unit menuAdapter$lambda$0(MessengerChat messengerChat, MenuChatItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messengerChat.onClickChatMenuItem(it);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit emojiAdapter$lambda$3(MessengerChat messengerChat, EmojiItem it) {
+    public static final Unit emojiAdapter$lambda$0(MessengerChat messengerChat, EmojiItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messengerChat.onClickEmoji(it);
         return Unit.INSTANCE;
@@ -288,38 +288,38 @@ public final class MessengerChat implements MobileController {
     }
 
     private final void prepareInput() {
-        if (this.contactInfo.m11067isBlocked()) {
+        if (this.contactInfo.m11078isBlocked()) {
             showBlockContact();
         }
         final MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding = this.pageBinding.inputFieldChatLayout;
         messengerInputFieldLayoutBinding.messageEditText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessengerChat.prepareInput$lambda$7$lambda$4(MessengerChat.this, messengerInputFieldLayoutBinding, view);
+                MessengerChat.prepareInput$lambda$0$0(MessengerChat.this, messengerInputFieldLayoutBinding, view);
             }
         });
         messengerInputFieldLayoutBinding.sendBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessengerChat.prepareInput$lambda$7$lambda$5(MessengerInputFieldLayoutBinding.this, this, view);
+                MessengerChat.prepareInput$lambda$0$1(MessengerInputFieldLayoutBinding.this, this, view);
             }
         });
         messengerInputFieldLayoutBinding.emojiBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessengerChat.prepareInput$lambda$7$lambda$6(MessengerInputFieldLayoutBinding.this, view);
+                MessengerChat.prepareInput$lambda$0$2(MessengerInputFieldLayoutBinding.this, view);
             }
         });
         messengerInputFieldLayoutBinding.emojiBar.setAdapter(this.emojiAdapter);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareInput$lambda$7$lambda$4(MessengerChat messengerChat, MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, View view) {
+    public static final void prepareInput$lambda$0$0(MessengerChat messengerChat, MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, View view) {
         messengerChat.frontendNotifier.showCustomKeyboardForEditText(new InputCustomKeyboardListener(), messengerInputFieldLayoutBinding.messageEditText.getText().toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareInput$lambda$7$lambda$5(MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, MessengerChat messengerChat, View view) {
+    public static final void prepareInput$lambda$0$1(MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, MessengerChat messengerChat, View view) {
         String obj = messengerInputFieldLayoutBinding.messageEditText.getText().toString();
         if (obj.length() > 0) {
             messengerChat.sendMessage(obj);
@@ -331,7 +331,7 @@ public final class MessengerChat implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareInput$lambda$7$lambda$6(MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, View view) {
+    public static final void prepareInput$lambda$0$2(MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding, View view) {
         RecyclerView emojiBar = messengerInputFieldLayoutBinding.emojiBar;
         Intrinsics.checkNotNullExpressionValue(emojiBar, "emojiBar");
         RecyclerView recyclerView = emojiBar;
@@ -397,7 +397,7 @@ public final class MessengerChat implements MobileController {
         mobilePhoneMessengerChatPageBinding.headerBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessengerChat.prepareHeader$lambda$11$lambda$9(MessengerChat.this, view);
+                MessengerChat.prepareHeader$lambda$0$0(MessengerChat.this, view);
             }
         });
         mobilePhoneMessengerChatPageBinding.avatar.updateData(new AvatarData(this.contactInfo.getAvatarUrl(), this.contactInfo.getStatus().getColor(), this.contactInfo.getContactBackground().getBackground(), null, 8, null));
@@ -418,7 +418,7 @@ public final class MessengerChat implements MobileController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareHeader$lambda$11$lambda$9(MessengerChat messengerChat, View view) {
+    public static final void prepareHeader$lambda$0$0(MessengerChat messengerChat, View view) {
         LinearLayout root = messengerChat.pageBinding.menuChatLayout.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
         if (root.getVisibility() == 0) {
@@ -494,7 +494,9 @@ public final class MessengerChat implements MobileController {
         if (this.token.length() == 0) {
             return;
         }
-        MessagesApi.getChatMessages$default(this.api, this.token, String.valueOf(this.contactInfo.getId()), 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$loadNextPage$1
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.getChatMessages$default(api, this.token, String.valueOf(this.contactInfo.getId()), 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$loadNextPage$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, Response<List<? extends ChatMessageApiResponse>> response) {
                 MobilePhoneMessengerChatAdapter mobilePhoneMessengerChatAdapter;
@@ -542,7 +544,9 @@ public final class MessengerChat implements MobileController {
         }
         this.chatAdapter.clearMessages();
         showLoader();
-        MessagesApi.getChatMessages$default(this.api, this.token, String.valueOf(this.contactInfo.getId()), 0, 0, 12, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$requestMessages$1
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.getChatMessages$default(api, this.token, String.valueOf(this.contactInfo.getId()), 0, 0, 12, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$requestMessages$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, Response<List<? extends ChatMessageApiResponse>> response) {
                 Activity activity;
@@ -811,7 +815,7 @@ public final class MessengerChat implements MobileController {
             if (changeMenuItem != -1) {
                 this.startedMenuList.set(changeMenuItem, getBlockMenuItem());
             }
-            if (this.contactInfo.m11067isBlocked()) {
+            if (this.contactInfo.m11078isBlocked()) {
                 showBlockContact();
             } else {
                 showInputLayout();
@@ -874,7 +878,9 @@ public final class MessengerChat implements MobileController {
 
     public final void updateDialog(int i) {
         this.dialogId = Integer.valueOf(i);
-        MessagesApi.getMessage$default(this.api, this.token, Integer.valueOf(i), 0, 0, 12, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$updateDialog$1
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.getMessage$default(api, this.token, Integer.valueOf(i), 0, 0, 12, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.MessengerChat$updateDialog$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 ContactApiResponse contactApiResponse;

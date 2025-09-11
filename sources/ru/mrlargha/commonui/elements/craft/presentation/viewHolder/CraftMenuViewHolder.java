@@ -50,13 +50,13 @@ public final class CraftMenuViewHolder extends RecyclerView.ViewHolder {
         itemMenuBtnBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.viewHolder.CraftMenuViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftMenuViewHolder.bind$lambda$1$lambda$0(CraftMenuViewHolder.this, i, view);
+                CraftMenuViewHolder.bind$lambda$0$0(CraftMenuViewHolder.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$1$lambda$0(CraftMenuViewHolder craftMenuViewHolder, int i, View view) {
+    public static final void bind$lambda$0$0(CraftMenuViewHolder craftMenuViewHolder, int i, View view) {
         craftMenuViewHolder.onItemClicked.invoke(Integer.valueOf(i), Integer.valueOf(craftMenuViewHolder.getAdapterPosition()));
     }
 }

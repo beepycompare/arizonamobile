@@ -103,46 +103,46 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$3;
-                accessoriesInventoryAdapter$lambda$3 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$3((DraggedItem) obj);
-                return accessoriesInventoryAdapter$lambda$3;
+                Unit accessoriesInventoryAdapter$lambda$0;
+                accessoriesInventoryAdapter$lambda$0 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$0((DraggedItem) obj);
+                return accessoriesInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$4;
-                accessoriesInventoryAdapter$lambda$4 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$4((InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$4;
+                Unit accessoriesInventoryAdapter$lambda$1;
+                accessoriesInventoryAdapter$lambda$1 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$1((InventoryItem) obj);
+                return accessoriesInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$5;
-                accessoriesInventoryAdapter$lambda$5 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$5(PreviewInventoryScreen.this, (InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$5;
+                Unit accessoriesInventoryAdapter$lambda$2;
+                accessoriesInventoryAdapter$lambda$2 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
+                return accessoriesInventoryAdapter$lambda$2;
             }
         });
         this.accessoriesInventoryAdapter = upgradesInventoryAdapter;
         UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$6;
-                upgradesInventoryAdapter$lambda$6 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$6((DraggedItem) obj);
-                return upgradesInventoryAdapter$lambda$6;
+                Unit upgradesInventoryAdapter$lambda$0;
+                upgradesInventoryAdapter$lambda$0 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$0((DraggedItem) obj);
+                return upgradesInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$7;
-                upgradesInventoryAdapter$lambda$7 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$7((InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$7;
+                Unit upgradesInventoryAdapter$lambda$1;
+                upgradesInventoryAdapter$lambda$1 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$1((InventoryItem) obj);
+                return upgradesInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$8;
-                upgradesInventoryAdapter$lambda$8 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$8(PreviewInventoryScreen.this, (InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$8;
+                Unit upgradesInventoryAdapter$lambda$2;
+                upgradesInventoryAdapter$lambda$2 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
+                return upgradesInventoryAdapter$lambda$2;
             }
         });
         this.upgradesInventoryAdapter = upgradesInventoryAdapter2;
@@ -183,19 +183,19 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$3(DraggedItem draggedItem) {
+    public static final Unit accessoriesInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$4(InventoryItem it) {
+    public static final Unit accessoriesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$5(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
+    public static final Unit accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             previewInventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())));
@@ -205,19 +205,19 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$6(DraggedItem draggedItem) {
+    public static final Unit upgradesInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$7(InventoryItem it) {
+    public static final Unit upgradesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$8(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
+    public static final Unit upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             previewInventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())));

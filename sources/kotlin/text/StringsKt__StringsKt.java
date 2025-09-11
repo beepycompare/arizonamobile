@@ -1375,14 +1375,14 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return new DelimitedRangesSequence(charSequence, i, i2, new Function2() { // from class: kotlin.text.StringsKt__StringsKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Pair rangesDelimitedBy$lambda$14$StringsKt__StringsKt;
-                rangesDelimitedBy$lambda$14$StringsKt__StringsKt = StringsKt__StringsKt.rangesDelimitedBy$lambda$14$StringsKt__StringsKt(cArr, z, (CharSequence) obj, ((Integer) obj2).intValue());
-                return rangesDelimitedBy$lambda$14$StringsKt__StringsKt;
+                Pair rangesDelimitedBy$lambda$0$StringsKt__StringsKt;
+                rangesDelimitedBy$lambda$0$StringsKt__StringsKt = StringsKt__StringsKt.rangesDelimitedBy$lambda$0$StringsKt__StringsKt(cArr, z, (CharSequence) obj, ((Integer) obj2).intValue());
+                return rangesDelimitedBy$lambda$0$StringsKt__StringsKt;
             }
         });
     }
 
-    public static final Pair rangesDelimitedBy$lambda$14$StringsKt__StringsKt(char[] cArr, boolean z, CharSequence DelimitedRangesSequence, int i) {
+    public static final Pair rangesDelimitedBy$lambda$0$StringsKt__StringsKt(char[] cArr, boolean z, CharSequence DelimitedRangesSequence, int i) {
         Intrinsics.checkNotNullParameter(DelimitedRangesSequence, "$this$DelimitedRangesSequence");
         int indexOfAny = StringsKt.indexOfAny(DelimitedRangesSequence, cArr, i, z);
         if (indexOfAny < 0) {
@@ -1410,14 +1410,14 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return new DelimitedRangesSequence(charSequence, i, i2, new Function2() { // from class: kotlin.text.StringsKt__StringsKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Pair rangesDelimitedBy$lambda$16$StringsKt__StringsKt;
-                rangesDelimitedBy$lambda$16$StringsKt__StringsKt = StringsKt__StringsKt.rangesDelimitedBy$lambda$16$StringsKt__StringsKt(asList, z, (CharSequence) obj, ((Integer) obj2).intValue());
-                return rangesDelimitedBy$lambda$16$StringsKt__StringsKt;
+                Pair rangesDelimitedBy$lambda$1$StringsKt__StringsKt;
+                rangesDelimitedBy$lambda$1$StringsKt__StringsKt = StringsKt__StringsKt.rangesDelimitedBy$lambda$1$StringsKt__StringsKt(asList, z, (CharSequence) obj, ((Integer) obj2).intValue());
+                return rangesDelimitedBy$lambda$1$StringsKt__StringsKt;
             }
         });
     }
 
-    public static final Pair rangesDelimitedBy$lambda$16$StringsKt__StringsKt(List list, boolean z, CharSequence DelimitedRangesSequence, int i) {
+    public static final Pair rangesDelimitedBy$lambda$1$StringsKt__StringsKt(List list, boolean z, CharSequence DelimitedRangesSequence, int i) {
         Intrinsics.checkNotNullParameter(DelimitedRangesSequence, "$this$DelimitedRangesSequence");
         Pair<Integer, String> findAnyOf$StringsKt__StringsKt = findAnyOf$StringsKt__StringsKt(DelimitedRangesSequence, list, i, z, false);
         if (findAnyOf$StringsKt__StringsKt != null) {
@@ -1448,14 +1448,14 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return SequencesKt.map(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null), new Function1() { // from class: kotlin.text.StringsKt__StringsKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String splitToSequence$lambda$18$StringsKt__StringsKt;
-                splitToSequence$lambda$18$StringsKt__StringsKt = StringsKt__StringsKt.splitToSequence$lambda$18$StringsKt__StringsKt(charSequence, (IntRange) obj);
-                return splitToSequence$lambda$18$StringsKt__StringsKt;
+                String splitToSequence$lambda$0$StringsKt__StringsKt;
+                splitToSequence$lambda$0$StringsKt__StringsKt = StringsKt__StringsKt.splitToSequence$lambda$0$StringsKt__StringsKt(charSequence, (IntRange) obj);
+                return splitToSequence$lambda$0$StringsKt__StringsKt;
             }
         });
     }
 
-    public static final String splitToSequence$lambda$18$StringsKt__StringsKt(CharSequence charSequence, IntRange it) {
+    public static final String splitToSequence$lambda$0$StringsKt__StringsKt(CharSequence charSequence, IntRange it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return StringsKt.substring(charSequence, it);
     }
@@ -1503,14 +1503,14 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return SequencesKt.map(rangesDelimitedBy$StringsKt__StringsKt$default(charSequence, delimiters, 0, z, i, 2, (Object) null), new Function1() { // from class: kotlin.text.StringsKt__StringsKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String splitToSequence$lambda$20$StringsKt__StringsKt;
-                splitToSequence$lambda$20$StringsKt__StringsKt = StringsKt__StringsKt.splitToSequence$lambda$20$StringsKt__StringsKt(charSequence, (IntRange) obj);
-                return splitToSequence$lambda$20$StringsKt__StringsKt;
+                String splitToSequence$lambda$1$StringsKt__StringsKt;
+                splitToSequence$lambda$1$StringsKt__StringsKt = StringsKt__StringsKt.splitToSequence$lambda$1$StringsKt__StringsKt(charSequence, (IntRange) obj);
+                return splitToSequence$lambda$1$StringsKt__StringsKt;
             }
         });
     }
 
-    public static final String splitToSequence$lambda$20$StringsKt__StringsKt(CharSequence charSequence, IntRange it) {
+    public static final String splitToSequence$lambda$1$StringsKt__StringsKt(CharSequence charSequence, IntRange it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return StringsKt.substring(charSequence, it);
     }
@@ -1560,6 +1560,12 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return arrayList;
     }
 
+    private static final List<String> split(CharSequence charSequence, Regex regex, int i) {
+        Intrinsics.checkNotNullParameter(charSequence, "<this>");
+        Intrinsics.checkNotNullParameter(regex, "regex");
+        return regex.split(charSequence, i);
+    }
+
     static /* synthetic */ List split$default(CharSequence charSequence, Regex regex, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = 0;
@@ -1569,22 +1575,16 @@ public class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return regex.split(charSequence, i);
     }
 
-    private static final List<String> split(CharSequence charSequence, Regex regex, int i) {
+    private static final Sequence<String> splitToSequence(CharSequence charSequence, Regex regex, int i) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(regex, "regex");
-        return regex.split(charSequence, i);
+        return regex.splitToSequence(charSequence, i);
     }
 
     static /* synthetic */ Sequence splitToSequence$default(CharSequence charSequence, Regex regex, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             i = 0;
         }
-        Intrinsics.checkNotNullParameter(charSequence, "<this>");
-        Intrinsics.checkNotNullParameter(regex, "regex");
-        return regex.splitToSequence(charSequence, i);
-    }
-
-    private static final Sequence<String> splitToSequence(CharSequence charSequence, Regex regex, int i) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
         Intrinsics.checkNotNullParameter(regex, "regex");
         return regex.splitToSequence(charSequence, i);

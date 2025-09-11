@@ -10,13 +10,13 @@ public final class C0288go extends AbstractC0462nh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0462nh
     public final boolean a(C0477o6 c0477o6) {
-        String j = this.f1001a.c.j();
+        String j = this.f1005a.c.j();
         String str = c0477o6.h;
-        this.f1001a.c.j(str).b();
+        this.f1005a.c.j(str).b();
         if (TextUtils.equals(j, str)) {
             return false;
         }
-        this.f1001a.a(C0397l4.o());
+        this.f1005a.a(C0397l4.o());
         return false;
     }
 }

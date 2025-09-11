@@ -7,23 +7,26 @@ import ru.mrlargha.arizonaui.R;
 /* loaded from: classes5.dex */
 public final class ColorsKt {
     public static final String ghettoColors(int i) {
-        if (i != 25) {
-            switch (i) {
-                case 11:
-                    return "#5D8836";
-                case 12:
-                    return "#DB9800";
-                case 13:
-                    return "#99389E";
-                case 14:
-                    return "#55A5B6";
-                case 15:
-                    return "#3766CD";
-                default:
-                    return "#818181";
+        if (i != -2) {
+            if (i != 25) {
+                switch (i) {
+                    case 11:
+                        return "#5D8836";
+                    case 12:
+                        return "#DB9800";
+                    case 13:
+                        return "#99389E";
+                    case 14:
+                        return "#55A5B6";
+                    case 15:
+                        return "#3766CD";
+                    default:
+                        return "#818181";
+                }
             }
+            return "#6B6B6B";
         }
-        return "#6B6B6B";
+        return "#EF1818";
     }
 
     public static final int ghettoImages(int i) {

@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Uj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f698a;
+    public final /* synthetic */ boolean f702a;
 
     public Uj(boolean z) {
-        this.f698a = z;
+        this.f702a = z;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.setDataSendingEnabled(this.f698a);
+        interfaceC0557rb.setDataSendingEnabled(this.f702a);
     }
 }

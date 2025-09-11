@@ -14,7 +14,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class M4 implements ArgumentsMerger {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f566a;
+    public final String f570a;
     public final Boolean b;
     public final Location c;
     public final Boolean d;
@@ -31,7 +31,7 @@ public final class M4 implements ArgumentsMerger {
     public final Set<String> o;
 
     public M4(String str, Boolean bool, Location location, Boolean bool2, Integer num, Integer num2, Integer num3, Boolean bool3, Boolean bool4, Map map, Integer num4, Boolean bool5, Boolean bool6, Boolean bool7, Set set) {
-        this.f566a = str;
+        this.f570a = str;
         this.b = bool;
         this.c = location;
         this.d = bool2;
@@ -55,7 +55,7 @@ public final class M4 implements ArgumentsMerger {
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
     /* renamed from: b */
     public final M4 mergeFrom(M4 m4) {
-        return new M4((String) WrapUtils.getOrDefaultNullable(this.f566a, m4.f566a), (Boolean) WrapUtils.getOrDefaultNullable(this.b, m4.b), (Location) WrapUtils.getOrDefaultNullable(this.c, m4.c), (Boolean) WrapUtils.getOrDefaultNullable(this.d, m4.d), (Integer) WrapUtils.getOrDefaultNullable(this.e, m4.e), (Integer) WrapUtils.getOrDefaultNullable(this.f, m4.f), (Integer) WrapUtils.getOrDefaultNullable(this.g, m4.g), (Boolean) WrapUtils.getOrDefaultNullable(this.h, m4.h), (Boolean) WrapUtils.getOrDefaultNullable(this.i, m4.i), (Map) WrapUtils.getOrDefaultNullable(this.j, m4.j), (Integer) WrapUtils.getOrDefaultNullable(this.k, m4.k), (Boolean) WrapUtils.getOrDefaultNullable(this.l, m4.l), (Boolean) WrapUtils.getOrDefaultNullable(this.m, m4.m), (Boolean) WrapUtils.getOrDefaultNullable(this.n, m4.n), CollectionUtils.merge(this.o, m4.o));
+        return new M4((String) WrapUtils.getOrDefaultNullable(this.f570a, m4.f570a), (Boolean) WrapUtils.getOrDefaultNullable(this.b, m4.b), (Location) WrapUtils.getOrDefaultNullable(this.c, m4.c), (Boolean) WrapUtils.getOrDefaultNullable(this.d, m4.d), (Integer) WrapUtils.getOrDefaultNullable(this.e, m4.e), (Integer) WrapUtils.getOrDefaultNullable(this.f, m4.f), (Integer) WrapUtils.getOrDefaultNullable(this.g, m4.g), (Boolean) WrapUtils.getOrDefaultNullable(this.h, m4.h), (Boolean) WrapUtils.getOrDefaultNullable(this.i, m4.i), (Map) WrapUtils.getOrDefaultNullable(this.j, m4.j), (Integer) WrapUtils.getOrDefaultNullable(this.k, m4.k), (Boolean) WrapUtils.getOrDefaultNullable(this.l, m4.l), (Boolean) WrapUtils.getOrDefaultNullable(this.m, m4.m), (Boolean) WrapUtils.getOrDefaultNullable(this.n, m4.n), CollectionUtils.merge(this.o, m4.o));
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
@@ -66,7 +66,7 @@ public final class M4 implements ArgumentsMerger {
     public final boolean equals(Object obj) {
         if (obj != null && M4.class == obj.getClass()) {
             M4 m4 = (M4) obj;
-            if (Objects.equals(this.f566a, m4.f566a) && Objects.equals(this.b, m4.b) && Objects.equals(this.c, m4.c) && Objects.equals(this.d, m4.d) && Objects.equals(this.e, m4.e) && Objects.equals(this.f, m4.f) && Objects.equals(this.g, m4.g) && Objects.equals(this.h, m4.h) && Objects.equals(this.i, m4.i) && Objects.equals(this.j, m4.j) && Objects.equals(this.k, m4.k) && Objects.equals(this.l, m4.l) && Objects.equals(this.m, m4.m) && Objects.equals(this.n, m4.n) && Objects.equals(this.o, m4.o)) {
+            if (Objects.equals(this.f570a, m4.f570a) && Objects.equals(this.b, m4.b) && Objects.equals(this.c, m4.c) && Objects.equals(this.d, m4.d) && Objects.equals(this.e, m4.e) && Objects.equals(this.f, m4.f) && Objects.equals(this.g, m4.g) && Objects.equals(this.h, m4.h) && Objects.equals(this.i, m4.i) && Objects.equals(this.j, m4.j) && Objects.equals(this.k, m4.k) && Objects.equals(this.l, m4.l) && Objects.equals(this.m, m4.m) && Objects.equals(this.n, m4.n) && Objects.equals(this.o, m4.o)) {
                 return true;
             }
         }
@@ -74,11 +74,11 @@ public final class M4 implements ArgumentsMerger {
     }
 
     public final int hashCode() {
-        return Objects.hash(this.f566a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o);
+        return Objects.hash(this.f570a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o);
     }
 
     public final String toString() {
-        return "ReporterArguments{apiKey='" + this.f566a + "', locationTracking=" + this.b + ", manualLocation=" + this.c + ", firstActivationAsUpdate=" + this.d + ", sessionTimeout=" + this.e + ", maxReportsCount=" + this.f + ", dispatchPeriod=" + this.g + ", logEnabled=" + this.h + ", dataSendingEnabled=" + this.i + ", clidsFromClient=" + this.j + ", maxReportsInDbCount=" + this.k + ", nativeCrashesEnabled=" + this.l + ", revenueAutoTrackingEnabled=" + this.m + ", advIdentifiersTrackingEnabled=" + this.n + ", autoCollectedDataSubscribers=" + this.o + AbstractJsonLexerKt.END_OBJ;
+        return "ReporterArguments{apiKey='" + this.f570a + "', locationTracking=" + this.b + ", manualLocation=" + this.c + ", firstActivationAsUpdate=" + this.d + ", sessionTimeout=" + this.e + ", maxReportsCount=" + this.f + ", dispatchPeriod=" + this.g + ", logEnabled=" + this.h + ", dataSendingEnabled=" + this.i + ", clidsFromClient=" + this.j + ", maxReportsInDbCount=" + this.k + ", nativeCrashesEnabled=" + this.l + ", revenueAutoTrackingEnabled=" + this.m + ", advIdentifiersTrackingEnabled=" + this.n + ", autoCollectedDataSubscribers=" + this.o + AbstractJsonLexerKt.END_OBJ;
     }
 
     public M4(CounterConfiguration counterConfiguration, Map<String, String> map) {

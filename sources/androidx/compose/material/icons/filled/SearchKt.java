@@ -12,16 +12,7 @@ public final class SearchKt {
         jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.compose.ui.graphics.vector.ImageVector.Builder.addPath-oIyEayM$default(androidx.compose.ui.graphics.vector.ImageVector$Builder, java.util.List, int, java.lang.String, androidx.compose.ui.graphics.Brush, float, androidx.compose.ui.graphics.Brush, float, float, int, int, float, float, float, float, int, java.lang.Object):androidx.compose.ui.graphics.vector.ImageVector$Builder
         	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
         	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.RegisterArg.getParentInsn()" because "reg" is null
-        	at jadx.core.dex.instructions.args.SSAVar.updateUsedInPhiList(SSAVar.java:152)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:482)
-        	at jadx.core.dex.instructions.mods.TernaryInsn.rebindArgs(TernaryInsn.java:92)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:484)
-        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1079)
-        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1088)
-        	at jadx.core.dex.visitors.InlineMethods.inlineMethod(InlineMethods.java:115)
-        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:74)
-        	... 1 more
+        Caused by: java.lang.NullPointerException
         */
     public static final androidx.compose.ui.graphics.vector.ImageVector getSearch(androidx.compose.material.icons.Icons.Filled r19) {
         /*

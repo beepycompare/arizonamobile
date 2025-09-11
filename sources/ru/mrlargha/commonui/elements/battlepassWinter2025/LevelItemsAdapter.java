@@ -42,6 +42,18 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
     private final Function0<Unit> onBuyLevel;
     private final Function2<Boolean, Integer, Unit> onClaimItem;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public LevelItemsAdapter(int i, int i2, Function0<Unit> onBuyLevel, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
+        Intrinsics.checkNotNullParameter(onBuyLevel, "onBuyLevel");
+        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
+        this.levelPassedColor = i;
+        this.levelNotPassedColor = i2;
+        this.onBuyLevel = onBuyLevel;
+        this.onClaimItem = onClaimItem;
+        this.items = new ArrayList();
+        this.isArizonaType = true;
+    }
+
     public /* synthetic */ LevelItemsAdapter(int i, int i2, Function0 function0, Function2 function2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2, function0, (i3 & 8) != 0 ? new Function2() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
@@ -56,18 +68,6 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit _init_$lambda$0(boolean z, int i) {
         return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public LevelItemsAdapter(int i, int i2, Function0<Unit> onBuyLevel, Function2<? super Boolean, ? super Integer, Unit> onClaimItem) {
-        Intrinsics.checkNotNullParameter(onBuyLevel, "onBuyLevel");
-        Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
-        this.levelPassedColor = i;
-        this.levelNotPassedColor = i2;
-        this.onBuyLevel = onBuyLevel;
-        this.onClaimItem = onClaimItem;
-        this.items = new ArrayList();
-        this.isArizonaType = true;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -200,25 +200,25 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
             winterBattlepassLevelItemBinding.boost1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$1(LevelItemsAdapter.this, view);
+                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$0(LevelItemsAdapter.this, view);
                 }
             });
             winterBattlepassLevelItemBinding.boost2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$2(LevelItemsAdapter.this, view);
+                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$1(LevelItemsAdapter.this, view);
                 }
             });
             winterBattlepassLevelItemBinding.boost3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$3(LevelItemsAdapter.this, view);
+                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$2(LevelItemsAdapter.this, view);
                 }
             });
             winterBattlepassLevelItemBinding.boost4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$4(LevelItemsAdapter.this, view);
+                    LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$3(LevelItemsAdapter.this, view);
                 }
             });
             if (i2 < 100) {
@@ -255,7 +255,7 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
                 winterBattlepassLevelItemBinding.itemLevelBtnPremium.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$5(WinterBattlepassLevelItemBinding.this, second, this, i3, view);
+                        LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$4(WinterBattlepassLevelItemBinding.this, second, this, i3, view);
                     }
                 });
             } else if (i3 > i2 || !z) {
@@ -276,7 +276,7 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
                 winterBattlepassLevelItemBinding.itemLevelBtnUsually.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.LevelItemsAdapter$LevelItemViewHolder$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LevelItemsAdapter.LevelItemViewHolder.bind$lambda$7$lambda$6(WinterBattlepassLevelItemBinding.this, first, this, i3, view);
+                        LevelItemsAdapter.LevelItemViewHolder.bind$lambda$0$5(WinterBattlepassLevelItemBinding.this, first, this, i3, view);
                     }
                 });
             } else if (i3 > i2) {
@@ -303,34 +303,34 @@ public final class LevelItemsAdapter extends RecyclerView.Adapter<LevelItemViewH
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$1(LevelItemsAdapter levelItemsAdapter, View view) {
+        public static final void bind$lambda$0$0(LevelItemsAdapter levelItemsAdapter, View view) {
             levelItemsAdapter.onBuyLevel.invoke();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$2(LevelItemsAdapter levelItemsAdapter, View view) {
+        public static final void bind$lambda$0$1(LevelItemsAdapter levelItemsAdapter, View view) {
             levelItemsAdapter.onBuyLevel.invoke();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$3(LevelItemsAdapter levelItemsAdapter, View view) {
+        public static final void bind$lambda$0$2(LevelItemsAdapter levelItemsAdapter, View view) {
             levelItemsAdapter.onBuyLevel.invoke();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$4(LevelItemsAdapter levelItemsAdapter, View view) {
+        public static final void bind$lambda$0$3(LevelItemsAdapter levelItemsAdapter, View view) {
             levelItemsAdapter.onBuyLevel.invoke();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$5(WinterBattlepassLevelItemBinding winterBattlepassLevelItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
+        public static final void bind$lambda$0$4(WinterBattlepassLevelItemBinding winterBattlepassLevelItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
             winterBattlepassLevelItemBinding.itemLevelBtnPremium.setVisibility(4);
             awardItemData.setWasClicked(true);
             levelItemViewHolder.onClaimItem.invoke(true, Integer.valueOf(i));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void bind$lambda$7$lambda$6(WinterBattlepassLevelItemBinding winterBattlepassLevelItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
+        public static final void bind$lambda$0$5(WinterBattlepassLevelItemBinding winterBattlepassLevelItemBinding, AwardItemData awardItemData, LevelItemViewHolder levelItemViewHolder, int i, View view) {
             winterBattlepassLevelItemBinding.itemLevelBtnUsually.setVisibility(4);
             awardItemData.setWasClicked(true);
             levelItemViewHolder.onClaimItem.invoke(false, Integer.valueOf(i));

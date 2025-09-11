@@ -19,7 +19,7 @@ public final class Ih extends AbstractC0462nh {
     @Override // io.appmetrica.analytics.impl.AbstractC0462nh
     public final boolean a(C0477o6 c0477o6) {
         C0477o6 a2;
-        C0651v5 c0651v5 = this.f1001a;
+        C0651v5 c0651v5 = this.f1005a;
         if (this.c.d()) {
             return false;
         }
@@ -30,9 +30,9 @@ public final class Ih extends AbstractC0462nh {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0651v5.f1115a, c0651v5.b.f1012a), ""));
+            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(c0651v5.f1119a, c0651v5.b.f1016a), ""));
             Nf nf = this.b;
-            nf.h.a(nf.f998a);
+            nf.h.a(nf.f1002a);
             jSONObject.put("preloadInfo", ((Kf) nf.c()).b());
         } catch (Throwable unused) {
         }
@@ -41,7 +41,7 @@ public final class Ih extends AbstractC0462nh {
         k9.a(a2, C0156bl.a(k9.c.b(a2), a2.i));
         Do r7 = this.c;
         synchronized (r7) {
-            Eo eo = r7.f413a;
+            Eo eo = r7.f417a;
             eo.a(eo.a().put("init_event_done", true));
         }
         this.c.a(this.e.currentTimeMillis());

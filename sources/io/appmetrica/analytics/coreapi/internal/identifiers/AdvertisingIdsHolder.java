@@ -5,7 +5,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class AdvertisingIdsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AdTrackingInfoResult f249a;
+    private final AdTrackingInfoResult f253a;
     private final AdTrackingInfoResult b;
     private final AdTrackingInfoResult c;
 
@@ -14,7 +14,7 @@ public class AdvertisingIdsHolder {
     }
 
     public AdTrackingInfoResult getGoogle() {
-        return this.f249a;
+        return this.f253a;
     }
 
     public AdTrackingInfoResult getHuawei() {
@@ -26,11 +26,11 @@ public class AdvertisingIdsHolder {
     }
 
     public String toString() {
-        return "AdvertisingIdsHolder{mGoogle=" + this.f249a + ", mHuawei=" + this.b + ", yandex=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "AdvertisingIdsHolder{mGoogle=" + this.f253a + ", mHuawei=" + this.b + ", yandex=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public AdvertisingIdsHolder(AdTrackingInfoResult adTrackingInfoResult, AdTrackingInfoResult adTrackingInfoResult2, AdTrackingInfoResult adTrackingInfoResult3) {
-        this.f249a = adTrackingInfoResult;
+        this.f253a = adTrackingInfoResult;
         this.b = adTrackingInfoResult2;
         this.c = adTrackingInfoResult3;
     }

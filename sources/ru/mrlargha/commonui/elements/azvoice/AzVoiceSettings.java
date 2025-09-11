@@ -34,7 +34,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
     private List<SoundSliderData> sliderList;
 
     /* renamed from: switch  reason: not valid java name */
-    private final SwitchCompat f88switch;
+    private final SwitchCompat f92switch;
     private final TextView switchText;
     private final TextView userVoiceSettingsButton;
 
@@ -49,7 +49,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
         View findViewById = constraintLayout.findViewById(R.id.micro_switch);
         Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(...)");
         SwitchCompat switchCompat = (SwitchCompat) findViewById;
-        this.f88switch = switchCompat;
+        this.f92switch = switchCompat;
         View findViewById2 = constraintLayout.findViewById(R.id.micro_state_text);
         Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById(...)");
         this.switchText = (TextView) findViewById2;
@@ -79,19 +79,19 @@ public final class AzVoiceSettings extends SAMPUIElement {
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda3
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                AzVoiceSettings._init_$lambda$1(AzVoiceSettings.this, targetActivity, i, compoundButton, z);
+                AzVoiceSettings._init_$lambda$0(AzVoiceSettings.this, targetActivity, i, compoundButton, z);
             }
         });
         appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AzVoiceSettings._init_$lambda$2(AzVoiceSettings.this, i, view);
+                AzVoiceSettings._init_$lambda$1(AzVoiceSettings.this, i, view);
             }
         });
         textView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AzVoiceSettings._init_$lambda$3(AzVoiceSettings.this, i, view);
+                AzVoiceSettings._init_$lambda$2(AzVoiceSettings.this, i, view);
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(targetActivity));
@@ -106,7 +106,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(AzVoiceSettings azVoiceSettings, Activity activity, int i, CompoundButton compoundButton, boolean z) {
+    public static final void _init_$lambda$0(AzVoiceSettings azVoiceSettings, Activity activity, int i, CompoundButton compoundButton, boolean z) {
         int color;
         Intrinsics.checkNotNullParameter(compoundButton, "<unused var>");
         TextView textView = azVoiceSettings.switchText;
@@ -121,13 +121,13 @@ public final class AzVoiceSettings extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(AzVoiceSettings azVoiceSettings, int i, View view) {
+    public static final void _init_$lambda$1(AzVoiceSettings azVoiceSettings, int i, View view) {
         azVoiceSettings.getNotifier().clickedWrapper(i, 2, -1);
         azVoiceSettings.setVisibility(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(AzVoiceSettings azVoiceSettings, int i, View view) {
+    public static final void _init_$lambda$2(AzVoiceSettings azVoiceSettings, int i, View view) {
         azVoiceSettings.getNotifier().clickedWrapper(i, 1, -1);
     }
 
@@ -140,26 +140,26 @@ public final class AzVoiceSettings extends SAMPUIElement {
         getTargetActivity().runOnUiThread(new Runnable() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                AzVoiceSettings.addSlider$lambda$4(AzVoiceSettings.this);
+                AzVoiceSettings.addSlider$lambda$0(AzVoiceSettings.this);
             }
         });
         return this.idCounter;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void addSlider$lambda$4(AzVoiceSettings azVoiceSettings) {
+    public static final void addSlider$lambda$0(AzVoiceSettings azVoiceSettings) {
         azVoiceSettings.sliderAdapter.submitList(azVoiceSettings.sliderList);
         azVoiceSettings.sliderAdapter.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeSlider$lambda$5(int i, SoundSliderData it) {
+    public static final boolean removeSlider$lambda$0(int i, SoundSliderData it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getSliderUId() == i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeSlider$lambda$6(Function1 function1, Object obj) {
+    public static final boolean removeSlider$lambda$1(Function1 function1, Object obj) {
         return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 
@@ -168,17 +168,17 @@ public final class AzVoiceSettings extends SAMPUIElement {
         final Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean removeSlider$lambda$5;
-                removeSlider$lambda$5 = AzVoiceSettings.removeSlider$lambda$5(i, (SoundSliderData) obj);
-                return Boolean.valueOf(removeSlider$lambda$5);
+                boolean removeSlider$lambda$0;
+                removeSlider$lambda$0 = AzVoiceSettings.removeSlider$lambda$0(i, (SoundSliderData) obj);
+                return Boolean.valueOf(removeSlider$lambda$0);
             }
         };
         Boolean.valueOf(list.removeIf(new Predicate() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda1
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean removeSlider$lambda$6;
-                removeSlider$lambda$6 = AzVoiceSettings.removeSlider$lambda$6(Function1.this, obj);
-                return removeSlider$lambda$6;
+                boolean removeSlider$lambda$1;
+                removeSlider$lambda$1 = AzVoiceSettings.removeSlider$lambda$1(Function1.this, obj);
+                return removeSlider$lambda$1;
             }
         }));
         this.sliderAdapter.submitList(this.sliderList);

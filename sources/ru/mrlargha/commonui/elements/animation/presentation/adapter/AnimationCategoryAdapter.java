@@ -67,13 +67,13 @@ public final class AnimationCategoryAdapter extends RecyclerView.Adapter<Animati
         holder.getAnimationCategoryItemBinding().aciBackground.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationCategoryAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationCategoryAdapter.onBindViewHolder$lambda$2(AnimationCategoryAdapter.this, i, holder, view);
+                AnimationCategoryAdapter.onBindViewHolder$lambda$0(AnimationCategoryAdapter.this, i, holder, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2(AnimationCategoryAdapter animationCategoryAdapter, int i, AnimationCategoryHolder animationCategoryHolder, View view) {
+    public static final void onBindViewHolder$lambda$0(AnimationCategoryAdapter animationCategoryAdapter, int i, AnimationCategoryHolder animationCategoryHolder, View view) {
         OnCategoryClickListener onCategoryClickListener;
         Object obj;
         Iterator<T> it = animationCategoryAdapter.animationCategoryList.iterator();

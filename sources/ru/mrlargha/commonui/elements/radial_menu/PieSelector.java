@@ -94,10 +94,6 @@ public final class PieSelector extends View {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ PieSelector(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PieSelector(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
@@ -184,6 +180,10 @@ public final class PieSelector extends View {
         this.captionPaint = paint10;
         this.sectors = new ArrayList();
         setSectorsList(CollectionsKt.listOf((Object[]) new SectorData[]{new SectorData(0, R.drawable.bag_bg, "Приветствовать 1", "Нажмите для\nиспользования 1", null, 0, 48, null), new SectorData(1, R.drawable.bag_bg, "Приветствовать 2", "Нажмите для\nиспользования 2", null, 0, 48, null), new SectorData(2, R.drawable.bag_bg, "Приветствовать 3", "Нажмите для\nиспользования 3", null, 0, 48, null), new SectorData(3, R.drawable.bag_bg, "Приветствовать 4", "Нажмите для\nиспользования 4", null, 0, 48, null), new SectorData(4, R.drawable.bag_bg, "Приветствовать 5", "Нажмите для\nиспользования 5", null, 0, 48, null), new SectorData(5, R.drawable.bag_bg, "Приветствовать 6", "Нажмите для\nиспользования 6", null, 0, 48, null), new SectorData(6, R.drawable.bag_bg, "Приветствовать 7", "Нажмите для\nиспользования 7", null, 0, 48, null), new SectorData(7, R.drawable.bag_bg, "Приветствовать 8", "Нажмите для\nиспользования 8", null, 0, 48, null)}));
+    }
+
+    public /* synthetic */ PieSelector(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -24,9 +24,9 @@ public final class ComposableSingletons$MainScaffoldKt {
     private static Function2<Composer, Integer, Unit> f63lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda__863503316$lambda$1;
-            lambda__863503316$lambda$1 = ComposableSingletons$MainScaffoldKt.lambda__863503316$lambda$1((Composer) obj, ((Integer) obj2).intValue());
-            return lambda__863503316$lambda$1;
+            Unit lambda__863503316$lambda$0;
+            lambda__863503316$lambda$0 = ComposableSingletons$MainScaffoldKt.lambda__863503316$lambda$0((Composer) obj, ((Integer) obj2).intValue());
+            return lambda__863503316$lambda$0;
         }
     });
 
@@ -34,19 +34,19 @@ public final class ComposableSingletons$MainScaffoldKt {
     private static Function2<Composer, Integer, Unit> f62lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda__1632204659$lambda$2;
-            lambda__1632204659$lambda$2 = ComposableSingletons$MainScaffoldKt.lambda__1632204659$lambda$2((Composer) obj, ((Integer) obj2).intValue());
-            return lambda__1632204659$lambda$2;
+            Unit lambda__1632204659$lambda$0;
+            lambda__1632204659$lambda$0 = ComposableSingletons$MainScaffoldKt.lambda__1632204659$lambda$0((Composer) obj, ((Integer) obj2).intValue());
+            return lambda__1632204659$lambda$0;
         }
     });
 
     /* renamed from: getLambda$-1632204659$app_root_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8908getLambda$1632204659$app_root_release() {
+    public final Function2<Composer, Integer, Unit> m8915getLambda$1632204659$app_root_release() {
         return f62lambda$1632204659;
     }
 
     /* renamed from: getLambda$-863503316$app_root_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8909getLambda$863503316$app_root_release() {
+    public final Function2<Composer, Integer, Unit> m8916getLambda$863503316$app_root_release() {
         return f63lambda$863503316;
     }
 
@@ -71,7 +71,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__863503316$lambda$1(Composer composer, int i) {
+    public static final Unit lambda__863503316$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MainScaffold.kt#v5ppa4");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
@@ -87,7 +87,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__1632204659$lambda$2(Composer composer, int i) {
+    public static final Unit lambda__1632204659$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MainScaffold.kt#v5ppa4");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {

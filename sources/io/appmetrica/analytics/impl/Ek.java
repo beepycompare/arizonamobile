@@ -12,12 +12,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class Ek implements InterfaceC0329id {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Co f426a;
+    public final Co f430a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public Ek(Co co) {
-        this.f426a = co;
+        this.f430a = co;
         C0108a c0108a = new C0108a(Na.j().f());
         this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0108a.b(), c0108a.a());
     }
@@ -30,7 +30,7 @@ public final class Ek implements InterfaceC0329id {
                 C0121ac a2 = a(readableDatabase);
                 C0568rm c0568rm = new C0568rm(new J4(new H4()));
                 if (a2 != null) {
-                    a(this.f426a, c0568rm, a2);
+                    a(this.f430a, c0568rm, a2);
                     c0568rm.p = a2.c;
                     c0568rm.r = a2.b;
                 }
@@ -45,7 +45,7 @@ public final class Ek implements InterfaceC0329id {
     public static void a(Co co, C0568rm c0568rm, C0121ac c0121ac) {
         String optStringOrNull;
         synchronized (co) {
-            optStringOrNull = JsonUtils.optStringOrNull(co.f393a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(co.f397a.a(), "device_id");
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(c0121ac.d)) {
@@ -54,10 +54,10 @@ public final class Ek implements InterfaceC0329id {
             if (!TextUtils.isEmpty(c0121ac.e)) {
                 co.b(c0121ac.e);
             }
-            if (TextUtils.isEmpty(c0121ac.f787a)) {
+            if (TextUtils.isEmpty(c0121ac.f791a)) {
                 return;
             }
-            c0568rm.f1067a = c0121ac.f787a;
+            c0568rm.f1071a = c0121ac.f791a;
         }
     }
 

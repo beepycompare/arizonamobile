@@ -31,6 +31,16 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
     private final boolean isArizona;
     private final Function2<CommonTaskInfo, Integer, Unit> onSelectTask;
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public CommonTasksAdapter(boolean z, int i, Function2<? super CommonTaskInfo, ? super Integer, Unit> onSelectTask) {
+        Intrinsics.checkNotNullParameter(onSelectTask, "onSelectTask");
+        this.isArizona = z;
+        this.colorMaxProgress = i;
+        this.onSelectTask = onSelectTask;
+        this.allTasksList = new ArrayList<>();
+        this.currentTasksList = new ArrayList<>();
+    }
+
     public /* synthetic */ CommonTasksAdapter(boolean z, int i, Function2 function2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(z, i, (i2 & 4) != 0 ? new Function2() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.CommonTasksAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
@@ -46,16 +56,6 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
     public static final Unit _init_$lambda$0(CommonTaskInfo commonTaskInfo, int i) {
         Intrinsics.checkNotNullParameter(commonTaskInfo, "<unused var>");
         return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public CommonTasksAdapter(boolean z, int i, Function2<? super CommonTaskInfo, ? super Integer, Unit> onSelectTask) {
-        Intrinsics.checkNotNullParameter(onSelectTask, "onSelectTask");
-        this.isArizona = z;
-        this.colorMaxProgress = i;
-        this.onSelectTask = onSelectTask;
-        this.allTasksList = new ArrayList<>();
-        this.currentTasksList = new ArrayList<>();
     }
 
     public final ArrayList<CommonTaskInfo> getAllTasksList() {
@@ -109,13 +109,13 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.CommonTasksAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommonTasksAdapter.onBindViewHolder$lambda$2$lambda$1(CommonTasksAdapter.this, commonTaskInfo2, i, view);
+                CommonTasksAdapter.onBindViewHolder$lambda$0$0(CommonTasksAdapter.this, commonTaskInfo2, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$2$lambda$1(CommonTasksAdapter commonTasksAdapter, CommonTaskInfo commonTaskInfo, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(CommonTasksAdapter commonTasksAdapter, CommonTaskInfo commonTaskInfo, int i, View view) {
         commonTasksAdapter.onSelectTask.invoke(commonTaskInfo, Integer.valueOf(i));
     }
 

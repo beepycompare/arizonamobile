@@ -4,10 +4,10 @@ package io.appmetrica.analytics.impl;
 public final class C0393l0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0512pf f956a;
+    public final C0512pf f960a;
     public final C0596t0 b = new C0596t0();
 
     public C0393l0(C0512pf c0512pf) {
-        this.f956a = c0512pf;
+        this.f960a = c0512pf;
     }
 }

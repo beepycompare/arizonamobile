@@ -74,13 +74,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class NotificationsScreentKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NotificationsScreent$lambda$8(Function0 function0, NotificationsComponent notificationsComponent, int i, Composer composer, int i2) {
+    public static final Unit NotificationsScreent$lambda$2(Function0 function0, NotificationsComponent notificationsComponent, int i, Composer composer, int i2) {
         NotificationsScreent(function0, notificationsComponent, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerTopBar$lambda$14(Function0 function0, int i, Composer composer, int i2) {
+    public static final Unit ServerTopBar$lambda$1(Function0 function0, int i, Composer composer, int i2) {
         ServerTopBar(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -217,11 +217,11 @@ public final class NotificationsScreentKt {
                     long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                     TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodyMedium();
                     float f = 32;
-                    long m9041dpToSp8Feqmps = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
-                    long m9041dpToSp8Feqmps2 = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
-                    long m9041dpToSp8Feqmps3 = TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(1), composer2, 6);
-                    TextUnitKt.m7458checkArithmeticR2X_6o(m9041dpToSp8Feqmps3);
-                    TextKt.m2804Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4536copywmQWz5c$default, m9041dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m9041dpToSp8Feqmps3), -TextUnit.m7445getValueimpl(m9041dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m9041dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
+                    long m9048dpToSp8Feqmps = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
+                    long m9048dpToSp8Feqmps2 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
+                    long m9048dpToSp8Feqmps3 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(1), composer2, 6);
+                    TextUnitKt.m7458checkArithmeticR2X_6o(m9048dpToSp8Feqmps3);
+                    TextKt.m2804Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4536copywmQWz5c$default, m9048dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m9048dpToSp8Feqmps3), -TextUnit.m7445getValueimpl(m9048dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m9048dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
                     composer2 = composer2;
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -264,7 +264,7 @@ public final class NotificationsScreentKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1167154385, "C93@3962L21:NotificationsScreent.kt#21zkme");
-                    AnimatedLoadingKt.m8925AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
+                    AnimatedLoadingKt.m8929AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     composer2.endNode();
@@ -275,7 +275,7 @@ public final class NotificationsScreentKt {
                 }
                 composer2.endReplaceGroup();
             } else {
-                composer2.startReplaceGroup(277660550);
+                composer2.startReplaceGroup(277677414);
                 ComposerKt.sourceInformation(composer2, "105@4461L138,99@4088L511");
                 GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7251constructorimpl(330), null);
                 Arrangement.HorizontalOrVertical m691spacedBy0680j_4 = Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(20));
@@ -292,9 +292,9 @@ public final class NotificationsScreentKt {
                     rememberedValue = new Function1() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4;
-                            NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4 = NotificationsScreentKt.NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4(State.this, (LazyGridScope) obj);
-                            return NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4;
+                            Unit NotificationsScreent$lambda$1$0$2$0;
+                            NotificationsScreent$lambda$1$0$2$0 = NotificationsScreentKt.NotificationsScreent$lambda$1$0$2$0(State.this, (LazyGridScope) obj);
+                            return NotificationsScreent$lambda$1$0$2$0;
                         }
                     };
                     composer2.updateRememberedValue(rememberedValue);
@@ -325,19 +325,19 @@ public final class NotificationsScreentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NotificationsScreent$lambda$8;
-                    NotificationsScreent$lambda$8 = NotificationsScreentKt.NotificationsScreent$lambda$8(Function0.this, component, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NotificationsScreent$lambda$8;
+                    Unit NotificationsScreent$lambda$2;
+                    NotificationsScreent$lambda$2 = NotificationsScreentKt.NotificationsScreent$lambda$2(Function0.this, component, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return NotificationsScreent$lambda$2;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4(State state, LazyGridScope LazyVerticalGrid) {
+    public static final Unit NotificationsScreent$lambda$1$0$2$0(State state, LazyGridScope LazyVerticalGrid) {
         Intrinsics.checkNotNullParameter(LazyVerticalGrid, "$this$LazyVerticalGrid");
         final List list = (List) state.getValue();
-        final NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$1 notificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$1
+        final NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$1 notificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$1 = new Function1() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$1
             @Override // kotlin.jvm.functions.Function1
             public final Void invoke(NotificationModel notificationModel) {
                 return null;
@@ -348,7 +348,7 @@ public final class NotificationsScreentKt {
                 return invoke((NotificationModel) obj);
             }
         };
-        LazyVerticalGrid.items(list.size(), null, null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$4
+        LazyVerticalGrid.items(list.size(), null, null, new Function1<Integer, Object>() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$4
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Object invoke(Integer num) {
                 return invoke(num.intValue());
@@ -357,7 +357,7 @@ public final class NotificationsScreentKt {
             public final Object invoke(int i) {
                 return Function1.this.invoke(list.get(i));
             }
-        }, ComposableLambdaKt.composableLambdaInstance(-1117249557, true, new Function4<LazyGridItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$7$lambda$6$lambda$5$lambda$4$$inlined$items$default$5
+        }, ComposableLambdaKt.composableLambdaInstance(-1117249557, true, new Function4<LazyGridItemScope, Integer, Composer, Integer, Unit>() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$NotificationsScreent$lambda$1$0$2$0$$inlined$items$default$5
             @Override // kotlin.jvm.functions.Function4
             public /* bridge */ /* synthetic */ Unit invoke(LazyGridItemScope lazyGridItemScope, Integer num, Composer composer, Integer num2) {
                 invoke(lazyGridItemScope, num.intValue(), composer, num2.intValue());
@@ -508,15 +508,15 @@ public final class NotificationsScreentKt {
                 rememberedValue = new Function0() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ServerTopBar$lambda$13$lambda$12$lambda$11$lambda$10$lambda$9;
-                        ServerTopBar$lambda$13$lambda$12$lambda$11$lambda$10$lambda$9 = NotificationsScreentKt.ServerTopBar$lambda$13$lambda$12$lambda$11$lambda$10$lambda$9(Function0.this);
-                        return ServerTopBar$lambda$13$lambda$12$lambda$11$lambda$10$lambda$9;
+                        Unit ServerTopBar$lambda$0$0$0$0$0;
+                        ServerTopBar$lambda$0$0$0$0$0 = NotificationsScreentKt.ServerTopBar$lambda$0$0$0$0$0(Function0.this);
+                        return ServerTopBar$lambda$0$0$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m9008getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m9014getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.notification_topbar_label, startRestartGroup, 0), (String) null, OffsetKt.m787offsetVpY3zN4$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(30)), Dp.m7251constructorimpl(-Dp.m7251constructorimpl(12)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -547,16 +547,16 @@ public final class NotificationsScreentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.notifications.presentation.NotificationsScreentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ServerTopBar$lambda$14;
-                    ServerTopBar$lambda$14 = NotificationsScreentKt.ServerTopBar$lambda$14(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ServerTopBar$lambda$14;
+                    Unit ServerTopBar$lambda$1;
+                    ServerTopBar$lambda$1 = NotificationsScreentKt.ServerTopBar$lambda$1(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ServerTopBar$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ServerTopBar$lambda$13$lambda$12$lambda$11$lambda$10$lambda$9(Function0 function0) {
+    public static final Unit ServerTopBar$lambda$0$0$0$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }

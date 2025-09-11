@@ -4,15 +4,15 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0551r5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0651v5 f1057a;
+    public final C0651v5 f1061a;
     public final String b = "[ComponentMigrationToV113]";
 
     public AbstractC0551r5(C0651v5 c0651v5) {
-        this.f1057a = c0651v5;
+        this.f1061a = c0651v5;
     }
 
     public final C0651v5 a() {
-        return this.f1057a;
+        return this.f1061a;
     }
 
     public final String b() {

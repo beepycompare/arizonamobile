@@ -9,6 +9,6 @@ public final class Uh extends Ch {
 
     @Override // io.appmetrica.analytics.impl.Ch, io.appmetrica.analytics.impl.Dh
     public final boolean a(Boolean bool) {
-        return !this.f387a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+        return !this.f391a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

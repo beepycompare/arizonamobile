@@ -8,20 +8,20 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class C0167c6 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0193d6 f816a;
+    public final /* synthetic */ C0193d6 f820a;
 
     public C0167c6(C0193d6 c0193d6) {
-        this.f816a = c0193d6;
+        this.f820a = c0193d6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = AbstractC0141b6.f801a[activityEvent.ordinal()];
+        int i = AbstractC0141b6.f805a[activityEvent.ordinal()];
         if (i == 1) {
-            this.f816a.b.resumeSession();
+            this.f820a.b.resumeSession();
         } else if (i != 2) {
         } else {
-            this.f816a.b.pauseSession();
+            this.f820a.b.pauseSession();
         }
     }
 }

@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class Pa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f619a;
+    public final HashMap f623a;
     public final boolean b;
 
     public Pa() {
@@ -16,22 +16,22 @@ public final class Pa {
 
     public final void a(Object obj, Object obj2) {
         ArrayList arrayList;
-        Collection collection = (Collection) this.f619a.get(obj);
+        Collection collection = (Collection) this.f623a.get(obj);
         if (collection == null) {
             arrayList = new ArrayList();
         } else {
             arrayList = new ArrayList(collection);
         }
         arrayList.add(obj2);
-        Collection collection2 = (Collection) this.f619a.put(obj, arrayList);
+        Collection collection2 = (Collection) this.f623a.put(obj, arrayList);
     }
 
     public final String toString() {
-        return this.f619a.toString();
+        return this.f623a.toString();
     }
 
     public Pa(boolean z) {
-        this.f619a = new HashMap();
+        this.f623a = new HashMap();
         this.b = z;
     }
 }

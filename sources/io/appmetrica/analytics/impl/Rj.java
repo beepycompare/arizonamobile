@@ -5,14 +5,14 @@ import io.appmetrica.analytics.profile.UserProfile;
 public final class Rj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f654a;
+    public final /* synthetic */ UserProfile f658a;
 
     public Rj(UserProfile userProfile) {
-        this.f654a = userProfile;
+        this.f658a = userProfile;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.reportUserProfile(this.f654a);
+        interfaceC0557rb.reportUserProfile(this.f658a);
     }
 }

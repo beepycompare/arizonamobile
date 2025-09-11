@@ -56,7 +56,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class SettingsTopBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$13(SettingsUiState settingsUiState, Modifier modifier, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+    public static final Unit SettingsTopBar$lambda$1(SettingsUiState settingsUiState, Modifier modifier, Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         SettingsTopBar(settingsUiState, modifier, function0, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
@@ -187,12 +187,12 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216321, "C45@1654L377,55@2075L42,54@2048L277,61@2342L28,64@2515L13,62@2387L159:SettingsTopBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9029getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m9034getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             float f = 36;
             float f2 = 12;
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.settings_label, startRestartGroup, 0), (String) null, OffsetKt.m787offsetVpY3zN4$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), Dp.m7251constructorimpl(-Dp.m7251constructorimpl(f2)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(6)), startRestartGroup, 6);
-            TextKt.m2804Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
+            TextKt.m2804Text4IGK_g("ВЕРСИЯ " + uiState.getVersion(), (Modifier) Modifier.Companion, Color.Companion.m4574getWhite0d7_KjU(), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(11), startRestartGroup, 6), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, startRestartGroup, 432, 0, 131056);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -242,9 +242,9 @@ public final class SettingsTopBarKt {
                     rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1;
-                            SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1(Function0.this);
-                            return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1;
+                            Unit SettingsTopBar$lambda$0$0$1$0$0;
+                            SettingsTopBar$lambda$0$0$1$0$0 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$0$0(Function0.this);
+                            return SettingsTopBar$lambda$0$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -253,9 +253,9 @@ public final class SettingsTopBarKt {
                 ScalingButtonKt.ScalingButton((Function0) rememberedValue, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-708380511, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
-                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3;
-                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3;
+                        Unit SettingsTopBar$lambda$0$0$1$1;
+                        SettingsTopBar$lambda$0$0$1$1 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$1(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SettingsTopBar$lambda$0$0$1$1;
                     }
                 }, startRestartGroup, 54), startRestartGroup, 432, 0);
             }
@@ -267,9 +267,9 @@ public final class SettingsTopBarKt {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4;
-                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4(Function0.this);
-                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4;
+                        Unit SettingsTopBar$lambda$0$0$1$2$0;
+                        SettingsTopBar$lambda$0$0$1$2$0 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$2$0(Function0.this);
+                        return SettingsTopBar$lambda$0$0$1$2$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -278,9 +278,9 @@ public final class SettingsTopBarKt {
             ScalingButtonKt.ScalingButton((Function0) rememberedValue2, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(1097723868, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6;
-                    SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6;
+                    Unit SettingsTopBar$lambda$0$0$1$3;
+                    SettingsTopBar$lambda$0$0$1$3 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$3(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SettingsTopBar$lambda$0$0$1$3;
                 }
             }, startRestartGroup, 54), startRestartGroup, 432, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1676275811, "CC(remember):SettingsTopBar.kt#9igjgp");
@@ -290,9 +290,9 @@ public final class SettingsTopBarKt {
                 rememberedValue3 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7;
-                        SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7(Function0.this);
-                        return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7;
+                        Unit SettingsTopBar$lambda$0$0$1$4$0;
+                        SettingsTopBar$lambda$0$0$1$4$0 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$4$0(Function0.this);
+                        return SettingsTopBar$lambda$0$0$1$4$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -301,9 +301,9 @@ public final class SettingsTopBarKt {
             ScalingButtonKt.ScalingButton((Function0) rememberedValue3, Modifier.Companion, ComposableLambdaKt.rememberComposableLambda(-1292796603, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9;
-                    SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9 = SettingsTopBarKt.SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9;
+                    Unit SettingsTopBar$lambda$0$0$1$5;
+                    SettingsTopBar$lambda$0$0$1$5 = SettingsTopBarKt.SettingsTopBar$lambda$0$0$1$5(Modifier.this, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+                    return SettingsTopBar$lambda$0$0$1$5;
                 }
             }, startRestartGroup, 54), startRestartGroup, 432, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -334,22 +334,22 @@ public final class SettingsTopBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsTopBarKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SettingsTopBar$lambda$13;
-                    SettingsTopBar$lambda$13 = SettingsTopBarKt.SettingsTopBar$lambda$13(SettingsUiState.this, modifier, onRepairGame, onBack, onSupport, onTech, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SettingsTopBar$lambda$13;
+                    Unit SettingsTopBar$lambda$1;
+                    SettingsTopBar$lambda$1 = SettingsTopBarKt.SettingsTopBar$lambda$1(SettingsUiState.this, modifier, onRepairGame, onBack, onSupport, onTech, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return SettingsTopBar$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$2$lambda$1(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$0$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$3(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$1(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C77@2949L39,77@2933L87:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -367,13 +367,13 @@ public final class SettingsTopBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$5$lambda$4(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$2$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$6(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$3(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C84@3235L42,84@3219L90:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
@@ -391,13 +391,13 @@ public final class SettingsTopBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$8$lambda$7(Function0 function0) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$4$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsTopBar$lambda$12$lambda$11$lambda$10$lambda$9(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit SettingsTopBar$lambda$0$0$1$5(Modifier modifier, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C90@3505L46,90@3489L94:SettingsTopBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {

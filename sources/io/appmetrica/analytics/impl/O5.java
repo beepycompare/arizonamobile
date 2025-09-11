@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 /* loaded from: classes4.dex */
 public final class O5 {
     public final Ze a(Context context) {
-        Ve ve = AbstractC0124af.f789a;
+        Ve ve = AbstractC0124af.f793a;
         return (Ze) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Ze.UNDEFINED, new Ye());
     }
 }

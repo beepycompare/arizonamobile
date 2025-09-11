@@ -6,16 +6,16 @@ import android.text.TextUtils;
 public final class C0635ue implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1106a;
+    public final String f1110a;
 
     public C0635ue(String str) {
-        this.f1106a = str;
+        this.f1110a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final wo a(String str) {
         if (TextUtils.isEmpty(str)) {
-            return new wo(this, false, this.f1106a + " is empty.");
+            return new wo(this, false, this.f1110a + " is empty.");
         }
         return new wo(this, true, "");
     }

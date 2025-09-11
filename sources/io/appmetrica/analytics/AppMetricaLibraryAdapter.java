@@ -13,11 +13,11 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static C0 f189a = new C0();
+    private static C0 f193a = new C0();
 
     public static void activate(Context context) {
-        C0 c0 = f189a;
-        if (c0.f374a.f805a.a(context).f1141a) {
+        C0 c0 = f193a;
+        if (c0.f378a.f809a.a(context).f1145a) {
             C0173cc c0173cc = c0.b;
             Context applicationContext = context.getApplicationContext();
             c0173cc.getClass();
@@ -29,27 +29,27 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void reportEvent(String str, String str2, String str3) {
-        f189a.a(str, str2, str3);
+        f193a.a(str, str2, str3);
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        C0 c0 = f189a;
-        if (c0.f374a.c.a((Void) null).f1141a) {
+        C0 c0 = f193a;
+        if (c0.f378a.c.a((Void) null).f1145a) {
             c0.b.getClass();
             ModulesFacade.setAdvIdentifiersTracking(z);
         }
     }
 
     public static void setProxy(C0 c0) {
-        f189a = c0;
+        f193a = c0;
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        C0 c0 = f189a;
+        C0 c0 = f193a;
         c0.getClass();
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Subscribe for auto-collected data with api key: " + ApiKeyUtils.createPartialApiKey(str), new Object[0]);
-        C0147bc c0147bc = c0.f374a;
-        if (c0147bc.g.a(str).f1141a && c0147bc.f805a.a(context).f1141a) {
+        C0147bc c0147bc = c0.f378a;
+        if (c0147bc.g.a(str).f1145a && c0147bc.f809a.a(context).f1145a) {
             c0.b.getClass();
             A4.l().g.a(context);
             C0109a0 b = A4.l().b();
@@ -59,9 +59,9 @@ public class AppMetricaLibraryAdapter {
     }
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        C0 c0 = f189a;
-        C0147bc c0147bc = c0.f374a;
-        if (c0147bc.f805a.a(context).f1141a && c0147bc.b.a(appMetricaLibraryAdapterConfig).f1141a) {
+        C0 c0 = f193a;
+        C0147bc c0147bc = c0.f378a;
+        if (c0147bc.f809a.a(context).f1145a && c0147bc.b.a(appMetricaLibraryAdapterConfig).f1145a) {
             C0173cc c0173cc = c0.b;
             Context applicationContext = context.getApplicationContext();
             c0173cc.getClass();

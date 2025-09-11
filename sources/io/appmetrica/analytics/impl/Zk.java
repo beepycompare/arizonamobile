@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Zk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EnumC0259fl f774a;
+    public final EnumC0259fl f778a;
     public final Integer b;
 
     public Zk(Yk yk) {
         EnumC0259fl enumC0259fl;
         Integer num;
-        enumC0259fl = yk.f757a;
-        this.f774a = enumC0259fl;
+        enumC0259fl = yk.f761a;
+        this.f778a = enumC0259fl;
         num = yk.b;
         this.b = num;
     }
@@ -20,7 +20,7 @@ public final class Zk {
     }
 
     public final EnumC0259fl b() {
-        return this.f774a;
+        return this.f778a;
     }
 
     public final Integer a() {

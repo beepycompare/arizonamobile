@@ -78,15 +78,15 @@ public abstract class ApiErrorType {
             return "Code(code=" + this.code + ")";
         }
 
-        public final ApiErrorCode getCode() {
-            return this.code;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Code(ApiErrorCode code) {
             super(null);
             Intrinsics.checkNotNullParameter(code, "code");
             this.code = code;
+        }
+
+        public final ApiErrorCode getCode() {
+            return this.code;
         }
     }
 
@@ -127,15 +127,15 @@ public abstract class ApiErrorType {
             return "UnknownCode(code=" + this.code + ")";
         }
 
-        public final String getCode() {
-            return this.code;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public UnknownCode(String code) {
             super(null);
             Intrinsics.checkNotNullParameter(code, "code");
             this.code = code;
+        }
+
+        public final String getCode() {
+            return this.code;
         }
     }
 

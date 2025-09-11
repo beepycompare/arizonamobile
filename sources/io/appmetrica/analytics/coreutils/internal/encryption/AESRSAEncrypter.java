@@ -13,7 +13,7 @@ import javax.crypto.Cipher;
 public class AESRSAEncrypter implements Encrypter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f282a;
+    private final String f286a;
     private final String b;
 
     public AESRSAEncrypter() {
@@ -39,7 +39,7 @@ public class AESRSAEncrypter implements Encrypter {
         }
         try {
             byteArrayOutputStream.write(cipher.doFinal(byteArray));
-            encrypt = new AESEncrypter(this.f282a, bArr2, bArr3).encrypt(bArr);
+            encrypt = new AESEncrypter(this.f286a, bArr2, bArr3).encrypt(bArr);
         } catch (Throwable unused2) {
             CloseableUtilsKt.closeSafely(byteArrayOutputStream);
             return null;
@@ -69,7 +69,7 @@ public class AESRSAEncrypter implements Encrypter {
     }
 
     AESRSAEncrypter(int i) {
-        this.f282a = AESEncrypter.DEFAULT_ALGORITHM;
+        this.f286a = AESEncrypter.DEFAULT_ALGORITHM;
         this.b = "RSA/ECB/PKCS1Padding";
     }
 }

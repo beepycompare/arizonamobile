@@ -184,9 +184,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         this.colorsAdapter = new MobilePhoneMessengerColorsAdapter(new Function1() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit colorsAdapter$lambda$3;
-                colorsAdapter$lambda$3 = Messenger.colorsAdapter$lambda$3(Messenger.this, (ColorItem) obj);
-                return colorsAdapter$lambda$3;
+                Unit colorsAdapter$lambda$0;
+                colorsAdapter$lambda$0 = Messenger.colorsAdapter$lambda$0(Messenger.this, (ColorItem) obj);
+                return colorsAdapter$lambda$0;
             }
         });
         this.currentPage = Page.LOADING;
@@ -229,7 +229,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit colorsAdapter$lambda$3(Messenger messenger, ColorItem it) {
+    public static final Unit colorsAdapter$lambda$0(Messenger messenger, ColorItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messenger.pageBinding.settingsLayout.avatar.updateBackgroundColor(it.getColor().getBackground());
         messenger.currentSettings = SettingsRequest.copy$default(messenger.currentSettings, it.getColor().ordinal(), 0, 2, null);
@@ -312,7 +312,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         if (this.token.length() == 0 || this.searchNickname.length() == 0) {
             return;
         }
-        MessagesApi.findContact$default(this.api, this.token, this.searchNickname, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadNextPage$1
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.findContact$default(api, this.token, this.searchNickname, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadNextPage$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -358,7 +360,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         if (str != null) {
             this.searchNickname = str;
         }
-        MessagesApi.findContact$default(this.api, this.token, str, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$requestContacts$2
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.findContact$default(api, this.token, str, 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$requestContacts$2
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -503,7 +507,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     private final void loadChats(String str, final Integer num) {
-        MessagesApi.getMessages$default(this.api, str, 0, 0, null, 14, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadChats$1
+        MessagesApi api = this.api;
+        Intrinsics.checkNotNullExpressionValue(api, "api");
+        MessagesApi.getMessages$default(api, str, 0, 0, null, 14, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$loadChats$1
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
@@ -679,24 +685,24 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         this.pageBinding.emptyMessagesLayout.buttonNewChat.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.setupEmptyPages$lambda$13$lambda$12(Messenger.this, view);
+                Messenger.setupEmptyPages$lambda$0$0(Messenger.this, view);
             }
         });
         this.pageBinding.emptyContactsLayout.buttonNewChat.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.setupEmptyPages$lambda$15$lambda$14(Messenger.this, view);
+                Messenger.setupEmptyPages$lambda$1$0(Messenger.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupEmptyPages$lambda$13$lambda$12(Messenger messenger, View view) {
+    public static final void setupEmptyPages$lambda$0$0(Messenger messenger, View view) {
         messenger.updatePage(Page.NEW_CORRESPONDENCE);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupEmptyPages$lambda$15$lambda$14(Messenger messenger, View view) {
+    public static final void setupEmptyPages$lambda$1$0(Messenger messenger, View view) {
         messenger.updatePage(Page.NEW_CORRESPONDENCE);
     }
 
@@ -705,19 +711,19 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         messengerNewCorrespondenceLayoutBinding.addFromContactsContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.setupNewCorrespondencePage$lambda$18$lambda$16(Messenger.this, view);
+                Messenger.setupNewCorrespondencePage$lambda$0$0(Messenger.this, view);
             }
         });
         messengerNewCorrespondenceLayoutBinding.findByNumberContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.setupNewCorrespondencePage$lambda$18$lambda$17(Messenger.this, view);
+                Messenger.setupNewCorrespondencePage$lambda$0$1(Messenger.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNewCorrespondencePage$lambda$18$lambda$16(Messenger messenger, View view) {
+    public static final void setupNewCorrespondencePage$lambda$0$0(Messenger messenger, View view) {
         messenger.updatePage(Page.MY_CONTACTS);
         messenger.pageBinding.messagesLayout.searchEditText.setText("");
         messenger.showMessagesLoader();
@@ -725,7 +731,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNewCorrespondencePage$lambda$18$lambda$17(Messenger messenger, View view) {
+    public static final void setupNewCorrespondencePage$lambda$0$1(Messenger messenger, View view) {
         messenger.contactsAdapter.clearData();
         messenger.pageBinding.messagesLayout.searchEditText.setText("");
         messenger.showContacts();
@@ -770,13 +776,13 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         messengerMessagesLayoutBinding.searchEditText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.setupMessagesPage$lambda$20$lambda$19(Messenger.this, view);
+                Messenger.setupMessagesPage$lambda$0$0(Messenger.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupMessagesPage$lambda$20$lambda$19(Messenger messenger, View view) {
+    public static final void setupMessagesPage$lambda$0$0(Messenger messenger, View view) {
         messenger.frontendNotifier.showCustomKeyboardForEditText(new InputCustomKeyboardListener(), "");
     }
 
@@ -785,7 +791,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         mobilePhoneMessengerPageBinding.headerBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.prepareHeader$lambda$24$lambda$21(Messenger.this, view);
+                Messenger.prepareHeader$lambda$0$0(Messenger.this, view);
             }
         });
         mobilePhoneMessengerPageBinding.headerSettingsBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda4
@@ -797,13 +803,13 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         mobilePhoneMessengerPageBinding.headerAddBtn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Messenger.prepareHeader$lambda$24$lambda$23(Messenger.this, view);
+                Messenger.prepareHeader$lambda$0$2(Messenger.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareHeader$lambda$24$lambda$21(Messenger messenger, View view) {
+    public static final void prepareHeader$lambda$0$0(Messenger messenger, View view) {
         if (messenger.currentPage == Page.MESSAGES || messenger.currentPage == Page.EMPTY_MESSAGES) {
             HistoryManager.Companion.clearAllHistory();
             HistoryManager.Companion.clearThisPage(MobilePhonePage.MESSENGER_APP.getId());
@@ -819,7 +825,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void prepareHeader$lambda$24$lambda$23(Messenger messenger, View view) {
+    public static final void prepareHeader$lambda$0$2(Messenger messenger, View view) {
         messenger.updatePage(Page.NEW_CORRESPONDENCE);
     }
 

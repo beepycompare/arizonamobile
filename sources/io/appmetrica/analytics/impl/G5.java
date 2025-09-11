@@ -11,11 +11,11 @@ import kotlin.collections.CollectionsKt;
 public final class G5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f451a = new ArrayList();
+    public final ArrayList f455a = new ArrayList();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final String getDescription() {
-        return CollectionsKt.joinToString$default(this.f451a, null, "Composite processor with " + this.f451a.size() + " children: [", "]", 0, null, F5.f434a, 25, null);
+        return CollectionsKt.joinToString$default(this.f455a, null, "Composite processor with " + this.f455a.size() + " children: [", "]", 0, null, F5.f438a, 25, null);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
@@ -23,7 +23,7 @@ public final class G5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProces
         Object obj;
         boolean process;
         LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
-        Iterator it = this.f451a.iterator();
+        Iterator it = this.f455a.iterator();
         while (true) {
             if (!it.hasNext()) {
                 obj = null;
@@ -52,6 +52,6 @@ public final class G5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProces
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
     public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
-        this.f451a.add(moduleAdRevenueProcessor);
+        this.f455a.add(moduleAdRevenueProcessor);
     }
 }

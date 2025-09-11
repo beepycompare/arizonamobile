@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DownloaderSyncDbRepository.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository", f = "DownloaderSyncDbRepository.kt", i = {0}, l = {37}, m = "getTask", n = {"id"}, s = {"J$0"})
+@DebugMetadata(c = "com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository", f = "DownloaderSyncDbRepository.kt", i = {0}, l = {37}, m = "getTask", n = {"id"}, s = {"J$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class DownloaderSyncDbRepository$getTask$1 extends ContinuationImpl {
     long J$0;

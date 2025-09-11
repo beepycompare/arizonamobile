@@ -228,16 +228,16 @@ public final class DonateItem {
         this.limit = num;
     }
 
+    public /* synthetic */ DonateItem(int i, String str, int i2, String str2, int i3, int i4, boolean z, int i5, Integer num, Integer num2, String str3, String str4, Long l, boolean z2, boolean z3, int i6, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, str, i2, str2, i3, i4, z, i5, num, (i6 & 512) != 0 ? 0 : num2, str3, (i6 & 2048) != 0 ? "" : str4, (i6 & 4096) != 0 ? 0L : l, (i6 & 8192) != 0 ? false : z2, (i6 & 16384) != 0 ? false : z3);
+    }
+
     public final Integer getCurrencyType() {
         return this.currencyType;
     }
 
     public final void setCurrencyType(Integer num) {
         this.currencyType = num;
-    }
-
-    public /* synthetic */ DonateItem(int i, String str, int i2, String str2, int i3, int i4, boolean z, int i5, Integer num, Integer num2, String str3, String str4, Long l, boolean z2, boolean z3, int i6, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, str, i2, str2, i3, i4, z, i5, num, (i6 & 512) != 0 ? 0 : num2, str3, (i6 & 2048) != 0 ? "" : str4, (i6 & 4096) != 0 ? 0L : l, (i6 & 8192) != 0 ? false : z2, (i6 & 16384) != 0 ? false : z3);
     }
 
     public final String getStatus() {

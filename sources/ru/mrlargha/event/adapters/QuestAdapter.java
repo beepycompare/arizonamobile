@@ -33,14 +33,6 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
     private final Function1<QuestData, Unit> onClick;
     private final Function2<String, View, Unit> onClickPrise;
 
-    public final boolean isArizona() {
-        return this.isArizona;
-    }
-
-    public final Function2<String, View, Unit> getOnClickPrise() {
-        return this.onClickPrise;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     public QuestAdapter(boolean z, Function1<? super QuestData, Unit> onClick, Function2<? super String, ? super View, Unit> onClickPrise) {
         Intrinsics.checkNotNullParameter(onClick, "onClick");
@@ -50,6 +42,14 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         this.onClickPrise = onClickPrise;
         this.itemsList = new ArrayList();
         this.completeColor = Color.parseColor("#FFE419");
+    }
+
+    public final boolean isArizona() {
+        return this.isArizona;
+    }
+
+    public final Function2<String, View, Unit> getOnClickPrise() {
+        return this.onClickPrise;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -178,13 +178,13 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         binding.btnGet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.adapters.QuestAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestAdapter.onBindViewHolder$lambda$4$lambda$3(QuestAdapter.this, questData, view);
+                QuestAdapter.onBindViewHolder$lambda$0$3(QuestAdapter.this, questData, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$4$lambda$3(QuestAdapter questAdapter, QuestData questData, View view) {
+    public static final void onBindViewHolder$lambda$0$3(QuestAdapter questAdapter, QuestData questData, View view) {
         questAdapter.onClick.invoke(questData);
     }
 

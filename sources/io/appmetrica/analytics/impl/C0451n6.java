@@ -20,7 +20,7 @@ public final class C0451n6 implements Parcelable.Creator {
             while (true) {
                 if (i2 < length) {
                     m9 = values[i2];
-                    if (m9.f571a == i) {
+                    if (m9.f575a == i) {
                         break;
                     }
                     i2++;
@@ -38,7 +38,7 @@ public final class C0451n6 implements Parcelable.Creator {
         c0477o6.e = readBundle.getInt("CounterReport.CustomType");
         c0477o6.b = StringUtils.ifIsNullToDef(readBundle.getString("CounterReport.Value"), "");
         c0477o6.c = readBundle.getString("CounterReport.Environment");
-        c0477o6.f1013a = readBundle.getString("CounterReport.Event");
+        c0477o6.f1017a = readBundle.getString("CounterReport.Event");
         c0477o6.f = C0477o6.a(readBundle);
         c0477o6.g = readBundle.getInt("CounterReport.TRUNCATED");
         c0477o6.h = readBundle.getString("CounterReport.ProfileID");

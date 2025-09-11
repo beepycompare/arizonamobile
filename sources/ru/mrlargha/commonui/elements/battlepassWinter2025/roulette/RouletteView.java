@@ -55,10 +55,6 @@ public final class RouletteView extends LinearLayout {
         Intrinsics.checkNotNullParameter(context, "context");
     }
 
-    public /* synthetic */ RouletteView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RouletteView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
@@ -70,6 +66,10 @@ public final class RouletteView extends LinearLayout {
         this.isFirstStart = true;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
         setOrientation(0);
+    }
+
+    public /* synthetic */ RouletteView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, (i2 & 2) != 0 ? null : attributeSet, (i2 & 4) != 0 ? 0 : i);
     }
 
     public final ImageView getBackgroundLine() {
@@ -130,9 +130,9 @@ public final class RouletteView extends LinearLayout {
             startRotation(priseList, new Function0() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit start$lambda$2;
-                    start$lambda$2 = RouletteView.start$lambda$2(Function0.this);
-                    return start$lambda$2;
+                    Unit start$lambda$0;
+                    start$lambda$0 = RouletteView.start$lambda$0(Function0.this);
+                    return start$lambda$0;
                 }
             });
             return;
@@ -142,7 +142,7 @@ public final class RouletteView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit start$lambda$2(Function0 function0) {
+    public static final Unit start$lambda$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
     }
@@ -165,9 +165,9 @@ public final class RouletteView extends LinearLayout {
             this.rouletteSlotList.get(i).startRotation(i2, (PriseModel) obj, new Function0() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit startRotation$lambda$5$lambda$4;
-                    startRotation$lambda$5$lambda$4 = RouletteView.startRotation$lambda$5$lambda$4(i, list, function0);
-                    return startRotation$lambda$5$lambda$4;
+                    Unit startRotation$lambda$0$0;
+                    startRotation$lambda$0$0 = RouletteView.startRotation$lambda$0$0(i, list, function0);
+                    return startRotation$lambda$0$0;
                 }
             });
             i2 += 200;
@@ -176,7 +176,7 @@ public final class RouletteView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit startRotation$lambda$5$lambda$4(int i, List list, Function0 function0) {
+    public static final Unit startRotation$lambda$0$0(int i, List list, Function0 function0) {
         if (i == list.size() - 1) {
             function0.invoke();
         }
@@ -194,9 +194,9 @@ public final class RouletteView extends LinearLayout {
                 createRouletteSlot(new Function0() { // from class: ru.mrlargha.commonui.elements.battlepassWinter2025.roulette.RouletteView$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit initialization$lambda$6;
-                        initialization$lambda$6 = RouletteView.initialization$lambda$6(Function1.this, i2);
-                        return initialization$lambda$6;
+                        Unit initialization$lambda$0;
+                        initialization$lambda$0 = RouletteView.initialization$lambda$0(Function1.this, i2);
+                        return initialization$lambda$0;
                     }
                 });
                 if (i2 == i) {
@@ -209,7 +209,7 @@ public final class RouletteView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit initialization$lambda$6(Function1 function1, int i) {
+    public static final Unit initialization$lambda$0(Function1 function1, int i) {
         function1.invoke(Integer.valueOf(i - 1));
         return Unit.INSTANCE;
     }

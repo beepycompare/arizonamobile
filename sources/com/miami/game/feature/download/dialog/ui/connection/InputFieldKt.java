@@ -48,13 +48,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class InputFieldKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit InputField_rAjV9yQ$lambda$3(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
-        m8946InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+    public static final Unit InputField_rAjV9yQ$lambda$1(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
+        m8955InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: InputField-rAjV9yQ  reason: not valid java name */
-    public static final void m8946InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
+    public static final void m8955InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(state, "state");
         Composer startRestartGroup = composer.startRestartGroup(-155401538);
@@ -112,7 +112,7 @@ public final class InputFieldKt {
             Modifier m889width3ABfNKs = SizeKt.m889width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
             float f2 = 24;
-            TextStyle m6726copyp1EtxEg$default = TextStyle.m6726copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9041dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m6726copyp1EtxEg$default = TextStyle.m6726copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -120,15 +120,15 @@ public final class InputFieldKt {
                 rememberedValue = new Function1() { // from class: com.miami.game.feature.download.dialog.ui.connection.InputFieldKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit InputField_rAjV9yQ$lambda$2$lambda$1$lambda$0;
-                        InputField_rAjV9yQ$lambda$2$lambda$1$lambda$0 = InputFieldKt.InputField_rAjV9yQ$lambda$2$lambda$1$lambda$0(MutableState.this, (String) obj);
-                        return InputField_rAjV9yQ$lambda$2$lambda$1$lambda$0;
+                        Unit InputField_rAjV9yQ$lambda$0$0$0;
+                        InputField_rAjV9yQ$lambda$0$0$0 = InputFieldKt.InputField_rAjV9yQ$lambda$0$0$0(MutableState.this, (String) obj);
+                        return InputField_rAjV9yQ$lambda$0$0$0;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m889width3ABfNKs, false, false, m6726copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m8944getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
+            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m889width3ABfNKs, false, false, m6726copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m8951getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -145,16 +145,16 @@ public final class InputFieldKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.connection.InputFieldKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit InputField_rAjV9yQ$lambda$3;
-                    InputField_rAjV9yQ$lambda$3 = InputFieldKt.InputField_rAjV9yQ$lambda$3(MutableState.this, f, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return InputField_rAjV9yQ$lambda$3;
+                    Unit InputField_rAjV9yQ$lambda$1;
+                    InputField_rAjV9yQ$lambda$1 = InputFieldKt.InputField_rAjV9yQ$lambda$1(MutableState.this, f, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return InputField_rAjV9yQ$lambda$1;
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit InputField_rAjV9yQ$lambda$2$lambda$1$lambda$0(MutableState mutableState, String newText) {
+    public static final Unit InputField_rAjV9yQ$lambda$0$0$0(MutableState mutableState, String newText) {
         Intrinsics.checkNotNullParameter(newText, "newText");
         mutableState.setValue(newText);
         return Unit.INSTANCE;

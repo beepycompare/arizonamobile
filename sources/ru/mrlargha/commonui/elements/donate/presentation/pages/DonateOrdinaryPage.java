@@ -39,14 +39,6 @@ public final class DonateOrdinaryPage extends DonatePage {
     private Job renderJob;
     private final CoroutineScope scope;
 
-    public final DonateOrdinaryPageBinding getBinding() {
-        return this.binding;
-    }
-
-    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
-        return this.openDialog;
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public DonateOrdinaryPage(int i, Activity targetActivity, DonateOnItemCompleteListeners onItemCompleteListeners, DonateOrdinaryPageBinding binding, Function1<? super DonateItemModelUi, Unit> openDialog) {
@@ -83,6 +75,14 @@ public final class DonateOrdinaryPage extends DonatePage {
         this.allItemList = new ArrayList();
         this.pageSize = 20;
         setupRecycler();
+    }
+
+    public final DonateOrdinaryPageBinding getBinding() {
+        return this.binding;
+    }
+
+    public final Function1<DonateItemModelUi, Unit> getOpenDialog() {
+        return this.openDialog;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

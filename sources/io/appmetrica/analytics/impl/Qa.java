@@ -23,20 +23,20 @@ public class Qa extends R2 {
     public final Sn a(List<Object> list) {
         int i;
         int i2 = 0;
-        if (list == null || (list.size() <= this.f644a && this.b == null)) {
+        if (list == null || (list.size() <= this.f648a && this.b == null)) {
             i = 0;
         } else {
             ArrayList arrayList = new ArrayList();
             i = 0;
             int i3 = 0;
             for (Object obj : list) {
-                if (i3 < this.f644a) {
+                if (i3 < this.f648a) {
                     Ta ta = this.b;
                     if (ta != null) {
                         Sn a2 = ta.a(obj);
-                        Object obj2 = a2.f671a;
+                        Object obj2 = a2.f675a;
                         i += a2.b.getBytesTruncated();
-                        ro.a(obj, a2.f671a);
+                        ro.a(obj, a2.f675a);
                         obj = obj2;
                     }
                     arrayList.add(obj);

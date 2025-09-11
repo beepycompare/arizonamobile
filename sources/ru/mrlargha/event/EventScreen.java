@@ -122,23 +122,23 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setEvent$lambda$48$lambda$38$lambda$37(View view) {
+    public static final void setEvent$lambda$0$2$1(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setEvent$lambda$48$lambda$44(View view) {
+    public static final void setEvent$lambda$0$8(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateEvent$lambda$33$lambda$23$lambda$21(View view) {
+    public static final void updateEvent$lambda$0$2$1(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateEvent$lambda$33$lambda$23$lambda$22(View view) {
+    public static final void updateEvent$lambda$0$2$2(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateEvent$lambda$33$lambda$29(View view) {
+    public static final void updateEvent$lambda$0$8(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -173,17 +173,17 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         this.shopAdapter = new ShopAdapter(z, new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit shopAdapter$lambda$2;
-                shopAdapter$lambda$2 = EventScreen.shopAdapter$lambda$2(EventScreen.this, (ShopItem) obj);
-                return shopAdapter$lambda$2;
+                Unit shopAdapter$lambda$0;
+                shopAdapter$lambda$0 = EventScreen.shopAdapter$lambda$0(EventScreen.this, (ShopItem) obj);
+                return shopAdapter$lambda$0;
             }
         });
         this.levelItemsAdapter = new AwardsAdapter(new Function2() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit levelItemsAdapter$lambda$3;
-                levelItemsAdapter$lambda$3 = EventScreen.levelItemsAdapter$lambda$3(EventScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
-                return levelItemsAdapter$lambda$3;
+                Unit levelItemsAdapter$lambda$0;
+                levelItemsAdapter$lambda$0 = EventScreen.levelItemsAdapter$lambda$0(EventScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
+                return levelItemsAdapter$lambda$0;
             }
         });
         this.timersList = new ArrayList();
@@ -218,14 +218,14 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit shopAdapter$lambda$2(EventScreen eventScreen, ShopItem it) {
+    public static final Unit shopAdapter$lambda$0(EventScreen eventScreen, ShopItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         eventScreen.onShopItemClick(it);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit levelItemsAdapter$lambda$3(EventScreen eventScreen, boolean z, int i) {
+    public static final Unit levelItemsAdapter$lambda$0(EventScreen eventScreen, boolean z, int i) {
         eventScreen.onClaimItem(i);
         return Unit.INSTANCE;
     }
@@ -508,60 +508,58 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             eventEventsItemBinding.tvEventDescription.setText(eventData.getDescription());
         }
         if (eventData.getButtonType() != null) {
-            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda20
+            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EventScreen.updateEvent$lambda$33$lambda$23$lambda$20(EventScreen.this, eventData, view);
+                    EventScreen.updateEvent$lambda$0$2$0(EventScreen.this, eventData, view);
                 }
             });
             String buttonType = eventData.getButtonType();
-            if (buttonType != null) {
-                switch (buttonType.hashCode()) {
-                    case -1512431652:
-                        if (buttonType.equals("event_started")) {
-                            eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
-                            eventEventsItemBinding.btnJoin.setText("Мероприятие началось");
-                            eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
-                            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda22
-                                @Override // android.view.View.OnClickListener
-                                public final void onClick(View view) {
-                                    EventScreen.updateEvent$lambda$33$lambda$23$lambda$22(view);
-                                }
-                            });
-                            break;
-                        }
+            switch (buttonType.hashCode()) {
+                case -1512431652:
+                    if (buttonType.equals("event_started")) {
+                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
+                        eventEventsItemBinding.btnJoin.setText("Мероприятие началось");
+                        eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
+                        eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda21
+                            @Override // android.view.View.OnClickListener
+                            public final void onClick(View view) {
+                                EventScreen.updateEvent$lambda$0$2$2(view);
+                            }
+                        });
                         break;
-                    case -1500192018:
-                        if (buttonType.equals("players_limit")) {
-                            eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
-                            eventEventsItemBinding.btnJoin.setText("Достигнут лимит участников");
-                            eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
-                            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda21
-                                @Override // android.view.View.OnClickListener
-                                public final void onClick(View view) {
-                                    EventScreen.updateEvent$lambda$33$lambda$23$lambda$21(view);
-                                }
-                            });
-                            break;
-                        }
+                    }
+                    break;
+                case -1500192018:
+                    if (buttonType.equals("players_limit")) {
+                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
+                        eventEventsItemBinding.btnJoin.setText("Достигнут лимит участников");
+                        eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
+                        eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda20
+                            @Override // android.view.View.OnClickListener
+                            public final void onClick(View view) {
+                                EventScreen.updateEvent$lambda$0$2$1(view);
+                            }
+                        });
                         break;
-                    case -1367724422:
-                        if (buttonType.equals(FacebookDialog.COMPLETION_GESTURE_CANCEL)) {
-                            eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_white);
-                            eventEventsItemBinding.btnJoin.setText("Отказаться от участия");
-                            eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
-                            break;
-                        }
+                    }
+                    break;
+                case -1367724422:
+                    if (buttonType.equals(FacebookDialog.COMPLETION_GESTURE_CANCEL)) {
+                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_white);
+                        eventEventsItemBinding.btnJoin.setText("Отказаться от участия");
+                        eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
                         break;
-                    case 3267882:
-                        if (buttonType.equals("join")) {
-                            eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg);
-                            eventEventsItemBinding.btnJoin.setText("Присоединиться");
-                            eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
-                            break;
-                        }
+                    }
+                    break;
+                case 3267882:
+                    if (buttonType.equals("join")) {
+                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg);
+                        eventEventsItemBinding.btnJoin.setText("Присоединиться");
+                        eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
                         break;
-                }
+                    }
+                    break;
             }
         }
         if (eventData.getAttempts() != null) {
@@ -591,10 +589,10 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             setPriseItem(item3, easterItem);
         }
         eventEventsItemBinding.errorOverlay.setVisibility(8);
-        eventEventsItemBinding.errorOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda23
+        eventEventsItemBinding.errorOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.updateEvent$lambda$33$lambda$29(view);
+                EventScreen.updateEvent$lambda$0$8(view);
             }
         });
         String timer = eventData.getTimer();
@@ -632,7 +630,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateEvent$lambda$33$lambda$23$lambda$20(EventScreen eventScreen, EventData eventData, View view) {
+    public static final void updateEvent$lambda$0$2$0(EventScreen eventScreen, EventData eventData, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, eventData.getId(), 3, null, 4, null);
     }
 
@@ -649,38 +647,36 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             eventEventsItemBinding.tvEventDescription.setText(eventData.getDescription());
         }
         if (eventData.getButtonType() != null) {
-            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda11
+            eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    EventScreen.setEvent$lambda$48$lambda$38$lambda$36(EventScreen.this, eventData, view);
+                    EventScreen.setEvent$lambda$0$2$0(EventScreen.this, eventData, view);
                 }
             });
             String buttonType = eventData.getButtonType();
-            if (buttonType != null) {
-                int hashCode = buttonType.hashCode();
-                if (hashCode != -1500192018) {
-                    if (hashCode != -1367724422) {
-                        if (hashCode == 3267882 && buttonType.equals("join")) {
-                            eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg);
-                            eventEventsItemBinding.btnJoin.setText("Присоединиться");
-                            eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
-                        }
-                    } else if (buttonType.equals(FacebookDialog.COMPLETION_GESTURE_CANCEL)) {
-                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_white);
-                        eventEventsItemBinding.btnJoin.setText("Отказаться от участия");
+            int hashCode = buttonType.hashCode();
+            if (hashCode != -1500192018) {
+                if (hashCode != -1367724422) {
+                    if (hashCode == 3267882 && buttonType.equals("join")) {
+                        eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg);
+                        eventEventsItemBinding.btnJoin.setText("Присоединиться");
                         eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
                     }
-                } else if (buttonType.equals("players_limit")) {
-                    eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
-                    eventEventsItemBinding.btnJoin.setText("Лимит участников");
-                    eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
-                    eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda16
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            EventScreen.setEvent$lambda$48$lambda$38$lambda$37(view);
-                        }
-                    });
+                } else if (buttonType.equals(FacebookDialog.COMPLETION_GESTURE_CANCEL)) {
+                    eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_white);
+                    eventEventsItemBinding.btnJoin.setText("Отказаться от участия");
+                    eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#3D3D3D"));
                 }
+            } else if (buttonType.equals("players_limit")) {
+                eventEventsItemBinding.btnJoin.setBackgroundResource(R.drawable.event_event_btn_bg_transparent);
+                eventEventsItemBinding.btnJoin.setText("Лимит участников");
+                eventEventsItemBinding.btnJoin.setTextColor(Color.parseColor("#BE3D3D3D"));
+                eventEventsItemBinding.btnJoin.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda11
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        EventScreen.setEvent$lambda$0$2$1(view);
+                    }
+                });
             }
         }
         LinearLayout linearLayout = eventEventsItemBinding.attempsContainer;
@@ -718,10 +714,10 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             setPriseItem(item3, easterItem);
         }
         eventEventsItemBinding.errorOverlay.setVisibility(8);
-        eventEventsItemBinding.errorOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
+        eventEventsItemBinding.errorOverlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setEvent$lambda$48$lambda$44(view);
+                EventScreen.setEvent$lambda$0$8(view);
             }
         });
         String timer = eventData.getTimer();
@@ -759,7 +755,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setEvent$lambda$48$lambda$38$lambda$36(EventScreen eventScreen, EventData eventData, View view) {
+    public static final void setEvent$lambda$0$2$0(EventScreen eventScreen, EventData eventData, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, eventData.getId(), 3, null, 4, null);
     }
 
@@ -884,16 +880,16 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             String resourceUrl2 = FirebaseConfigHelper.INSTANCE.getResourceUrl();
             picasso2.load(resourceUrl2 + "/projects/rodina-rp/systems/battlepass/items/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
         }
-        eventPriseItemEventBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda18
+        eventPriseItemEventBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setPriseItem$lambda$50$lambda$49(EventScreen.this, easterItem, view);
+                EventScreen.setPriseItem$lambda$0$0(EventScreen.this, easterItem, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setPriseItem$lambda$50$lambda$49(EventScreen eventScreen, EasterItem easterItem, View view) {
+    public static final void setPriseItem$lambda$0$0(EventScreen eventScreen, EasterItem easterItem, View view) {
         String name = easterItem.getName();
         Intrinsics.checkNotNull(view);
         eventScreen.onPriseInfo(name, view);
@@ -945,42 +941,42 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         view.post(new Runnable() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                EventScreen.onPriseInfo$lambda$54$lambda$53(view, eventScreenBinding, str);
+                EventScreen.onPriseInfo$lambda$0$0(view, eventScreenBinding, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onPriseInfo$lambda$54$lambda$53(View view, final EventScreenBinding eventScreenBinding, final String str) {
+    public static final void onPriseInfo$lambda$0$0(View view, final EventScreenBinding eventScreenBinding, final String str) {
         int[] iArr = new int[2];
         view.getLocationOnScreen(iArr);
         final float width = iArr[0] + (view.getWidth() / 2);
         final float height = iArr[1] + (view.getHeight() / 2);
         Log.d("onPriseInfo", width + " , " + height);
-        eventScreenBinding.infoText.post(new Runnable() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda0
+        eventScreenBinding.infoText.post(new Runnable() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
-                EventScreen.onPriseInfo$lambda$54$lambda$53$lambda$52(EventScreenBinding.this, width, height, str);
+                EventScreen.onPriseInfo$lambda$0$0$0(EventScreenBinding.this, width, height, str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onPriseInfo$lambda$54$lambda$53$lambda$52(final EventScreenBinding eventScreenBinding, float f, float f2, String str) {
+    public static final void onPriseInfo$lambda$0$0$0(final EventScreenBinding eventScreenBinding, float f, float f2, String str) {
         eventScreenBinding.infoText.setX(f);
         eventScreenBinding.infoText.setY(f2 - eventScreenBinding.infoText.getHeight());
         eventScreenBinding.infoText.setText(str);
         eventScreenBinding.infoTextBg.setVisibility(0);
-        eventScreenBinding.infoTextBg.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda19
+        eventScreenBinding.infoTextBg.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.onPriseInfo$lambda$54$lambda$53$lambda$52$lambda$51(EventScreenBinding.this, view);
+                EventScreen.onPriseInfo$lambda$0$0$0$0(EventScreenBinding.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onPriseInfo$lambda$54$lambda$53$lambda$52$lambda$51(EventScreenBinding eventScreenBinding, View view) {
+    public static final void onPriseInfo$lambda$0$0$0$0(EventScreenBinding eventScreenBinding, View view) {
         eventScreenBinding.infoTextBg.setVisibility(8);
     }
 
@@ -1006,50 +1002,50 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventTopbarBinding.tabMain.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$62$lambda$57(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$0$0(EventScreen.this, view);
             }
         });
         eventTopbarBinding.tabShop.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$62$lambda$58(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$0$1(EventScreen.this, view);
             }
         });
         eventTopbarBinding.tabTask.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$62$lambda$59(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$0$2(EventScreen.this, view);
             }
         });
         eventTopbarBinding.tabEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$62$lambda$60(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$0$3(EventScreen.this, view);
             }
         });
         eventTopbarBinding.backButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$62$lambda$61(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$0$4(EventScreen.this, view);
             }
         });
         this.binding.main.ivVideo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$63(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$1(EventScreen.this, view);
             }
         });
         this.binding.topElements.tabVideoBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$64(EventScreen.this, view);
+                EventScreen.setupNavigation$lambda$2(EventScreen.this, view);
             }
         });
         final EventShopSceenBinding eventShopSceenBinding = this.binding.shop;
         eventShopSceenBinding.resultBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$66$lambda$65(EventShopSceenBinding.this, view);
+                EventScreen.setupNavigation$lambda$3$0(EventShopSceenBinding.this, view);
             }
         });
         BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new EventScreen$setupNavigation$4$2(eventShopSceenBinding, this, null), 3, null);
@@ -1058,56 +1054,56 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventMainResultScreenBinding.resultBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EventScreen.setupNavigation$lambda$68$lambda$67(EventMainResultScreenBinding.this, view);
+                EventScreen.setupNavigation$lambda$4$0(EventMainResultScreenBinding.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$62$lambda$57(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$0$0(EventScreen eventScreen, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, EasterBites.Main.getValue(), 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$62$lambda$58(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$0$1(EventScreen eventScreen, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, EasterBites.Shop.getValue(), 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$62$lambda$59(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$0$2(EventScreen eventScreen, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, EasterBites.Task.getValue(), 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$62$lambda$60(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$0$3(EventScreen eventScreen, View view) {
         SAMPUIElement.notifyClick$default(eventScreen, EasterBites.Event.getValue(), 1, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$62$lambda$61(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$0$4(EventScreen eventScreen, View view) {
         eventScreen.stopVideo();
         SAMPUIElement.notifyClick$default(eventScreen, 0, 0, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$63(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$1(EventScreen eventScreen, View view) {
         eventScreen.navigateTo(Navigation.Video);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$64(EventScreen eventScreen, View view) {
+    public static final void setupNavigation$lambda$2(EventScreen eventScreen, View view) {
         eventScreen.navigateTo(Navigation.Main);
         eventScreen.stopVideo();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$66$lambda$65(EventShopSceenBinding eventShopSceenBinding, View view) {
+    public static final void setupNavigation$lambda$3$0(EventShopSceenBinding eventShopSceenBinding, View view) {
         eventShopSceenBinding.result.setVisibility(8);
         eventShopSceenBinding.rvItems.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupNavigation$lambda$68$lambda$67(EventMainResultScreenBinding eventMainResultScreenBinding, View view) {
+    public static final void setupNavigation$lambda$4$0(EventMainResultScreenBinding eventMainResultScreenBinding, View view) {
         eventMainResultScreenBinding.getRoot().setVisibility(8);
     }
 

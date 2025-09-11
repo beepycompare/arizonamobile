@@ -4,21 +4,21 @@ package io.appmetrica.analytics.impl;
 public final class C0685we implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1134a;
+    public final String f1138a;
 
     public C0685we(String str) {
-        this.f1134a = str;
+        this.f1138a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.yo
     public final wo a(Object obj) {
         if (obj == null) {
-            return new wo(this, false, this.f1134a + " is null.");
+            return new wo(this, false, this.f1138a + " is null.");
         }
         return new wo(this, true, "");
     }
 
     public final String a() {
-        return this.f1134a;
+        return this.f1138a;
     }
 }

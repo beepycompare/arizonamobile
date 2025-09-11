@@ -6,5 +6,5 @@ import java.util.List;
 public abstract class R5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f646a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
+    public static final List f650a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
 }

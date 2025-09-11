@@ -55,16 +55,16 @@ public final class TextStreamsKt {
         forEachLine(reader, new Function1() { // from class: kotlin.io.TextStreamsKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit readLines$lambda$1;
-                readLines$lambda$1 = TextStreamsKt.readLines$lambda$1(arrayList, (String) obj);
-                return readLines$lambda$1;
+                Unit readLines$lambda$0;
+                readLines$lambda$0 = TextStreamsKt.readLines$lambda$0(arrayList, (String) obj);
+                return readLines$lambda$0;
             }
         });
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit readLines$lambda$1(ArrayList arrayList, String it) {
+    public static final Unit readLines$lambda$0(ArrayList arrayList, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
         arrayList.add(it);
         return Unit.INSTANCE;

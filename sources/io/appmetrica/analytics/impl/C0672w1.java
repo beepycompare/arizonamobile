@@ -6,9 +6,9 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 public final class C0672w1 implements InterfaceC0722y1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AppMetricaService f1129a;
+    public final /* synthetic */ AppMetricaService f1133a;
 
     public C0672w1(AppMetricaService appMetricaService) {
-        this.f1129a = appMetricaService;
+        this.f1133a = appMetricaService;
     }
 }

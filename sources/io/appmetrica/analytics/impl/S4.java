@@ -6,12 +6,12 @@ import android.os.ResultReceiver;
 public final class S4 implements D4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f660a;
+    public final Context f664a;
     public final V4 b;
     public final ResultReceiver c;
 
     public S4(Context context, V4 v4, N4 n4) {
-        this.f660a = context;
+        this.f664a = context;
         this.b = v4;
         this.c = n4.c;
         v4.a(this);
@@ -28,7 +28,7 @@ public final class S4 implements D4 {
     }
 
     public final Context c() {
-        return this.f660a;
+        return this.f664a;
     }
 
     public final ResultReceiver d() {

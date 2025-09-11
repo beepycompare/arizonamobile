@@ -57,7 +57,7 @@ public final class DonateShop extends SAMPUIElement {
     private final IBackendNotifier sendServerEvent;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void init$lambda$3$lambda$0(View view) {
+    public static final void init$lambda$0$0(View view) {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -105,13 +105,13 @@ public final class DonateShop extends SAMPUIElement {
         this.donateShopBinding.donateShop.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateShop.init$lambda$3$lambda$0(view);
+                DonateShop.init$lambda$0$0(view);
             }
         });
         this.donateShopBinding.donatePay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateShop.init$lambda$3$lambda$1(DonateShop.this, view);
+                DonateShop.init$lambda$0$1(DonateShop.this, view);
             }
         });
         this.donateCategoryAdapter.categoryOnClick(new DonateCategoryAdapter.CategoryOnClickListener() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$init$1$3
@@ -175,7 +175,7 @@ public final class DonateShop extends SAMPUIElement {
         this.donateShopBinding.closeDonate.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateShop.init$lambda$3$lambda$2(DonateShop.this, view);
+                DonateShop.init$lambda$0$2(DonateShop.this, view);
             }
         });
         this.donateAdapter.setOnItemClickListener(new DonateAdapter.OnItemClickListener() { // from class: ru.mrlargha.arizonaui.donate.presentation.DonateShop$init$1$5
@@ -264,7 +264,7 @@ public final class DonateShop extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void init$lambda$3$lambda$1(DonateShop donateShop, View view) {
+    public static final void init$lambda$0$1(DonateShop donateShop, View view) {
         try {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("https://arizona-rp.com/shop"));
             if (donateShop.getTargetActivity().getPackageManager().resolveActivity(intent, 65536) != null) {
@@ -276,7 +276,7 @@ public final class DonateShop extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void init$lambda$3$lambda$2(DonateShop donateShop, View view) {
+    public static final void init$lambda$0$2(DonateShop donateShop, View view) {
         donateShop.setVisibility(false);
         donateShop.getNotifier().requestRemoveUIElement(donateShop);
     }

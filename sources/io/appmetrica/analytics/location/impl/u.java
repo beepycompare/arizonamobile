@@ -13,20 +13,20 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor;
 public class u implements LastKnownLocationExtractor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1214a;
+    public final Context f1218a;
     public final PermissionResolutionStrategy b;
     public final LocationListener c;
     public final String d;
 
     public u(Context context, PermissionResolutionStrategy permissionResolutionStrategy, LocationListener locationListener, String str) {
-        this.f1214a = context;
+        this.f1218a = context;
         this.b = permissionResolutionStrategy;
         this.c = locationListener;
         this.d = str;
     }
 
     public final Context a() {
-        return this.f1214a;
+        return this.f1218a;
     }
 
     public final LocationListener b() {
@@ -44,7 +44,7 @@ public class u implements LastKnownLocationExtractor {
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor
     public final void updateLastKnownLocation() {
         Location location;
-        if (!this.b.hasNecessaryPermissions(this.f1214a) || (location = (Location) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1214a, FirebaseAnalytics.Param.LOCATION, "getting last known location for provider " + this.d, "location manager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.location.impl.u$$ExternalSyntheticLambda0
+        if (!this.b.hasNecessaryPermissions(this.f1218a) || (location = (Location) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1218a, FirebaseAnalytics.Param.LOCATION, "getting last known location for provider " + this.d, "location manager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.location.impl.u$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {
                 return u.a(u.this, (LocationManager) obj);

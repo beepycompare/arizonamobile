@@ -13,13 +13,13 @@ import kotlin.jvm.internal.markers.KMutableCollection;
 public final class MapBuilderValues<V> extends AbstractMutableCollection<V> implements Collection<V>, KMutableCollection {
     private final MapBuilder<?, V> backing;
 
-    public final MapBuilder<?, V> getBacking() {
-        return this.backing;
-    }
-
     public MapBuilderValues(MapBuilder<?, V> backing) {
         Intrinsics.checkNotNullParameter(backing, "backing");
         this.backing = backing;
+    }
+
+    public final MapBuilder<?, V> getBacking() {
+        return this.backing;
     }
 
     @Override // kotlin.collections.AbstractMutableCollection

@@ -523,15 +523,15 @@ public abstract class SAMPUIElement {
         this.baseLayout.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.core.SAMPUIElement$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view7, MotionEvent motionEvent) {
-                boolean addViewToConstraintLayout$lambda$13;
-                addViewToConstraintLayout$lambda$13 = SAMPUIElement.addViewToConstraintLayout$lambda$13(SAMPUIElement.this, view7, motionEvent);
-                return addViewToConstraintLayout$lambda$13;
+                boolean addViewToConstraintLayout$lambda$2;
+                addViewToConstraintLayout$lambda$2 = SAMPUIElement.addViewToConstraintLayout$lambda$2(SAMPUIElement.this, view7, motionEvent);
+                return addViewToConstraintLayout$lambda$2;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean addViewToConstraintLayout$lambda$13(SAMPUIElement sAMPUIElement, View view, MotionEvent motionEvent) {
+    public static final boolean addViewToConstraintLayout$lambda$2(SAMPUIElement sAMPUIElement, View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             view.performClick();
         }
@@ -605,13 +605,13 @@ public abstract class SAMPUIElement {
         view.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.core.SAMPUIElement$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SAMPUIElement.bindBackendClick$lambda$14(SAMPUIElement.this, i, i2, message, view2);
+                SAMPUIElement.bindBackendClick$lambda$0(SAMPUIElement.this, i, i2, message, view2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bindBackendClick$lambda$14(SAMPUIElement sAMPUIElement, int i, int i2, String str, View view) {
+    public static final void bindBackendClick$lambda$0(SAMPUIElement sAMPUIElement, int i, int i2, String str, View view) {
         Log.d(TAG, "Click on backendId: " + sAMPUIElement.backendID + ",  viewId: " + i + ", subId: " + i2 + ", message: " + str);
         IBackendNotifier notifier = sAMPUIElement.getNotifier();
         int i3 = sAMPUIElement.backendID;
@@ -646,13 +646,13 @@ public abstract class SAMPUIElement {
         view.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.core.SAMPUIElement$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                SAMPUIElement.bindBackendClick$lambda$15(SAMPUIElement.this, i, i2, message, view2);
+                SAMPUIElement.bindBackendClick$lambda$1(SAMPUIElement.this, i, i2, message, view2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bindBackendClick$lambda$15(SAMPUIElement sAMPUIElement, int i, int i2, Function0 function0, View view) {
+    public static final void bindBackendClick$lambda$1(SAMPUIElement sAMPUIElement, int i, int i2, Function0 function0, View view) {
         Log.d(TAG, "Click on backendId: " + sAMPUIElement.backendID + ", id: " + i + ", subId: " + i2 + ", message: lambda function");
         IBackendNotifier notifier = sAMPUIElement.getNotifier();
         int i3 = sAMPUIElement.backendID;

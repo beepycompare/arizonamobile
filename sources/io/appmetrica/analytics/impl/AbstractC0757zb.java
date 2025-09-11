@@ -6,12 +6,12 @@ import io.appmetrica.analytics.modulesapi.internal.common.InternalModuleEvent;
 public abstract /* synthetic */ class AbstractC0757zb {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1184a;
+    public static final /* synthetic */ int[] f1188a;
 
     static {
         int[] iArr = new int[InternalModuleEvent.Category.values().length];
         iArr[InternalModuleEvent.Category.SYSTEM.ordinal()] = 1;
         iArr[InternalModuleEvent.Category.GENERAL.ordinal()] = 2;
-        f1184a = iArr;
+        f1188a = iArr;
     }
 }

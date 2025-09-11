@@ -151,11 +151,11 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     private List<InventoryItem> warehouseList;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$49(View view) {
+    public static final void initClickListeners$lambda$0$7(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$50(View view) {
+    public static final void initClickListeners$lambda$0$8(View view) {
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -192,9 +192,9 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mainInventoryAdapter$lambda$2;
-                mainInventoryAdapter$lambda$2 = InventoryScreen.mainInventoryAdapter$lambda$2(InventoryScreen.this, (DraggedItem) obj);
-                return mainInventoryAdapter$lambda$2;
+                Unit mainInventoryAdapter$lambda$0;
+                mainInventoryAdapter$lambda$0 = InventoryScreen.mainInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return mainInventoryAdapter$lambda$0;
             }
         };
         RecyclerView rvMainInventory = bind.rvMainInventory;
@@ -203,82 +203,82 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.mainInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function1, rvMainInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mainInventoryAdapter$lambda$3;
-                mainInventoryAdapter$lambda$3 = InventoryScreen.mainInventoryAdapter$lambda$3(InventoryScreen.this, (InventoryItem) obj);
-                return mainInventoryAdapter$lambda$3;
+                Unit mainInventoryAdapter$lambda$1;
+                mainInventoryAdapter$lambda$1 = InventoryScreen.mainInventoryAdapter$lambda$1(InventoryScreen.this, (InventoryItem) obj);
+                return mainInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda28
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mainInventoryAdapter$lambda$4;
-                mainInventoryAdapter$lambda$4 = InventoryScreen.mainInventoryAdapter$lambda$4(InventoryScreen.this, (InventoryItem) obj);
-                return mainInventoryAdapter$lambda$4;
+                Unit mainInventoryAdapter$lambda$2;
+                mainInventoryAdapter$lambda$2 = InventoryScreen.mainInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return mainInventoryAdapter$lambda$2;
             }
         }));
         this.subInventoryAdapter = new SubInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda29
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$5;
-                subInventoryAdapter$lambda$5 = InventoryScreen.subInventoryAdapter$lambda$5(InventoryScreen.this, (DraggedItem) obj);
-                return subInventoryAdapter$lambda$5;
+                Unit subInventoryAdapter$lambda$0;
+                subInventoryAdapter$lambda$0 = InventoryScreen.subInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return subInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$6;
-                subInventoryAdapter$lambda$6 = InventoryScreen.subInventoryAdapter$lambda$6((InventoryItem) obj);
-                return subInventoryAdapter$lambda$6;
+                Unit subInventoryAdapter$lambda$1;
+                subInventoryAdapter$lambda$1 = InventoryScreen.subInventoryAdapter$lambda$1((InventoryItem) obj);
+                return subInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda31
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$7;
-                subInventoryAdapter$lambda$7 = InventoryScreen.subInventoryAdapter$lambda$7(InventoryScreen.this, (InventoryItem) obj);
-                return subInventoryAdapter$lambda$7;
+                Unit subInventoryAdapter$lambda$2;
+                subInventoryAdapter$lambda$2 = InventoryScreen.subInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return subInventoryAdapter$lambda$2;
             }
         });
         this.accessoriesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda32
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$8;
-                accessoriesInventoryAdapter$lambda$8 = InventoryScreen.accessoriesInventoryAdapter$lambda$8(InventoryScreen.this, (DraggedItem) obj);
-                return accessoriesInventoryAdapter$lambda$8;
+                Unit accessoriesInventoryAdapter$lambda$0;
+                accessoriesInventoryAdapter$lambda$0 = InventoryScreen.accessoriesInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return accessoriesInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda34
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$9;
-                accessoriesInventoryAdapter$lambda$9 = InventoryScreen.accessoriesInventoryAdapter$lambda$9((InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$9;
+                Unit accessoriesInventoryAdapter$lambda$1;
+                accessoriesInventoryAdapter$lambda$1 = InventoryScreen.accessoriesInventoryAdapter$lambda$1((InventoryItem) obj);
+                return accessoriesInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda35
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$10;
-                accessoriesInventoryAdapter$lambda$10 = InventoryScreen.accessoriesInventoryAdapter$lambda$10(InventoryScreen.this, (InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$10;
+                Unit accessoriesInventoryAdapter$lambda$2;
+                accessoriesInventoryAdapter$lambda$2 = InventoryScreen.accessoriesInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return accessoriesInventoryAdapter$lambda$2;
             }
         });
         this.upgradesInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda56
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$11;
-                upgradesInventoryAdapter$lambda$11 = InventoryScreen.upgradesInventoryAdapter$lambda$11(InventoryScreen.this, (DraggedItem) obj);
-                return upgradesInventoryAdapter$lambda$11;
+                Unit upgradesInventoryAdapter$lambda$0;
+                upgradesInventoryAdapter$lambda$0 = InventoryScreen.upgradesInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return upgradesInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda57
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$12;
-                upgradesInventoryAdapter$lambda$12 = InventoryScreen.upgradesInventoryAdapter$lambda$12((InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$12;
+                Unit upgradesInventoryAdapter$lambda$1;
+                upgradesInventoryAdapter$lambda$1 = InventoryScreen.upgradesInventoryAdapter$lambda$1((InventoryItem) obj);
+                return upgradesInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda58
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$13;
-                upgradesInventoryAdapter$lambda$13 = InventoryScreen.upgradesInventoryAdapter$lambda$13(InventoryScreen.this, (InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$13;
+                Unit upgradesInventoryAdapter$lambda$2;
+                upgradesInventoryAdapter$lambda$2 = InventoryScreen.upgradesInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return upgradesInventoryAdapter$lambda$2;
             }
         });
         RecyclerView rvWalletInventory = bind.rvWalletInventory;
@@ -286,23 +286,23 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.walletInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit walletInventoryAdapter$lambda$14;
-                walletInventoryAdapter$lambda$14 = InventoryScreen.walletInventoryAdapter$lambda$14(InventoryScreen.this, (DraggedItem) obj);
-                return walletInventoryAdapter$lambda$14;
+                Unit walletInventoryAdapter$lambda$0;
+                walletInventoryAdapter$lambda$0 = InventoryScreen.walletInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return walletInventoryAdapter$lambda$0;
             }
         }, rvWalletInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit walletInventoryAdapter$lambda$15;
-                walletInventoryAdapter$lambda$15 = InventoryScreen.walletInventoryAdapter$lambda$15((InventoryItem) obj);
-                return walletInventoryAdapter$lambda$15;
+                Unit walletInventoryAdapter$lambda$1;
+                walletInventoryAdapter$lambda$1 = InventoryScreen.walletInventoryAdapter$lambda$1((InventoryItem) obj);
+                return walletInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit walletInventoryAdapter$lambda$16;
-                walletInventoryAdapter$lambda$16 = InventoryScreen.walletInventoryAdapter$lambda$16(InventoryScreen.this, (InventoryItem) obj);
-                return walletInventoryAdapter$lambda$16;
+                Unit walletInventoryAdapter$lambda$2;
+                walletInventoryAdapter$lambda$2 = InventoryScreen.walletInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return walletInventoryAdapter$lambda$2;
             }
         }));
         this.guardInfoList = new ArrayList();
@@ -312,31 +312,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.guardSubInventoryAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardSubInventoryAdapter$lambda$18;
-                guardSubInventoryAdapter$lambda$18 = InventoryScreen.guardSubInventoryAdapter$lambda$18(InventoryScreen.this, (DraggedItem) obj);
-                return guardSubInventoryAdapter$lambda$18;
+                Unit guardSubInventoryAdapter$lambda$0;
+                guardSubInventoryAdapter$lambda$0 = InventoryScreen.guardSubInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return guardSubInventoryAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardSubInventoryAdapter$lambda$19;
-                guardSubInventoryAdapter$lambda$19 = InventoryScreen.guardSubInventoryAdapter$lambda$19((InventoryItem) obj);
-                return guardSubInventoryAdapter$lambda$19;
+                Unit guardSubInventoryAdapter$lambda$1;
+                guardSubInventoryAdapter$lambda$1 = InventoryScreen.guardSubInventoryAdapter$lambda$1((InventoryItem) obj);
+                return guardSubInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardSubInventoryAdapter$lambda$20;
-                guardSubInventoryAdapter$lambda$20 = InventoryScreen.guardSubInventoryAdapter$lambda$20(InventoryScreen.this, (InventoryItem) obj);
-                return guardSubInventoryAdapter$lambda$20;
+                Unit guardSubInventoryAdapter$lambda$2;
+                guardSubInventoryAdapter$lambda$2 = InventoryScreen.guardSubInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return guardSubInventoryAdapter$lambda$2;
             }
         });
         Function1 function12 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardInventoryAdapter$lambda$22;
-                guardInventoryAdapter$lambda$22 = InventoryScreen.guardInventoryAdapter$lambda$22(InventoryScreen.this, (DraggedItem) obj);
-                return guardInventoryAdapter$lambda$22;
+                Unit guardInventoryAdapter$lambda$0;
+                guardInventoryAdapter$lambda$0 = InventoryScreen.guardInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return guardInventoryAdapter$lambda$0;
             }
         };
         RecyclerView rvGuardInventory = bind.rvGuardInventory;
@@ -344,16 +344,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.guardInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function12, rvGuardInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardInventoryAdapter$lambda$23;
-                guardInventoryAdapter$lambda$23 = InventoryScreen.guardInventoryAdapter$lambda$23((InventoryItem) obj);
-                return guardInventoryAdapter$lambda$23;
+                Unit guardInventoryAdapter$lambda$1;
+                guardInventoryAdapter$lambda$1 = InventoryScreen.guardInventoryAdapter$lambda$1((InventoryItem) obj);
+                return guardInventoryAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit guardInventoryAdapter$lambda$24;
-                guardInventoryAdapter$lambda$24 = InventoryScreen.guardInventoryAdapter$lambda$24(InventoryScreen.this, (InventoryItem) obj);
-                return guardInventoryAdapter$lambda$24;
+                Unit guardInventoryAdapter$lambda$2;
+                guardInventoryAdapter$lambda$2 = InventoryScreen.guardInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return guardInventoryAdapter$lambda$2;
             }
         }));
         this.vehicleSubList = new ArrayList();
@@ -362,76 +362,76 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.vehicleAccessoriesAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleAccessoriesAdapter$lambda$25;
-                vehicleAccessoriesAdapter$lambda$25 = InventoryScreen.vehicleAccessoriesAdapter$lambda$25(InventoryScreen.this, (DraggedItem) obj);
-                return vehicleAccessoriesAdapter$lambda$25;
+                Unit vehicleAccessoriesAdapter$lambda$0;
+                vehicleAccessoriesAdapter$lambda$0 = InventoryScreen.vehicleAccessoriesAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return vehicleAccessoriesAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleAccessoriesAdapter$lambda$26;
-                vehicleAccessoriesAdapter$lambda$26 = InventoryScreen.vehicleAccessoriesAdapter$lambda$26((InventoryItem) obj);
-                return vehicleAccessoriesAdapter$lambda$26;
+                Unit vehicleAccessoriesAdapter$lambda$1;
+                vehicleAccessoriesAdapter$lambda$1 = InventoryScreen.vehicleAccessoriesAdapter$lambda$1((InventoryItem) obj);
+                return vehicleAccessoriesAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleAccessoriesAdapter$lambda$27;
-                vehicleAccessoriesAdapter$lambda$27 = InventoryScreen.vehicleAccessoriesAdapter$lambda$27(InventoryScreen.this, (InventoryItem) obj);
-                return vehicleAccessoriesAdapter$lambda$27;
+                Unit vehicleAccessoriesAdapter$lambda$2;
+                vehicleAccessoriesAdapter$lambda$2 = InventoryScreen.vehicleAccessoriesAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return vehicleAccessoriesAdapter$lambda$2;
             }
         });
         this.vehicleTechAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleTechAdapter$lambda$28;
-                vehicleTechAdapter$lambda$28 = InventoryScreen.vehicleTechAdapter$lambda$28(InventoryScreen.this, (DraggedItem) obj);
-                return vehicleTechAdapter$lambda$28;
+                Unit vehicleTechAdapter$lambda$0;
+                vehicleTechAdapter$lambda$0 = InventoryScreen.vehicleTechAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return vehicleTechAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleTechAdapter$lambda$29;
-                vehicleTechAdapter$lambda$29 = InventoryScreen.vehicleTechAdapter$lambda$29((InventoryItem) obj);
-                return vehicleTechAdapter$lambda$29;
+                Unit vehicleTechAdapter$lambda$1;
+                vehicleTechAdapter$lambda$1 = InventoryScreen.vehicleTechAdapter$lambda$1((InventoryItem) obj);
+                return vehicleTechAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleTechAdapter$lambda$30;
-                vehicleTechAdapter$lambda$30 = InventoryScreen.vehicleTechAdapter$lambda$30(InventoryScreen.this, (InventoryItem) obj);
-                return vehicleTechAdapter$lambda$30;
+                Unit vehicleTechAdapter$lambda$2;
+                vehicleTechAdapter$lambda$2 = InventoryScreen.vehicleTechAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return vehicleTechAdapter$lambda$2;
             }
         });
         this.vehicleVisualAdapter = new UpgradesInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleVisualAdapter$lambda$31;
-                vehicleVisualAdapter$lambda$31 = InventoryScreen.vehicleVisualAdapter$lambda$31(InventoryScreen.this, (DraggedItem) obj);
-                return vehicleVisualAdapter$lambda$31;
+                Unit vehicleVisualAdapter$lambda$0;
+                vehicleVisualAdapter$lambda$0 = InventoryScreen.vehicleVisualAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return vehicleVisualAdapter$lambda$0;
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleVisualAdapter$lambda$32;
-                vehicleVisualAdapter$lambda$32 = InventoryScreen.vehicleVisualAdapter$lambda$32((InventoryItem) obj);
-                return vehicleVisualAdapter$lambda$32;
+                Unit vehicleVisualAdapter$lambda$1;
+                vehicleVisualAdapter$lambda$1 = InventoryScreen.vehicleVisualAdapter$lambda$1((InventoryItem) obj);
+                return vehicleVisualAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vehicleVisualAdapter$lambda$33;
-                vehicleVisualAdapter$lambda$33 = InventoryScreen.vehicleVisualAdapter$lambda$33(InventoryScreen.this, (InventoryItem) obj);
-                return vehicleVisualAdapter$lambda$33;
+                Unit vehicleVisualAdapter$lambda$2;
+                vehicleVisualAdapter$lambda$2 = InventoryScreen.vehicleVisualAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return vehicleVisualAdapter$lambda$2;
             }
         });
         this.warehouseList = new ArrayList();
         Function1 function13 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warehouseAdapter$lambda$34;
-                warehouseAdapter$lambda$34 = InventoryScreen.warehouseAdapter$lambda$34(InventoryScreen.this, (DraggedItem) obj);
-                return warehouseAdapter$lambda$34;
+                Unit warehouseAdapter$lambda$0;
+                warehouseAdapter$lambda$0 = InventoryScreen.warehouseAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
+                return warehouseAdapter$lambda$0;
             }
         };
         RecyclerView rvWarehouse = bind.layoutWarehouse.rvWarehouse;
@@ -439,16 +439,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.warehouseAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function13, rvWarehouse, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warehouseAdapter$lambda$35;
-                warehouseAdapter$lambda$35 = InventoryScreen.warehouseAdapter$lambda$35((InventoryItem) obj);
-                return warehouseAdapter$lambda$35;
+                Unit warehouseAdapter$lambda$1;
+                warehouseAdapter$lambda$1 = InventoryScreen.warehouseAdapter$lambda$1((InventoryItem) obj);
+                return warehouseAdapter$lambda$1;
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warehouseAdapter$lambda$36;
-                warehouseAdapter$lambda$36 = InventoryScreen.warehouseAdapter$lambda$36(InventoryScreen.this, (InventoryItem) obj);
-                return warehouseAdapter$lambda$36;
+                Unit warehouseAdapter$lambda$2;
+                warehouseAdapter$lambda$2 = InventoryScreen.warehouseAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
+                return warehouseAdapter$lambda$2;
             }
         }));
         this.db = AppDatabase.Companion.invoke(activity);
@@ -495,16 +495,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         bind.layoutGuards.layoutGuardInfo.setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda26
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
-                boolean _init_$lambda$38;
-                _init_$lambda$38 = InventoryScreen._init_$lambda$38(InventoryScreen.this, view, dragEvent);
-                return _init_$lambda$38;
+                boolean _init_$lambda$0;
+                _init_$lambda$0 = InventoryScreen._init_$lambda$0(InventoryScreen.this, view, dragEvent);
+                return _init_$lambda$0;
             }
         });
         this.currentBackendId = i;
         bind.getRoot().post(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                InventoryScreen._init_$lambda$39(InventoryScreen.this);
+                InventoryScreen._init_$lambda$1(InventoryScreen.this);
             }
         });
     }
@@ -521,7 +521,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit mainInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit mainInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         InventoryItem inventoryItem = (InventoryItem) CollectionsKt.getOrNull(inventoryScreen.mainInventoryList, currentItem.getPosition());
         if (inventoryItem != null) {
@@ -532,7 +532,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit mainInventoryAdapter$lambda$3(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit mainInventoryAdapter$lambda$1(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.colorItem(it, true);
         Group groupCharacter = inventoryScreen.binding.groupCharacter;
@@ -545,7 +545,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit mainInventoryAdapter$lambda$4(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit mainInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
@@ -555,7 +555,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit subInventoryAdapter$lambda$5(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit subInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.subCaseArmorSkinList.get(currentItem.getPosition()));
         inventoryScreen.colorItem(currentItem.getItemInfo(), false);
@@ -563,13 +563,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit subInventoryAdapter$lambda$6(InventoryItem it) {
+    public static final Unit subInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit subInventoryAdapter$lambda$7(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit subInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
@@ -579,7 +579,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$8(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit accessoriesInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.subAccessoriesList.get(currentItem.getPosition()));
         inventoryScreen.colorItem(currentItem.getItemInfo(), false);
@@ -587,13 +587,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$9(InventoryItem it) {
+    public static final Unit accessoriesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit accessoriesInventoryAdapter$lambda$10(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit accessoriesInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
@@ -603,7 +603,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$11(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit upgradesInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.subUpgradesList.get(currentItem.getPosition()));
         inventoryScreen.colorItem(currentItem.getItemInfo(), false);
@@ -611,13 +611,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$12(InventoryItem it) {
+    public static final Unit upgradesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit upgradesInventoryAdapter$lambda$13(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit upgradesInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
@@ -627,20 +627,20 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit walletInventoryAdapter$lambda$14(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit walletInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.walletInventoryList.get(currentItem.getPosition()));
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit walletInventoryAdapter$lambda$15(InventoryItem it) {
+    public static final Unit walletInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit walletInventoryAdapter$lambda$16(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit walletInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -648,7 +648,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardSubInventoryAdapter$lambda$18(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit guardSubInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(inventoryScreen.guardInfoList, inventoryScreen.guardNumber);
         if (guardInfo != null) {
@@ -659,13 +659,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardSubInventoryAdapter$lambda$19(InventoryItem it) {
+    public static final Unit guardSubInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardSubInventoryAdapter$lambda$20(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit guardSubInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlotGuard(it.getSlot(), it.getInventoryType(), it.getId())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -673,7 +673,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardInventoryAdapter$lambda$22(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit guardInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(inventoryScreen.guardInfoList, inventoryScreen.guardNumber);
         if (guardInfo != null) {
@@ -684,13 +684,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardInventoryAdapter$lambda$23(InventoryItem it) {
+    public static final Unit guardInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit guardInventoryAdapter$lambda$24(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit guardInventoryAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlotGuard(it.getSlot(), it.getInventoryType(), it.getId())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -698,7 +698,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleAccessoriesAdapter$lambda$25(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit vehicleAccessoriesAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.vehicleSubList.get(currentItem.getPosition()));
         inventoryScreen.colorItem(currentItem.getItemInfo(), false);
@@ -706,13 +706,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleAccessoriesAdapter$lambda$26(InventoryItem it) {
+    public static final Unit vehicleAccessoriesAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleAccessoriesAdapter$lambda$27(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit vehicleAccessoriesAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -720,7 +720,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleTechAdapter$lambda$28(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit vehicleTechAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         if (currentItem.getPosition() < 10) {
             inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.vehicleTechnicalList.get(currentItem.getPosition()));
@@ -730,13 +730,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleTechAdapter$lambda$29(InventoryItem it) {
+    public static final Unit vehicleTechAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleTechAdapter$lambda$30(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit vehicleTechAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -744,7 +744,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleVisualAdapter$lambda$31(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit vehicleVisualAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
         if (currentItem.getPosition() < 10) {
             inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.vehicleVisualList.get(currentItem.getPosition()));
@@ -754,13 +754,13 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleVisualAdapter$lambda$32(InventoryItem it) {
+    public static final Unit vehicleVisualAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit vehicleVisualAdapter$lambda$33(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit vehicleVisualAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -768,21 +768,24 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit warehouseAdapter$lambda$34(InventoryScreen inventoryScreen, DraggedItem currentItem) {
+    public static final Unit warehouseAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
-        inventoryScreen.sendData(currentItem.getItemInfo(), inventoryScreen.warehouseList.get(currentItem.getPosition()));
-        inventoryScreen.colorItem(currentItem.getItemInfo(), false);
+        InventoryItem inventoryItem = (InventoryItem) CollectionsKt.getOrNull(inventoryScreen.warehouseList, currentItem.getPosition());
+        if (inventoryItem != null) {
+            inventoryScreen.sendData(currentItem.getItemInfo(), inventoryItem);
+            inventoryScreen.colorItem(currentItem.getItemInfo(), false);
+        }
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit warehouseAdapter$lambda$35(InventoryItem it) {
+    public static final Unit warehouseAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit warehouseAdapter$lambda$36(InventoryScreen inventoryScreen, InventoryItem it) {
+    public static final Unit warehouseAdapter$lambda$2(InventoryScreen inventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
         inventoryScreen.showSelectorDialog(it);
@@ -795,7 +798,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$38(InventoryScreen inventoryScreen, View view, DragEvent dragEvent) {
+    public static final boolean _init_$lambda$0(InventoryScreen inventoryScreen, View view, DragEvent dragEvent) {
         Integer id;
         int action = dragEvent.getAction();
         if (action != 1) {
@@ -825,7 +828,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$39(InventoryScreen inventoryScreen) {
+    public static final void _init_$lambda$1(InventoryScreen inventoryScreen) {
         inventoryScreen.binding.getRoot().getViewTreeObserver().addOnWindowAttachListener(new ViewTreeObserver.OnWindowAttachListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$2$1
             @Override // android.view.ViewTreeObserver.OnWindowAttachListener
             public void onWindowAttached() {
@@ -840,20 +843,24 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     private final void initRetrofit() {
-        String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-        this.retrofit = build;
-        if (build == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("retrofit");
-            build = null;
+        if (UtilsKt.getItemsName().isEmpty()) {
+            String serverApiUrl = FirebaseConfigHelper.INSTANCE.getServerApiUrl();
+            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
+            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            Retrofit build = new Retrofit.Builder().baseUrl(serverApiUrl).client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
+            Intrinsics.checkNotNullExpressionValue(build, "build(...)");
+            this.retrofit = build;
+            if (build == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("retrofit");
+                build = null;
+            }
+            Object create = build.create(InventoryApi.class);
+            Intrinsics.checkNotNullExpressionValue(create, "create(...)");
+            this.api = (InventoryApi) create;
+            BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
+            return;
         }
-        Object create = build.create(InventoryApi.class);
-        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
-        this.api = (InventoryApi) create;
-        BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
+        SAMPUIElement.notifyClick$default(this, 0, 10, null, 4, null);
     }
 
     private final void initClickListeners() {
@@ -861,31 +868,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         mainInventoryBinding.btnAccessories.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda36
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$40(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$0$0(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnUpgrades.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda45
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$41(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$0$1(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnWallet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$42(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$0$2(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.layoutGuards.btnGuardMenu.btnGuardMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda47
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$44(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$0$3(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda48
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$45(MainInventoryBinding.this, this, view);
+                InventoryScreen.initClickListeners$lambda$0$4(MainInventoryBinding.this, this, view);
             }
         });
         mainInventoryBinding.layoutGuards.btnGuardInventory.btnGuardInventory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda49
@@ -897,31 +904,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         mainInventoryBinding.layoutGuards.layoutGuardInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda50
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$48(InventoryScreen.this, view);
+                InventoryScreen.initClickListeners$lambda$0$6(InventoryScreen.this, view);
             }
         });
         mainInventoryBinding.layoutGuards.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$49(view);
+                InventoryScreen.initClickListeners$lambda$0$7(view);
             }
         });
         mainInventoryBinding.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda52
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$50(view);
+                InventoryScreen.initClickListeners$lambda$0$8(view);
             }
         });
         mainInventoryBinding.layoutVehicle.btnVehicleTechnical.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$51(InventoryScreen.this, mainInventoryBinding, view);
+                InventoryScreen.initClickListeners$lambda$0$9(InventoryScreen.this, mainInventoryBinding, view);
             }
         });
         mainInventoryBinding.layoutVehicle.btnVehicleVisual.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.initClickListeners$lambda$59$lambda$52(InventoryScreen.this, mainInventoryBinding, view);
+                InventoryScreen.initClickListeners$lambda$0$10(InventoryScreen.this, mainInventoryBinding, view);
             }
         });
         mainInventoryBinding.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda38
@@ -965,7 +972,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$40(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$0(InventoryScreen inventoryScreen, View view) {
         if (inventoryScreen.isAccessoriesListVisible) {
             inventoryScreen.binding.btnAccessories.setBackgroundResource(R.drawable.ic_btn_accessories_red);
             RecyclerView rvAccessoriesInventory = inventoryScreen.binding.rvAccessoriesInventory;
@@ -989,7 +996,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$41(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$1(InventoryScreen inventoryScreen, View view) {
         if (inventoryScreen.isUpgradesListVisible) {
             inventoryScreen.binding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades);
             RecyclerView rvUpgradesInventory = inventoryScreen.binding.rvUpgradesInventory;
@@ -1013,7 +1020,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$42(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$2(InventoryScreen inventoryScreen, View view) {
         boolean z = inventoryScreen.isWalletListVisible;
         Log.e("wallet", "initClickListeners: " + z + " " + inventoryScreen.walletInventoryList);
         if (inventoryScreen.isWalletListVisible) {
@@ -1053,7 +1060,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$44(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$3(InventoryScreen inventoryScreen, View view) {
         GuardInfo guardInfo;
         int size = inventoryScreen.guardInfoList.size();
         int i = inventoryScreen.guardNumber;
@@ -1066,7 +1073,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$45(MainInventoryBinding mainInventoryBinding, InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$4(MainInventoryBinding mainInventoryBinding, InventoryScreen inventoryScreen, View view) {
         RecyclerView rvGuardInventory = mainInventoryBinding.rvGuardInventory;
         Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
         if (rvGuardInventory.getVisibility() == 0) {
@@ -1086,7 +1093,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$48(InventoryScreen inventoryScreen, View view) {
+    public static final void initClickListeners$lambda$0$6(InventoryScreen inventoryScreen, View view) {
         GuardInfo guardInfo = (GuardInfo) CollectionsKt.getOrNull(inventoryScreen.guardInfoList, inventoryScreen.guardNumber);
         if (guardInfo != null) {
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new SendId(guardInfo.getId())), 4);
@@ -1094,7 +1101,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$51(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
+    public static final void initClickListeners$lambda$0$9(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
         Log.e("inventory", "initClickListeners: " + inventoryScreen.isTechnicalListVisible);
         if (inventoryScreen.isTechnicalListVisible) {
             view.setBackgroundResource(R.drawable.btn_technical_grey);
@@ -1118,7 +1125,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void initClickListeners$lambda$59$lambda$52(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
+    public static final void initClickListeners$lambda$0$10(InventoryScreen inventoryScreen, MainInventoryBinding mainInventoryBinding, View view) {
         if (inventoryScreen.isVisualListVisible) {
             view.setBackgroundResource(R.drawable.btn_visual_grey);
             ConstraintLayout constraintTechVis = mainInventoryBinding.layoutVehicle.constraintTechVis;
@@ -1440,31 +1447,31 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
         this.binding.layoutGuards.btnGuardTypeOne.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$65(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$0(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeTwo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda33
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$66(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$1(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeThree.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda44
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$67(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$2(InventoryScreen.this, view);
             }
         });
         this.binding.layoutGuards.btnGuardTypeFour.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda54
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                InventoryScreen.guardsTypeClickListeners$lambda$68(InventoryScreen.this, view);
+                InventoryScreen.guardsTypeClickListeners$lambda$3(InventoryScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$65(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$0(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 0;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_1_white);
@@ -1481,7 +1488,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$66(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$1(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 1;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_2_white);
@@ -1498,7 +1505,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$67(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$2(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 2;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_3_white);
@@ -1515,7 +1522,7 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void guardsTypeClickListeners$lambda$68(InventoryScreen inventoryScreen, View view) {
+    public static final void guardsTypeClickListeners$lambda$3(InventoryScreen inventoryScreen, View view) {
         inventoryScreen.guardNumber = 3;
         Intrinsics.checkNotNull(view);
         inventoryScreen.setItemBackground(view, R.drawable.btn_guard_4_white);
@@ -1855,16 +1862,16 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
                         new Handler().postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                InventoryScreen.onBackendMessage$lambda$81(InventoryScreen.this);
+                                InventoryScreen.onBackendMessage$lambda$0(InventoryScreen.this);
                             }
                         }, 1000L);
                     }
                     CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj9) {
-                            boolean onBackendMessage$lambda$82;
-                            onBackendMessage$lambda$82 = InventoryScreen.onBackendMessage$lambda$82((InventoryItem) obj9);
-                            return Boolean.valueOf(onBackendMessage$lambda$82);
+                            boolean onBackendMessage$lambda$1;
+                            onBackendMessage$lambda$1 = InventoryScreen.onBackendMessage$lambda$1((InventoryItem) obj9);
+                            return Boolean.valueOf(onBackendMessage$lambda$1);
                         }
                     });
                     CollectionsKt.addAll(this.mainInventoryList, editResponseInfo(inventoryResponse));
@@ -2908,14 +2915,14 @@ public final class InventoryScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBackendMessage$lambda$81(InventoryScreen inventoryScreen) {
+    public static final void onBackendMessage$lambda$0(InventoryScreen inventoryScreen) {
         inventoryScreen.addLockedItems();
         inventoryScreen.mainInventoryAdapter.notifyDataSetChanged();
         inventoryScreen.addInfoToDatabase(inventoryScreen.mainInventoryList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onBackendMessage$lambda$82(InventoryItem it) {
+    public static final boolean onBackendMessage$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.isLocked();
     }

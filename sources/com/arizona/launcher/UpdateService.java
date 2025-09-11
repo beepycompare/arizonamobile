@@ -477,15 +477,15 @@ public final class UpdateService extends Hilt_UpdateService {
             stopForegroundService();
             return;
         }
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
-                UpdateService.checkUpdate$lambda$1(UpdateService.this, (String) obj);
+                UpdateService.checkUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.checkUpdate$lambda$2(UpdateService.this, volleyError);
+                UpdateService.checkUpdate$lambda$1(UpdateService.this, volleyError);
             }
         });
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
@@ -495,14 +495,14 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkUpdate$lambda$1(UpdateService updateService, final String str) {
+    public static final void checkUpdate$lambda$0(UpdateService updateService, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                JSONArray checkUpdate$lambda$1$lambda$0;
-                checkUpdate$lambda$1$lambda$0 = UpdateService.checkUpdate$lambda$1$lambda$0(jSONObject, str, (String) obj);
-                return checkUpdate$lambda$1$lambda$0;
+                JSONArray checkUpdate$lambda$0$0;
+                checkUpdate$lambda$0$0 = UpdateService.checkUpdate$lambda$0$0(jSONObject, str, (String) obj);
+                return checkUpdate$lambda$0$0;
             }
         }.invoke("files");
         updateService.mDataInfo = jSONArray;
@@ -514,7 +514,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final JSONArray checkUpdate$lambda$1$lambda$0(JSONObject jSONObject, String str, String str2) {
+    public static final JSONArray checkUpdate$lambda$0$0(JSONObject jSONObject, String str, String str2) {
         JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
         int length = jSONArray.length();
         if (length >= 0) {
@@ -532,7 +532,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkUpdate$lambda$2(UpdateService updateService, VolleyError volleyError) {
+    public static final void checkUpdate$lambda$1(UpdateService updateService, VolleyError volleyError) {
         FileServers.INSTANCE.currentServerIsUnreachable();
         updateService.mLastOperationStatus = Errno.UpdateServerUnreachable;
         updateService.setUpdateStatus(UpdateStatus.Undefined);
@@ -669,40 +669,40 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mainHandler.postDelayed(this.checkTimeoutRunnable, 5000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
+            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    Unit downloadGameData$lambda$3;
-                    downloadGameData$lambda$3 = UpdateService.downloadGameData$lambda$3((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
-                    return downloadGameData$lambda$3;
+                    Unit downloadGameData$lambda$0;
+                    downloadGameData$lambda$0 = UpdateService.downloadGameData$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
+                    return downloadGameData$lambda$0;
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda16
+            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit downloadGameData$lambda$4;
-                    downloadGameData$lambda$4 = UpdateService.downloadGameData$lambda$4(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
-                    return downloadGameData$lambda$4;
+                    Unit downloadGameData$lambda$1;
+                    downloadGameData$lambda$1 = UpdateService.downloadGameData$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
+                    return downloadGameData$lambda$1;
                 }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
+            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda16
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    Unit downloadGameData$lambda$6;
-                    downloadGameData$lambda$6 = UpdateService.downloadGameData$lambda$6(UpdateService.this, arrayList, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
-                    return downloadGameData$lambda$6;
+                    Unit downloadGameData$lambda$2;
+                    downloadGameData$lambda$2 = UpdateService.downloadGameData$lambda$2(UpdateService.this, arrayList, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
+                    return downloadGameData$lambda$2;
                 }
             }, 3, null), false);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit downloadGameData$lambda$3(DownloadTask connectTask, int i, long j, long j2) {
+    public static final Unit downloadGameData$lambda$0(DownloadTask connectTask, int i, long j, long j2) {
         Intrinsics.checkNotNullParameter(connectTask, "connectTask");
         Log.v(TAG, "Downloading " + connectTask);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit downloadGameData$lambda$4(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
+    public static final Unit downloadGameData$lambda$1(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
         Intrinsics.checkNotNullParameter(progressTask, "progressTask");
         updateService.calcSpeed(progressTask, j);
         progressTask.addTag(2, Long.valueOf(j));
@@ -711,7 +711,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit downloadGameData$lambda$6(UpdateService updateService, ArrayList arrayList, DownloadTask task, EndCause p1, Exception exc, Listener1Assist.Listener1Model p3) {
+    public static final Unit downloadGameData$lambda$2(UpdateService updateService, ArrayList arrayList, DownloadTask task, EndCause p1, Exception exc, Listener1Assist.Listener1Model p3) {
         Intrinsics.checkNotNullParameter(task, "task");
         Intrinsics.checkNotNullParameter(p1, "p1");
         Intrinsics.checkNotNullParameter(p3, "p3");
@@ -1198,18 +1198,18 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     private final String toHex(byte[] bArr) {
-        return ArraysKt.joinToString$default(bArr, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
+        return ArraysKt.joinToString$default(bArr, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence hex$lambda$13;
-                hex$lambda$13 = UpdateService.toHex$lambda$13(((Byte) obj).byteValue());
-                return hex$lambda$13;
+                CharSequence hex$lambda$0;
+                hex$lambda$0 = UpdateService.toHex$lambda$0(((Byte) obj).byteValue());
+                return hex$lambda$0;
             }
         }, 30, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence toHex$lambda$13(byte b) {
+    public static final CharSequence toHex$lambda$0(byte b) {
         String format = String.format("%02x", Arrays.copyOf(new Object[]{Byte.valueOf(b)}, 1));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
@@ -1236,12 +1236,12 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         this.mLastOperationStatus = Errno.NoError;
-        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
-                UpdateService.checkLauncherUpdate$lambda$14(UpdateService.this, (String) obj);
+                UpdateService.checkLauncherUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.this.notifyServerUnreachable();
@@ -1253,9 +1253,9 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkLauncherUpdate$lambda$14(UpdateService updateService, String str) {
+    public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1651;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1652;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1322,40 +1322,40 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mainHandler.postDelayed(this.checkTimeoutRunnable, 5000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
+            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    Unit startDownloadNewLauncherApk$lambda$16;
-                    startDownloadNewLauncherApk$lambda$16 = UpdateService.startDownloadNewLauncherApk$lambda$16((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
-                    return startDownloadNewLauncherApk$lambda$16;
+                    Unit startDownloadNewLauncherApk$lambda$0;
+                    startDownloadNewLauncherApk$lambda$0 = UpdateService.startDownloadNewLauncherApk$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
+                    return startDownloadNewLauncherApk$lambda$0;
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
+            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit startDownloadNewLauncherApk$lambda$17;
-                    startDownloadNewLauncherApk$lambda$17 = UpdateService.startDownloadNewLauncherApk$lambda$17(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
-                    return startDownloadNewLauncherApk$lambda$17;
+                    Unit startDownloadNewLauncherApk$lambda$1;
+                    startDownloadNewLauncherApk$lambda$1 = UpdateService.startDownloadNewLauncherApk$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
+                    return startDownloadNewLauncherApk$lambda$1;
                 }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    Unit startDownloadNewLauncherApk$lambda$19;
-                    startDownloadNewLauncherApk$lambda$19 = UpdateService.startDownloadNewLauncherApk$lambda$19(UpdateService.this, file, r3, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
-                    return startDownloadNewLauncherApk$lambda$19;
+                    Unit startDownloadNewLauncherApk$lambda$2;
+                    startDownloadNewLauncherApk$lambda$2 = UpdateService.startDownloadNewLauncherApk$lambda$2(UpdateService.this, file, r3, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
+                    return startDownloadNewLauncherApk$lambda$2;
                 }
             }, 3, null), false);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit startDownloadNewLauncherApk$lambda$16(DownloadTask connectTask, int i, long j, long j2) {
+    public static final Unit startDownloadNewLauncherApk$lambda$0(DownloadTask connectTask, int i, long j, long j2) {
         Intrinsics.checkNotNullParameter(connectTask, "connectTask");
         Log.v(TAG, "Downloading " + connectTask);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit startDownloadNewLauncherApk$lambda$17(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
+    public static final Unit startDownloadNewLauncherApk$lambda$1(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
         Intrinsics.checkNotNullParameter(progressTask, "progressTask");
         updateService.mTotalLength = j2;
         updateService.calcSpeed(progressTask, j);
@@ -1365,7 +1365,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit startDownloadNewLauncherApk$lambda$19(final UpdateService updateService, File file, String str, DownloadTask errorTask, EndCause errorCode, Exception exc, Listener1Assist.Listener1Model exception) {
+    public static final Unit startDownloadNewLauncherApk$lambda$2(final UpdateService updateService, File file, String str, DownloadTask errorTask, EndCause errorCode, Exception exc, Listener1Assist.Listener1Model exception) {
         Intrinsics.checkNotNullParameter(errorTask, "errorTask");
         Intrinsics.checkNotNullParameter(errorCode, "errorCode");
         Intrinsics.checkNotNullParameter(exception, "exception");
@@ -1384,17 +1384,17 @@ public final class UpdateService extends Hilt_UpdateService {
             }
             file.renameTo(file2);
         }
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                UpdateService.startDownloadNewLauncherApk$lambda$19$lambda$18(UpdateService.this);
+                UpdateService.startDownloadNewLauncherApk$lambda$2$0(UpdateService.this);
             }
         }, 1250L);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startDownloadNewLauncherApk$lambda$19$lambda$18(UpdateService updateService) {
+    public static final void startDownloadNewLauncherApk$lambda$2$0(UpdateService updateService) {
         Message obtain = Message.obtain(updateService.mInHandler, 6);
         obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
         obtain.replyTo = updateService.mMessenger;
@@ -1562,15 +1562,15 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         Log.i(TAG, "checkUpdate: requesting server for update json");
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
-                UpdateService.checkUpdateAndDownload$lambda$22(UpdateService.this, onFinish, (String) obj);
+                UpdateService.checkUpdateAndDownload$lambda$1(UpdateService.this, onFinish, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.checkUpdateAndDownload$lambda$24(UpdateService.this, volleyError);
+                UpdateService.checkUpdateAndDownload$lambda$2(UpdateService.this, volleyError);
             }
         });
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
@@ -1580,14 +1580,14 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkUpdateAndDownload$lambda$22(UpdateService updateService, Function0 function0, final String str) {
+    public static final void checkUpdateAndDownload$lambda$1(UpdateService updateService, Function0 function0, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                JSONArray checkUpdateAndDownload$lambda$22$lambda$21;
-                checkUpdateAndDownload$lambda$22$lambda$21 = UpdateService.checkUpdateAndDownload$lambda$22$lambda$21(jSONObject, str, (String) obj);
-                return checkUpdateAndDownload$lambda$22$lambda$21;
+                JSONArray checkUpdateAndDownload$lambda$1$0;
+                checkUpdateAndDownload$lambda$1$0 = UpdateService.checkUpdateAndDownload$lambda$1$0(jSONObject, str, (String) obj);
+                return checkUpdateAndDownload$lambda$1$0;
             }
         }.invoke("files");
         updateService.mDataInfo = jSONArray;
@@ -1598,7 +1598,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final JSONArray checkUpdateAndDownload$lambda$22$lambda$21(JSONObject jSONObject, String str, String str2) {
+    public static final JSONArray checkUpdateAndDownload$lambda$1$0(JSONObject jSONObject, String str, String str2) {
         JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
         int length = jSONArray.length();
         if (length >= 0) {
@@ -1616,21 +1616,21 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkUpdateAndDownload$lambda$24(final UpdateService updateService, VolleyError volleyError) {
+    public static final void checkUpdateAndDownload$lambda$2(final UpdateService updateService, VolleyError volleyError) {
         FileServers.INSTANCE.currentServerIsUnreachable();
-        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
+        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit checkUpdateAndDownload$lambda$24$lambda$23;
-                checkUpdateAndDownload$lambda$24$lambda$23 = UpdateService.checkUpdateAndDownload$lambda$24$lambda$23(UpdateService.this);
-                return checkUpdateAndDownload$lambda$24$lambda$23;
+                Unit checkUpdateAndDownload$lambda$2$0;
+                checkUpdateAndDownload$lambda$2$0 = UpdateService.checkUpdateAndDownload$lambda$2$0(UpdateService.this);
+                return checkUpdateAndDownload$lambda$2$0;
             }
         });
         updateService.stopForegroundService();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkUpdateAndDownload$lambda$24$lambda$23(UpdateService updateService) {
+    public static final Unit checkUpdateAndDownload$lambda$2$0(UpdateService updateService) {
         updateService.updateGameData();
         return Unit.INSTANCE;
     }

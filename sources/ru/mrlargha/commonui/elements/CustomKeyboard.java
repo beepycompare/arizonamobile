@@ -162,95 +162,95 @@ public final class CustomKeyboard extends SAMPUIElement {
         constraintLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda14
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                CustomKeyboard._init_$lambda$2(CustomKeyboard.this, targetActivity);
+                CustomKeyboard._init_$lambda$1(CustomKeyboard.this, targetActivity);
             }
         });
         appCompatImageView2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$3(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$2(CustomKeyboard.this, view);
             }
         });
         appCompatImageView6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$4(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$3(CustomKeyboard.this, view);
             }
         });
         editText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$5(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$4(CustomKeyboard.this, view);
             }
         });
         appCompatImageView5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$6(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$5(CustomKeyboard.this, view);
             }
         });
         button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$7(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$6(CustomKeyboard.this, view);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$8(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$7(CustomKeyboard.this, view);
             }
         });
         button3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$9(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$8(CustomKeyboard.this, view);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$10(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$9(CustomKeyboard.this, view);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$11(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$10(CustomKeyboard.this, view);
             }
         });
         button6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$12(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$11(CustomKeyboard.this, view);
             }
         });
         appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$13(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$12(CustomKeyboard.this, view);
             }
         });
         appCompatImageView4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$14(CustomKeyboard.this, view);
+                CustomKeyboard._init_$lambda$13(CustomKeyboard.this, view);
             }
         });
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda12
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$15;
-                _init_$lambda$15 = CustomKeyboard._init_$lambda$15(CustomKeyboard.this, textView, i2, keyEvent);
-                return _init_$lambda$15;
+                boolean _init_$lambda$14;
+                _init_$lambda$14 = CustomKeyboard._init_$lambda$14(CustomKeyboard.this, textView, i2, keyEvent);
+                return _init_$lambda$14;
             }
         });
         editText.setOnKeyListener(new View.OnKeyListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda13
             @Override // android.view.View.OnKeyListener
             public final boolean onKey(View view, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$16;
-                _init_$lambda$16 = CustomKeyboard._init_$lambda$16(CustomKeyboard.this, view, i2, keyEvent);
-                return _init_$lambda$16;
+                boolean _init_$lambda$15;
+                _init_$lambda$15 = CustomKeyboard._init_$lambda$15(CustomKeyboard.this, view, i2, keyEvent);
+                return _init_$lambda$15;
             }
         });
     }
@@ -396,7 +396,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(final CustomKeyboard customKeyboard, Activity activity) {
+    public static final void _init_$lambda$1(final CustomKeyboard customKeyboard, Activity activity) {
         int height;
         Rect rect = new Rect();
         customKeyboard.mKeyboardView.getWindowVisibleDisplayFrame(rect);
@@ -417,14 +417,14 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$2(CustomKeyboard customKeyboard, View view) {
         customKeyboard.currentHistory--;
         customKeyboard.updateHistoryNavigationButtonsEnabledState();
         customKeyboard.updateTextByCurrentHistoryLevel();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$3(CustomKeyboard customKeyboard, View view) {
         Editable text = customKeyboard.inputArea.getText();
         if (text != null) {
             String obj = text.toString();
@@ -434,7 +434,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$4(CustomKeyboard customKeyboard, View view) {
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -448,7 +448,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$5(CustomKeyboard customKeyboard, View view) {
         if (customKeyboard.rpButton.getVisibility() == 8 && customKeyboard.nonrpButton.getVisibility() == 8 && customKeyboard.orgButton.getVisibility() == 8 && customKeyboard.familyButton.getVisibility() == 8 && customKeyboard.workButton.getVisibility() == 8 && customKeyboard.vipButton.getVisibility() == 8) {
             customKeyboard.rpButton.setVisibility(0);
             customKeyboard.nonrpButton.setVisibility(0);
@@ -474,7 +474,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$6(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("РП");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -494,7 +494,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$7(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("НРП");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -514,7 +514,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$8(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("ОРГ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -534,7 +534,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$10(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$9(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("СЕМ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -554,7 +554,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$11(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$10(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("РАБ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -574,7 +574,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$12(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$11(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("VIP");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -594,14 +594,14 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$13(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$12(CustomKeyboard customKeyboard, View view) {
         customKeyboard.currentHistory++;
         customKeyboard.updateHistoryNavigationButtonsEnabledState();
         customKeyboard.updateTextByCurrentHistoryLevel();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$14(CustomKeyboard customKeyboard, View view) {
+    public static final void _init_$lambda$13(CustomKeyboard customKeyboard, View view) {
         if (!customKeyboard.isBinderShowing) {
             customKeyboard.hideKeyboard();
             customKeyboard.getNotifier().setUIElementVisible(UIElementID.COMMAND_BINDER.getId(), true);
@@ -622,7 +622,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$15(CustomKeyboard customKeyboard, TextView textView, int i, KeyEvent keyEvent) {
+    public static final boolean _init_$lambda$14(CustomKeyboard customKeyboard, TextView textView, int i, KeyEvent keyEvent) {
         Editable text;
         if ((i == 0 || i == 5 || i == 6) && (text = customKeyboard.inputArea.getText()) != null) {
             String obj = text.toString();
@@ -634,7 +634,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$16(CustomKeyboard customKeyboard, View view, int i, KeyEvent keyEvent) {
+    public static final boolean _init_$lambda$15(CustomKeyboard customKeyboard, View view, int i, KeyEvent keyEvent) {
         Editable text;
         if (i == 66 && keyEvent.isCtrlPressed() && (text = customKeyboard.inputArea.getText()) != null) {
             String obj = text.toString();

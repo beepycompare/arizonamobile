@@ -24,9 +24,6 @@ public final /* synthetic */ class MainComponent$DialogConfig$DownloadCache$$ser
     public static final MainComponent$DialogConfig$DownloadCache$$serializer INSTANCE;
     private static final SerialDescriptor descriptor;
 
-    private MainComponent$DialogConfig$DownloadCache$$serializer() {
-    }
-
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
     public final SerialDescriptor getDescriptor() {
         return descriptor;
@@ -39,6 +36,9 @@ public final /* synthetic */ class MainComponent$DialogConfig$DownloadCache$$ser
         pluginGeneratedSerialDescriptor.addElement("description", false);
         descriptor = pluginGeneratedSerialDescriptor;
         $stable = 8;
+    }
+
+    private MainComponent$DialogConfig$DownloadCache$$serializer() {
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer
@@ -87,7 +87,7 @@ public final /* synthetic */ class MainComponent$DialogConfig$DownloadCache$$ser
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer
-    public KSerializer<?>[] typeParametersSerializers() {
+    public /* bridge */ KSerializer<?>[] typeParametersSerializers() {
         return GeneratedSerializer.DefaultImpls.typeParametersSerializers(this);
     }
 }

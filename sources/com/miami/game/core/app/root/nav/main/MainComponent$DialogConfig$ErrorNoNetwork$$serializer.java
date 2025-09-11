@@ -24,9 +24,6 @@ public final /* synthetic */ class MainComponent$DialogConfig$ErrorNoNetwork$$se
     public static final MainComponent$DialogConfig$ErrorNoNetwork$$serializer INSTANCE;
     private static final SerialDescriptor descriptor;
 
-    private MainComponent$DialogConfig$ErrorNoNetwork$$serializer() {
-    }
-
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
     public final SerialDescriptor getDescriptor() {
         return descriptor;
@@ -39,6 +36,9 @@ public final /* synthetic */ class MainComponent$DialogConfig$ErrorNoNetwork$$se
         pluginGeneratedSerialDescriptor.addElement("errorMessage", false);
         descriptor = pluginGeneratedSerialDescriptor;
         $stable = 8;
+    }
+
+    private MainComponent$DialogConfig$ErrorNoNetwork$$serializer() {
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer
@@ -87,7 +87,7 @@ public final /* synthetic */ class MainComponent$DialogConfig$ErrorNoNetwork$$se
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer
-    public KSerializer<?>[] typeParametersSerializers() {
+    public /* bridge */ KSerializer<?>[] typeParametersSerializers() {
         return GeneratedSerializer.DefaultImpls.typeParametersSerializers(this);
     }
 }

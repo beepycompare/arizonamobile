@@ -29,14 +29,6 @@ public final class CurrentContainerRewardsAdapter extends RecyclerView.Adapter<C
     private final IBackendNotifier sendServerEvent;
     private final Activity targetActivity;
 
-    public final int getBackendId() {
-        return this.backendId;
-    }
-
-    public final Activity getTargetActivity() {
-        return this.targetActivity;
-    }
-
     public CurrentContainerRewardsAdapter(Activity targetActivity, int i) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.targetActivity = targetActivity;
@@ -44,6 +36,14 @@ public final class CurrentContainerRewardsAdapter extends RecyclerView.Adapter<C
         this.listItem = new ArrayList<>();
         Intrinsics.checkNotNull(targetActivity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
         this.sendServerEvent = (IBackendNotifier) targetActivity;
+    }
+
+    public final int getBackendId() {
+        return this.backendId;
+    }
+
+    public final Activity getTargetActivity() {
+        return this.targetActivity;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

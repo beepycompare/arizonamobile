@@ -7,11 +7,11 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public final class L6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Si f549a;
+    public final Si f553a;
     public final C0153bi b;
 
     public L6(Vf vf, C0144b9 c0144b9, Si si, AppMetricaConfig appMetricaConfig) {
-        this.f549a = si;
+        this.f553a = si;
         this.b = new C0153bi(vf, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), c0144b9, appMetricaConfig.userProfileID);
     }
 

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0715xj implements InterfaceC0366k {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0512pf f1154a;
+    public C0512pf f1158a;
     public ScreenInfo b;
     public boolean c;
     public boolean d;
@@ -21,16 +21,16 @@ public final class C0715xj implements InterfaceC0366k {
     public final synchronized void a(Activity activity) {
         this.f = new WeakReference(activity);
         if (!this.d) {
-            if (this.f1154a == null) {
-                this.f1154a = new C0512pf(C0728y7.a(activity).a());
+            if (this.f1158a == null) {
+                this.f1158a = new C0512pf(C0728y7.a(activity).a());
             }
-            C0512pf c0512pf = this.f1154a;
+            C0512pf c0512pf = this.f1158a;
             Intrinsics.checkNotNull(c0512pf);
             this.b = c0512pf.p();
-            if (this.f1154a == null) {
-                this.f1154a = new C0512pf(C0728y7.a(activity).a());
+            if (this.f1158a == null) {
+                this.f1158a = new C0512pf(C0728y7.a(activity).a());
             }
-            C0512pf c0512pf2 = this.f1154a;
+            C0512pf c0512pf2 = this.f1158a;
             Intrinsics.checkNotNull(c0512pf2);
             this.c = c0512pf2.t();
             this.d = true;
@@ -48,10 +48,10 @@ public final class C0715xj implements InterfaceC0366k {
                 return;
             }
             this.b = a2;
-            if (this.f1154a == null) {
-                this.f1154a = new C0512pf(C0728y7.a(context).a());
+            if (this.f1158a == null) {
+                this.f1158a = new C0512pf(C0728y7.a(context).a());
             }
-            C0512pf c0512pf = this.f1154a;
+            C0512pf c0512pf = this.f1158a;
             Intrinsics.checkNotNull(c0512pf);
             c0512pf.a(this.b);
         }
@@ -59,16 +59,16 @@ public final class C0715xj implements InterfaceC0366k {
 
     public final synchronized ScreenInfo a(Context context) {
         if (!this.d) {
-            if (this.f1154a == null) {
-                this.f1154a = new C0512pf(C0728y7.a(context).a());
+            if (this.f1158a == null) {
+                this.f1158a = new C0512pf(C0728y7.a(context).a());
             }
-            C0512pf c0512pf = this.f1154a;
+            C0512pf c0512pf = this.f1158a;
             Intrinsics.checkNotNull(c0512pf);
             this.b = c0512pf.p();
-            if (this.f1154a == null) {
-                this.f1154a = new C0512pf(C0728y7.a(context).a());
+            if (this.f1158a == null) {
+                this.f1158a = new C0512pf(C0728y7.a(context).a());
             }
-            C0512pf c0512pf2 = this.f1154a;
+            C0512pf c0512pf2 = this.f1158a;
             Intrinsics.checkNotNull(c0512pf2);
             this.c = c0512pf2.t();
             this.d = true;
@@ -79,10 +79,10 @@ public final class C0715xj implements InterfaceC0366k {
                 if (!this.c) {
                     b(context);
                     this.c = true;
-                    if (this.f1154a == null) {
-                        this.f1154a = new C0512pf(C0728y7.a(context).a());
+                    if (this.f1158a == null) {
+                        this.f1158a = new C0512pf(C0728y7.a(context).a());
                     }
-                    C0512pf c0512pf3 = this.f1154a;
+                    C0512pf c0512pf3 = this.f1158a;
                     Intrinsics.checkNotNull(c0512pf3);
                     c0512pf3.v();
                 }
@@ -94,6 +94,6 @@ public final class C0715xj implements InterfaceC0366k {
     }
 
     public final void a(C0512pf c0512pf) {
-        this.f1154a = c0512pf;
+        this.f1158a = c0512pf;
     }
 }

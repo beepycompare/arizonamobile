@@ -6,16 +6,16 @@ import io.appmetrica.analytics.ExternalAttribution;
 public final class RunnableC0317i1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ExternalAttribution f911a;
+    public final /* synthetic */ ExternalAttribution f915a;
     public final /* synthetic */ C0547r1 b;
 
     public RunnableC0317i1(C0547r1 c0547r1, ExternalAttribution externalAttribution) {
         this.b = c0547r1;
-        this.f911a = externalAttribution;
+        this.f915a = externalAttribution;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0547r1.a(this.b).a(this.f911a);
+        C0547r1.a(this.b).a(this.f915a);
     }
 }

@@ -50,7 +50,7 @@ public final class CreateClanColorAdapter extends RecyclerView.Adapter<CreateCla
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.family.adapters.CreateClanColorAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateClanColorAdapter.onBindViewHolder$lambda$1$lambda$0(CreateClanColorAdapter.this, i, view);
+                CreateClanColorAdapter.onBindViewHolder$lambda$0$0(CreateClanColorAdapter.this, i, view);
             }
         });
         binding.colorItem.setForeground(i == this.selectedColorPos ? ContextCompat.getDrawable(holder.getCntx(), R.drawable.family_create_color_stroke) : null);
@@ -58,7 +58,7 @@ public final class CreateClanColorAdapter extends RecyclerView.Adapter<CreateCla
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1$lambda$0(CreateClanColorAdapter createClanColorAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0$0(CreateClanColorAdapter createClanColorAdapter, int i, View view) {
         createClanColorAdapter.selectedColorPos = i;
         createClanColorAdapter.notifyDataSetChanged();
     }

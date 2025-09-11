@@ -47,7 +47,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class DialogFrameKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DialogFrame$lambda$7(Integer num, Function0 function0, Function2 function2, int i, int i2, Composer composer, int i3) {
+    public static final Unit DialogFrame$lambda$3(Integer num, Function0 function0, Function2 function2, int i, int i2, Composer composer, int i3) {
         DialogFrame(num, function0, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
@@ -90,7 +90,7 @@ public final class DialogFrameKt {
                 ComposerKt.traceEventStart(468851715, i6, -1, "com.miami.game.core.design.system.component.dialog_frame.DialogFrame (DialogFrame.kt:50)");
             }
             Modifier m257backgroundbw27NRU$default = BackgroundKt.m257backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, 2, null);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405052982, "CC(remember):DialogFrame.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405053366, "CC(remember):DialogFrame.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = InteractionSourceKt.MutableInteractionSource();
@@ -98,7 +98,7 @@ public final class DialogFrameKt {
             }
             MutableInteractionSource mutableInteractionSource = (MutableInteractionSource) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405054171, "CC(remember):DialogFrame.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405054555, "CC(remember):DialogFrame.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new Function0() { // from class: com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt$$ExternalSyntheticLambda0
@@ -298,9 +298,9 @@ public final class DialogFrameKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.dialog_frame.DialogFrameKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit DialogFrame$lambda$7;
-                    DialogFrame$lambda$7 = DialogFrameKt.DialogFrame$lambda$7(num2, onDismiss, content, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return DialogFrame$lambda$7;
+                    Unit DialogFrame$lambda$3;
+                    DialogFrame$lambda$3 = DialogFrameKt.DialogFrame$lambda$3(num2, onDismiss, content, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
+                    return DialogFrame$lambda$3;
                 }
             });
         }

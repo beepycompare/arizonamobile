@@ -12,13 +12,13 @@ import org.json.JSONObject;
 public final class Df implements InterfaceC0541qj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f406a;
+    public final Context f410a;
     public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/preload_info";
     public final String c = "tracking_id";
     public final String d = "additional_parameters";
 
     public Df(Context context) {
-        this.f406a = context;
+        this.f410a = context;
     }
 
     public final String a() {
@@ -30,12 +30,12 @@ public final class Df implements InterfaceC0541qj {
     public final Kf invoke() {
         Cursor cursor;
         JSONObject jSONObject;
-        if (!PackageManagerUtils.hasContentProvider(this.f406a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+        if (!PackageManagerUtils.hasContentProvider(this.f410a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
             Bj.a("Satellite content provider with preload info was not found.", new Object[0]);
             return null;
         }
         try {
-            cursor = this.f406a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            cursor = this.f410a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
             try {
                 if (cursor != null) {
                     if (cursor.moveToFirst()) {

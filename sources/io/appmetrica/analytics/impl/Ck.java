@@ -5,12 +5,12 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class Ck {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SystemTimeProvider f389a;
+    public final SystemTimeProvider f393a;
     public final long b;
 
     public Ck() {
         SystemTimeProvider systemTimeProvider = new SystemTimeProvider();
-        this.f389a = systemTimeProvider;
+        this.f393a = systemTimeProvider;
         this.b = systemTimeProvider.currentTimeMillis();
     }
 }

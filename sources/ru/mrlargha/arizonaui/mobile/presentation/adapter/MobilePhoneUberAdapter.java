@@ -27,14 +27,14 @@ public final class MobilePhoneUberAdapter extends RecyclerView.Adapter<MobilePho
         void callback(int i);
     }
 
-    public final Activity getActivity() {
-        return this.activity;
-    }
-
     public MobilePhoneUberAdapter(Activity activity) {
         Intrinsics.checkNotNullParameter(activity, "activity");
         this.activity = activity;
         this.list = CollectionsKt.listOf((Object[]) new MobilePhoneUberChoseTaxi[]{new MobilePhoneUberChoseTaxi("Эконом", 1000, true), new MobilePhoneUberChoseTaxi("Комфорт", 2000, false), new MobilePhoneUberChoseTaxi("Бизнес", 10000, false)});
+    }
+
+    public final Activity getActivity() {
+        return this.activity;
     }
 
     public final void setOnChoseCarClickListener(OnChosePriorityClickListener onChosePriorityClickListener) {
@@ -80,13 +80,13 @@ public final class MobilePhoneUberAdapter extends RecyclerView.Adapter<MobilePho
         holder.getUberItem().mpUberPriorityItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneUberAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MobilePhoneUberAdapter.onBindViewHolder$lambda$1(MobilePhoneUberAdapter.this, i, view);
+                MobilePhoneUberAdapter.onBindViewHolder$lambda$0(MobilePhoneUberAdapter.this, i, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1(MobilePhoneUberAdapter mobilePhoneUberAdapter, int i, View view) {
+    public static final void onBindViewHolder$lambda$0(MobilePhoneUberAdapter mobilePhoneUberAdapter, int i, View view) {
         for (MobilePhoneUberChoseTaxi mobilePhoneUberChoseTaxi : mobilePhoneUberAdapter.list) {
             mobilePhoneUberChoseTaxi.setActive(false);
         }

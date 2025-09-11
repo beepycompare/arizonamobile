@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateBonusAdapter;
 /* compiled from: DonateReplenishmentDialogPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2$bonus$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2$bonus$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 final class DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2$bonus$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Integer>, Object> {
     final /* synthetic */ long $number;

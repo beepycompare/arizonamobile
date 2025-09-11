@@ -52,29 +52,29 @@ public abstract class TrieNodeBaseIterator<K, V, T> implements Iterator<T>, KMap
     }
 
     public final K currentKey() {
-        CommonFunctionsKt.m10579assert(hasNextKey());
+        CommonFunctionsKt.m10591assert(hasNextKey());
         return (K) this.buffer[this.index];
     }
 
     public final void moveToNextKey() {
-        CommonFunctionsKt.m10579assert(hasNextKey());
+        CommonFunctionsKt.m10591assert(hasNextKey());
         this.index += 2;
     }
 
     public final boolean hasNextNode() {
-        CommonFunctionsKt.m10579assert(this.index >= this.dataSize);
+        CommonFunctionsKt.m10591assert(this.index >= this.dataSize);
         return this.index < this.buffer.length;
     }
 
     public final TrieNode<? extends K, ? extends V> currentNode() {
-        CommonFunctionsKt.m10579assert(hasNextNode());
+        CommonFunctionsKt.m10591assert(hasNextNode());
         Object obj = this.buffer[this.index];
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableMap.TrieNode<K of kotlinx.collections.immutable.implementations.immutableMap.TrieNodeBaseIterator, V of kotlinx.collections.immutable.implementations.immutableMap.TrieNodeBaseIterator>");
         return (TrieNode) obj;
     }
 
     public final void moveToNextNode() {
-        CommonFunctionsKt.m10579assert(hasNextNode());
+        CommonFunctionsKt.m10591assert(hasNextNode());
         this.index++;
     }
 

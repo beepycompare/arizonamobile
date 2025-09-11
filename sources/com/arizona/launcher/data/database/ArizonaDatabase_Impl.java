@@ -38,25 +38,25 @@ public final class ArizonaDatabase_Impl extends ArizonaDatabase {
     private final Lazy<LastPlayedDAO> _lastPlayedDAO = LazyKt.lazy(new Function0() { // from class: com.arizona.launcher.data.database.ArizonaDatabase_Impl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            LastPlayedDAO_Impl _lastPlayedDAO$lambda$1;
-            _lastPlayedDAO$lambda$1 = ArizonaDatabase_Impl._lastPlayedDAO$lambda$1(ArizonaDatabase_Impl.this);
-            return _lastPlayedDAO$lambda$1;
+            LastPlayedDAO_Impl _lastPlayedDAO$lambda$0;
+            _lastPlayedDAO$lambda$0 = ArizonaDatabase_Impl._lastPlayedDAO$lambda$0(ArizonaDatabase_Impl.this);
+            return _lastPlayedDAO$lambda$0;
         }
     });
     private final Lazy<NotificationHistoryDAO> _notificationHistoryDAO = LazyKt.lazy(new Function0() { // from class: com.arizona.launcher.data.database.ArizonaDatabase_Impl$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            NotificationHistoryDAO_Impl _notificationHistoryDAO$lambda$2;
-            _notificationHistoryDAO$lambda$2 = ArizonaDatabase_Impl._notificationHistoryDAO$lambda$2(ArizonaDatabase_Impl.this);
-            return _notificationHistoryDAO$lambda$2;
+            NotificationHistoryDAO_Impl _notificationHistoryDAO$lambda$0;
+            _notificationHistoryDAO$lambda$0 = ArizonaDatabase_Impl._notificationHistoryDAO$lambda$0(ArizonaDatabase_Impl.this);
+            return _notificationHistoryDAO$lambda$0;
         }
     });
     private final Lazy<ServersDAO> _serversDAO = LazyKt.lazy(new Function0() { // from class: com.arizona.launcher.data.database.ArizonaDatabase_Impl$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ServersDAO_Impl _serversDAO$lambda$3;
-            _serversDAO$lambda$3 = ArizonaDatabase_Impl._serversDAO$lambda$3(ArizonaDatabase_Impl.this);
-            return _serversDAO$lambda$3;
+            ServersDAO_Impl _serversDAO$lambda$0;
+            _serversDAO$lambda$0 = ArizonaDatabase_Impl._serversDAO$lambda$0(ArizonaDatabase_Impl.this);
+            return _serversDAO$lambda$0;
         }
     });
 
@@ -66,17 +66,17 @@ public final class ArizonaDatabase_Impl extends ArizonaDatabase {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final LastPlayedDAO_Impl _lastPlayedDAO$lambda$1(ArizonaDatabase_Impl arizonaDatabase_Impl) {
+    public static final LastPlayedDAO_Impl _lastPlayedDAO$lambda$0(ArizonaDatabase_Impl arizonaDatabase_Impl) {
         return new LastPlayedDAO_Impl(arizonaDatabase_Impl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final NotificationHistoryDAO_Impl _notificationHistoryDAO$lambda$2(ArizonaDatabase_Impl arizonaDatabase_Impl) {
+    public static final NotificationHistoryDAO_Impl _notificationHistoryDAO$lambda$0(ArizonaDatabase_Impl arizonaDatabase_Impl) {
         return new NotificationHistoryDAO_Impl(arizonaDatabase_Impl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final ServersDAO_Impl _serversDAO$lambda$3(ArizonaDatabase_Impl arizonaDatabase_Impl) {
+    public static final ServersDAO_Impl _serversDAO$lambda$0(ArizonaDatabase_Impl arizonaDatabase_Impl) {
         return new ServersDAO_Impl(arizonaDatabase_Impl);
     }
 

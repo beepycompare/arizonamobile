@@ -181,9 +181,9 @@ public final class DownloadScreenComponent implements ComponentContext, Coroutin
         this.onRetry = new Function0() { // from class: com.miami.game.feature.download.screen.ui.DownloadScreenComponent$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit handleError$lambda$4;
-                handleError$lambda$4 = DownloadScreenComponent.handleError$lambda$4(DownloadScreenComponent.this);
-                return handleError$lambda$4;
+                Unit handleError$lambda$0;
+                handleError$lambda$0 = DownloadScreenComponent.handleError$lambda$0(DownloadScreenComponent.this);
+                return handleError$lambda$0;
             }
         };
         this.errorMessage = "";
@@ -191,7 +191,7 @@ public final class DownloadScreenComponent implements ComponentContext, Coroutin
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit handleError$lambda$4(DownloadScreenComponent downloadScreenComponent) {
+    public static final Unit handleError$lambda$0(DownloadScreenComponent downloadScreenComponent) {
         downloadScreenComponent.initVmState();
         return Unit.INSTANCE;
     }

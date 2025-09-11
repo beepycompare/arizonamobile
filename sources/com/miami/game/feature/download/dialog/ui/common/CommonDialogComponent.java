@@ -132,7 +132,7 @@ public final class CommonDialogComponent implements ComponentContext, CoroutineF
 
     /* compiled from: CommonDialogComponent.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.feature.download.dialog.ui.common.CommonDialogComponent$1", f = "CommonDialogComponent.kt", i = {0, 0, 0, 0, 0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, m = "invokeSuspend", n = {"$this$update$iv", "prevValue$iv", "it", "$i$f$update", "$i$a$-update-CommonDialogComponent$1$1"}, s = {"L$0", "L$2", "L$3", "I$0", "I$1"})
+    @DebugMetadata(c = "com.miami.game.feature.download.dialog.ui.common.CommonDialogComponent$1", f = "CommonDialogComponent.kt", i = {0, 0, 0, 0, 0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, m = "invokeSuspend", n = {"$this$update$iv", "prevValue$iv", "it", "$i$f$update", "$i$a$-update-CommonDialogComponent$1$1"}, s = {"L$0", "L$2", "L$3", "I$0", "I$1"}, v = 1)
     /* renamed from: com.miami.game.feature.download.dialog.ui.common.CommonDialogComponent$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

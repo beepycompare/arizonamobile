@@ -77,7 +77,7 @@ public final class Authorization implements InterfaceController {
     private BackgroundVideoBinding videoBinding;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(View view) {
+    public static final void _init_$lambda$1(View view) {
     }
 
     public Authorization(Activity targetActivity, int i) {
@@ -121,13 +121,13 @@ public final class Authorization implements InterfaceController {
         bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$1(Authorization.this, view);
+                Authorization._init_$lambda$0(Authorization.this, view);
             }
         });
         bind.auth.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$2(view);
+                Authorization._init_$lambda$1(view);
             }
         });
         if (getUserAuthData() == null) {
@@ -136,7 +136,7 @@ public final class Authorization implements InterfaceController {
         bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$3(Authorization.this, view);
+                Authorization._init_$lambda$2(Authorization.this, view);
             }
         });
         bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
@@ -157,13 +157,13 @@ public final class Authorization implements InterfaceController {
         bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                Authorization._init_$lambda$6(Authorization.this);
+                Authorization._init_$lambda$5(Authorization.this);
             }
         });
         bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Authorization._init_$lambda$7(Authorization.this, view);
+                Authorization._init_$lambda$6(Authorization.this, view);
             }
         });
     }
@@ -177,7 +177,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(Authorization authorization, View view) {
+    public static final void _init_$lambda$0(Authorization authorization, View view) {
         if (authorization.timer != null) {
             authorization.authorizationBinding.authLoginText.setText("Войти в аккаунт");
             CountDownTimer countDownTimer = authorization.timer;
@@ -200,7 +200,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(Authorization authorization, View view) {
+    public static final void _init_$lambda$2(Authorization authorization, View view) {
         if (authorization.rememberMe) {
             authorization.checkboxDisable();
             authorization.rememberMe = false;
@@ -211,7 +211,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(Authorization authorization) {
+    public static final void _init_$lambda$5(Authorization authorization) {
         String obj;
         EditText authUsernameEdit = authorization.authorizationBinding.authUsernameEdit;
         Intrinsics.checkNotNullExpressionValue(authUsernameEdit, "authUsernameEdit");
@@ -246,7 +246,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(Authorization authorization, View view) {
+    public static final void _init_$lambda$6(Authorization authorization, View view) {
         if (authorization.timer != null) {
             authorization.authorizationBinding.authLoginText.setText("Войти в аккаунт");
             CountDownTimer countDownTimer = authorization.timer;
@@ -375,13 +375,13 @@ public final class Authorization implements InterfaceController {
         editText.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Authorization.checkRaisingContent$lambda$12$lambda$11(AuthorizationBinding.this, editText, this, intRef);
+                Authorization.checkRaisingContent$lambda$0$0(AuthorizationBinding.this, editText, this, intRef);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void checkRaisingContent$lambda$12$lambda$11(final AuthorizationBinding authorizationBinding, EditText editText, final Authorization authorization, final Ref.IntRef intRef) {
+    public static final void checkRaisingContent$lambda$0$0(final AuthorizationBinding authorizationBinding, EditText editText, final Authorization authorization, final Ref.IntRef intRef) {
         int[] iArr = new int[2];
         authorizationBinding.authPasswordEdit.getLocationOnScreen(iArr);
         final int height = iArr[1] + authorizationBinding.authPasswordEdit.getHeight();
@@ -492,7 +492,7 @@ public final class Authorization implements InterfaceController {
                     this.authorizationBinding.loaderContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            Authorization.onServerMessage$lambda$13(Authorization.this, view);
+                            Authorization.onServerMessage$lambda$0(Authorization.this, view);
                         }
                     });
                     if (this.authorizationBinding.authSurnameEdit.getText().toString().length() > 0) {
@@ -598,7 +598,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onServerMessage$lambda$13(Authorization authorization, View view) {
+    public static final void onServerMessage$lambda$0(Authorization authorization, View view) {
         Toast.makeText(authorization.targetActivity, "Загрузка...", 0).show();
     }
 

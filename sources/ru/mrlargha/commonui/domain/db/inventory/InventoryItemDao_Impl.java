@@ -277,16 +277,16 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit updateInfo$lambda$1;
-                updateInfo$lambda$1 = InventoryItemDao_Impl.updateInfo$lambda$1(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
-                return updateInfo$lambda$1;
+                Unit updateInfo$lambda$0;
+                updateInfo$lambda$0 = InventoryItemDao_Impl.updateInfo$lambda$0(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
+                return updateInfo$lambda$0;
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit updateInfo$lambda$1(InventoryItemDao_Impl inventoryItemDao_Impl, InventoryItemEntity inventoryItemEntity, SQLiteConnection _connection) {
+    public static final Unit updateInfo$lambda$0(InventoryItemDao_Impl inventoryItemDao_Impl, InventoryItemEntity inventoryItemEntity, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         inventoryItemDao_Impl.__updateAdapterOfInventoryItemEntity.handle(_connection, inventoryItemEntity);
         return Unit.INSTANCE;
@@ -297,15 +297,15 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return FlowUtil.createFlow(this.__db, false, new String[]{"inventoryitementity"}, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List collectInventoryList$lambda$2;
-                collectInventoryList$lambda$2 = InventoryItemDao_Impl.getCollectInventoryList$lambda$2(r1, (SQLiteConnection) obj);
-                return collectInventoryList$lambda$2;
+                List collectInventoryList$lambda$0;
+                collectInventoryList$lambda$0 = InventoryItemDao_Impl.getCollectInventoryList$lambda$0(r1, (SQLiteConnection) obj);
+                return collectInventoryList$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getCollectInventoryList$lambda$2(String str, SQLiteConnection _connection) {
+    public static final List getCollectInventoryList$lambda$0(String str, SQLiteConnection _connection) {
         int i;
         Integer valueOf;
         int i2;
@@ -428,15 +428,15 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List all$lambda$3;
-                all$lambda$3 = InventoryItemDao_Impl.getAll$lambda$3(r1, (SQLiteConnection) obj);
-                return all$lambda$3;
+                List all$lambda$0;
+                all$lambda$0 = InventoryItemDao_Impl.getAll$lambda$0(r1, (SQLiteConnection) obj);
+                return all$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List getAll$lambda$3(String str, SQLiteConnection _connection) {
+    public static final List getAll$lambda$0(String str, SQLiteConnection _connection) {
         int i;
         Integer valueOf;
         int i2;
@@ -559,15 +559,15 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                InventoryItemEntity findByItem$lambda$4;
-                findByItem$lambda$4 = InventoryItemDao_Impl.findByItem$lambda$4(r1, i, (SQLiteConnection) obj);
-                return findByItem$lambda$4;
+                InventoryItemEntity findByItem$lambda$0;
+                findByItem$lambda$0 = InventoryItemDao_Impl.findByItem$lambda$0(r1, i, (SQLiteConnection) obj);
+                return findByItem$lambda$0;
             }
         }, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final InventoryItemEntity findByItem$lambda$4(String str, int i, SQLiteConnection _connection) {
+    public static final InventoryItemEntity findByItem$lambda$0(String str, int i, SQLiteConnection _connection) {
         int i2;
         Integer valueOf;
         Intrinsics.checkNotNullParameter(_connection, "_connection");
@@ -616,15 +616,15 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteByItem$lambda$5;
-                deleteByItem$lambda$5 = InventoryItemDao_Impl.deleteByItem$lambda$5(r1, i, (SQLiteConnection) obj);
-                return deleteByItem$lambda$5;
+                Unit deleteByItem$lambda$0;
+                deleteByItem$lambda$0 = InventoryItemDao_Impl.deleteByItem$lambda$0(r1, i, (SQLiteConnection) obj);
+                return deleteByItem$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit deleteByItem$lambda$5(String str, int i, SQLiteConnection _connection) {
+    public static final Unit deleteByItem$lambda$0(String str, int i, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -643,15 +643,15 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteAllItems$lambda$6;
-                deleteAllItems$lambda$6 = InventoryItemDao_Impl.deleteAllItems$lambda$6(r1, (SQLiteConnection) obj);
-                return deleteAllItems$lambda$6;
+                Unit deleteAllItems$lambda$0;
+                deleteAllItems$lambda$0 = InventoryItemDao_Impl.deleteAllItems$lambda$0(r1, (SQLiteConnection) obj);
+                return deleteAllItems$lambda$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit deleteAllItems$lambda$6(String str, SQLiteConnection _connection) {
+    public static final Unit deleteAllItems$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {

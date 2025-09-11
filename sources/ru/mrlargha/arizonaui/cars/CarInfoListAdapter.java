@@ -266,9 +266,9 @@ public final class CarInfoListAdapter extends ListAdapter<CarsScreen.Companion.C
         EasyAnimation.animateClick$default(easyAnimation, spawnButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.CarInfoListAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$0;
-                onBindViewHolder$lambda$2$lambda$0 = CarInfoListAdapter.onBindViewHolder$lambda$2$lambda$0(CarInfoListAdapter.this, item);
-                return onBindViewHolder$lambda$2$lambda$0;
+                Unit onBindViewHolder$lambda$0$0;
+                onBindViewHolder$lambda$0$0 = CarInfoListAdapter.onBindViewHolder$lambda$0$0(CarInfoListAdapter.this, item);
+                return onBindViewHolder$lambda$0$0;
             }
         }, 3, null);
         EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
@@ -277,15 +277,15 @@ public final class CarInfoListAdapter extends ListAdapter<CarsScreen.Companion.C
         EasyAnimation.animateClick$default(easyAnimation2, carInfoContainer, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.cars.CarInfoListAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$2$lambda$1;
-                onBindViewHolder$lambda$2$lambda$1 = CarInfoListAdapter.onBindViewHolder$lambda$2$lambda$1(CarInfoListAdapter.this, item);
-                return onBindViewHolder$lambda$2$lambda$1;
+                Unit onBindViewHolder$lambda$0$1;
+                onBindViewHolder$lambda$0$1 = CarInfoListAdapter.onBindViewHolder$lambda$0$1(CarInfoListAdapter.this, item);
+                return onBindViewHolder$lambda$0$1;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$0(CarInfoListAdapter carInfoListAdapter, CarsScreen.Companion.CarInfoListItem carInfoListItem) {
+    public static final Unit onBindViewHolder$lambda$0$0(CarInfoListAdapter carInfoListAdapter, CarsScreen.Companion.CarInfoListItem carInfoListItem) {
         OnSpawnClickListener onSpawnClickListener = carInfoListAdapter.spawnClickListener;
         if (onSpawnClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("spawnClickListener");
@@ -296,7 +296,7 @@ public final class CarInfoListAdapter extends ListAdapter<CarsScreen.Companion.C
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$2$lambda$1(CarInfoListAdapter carInfoListAdapter, CarsScreen.Companion.CarInfoListItem carInfoListItem) {
+    public static final Unit onBindViewHolder$lambda$0$1(CarInfoListAdapter carInfoListAdapter, CarsScreen.Companion.CarInfoListItem carInfoListItem) {
         OnCarInfoClickListener onCarInfoClickListener = carInfoListAdapter.carInfoClickListener;
         if (onCarInfoClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("carInfoClickListener");

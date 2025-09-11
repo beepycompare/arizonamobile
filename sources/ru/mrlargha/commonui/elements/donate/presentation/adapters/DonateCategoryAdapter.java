@@ -172,16 +172,16 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
         private final void setupListeners(final int i) {
             final DonateCategoryItemBinding donateCategoryItemBinding = this.binding;
             final DonateCategoryAdapter donateCategoryAdapter = this.this$0;
-            donateCategoryItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda1
+            donateCategoryItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonateCategoryAdapter.DonateCategoryViewHolder.setupListeners$lambda$4$lambda$3(DonateCategoryAdapter.this, i, donateCategoryItemBinding, view);
+                    DonateCategoryAdapter.DonateCategoryViewHolder.setupListeners$lambda$0$0(DonateCategoryAdapter.this, i, donateCategoryItemBinding, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void setupListeners$lambda$4$lambda$3(DonateCategoryAdapter donateCategoryAdapter, int i, DonateCategoryItemBinding donateCategoryItemBinding, View view) {
+        public static final void setupListeners$lambda$0$0(DonateCategoryAdapter donateCategoryAdapter, int i, DonateCategoryItemBinding donateCategoryItemBinding, View view) {
             if (donateCategoryAdapter.selectItemPosition != i || donateCategoryAdapter.isRateCategory) {
                 donateCategoryAdapter.isRateCategory = false;
                 donateCategoryAdapter.notifyItemChanged(donateCategoryAdapter.selectItemPosition);
@@ -200,13 +200,13 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
             return donateCategoryItemBinding.getRoot().post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DonateCategoryAdapter.DonateCategoryViewHolder.setSelectItem$lambda$8$lambda$7(DonateCategoryItemBinding.this, str);
+                    DonateCategoryAdapter.DonateCategoryViewHolder.setSelectItem$lambda$0$0(DonateCategoryItemBinding.this, str);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void setSelectItem$lambda$8$lambda$7(final DonateCategoryItemBinding donateCategoryItemBinding, String str) {
+        public static final void setSelectItem$lambda$0$0(final DonateCategoryItemBinding donateCategoryItemBinding, String str) {
             float width = donateCategoryItemBinding.getRoot().getWidth() / 2.0f;
             Context context = donateCategoryItemBinding.getRoot().getContext();
             Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
@@ -216,18 +216,18 @@ public final class DonateCategoryAdapter extends ListAdapter<DonateCategoryModel
             }
             ImageView ivSelectBackground = donateCategoryItemBinding.ivSelectBackground;
             Intrinsics.checkNotNullExpressionValue(ivSelectBackground, "ivSelectBackground");
-            DonateUtilsKt.setTranslateAnimation$default(ivSelectBackground, width, -width, 0L, 500L, false, new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda0
+            DonateUtilsKt.setTranslateAnimation$default(ivSelectBackground, width, -width, 0L, 500L, false, new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.adapters.DonateCategoryAdapter$DonateCategoryViewHolder$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit selectItem$lambda$8$lambda$7$lambda$6;
-                    selectItem$lambda$8$lambda$7$lambda$6 = DonateCategoryAdapter.DonateCategoryViewHolder.setSelectItem$lambda$8$lambda$7$lambda$6(DonateCategoryItemBinding.this);
-                    return selectItem$lambda$8$lambda$7$lambda$6;
+                    Unit selectItem$lambda$0$0$1;
+                    selectItem$lambda$0$0$1 = DonateCategoryAdapter.DonateCategoryViewHolder.setSelectItem$lambda$0$0$1(DonateCategoryItemBinding.this);
+                    return selectItem$lambda$0$0$1;
                 }
             }, 20, null).start();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit setSelectItem$lambda$8$lambda$7$lambda$6(DonateCategoryItemBinding donateCategoryItemBinding) {
+        public static final Unit setSelectItem$lambda$0$0$1(DonateCategoryItemBinding donateCategoryItemBinding) {
             ImageView ivSelectBackground = donateCategoryItemBinding.ivSelectBackground;
             Intrinsics.checkNotNullExpressionValue(ivSelectBackground, "ivSelectBackground");
             ivSelectBackground.setVisibility(0);

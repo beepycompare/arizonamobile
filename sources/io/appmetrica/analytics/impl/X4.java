@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class X4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0250fc f732a;
+    public final C0250fc f736a;
 
     public X4() {
         this(Na.j().k());
@@ -14,12 +14,12 @@ public final class X4 {
     }
 
     public X4(C0250fc c0250fc) {
-        this.f732a = c0250fc;
+        this.f736a = c0250fc;
     }
 
     public final C0594sn a(V4 v4, Km km) {
         C0594sn c0594sn = new C0594sn(v4, new C0229eh(km));
-        C0250fc c0250fc = this.f732a;
+        C0250fc c0250fc = this.f736a;
         synchronized (c0250fc) {
             c0250fc.c.add(c0594sn);
         }

@@ -84,9 +84,9 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
             EasyAnimation.slideWithFade$default(easyAnimation, mainInfoContainer2, EasyAnimation.SlideDirection.SCREEN_TO_DEFAULT, 600L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.RolesAdapter$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onBindViewHolder$lambda$6$lambda$1;
-                    onBindViewHolder$lambda$6$lambda$1 = RolesAdapter.onBindViewHolder$lambda$6$lambda$1(SituationItemBinding.this);
-                    return onBindViewHolder$lambda$6$lambda$1;
+                    Unit onBindViewHolder$lambda$0$1;
+                    onBindViewHolder$lambda$0$1 = RolesAdapter.onBindViewHolder$lambda$0$1(SituationItemBinding.this);
+                    return onBindViewHolder$lambda$0$1;
                 }
             }, 4, null);
             binding.infoButton.setBackgroundResource(R.drawable.situation_pressed_button_bg);
@@ -156,9 +156,9 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         EasyAnimation.animateClick$default(easyAnimation2, chooseButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.RolesAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$6$lambda$3;
-                onBindViewHolder$lambda$6$lambda$3 = RolesAdapter.onBindViewHolder$lambda$6$lambda$3(RolesAdapter.this, i);
-                return onBindViewHolder$lambda$6$lambda$3;
+                Unit onBindViewHolder$lambda$0$3;
+                onBindViewHolder$lambda$0$3 = RolesAdapter.onBindViewHolder$lambda$0$3(RolesAdapter.this, i);
+                return onBindViewHolder$lambda$0$3;
             }
         }, 3, null);
         EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
@@ -167,21 +167,21 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
         EasyAnimation.animateClick$default(easyAnimation3, infoButton, 0L, null, new Function0() { // from class: ru.mrlargha.arizonaui.situation.RolesAdapter$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onBindViewHolder$lambda$6$lambda$5;
-                onBindViewHolder$lambda$6$lambda$5 = RolesAdapter.onBindViewHolder$lambda$6$lambda$5(SituationScreen.Companion.RoleInfo.this, this);
-                return onBindViewHolder$lambda$6$lambda$5;
+                Unit onBindViewHolder$lambda$0$4;
+                onBindViewHolder$lambda$0$4 = RolesAdapter.onBindViewHolder$lambda$0$4(SituationScreen.Companion.RoleInfo.this, this);
+                return onBindViewHolder$lambda$0$4;
             }
         }, 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$6$lambda$1(SituationItemBinding situationItemBinding) {
+    public static final Unit onBindViewHolder$lambda$0$1(SituationItemBinding situationItemBinding) {
         situationItemBinding.situationFullInfoContainer.setVisibility(0);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$6$lambda$3(RolesAdapter rolesAdapter, int i) {
+    public static final Unit onBindViewHolder$lambda$0$3(RolesAdapter rolesAdapter, int i) {
         OnRoleClickListener onRoleClickListener = rolesAdapter.onRoleClickListener;
         if (onRoleClickListener == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onRoleClickListener");
@@ -192,7 +192,7 @@ public final class RolesAdapter extends RecyclerView.Adapter<RoleViewHolder> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$6$lambda$5(SituationScreen.Companion.RoleInfo roleInfo, RolesAdapter rolesAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$4(SituationScreen.Companion.RoleInfo roleInfo, RolesAdapter rolesAdapter) {
         roleInfo.setPressed(!roleInfo.isPressed());
         for (SituationScreen.Companion.RoleInfo roleInfo2 : rolesAdapter.roles) {
             if (roleInfo2.getImageId() != roleInfo.getImageId()) {
