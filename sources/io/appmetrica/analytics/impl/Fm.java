@@ -12,7 +12,7 @@ public final class Fm extends MessageNano {
     public static volatile Fm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f450a;
+    public long f451a;
 
     public Fm() {
         a();
@@ -30,19 +30,19 @@ public final class Fm extends MessageNano {
     }
 
     public final Fm a() {
-        this.f450a = 18000000L;
+        this.f451a = 18000000L;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt64Size(1, this.f450a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeInt64Size(1, this.f451a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt64(1, this.f450a);
+        codedOutputByteBufferNano.writeInt64(1, this.f451a);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -58,7 +58,7 @@ public final class Fm extends MessageNano {
                     break;
                 }
             } else {
-                this.f450a = codedInputByteBufferNano.readInt64();
+                this.f451a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

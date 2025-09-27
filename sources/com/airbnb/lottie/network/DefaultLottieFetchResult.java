@@ -40,7 +40,7 @@ public class DefaultLottieFetchResult implements LottieFetchResult {
                 return null;
             }
             return "Unable to fetch " + this.connection.getURL() + ". Failed with " + this.connection.getResponseCode() + "\n" + getErrorFromConnection(this.connection);
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             Logger.warning("get error failed ", e);
             return e.getMessage();
         }

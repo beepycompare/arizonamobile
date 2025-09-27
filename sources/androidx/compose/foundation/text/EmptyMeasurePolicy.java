@@ -34,7 +34,7 @@ final class EmptyMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7204getMaxWidthimpl(j), Constraints.m7203getMaxHeightimpl(j), null, placementBlock, 4, null);
+    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), null, placementBlock, 4, null);
     }
 }

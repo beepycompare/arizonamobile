@@ -42,7 +42,7 @@ public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
             write(jsonWriter, (Collection) ((Collection) obj));
         }
 
-        public Adapter(TypeAdapter<E> typeAdapter, ObjectConstructor<? extends Collection<E>> objectConstructor) {
+        Adapter(TypeAdapter<E> typeAdapter, ObjectConstructor<? extends Collection<E>> objectConstructor) {
             this.elementTypeAdapter = typeAdapter;
             this.constructor = objectConstructor;
         }

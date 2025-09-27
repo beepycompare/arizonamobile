@@ -5,17 +5,17 @@ import android.content.Context;
 public final class Xg implements Zl, InterfaceC0275gb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f744a;
+    public final Context f745a;
     public final C0476o5 b;
     public final C0502p5 c;
     public final Km d;
     public final InterfaceC0508pb e;
 
     public Xg(Context context, C0476o5 c0476o5, N4 n4, InterfaceC0676w5 interfaceC0676w5, C0502p5 c0502p5, Ql ql) {
-        this.f744a = context;
+        this.f745a = context;
         this.b = c0476o5;
         this.c = c0502p5;
-        Km a2 = ql.a(context, c0476o5, n4.f588a);
+        Km a2 = ql.a(context, c0476o5, n4.f589a);
         this.d = a2;
         this.e = interfaceC0676w5.a(context, c0476o5, n4.b, a2);
         ql.a(c0476o5, this);
@@ -26,15 +26,15 @@ public final class Xg implements Zl, InterfaceC0275gb {
     }
 
     public final Context b() {
-        return this.f744a;
+        return this.f745a;
     }
 
     public final void a(D4 d4) {
-        this.c.f1031a.add(d4);
+        this.c.f1032a.add(d4);
     }
 
     public final void b(D4 d4) {
-        this.c.f1031a.remove(d4);
+        this.c.f1032a.remove(d4);
     }
 
     @Override // io.appmetrica.analytics.impl.Zl
@@ -49,7 +49,7 @@ public final class Xg implements Zl, InterfaceC0275gb {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0275gb
     public final void a(N4 n4) {
-        this.d.a(n4.f588a);
+        this.d.a(n4.f589a);
         this.e.a(n4.b);
     }
 

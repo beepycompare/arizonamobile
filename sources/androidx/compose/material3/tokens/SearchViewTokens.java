@@ -9,12 +9,12 @@ public final class SearchViewTokens {
     public static final int $stable = 0;
     public static final SearchViewTokens INSTANCE = new SearchViewTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3287getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens DividerColor = ColorSchemeKeyTokens.Outline;
     private static final ShapeKeyTokens DockedContainerShape = ShapeKeyTokens.CornerExtraLarge;
-    private static final float DockedHeaderContainerHeight = Dp.m7251constructorimpl((float) 56.0d);
+    private static final float DockedHeaderContainerHeight = Dp.m7264constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens FullScreenContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float FullScreenHeaderContainerHeight = Dp.m7251constructorimpl((float) 72.0d);
+    private static final float FullScreenHeaderContainerHeight = Dp.m7264constructorimpl((float) 72.0d);
     private static final ColorSchemeKeyTokens HeaderInputTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens HeaderInputTextFont = TypographyKeyTokens.BodyLarge;
     private static final ColorSchemeKeyTokens HeaderLeadingIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -30,7 +30,7 @@ public final class SearchViewTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3586getContainerElevationD9Ej5fM() {
+    public final float m3596getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -43,7 +43,7 @@ public final class SearchViewTokens {
     }
 
     /* renamed from: getDockedHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3587getDockedHeaderContainerHeightD9Ej5fM() {
+    public final float m3597getDockedHeaderContainerHeightD9Ej5fM() {
         return DockedHeaderContainerHeight;
     }
 
@@ -52,7 +52,7 @@ public final class SearchViewTokens {
     }
 
     /* renamed from: getFullScreenHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3588getFullScreenHeaderContainerHeightD9Ej5fM() {
+    public final float m3598getFullScreenHeaderContainerHeightD9Ej5fM() {
         return FullScreenHeaderContainerHeight;
     }
 

@@ -4,17 +4,17 @@ import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.analytics.event.AnalyticsEvent;
 /* renamed from: ru.rustore.sdk.appupdate.i  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0804i extends AnalyticsEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1398a;
+    public final String f1399a;
     public final Map<String, String> b;
 
     public C0804i(String eventName, Map<String, String> eventData) {
         Intrinsics.checkNotNullParameter(eventName, "eventName");
         Intrinsics.checkNotNullParameter(eventData, "eventData");
-        this.f1398a = eventName;
+        this.f1399a = eventName;
         this.b = eventData;
     }
 
@@ -24,7 +24,7 @@ public final class C0804i extends AnalyticsEvent {
         }
         if (obj instanceof C0804i) {
             C0804i c0804i = (C0804i) obj;
-            return Intrinsics.areEqual(this.f1398a, c0804i.f1398a) && Intrinsics.areEqual(this.b, c0804i.b);
+            return Intrinsics.areEqual(this.f1399a, c0804i.f1399a) && Intrinsics.areEqual(this.b, c0804i.b);
         }
         return false;
     }
@@ -36,14 +36,14 @@ public final class C0804i extends AnalyticsEvent {
 
     @Override // ru.rustore.sdk.analytics.event.AnalyticsEvent
     public final String getEventName() {
-        return this.f1398a;
+        return this.f1399a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1398a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1399a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "AppUpdateAnalyticsEvent(eventName=" + this.f1398a + ", eventData=" + this.b + ')';
+        return "AppUpdateAnalyticsEvent(eventName=" + this.f1399a + ", eventData=" + this.b + ')';
     }
 }

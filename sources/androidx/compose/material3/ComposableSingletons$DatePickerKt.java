@@ -37,7 +37,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector edit = EditKt.getEdit(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m2261Iconww6aTOc(edit, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_input_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2271Iconww6aTOc(edit, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_picker_switch_to_input_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -64,7 +64,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector dateRange = DateRangeKt.getDateRange(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m2261Iconww6aTOc(dateRange, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_calendar_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2271Iconww6aTOc(dateRange, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_picker_switch_to_calendar_mode), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -91,7 +91,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector keyboardArrowLeft = KeyboardArrowLeftKt.getKeyboardArrowLeft(Icons.AutoMirrored.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m2261Iconww6aTOc(keyboardArrowLeft, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_previous_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2271Iconww6aTOc(keyboardArrowLeft, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_picker_switch_to_previous_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -118,7 +118,7 @@ public final class ComposableSingletons$DatePickerKt {
                 }
                 ImageVector keyboardArrowRight = KeyboardArrowRightKt.getKeyboardArrowRight(Icons.AutoMirrored.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m2261Iconww6aTOc(keyboardArrowRight, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_date_picker_switch_to_next_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2271Iconww6aTOc(keyboardArrowRight, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_date_picker_switch_to_next_month), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -130,22 +130,22 @@ public final class ComposableSingletons$DatePickerKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2071getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2081getLambda1$material3_release() {
         return f24lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2072getLambda2$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2082getLambda2$material3_release() {
         return f25lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2073getLambda3$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2083getLambda3$material3_release() {
         return f26lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2074getLambda4$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2084getLambda4$material3_release() {
         return f27lambda4;
     }
 }

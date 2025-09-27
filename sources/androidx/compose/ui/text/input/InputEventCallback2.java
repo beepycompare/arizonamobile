@@ -15,7 +15,7 @@ public interface InputEventCallback2 {
     void onEditCommands(List<? extends EditCommand> list);
 
     /* renamed from: onImeAction-KlQnJC8  reason: not valid java name */
-    void mo6914onImeActionKlQnJC8(int i);
+    void mo6927onImeActionKlQnJC8(int i);
 
     void onKeyEvent(KeyEvent keyEvent);
 

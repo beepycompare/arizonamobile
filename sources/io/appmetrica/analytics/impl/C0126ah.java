@@ -10,7 +10,7 @@ import java.util.List;
 public final class C0126ah implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ln f795a;
+    public final Ln f796a;
     public final V b;
     public final G6 c;
     public final Kl d;
@@ -25,12 +25,12 @@ public final class C0126ah implements ProtobufConverter {
     /* renamed from: a */
     public final C0677w6 fromModel(Zg zg) {
         C0677w6 c0677w6 = new C0677w6();
-        c0677w6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(zg.f775a, c0677w6.f));
+        c0677w6.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(zg.f776a, c0677w6.f));
         Wn wn = zg.b;
         if (wn != null) {
-            Mn mn = wn.f731a;
+            Mn mn = wn.f732a;
             if (mn != null) {
-                c0677w6.f1135a = this.f795a.fromModel(mn);
+                c0677w6.f1136a = this.f796a.fromModel(mn);
             }
             U u = wn.b;
             if (u != null) {
@@ -62,7 +62,7 @@ public final class C0126ah implements ProtobufConverter {
     }
 
     public C0126ah(Ln ln, V v, G6 g6, Kl kl, C0150bf c0150bf, C0176cf c0176cf) {
-        this.f795a = ln;
+        this.f796a = ln;
         this.b = v;
         this.c = g6;
         this.d = kl;

@@ -52,7 +52,7 @@ public final class NavControllerViewModel extends ViewModel implements NavViewMo
 
     public String toString() {
         StringBuilder sb = new StringBuilder("NavControllerViewModel{");
-        sb.append(UStringsKt.m10436toStringV7xB4Y4(UInt.m9191constructorimpl(Utils_jvmCommonKt.identityHashCode(this)), 16));
+        sb.append(UStringsKt.m10451toStringV7xB4Y4(UInt.m9206constructorimpl(Utils_jvmCommonKt.identityHashCode(this)), 16));
         sb.append("} ViewModelStores (");
         Iterator<String> it = this.viewModelStores.keySet().iterator();
         while (it.hasNext()) {

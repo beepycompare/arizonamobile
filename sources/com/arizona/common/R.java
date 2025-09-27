@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int progressCount = 0x7f040524;
+        public static int progressCount = 0x7f0404fe;
 
         private attr() {
         }
@@ -13,10 +13,10 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class color {
         public static int gray_scale = 0x7f0600a5;
-        public static int progress_max_active = 0x7f060409;
-        public static int progress_primary = 0x7f06040a;
-        public static int progress_secondary = 0x7f06040b;
-        public static int white = 0x7f060437;
+        public static int progress_max_active = 0x7f060407;
+        public static int progress_primary = 0x7f060408;
+        public static int progress_secondary = 0x7f060409;
+        public static int white = 0x7f060435;
 
         private color() {
         }
@@ -32,8 +32,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int avatar_error_placeholder = 0x7f080308;
-        public static int sample_skin_avatar_view = 0x7f080c65;
+        public static int avatar_error_placeholder = 0x7f08030e;
+        public static int sample_skin_avatar_view = 0x7f080c7a;
 
         private drawable() {
         }
@@ -46,8 +46,8 @@ public final class R {
         public static int avatar_loader = 0x7f0a0139;
         public static int avatar_status = 0x7f0a013a;
         public static int back_progress = 0x7f0a0156;
-        public static int front_progress = 0x7f0a0526;
-        public static int max_progress = 0x7f0a0837;
+        public static int front_progress = 0x7f0a053a;
+        public static int max_progress = 0x7f0a084f;
 
         private id() {
         }
@@ -56,7 +56,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class layout {
         public static int avatar_view = 0x7f0d0039;
-        public static int pausable_progress = 0x7f0d01ce;
+        public static int pausable_progress = 0x7f0d01d3;
 
         private layout() {
         }

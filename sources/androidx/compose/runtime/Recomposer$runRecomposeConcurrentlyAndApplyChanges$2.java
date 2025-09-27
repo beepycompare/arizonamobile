@@ -3,6 +3,7 @@ package androidx.compose.runtime;
 import androidx.collection.MutableScatterSet;
 import androidx.compose.runtime.collection.MutableVector;
 import androidx.compose.runtime.collection.ScatterSetWrapperKt;
+import androidx.datastore.preferences.protobuf.DescriptorProtos;
 import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
@@ -22,7 +23,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt;
 /* compiled from: Recomposer.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "parentFrameClock", "Landroidx/compose/runtime/MonotonicFrameClock;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeConcurrentlyAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 1}, l = {999, 1019, 1020}, m = "invokeSuspend", n = {"recomposeCoroutineScope", "frameSignal", "frameLoop", "frameLoop"}, s = {"L$0", "L$1", "L$2", "L$0"})
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$runRecomposeConcurrentlyAndApplyChanges$2", f = "Recomposer.kt", i = {0, 0, 0, 1}, l = {DescriptorProtos.Edition.EDITION_PROTO2_VALUE, 1018, 1019}, m = "invokeSuspend", n = {"recomposeCoroutineScope", "frameSignal", "frameLoop", "frameLoop"}, s = {"L$0", "L$1", "L$2", "L$0"})
 /* loaded from: classes.dex */
 final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends SuspendLambda implements Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> {
     final /* synthetic */ CoroutineContext $recomposeCoroutineContext;
@@ -48,18 +49,18 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
         return recomposer$runRecomposeConcurrentlyAndApplyChanges$2.invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00c7, code lost:
         if (r10 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x01b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x01b6, code lost:
         if (kotlinx.coroutines.JobKt.cancelAndJoin(kotlinx.coroutines.JobKt.getJob(r9.getCoroutineContext()), r18) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x01c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01c4, code lost:
         if (kotlinx.coroutines.JobKt.cancelAndJoin(r2, r18) == r0) goto L15;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01a0  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00c8 -> B:25:0x00cc). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x019f  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00c7 -> B:25:0x00cb). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -145,7 +146,7 @@ final class Recomposer$runRecomposeConcurrentlyAndApplyChanges$2 extends Suspend
             }
             if (requestFrameLocked != null) {
                 Result.Companion companion = Result.Companion;
-                requestFrameLocked.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+                requestFrameLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
             }
             i3 = 0;
             shouldKeepRecomposing = this.this$0.getShouldKeepRecomposing();

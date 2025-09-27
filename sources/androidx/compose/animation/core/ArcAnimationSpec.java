@@ -29,11 +29,11 @@ public final class ArcAnimationSpec<T> implements DurationBasedAnimationSpec<T> 
     }
 
     public /* synthetic */ ArcAnimationSpec(int i, int i2, int i3, Easing easing, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i4 & 1) != 0 ? ArcMode.Companion.m163getArcBelow9TMq4() : i, (i4 & 2) != 0 ? 300 : i2, (i4 & 4) != 0 ? 0 : i3, (i4 & 8) != 0 ? EasingKt.getFastOutSlowInEasing() : easing, null);
+        this((i4 & 1) != 0 ? ArcMode.Companion.m173getArcBelow9TMq4() : i, (i4 & 2) != 0 ? 300 : i2, (i4 & 4) != 0 ? 0 : i3, (i4 & 8) != 0 ? EasingKt.getFastOutSlowInEasing() : easing, null);
     }
 
     /* renamed from: getMode--9T-Mq4  reason: not valid java name */
-    public final int m154getMode9TMq4() {
+    public final int m164getMode9TMq4() {
         return this.mode;
     }
 
@@ -60,7 +60,7 @@ public final class ArcAnimationSpec<T> implements DurationBasedAnimationSpec<T> 
         }
         if (obj instanceof ArcAnimationSpec) {
             ArcAnimationSpec arcAnimationSpec = (ArcAnimationSpec) obj;
-            if (ArcMode.m158equalsimpl0(this.mode, arcAnimationSpec.mode) && this.durationMillis == arcAnimationSpec.durationMillis && this.delayMillis == arcAnimationSpec.delayMillis) {
+            if (ArcMode.m168equalsimpl0(this.mode, arcAnimationSpec.mode) && this.durationMillis == arcAnimationSpec.durationMillis && this.delayMillis == arcAnimationSpec.delayMillis) {
                 return Intrinsics.areEqual(this.easing, arcAnimationSpec.easing);
             }
             return false;
@@ -69,6 +69,6 @@ public final class ArcAnimationSpec<T> implements DurationBasedAnimationSpec<T> 
     }
 
     public int hashCode() {
-        return (((((ArcMode.m159hashCodeimpl(this.mode) * 31) + this.durationMillis) * 31) + this.delayMillis) * 31) + this.easing.hashCode();
+        return (((((ArcMode.m169hashCodeimpl(this.mode) * 31) + this.durationMillis) * 31) + this.delayMillis) * 31) + this.easing.hashCode();
     }
 }

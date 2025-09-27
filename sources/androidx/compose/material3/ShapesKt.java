@@ -132,21 +132,21 @@ public final class ShapesKt {
 
     public static final CornerBasedShape top(CornerBasedShape cornerBasedShape) {
         float f = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        return CornerBasedShape.copy$default(cornerBasedShape, null, null, CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), 3, null);
+        return CornerBasedShape.copy$default(cornerBasedShape, null, null, CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), 3, null);
     }
 
     public static final CornerBasedShape bottom(CornerBasedShape cornerBasedShape) {
         float f = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        return CornerBasedShape.copy$default(cornerBasedShape, CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), null, null, 12, null);
+        return CornerBasedShape.copy$default(cornerBasedShape, CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), null, null, 12, null);
     }
 
     public static final CornerBasedShape start(CornerBasedShape cornerBasedShape) {
         float f = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        return CornerBasedShape.copy$default(cornerBasedShape, null, CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), null, 9, null);
+        return CornerBasedShape.copy$default(cornerBasedShape, null, CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), null, 9, null);
     }
 
     public static final CornerBasedShape end(CornerBasedShape cornerBasedShape) {
         float f = (float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
-        return CornerBasedShape.copy$default(cornerBasedShape, CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), null, null, CornerSizeKt.m1189CornerSize0680j_4(Dp.m7251constructorimpl(f)), 6, null);
+        return CornerBasedShape.copy$default(cornerBasedShape, CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), null, null, CornerSizeKt.m1199CornerSize0680j_4(Dp.m7264constructorimpl(f)), 6, null);
     }
 }

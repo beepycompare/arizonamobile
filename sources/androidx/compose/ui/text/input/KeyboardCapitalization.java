@@ -10,47 +10,47 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class KeyboardCapitalization {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unspecified = m6916constructorimpl(-1);
-    private static final int None = m6916constructorimpl(0);
-    private static final int Characters = m6916constructorimpl(1);
-    private static final int Words = m6916constructorimpl(2);
-    private static final int Sentences = m6916constructorimpl(3);
+    private static final int Unspecified = m6929constructorimpl(-1);
+    private static final int None = m6929constructorimpl(0);
+    private static final int Characters = m6929constructorimpl(1);
+    private static final int Words = m6929constructorimpl(2);
+    private static final int Sentences = m6929constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ KeyboardCapitalization m6915boximpl(int i) {
+    public static final /* synthetic */ KeyboardCapitalization m6928boximpl(int i) {
         return new KeyboardCapitalization(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6916constructorimpl(int i) {
+    private static int m6929constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6917equalsimpl(int i, Object obj) {
-        return (obj instanceof KeyboardCapitalization) && i == ((KeyboardCapitalization) obj).m6921unboximpl();
+    public static boolean m6930equalsimpl(int i, Object obj) {
+        return (obj instanceof KeyboardCapitalization) && i == ((KeyboardCapitalization) obj).m6934unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6918equalsimpl0(int i, int i2) {
+    public static final boolean m6931equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6919hashCodeimpl(int i) {
+    public static int m6932hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6917equalsimpl(this.value, obj);
+        return m6930equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6919hashCodeimpl(this.value);
+        return m6932hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6921unboximpl() {
+    public final /* synthetic */ int m6934unboximpl() {
         return this.value;
     }
 
@@ -59,12 +59,12 @@ public final class KeyboardCapitalization {
     }
 
     public String toString() {
-        return m6920toStringimpl(this.value);
+        return m6933toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6920toStringimpl(int i) {
-        return m6918equalsimpl0(i, Unspecified) ? "Unspecified" : m6918equalsimpl0(i, None) ? "None" : m6918equalsimpl0(i, Characters) ? "Characters" : m6918equalsimpl0(i, Words) ? "Words" : m6918equalsimpl0(i, Sentences) ? "Sentences" : "Invalid";
+    public static String m6933toStringimpl(int i) {
+        return m6931equalsimpl0(i, Unspecified) ? "Unspecified" : m6931equalsimpl0(i, None) ? "None" : m6931equalsimpl0(i, Characters) ? "Characters" : m6931equalsimpl0(i, Words) ? "Words" : m6931equalsimpl0(i, Sentences) ? "Sentences" : "Invalid";
     }
 
     /* compiled from: KeyboardCapitalization.kt */
@@ -76,50 +76,50 @@ public final class KeyboardCapitalization {
         }
 
         /* renamed from: getCharacters-IUNYP9k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6922getCharactersIUNYP9k$annotations() {
+        public static /* synthetic */ void m6935getCharactersIUNYP9k$annotations() {
         }
 
         /* renamed from: getNone-IUNYP9k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6923getNoneIUNYP9k$annotations() {
+        public static /* synthetic */ void m6936getNoneIUNYP9k$annotations() {
         }
 
         /* renamed from: getSentences-IUNYP9k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6924getSentencesIUNYP9k$annotations() {
+        public static /* synthetic */ void m6937getSentencesIUNYP9k$annotations() {
         }
 
         /* renamed from: getUnspecified-IUNYP9k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6925getUnspecifiedIUNYP9k$annotations() {
+        public static /* synthetic */ void m6938getUnspecifiedIUNYP9k$annotations() {
         }
 
         /* renamed from: getWords-IUNYP9k$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6926getWordsIUNYP9k$annotations() {
+        public static /* synthetic */ void m6939getWordsIUNYP9k$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-IUNYP9k  reason: not valid java name */
-        public final int m6930getUnspecifiedIUNYP9k() {
+        public final int m6943getUnspecifiedIUNYP9k() {
             return KeyboardCapitalization.Unspecified;
         }
 
         /* renamed from: getNone-IUNYP9k  reason: not valid java name */
-        public final int m6928getNoneIUNYP9k() {
+        public final int m6941getNoneIUNYP9k() {
             return KeyboardCapitalization.None;
         }
 
         /* renamed from: getCharacters-IUNYP9k  reason: not valid java name */
-        public final int m6927getCharactersIUNYP9k() {
+        public final int m6940getCharactersIUNYP9k() {
             return KeyboardCapitalization.Characters;
         }
 
         /* renamed from: getWords-IUNYP9k  reason: not valid java name */
-        public final int m6931getWordsIUNYP9k() {
+        public final int m6944getWordsIUNYP9k() {
             return KeyboardCapitalization.Words;
         }
 
         /* renamed from: getSentences-IUNYP9k  reason: not valid java name */
-        public final int m6929getSentencesIUNYP9k() {
+        public final int m6942getSentencesIUNYP9k() {
             return KeyboardCapitalization.Sentences;
         }
     }

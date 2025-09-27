@@ -35,12 +35,12 @@ final class HoverableNode extends Modifier.Node implements PointerInputModifierN
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         if (pointerEventPass == PointerEventPass.Main) {
-            int m5768getType7fucELk = pointerEvent.m5768getType7fucELk();
-            if (PointerEventType.m5775equalsimpl0(m5768getType7fucELk, PointerEventType.Companion.m5779getEnter7fucELk())) {
+            int m5781getType7fucELk = pointerEvent.m5781getType7fucELk();
+            if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5792getEnter7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new HoverableNode$onPointerEvent$1(this, null), 3, null);
-            } else if (PointerEventType.m5775equalsimpl0(m5768getType7fucELk, PointerEventType.Companion.m5780getExit7fucELk())) {
+            } else if (PointerEventType.m5788equalsimpl0(m5781getType7fucELk, PointerEventType.Companion.m5793getExit7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new HoverableNode$onPointerEvent$2(this, null), 3, null);
             }
         }

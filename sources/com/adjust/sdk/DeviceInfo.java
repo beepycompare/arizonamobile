@@ -32,7 +32,7 @@ public class DeviceInfo {
     String abi;
     String androidId;
     String apiLevel;
-    String appInstallTime;
+    long appInstallTime;
     String appSetId;
     String appUpdateTime;
     String appVersion;
@@ -50,12 +50,14 @@ public class DeviceInfo {
     Boolean fireTrackingEnabled;
     String hardwareName;
     Map<String, String> imeiParameters;
+    String initiatingPackageName;
     boolean isGooglePlayGamesForPC;
     Boolean isTrackingEnabled;
     String language;
     String mcc;
     String mnc;
     Map<String, String> oaidParameters;
+    String originatingPackageName;
     String osName;
     String osVersion;
     String packageName;
@@ -109,6 +111,8 @@ public class DeviceInfo {
         }
         this.storeInfoFromClient = StoreInfoUtil.getStoreInfoFromClient(adjustConfig, context);
         this.storeIdFromSystem = StoreInfoUtil.getStoreIdFromSystem(context);
+        this.initiatingPackageName = StoreInfoUtil.getInitiatingPackageName(context);
+        this.originatingPackageName = StoreInfoUtil.getOriginatingPackageName(context);
     }
 
     private String getABI() {
@@ -123,12 +127,11 @@ public class DeviceInfo {
         return "" + Build.VERSION.SDK_INT;
     }
 
-    private String getAppInstallTime(PackageInfo packageInfo) {
-        try {
-            return Util.dateFormatter.format(new Date(packageInfo.firstInstallTime));
-        } catch (Exception unused) {
-            return null;
+    private long getAppInstallTime(PackageInfo packageInfo) {
+        if (packageInfo == null) {
+            return 0L;
         }
+        return packageInfo.firstInstallTime;
     }
 
     private String getAppUpdateTime(PackageInfo packageInfo) {

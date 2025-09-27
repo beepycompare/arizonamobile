@@ -5,11 +5,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Sn implements A3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f675a;
+    public final Object f676a;
     public final A3 b;
 
     public Sn(Object obj, A3 a3) {
-        this.f675a = obj;
+        this.f676a = obj;
         this.b = a3;
     }
 
@@ -19,6 +19,6 @@ public final class Sn implements A3 {
     }
 
     public final String toString() {
-        return "TrimmingResult{value=" + this.f675a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "TrimmingResult{value=" + this.f676a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

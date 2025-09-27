@@ -40,7 +40,7 @@ public final class LazyStaggeredGridMeasureContext {
     }
 
     /* renamed from: getLaneInfo-SZVOQXA  reason: not valid java name */
-    public final int m1095getLaneInfoSZVOQXA(long j) {
+    public final int m1105getLaneInfoSZVOQXA(long j) {
         int i = (int) (j >> 32);
         if (((int) (4294967295L & j)) - i != 1) {
             return -2;
@@ -49,7 +49,7 @@ public final class LazyStaggeredGridMeasureContext {
     }
 
     /* renamed from: isFullSpan-SZVOQXA  reason: not valid java name */
-    public final boolean m1097isFullSpanSZVOQXA(long j) {
+    public final boolean m1107isFullSpanSZVOQXA(long j) {
         return ((int) (4294967295L & j)) - ((int) (j >> 32)) != 1;
     }
 
@@ -75,7 +75,7 @@ public final class LazyStaggeredGridMeasureContext {
         this.measuredItemProvider = new LazyStaggeredGridMeasureProvider(z, lazyStaggeredGridItemProvider, lazyLayoutMeasureScope, lazyStaggeredGridSlots) { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureContext$measuredItemProvider$1
             @Override // androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureProvider
             /* renamed from: createItem-pitSLOA  reason: not valid java name */
-            public LazyStaggeredGridMeasuredItem mo1098createItempitSLOA(int i5, int i6, int i7, Object obj, Object obj2, List<? extends Placeable> list2, long j3) {
+            public LazyStaggeredGridMeasuredItem mo1108createItempitSLOA(int i5, int i6, int i7, Object obj, Object obj2, List<? extends Placeable> list2, long j3) {
                 return new LazyStaggeredGridMeasuredItem(i5, obj, list2, LazyStaggeredGridMeasureContext.this.isVertical(), LazyStaggeredGridMeasureContext.this.getMainAxisSpacing(), i6, i7, LazyStaggeredGridMeasureContext.this.getBeforeContentPadding(), LazyStaggeredGridMeasureContext.this.getAfterContentPadding(), obj2, LazyStaggeredGridMeasureContext.this.getState().getItemAnimator$foundation_release(), j3, null);
             }
         };
@@ -100,7 +100,7 @@ public final class LazyStaggeredGridMeasureContext {
     }
 
     /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-    public final long m1093getConstraintsmsEJaDk() {
+    public final long m1103getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -117,7 +117,7 @@ public final class LazyStaggeredGridMeasureContext {
     }
 
     /* renamed from: getContentOffset-nOcc-ac  reason: not valid java name */
-    public final long m1094getContentOffsetnOccac() {
+    public final long m1104getContentOffsetnOccac() {
         return this.contentOffset;
     }
 
@@ -174,12 +174,12 @@ public final class LazyStaggeredGridMeasureContext {
     }
 
     /* renamed from: getSpanRange-lOCCd4c  reason: not valid java name */
-    public final long m1096getSpanRangelOCCd4c(LazyStaggeredGridItemProvider lazyStaggeredGridItemProvider, int i, int i2) {
+    public final long m1106getSpanRangelOCCd4c(LazyStaggeredGridItemProvider lazyStaggeredGridItemProvider, int i, int i2) {
         boolean isFullSpan = lazyStaggeredGridItemProvider.getSpanProvider().isFullSpan(i);
         int i3 = isFullSpan ? this.laneCount : 1;
         if (isFullSpan) {
             i2 = 0;
         }
-        return SpanRange.m1113constructorimpl(i2, i3);
+        return SpanRange.m1123constructorimpl(i2, i3);
     }
 }

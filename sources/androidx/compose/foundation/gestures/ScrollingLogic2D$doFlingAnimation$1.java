@@ -26,6 +26,6 @@ public final class ScrollingLogic2D$doFlingAnimation$1 extends ContinuationImpl 
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.mo553doFlingAnimationQWom1Mo(0L, this);
+        return this.this$0.mo563doFlingAnimationQWom1Mo(0L, this);
     }
 }

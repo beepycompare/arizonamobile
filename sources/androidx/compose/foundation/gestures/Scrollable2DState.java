@@ -11,10 +11,10 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public interface Scrollable2DState {
     /* renamed from: canScroll-k-4lQ0M */
-    boolean mo461canScrollk4lQ0M(long j);
+    boolean mo471canScrollk4lQ0M(long j);
 
     /* renamed from: dispatchRawDelta-MK-Hz9U */
-    long mo462dispatchRawDeltaMKHz9U(long j);
+    long mo472dispatchRawDeltaMKHz9U(long j);
 
     boolean isScrollInProgress();
 

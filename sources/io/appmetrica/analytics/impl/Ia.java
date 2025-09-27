@@ -7,12 +7,12 @@ import kotlin.text.Charsets;
 public final class Ia implements InterfaceC0455na {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0299h9 f494a = new C0299h9();
+    public final C0299h9 f495a = new C0299h9();
 
     public final C9[] a(byte[] bArr) {
         int i = 0;
         if (bArr != null) {
-            Map<String, byte[]> model = this.f494a.toModel(bArr);
+            Map<String, byte[]> model = this.f495a.toModel(bArr);
             C9[] c9Arr = new C9[model.size()];
             for (Object obj : model.entrySet()) {
                 int i2 = i + 1;
@@ -21,7 +21,7 @@ public final class Ia implements InterfaceC0455na {
                 }
                 Map.Entry entry = (Map.Entry) obj;
                 C9 c9 = new C9();
-                c9.f386a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
+                c9.f387a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
                 c9.b = (byte[]) entry.getValue();
                 c9Arr[i] = c9;
                 i = i2;

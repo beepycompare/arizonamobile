@@ -1,10 +1,7 @@
 package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.AttributeSet;
-import android.view.View;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
@@ -20,14 +17,12 @@ import java.io.InputStream;
 import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.Unit;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: WebViewYouTubePlayer.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u000f\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005B+\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0002\u0010\fJ\u000e\u0010%\u001a\u00020\u00102\u0006\u0010\u0006\u001a\u00020\u0017J\b\u0010&\u001a\u00020!H\u0016J\b\u0010'\u001a\u00020 H\u0016J\u001a\u0010(\u001a\u00020!2\u0006\u0010)\u001a\u00020*2\b\u0010+\u001a\u0004\u0018\u00010,H\u0003J5\u0010-\u001a\u00020!2\u0012\u0010.\u001a\u000e\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001f2\b\u0010)\u001a\u0004\u0018\u00010*2\b\u0010+\u001a\u0004\u0018\u00010,H\u0000¢\u0006\u0002\b/J\u0010\u00100\u001a\u00020!2\u0006\u00101\u001a\u00020\u000bH\u0014J\b\u00102\u001a\u00020!H\u0016J\u000e\u00103\u001a\u00020\u00102\u0006\u0010\u0006\u001a\u00020\u0017R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u00020\u0010X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u00168VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020 \u0012\u0004\u0012\u00020!0\u001fX\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\u00020 8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b#\u0010$¨\u00064"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "Landroid/webkit/WebView;", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "context", "Landroid/content/Context;", "(Landroid/content/Context;)V", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "(Landroid/content/Context;Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;Landroid/util/AttributeSet;I)V", "_youTubePlayer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/YouTubePlayerImpl;", "isBackgroundPlaybackEnabled", "", "isBackgroundPlaybackEnabled$core_release", "()Z", "setBackgroundPlaybackEnabled$core_release", "(Z)V", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "getListeners", "()Ljava/util/Collection;", "youTubePlayerBridge", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge;", "youTubePlayerCallbacks", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerCallbacks;", "youTubePlayerInitListener", "Lkotlin/Function1;", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "", "youtubePlayer", "getYoutubePlayer$core_release", "()Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "addListener", "destroy", "getInstance", "initWebView", "playerOptions", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/options/IFramePlayerOptions;", "videoId", "", "initialize", "initListener", "initialize$core_release", "onWindowVisibilityChanged", "visibility", "onYouTubeIFrameAPIReady", "removeListener", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0000\u0018\u00002\u00020\u00012\u00020\u0002B-\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\b\b\u0002\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fB\u0011\b\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u000b\u0010\rJ5\u0010!\u001a\u00020\u00182\u0012\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00180\u00172\b\u0010#\u001a\u0004\u0018\u00010$2\b\u0010%\u001a\u0004\u0018\u00010&H\u0000¢\u0006\u0002\b'J\b\u0010-\u001a\u00020\u0013H\u0016J\b\u0010.\u001a\u00020\u0018H\u0016J\u000e\u0010/\u001a\u00020\u001a2\u0006\u0010\u0005\u001a\u00020*J\u000e\u00100\u001a\u00020\u001a2\u0006\u0010\u0005\u001a\u00020*J\b\u00101\u001a\u00020\u0018H\u0016J\u001a\u00102\u001a\u00020\u00182\u0006\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010&H\u0003J\u0010\u00103\u001a\u00020\u00182\u0006\u00104\u001a\u00020\nH\u0014R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00180\u0017X\u0082.¢\u0006\u0002\n\u0000R\u001a\u0010\u0019\u001a\u00020\u001aX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b+\u0010,¨\u00065"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "Landroid/webkit/WebView;", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "context", "Landroid/content/Context;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;Landroid/util/AttributeSet;I)V", "(Landroid/content/Context;)V", "youTubePlayerCallbacks", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerCallbacks;", "_youTubePlayer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/YouTubePlayerImpl;", "youtubePlayer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "getYoutubePlayer$core_release", "()Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "youTubePlayerInitListener", "Lkotlin/Function1;", "", "isBackgroundPlaybackEnabled", "", "isBackgroundPlaybackEnabled$core_release", "()Z", "setBackgroundPlaybackEnabled$core_release", "(Z)V", "youTubePlayerBridge", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge;", "initialize", "initListener", "playerOptions", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/options/IFramePlayerOptions;", "videoId", "", "initialize$core_release", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "getListeners", "()Ljava/util/Collection;", "getInstance", "onYouTubeIFrameAPIReady", "addListener", "removeListener", "destroy", "initWebView", "onWindowVisibilityChanged", "visibility", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class WebViewYouTubePlayer extends WebView implements YouTubePlayerBridge.YouTubePlayerBridgeCallbacks {
     private final YouTubePlayerImpl _youTubePlayer;
@@ -75,14 +70,17 @@ public final class WebViewYouTubePlayer extends WebView implements YouTubePlayer
         Intrinsics.checkNotNullParameter(initListener, "initListener");
         this.youTubePlayerInitListener = initListener;
         if (iFramePlayerOptions == null) {
-            iFramePlayerOptions = IFramePlayerOptions.Companion.getDefault();
+            IFramePlayerOptions.Companion companion = IFramePlayerOptions.Companion;
+            Context context = getContext();
+            Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+            iFramePlayerOptions = companion.getDefault(context);
         }
         initWebView(iFramePlayerOptions, str);
     }
 
     @Override // com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayerBridge.YouTubePlayerBridgeCallbacks
     public Collection<YouTubePlayerListener> getListeners() {
-        return CollectionsKt.toSet(this._youTubePlayer.getListeners());
+        return this._youTubePlayer.getListeners();
     }
 
     @Override // com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayerBridge.YouTubePlayerBridgeCallbacks
@@ -102,12 +100,12 @@ public final class WebViewYouTubePlayer extends WebView implements YouTubePlayer
 
     public final boolean addListener(YouTubePlayerListener listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
-        return this._youTubePlayer.getListeners().add(listener);
+        return this._youTubePlayer.addListener(listener);
     }
 
     public final boolean removeListener(YouTubePlayerListener listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
-        return this._youTubePlayer.getListeners().remove(listener);
+        return this._youTubePlayer.removeListener(listener);
     }
 
     @Override // android.webkit.WebView
@@ -124,50 +122,9 @@ public final class WebViewYouTubePlayer extends WebView implements YouTubePlayer
         addJavascriptInterface(this.youTubePlayerBridge, "YouTubePlayerBridge");
         addJavascriptInterface(this.youTubePlayerCallbacks, "YouTubePlayerCallbacks");
         InputStream openRawResource = getResources().openRawResource(R.raw.ayp_youtube_player);
-        Intrinsics.checkNotNullExpressionValue(openRawResource, "resources.openRawResourc…R.raw.ayp_youtube_player)");
+        Intrinsics.checkNotNullExpressionValue(openRawResource, "openRawResource(...)");
         loadDataWithBaseURL(iFramePlayerOptions.getOrigin$core_release(), StringsKt.replace$default(StringsKt.replace$default(WebViewYouTubePlayerKt.readHTMLFromUTF8File(openRawResource), "<<injectedVideoId>>", str != null ? "'" + str + '\'' : StringUtils.UNDEFINED, false, 4, (Object) null), "<<injectedPlayerVars>>", iFramePlayerOptions.toString(), false, 4, (Object) null), "text/html", "utf-8", null);
-        setWebChromeClient(new WebChromeClient() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.WebViewYouTubePlayer$initWebView$2
-            @Override // android.webkit.WebChromeClient
-            public void onShowCustomView(View view, final WebChromeClient.CustomViewCallback callback) {
-                FullscreenListener fullscreenListener;
-                Intrinsics.checkNotNullParameter(view, "view");
-                Intrinsics.checkNotNullParameter(callback, "callback");
-                super.onShowCustomView(view, callback);
-                fullscreenListener = WebViewYouTubePlayer.this.listener;
-                fullscreenListener.onEnterFullscreen(view, new Function0<Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.WebViewYouTubePlayer$initWebView$2$onShowCustomView$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(0);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function0
-                    public /* bridge */ /* synthetic */ Unit invoke() {
-                        invoke2();
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2() {
-                        callback.onCustomViewHidden();
-                    }
-                });
-            }
-
-            @Override // android.webkit.WebChromeClient
-            public void onHideCustomView() {
-                FullscreenListener fullscreenListener;
-                super.onHideCustomView();
-                fullscreenListener = WebViewYouTubePlayer.this.listener;
-                fullscreenListener.onExitFullscreen();
-            }
-
-            @Override // android.webkit.WebChromeClient
-            public Bitmap getDefaultVideoPoster() {
-                Bitmap defaultVideoPoster = super.getDefaultVideoPoster();
-                return defaultVideoPoster == null ? Bitmap.createBitmap(1, 1, Bitmap.Config.RGB_565) : defaultVideoPoster;
-            }
-        });
+        setWebChromeClient(new WebViewYouTubePlayer$initWebView$2(this));
     }
 
     @Override // android.webkit.WebView, android.view.View

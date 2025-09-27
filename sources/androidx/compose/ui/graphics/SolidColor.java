@@ -19,22 +19,22 @@ public final class SolidColor extends Brush {
     }
 
     /* renamed from: getValue-0d7_KjU  reason: not valid java name */
-    public final long m4889getValue0d7_KjU() {
+    public final long m4901getValue0d7_KjU() {
         return this.value;
     }
 
     @Override // androidx.compose.ui.graphics.Brush
     /* renamed from: applyTo-Pq9zytI */
-    public void mo4483applyToPq9zytI(long j, Paint paint, float f) {
-        long m4536copywmQWz5c$default;
+    public void mo4495applyToPq9zytI(long j, Paint paint, float f) {
+        long m4548copywmQWz5c$default;
         paint.setAlpha(1.0f);
         if (f != 1.0f) {
             long j2 = this.value;
-            m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(j2, Color.m4539getAlphaimpl(j2) * f, 0.0f, 0.0f, 0.0f, 14, null);
+            m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(j2, Color.m4551getAlphaimpl(j2) * f, 0.0f, 0.0f, 0.0f, 14, null);
         } else {
-            m4536copywmQWz5c$default = this.value;
+            m4548copywmQWz5c$default = this.value;
         }
-        paint.mo4414setColor8_81llA(m4536copywmQWz5c$default);
+        paint.mo4426setColor8_81llA(m4548copywmQWz5c$default);
         if (paint.getShader() != null) {
             paint.setShader(null);
         }
@@ -44,14 +44,14 @@ public final class SolidColor extends Brush {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof SolidColor) && Color.m4538equalsimpl0(this.value, ((SolidColor) obj).value);
+        return (obj instanceof SolidColor) && Color.m4550equalsimpl0(this.value, ((SolidColor) obj).value);
     }
 
     public int hashCode() {
-        return Color.m4544hashCodeimpl(this.value);
+        return Color.m4556hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return "SolidColor(value=" + ((Object) Color.m4545toStringimpl(this.value)) + ')';
+        return "SolidColor(value=" + ((Object) Color.m4557toStringimpl(this.value)) + ')';
     }
 }

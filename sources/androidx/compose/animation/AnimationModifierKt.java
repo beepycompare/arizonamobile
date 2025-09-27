@@ -18,7 +18,7 @@ public final class AnimationModifierKt {
 
     public static /* synthetic */ Modifier animateContentSize$default(Modifier modifier, FiniteAnimationSpec finiteAnimationSpec, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7414boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7427boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             function2 = null;
@@ -32,7 +32,7 @@ public final class AnimationModifierKt {
 
     public static /* synthetic */ Modifier animateContentSize$default(Modifier modifier, FiniteAnimationSpec finiteAnimationSpec, Alignment alignment, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7414boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7427boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             alignment = Alignment.Companion.getTopStart();
@@ -52,12 +52,12 @@ public final class AnimationModifierKt {
     }
 
     /* renamed from: isValid-ozmzZPI  reason: not valid java name */
-    public static final boolean m74isValidozmzZPI(long j) {
-        return !IntSize.m7420equalsimpl0(j, InvalidSize);
+    public static final boolean m84isValidozmzZPI(long j) {
+        return !IntSize.m7433equalsimpl0(j, InvalidSize);
     }
 
     static {
         long j = Integer.MIN_VALUE;
-        InvalidSize = IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
+        InvalidSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

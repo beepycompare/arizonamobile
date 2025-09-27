@@ -89,7 +89,7 @@ public final class DialogFrameKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(468851715, i6, -1, "com.miami.game.core.design.system.component.dialog_frame.DialogFrame (DialogFrame.kt:50)");
             }
-            Modifier m257backgroundbw27NRU$default = BackgroundKt.m257backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, 2, null);
+            Modifier m267backgroundbw27NRU$default = BackgroundKt.m267backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, 2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -405053366, "CC(remember):DialogFrame.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -112,14 +112,14 @@ public final class DialogFrameKt {
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier m294clickableO2vRcR0$default = ClickableKt.m294clickableO2vRcR0$default(m257backgroundbw27NRU$default, mutableInteractionSource, null, false, null, null, (Function0) rememberedValue2, 28, null);
+            Modifier m304clickableO2vRcR0$default = ClickableKt.m304clickableO2vRcR0$default(m267backgroundbw27NRU$default, mutableInteractionSource, null, false, null, null, (Function0) rememberedValue2, 28, null);
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m294clickableO2vRcR0$default);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m304clickableO2vRcR0$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -131,20 +131,20 @@ public final class DialogFrameKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 17078808, "C66@2639L2242:DialogFrame.kt#x951st");
             Integer num4 = num3;
-            Modifier clip = ClipKt.clip(BorderKt.m271borderziNgDLE(SizeKt.m889width3ABfNKs(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(300)), Dp.m7251constructorimpl(600)), Dp.m7251constructorimpl(2), Brush.Companion.m4493verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4569getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4527boximpl(Color.Companion.m4572getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramShape(0.0f, 0.0f, 3, null));
+            Modifier clip = ClipKt.clip(BorderKt.m281borderziNgDLE(SizeKt.m899width3ABfNKs(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(300)), Dp.m7264constructorimpl(600)), Dp.m7264constructorimpl(2), Brush.Companion.m4505verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4539boximpl(Color.m4548copywmQWz5c$default(Color.Companion.m4581getLightGray0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4539boximpl(Color.Companion.m4584getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramShape(0.0f, 0.0f, 3, null));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
@@ -162,15 +162,15 @@ public final class DialogFrameKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -192394474, "C101@3777L1094:DialogFrame.kt#x951st");
@@ -183,7 +183,7 @@ public final class DialogFrameKt {
                 i4 = 1;
                 str = "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp";
                 obj2 = null;
-                IconKt.m2260Iconww6aTOc(PainterResources_androidKt.painterResource(num4.intValue(), startRestartGroup, i6 & 14), (String) null, boxScopeInstance2.align(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), Alignment.Companion.getCenterEnd()), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.7f, 0.0f, 0.0f, 0.0f, 14, null), startRestartGroup, 3120, 0);
+                IconKt.m2270Iconww6aTOc(PainterResources_androidKt.painterResource(num4.intValue(), startRestartGroup, i6 & 14), (String) null, boxScopeInstance2.align(SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), Alignment.Companion.getCenterEnd()), Color.m4548copywmQWz5c$default(Color.Companion.m4586getWhite0d7_KjU(), 0.7f, 0.0f, 0.0f, 0.0f, 14, null), startRestartGroup, 3120, 0);
             } else {
                 i4 = 1;
                 str = "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp";
@@ -197,9 +197,9 @@ public final class DialogFrameKt {
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, f, i4, obj2);
             Brush.Companion companion = Brush.Companion;
             Color[] colorArr = new Color[2];
-            colorArr[0] = Color.m4527boximpl(ColorKt.Color(4279508784L));
-            colorArr[i4] = Color.m4527boximpl(ColorKt.Color(3489660928L));
-            Modifier background$default = BackgroundKt.background$default(fillMaxSize$default, Brush.Companion.m4487linearGradientmHitzGk$default(companion, CollectionsKt.listOf((Object[]) colorArr), 0L, 0L, 0, 14, (Object) null), null, 0.0f, 6, null);
+            colorArr[0] = Color.m4539boximpl(ColorKt.Color(4279508784L));
+            colorArr[i4] = Color.m4539boximpl(ColorKt.Color(3489660928L));
+            Modifier background$default = BackgroundKt.background$default(fillMaxSize$default, Brush.Companion.m4499linearGradientmHitzGk$default(companion, CollectionsKt.listOf((Object[]) colorArr), 0L, 0L, 0, 14, (Object) null), null, 0.0f, 6, null);
             Alignment center2 = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, str3);
             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(center2, false);
@@ -219,23 +219,23 @@ public final class DialogFrameKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
-                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
-                m3855constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
+            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
+                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
+                m3867constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
             }
-            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1467119516, "C125@4623L21,122@4495L362:DialogFrame.kt#x951st");
             float f2 = 10;
-            Modifier verticalScroll$default = ScrollKt.verticalScroll$default(PaddingKt.m832padding3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f2)), ScrollKt.rememberScrollState(0, startRestartGroup, 0, i4), false, null, false, 14, null);
+            Modifier verticalScroll$default = ScrollKt.verticalScroll$default(PaddingKt.m842padding3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(f2)), ScrollKt.rememberScrollState(0, startRestartGroup, 0, i4), false, null, false, 14, null);
             Alignment.Horizontal centerHorizontally = Alignment.Companion.getCenterHorizontally();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
-            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(f2)), centerHorizontally, startRestartGroup, 54);
+            MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(f2)), centerHorizontally, startRestartGroup, 54);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, str4);
             int hashCode4 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap4 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -251,15 +251,15 @@ public final class DialogFrameKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl4, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl4, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
-                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
-                m3855constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
+            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
+                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
+                m3867constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
             }
-            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1316709103, "C130@4830L9:DialogFrame.kt#x951st");

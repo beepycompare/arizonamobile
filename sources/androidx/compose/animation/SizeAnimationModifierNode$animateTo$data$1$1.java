@@ -52,7 +52,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m7414boximpl(this.$targetSize), this.this$0.getAnimationSpec(), null, null, this, 12, null);
+            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m7427boximpl(this.$targetSize), this.this$0.getAnimationSpec(), null, null, this, 12, null);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -63,7 +63,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         }
         AnimationResult animationResult = (AnimationResult) obj;
         if (animationResult.getEndReason() == AnimationEndReason.Finished && (listener = this.this$0.getListener()) != null) {
-            listener.invoke(IntSize.m7414boximpl(this.$this_apply.m127getStartSizeYbymL2g()), animationResult.getEndState().getValue());
+            listener.invoke(IntSize.m7427boximpl(this.$this_apply.m137getStartSizeYbymL2g()), animationResult.getEndState().getValue());
         }
         return Unit.INSTANCE;
     }

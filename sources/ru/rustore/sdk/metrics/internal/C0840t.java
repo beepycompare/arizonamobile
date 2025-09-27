@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
 import ru.rustore.sdk.metrics.MetricsEvent;
 /* renamed from: ru.rustore.sdk.metrics.internal.t  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0840t {
     public static String a(MetricsEvent model) {
         Intrinsics.checkNotNullParameter(model, "model");

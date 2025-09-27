@@ -29,7 +29,7 @@ public final class PointerInputEventData {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-rc8HELY$default  reason: not valid java name */
-    public static /* synthetic */ PointerInputEventData m5832copyrc8HELY$default(PointerInputEventData pointerInputEventData, long j, long j2, long j3, long j4, boolean z, float f, int i, boolean z2, List list, long j5, long j6, int i2, Object obj) {
+    public static /* synthetic */ PointerInputEventData m5845copyrc8HELY$default(PointerInputEventData pointerInputEventData, long j, long j2, long j3, long j4, boolean z, float f, int i, boolean z2, List list, long j5, long j6, int i2, Object obj) {
         long j7;
         long j8;
         long j9;
@@ -57,21 +57,21 @@ public final class PointerInputEventData {
             j9 = j6;
             j10 = j8;
         }
-        return pointerInputEventData.m5839copyrc8HELY(j7, j12, j13, j14, z3, f2, i3, z4, list2, j10, j9);
+        return pointerInputEventData.m5852copyrc8HELY(j7, j12, j13, j14, z3, f2, i3, z4, list2, j10, j9);
     }
 
     /* renamed from: component1-J3iCeTQ  reason: not valid java name */
-    public final long m5833component1J3iCeTQ() {
+    public final long m5846component1J3iCeTQ() {
         return this.id;
     }
 
     /* renamed from: component10-F1C5BW0  reason: not valid java name */
-    public final long m5834component10F1C5BW0() {
+    public final long m5847component10F1C5BW0() {
         return this.scrollDelta;
     }
 
     /* renamed from: component11-F1C5BW0  reason: not valid java name */
-    public final long m5835component11F1C5BW0() {
+    public final long m5848component11F1C5BW0() {
         return this.originalEventPosition;
     }
 
@@ -80,12 +80,12 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: component3-F1C5BW0  reason: not valid java name */
-    public final long m5836component3F1C5BW0() {
+    public final long m5849component3F1C5BW0() {
         return this.positionOnScreen;
     }
 
     /* renamed from: component4-F1C5BW0  reason: not valid java name */
-    public final long m5837component4F1C5BW0() {
+    public final long m5850component4F1C5BW0() {
         return this.position;
     }
 
@@ -98,7 +98,7 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: component7-T8wyACA  reason: not valid java name */
-    public final int m5838component7T8wyACA() {
+    public final int m5851component7T8wyACA() {
         return this.type;
     }
 
@@ -111,7 +111,7 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: copy-rc8HELY  reason: not valid java name */
-    public final PointerInputEventData m5839copyrc8HELY(long j, long j2, long j3, long j4, boolean z, float f, int i, boolean z2, List<HistoricalChange> list, long j5, long j6) {
+    public final PointerInputEventData m5852copyrc8HELY(long j, long j2, long j3, long j4, boolean z, float f, int i, boolean z2, List<HistoricalChange> list, long j5, long j6) {
         return new PointerInputEventData(j, j2, j3, j4, z, f, i, z2, list, j5, j6, null);
     }
 
@@ -121,18 +121,18 @@ public final class PointerInputEventData {
         }
         if (obj instanceof PointerInputEventData) {
             PointerInputEventData pointerInputEventData = (PointerInputEventData) obj;
-            return PointerId.m5808equalsimpl0(this.id, pointerInputEventData.id) && this.uptime == pointerInputEventData.uptime && Offset.m4290equalsimpl0(this.positionOnScreen, pointerInputEventData.positionOnScreen) && Offset.m4290equalsimpl0(this.position, pointerInputEventData.position) && this.down == pointerInputEventData.down && Float.compare(this.pressure, pointerInputEventData.pressure) == 0 && PointerType.m5897equalsimpl0(this.type, pointerInputEventData.type) && this.activeHover == pointerInputEventData.activeHover && Intrinsics.areEqual(this.historical, pointerInputEventData.historical) && Offset.m4290equalsimpl0(this.scrollDelta, pointerInputEventData.scrollDelta) && Offset.m4290equalsimpl0(this.originalEventPosition, pointerInputEventData.originalEventPosition);
+            return PointerId.m5821equalsimpl0(this.id, pointerInputEventData.id) && this.uptime == pointerInputEventData.uptime && Offset.m4302equalsimpl0(this.positionOnScreen, pointerInputEventData.positionOnScreen) && Offset.m4302equalsimpl0(this.position, pointerInputEventData.position) && this.down == pointerInputEventData.down && Float.compare(this.pressure, pointerInputEventData.pressure) == 0 && PointerType.m5910equalsimpl0(this.type, pointerInputEventData.type) && this.activeHover == pointerInputEventData.activeHover && Intrinsics.areEqual(this.historical, pointerInputEventData.historical) && Offset.m4302equalsimpl0(this.scrollDelta, pointerInputEventData.scrollDelta) && Offset.m4302equalsimpl0(this.originalEventPosition, pointerInputEventData.originalEventPosition);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((PointerId.m5809hashCodeimpl(this.id) * 31) + Long.hashCode(this.uptime)) * 31) + Offset.m4295hashCodeimpl(this.positionOnScreen)) * 31) + Offset.m4295hashCodeimpl(this.position)) * 31) + Boolean.hashCode(this.down)) * 31) + Float.hashCode(this.pressure)) * 31) + PointerType.m5898hashCodeimpl(this.type)) * 31) + Boolean.hashCode(this.activeHover)) * 31) + this.historical.hashCode()) * 31) + Offset.m4295hashCodeimpl(this.scrollDelta)) * 31) + Offset.m4295hashCodeimpl(this.originalEventPosition);
+        return (((((((((((((((((((PointerId.m5822hashCodeimpl(this.id) * 31) + Long.hashCode(this.uptime)) * 31) + Offset.m4307hashCodeimpl(this.positionOnScreen)) * 31) + Offset.m4307hashCodeimpl(this.position)) * 31) + Boolean.hashCode(this.down)) * 31) + Float.hashCode(this.pressure)) * 31) + PointerType.m5911hashCodeimpl(this.type)) * 31) + Boolean.hashCode(this.activeHover)) * 31) + this.historical.hashCode()) * 31) + Offset.m4307hashCodeimpl(this.scrollDelta)) * 31) + Offset.m4307hashCodeimpl(this.originalEventPosition);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("PointerInputEventData(id=");
-        sb.append((Object) PointerId.m5810toStringimpl(this.id)).append(", uptime=").append(this.uptime).append(", positionOnScreen=").append((Object) Offset.m4301toStringimpl(this.positionOnScreen)).append(", position=").append((Object) Offset.m4301toStringimpl(this.position)).append(", down=").append(this.down).append(", pressure=").append(this.pressure).append(", type=").append((Object) PointerType.m5899toStringimpl(this.type)).append(", activeHover=").append(this.activeHover).append(", historical=").append(this.historical).append(", scrollDelta=").append((Object) Offset.m4301toStringimpl(this.scrollDelta)).append(", originalEventPosition=").append((Object) Offset.m4301toStringimpl(this.originalEventPosition)).append(')');
+        sb.append((Object) PointerId.m5823toStringimpl(this.id)).append(", uptime=").append(this.uptime).append(", positionOnScreen=").append((Object) Offset.m4313toStringimpl(this.positionOnScreen)).append(", position=").append((Object) Offset.m4313toStringimpl(this.position)).append(", down=").append(this.down).append(", pressure=").append(this.pressure).append(", type=").append((Object) PointerType.m5912toStringimpl(this.type)).append(", activeHover=").append(this.activeHover).append(", historical=").append(this.historical).append(", scrollDelta=").append((Object) Offset.m4313toStringimpl(this.scrollDelta)).append(", originalEventPosition=").append((Object) Offset.m4313toStringimpl(this.originalEventPosition)).append(')');
         return sb.toString();
     }
 
@@ -151,7 +151,7 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: getId-J3iCeTQ  reason: not valid java name */
-    public final long m5840getIdJ3iCeTQ() {
+    public final long m5853getIdJ3iCeTQ() {
         return this.id;
     }
 
@@ -160,12 +160,12 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: getPositionOnScreen-F1C5BW0  reason: not valid java name */
-    public final long m5843getPositionOnScreenF1C5BW0() {
+    public final long m5856getPositionOnScreenF1C5BW0() {
         return this.positionOnScreen;
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m5842getPositionF1C5BW0() {
+    public final long m5855getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -178,7 +178,7 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: getType-T8wyACA  reason: not valid java name */
-    public final int m5845getTypeT8wyACA() {
+    public final int m5858getTypeT8wyACA() {
         return this.type;
     }
 
@@ -187,7 +187,7 @@ public final class PointerInputEventData {
     }
 
     public /* synthetic */ PointerInputEventData(long j, long j2, long j3, long j4, boolean z, float f, int i, boolean z2, List list, long j5, long j6, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(j, j2, j3, j4, z, f, i, (i2 & 128) != 0 ? false : z2, (i2 & 256) != 0 ? new ArrayList() : list, (i2 & 512) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j5, (i2 & 1024) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j6, null);
+        this(j, j2, j3, j4, z, f, i, (i2 & 128) != 0 ? false : z2, (i2 & 256) != 0 ? new ArrayList() : list, (i2 & 512) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j5, (i2 & 1024) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j6, null);
     }
 
     public final List<HistoricalChange> getHistorical() {
@@ -195,12 +195,12 @@ public final class PointerInputEventData {
     }
 
     /* renamed from: getScrollDelta-F1C5BW0  reason: not valid java name */
-    public final long m5844getScrollDeltaF1C5BW0() {
+    public final long m5857getScrollDeltaF1C5BW0() {
         return this.scrollDelta;
     }
 
     /* renamed from: getOriginalEventPosition-F1C5BW0  reason: not valid java name */
-    public final long m5841getOriginalEventPositionF1C5BW0() {
+    public final long m5854getOriginalEventPositionF1C5BW0() {
         return this.originalEventPosition;
     }
 }

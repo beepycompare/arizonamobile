@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class KeyEventType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unknown = m5673constructorimpl(0);
-    private static final int KeyUp = m5673constructorimpl(1);
-    private static final int KeyDown = m5673constructorimpl(2);
+    private static final int Unknown = m5686constructorimpl(0);
+    private static final int KeyUp = m5686constructorimpl(1);
+    private static final int KeyDown = m5686constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ KeyEventType m5672boximpl(int i) {
+    public static final /* synthetic */ KeyEventType m5685boximpl(int i) {
         return new KeyEventType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5673constructorimpl(int i) {
+    public static int m5686constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5674equalsimpl(int i, Object obj) {
-        return (obj instanceof KeyEventType) && i == ((KeyEventType) obj).m5678unboximpl();
+    public static boolean m5687equalsimpl(int i, Object obj) {
+        return (obj instanceof KeyEventType) && i == ((KeyEventType) obj).m5691unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5675equalsimpl0(int i, int i2) {
+    public static final boolean m5688equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5676hashCodeimpl(int i) {
+    public static int m5689hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5674equalsimpl(this.value, obj);
+        return m5687equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5676hashCodeimpl(this.value);
+        return m5689hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5678unboximpl() {
+    public final /* synthetic */ int m5691unboximpl() {
         return this.value;
     }
 
@@ -58,12 +58,12 @@ public final class KeyEventType {
     }
 
     public String toString() {
-        return m5677toStringimpl(this.value);
+        return m5690toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5677toStringimpl(int i) {
-        return m5675equalsimpl0(i, KeyUp) ? "KeyUp" : m5675equalsimpl0(i, KeyDown) ? "KeyDown" : m5675equalsimpl0(i, Unknown) ? AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN : "Invalid";
+    public static String m5690toStringimpl(int i) {
+        return m5688equalsimpl0(i, KeyUp) ? "KeyUp" : m5688equalsimpl0(i, KeyDown) ? "KeyDown" : m5688equalsimpl0(i, Unknown) ? AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN : "Invalid";
     }
 
     /* compiled from: KeyEvent.kt */
@@ -78,17 +78,17 @@ public final class KeyEventType {
         }
 
         /* renamed from: getUnknown-CS__XNY  reason: not valid java name */
-        public final int m5681getUnknownCS__XNY() {
+        public final int m5694getUnknownCS__XNY() {
             return KeyEventType.Unknown;
         }
 
         /* renamed from: getKeyUp-CS__XNY  reason: not valid java name */
-        public final int m5680getKeyUpCS__XNY() {
+        public final int m5693getKeyUpCS__XNY() {
             return KeyEventType.KeyUp;
         }
 
         /* renamed from: getKeyDown-CS__XNY  reason: not valid java name */
-        public final int m5679getKeyDownCS__XNY() {
+        public final int m5692getKeyDownCS__XNY() {
             return KeyEventType.KeyDown;
         }
     }

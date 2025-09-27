@@ -12,7 +12,7 @@ public final class V3 extends MessageNano {
     public static volatile V3[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public U3[] f708a;
+    public U3[] f709a;
 
     public V3() {
         a();
@@ -30,7 +30,7 @@ public final class V3 extends MessageNano {
     }
 
     public final V3 a() {
-        this.f708a = U3.b();
+        this.f709a = U3.b();
         this.cachedSize = -1;
         return this;
     }
@@ -38,11 +38,11 @@ public final class V3 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        U3[] u3Arr = this.f708a;
+        U3[] u3Arr = this.f709a;
         if (u3Arr != null && u3Arr.length > 0) {
             int i = 0;
             while (true) {
-                U3[] u3Arr2 = this.f708a;
+                U3[] u3Arr2 = this.f709a;
                 if (i >= u3Arr2.length) {
                     break;
                 }
@@ -58,11 +58,11 @@ public final class V3 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        U3[] u3Arr = this.f708a;
+        U3[] u3Arr = this.f709a;
         if (u3Arr != null && u3Arr.length > 0) {
             int i = 0;
             while (true) {
-                U3[] u3Arr2 = this.f708a;
+                U3[] u3Arr2 = this.f709a;
                 if (i >= u3Arr2.length) {
                     break;
                 }
@@ -89,7 +89,7 @@ public final class V3 extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                U3[] u3Arr = this.f708a;
+                U3[] u3Arr = this.f709a;
                 int length = u3Arr == null ? 0 : u3Arr.length;
                 int i = repeatedFieldArrayLength + length;
                 U3[] u3Arr2 = new U3[i];
@@ -106,7 +106,7 @@ public final class V3 extends MessageNano {
                 U3 u32 = new U3();
                 u3Arr2[length] = u32;
                 codedInputByteBufferNano.readMessage(u32);
-                this.f708a = u3Arr2;
+                this.f709a = u3Arr2;
             }
         }
         return this;

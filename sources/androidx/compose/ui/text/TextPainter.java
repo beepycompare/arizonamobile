@@ -34,14 +34,14 @@ public final class TextPainter {
         Throwable th;
         Brush brush;
         Canvas canvas3;
-        long m4563getBlack0d7_KjU;
+        long m4575getBlack0d7_KjU;
         float alpha;
-        boolean z = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7177equalsimpl0(textLayoutResult.getLayoutInput().m6680getOverflowgIe3tQ8(), TextOverflow.Companion.m7190getVisiblegIe3tQ8());
+        boolean z = textLayoutResult.getHasVisualOverflow() && !TextOverflow.m7190equalsimpl0(textLayoutResult.getLayoutInput().m6693getOverflowgIe3tQ8(), TextOverflow.Companion.m7203getVisiblegIe3tQ8());
         if (z) {
-            Rect m4333Recttz77jQw = RectKt.m4333Recttz77jQw(Offset.Companion.m4309getZeroF1C5BW0(), Size.m4353constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m6684getSizeYbymL2g() & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (textLayoutResult.m6684getSizeYbymL2g() >> 32)) << 32)));
+            Rect m4345Recttz77jQw = RectKt.m4345Recttz77jQw(Offset.Companion.m4321getZeroF1C5BW0(), Size.m4365constructorimpl((Float.floatToRawIntBits((int) (textLayoutResult.m6697getSizeYbymL2g() & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (textLayoutResult.m6697getSizeYbymL2g() >> 32)) << 32)));
             canvas.save();
             canvas2 = null;
-            Canvas.m4510clipRectmtrdDE$default(canvas, m4333Recttz77jQw, 0, 2, null);
+            Canvas.m4522clipRectmtrdDE$default(canvas, m4345Recttz77jQw, 0, 2, null);
         }
         SpanStyle spanStyle$ui_text = textLayoutResult.getLayoutInput().getStyle().getSpanStyle$ui_text();
         TextDecoration textDecoration = spanStyle$ui_text.getTextDecoration();
@@ -82,15 +82,15 @@ public final class TextPainter {
                     alpha = 1.0f;
                 }
                 canvas3 = canvas;
-                MultiParagraph.m6552painthn5TExg$default(textLayoutResult.getMultiParagraph(), canvas3, brush, alpha, shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                MultiParagraph.m6565painthn5TExg$default(textLayoutResult.getMultiParagraph(), canvas3, brush, alpha, shadow2, textDecoration2, drawStyle2, 0, 64, null);
             } else {
                 canvas3 = canvas;
                 if (spanStyle$ui_text.getTextForegroundStyle$ui_text() != TextForegroundStyle.Unspecified.INSTANCE) {
-                    m4563getBlack0d7_KjU = spanStyle$ui_text.getTextForegroundStyle$ui_text().mo7021getColor0d7_KjU();
+                    m4575getBlack0d7_KjU = spanStyle$ui_text.getTextForegroundStyle$ui_text().mo7034getColor0d7_KjU();
                 } else {
-                    m4563getBlack0d7_KjU = Color.Companion.m4563getBlack0d7_KjU();
+                    m4575getBlack0d7_KjU = Color.Companion.m4575getBlack0d7_KjU();
                 }
-                textLayoutResult.getMultiParagraph().m6557paintLG529CI(canvas3, (r14 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : m4563getBlack0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5118getDefaultBlendMode0nO6VwU() : 0);
+                textLayoutResult.getMultiParagraph().m6570paintLG529CI(canvas3, (r14 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : m4575getBlack0d7_KjU, (r14 & 4) != 0 ? null : shadow2, (r14 & 8) != 0 ? null : textDecoration2, (r14 & 16) == 0 ? drawStyle2 : null, (r14 & 32) != 0 ? DrawScope.Companion.m5130getDefaultBlendMode0nO6VwU() : 0);
             }
             if (z) {
                 canvas3.restore();

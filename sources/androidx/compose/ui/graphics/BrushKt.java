@@ -16,9 +16,9 @@ public final class BrushKt {
         }
         if (brush instanceof SolidColor) {
             SolidColor solidColor = (SolidColor) brush;
-            Brush m4493verticalGradient8A3gB4$default = Brush.Companion.m4493verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(solidColor.m4889getValue0d7_KjU()), Color.m4527boximpl(solidColor.m4889getValue0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null);
-            Intrinsics.checkNotNull(m4493verticalGradient8A3gB4$default, "null cannot be cast to non-null type androidx.compose.ui.graphics.ShaderBrush");
-            return (ShaderBrush) m4493verticalGradient8A3gB4$default;
+            Brush m4505verticalGradient8A3gB4$default = Brush.Companion.m4505verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4539boximpl(solidColor.m4901getValue0d7_KjU()), Color.m4539boximpl(solidColor.m4901getValue0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null);
+            Intrinsics.checkNotNull(m4505verticalGradient8A3gB4$default, "null cannot be cast to non-null type androidx.compose.ui.graphics.ShaderBrush");
+            return (ShaderBrush) m4505verticalGradient8A3gB4$default;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -27,7 +27,7 @@ public final class BrushKt {
         return new ShaderBrush() { // from class: androidx.compose.ui.graphics.BrushKt$ShaderBrush$1
             @Override // androidx.compose.ui.graphics.ShaderBrush
             /* renamed from: createShader-uvyYCjk  reason: not valid java name */
-            public Shader mo4506createShaderuvyYCjk(long j) {
+            public Shader mo4518createShaderuvyYCjk(long j) {
                 return shader;
             }
         };

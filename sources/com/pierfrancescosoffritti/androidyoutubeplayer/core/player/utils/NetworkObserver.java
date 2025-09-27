@@ -3,7 +3,6 @@ package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -11,7 +10,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkObserver.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001:\u0001\u0013B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0006\u0010\u000e\u001a\u00020\u000fJ\u0010\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u0003H\u0003J\u0010\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u0003H\u0002J\u0006\u0010\u0012\u001a\u00020\u000fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver;", "", "context", "Landroid/content/Context;", "(Landroid/content/Context;)V", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver$Listener;", "getListeners", "()Ljava/util/List;", "networkBroadcastReceiver", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkBroadcastReceiver;", "networkCallback", "Landroid/net/ConnectivityManager$NetworkCallback;", "destroy", "", "doObserveNetwork", "doObserveNetworkLegacy", "observeNetwork", "Listener", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001:\u0001\u0014B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u000f\u001a\u00020\u0010J\u0006\u0010\u0011\u001a\u00020\u0010J\u0010\u0010\u0012\u001a\u00020\u00102\u0006\u0010\u0002\u001a\u00020\u0003H\u0003J\u0010\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0002\u001a\u00020\u0003H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver;", "", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver$Listener;", "getListeners", "()Ljava/util/List;", "networkBroadcastReceiver", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkBroadcastReceiver;", "networkCallback", "Landroid/net/ConnectivityManager$NetworkCallback;", "observeNetwork", "", "destroy", "doObserveNetwork", "doObserveNetworkLegacy", "Listener", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NetworkObserver {
     private final Context context;
@@ -20,7 +19,7 @@ public final class NetworkObserver {
     private ConnectivityManager.NetworkCallback networkCallback;
 
     /* compiled from: NetworkObserver.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&¨\u0006\u0005"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver$Listener;", "", "onNetworkAvailable", "", "onNetworkUnavailable", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&¨\u0006\u0005"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver$Listener;", "", "onNetworkAvailable", "", "onNetworkUnavailable", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public interface Listener {
         void onNetworkAvailable();
@@ -64,44 +63,38 @@ public final class NetworkObserver {
     }
 
     private final void doObserveNetworkLegacy(Context context) {
-        NetworkBroadcastReceiver networkBroadcastReceiver = new NetworkBroadcastReceiver(new Function0<Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$doObserveNetworkLegacy$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        NetworkBroadcastReceiver networkBroadcastReceiver = new NetworkBroadcastReceiver(new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
+            public final Object invoke() {
+                Unit doObserveNetworkLegacy$lambda$2;
+                doObserveNetworkLegacy$lambda$2 = NetworkObserver.doObserveNetworkLegacy$lambda$2(NetworkObserver.this);
+                return doObserveNetworkLegacy$lambda$2;
             }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                for (NetworkObserver.Listener listener : NetworkObserver.this.getListeners()) {
-                    listener.onNetworkAvailable();
-                }
-            }
-        }, new Function0<Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$doObserveNetworkLegacy$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(0);
-            }
-
+        }, new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                for (NetworkObserver.Listener listener : NetworkObserver.this.getListeners()) {
-                    listener.onNetworkUnavailable();
-                }
+            public final Object invoke() {
+                Unit doObserveNetworkLegacy$lambda$4;
+                doObserveNetworkLegacy$lambda$4 = NetworkObserver.doObserveNetworkLegacy$lambda$4(NetworkObserver.this);
+                return doObserveNetworkLegacy$lambda$4;
             }
         });
         this.networkBroadcastReceiver = networkBroadcastReceiver;
         context.registerReceiver(networkBroadcastReceiver, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit doObserveNetworkLegacy$lambda$2(NetworkObserver networkObserver) {
+        for (Listener listener : networkObserver.listeners) {
+            listener.onNetworkAvailable();
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit doObserveNetworkLegacy$lambda$4(NetworkObserver networkObserver) {
+        for (Listener listener : networkObserver.listeners) {
+            listener.onNetworkUnavailable();
+        }
+        return Unit.INSTANCE;
     }
 }

@@ -39,7 +39,7 @@ public final class ComposableSingletons$DateRangePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(766806659, i, -1, "androidx.compose.material3.ComposableSingletons$DateRangePickerKt.lambda-1.<anonymous> (DateRangePicker.kt:379)");
             }
-            TextKt.m2804Text4IGK_g(Constants.FILENAME_SEQUENCE_SEPARATOR, (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 6, 0, 131070);
+            TextKt.m2814Text4IGK_g(Constants.FILENAME_SEQUENCE_SEPARATOR, (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -47,7 +47,7 @@ public final class ComposableSingletons$DateRangePickerKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2075getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2085getLambda1$material3_release() {
         return f28lambda1;
     }
 }

@@ -18,17 +18,17 @@ public final class SendKt {
     private static ImageVector _send;
 
     public static final ImageVector getSend(Icons.AutoMirrored.Filled filled) {
-        ImageVector.Builder m5274addPathoIyEayM;
+        ImageVector.Builder m5286addPathoIyEayM;
         ImageVector imageVector = _send;
         if (imageVector != null) {
             Intrinsics.checkNotNull(imageVector);
             return imageVector;
         }
-        ImageVector.Builder builder = new ImageVector.Builder("AutoMirrored.Filled.Send", Dp.m7251constructorimpl(24.0f), Dp.m7251constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, true, 96, null);
+        ImageVector.Builder builder = new ImageVector.Builder("AutoMirrored.Filled.Send", Dp.m7264constructorimpl(24.0f), Dp.m7264constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, true, 96, null);
         int defaultFillType = VectorKt.getDefaultFillType();
-        SolidColor solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
-        int m4907getButtKaPHkGw = StrokeCap.Companion.m4907getButtKaPHkGw();
-        int m4917getBevelLxFBmk8 = StrokeJoin.Companion.m4917getBevelLxFBmk8();
+        SolidColor solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+        int m4919getButtKaPHkGw = StrokeCap.Companion.m4919getButtKaPHkGw();
+        int m4929getBevelLxFBmk8 = StrokeJoin.Companion.m4929getBevelLxFBmk8();
         PathBuilder pathBuilder = new PathBuilder();
         pathBuilder.moveTo(2.01f, 21.0f);
         pathBuilder.lineTo(23.0f, 12.0f);
@@ -37,8 +37,8 @@ public final class SendKt {
         pathBuilder.lineToRelative(15.0f, 2.0f);
         pathBuilder.lineToRelative(-15.0f, 2.0f);
         pathBuilder.close();
-        m5274addPathoIyEayM = builder.m5274addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4907getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4917getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        ImageVector build = m5274addPathoIyEayM.build();
+        m5286addPathoIyEayM = builder.m5286addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4919getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4929getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        ImageVector build = m5286addPathoIyEayM.build();
         _send = build;
         Intrinsics.checkNotNull(build);
         return build;

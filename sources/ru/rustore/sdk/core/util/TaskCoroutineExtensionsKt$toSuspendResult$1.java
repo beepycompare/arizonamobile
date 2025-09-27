@@ -10,7 +10,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: TaskCoroutineExtensions.kt */
 @Metadata(k = 3, mv = {1, 7, 0}, xi = 48)
 @DebugMetadata(c = "ru.rustore.sdk.core.util.TaskCoroutineExtensionsKt", f = "TaskCoroutineExtensions.kt", i = {0, 0}, l = {36}, m = "toSuspendResult", n = {"$this$toSuspendResult", "executor"}, s = {"L$0", "L$1"})
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TaskCoroutineExtensionsKt$toSuspendResult$1<T> extends ContinuationImpl {
     Object L$0;
     Object L$1;
@@ -27,6 +27,6 @@ public final class TaskCoroutineExtensionsKt$toSuspendResult$1<T> extends Contin
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
         Object suspendResult = TaskCoroutineExtensionsKt.toSuspendResult(null, this);
-        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m9090boximpl(suspendResult);
+        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m9105boximpl(suspendResult);
     }
 }

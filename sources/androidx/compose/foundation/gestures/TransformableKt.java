@@ -169,11 +169,11 @@ public final class TransformableKt {
                     ResultKt.throwOnFailure(obj);
                 }
                 pointerEvent = (PointerEvent) obj;
-                if (PointerEvent_androidKt.m5793isCtrlPressed5xRPYO0(pointerEvent.m5767getKeyboardModifiersk7X9c1A()) || !PointerEventType.m5775equalsimpl0(pointerEvent.m5768getType7fucELk(), PointerEventType.Companion.m5784getScroll7fucELk())) {
+                if (PointerEvent_androidKt.m5806isCtrlPressed5xRPYO0(pointerEvent.m5780getKeyboardModifiersk7X9c1A()) || !PointerEventType.m5788equalsimpl0(pointerEvent.m5781getType7fucELk(), PointerEventType.Companion.m5797getScroll7fucELk())) {
                     return null;
                 }
-                long mo447calculateMouseWheelScroll8xgXZGE = scrollConfig.mo447calculateMouseWheelScroll8xgXZGE(awaitPointerEventScope, pointerEvent, awaitPointerEventScope.mo5735getSizeYbymL2g());
-                if (Offset.m4290equalsimpl0(mo447calculateMouseWheelScroll8xgXZGE, Offset.Companion.m4309getZeroF1C5BW0())) {
+                long mo457calculateMouseWheelScroll8xgXZGE = scrollConfig.mo457calculateMouseWheelScroll8xgXZGE(awaitPointerEventScope, pointerEvent, awaitPointerEventScope.mo5748getSizeYbymL2g());
+                if (Offset.m4302equalsimpl0(mo457calculateMouseWheelScroll8xgXZGE, Offset.Companion.m4321getZeroF1C5BW0())) {
                     return null;
                 }
                 List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -181,7 +181,7 @@ public final class TransformableKt {
                 for (int i2 = 0; i2 < size; i2++) {
                     changes.get(i2).consume();
                 }
-                return Offset.m4282boximpl(mo447calculateMouseWheelScroll8xgXZGE);
+                return Offset.m4294boximpl(mo457calculateMouseWheelScroll8xgXZGE);
             }
         }
         transformableKt$awaitCtrlMouseScrollOrNull$1 = new TransformableKt$awaitCtrlMouseScrollOrNull$1(continuation);
@@ -191,14 +191,14 @@ public final class TransformableKt {
         if (i != 0) {
         }
         pointerEvent = (PointerEvent) obj2;
-        if (PointerEvent_androidKt.m5793isCtrlPressed5xRPYO0(pointerEvent.m5767getKeyboardModifiersk7X9c1A())) {
+        if (PointerEvent_androidKt.m5806isCtrlPressed5xRPYO0(pointerEvent.m5780getKeyboardModifiersk7X9c1A())) {
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x020d, code lost:
-        if (r13.invoke(androidx.compose.ui.geometry.Offset.m4282boximpl(r9)).booleanValue() != false) goto L63;
+        if (r13.invoke(androidx.compose.ui.geometry.Offset.m4294boximpl(r9)).booleanValue() != false) goto L63;
      */
     /* JADX WARN: Code restructure failed: missing block: B:87:0x02c3, code lost:
         if (r6 != 0) goto L96;
@@ -277,7 +277,7 @@ public final class TransformableKt {
                 i = transformableKt$detectZoom$14.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    long m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+                    long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
                     float touchSlop = awaitPointerEventScope.getViewConfiguration().getTouchSlop();
                     transformableKt$detectZoom$14.L$0 = awaitPointerEventScope;
                     channel2 = channel;
@@ -288,14 +288,14 @@ public final class TransformableKt {
                     transformableKt$detectZoom$14.Z$0 = z2;
                     transformableKt$detectZoom$14.F$0 = 0.0f;
                     transformableKt$detectZoom$14.F$1 = 1.0f;
-                    transformableKt$detectZoom$14.J$0 = m4309getZeroF1C5BW0;
+                    transformableKt$detectZoom$14.J$0 = m4321getZeroF1C5BW0;
                     transformableKt$detectZoom$14.I$0 = 0;
                     transformableKt$detectZoom$14.F$2 = touchSlop;
                     transformableKt$detectZoom$14.I$1 = 0;
                     transformableKt$detectZoom$14.label = 1;
                     if (TapGestureDetectorKt.awaitFirstDown$default(awaitPointerEventScope, false, null, transformableKt$detectZoom$14, 2, null) != coroutine_suspended) {
                         f = touchSlop;
-                        j = m4309getZeroF1C5BW0;
+                        j = m4321getZeroF1C5BW0;
                         i2 = 0;
                         i3 = 0;
                         f2 = 1.0f;
@@ -398,14 +398,14 @@ public final class TransformableKt {
                         if (i3 == 0) {
                             float f15 = f13 * calculateZoom;
                             float f16 = f14 + calculateRotation;
-                            long m4298plusMKHz9U = Offset.m4298plusMKHz9U(j, calculatePan);
+                            long m4310plusMKHz9U = Offset.m4310plusMKHz9U(j, calculatePan);
                             int i14 = i3;
                             float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent2, false);
                             float abs = Math.abs(((3.1415927f * f16) * calculateCentroidSize) / 180.0f);
-                            float m4291getDistanceimpl = Offset.m4291getDistanceimpl(m4298plusMKHz9U);
-                            if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m4291getDistanceimpl > f && function13.invoke(Offset.m4282boximpl(calculatePan)).booleanValue())) {
+                            float m4303getDistanceimpl = Offset.m4303getDistanceimpl(m4310plusMKHz9U);
+                            if (Math.abs(1 - f15) * calculateCentroidSize > f || abs > f || (m4303getDistanceimpl > f && function13.invoke(Offset.m4294boximpl(calculatePan)).booleanValue())) {
                                 i7 = (!z2 || abs >= f) ? 0 : 1;
-                                channel3.mo8127trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                                channel3.mo8140trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                                 i6 = 1;
                                 f8 = f15;
                                 f9 = f16;
@@ -415,7 +415,7 @@ public final class TransformableKt {
                                 f9 = f16;
                                 i6 = i14;
                             }
-                            j3 = m4298plusMKHz9U;
+                            j3 = m4310plusMKHz9U;
                         } else {
                             f8 = f13;
                             f9 = f14;
@@ -431,7 +431,7 @@ public final class TransformableKt {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                             } else if (calculateZoom == 1.0f) {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                                if (!Offset.m4290equalsimpl0(calculatePan, Offset.Companion.m4309getZeroF1C5BW0())) {
+                                if (!Offset.m4302equalsimpl0(calculatePan, Offset.Companion.m4321getZeroF1C5BW0())) {
                                 }
                                 List<PointerInputChange> changes4 = pointerEvent2.getChanges();
                                 size2 = changes4.size();
@@ -444,7 +444,7 @@ public final class TransformableKt {
                             } else {
                                 transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                             }
-                            channel3.mo8127trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
+                            channel3.mo8140trySendJP2dKIU(new TransformEvent.TransformDelta(calculateZoom, calculatePan, f17, null));
                             List<PointerInputChange> changes42 = pointerEvent2.getChanges();
                             size2 = changes42.size();
                             while (i10 < size2) {
@@ -456,7 +456,7 @@ public final class TransformableKt {
                     } else {
                         int i15 = i3;
                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        ChannelResult.m10622boximpl(channel3.mo8127trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        ChannelResult.m10637boximpl(channel3.mo8140trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
                         f6 = f5;
                         f3 = f4;
                         j2 = j;

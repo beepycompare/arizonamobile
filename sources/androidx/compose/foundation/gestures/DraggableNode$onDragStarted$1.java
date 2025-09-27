@@ -49,9 +49,9 @@ final class DraggableNode$onDragStarted$1 extends SuspendLambda implements Funct
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function3 = this.this$0.onDragStarted;
-            Offset m4282boximpl = Offset.m4282boximpl(this.$startedPosition);
+            Offset m4294boximpl = Offset.m4294boximpl(this.$startedPosition);
             this.label = 1;
-            if (function3.invoke((CoroutineScope) this.L$0, m4282boximpl, this) == coroutine_suspended) {
+            if (function3.invoke((CoroutineScope) this.L$0, m4294boximpl, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

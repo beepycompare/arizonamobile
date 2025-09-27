@@ -9,18 +9,18 @@ import java.util.Map;
 public final class Nh implements InterfaceC0669vn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ J9 f596a;
+    public final /* synthetic */ J9 f597a;
     public final /* synthetic */ Qh b;
 
     public Nh(Qh qh, J9 j9) {
         this.b = qh;
-        this.f596a = j9;
+        this.f597a = j9;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0669vn
     public final void a(Object obj) {
         List list = (List) obj;
-        J9 j9 = this.f596a;
+        J9 j9 = this.f597a;
         if (ro.a((Collection) list)) {
             return;
         }
@@ -28,11 +28,11 @@ public final class Nh implements InterfaceC0669vn {
         for (int i = 0; i < list.size(); i++) {
             C0567rl c0567rl = (C0567rl) list.get(i);
             H9[] h9Arr = j9.d;
-            Map map = AbstractC0409lg.f973a;
+            Map map = AbstractC0409lg.f974a;
             H9 h9 = new H9();
-            Integer num = c0567rl.f1070a;
+            Integer num = c0567rl.f1071a;
             if (num != null) {
-                h9.f475a = num.intValue();
+                h9.f476a = num.intValue();
             }
             Integer num2 = c0567rl.b;
             if (num2 != null) {

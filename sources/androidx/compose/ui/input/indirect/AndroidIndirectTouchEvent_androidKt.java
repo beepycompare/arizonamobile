@@ -19,19 +19,19 @@ public final class AndroidIndirectTouchEvent_androidKt {
     public static final IndirectTouchEvent IndirectTouchEvent(MotionEvent motionEvent) {
         float x = motionEvent.getX();
         float y = motionEvent.getY();
-        return new AndroidIndirectTouchEvent(Offset.m4285constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)), motionEvent.getEventTime(), convertActionToIndirectTouchEventType(motionEvent.getActionMasked()), motionEvent, null);
+        return new AndroidIndirectTouchEvent(Offset.m4297constructorimpl((Float.floatToRawIntBits(y) & 4294967295L) | (Float.floatToRawIntBits(x) << 32)), motionEvent.getEventTime(), convertActionToIndirectTouchEventType(motionEvent.getActionMasked()), motionEvent, null);
     }
 
     public static final int convertActionToIndirectTouchEventType(int i) {
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
-                    return IndirectTouchEventType.Companion.m5365getMoveLxEHWp8();
+                    return IndirectTouchEventType.Companion.m5378getMoveLxEHWp8();
                 }
-                return IndirectTouchEventType.Companion.m5368getUnknownLxEHWp8();
+                return IndirectTouchEventType.Companion.m5381getUnknownLxEHWp8();
             }
-            return IndirectTouchEventType.Companion.m5367getReleaseLxEHWp8();
+            return IndirectTouchEventType.Companion.m5380getReleaseLxEHWp8();
         }
-        return IndirectTouchEventType.Companion.m5366getPressLxEHWp8();
+        return IndirectTouchEventType.Companion.m5379getPressLxEHWp8();
     }
 }

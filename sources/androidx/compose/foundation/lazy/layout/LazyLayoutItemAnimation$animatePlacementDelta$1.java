@@ -46,7 +46,7 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:29:0x00ad, code lost:
-        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m7370boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1$$ExternalSyntheticLambda0(r14, r3), r13, 4, null) != r0) goto L7;
+        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m7383boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1$$ExternalSyntheticLambda0(r14, r3), r13, 4, null) != r0) goto L7;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -84,12 +84,12 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
                 animatable3 = this.this$0.placementDeltaAnimation;
                 this.L$0 = finiteAnimationSpec;
                 this.label = 1;
-                if (animatable3.snapTo(IntOffset.m7370boximpl(this.$totalDelta), this) == coroutine_suspended) {
+                if (animatable3.snapTo(IntOffset.m7383boximpl(this.$totalDelta), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }
             animatable4 = this.this$0.placementDeltaAnimation;
-            final long m7382minusqkQi6aY = IntOffset.m7382minusqkQi6aY(((IntOffset) animatable4.getValue()).m7388unboximpl(), this.$totalDelta);
+            final long m7395minusqkQi6aY = IntOffset.m7395minusqkQi6aY(((IntOffset) animatable4.getValue()).m7401unboximpl(), this.$totalDelta);
             animatable5 = this.this$0.placementDeltaAnimation;
             final LazyLayoutItemAnimation lazyLayoutItemAnimation = this.this$0;
             this.L$0 = null;
@@ -109,7 +109,7 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
         function0 = this.this$0.onLayerPropertyChanged;
         function0.invoke();
         animatable4 = this.this$0.placementDeltaAnimation;
-        final long m7382minusqkQi6aY2 = IntOffset.m7382minusqkQi6aY(((IntOffset) animatable4.getValue()).m7388unboximpl(), this.$totalDelta);
+        final long m7395minusqkQi6aY2 = IntOffset.m7395minusqkQi6aY(((IntOffset) animatable4.getValue()).m7401unboximpl(), this.$totalDelta);
         animatable5 = this.this$0.placementDeltaAnimation;
         final LazyLayoutItemAnimation lazyLayoutItemAnimation2 = this.this$0;
         this.L$0 = null;
@@ -119,7 +119,7 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(LazyLayoutItemAnimation lazyLayoutItemAnimation, long j, Animatable animatable) {
         Function0 function0;
-        lazyLayoutItemAnimation.m1019setPlacementDeltagyyYBs(IntOffset.m7382minusqkQi6aY(((IntOffset) animatable.getValue()).m7388unboximpl(), j));
+        lazyLayoutItemAnimation.m1029setPlacementDeltagyyYBs(IntOffset.m7395minusqkQi6aY(((IntOffset) animatable.getValue()).m7401unboximpl(), j));
         function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
         function0.invoke();
         return Unit.INSTANCE;

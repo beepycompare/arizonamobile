@@ -12,26 +12,26 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Size {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m4353constructorimpl(0);
-    private static final long Unspecified = m4353constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
+    private static final long Zero = m4365constructorimpl(0);
+    private static final long Unspecified = m4365constructorimpl(InlineClassHelperKt.UnspecifiedPackedFloats);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Size m4350boximpl(long j) {
+    public static final /* synthetic */ Size m4362boximpl(long j) {
         return new Size(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m4353constructorimpl(long j) {
+    public static long m4365constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4357equalsimpl(long j, Object obj) {
-        return (obj instanceof Size) && j == ((Size) obj).m4367unboximpl();
+    public static boolean m4369equalsimpl(long j, Object obj) {
+        return (obj instanceof Size) && j == ((Size) obj).m4379unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4358equalsimpl0(long j, long j2) {
+    public static final boolean m4370equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -48,20 +48,20 @@ public final class Size {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4363hashCodeimpl(long j) {
+    public static int m4375hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m4357equalsimpl(this.packedValue, obj);
+        return m4369equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m4363hashCodeimpl(this.packedValue);
+        return m4375hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m4367unboximpl() {
+    public final /* synthetic */ long m4379unboximpl() {
         return this.packedValue;
     }
 
@@ -82,33 +82,33 @@ public final class Size {
         }
 
         /* renamed from: getUnspecified-NH-jbRc$annotations  reason: not valid java name */
-        public static /* synthetic */ void m4368getUnspecifiedNHjbRc$annotations() {
+        public static /* synthetic */ void m4380getUnspecifiedNHjbRc$annotations() {
         }
 
         /* renamed from: getZero-NH-jbRc$annotations  reason: not valid java name */
-        public static /* synthetic */ void m4369getZeroNHjbRc$annotations() {
+        public static /* synthetic */ void m4381getZeroNHjbRc$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getZero-NH-jbRc  reason: not valid java name */
-        public final long m4371getZeroNHjbRc() {
+        public final long m4383getZeroNHjbRc() {
             return Size.Zero;
         }
 
         /* renamed from: getUnspecified-NH-jbRc  reason: not valid java name */
-        public final long m4370getUnspecifiedNHjbRc() {
+        public final long m4382getUnspecifiedNHjbRc() {
             return Size.Unspecified;
         }
     }
 
     public String toString() {
-        return m4366toStringimpl(this.packedValue);
+        return m4378toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4366toStringimpl(long j) {
+    public static String m4378toStringimpl(long j) {
         if (j != InlineClassHelperKt.UnspecifiedPackedFloats) {
             return "Size(" + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j >> 32)), 1) + ", " + GeometryUtilsKt.toStringAsFixed(Float.intBitsToFloat((int) (j & 4294967295L)), 1) + ')';
         }
@@ -116,63 +116,63 @@ public final class Size {
     }
 
     /* renamed from: getWidth-impl  reason: not valid java name */
-    public static final float m4362getWidthimpl(long j) {
+    public static final float m4374getWidthimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getHeight-impl  reason: not valid java name */
-    public static final float m4359getHeightimpl(long j) {
+    public static final float m4371getHeightimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m4351component1impl(long j) {
+    public static final float m4363component1impl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m4352component2impl(long j) {
+    public static final float m4364component2impl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: copy-xjbvk4A  reason: not valid java name */
-    public static final long m4354copyxjbvk4A(long j, float f, float f2) {
-        return m4353constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m4366copyxjbvk4A(long j, float f, float f2) {
+        return m4365constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     /* renamed from: copy-xjbvk4A$default  reason: not valid java name */
-    public static /* synthetic */ long m4355copyxjbvk4A$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m4367copyxjbvk4A$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if ((i & 2) != 0) {
             f2 = Float.intBitsToFloat((int) (4294967295L & j));
         }
-        return m4354copyxjbvk4A(j, f, f2);
+        return m4366copyxjbvk4A(j, f, f2);
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m4364isEmptyimpl(long j) {
+    public static final boolean m4376isEmptyimpl(long j) {
         return (j == InlineClassHelperKt.UnspecifiedPackedFloats) | (Float.intBitsToFloat((int) (j >> 32)) <= 0.0f) | (Float.intBitsToFloat((int) (j & 4294967295L)) <= 0.0f);
     }
 
     /* renamed from: times-7Ah8Wj8  reason: not valid java name */
-    public static final long m4365times7Ah8Wj8(long j, float f) {
-        return m4353constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
+    public static final long m4377times7Ah8Wj8(long j, float f) {
+        return m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
     }
 
     /* renamed from: div-7Ah8Wj8  reason: not valid java name */
-    public static final long m4356div7Ah8Wj8(long j, float f) {
-        return m4353constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
+    public static final long m4368div7Ah8Wj8(long j, float f) {
+        return m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
     }
 
     /* renamed from: getMinDimension-impl  reason: not valid java name */
-    public static final float m4361getMinDimensionimpl(long j) {
+    public static final float m4373getMinDimensionimpl(long j) {
         return Math.min(Float.intBitsToFloat((int) ((j >> 32) & SieveCacheKt.NodeLinkMask)), Float.intBitsToFloat((int) (j & SieveCacheKt.NodeLinkMask)));
     }
 
     /* renamed from: getMaxDimension-impl  reason: not valid java name */
-    public static final float m4360getMaxDimensionimpl(long j) {
+    public static final float m4372getMaxDimensionimpl(long j) {
         return Math.max(Float.intBitsToFloat((int) ((j >> 32) & SieveCacheKt.NodeLinkMask)), Float.intBitsToFloat((int) (j & SieveCacheKt.NodeLinkMask)));
     }
 }

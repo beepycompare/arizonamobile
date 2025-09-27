@@ -84,7 +84,7 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter extends LegacyPl
             if (layoutCoordinates == null) {
                 return;
             }
-            layoutCoordinates.mo5970transformToScreen58bKbWc(fArr);
+            layoutCoordinates.mo5983transformToScreen58bKbWc(fArr);
         }
     }
 

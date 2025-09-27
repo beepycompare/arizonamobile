@@ -14,12 +14,13 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: YouTubePlayerBridge.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000f\b\u0007\u0018\u0000 $2\u00020\u0001:\u0002$%B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0002J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\nH\u0002J\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\nH\u0002J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\nH\u0002J\b\u0010\u0014\u001a\u00020\u0015H\u0007J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0010\u001a\u00020\nH\u0007J\u0010\u0010\u0018\u001a\u00020\u00172\u0006\u0010\t\u001a\u00020\nH\u0007J\u0010\u0010\u0019\u001a\u00020\u00172\u0006\u0010\r\u001a\u00020\nH\u0007J\b\u0010\u001a\u001a\u00020\u0015H\u0007J\u0010\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u0013\u001a\u00020\nH\u0007J\u0010\u0010\u001c\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\nH\u0007J\u0010\u0010\u001e\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\nH\u0007J\u0010\u0010\u001f\u001a\u00020\u00152\u0006\u0010 \u001a\u00020\nH\u0007J\u0010\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\nH\u0007J\b\u0010#\u001a\u00020\u0015H\u0007R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge;", "", "youTubePlayerOwner", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "(Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;)V", "mainThreadHandler", "Landroid/os/Handler;", "parsePlaybackQuality", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlaybackQuality;", "quality", "", "parsePlaybackRate", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlaybackRate;", "rate", "parsePlayerError", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlayerError;", "error", "parsePlayerState", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlayerState;", RemoteConfigConstants.ResponseFieldKey.STATE, "sendApiChange", "", "sendError", "", "sendPlaybackQualityChange", "sendPlaybackRateChange", "sendReady", "sendStateChange", "sendVideoCurrentTime", "seconds", "sendVideoDuration", "sendVideoId", "videoId", "sendVideoLoadedFraction", "fraction", "sendYouTubeIFrameAPIReady", "Companion", "YouTubePlayerBridgeCallbacks", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u0000 %2\u00020\u0001:\u0002%&B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\b\u001a\u00020\tH\u0007J\b\u0010\n\u001a\u00020\tH\u0007J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0007J\u0010\u0010\u000f\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\u000eH\u0007J\u0010\u0010\u0011\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\u000eH\u0007J\u0010\u0010\u0013\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u000eH\u0007J\b\u0010\u0015\u001a\u00020\tH\u0007J\u0010\u0010\u0016\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\u000eH\u0007J\u0010\u0010\u0018\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\u000eH\u0007J\u0010\u0010\u0019\u001a\u00020\f2\u0006\u0010\u001a\u001a\u00020\u000eH\u0007J\u0010\u0010\u001b\u001a\u00020\t2\u0006\u0010\u001c\u001a\u00020\u000eH\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\r\u001a\u00020\u000eH\u0002J\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010\u0010\u001a\u00020\u000eH\u0002J\u0010\u0010!\u001a\u00020\"2\u0006\u0010\u0012\u001a\u00020\u000eH\u0002J\u0010\u0010#\u001a\u00020$2\u0006\u0010\u0014\u001a\u00020\u000eH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge;", "", "youTubePlayerOwner", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "<init>", "(Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;)V", "mainThreadHandler", "Landroid/os/Handler;", "sendYouTubeIFrameAPIReady", "", "sendReady", "sendStateChange", "", RemoteConfigConstants.ResponseFieldKey.STATE, "", "sendPlaybackQualityChange", "quality", "sendPlaybackRateChange", "rate", "sendError", "error", "sendApiChange", "sendVideoCurrentTime", "seconds", "sendVideoDuration", "sendVideoLoadedFraction", "fraction", "sendVideoId", "videoId", "parsePlayerState", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlayerState;", "parsePlaybackQuality", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlaybackQuality;", "parsePlaybackRate", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlaybackRate;", "parsePlayerError", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/PlayerConstants$PlayerError;", "Companion", "YouTubePlayerBridgeCallbacks", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class YouTubePlayerBridge {
     public static final Companion Companion = new Companion(null);
     private static final String ERROR_HTML_5_PLAYER = "5";
     private static final String ERROR_INVALID_PARAMETER_IN_REQUEST = "2";
+    private static final String ERROR_REQUEST_MISSING_HTTP_REFERER = "153";
     private static final String ERROR_VIDEO_NOT_FOUND = "100";
     private static final String ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER1 = "101";
     private static final String ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER2 = "150";
@@ -48,7 +49,7 @@ public final class YouTubePlayerBridge {
     private final YouTubePlayerBridgeCallbacks youTubePlayerOwner;
 
     /* compiled from: YouTubePlayerBridge.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0007\u001a\u00020\bH&J\b\u0010\t\u001a\u00020\nH&R\u0018\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u000b"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "getListeners", "()Ljava/util/Collection;", "getInstance", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "onYouTubeIFrameAPIReady", "", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0007\u001a\u00020\bH&J\b\u0010\t\u001a\u00020\nH&R\u0018\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003X¦\u0004¢\u0006\u0006\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u000b"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$YouTubePlayerBridgeCallbacks;", "", "listeners", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "getListeners", "()Ljava/util/Collection;", "getInstance", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "onYouTubeIFrameAPIReady", "", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public interface YouTubePlayerBridgeCallbacks {
         YouTubePlayer getInstance();
@@ -65,7 +66,7 @@ public final class YouTubePlayerBridge {
     }
 
     /* compiled from: YouTubePlayerBridge.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u001a\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$Companion;", "", "()V", "ERROR_HTML_5_PLAYER", "", "ERROR_INVALID_PARAMETER_IN_REQUEST", "ERROR_VIDEO_NOT_FOUND", "ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER1", "ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER2", "QUALITY_DEFAULT", "QUALITY_HD1080", "QUALITY_HD720", "QUALITY_HIGH_RES", "QUALITY_LARGE", "QUALITY_MEDIUM", "QUALITY_SMALL", "RATE_0_25", "RATE_0_5", "RATE_0_75", "RATE_1", "RATE_1_25", "RATE_1_5", "RATE_1_75", "RATE_2", "STATE_BUFFERING", "STATE_CUED", "STATE_ENDED", "STATE_PAUSED", "STATE_PLAYING", "STATE_UNSTARTED", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u001b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerBridge$Companion;", "", "<init>", "()V", "STATE_UNSTARTED", "", "STATE_ENDED", "STATE_PLAYING", "STATE_PAUSED", "STATE_BUFFERING", "STATE_CUED", "QUALITY_SMALL", "QUALITY_MEDIUM", "QUALITY_LARGE", "QUALITY_HD720", "QUALITY_HD1080", "QUALITY_HIGH_RES", "QUALITY_DEFAULT", "RATE_0_25", "RATE_0_5", "RATE_0_75", "RATE_1", "RATE_1_25", "RATE_1_5", "RATE_1_75", "RATE_2", "ERROR_INVALID_PARAMETER_IN_REQUEST", "ERROR_HTML_5_PLAYER", "ERROR_VIDEO_NOT_FOUND", "ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER1", "ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER2", "ERROR_REQUEST_MISSING_HTTP_REFERER", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -77,9 +78,8 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendYouTubeIFrameAPIReady$lambda$0(YouTubePlayerBridge this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.youTubePlayerOwner.onYouTubeIFrameAPIReady();
+    public static final void sendYouTubeIFrameAPIReady$lambda$0(YouTubePlayerBridge youTubePlayerBridge) {
+        youTubePlayerBridge.youTubePlayerOwner.onYouTubeIFrameAPIReady();
     }
 
     @JavascriptInterface
@@ -103,10 +103,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendReady$lambda$2(YouTubePlayerBridge this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onReady(this$0.youTubePlayerOwner.getInstance());
+    public static final void sendReady$lambda$2(YouTubePlayerBridge youTubePlayerBridge) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onReady(youTubePlayerBridge.youTubePlayerOwner.getInstance());
         }
     }
 
@@ -123,11 +122,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendStateChange$lambda$4(YouTubePlayerBridge this$0, PlayerConstants.PlayerState playerState) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(playerState, "$playerState");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onStateChange(this$0.youTubePlayerOwner.getInstance(), playerState);
+    public static final void sendStateChange$lambda$4(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlayerState playerState) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onStateChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playerState);
         }
     }
 
@@ -144,11 +141,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendPlaybackQualityChange$lambda$6(YouTubePlayerBridge this$0, PlayerConstants.PlaybackQuality playbackQuality) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(playbackQuality, "$playbackQuality");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onPlaybackQualityChange(this$0.youTubePlayerOwner.getInstance(), playbackQuality);
+    public static final void sendPlaybackQualityChange$lambda$6(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlaybackQuality playbackQuality) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onPlaybackQualityChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playbackQuality);
         }
     }
 
@@ -165,11 +160,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendPlaybackRateChange$lambda$8(YouTubePlayerBridge this$0, PlayerConstants.PlaybackRate playbackRate) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(playbackRate, "$playbackRate");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onPlaybackRateChange(this$0.youTubePlayerOwner.getInstance(), playbackRate);
+    public static final void sendPlaybackRateChange$lambda$8(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlaybackRate playbackRate) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onPlaybackRateChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playbackRate);
         }
     }
 
@@ -186,11 +179,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendError$lambda$10(YouTubePlayerBridge this$0, PlayerConstants.PlayerError playerError) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(playerError, "$playerError");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onError(this$0.youTubePlayerOwner.getInstance(), playerError);
+    public static final void sendError$lambda$10(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlayerError playerError) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onError(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playerError);
         }
     }
 
@@ -205,10 +196,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendApiChange$lambda$12(YouTubePlayerBridge this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onApiChange(this$0.youTubePlayerOwner.getInstance());
+    public static final void sendApiChange$lambda$12(YouTubePlayerBridge youTubePlayerBridge) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onApiChange(youTubePlayerBridge.youTubePlayerOwner.getInstance());
         }
     }
 
@@ -229,10 +219,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendVideoCurrentTime$lambda$14(YouTubePlayerBridge this$0, float f) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onCurrentSecond(this$0.youTubePlayerOwner.getInstance(), f);
+    public static final void sendVideoCurrentTime$lambda$14(YouTubePlayerBridge youTubePlayerBridge, float f) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onCurrentSecond(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
         }
     }
 
@@ -256,10 +245,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendVideoDuration$lambda$16(YouTubePlayerBridge this$0, float f) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onVideoDuration(this$0.youTubePlayerOwner.getInstance(), f);
+    public static final void sendVideoDuration$lambda$16(YouTubePlayerBridge youTubePlayerBridge, float f) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onVideoDuration(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
         }
     }
 
@@ -280,10 +268,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendVideoLoadedFraction$lambda$18(YouTubePlayerBridge this$0, float f) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onVideoLoadedFraction(this$0.youTubePlayerOwner.getInstance(), f);
+    public static final void sendVideoLoadedFraction$lambda$18(YouTubePlayerBridge youTubePlayerBridge, float f) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onVideoLoadedFraction(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
         }
     }
 
@@ -299,11 +286,9 @@ public final class YouTubePlayerBridge {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendVideoId$lambda$20(YouTubePlayerBridge this$0, String videoId) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(videoId, "$videoId");
-        for (YouTubePlayerListener youTubePlayerListener : this$0.youTubePlayerOwner.getListeners()) {
-            youTubePlayerListener.onVideoId(this$0.youTubePlayerOwner.getInstance(), videoId);
+    public static final void sendVideoId$lambda$20(YouTubePlayerBridge youTubePlayerBridge, String str) {
+        for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
+            youTubePlayerListener.onVideoId(youTubePlayerBridge.youTubePlayerOwner.getInstance(), str);
         }
     }
 
@@ -348,7 +333,7 @@ public final class YouTubePlayerBridge {
             return PlayerConstants.PlayerError.VIDEO_NOT_FOUND;
         }
         if (!StringsKt.equals(str, ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER1, true) && !StringsKt.equals(str, ERROR_VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER2, true)) {
-            return PlayerConstants.PlayerError.UNKNOWN;
+            return StringsKt.equals(str, ERROR_REQUEST_MISSING_HTTP_REFERER, true) ? PlayerConstants.PlayerError.REQUEST_MISSING_HTTP_REFERER : PlayerConstants.PlayerError.UNKNOWN;
         }
         return PlayerConstants.PlayerError.VIDEO_NOT_PLAYABLE_IN_EMBEDDED_PLAYER;
     }

@@ -11,7 +11,7 @@ public final class Vi extends Y4 {
     @Override // io.appmetrica.analytics.impl.Y4
     public final boolean a(C0477o6 c0477o6, S4 s4) {
         Bundle bundle = c0477o6.m;
-        this.f752a.k.a(new U4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+        this.f753a.k.a(new U4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
         return false;
     }
 }

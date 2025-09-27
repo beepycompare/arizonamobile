@@ -49,9 +49,9 @@ public final class ExpressiveNavigationBarItemDefaults {
             colorSchemeKeyTokens5 = ExpressiveNavigationBarKt.InactiveLabelTextColor;
             long fromToken5 = ColorSchemeKt.fromToken(colorScheme, colorSchemeKeyTokens5);
             colorSchemeKeyTokens6 = ExpressiveNavigationBarKt.InactiveIconColor;
-            long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, colorSchemeKeyTokens6), 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
+            long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, colorSchemeKeyTokens6), 0.38f, 0.0f, 0.0f, 0.0f, 14, null);
             colorSchemeKeyTokens7 = ExpressiveNavigationBarKt.InactiveLabelTextColor;
-            NavigationItemColors navigationItemColors = new NavigationItemColors(fromToken, fromToken2, fromToken3, fromToken4, fromToken5, m4536copywmQWz5c$default, Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, colorSchemeKeyTokens7), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            NavigationItemColors navigationItemColors = new NavigationItemColors(fromToken, fromToken2, fromToken3, fromToken4, fromToken5, m4548copywmQWz5c$default, Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, colorSchemeKeyTokens7), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultExpressiveNavigationBarItemColorsCached$material3_release(navigationItemColors);
             return navigationItemColors;
         }

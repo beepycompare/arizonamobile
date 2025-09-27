@@ -50,7 +50,7 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         FlingBehavior flingBehavior;
-        float m559getMagnitudeTH1AsA0;
+        float m569getMagnitudeTH1AsA0;
         long j;
         Ref.LongRef longRef;
         long doFlingAnimation_QWom1Mo$toDecomposedVelocity;
@@ -65,18 +65,18 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
                 @Override // androidx.compose.foundation.gestures.ScrollScope
                 public float scrollBy(float f) {
                     long doFlingAnimation_QWom1Mo$toDecomposedOffset;
-                    boolean m591shouldCancelFlingk4lQ0M;
+                    boolean m601shouldCancelFlingk4lQ0M;
                     float doFlingAnimation_QWom1Mo$toMagnitudeFloat;
                     Function0 function0;
                     doFlingAnimation_QWom1Mo$toDecomposedOffset = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toDecomposedOffset(f, j2);
                     if (ComposeFoundationFlags.isFlingContinuationAtBoundsEnabled) {
                         function0 = ScrollingLogic2D.this.isScrollableNodeAttached;
-                        m591shouldCancelFlingk4lQ0M = !((Boolean) function0.invoke()).booleanValue();
+                        m601shouldCancelFlingk4lQ0M = !((Boolean) function0.invoke()).booleanValue();
                     } else {
-                        m591shouldCancelFlingk4lQ0M = ScrollingLogic2D.this.m591shouldCancelFlingk4lQ0M(doFlingAnimation_QWom1Mo$toDecomposedOffset);
+                        m601shouldCancelFlingk4lQ0M = ScrollingLogic2D.this.m601shouldCancelFlingk4lQ0M(doFlingAnimation_QWom1Mo$toDecomposedOffset);
                     }
-                    if (Offset.m4290equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m4309getZeroF1C5BW0()) || !m591shouldCancelFlingk4lQ0M) {
-                        doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo524scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m5718getSideEffectWNlRxjI()));
+                    if (Offset.m4302equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m4321getZeroF1C5BW0()) || !m601shouldCancelFlingk4lQ0M) {
+                        doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m5731getSideEffectWNlRxjI()));
                         return doFlingAnimation_QWom1Mo$toMagnitudeFloat;
                     }
                     throw new FlingCancellationException();
@@ -86,11 +86,11 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
             long j3 = this.$available;
             Ref.LongRef longRef2 = this.$result;
             flingBehavior = scrollingLogic2D2.flingBehavior;
-            m559getMagnitudeTH1AsA0 = Scrollable2DKt.m559getMagnitudeTH1AsA0(j3);
+            m569getMagnitudeTH1AsA0 = Scrollable2DKt.m569getMagnitudeTH1AsA0(j3);
             this.L$0 = longRef2;
             this.J$0 = j3;
             this.label = 1;
-            obj = flingBehavior.performFling(scrollScope, m559getMagnitudeTH1AsA0, this);
+            obj = flingBehavior.performFling(scrollScope, m569getMagnitudeTH1AsA0, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }

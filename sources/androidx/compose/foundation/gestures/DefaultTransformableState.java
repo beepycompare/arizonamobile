@@ -21,8 +21,8 @@ final class DefaultTransformableState implements TransformableState {
     private final TransformScope transformScope = new TransformScope() { // from class: androidx.compose.foundation.gestures.DefaultTransformableState$transformScope$1
         @Override // androidx.compose.foundation.gestures.TransformScope
         /* renamed from: transformBy-d-4ec7I  reason: not valid java name */
-        public void mo464transformByd4ec7I(float f, long j, float f2) {
-            DefaultTransformableState.this.getOnTransformation().invoke(Float.valueOf(f), Offset.m4282boximpl(j), Float.valueOf(f2));
+        public void mo474transformByd4ec7I(float f, long j, float f2) {
+            DefaultTransformableState.this.getOnTransformation().invoke(Float.valueOf(f), Offset.m4294boximpl(j), Float.valueOf(f2));
         }
     };
     private final MutatorMutex transformMutex = new MutatorMutex();

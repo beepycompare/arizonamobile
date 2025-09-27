@@ -5,16 +5,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class B1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ K1 f359a;
+    public final /* synthetic */ K1 f360a;
 
     public B1(K1 k1) {
-        this.f359a = k1;
+        this.f360a = k1;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        synchronized (this.f359a) {
-            K1 k1 = this.f359a;
+        synchronized (this.f360a) {
+            K1 k1 = this.f360a;
             if (k1.c) {
                 k1.b.onCreate();
             }

@@ -24,7 +24,7 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
     }
 
     public /* synthetic */ SizeElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f2, (i & 4) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f3, (i & 8) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f4, z, function1, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -45,10 +45,10 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(SizeNode sizeNode) {
-        sizeNode.m901setMinWidth0680j_4(this.minWidth);
-        sizeNode.m900setMinHeight0680j_4(this.minHeight);
-        sizeNode.m899setMaxWidth0680j_4(this.maxWidth);
-        sizeNode.m898setMaxHeight0680j_4(this.maxHeight);
+        sizeNode.m911setMinWidth0680j_4(this.minWidth);
+        sizeNode.m910setMinHeight0680j_4(this.minHeight);
+        sizeNode.m909setMaxWidth0680j_4(this.maxWidth);
+        sizeNode.m908setMaxHeight0680j_4(this.maxHeight);
         sizeNode.setEnforceIncoming(this.enforceIncoming);
     }
 
@@ -64,13 +64,13 @@ public final class SizeElement extends ModifierNodeElement<SizeNode> {
         }
         if (obj instanceof SizeElement) {
             SizeElement sizeElement = (SizeElement) obj;
-            return Dp.m7256equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m7256equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m7256equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m7256equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
+            return Dp.m7269equalsimpl0(this.minWidth, sizeElement.minWidth) && Dp.m7269equalsimpl0(this.minHeight, sizeElement.minHeight) && Dp.m7269equalsimpl0(this.maxWidth, sizeElement.maxWidth) && Dp.m7269equalsimpl0(this.maxHeight, sizeElement.maxHeight) && this.enforceIncoming == sizeElement.enforceIncoming;
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7257hashCodeimpl(this.minWidth) * 31) + Dp.m7257hashCodeimpl(this.minHeight)) * 31) + Dp.m7257hashCodeimpl(this.maxWidth)) * 31) + Dp.m7257hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
+        return (((((((Dp.m7270hashCodeimpl(this.minWidth) * 31) + Dp.m7270hashCodeimpl(this.minHeight)) * 31) + Dp.m7270hashCodeimpl(this.maxWidth)) * 31) + Dp.m7270hashCodeimpl(this.maxHeight)) * 31) + Boolean.hashCode(this.enforceIncoming);
     }
 }

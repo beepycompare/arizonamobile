@@ -8,11 +8,11 @@ import kotlin.ULong;
 /* loaded from: classes.dex */
 public final class AndroidColor_androidKt {
     /* renamed from: toColorLong-8_81llA  reason: not valid java name */
-    public static final long m4401toColorLong8_81llA(long j) {
+    public static final long m4413toColorLong8_81llA(long j) {
         int compare;
         long j2 = 63 & j;
-        compare = Long.compare(ULong.m9270constructorimpl(j2) ^ Long.MIN_VALUE, 16 ^ Long.MIN_VALUE);
-        return compare < 0 ? j : ULong.m9270constructorimpl(ULong.m9270constructorimpl(j & ULong.m9270constructorimpl(-64L)) | ULong.m9270constructorimpl(ULong.m9270constructorimpl(j2) - 1));
+        compare = Long.compare(ULong.m9285constructorimpl(j2) ^ Long.MIN_VALUE, 16 ^ Long.MIN_VALUE);
+        return compare < 0 ? j : ULong.m9285constructorimpl(ULong.m9285constructorimpl(j & ULong.m9285constructorimpl(-64L)) | ULong.m9285constructorimpl(ULong.m9285constructorimpl(j2) - 1));
     }
 
     public static final long fromColorLong(Color.Companion companion, long j) {
@@ -20,6 +20,6 @@ public final class AndroidColor_androidKt {
         if (j2 >= 16) {
             j = (j & (-64)) | (j2 + 1);
         }
-        return Color.m4533constructorimpl(ULong.m9270constructorimpl(j));
+        return Color.m4545constructorimpl(ULong.m9285constructorimpl(j));
     }
 }

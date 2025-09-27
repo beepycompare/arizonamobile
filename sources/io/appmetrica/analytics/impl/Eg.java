@@ -7,11 +7,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class Eg implements InterfaceC0482ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f428a;
+    public final ICommonExecutor f429a;
     public final InstallReferrerClient b;
 
     public Eg(Context context, ICommonExecutor iCommonExecutor) {
-        this.f428a = iCommonExecutor;
+        this.f429a = iCommonExecutor;
         this.b = InstallReferrerClient.newBuilder(context).build();
     }
 
@@ -25,7 +25,7 @@ public final class Eg implements InterfaceC0482ob {
     }
 
     public final void a(final Og og, final Throwable th) {
-        this.f428a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Eg$$ExternalSyntheticLambda0
+        this.f429a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Eg$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 Eg.b(Og.this, th);

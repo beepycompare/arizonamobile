@@ -6,12 +6,12 @@ import android.content.Context;
 public final class C0566rk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1069a;
+    public final Context f1070a;
     public final C0471o0 b;
     public InterfaceC0336il c;
 
     public C0566rk(Context context, C0471o0 c0471o0) {
-        this.f1069a = context;
+        this.f1070a = context;
         this.b = c0471o0;
     }
 }

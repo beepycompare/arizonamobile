@@ -56,18 +56,18 @@ public final class TransformGestureDetectorKt {
         for (int i4 = 0; i4 < size2; i4++) {
             PointerInputChange pointerInputChange2 = changes2.get(i4);
             if (pointerInputChange2.getPressed() && pointerInputChange2.getPreviousPressed()) {
-                long m5826getPositionF1C5BW0 = pointerInputChange2.m5826getPositionF1C5BW0();
-                long m4297minusMKHz9U = Offset.m4297minusMKHz9U(pointerInputChange2.m5827getPreviousPositionF1C5BW0(), calculateCentroid2);
-                long m4297minusMKHz9U2 = Offset.m4297minusMKHz9U(m5826getPositionF1C5BW0, calculateCentroid);
-                float m603anglek4lQ0M = m603anglek4lQ0M(m4297minusMKHz9U2) - m603anglek4lQ0M(m4297minusMKHz9U);
-                float m4291getDistanceimpl = Offset.m4291getDistanceimpl(Offset.m4298plusMKHz9U(m4297minusMKHz9U2, m4297minusMKHz9U)) / 2.0f;
-                if (m603anglek4lQ0M > 180.0f) {
-                    m603anglek4lQ0M -= 360.0f;
-                } else if (m603anglek4lQ0M < -180.0f) {
-                    m603anglek4lQ0M += 360.0f;
+                long m5839getPositionF1C5BW0 = pointerInputChange2.m5839getPositionF1C5BW0();
+                long m4309minusMKHz9U = Offset.m4309minusMKHz9U(pointerInputChange2.m5840getPreviousPositionF1C5BW0(), calculateCentroid2);
+                long m4309minusMKHz9U2 = Offset.m4309minusMKHz9U(m5839getPositionF1C5BW0, calculateCentroid);
+                float m613anglek4lQ0M = m613anglek4lQ0M(m4309minusMKHz9U2) - m613anglek4lQ0M(m4309minusMKHz9U);
+                float m4303getDistanceimpl = Offset.m4303getDistanceimpl(Offset.m4310plusMKHz9U(m4309minusMKHz9U2, m4309minusMKHz9U)) / 2.0f;
+                if (m613anglek4lQ0M > 180.0f) {
+                    m613anglek4lQ0M -= 360.0f;
+                } else if (m613anglek4lQ0M < -180.0f) {
+                    m613anglek4lQ0M += 360.0f;
                 }
-                f2 += m603anglek4lQ0M * m4291getDistanceimpl;
-                f += m4291getDistanceimpl;
+                f2 += m613anglek4lQ0M * m4303getDistanceimpl;
+                f += m4303getDistanceimpl;
             }
         }
         if (f == 0.0f) {
@@ -87,10 +87,10 @@ public final class TransformGestureDetectorKt {
 
     public static final long calculatePan(PointerEvent pointerEvent) {
         long calculateCentroid = calculateCentroid(pointerEvent, true);
-        if (Offset.m4290equalsimpl0(calculateCentroid, Offset.Companion.m4308getUnspecifiedF1C5BW0())) {
-            return Offset.Companion.m4309getZeroF1C5BW0();
+        if (Offset.m4302equalsimpl0(calculateCentroid, Offset.Companion.m4320getUnspecifiedF1C5BW0())) {
+            return Offset.Companion.m4321getZeroF1C5BW0();
         }
-        return Offset.m4297minusMKHz9U(calculateCentroid, calculateCentroid(pointerEvent, false));
+        return Offset.m4309minusMKHz9U(calculateCentroid, calculateCentroid(pointerEvent, false));
     }
 
     public static /* synthetic */ float calculateCentroidSize$default(PointerEvent pointerEvent, boolean z, int i, Object obj) {
@@ -103,7 +103,7 @@ public final class TransformGestureDetectorKt {
     public static final float calculateCentroidSize(PointerEvent pointerEvent, boolean z) {
         long calculateCentroid = calculateCentroid(pointerEvent, z);
         float f = 0.0f;
-        if (Offset.m4290equalsimpl0(calculateCentroid, Offset.Companion.m4308getUnspecifiedF1C5BW0())) {
+        if (Offset.m4302equalsimpl0(calculateCentroid, Offset.Companion.m4320getUnspecifiedF1C5BW0())) {
             return 0.0f;
         }
         List<PointerInputChange> changes = pointerEvent.getChanges();
@@ -112,7 +112,7 @@ public final class TransformGestureDetectorKt {
         for (int i2 = 0; i2 < size; i2++) {
             PointerInputChange pointerInputChange = changes.get(i2);
             if (pointerInputChange.getPressed() && pointerInputChange.getPreviousPressed()) {
-                f += Offset.m4291getDistanceimpl(Offset.m4297minusMKHz9U(z ? pointerInputChange.m5826getPositionF1C5BW0() : pointerInputChange.m5827getPreviousPositionF1C5BW0(), calculateCentroid));
+                f += Offset.m4303getDistanceimpl(Offset.m4309minusMKHz9U(z ? pointerInputChange.m5839getPositionF1C5BW0() : pointerInputChange.m5840getPreviousPositionF1C5BW0(), calculateCentroid));
                 i++;
             }
         }
@@ -127,25 +127,25 @@ public final class TransformGestureDetectorKt {
     }
 
     public static final long calculateCentroid(PointerEvent pointerEvent, boolean z) {
-        long m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+        long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
             PointerInputChange pointerInputChange = changes.get(i2);
             if (pointerInputChange.getPressed() && pointerInputChange.getPreviousPressed()) {
-                m4309getZeroF1C5BW0 = Offset.m4298plusMKHz9U(m4309getZeroF1C5BW0, z ? pointerInputChange.m5826getPositionF1C5BW0() : pointerInputChange.m5827getPreviousPositionF1C5BW0());
+                m4321getZeroF1C5BW0 = Offset.m4310plusMKHz9U(m4321getZeroF1C5BW0, z ? pointerInputChange.m5839getPositionF1C5BW0() : pointerInputChange.m5840getPreviousPositionF1C5BW0());
                 i++;
             }
         }
         if (i == 0) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
-        return Offset.m4288divtuRUvjQ(m4309getZeroF1C5BW0, i);
+        return Offset.m4300divtuRUvjQ(m4321getZeroF1C5BW0, i);
     }
 
     /* renamed from: angle-k-4lQ0M  reason: not valid java name */
-    private static final float m603anglek4lQ0M(long j) {
+    private static final float m613anglek4lQ0M(long j) {
         int i = (int) (j >> 32);
         if (Float.intBitsToFloat(i) == 0.0f && Float.intBitsToFloat((int) (j & 4294967295L)) == 0.0f) {
             return 0.0f;

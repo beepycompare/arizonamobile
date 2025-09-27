@@ -7,7 +7,7 @@ import java.util.List;
 public final class K3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ra f530a;
+    public final Ra f531a;
 
     public K3() {
         this(new Ra(20, 100));
@@ -16,11 +16,11 @@ public final class K3 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Zi fromModel(List<String> list) {
-        Sn a2 = this.f530a.a((List<Object>) list);
+        Sn a2 = this.f531a.a((List<Object>) list);
         E8 e8 = new E8();
-        e8.f424a = StringUtils.getUTF8Bytes((List) a2.f675a);
+        e8.f425a = StringUtils.getUTF8Bytes((List) a2.f676a);
         A3 a3 = a2.b;
-        int i = ((L4) a3).f1181a;
+        int i = ((L4) a3).f1182a;
         return new Zi(e8, a3);
     }
 
@@ -31,7 +31,7 @@ public final class K3 implements Converter {
     }
 
     public K3(Ra ra) {
-        this.f530a = ra;
+        this.f531a = ra;
     }
 
     public final List<String> a(Zi zi) {

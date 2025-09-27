@@ -55,7 +55,7 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
     @Override // androidx.compose.animation.BoundsProvider
     public Rect getLastBoundsInSharedTransitionScope() {
         if (isAttached() && this.isPlaced) {
-            return RectKt.m4333Recttz77jQw(LayoutCoordinates.m5961localPositionOfS_NoaFU$default(getRootCoords(), getApproachCoordinates(), 0L, false, 6, null), IntSizeKt.m7434toSizeozmzZPI(getApproachCoordinates().mo5962getSizeYbymL2g()));
+            return RectKt.m4345Recttz77jQw(LayoutCoordinates.m5974localPositionOfS_NoaFU$default(getRootCoords(), getApproachCoordinates(), 0L, false, 6, null), IntSizeKt.m7447toSizeozmzZPI(getApproachCoordinates().mo5975getSizeYbymL2g()));
         }
         return null;
     }
@@ -147,9 +147,9 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode, androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$measure$1
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -174,17 +174,17 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void approachPlaceMatchBeyondTransition(Placeable.PlacementScope placementScope, Placeable placeable) {
-        long m7390getZeronOccac;
+        long m7403getZeronOccac;
         if (!getBoundsAnimation().getTarget()) {
             Rect currentBoundsWhenMatched = getSharedElement().getCurrentBoundsWhenMatched();
             if (currentBoundsWhenMatched != null) {
                 LayoutCoordinates coordinates = placementScope.getCoordinates();
                 if (coordinates != null) {
-                    m7390getZeronOccac = IntOffsetKt.m7396roundk4lQ0M(Offset.m4297minusMKHz9U(currentBoundsWhenMatched.m4328getTopLeftF1C5BW0(), getRootCoords().mo5963localPositionOfR5De75A(coordinates, Offset.Companion.m4309getZeroF1C5BW0())));
+                    m7403getZeronOccac = IntOffsetKt.m7409roundk4lQ0M(Offset.m4309minusMKHz9U(currentBoundsWhenMatched.m4340getTopLeftF1C5BW0(), getRootCoords().mo5976localPositionOfR5De75A(coordinates, Offset.Companion.m4321getZeroF1C5BW0())));
                 } else {
-                    m7390getZeronOccac = IntOffset.Companion.m7390getZeronOccac();
+                    m7403getZeronOccac = IntOffset.Companion.m7403getZeronOccac();
                 }
-                Placeable.PlacementScope.place$default(placementScope, placeable, IntOffset.m7379getXimpl(m7390getZeronOccac), IntOffset.m7380getYimpl(m7390getZeronOccac), 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, placeable, IntOffset.m7392getXimpl(m7403getZeronOccac), IntOffset.m7393getYimpl(m7403getZeronOccac), 0.0f, 4, null);
                 return;
             }
             Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
@@ -196,19 +196,19 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
     /* JADX INFO: Access modifiers changed from: private */
     public final void approachPlaceMatchInTransition(Placeable.PlacementScope placementScope, Placeable placeable) {
         Offset offset;
-        long m4328getTopLeftF1C5BW0;
+        long m4340getTopLeftF1C5BW0;
         long j;
-        Rect m4333Recttz77jQw;
+        Rect m4345Recttz77jQw;
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         if (coordinates == null) {
             Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
             return;
         }
-        long mo5963localPositionOfR5De75A = getRootCoords().mo5963localPositionOfR5De75A(coordinates, Offset.Companion.m4309getZeroF1C5BW0());
+        long mo5976localPositionOfR5De75A = getRootCoords().mo5976localPositionOfR5De75A(coordinates, Offset.Companion.m4321getZeroF1C5BW0());
         if (getSharedElement().getTargetData$animation() != null) {
             Rect currentBoundsWhenMatched = getSharedElement().getCurrentBoundsWhenMatched();
             if (currentBoundsWhenMatched == null) {
-                currentBoundsWhenMatched = RectKt.m4333Recttz77jQw(mo5963localPositionOfR5De75A, Size.m4353constructorimpl((Float.floatToRawIntBits(placeable.getWidth()) << 32) | (Float.floatToRawIntBits(placeable.getHeight()) & 4294967295L)));
+                currentBoundsWhenMatched = RectKt.m4345Recttz77jQw(mo5976localPositionOfR5De75A, Size.m4365constructorimpl((Float.floatToRawIntBits(placeable.getWidth()) << 32) | (Float.floatToRawIntBits(placeable.getHeight()) & 4294967295L)));
             }
             BoundsAnimation boundsAnimation = getBoundsAnimation();
             TargetData targetData$animation = getSharedElement().getTargetData$animation();
@@ -219,30 +219,30 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
         if (value != null) {
             TargetData targetData$animation2 = getSharedElement().getTargetData$animation();
             Intrinsics.checkNotNull(targetData$animation2);
-            offset = Offset.m4282boximpl(SharedElementKt.calculateOffsetFromDirectManipulation(targetData$animation2, value));
+            offset = Offset.m4294boximpl(SharedElementKt.calculateOffsetFromDirectManipulation(targetData$animation2, value));
         } else {
             offset = null;
         }
         if (getBoundsAnimation().getTarget()) {
-            j = offset != null ? offset.m4303unboximpl() : mo5963localPositionOfR5De75A;
+            j = offset != null ? offset.m4315unboximpl() : mo5976localPositionOfR5De75A;
             if (offset == null) {
-                m4333Recttz77jQw = RectKt.m4333Recttz77jQw(mo5963localPositionOfR5De75A, IntSizeKt.m7434toSizeozmzZPI(coordinates.mo5962getSizeYbymL2g()));
+                m4345Recttz77jQw = RectKt.m4345Recttz77jQw(mo5976localPositionOfR5De75A, IntSizeKt.m7447toSizeozmzZPI(coordinates.mo5975getSizeYbymL2g()));
             } else {
-                m4333Recttz77jQw = RectKt.m4333Recttz77jQw(offset.m4303unboximpl(), value.m4326getSizeNHjbRc());
+                m4345Recttz77jQw = RectKt.m4345Recttz77jQw(offset.m4315unboximpl(), value.m4338getSizeNHjbRc());
             }
-            getSharedElement().setCurrentBoundsWhenMatched(m4333Recttz77jQw);
+            getSharedElement().setCurrentBoundsWhenMatched(m4345Recttz77jQw);
         } else {
             if (offset != null) {
-                m4328getTopLeftF1C5BW0 = offset.m4303unboximpl();
+                m4340getTopLeftF1C5BW0 = offset.m4315unboximpl();
             } else {
                 Rect currentBoundsWhenMatched2 = getSharedElement().getCurrentBoundsWhenMatched();
                 Intrinsics.checkNotNull(currentBoundsWhenMatched2);
-                m4328getTopLeftF1C5BW0 = currentBoundsWhenMatched2.m4328getTopLeftF1C5BW0();
+                m4340getTopLeftF1C5BW0 = currentBoundsWhenMatched2.m4340getTopLeftF1C5BW0();
             }
-            j = m4328getTopLeftF1C5BW0;
+            j = m4340getTopLeftF1C5BW0;
         }
-        long m4297minusMKHz9U = Offset.m4297minusMKHz9U(j, mo5963localPositionOfR5De75A);
-        Placeable.PlacementScope.place$default(placementScope, placeable, Math.round(Float.intBitsToFloat((int) (m4297minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m4297minusMKHz9U & 4294967295L))), 0.0f, 4, null);
+        long m4309minusMKHz9U = Offset.m4309minusMKHz9U(j, mo5976localPositionOfR5De75A);
+        Placeable.PlacementScope.place$default(placementScope, placeable, Math.round(Float.intBitsToFloat((int) (m4309minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m4309minusMKHz9U & 4294967295L))), 0.0f, 4, null);
     }
 
     private final MeasureResult approachPlace(MeasureScope measureScope, final Placeable placeable) {
@@ -286,8 +286,8 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
                 }
             }, 4, null);
         } else {
-            long mo114calculateSizeJyjRU_E = this.state.getPlaceHolderSize().mo114calculateSizeJyjRU_E(requireLookaheadLayoutCoordinates().mo5962getSizeYbymL2g(), IntSize.m7417constructorimpl((placeable.getWidth() << 32) | (placeable.getHeight() & 4294967295L)));
-            return MeasureScope.layout$default(measureScope, (int) (mo114calculateSizeJyjRU_E >> 32), (int) (mo114calculateSizeJyjRU_E & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$approachPlace$3
+            long mo124calculateSizeJyjRU_E = this.state.getPlaceHolderSize().mo124calculateSizeJyjRU_E(requireLookaheadLayoutCoordinates().mo5975getSizeYbymL2g(), IntSize.m7430constructorimpl((placeable.getWidth() << 32) | (placeable.getHeight() & 4294967295L)));
+            return MeasureScope.layout$default(measureScope, (int) (mo124calculateSizeJyjRU_E >> 32), (int) (mo124calculateSizeJyjRU_E & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$approachPlace$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -310,29 +310,29 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: isMeasurementApproachInProgress-ozmzZPI */
-    public boolean mo76isMeasurementApproachInProgressozmzZPI(long j) {
+    public boolean mo86isMeasurementApproachInProgressozmzZPI(long j) {
         return getSharedElement().getFoundMatch() && this.state.getSharedElement().getScope().isTransitionActive();
     }
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: approachMeasure-3p2s80s */
-    public MeasureResult mo75approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+    public MeasureResult mo85approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
         if (getSharedElement().getFoundMatch()) {
             Rect value = getBoundsAnimation().getValue();
             if (value == null) {
                 value = getSharedElement().tryInitializingCurrentBounds();
             }
             if (value != null) {
-                long m7430roundToIntSizeuvyYCjk = IntSizeKt.m7430roundToIntSizeuvyYCjk(value.m4326getSizeNHjbRc());
-                int i = (int) (m7430roundToIntSizeuvyYCjk >> 32);
-                int i2 = (int) (m7430roundToIntSizeuvyYCjk & 4294967295L);
+                long m7443roundToIntSizeuvyYCjk = IntSizeKt.m7443roundToIntSizeuvyYCjk(value.m4338getSizeNHjbRc());
+                int i = (int) (m7443roundToIntSizeuvyYCjk >> 32);
+                int i2 = (int) (m7443roundToIntSizeuvyYCjk & 4294967295L);
                 if (i == Integer.MAX_VALUE || i2 == Integer.MAX_VALUE) {
                     throw new IllegalArgumentException(("Error: Infinite width/height is invalid. animated bounds: " + getBoundsAnimation().getValue() + ", current bounds: " + getSharedElement().getCurrentBoundsWhenMatched()).toString());
                 }
-                j = Constraints.Companion.m7214fixedJhjzzOo(RangesKt.coerceAtLeast(i, 0), RangesKt.coerceAtLeast(i2, 0));
+                j = Constraints.Companion.m7227fixedJhjzzOo(RangesKt.coerceAtLeast(i, 0), RangesKt.coerceAtLeast(i2, 0));
             }
         }
-        return approachPlace(approachMeasureScope, measurable.mo5954measureBRTryo0(j));
+        return approachPlace(approachMeasureScope, measurable.mo5967measureBRTryo0(j));
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -354,7 +354,7 @@ public final class SharedBoundsNode extends Modifier.Node implements ApproachLay
             throw new IllegalArgumentException(("Error: Layer is null when accessed for shared bounds/element : " + getSharedElement().getKey() + ",target: " + this.state.getBoundsAnimation().getTarget() + ", is attached: " + isAttached()).toString());
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5114recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$draw$1
+        DrawScope.m5126recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.SharedBoundsNode$draw$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

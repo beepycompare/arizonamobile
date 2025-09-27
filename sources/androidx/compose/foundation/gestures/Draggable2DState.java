@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public interface Draggable2DState {
     /* renamed from: dispatchRawDelta-k-4lQ0M */
-    void mo459dispatchRawDeltak4lQ0M(long j);
+    void mo469dispatchRawDeltak4lQ0M(long j);
 
     Object drag(MutatePriority mutatePriority, Function2<? super Drag2DScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation);
 

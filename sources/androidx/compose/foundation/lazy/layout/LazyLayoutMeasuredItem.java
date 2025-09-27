@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface LazyLayoutMeasuredItem {
     /* renamed from: getConstraints-msEJaDk */
-    long mo960getConstraintsmsEJaDk();
+    long mo970getConstraintsmsEJaDk();
 
     int getIndex();
 
@@ -21,7 +21,7 @@ public interface LazyLayoutMeasuredItem {
     boolean getNonScrollableItem();
 
     /* renamed from: getOffset-Bjo55l4 */
-    long mo961getOffsetBjo55l4(int i);
+    long mo971getOffsetBjo55l4(int i);
 
     Object getParentData(int i);
 

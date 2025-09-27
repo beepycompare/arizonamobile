@@ -870,7 +870,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x008e, code lost:
         if (r3.equals(androidx.media3.common.MimeTypes.VIDEO_AV1) == false) goto L19;
      */
     /*
@@ -1088,7 +1088,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00a6  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a7  */
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1772,7 +1772,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x0848, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x084f, code lost:
         if (r0.equals("PGN528") == false) goto L46;
      */
     /*

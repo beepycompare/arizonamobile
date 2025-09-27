@@ -12,7 +12,6 @@ import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
 import androidx.compose.ui.input.pointer.PointerInputScope;
 import androidx.core.app.NotificationCompat;
-import com.arizona.game.BuildConfig;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -85,7 +84,7 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Slider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u008a@"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1", f = "Slider.kt", i = {}, l = {BuildConfig.VERSION_CODE}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1", f = "Slider.kt", i = {}, l = {1652}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -163,7 +162,7 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
             public final Object invokeSuspend(Object obj) {
                 AwaitPointerEventScope awaitPointerEventScope;
                 PointerInputChange pointerInputChange;
-                Object m2615awaitSlop8vUncbI;
+                Object m2625awaitSlop8vUncbI;
                 DragInteraction.Start start;
                 Ref.FloatRef floatRef;
                 final Ref.BooleanRef booleanRef;
@@ -217,19 +216,19 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
                     pair = (Pair) obj;
                     if (pair != null) {
                         RangeSliderState rangeSliderState = this.$state;
-                        float m3007pointerSlopE8SPZFQ = DragGestureDetectorCopyKt.m3007pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), pointerInputChange.m5829getTypeT8wyACA());
-                        if (Math.abs(rangeSliderState.getRawOffsetEnd$material3_release() - floatRef.element) < m3007pointerSlopE8SPZFQ && Math.abs(rangeSliderState.getRawOffsetStart$material3_release() - floatRef.element) < m3007pointerSlopE8SPZFQ) {
+                        float m3017pointerSlopE8SPZFQ = DragGestureDetectorCopyKt.m3017pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), pointerInputChange.m5842getTypeT8wyACA());
+                        if (Math.abs(rangeSliderState.getRawOffsetEnd$material3_release() - floatRef.element) < m3017pointerSlopE8SPZFQ && Math.abs(rangeSliderState.getRawOffsetStart$material3_release() - floatRef.element) < m3017pointerSlopE8SPZFQ) {
                             float floatValue = ((Number) pair.getSecond()).floatValue();
                             if (!rangeSliderState.isRtl$material3_release() ? floatValue < 0.0f : floatValue >= 0.0f) {
                                 z = true;
                             }
                             booleanRef.element = z;
-                            floatRef.element += Offset.m4293getXimpl(PointerEventKt.positionChange((PointerInputChange) pair.getFirst()));
+                            floatRef.element += Offset.m4305getXimpl(PointerEventKt.positionChange((PointerInputChange) pair.getFirst()));
                         }
                     }
                     this.$rangeSliderLogic.captureThumb(booleanRef.element, floatRef.element, start, this.$$this$coroutineScope);
                     try {
-                        long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
+                        long m5837getIdJ3iCeTQ = pointerInputChange.m5837getIdJ3iCeTQ();
                         final RangeSliderState rangeSliderState2 = this.$state;
                         this.L$0 = start;
                         this.L$1 = booleanRef;
@@ -237,7 +236,7 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
                         this.L$3 = null;
                         this.L$4 = null;
                         this.label = 3;
-                        obj = DragGestureDetectorKt.m488horizontalDragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1$finishInteraction$success$1
+                        obj = DragGestureDetectorKt.m498horizontalDragjO51t88(awaitPointerEventScope, m5837getIdJ3iCeTQ, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1$finishInteraction$success$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             {
@@ -252,13 +251,13 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(PointerInputChange pointerInputChange2) {
-                                float m4293getXimpl = Offset.m4293getXimpl(PointerEventKt.positionChange(pointerInputChange2));
+                                float m4305getXimpl = Offset.m4305getXimpl(PointerEventKt.positionChange(pointerInputChange2));
                                 RangeSliderState rangeSliderState3 = RangeSliderState.this;
                                 boolean z2 = booleanRef.element;
                                 if (RangeSliderState.this.isRtl$material3_release()) {
-                                    m4293getXimpl = -m4293getXimpl;
+                                    m4305getXimpl = -m4305getXimpl;
                                 }
-                                rangeSliderState3.onDrag$material3_release(z2, m4293getXimpl);
+                                rangeSliderState3.onDrag$material3_release(z2, m4305getXimpl);
                             }
                         }, this);
                     } catch (CancellationException unused2) {
@@ -286,7 +285,7 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
                 pointerInputChange = (PointerInputChange) obj;
                 DragInteraction.Start start3 = new DragInteraction.Start();
                 Ref.FloatRef floatRef2 = new Ref.FloatRef();
-                floatRef2.element = this.$state.isRtl$material3_release() ? this.$state.getTotalWidth$material3_release() - Offset.m4293getXimpl(pointerInputChange.m5826getPositionF1C5BW0()) : Offset.m4293getXimpl(pointerInputChange.m5826getPositionF1C5BW0());
+                floatRef2.element = this.$state.isRtl$material3_release() ? this.$state.getTotalWidth$material3_release() - Offset.m4305getXimpl(pointerInputChange.m5839getPositionF1C5BW0()) : Offset.m4305getXimpl(pointerInputChange.m5839getPositionF1C5BW0());
                 int compareOffsets = this.$rangeSliderLogic.compareOffsets(floatRef2.element);
                 Ref.BooleanRef booleanRef3 = new Ref.BooleanRef();
                 booleanRef3.element = compareOffsets == 0 ? this.$state.getRawOffsetStart$material3_release() > floatRef2.element : compareOffsets < 0;
@@ -296,17 +295,17 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
                 this.L$3 = floatRef2;
                 this.L$4 = booleanRef3;
                 this.label = 2;
-                m2615awaitSlop8vUncbI = SliderKt.m2615awaitSlop8vUncbI(awaitPointerEventScope, pointerInputChange.m5824getIdJ3iCeTQ(), pointerInputChange.m5829getTypeT8wyACA(), this);
-                if (m2615awaitSlop8vUncbI != coroutine_suspended) {
+                m2625awaitSlop8vUncbI = SliderKt.m2625awaitSlop8vUncbI(awaitPointerEventScope, pointerInputChange.m5837getIdJ3iCeTQ(), pointerInputChange.m5842getTypeT8wyACA(), this);
+                if (m2625awaitSlop8vUncbI != coroutine_suspended) {
                     start = start3;
-                    obj = m2615awaitSlop8vUncbI;
+                    obj = m2625awaitSlop8vUncbI;
                     floatRef = floatRef2;
                     booleanRef = booleanRef3;
                     pair = (Pair) obj;
                     if (pair != null) {
                     }
                     this.$rangeSliderLogic.captureThumb(booleanRef.element, floatRef.element, start, this.$$this$coroutineScope);
-                    long m5824getIdJ3iCeTQ2 = pointerInputChange.m5824getIdJ3iCeTQ();
+                    long m5837getIdJ3iCeTQ2 = pointerInputChange.m5837getIdJ3iCeTQ();
                     final RangeSliderState rangeSliderState22 = this.$state;
                     this.L$0 = start;
                     this.L$1 = booleanRef;
@@ -314,7 +313,7 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
                     this.L$3 = null;
                     this.L$4 = null;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m488horizontalDragjO51t88(awaitPointerEventScope, m5824getIdJ3iCeTQ2, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1$finishInteraction$success$1
+                    obj = DragGestureDetectorKt.m498horizontalDragjO51t88(awaitPointerEventScope, m5837getIdJ3iCeTQ2, new Function1<PointerInputChange, Unit>() { // from class: androidx.compose.material3.SliderKt$rangeSliderPressDragModifier$1$1$1$finishInteraction$success$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -329,13 +328,13 @@ public final class SliderKt$rangeSliderPressDragModifier$1 extends SuspendLambda
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(PointerInputChange pointerInputChange2) {
-                            float m4293getXimpl = Offset.m4293getXimpl(PointerEventKt.positionChange(pointerInputChange2));
+                            float m4305getXimpl = Offset.m4305getXimpl(PointerEventKt.positionChange(pointerInputChange2));
                             RangeSliderState rangeSliderState3 = RangeSliderState.this;
                             boolean z2 = booleanRef.element;
                             if (RangeSliderState.this.isRtl$material3_release()) {
-                                m4293getXimpl = -m4293getXimpl;
+                                m4305getXimpl = -m4305getXimpl;
                             }
-                            rangeSliderState3.onDrag$material3_release(z2, m4293getXimpl);
+                            rangeSliderState3.onDrag$material3_release(z2, m4305getXimpl);
                         }
                     }, this);
                     if (obj != coroutine_suspended) {

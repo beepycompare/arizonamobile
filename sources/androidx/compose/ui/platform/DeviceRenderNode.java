@@ -27,7 +27,7 @@ public interface DeviceRenderNode {
     int getAmbientShadowColor();
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    int mo6380getBlendMode0nO6VwU();
+    int mo6393getBlendMode0nO6VwU();
 
     int getBottom();
 
@@ -40,7 +40,7 @@ public interface DeviceRenderNode {
     ColorFilter getColorFilter();
 
     /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-    int mo6381getCompositingStrategyNrFUSI();
+    int mo6394getCompositingStrategyNrFUSI();
 
     float getElevation();
 
@@ -95,7 +95,7 @@ public interface DeviceRenderNode {
     void setAmbientShadowColor(int i);
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    void mo6382setBlendModes9anfk8(int i);
+    void mo6395setBlendModes9anfk8(int i);
 
     void setCameraDistance(float f);
 
@@ -106,7 +106,7 @@ public interface DeviceRenderNode {
     void setColorFilter(ColorFilter colorFilter);
 
     /* renamed from: setCompositingStrategy-aDBOjCE  reason: not valid java name */
-    void mo6383setCompositingStrategyaDBOjCE(int i);
+    void mo6396setCompositingStrategyaDBOjCE(int i);
 
     void setElevation(float f);
 

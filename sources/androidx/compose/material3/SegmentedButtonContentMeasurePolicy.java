@@ -45,7 +45,7 @@ public final class SegmentedButtonContentMeasurePolicy implements MultiContentMe
 
     @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo770measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
+    public MeasureResult mo780measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j) {
         Object obj;
         Object obj2;
         Object obj3;
@@ -58,7 +58,7 @@ public final class SegmentedButtonContentMeasurePolicy implements MultiContentMe
         ArrayList arrayList = new ArrayList(list2.size());
         int size = list2.size();
         for (int i3 = 0; i3 < size; i3++) {
-            arrayList.add(list2.get(i3).mo5954measureBRTryo0(j));
+            arrayList.add(list2.get(i3).mo5967measureBRTryo0(j));
         }
         final ArrayList arrayList2 = arrayList;
         if (arrayList2.isEmpty()) {
@@ -88,7 +88,7 @@ public final class SegmentedButtonContentMeasurePolicy implements MultiContentMe
         ArrayList arrayList3 = new ArrayList(list3.size());
         int size2 = list3.size();
         for (int i5 = 0; i5 < size2; i5++) {
-            arrayList3.add(list3.get(i5).mo5954measureBRTryo0(j));
+            arrayList3.add(list3.get(i5).mo5967measureBRTryo0(j));
         }
         final ArrayList arrayList4 = arrayList3;
         if (arrayList4.isEmpty()) {
@@ -138,13 +138,13 @@ public final class SegmentedButtonContentMeasurePolicy implements MultiContentMe
         }
         Placeable placeable3 = (Placeable) obj3;
         int height3 = placeable3 != null ? placeable3.getHeight() : 0;
-        int max = Math.max(measureScope.mo413roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2565getIconSizeD9Ej5fM()), width3);
+        int max = Math.max(measureScope.mo423roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2575getIconSizeD9Ej5fM()), width3);
         f = SegmentedButtonKt.IconSpacing;
-        int i7 = max + measureScope.mo413roundToPx0680j_4(f) + (valueOf != null ? valueOf.intValue() : 0);
+        int i7 = max + measureScope.mo423roundToPx0680j_4(f) + (valueOf != null ? valueOf.intValue() : 0);
         if (width3 == 0) {
-            int i8 = measureScope.mo413roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2565getIconSizeD9Ej5fM());
+            int i8 = measureScope.mo423roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2575getIconSizeD9Ej5fM());
             f2 = SegmentedButtonKt.IconSpacing;
-            i = (-(i8 + measureScope.mo413roundToPx0680j_4(f2))) / 2;
+            i = (-(i8 + measureScope.mo423roundToPx0680j_4(f2))) / 2;
         }
         if (this.initialOffset == null) {
             this.initialOffset = Integer.valueOf(i);
@@ -187,10 +187,10 @@ public final class SegmentedButtonContentMeasurePolicy implements MultiContentMe
                     Placeable placeable4 = list4.get(i12);
                     Placeable.PlacementScope.place$default(placementScope, placeable4, 0, (i11 - placeable4.getHeight()) / 2, 0.0f, 4, null);
                 }
-                int i13 = measureScope.mo413roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2565getIconSizeD9Ej5fM());
+                int i13 = measureScope.mo423roundToPx0680j_4(SegmentedButtonDefaults.INSTANCE.m2575getIconSizeD9Ej5fM());
                 MeasureScope measureScope2 = measureScope;
                 f3 = SegmentedButtonKt.IconSpacing;
-                int i14 = i13 + measureScope2.mo413roundToPx0680j_4(f3);
+                int i14 = i13 + measureScope2.mo423roundToPx0680j_4(f3);
                 Animatable<Integer, AnimationVector1D> animatable3 = this.getAnimatable();
                 int intValue = i14 + (animatable3 != null ? animatable3.getValue().intValue() : i10);
                 List<Placeable> list5 = arrayList4;

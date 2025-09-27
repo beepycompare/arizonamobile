@@ -17,8 +17,8 @@ final class HorizontalScrollableClipShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI  reason: not valid java name */
-    public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-        float mo413roundToPx0680j_4 = density.mo413roundToPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
-        return new Outline.Rectangle(new Rect(0.0f, -mo413roundToPx0680j_4, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)) + mo413roundToPx0680j_4));
+    public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+        float mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
+        return new Outline.Rectangle(new Rect(0.0f, -mo423roundToPx0680j_4, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)) + mo423roundToPx0680j_4));
     }
 }

@@ -11,7 +11,7 @@ import java.util.Iterator;
 public final class C0295h5 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f906a = "sessions";
+    public final String f907a = "sessions";
     public final int b = 200;
     public final String c = "id";
     public final String d = "start_time";
@@ -65,11 +65,11 @@ public final class C0295h5 extends DatabaseScript {
             sQLiteDatabase2 = sQLiteDatabase;
         }
         try {
-            cursor = sQLiteDatabase2.query(this.f906a, null, null, null, null, null, null, String.valueOf(this.b));
+            cursor = sQLiteDatabase2.query(this.f907a, null, null, null, null, null, null, String.valueOf(this.b));
             while (cursor.moveToNext()) {
                 try {
                     S7 a2 = a(cursor);
-                    if (a2 != null && (l = a2.f667a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f651a) != null && l2.longValue() > 0) {
+                    if (a2 != null && (l = a2.f668a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f652a) != null && l2.longValue() > 0) {
                         arrayList.add(this.i.fromModel(a2));
                     }
                 } catch (Throwable unused2) {
@@ -79,7 +79,7 @@ public final class C0295h5 extends DatabaseScript {
             cursor = null;
         }
         cursor.close();
-        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f906a);
+        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f907a);
         sQLiteDatabase2.execSQL("CREATE TABLE IF NOT EXISTS sessions (id INTEGER,type INTEGER,report_request_parameters TEXT,session_description BLOB )");
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {

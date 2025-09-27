@@ -64,12 +64,12 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
     public PersistentSet<E> build() {
         PersistentOrderedSet<E> persistentOrderedSet = this.builtSet;
         if (persistentOrderedSet != null) {
-            CommonFunctionsKt.m10591assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
-            CommonFunctionsKt.m10591assert(this.firstElement == persistentOrderedSet.getFirstElement$kotlinx_collections_immutable());
-            CommonFunctionsKt.m10591assert(this.lastElement == persistentOrderedSet.getLastElement$kotlinx_collections_immutable());
+            CommonFunctionsKt.m10606assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
+            CommonFunctionsKt.m10606assert(this.firstElement == persistentOrderedSet.getFirstElement$kotlinx_collections_immutable());
+            CommonFunctionsKt.m10606assert(this.lastElement == persistentOrderedSet.getLastElement$kotlinx_collections_immutable());
             return persistentOrderedSet;
         }
-        CommonFunctionsKt.m10591assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
+        CommonFunctionsKt.m10606assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
         PersistentOrderedSet<E> persistentOrderedSet2 = new PersistentOrderedSet<>(this.firstElement, this.lastElement, this.hashMapBuilder.build());
         this.builtSet = persistentOrderedSet2;
         return persistentOrderedSet2;

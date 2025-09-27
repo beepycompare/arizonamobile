@@ -25,7 +25,7 @@ public final class CompositeShaderBrush extends ShaderBrush {
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m4619getBlendMode0nO6VwU() {
+    public final int m4631getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
@@ -37,8 +37,8 @@ public final class CompositeShaderBrush extends ShaderBrush {
 
     @Override // androidx.compose.ui.graphics.ShaderBrush
     /* renamed from: createShader-uvyYCjk */
-    public Shader mo4506createShaderuvyYCjk(long j) {
-        return ShaderKt.m4864CompositeShader7EN7VTw(this.dstBrush.mo4506createShaderuvyYCjk(j), this.srcBrush.mo4506createShaderuvyYCjk(j), this.blendMode);
+    public Shader mo4518createShaderuvyYCjk(long j) {
+        return ShaderKt.m4876CompositeShader7EN7VTw(this.dstBrush.mo4518createShaderuvyYCjk(j), this.srcBrush.mo4518createShaderuvyYCjk(j), this.blendMode);
     }
 
     public boolean equals(Object obj) {
@@ -47,16 +47,16 @@ public final class CompositeShaderBrush extends ShaderBrush {
         }
         if (obj instanceof CompositeShaderBrush) {
             CompositeShaderBrush compositeShaderBrush = (CompositeShaderBrush) obj;
-            return Intrinsics.areEqual(this.dstBrush, compositeShaderBrush.dstBrush) && Intrinsics.areEqual(this.srcBrush, compositeShaderBrush.srcBrush) && BlendMode.m4447equalsimpl0(this.blendMode, compositeShaderBrush.blendMode);
+            return Intrinsics.areEqual(this.dstBrush, compositeShaderBrush.dstBrush) && Intrinsics.areEqual(this.srcBrush, compositeShaderBrush.srcBrush) && BlendMode.m4459equalsimpl0(this.blendMode, compositeShaderBrush.blendMode);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.dstBrush.hashCode() * 31) + this.srcBrush.hashCode()) * 31) + BlendMode.m4448hashCodeimpl(this.blendMode);
+        return (((this.dstBrush.hashCode() * 31) + this.srcBrush.hashCode()) * 31) + BlendMode.m4460hashCodeimpl(this.blendMode);
     }
 
     public String toString() {
-        return "CompositeShaderBrush(dstBrush=" + this.dstBrush + ", srcBrush=" + this.srcBrush + ", blendMode=" + ((Object) BlendMode.m4449toStringimpl(this.blendMode)) + ')';
+        return "CompositeShaderBrush(dstBrush=" + this.dstBrush + ", srcBrush=" + this.srcBrush + ", blendMode=" + ((Object) BlendMode.m4461toStringimpl(this.blendMode)) + ')';
     }
 }

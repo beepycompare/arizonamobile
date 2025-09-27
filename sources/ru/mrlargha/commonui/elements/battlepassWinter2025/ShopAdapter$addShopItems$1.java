@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: ShopAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.ShopAdapter$addShopItems$1", f = "ShopAdapter.kt", i = {0, 0, 0, 0, 0, 0, 0, 0}, l = {82}, m = "invokeSuspend", n = {"$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "it", "$i$f$map", "$i$f$mapTo", "$i$a$-map-ShopAdapter$addShopItems$1$resultList$1"}, s = {"L$0", "L$1", "L$2", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 1)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ShopAdapter$addShopItems$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<BattlePassShopData> $shopList;
     int I$0;

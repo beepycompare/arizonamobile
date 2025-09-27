@@ -7,11 +7,11 @@ public final class B implements Parcelable {
     public static final A CREATOR = new A();
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1292a;
+    public final boolean f1293a;
     public final D b;
 
     public B(boolean z, D d) {
-        this.f1292a = z;
+        this.f1293a = z;
         this.b = d;
     }
 
@@ -20,7 +20,7 @@ public final class B implements Parcelable {
     }
 
     public final boolean b() {
-        return this.f1292a;
+        return this.f1293a;
     }
 
     @Override // android.os.Parcelable
@@ -29,12 +29,12 @@ public final class B implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableRemoteScreenshotConfig(enabled=" + this.f1292a + ", config=" + this.b + ')';
+        return "ParcelableRemoteScreenshotConfig(enabled=" + this.f1293a + ", config=" + this.b + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByte(this.f1292a ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f1293a ? (byte) 1 : (byte) 0);
         parcel.writeParcelable(this.b, i);
     }
 

@@ -24,7 +24,7 @@ public final class RadialGradient extends ShaderBrush {
     }
 
     public /* synthetic */ RadialGradient(List list, List list2, long j, float f, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(list, (i2 & 2) != 0 ? null : list2, j, f, (i2 & 16) != 0 ? TileMode.Companion.m4927getClamp3opZhB0() : i, null);
+        this(list, (i2 & 2) != 0 ? null : list2, j, f, (i2 & 16) != 0 ? TileMode.Companion.m4939getClamp3opZhB0() : i, null);
     }
 
     private RadialGradient(List<Color> list, List<Float> list2, long j, float f, int i) {
@@ -37,37 +37,37 @@ public final class RadialGradient extends ShaderBrush {
 
     @Override // androidx.compose.ui.graphics.Brush
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo4484getIntrinsicSizeNHjbRc() {
+    public long mo4496getIntrinsicSizeNHjbRc() {
         if ((Float.floatToRawIntBits(this.radius) & Integer.MAX_VALUE) < 2139095040) {
             float f = this.radius;
             float f2 = 2;
-            return Size.m4353constructorimpl((Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(f * f2) & 4294967295L));
+            return Size.m4365constructorimpl((Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(f * f2) & 4294967295L));
         }
-        return Size.Companion.m4370getUnspecifiedNHjbRc();
+        return Size.Companion.m4382getUnspecifiedNHjbRc();
     }
 
     @Override // androidx.compose.ui.graphics.ShaderBrush
     /* renamed from: createShader-uvyYCjk */
-    public Shader mo4506createShaderuvyYCjk(long j) {
+    public Shader mo4518createShaderuvyYCjk(long j) {
         float intBitsToFloat;
         float intBitsToFloat2;
         long j2 = this.center;
         if ((9223372034707292159L & j2) == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            long m4372getCenteruvyYCjk = SizeKt.m4372getCenteruvyYCjk(j);
-            intBitsToFloat = Float.intBitsToFloat((int) (m4372getCenteruvyYCjk >> 32));
-            intBitsToFloat2 = Float.intBitsToFloat((int) (m4372getCenteruvyYCjk & 4294967295L));
+            long m4384getCenteruvyYCjk = SizeKt.m4384getCenteruvyYCjk(j);
+            intBitsToFloat = Float.intBitsToFloat((int) (m4384getCenteruvyYCjk >> 32));
+            intBitsToFloat2 = Float.intBitsToFloat((int) (m4384getCenteruvyYCjk & 4294967295L));
         } else {
             intBitsToFloat = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (j2 >> 32)) == Float.POSITIVE_INFINITY ? j >> 32 : this.center >> 32));
             intBitsToFloat2 = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (this.center & 4294967295L)) == Float.POSITIVE_INFINITY ? j & 4294967295L : this.center & 4294967295L));
         }
         List<Color> list = this.colors;
         List<Float> list2 = this.stops;
-        long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (4294967295L & Float.floatToRawIntBits(intBitsToFloat2)));
+        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (4294967295L & Float.floatToRawIntBits(intBitsToFloat2)));
         float f = this.radius;
         if (f == Float.POSITIVE_INFINITY) {
-            f = Size.m4361getMinDimensionimpl(j) / 2;
+            f = Size.m4373getMinDimensionimpl(j) / 2;
         }
-        return ShaderKt.m4869RadialGradientShader8uybcMk(m4285constructorimpl, f, list, list2, this.tileMode);
+        return ShaderKt.m4881RadialGradientShader8uybcMk(m4297constructorimpl, f, list, list2, this.tileMode);
     }
 
     public boolean equals(Object obj) {
@@ -76,7 +76,7 @@ public final class RadialGradient extends ShaderBrush {
         }
         if (obj instanceof RadialGradient) {
             RadialGradient radialGradient = (RadialGradient) obj;
-            return Intrinsics.areEqual(this.colors, radialGradient.colors) && Intrinsics.areEqual(this.stops, radialGradient.stops) && Offset.m4290equalsimpl0(this.center, radialGradient.center) && this.radius == radialGradient.radius && TileMode.m4923equalsimpl0(this.tileMode, radialGradient.tileMode);
+            return Intrinsics.areEqual(this.colors, radialGradient.colors) && Intrinsics.areEqual(this.stops, radialGradient.stops) && Offset.m4302equalsimpl0(this.center, radialGradient.center) && this.radius == radialGradient.radius && TileMode.m4935equalsimpl0(this.tileMode, radialGradient.tileMode);
         }
         return false;
     }
@@ -84,10 +84,10 @@ public final class RadialGradient extends ShaderBrush {
     public int hashCode() {
         int hashCode = this.colors.hashCode() * 31;
         List<Float> list = this.stops;
-        return ((((((hashCode + (list != null ? list.hashCode() : 0)) * 31) + Offset.m4295hashCodeimpl(this.center)) * 31) + Float.hashCode(this.radius)) * 31) + TileMode.m4924hashCodeimpl(this.tileMode);
+        return ((((((hashCode + (list != null ? list.hashCode() : 0)) * 31) + Offset.m4307hashCodeimpl(this.center)) * 31) + Float.hashCode(this.radius)) * 31) + TileMode.m4936hashCodeimpl(this.tileMode);
     }
 
     public String toString() {
-        return "RadialGradient(colors=" + this.colors + ", stops=" + this.stops + ", " + ((this.center & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? "center=" + ((Object) Offset.m4301toStringimpl(this.center)) + ", " : "") + ((Float.floatToRawIntBits(this.radius) & Integer.MAX_VALUE) < 2139095040 ? "radius=" + this.radius + ", " : "") + "tileMode=" + ((Object) TileMode.m4925toStringimpl(this.tileMode)) + ')';
+        return "RadialGradient(colors=" + this.colors + ", stops=" + this.stops + ", " + ((this.center & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? "center=" + ((Object) Offset.m4313toStringimpl(this.center)) + ", " : "") + ((Float.floatToRawIntBits(this.radius) & Integer.MAX_VALUE) < 2139095040 ? "radius=" + this.radius + ", " : "") + "tileMode=" + ((Object) TileMode.m4937toStringimpl(this.tileMode)) + ')';
     }
 }

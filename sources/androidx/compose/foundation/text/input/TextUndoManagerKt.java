@@ -20,14 +20,14 @@ public final class TextUndoManagerKt {
             return null;
         }
         if (textUndoOperation.getTextEditType() == TextEditType.Insert && textUndoOperation.getIndex() + textUndoOperation.getPostText().length() == textUndoOperation2.getIndex()) {
-            return new TextUndoOperation(textUndoOperation.getIndex(), "", textUndoOperation.getPostText() + textUndoOperation2.getPostText(), textUndoOperation.m1662getPreSelectiond9O1mEE(), textUndoOperation2.m1661getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
+            return new TextUndoOperation(textUndoOperation.getIndex(), "", textUndoOperation.getPostText() + textUndoOperation2.getPostText(), textUndoOperation.m1672getPreSelectiond9O1mEE(), textUndoOperation2.m1671getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
         }
         if (textUndoOperation.getTextEditType() == TextEditType.Delete && textUndoOperation.getDeletionType() == textUndoOperation2.getDeletionType() && (textUndoOperation.getDeletionType() == TextDeleteType.Start || textUndoOperation.getDeletionType() == TextDeleteType.End)) {
             if (textUndoOperation.getIndex() == textUndoOperation2.getIndex() + textUndoOperation2.getPreText().length()) {
-                return new TextUndoOperation(textUndoOperation2.getIndex(), textUndoOperation2.getPreText() + textUndoOperation.getPreText(), "", textUndoOperation.m1662getPreSelectiond9O1mEE(), textUndoOperation2.m1661getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
+                return new TextUndoOperation(textUndoOperation2.getIndex(), textUndoOperation2.getPreText() + textUndoOperation.getPreText(), "", textUndoOperation.m1672getPreSelectiond9O1mEE(), textUndoOperation2.m1671getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
             }
             if (textUndoOperation.getIndex() == textUndoOperation2.getIndex()) {
-                return new TextUndoOperation(textUndoOperation.getIndex(), textUndoOperation.getPreText() + textUndoOperation2.getPreText(), "", textUndoOperation.m1662getPreSelectiond9O1mEE(), textUndoOperation2.m1661getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
+                return new TextUndoOperation(textUndoOperation.getIndex(), textUndoOperation.getPreText() + textUndoOperation2.getPreText(), "", textUndoOperation.m1672getPreSelectiond9O1mEE(), textUndoOperation2.m1671getPostSelectiond9O1mEE(), textUndoOperation.getTimeInMillis(), false, 64, null);
             }
         }
         return null;
@@ -42,14 +42,14 @@ public final class TextUndoManagerKt {
 
     public static final void recordChanges(TextUndoManager textUndoManager, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, TextFieldBuffer.ChangeList changeList, boolean z) {
         if (changeList.getChangeCount() > 1) {
-            textUndoManager.record(new TextUndoOperation(0, textFieldCharSequence.toString(), textFieldCharSequence2.toString(), textFieldCharSequence.m1436getSelectiond9O1mEE(), textFieldCharSequence2.m1436getSelectiond9O1mEE(), 0L, false, 32, null));
+            textUndoManager.record(new TextUndoOperation(0, textFieldCharSequence.toString(), textFieldCharSequence2.toString(), textFieldCharSequence.m1446getSelectiond9O1mEE(), textFieldCharSequence2.m1446getSelectiond9O1mEE(), 0L, false, 32, null));
         } else if (changeList.getChangeCount() == 1) {
-            long mo1432getOriginalRangejx7JFs = changeList.mo1432getOriginalRangejx7JFs(0);
-            long mo1433getRangejx7JFs = changeList.mo1433getRangejx7JFs(0);
-            if (TextRange.m6707getCollapsedimpl(mo1432getOriginalRangejx7JFs) && TextRange.m6707getCollapsedimpl(mo1433getRangejx7JFs)) {
+            long mo1442getOriginalRangejx7JFs = changeList.mo1442getOriginalRangejx7JFs(0);
+            long mo1443getRangejx7JFs = changeList.mo1443getRangejx7JFs(0);
+            if (TextRange.m6720getCollapsedimpl(mo1442getOriginalRangejx7JFs) && TextRange.m6720getCollapsedimpl(mo1443getRangejx7JFs)) {
                 return;
             }
-            textUndoManager.record(new TextUndoOperation(TextRange.m6711getMinimpl(mo1432getOriginalRangejx7JFs), TextRangeKt.m6720substringFDrldGo(textFieldCharSequence, mo1432getOriginalRangejx7JFs), TextRangeKt.m6720substringFDrldGo(textFieldCharSequence2, mo1433getRangejx7JFs), textFieldCharSequence.m1436getSelectiond9O1mEE(), textFieldCharSequence2.m1436getSelectiond9O1mEE(), 0L, z, 32, null));
+            textUndoManager.record(new TextUndoOperation(TextRange.m6724getMinimpl(mo1442getOriginalRangejx7JFs), TextRangeKt.m6733substringFDrldGo(textFieldCharSequence, mo1442getOriginalRangejx7JFs), TextRangeKt.m6733substringFDrldGo(textFieldCharSequence2, mo1443getRangejx7JFs), textFieldCharSequence.m1446getSelectiond9O1mEE(), textFieldCharSequence2.m1446getSelectiond9O1mEE(), 0L, z, 32, null));
         }
     }
 

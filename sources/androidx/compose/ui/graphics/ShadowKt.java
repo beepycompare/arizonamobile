@@ -9,6 +9,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ShadowKt {
     public static final Shadow lerp(Shadow shadow, Shadow shadow2, float f) {
-        return new Shadow(ColorKt.m4588lerpjxsXWHM(shadow.m4877getColor0d7_KjU(), shadow2.m4877getColor0d7_KjU(), f), OffsetKt.m4316lerpWko1d7g(shadow.m4878getOffsetF1C5BW0(), shadow2.m4878getOffsetF1C5BW0(), f), MathHelpersKt.lerp(shadow.getBlurRadius(), shadow2.getBlurRadius(), f), null);
+        return new Shadow(ColorKt.m4600lerpjxsXWHM(shadow.m4889getColor0d7_KjU(), shadow2.m4889getColor0d7_KjU(), f), OffsetKt.m4328lerpWko1d7g(shadow.m4890getOffsetF1C5BW0(), shadow2.m4890getOffsetF1C5BW0(), f), MathHelpersKt.lerp(shadow.getBlurRadius(), shadow2.getBlurRadius(), f), null);
     }
 }

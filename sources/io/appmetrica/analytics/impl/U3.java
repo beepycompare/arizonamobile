@@ -12,7 +12,7 @@ public final class U3 extends MessageNano {
     public static volatile U3[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f692a;
+    public String f693a;
     public String b;
 
     public U3() {
@@ -31,7 +31,7 @@ public final class U3 extends MessageNano {
     }
 
     public final U3 a() {
-        this.f692a = "";
+        this.f693a = "";
         this.b = "";
         this.cachedSize = -1;
         return this;
@@ -40,16 +40,16 @@ public final class U3 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f692a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f692a);
+        if (!this.f693a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f693a);
         }
         return !this.b.equals("") ? CodedOutputByteBufferNano.computeStringSize(2, this.b) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f692a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f692a);
+        if (!this.f693a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f693a);
         }
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
@@ -65,7 +65,7 @@ public final class U3 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f692a = codedInputByteBufferNano.readString();
+                this.f693a = codedInputByteBufferNano.readString();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

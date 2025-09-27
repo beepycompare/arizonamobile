@@ -57,7 +57,7 @@ public interface GridCells {
 
         private Adaptive(float f) {
             this.minSize = f;
-            if (Dp.m7250compareTo0680j_4(f, Dp.m7251constructorimpl((float) 0)) > 0) {
+            if (Dp.m7263compareTo0680j_4(f, Dp.m7264constructorimpl((float) 0)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided min size should be larger than zero.");
@@ -66,16 +66,16 @@ public interface GridCells {
         @Override // androidx.compose.foundation.lazy.grid.GridCells
         public List<Integer> calculateCrossAxisCellSizes(Density density, int i, int i2) {
             List<Integer> calculateCellsCrossAxisSizeImpl;
-            calculateCellsCrossAxisSizeImpl = LazyGridDslKt.calculateCellsCrossAxisSizeImpl(i, Math.max((i + i2) / (density.mo413roundToPx0680j_4(this.minSize) + i2), 1), i2);
+            calculateCellsCrossAxisSizeImpl = LazyGridDslKt.calculateCellsCrossAxisSizeImpl(i, Math.max((i + i2) / (density.mo423roundToPx0680j_4(this.minSize) + i2), 1), i2);
             return calculateCellsCrossAxisSizeImpl;
         }
 
         public int hashCode() {
-            return Dp.m7257hashCodeimpl(this.minSize);
+            return Dp.m7270hashCodeimpl(this.minSize);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof Adaptive) && Dp.m7256equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
+            return (obj instanceof Adaptive) && Dp.m7269equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
         }
     }
 
@@ -92,7 +92,7 @@ public interface GridCells {
 
         private FixedSize(float f) {
             this.size = f;
-            if (Dp.m7250compareTo0680j_4(f, Dp.m7251constructorimpl((float) 0)) > 0) {
+            if (Dp.m7263compareTo0680j_4(f, Dp.m7264constructorimpl((float) 0)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("Provided size should be larger than zero.");
@@ -100,14 +100,14 @@ public interface GridCells {
 
         @Override // androidx.compose.foundation.lazy.grid.GridCells
         public List<Integer> calculateCrossAxisCellSizes(Density density, int i, int i2) {
-            int mo413roundToPx0680j_4 = density.mo413roundToPx0680j_4(this.size);
-            int i3 = mo413roundToPx0680j_4 + i2;
+            int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(this.size);
+            int i3 = mo423roundToPx0680j_4 + i2;
             int i4 = i2 + i;
             if (i3 < i4) {
                 int i5 = i4 / i3;
                 ArrayList arrayList = new ArrayList(i5);
                 for (int i6 = 0; i6 < i5; i6++) {
-                    arrayList.add(Integer.valueOf(mo413roundToPx0680j_4));
+                    arrayList.add(Integer.valueOf(mo423roundToPx0680j_4));
                 }
                 return arrayList;
             }
@@ -117,11 +117,11 @@ public interface GridCells {
         }
 
         public int hashCode() {
-            return Dp.m7257hashCodeimpl(this.size);
+            return Dp.m7270hashCodeimpl(this.size);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof FixedSize) && Dp.m7256equalsimpl0(this.size, ((FixedSize) obj).size);
+            return (obj instanceof FixedSize) && Dp.m7269equalsimpl0(this.size, ((FixedSize) obj).size);
         }
     }
 }

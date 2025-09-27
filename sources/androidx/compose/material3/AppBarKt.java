@@ -238,10 +238,10 @@ public final class AppBarKt {
                             if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2050getLambda1$material3_release();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2060getLambda1$material3_release();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2060getLambda2$material3_release();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2070getLambda2$material3_release();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -289,7 +289,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m1883TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
+                            m1893TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -357,7 +357,7 @@ public final class AppBarKt {
                     }
                     int i112 = i3 << 3;
                     composer2 = startRestartGroup;
-                    m1883TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112) | (3670016 & i112) | (i112 & 29360128), 0);
+                    m1893TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112) | (3670016 & i112) | (i112 & 29360128), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = obj6;
@@ -402,7 +402,7 @@ public final class AppBarKt {
                 }
                 int i1122 = i3 << 3;
                 composer2 = startRestartGroup;
-                m1883TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i1122) | (3670016 & i1122) | (i1122 & 29360128), 0);
+                m1893TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i1122) | (3670016 & i1122) | (i1122 & 29360128), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = obj6;
@@ -451,7 +451,7 @@ public final class AppBarKt {
             }
             int i11222 = i3 << 3;
             composer2 = startRestartGroup;
-            m1883TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11222) | (3670016 & i11222) | (i11222 & 29360128), 0);
+            m1893TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11222) | (3670016 & i11222) | (i11222 & 29360128), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = obj6;
@@ -504,7 +504,7 @@ public final class AppBarKt {
         }
         int i112222 = i3 << 3;
         composer2 = startRestartGroup;
-        m1883TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112222) | (3670016 & i112222) | (i112222 & 29360128), 0);
+        m1893TopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112222) | (3670016 & i112222) | (i112222 & 29360128), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = obj6;
@@ -551,7 +551,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1883TopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1893TopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Object obj;
@@ -664,13 +664,13 @@ public final class AppBarKt {
                                 if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                     Modifier.Companion companion = i13 == 0 ? Modifier.Companion : obj;
                                     if (i4 != 0) {
-                                        function24 = ComposableSingletons$AppBarKt.INSTANCE.m2061getLambda3$material3_release();
+                                        function24 = ComposableSingletons$AppBarKt.INSTANCE.m2071getLambda3$material3_release();
                                     }
                                     if (i5 != 0) {
-                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2062getLambda4$material3_release();
+                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2072getLambda4$material3_release();
                                     }
                                     if (i6 != 0) {
-                                        f2 = TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM();
+                                        f2 = TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM();
                                     }
                                     if ((i2 & 32) == 0) {
                                         i9 = i14 & (-458753);
@@ -717,7 +717,7 @@ public final class AppBarKt {
                                 }
                                 int i16 = i9 << 6;
                                 composer2 = startRestartGroup;
-                                m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16) | (458752 & i16) | (29360128 & i16) | (234881024 & i16) | (i16 & 1879048192), 0);
+                                m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16) | (458752 & i16) | (29360128 & i16) | (234881024 & i16) | (i16 & 1879048192), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -756,7 +756,7 @@ public final class AppBarKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i17) {
-                                        AppBarKt.m1883TopAppBarGHTll3U(function2, modifier2, function26, function34, f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                        AppBarKt.m1893TopAppBarGHTll3U(function2, modifier2, function26, function34, f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                     }
                                 });
                                 return;
@@ -795,7 +795,7 @@ public final class AppBarKt {
                         }
                         int i162 = i9 << 6;
                         composer2 = startRestartGroup;
-                        m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162) | (458752 & i162) | (29360128 & i162) | (234881024 & i162) | (i162 & 1879048192), 0);
+                        m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162) | (458752 & i162) | (29360128 & i162) | (234881024 & i162) | (i162 & 1879048192), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         f4 = f3;
@@ -849,7 +849,7 @@ public final class AppBarKt {
                     }
                     int i1622 = i9 << 6;
                     composer2 = startRestartGroup;
-                    m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622) | (458752 & i1622) | (29360128 & i1622) | (234881024 & i1622) | (i1622 & 1879048192), 0);
+                    m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622) | (458752 & i1622) | (29360128 & i1622) | (234881024 & i1622) | (i1622 & 1879048192), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     f4 = f3;
@@ -907,7 +907,7 @@ public final class AppBarKt {
                 }
                 int i16222 = i9 << 6;
                 composer2 = startRestartGroup;
-                m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16222) | (458752 & i16222) | (29360128 & i16222) | (234881024 & i16222) | (i16222 & 1879048192), 0);
+                m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16222) | (458752 & i16222) | (29360128 & i16222) | (234881024 & i16222) | (i16222 & 1879048192), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 f4 = f3;
@@ -969,7 +969,7 @@ public final class AppBarKt {
             }
             int i162222 = i9 << 6;
             composer2 = startRestartGroup;
-            m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162222) | (458752 & i162222) | (29360128 & i162222) | (234881024 & i162222) | (i162222 & 1879048192), 0);
+            m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162222) | (458752 & i162222) | (29360128 & i162222) | (234881024 & i162222) | (i162222 & 1879048192), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             f4 = f3;
@@ -1035,7 +1035,7 @@ public final class AppBarKt {
         }
         int i1622222 = i9 << 6;
         composer2 = startRestartGroup;
-        m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622222) | (458752 & i1622222) | (29360128 & i1622222) | (234881024 & i1622222) | (i1622222 & 1879048192), 0);
+        m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), false, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622222) | (458752 & i1622222) | (29360128 & i1622222) | (234881024 & i1622222) | (i1622222 & 1879048192), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         f4 = f3;
@@ -1179,10 +1179,10 @@ public final class AppBarKt {
                             if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2063getLambda5$material3_release();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2073getLambda5$material3_release();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2064getLambda6$material3_release();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2074getLambda6$material3_release();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -1230,7 +1230,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 3;
                             composer2 = startRestartGroup;
-                            m1879CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
+                            m1889CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11) | (3670016 & i11) | (i11 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1298,7 +1298,7 @@ public final class AppBarKt {
                     }
                     int i112 = i3 << 3;
                     composer2 = startRestartGroup;
-                    m1879CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112) | (3670016 & i112) | (i112 & 29360128), 0);
+                    m1889CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112) | (3670016 & i112) | (i112 & 29360128), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = obj6;
@@ -1343,7 +1343,7 @@ public final class AppBarKt {
                 }
                 int i1122 = i3 << 3;
                 composer2 = startRestartGroup;
-                m1879CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i1122) | (3670016 & i1122) | (i1122 & 29360128), 0);
+                m1889CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i1122) | (3670016 & i1122) | (i1122 & 29360128), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = obj6;
@@ -1392,7 +1392,7 @@ public final class AppBarKt {
             }
             int i11222 = i3 << 3;
             composer2 = startRestartGroup;
-            m1879CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11222) | (3670016 & i11222) | (i11222 & 29360128), 0);
+            m1889CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i11222) | (3670016 & i11222) | (i11222 & 29360128), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = obj6;
@@ -1445,7 +1445,7 @@ public final class AppBarKt {
         }
         int i112222 = i3 << 3;
         composer2 = startRestartGroup;
-        m1879CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112222) | (3670016 & i112222) | (i112222 & 29360128), 0);
+        m1889CenterAlignedTopAppBarGHTll3U(function23, obj6, function25, function33, TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (458752 & i112222) | (3670016 & i112222) | (i112222 & 29360128), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = obj6;
@@ -1492,7 +1492,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1879CenterAlignedTopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1889CenterAlignedTopAppBarGHTll3U(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Object obj;
@@ -1605,13 +1605,13 @@ public final class AppBarKt {
                                 if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                     Modifier.Companion companion = i13 == 0 ? Modifier.Companion : obj;
                                     if (i4 != 0) {
-                                        function24 = ComposableSingletons$AppBarKt.INSTANCE.m2065getLambda7$material3_release();
+                                        function24 = ComposableSingletons$AppBarKt.INSTANCE.m2075getLambda7$material3_release();
                                     }
                                     if (i5 != 0) {
-                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2066getLambda8$material3_release();
+                                        function32 = ComposableSingletons$AppBarKt.INSTANCE.m2076getLambda8$material3_release();
                                     }
                                     if (i6 != 0) {
-                                        f2 = TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM();
+                                        f2 = TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM();
                                     }
                                     if ((i2 & 32) == 0) {
                                         i9 = i14 & (-458753);
@@ -1658,7 +1658,7 @@ public final class AppBarKt {
                                 }
                                 int i16 = i9 << 6;
                                 composer2 = startRestartGroup;
-                                m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16) | (458752 & i16) | (29360128 & i16) | (234881024 & i16) | (i16 & 1879048192), 0);
+                                m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16) | (458752 & i16) | (29360128 & i16) | (234881024 & i16) | (i16 & 1879048192), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1697,7 +1697,7 @@ public final class AppBarKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i17) {
-                                        AppBarKt.m1879CenterAlignedTopAppBarGHTll3U(function2, modifier2, function26, function34, f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                        AppBarKt.m1889CenterAlignedTopAppBarGHTll3U(function2, modifier2, function26, function34, f4, windowInsets3, topAppBarColors3, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                     }
                                 });
                                 return;
@@ -1736,7 +1736,7 @@ public final class AppBarKt {
                         }
                         int i162 = i9 << 6;
                         composer2 = startRestartGroup;
-                        m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162) | (458752 & i162) | (29360128 & i162) | (234881024 & i162) | (i162 & 1879048192), 0);
+                        m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162) | (458752 & i162) | (29360128 & i162) | (234881024 & i162) | (i162 & 1879048192), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         f4 = f3;
@@ -1790,7 +1790,7 @@ public final class AppBarKt {
                     }
                     int i1622 = i9 << 6;
                     composer2 = startRestartGroup;
-                    m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622) | (458752 & i1622) | (29360128 & i1622) | (234881024 & i1622) | (i1622 & 1879048192), 0);
+                    m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622) | (458752 & i1622) | (29360128 & i1622) | (234881024 & i1622) | (i1622 & 1879048192), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     f4 = f3;
@@ -1848,7 +1848,7 @@ public final class AppBarKt {
                 }
                 int i16222 = i9 << 6;
                 composer2 = startRestartGroup;
-                m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16222) | (458752 & i16222) | (29360128 & i16222) | (234881024 & i16222) | (i16222 & 1879048192), 0);
+                m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i16222) | (458752 & i16222) | (29360128 & i16222) | (234881024 & i16222) | (i16222 & 1879048192), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 f4 = f3;
@@ -1910,7 +1910,7 @@ public final class AppBarKt {
             }
             int i162222 = i9 << 6;
             composer2 = startRestartGroup;
-            m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162222) | (458752 & i162222) | (29360128 & i162222) | (234881024 & i162222) | (i162222 & 1879048192), 0);
+            m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i162222) | (458752 & i162222) | (29360128 & i162222) | (234881024 & i162222) | (i162222 & 1879048192), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             f4 = f3;
@@ -1976,7 +1976,7 @@ public final class AppBarKt {
         }
         int i1622222 = i9 << 6;
         composer2 = startRestartGroup;
-        m1882SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7256equalsimpl0(f3, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f3, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2972getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622222) | (458752 & i1622222) | (29360128 & i1622222) | (234881024 & i1622222) | (i1622222 & 1879048192), 0);
+        m1892SingleRowTopAppBarcJHQLPU(obj4, function23, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), true, function25, function33, (!Dp.m7269equalsimpl0(f3, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f3, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2982getTopAppBarExpandedHeightD9Ej5fM() : f3, windowInsets2, topAppBarColors2, topAppBarScrollBehavior2, composer2, ((i9 >> 3) & 14) | 3072 | ((i9 << 3) & 112) | (57344 & i1622222) | (458752 & i1622222) | (29360128 & i1622222) | (234881024 & i1622222) | (i1622222 & 1879048192), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         f4 = f3;
@@ -2119,10 +2119,10 @@ public final class AppBarKt {
                             if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2067getLambda9$material3_release();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2077getLambda9$material3_release();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2051getLambda10$material3_release();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2061getLambda10$material3_release();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -2165,7 +2165,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 6;
                             composer2 = startRestartGroup;
-                            m1881MediumTopAppBaroKE7A98(function23, modifier2, function26, function33, TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
+                            m1891MediumTopAppBaroKE7A98(function23, modifier2, function26, function33, TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2237,7 +2237,7 @@ public final class AppBarKt {
                     }
                     int i112 = i3 << 6;
                     composer2 = startRestartGroup;
-                    m1881MediumTopAppBaroKE7A98(function23, modifier2, function262, function33, TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112) | (i112 & 234881024), 0);
+                    m1891MediumTopAppBaroKE7A98(function23, modifier2, function262, function33, TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112) | (i112 & 234881024), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier3 = modifier2;
@@ -2286,7 +2286,7 @@ public final class AppBarKt {
                 }
                 int i1122 = i3 << 6;
                 composer2 = startRestartGroup;
-                m1881MediumTopAppBaroKE7A98(function23, modifier2, function2622, function33, TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i1122) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i1122) | (i1122 & 234881024), 0);
+                m1891MediumTopAppBaroKE7A98(function23, modifier2, function2622, function33, TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i1122) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i1122) | (i1122 & 234881024), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
@@ -2339,7 +2339,7 @@ public final class AppBarKt {
             }
             int i11222 = i3 << 6;
             composer2 = startRestartGroup;
-            m1881MediumTopAppBaroKE7A98(function23, modifier2, function26222, function33, TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11222) | (i11222 & 234881024), 0);
+            m1891MediumTopAppBaroKE7A98(function23, modifier2, function26222, function33, TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11222) | (i11222 & 234881024), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
@@ -2396,7 +2396,7 @@ public final class AppBarKt {
         }
         int i112222 = i3 << 6;
         composer2 = startRestartGroup;
-        m1881MediumTopAppBaroKE7A98(function23, modifier2, function262222, function33, TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112222) | (i112222 & 234881024), 0);
+        m1891MediumTopAppBaroKE7A98(function23, modifier2, function262222, function33, TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112222) | (i112222 & 234881024), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
@@ -2447,7 +2447,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1881MediumTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1891MediumTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Modifier.Companion companion;
@@ -2551,16 +2551,16 @@ public final class AppBarKt {
                                             companion = Modifier.Companion;
                                         }
                                         if (i4 != 0) {
-                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2052getLambda11$material3_release();
+                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2062getLambda11$material3_release();
                                         }
                                         if (i5 != 0) {
-                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2053getLambda12$material3_release();
+                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2063getLambda12$material3_release();
                                         }
                                         if (i6 != 0) {
-                                            f3 = TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM();
+                                            f3 = TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM();
                                         }
                                         if (i7 != 0) {
-                                            f4 = TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM();
+                                            f4 = TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM();
                                         }
                                         if ((i2 & 64) != 0) {
                                             windowInsets2 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -2613,7 +2613,7 @@ public final class AppBarKt {
                                     }
                                     int i16 = i11 << 12;
                                     composer2 = startRestartGroup;
-                                    m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f8, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16) | (3670016 & i16) | (i16 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                                    m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f8, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16) | (3670016 & i16) | (i16 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2654,7 +2654,7 @@ public final class AppBarKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i17) {
-                                            AppBarKt.m1881MediumTopAppBaroKE7A98(function2, modifier3, function26, function34, f6, f7, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                            AppBarKt.m1891MediumTopAppBaroKE7A98(function2, modifier3, function26, function34, f6, f7, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                         }
                                     });
                                     return;
@@ -2694,7 +2694,7 @@ public final class AppBarKt {
                             }
                             int i162 = i11 << 12;
                             composer2 = startRestartGroup;
-                            m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f82, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f82, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f82, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162) | (3670016 & i162) | (i162 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                            m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f82, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f82, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f82, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162) | (3670016 & i162) | (i162 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             f6 = f5;
@@ -2750,7 +2750,7 @@ public final class AppBarKt {
                         }
                         int i1622 = i11 << 12;
                         composer2 = startRestartGroup;
-                        m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f822, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f822, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f822, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622) | (3670016 & i1622) | (i1622 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                        m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f822, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f822, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f822, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622) | (3670016 & i1622) | (i1622 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         f6 = f5;
@@ -2810,7 +2810,7 @@ public final class AppBarKt {
                     }
                     int i16222 = i11 << 12;
                     composer2 = startRestartGroup;
-                    m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f8222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222) | (3670016 & i16222) | (i16222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                    m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f8222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222) | (3670016 & i16222) | (i16222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     f6 = f5;
@@ -2874,7 +2874,7 @@ public final class AppBarKt {
                 }
                 int i162222 = i11 << 12;
                 composer2 = startRestartGroup;
-                m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f82222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f82222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f82222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162222) | (3670016 & i162222) | (i162222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f82222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f82222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f82222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162222) | (3670016 & i162222) | (i162222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 f6 = f5;
@@ -2942,7 +2942,7 @@ public final class AppBarKt {
             }
             int i1622222 = i11 << 12;
             composer2 = startRestartGroup;
-            m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f822222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f822222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f822222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622222) | (3670016 & i1622222) | (i1622222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+            m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f822222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f822222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f822222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622222) | (3670016 & i1622222) | (i1622222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             f6 = f5;
@@ -3014,7 +3014,7 @@ public final class AppBarKt {
         }
         int i16222222 = i11 << 12;
         composer2 = startRestartGroup;
-        m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2970getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8222222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8222222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2971getMediumAppBarExpandedHeightD9Ej5fM() : f8222222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222222) | (3670016 & i16222222) | (i16222222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+        m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarMediumTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), MediumTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2980getMediumAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8222222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8222222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2981getMediumAppBarExpandedHeightD9Ej5fM() : f8222222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222222) | (3670016 & i16222222) | (i16222222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         f6 = f5;
@@ -3158,10 +3158,10 @@ public final class AppBarKt {
                             if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                 Modifier.Companion companion = i10 != 0 ? Modifier.Companion : obj;
                                 if (i4 != 0) {
-                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2054getLambda13$material3_release();
+                                    function24 = ComposableSingletons$AppBarKt.INSTANCE.m2064getLambda13$material3_release();
                                 }
                                 if (i5 != 0) {
-                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2055getLambda14$material3_release();
+                                    function32 = ComposableSingletons$AppBarKt.INSTANCE.m2065getLambda14$material3_release();
                                 }
                                 if ((i2 & 16) != 0) {
                                     i3 &= -57345;
@@ -3204,7 +3204,7 @@ public final class AppBarKt {
                             }
                             int i11 = i3 << 6;
                             composer2 = startRestartGroup;
-                            m1880LargeTopAppBaroKE7A98(function23, modifier2, function26, function33, TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
+                            m1890LargeTopAppBaroKE7A98(function23, modifier2, function26, function33, TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11) | (i11 & 234881024), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -3276,7 +3276,7 @@ public final class AppBarKt {
                     }
                     int i112 = i3 << 6;
                     composer2 = startRestartGroup;
-                    m1880LargeTopAppBaroKE7A98(function23, modifier2, function262, function33, TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112) | (i112 & 234881024), 0);
+                    m1890LargeTopAppBaroKE7A98(function23, modifier2, function262, function33, TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112) | (i112 & 234881024), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier3 = modifier2;
@@ -3325,7 +3325,7 @@ public final class AppBarKt {
                 }
                 int i1122 = i3 << 6;
                 composer2 = startRestartGroup;
-                m1880LargeTopAppBaroKE7A98(function23, modifier2, function2622, function33, TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i1122) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i1122) | (i1122 & 234881024), 0);
+                m1890LargeTopAppBaroKE7A98(function23, modifier2, function2622, function33, TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i1122) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i1122) | (i1122 & 234881024), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
@@ -3378,7 +3378,7 @@ public final class AppBarKt {
             }
             int i11222 = i3 << 6;
             composer2 = startRestartGroup;
-            m1880LargeTopAppBaroKE7A98(function23, modifier2, function26222, function33, TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11222) | (i11222 & 234881024), 0);
+            m1890LargeTopAppBaroKE7A98(function23, modifier2, function26222, function33, TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i11222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i11222) | (i11222 & 234881024), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
@@ -3435,7 +3435,7 @@ public final class AppBarKt {
         }
         int i112222 = i3 << 6;
         composer2 = startRestartGroup;
-        m1880LargeTopAppBaroKE7A98(function23, modifier2, function262222, function33, TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112222) | (i112222 & 234881024), 0);
+        m1890LargeTopAppBaroKE7A98(function23, modifier2, function262222, function33, TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM(), TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM(), windowInsets2, topAppBarColors2, obj5, composer2, (3670016 & i112222) | (i3 & 14) | 221184 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (29360128 & i112222) | (i112222 & 234881024), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
@@ -3486,7 +3486,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1880LargeTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1890LargeTopAppBaroKE7A98(final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, float f, float f2, WindowInsets windowInsets, TopAppBarColors topAppBarColors, TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Function2<? super Composer, ? super Integer, Unit> function23;
         int i3;
         Modifier.Companion companion;
@@ -3590,16 +3590,16 @@ public final class AppBarKt {
                                             companion = Modifier.Companion;
                                         }
                                         if (i4 != 0) {
-                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2056getLambda15$material3_release();
+                                            function24 = ComposableSingletons$AppBarKt.INSTANCE.m2066getLambda15$material3_release();
                                         }
                                         if (i5 != 0) {
-                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2057getLambda16$material3_release();
+                                            function32 = ComposableSingletons$AppBarKt.INSTANCE.m2067getLambda16$material3_release();
                                         }
                                         if (i6 != 0) {
-                                            f3 = TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM();
+                                            f3 = TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM();
                                         }
                                         if (i7 != 0) {
-                                            f4 = TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM();
+                                            f4 = TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM();
                                         }
                                         if ((i2 & 64) != 0) {
                                             windowInsets2 = TopAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -3652,7 +3652,7 @@ public final class AppBarKt {
                                     }
                                     int i16 = i11 << 12;
                                     composer2 = startRestartGroup;
-                                    m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f8, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16) | (3670016 & i16) | (i16 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                                    m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f8, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16) | (3670016 & i16) | (i16 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -3693,7 +3693,7 @@ public final class AppBarKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i17) {
-                                            AppBarKt.m1880LargeTopAppBaroKE7A98(function2, modifier3, function26, function34, f6, f7, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                            AppBarKt.m1890LargeTopAppBaroKE7A98(function2, modifier3, function26, function34, f6, f7, windowInsets4, topAppBarColors4, topAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                         }
                                     });
                                     return;
@@ -3733,7 +3733,7 @@ public final class AppBarKt {
                             }
                             int i162 = i11 << 12;
                             composer2 = startRestartGroup;
-                            m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f82, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f82, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f82, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162) | (3670016 & i162) | (i162 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                            m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f82, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f82, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f82, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162) | (3670016 & i162) | (i162 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             f6 = f5;
@@ -3789,7 +3789,7 @@ public final class AppBarKt {
                         }
                         int i1622 = i11 << 12;
                         composer2 = startRestartGroup;
-                        m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f822, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f822, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f822, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622) | (3670016 & i1622) | (i1622 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                        m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f822, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f822, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f822, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622) | (3670016 & i1622) | (i1622 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         f6 = f5;
@@ -3849,7 +3849,7 @@ public final class AppBarKt {
                     }
                     int i16222 = i11 << 12;
                     composer2 = startRestartGroup;
-                    m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f8222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222) | (3670016 & i16222) | (i16222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                    m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f8222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222) | (3670016 & i16222) | (i16222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     f6 = f5;
@@ -3913,7 +3913,7 @@ public final class AppBarKt {
                 }
                 int i162222 = i11 << 12;
                 composer2 = startRestartGroup;
-                m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f82222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f82222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f82222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162222) | (3670016 & i162222) | (i162222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+                m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f82222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f82222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f82222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i162222) | (3670016 & i162222) | (i162222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 f6 = f5;
@@ -3981,7 +3981,7 @@ public final class AppBarKt {
             }
             int i1622222 = i11 << 12;
             composer2 = startRestartGroup;
-            m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f822222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f822222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f822222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622222) | (3670016 & i1622222) | (i1622222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+            m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f822222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f822222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f822222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i1622222) | (3670016 & i1622222) | (i1622222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             f6 = f5;
@@ -4053,7 +4053,7 @@ public final class AppBarKt {
         }
         int i16222222 = i11 << 12;
         composer2 = startRestartGroup;
-        m1885TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7256equalsimpl0(f5, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f5, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2968getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7256equalsimpl0(f8222222, Dp.Companion.m7271getUnspecifiedD9Ej5fM()) || Dp.m7256equalsimpl0(f8222222, Dp.Companion.m7270getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2969getLargeAppBarExpandedHeightD9Ej5fM() : f8222222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222222) | (3670016 & i16222222) | (i16222222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
+        m1895TwoRowsTopAppBarnS6u9G4(modifier2, function23, TypographyKt.getValue(TopAppBarLargeTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), LargeTitleBottomPadding, function2, TypographyKt.getValue(TopAppBarSmallTokens.INSTANCE.getHeadlineFont(), startRestartGroup, 6), function25, function33, (!Dp.m7269equalsimpl0(f5, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f5, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2978getLargeAppBarCollapsedHeightD9Ej5fM() : f5, (!Dp.m7269equalsimpl0(f8222222, Dp.Companion.m7284getUnspecifiedD9Ej5fM()) || Dp.m7269equalsimpl0(f8222222, Dp.Companion.m7283getInfinityD9Ej5fM())) ? TopAppBarDefaults.INSTANCE.m2979getLargeAppBarExpandedHeightD9Ej5fM() : f8222222, windowInsets3, topAppBarColors3, topAppBarScrollBehavior2, composer2, ((i11 >> 3) & 14) | 3072 | ((i11 << 3) & 112) | (57344 & i16222222) | (3670016 & i16222222) | (i16222222 & 29360128), (i11 >> 18) & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         f6 = f5;
@@ -4098,7 +4098,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1876BottomAppBarSnr_uVM(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, Composer composer, final int i, final int i2) {
+    public static final void m1886BottomAppBarSnr_uVM(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, Composer composer, final int i, final int i2) {
         Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function32;
         int i3;
         Modifier.Companion companion;
@@ -4212,11 +4212,11 @@ public final class AppBarKt {
                                 i3 &= -7169;
                             }
                             if ((i2 & 16) != 0) {
-                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                 i3 &= -57345;
                             }
                             if (i5 != 0) {
-                                f2 = BottomAppBarDefaults.INSTANCE.m1900getContainerElevationD9Ej5fM();
+                                f2 = BottomAppBarDefaults.INSTANCE.m1910getContainerElevationD9Ej5fM();
                             }
                             PaddingValues contentPadding = i6 == 0 ? BottomAppBarDefaults.INSTANCE.getContentPadding() : paddingValues;
                             if ((i2 & 128) == 0) {
@@ -4233,7 +4233,7 @@ public final class AppBarKt {
                                     ComposerKt.traceEventStart(2141738945, i3, -1, "androidx.compose.material3.BottomAppBar (AppBar.kt:684)");
                                 }
                                 composer2 = startRestartGroup;
-                                m1878BottomAppBarqhFBPw4(function32, modifier2, function23, j7, j8, f4, paddingValues2, windowInsets2, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
+                                m1888BottomAppBarqhFBPw4(function32, modifier2, function23, j7, j8, f4, paddingValues2, windowInsets2, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -4271,7 +4271,7 @@ public final class AppBarKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer2 = startRestartGroup;
-                        m1878BottomAppBarqhFBPw4(function32, modifier2, function232, j72, j82, f42, paddingValues2, windowInsets2, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
+                        m1888BottomAppBarqhFBPw4(function32, modifier2, function232, j72, j82, f42, paddingValues2, windowInsets2, null, composer2, (i3 & 14) | 100663296 | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (3670016 & i3) | (i3 & 29360128), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier3 = modifier2;
@@ -4309,7 +4309,7 @@ public final class AppBarKt {
                             }
 
                             public final void invoke(Composer composer3, int i11) {
-                                AppBarKt.m1876BottomAppBarSnr_uVM(function3, modifier3, function22, j5, j6, f3, paddingValues3, windowInsets3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                AppBarKt.m1886BottomAppBarSnr_uVM(function3, modifier3, function22, j5, j6, f3, paddingValues3, windowInsets3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -4451,7 +4451,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1878BottomAppBarqhFBPw4(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1888BottomAppBarqhFBPw4(final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -4577,10 +4577,10 @@ public final class AppBarKt {
                                     i3 &= -7169;
                                 }
                                 if ((i2 & 16) != 0) {
-                                    j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                    j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                     i3 &= -57345;
                                 }
-                                float m1900getContainerElevationD9Ej5fM = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m1900getContainerElevationD9Ej5fM() : f2;
+                                float m1910getContainerElevationD9Ej5fM = i5 != 0 ? BottomAppBarDefaults.INSTANCE.m1910getContainerElevationD9Ej5fM() : f2;
                                 PaddingValues contentPadding = i6 != 0 ? BottomAppBarDefaults.INSTANCE.getContentPadding() : paddingValues;
                                 if ((i2 & 128) != 0) {
                                     windowInsets2 = BottomAppBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
@@ -4589,7 +4589,7 @@ public final class AppBarKt {
                                     windowInsets2 = windowInsets;
                                 }
                                 bottomAppBarScrollBehavior2 = i8 != 0 ? null : bottomAppBarScrollBehavior;
-                                f3 = m1900getContainerElevationD9Ej5fM;
+                                f3 = m1910getContainerElevationD9Ej5fM;
                                 paddingValues2 = contentPadding;
                                 windowInsets3 = windowInsets2;
                                 i9 = 12582912;
@@ -4624,7 +4624,7 @@ public final class AppBarKt {
                             }
                             int i15 = i3 >> 6;
                             composer2 = startRestartGroup;
-                            m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+                            m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
@@ -4673,15 +4673,15 @@ public final class AppBarKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                        Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                        Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                         function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -4693,7 +4693,7 @@ public final class AppBarKt {
                                             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                                             f5 = AppBarKt.FABVerticalPadding;
                                             f6 = AppBarKt.FABHorizontalPadding;
-                                            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                                             Alignment topStart = Alignment.Companion.getTopStart();
                                             Function2<Composer, Integer, Unit> function23 = obj;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4701,7 +4701,7 @@ public final class AppBarKt {
                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                             CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -4713,15 +4713,15 @@ public final class AppBarKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 553416911, "C771@38228L22:AppBar.kt#uh7d8r");
@@ -4782,7 +4782,7 @@ public final class AppBarKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i16) {
-                                    AppBarKt.m1878BottomAppBarqhFBPw4(function3, modifier3, function22, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    AppBarKt.m1888BottomAppBarqhFBPw4(function3, modifier3, function22, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -4811,7 +4811,7 @@ public final class AppBarKt {
                     }
                     if (i8 != 0) {
                     }
-                    f3 = m1900getContainerElevationD9Ej5fM;
+                    f3 = m1910getContainerElevationD9Ej5fM;
                     paddingValues2 = contentPadding;
                     windowInsets3 = windowInsets2;
                     i9 = 12582912;
@@ -4824,7 +4824,7 @@ public final class AppBarKt {
                     }
                     int i152 = i3 >> 6;
                     composer2 = startRestartGroup;
-                    m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+                    m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -4873,15 +4873,15 @@ public final class AppBarKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                 function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -4893,7 +4893,7 @@ public final class AppBarKt {
                                     Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                                     f5 = AppBarKt.FABVerticalPadding;
                                     f6 = AppBarKt.FABHorizontalPadding;
-                                    Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                                    Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                                     Alignment topStart = Alignment.Companion.getTopStart();
                                     Function2<Composer, Integer, Unit> function23 = obj;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -4901,7 +4901,7 @@ public final class AppBarKt {
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                     Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -4913,15 +4913,15 @@ public final class AppBarKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                    Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 553416911, "C771@38228L22:AppBar.kt#uh7d8r");
@@ -4987,7 +4987,7 @@ public final class AppBarKt {
                 }
                 if (i8 != 0) {
                 }
-                f3 = m1900getContainerElevationD9Ej5fM;
+                f3 = m1910getContainerElevationD9Ej5fM;
                 paddingValues2 = contentPadding;
                 windowInsets3 = windowInsets2;
                 i9 = 12582912;
@@ -5000,7 +5000,7 @@ public final class AppBarKt {
                 }
                 int i1522 = i3 >> 6;
                 composer2 = startRestartGroup;
-                m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+                m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -5049,15 +5049,15 @@ public final class AppBarKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                             function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -5069,7 +5069,7 @@ public final class AppBarKt {
                                 Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                                 f5 = AppBarKt.FABVerticalPadding;
                                 f6 = AppBarKt.FABHorizontalPadding;
-                                Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                                Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                                 Alignment topStart = Alignment.Companion.getTopStart();
                                 Function2<Composer, Integer, Unit> function23 = obj;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -5077,7 +5077,7 @@ public final class AppBarKt {
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                 CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -5089,15 +5089,15 @@ public final class AppBarKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 553416911, "C771@38228L22:AppBar.kt#uh7d8r");
@@ -5171,7 +5171,7 @@ public final class AppBarKt {
             }
             if (i8 != 0) {
             }
-            f3 = m1900getContainerElevationD9Ej5fM;
+            f3 = m1910getContainerElevationD9Ej5fM;
             paddingValues2 = contentPadding;
             windowInsets3 = windowInsets2;
             i9 = 12582912;
@@ -5184,7 +5184,7 @@ public final class AppBarKt {
             }
             int i15222 = i3 >> 6;
             composer2 = startRestartGroup;
-            m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+            m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -5233,15 +5233,15 @@ public final class AppBarKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -5253,7 +5253,7 @@ public final class AppBarKt {
                             Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                             f5 = AppBarKt.FABVerticalPadding;
                             f6 = AppBarKt.FABHorizontalPadding;
-                            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                             Alignment topStart = Alignment.Companion.getTopStart();
                             Function2<Composer, Integer, Unit> function23 = obj;
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -5261,7 +5261,7 @@ public final class AppBarKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -5273,15 +5273,15 @@ public final class AppBarKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 553416911, "C771@38228L22:AppBar.kt#uh7d8r");
@@ -5359,7 +5359,7 @@ public final class AppBarKt {
         }
         if (i8 != 0) {
         }
-        f3 = m1900getContainerElevationD9Ej5fM;
+        f3 = m1910getContainerElevationD9Ej5fM;
         paddingValues2 = contentPadding;
         windowInsets3 = windowInsets2;
         i9 = 12582912;
@@ -5372,7 +5372,7 @@ public final class AppBarKt {
         }
         int i152222 = i3 >> 6;
         composer2 = startRestartGroup;
-        m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
+        m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets3, bottomAppBarScrollBehavior2, ComposableLambdaKt.rememberComposableLambda(1566394874, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -5421,15 +5421,15 @@ public final class AppBarKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                     function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -5441,7 +5441,7 @@ public final class AppBarKt {
                         Modifier fillMaxHeight$default = SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null);
                         f5 = AppBarKt.FABVerticalPadding;
                         f6 = AppBarKt.FABHorizontalPadding;
-                        Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
+                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(fillMaxHeight$default, 0.0f, f5, f6, 0.0f, 9, null);
                         Alignment topStart = Alignment.Companion.getTopStart();
                         Function2<Composer, Integer, Unit> function23 = obj;
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -5449,7 +5449,7 @@ public final class AppBarKt {
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -5461,15 +5461,15 @@ public final class AppBarKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 553416911, "C771@38228L22:AppBar.kt#uh7d8r");
@@ -5529,7 +5529,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1875BottomAppBar1oL4kX8(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m1885BottomAppBar1oL4kX8(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j3;
@@ -5640,11 +5640,11 @@ public final class AppBarKt {
                                 i3 &= -113;
                             }
                             if ((i2 & 4) != 0) {
-                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                                j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                                 i3 &= -897;
                             }
                             if (i11 != 0) {
-                                f2 = BottomAppBarDefaults.INSTANCE.m1900getContainerElevationD9Ej5fM();
+                                f2 = BottomAppBarDefaults.INSTANCE.m1910getContainerElevationD9Ej5fM();
                             }
                             if (i4 != 0) {
                                 obj2 = BottomAppBarDefaults.INSTANCE.getContentPadding();
@@ -5696,7 +5696,7 @@ public final class AppBarKt {
                             ComposerKt.traceEventStart(i6, i3, -1, "androidx.compose.material3.BottomAppBar (AppBar.kt:814)");
                         }
                         composer2 = startRestartGroup;
-                        m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
+                        m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -5733,7 +5733,7 @@ public final class AppBarKt {
                             }
 
                             public final void invoke(Composer composer3, int i12) {
-                                AppBarKt.m1875BottomAppBar1oL4kX8(Modifier.this, j7, j8, f4, paddingValues3, windowInsets3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                AppBarKt.m1885BottomAppBar1oL4kX8(Modifier.this, j7, j8, f4, paddingValues3, windowInsets3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -5761,7 +5761,7 @@ public final class AppBarKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
-                m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
+                m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
@@ -5800,7 +5800,7 @@ public final class AppBarKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
-            m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
+            m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
@@ -5843,7 +5843,7 @@ public final class AppBarKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
-        m1877BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
+        m1887BottomAppBare3WI5M(modifier2, j5, j6, f3, paddingValues2, windowInsets2, null, function3, composer2, i5 | (i3 & 14) | (i3 & 112) | (i3 & 896) | (i3 & 7168) | (57344 & i3) | (458752 & i3) | (29360128 & (i3 << 3)), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
@@ -5887,7 +5887,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1877BottomAppBare3WI5M(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m1887BottomAppBare3WI5M(Modifier modifier, long j, long j2, float f, PaddingValues paddingValues, WindowInsets windowInsets, BottomAppBarScrollBehavior bottomAppBarScrollBehavior, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Modifier.Companion companion;
         int i3;
         long j3;
@@ -6002,11 +6002,11 @@ public final class AppBarKt {
                             i3 &= -113;
                         }
                         if ((i2 & 4) != 0) {
-                            j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
+                            j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 3) & 14);
                             i3 &= -897;
                         }
                         if (i14 != 0) {
-                            f2 = BottomAppBarDefaults.INSTANCE.m1900getContainerElevationD9Ej5fM();
+                            f2 = BottomAppBarDefaults.INSTANCE.m1910getContainerElevationD9Ej5fM();
                         }
                         if (i4 != 0) {
                             obj = BottomAppBarDefaults.INSTANCE.getContentPadding();
@@ -6129,21 +6129,21 @@ public final class AppBarKt {
 
                             @Override // kotlin.jvm.functions.Function3
                             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                return m1889invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                                return m1899invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
                             }
 
                             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                            public final MeasureResult m1889invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
+                            public final MeasureResult m1899invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
                                 BottomAppBarState state;
                                 BottomAppBarScrollBehavior bottomAppBarScrollBehavior4 = BottomAppBarScrollBehavior.this;
                                 BottomAppBarState state2 = bottomAppBarScrollBehavior4 != null ? bottomAppBarScrollBehavior4.getState() : null;
                                 if (state2 != null) {
-                                    state2.setHeightOffsetLimit(-measureScope.mo419toPx0680j_4(BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()));
+                                    state2.setHeightOffsetLimit(-measureScope.mo429toPx0680j_4(BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()));
                                 }
-                                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j12);
-                                float height = mo5954measureBRTryo0.getHeight();
+                                final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j12);
+                                float height = mo5967measureBRTryo0.getHeight();
                                 BottomAppBarScrollBehavior bottomAppBarScrollBehavior5 = BottomAppBarScrollBehavior.this;
-                                return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
+                                return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
                                     {
                                         super(1);
                                     }
@@ -6166,7 +6166,7 @@ public final class AppBarKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     int i18 = i6 << 3;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2654SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
+                    SurfaceKt.m2664SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -6186,7 +6186,7 @@ public final class AppBarKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(1243053520, i19, -1, "androidx.compose.material3.BottomAppBar.<anonymous> (AppBar.kt:912)");
                                 }
-                                Modifier padding = PaddingKt.padding(SizeKt.m870height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()), paddingValues2);
+                                Modifier padding = PaddingKt.padding(SizeKt.m880height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()), paddingValues2);
                                 Arrangement.Horizontal start = Arrangement.INSTANCE.getStart();
                                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                 Function3<RowScope, Composer, Integer, Unit> function32 = function3;
@@ -6207,15 +6207,15 @@ public final class AppBarKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                 function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -6270,7 +6270,7 @@ public final class AppBarKt {
                         }
 
                         public final void invoke(Composer composer3, int i19) {
-                            AppBarKt.m1877BottomAppBare3WI5M(Modifier.this, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            AppBarKt.m1887BottomAppBare3WI5M(Modifier.this, j7, j8, f4, paddingValues3, windowInsets4, bottomAppBarScrollBehavior3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                         }
                     });
                     return;
@@ -6331,21 +6331,21 @@ public final class AppBarKt {
 
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                    return m1889invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                    return m1899invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
                 }
 
                 /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                public final MeasureResult m1889invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
+                public final MeasureResult m1899invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
                     BottomAppBarState state;
                     BottomAppBarScrollBehavior bottomAppBarScrollBehavior4 = BottomAppBarScrollBehavior.this;
                     BottomAppBarState state2 = bottomAppBarScrollBehavior4 != null ? bottomAppBarScrollBehavior4.getState() : null;
                     if (state2 != null) {
-                        state2.setHeightOffsetLimit(-measureScope.mo419toPx0680j_4(BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()));
+                        state2.setHeightOffsetLimit(-measureScope.mo429toPx0680j_4(BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()));
                     }
-                    final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j12);
-                    float height = mo5954measureBRTryo0.getHeight();
+                    final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j12);
+                    float height = mo5967measureBRTryo0.getHeight();
                     BottomAppBarScrollBehavior bottomAppBarScrollBehavior5 = BottomAppBarScrollBehavior.this;
-                    return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
+                    return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
                         {
                             super(1);
                         }
@@ -6367,7 +6367,7 @@ public final class AppBarKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             int i182 = i6 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value2, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
+            SurfaceKt.m2664SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value2, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -6387,7 +6387,7 @@ public final class AppBarKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1243053520, i19, -1, "androidx.compose.material3.BottomAppBar.<anonymous> (AppBar.kt:912)");
                         }
-                        Modifier padding = PaddingKt.padding(SizeKt.m870height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()), paddingValues2);
+                        Modifier padding = PaddingKt.padding(SizeKt.m880height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()), paddingValues2);
                         Arrangement.Horizontal start = Arrangement.INSTANCE.getStart();
                         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                         Function3<RowScope, Composer, Integer, Unit> function32 = function3;
@@ -6408,15 +6408,15 @@ public final class AppBarKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -6504,21 +6504,21 @@ public final class AppBarKt {
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                return m1889invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                return m1899invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
             }
 
             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-            public final MeasureResult m1889invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
+            public final MeasureResult m1899invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j12) {
                 BottomAppBarState state;
                 BottomAppBarScrollBehavior bottomAppBarScrollBehavior4 = BottomAppBarScrollBehavior.this;
                 BottomAppBarState state2 = bottomAppBarScrollBehavior4 != null ? bottomAppBarScrollBehavior4.getState() : null;
                 if (state2 != null) {
-                    state2.setHeightOffsetLimit(-measureScope.mo419toPx0680j_4(BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()));
+                    state2.setHeightOffsetLimit(-measureScope.mo429toPx0680j_4(BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()));
                 }
-                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j12);
-                float height = mo5954measureBRTryo0.getHeight();
+                final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j12);
+                float height = mo5967measureBRTryo0.getHeight();
                 BottomAppBarScrollBehavior bottomAppBarScrollBehavior5 = BottomAppBarScrollBehavior.this;
-                return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
+                return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), MathKt.roundToInt(height + ((bottomAppBarScrollBehavior5 == null || (state = bottomAppBarScrollBehavior5.getState()) == null) ? 0.0f : state.getHeightOffset())), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$5$1.1
                     {
                         super(1);
                     }
@@ -6540,7 +6540,7 @@ public final class AppBarKt {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         int i1822 = i6 << 3;
         composer2 = startRestartGroup;
-        SurfaceKt.m2654SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value22, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
+        SurfaceKt.m2664SurfaceT9BRK9s(LayoutModifierKt.layout(companion, (Function3) rememberedValue).then(companion2), value22, j5, j6, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1243053520, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$BottomAppBar$6
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -6560,7 +6560,7 @@ public final class AppBarKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1243053520, i19, -1, "androidx.compose.material3.BottomAppBar.<anonymous> (AppBar.kt:912)");
                     }
-                    Modifier padding = PaddingKt.padding(SizeKt.m870height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3128getContainerHeightD9Ej5fM()), paddingValues2);
+                    Modifier padding = PaddingKt.padding(SizeKt.m880height3ABfNKs(WindowInsetsPaddingKt.windowInsetsPadding(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), WindowInsets.this), BottomAppBarTokens.INSTANCE.m3138getContainerHeightD9Ej5fM()), paddingValues2);
                     Arrangement.Horizontal start = Arrangement.INSTANCE.getStart();
                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                     Function3<RowScope, Composer, Integer, Unit> function32 = function3;
@@ -6581,15 +6581,15 @@ public final class AppBarKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                     function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -6656,7 +6656,7 @@ public final class AppBarKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TopAppBarState topAppBarState = (TopAppBarState) RememberSaveableKt.m3982rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
+        TopAppBarState topAppBarState = (TopAppBarState) RememberSaveableKt.m3994rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -6700,7 +6700,7 @@ public final class AppBarKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        BottomAppBarState bottomAppBarState = (BottomAppBarState) RememberSaveableKt.m3982rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
+        BottomAppBarState bottomAppBarState = (BottomAppBarState) RememberSaveableKt.m3994rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -6747,7 +6747,7 @@ public final class AppBarKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     if (bottomAppBarState2.getCollapsedFraction() < 0.01f || bottomAppBarState2.getCollapsedFraction() == 1.0f) {
-                        return Velocity.m7480boximpl(Velocity.Companion.m7500getZero9UxMQ8M());
+                        return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
                     }
                     floatRef = new Ref.FloatRef();
                     floatRef.element = f;
@@ -6766,7 +6766,7 @@ public final class AppBarKt {
                         floatRef2 = (Ref.FloatRef) appBarKt$settleAppBarBottom$12.L$0;
                         ResultKt.throwOnFailure(obj);
                         floatRef = floatRef2;
-                        return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                        return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -6805,7 +6805,7 @@ public final class AppBarKt {
                     }
                     return coroutine_suspended;
                 }
-                return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
             }
         }
         appBarKt$settleAppBarBottom$1 = new AppBarKt$settleAppBarBottom$1(continuation);
@@ -6844,7 +6844,7 @@ public final class AppBarKt {
             }
             return coroutine_suspended;
         }
-        return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+        return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
     }
 
     public static final float getBottomAppBarVerticalPadding() {
@@ -6876,7 +6876,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1882SingleRowTopAppBarcJHQLPU(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function22, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
+    public static final void m1892SingleRowTopAppBarcJHQLPU(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function22, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2) {
         Modifier.Companion companion;
         int i3;
         Modifier.Companion companion2;
@@ -6949,7 +6949,7 @@ public final class AppBarKt {
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                                         Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        final float coerceAtLeast = RangesKt.coerceAtLeast(((Density) consume).mo419toPx0680j_4(f), 0.0f);
+                                        final float coerceAtLeast = RangesKt.coerceAtLeast(((Density) consume).mo429toPx0680j_4(f), 0.0f);
                                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1193658092, "CC(remember):AppBar.kt#9igjgp");
                                         int i5 = 1879048192 & i3;
                                         boolean changed = (i5 == 536870912) | startRestartGroup.changed(coerceAtLeast);
@@ -7008,7 +7008,7 @@ public final class AppBarKt {
                                             startRestartGroup.updateRememberedValue(rememberedValue2);
                                         }
                                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                        State<Color> m120animateColorAsStateeuL9pac = SingleValueAnimationKt.m120animateColorAsStateeuL9pac(topAppBarColors.m2960containerColorvNxB06k$material3_release(SingleRowTopAppBar_cJHQLPU$lambda$9((State) rememberedValue2)), AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null), null, null, startRestartGroup, 48, 12);
+                                        State<Color> m130animateColorAsStateeuL9pac = SingleValueAnimationKt.m130animateColorAsStateeuL9pac(topAppBarColors.m2970containerColorvNxB06k$material3_release(SingleRowTopAppBar_cJHQLPU$lambda$9((State) rememberedValue2)), AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null), null, null, startRestartGroup, 48, 12);
                                         ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(1370231018, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$SingleRowTopAppBar$actionsRow$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -7049,15 +7049,15 @@ public final class AppBarKt {
                                                     } else {
                                                         composer3.useNode();
                                                     }
-                                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                     }
-                                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                     ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                                     function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -7118,7 +7118,7 @@ public final class AppBarKt {
                                             companion2 = Modifier.Companion;
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        SurfaceKt.m2654SurfaceT9BRK9s(companion.then(companion2), null, SingleRowTopAppBar_cJHQLPU$lambda$10(m120animateColorAsStateeuL9pac), 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1943739546, true, new AppBarKt$SingleRowTopAppBar$3(windowInsets, f, topAppBarScrollBehavior, topAppBarColors, function2, textStyle, z, function22, rememberComposableLambda), startRestartGroup, 54), startRestartGroup, 12582912, 122);
+                                        SurfaceKt.m2664SurfaceT9BRK9s(companion.then(companion2), null, SingleRowTopAppBar_cJHQLPU$lambda$10(m130animateColorAsStateeuL9pac), 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1943739546, true, new AppBarKt$SingleRowTopAppBar$3(windowInsets, f, topAppBarScrollBehavior, topAppBarColors, function2, textStyle, z, function22, rememberComposableLambda), startRestartGroup, 54), startRestartGroup, 12582912, 122);
                                         composer2 = startRestartGroup;
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
@@ -7145,7 +7145,7 @@ public final class AppBarKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i6) {
-                                        AppBarKt.m1882SingleRowTopAppBarcJHQLPU(Modifier.this, function2, textStyle, z, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                        AppBarKt.m1892SingleRowTopAppBarcJHQLPU(Modifier.this, function2, textStyle, z, function22, function3, f, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                     }
                                 });
                                 return;
@@ -7289,7 +7289,7 @@ public final class AppBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1885TwoRowsTopAppBarnS6u9G4(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function2<? super Composer, ? super Integer, Unit> function23, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f2, final float f3, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1895TwoRowsTopAppBarnS6u9G4(Modifier modifier, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Function2<? super Composer, ? super Integer, Unit> function22, final TextStyle textStyle2, final Function2<? super Composer, ? super Integer, Unit> function23, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, final float f2, final float f3, final WindowInsets windowInsets, final TopAppBarColors topAppBarColors, final TopAppBarScrollBehavior topAppBarScrollBehavior, Composer composer, final int i, final int i2, final int i3) {
         Object obj;
         int i4;
         Object obj2;
@@ -7382,7 +7382,7 @@ public final class AppBarKt {
                         if (!(f2 == Float.POSITIVE_INFINITY)) {
                             if (!Float.isNaN(f3)) {
                                 if (!(f3 == Float.POSITIVE_INFINITY)) {
-                                    if (Dp.m7250compareTo0680j_4(f3, f2) < 0) {
+                                    if (Dp.m7263compareTo0680j_4(f3, f2) < 0) {
                                         throw new IllegalArgumentException("The expandedHeight is expected to be greater or equal to the collapsedHeight".toString());
                                     }
                                     final Ref.FloatRef floatRef = new Ref.FloatRef();
@@ -7392,9 +7392,9 @@ public final class AppBarKt {
                                     Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     Density density = (Density) consume;
-                                    floatRef.element = density.mo419toPx0680j_4(f3);
-                                    floatRef2.element = density.mo419toPx0680j_4(f2);
-                                    intRef.element = density.mo413roundToPx0680j_4(f);
+                                    floatRef.element = density.mo429toPx0680j_4(f3);
+                                    floatRef2.element = density.mo429toPx0680j_4(f2);
+                                    intRef.element = density.mo423roundToPx0680j_4(f);
                                     Unit unit = Unit.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1641215730, "CC(remember):AppBar.kt#9igjgp");
                                     int i8 = i7 & 896;
@@ -7434,7 +7434,7 @@ public final class AppBarKt {
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     EffectsKt.SideEffect((Function0) rememberedValue, startRestartGroup, 0);
                                     float collapsedFraction = (topAppBarScrollBehavior == null || (state = topAppBarScrollBehavior.getState()) == null) ? 0.0f : state.getCollapsedFraction();
-                                    long m2960containerColorvNxB06k$material3_release = topAppBarColors.m2960containerColorvNxB06k$material3_release(collapsedFraction);
+                                    long m2970containerColorvNxB06k$material3_release = topAppBarColors.m2970containerColorvNxB06k$material3_release(collapsedFraction);
                                     ComposableLambda rememberComposableLambda = ComposableLambdaKt.rememberComposableLambda(-89435287, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.AppBarKt$TwoRowsTopAppBar$actionsRow$1
                                         /* JADX INFO: Access modifiers changed from: package-private */
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -7475,15 +7475,15 @@ public final class AppBarKt {
                                                 } else {
                                                     composer3.useNode();
                                                 }
-                                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                                Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                                Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                                 function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -7549,7 +7549,7 @@ public final class AppBarKt {
                                     }
                                     startRestartGroup.endReplaceGroup();
                                     composer2 = startRestartGroup;
-                                    SurfaceKt.m2654SurfaceT9BRK9s(companion.then(companion2), null, m2960containerColorvNxB06k$material3_release, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1350062619, true, new AppBarKt$TwoRowsTopAppBar$6(windowInsets, f2, topAppBarColors, function22, textStyle2, transform, z, function23, rememberComposableLambda, f3, topAppBarScrollBehavior, function2, obj2, f4, intRef, z2), startRestartGroup, 54), composer2, 12582912, 122);
+                                    SurfaceKt.m2664SurfaceT9BRK9s(companion.then(companion2), null, m2970containerColorvNxB06k$material3_release, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1350062619, true, new AppBarKt$TwoRowsTopAppBar$6(windowInsets, f2, topAppBarColors, function22, textStyle2, transform, z, function23, rememberComposableLambda, f3, topAppBarScrollBehavior, function2, obj2, f4, intRef, z2), startRestartGroup, 54), composer2, 12582912, 122);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -7580,7 +7580,7 @@ public final class AppBarKt {
                         }
 
                         public final void invoke(Composer composer3, int i9) {
-                            AppBarKt.m1885TwoRowsTopAppBarnS6u9G4(Modifier.this, function2, textStyle, f, function22, textStyle2, function23, function3, f2, f3, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+                            AppBarKt.m1895TwoRowsTopAppBarnS6u9G4(Modifier.this, function2, textStyle, f, function22, textStyle2, function23, function3, f2, f3, windowInsets, topAppBarColors, topAppBarScrollBehavior, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
                         }
                     });
                     return;
@@ -7649,7 +7649,7 @@ public final class AppBarKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: TopAppBarLayout-kXwM9vE  reason: not valid java name */
-    public static final void m1884TopAppBarLayoutkXwM9vE(final Modifier modifier, final ScrolledOffset scrolledOffset, final long j, final long j2, final long j3, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Arrangement.Vertical vertical, final Arrangement.Horizontal horizontal, final int i, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i2, final int i3) {
+    public static final void m1894TopAppBarLayoutkXwM9vE(final Modifier modifier, final ScrolledOffset scrolledOffset, final long j, final long j2, final long j3, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final float f, final Arrangement.Vertical vertical, final Arrangement.Horizontal horizontal, final int i, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         Composer composer2;
@@ -7714,44 +7714,44 @@ public final class AppBarKt {
                 rememberedValue = new MeasurePolicy() { // from class: androidx.compose.material3.AppBarKt$TopAppBarLayout$2$1
                     @Override // androidx.compose.ui.layout.MeasurePolicy
                     /* renamed from: measure-3p2s80s */
-                    public final MeasureResult mo42measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, final long j4) {
+                    public final MeasureResult mo52measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, final long j4) {
                         int coerceAtLeast;
-                        int m7203getMaxHeightimpl;
+                        int m7216getMaxHeightimpl;
                         int size = list.size();
                         for (int i8 = 0; i8 < size; i8++) {
                             Measurable measurable = list.get(i8);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "navigationIcon")) {
-                                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j4, 0, 0, 0, 0, 14, null));
+                                final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j4, 0, 0, 0, 0, 14, null));
                                 int size2 = list.size();
                                 for (int i9 = 0; i9 < size2; i9++) {
                                     Measurable measurable2 = list.get(i9);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "actionIcons")) {
-                                        final Placeable mo5954measureBRTryo02 = measurable2.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j4, 0, 0, 0, 0, 14, null));
-                                        if (Constraints.m7204getMaxWidthimpl(j4) == Integer.MAX_VALUE) {
-                                            coerceAtLeast = Constraints.m7204getMaxWidthimpl(j4);
+                                        final Placeable mo5967measureBRTryo02 = measurable2.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j4, 0, 0, 0, 0, 14, null));
+                                        if (Constraints.m7217getMaxWidthimpl(j4) == Integer.MAX_VALUE) {
+                                            coerceAtLeast = Constraints.m7217getMaxWidthimpl(j4);
                                         } else {
-                                            coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo0.getWidth()) - mo5954measureBRTryo02.getWidth(), 0);
+                                            coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo0.getWidth()) - mo5967measureBRTryo02.getWidth(), 0);
                                         }
                                         int i10 = coerceAtLeast;
                                         int size3 = list.size();
                                         for (int i11 = 0; i11 < size3; i11++) {
                                             Measurable measurable3 = list.get(i11);
                                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "title")) {
-                                                final Placeable mo5954measureBRTryo03 = measurable3.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j4, 0, i10, 0, 0, 12, null));
-                                                final int i12 = mo5954measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) != Integer.MIN_VALUE ? mo5954measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) : 0;
+                                                final Placeable mo5967measureBRTryo03 = measurable3.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j4, 0, i10, 0, 0, 12, null));
+                                                final int i12 = mo5967measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) != Integer.MIN_VALUE ? mo5967measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) : 0;
                                                 float offset = ScrolledOffset.this.offset();
                                                 int roundToInt = Float.isNaN(offset) ? 0 : MathKt.roundToInt(offset);
-                                                if (Constraints.m7203getMaxHeightimpl(j4) == Integer.MAX_VALUE) {
-                                                    m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j4);
+                                                if (Constraints.m7216getMaxHeightimpl(j4) == Integer.MAX_VALUE) {
+                                                    m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j4);
                                                 } else {
-                                                    m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j4) + roundToInt;
+                                                    m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j4) + roundToInt;
                                                 }
-                                                final int i13 = m7203getMaxHeightimpl;
-                                                int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j4);
+                                                final int i13 = m7216getMaxHeightimpl;
+                                                int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j4);
                                                 final Arrangement.Horizontal horizontal2 = horizontal;
                                                 final Arrangement.Vertical vertical2 = vertical;
                                                 final int i14 = i;
-                                                return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, i13, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$TopAppBarLayout$2$1.1
+                                                return MeasureScope.layout$default(measureScope, m7217getMaxWidthimpl, i13, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.AppBarKt$TopAppBarLayout$2$1.1
                                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                                     {
                                                         super(1);
@@ -7769,50 +7769,50 @@ public final class AppBarKt {
                                                         int max;
                                                         int i15;
                                                         int height;
-                                                        int m7204getMaxWidthimpl2;
+                                                        int m7217getMaxWidthimpl2;
                                                         Placeable placeable = Placeable.this;
                                                         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, 0, (i13 - placeable.getHeight()) / 2, 0.0f, 4, null);
-                                                        Placeable placeable2 = mo5954measureBRTryo03;
+                                                        Placeable placeable2 = mo5967measureBRTryo03;
                                                         Arrangement.Horizontal horizontal3 = horizontal2;
                                                         if (Intrinsics.areEqual(horizontal3, Arrangement.INSTANCE.getCenter())) {
-                                                            max = (Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo03.getWidth()) / 2;
+                                                            max = (Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo03.getWidth()) / 2;
                                                             if (max < Placeable.this.getWidth()) {
-                                                                m7204getMaxWidthimpl2 = Placeable.this.getWidth() - max;
-                                                            } else if (mo5954measureBRTryo03.getWidth() + max > Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo02.getWidth()) {
-                                                                m7204getMaxWidthimpl2 = (Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo02.getWidth()) - (mo5954measureBRTryo03.getWidth() + max);
+                                                                m7217getMaxWidthimpl2 = Placeable.this.getWidth() - max;
+                                                            } else if (mo5967measureBRTryo03.getWidth() + max > Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo02.getWidth()) {
+                                                                m7217getMaxWidthimpl2 = (Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo02.getWidth()) - (mo5967measureBRTryo03.getWidth() + max);
                                                             }
-                                                            max += m7204getMaxWidthimpl2;
+                                                            max += m7217getMaxWidthimpl2;
                                                         } else if (Intrinsics.areEqual(horizontal3, Arrangement.INSTANCE.getEnd())) {
-                                                            max = (Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo03.getWidth()) - mo5954measureBRTryo02.getWidth();
+                                                            max = (Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo03.getWidth()) - mo5967measureBRTryo02.getWidth();
                                                         } else {
                                                             MeasureScope measureScope2 = measureScope;
                                                             f2 = AppBarKt.TopAppBarTitleInset;
-                                                            max = Math.max(measureScope2.mo413roundToPx0680j_4(f2), Placeable.this.getWidth());
+                                                            max = Math.max(measureScope2.mo423roundToPx0680j_4(f2), Placeable.this.getWidth());
                                                         }
                                                         int i16 = max;
                                                         Arrangement.Vertical vertical3 = vertical2;
                                                         if (Intrinsics.areEqual(vertical3, Arrangement.INSTANCE.getCenter())) {
-                                                            height = (i13 - mo5954measureBRTryo03.getHeight()) / 2;
+                                                            height = (i13 - mo5967measureBRTryo03.getHeight()) / 2;
                                                         } else if (!Intrinsics.areEqual(vertical3, Arrangement.INSTANCE.getBottom())) {
                                                             i15 = 0;
                                                             Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i16, i15, 0.0f, 4, null);
-                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo02.getWidth(), (i13 - mo5954measureBRTryo02.getHeight()) / 2, 0.0f, 4, null);
+                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo02.getWidth(), (i13 - mo5967measureBRTryo02.getHeight()) / 2, 0.0f, 4, null);
                                                         } else {
                                                             int i17 = i14;
                                                             if (i17 == 0) {
-                                                                height = i13 - mo5954measureBRTryo03.getHeight();
+                                                                height = i13 - mo5967measureBRTryo03.getHeight();
                                                             } else {
-                                                                int height2 = i17 - (mo5954measureBRTryo03.getHeight() - i12);
-                                                                int height3 = mo5954measureBRTryo03.getHeight() + height2;
-                                                                if (height3 > Constraints.m7203getMaxHeightimpl(j4)) {
-                                                                    height2 -= height3 - Constraints.m7203getMaxHeightimpl(j4);
+                                                                int height2 = i17 - (mo5967measureBRTryo03.getHeight() - i12);
+                                                                int height3 = mo5967measureBRTryo03.getHeight() + height2;
+                                                                if (height3 > Constraints.m7216getMaxHeightimpl(j4)) {
+                                                                    height2 -= height3 - Constraints.m7216getMaxHeightimpl(j4);
                                                                 }
-                                                                height = (i13 - mo5954measureBRTryo03.getHeight()) - Math.max(0, height2);
+                                                                height = (i13 - mo5967measureBRTryo03.getHeight()) - Math.max(0, height2);
                                                             }
                                                         }
                                                         i15 = height;
                                                         Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i16, i15, 0.0f, 4, null);
-                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, Constraints.m7204getMaxWidthimpl(j4) - mo5954measureBRTryo02.getWidth(), (i13 - mo5954measureBRTryo02.getHeight()) / 2, 0.0f, 4, null);
+                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, Constraints.m7217getMaxWidthimpl(j4) - mo5967measureBRTryo02.getWidth(), (i13 - mo5967measureBRTryo02.getHeight()) / 2, 0.0f, 4, null);
                                                     }
                                                 }, 4, null);
                                             }
@@ -7845,26 +7845,26 @@ public final class AppBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 9049318, "C2137@97755L280,2143@98048L502,2155@98563L264:AppBar.kt#uh7d8r");
             Modifier layoutId = LayoutIdKt.layoutId(Modifier.Companion, "navigationIcon");
             float f2 = TopAppBarHorizontalPadding;
-            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(layoutId, f2, 0.0f, 0.0f, 0.0f, 14, null);
+            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(layoutId, f2, 0.0f, 0.0f, 0.0f, 14, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             int i8 = i6;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m836paddingqDBjuR0$default);
+            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m846paddingqDBjuR0$default);
             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -7876,26 +7876,26 @@ public final class AppBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 249765716, "C2138@97858L163:AppBar.kt#uh7d8r");
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j)), function22, startRestartGroup, ProvidedValue.$stable | ((i7 >> 3) & 112));
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j)), function22, startRestartGroup, ProvidedValue.$stable | ((i7 >> 3) & 112));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
+            Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(LayoutIdKt.layoutId(Modifier.Companion, "title"), f2, 0.0f, 2, null);
             Modifier.Companion companion = Modifier.Companion;
             if (z) {
                 companion = SemanticsModifierKt.clearAndSetSemantics(companion, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.AppBarKt$TopAppBarLayout$1$2
@@ -7910,13 +7910,13 @@ public final class AppBarKt {
                     }
                 });
             }
-            Modifier m4701graphicsLayerAp8cVGQ$default = GraphicsLayerModifierKt.m4701graphicsLayerAp8cVGQ$default(m834paddingVpY3zN4$default.then(companion), 0.0f, 0.0f, f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 131067, null);
+            Modifier m4713graphicsLayerAp8cVGQ$default = GraphicsLayerModifierKt.m4713graphicsLayerAp8cVGQ$default(m844paddingVpY3zN4$default.then(companion), 0.0f, 0.0f, f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 131067, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
             int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, m4701graphicsLayerAp8cVGQ$default);
+            Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, m4713graphicsLayerAp8cVGQ$default);
             Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -7928,20 +7928,20 @@ public final class AppBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
             }
-            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 250255454, "C2149@98351L185:AppBar.kt#uh7d8r");
             int i9 = i8 >> 9;
-            ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, startRestartGroup, (i9 & 14) | ((i8 >> 15) & 112) | (i9 & 896));
+            ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j2, textStyle, function2, startRestartGroup, (i9 & 14) | ((i8 >> 15) & 112) | (i9 & 896));
             composer2 = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -7949,13 +7949,13 @@ public final class AppBarKt {
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            Modifier m836paddingqDBjuR0$default2 = PaddingKt.m836paddingqDBjuR0$default(LayoutIdKt.layoutId(Modifier.Companion, "actionIcons"), 0.0f, 0.0f, f2, 0.0f, 11, null);
+            Modifier m846paddingqDBjuR0$default2 = PaddingKt.m846paddingqDBjuR0$default(LayoutIdKt.layoutId(Modifier.Companion, "actionIcons"), 0.0f, 0.0f, f2, 0.0f, 11, null);
             ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
             int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
             CompositionLocalMap currentCompositionLocalMap4 = composer2.getCurrentCompositionLocalMap();
-            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m836paddingqDBjuR0$default2);
+            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default2);
             Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
             if (!(composer2.getApplier() instanceof Applier)) {
@@ -7967,19 +7967,19 @@ public final class AppBarKt {
             } else {
                 composer2.useNode();
             }
-            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer2);
-            Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer2);
+            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
             }
-            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, 250561951, "C2156@98661L152:AppBar.kt#uh7d8r");
-            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j3)), function23, composer2, ProvidedValue.$stable | ((i7 >> 6) & 112));
+            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j3)), function23, composer2, ProvidedValue.$stable | ((i7 >> 6) & 112));
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -8014,7 +8014,7 @@ public final class AppBarKt {
                 }
 
                 public final void invoke(Composer composer3, int i10) {
-                    AppBarKt.m1884TopAppBarLayoutkXwM9vE(Modifier.this, scrolledOffset, j, j2, j3, function2, textStyle, f, vertical, horizontal, i, z, function22, function23, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
+                    AppBarKt.m1894TopAppBarLayoutkXwM9vE(Modifier.this, scrolledOffset, j, j2, j3, function2, textStyle, f, vertical, horizontal, i, z, function22, function23, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3));
                 }
             });
         }
@@ -8055,7 +8055,7 @@ public final class AppBarKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     if (topAppBarState2.getCollapsedFraction() < 0.01f || topAppBarState2.getCollapsedFraction() == 1.0f) {
-                        return Velocity.m7480boximpl(Velocity.Companion.m7500getZero9UxMQ8M());
+                        return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
                     }
                     floatRef = new Ref.FloatRef();
                     floatRef.element = f;
@@ -8074,7 +8074,7 @@ public final class AppBarKt {
                         floatRef2 = (Ref.FloatRef) appBarKt$settleAppBar$12.L$0;
                         ResultKt.throwOnFailure(obj);
                         floatRef = floatRef2;
-                        return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                        return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -8113,7 +8113,7 @@ public final class AppBarKt {
                     }
                     return coroutine_suspended;
                 }
-                return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+                return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
             }
         }
         appBarKt$settleAppBar$1 = new AppBarKt$settleAppBar$1(continuation);
@@ -8152,7 +8152,7 @@ public final class AppBarKt {
             }
             return coroutine_suspended;
         }
-        return Velocity.m7480boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
+        return Velocity.m7493boximpl(VelocityKt.Velocity(0.0f, floatRef.element));
     }
 
     public static final CubicBezierEasing getTopTitleAlphaEasing() {
@@ -8164,23 +8164,23 @@ public final class AppBarKt {
     }
 
     private static final long SingleRowTopAppBar_cJHQLPU$lambda$10(State<Color> state) {
-        return state.getValue().m4547unboximpl();
+        return state.getValue().m4559unboximpl();
     }
 
     static {
         float f = 16;
         float f2 = 12;
-        float m7251constructorimpl = Dp.m7251constructorimpl(Dp.m7251constructorimpl(f) - Dp.m7251constructorimpl(f2));
-        BottomAppBarHorizontalPadding = m7251constructorimpl;
-        float m7251constructorimpl2 = Dp.m7251constructorimpl(Dp.m7251constructorimpl(f) - Dp.m7251constructorimpl(f2));
-        BottomAppBarVerticalPadding = m7251constructorimpl2;
-        FABHorizontalPadding = Dp.m7251constructorimpl(Dp.m7251constructorimpl(f) - m7251constructorimpl);
-        FABVerticalPadding = Dp.m7251constructorimpl(Dp.m7251constructorimpl(f2) - m7251constructorimpl2);
+        float m7264constructorimpl = Dp.m7264constructorimpl(Dp.m7264constructorimpl(f) - Dp.m7264constructorimpl(f2));
+        BottomAppBarHorizontalPadding = m7264constructorimpl;
+        float m7264constructorimpl2 = Dp.m7264constructorimpl(Dp.m7264constructorimpl(f) - Dp.m7264constructorimpl(f2));
+        BottomAppBarVerticalPadding = m7264constructorimpl2;
+        FABHorizontalPadding = Dp.m7264constructorimpl(Dp.m7264constructorimpl(f) - m7264constructorimpl);
+        FABVerticalPadding = Dp.m7264constructorimpl(Dp.m7264constructorimpl(f2) - m7264constructorimpl2);
         TopTitleAlphaEasing = new CubicBezierEasing(0.8f, 0.0f, 0.8f, 0.15f);
-        MediumTitleBottomPadding = Dp.m7251constructorimpl(24);
-        LargeTitleBottomPadding = Dp.m7251constructorimpl(28);
-        float m7251constructorimpl3 = Dp.m7251constructorimpl(4);
-        TopAppBarHorizontalPadding = m7251constructorimpl3;
-        TopAppBarTitleInset = Dp.m7251constructorimpl(Dp.m7251constructorimpl(f) - m7251constructorimpl3);
+        MediumTitleBottomPadding = Dp.m7264constructorimpl(24);
+        LargeTitleBottomPadding = Dp.m7264constructorimpl(28);
+        float m7264constructorimpl3 = Dp.m7264constructorimpl(4);
+        TopAppBarHorizontalPadding = m7264constructorimpl3;
+        TopAppBarTitleInset = Dp.m7264constructorimpl(Dp.m7264constructorimpl(f) - m7264constructorimpl3);
     }
 }

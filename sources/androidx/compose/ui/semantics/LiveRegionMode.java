@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class LiveRegionMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Polite = m6446constructorimpl(0);
-    private static final int Assertive = m6446constructorimpl(1);
+    private static final int Polite = m6459constructorimpl(0);
+    private static final int Assertive = m6459constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ LiveRegionMode m6445boximpl(int i) {
+    public static final /* synthetic */ LiveRegionMode m6458boximpl(int i) {
         return new LiveRegionMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6446constructorimpl(int i) {
+    private static int m6459constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6447equalsimpl(int i, Object obj) {
-        return (obj instanceof LiveRegionMode) && i == ((LiveRegionMode) obj).m6451unboximpl();
+    public static boolean m6460equalsimpl(int i, Object obj) {
+        return (obj instanceof LiveRegionMode) && i == ((LiveRegionMode) obj).m6464unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6448equalsimpl0(int i, int i2) {
+    public static final boolean m6461equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6449hashCodeimpl(int i) {
+    public static int m6462hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6447equalsimpl(this.value, obj);
+        return m6460equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6449hashCodeimpl(this.value);
+        return m6462hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6451unboximpl() {
+    public final /* synthetic */ int m6464unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class LiveRegionMode {
         }
 
         /* renamed from: getPolite-0phEisY  reason: not valid java name */
-        public final int m6453getPolite0phEisY() {
+        public final int m6466getPolite0phEisY() {
             return LiveRegionMode.Polite;
         }
 
         /* renamed from: getAssertive-0phEisY  reason: not valid java name */
-        public final int m6452getAssertive0phEisY() {
+        public final int m6465getAssertive0phEisY() {
             return LiveRegionMode.Assertive;
         }
     }
@@ -79,11 +79,11 @@ public final class LiveRegionMode {
     }
 
     public String toString() {
-        return m6450toStringimpl(this.value);
+        return m6463toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6450toStringimpl(int i) {
-        return m6448equalsimpl0(i, Polite) ? "Polite" : m6448equalsimpl0(i, Assertive) ? "Assertive" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m6463toStringimpl(int i) {
+        return m6461equalsimpl0(i, Polite) ? "Polite" : m6461equalsimpl0(i, Assertive) ? "Assertive" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

@@ -30,21 +30,21 @@ final class WrappedOverscrollEffect implements OverscrollEffect {
 
     @Override // androidx.compose.foundation.OverscrollEffect
     /* renamed from: applyToScroll-Rhakbz0 */
-    public long mo236applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
+    public long mo246applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1) {
         if (this.eventHandlingEnabled) {
-            return this.innerOverscrollEffect.mo236applyToScrollRhakbz0(j, i, function1);
+            return this.innerOverscrollEffect.mo246applyToScrollRhakbz0(j, i, function1);
         }
-        return function1.invoke(Offset.m4282boximpl(j)).m4303unboximpl();
+        return function1.invoke(Offset.m4294boximpl(j)).m4315unboximpl();
     }
 
     @Override // androidx.compose.foundation.OverscrollEffect
     /* renamed from: applyToFling-BMRW4eQ */
-    public Object mo235applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
+    public Object mo245applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation) {
         if (this.eventHandlingEnabled) {
-            Object mo235applyToFlingBMRW4eQ = this.innerOverscrollEffect.mo235applyToFlingBMRW4eQ(j, function2, continuation);
-            return mo235applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo235applyToFlingBMRW4eQ : Unit.INSTANCE;
+            Object mo245applyToFlingBMRW4eQ = this.innerOverscrollEffect.mo245applyToFlingBMRW4eQ(j, function2, continuation);
+            return mo245applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo245applyToFlingBMRW4eQ : Unit.INSTANCE;
         }
-        Object invoke = function2.invoke(Velocity.m7480boximpl(j), continuation);
+        Object invoke = function2.invoke(Velocity.m7493boximpl(j), continuation);
         return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
     }
 

@@ -20,40 +20,40 @@ public final class NestedScrollSource {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ NestedScrollSource m5704boximpl(int i) {
+    public static final /* synthetic */ NestedScrollSource m5717boximpl(int i) {
         return new NestedScrollSource(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5705constructorimpl(int i) {
+    public static int m5718constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5706equalsimpl(int i, Object obj) {
-        return (obj instanceof NestedScrollSource) && i == ((NestedScrollSource) obj).m5710unboximpl();
+    public static boolean m5719equalsimpl(int i, Object obj) {
+        return (obj instanceof NestedScrollSource) && i == ((NestedScrollSource) obj).m5723unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5707equalsimpl0(int i, int i2) {
+    public static final boolean m5720equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5708hashCodeimpl(int i) {
+    public static int m5721hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5706equalsimpl(this.value, obj);
+        return m5719equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5708hashCodeimpl(this.value);
+        return m5721hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5710unboximpl() {
+    public final /* synthetic */ int m5723unboximpl() {
         return this.value;
     }
 
@@ -62,12 +62,12 @@ public final class NestedScrollSource {
     }
 
     public String toString() {
-        return m5709toStringimpl(this.value);
+        return m5722toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5709toStringimpl(int i) {
-        return m5707equalsimpl0(i, UserInput) ? "UserInput" : m5707equalsimpl0(i, SideEffect) ? "SideEffect" : m5707equalsimpl0(i, Relocate) ? "Relocate" : "Invalid";
+    public static String m5722toStringimpl(int i) {
+        return m5720equalsimpl0(i, UserInput) ? "UserInput" : m5720equalsimpl0(i, SideEffect) ? "SideEffect" : m5720equalsimpl0(i, Relocate) ? "Relocate" : "Invalid";
     }
 
     /* compiled from: NestedScrollModifier.kt */
@@ -80,66 +80,66 @@ public final class NestedScrollSource {
 
         @Deprecated(message = "This has been replaced by UserInput.", replaceWith = @ReplaceWith(expression = "NestedScrollSource.UserInput", imports = {"import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.UserInput"}))
         /* renamed from: getDrag-WNlRxjI$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5711getDragWNlRxjI$annotations() {
+        public static /* synthetic */ void m5724getDragWNlRxjI$annotations() {
         }
 
         @Deprecated(message = "This has been replaced by SideEffect.", replaceWith = @ReplaceWith(expression = "NestedScrollSource.SideEffect", imports = {"import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.SideEffect"}))
         /* renamed from: getFling-WNlRxjI$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5712getFlingWNlRxjI$annotations() {
+        public static /* synthetic */ void m5725getFlingWNlRxjI$annotations() {
         }
 
         @Deprecated(message = "Do not use. Will be removed in the future.")
         /* renamed from: getRelocate-WNlRxjI$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5713getRelocateWNlRxjI$annotations() {
+        public static /* synthetic */ void m5726getRelocateWNlRxjI$annotations() {
         }
 
         @Deprecated(message = "This has been replaced by UserInput.", replaceWith = @ReplaceWith(expression = "NestedScrollSource.UserInput", imports = {"import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.UserInput"}))
         /* renamed from: getWheel-WNlRxjI$annotations  reason: not valid java name */
-        public static /* synthetic */ void m5714getWheelWNlRxjI$annotations() {
+        public static /* synthetic */ void m5727getWheelWNlRxjI$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUserInput-WNlRxjI  reason: not valid java name */
-        public final int m5719getUserInputWNlRxjI() {
+        public final int m5732getUserInputWNlRxjI() {
             return NestedScrollSource.UserInput;
         }
 
         /* renamed from: getSideEffect-WNlRxjI  reason: not valid java name */
-        public final int m5718getSideEffectWNlRxjI() {
+        public final int m5731getSideEffectWNlRxjI() {
             return NestedScrollSource.SideEffect;
         }
 
         /* renamed from: getDrag-WNlRxjI  reason: not valid java name */
-        public final int m5715getDragWNlRxjI() {
+        public final int m5728getDragWNlRxjI() {
             return NestedScrollSource.Drag;
         }
 
         /* renamed from: getFling-WNlRxjI  reason: not valid java name */
-        public final int m5716getFlingWNlRxjI() {
+        public final int m5729getFlingWNlRxjI() {
             return NestedScrollSource.Fling;
         }
 
         /* renamed from: getRelocate-WNlRxjI  reason: not valid java name */
-        public final int m5717getRelocateWNlRxjI() {
+        public final int m5730getRelocateWNlRxjI() {
             return NestedScrollSource.Relocate;
         }
 
         /* renamed from: getWheel-WNlRxjI  reason: not valid java name */
-        public final int m5720getWheelWNlRxjI() {
+        public final int m5733getWheelWNlRxjI() {
             return NestedScrollSource.Wheel;
         }
     }
 
     static {
-        int m5705constructorimpl = m5705constructorimpl(1);
-        UserInput = m5705constructorimpl;
-        int m5705constructorimpl2 = m5705constructorimpl(2);
-        SideEffect = m5705constructorimpl2;
-        Drag = m5705constructorimpl;
-        Fling = m5705constructorimpl2;
-        Relocate = m5705constructorimpl(3);
-        Wheel = m5705constructorimpl;
+        int m5718constructorimpl = m5718constructorimpl(1);
+        UserInput = m5718constructorimpl;
+        int m5718constructorimpl2 = m5718constructorimpl(2);
+        SideEffect = m5718constructorimpl2;
+        Drag = m5718constructorimpl;
+        Fling = m5718constructorimpl2;
+        Relocate = m5718constructorimpl(3);
+        Wheel = m5718constructorimpl;
     }
 }

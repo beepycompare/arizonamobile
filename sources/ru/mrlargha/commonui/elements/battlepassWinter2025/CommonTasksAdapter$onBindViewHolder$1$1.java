@@ -22,7 +22,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: CommonTasksAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.CommonTasksAdapter$onBindViewHolder$1$1", f = "CommonTasksAdapter.kt", i = {0}, l = {68}, m = "invokeSuspend", n = {"imageId"}, s = {"I$0"}, v = 1)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CommonTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ RodinaBattlePassCommonTaskViewHolder $holder;
     final /* synthetic */ CommonTaskInfo $task;

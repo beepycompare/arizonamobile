@@ -63,35 +63,35 @@ public abstract class AbstractDoubleTimeSource implements TimeSource.WithCompara
 
         @Override // kotlin.time.TimeMark
         /* renamed from: minus-LRDsOJo  reason: not valid java name */
-        public /* bridge */ ComparableTimeMark mo10439minusLRDsOJo(long j) {
-            return ComparableTimeMark.DefaultImpls.m10443minusLRDsOJo(this, j);
+        public /* bridge */ ComparableTimeMark mo10454minusLRDsOJo(long j) {
+            return ComparableTimeMark.DefaultImpls.m10458minusLRDsOJo(this, j);
         }
 
         @Override // kotlin.time.TimeMark
         /* renamed from: elapsedNow-UwyO8pc  reason: not valid java name */
-        public long mo10438elapsedNowUwyO8pc() {
-            return Duration.m10476minusLRDsOJo(DurationKt.toDuration(this.timeSource.read() - this.startedAt, this.timeSource.getUnit()), this.offset);
+        public long mo10453elapsedNowUwyO8pc() {
+            return Duration.m10491minusLRDsOJo(DurationKt.toDuration(this.timeSource.read() - this.startedAt, this.timeSource.getUnit()), this.offset);
         }
 
         @Override // kotlin.time.TimeMark
         /* renamed from: plus-LRDsOJo  reason: not valid java name */
-        public ComparableTimeMark mo10441plusLRDsOJo(long j) {
-            return new DoubleTimeMark(this.startedAt, this.timeSource, Duration.m10477plusLRDsOJo(this.offset, j), null);
+        public ComparableTimeMark mo10456plusLRDsOJo(long j) {
+            return new DoubleTimeMark(this.startedAt, this.timeSource, Duration.m10492plusLRDsOJo(this.offset, j), null);
         }
 
         @Override // kotlin.time.ComparableTimeMark
         /* renamed from: minus-UwyO8pc  reason: not valid java name */
-        public long mo10440minusUwyO8pc(ComparableTimeMark other) {
+        public long mo10455minusUwyO8pc(ComparableTimeMark other) {
             Intrinsics.checkNotNullParameter(other, "other");
             if (other instanceof DoubleTimeMark) {
                 DoubleTimeMark doubleTimeMark = (DoubleTimeMark) other;
                 if (Intrinsics.areEqual(this.timeSource, doubleTimeMark.timeSource)) {
-                    if (Duration.m10453equalsimpl0(this.offset, doubleTimeMark.offset) && Duration.m10473isInfiniteimpl(this.offset)) {
-                        return Duration.Companion.m10539getZEROUwyO8pc();
+                    if (Duration.m10468equalsimpl0(this.offset, doubleTimeMark.offset) && Duration.m10488isInfiniteimpl(this.offset)) {
+                        return Duration.Companion.m10554getZEROUwyO8pc();
                     }
-                    long m10476minusLRDsOJo = Duration.m10476minusLRDsOJo(this.offset, doubleTimeMark.offset);
+                    long m10491minusLRDsOJo = Duration.m10491minusLRDsOJo(this.offset, doubleTimeMark.offset);
                     long duration = DurationKt.toDuration(this.startedAt - doubleTimeMark.startedAt, this.timeSource.getUnit());
-                    return Duration.m10453equalsimpl0(duration, Duration.m10492unaryMinusUwyO8pc(m10476minusLRDsOJo)) ? Duration.Companion.m10539getZEROUwyO8pc() : Duration.m10477plusLRDsOJo(duration, m10476minusLRDsOJo);
+                    return Duration.m10468equalsimpl0(duration, Duration.m10507unaryMinusUwyO8pc(m10491minusLRDsOJo)) ? Duration.Companion.m10554getZEROUwyO8pc() : Duration.m10492plusLRDsOJo(duration, m10491minusLRDsOJo);
                 }
             }
             throw new IllegalArgumentException("Subtracting or comparing time marks from different time sources is not possible: " + this + " and " + other);
@@ -99,21 +99,21 @@ public abstract class AbstractDoubleTimeSource implements TimeSource.WithCompara
 
         @Override // kotlin.time.ComparableTimeMark
         public boolean equals(Object obj) {
-            return (obj instanceof DoubleTimeMark) && Intrinsics.areEqual(this.timeSource, ((DoubleTimeMark) obj).timeSource) && Duration.m10453equalsimpl0(mo10440minusUwyO8pc((ComparableTimeMark) obj), Duration.Companion.m10539getZEROUwyO8pc());
+            return (obj instanceof DoubleTimeMark) && Intrinsics.areEqual(this.timeSource, ((DoubleTimeMark) obj).timeSource) && Duration.m10468equalsimpl0(mo10455minusUwyO8pc((ComparableTimeMark) obj), Duration.Companion.m10554getZEROUwyO8pc());
         }
 
         @Override // kotlin.time.ComparableTimeMark
         public int hashCode() {
-            return Duration.m10469hashCodeimpl(Duration.m10477plusLRDsOJo(DurationKt.toDuration(this.startedAt, this.timeSource.getUnit()), this.offset));
+            return Duration.m10484hashCodeimpl(Duration.m10492plusLRDsOJo(DurationKt.toDuration(this.startedAt, this.timeSource.getUnit()), this.offset));
         }
 
         public String toString() {
-            return "DoubleTimeMark(" + this.startedAt + DurationUnitKt.shortName(this.timeSource.getUnit()) + " + " + ((Object) Duration.m10488toStringimpl(this.offset)) + ", " + this.timeSource + ')';
+            return "DoubleTimeMark(" + this.startedAt + DurationUnitKt.shortName(this.timeSource.getUnit()) + " + " + ((Object) Duration.m10503toStringimpl(this.offset)) + ", " + this.timeSource + ')';
         }
     }
 
     @Override // kotlin.time.TimeSource
     public ComparableTimeMark markNow() {
-        return new DoubleTimeMark(read(), this, Duration.Companion.m10539getZEROUwyO8pc(), null);
+        return new DoubleTimeMark(read(), this, Duration.Companion.m10554getZEROUwyO8pc(), null);
     }
 }

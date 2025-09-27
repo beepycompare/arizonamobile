@@ -25,6 +25,6 @@ public final class NestedScrollDispatcher$dispatchPostFling$1 extends Continuati
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m5700dispatchPostFlingRZ2iAVY(0L, 0L, this);
+        return this.this$0.m5713dispatchPostFlingRZ2iAVY(0L, 0L, this);
     }
 }

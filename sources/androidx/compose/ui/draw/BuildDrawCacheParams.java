@@ -12,5 +12,5 @@ public interface BuildDrawCacheParams {
     LayoutDirection getLayoutDirection();
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    long mo4075getSizeNHjbRc();
+    long mo4087getSizeNHjbRc();
 }

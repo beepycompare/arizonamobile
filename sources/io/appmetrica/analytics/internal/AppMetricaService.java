@@ -30,7 +30,7 @@ public class AppMetricaService extends Service {
     private static K1 c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0672w1 f1197a = new C0672w1(this);
+    private final C0672w1 f1198a = new C0672w1(this);
     private final a b = new a();
 
     @Override // android.app.Service
@@ -43,7 +43,7 @@ public class AppMetricaService extends Service {
             iBinder = this.b;
         }
         K1 k1 = c;
-        k1.f529a.execute(new E1(k1, intent));
+        k1.f530a.execute(new E1(k1, intent));
         return iBinder;
     }
 
@@ -51,7 +51,7 @@ public class AppMetricaService extends Service {
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         K1 k1 = c;
-        k1.f529a.execute(new A1(k1, configuration));
+        k1.f530a.execute(new A1(k1, configuration));
     }
 
     @Override // android.app.Service
@@ -62,10 +62,10 @@ public class AppMetricaService extends Service {
         K1 k1 = c;
         if (k1 == null) {
             Context applicationContext = getApplicationContext();
-            L1 l1 = new L1(applicationContext, this.f1197a, new B5(applicationContext));
+            L1 l1 = new L1(applicationContext, this.f1198a, new B5(applicationContext));
             C0666vk c0666vk = Na.F.v;
             O1 o1 = new O1(l1);
-            LinkedHashMap linkedHashMap = c0666vk.f1129a;
+            LinkedHashMap linkedHashMap = c0666vk.f1130a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();
@@ -74,12 +74,12 @@ public class AppMetricaService extends Service {
             ((List) obj).add(o1);
             c = new K1(Na.F.d.b(), l1);
         } else {
-            k1.b.a(this.f1197a);
+            k1.b.a(this.f1198a);
         }
         Na na = Na.F;
         Jj jj = new Jj(c);
         synchronized (na) {
-            na.f = new Ij(na.f593a, jj);
+            na.f = new Ij(na.f594a, jj);
         }
         c.onCreate();
     }
@@ -94,26 +94,26 @@ public class AppMetricaService extends Service {
     public void onRebind(Intent intent) {
         super.onRebind(intent);
         K1 k1 = c;
-        k1.f529a.execute(new F1(k1, intent));
+        k1.f530a.execute(new F1(k1, intent));
     }
 
     @Override // android.app.Service
     public void onStart(Intent intent, int i) {
         K1 k1 = c;
-        k1.f529a.execute(new C1(k1, intent, i));
+        k1.f530a.execute(new C1(k1, intent, i));
     }
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
         K1 k1 = c;
-        k1.f529a.execute(new D1(k1, intent, i, i2));
+        k1.f530a.execute(new D1(k1, intent, i, i2));
         return 2;
     }
 
     @Override // android.app.Service
     public boolean onUnbind(Intent intent) {
         K1 k1 = c;
-        k1.f529a.execute(new G1(k1, intent));
+        k1.f530a.execute(new G1(k1, intent));
         String action = intent.getAction();
         return (action == null || !action.startsWith("io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK")) && intent.getData() != null;
     }

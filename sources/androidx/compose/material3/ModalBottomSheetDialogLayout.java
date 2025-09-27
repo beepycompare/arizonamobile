@@ -57,7 +57,7 @@ final class ModalBottomSheetDialogLayout extends AbstractComposeView implements 
         this.onDismissRequest = function0;
         this.predictiveBackProgress = animatable;
         this.scope = coroutineScope;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m2083getLambda2$material3_release(), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m2093getLambda2$material3_release(), null, 2, null);
         this.content$delegate = mutableStateOf$default;
     }
 

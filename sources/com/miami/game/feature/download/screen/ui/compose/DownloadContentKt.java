@@ -127,15 +127,15 @@ public final class DownloadContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 246913741, "C63@2450L773:DownloadContent.kt#k3v2wi");
@@ -183,24 +183,24 @@ public final class DownloadContentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2040831088, "C68@2652L10,68@2625L169,71@2834L10,71@2807L205,77@3159L40,75@3025L188:DownloadContent.kt#k3v2wi");
             int i8 = i6;
             int i9 = i5;
-            TextKt.m2804Text4IGK_g(uiState.getTextDownload() + " " + uiState.getDownloadingStringState(), (Modifier) null, Color.Companion.m4574getWhite0d7_KjU(), 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65530);
-            TextKt.m2804Text4IGK_g("Осталось времени: " + uiState.getTimeRemainingString(), (Modifier) null, Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TextUnitKt.getSp(10), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 3456, 0, 65522);
+            TextKt.m2814Text4IGK_g(uiState.getTextDownload() + " " + uiState.getDownloadingStringState(), (Modifier) null, Color.Companion.m4586getWhite0d7_KjU(), 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK, 0, 65530);
+            TextKt.m2814Text4IGK_g("Осталось времени: " + uiState.getTimeRemainingString(), (Modifier) null, Color.m4548copywmQWz5c$default(Color.Companion.m4586getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TextUnitKt.getSp(10), (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, 3456, 0, 65522);
             startRestartGroup = startRestartGroup;
-            Modifier m833paddingVpY3zN4 = PaddingKt.m833paddingVpY3zN4(Modifier.Companion, Dp.m7251constructorimpl(i7), Dp.m7251constructorimpl(28));
+            Modifier m843paddingVpY3zN4 = PaddingKt.m843paddingVpY3zN4(Modifier.Companion, Dp.m7264constructorimpl(i7), Dp.m7264constructorimpl(28));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1873812849, "CC(remember):DownloadContent.kt#9igjgp");
             int i10 = (i4 & 14) == i9 ? i3 : i8;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -216,7 +216,7 @@ public final class DownloadContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ProgressBarKt.CustomLinerProgressBar((Function0) rememberedValue, m833paddingVpY3zN4, startRestartGroup, 48, i8);
+            ProgressBarKt.CustomLinerProgressBar((Function0) rememberedValue, m843paddingVpY3zN4, startRestartGroup, 48, i8);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -262,7 +262,7 @@ public final class DownloadContentKt {
             } else {
                 i2 = R.drawable.download_screen_sound_btn_off;
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m836paddingqDBjuR0$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(80)), 0.0f, Dp.m7251constructorimpl(24), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, PaddingKt.m846paddingqDBjuR0$default(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(80)), 0.0f, Dp.m7264constructorimpl(24), 0.0f, 0.0f, 13, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

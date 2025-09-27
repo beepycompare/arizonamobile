@@ -11,49 +11,49 @@ public final class KeyEvent {
     private final android.view.KeyEvent nativeKeyEvent;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ KeyEvent m5665boximpl(android.view.KeyEvent keyEvent) {
+    public static final /* synthetic */ KeyEvent m5678boximpl(android.view.KeyEvent keyEvent) {
         return new KeyEvent(keyEvent);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static android.view.KeyEvent m5666constructorimpl(android.view.KeyEvent keyEvent) {
+    public static android.view.KeyEvent m5679constructorimpl(android.view.KeyEvent keyEvent) {
         return keyEvent;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5667equalsimpl(android.view.KeyEvent keyEvent, Object obj) {
-        return (obj instanceof KeyEvent) && Intrinsics.areEqual(keyEvent, ((KeyEvent) obj).m5671unboximpl());
+    public static boolean m5680equalsimpl(android.view.KeyEvent keyEvent, Object obj) {
+        return (obj instanceof KeyEvent) && Intrinsics.areEqual(keyEvent, ((KeyEvent) obj).m5684unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5668equalsimpl0(android.view.KeyEvent keyEvent, android.view.KeyEvent keyEvent2) {
+    public static final boolean m5681equalsimpl0(android.view.KeyEvent keyEvent, android.view.KeyEvent keyEvent2) {
         return Intrinsics.areEqual(keyEvent, keyEvent2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5669hashCodeimpl(android.view.KeyEvent keyEvent) {
+    public static int m5682hashCodeimpl(android.view.KeyEvent keyEvent) {
         return keyEvent.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5670toStringimpl(android.view.KeyEvent keyEvent) {
+    public static String m5683toStringimpl(android.view.KeyEvent keyEvent) {
         return "KeyEvent(nativeKeyEvent=" + keyEvent + ')';
     }
 
     public boolean equals(Object obj) {
-        return m5667equalsimpl(this.nativeKeyEvent, obj);
+        return m5680equalsimpl(this.nativeKeyEvent, obj);
     }
 
     public int hashCode() {
-        return m5669hashCodeimpl(this.nativeKeyEvent);
+        return m5682hashCodeimpl(this.nativeKeyEvent);
     }
 
     public String toString() {
-        return m5670toStringimpl(this.nativeKeyEvent);
+        return m5683toStringimpl(this.nativeKeyEvent);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ android.view.KeyEvent m5671unboximpl() {
+    public final /* synthetic */ android.view.KeyEvent m5684unboximpl() {
         return this.nativeKeyEvent;
     }
 

@@ -33,21 +33,21 @@ public final class TextUnitKt {
     }
 
     /* renamed from: isSpecified--R2X_6o$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7462isSpecifiedR2X_6o$annotations(long j) {
+    public static /* synthetic */ void m7475isSpecifiedR2X_6o$annotations(long j) {
     }
 
     /* renamed from: isUnspecified--R2X_6o$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7464isUnspecifiedR2X_6o$annotations(long j) {
+    public static /* synthetic */ void m7477isUnspecifiedR2X_6o$annotations(long j) {
     }
 
     /* renamed from: TextUnit-anM5pPY  reason: not valid java name */
-    public static final long m7457TextUnitanM5pPY(float f, long j) {
+    public static final long m7470TextUnitanM5pPY(float f, long j) {
         return pack(j, f);
     }
 
     /* renamed from: isUnspecified--R2X_6o  reason: not valid java name */
-    public static final boolean m7463isUnspecifiedR2X_6o(long j) {
-        return TextUnit.m7443getRawTypeimpl(j) == 0;
+    public static final boolean m7476isUnspecifiedR2X_6o(long j) {
+        return TextUnit.m7456getRawTypeimpl(j) == 0;
     }
 
     public static final long getSp(float f) {
@@ -75,73 +75,73 @@ public final class TextUnitKt {
     }
 
     /* renamed from: times-mpE4wyQ  reason: not valid java name */
-    public static final long m7468timesmpE4wyQ(float f, long j) {
-        m7458checkArithmeticR2X_6o(j);
-        return pack(TextUnit.m7443getRawTypeimpl(j), f * TextUnit.m7445getValueimpl(j));
+    public static final long m7481timesmpE4wyQ(float f, long j) {
+        m7471checkArithmeticR2X_6o(j);
+        return pack(TextUnit.m7456getRawTypeimpl(j), f * TextUnit.m7458getValueimpl(j));
     }
 
     /* renamed from: times-mpE4wyQ  reason: not valid java name */
-    public static final long m7467timesmpE4wyQ(double d, long j) {
-        m7458checkArithmeticR2X_6o(j);
-        return pack(TextUnit.m7443getRawTypeimpl(j), ((float) d) * TextUnit.m7445getValueimpl(j));
+    public static final long m7480timesmpE4wyQ(double d, long j) {
+        m7471checkArithmeticR2X_6o(j);
+        return pack(TextUnit.m7456getRawTypeimpl(j), ((float) d) * TextUnit.m7458getValueimpl(j));
     }
 
     /* renamed from: times-mpE4wyQ  reason: not valid java name */
-    public static final long m7469timesmpE4wyQ(int i, long j) {
-        m7458checkArithmeticR2X_6o(j);
-        return pack(TextUnit.m7443getRawTypeimpl(j), i * TextUnit.m7445getValueimpl(j));
+    public static final long m7482timesmpE4wyQ(int i, long j) {
+        m7471checkArithmeticR2X_6o(j);
+        return pack(TextUnit.m7456getRawTypeimpl(j), i * TextUnit.m7458getValueimpl(j));
     }
 
     public static final long pack(long j, float f) {
-        return TextUnit.m7437constructorimpl(j | (Float.floatToRawIntBits(f) & 4294967295L));
+        return TextUnit.m7450constructorimpl(j | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 
     /* renamed from: lerp-C3pnCVY  reason: not valid java name */
-    public static final long m7465lerpC3pnCVY(long j, long j2, float f) {
-        m7459checkArithmeticNB67dxo(j, j2);
-        return pack(TextUnit.m7443getRawTypeimpl(j), MathHelpersKt.lerp(TextUnit.m7445getValueimpl(j), TextUnit.m7445getValueimpl(j2), f));
+    public static final long m7478lerpC3pnCVY(long j, long j2, float f) {
+        m7472checkArithmeticNB67dxo(j, j2);
+        return pack(TextUnit.m7456getRawTypeimpl(j), MathHelpersKt.lerp(TextUnit.m7458getValueimpl(j), TextUnit.m7458getValueimpl(j2), f));
     }
 
     /* renamed from: isSpecified--R2X_6o  reason: not valid java name */
-    public static final boolean m7461isSpecifiedR2X_6o(long j) {
-        return !(TextUnit.m7443getRawTypeimpl(j) == 0);
+    public static final boolean m7474isSpecifiedR2X_6o(long j) {
+        return !(TextUnit.m7456getRawTypeimpl(j) == 0);
     }
 
     /* renamed from: takeOrElse-eAf_CNQ  reason: not valid java name */
-    public static final long m7466takeOrElseeAf_CNQ(long j, Function0<TextUnit> function0) {
-        return !((TextUnit.m7443getRawTypeimpl(j) > 0L ? 1 : (TextUnit.m7443getRawTypeimpl(j) == 0L ? 0 : -1)) == 0) ? j : function0.invoke().m7454unboximpl();
+    public static final long m7479takeOrElseeAf_CNQ(long j, Function0<TextUnit> function0) {
+        return !((TextUnit.m7456getRawTypeimpl(j) > 0L ? 1 : (TextUnit.m7456getRawTypeimpl(j) == 0L ? 0 : -1)) == 0) ? j : function0.invoke().m7467unboximpl();
     }
 
     /* renamed from: checkArithmetic--R2X_6o  reason: not valid java name */
-    public static final void m7458checkArithmeticR2X_6o(long j) {
-        if (TextUnit.m7443getRawTypeimpl(j) == 0) {
+    public static final void m7471checkArithmeticR2X_6o(long j) {
+        if (TextUnit.m7456getRawTypeimpl(j) == 0) {
             InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for Unspecified type.");
         }
     }
 
     /* renamed from: checkArithmetic-NB67dxo  reason: not valid java name */
-    public static final void m7459checkArithmeticNB67dxo(long j, long j2) {
-        if (!((TextUnit.m7443getRawTypeimpl(j) == 0 || TextUnit.m7443getRawTypeimpl(j2) == 0) ? false : true)) {
+    public static final void m7472checkArithmeticNB67dxo(long j, long j2) {
+        if (!((TextUnit.m7456getRawTypeimpl(j) == 0 || TextUnit.m7456getRawTypeimpl(j2) == 0) ? false : true)) {
             InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for Unspecified type.");
         }
-        if (TextUnitType.m7473equalsimpl0(TextUnit.m7444getTypeUIouoOA(j), TextUnit.m7444getTypeUIouoOA(j2))) {
+        if (TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnit.m7457getTypeUIouoOA(j2))) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for " + ((Object) TextUnitType.m7475toStringimpl(TextUnit.m7444getTypeUIouoOA(j))) + " and " + ((Object) TextUnitType.m7475toStringimpl(TextUnit.m7444getTypeUIouoOA(j2))));
+        InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for " + ((Object) TextUnitType.m7488toStringimpl(TextUnit.m7457getTypeUIouoOA(j))) + " and " + ((Object) TextUnitType.m7488toStringimpl(TextUnit.m7457getTypeUIouoOA(j2))));
     }
 
     /* renamed from: checkArithmetic-vU-0ePk  reason: not valid java name */
-    public static final void m7460checkArithmeticvU0ePk(long j, long j2, long j3) {
+    public static final void m7473checkArithmeticvU0ePk(long j, long j2, long j3) {
         boolean z = true;
-        if (!((TextUnit.m7443getRawTypeimpl(j) == 0 || TextUnit.m7443getRawTypeimpl(j2) == 0 || TextUnit.m7443getRawTypeimpl(j3) == 0) ? false : true)) {
+        if (!((TextUnit.m7456getRawTypeimpl(j) == 0 || TextUnit.m7456getRawTypeimpl(j2) == 0 || TextUnit.m7456getRawTypeimpl(j3) == 0) ? false : true)) {
             InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for Unspecified type.");
         }
-        if (!TextUnitType.m7473equalsimpl0(TextUnit.m7444getTypeUIouoOA(j), TextUnit.m7444getTypeUIouoOA(j2)) || !TextUnitType.m7473equalsimpl0(TextUnit.m7444getTypeUIouoOA(j2), TextUnit.m7444getTypeUIouoOA(j3))) {
+        if (!TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnit.m7457getTypeUIouoOA(j2)) || !TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j2), TextUnit.m7457getTypeUIouoOA(j3))) {
             z = false;
         }
         if (z) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for " + ((Object) TextUnitType.m7475toStringimpl(TextUnit.m7444getTypeUIouoOA(j))) + " and " + ((Object) TextUnitType.m7475toStringimpl(TextUnit.m7444getTypeUIouoOA(j2))));
+        InlineClassHelperKt.throwIllegalArgumentException("Cannot perform operation for " + ((Object) TextUnitType.m7488toStringimpl(TextUnit.m7457getTypeUIouoOA(j))) + " and " + ((Object) TextUnitType.m7488toStringimpl(TextUnit.m7457getTypeUIouoOA(j2))));
     }
 }

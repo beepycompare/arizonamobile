@@ -18,6 +18,7 @@ public class SharedPreferencesManager {
     private static final String PREFS_KEY_DEEPLINK_URL_CACHED = "deeplink_url_cached";
     private static final String PREFS_KEY_GDPR_FORGET_ME = "gdpr_forget_me";
     private static final String PREFS_KEY_INSTALL_TRACKED = "install_tracked";
+    private static final String PREFS_KEY_LVL_TRACKED = "lvl_tracked";
     private static final String PREFS_KEY_PREINSTALL_PAYLOAD_READ_STATUS = "preinstall_payload_read_status";
     private static final String PREFS_KEY_PREINSTALL_SYSTEM_INSTALLER_REFERRER = "preinstall_system_installer_referrer";
     private static final String PREFS_KEY_PUSH_TOKEN = "push_token";
@@ -189,6 +190,10 @@ public class SharedPreferencesManager {
         return getBoolean(PREFS_KEY_INSTALL_TRACKED, false);
     }
 
+    public synchronized boolean getLicenseVerificationTracked() {
+        return getBoolean(PREFS_KEY_LVL_TRACKED, false);
+    }
+
     public synchronized long getPreinstallPayloadReadStatus() {
         return getLong(PREFS_KEY_PREINSTALL_PAYLOAD_READ_STATUS, 0L);
     }
@@ -329,6 +334,10 @@ public class SharedPreferencesManager {
 
     public synchronized void setInstallTracked() {
         saveBoolean(PREFS_KEY_INSTALL_TRACKED, true);
+    }
+
+    public synchronized void setLicenseVerificationTracked() {
+        saveBoolean(PREFS_KEY_LVL_TRACKED, true);
     }
 
     public synchronized void setPreinstallPayloadReadStatus(long j) {

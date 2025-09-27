@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface OnScrollChangedDispatcher {
     /* renamed from: dispatchScrollDeltaInfo-k-4lQ0M  reason: not valid java name */
-    void mo525dispatchScrollDeltaInfok4lQ0M(long j);
+    void mo535dispatchScrollDeltaInfok4lQ0M(long j);
 }

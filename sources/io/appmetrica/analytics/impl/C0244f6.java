@@ -6,10 +6,10 @@ import android.content.BroadcastReceiver;
 public final class C0244f6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BroadcastReceiver f873a;
+    public final BroadcastReceiver f874a;
     public boolean b = false;
 
     public C0244f6(I2 i2) {
-        this.f873a = i2;
+        this.f874a = i2;
     }
 }

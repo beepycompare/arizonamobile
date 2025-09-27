@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public interface OnRemeasuredModifier extends Modifier.Element {
     /* renamed from: onRemeasured-ozmzZPI  reason: not valid java name */
-    void m6009onRemeasuredozmzZPI(long j);
+    void m6022onRemeasuredozmzZPI(long j);
 
     /* compiled from: OnRemeasuredModifier.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)

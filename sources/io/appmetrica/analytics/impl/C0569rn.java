@@ -12,20 +12,20 @@ import java.util.Map;
 public final class C0569rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1072a;
+    public final HashMap f1073a;
 
     public C0569rn(String str, HashMap<String, List<String>> hashMap) {
-        this.f1072a = hashMap;
+        this.f1073a = hashMap;
     }
 
     public final HashMap<String, List<String>> a() {
-        return this.f1072a;
+        return this.f1073a;
     }
 
     public final boolean a(SQLiteDatabase sQLiteDatabase) {
         try {
             boolean z = true;
-            for (Map.Entry entry : this.f1072a.entrySet()) {
+            for (Map.Entry entry : this.f1073a.entrySet()) {
                 SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
                 Cursor query = sQLiteDatabase2.query((String) entry.getKey(), null, null, null, null, null, null);
                 if (query == null) {

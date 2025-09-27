@@ -24,7 +24,7 @@ public final class Pc extends C0651v5 implements InterfaceC0430mb, InterfaceC040
         boolean optBoolean;
         Do r0 = this.t;
         synchronized (r0) {
-            optBoolean = r0.f417a.a().optBoolean("referrer_handled", false);
+            optBoolean = r0.f418a.a().optBoolean("referrer_handled", false);
         }
         return optBoolean;
     }
@@ -50,7 +50,7 @@ public final class Pc extends C0651v5 implements InterfaceC0430mb, InterfaceC040
     public final void a() {
         Do r0 = this.t;
         synchronized (r0) {
-            Eo eo = r0.f417a;
+            Eo eo = r0.f418a;
             eo.a(eo.a().put("referrer_handled", true));
         }
     }

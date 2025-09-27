@@ -75,22 +75,22 @@ public final class TextStyle {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getHyphens-EaSxIns$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6728getHyphensEaSxIns$annotations() {
+    public static /* synthetic */ void m6741getHyphensEaSxIns$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getLineBreak-LgCVezo$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6729getLineBreakLgCVezo$annotations() {
+    public static /* synthetic */ void m6742getLineBreakLgCVezo$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getTextAlign-buA522U$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6730getTextAlignbuA522U$annotations() {
+    public static /* synthetic */ void m6743getTextAlignbuA522U$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getTextDirection-mmuk1to$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6731getTextDirectionmmuk1to$annotations() {
+    public static /* synthetic */ void m6744getTextDirectionmmuk1to$annotations() {
     }
 
     public TextStyle(SpanStyle spanStyle, ParagraphStyle paragraphStyle, PlatformTextStyle platformTextStyle) {
@@ -124,35 +124,35 @@ public final class TextStyle {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(r18, r3, r5, r31, r32, r33, r34, r35, r37, r38, r39, r40, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        this(r18, r3, r5, r31, r32, r33, r34, r35, r37, r38, r39, r40, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, null);
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j6 = m4573getUnspecified0d7_KjU;
+        long j6 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j7 = m7456getUnspecifiedXSAIIZE2;
+        long j7 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j8 = m4573getUnspecified0d7_KjU2;
+        long j8 = m4585getUnspecified0d7_KjU2;
     }
 
     private TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent) {
-        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, (PlatformSpanStyle) null, (DrawStyle) null, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, (PlatformParagraphStyle) null, (LineHeightStyle) null, LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null), null);
+        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, (PlatformSpanStyle) null, (DrawStyle) null, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, (PlatformParagraphStyle) null, (LineHeightStyle) null, LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null), null);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -160,35 +160,35 @@ public final class TextStyle {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(r18, r3, r5, r33, r34, r35, r36, r37, r39, r40, r41, r42, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, (i & 262144) != 0 ? null : platformTextStyle, (i & 524288) != 0 ? null : lineHeightStyle, null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        this(r18, r3, r5, r33, r34, r35, r36, r37, r39, r40, r41, r42, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, (i & 262144) != 0 ? null : platformTextStyle, (i & 524288) != 0 ? null : lineHeightStyle, null);
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j6 = m4573getUnspecified0d7_KjU;
+        long j6 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j7 = m7456getUnspecifiedXSAIIZE2;
+        long j7 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j8 = m4573getUnspecified0d7_KjU2;
+        long j8 = m4585getUnspecified0d7_KjU2;
     }
 
     private TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle) {
-        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, (DrawStyle) null, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null), platformTextStyle);
+        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, (DrawStyle) null, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -196,35 +196,35 @@ public final class TextStyle {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(r18, r3, r5, r35, r36, r37, r38, r39, r41, r42, r43, r44, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, (i & 262144) != 0 ? null : platformTextStyle, (i & 524288) != 0 ? null : lineHeightStyle, (i & 1048576) != 0 ? null : lineBreak, (i & 2097152) != 0 ? null : hyphens, null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        this(r18, r3, r5, r35, r36, r37, r38, r39, r41, r42, r43, r44, r6, r1, (i & 16384) != 0 ? null : textAlign, (i & 32768) != 0 ? null : textDirection, (i & 65536) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i & 131072) != 0 ? null : textIndent, (i & 262144) != 0 ? null : platformTextStyle, (i & 524288) != 0 ? null : lineHeightStyle, (i & 1048576) != 0 ? null : lineBreak, (i & 2097152) != 0 ? null : hyphens, null);
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j6 = m4573getUnspecified0d7_KjU;
+        long j6 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j7 = m7456getUnspecifiedXSAIIZE2;
+        long j7 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j8 = m4573getUnspecified0d7_KjU2;
+        long j8 = m4585getUnspecified0d7_KjU2;
     }
 
     private TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
-        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, (DrawStyle) null, 32768, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), (TextMotion) null, 256, (DefaultConstructorMarker) null), platformTextStyle);
+        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, (DrawStyle) null, 32768, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), (TextMotion) null, 256, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -232,35 +232,35 @@ public final class TextStyle {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(r18, r3, r5, r37, r38, r39, r40, r41, r43, r44, r45, r46, r6, r1, (i & 16384) != 0 ? null : drawStyle, (i & 32768) != 0 ? null : textAlign, (i & 65536) != 0 ? null : textDirection, (i & 131072) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i & 262144) != 0 ? null : textIndent, (i & 524288) != 0 ? null : platformTextStyle, (i & 1048576) != 0 ? null : lineHeightStyle, (i & 2097152) != 0 ? null : lineBreak, (i & 4194304) != 0 ? null : hyphens, (i & 8388608) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        this(r18, r3, r5, r37, r38, r39, r40, r41, r43, r44, r45, r46, r6, r1, (i & 16384) != 0 ? null : drawStyle, (i & 32768) != 0 ? null : textAlign, (i & 65536) != 0 ? null : textDirection, (i & 131072) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i & 262144) != 0 ? null : textIndent, (i & 524288) != 0 ? null : platformTextStyle, (i & 1048576) != 0 ? null : lineHeightStyle, (i & 2097152) != 0 ? null : lineBreak, (i & 4194304) != 0 ? null : hyphens, (i & 8388608) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j6 = m4573getUnspecified0d7_KjU;
+        long j6 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j7 = m7456getUnspecifiedXSAIIZE2;
+        long j7 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j8 = m4573getUnspecified0d7_KjU2;
+        long j8 = m4585getUnspecified0d7_KjU2;
     }
 
     private TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
+        this(new SpanStyle(j, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -268,31 +268,31 @@ public final class TextStyle {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, DefaultConstructorMarker defaultConstructorMarker) {
-        this(r18, r3, r5, r37, r38, r39, r40, r41, r43, r44, r45, r46, r6, r1, (i5 & 16384) != 0 ? null : drawStyle, (i5 & 32768) != 0 ? TextAlign.Companion.m7141getUnspecifiede0LSkKk() : i, (i5 & 65536) != 0 ? TextDirection.Companion.m7154getUnspecifieds_7Xco() : i2, (i5 & 131072) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i5 & 262144) != 0 ? null : textIndent, (i5 & 524288) != 0 ? null : platformTextStyle, (i5 & 1048576) != 0 ? null : lineHeightStyle, (i5 & 2097152) != 0 ? LineBreak.Companion.m7056getUnspecifiedrAG3T2k() : i3, (i5 & 4194304) != 0 ? Hyphens.Companion.m7035getUnspecifiedvmbZdU8() : i4, (i5 & 8388608) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
-        long m4573getUnspecified0d7_KjU = (i5 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i5 & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        this(r18, r3, r5, r37, r38, r39, r40, r41, r43, r44, r45, r46, r6, r1, (i5 & 16384) != 0 ? null : drawStyle, (i5 & 32768) != 0 ? TextAlign.Companion.m7154getUnspecifiede0LSkKk() : i, (i5 & 65536) != 0 ? TextDirection.Companion.m7167getUnspecifieds_7Xco() : i2, (i5 & 131072) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i5 & 262144) != 0 ? null : textIndent, (i5 & 524288) != 0 ? null : platformTextStyle, (i5 & 1048576) != 0 ? null : lineHeightStyle, (i5 & 2097152) != 0 ? LineBreak.Companion.m7069getUnspecifiedrAG3T2k() : i3, (i5 & 4194304) != 0 ? Hyphens.Companion.m7048getUnspecifiedvmbZdU8() : i4, (i5 & 8388608) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
+        long m4585getUnspecified0d7_KjU = (i5 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i5 & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i5 & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i5 & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i5 & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i5 & 32) != 0 ? null : fontFamily;
         String str2 = (i5 & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i5 & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i5 & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i5 & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i5 & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i5 & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i5 & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i5 & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i5 & 4096) != 0 ? null : textDecoration;
-        long j6 = m4573getUnspecified0d7_KjU;
+        long j6 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i5 & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j7 = m7456getUnspecifiedXSAIIZE2;
+        long j7 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j8 = m4573getUnspecified0d7_KjU2;
+        long j8 = m4585getUnspecified0d7_KjU2;
     }
 
     private TextStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
@@ -300,7 +300,7 @@ public final class TextStyle {
     }
 
     public /* synthetic */ TextStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, DefaultConstructorMarker defaultConstructorMarker) {
-        this(brush, (i5 & 2) != 0 ? Float.NaN : f, (i5 & 4) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j, (i5 & 8) != 0 ? null : fontWeight, (i5 & 16) != 0 ? null : fontStyle, (i5 & 32) != 0 ? null : fontSynthesis, (i5 & 64) != 0 ? null : fontFamily, (i5 & 128) != 0 ? null : str, (i5 & 256) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i5 & 512) != 0 ? null : baselineShift, (i5 & 1024) != 0 ? null : textGeometricTransform, (i5 & 2048) != 0 ? null : localeList, (i5 & 4096) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3, (i5 & 8192) != 0 ? null : textDecoration, (i5 & 16384) != 0 ? null : shadow, (32768 & i5) != 0 ? null : drawStyle, (65536 & i5) != 0 ? TextAlign.Companion.m7141getUnspecifiede0LSkKk() : i, (131072 & i5) != 0 ? TextDirection.Companion.m7154getUnspecifieds_7Xco() : i2, (262144 & i5) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4, (524288 & i5) != 0 ? null : textIndent, (1048576 & i5) != 0 ? null : platformTextStyle, (2097152 & i5) != 0 ? null : lineHeightStyle, (4194304 & i5) != 0 ? LineBreak.Companion.m7056getUnspecifiedrAG3T2k() : i3, (8388608 & i5) != 0 ? Hyphens.Companion.m7035getUnspecifiedvmbZdU8() : i4, (i5 & 16777216) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
+        this(brush, (i5 & 2) != 0 ? Float.NaN : f, (i5 & 4) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j, (i5 & 8) != 0 ? null : fontWeight, (i5 & 16) != 0 ? null : fontStyle, (i5 & 32) != 0 ? null : fontSynthesis, (i5 & 64) != 0 ? null : fontFamily, (i5 & 128) != 0 ? null : str, (i5 & 256) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i5 & 512) != 0 ? null : baselineShift, (i5 & 1024) != 0 ? null : textGeometricTransform, (i5 & 2048) != 0 ? null : localeList, (i5 & 4096) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3, (i5 & 8192) != 0 ? null : textDecoration, (i5 & 16384) != 0 ? null : shadow, (32768 & i5) != 0 ? null : drawStyle, (65536 & i5) != 0 ? TextAlign.Companion.m7154getUnspecifiede0LSkKk() : i, (131072 & i5) != 0 ? TextDirection.Companion.m7167getUnspecifieds_7Xco() : i2, (262144 & i5) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4, (524288 & i5) != 0 ? null : textIndent, (1048576 & i5) != 0 ? null : platformTextStyle, (2097152 & i5) != 0 ? null : lineHeightStyle, (4194304 & i5) != 0 ? LineBreak.Companion.m7069getUnspecifiedrAG3T2k() : i3, (8388608 & i5) != 0 ? Hyphens.Companion.m7048getUnspecifiedvmbZdU8() : i4, (i5 & 16777216) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
     }
 
     private TextStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
@@ -308,11 +308,11 @@ public final class TextStyle {
     }
 
     public /* synthetic */ TextStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(brush, (i & 2) != 0 ? Float.NaN : f, (i & 4) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : fontWeight, (i & 16) != 0 ? null : fontStyle, (i & 32) != 0 ? null : fontSynthesis, (i & 64) != 0 ? null : fontFamily, (i & 128) != 0 ? null : str, (i & 256) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i & 512) != 0 ? null : baselineShift, (i & 1024) != 0 ? null : textGeometricTransform, (i & 2048) != 0 ? null : localeList, (i & 4096) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3, (i & 8192) != 0 ? null : textDecoration, (i & 16384) != 0 ? null : shadow, (32768 & i) != 0 ? null : drawStyle, (65536 & i) != 0 ? null : textAlign, (131072 & i) != 0 ? null : textDirection, (262144 & i) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4, (524288 & i) != 0 ? null : textIndent, (1048576 & i) != 0 ? null : platformTextStyle, (2097152 & i) != 0 ? null : lineHeightStyle, (4194304 & i) != 0 ? null : lineBreak, (8388608 & i) != 0 ? null : hyphens, (i & 16777216) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
+        this(brush, (i & 2) != 0 ? Float.NaN : f, (i & 4) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : fontWeight, (i & 16) != 0 ? null : fontStyle, (i & 32) != 0 ? null : fontSynthesis, (i & 64) != 0 ? null : fontFamily, (i & 128) != 0 ? null : str, (i & 256) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i & 512) != 0 ? null : baselineShift, (i & 1024) != 0 ? null : textGeometricTransform, (i & 2048) != 0 ? null : localeList, (i & 4096) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3, (i & 8192) != 0 ? null : textDecoration, (i & 16384) != 0 ? null : shadow, (32768 & i) != 0 ? null : drawStyle, (65536 & i) != 0 ? null : textAlign, (131072 & i) != 0 ? null : textDirection, (262144 & i) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4, (524288 & i) != 0 ? null : textIndent, (1048576 & i) != 0 ? null : platformTextStyle, (2097152 & i) != 0 ? null : lineHeightStyle, (4194304 & i) != 0 ? null : lineBreak, (8388608 & i) != 0 ? null : hyphens, (i & 16777216) != 0 ? null : textMotion, (DefaultConstructorMarker) null);
     }
 
     private TextStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        this(new SpanStyle(brush, f, j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j4, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
+        this(new SpanStyle(brush, f, j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j4, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     public final SpanStyle toSpanStyle() {
@@ -335,30 +335,30 @@ public final class TextStyle {
     }
 
     /* renamed from: merge-dA7vx0o$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6733mergedA7vx0o$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, int i3, int i4, PlatformTextStyle platformTextStyle, TextMotion textMotion, int i5, Object obj) {
-        long m4573getUnspecified0d7_KjU = (i5 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        return textStyle.m6758mergedA7vx0o(m4573getUnspecified0d7_KjU, (i5 & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i5 & 4) != 0 ? null : fontWeight, (i5 & 8) != 0 ? null : fontStyle, (i5 & 16) != 0 ? null : fontSynthesis, (i5 & 32) != 0 ? null : fontFamily, (i5 & 64) != 0 ? null : str, (i5 & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3, (i5 & 256) != 0 ? null : baselineShift, (i5 & 512) != 0 ? null : textGeometricTransform, (i5 & 1024) != 0 ? null : localeList, (i5 & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4, (i5 & 4096) != 0 ? null : textDecoration, (i5 & 8192) != 0 ? null : shadow, (i5 & 16384) != 0 ? null : drawStyle, (i5 & 32768) != 0 ? TextAlign.Companion.m7141getUnspecifiede0LSkKk() : i, (i5 & 65536) != 0 ? TextDirection.Companion.m7154getUnspecifieds_7Xco() : i2, (i5 & 131072) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i5 & 262144) != 0 ? null : textIndent, (i5 & 524288) != 0 ? null : lineHeightStyle, (i5 & 1048576) != 0 ? LineBreak.Companion.m7056getUnspecifiedrAG3T2k() : i3, (i5 & 2097152) != 0 ? Hyphens.Companion.m7035getUnspecifiedvmbZdU8() : i4, (i5 & 4194304) != 0 ? null : platformTextStyle, (i5 & 8388608) != 0 ? null : textMotion);
+    public static /* synthetic */ TextStyle m6746mergedA7vx0o$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, int i3, int i4, PlatformTextStyle platformTextStyle, TextMotion textMotion, int i5, Object obj) {
+        long m4585getUnspecified0d7_KjU = (i5 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        return textStyle.m6771mergedA7vx0o(m4585getUnspecified0d7_KjU, (i5 & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i5 & 4) != 0 ? null : fontWeight, (i5 & 8) != 0 ? null : fontStyle, (i5 & 16) != 0 ? null : fontSynthesis, (i5 & 32) != 0 ? null : fontFamily, (i5 & 64) != 0 ? null : str, (i5 & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3, (i5 & 256) != 0 ? null : baselineShift, (i5 & 512) != 0 ? null : textGeometricTransform, (i5 & 1024) != 0 ? null : localeList, (i5 & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4, (i5 & 4096) != 0 ? null : textDecoration, (i5 & 8192) != 0 ? null : shadow, (i5 & 16384) != 0 ? null : drawStyle, (i5 & 32768) != 0 ? TextAlign.Companion.m7154getUnspecifiede0LSkKk() : i, (i5 & 65536) != 0 ? TextDirection.Companion.m7167getUnspecifieds_7Xco() : i2, (i5 & 131072) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i5 & 262144) != 0 ? null : textIndent, (i5 & 524288) != 0 ? null : lineHeightStyle, (i5 & 1048576) != 0 ? LineBreak.Companion.m7069getUnspecifiedrAG3T2k() : i3, (i5 & 2097152) != 0 ? Hyphens.Companion.m7048getUnspecifiedvmbZdU8() : i4, (i5 & 4194304) != 0 ? null : platformTextStyle, (i5 & 8388608) != 0 ? null : textMotion);
     }
 
     /* renamed from: merge-dA7vx0o  reason: not valid java name */
-    public final TextStyle m6758mergedA7vx0o(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, int i3, int i4, PlatformTextStyle platformTextStyle, TextMotion textMotion) {
-        SpanStyle m6659fastMergedSHsh3o = SpanStyleKt.m6659fastMergedSHsh3o(this.spanStyle, j, null, Float.NaN, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle);
-        ParagraphStyle m6602fastMergej5T8yCg = ParagraphStyleKt.m6602fastMergej5T8yCg(this.paragraphStyle, i, i2, j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, i3, i4, textMotion);
-        return (this.spanStyle == m6659fastMergedSHsh3o && this.paragraphStyle == m6602fastMergej5T8yCg) ? this : new TextStyle(m6659fastMergedSHsh3o, m6602fastMergej5T8yCg);
+    public final TextStyle m6771mergedA7vx0o(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, int i3, int i4, PlatformTextStyle platformTextStyle, TextMotion textMotion) {
+        SpanStyle m6672fastMergedSHsh3o = SpanStyleKt.m6672fastMergedSHsh3o(this.spanStyle, j, null, Float.NaN, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle);
+        ParagraphStyle m6615fastMergej5T8yCg = ParagraphStyleKt.m6615fastMergej5T8yCg(this.paragraphStyle, i, i2, j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, i3, i4, textMotion);
+        return (this.spanStyle == m6672fastMergedSHsh3o && this.paragraphStyle == m6615fastMergej5T8yCg) ? this : new TextStyle(m6672fastMergedSHsh3o, m6615fastMergej5T8yCg);
     }
 
     /* renamed from: merge-Z1GrekI$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6732mergeZ1GrekI$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, PlatformTextStyle platformTextStyle, TextMotion textMotion, int i, Object obj) {
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        return textStyle.m6757mergeZ1GrekI(m4573getUnspecified0d7_KjU, (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i & 4) != 0 ? null : fontWeight, (i & 8) != 0 ? null : fontStyle, (i & 16) != 0 ? null : fontSynthesis, (i & 32) != 0 ? null : fontFamily, (i & 64) != 0 ? null : str, (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3, (i & 256) != 0 ? null : baselineShift, (i & 512) != 0 ? null : textGeometricTransform, (i & 1024) != 0 ? null : localeList, (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, (i & 16384) != 0 ? null : drawStyle, (i & 32768) != 0 ? null : textAlign, (i & 65536) != 0 ? null : textDirection, (i & 131072) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j5, (i & 262144) != 0 ? null : textIndent, (i & 524288) != 0 ? null : lineHeightStyle, (i & 1048576) != 0 ? null : lineBreak, (i & 2097152) != 0 ? null : hyphens, (i & 4194304) != 0 ? null : platformTextStyle, (i & 8388608) != 0 ? null : textMotion);
+    public static /* synthetic */ TextStyle m6745mergeZ1GrekI$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, PlatformTextStyle platformTextStyle, TextMotion textMotion, int i, Object obj) {
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        return textStyle.m6770mergeZ1GrekI(m4585getUnspecified0d7_KjU, (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i & 4) != 0 ? null : fontWeight, (i & 8) != 0 ? null : fontStyle, (i & 16) != 0 ? null : fontSynthesis, (i & 32) != 0 ? null : fontFamily, (i & 64) != 0 ? null : str, (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3, (i & 256) != 0 ? null : baselineShift, (i & 512) != 0 ? null : textGeometricTransform, (i & 1024) != 0 ? null : localeList, (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, (i & 16384) != 0 ? null : drawStyle, (i & 32768) != 0 ? null : textAlign, (i & 65536) != 0 ? null : textDirection, (i & 131072) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j5, (i & 262144) != 0 ? null : textIndent, (i & 524288) != 0 ? null : lineHeightStyle, (i & 1048576) != 0 ? null : lineBreak, (i & 2097152) != 0 ? null : hyphens, (i & 4194304) != 0 ? null : platformTextStyle, (i & 8388608) != 0 ? null : textMotion);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "merge that takes nullable TextAlign, TextDirection, LineBreak, and Hyphens are deprecated. Please use a new constructor where these parameters are non-nullable. Null value has been replaced by a special Unspecified object for performance reason.")
     /* renamed from: merge-Z1GrekI  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6757mergeZ1GrekI(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, PlatformTextStyle platformTextStyle, TextMotion textMotion) {
-        SpanStyle m6659fastMergedSHsh3o = SpanStyleKt.m6659fastMergedSHsh3o(this.spanStyle, j, null, Float.NaN, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle);
-        ParagraphStyle m6602fastMergej5T8yCg = ParagraphStyleKt.m6602fastMergej5T8yCg(this.paragraphStyle, textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), textMotion);
-        return (this.spanStyle == m6659fastMergedSHsh3o && this.paragraphStyle == m6602fastMergej5T8yCg) ? this : new TextStyle(m6659fastMergedSHsh3o, m6602fastMergej5T8yCg);
+    public final /* synthetic */ TextStyle m6770mergeZ1GrekI(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, PlatformTextStyle platformTextStyle, TextMotion textMotion) {
+        SpanStyle m6672fastMergedSHsh3o = SpanStyleKt.m6672fastMergedSHsh3o(this.spanStyle, j, null, Float.NaN, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle);
+        ParagraphStyle m6615fastMergej5T8yCg = ParagraphStyleKt.m6615fastMergej5T8yCg(this.paragraphStyle, textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), textMotion);
+        return (this.spanStyle == m6672fastMergedSHsh3o && this.paragraphStyle == m6615fastMergej5T8yCg) ? this : new TextStyle(m6672fastMergedSHsh3o, m6615fastMergej5T8yCg);
     }
 
     public final TextStyle merge(SpanStyle spanStyle) {
@@ -382,59 +382,59 @@ public final class TextStyle {
     }
 
     /* renamed from: copy-HL5avdY$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6722copyHL5avdY$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, int i, Object obj) {
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6654getColor0d7_KjU() : j;
-        long m6655getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j2;
+    public static /* synthetic */ TextStyle m6735copyHL5avdY$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, int i, Object obj) {
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6667getColor0d7_KjU() : j;
+        long m6668getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i & 64) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j3;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j3;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long j6 = m6654getColor0d7_KjU;
-        long m6652getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j4;
+        long j6 = m6667getColor0d7_KjU;
+        long m6665getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
-        return textStyle.m6735copyHL5avdY(j6, m6655getFontSizeXSAIIZE, fontWeight2, m6656getFontStyle4Lr2A7w, m6657getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6658getLetterSpacingXSAIIZE, m6653getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6652getBackground0d7_KjU, textDecoration2, (i & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow, (i & 16384) != 0 ? TextAlign.m7128boximpl(textStyle.paragraphStyle.m6599getTextAligne0LSkKk()) : textAlign, (i & 32768) != 0 ? TextDirection.m7142boximpl(textStyle.paragraphStyle.m6601getTextDirections_7Xco()) : textDirection, (i & 65536) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j5, (i & 131072) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent);
+        return textStyle.m6748copyHL5avdY(j6, m6668getFontSizeXSAIIZE, fontWeight2, m6669getFontStyle4Lr2A7w, m6670getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6671getLetterSpacingXSAIIZE, m6666getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6665getBackground0d7_KjU, textDecoration2, (i & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow, (i & 16384) != 0 ? TextAlign.m7141boximpl(textStyle.paragraphStyle.m6612getTextAligne0LSkKk()) : textAlign, (i & 32768) != 0 ? TextDirection.m7155boximpl(textStyle.paragraphStyle.m6614getTextDirections_7Xco()) : textDirection, (i & 65536) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j5, (i & 131072) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "TextStyle copy constructors that do not take new stable parameters like LineHeightStyle, LineBreak, Hyphens are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-HL5avdY  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6735copyHL5avdY(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, this.spanStyle.m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
+    public final /* synthetic */ TextStyle m6748copyHL5avdY(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, this.spanStyle.m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new TextStyle(new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, this.spanStyle.getPlatformStyle(), this.spanStyle.getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, this.paragraphStyle.getPlatformStyle(), getLineHeightStyle(), m6751getLineBreakrAG3T2k(), m6748getHyphensvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), this.platformStyle);
+        return new TextStyle(new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, this.spanStyle.getPlatformStyle(), this.spanStyle.getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, this.paragraphStyle.getPlatformStyle(), getLineHeightStyle(), m6764getLineBreakrAG3T2k(), m6761getHyphensvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), this.platformStyle);
     }
 
     /* renamed from: copy-NOaFTUo$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6723copyNOaFTUo$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i, Object obj) {
+    public static /* synthetic */ TextStyle m6736copyNOaFTUo$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i, Object obj) {
         LineHeightStyle lineHeightStyle2;
         PlatformTextStyle platformTextStyle2;
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6654getColor0d7_KjU() : j;
-        long m6655getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j2;
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6667getColor0d7_KjU() : j;
+        long m6668getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i & 64) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j3;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j3;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long j6 = m6654getColor0d7_KjU;
-        long m6652getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j4;
+        long j6 = m6667getColor0d7_KjU;
+        long m6665getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow2 = (i & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         TextDecoration textDecoration3 = textDecoration2;
-        TextAlign m7128boximpl = (i & 16384) != 0 ? TextAlign.m7128boximpl(textStyle.paragraphStyle.m6599getTextAligne0LSkKk()) : textAlign;
-        TextDirection m7142boximpl = (i & 32768) != 0 ? TextDirection.m7142boximpl(textStyle.paragraphStyle.m6601getTextDirections_7Xco()) : textDirection;
-        long m6597getLineHeightXSAIIZE = (i & 65536) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j5;
+        TextAlign m7141boximpl = (i & 16384) != 0 ? TextAlign.m7141boximpl(textStyle.paragraphStyle.m6612getTextAligne0LSkKk()) : textAlign;
+        TextDirection m7155boximpl = (i & 32768) != 0 ? TextDirection.m7155boximpl(textStyle.paragraphStyle.m6614getTextDirections_7Xco()) : textDirection;
+        long m6610getLineHeightXSAIIZE = (i & 65536) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j5;
         TextIndent textIndent2 = (i & 131072) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle3 = (i & 262144) != 0 ? textStyle.platformStyle : platformTextStyle;
         if ((i & 524288) != 0) {
@@ -444,173 +444,173 @@ public final class TextStyle {
             lineHeightStyle2 = lineHeightStyle;
             platformTextStyle2 = platformTextStyle3;
         }
-        return textStyle.m6736copyNOaFTUo(j6, m6655getFontSizeXSAIIZE, fontWeight2, m6656getFontStyle4Lr2A7w, m6657getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6658getLetterSpacingXSAIIZE, m6653getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6652getBackground0d7_KjU, textDecoration3, shadow2, m7128boximpl, m7142boximpl, m6597getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2);
+        return textStyle.m6749copyNOaFTUo(j6, m6668getFontSizeXSAIIZE, fontWeight2, m6669getFontStyle4Lr2A7w, m6670getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6671getLetterSpacingXSAIIZE, m6666getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6665getBackground0d7_KjU, textDecoration3, shadow2, m7141boximpl, m7155boximpl, m6610getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "TextStyle copy constructors that do not take new stable parameters like LineHeightStyle, LineBreak, Hyphens are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-NOaFTUo  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6736copyNOaFTUo(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, this.spanStyle.m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
+    public final /* synthetic */ TextStyle m6749copyNOaFTUo(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, this.spanStyle.m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new TextStyle(new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, this.spanStyle.getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, m6751getLineBreakrAG3T2k(), m6748getHyphensvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), platformTextStyle);
+        return new TextStyle(new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, this.spanStyle.getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, m6764getLineBreakrAG3T2k(), m6761getHyphensvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* renamed from: copy-CXVQc50$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6721copyCXVQc50$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, Object obj) {
+    public static /* synthetic */ TextStyle m6734copyCXVQc50$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, Object obj) {
         Hyphens hyphens2;
         LineBreak lineBreak2;
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6654getColor0d7_KjU() : j;
-        long m6655getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j2;
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6667getColor0d7_KjU() : j;
+        long m6668getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i & 64) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j3;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j3;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long j6 = m6654getColor0d7_KjU;
-        long m6652getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j4;
+        long j6 = m6667getColor0d7_KjU;
+        long m6665getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow2 = (i & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         TextDecoration textDecoration3 = textDecoration2;
-        TextAlign m7128boximpl = (i & 16384) != 0 ? TextAlign.m7128boximpl(textStyle.paragraphStyle.m6599getTextAligne0LSkKk()) : textAlign;
-        TextDirection m7142boximpl = (i & 32768) != 0 ? TextDirection.m7142boximpl(textStyle.paragraphStyle.m6601getTextDirections_7Xco()) : textDirection;
-        long m6597getLineHeightXSAIIZE = (i & 65536) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j5;
+        TextAlign m7141boximpl = (i & 16384) != 0 ? TextAlign.m7141boximpl(textStyle.paragraphStyle.m6612getTextAligne0LSkKk()) : textAlign;
+        TextDirection m7155boximpl = (i & 32768) != 0 ? TextDirection.m7155boximpl(textStyle.paragraphStyle.m6614getTextDirections_7Xco()) : textDirection;
+        long m6610getLineHeightXSAIIZE = (i & 65536) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j5;
         TextIndent textIndent2 = (i & 131072) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle2 = (i & 262144) != 0 ? textStyle.platformStyle : platformTextStyle;
         LineHeightStyle lineHeightStyle2 = (i & 524288) != 0 ? textStyle.paragraphStyle.getLineHeightStyle() : lineHeightStyle;
-        LineBreak m7036boximpl = (i & 1048576) != 0 ? LineBreak.m7036boximpl(textStyle.paragraphStyle.m6596getLineBreakrAG3T2k()) : lineBreak;
+        LineBreak m7049boximpl = (i & 1048576) != 0 ? LineBreak.m7049boximpl(textStyle.paragraphStyle.m6609getLineBreakrAG3T2k()) : lineBreak;
         if ((i & 2097152) != 0) {
-            lineBreak2 = m7036boximpl;
-            hyphens2 = Hyphens.m7026boximpl(textStyle.paragraphStyle.m6594getHyphensvmbZdU8());
+            lineBreak2 = m7049boximpl;
+            hyphens2 = Hyphens.m7039boximpl(textStyle.paragraphStyle.m6607getHyphensvmbZdU8());
         } else {
             hyphens2 = hyphens;
-            lineBreak2 = m7036boximpl;
+            lineBreak2 = m7049boximpl;
         }
-        return textStyle.m6734copyCXVQc50(j6, m6655getFontSizeXSAIIZE, fontWeight2, m6656getFontStyle4Lr2A7w, m6657getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6658getLetterSpacingXSAIIZE, m6653getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6652getBackground0d7_KjU, textDecoration3, shadow2, m7128boximpl, m7142boximpl, m6597getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, lineBreak2, hyphens2);
+        return textStyle.m6747copyCXVQc50(j6, m6668getFontSizeXSAIIZE, fontWeight2, m6669getFontStyle4Lr2A7w, m6670getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6671getLetterSpacingXSAIIZE, m6666getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6665getBackground0d7_KjU, textDecoration3, shadow2, m7141boximpl, m7155boximpl, m6610getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, lineBreak2, hyphens2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "TextStyle copy constructors that do not take new stable parameters like LineBreak, Hyphens, and TextMotion are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-CXVQc50  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6734copyCXVQc50(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, this.spanStyle.m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
+    public final /* synthetic */ TextStyle m6747copyCXVQc50(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, this.spanStyle.m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new TextStyle(new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), platformTextStyle);
+        return new TextStyle(new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, getDrawStyle(), (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), getTextMotion(), (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* renamed from: copy-v2rsoow$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6727copyv2rsoow$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
+    public static /* synthetic */ TextStyle m6740copyv2rsoow$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
         TextMotion textMotion2;
         Hyphens hyphens2;
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6654getColor0d7_KjU() : j;
-        long m6655getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j2;
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? textStyle.spanStyle.m6667getColor0d7_KjU() : j;
+        long m6668getFontSizeXSAIIZE = (i & 2) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i & 8) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i & 16) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i & 64) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j3;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i & 128) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j3;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i & 256) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long j6 = m6654getColor0d7_KjU;
-        long m6652getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j4;
+        long j6 = m6667getColor0d7_KjU;
+        long m6665getBackground0d7_KjU = (i & 2048) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow2 = (i & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         TextDecoration textDecoration3 = textDecoration2;
         DrawStyle drawStyle2 = (i & 16384) != 0 ? textStyle.spanStyle.getDrawStyle() : drawStyle;
-        TextAlign m7128boximpl = (i & 32768) != 0 ? TextAlign.m7128boximpl(textStyle.paragraphStyle.m6599getTextAligne0LSkKk()) : textAlign;
-        TextDirection m7142boximpl = (i & 65536) != 0 ? TextDirection.m7142boximpl(textStyle.paragraphStyle.m6601getTextDirections_7Xco()) : textDirection;
-        long m6597getLineHeightXSAIIZE = (i & 131072) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j5;
+        TextAlign m7141boximpl = (i & 32768) != 0 ? TextAlign.m7141boximpl(textStyle.paragraphStyle.m6612getTextAligne0LSkKk()) : textAlign;
+        TextDirection m7155boximpl = (i & 65536) != 0 ? TextDirection.m7155boximpl(textStyle.paragraphStyle.m6614getTextDirections_7Xco()) : textDirection;
+        long m6610getLineHeightXSAIIZE = (i & 131072) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j5;
         TextIndent textIndent2 = (i & 262144) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle2 = (i & 524288) != 0 ? textStyle.platformStyle : platformTextStyle;
         LineHeightStyle lineHeightStyle2 = (i & 1048576) != 0 ? textStyle.paragraphStyle.getLineHeightStyle() : lineHeightStyle;
-        LineBreak m7036boximpl = (i & 2097152) != 0 ? LineBreak.m7036boximpl(textStyle.paragraphStyle.m6596getLineBreakrAG3T2k()) : lineBreak;
-        Hyphens m7026boximpl = (i & 4194304) != 0 ? Hyphens.m7026boximpl(textStyle.paragraphStyle.m6594getHyphensvmbZdU8()) : hyphens;
+        LineBreak m7049boximpl = (i & 2097152) != 0 ? LineBreak.m7049boximpl(textStyle.paragraphStyle.m6609getLineBreakrAG3T2k()) : lineBreak;
+        Hyphens m7039boximpl = (i & 4194304) != 0 ? Hyphens.m7039boximpl(textStyle.paragraphStyle.m6607getHyphensvmbZdU8()) : hyphens;
         if ((i & 8388608) != 0) {
-            hyphens2 = m7026boximpl;
+            hyphens2 = m7039boximpl;
             textMotion2 = textStyle.paragraphStyle.getTextMotion();
         } else {
             textMotion2 = textMotion;
-            hyphens2 = m7026boximpl;
+            hyphens2 = m7039boximpl;
         }
-        return textStyle.m6740copyv2rsoow(j6, m6655getFontSizeXSAIIZE, fontWeight2, m6656getFontStyle4Lr2A7w, m6657getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6658getLetterSpacingXSAIIZE, m6653getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6652getBackground0d7_KjU, textDecoration3, shadow2, drawStyle2, m7128boximpl, m7142boximpl, m6597getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, m7036boximpl, hyphens2, textMotion2);
+        return textStyle.m6753copyv2rsoow(j6, m6668getFontSizeXSAIIZE, fontWeight2, m6669getFontStyle4Lr2A7w, m6670getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6671getLetterSpacingXSAIIZE, m6666getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6665getBackground0d7_KjU, textDecoration3, shadow2, drawStyle2, m7141boximpl, m7155boximpl, m6610getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, m7049boximpl, hyphens2, textMotion2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "copy constructors that take nullable TextAlign, TextDirection, LineBreak, and Hyphens are deprecated. Please use a new constructor where these parameters are non-nullable. Null value has been replaced by a special Unspecified object for performance reason.")
     /* renamed from: copy-v2rsoow  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6740copyv2rsoow(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, this.spanStyle.m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
+    public final /* synthetic */ TextStyle m6753copyv2rsoow(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, this.spanStyle.m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new TextStyle(new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
+        return new TextStyle(new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* renamed from: copy-p1EtxEg$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6726copyp1EtxEg$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
+    public static /* synthetic */ TextStyle m6739copyp1EtxEg$default(TextStyle textStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
         TextMotion textMotion2;
         int i6;
-        long m6654getColor0d7_KjU = (i5 & 1) != 0 ? textStyle.spanStyle.m6654getColor0d7_KjU() : j;
-        long m6655getFontSizeXSAIIZE = (i5 & 2) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j2;
+        long m6667getColor0d7_KjU = (i5 & 1) != 0 ? textStyle.spanStyle.m6667getColor0d7_KjU() : j;
+        long m6668getFontSizeXSAIIZE = (i5 & 2) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j2;
         FontWeight fontWeight2 = (i5 & 4) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i5 & 8) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i5 & 16) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i5 & 8) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i5 & 16) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily2 = (i5 & 32) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i5 & 64) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i5 & 128) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j3;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i5 & 256) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i5 & 128) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j3;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i5 & 256) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i5 & 512) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList2 = (i5 & 1024) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long j6 = m6654getColor0d7_KjU;
-        long m6652getBackground0d7_KjU = (i5 & 2048) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j4;
+        long j6 = m6667getColor0d7_KjU;
+        long m6665getBackground0d7_KjU = (i5 & 2048) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i5 & 4096) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow2 = (i5 & 8192) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         TextDecoration textDecoration3 = textDecoration2;
         DrawStyle drawStyle2 = (i5 & 16384) != 0 ? textStyle.spanStyle.getDrawStyle() : drawStyle;
-        int m6599getTextAligne0LSkKk = (i5 & 32768) != 0 ? textStyle.paragraphStyle.m6599getTextAligne0LSkKk() : i;
-        int m6601getTextDirections_7Xco = (i5 & 65536) != 0 ? textStyle.paragraphStyle.m6601getTextDirections_7Xco() : i2;
-        long m6597getLineHeightXSAIIZE = (i5 & 131072) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j5;
+        int m6612getTextAligne0LSkKk = (i5 & 32768) != 0 ? textStyle.paragraphStyle.m6612getTextAligne0LSkKk() : i;
+        int m6614getTextDirections_7Xco = (i5 & 65536) != 0 ? textStyle.paragraphStyle.m6614getTextDirections_7Xco() : i2;
+        long m6610getLineHeightXSAIIZE = (i5 & 131072) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j5;
         TextIndent textIndent2 = (i5 & 262144) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle2 = (i5 & 524288) != 0 ? textStyle.platformStyle : platformTextStyle;
         LineHeightStyle lineHeightStyle2 = (i5 & 1048576) != 0 ? textStyle.paragraphStyle.getLineHeightStyle() : lineHeightStyle;
-        int m6596getLineBreakrAG3T2k = (i5 & 2097152) != 0 ? textStyle.paragraphStyle.m6596getLineBreakrAG3T2k() : i3;
-        int m6594getHyphensvmbZdU8 = (i5 & 4194304) != 0 ? textStyle.paragraphStyle.m6594getHyphensvmbZdU8() : i4;
+        int m6609getLineBreakrAG3T2k = (i5 & 2097152) != 0 ? textStyle.paragraphStyle.m6609getLineBreakrAG3T2k() : i3;
+        int m6607getHyphensvmbZdU8 = (i5 & 4194304) != 0 ? textStyle.paragraphStyle.m6607getHyphensvmbZdU8() : i4;
         if ((i5 & 8388608) != 0) {
-            i6 = m6594getHyphensvmbZdU8;
+            i6 = m6607getHyphensvmbZdU8;
             textMotion2 = textStyle.paragraphStyle.getTextMotion();
         } else {
             textMotion2 = textMotion;
-            i6 = m6594getHyphensvmbZdU8;
+            i6 = m6607getHyphensvmbZdU8;
         }
-        return textStyle.m6739copyp1EtxEg(j6, m6655getFontSizeXSAIIZE, fontWeight2, m6656getFontStyle4Lr2A7w, m6657getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6658getLetterSpacingXSAIIZE, m6653getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6652getBackground0d7_KjU, textDecoration3, shadow2, drawStyle2, m6599getTextAligne0LSkKk, m6601getTextDirections_7Xco, m6597getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, m6596getLineBreakrAG3T2k, i6, textMotion2);
+        return textStyle.m6752copyp1EtxEg(j6, m6668getFontSizeXSAIIZE, fontWeight2, m6669getFontStyle4Lr2A7w, m6670getFontSynthesisZQGJjVo, fontFamily2, fontFeatureSettings, m6671getLetterSpacingXSAIIZE, m6666getBaselineShift5SSeXJ0, textGeometricTransform2, localeList2, m6665getBackground0d7_KjU, textDecoration3, shadow2, drawStyle2, m6612getTextAligne0LSkKk, m6614getTextDirections_7Xco, m6610getLineHeightXSAIIZE, textIndent2, platformTextStyle2, lineHeightStyle2, m6609getLineBreakrAG3T2k, i6, textMotion2);
     }
 
     /* renamed from: copy-p1EtxEg  reason: not valid java name */
-    public final TextStyle m6739copyp1EtxEg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, this.spanStyle.m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
+    public final TextStyle m6752copyp1EtxEg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j5, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, this.spanStyle.m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.spanStyle.getTextForegroundStyle$ui_text();
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new TextStyle(new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(i, i2, j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, i3, i4, textMotion, (DefaultConstructorMarker) null), platformTextStyle);
+        return new TextStyle(new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(i, i2, j5, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, i3, i4, textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* renamed from: copy-aIRg9q4$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6725copyaIRg9q4$default(TextStyle textStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
+    public static /* synthetic */ TextStyle m6738copyaIRg9q4$default(TextStyle textStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
         TextMotion textMotion2;
         Hyphens hyphens2;
         TextDecoration textDecoration2;
@@ -638,95 +638,95 @@ public final class TextStyle {
         TextStyle textStyle2;
         FontFamily fontFamily2;
         float alpha = (i & 2) != 0 ? textStyle.spanStyle.getAlpha() : f;
-        long m6655getFontSizeXSAIIZE = (i & 4) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j;
+        long m6668getFontSizeXSAIIZE = (i & 4) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j;
         FontWeight fontWeight3 = (i & 8) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i & 16) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i & 32) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i & 16) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i & 32) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily3 = (i & 64) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i & 128) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i & 256) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j2;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i & 512) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i & 256) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j2;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i & 512) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform3 = (i & 1024) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList3 = (i & 2048) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long m6652getBackground0d7_KjU = (i & 4096) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j3;
+        long m6665getBackground0d7_KjU = (i & 4096) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j3;
         float f3 = alpha;
         TextDecoration textDecoration3 = (i & 8192) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow3 = (i & 16384) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         DrawStyle drawStyle3 = (i & 32768) != 0 ? textStyle.spanStyle.getDrawStyle() : drawStyle;
-        TextAlign m7128boximpl = (i & 65536) != 0 ? TextAlign.m7128boximpl(textStyle.paragraphStyle.m6599getTextAligne0LSkKk()) : textAlign;
-        TextDirection m7142boximpl = (i & 131072) != 0 ? TextDirection.m7142boximpl(textStyle.paragraphStyle.m6601getTextDirections_7Xco()) : textDirection;
-        long m6597getLineHeightXSAIIZE = (i & 262144) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j4;
+        TextAlign m7141boximpl = (i & 65536) != 0 ? TextAlign.m7141boximpl(textStyle.paragraphStyle.m6612getTextAligne0LSkKk()) : textAlign;
+        TextDirection m7155boximpl = (i & 131072) != 0 ? TextDirection.m7155boximpl(textStyle.paragraphStyle.m6614getTextDirections_7Xco()) : textDirection;
+        long m6610getLineHeightXSAIIZE = (i & 262144) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j4;
         TextIndent textIndent3 = (i & 524288) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle3 = (i & 1048576) != 0 ? textStyle.platformStyle : platformTextStyle;
         LineHeightStyle lineHeightStyle3 = (i & 2097152) != 0 ? textStyle.paragraphStyle.getLineHeightStyle() : lineHeightStyle;
-        LineBreak m7036boximpl = (i & 4194304) != 0 ? LineBreak.m7036boximpl(textStyle.paragraphStyle.m6596getLineBreakrAG3T2k()) : lineBreak;
-        Hyphens m7026boximpl = (i & 8388608) != 0 ? Hyphens.m7026boximpl(textStyle.paragraphStyle.m6594getHyphensvmbZdU8()) : hyphens;
+        LineBreak m7049boximpl = (i & 4194304) != 0 ? LineBreak.m7049boximpl(textStyle.paragraphStyle.m6609getLineBreakrAG3T2k()) : lineBreak;
+        Hyphens m7039boximpl = (i & 8388608) != 0 ? Hyphens.m7039boximpl(textStyle.paragraphStyle.m6607getHyphensvmbZdU8()) : hyphens;
         if ((i & 16777216) != 0) {
-            hyphens2 = m7026boximpl;
+            hyphens2 = m7039boximpl;
             textMotion2 = textStyle.paragraphStyle.getTextMotion();
             textDecoration2 = textDecoration3;
             drawStyle2 = drawStyle3;
-            textAlign2 = m7128boximpl;
-            textDirection2 = m7142boximpl;
+            textAlign2 = m7141boximpl;
+            textDirection2 = m7155boximpl;
             textIndent2 = textIndent3;
             platformTextStyle2 = platformTextStyle3;
             lineHeightStyle2 = lineHeightStyle3;
-            lineBreak2 = m7036boximpl;
+            lineBreak2 = m7049boximpl;
             shadow2 = shadow3;
-            j5 = m6655getFontSizeXSAIIZE;
+            j5 = m6668getFontSizeXSAIIZE;
             fontWeight2 = fontWeight3;
-            fontStyle2 = m6656getFontStyle4Lr2A7w;
-            fontSynthesis2 = m6657getFontSynthesisZQGJjVo;
+            fontStyle2 = m6669getFontStyle4Lr2A7w;
+            fontSynthesis2 = m6670getFontSynthesisZQGJjVo;
             fontFamily2 = fontFamily3;
             str2 = fontFeatureSettings;
-            j6 = m6658getLetterSpacingXSAIIZE;
-            baselineShift2 = m6653getBaselineShift5SSeXJ0;
+            j6 = m6671getLetterSpacingXSAIIZE;
+            baselineShift2 = m6666getBaselineShift5SSeXJ0;
             textGeometricTransform2 = textGeometricTransform3;
             localeList2 = localeList3;
-            j7 = m6652getBackground0d7_KjU;
-            j8 = m6597getLineHeightXSAIIZE;
+            j7 = m6665getBackground0d7_KjU;
+            j8 = m6610getLineHeightXSAIIZE;
             brush2 = brush;
             f2 = f3;
             textStyle2 = textStyle;
         } else {
             textMotion2 = textMotion;
-            hyphens2 = m7026boximpl;
+            hyphens2 = m7039boximpl;
             textDecoration2 = textDecoration3;
             drawStyle2 = drawStyle3;
-            textAlign2 = m7128boximpl;
-            textDirection2 = m7142boximpl;
+            textAlign2 = m7141boximpl;
+            textDirection2 = m7155boximpl;
             textIndent2 = textIndent3;
             platformTextStyle2 = platformTextStyle3;
             lineHeightStyle2 = lineHeightStyle3;
             shadow2 = shadow3;
-            j5 = m6655getFontSizeXSAIIZE;
+            j5 = m6668getFontSizeXSAIIZE;
             fontWeight2 = fontWeight3;
-            fontStyle2 = m6656getFontStyle4Lr2A7w;
-            fontSynthesis2 = m6657getFontSynthesisZQGJjVo;
+            fontStyle2 = m6669getFontStyle4Lr2A7w;
+            fontSynthesis2 = m6670getFontSynthesisZQGJjVo;
             str2 = fontFeatureSettings;
-            j6 = m6658getLetterSpacingXSAIIZE;
-            baselineShift2 = m6653getBaselineShift5SSeXJ0;
+            j6 = m6671getLetterSpacingXSAIIZE;
+            baselineShift2 = m6666getBaselineShift5SSeXJ0;
             textGeometricTransform2 = textGeometricTransform3;
             localeList2 = localeList3;
-            j7 = m6652getBackground0d7_KjU;
-            j8 = m6597getLineHeightXSAIIZE;
+            j7 = m6665getBackground0d7_KjU;
+            j8 = m6610getLineHeightXSAIIZE;
             brush2 = brush;
             f2 = f3;
-            lineBreak2 = m7036boximpl;
+            lineBreak2 = m7049boximpl;
             textStyle2 = textStyle;
             fontFamily2 = fontFamily3;
         }
-        return textStyle2.m6738copyaIRg9q4(brush2, f2, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j7, textDecoration2, shadow2, drawStyle2, textAlign2, textDirection2, j8, textIndent2, platformTextStyle2, lineHeightStyle2, lineBreak2, hyphens2, textMotion2);
+        return textStyle2.m6751copyaIRg9q4(brush2, f2, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j7, textDecoration2, shadow2, drawStyle2, textAlign2, textDirection2, j8, textIndent2, platformTextStyle2, lineHeightStyle2, lineBreak2, hyphens2, textMotion2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "copy constructors that take nullable TextAlign, TextDirection, LineBreak, and Hyphens are deprecated. Please use a new constructor where these parameters are non-nullable. Null value has been replaced by a special Unspecified object for performance reason.")
     /* renamed from: copy-aIRg9q4  reason: not valid java name */
-    public final /* synthetic */ TextStyle m6738copyaIRg9q4(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        return new TextStyle(new SpanStyle(brush, f, j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7148unboximpl() : TextDirection.Companion.m7154getUnspecifieds_7Xco(), j4, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7048unboximpl() : LineBreak.Companion.m7056getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7032unboximpl() : Hyphens.Companion.m7035getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
+    public final /* synthetic */ TextStyle m6751copyaIRg9q4(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, TextAlign textAlign, TextDirection textDirection, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
+        return new TextStyle(new SpanStyle(brush, f, j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(textAlign != null ? textAlign.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7161unboximpl() : TextDirection.Companion.m7167getUnspecifieds_7Xco(), j4, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, lineBreak != null ? lineBreak.m7061unboximpl() : LineBreak.Companion.m7069getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7045unboximpl() : Hyphens.Companion.m7048getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
     /* renamed from: copy-Ns73l9s$default  reason: not valid java name */
-    public static /* synthetic */ TextStyle m6724copyNs73l9s$default(TextStyle textStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
+    public static /* synthetic */ TextStyle m6737copyNs73l9s$default(TextStyle textStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
         TextMotion textMotion2;
         int i6;
         TextDecoration textDecoration2;
@@ -754,89 +754,89 @@ public final class TextStyle {
         TextStyle textStyle2;
         FontFamily fontFamily2;
         float alpha = (i5 & 2) != 0 ? textStyle.spanStyle.getAlpha() : f;
-        long m6655getFontSizeXSAIIZE = (i5 & 4) != 0 ? textStyle.spanStyle.m6655getFontSizeXSAIIZE() : j;
+        long m6668getFontSizeXSAIIZE = (i5 & 4) != 0 ? textStyle.spanStyle.m6668getFontSizeXSAIIZE() : j;
         FontWeight fontWeight3 = (i5 & 8) != 0 ? textStyle.spanStyle.getFontWeight() : fontWeight;
-        FontStyle m6656getFontStyle4Lr2A7w = (i5 & 16) != 0 ? textStyle.spanStyle.m6656getFontStyle4Lr2A7w() : fontStyle;
-        FontSynthesis m6657getFontSynthesisZQGJjVo = (i5 & 32) != 0 ? textStyle.spanStyle.m6657getFontSynthesisZQGJjVo() : fontSynthesis;
+        FontStyle m6669getFontStyle4Lr2A7w = (i5 & 16) != 0 ? textStyle.spanStyle.m6669getFontStyle4Lr2A7w() : fontStyle;
+        FontSynthesis m6670getFontSynthesisZQGJjVo = (i5 & 32) != 0 ? textStyle.spanStyle.m6670getFontSynthesisZQGJjVo() : fontSynthesis;
         FontFamily fontFamily3 = (i5 & 64) != 0 ? textStyle.spanStyle.getFontFamily() : fontFamily;
         String fontFeatureSettings = (i5 & 128) != 0 ? textStyle.spanStyle.getFontFeatureSettings() : str;
-        long m6658getLetterSpacingXSAIIZE = (i5 & 256) != 0 ? textStyle.spanStyle.m6658getLetterSpacingXSAIIZE() : j2;
-        BaselineShift m6653getBaselineShift5SSeXJ0 = (i5 & 512) != 0 ? textStyle.spanStyle.m6653getBaselineShift5SSeXJ0() : baselineShift;
+        long m6671getLetterSpacingXSAIIZE = (i5 & 256) != 0 ? textStyle.spanStyle.m6671getLetterSpacingXSAIIZE() : j2;
+        BaselineShift m6666getBaselineShift5SSeXJ0 = (i5 & 512) != 0 ? textStyle.spanStyle.m6666getBaselineShift5SSeXJ0() : baselineShift;
         TextGeometricTransform textGeometricTransform3 = (i5 & 1024) != 0 ? textStyle.spanStyle.getTextGeometricTransform() : textGeometricTransform;
         LocaleList localeList3 = (i5 & 2048) != 0 ? textStyle.spanStyle.getLocaleList() : localeList;
-        long m6652getBackground0d7_KjU = (i5 & 4096) != 0 ? textStyle.spanStyle.m6652getBackground0d7_KjU() : j3;
+        long m6665getBackground0d7_KjU = (i5 & 4096) != 0 ? textStyle.spanStyle.m6665getBackground0d7_KjU() : j3;
         float f3 = alpha;
         TextDecoration textDecoration3 = (i5 & 8192) != 0 ? textStyle.spanStyle.getTextDecoration() : textDecoration;
         Shadow shadow3 = (i5 & 16384) != 0 ? textStyle.spanStyle.getShadow() : shadow;
         DrawStyle drawStyle3 = (i5 & 32768) != 0 ? textStyle.spanStyle.getDrawStyle() : drawStyle;
-        int m6599getTextAligne0LSkKk = (i5 & 65536) != 0 ? textStyle.paragraphStyle.m6599getTextAligne0LSkKk() : i;
-        int m6601getTextDirections_7Xco = (i5 & 131072) != 0 ? textStyle.paragraphStyle.m6601getTextDirections_7Xco() : i2;
-        long m6597getLineHeightXSAIIZE = (i5 & 262144) != 0 ? textStyle.paragraphStyle.m6597getLineHeightXSAIIZE() : j4;
+        int m6612getTextAligne0LSkKk = (i5 & 65536) != 0 ? textStyle.paragraphStyle.m6612getTextAligne0LSkKk() : i;
+        int m6614getTextDirections_7Xco = (i5 & 131072) != 0 ? textStyle.paragraphStyle.m6614getTextDirections_7Xco() : i2;
+        long m6610getLineHeightXSAIIZE = (i5 & 262144) != 0 ? textStyle.paragraphStyle.m6610getLineHeightXSAIIZE() : j4;
         TextIndent textIndent3 = (i5 & 524288) != 0 ? textStyle.paragraphStyle.getTextIndent() : textIndent;
         PlatformTextStyle platformTextStyle3 = (i5 & 1048576) != 0 ? textStyle.platformStyle : platformTextStyle;
         LineHeightStyle lineHeightStyle3 = (i5 & 2097152) != 0 ? textStyle.paragraphStyle.getLineHeightStyle() : lineHeightStyle;
-        int m6596getLineBreakrAG3T2k = (i5 & 4194304) != 0 ? textStyle.paragraphStyle.m6596getLineBreakrAG3T2k() : i3;
-        int m6594getHyphensvmbZdU8 = (i5 & 8388608) != 0 ? textStyle.paragraphStyle.m6594getHyphensvmbZdU8() : i4;
+        int m6609getLineBreakrAG3T2k = (i5 & 4194304) != 0 ? textStyle.paragraphStyle.m6609getLineBreakrAG3T2k() : i3;
+        int m6607getHyphensvmbZdU8 = (i5 & 8388608) != 0 ? textStyle.paragraphStyle.m6607getHyphensvmbZdU8() : i4;
         if ((i5 & 16777216) != 0) {
-            i6 = m6594getHyphensvmbZdU8;
+            i6 = m6607getHyphensvmbZdU8;
             textMotion2 = textStyle.paragraphStyle.getTextMotion();
             textDecoration2 = textDecoration3;
             drawStyle2 = drawStyle3;
-            i7 = m6599getTextAligne0LSkKk;
-            i8 = m6601getTextDirections_7Xco;
+            i7 = m6612getTextAligne0LSkKk;
+            i8 = m6614getTextDirections_7Xco;
             textIndent2 = textIndent3;
             platformTextStyle2 = platformTextStyle3;
             lineHeightStyle2 = lineHeightStyle3;
-            i9 = m6596getLineBreakrAG3T2k;
+            i9 = m6609getLineBreakrAG3T2k;
             shadow2 = shadow3;
-            j5 = m6655getFontSizeXSAIIZE;
+            j5 = m6668getFontSizeXSAIIZE;
             fontWeight2 = fontWeight3;
-            fontStyle2 = m6656getFontStyle4Lr2A7w;
-            fontSynthesis2 = m6657getFontSynthesisZQGJjVo;
+            fontStyle2 = m6669getFontStyle4Lr2A7w;
+            fontSynthesis2 = m6670getFontSynthesisZQGJjVo;
             fontFamily2 = fontFamily3;
             str2 = fontFeatureSettings;
-            j6 = m6658getLetterSpacingXSAIIZE;
-            baselineShift2 = m6653getBaselineShift5SSeXJ0;
+            j6 = m6671getLetterSpacingXSAIIZE;
+            baselineShift2 = m6666getBaselineShift5SSeXJ0;
             textGeometricTransform2 = textGeometricTransform3;
             localeList2 = localeList3;
-            j7 = m6652getBackground0d7_KjU;
-            j8 = m6597getLineHeightXSAIIZE;
+            j7 = m6665getBackground0d7_KjU;
+            j8 = m6610getLineHeightXSAIIZE;
             brush2 = brush;
             f2 = f3;
             textStyle2 = textStyle;
         } else {
             textMotion2 = textMotion;
-            i6 = m6594getHyphensvmbZdU8;
+            i6 = m6607getHyphensvmbZdU8;
             textDecoration2 = textDecoration3;
             drawStyle2 = drawStyle3;
-            i7 = m6599getTextAligne0LSkKk;
-            i8 = m6601getTextDirections_7Xco;
+            i7 = m6612getTextAligne0LSkKk;
+            i8 = m6614getTextDirections_7Xco;
             textIndent2 = textIndent3;
             platformTextStyle2 = platformTextStyle3;
             lineHeightStyle2 = lineHeightStyle3;
             shadow2 = shadow3;
-            j5 = m6655getFontSizeXSAIIZE;
+            j5 = m6668getFontSizeXSAIIZE;
             fontWeight2 = fontWeight3;
-            fontStyle2 = m6656getFontStyle4Lr2A7w;
-            fontSynthesis2 = m6657getFontSynthesisZQGJjVo;
+            fontStyle2 = m6669getFontStyle4Lr2A7w;
+            fontSynthesis2 = m6670getFontSynthesisZQGJjVo;
             str2 = fontFeatureSettings;
-            j6 = m6658getLetterSpacingXSAIIZE;
-            baselineShift2 = m6653getBaselineShift5SSeXJ0;
+            j6 = m6671getLetterSpacingXSAIIZE;
+            baselineShift2 = m6666getBaselineShift5SSeXJ0;
             textGeometricTransform2 = textGeometricTransform3;
             localeList2 = localeList3;
-            j7 = m6652getBackground0d7_KjU;
-            j8 = m6597getLineHeightXSAIIZE;
+            j7 = m6665getBackground0d7_KjU;
+            j8 = m6610getLineHeightXSAIIZE;
             brush2 = brush;
             f2 = f3;
-            i9 = m6596getLineBreakrAG3T2k;
+            i9 = m6609getLineBreakrAG3T2k;
             textStyle2 = textStyle;
             fontFamily2 = fontFamily3;
         }
-        return textStyle2.m6737copyNs73l9s(brush2, f2, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j7, textDecoration2, shadow2, drawStyle2, i7, i8, j8, textIndent2, platformTextStyle2, lineHeightStyle2, i9, i6, textMotion2);
+        return textStyle2.m6750copyNs73l9s(brush2, f2, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j7, textDecoration2, shadow2, drawStyle2, i7, i8, j8, textIndent2, platformTextStyle2, lineHeightStyle2, i9, i6, textMotion2);
     }
 
     /* renamed from: copy-Ns73l9s  reason: not valid java name */
-    public final TextStyle m6737copyNs73l9s(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
+    public final TextStyle m6750copyNs73l9s(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, DrawStyle drawStyle, int i, int i2, long j4, TextIndent textIndent, PlatformTextStyle platformTextStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
         return new TextStyle(new SpanStyle(brush, f, j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformTextStyle != null ? platformTextStyle.getSpanStyle() : null, drawStyle, (DefaultConstructorMarker) null), new ParagraphStyle(i, i2, j4, textIndent, platformTextStyle != null ? platformTextStyle.getParagraphStyle() : null, lineHeightStyle, i3, i4, textMotion, (DefaultConstructorMarker) null), platformTextStyle);
     }
 
@@ -845,8 +845,8 @@ public final class TextStyle {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m6743getColor0d7_KjU() {
-        return this.spanStyle.m6654getColor0d7_KjU();
+    public final long m6756getColor0d7_KjU() {
+        return this.spanStyle.m6667getColor0d7_KjU();
     }
 
     public final float getAlpha() {
@@ -854,8 +854,8 @@ public final class TextStyle {
     }
 
     /* renamed from: getFontSize-XSAIIZE  reason: not valid java name */
-    public final long m6744getFontSizeXSAIIZE() {
-        return this.spanStyle.m6655getFontSizeXSAIIZE();
+    public final long m6757getFontSizeXSAIIZE() {
+        return this.spanStyle.m6668getFontSizeXSAIIZE();
     }
 
     public final FontWeight getFontWeight() {
@@ -863,13 +863,13 @@ public final class TextStyle {
     }
 
     /* renamed from: getFontStyle-4Lr2A7w  reason: not valid java name */
-    public final FontStyle m6745getFontStyle4Lr2A7w() {
-        return this.spanStyle.m6656getFontStyle4Lr2A7w();
+    public final FontStyle m6758getFontStyle4Lr2A7w() {
+        return this.spanStyle.m6669getFontStyle4Lr2A7w();
     }
 
     /* renamed from: getFontSynthesis-ZQGJjVo  reason: not valid java name */
-    public final FontSynthesis m6746getFontSynthesisZQGJjVo() {
-        return this.spanStyle.m6657getFontSynthesisZQGJjVo();
+    public final FontSynthesis m6759getFontSynthesisZQGJjVo() {
+        return this.spanStyle.m6670getFontSynthesisZQGJjVo();
     }
 
     public final FontFamily getFontFamily() {
@@ -881,13 +881,13 @@ public final class TextStyle {
     }
 
     /* renamed from: getLetterSpacing-XSAIIZE  reason: not valid java name */
-    public final long m6749getLetterSpacingXSAIIZE() {
-        return this.spanStyle.m6658getLetterSpacingXSAIIZE();
+    public final long m6762getLetterSpacingXSAIIZE() {
+        return this.spanStyle.m6671getLetterSpacingXSAIIZE();
     }
 
     /* renamed from: getBaselineShift-5SSeXJ0  reason: not valid java name */
-    public final BaselineShift m6742getBaselineShift5SSeXJ0() {
-        return this.spanStyle.m6653getBaselineShift5SSeXJ0();
+    public final BaselineShift m6755getBaselineShift5SSeXJ0() {
+        return this.spanStyle.m6666getBaselineShift5SSeXJ0();
     }
 
     public final TextGeometricTransform getTextGeometricTransform() {
@@ -899,8 +899,8 @@ public final class TextStyle {
     }
 
     /* renamed from: getBackground-0d7_KjU  reason: not valid java name */
-    public final long m6741getBackground0d7_KjU() {
-        return this.spanStyle.m6652getBackground0d7_KjU();
+    public final long m6754getBackground0d7_KjU() {
+        return this.spanStyle.m6665getBackground0d7_KjU();
     }
 
     public final TextDecoration getTextDecoration() {
@@ -916,28 +916,28 @@ public final class TextStyle {
     }
 
     /* renamed from: getTextAlign-e0LSkKk  reason: not valid java name */
-    public final int m6754getTextAligne0LSkKk() {
-        return this.paragraphStyle.m6599getTextAligne0LSkKk();
+    public final int m6767getTextAligne0LSkKk() {
+        return this.paragraphStyle.m6612getTextAligne0LSkKk();
     }
 
     /* renamed from: getTextAlign-buA522U  reason: not valid java name */
-    public final TextAlign m6753getTextAlignbuA522U() {
-        return TextAlign.m7128boximpl(m6754getTextAligne0LSkKk());
+    public final TextAlign m6766getTextAlignbuA522U() {
+        return TextAlign.m7141boximpl(m6767getTextAligne0LSkKk());
     }
 
     /* renamed from: getTextDirection-s_7X-co  reason: not valid java name */
-    public final int m6756getTextDirections_7Xco() {
-        return this.paragraphStyle.m6601getTextDirections_7Xco();
+    public final int m6769getTextDirections_7Xco() {
+        return this.paragraphStyle.m6614getTextDirections_7Xco();
     }
 
     /* renamed from: getTextDirection-mmuk1to  reason: not valid java name */
-    public final TextDirection m6755getTextDirectionmmuk1to() {
-        return TextDirection.m7142boximpl(m6756getTextDirections_7Xco());
+    public final TextDirection m6768getTextDirectionmmuk1to() {
+        return TextDirection.m7155boximpl(m6769getTextDirections_7Xco());
     }
 
     /* renamed from: getLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m6752getLineHeightXSAIIZE() {
-        return this.paragraphStyle.m6597getLineHeightXSAIIZE();
+    public final long m6765getLineHeightXSAIIZE() {
+        return this.paragraphStyle.m6610getLineHeightXSAIIZE();
     }
 
     public final TextIndent getTextIndent() {
@@ -949,23 +949,23 @@ public final class TextStyle {
     }
 
     /* renamed from: getHyphens-vmbZdU8  reason: not valid java name */
-    public final int m6748getHyphensvmbZdU8() {
-        return this.paragraphStyle.m6594getHyphensvmbZdU8();
+    public final int m6761getHyphensvmbZdU8() {
+        return this.paragraphStyle.m6607getHyphensvmbZdU8();
     }
 
     /* renamed from: getHyphens-EaSxIns  reason: not valid java name */
-    public final Hyphens m6747getHyphensEaSxIns() {
-        return Hyphens.m7026boximpl(m6748getHyphensvmbZdU8());
+    public final Hyphens m6760getHyphensEaSxIns() {
+        return Hyphens.m7039boximpl(m6761getHyphensvmbZdU8());
     }
 
     /* renamed from: getLineBreak-rAG3T2k  reason: not valid java name */
-    public final int m6751getLineBreakrAG3T2k() {
-        return this.paragraphStyle.m6596getLineBreakrAG3T2k();
+    public final int m6764getLineBreakrAG3T2k() {
+        return this.paragraphStyle.m6609getLineBreakrAG3T2k();
     }
 
     /* renamed from: getLineBreak-LgCVezo  reason: not valid java name */
-    public final LineBreak m6750getLineBreakLgCVezo() {
-        return LineBreak.m7036boximpl(m6751getLineBreakrAG3T2k());
+    public final LineBreak m6763getLineBreakLgCVezo() {
+        return LineBreak.m7049boximpl(m6764getLineBreakrAG3T2k());
     }
 
     public final TextMotion getTextMotion() {
@@ -1008,9 +1008,9 @@ public final class TextStyle {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("TextStyle(color=");
-        sb.append((Object) Color.m4545toStringimpl(m6743getColor0d7_KjU())).append(", brush=").append(getBrush()).append(", alpha=").append(getAlpha()).append(", fontSize=").append((Object) TextUnit.m7452toStringimpl(m6744getFontSizeXSAIIZE())).append(", fontWeight=").append(getFontWeight()).append(", fontStyle=").append(m6745getFontStyle4Lr2A7w()).append(", fontSynthesis=").append(m6746getFontSynthesisZQGJjVo()).append(", fontFamily=").append(getFontFamily()).append(", fontFeatureSettings=").append(getFontFeatureSettings()).append(", letterSpacing=").append((Object) TextUnit.m7452toStringimpl(m6749getLetterSpacingXSAIIZE())).append(", baselineShift=").append(m6742getBaselineShift5SSeXJ0()).append(", textGeometricTransform=");
-        sb.append(getTextGeometricTransform()).append(", localeList=").append(getLocaleList()).append(", background=").append((Object) Color.m4545toStringimpl(m6741getBackground0d7_KjU())).append(", textDecoration=").append(getTextDecoration()).append(", shadow=").append(getShadow()).append(", drawStyle=").append(getDrawStyle()).append(", textAlign=").append((Object) TextAlign.m7133toStringimpl(m6754getTextAligne0LSkKk())).append(", textDirection=").append((Object) TextDirection.m7147toStringimpl(m6756getTextDirections_7Xco())).append(", lineHeight=").append((Object) TextUnit.m7452toStringimpl(m6752getLineHeightXSAIIZE())).append(", textIndent=").append(getTextIndent()).append(", platformStyle=").append(this.platformStyle).append(", lineHeightStyle=").append(getLineHeightStyle());
-        sb.append(", lineBreak=").append((Object) LineBreak.m7047toStringimpl(m6751getLineBreakrAG3T2k())).append(", hyphens=").append((Object) Hyphens.m7031toStringimpl(m6748getHyphensvmbZdU8())).append(", textMotion=").append(getTextMotion()).append(')');
+        sb.append((Object) Color.m4557toStringimpl(m6756getColor0d7_KjU())).append(", brush=").append(getBrush()).append(", alpha=").append(getAlpha()).append(", fontSize=").append((Object) TextUnit.m7465toStringimpl(m6757getFontSizeXSAIIZE())).append(", fontWeight=").append(getFontWeight()).append(", fontStyle=").append(m6758getFontStyle4Lr2A7w()).append(", fontSynthesis=").append(m6759getFontSynthesisZQGJjVo()).append(", fontFamily=").append(getFontFamily()).append(", fontFeatureSettings=").append(getFontFeatureSettings()).append(", letterSpacing=").append((Object) TextUnit.m7465toStringimpl(m6762getLetterSpacingXSAIIZE())).append(", baselineShift=").append(m6755getBaselineShift5SSeXJ0()).append(", textGeometricTransform=");
+        sb.append(getTextGeometricTransform()).append(", localeList=").append(getLocaleList()).append(", background=").append((Object) Color.m4557toStringimpl(m6754getBackground0d7_KjU())).append(", textDecoration=").append(getTextDecoration()).append(", shadow=").append(getShadow()).append(", drawStyle=").append(getDrawStyle()).append(", textAlign=").append((Object) TextAlign.m7146toStringimpl(m6767getTextAligne0LSkKk())).append(", textDirection=").append((Object) TextDirection.m7160toStringimpl(m6769getTextDirections_7Xco())).append(", lineHeight=").append((Object) TextUnit.m7465toStringimpl(m6765getLineHeightXSAIIZE())).append(", textIndent=").append(getTextIndent()).append(", platformStyle=").append(this.platformStyle).append(", lineHeightStyle=").append(getLineHeightStyle());
+        sb.append(", lineBreak=").append((Object) LineBreak.m7060toStringimpl(m6764getLineBreakrAG3T2k())).append(", hyphens=").append((Object) Hyphens.m7044toStringimpl(m6761getHyphensvmbZdU8())).append(", textMotion=").append(getTextMotion()).append(')');
         return sb.toString();
     }
 

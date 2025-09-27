@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.business.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class MyBusinessParentStatItemBinding implements ViewBinding {
     public final RecyclerView childStatRc;
     public final CardView editButton;

@@ -44,7 +44,7 @@ public final class Xyz extends ColorSpace {
     }
 
     public Xyz(String str, int i) {
-        super(str, ColorModel.Companion.m4970getXyzxdoWZVw(), i, null);
+        super(str, ColorModel.Companion.m4982getXyzxdoWZVw(), i, null);
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
@@ -73,7 +73,7 @@ public final class Xyz extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics_release */
-    public long mo4972xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo4984xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         if (f < -2.0f) {
             f = -2.0f;
         }

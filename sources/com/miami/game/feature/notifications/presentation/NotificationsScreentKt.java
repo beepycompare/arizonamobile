@@ -134,15 +134,15 @@ public final class NotificationsScreentKt {
             } else {
                 composer2.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, -545962870, "C69@2845L1778:NotificationsScreent.kt#21zkme");
@@ -164,15 +164,15 @@ public final class NotificationsScreentKt {
             } else {
                 composer2.useNode();
             }
-            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer2);
-            Updater.m3862setimpl(m3855constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer2);
+            Updater.m3874setimpl(m3867constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer2, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer2, 276628437, "C74@2996L36:NotificationsScreent.kt#21zkme");
@@ -202,26 +202,26 @@ public final class NotificationsScreentKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer2);
-                    Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer2);
+                    Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
-                        m3855constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
-                        m3855constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
+                    if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
+                        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
+                        m3867constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -2088201931, "C83@3492L10,84@3558L13,85@3619L13,86@3683L12,80@3317L408:NotificationsScreent.kt#21zkme");
-                    long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
+                    long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(Color.Companion.m4586getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                     TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodyMedium();
                     float f = 32;
-                    long m9048dpToSp8Feqmps = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
-                    long m9048dpToSp8Feqmps2 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f), composer2, 6);
-                    long m9048dpToSp8Feqmps3 = TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(1), composer2, 6);
-                    TextUnitKt.m7458checkArithmeticR2X_6o(m9048dpToSp8Feqmps3);
-                    TextKt.m2804Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4536copywmQWz5c$default, m9048dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7443getRawTypeimpl(m9048dpToSp8Feqmps3), -TextUnit.m7445getValueimpl(m9048dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m9048dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
+                    long m9061dpToSp8Feqmps = TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(f), composer2, 6);
+                    long m9061dpToSp8Feqmps2 = TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(f), composer2, 6);
+                    long m9061dpToSp8Feqmps3 = TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(1), composer2, 6);
+                    TextUnitKt.m7471checkArithmeticR2X_6o(m9061dpToSp8Feqmps3);
+                    TextKt.m2814Text4IGK_g("НЕТ УВЕДОМЛЕНИЙ", (Modifier) null, m4548copywmQWz5c$default, m9061dpToSp8Feqmps, (FontStyle) null, (FontWeight) null, (FontFamily) null, TextUnitKt.pack(TextUnit.m7456getRawTypeimpl(m9061dpToSp8Feqmps3), -TextUnit.m7458getValueimpl(m9061dpToSp8Feqmps3)), (TextDecoration) null, (TextAlign) null, m9061dpToSp8Feqmps2, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, bodyMedium, composer2, 390, 0, 64370);
                     composer2 = composer2;
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -252,19 +252,19 @@ public final class NotificationsScreentKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer2);
-                    Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer2);
+                    Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
-                        m3855constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
-                        m3855constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
+                    if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(hashCode4))) {
+                        m3867constructorimpl4.updateRememberedValue(Integer.valueOf(hashCode4));
+                        m3867constructorimpl4.apply(Integer.valueOf(hashCode4), setCompositeKeyHash4);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1167154385, "C93@3962L21:NotificationsScreent.kt#21zkme");
-                    AnimatedLoadingKt.m8929AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
+                    AnimatedLoadingKt.m8941AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     composer2.endNode();
@@ -277,13 +277,13 @@ public final class NotificationsScreentKt {
             } else {
                 composer2.startReplaceGroup(277677414);
                 ComposerKt.sourceInformation(composer2, "105@4461L138,99@4088L511");
-                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7251constructorimpl(330), null);
-                Arrangement.HorizontalOrVertical m691spacedBy0680j_4 = Arrangement.INSTANCE.m691spacedBy0680j_4(Dp.m7251constructorimpl(20));
+                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7264constructorimpl(330), null);
+                Arrangement.HorizontalOrVertical m701spacedBy0680j_4 = Arrangement.INSTANCE.m701spacedBy0680j_4(Dp.m7264constructorimpl(20));
                 Arrangement.HorizontalOrVertical center3 = Arrangement.INSTANCE.getCenter();
-                PaddingValues m829PaddingValuesa9UjIt4$default = PaddingKt.m829PaddingValuesa9UjIt4$default(0.0f, Dp.m7251constructorimpl(16), 0.0f, Dp.m7251constructorimpl(36), 5, null);
+                PaddingValues m839PaddingValuesa9UjIt4$default = PaddingKt.m839PaddingValuesa9UjIt4$default(0.0f, Dp.m7264constructorimpl(16), 0.0f, Dp.m7264constructorimpl(36), 5, null);
                 Modifier fillMaxSize$default5 = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
                 GridCells.FixedSize fixedSize2 = fixedSize;
-                Arrangement.HorizontalOrVertical horizontalOrVertical = m691spacedBy0680j_4;
+                Arrangement.HorizontalOrVertical horizontalOrVertical = m701spacedBy0680j_4;
                 Arrangement.HorizontalOrVertical horizontalOrVertical2 = center3;
                 ComposerKt.sourceInformationMarkerStart(composer2, 147516231, "CC(remember):NotificationsScreent.kt#9igjgp");
                 boolean changed = composer2.changed(observeAsState);
@@ -300,7 +300,7 @@ public final class NotificationsScreentKt {
                     composer2.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer2);
-                LazyGridDslKt.LazyVerticalGrid(fixedSize2, fillMaxSize$default5, null, m829PaddingValuesa9UjIt4$default, false, horizontalOrVertical, horizontalOrVertical2, null, false, null, rememberedValue, composer2, 1772592, 0, 916);
+                LazyGridDslKt.LazyVerticalGrid(fixedSize2, fillMaxSize$default5, null, m839PaddingValuesa9UjIt4$default, false, horizontalOrVertical, horizontalOrVertical2, null, false, null, rememberedValue, composer2, 1772592, 0, 916);
                 composer2 = composer2;
                 composer2.endReplaceGroup();
             }
@@ -427,15 +427,15 @@ public final class NotificationsScreentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1757134564, "C121@4709L1077,150@5795L138:NotificationsScreent.kt#21zkme");
@@ -459,15 +459,15 @@ public final class NotificationsScreentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
             }
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -789291317, "C126@4907L869:NotificationsScreent.kt#21zkme");
@@ -489,15 +489,15 @@ public final class NotificationsScreentKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
-                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
-                m3855constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
+            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(hashCode3))) {
+                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(hashCode3));
+                m3867constructorimpl3.apply(Integer.valueOf(hashCode3), setCompositeKeyHash3);
             }
-            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1261122335, "C130@5052L56,129@5007L450,142@5501L53,141@5474L288:NotificationsScreent.kt#21zkme");
@@ -516,8 +516,8 @@ public final class NotificationsScreentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m9014getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.notification_topbar_label, startRestartGroup, 0), (String) null, OffsetKt.m787offsetVpY3zN4$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(30)), Dp.m7251constructorimpl(-Dp.m7251constructorimpl(12)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m9026getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.notification_topbar_label, startRestartGroup, 0), (String) null, OffsetKt.m797offsetVpY3zN4$default(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(30)), Dp.m7264constructorimpl(-Dp.m7264constructorimpl(12)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -531,7 +531,7 @@ public final class NotificationsScreentKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CustomDividerKt.CustomDivider(OffsetKt.m787offsetVpY3zN4$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomCenter()), 0.0f, Dp.m7251constructorimpl(-Dp.m7251constructorimpl(0)), 1, null), startRestartGroup, 0, 0);
+            CustomDividerKt.CustomDivider(OffsetKt.m797offsetVpY3zN4$default(boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomCenter()), 0.0f, Dp.m7264constructorimpl(-Dp.m7264constructorimpl(0)), 1, null), startRestartGroup, 0, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

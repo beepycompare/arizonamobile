@@ -27,25 +27,25 @@ public final class TextInputServiceAndroid_androidKt {
 
     public static final void update(EditorInfo editorInfo, ImeOptions imeOptions, TextFieldValue textFieldValue) {
         String privateImeOptions;
-        int m6911getImeActioneUduSuo = imeOptions.m6911getImeActioneUduSuo();
+        int m6924getImeActioneUduSuo = imeOptions.m6924getImeActioneUduSuo();
         int i = 6;
-        if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6895getDefaulteUduSuo())) {
+        if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6908getDefaulteUduSuo())) {
             if (!imeOptions.getSingleLine()) {
                 i = 0;
             }
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6899getNoneeUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6912getNoneeUduSuo())) {
             i = 1;
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6897getGoeUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6910getGoeUduSuo())) {
             i = 2;
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6898getNexteUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6911getNexteUduSuo())) {
             i = 5;
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6900getPreviouseUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6913getPreviouseUduSuo())) {
             i = 7;
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6901getSearcheUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6914getSearcheUduSuo())) {
             i = 3;
-        } else if (ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6902getSendeUduSuo())) {
+        } else if (ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6915getSendeUduSuo())) {
             i = 4;
-        } else if (!ImeAction.m6882equalsimpl0(m6911getImeActioneUduSuo, ImeAction.Companion.m6896getDoneeUduSuo())) {
+        } else if (!ImeAction.m6895equalsimpl0(m6924getImeActioneUduSuo, ImeAction.Companion.m6909getDoneeUduSuo())) {
             throw new IllegalStateException("invalid ImeAction".toString());
         }
         editorInfo.imeOptions = i;
@@ -53,50 +53,50 @@ public final class TextInputServiceAndroid_androidKt {
         if (platformImeOptions != null && (privateImeOptions = platformImeOptions.getPrivateImeOptions()) != null) {
             editorInfo.privateImeOptions = privateImeOptions;
         }
-        int m6912getKeyboardTypePjHm6EE = imeOptions.m6912getKeyboardTypePjHm6EE();
-        if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6956getTextPjHm6EE())) {
+        int m6925getKeyboardTypePjHm6EE = imeOptions.m6925getKeyboardTypePjHm6EE();
+        if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6969getTextPjHm6EE())) {
             editorInfo.inputType = 1;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6949getAsciiPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6962getAsciiPjHm6EE())) {
             editorInfo.inputType = 1;
             editorInfo.imeOptions |= Integer.MIN_VALUE;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6952getNumberPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6965getNumberPjHm6EE())) {
             editorInfo.inputType = 2;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6955getPhonePjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6968getPhonePjHm6EE())) {
             editorInfo.inputType = 3;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6958getUriPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6971getUriPjHm6EE())) {
             editorInfo.inputType = 17;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6951getEmailPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6964getEmailPjHm6EE())) {
             editorInfo.inputType = 33;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6954getPasswordPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6967getPasswordPjHm6EE())) {
             editorInfo.inputType = TsExtractor.TS_STREAM_TYPE_AC3;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6953getNumberPasswordPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6966getNumberPasswordPjHm6EE())) {
             editorInfo.inputType = 18;
-        } else if (KeyboardType.m6935equalsimpl0(m6912getKeyboardTypePjHm6EE, KeyboardType.Companion.m6950getDecimalPjHm6EE())) {
+        } else if (KeyboardType.m6948equalsimpl0(m6925getKeyboardTypePjHm6EE, KeyboardType.Companion.m6963getDecimalPjHm6EE())) {
             editorInfo.inputType = 8194;
         } else {
             throw new IllegalStateException("Invalid Keyboard Type".toString());
         }
         if (!imeOptions.getSingleLine() && hasFlag(editorInfo.inputType, 1)) {
             editorInfo.inputType |= 131072;
-            if (ImeAction.m6882equalsimpl0(imeOptions.m6911getImeActioneUduSuo(), ImeAction.Companion.m6895getDefaulteUduSuo())) {
+            if (ImeAction.m6895equalsimpl0(imeOptions.m6924getImeActioneUduSuo(), ImeAction.Companion.m6908getDefaulteUduSuo())) {
                 editorInfo.imeOptions |= 1073741824;
             }
         }
         if (hasFlag(editorInfo.inputType, 1)) {
-            int m6910getCapitalizationIUNYP9k = imeOptions.m6910getCapitalizationIUNYP9k();
-            if (KeyboardCapitalization.m6918equalsimpl0(m6910getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6927getCharactersIUNYP9k())) {
+            int m6923getCapitalizationIUNYP9k = imeOptions.m6923getCapitalizationIUNYP9k();
+            if (KeyboardCapitalization.m6931equalsimpl0(m6923getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6940getCharactersIUNYP9k())) {
                 editorInfo.inputType |= 4096;
-            } else if (KeyboardCapitalization.m6918equalsimpl0(m6910getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6931getWordsIUNYP9k())) {
+            } else if (KeyboardCapitalization.m6931equalsimpl0(m6923getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6944getWordsIUNYP9k())) {
                 editorInfo.inputType |= 8192;
-            } else if (KeyboardCapitalization.m6918equalsimpl0(m6910getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6929getSentencesIUNYP9k())) {
+            } else if (KeyboardCapitalization.m6931equalsimpl0(m6923getCapitalizationIUNYP9k, KeyboardCapitalization.Companion.m6942getSentencesIUNYP9k())) {
                 editorInfo.inputType |= 16384;
             }
             if (imeOptions.getAutoCorrect()) {
                 editorInfo.inputType |= 32768;
             }
         }
-        editorInfo.initialSelStart = TextRange.m6713getStartimpl(textFieldValue.m6964getSelectiond9O1mEE());
-        editorInfo.initialSelEnd = TextRange.m6708getEndimpl(textFieldValue.m6964getSelectiond9O1mEE());
+        editorInfo.initialSelStart = TextRange.m6726getStartimpl(textFieldValue.m6977getSelectiond9O1mEE());
+        editorInfo.initialSelEnd = TextRange.m6721getEndimpl(textFieldValue.m6977getSelectiond9O1mEE());
         EditorInfoCompat.setInitialSurroundingText(editorInfo, textFieldValue.getText());
         editorInfo.imeOptions |= 33554432;
     }

@@ -9,7 +9,7 @@ import java.io.Closeable;
 public final class C0758zc implements X6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1189a;
+    public final Context f1190a;
     public final String b;
     public final C0545qn c;
     public final C0731ya d;
@@ -24,7 +24,7 @@ public final class C0758zc implements X6 {
         C0703x7 c0703x7;
         try {
             this.d.a();
-            c0703x7 = new C0703x7(this.f1189a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            c0703x7 = new C0703x7(this.f1190a, this.b, this.c, PublicLogger.getAnonymousInstance());
             this.e = c0703x7;
         } catch (Throwable unused) {
             return null;
@@ -33,7 +33,7 @@ public final class C0758zc implements X6 {
     }
 
     public C0758zc(Context context, String str, C0731ya c0731ya, C0545qn c0545qn) {
-        this.f1189a = context;
+        this.f1190a = context;
         this.b = str;
         this.d = c0731ya;
         this.c = c0545qn;

@@ -37,8 +37,8 @@ public interface PathEffect {
         }
 
         /* renamed from: stampedPathEffect-7aD1DOk  reason: not valid java name */
-        public final PathEffect m4823stampedPathEffect7aD1DOk(Path path, float f, float f2, int i) {
-            return AndroidPathEffect_androidKt.m4431actualStampedPathEffect7aD1DOk(path, f, f2, i);
+        public final PathEffect m4835stampedPathEffect7aD1DOk(Path path, float f, float f2, int i) {
+            return AndroidPathEffect_androidKt.m4443actualStampedPathEffect7aD1DOk(path, f, f2, i);
         }
     }
 }

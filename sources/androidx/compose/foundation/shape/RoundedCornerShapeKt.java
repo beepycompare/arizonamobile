@@ -17,8 +17,8 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-0680j_4  reason: not valid java name */
-    public static final RoundedCornerShape m1197RoundedCornerShape0680j_4(float f) {
-        return RoundedCornerShape(CornerSizeKt.m1189CornerSize0680j_4(f));
+    public static final RoundedCornerShape m1207RoundedCornerShape0680j_4(float f) {
+        return RoundedCornerShape(CornerSizeKt.m1199CornerSize0680j_4(f));
     }
 
     public static final RoundedCornerShape RoundedCornerShape(float f) {
@@ -30,8 +30,8 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-a9UjIt4  reason: not valid java name */
-    public static final RoundedCornerShape m1198RoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
-        return new RoundedCornerShape(CornerSizeKt.m1189CornerSize0680j_4(f), CornerSizeKt.m1189CornerSize0680j_4(f2), CornerSizeKt.m1189CornerSize0680j_4(f3), CornerSizeKt.m1189CornerSize0680j_4(f4));
+    public static final RoundedCornerShape m1208RoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
+        return new RoundedCornerShape(CornerSizeKt.m1199CornerSize0680j_4(f), CornerSizeKt.m1199CornerSize0680j_4(f2), CornerSizeKt.m1199CornerSize0680j_4(f3), CornerSizeKt.m1199CornerSize0680j_4(f4));
     }
 
     public static /* synthetic */ RoundedCornerShape RoundedCornerShape$default(float f, float f2, float f3, float f4, int i, Object obj) {
@@ -75,19 +75,19 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ RoundedCornerShape m1199RoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ RoundedCornerShape m1209RoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m7251constructorimpl(0);
+            f = Dp.m7264constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m7251constructorimpl(0);
+            f2 = Dp.m7264constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m7251constructorimpl(0);
+            f3 = Dp.m7264constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m7251constructorimpl(0);
+            f4 = Dp.m7264constructorimpl(0);
         }
-        return m1198RoundedCornerShapea9UjIt4(f, f2, f3, f4);
+        return m1208RoundedCornerShapea9UjIt4(f, f2, f3, f4);
     }
 }

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 final /* synthetic */ class SettingsScreenKt$SettingsRoute$9$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public SettingsScreenKt$SettingsRoute$9$1(Object obj) {
-        super(0, obj, SettingsComponent.class, "onPrivacyPolicy", "onPrivacyPolicy()V", 0);
+        super(0, obj, SettingsComponent.class, "onBugsReport", "onBugsReport()V", 0);
     }
 
     @Override // kotlin.jvm.functions.Function0
@@ -22,6 +22,6 @@ final /* synthetic */ class SettingsScreenKt$SettingsRoute$9$1 extends FunctionR
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        ((SettingsComponent) this.receiver).onPrivacyPolicy();
+        ((SettingsComponent) this.receiver).onBugsReport();
     }
 }

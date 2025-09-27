@@ -21,16 +21,16 @@ final class SimpleLayoutKt$SimpleLayout$1$1 implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         int i = 0;
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            Placeable mo5954measureBRTryo0 = list.get(i3).mo5954measureBRTryo0(j);
-            i = Math.max(i, mo5954measureBRTryo0.getWidth());
-            i2 = Math.max(i2, mo5954measureBRTryo0.getHeight());
-            arrayList.add(mo5954measureBRTryo0);
+            Placeable mo5967measureBRTryo0 = list.get(i3).mo5967measureBRTryo0(j);
+            i = Math.max(i, mo5967measureBRTryo0.getWidth());
+            i2 = Math.max(i2, mo5967measureBRTryo0.getHeight());
+            arrayList.add(mo5967measureBRTryo0);
         }
         final ArrayList arrayList2 = arrayList;
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1() { // from class: androidx.compose.foundation.text.selection.SimpleLayoutKt$SimpleLayout$1$1$$ExternalSyntheticLambda0

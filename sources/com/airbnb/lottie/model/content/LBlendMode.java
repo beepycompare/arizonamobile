@@ -1,5 +1,6 @@
 package com.airbnb.lottie.model.content;
 
+import android.os.Build;
 import androidx.core.graphics.BlendModeCompat;
 /* loaded from: classes3.dex */
 public enum LBlendMode {
@@ -24,24 +25,27 @@ public enum LBlendMode {
 
     public BlendModeCompat toNativeBlendMode() {
         int ordinal = ordinal();
-        if (ordinal != 1) {
-            if (ordinal != 2) {
-                if (ordinal != 3) {
-                    if (ordinal != 4) {
-                        if (ordinal != 5) {
-                            if (ordinal != 16) {
-                                return null;
-                            }
-                            return BlendModeCompat.PLUS;
-                        }
-                        return BlendModeCompat.LIGHTEN;
-                    }
-                    return BlendModeCompat.DARKEN;
-                }
-                return BlendModeCompat.OVERLAY;
+        if (ordinal == 1) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                return BlendModeCompat.MULTIPLY;
             }
+            return BlendModeCompat.MODULATE;
+        } else if (ordinal != 2) {
+            if (ordinal != 3) {
+                if (ordinal != 4) {
+                    if (ordinal != 5) {
+                        if (ordinal != 16) {
+                            return null;
+                        }
+                        return BlendModeCompat.PLUS;
+                    }
+                    return BlendModeCompat.LIGHTEN;
+                }
+                return BlendModeCompat.DARKEN;
+            }
+            return BlendModeCompat.OVERLAY;
+        } else {
             return BlendModeCompat.SCREEN;
         }
-        return BlendModeCompat.MODULATE;
     }
 }

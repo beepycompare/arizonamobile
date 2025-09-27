@@ -16,10 +16,10 @@ public final class KeylineListKt {
     }
 
     /* renamed from: keylineListOf-WNYm7Xg  reason: not valid java name */
-    public static final KeylineList m2998keylineListOfWNYm7Xg(float f, float f2, int i, Function1<? super KeylineListScope, Unit> function1) {
+    public static final KeylineList m3008keylineListOfWNYm7Xg(float f, float f2, int i, Function1<? super KeylineListScope, Unit> function1) {
         KeylineListScopeImpl keylineListScopeImpl = new KeylineListScopeImpl();
         function1.invoke(keylineListScopeImpl);
-        return keylineListScopeImpl.m2999createWithAlignmentwaks0t8(f, f2, i);
+        return keylineListScopeImpl.m3009createWithAlignmentwaks0t8(f, f2, i);
     }
 
     public static final KeylineList keylineListOf(float f, float f2, int i, float f3, Function1<? super KeylineListScope, Unit> function1) {

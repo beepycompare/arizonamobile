@@ -1,6 +1,5 @@
 package com.miami.game.feature.download.dialog.ui.connection;
 
-import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -42,7 +41,7 @@ public final class ConnectionHolder {
             return unit;
         }
     };
-    private static SettingsData settingsData = new SettingsData(0, 0, false, false, false, false, false, null, null, null, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null);
+    private static SettingsData settingsData = new SettingsData(0, 0, false, false, false, false, false, false, null, null, null, 2047, null);
     private static ServerModel selectedServer = new ServerModel(0, null, null, null, false, 31, null);
     public static final int $stable = 8;
 

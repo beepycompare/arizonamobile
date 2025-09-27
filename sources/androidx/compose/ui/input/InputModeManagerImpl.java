@@ -21,24 +21,24 @@ public final class InputModeManagerImpl implements InputModeManager {
     private InputModeManagerImpl(int i, Function1<? super InputMode, Boolean> function1) {
         MutableState mutableStateOf$default;
         this.onRequestInputModeChange = function1;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(InputMode.m5344boximpl(i), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(InputMode.m5357boximpl(i), null, 2, null);
         this.inputMode$delegate = mutableStateOf$default;
     }
 
     @Override // androidx.compose.ui.input.InputModeManager
     /* renamed from: getInputMode-aOaMEAU */
-    public int mo5353getInputModeaOaMEAU() {
-        return ((InputMode) this.inputMode$delegate.getValue()).m5350unboximpl();
+    public int mo5366getInputModeaOaMEAU() {
+        return ((InputMode) this.inputMode$delegate.getValue()).m5363unboximpl();
     }
 
     /* renamed from: setInputMode-iuPiT84  reason: not valid java name */
-    public void m5355setInputModeiuPiT84(int i) {
-        this.inputMode$delegate.setValue(InputMode.m5344boximpl(i));
+    public void m5368setInputModeiuPiT84(int i) {
+        this.inputMode$delegate.setValue(InputMode.m5357boximpl(i));
     }
 
     @Override // androidx.compose.ui.input.InputModeManager
     /* renamed from: requestInputMode-iuPiT84 */
-    public boolean mo5354requestInputModeiuPiT84(int i) {
-        return this.onRequestInputModeChange.invoke(InputMode.m5344boximpl(i)).booleanValue();
+    public boolean mo5367requestInputModeiuPiT84(int i) {
+        return this.onRequestInputModeChange.invoke(InputMode.m5357boximpl(i)).booleanValue();
     }
 }

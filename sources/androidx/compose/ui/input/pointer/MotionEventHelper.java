@@ -14,8 +14,8 @@ final class MotionEventHelper {
     }
 
     /* renamed from: toRawOffset-dBAh8RU  reason: not valid java name */
-    public final long m5757toRawOffsetdBAh8RU(MotionEvent motionEvent, int i) {
+    public final long m5770toRawOffsetdBAh8RU(MotionEvent motionEvent, int i) {
         float rawX = motionEvent.getRawX(i);
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(motionEvent.getRawY(i)) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(motionEvent.getRawY(i)) & 4294967295L) | (Float.floatToRawIntBits(rawX) << 32));
     }
 }

@@ -9,5 +9,5 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface AndroidTypeface extends Typeface {
     /* renamed from: getNativeTypeface-PYhJU0U */
-    android.graphics.Typeface mo6969getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2);
+    android.graphics.Typeface mo6982getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2);
 }

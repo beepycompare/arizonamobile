@@ -18,9 +18,9 @@ import kotlin.Metadata;
 /* loaded from: classes3.dex */
 public final class ImagePainter_androidKt {
     /* renamed from: asPainter-55t9-rM  reason: not valid java name */
-    public static final Painter m8330asPainter55t9rM(Image image, Context context, int i) {
+    public static final Painter m8342asPainter55t9rM(Image image, Context context, int i) {
         if (image instanceof BitmapImage) {
-            return BitmapPainterKt.m5239BitmapPainterQZhYCtY$default(AndroidImageBitmap_androidKt.asImageBitmap(((BitmapImage) image).getBitmap()), 0L, 0L, i, 6, null);
+            return BitmapPainterKt.m5251BitmapPainterQZhYCtY$default(AndroidImageBitmap_androidKt.asImageBitmap(((BitmapImage) image).getBitmap()), 0L, 0L, i, 6, null);
         }
         if (image instanceof DrawableImage) {
             return new DrawablePainter(Image_androidKt.asDrawable(image, context.getResources()).mutate());
@@ -33,10 +33,10 @@ public final class ImagePainter_androidKt {
     }
 
     /* renamed from: asPainter-55t9-rM$default  reason: not valid java name */
-    public static /* synthetic */ Painter m8331asPainter55t9rM$default(Image image, Context context, int i, int i2, Object obj) {
+    public static /* synthetic */ Painter m8343asPainter55t9rM$default(Image image, Context context, int i, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I();
+            i = DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I();
         }
-        return m8330asPainter55t9rM(image, context, i);
+        return m8342asPainter55t9rM(image, context, i);
     }
 }

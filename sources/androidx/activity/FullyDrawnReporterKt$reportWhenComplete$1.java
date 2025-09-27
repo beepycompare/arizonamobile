@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FullyDrawnReporter.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 176)
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
 @DebugMetadata(c = "androidx.activity.FullyDrawnReporterKt", f = "FullyDrawnReporter.kt", i = {0}, l = {173}, m = "reportWhenComplete", n = {"$this$reportWhenComplete"}, s = {"L$0"})
 /* loaded from: classes.dex */
 public final class FullyDrawnReporterKt$reportWhenComplete$1 extends ContinuationImpl {

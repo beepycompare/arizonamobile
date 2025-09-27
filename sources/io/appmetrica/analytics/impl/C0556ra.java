@@ -7,12 +7,12 @@ import org.json.JSONObject;
 public final class C0556ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1064a;
+    public final String f1065a;
     public final int b;
     public final boolean c;
 
     public C0556ra(JSONObject jSONObject) {
-        this.f1064a = jSONObject.getString("name");
+        this.f1065a = jSONObject.getString("name");
         this.c = jSONObject.getBoolean("required");
         this.b = jSONObject.optInt(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, -1);
     }
@@ -26,8 +26,8 @@ public final class C0556ra {
             if (this.b != c0556ra.b || this.c != c0556ra.c) {
                 return false;
             }
-            String str = this.f1064a;
-            String str2 = c0556ra.f1064a;
+            String str = this.f1065a;
+            String str2 = c0556ra.f1065a;
             if (str != null) {
                 return str.equals(str2);
             }
@@ -39,12 +39,12 @@ public final class C0556ra {
     }
 
     public final int hashCode() {
-        String str = this.f1064a;
+        String str = this.f1065a;
         return ((((str != null ? str.hashCode() : 0) * 31) + this.b) * 31) + (this.c ? 1 : 0);
     }
 
     public C0556ra(String str, int i, boolean z) {
-        this.f1064a = str;
+        this.f1065a = str;
         this.b = i;
         this.c = z;
     }

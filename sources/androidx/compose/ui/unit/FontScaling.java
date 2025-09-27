@@ -18,19 +18,19 @@ public interface FontScaling {
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m7363toSp0xMU5do(FontScaling fontScaling, float f) {
-            return FontScaling.super.mo421toSp0xMU5do(f);
+        public static long m7376toSp0xMU5do(FontScaling fontScaling, float f) {
+            return FontScaling.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m7362toDpGaN1DYA(FontScaling fontScaling, long j) {
-            return FontScaling.super.mo414toDpGaN1DYA(j);
+        public static float m7375toDpGaN1DYA(FontScaling fontScaling, long j) {
+            return FontScaling.super.mo424toDpGaN1DYA(j);
         }
     }
 
     /* renamed from: toSp-0xMU5do */
-    default long mo421toSp0xMU5do(float f) {
+    default long mo431toSp0xMU5do(float f) {
         if (!FontScaleConverterFactory.INSTANCE.isNonLinearFontScalingActive(getFontScale())) {
             return TextUnitKt.getSp(f / getFontScale());
         }
@@ -39,15 +39,15 @@ public interface FontScaling {
     }
 
     /* renamed from: toDp-GaN1DYA */
-    default float mo414toDpGaN1DYA(long j) {
-        if (!TextUnitType.m7473equalsimpl0(TextUnit.m7444getTypeUIouoOA(j), TextUnitType.Companion.m7478getSpUIouoOA())) {
+    default float mo424toDpGaN1DYA(long j) {
+        if (!TextUnitType.m7486equalsimpl0(TextUnit.m7457getTypeUIouoOA(j), TextUnitType.Companion.m7491getSpUIouoOA())) {
             InlineClassHelperKt.throwIllegalStateException("Only Sp can convert to Px");
         }
         if (!FontScaleConverterFactory.INSTANCE.isNonLinearFontScalingActive(getFontScale())) {
-            return Dp.m7251constructorimpl(TextUnit.m7445getValueimpl(j) * getFontScale());
+            return Dp.m7264constructorimpl(TextUnit.m7458getValueimpl(j) * getFontScale());
         }
         FontScaleConverter forScale = FontScaleConverterFactory.INSTANCE.forScale(getFontScale());
-        float m7445getValueimpl = TextUnit.m7445getValueimpl(j);
-        return forScale == null ? Dp.m7251constructorimpl(m7445getValueimpl * getFontScale()) : Dp.m7251constructorimpl(forScale.convertSpToDp(m7445getValueimpl));
+        float m7458getValueimpl = TextUnit.m7458getValueimpl(j);
+        return forScale == null ? Dp.m7264constructorimpl(m7458getValueimpl * getFontScale()) : Dp.m7264constructorimpl(forScale.convertSpToDp(m7458getValueimpl));
     }
 }

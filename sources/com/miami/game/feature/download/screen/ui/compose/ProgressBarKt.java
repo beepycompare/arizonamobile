@@ -82,14 +82,14 @@ public final class ProgressBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-220773208, i2, -1, "com.miami.game.feature.download.screen.ui.compose.ProgressBar (ProgressBar.kt:29)");
             }
-            Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Dp.m7251constructorimpl(20));
+            Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Dp.m7264constructorimpl(20));
             Alignment center = Alignment.Companion.getCenter();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(center, false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)80@3267L27,83@3433L360:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m870height3ABfNKs);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m880height3ABfNKs);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -101,20 +101,20 @@ public final class ProgressBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1880654975, "C37@1353L244,63@2252L11,56@1976L371:ProgressBar.kt#k3v2wi");
             float f = 12;
-            BoxKt.Box(BackgroundKt.m256backgroundbw27NRU(SizeKt.fillMaxWidth$default(SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(f)), 0.0f, 1, null), Color.Companion.m4563getBlack0d7_KjU(), new ProgressBarShape()), startRestartGroup, 0);
-            BoxKt.Box(BackgroundKt.m256backgroundbw27NRU(SizeKt.fillMaxWidth(SizeKt.m870height3ABfNKs(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7251constructorimpl(f)), (float) d), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), new ProgressBarShape()), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.m266backgroundbw27NRU(SizeKt.fillMaxWidth$default(SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(f)), 0.0f, 1, null), Color.Companion.m4575getBlack0d7_KjU(), new ProgressBarShape()), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.m266backgroundbw27NRU(SizeKt.fillMaxWidth(SizeKt.m880height3ABfNKs(BoxScopeInstance.INSTANCE.align(Modifier.Companion, Alignment.Companion.getCenterStart()), Dp.m7264constructorimpl(f)), (float) d), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2031getPrimary0d7_KjU(), new ProgressBarShape()), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -174,24 +174,24 @@ public final class ProgressBarKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1973590290, i3, -1, "com.miami.game.feature.download.screen.ui.compose.CustomLinerProgressBar (ProgressBar.kt:113)");
                 }
-                final long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2021getPrimary0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
-                Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), Dp.m7251constructorimpl(10));
+                final long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2031getPrimary0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
+                Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null), Dp.m7264constructorimpl(10));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1755266998, "CC(remember):ProgressBar.kt#9igjgp");
-                boolean changed = startRestartGroup.changed(m4536copywmQWz5c$default) | ((i3 & 14) == 4);
+                boolean changed = startRestartGroup.changed(m4548copywmQWz5c$default) | ((i3 & 14) == 4);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                     rememberedValue = new Function1() { // from class: com.miami.game.feature.download.screen.ui.compose.ProgressBarKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit CustomLinerProgressBar$lambda$0$0;
-                            CustomLinerProgressBar$lambda$0$0 = ProgressBarKt.CustomLinerProgressBar$lambda$0$0(Function0.this, m4536copywmQWz5c$default, (DrawScope) obj2);
+                            CustomLinerProgressBar$lambda$0$0 = ProgressBarKt.CustomLinerProgressBar$lambda$0$0(Function0.this, m4548copywmQWz5c$default, (DrawScope) obj2);
                             return CustomLinerProgressBar$lambda$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                CanvasKt.Canvas(m870height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
+                CanvasKt.Canvas(m880height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -221,9 +221,9 @@ public final class ProgressBarKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit CustomLinerProgressBar$lambda$0$0(Function0 function0, long j, DrawScope Canvas) {
         Intrinsics.checkNotNullParameter(Canvas, "$this$Canvas");
-        drawCustomLine(Canvas, Brush.Companion.m4487linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4527boximpl(Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), 1.0f);
+        drawCustomLine(Canvas, Brush.Companion.m4499linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4539boximpl(Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4539boximpl(Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), 0.65f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), 1.0f);
         try {
-            drawCustomLine(Canvas, Brush.Companion.m4487linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(ColorKt.getPink()), Color.m4527boximpl(Color.Companion.m4574getWhite0d7_KjU())}), Offset.m4285constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (Canvas.mo5116getSizeNHjbRc() >> 32)) * ((Number) function0.invoke()).floatValue()) / 1.5f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (Canvas.mo5116getSizeNHjbRc() >> 32)) * ((Number) function0.invoke()).floatValue()) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), 0, 8, (Object) null), ((Number) function0.invoke()).floatValue(), new Border(20.0f, j, null));
+            drawCustomLine(Canvas, Brush.Companion.m4499linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4539boximpl(ColorKt.getPink()), Color.m4539boximpl(Color.Companion.m4586getWhite0d7_KjU())}), Offset.m4297constructorimpl((Float.floatToRawIntBits((Float.intBitsToFloat((int) (Canvas.mo5128getSizeNHjbRc() >> 32)) * ((Number) function0.invoke()).floatValue()) / 1.5f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (Canvas.mo5128getSizeNHjbRc() >> 32)) * ((Number) function0.invoke()).floatValue()) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), 0, 8, (Object) null), ((Number) function0.invoke()).floatValue(), new Border(20.0f, j, null));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -233,31 +233,31 @@ public final class ProgressBarKt {
     public static final void drawCustomLine(DrawScope drawScope, Brush brush, float f) {
         Intrinsics.checkNotNullParameter(drawScope, "<this>");
         Intrinsics.checkNotNullParameter(brush, "brush");
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)) / 2;
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32)) * f;
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)) / 2;
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)) * f;
         Path Path = AndroidPath_androidKt.Path();
         Path.moveTo(intBitsToFloat, 0.0f);
         Path.lineTo(intBitsToFloat2, 0.0f);
-        Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)));
-        Path.lineTo(0.0f, Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)));
+        Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)));
+        Path.lineTo(0.0f, Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)));
         Path.close();
-        DrawScope.m5105drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
+        DrawScope.m5117drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
     }
 
     public static final void drawCustomLine(DrawScope drawScope, Brush brush, float f, Border border) {
         Intrinsics.checkNotNullParameter(drawScope, "<this>");
         Intrinsics.checkNotNullParameter(brush, "brush");
         Intrinsics.checkNotNullParameter(border, "border");
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)) / 2;
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32)) * f;
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)) / 2;
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)) * f;
         Path Path = AndroidPath_androidKt.Path();
         Path.moveTo(intBitsToFloat, 0.0f);
         Path.lineTo(intBitsToFloat2, 0.0f);
-        Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)));
-        Path.lineTo(0.0f, Float.intBitsToFloat((int) (4294967295L & drawScope.mo5116getSizeNHjbRc())));
+        Path.lineTo(intBitsToFloat2 - intBitsToFloat, Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)));
+        Path.lineTo(0.0f, Float.intBitsToFloat((int) (4294967295L & drawScope.mo5128getSizeNHjbRc())));
         Path.close();
-        DrawScope.m5106drawPathLG529CI$default(drawScope, Path, border.m8991getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
-        DrawScope.m5105drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
+        DrawScope.m5118drawPathLG529CI$default(drawScope, Path, border.m9003getColor0d7_KjU(), 0.0f, new Stroke(border.getWight(), 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
+        DrawScope.m5117drawPathGBMwjPU$default(drawScope, Path, brush, 0.0f, Fill.INSTANCE, null, 0, 52, null);
     }
 
     public static final void PreviewCustomProgressBar(Composer composer, final int i) {
@@ -288,15 +288,15 @@ public final class ProgressBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 678967340, "C200@6184L9,200@6150L44:ProgressBar.kt#k3v2wi");

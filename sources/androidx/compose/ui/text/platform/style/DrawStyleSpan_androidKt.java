@@ -9,12 +9,12 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class DrawStyleSpan_androidKt {
     /* renamed from: toAndroidJoin-Ww9F2mQ  reason: not valid java name */
-    public static final Paint.Join m7004toAndroidJoinWw9F2mQ(int i) {
-        return StrokeJoin.m4913equalsimpl0(i, StrokeJoin.Companion.m4918getMiterLxFBmk8()) ? Paint.Join.MITER : StrokeJoin.m4913equalsimpl0(i, StrokeJoin.Companion.m4919getRoundLxFBmk8()) ? Paint.Join.ROUND : StrokeJoin.m4913equalsimpl0(i, StrokeJoin.Companion.m4917getBevelLxFBmk8()) ? Paint.Join.BEVEL : Paint.Join.MITER;
+    public static final Paint.Join m7017toAndroidJoinWw9F2mQ(int i) {
+        return StrokeJoin.m4925equalsimpl0(i, StrokeJoin.Companion.m4930getMiterLxFBmk8()) ? Paint.Join.MITER : StrokeJoin.m4925equalsimpl0(i, StrokeJoin.Companion.m4931getRoundLxFBmk8()) ? Paint.Join.ROUND : StrokeJoin.m4925equalsimpl0(i, StrokeJoin.Companion.m4929getBevelLxFBmk8()) ? Paint.Join.BEVEL : Paint.Join.MITER;
     }
 
     /* renamed from: toAndroidCap-BeK7IIE  reason: not valid java name */
-    public static final Paint.Cap m7003toAndroidCapBeK7IIE(int i) {
-        return StrokeCap.m4903equalsimpl0(i, StrokeCap.Companion.m4907getButtKaPHkGw()) ? Paint.Cap.BUTT : StrokeCap.m4903equalsimpl0(i, StrokeCap.Companion.m4908getRoundKaPHkGw()) ? Paint.Cap.ROUND : StrokeCap.m4903equalsimpl0(i, StrokeCap.Companion.m4909getSquareKaPHkGw()) ? Paint.Cap.SQUARE : Paint.Cap.BUTT;
+    public static final Paint.Cap m7016toAndroidCapBeK7IIE(int i) {
+        return StrokeCap.m4915equalsimpl0(i, StrokeCap.Companion.m4919getButtKaPHkGw()) ? Paint.Cap.BUTT : StrokeCap.m4915equalsimpl0(i, StrokeCap.Companion.m4920getRoundKaPHkGw()) ? Paint.Cap.ROUND : StrokeCap.m4915equalsimpl0(i, StrokeCap.Companion.m4921getSquareKaPHkGw()) ? Paint.Cap.SQUARE : Paint.Cap.BUTT;
     }
 }

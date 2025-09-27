@@ -18,13 +18,13 @@ public final class FavoriteButtonShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 5.9772 60.959 L 0.2926 22.959 C -1.516 10.8693 7.8483 0 20.0725 0 H 84.958 C 94.861 0 103.273 7.247 104.738 17.0408 L 110.423 55.041 C 112.232 67.131 102.868 78 90.643 78 H 25.7571 C 15.8541 78 7.4423 70.753 5.9772 60.959 Z"), null, 1, null);
-        float[] m4779constructorimpl$default = Matrix.m4779constructorimpl$default(null, 1, null);
-        Matrix.m4795scaleimpl$default(m4779constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / ((float) MenuKt.InTransitionDuration), Float.intBitsToFloat((int) (j & 4294967295L)) / 78, 0.0f, 4, null);
-        path$default.mo4429transform58bKbWc(m4779constructorimpl$default);
+        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
+        Matrix.m4807scaleimpl$default(m4791constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / ((float) MenuKt.InTransitionDuration), Float.intBitsToFloat((int) (j & 4294967295L)) / 78, 0.0f, 4, null);
+        path$default.mo4441transform58bKbWc(m4791constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

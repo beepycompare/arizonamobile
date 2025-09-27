@@ -44,7 +44,7 @@ final class TransformableStateKt$zoomBy$2 extends SuspendLambda implements Funct
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        ((TransformScope) this.L$0).mo464transformByd4ec7I(this.$zoomFactor, Offset.Companion.m4309getZeroF1C5BW0(), 0.0f);
+        ((TransformScope) this.L$0).mo474transformByd4ec7I(this.$zoomFactor, Offset.Companion.m4321getZeroF1C5BW0(), 0.0f);
         return Unit.INSTANCE;
     }
 }

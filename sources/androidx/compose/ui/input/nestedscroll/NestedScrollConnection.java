@@ -9,13 +9,13 @@ import kotlin.coroutines.Continuation;
 /* loaded from: classes.dex */
 public interface NestedScrollConnection {
     /* renamed from: onPostFling-RZ2iAVY */
-    default Object mo566onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-        return m5694onPostFlingRZ2iAVY$suspendImpl(this, j, j2, continuation);
+    default Object mo576onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+        return m5707onPostFlingRZ2iAVY$suspendImpl(this, j, j2, continuation);
     }
 
     /* renamed from: onPreFling-QWom1Mo */
-    default Object mo917onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
-        return m5695onPreFlingQWom1Mo$suspendImpl(this, j, continuation);
+    default Object mo927onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+        return m5708onPreFlingQWom1Mo$suspendImpl(this, j, continuation);
     }
 
     /* compiled from: NestedScrollModifier.kt */
@@ -24,46 +24,46 @@ public interface NestedScrollConnection {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: onPreScroll-OzD1aCk  reason: not valid java name */
-        public static long m5699onPreScrollOzD1aCk(NestedScrollConnection nestedScrollConnection, long j, int i) {
-            return NestedScrollConnection.super.mo918onPreScrollOzD1aCk(j, i);
+        public static long m5712onPreScrollOzD1aCk(NestedScrollConnection nestedScrollConnection, long j, int i) {
+            return NestedScrollConnection.super.mo928onPreScrollOzD1aCk(j, i);
         }
 
         @Deprecated
         /* renamed from: onPostScroll-DzOQY0M  reason: not valid java name */
-        public static long m5697onPostScrollDzOQY0M(NestedScrollConnection nestedScrollConnection, long j, long j2, int i) {
-            return NestedScrollConnection.super.mo567onPostScrollDzOQY0M(j, j2, i);
+        public static long m5710onPostScrollDzOQY0M(NestedScrollConnection nestedScrollConnection, long j, long j2, int i) {
+            return NestedScrollConnection.super.mo577onPostScrollDzOQY0M(j, j2, i);
         }
 
         @Deprecated
         /* renamed from: onPreFling-QWom1Mo  reason: not valid java name */
-        public static Object m5698onPreFlingQWom1Mo(NestedScrollConnection nestedScrollConnection, long j, Continuation<? super Velocity> continuation) {
-            return NestedScrollConnection.super.mo917onPreFlingQWom1Mo(j, continuation);
+        public static Object m5711onPreFlingQWom1Mo(NestedScrollConnection nestedScrollConnection, long j, Continuation<? super Velocity> continuation) {
+            return NestedScrollConnection.super.mo927onPreFlingQWom1Mo(j, continuation);
         }
 
         @Deprecated
         /* renamed from: onPostFling-RZ2iAVY  reason: not valid java name */
-        public static Object m5696onPostFlingRZ2iAVY(NestedScrollConnection nestedScrollConnection, long j, long j2, Continuation<? super Velocity> continuation) {
-            return NestedScrollConnection.super.mo566onPostFlingRZ2iAVY(j, j2, continuation);
+        public static Object m5709onPostFlingRZ2iAVY(NestedScrollConnection nestedScrollConnection, long j, long j2, Continuation<? super Velocity> continuation) {
+            return NestedScrollConnection.super.mo576onPostFlingRZ2iAVY(j, j2, continuation);
         }
     }
 
     /* renamed from: onPreScroll-OzD1aCk */
-    default long mo918onPreScrollOzD1aCk(long j, int i) {
-        return Offset.Companion.m4309getZeroF1C5BW0();
+    default long mo928onPreScrollOzD1aCk(long j, int i) {
+        return Offset.Companion.m4321getZeroF1C5BW0();
     }
 
     /* renamed from: onPostScroll-DzOQY0M */
-    default long mo567onPostScrollDzOQY0M(long j, long j2, int i) {
-        return Offset.Companion.m4309getZeroF1C5BW0();
+    default long mo577onPostScrollDzOQY0M(long j, long j2, int i) {
+        return Offset.Companion.m4321getZeroF1C5BW0();
     }
 
     /* renamed from: onPreFling-QWom1Mo$suspendImpl  reason: not valid java name */
-    static /* synthetic */ Object m5695onPreFlingQWom1Mo$suspendImpl(NestedScrollConnection nestedScrollConnection, long j, Continuation<? super Velocity> continuation) {
-        return Velocity.m7480boximpl(Velocity.Companion.m7500getZero9UxMQ8M());
+    static /* synthetic */ Object m5708onPreFlingQWom1Mo$suspendImpl(NestedScrollConnection nestedScrollConnection, long j, Continuation<? super Velocity> continuation) {
+        return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
     }
 
     /* renamed from: onPostFling-RZ2iAVY$suspendImpl  reason: not valid java name */
-    static /* synthetic */ Object m5694onPostFlingRZ2iAVY$suspendImpl(NestedScrollConnection nestedScrollConnection, long j, long j2, Continuation<? super Velocity> continuation) {
-        return Velocity.m7480boximpl(Velocity.Companion.m7500getZero9UxMQ8M());
+    static /* synthetic */ Object m5707onPostFlingRZ2iAVY$suspendImpl(NestedScrollConnection nestedScrollConnection, long j, long j2, Continuation<? super Velocity> continuation) {
+        return Velocity.m7493boximpl(Velocity.Companion.m7513getZero9UxMQ8M());
     }
 }

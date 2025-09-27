@@ -116,7 +116,7 @@ public final class ComposableSingletons$BasicTextFieldKt {
     });
 
     /* renamed from: getLambda$-665310900$foundation_release  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1242getLambda$665310900$foundation_release() {
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1252getLambda$665310900$foundation_release() {
         return f1lambda$665310900;
     }
 

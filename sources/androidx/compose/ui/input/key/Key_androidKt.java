@@ -6,11 +6,11 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class Key_androidKt {
     /* renamed from: getNativeKeyCode-YVgTNJs  reason: not valid java name */
-    public static final int m5689getNativeKeyCodeYVgTNJs(long j) {
+    public static final int m5702getNativeKeyCodeYVgTNJs(long j) {
         return (int) (j >> 32);
     }
 
     public static final long Key(int i) {
-        return Key.m5372constructorimpl((i << 32) | (0 & 4294967295L));
+        return Key.m5385constructorimpl((i << 32) | (0 & 4294967295L));
     }
 }

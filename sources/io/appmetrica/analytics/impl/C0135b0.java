@@ -4,12 +4,12 @@ package io.appmetrica.analytics.impl;
 public final class C0135b0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f800a;
+    public final U f801a;
     public final String b;
     public final Boolean c;
 
     public C0135b0(U u, String str, Boolean bool) {
-        this.f800a = u;
+        this.f801a = u;
         this.b = str;
         this.c = bool;
     }

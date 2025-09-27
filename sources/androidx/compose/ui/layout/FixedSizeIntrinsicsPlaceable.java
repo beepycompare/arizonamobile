@@ -17,10 +17,10 @@ final class FixedSizeIntrinsicsPlaceable extends Placeable {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno  reason: not valid java name */
-    public void mo5955placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+    public void mo5968placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
     }
 
     public FixedSizeIntrinsicsPlaceable(int i, int i2) {
-        m6017setMeasuredSizeozmzZPI(IntSize.m7417constructorimpl((i2 & 4294967295L) | (i << 32)));
+        m6030setMeasuredSizeozmzZPI(IntSize.m7430constructorimpl((i2 & 4294967295L) | (i << 32)));
     }
 }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class X implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V7 f732a;
+    public final V7 f733a;
     public final Sa b;
 
     public X() {
@@ -17,9 +17,9 @@ public final class X implements Converter {
     /* renamed from: a */
     public final Zi fromModel(Y y) {
         B8 b8 = new B8();
-        b8.b = this.f732a.fromModel(y.f749a);
+        b8.b = this.f733a.fromModel(y.f750a);
         Sn a2 = this.b.a(y.b);
-        b8.f365a = StringUtils.getUTF8Bytes((String) a2.f675a);
+        b8.f366a = StringUtils.getUTF8Bytes((String) a2.f676a);
         return new Zi(b8, new C0749z3(C0749z3.b(a2)));
     }
 
@@ -30,7 +30,7 @@ public final class X implements Converter {
     }
 
     public X(V7 v7, Sa sa) {
-        this.f732a = v7;
+        this.f733a = v7;
         this.b = sa;
     }
 

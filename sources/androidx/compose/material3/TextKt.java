@@ -119,7 +119,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2804Text4IGK_g(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+    public static final void m2814Text4IGK_g(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         int i8;
         long j5;
@@ -151,7 +151,7 @@ public final class TextKt {
         int i29;
         Modifier.Companion companion;
         final TextAlign textAlign2;
-        final int m7186getClipgIe3tQ8;
+        final int m7199getClipgIe3tQ8;
         int i30;
         int i31;
         Function1<? super TextLayoutResult, Unit> function12;
@@ -319,10 +319,10 @@ public final class TextKt {
                                     if ((i4 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                         companion = i34 != 0 ? Modifier.Companion : modifier;
                                         if (i8 != 0) {
-                                            j5 = Color.Companion.m4573getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
                                         }
                                         if (i10 != 0) {
-                                            j6 = TextUnit.Companion.m7456getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
                                         }
                                         if (i11 != 0) {
                                             obj = null;
@@ -333,11 +333,11 @@ public final class TextKt {
                                         if (i13 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7456getUnspecifiedXSAIIZE = i14 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+                                        long m7469getUnspecifiedXSAIIZE = i14 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i17 != 0 ? null : textDecoration;
                                         textAlign2 = i19 != 0 ? null : textAlign;
-                                        long m7456getUnspecifiedXSAIIZE2 = i21 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4;
-                                        m7186getClipgIe3tQ8 = i24 != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i;
+                                        long m7469getUnspecifiedXSAIIZE2 = i21 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
+                                        m7199getClipgIe3tQ8 = i24 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
                                         if (i25 != 0) {
                                             z2 = true;
                                         }
@@ -357,8 +357,8 @@ public final class TextKt {
                                             j7 = j6;
                                             fontWeight2 = obj2;
                                             fontFamily2 = obj3;
-                                            j8 = m7456getUnspecifiedXSAIIZE;
-                                            j9 = m7456getUnspecifiedXSAIIZE2;
+                                            j8 = m7469getUnspecifiedXSAIIZE;
+                                            j9 = m7469getUnspecifiedXSAIIZE2;
                                             companion = modifier3;
                                         } else {
                                             textStyle2 = textStyle;
@@ -367,8 +367,8 @@ public final class TextKt {
                                             j7 = j6;
                                             fontWeight2 = obj2;
                                             fontFamily2 = obj3;
-                                            j8 = m7456getUnspecifiedXSAIIZE;
-                                            j9 = m7456getUnspecifiedXSAIIZE2;
+                                            j8 = m7469getUnspecifiedXSAIIZE;
+                                            j9 = m7469getUnspecifiedXSAIIZE2;
                                         }
                                     } else {
                                         startRestartGroup.skipToGroupEnd();
@@ -380,7 +380,7 @@ public final class TextKt {
                                         textDecoration2 = textDecoration;
                                         textAlign2 = textAlign;
                                         j9 = j4;
-                                        m7186getClipgIe3tQ8 = i;
+                                        m7199getClipgIe3tQ8 = i;
                                         i30 = i2;
                                         i31 = i3;
                                         function12 = function1;
@@ -401,19 +401,19 @@ public final class TextKt {
                                     } else {
                                         startRestartGroup.startReplaceGroup(-1827892168);
                                         ComposerKt.sourceInformation(startRestartGroup, "*111@5715L7");
-                                        long m6743getColor0d7_KjU = textStyle2.m6743getColor0d7_KjU();
-                                        if (m6743getColor0d7_KjU == 16) {
+                                        long m6756getColor0d7_KjU = textStyle2.m6756getColor0d7_KjU();
+                                        if (m6756getColor0d7_KjU == 16) {
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                                             Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            m6743getColor0d7_KjU = ((Color) consume2).m4547unboximpl();
+                                            m6756getColor0d7_KjU = ((Color) consume2).m4559unboximpl();
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        j10 = m6743getColor0d7_KjU;
+                                        j10 = m6756getColor0d7_KjU;
                                     }
                                     startRestartGroup.endReplaceGroup();
                                     int i38 = i27 << 9;
-                                    BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38) | (458752 & i38) | (3670016 & i38) | (i38 & 29360128), 256);
+                                    BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38) | (458752 & i38) | (3670016 & i38) | (i38 & 29360128), 256);
                                     composer2 = startRestartGroup;
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
@@ -436,7 +436,7 @@ public final class TextKt {
                                     startRestartGroup.skipToGroupEnd();
                                     modifier2 = modifier;
                                     textAlign2 = textAlign;
-                                    m7186getClipgIe3tQ8 = i;
+                                    m7199getClipgIe3tQ8 = i;
                                     i32 = i2;
                                     i33 = i3;
                                     function13 = function1;
@@ -469,7 +469,7 @@ public final class TextKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i39) {
-                                            TextKt.m2804Text4IGK_g(str, modifier2, j11, j14, fontStyle3, fontWeight3, fontFamily3, j12, textDecoration3, textAlign2, j13, m7186getClipgIe3tQ8, z3, i32, i33, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+                                            TextKt.m2814Text4IGK_g(str, modifier2, j11, j14, fontStyle3, fontWeight3, fontFamily3, j12, textDecoration3, textAlign2, j13, m7199getClipgIe3tQ8, z3, i32, i33, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
                                         }
                                     });
                                     return;
@@ -527,7 +527,7 @@ public final class TextKt {
                             }
                             startRestartGroup.endReplaceGroup();
                             int i382 = i27 << 9;
-                            BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382) | (458752 & i382) | (3670016 & i382) | (i382 & 29360128), 256);
+                            BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382) | (458752 & i382) | (3670016 & i382) | (i382 & 29360128), 256);
                             composer2 = startRestartGroup;
                             if (ComposerKt.isTraceInProgress()) {
                             }
@@ -607,7 +607,7 @@ public final class TextKt {
                         }
                         startRestartGroup.endReplaceGroup();
                         int i3822 = i27 << 9;
-                        BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822) | (458752 & i3822) | (3670016 & i3822) | (i3822 & 29360128), 256);
+                        BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822) | (458752 & i3822) | (3670016 & i3822) | (i3822 & 29360128), 256);
                         composer2 = startRestartGroup;
                         if (ComposerKt.isTraceInProgress()) {
                         }
@@ -702,7 +702,7 @@ public final class TextKt {
                     }
                     startRestartGroup.endReplaceGroup();
                     int i38222 = i27 << 9;
-                    BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222) | (458752 & i38222) | (3670016 & i38222) | (i38222 & 29360128), 256);
+                    BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222) | (458752 & i38222) | (3670016 & i38222) | (i38222 & 29360128), 256);
                     composer2 = startRestartGroup;
                     if (ComposerKt.isTraceInProgress()) {
                     }
@@ -801,7 +801,7 @@ public final class TextKt {
                 }
                 startRestartGroup.endReplaceGroup();
                 int i382222 = i27 << 9;
-                BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382222) | (458752 & i382222) | (3670016 & i382222) | (i382222 & 29360128), 256);
+                BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i382222) | (458752 & i382222) | (3670016 & i382222) | (i382222 & 29360128), 256);
                 composer2 = startRestartGroup;
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -910,7 +910,7 @@ public final class TextKt {
             }
             startRestartGroup.endReplaceGroup();
             int i3822222 = i27 << 9;
-            BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822222) | (458752 & i3822222) | (3670016 & i3822222) | (i3822222 & 29360128), 256);
+            BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i3822222) | (458752 & i3822222) | (3670016 & i3822222) | (i3822222 & 29360128), 256);
             composer2 = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
             }
@@ -1028,7 +1028,7 @@ public final class TextKt {
         }
         startRestartGroup.endReplaceGroup();
         int i38222222 = i27 << 9;
-        BasicTextKt.m1234BasicTextVhcvRP8(str, companion, TextStyle.m6733mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7186getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222222) | (458752 & i38222222) | (3670016 & i38222222) | (i38222222 & 29360128), 256);
+        BasicTextKt.m1244BasicTextVhcvRP8(str, companion, TextStyle.m6746mergedA7vx0o$default(textStyle2, j10, j7, fontWeight2, fontStyle2, null, fontFamily2, null, j8, null, null, null, 0L, textDecoration2, null, null, textAlign2 != null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j9, null, null, 0, 0, null, null, 16609104, null), function12, m7199getClipgIe3tQ8, z2, i30, i31, (ColorProducer) null, startRestartGroup, (i20 & WebSocketProtocol.PAYLOAD_SHORT) | ((i27 >> 6) & 7168) | (57344 & i38222222) | (458752 & i38222222) | (3670016 & i38222222) | (i38222222 & 29360128), 256);
         composer2 = startRestartGroup;
         if (ComposerKt.isTraceInProgress()) {
         }
@@ -1113,7 +1113,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2806TextfLXpl1I(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
+    public static final /* synthetic */ void m2816TextfLXpl1I(final String str, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
         int i6;
         int i7;
         long j5;
@@ -1312,10 +1312,10 @@ public final class TextKt {
                                     if ((i3 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                         Modifier.Companion companion = i32 != 0 ? Modifier.Companion : modifier;
                                         if (i7 != 0) {
-                                            j5 = Color.Companion.m4573getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
                                         }
                                         if (i9 != 0) {
-                                            j6 = TextUnit.Companion.m7456getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
                                         }
                                         if (i10 != 0) {
                                             obj = null;
@@ -1326,11 +1326,11 @@ public final class TextKt {
                                         if (i12 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7456getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+                                        long m7469getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i16 != 0 ? null : textDecoration;
                                         TextAlign textAlign5 = i18 == 0 ? textAlign : null;
-                                        long m7456getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4;
-                                        int m7186getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i;
+                                        long m7469getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
+                                        int m7199getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
                                         if (i24 != 0) {
                                             z2 = true;
                                         }
@@ -1355,16 +1355,16 @@ public final class TextKt {
                                             i26 &= -458753;
                                             z3 = z2;
                                             j7 = j5;
-                                            i28 = m7186getClipgIe3tQ8;
-                                            j8 = m7456getUnspecifiedXSAIIZE2;
+                                            i28 = m7199getClipgIe3tQ8;
+                                            j8 = m7469getUnspecifiedXSAIIZE2;
                                             textStyle2 = (TextStyle) consume;
                                         } else {
                                             modifier2 = companion;
                                             textAlign2 = textAlign5;
                                             z3 = z2;
                                             j7 = j5;
-                                            i28 = m7186getClipgIe3tQ8;
-                                            j8 = m7456getUnspecifiedXSAIIZE2;
+                                            i28 = m7199getClipgIe3tQ8;
+                                            j8 = m7469getUnspecifiedXSAIIZE2;
                                             textStyle2 = textStyle;
                                         }
                                         function12 = textKt$Text$2;
@@ -1376,7 +1376,7 @@ public final class TextKt {
                                         j9 = j6;
                                         fontWeight2 = obj2;
                                         fontFamily2 = fontFamily4;
-                                        j10 = m7456getUnspecifiedXSAIIZE;
+                                        j10 = m7469getUnspecifiedXSAIIZE;
                                         i29 = i38;
                                     } else {
                                         startRestartGroup.skipToGroupEnd();
@@ -1404,7 +1404,7 @@ public final class TextKt {
                                     }
                                     int i39 = i26 << 3;
                                     composer2 = startRestartGroup;
-                                    m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (i39 & 3670016), 0);
+                                    m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (i39 & 3670016), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1459,7 +1459,7 @@ public final class TextKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i40) {
-                                            TextKt.m2806TextfLXpl1I(str, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i30, z4, i31, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                            TextKt.m2816TextfLXpl1I(str, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i30, z4, i31, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
                                         }
                                     });
                                     return;
@@ -1512,14 +1512,14 @@ public final class TextKt {
                             j9 = j6;
                             fontWeight2 = obj2;
                             fontFamily2 = fontFamily42;
-                            j10 = m7456getUnspecifiedXSAIIZE;
+                            j10 = m7469getUnspecifiedXSAIIZE;
                             i29 = i382;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             int i392 = i26 << 3;
                             composer2 = startRestartGroup;
-                            m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (i392 & 3670016), 0);
+                            m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (i392 & 3670016), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier4 = modifier3;
@@ -1594,14 +1594,14 @@ public final class TextKt {
                         j9 = j6;
                         fontWeight2 = obj2;
                         fontFamily2 = fontFamily422;
-                        j10 = m7456getUnspecifiedXSAIIZE;
+                        j10 = m7469getUnspecifiedXSAIIZE;
                         i29 = i3822;
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         int i3922 = i26 << 3;
                         composer2 = startRestartGroup;
-                        m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (i3922 & 3670016), 0);
+                        m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (i3922 & 3670016), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier4 = modifier3;
@@ -1691,14 +1691,14 @@ public final class TextKt {
                     j9 = j6;
                     fontWeight2 = obj2;
                     fontFamily2 = fontFamily4222;
-                    j10 = m7456getUnspecifiedXSAIIZE;
+                    j10 = m7469getUnspecifiedXSAIIZE;
                     i29 = i38222;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     int i39222 = i26 << 3;
                     composer2 = startRestartGroup;
-                    m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (i39222 & 3670016), 0);
+                    m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (i39222 & 3670016), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier4 = modifier3;
@@ -1792,14 +1792,14 @@ public final class TextKt {
                 j9 = j6;
                 fontWeight2 = obj2;
                 fontFamily2 = fontFamily42222;
-                j10 = m7456getUnspecifiedXSAIIZE;
+                j10 = m7469getUnspecifiedXSAIIZE;
                 i29 = i382222;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 int i392222 = i26 << 3;
                 composer2 = startRestartGroup;
-                m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (i392222 & 3670016), 0);
+                m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (i392222 & 3670016), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier4 = modifier3;
@@ -1904,14 +1904,14 @@ public final class TextKt {
             j9 = j6;
             fontWeight2 = obj2;
             fontFamily2 = fontFamily422222;
-            j10 = m7456getUnspecifiedXSAIIZE;
+            j10 = m7469getUnspecifiedXSAIIZE;
             i29 = i3822222;
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
             int i3922222 = i26 << 3;
             composer2 = startRestartGroup;
-            m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (i3922222 & 3670016), 0);
+            m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (i3922222 & 3670016), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier4 = modifier3;
@@ -2025,14 +2025,14 @@ public final class TextKt {
         j9 = j6;
         fontWeight2 = obj2;
         fontFamily2 = fontFamily4222222;
-        j10 = m7456getUnspecifiedXSAIIZE;
+        j10 = m7469getUnspecifiedXSAIIZE;
         i29 = i38222222;
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
         int i39222222 = i26 << 3;
         composer2 = startRestartGroup;
-        m2804Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (i39222222 & 3670016), 0);
+        m2814Text4IGK_g(str, modifier3, j7, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j8, i28, z3, i29, 1, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (i39222222 & 3670016), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier4 = modifier3;
@@ -2128,7 +2128,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2805TextIbK3jfQ(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
+    public static final void m2815TextIbK3jfQ(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, int i3, Map<String, InlineTextContent> map, Function1<? super TextLayoutResult, Unit> function1, TextStyle textStyle, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         int i8;
         int i9;
@@ -2156,9 +2156,9 @@ public final class TextKt {
         int i26;
         int i27;
         Modifier.Companion companion;
-        long m4573getUnspecified0d7_KjU;
+        long m4585getUnspecified0d7_KjU;
         TextAlign textAlign2;
-        int m7186getClipgIe3tQ8;
+        int m7199getClipgIe3tQ8;
         int i28;
         int i29;
         Map<String, InlineTextContent> emptyMap;
@@ -2328,9 +2328,9 @@ public final class TextKt {
                                     startRestartGroup.startDefaults();
                                     if ((i4 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                         companion = i34 == 0 ? Modifier.Companion : modifier;
-                                        m4573getUnspecified0d7_KjU = i8 == 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
+                                        m4585getUnspecified0d7_KjU = i8 == 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
                                         if (i9 != 0) {
-                                            j5 = TextUnit.Companion.m7456getUnspecifiedXSAIIZE();
+                                            j5 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
                                         }
                                         if (i10 != 0) {
                                             obj = null;
@@ -2341,11 +2341,11 @@ public final class TextKt {
                                         if (i12 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7456getUnspecifiedXSAIIZE = i13 == 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+                                        long m7469getUnspecifiedXSAIIZE = i13 == 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i14 == 0 ? null : textDecoration;
                                         textAlign2 = i16 == 0 ? textAlign : null;
-                                        long m7456getUnspecifiedXSAIIZE2 = i17 == 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4;
-                                        m7186getClipgIe3tQ8 = i20 == 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i;
+                                        long m7469getUnspecifiedXSAIIZE2 = i17 == 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
+                                        m7199getClipgIe3tQ8 = i20 == 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
                                         if (i21 != 0) {
                                             z2 = true;
                                         }
@@ -2375,9 +2375,9 @@ public final class TextKt {
                                             j6 = j5;
                                             fontWeight2 = obj2;
                                             fontFamily2 = obj3;
-                                            j7 = m7456getUnspecifiedXSAIIZE;
+                                            j7 = m7469getUnspecifiedXSAIIZE;
                                             i30 = i25 & (-29360129);
-                                            j8 = m7456getUnspecifiedXSAIIZE2;
+                                            j8 = m7469getUnspecifiedXSAIIZE2;
                                             companion = modifier3;
                                         } else {
                                             textStyle2 = textStyle;
@@ -2386,9 +2386,9 @@ public final class TextKt {
                                             j6 = j5;
                                             fontWeight2 = obj2;
                                             fontFamily2 = obj3;
-                                            j7 = m7456getUnspecifiedXSAIIZE;
+                                            j7 = m7469getUnspecifiedXSAIIZE;
                                             i30 = i25;
-                                            j8 = m7456getUnspecifiedXSAIIZE2;
+                                            j8 = m7469getUnspecifiedXSAIIZE2;
                                         }
                                     } else {
                                         startRestartGroup.skipToGroupEnd();
@@ -2396,12 +2396,12 @@ public final class TextKt {
                                             i25 &= -29360129;
                                         }
                                         companion = modifier;
-                                        m4573getUnspecified0d7_KjU = j;
+                                        m4585getUnspecified0d7_KjU = j;
                                         j7 = j3;
                                         textDecoration2 = textDecoration;
                                         textAlign2 = textAlign;
                                         j8 = j4;
-                                        m7186getClipgIe3tQ8 = i;
+                                        m7199getClipgIe3tQ8 = i;
                                         i28 = i2;
                                         i29 = i3;
                                         emptyMap = map;
@@ -2419,25 +2419,25 @@ public final class TextKt {
                                     }
                                     startRestartGroup.startReplaceGroup(-1827697581);
                                     ComposerKt.sourceInformation(startRestartGroup, "");
-                                    if (m4573getUnspecified0d7_KjU == 16) {
-                                        j9 = m4573getUnspecified0d7_KjU;
+                                    if (m4585getUnspecified0d7_KjU == 16) {
+                                        j9 = m4585getUnspecified0d7_KjU;
                                     } else {
                                         startRestartGroup.startReplaceGroup(-1827696808);
                                         ComposerKt.sourceInformation(startRestartGroup, "*256@11820L7");
-                                        long m6743getColor0d7_KjU = textStyle2.m6743getColor0d7_KjU();
-                                        if (m6743getColor0d7_KjU == 16) {
+                                        long m6756getColor0d7_KjU = textStyle2.m6756getColor0d7_KjU();
+                                        if (m6756getColor0d7_KjU == 16) {
                                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                                             Object consume2 = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                            m6743getColor0d7_KjU = ((Color) consume2).m4547unboximpl();
+                                            m6756getColor0d7_KjU = ((Color) consume2).m4559unboximpl();
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        j9 = m6743getColor0d7_KjU;
+                                        j9 = m6756getColor0d7_KjU;
                                     }
                                     startRestartGroup.endReplaceGroup();
                                     int i37 = i30 << 9;
                                     Modifier modifier4 = companion;
-                                    BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier4, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37) | (458752 & i37) | (3670016 & i37) | (29360128 & i37), 512);
+                                    BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier4, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37) | (458752 & i37) | (3670016 & i37) | (29360128 & i37), 512);
                                     modifier2 = modifier4;
                                     composer2 = startRestartGroup;
                                     if (ComposerKt.isTraceInProgress()) {
@@ -2445,10 +2445,10 @@ public final class TextKt {
                                     }
                                     textAlign3 = textAlign2;
                                     map2 = emptyMap;
-                                    i31 = m7186getClipgIe3tQ8;
+                                    i31 = m7199getClipgIe3tQ8;
                                     i32 = i28;
                                     function12 = textKt$Text$4;
-                                    j10 = m4573getUnspecified0d7_KjU;
+                                    j10 = m4585getUnspecified0d7_KjU;
                                     textStyle3 = textStyle2;
                                     fontWeight3 = fontWeight2;
                                     fontStyle3 = fontStyle2;
@@ -2497,7 +2497,7 @@ public final class TextKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i38) {
-                                            TextKt.m2805TextIbK3jfQ(AnnotatedString.this, modifier2, j10, j13, fontStyle3, fontWeight3, fontFamily3, j11, textDecoration3, textAlign3, j12, i31, z3, i32, i33, map2, function12, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+                                            TextKt.m2815TextIbK3jfQ(AnnotatedString.this, modifier2, j10, j13, fontStyle3, fontWeight3, fontFamily3, j11, textDecoration3, textAlign3, j12, i31, z3, i32, i33, map2, function12, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
                                         }
                                     });
                                     return;
@@ -2557,22 +2557,22 @@ public final class TextKt {
                         }
                         startRestartGroup.startReplaceGroup(-1827697581);
                         ComposerKt.sourceInformation(startRestartGroup, "");
-                        if (m4573getUnspecified0d7_KjU == 16) {
+                        if (m4585getUnspecified0d7_KjU == 16) {
                         }
                         startRestartGroup.endReplaceGroup();
                         int i372 = i30 << 9;
                         Modifier modifier42 = companion;
-                        BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier42, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372) | (458752 & i372) | (3670016 & i372) | (29360128 & i372), 512);
+                        BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier42, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372) | (458752 & i372) | (3670016 & i372) | (29360128 & i372), 512);
                         modifier2 = modifier42;
                         composer2 = startRestartGroup;
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         textAlign3 = textAlign2;
                         map2 = emptyMap;
-                        i31 = m7186getClipgIe3tQ8;
+                        i31 = m7199getClipgIe3tQ8;
                         i32 = i28;
                         function12 = textKt$Text$4;
-                        j10 = m4573getUnspecified0d7_KjU;
+                        j10 = m4585getUnspecified0d7_KjU;
                         textStyle3 = textStyle2;
                         fontWeight3 = fontWeight2;
                         fontStyle3 = fontStyle2;
@@ -2646,22 +2646,22 @@ public final class TextKt {
                     }
                     startRestartGroup.startReplaceGroup(-1827697581);
                     ComposerKt.sourceInformation(startRestartGroup, "");
-                    if (m4573getUnspecified0d7_KjU == 16) {
+                    if (m4585getUnspecified0d7_KjU == 16) {
                     }
                     startRestartGroup.endReplaceGroup();
                     int i3722 = i30 << 9;
                     Modifier modifier422 = companion;
-                    BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier422, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722) | (458752 & i3722) | (3670016 & i3722) | (29360128 & i3722), 512);
+                    BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier422, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722) | (458752 & i3722) | (3670016 & i3722) | (29360128 & i3722), 512);
                     modifier2 = modifier422;
                     composer2 = startRestartGroup;
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     textAlign3 = textAlign2;
                     map2 = emptyMap;
-                    i31 = m7186getClipgIe3tQ8;
+                    i31 = m7199getClipgIe3tQ8;
                     i32 = i28;
                     function12 = textKt$Text$4;
-                    j10 = m4573getUnspecified0d7_KjU;
+                    j10 = m4585getUnspecified0d7_KjU;
                     textStyle3 = textStyle2;
                     fontWeight3 = fontWeight2;
                     fontStyle3 = fontStyle2;
@@ -2746,22 +2746,22 @@ public final class TextKt {
                 }
                 startRestartGroup.startReplaceGroup(-1827697581);
                 ComposerKt.sourceInformation(startRestartGroup, "");
-                if (m4573getUnspecified0d7_KjU == 16) {
+                if (m4585getUnspecified0d7_KjU == 16) {
                 }
                 startRestartGroup.endReplaceGroup();
                 int i37222 = i30 << 9;
                 Modifier modifier4222 = companion;
-                BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier4222, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37222) | (458752 & i37222) | (3670016 & i37222) | (29360128 & i37222), 512);
+                BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier4222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i37222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i37222) | (458752 & i37222) | (3670016 & i37222) | (29360128 & i37222), 512);
                 modifier2 = modifier4222;
                 composer2 = startRestartGroup;
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 textAlign3 = textAlign2;
                 map2 = emptyMap;
-                i31 = m7186getClipgIe3tQ8;
+                i31 = m7199getClipgIe3tQ8;
                 i32 = i28;
                 function12 = textKt$Text$4;
-                j10 = m4573getUnspecified0d7_KjU;
+                j10 = m4585getUnspecified0d7_KjU;
                 textStyle3 = textStyle2;
                 fontWeight3 = fontWeight2;
                 fontStyle3 = fontStyle2;
@@ -2862,22 +2862,22 @@ public final class TextKt {
             }
             startRestartGroup.startReplaceGroup(-1827697581);
             ComposerKt.sourceInformation(startRestartGroup, "");
-            if (m4573getUnspecified0d7_KjU == 16) {
+            if (m4585getUnspecified0d7_KjU == 16) {
             }
             startRestartGroup.endReplaceGroup();
             int i372222 = i30 << 9;
             Modifier modifier42222 = companion;
-            BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier42222, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372222) | (458752 & i372222) | (3670016 & i372222) | (29360128 & i372222), 512);
+            BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier42222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i372222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i372222) | (458752 & i372222) | (3670016 & i372222) | (29360128 & i372222), 512);
             modifier2 = modifier42222;
             composer2 = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
             }
             textAlign3 = textAlign2;
             map2 = emptyMap;
-            i31 = m7186getClipgIe3tQ8;
+            i31 = m7199getClipgIe3tQ8;
             i32 = i28;
             function12 = textKt$Text$4;
-            j10 = m4573getUnspecified0d7_KjU;
+            j10 = m4585getUnspecified0d7_KjU;
             textStyle3 = textStyle2;
             fontWeight3 = fontWeight2;
             fontStyle3 = fontStyle2;
@@ -2987,22 +2987,22 @@ public final class TextKt {
         }
         startRestartGroup.startReplaceGroup(-1827697581);
         ComposerKt.sourceInformation(startRestartGroup, "");
-        if (m4573getUnspecified0d7_KjU == 16) {
+        if (m4585getUnspecified0d7_KjU == 16) {
         }
         startRestartGroup.endReplaceGroup();
         int i3722222 = i30 << 9;
         Modifier modifier422222 = companion;
-        BasicTextKt.m1231BasicTextRWo7tUw(annotatedString, modifier422222, TextStyle.m6733mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7134unboximpl() : TextAlign.Companion.m7141getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7186getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722222) | (458752 & i3722222) | (3670016 & i3722222) | (29360128 & i3722222), 512);
+        BasicTextKt.m1241BasicTextRWo7tUw(annotatedString, modifier422222, TextStyle.m6746mergedA7vx0o$default(textStyle2, j9, j6, fontWeight2, fontStyle2, null, fontFamily2, null, j7, null, null, null, 0L, textDecoration2, null, null, textAlign2 == null ? textAlign2.m7147unboximpl() : TextAlign.Companion.m7154getUnspecifiede0LSkKk(), 0, j8, null, null, 0, 0, null, null, 16609104, null), textKt$Text$4, m7199getClipgIe3tQ8, z2, i28, i29, emptyMap, (ColorProducer) null, startRestartGroup, (i3722222 & 234881024) | (i7 & WebSocketProtocol.PAYLOAD_SHORT) | ((i30 >> 9) & 7168) | (57344 & i3722222) | (458752 & i3722222) | (3670016 & i3722222) | (29360128 & i3722222), 512);
         modifier2 = modifier422222;
         composer2 = startRestartGroup;
         if (ComposerKt.isTraceInProgress()) {
         }
         textAlign3 = textAlign2;
         map2 = emptyMap;
-        i31 = m7186getClipgIe3tQ8;
+        i31 = m7199getClipgIe3tQ8;
         i32 = i28;
         function12 = textKt$Text$4;
-        j10 = m4573getUnspecified0d7_KjU;
+        j10 = m4585getUnspecified0d7_KjU;
         textStyle3 = textStyle2;
         fontWeight3 = fontWeight2;
         fontStyle3 = fontStyle2;
@@ -3084,7 +3084,7 @@ public final class TextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2803Text4IGK_g(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Map map, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
+    public static final /* synthetic */ void m2813Text4IGK_g(final AnnotatedString annotatedString, Modifier modifier, long j, long j2, FontStyle fontStyle, FontWeight fontWeight, FontFamily fontFamily, long j3, TextDecoration textDecoration, TextAlign textAlign, long j4, int i, boolean z, int i2, Map map, Function1 function1, TextStyle textStyle, Composer composer, final int i3, final int i4, final int i5) {
         int i6;
         int i7;
         long j5;
@@ -3288,10 +3288,10 @@ public final class TextKt {
                                     if ((i3 & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                                         Modifier.Companion companion = i33 != 0 ? Modifier.Companion : modifier;
                                         if (i7 != 0) {
-                                            j5 = Color.Companion.m4573getUnspecified0d7_KjU();
+                                            j5 = Color.Companion.m4585getUnspecified0d7_KjU();
                                         }
                                         if (i9 != 0) {
-                                            j6 = TextUnit.Companion.m7456getUnspecifiedXSAIIZE();
+                                            j6 = TextUnit.Companion.m7469getUnspecifiedXSAIIZE();
                                         }
                                         if (i10 != 0) {
                                             obj = null;
@@ -3302,11 +3302,11 @@ public final class TextKt {
                                         if (i12 != 0) {
                                             obj3 = null;
                                         }
-                                        long m7456getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+                                        long m7469getUnspecifiedXSAIIZE = i13 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
                                         TextDecoration textDecoration4 = i16 != 0 ? null : textDecoration;
                                         TextAlign textAlign5 = i18 == 0 ? textAlign : null;
-                                        long m7456getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j4;
-                                        int m7186getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7186getClipgIe3tQ8() : i;
+                                        long m7469getUnspecifiedXSAIIZE2 = i20 != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j4;
+                                        int m7199getClipgIe3tQ8 = i23 != 0 ? TextOverflow.Companion.m7199getClipgIe3tQ8() : i;
                                         if (i24 != 0) {
                                             z2 = true;
                                         }
@@ -3336,14 +3336,14 @@ public final class TextKt {
                                             textAlign2 = textAlign5;
                                             textStyle2 = textStyle;
                                         }
-                                        i29 = m7186getClipgIe3tQ8;
+                                        i29 = m7199getClipgIe3tQ8;
                                         function12 = textKt$Text$6;
-                                        j7 = m7456getUnspecifiedXSAIIZE2;
+                                        j7 = m7469getUnspecifiedXSAIIZE2;
                                         map2 = emptyMap;
                                         modifier3 = modifier2;
                                         int i38 = i37;
                                         textAlign3 = textAlign2;
-                                        long j15 = m7456getUnspecifiedXSAIIZE;
+                                        long j15 = m7469getUnspecifiedXSAIIZE;
                                         z3 = z2;
                                         j8 = j5;
                                         i30 = i38;
@@ -3380,7 +3380,7 @@ public final class TextKt {
                                     }
                                     int i39 = i26 << 3;
                                     composer2 = startRestartGroup;
-                                    m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (3670016 & i39) | (i39 & 29360128), 0);
+                                    m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39) | (3670016 & i39) | (i39 & 29360128), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -3437,7 +3437,7 @@ public final class TextKt {
                                         }
 
                                         public final void invoke(Composer composer3, int i40) {
-                                            TextKt.m2803Text4IGK_g(AnnotatedString.this, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i31, z4, i32, map3, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
+                                            TextKt.m2813Text4IGK_g(AnnotatedString.this, modifier4, j11, j12, fontStyle2, fontWeight3, fontFamily3, j13, textDecoration3, textAlign4, j14, i31, z4, i32, map3, function13, textStyle3, composer3, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
                                         }
                                     });
                                     return;
@@ -3486,14 +3486,14 @@ public final class TextKt {
                             }
                             if ((i5 & 65536) != 0) {
                             }
-                            i29 = m7186getClipgIe3tQ8;
+                            i29 = m7199getClipgIe3tQ8;
                             function12 = textKt$Text$6;
-                            j7 = m7456getUnspecifiedXSAIIZE2;
+                            j7 = m7469getUnspecifiedXSAIIZE2;
                             map2 = emptyMap;
                             modifier3 = modifier2;
                             int i382 = i37;
                             textAlign3 = textAlign2;
-                            long j152 = m7456getUnspecifiedXSAIIZE;
+                            long j152 = m7469getUnspecifiedXSAIIZE;
                             z3 = z2;
                             j8 = j5;
                             i30 = i382;
@@ -3508,7 +3508,7 @@ public final class TextKt {
                             }
                             int i392 = i26 << 3;
                             composer2 = startRestartGroup;
-                            m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (3670016 & i392) | (i392 & 29360128), 0);
+                            m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392) | (3670016 & i392) | (i392 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier4 = modifier3;
@@ -3580,14 +3580,14 @@ public final class TextKt {
                         }
                         if ((i5 & 65536) != 0) {
                         }
-                        i29 = m7186getClipgIe3tQ8;
+                        i29 = m7199getClipgIe3tQ8;
                         function12 = textKt$Text$6;
-                        j7 = m7456getUnspecifiedXSAIIZE2;
+                        j7 = m7469getUnspecifiedXSAIIZE2;
                         map2 = emptyMap;
                         modifier3 = modifier2;
                         int i3822 = i37;
                         textAlign3 = textAlign2;
-                        long j1522 = m7456getUnspecifiedXSAIIZE;
+                        long j1522 = m7469getUnspecifiedXSAIIZE;
                         z3 = z2;
                         j8 = j5;
                         i30 = i3822;
@@ -3602,7 +3602,7 @@ public final class TextKt {
                         }
                         int i3922 = i26 << 3;
                         composer2 = startRestartGroup;
-                        m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (3670016 & i3922) | (i3922 & 29360128), 0);
+                        m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922) | (3670016 & i3922) | (i3922 & 29360128), 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier4 = modifier3;
@@ -3689,14 +3689,14 @@ public final class TextKt {
                     }
                     if ((i5 & 65536) != 0) {
                     }
-                    i29 = m7186getClipgIe3tQ8;
+                    i29 = m7199getClipgIe3tQ8;
                     function12 = textKt$Text$6;
-                    j7 = m7456getUnspecifiedXSAIIZE2;
+                    j7 = m7469getUnspecifiedXSAIIZE2;
                     map2 = emptyMap;
                     modifier3 = modifier2;
                     int i38222 = i37;
                     textAlign3 = textAlign2;
-                    long j15222 = m7456getUnspecifiedXSAIIZE;
+                    long j15222 = m7469getUnspecifiedXSAIIZE;
                     z3 = z2;
                     j8 = j5;
                     i30 = i38222;
@@ -3711,7 +3711,7 @@ public final class TextKt {
                     }
                     int i39222 = i26 << 3;
                     composer2 = startRestartGroup;
-                    m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (3670016 & i39222) | (i39222 & 29360128), 0);
+                    m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222) | (3670016 & i39222) | (i39222 & 29360128), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier4 = modifier3;
@@ -3802,14 +3802,14 @@ public final class TextKt {
                 }
                 if ((i5 & 65536) != 0) {
                 }
-                i29 = m7186getClipgIe3tQ8;
+                i29 = m7199getClipgIe3tQ8;
                 function12 = textKt$Text$6;
-                j7 = m7456getUnspecifiedXSAIIZE2;
+                j7 = m7469getUnspecifiedXSAIIZE2;
                 map2 = emptyMap;
                 modifier3 = modifier2;
                 int i382222 = i37;
                 textAlign3 = textAlign2;
-                long j152222 = m7456getUnspecifiedXSAIIZE;
+                long j152222 = m7469getUnspecifiedXSAIIZE;
                 z3 = z2;
                 j8 = j5;
                 i30 = i382222;
@@ -3824,7 +3824,7 @@ public final class TextKt {
                 }
                 int i392222 = i26 << 3;
                 composer2 = startRestartGroup;
-                m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (3670016 & i392222) | (i392222 & 29360128), 0);
+                m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i392222) | (3670016 & i392222) | (i392222 & 29360128), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier4 = modifier3;
@@ -3925,14 +3925,14 @@ public final class TextKt {
             }
             if ((i5 & 65536) != 0) {
             }
-            i29 = m7186getClipgIe3tQ8;
+            i29 = m7199getClipgIe3tQ8;
             function12 = textKt$Text$6;
-            j7 = m7456getUnspecifiedXSAIIZE2;
+            j7 = m7469getUnspecifiedXSAIIZE2;
             map2 = emptyMap;
             modifier3 = modifier2;
             int i3822222 = i37;
             textAlign3 = textAlign2;
-            long j1522222 = m7456getUnspecifiedXSAIIZE;
+            long j1522222 = m7469getUnspecifiedXSAIIZE;
             z3 = z2;
             j8 = j5;
             i30 = i3822222;
@@ -3947,7 +3947,7 @@ public final class TextKt {
             }
             int i3922222 = i26 << 3;
             composer2 = startRestartGroup;
-            m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (3670016 & i3922222) | (i3922222 & 29360128), 0);
+            m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i3922222) | (3670016 & i3922222) | (i3922222 & 29360128), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier4 = modifier3;
@@ -4057,14 +4057,14 @@ public final class TextKt {
         }
         if ((i5 & 65536) != 0) {
         }
-        i29 = m7186getClipgIe3tQ8;
+        i29 = m7199getClipgIe3tQ8;
         function12 = textKt$Text$6;
-        j7 = m7456getUnspecifiedXSAIIZE2;
+        j7 = m7469getUnspecifiedXSAIIZE2;
         map2 = emptyMap;
         modifier3 = modifier2;
         int i38222222 = i37;
         textAlign3 = textAlign2;
-        long j15222222 = m7456getUnspecifiedXSAIIZE;
+        long j15222222 = m7469getUnspecifiedXSAIIZE;
         z3 = z2;
         j8 = j5;
         i30 = i38222222;
@@ -4079,7 +4079,7 @@ public final class TextKt {
         }
         int i39222222 = i26 << 3;
         composer2 = startRestartGroup;
-        m2805TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (3670016 & i39222222) | (i39222222 & 29360128), 0);
+        m2815TextIbK3jfQ(annotatedString, modifier3, j8, j9, obj, fontWeight2, fontFamily2, j10, textDecoration2, textAlign3, j7, i29, z3, i30, 1, map2, function12, textStyle2, composer2, i19 & 2147483646, (i26 & 14) | 24576 | (i26 & 112) | (i26 & 896) | (i26 & 7168) | (458752 & i39222222) | (3670016 & i39222222) | (i39222222 & 29360128), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier4 = modifier3;

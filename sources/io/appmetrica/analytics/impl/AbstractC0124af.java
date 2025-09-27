@@ -12,7 +12,7 @@ import java.util.Locale;
 public abstract class AbstractC0124af {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ve f793a = new Ve();
+    public static final Ve f794a = new Ve();
     public static final We b = new We();
     public static final Xe c = new Xe(2);
 
@@ -39,7 +39,7 @@ public abstract class AbstractC0124af {
         }
         NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
         if (networkCapabilities != null) {
-            for (Integer num : b.f842a.keySet()) {
+            for (Integer num : b.f843a.keySet()) {
                 if (networkCapabilities.hasTransport(num.intValue())) {
                     return (Ze) b.a(num);
                 }

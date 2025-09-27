@@ -10,26 +10,26 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class LayoutUtilsKt {
     /* renamed from: finalConstraints-tfFHcEY  reason: not valid java name */
-    public static final long m1686finalConstraintstfFHcEY(long j, boolean z, int i, float f) {
-        return Constraints.Companion.m7213fitPrioritizingWidthZbe2FdA(0, m1688finalMaxWidthtfFHcEY(j, z, i, f), 0, Constraints.m7203getMaxHeightimpl(j));
+    public static final long m1696finalConstraintstfFHcEY(long j, boolean z, int i, float f) {
+        return Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA(0, m1698finalMaxWidthtfFHcEY(j, z, i, f), 0, Constraints.m7216getMaxHeightimpl(j));
     }
 
     /* renamed from: finalMaxWidth-tfFHcEY  reason: not valid java name */
-    public static final int m1688finalMaxWidthtfFHcEY(long j, boolean z, int i, float f) {
-        int m7204getMaxWidthimpl = ((z || m1689isEllipsisMW5ApA(i)) && Constraints.m7200getHasBoundedWidthimpl(j)) ? Constraints.m7204getMaxWidthimpl(j) : Integer.MAX_VALUE;
-        return Constraints.m7206getMinWidthimpl(j) == m7204getMaxWidthimpl ? m7204getMaxWidthimpl : RangesKt.coerceIn(TextDelegateKt.ceilToIntPx(f), Constraints.m7206getMinWidthimpl(j), m7204getMaxWidthimpl);
+    public static final int m1698finalMaxWidthtfFHcEY(long j, boolean z, int i, float f) {
+        int m7217getMaxWidthimpl = ((z || m1699isEllipsisMW5ApA(i)) && Constraints.m7213getHasBoundedWidthimpl(j)) ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE;
+        return Constraints.m7219getMinWidthimpl(j) == m7217getMaxWidthimpl ? m7217getMaxWidthimpl : RangesKt.coerceIn(TextDelegateKt.ceilToIntPx(f), Constraints.m7219getMinWidthimpl(j), m7217getMaxWidthimpl);
     }
 
     /* renamed from: finalMaxLines-xdlQI24  reason: not valid java name */
-    public static final int m1687finalMaxLinesxdlQI24(boolean z, int i, int i2) {
-        if (z || !m1689isEllipsisMW5ApA(i)) {
+    public static final int m1697finalMaxLinesxdlQI24(boolean z, int i, int i2) {
+        if (z || !m1699isEllipsisMW5ApA(i)) {
             return RangesKt.coerceAtLeast(i2, 1);
         }
         return 1;
     }
 
     /* renamed from: isEllipsis-MW5-ApA  reason: not valid java name */
-    public static final boolean m1689isEllipsisMW5ApA(int i) {
-        return TextOverflow.m7177equalsimpl0(i, TextOverflow.Companion.m7187getEllipsisgIe3tQ8()) || TextOverflow.m7177equalsimpl0(i, TextOverflow.Companion.m7189getStartEllipsisgIe3tQ8()) || TextOverflow.m7177equalsimpl0(i, TextOverflow.Companion.m7188getMiddleEllipsisgIe3tQ8());
+    public static final boolean m1699isEllipsisMW5ApA(int i) {
+        return TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7200getEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7202getStartEllipsisgIe3tQ8()) || TextOverflow.m7190equalsimpl0(i, TextOverflow.Companion.m7201getMiddleEllipsisgIe3tQ8());
     }
 }

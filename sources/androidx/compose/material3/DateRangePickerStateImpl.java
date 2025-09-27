@@ -39,7 +39,7 @@ final class DateRangePickerStateImpl extends BaseDatePickerStateImpl implements 
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this._selectedEndDate = mutableStateOf$default2;
         setSelection(l, l2);
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(DisplayMode.m2172boximpl(i), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(DisplayMode.m2182boximpl(i), null, 2, null);
         this._displayMode = mutableStateOf$default3;
     }
 
@@ -63,18 +63,18 @@ final class DateRangePickerStateImpl extends BaseDatePickerStateImpl implements 
 
     @Override // androidx.compose.material3.DateRangePickerState
     /* renamed from: getDisplayMode-jFl-4v0 */
-    public int mo2161getDisplayModejFl4v0() {
-        return this._displayMode.getValue().m2178unboximpl();
+    public int mo2171getDisplayModejFl4v0() {
+        return this._displayMode.getValue().m2188unboximpl();
     }
 
     @Override // androidx.compose.material3.DateRangePickerState
     /* renamed from: setDisplayMode-vCnGnXg */
-    public void mo2162setDisplayModevCnGnXg(int i) {
+    public void mo2172setDisplayModevCnGnXg(int i) {
         Long selectedStartDateMillis = getSelectedStartDateMillis();
         if (selectedStartDateMillis != null) {
             setDisplayedMonthMillis(getCalendarModel().getMonth(selectedStartDateMillis.longValue()).getStartUtcTimeMillis());
         }
-        this._displayMode.setValue(DisplayMode.m2172boximpl(i));
+        this._displayMode.setValue(DisplayMode.m2182boximpl(i));
     }
 
     @Override // androidx.compose.material3.DateRangePickerState
@@ -114,7 +114,7 @@ final class DateRangePickerStateImpl extends BaseDatePickerStateImpl implements 
             return ListSaverKt.listSaver(new Function2<SaverScope, DateRangePickerStateImpl, List<? extends Object>>() { // from class: androidx.compose.material3.DateRangePickerStateImpl$Companion$Saver$1
                 @Override // kotlin.jvm.functions.Function2
                 public final List<Object> invoke(SaverScope saverScope, DateRangePickerStateImpl dateRangePickerStateImpl) {
-                    return CollectionsKt.listOf(dateRangePickerStateImpl.getSelectedStartDateMillis(), dateRangePickerStateImpl.getSelectedEndDateMillis(), Long.valueOf(dateRangePickerStateImpl.getDisplayedMonthMillis()), Integer.valueOf(dateRangePickerStateImpl.getYearRange().getFirst()), Integer.valueOf(dateRangePickerStateImpl.getYearRange().getLast()), Integer.valueOf(dateRangePickerStateImpl.mo2161getDisplayModejFl4v0()));
+                    return CollectionsKt.listOf(dateRangePickerStateImpl.getSelectedStartDateMillis(), dateRangePickerStateImpl.getSelectedEndDateMillis(), Long.valueOf(dateRangePickerStateImpl.getDisplayedMonthMillis()), Integer.valueOf(dateRangePickerStateImpl.getYearRange().getFirst()), Integer.valueOf(dateRangePickerStateImpl.getYearRange().getLast()), Integer.valueOf(dateRangePickerStateImpl.mo2171getDisplayModejFl4v0()));
                 }
             }, new Function1<List, DateRangePickerStateImpl>() { // from class: androidx.compose.material3.DateRangePickerStateImpl$Companion$Saver$2
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -138,7 +138,7 @@ final class DateRangePickerStateImpl extends BaseDatePickerStateImpl implements 
                     IntRange intRange = new IntRange(intValue, ((Integer) obj2).intValue());
                     Object obj3 = list.get(5);
                     Intrinsics.checkNotNull(obj3, "null cannot be cast to non-null type kotlin.Int");
-                    return new DateRangePickerStateImpl((Long) list.get(0), (Long) list.get(1), (Long) list.get(2), intRange, DisplayMode.m2173constructorimpl(((Integer) obj3).intValue()), SelectableDates.this, locale, null);
+                    return new DateRangePickerStateImpl((Long) list.get(0), (Long) list.get(1), (Long) list.get(2), intRange, DisplayMode.m2183constructorimpl(((Integer) obj3).intValue()), SelectableDates.this, locale, null);
                 }
             });
         }

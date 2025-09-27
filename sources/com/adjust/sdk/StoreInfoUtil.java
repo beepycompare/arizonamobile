@@ -6,6 +6,32 @@ import android.os.Build;
 import android.os.Bundle;
 /* loaded from: classes3.dex */
 public class StoreInfoUtil {
+    public static String getInitiatingPackageName(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            String packageName = context.getPackageName();
+            if (Build.VERSION.SDK_INT >= 30) {
+                return packageManager.getInstallSourceInfo(packageName).getInitiatingPackageName();
+            }
+            return null;
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
+    public static String getOriginatingPackageName(Context context) {
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            String packageName = context.getPackageName();
+            if (Build.VERSION.SDK_INT >= 30) {
+                return packageManager.getInstallSourceInfo(packageName).getOriginatingPackageName();
+            }
+            return null;
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
     public static String getStoreIdFromSystem(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();

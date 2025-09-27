@@ -126,11 +126,11 @@ public final class BiasAbsoluteAlignment implements Alignment {
 
     @Override // androidx.compose.ui.Alignment
     /* renamed from: align-KFBX0sM */
-    public long mo4016alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
-        long m7417constructorimpl = IntSize.m7417constructorimpl(((((int) (j2 >> 32)) - ((int) (j >> 32))) << 32) | ((((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L));
+    public long mo4028alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
+        long m7430constructorimpl = IntSize.m7430constructorimpl(((((int) (j2 >> 32)) - ((int) (j >> 32))) << 32) | ((((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) & 4294967295L));
         float f = 1;
-        float f2 = (((int) (m7417constructorimpl >> 32)) / 2.0f) * (this.horizontalBias + f);
-        float f3 = (((int) (m7417constructorimpl & 4294967295L)) / 2.0f) * (f + this.verticalBias);
-        return IntOffset.m7373constructorimpl((Math.round(f2) << 32) | (Math.round(f3) & 4294967295L));
+        float f2 = (((int) (m7430constructorimpl >> 32)) / 2.0f) * (this.horizontalBias + f);
+        float f3 = (((int) (m7430constructorimpl & 4294967295L)) / 2.0f) * (f + this.verticalBias);
+        return IntOffset.m7386constructorimpl((Math.round(f2) << 32) | (Math.round(f3) & 4294967295L));
     }
 }

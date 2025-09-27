@@ -7,19 +7,19 @@ import org.json.JSONObject;
 public final class Lf implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Jf f559a = new Jf();
+    public final Jf f560a = new Jf();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Ff fromModel(Kf kf) {
         Ff ff = new Ff();
-        if (!TextUtils.isEmpty(kf.f539a)) {
-            ff.f446a = kf.f539a;
+        if (!TextUtils.isEmpty(kf.f540a)) {
+            ff.f447a = kf.f540a;
         }
         ff.b = kf.b.toString();
         ff.c = kf.c;
         ff.d = kf.d;
-        ff.e = this.f559a.fromModel(kf.e).intValue();
+        ff.e = this.f560a.fromModel(kf.e).intValue();
         return ff;
     }
 
@@ -27,16 +27,16 @@ public final class Lf implements ProtobufConverter {
     /* renamed from: a */
     public final Kf toModel(Ff ff) {
         JSONObject jSONObject;
-        String str = ff.f446a;
+        String str = ff.f447a;
         String str2 = ff.b;
         if (!TextUtils.isEmpty(str2)) {
             try {
                 jSONObject = new JSONObject(str2);
             } catch (Throwable unused) {
             }
-            return new Kf(str, jSONObject, ff.c, ff.d, this.f559a.toModel(Integer.valueOf(ff.e)));
+            return new Kf(str, jSONObject, ff.c, ff.d, this.f560a.toModel(Integer.valueOf(ff.e)));
         }
         jSONObject = new JSONObject();
-        return new Kf(str, jSONObject, ff.c, ff.d, this.f559a.toModel(Integer.valueOf(ff.e)));
+        return new Kf(str, jSONObject, ff.c, ff.d, this.f560a.toModel(Integer.valueOf(ff.e)));
     }
 }

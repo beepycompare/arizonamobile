@@ -17,18 +17,18 @@ import kotlin.collections.MapsKt;
 public final class Ab implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0484od f348a = new C0484od();
+    public final C0484od f349a = new C0484od();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        C0484od c0484od = this.f348a;
+        C0484od c0484od = this.f349a;
         c0484od.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : AbstractC0458nd.f1003a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : AbstractC0458nd.f1004a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -62,7 +62,7 @@ public final class Ab implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        c0484od.f1018a.getClass();
+        c0484od.f1019a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }
@@ -77,7 +77,7 @@ public final class Ab implements InternalClientModuleFacade {
         }
         InternalModuleEvent.Category category2 = internalModuleEvent.getCategory();
         if (category2 != null) {
-            int i = AbstractC0757zb.f1188a[category2.ordinal()];
+            int i = AbstractC0757zb.f1189a[category2.ordinal()];
             if (i != 1) {
                 category = i != 2 ? null : ModuleEvent.Category.GENERAL;
             } else {

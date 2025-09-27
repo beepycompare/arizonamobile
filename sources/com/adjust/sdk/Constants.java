@@ -14,7 +14,7 @@ public interface Constants {
     public static final String BASE_URL_FORMAT = "https://app.%s";
     public static final String BASE_URL_NO_SUB_DOMAIN_FORMAT = "https://%s";
     public static final String CALLBACK_PARAMETERS = "callback_params";
-    public static final String CLIENT_SDK = "android5.4.3";
+    public static final String CLIENT_SDK = "android5.4.4";
     public static final int CONNECTION_TIMEOUT = 60000;
     public static final int CONNECTION_TIMEOUT_VERIFY = 30000;
     public static final String CONTENT_PROVIDER = "content_provider";
@@ -34,6 +34,7 @@ public interface Constants {
     public static final String HIGH = "high";
     public static final String INSTALL_REFERRER = "install_referrer";
     public static final String LARGE = "large";
+    public static final String LICENSE_VERIFICATION = "google_lvl";
     public static final String LOGTAG = "Adjust";
     public static final String LONG = "long";
     public static final String LOW = "low";

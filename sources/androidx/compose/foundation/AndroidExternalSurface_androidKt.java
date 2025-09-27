@@ -28,13 +28,13 @@ import kotlinx.coroutines.CoroutineScope;
 public final class AndroidExternalSurface_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AndroidEmbeddedExternalSurface_sv6N_fY$lambda$18(Modifier modifier, boolean z, long j, float[] fArr, Function1 function1, int i, int i2, Composer composer, int i3) {
-        m251AndroidEmbeddedExternalSurfacesv6N_fY(modifier, z, j, fArr, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m261AndroidEmbeddedExternalSurfacesv6N_fY(modifier, z, j, fArr, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AndroidExternalSurface_58FFMhA$lambda$8(Modifier modifier, boolean z, long j, int i, boolean z2, Function1 function1, int i2, int i3, Composer composer, int i4) {
-        m252AndroidExternalSurface58FFMhA(modifier, z, j, i, z2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m262AndroidExternalSurface58FFMhA(modifier, z, j, i, z2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -88,7 +88,7 @@ public final class AndroidExternalSurface_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m252AndroidExternalSurface58FFMhA(Modifier modifier, boolean z, long j, int i, boolean z2, final Function1<? super AndroidExternalSurfaceScope, Unit> function1, Composer composer, final int i2, final int i3) {
+    public static final void m262AndroidExternalSurface58FFMhA(Modifier modifier, boolean z, long j, int i, boolean z2, final Function1<? super AndroidExternalSurfaceScope, Unit> function1, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         boolean z3;
@@ -165,10 +165,10 @@ public final class AndroidExternalSurface_androidKt {
                             }
                             if ((i3 & 4) != 0) {
                                 i4 &= -897;
-                                j2 = IntSize.Companion.m7427getZeroYbymL2g();
+                                j2 = IntSize.Companion.m7440getZeroYbymL2g();
                             }
                             if (i5 != 0) {
-                                i6 = AndroidExternalSurfaceZOrder.Companion.m248getBehindB_4ceCc();
+                                i6 = AndroidExternalSurfaceZOrder.Companion.m258getBehindB_4ceCc();
                             }
                             if (i7 != 0) {
                                 z4 = false;
@@ -325,17 +325,17 @@ public final class AndroidExternalSurface_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AndroidExternalSurface_58FFMhA$lambda$7$lambda$6(long j, boolean z, int i, boolean z2, SurfaceView surfaceView) {
-        if (!IntSize.m7420equalsimpl0(j, IntSize.Companion.m7427getZeroYbymL2g())) {
+        if (!IntSize.m7433equalsimpl0(j, IntSize.Companion.m7440getZeroYbymL2g())) {
             surfaceView.getHolder().setFixedSize((int) (j >> 32), (int) (j & 4294967295L));
         } else {
             surfaceView.getHolder().setSizeFromLayout();
         }
         surfaceView.getHolder().setFormat(z ? -1 : -3);
-        if (AndroidExternalSurfaceZOrder.m244equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m248getBehindB_4ceCc())) {
+        if (AndroidExternalSurfaceZOrder.m254equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m258getBehindB_4ceCc())) {
             surfaceView.setZOrderOnTop(false);
-        } else if (AndroidExternalSurfaceZOrder.m244equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m249getMediaOverlayB_4ceCc())) {
+        } else if (AndroidExternalSurfaceZOrder.m254equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m259getMediaOverlayB_4ceCc())) {
             surfaceView.setZOrderMediaOverlay(true);
-        } else if (AndroidExternalSurfaceZOrder.m244equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m250getOnTopB_4ceCc())) {
+        } else if (AndroidExternalSurfaceZOrder.m254equalsimpl0(i, AndroidExternalSurfaceZOrder.Companion.m260getOnTopB_4ceCc())) {
             surfaceView.setZOrderOnTop(true);
         }
         surfaceView.setSecure(z2);
@@ -397,7 +397,7 @@ public final class AndroidExternalSurface_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m251AndroidEmbeddedExternalSurfacesv6N_fY(Modifier modifier, boolean z, long j, float[] fArr, final Function1<? super AndroidExternalSurfaceScope, Unit> function1, Composer composer, final int i, final int i2) {
+    public static final void m261AndroidEmbeddedExternalSurfacesv6N_fY(Modifier modifier, boolean z, long j, float[] fArr, final Function1<? super AndroidExternalSurfaceScope, Unit> function1, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         boolean z2;
@@ -446,7 +446,7 @@ public final class AndroidExternalSurface_androidKt {
             if (i4 == 0) {
                 i3 |= 3072;
             } else if ((i & 3072) == 0) {
-                i3 |= startRestartGroup.changedInstance(fArr != null ? Matrix.m4777boximpl(fArr) : null) ? 2048 : 1024;
+                i3 |= startRestartGroup.changedInstance(fArr != null ? Matrix.m4789boximpl(fArr) : null) ? 2048 : 1024;
             }
             if ((i2 & 16) == 0) {
                 i3 |= 24576;
@@ -469,7 +469,7 @@ public final class AndroidExternalSurface_androidKt {
                         }
                         if ((i2 & 4) != 0) {
                             i3 &= -897;
-                            j2 = IntSize.Companion.m7427getZeroYbymL2g();
+                            j2 = IntSize.Companion.m7440getZeroYbymL2g();
                         }
                         if (i4 != 0) {
                             z4 = z2;
@@ -510,7 +510,7 @@ public final class AndroidExternalSurface_androidKt {
                             Function1 function13 = (Function1) rememberedValue2;
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1396180415, "CC(remember):AndroidExternalSurface.android.kt#9igjgp");
-                            changedInstance = ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(rememberAndroidEmbeddedExternalSurfaceState) | ((57344 & i3) != 16384) | ((i3 & 112) == 32) | startRestartGroup.changedInstance(fArr3 == null ? Matrix.m4777boximpl(fArr3) : null);
+                            changedInstance = ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(rememberAndroidEmbeddedExternalSurfaceState) | ((57344 & i3) != 16384) | ((i3 & 112) == 32) | startRestartGroup.changedInstance(fArr3 == null ? Matrix.m4789boximpl(fArr3) : null);
                             rememberedValue3 = startRestartGroup.rememberedValue();
                             if (!changedInstance || rememberedValue3 == Composer.Companion.getEmpty()) {
                                 j4 = j2;
@@ -559,7 +559,7 @@ public final class AndroidExternalSurface_androidKt {
                     Function1 function132 = (Function1) rememberedValue2;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1396180415, "CC(remember):AndroidExternalSurface.android.kt#9igjgp");
-                    changedInstance = ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(rememberAndroidEmbeddedExternalSurfaceState2) | ((57344 & i3) != 16384) | ((i3 & 112) == 32) | startRestartGroup.changedInstance(fArr3 == null ? Matrix.m4777boximpl(fArr3) : null);
+                    changedInstance = ((((i3 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(rememberAndroidEmbeddedExternalSurfaceState2) | ((57344 & i3) != 16384) | ((i3 & 112) == 32) | startRestartGroup.changedInstance(fArr3 == null ? Matrix.m4789boximpl(fArr3) : null);
                     rememberedValue3 = startRestartGroup.rememberedValue();
                     if (changedInstance) {
                     }
@@ -641,10 +641,10 @@ public final class AndroidExternalSurface_androidKt {
     public static final Unit AndroidEmbeddedExternalSurface_sv6N_fY$lambda$17$lambda$16(long j, AndroidEmbeddedExternalSurfaceState androidEmbeddedExternalSurfaceState, Function1 function1, boolean z, float[] fArr, TextureView textureView) {
         android.graphics.Matrix matrix;
         SurfaceTexture surfaceTexture;
-        if (!IntSize.m7420equalsimpl0(j, IntSize.Companion.m7427getZeroYbymL2g()) && (surfaceTexture = textureView.getSurfaceTexture()) != null) {
+        if (!IntSize.m7433equalsimpl0(j, IntSize.Companion.m7440getZeroYbymL2g()) && (surfaceTexture = textureView.getSurfaceTexture()) != null) {
             surfaceTexture.setDefaultBufferSize((int) (j >> 32), (int) (4294967295L & j));
         }
-        androidEmbeddedExternalSurfaceState.m240setSurfaceSizeozmzZPI(j);
+        androidEmbeddedExternalSurfaceState.m250setSurfaceSizeozmzZPI(j);
         if (textureView.getSurfaceTextureListener() != androidEmbeddedExternalSurfaceState) {
             function1.invoke(androidEmbeddedExternalSurfaceState);
             textureView.setSurfaceTextureListener(androidEmbeddedExternalSurfaceState);
@@ -652,7 +652,7 @@ public final class AndroidExternalSurface_androidKt {
         textureView.setOpaque(z);
         if (fArr != null) {
             matrix = androidEmbeddedExternalSurfaceState.getMatrix();
-            AndroidMatrixConversions_androidKt.m4405setFromEL8BTi8(matrix, fArr);
+            AndroidMatrixConversions_androidKt.m4417setFromEL8BTi8(matrix, fArr);
         } else {
             matrix = null;
         }

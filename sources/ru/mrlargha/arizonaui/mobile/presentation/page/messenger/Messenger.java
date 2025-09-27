@@ -21,6 +21,7 @@ import com.arizona.common.model.AvatarData;
 import com.arizona.common.ui.AvatarView;
 import com.arizona.launcher.model.settings.SettingsConstants;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.miami.game.core.settings.SettingsInteractor;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -245,7 +246,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", "SETTINGS", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", SettingsInteractor.SettingsKey, "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Page {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -259,7 +260,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         public static final Page CONTACTS_SEARCH = new Page("CONTACTS_SEARCH", 4, R.id.messages_layout, "Поиск");
         public static final Page MY_CONTACTS = new Page("MY_CONTACTS", 5, R.id.messages_layout, "Контакты");
         public static final Page LOADING = new Page("LOADING", 6, R.id.loading_layout, "Сообщения");
-        public static final Page SETTINGS = new Page("SETTINGS", 7, R.id.settings_layout, "Настройки");
+        public static final Page SETTINGS = new Page(SettingsInteractor.SettingsKey, 7, R.id.settings_layout, "Настройки");
 
         private static final /* synthetic */ Page[] $values() {
             return new Page[]{EMPTY_MESSAGES, EMPTY_CONTACTS, MESSAGES, NEW_CORRESPONDENCE, CONTACTS_SEARCH, MY_CONTACTS, LOADING, SETTINGS};

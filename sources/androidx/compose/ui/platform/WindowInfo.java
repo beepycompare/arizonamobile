@@ -9,13 +9,13 @@ public interface WindowInfo {
     boolean isWindowFocused();
 
     /* renamed from: getKeyboardModifiers-k7X9c1A */
-    default int mo6408getKeyboardModifiersk7X9c1A() {
-        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().getValue().m5893unboximpl();
+    default int mo6421getKeyboardModifiersk7X9c1A() {
+        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().getValue().m5906unboximpl();
     }
 
     /* renamed from: getContainerSize-YbymL2g */
-    default long mo6407getContainerSizeYbymL2g() {
+    default long mo6420getContainerSizeYbymL2g() {
         long j = Integer.MIN_VALUE;
-        return IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
+        return IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

@@ -12,7 +12,7 @@ public final class WrapperVerificationHelperMethods {
     }
 
     /* renamed from: setBlendMode-GB0RdKg  reason: not valid java name */
-    public final void m4958setBlendModeGB0RdKg(android.graphics.Paint paint, int i) {
-        paint.setBlendMode(AndroidBlendMode_androidKt.m4385toAndroidBlendModes9anfk8(i));
+    public final void m4970setBlendModeGB0RdKg(android.graphics.Paint paint, int i) {
+        paint.setBlendMode(AndroidBlendMode_androidKt.m4397toAndroidBlendModes9anfk8(i));
     }
 }

@@ -67,7 +67,7 @@ public final class DotsIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9061DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
+    public static final void m9076DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
         int i4;
         float f2;
         Object rememberedValue;
@@ -110,7 +110,7 @@ public final class DotsIndicatorKt {
             }
             if ((46811 & i4) == 9362 || !startRestartGroup.getSkipping()) {
                 Modifier.Companion companion = i5 == 0 ? Modifier.Companion : modifier;
-                float m7251constructorimpl = i6 == 0 ? Dp.m7251constructorimpl(12) : f2;
+                float m7264constructorimpl = i6 == 0 ? Dp.m7264constructorimpl(12) : f2;
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(2032190952, i4, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:22)");
                 }
@@ -126,7 +126,7 @@ public final class DotsIndicatorKt {
                 final CoroutineScope coroutineScope = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier modifier3 = companion;
-                float f4 = m7251constructorimpl;
+                float f4 = m7264constructorimpl;
                 int currentPage = pagerState.getCurrentPage();
                 startRestartGroup.startReplaceGroup(581553696);
                 z = (i4 & 57344) != 16384;
@@ -147,7 +147,7 @@ public final class DotsIndicatorKt {
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
                 startRestartGroup.endReplaceGroup();
-                m9060DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+                m9075DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -237,7 +237,7 @@ public final class DotsIndicatorKt {
                     }
 
                     public final void invoke(Composer composer2, int i7) {
-                        DotsIndicatorKt.m9061DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                        DotsIndicatorKt.m9076DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                     }
                 });
                 return;
@@ -266,7 +266,7 @@ public final class DotsIndicatorKt {
         final CoroutineScope coroutineScope2 = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         Modifier modifier32 = companion;
-        float f42 = m7251constructorimpl;
+        float f42 = m7264constructorimpl;
         int currentPage2 = pagerState.getCurrentPage();
         startRestartGroup.startReplaceGroup(581553696);
         if ((i4 & 57344) != 16384) {
@@ -288,7 +288,7 @@ public final class DotsIndicatorKt {
         };
         startRestartGroup.updateRememberedValue(rememberedValue2);
         startRestartGroup.endReplaceGroup();
-        m9060DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+        m9075DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -390,7 +390,7 @@ public final class DotsIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9060DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
+    public static final void m9075DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
         int i5;
         Modifier.Companion companion;
         int i6;
@@ -464,7 +464,7 @@ public final class DotsIndicatorKt {
                         if (i10 != 0) {
                             companion = Modifier.Companion;
                         }
-                        float m7251constructorimpl = i6 == 0 ? Dp.m7251constructorimpl(12) : f2;
+                        float m7264constructorimpl = i6 == 0 ? Dp.m7264constructorimpl(12) : f2;
                         Function1<? super Integer, Unit> function13 = i8 == 0 ? null : obj;
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1298032090, i5, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicator (DotsIndicator.kt:45)");
@@ -517,11 +517,11 @@ public final class DotsIndicatorKt {
                         startRestartGroup.endReplaceGroup();
                         int i11 = i5 << 6;
                         modifier2 = companion;
-                        type.mo9072IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7251constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
+                        type.mo9087IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7264constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
-                        f3 = m7251constructorimpl;
+                        f3 = m7264constructorimpl;
                         function12 = function13;
                     }
                     endRestartGroup = startRestartGroup.endRestartGroup();
@@ -541,7 +541,7 @@ public final class DotsIndicatorKt {
                             }
 
                             public final void invoke(Composer composer2, int i12) {
-                                DotsIndicatorKt.m9060DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+                                DotsIndicatorKt.m9075DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
                             }
                         });
                         return;
@@ -615,10 +615,10 @@ public final class DotsIndicatorKt {
                 startRestartGroup.endReplaceGroup();
                 int i112 = i5 << 6;
                 modifier2 = companion;
-                type.mo9072IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7251constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
+                type.mo9087IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7264constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                f3 = m7251constructorimpl;
+                f3 = m7264constructorimpl;
                 function12 = function13;
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup == null) {
@@ -697,10 +697,10 @@ public final class DotsIndicatorKt {
             startRestartGroup.endReplaceGroup();
             int i1122 = i5 << 6;
             modifier2 = companion;
-            type.mo9072IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7251constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
+            type.mo9087IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7264constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
-            f3 = m7251constructorimpl;
+            f3 = m7264constructorimpl;
             function12 = function13;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
@@ -783,10 +783,10 @@ public final class DotsIndicatorKt {
         startRestartGroup.endReplaceGroup();
         int i11222 = i5 << 6;
         modifier2 = companion;
-        type.mo9072IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7251constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
+        type.mo9087IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m7264constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
-        f3 = m7251constructorimpl;
+        f3 = m7264constructorimpl;
         function12 = function13;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -800,7 +800,7 @@ public final class DotsIndicatorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2128547675, i, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorPreview (DotsIndicator.kt:72)");
             }
-            m9060DotsIndicatorAFY4PWA(10, null, Dp.m7251constructorimpl(8), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
+            m9075DotsIndicatorAFY4PWA(10, null, Dp.m7264constructorimpl(8), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final Float invoke() {

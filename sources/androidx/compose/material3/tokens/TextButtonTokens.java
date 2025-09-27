@@ -10,7 +10,7 @@ public final class TextButtonTokens {
     public static final float DisabledIconOpacity = 0.38f;
     public static final float DisabledLabelTextOpacity = 0.38f;
     public static final TextButtonTokens INSTANCE = new TextButtonTokens();
-    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 40.0d);
+    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 40.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens DisabledLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusLabelTextColor = ColorSchemeKeyTokens.Primary;
@@ -22,14 +22,14 @@ public final class TextButtonTokens {
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Primary;
-    private static final float IconSize = Dp.m7251constructorimpl((float) 18.0d);
+    private static final float IconSize = Dp.m7264constructorimpl((float) 18.0d);
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.Primary;
 
     private TextButtonTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3641getContainerHeightD9Ej5fM() {
+    public final float m3651getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -78,7 +78,7 @@ public final class TextButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3642getIconSizeD9Ej5fM() {
+    public final float m3652getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

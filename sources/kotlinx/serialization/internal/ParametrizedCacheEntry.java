@@ -19,8 +19,8 @@ final class ParametrizedCacheEntry<T> {
     private final ConcurrentHashMap<List<KTypeWrapper>, Result<KSerializer<T>>> serializers = new ConcurrentHashMap<>();
 
     /* renamed from: computeIfAbsent-gIAlu-s  reason: not valid java name */
-    public final Object m10804computeIfAbsentgIAlus(List<? extends KType> types, Function0<? extends KSerializer<T>> producer) {
-        Object m9091constructorimpl;
+    public final Object m10819computeIfAbsentgIAlus(List<? extends KType> types, Function0<? extends KSerializer<T>> producer) {
+        Object m9106constructorimpl;
         Intrinsics.checkNotNullParameter(types, "types");
         Intrinsics.checkNotNullParameter(producer, "producer");
         List<? extends KType> list = types;
@@ -34,16 +34,16 @@ final class ParametrizedCacheEntry<T> {
         if (obj == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m9091constructorimpl = Result.m9091constructorimpl(producer.invoke());
+                m9106constructorimpl = Result.m9106constructorimpl(producer.invoke());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
+                m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
             }
-            Result m9090boximpl = Result.m9090boximpl(m9091constructorimpl);
-            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, m9090boximpl);
-            obj = putIfAbsent == null ? m9090boximpl : putIfAbsent;
+            Result m9105boximpl = Result.m9105boximpl(m9106constructorimpl);
+            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, m9105boximpl);
+            obj = putIfAbsent == null ? m9105boximpl : putIfAbsent;
         }
         Intrinsics.checkNotNullExpressionValue(obj, "getOrPut(...)");
-        return ((Result) obj).m9100unboximpl();
+        return ((Result) obj).m9115unboximpl();
     }
 }

@@ -70,33 +70,33 @@ public final class FocusTransactionsKt {
         }
         MutableVector mutableVector3 = null;
         int i3 = 0;
-        if (activeFocusTargetNode != null || m4216requestOwnerFocusEtdf9zw$default(focusTargetNode, null, null, 3, null)) {
+        if (activeFocusTargetNode != null || m4228requestOwnerFocusEtdf9zw$default(focusTargetNode, null, null, 3, null)) {
             int i4 = 1024;
             int i5 = 16;
             if (activeFocusTargetNode != null) {
                 mutableVector = new MutableVector(new FocusTargetNode[16], 0);
                 FocusTargetNode focusTargetNode5 = activeFocusTargetNode;
-                int m6245constructorimpl = NodeKind.m6245constructorimpl(1024);
+                int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
                 if (!focusTargetNode5.getNode().isAttached()) {
                     InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                 }
                 Modifier.Node parent$ui_release = focusTargetNode5.getNode().getParent$ui_release();
                 LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(focusTargetNode5);
                 while (requireLayoutNode != null) {
-                    if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
+                    if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
                         while (parent$ui_release != null) {
-                            if ((parent$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                            if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                 MutableVector mutableVector4 = mutableVector3;
                                 Modifier.Node node2 = parent$ui_release;
                                 while (node2 != null) {
                                     int i6 = i4;
                                     if (node2 instanceof FocusTargetNode) {
                                         mutableVector.add((FocusTargetNode) node2);
-                                    } else if ((node2.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                                    } else if ((node2.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                                         Modifier.Node delegate$ui_release = ((DelegatingNode) node2).getDelegate$ui_release();
                                         int i7 = 0;
                                         while (delegate$ui_release != null) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                            if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                                 i7++;
                                                 if (i7 == i2) {
                                                     focusTargetNode3 = focusTargetNode4;
@@ -167,7 +167,7 @@ public final class FocusTransactionsKt {
             }
             FocusTargetNode focusTargetNode7 = focusTargetNode4;
             MutableVector mutableVector5 = new MutableVector(new FocusTargetNode[16], 0);
-            int m6245constructorimpl2 = NodeKind.m6245constructorimpl(i4);
+            int m6258constructorimpl2 = NodeKind.m6258constructorimpl(i4);
             if (!focusTargetNode7.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -175,9 +175,9 @@ public final class FocusTransactionsKt {
             LayoutNode requireLayoutNode2 = DelegatableNodeKt.requireLayoutNode(focusTargetNode7);
             int i10 = 1;
             while (requireLayoutNode2 != null) {
-                if ((requireLayoutNode2.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl2) != 0) {
+                if ((requireLayoutNode2.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl2) != 0) {
                     while (parent$ui_release2 != null) {
-                        if ((parent$ui_release2.getKindSet$ui_release() & m6245constructorimpl2) != 0) {
+                        if ((parent$ui_release2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
                             FocusTargetNode focusTargetNode8 = parent$ui_release2;
                             MutableVector mutableVector6 = null;
                             while (focusTargetNode8 != null) {
@@ -190,12 +190,12 @@ public final class FocusTransactionsKt {
                                     if (focusTargetNode9 == activeFocusTargetNode) {
                                         i10 = i3;
                                     }
-                                } else if ((focusTargetNode8.getKindSet$ui_release() & m6245constructorimpl2) != 0 && (focusTargetNode8 instanceof DelegatingNode)) {
+                                } else if ((focusTargetNode8.getKindSet$ui_release() & m6258constructorimpl2) != 0 && (focusTargetNode8 instanceof DelegatingNode)) {
                                     Modifier.Node delegate$ui_release2 = ((DelegatingNode) focusTargetNode8).getDelegate$ui_release();
                                     int i11 = i3;
                                     node = focusTargetNode8;
                                     while (delegate$ui_release2 != null) {
-                                        if ((delegate$ui_release2.getKindSet$ui_release() & m6245constructorimpl2) != 0) {
+                                        if ((delegate$ui_release2.getKindSet$ui_release() & m6258constructorimpl2) != 0) {
                                             i11++;
                                             if (i11 == 1) {
                                                 node = delegate$ui_release2;
@@ -283,7 +283,7 @@ public final class FocusTransactionsKt {
                 return false;
             }
             if (ComposeUiFlags.isViewFocusFixEnabled && DelegatableNodeKt.requireLayoutNode(focusTargetNode7).getInteropView() == null) {
-                m4215requestOwnerFocusEtdf9zw(focusTargetNode, FocusDirection.m4169boximpl(FocusDirection.Companion.m4180getNextdhqQ8s()), null);
+                m4227requestOwnerFocusEtdf9zw(focusTargetNode, FocusDirection.m4181boximpl(FocusDirection.Companion.m4192getNextdhqQ8s()), null);
                 return true;
             }
             return true;
@@ -407,19 +407,19 @@ public final class FocusTransactionsKt {
     }
 
     /* renamed from: requestOwnerFocus-Etdf9zw$default  reason: not valid java name */
-    static /* synthetic */ boolean m4216requestOwnerFocusEtdf9zw$default(FocusTargetNode focusTargetNode, FocusDirection focusDirection, Rect rect, int i, Object obj) {
+    static /* synthetic */ boolean m4228requestOwnerFocusEtdf9zw$default(FocusTargetNode focusTargetNode, FocusDirection focusDirection, Rect rect, int i, Object obj) {
         if ((i & 1) != 0) {
             focusDirection = null;
         }
         if ((i & 2) != 0) {
             rect = null;
         }
-        return m4215requestOwnerFocusEtdf9zw(focusTargetNode, focusDirection, rect);
+        return m4227requestOwnerFocusEtdf9zw(focusTargetNode, focusDirection, rect);
     }
 
     /* renamed from: requestOwnerFocus-Etdf9zw  reason: not valid java name */
-    private static final boolean m4215requestOwnerFocusEtdf9zw(FocusTargetNode focusTargetNode, FocusDirection focusDirection, Rect rect) {
-        return DelegatableNodeKt.requireOwner(focusTargetNode).getFocusOwner().mo4192requestOwnerFocus7o62pno(focusDirection, rect);
+    private static final boolean m4227requestOwnerFocusEtdf9zw(FocusTargetNode focusTargetNode, FocusDirection focusDirection, Rect rect) {
+        return DelegatableNodeKt.requireOwner(focusTargetNode).getFocusOwner().mo4204requestOwnerFocus7o62pno(focusDirection, rect);
     }
 
     private static final FocusTargetNode requireActiveChild(FocusTargetNode focusTargetNode) {
@@ -431,7 +431,7 @@ public final class FocusTransactionsKt {
     }
 
     /* renamed from: performCustomRequestFocus-Mxy_nc0  reason: not valid java name */
-    public static final CustomDestinationResult m4214performCustomRequestFocusMxy_nc0(FocusTargetNode focusTargetNode, int i) {
+    public static final CustomDestinationResult m4226performCustomRequestFocusMxy_nc0(FocusTargetNode focusTargetNode, int i) {
         FocusTargetNode focusTargetNode2;
         NodeChain nodes$ui_release;
         int i2 = WhenMappings.$EnumSwitchMapping$0[focusTargetNode.getFocusState().ordinal()];
@@ -443,7 +443,7 @@ public final class FocusTransactionsKt {
                 throw new NoWhenBranchMatchedException();
             }
             FocusTargetNode focusTargetNode3 = focusTargetNode;
-            int m6245constructorimpl = NodeKind.m6245constructorimpl(1024);
+            int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
             if (!focusTargetNode3.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -454,19 +454,19 @@ public final class FocusTransactionsKt {
                     focusTargetNode2 = null;
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
                     while (parent$ui_release != null) {
-                        if ((parent$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                        if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                             focusTargetNode2 = parent$ui_release;
                             MutableVector mutableVector = null;
                             while (focusTargetNode2 != null) {
                                 if (focusTargetNode2 instanceof FocusTargetNode) {
                                     break loop0;
                                 }
-                                if ((focusTargetNode2.getKindSet$ui_release() & m6245constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
+                                if ((focusTargetNode2.getKindSet$ui_release() & m6258constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
                                     int i3 = 0;
                                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) focusTargetNode2).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                        if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                        if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                             i3++;
                                             if (i3 == 1) {
                                                 focusTargetNode2 = delegate$ui_release;
@@ -510,32 +510,32 @@ public final class FocusTransactionsKt {
                         if (i4 != 4) {
                             throw new NoWhenBranchMatchedException();
                         }
-                        CustomDestinationResult m4214performCustomRequestFocusMxy_nc0 = m4214performCustomRequestFocusMxy_nc0(focusTargetNode4, i);
-                        CustomDestinationResult customDestinationResult = m4214performCustomRequestFocusMxy_nc0 != CustomDestinationResult.None ? m4214performCustomRequestFocusMxy_nc0 : null;
-                        return customDestinationResult == null ? m4212performCustomEnterMxy_nc0(focusTargetNode4, i) : customDestinationResult;
+                        CustomDestinationResult m4226performCustomRequestFocusMxy_nc0 = m4226performCustomRequestFocusMxy_nc0(focusTargetNode4, i);
+                        CustomDestinationResult customDestinationResult = m4226performCustomRequestFocusMxy_nc0 != CustomDestinationResult.None ? m4226performCustomRequestFocusMxy_nc0 : null;
+                        return customDestinationResult == null ? m4224performCustomEnterMxy_nc0(focusTargetNode4, i) : customDestinationResult;
                     }
-                    return m4214performCustomRequestFocusMxy_nc0(focusTargetNode4, i);
+                    return m4226performCustomRequestFocusMxy_nc0(focusTargetNode4, i);
                 }
                 return CustomDestinationResult.Cancelled;
             }
-            return m4212performCustomEnterMxy_nc0(focusTargetNode4, i);
+            return m4224performCustomEnterMxy_nc0(focusTargetNode4, i);
         }
-        return m4211performCustomClearFocusMxy_nc0(requireActiveChild(focusTargetNode), i);
+        return m4223performCustomClearFocusMxy_nc0(requireActiveChild(focusTargetNode), i);
     }
 
     /* renamed from: performCustomClearFocus-Mxy_nc0  reason: not valid java name */
-    public static final CustomDestinationResult m4211performCustomClearFocusMxy_nc0(FocusTargetNode focusTargetNode, int i) {
+    public static final CustomDestinationResult m4223performCustomClearFocusMxy_nc0(FocusTargetNode focusTargetNode, int i) {
         int i2 = WhenMappings.$EnumSwitchMapping$0[focusTargetNode.getFocusState().ordinal()];
         if (i2 != 1) {
             if (i2 == 2) {
                 return CustomDestinationResult.Cancelled;
             }
             if (i2 == 3) {
-                CustomDestinationResult m4211performCustomClearFocusMxy_nc0 = m4211performCustomClearFocusMxy_nc0(requireActiveChild(focusTargetNode), i);
-                if (m4211performCustomClearFocusMxy_nc0 == CustomDestinationResult.None) {
-                    m4211performCustomClearFocusMxy_nc0 = null;
+                CustomDestinationResult m4223performCustomClearFocusMxy_nc0 = m4223performCustomClearFocusMxy_nc0(requireActiveChild(focusTargetNode), i);
+                if (m4223performCustomClearFocusMxy_nc0 == CustomDestinationResult.None) {
+                    m4223performCustomClearFocusMxy_nc0 = null;
                 }
-                return m4211performCustomClearFocusMxy_nc0 == null ? m4213performCustomExitMxy_nc0(focusTargetNode, i) : m4211performCustomClearFocusMxy_nc0;
+                return m4223performCustomClearFocusMxy_nc0 == null ? m4225performCustomExitMxy_nc0(focusTargetNode, i) : m4223performCustomClearFocusMxy_nc0;
             } else if (i2 != 4) {
                 throw new NoWhenBranchMatchedException();
             }
@@ -544,7 +544,7 @@ public final class FocusTransactionsKt {
     }
 
     /* renamed from: performCustomEnter-Mxy_nc0  reason: not valid java name */
-    private static final CustomDestinationResult m4212performCustomEnterMxy_nc0(FocusTargetNode focusTargetNode, int i) {
+    private static final CustomDestinationResult m4224performCustomEnterMxy_nc0(FocusTargetNode focusTargetNode, int i) {
         if (!focusTargetNode.isProcessingCustomEnter) {
             focusTargetNode.isProcessingCustomEnter = true;
             try {
@@ -562,7 +562,7 @@ public final class FocusTransactionsKt {
                     if (cancel == FocusRequester.Companion.getRedirect$ui_release()) {
                         return CustomDestinationResult.Redirected;
                     }
-                    return FocusRequester.m4200requestFocus3ESFkO8$default(cancel, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
+                    return FocusRequester.m4212requestFocus3ESFkO8$default(cancel, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
                 } else if (activeFocusTargetNode != activeFocusTargetNode2 && activeFocusTargetNode2 != null) {
                     FocusRequester redirect$ui_release = FocusRequester.Companion.getRedirect$ui_release();
                     if (redirect$ui_release == FocusRequester.Companion.getCancel()) {
@@ -571,7 +571,7 @@ public final class FocusTransactionsKt {
                     if (redirect$ui_release == FocusRequester.Companion.getRedirect$ui_release()) {
                         return CustomDestinationResult.Redirected;
                     }
-                    return FocusRequester.m4200requestFocus3ESFkO8$default(redirect$ui_release, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
+                    return FocusRequester.m4212requestFocus3ESFkO8$default(redirect$ui_release, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
                 }
             } finally {
                 focusTargetNode.isProcessingCustomEnter = false;
@@ -581,7 +581,7 @@ public final class FocusTransactionsKt {
     }
 
     /* renamed from: performCustomExit-Mxy_nc0  reason: not valid java name */
-    private static final CustomDestinationResult m4213performCustomExitMxy_nc0(FocusTargetNode focusTargetNode, int i) {
+    private static final CustomDestinationResult m4225performCustomExitMxy_nc0(FocusTargetNode focusTargetNode, int i) {
         if (!focusTargetNode.isProcessingCustomExit) {
             focusTargetNode.isProcessingCustomExit = true;
             try {
@@ -599,7 +599,7 @@ public final class FocusTransactionsKt {
                     if (cancel == FocusRequester.Companion.getRedirect$ui_release()) {
                         return CustomDestinationResult.Redirected;
                     }
-                    return FocusRequester.m4200requestFocus3ESFkO8$default(cancel, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
+                    return FocusRequester.m4212requestFocus3ESFkO8$default(cancel, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
                 } else if (activeFocusTargetNode != activeFocusTargetNode2 && activeFocusTargetNode2 != null) {
                     FocusRequester redirect$ui_release = FocusRequester.Companion.getRedirect$ui_release();
                     if (redirect$ui_release == FocusRequester.Companion.getCancel()) {
@@ -608,7 +608,7 @@ public final class FocusTransactionsKt {
                     if (redirect$ui_release == FocusRequester.Companion.getRedirect$ui_release()) {
                         return CustomDestinationResult.Redirected;
                     }
-                    return FocusRequester.m4200requestFocus3ESFkO8$default(redirect$ui_release, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
+                    return FocusRequester.m4212requestFocus3ESFkO8$default(redirect$ui_release, 0, 1, null) ? CustomDestinationResult.Redirected : CustomDestinationResult.RedirectCancelled;
                 }
             } finally {
                 focusTargetNode.isProcessingCustomExit = false;

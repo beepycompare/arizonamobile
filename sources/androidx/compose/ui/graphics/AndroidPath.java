@@ -39,19 +39,19 @@ public final class AndroidPath implements Path {
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: getFillType-Rg-k1Os  reason: not valid java name */
-    public int mo4426getFillTypeRgk1Os() {
+    public int mo4438getFillTypeRgk1Os() {
         if (this.internalPath.getFillType() == Path.FillType.EVEN_ODD) {
-            return PathFillType.Companion.m4831getEvenOddRgk1Os();
+            return PathFillType.Companion.m4843getEvenOddRgk1Os();
         }
-        return PathFillType.Companion.m4832getNonZeroRgk1Os();
+        return PathFillType.Companion.m4844getNonZeroRgk1Os();
     }
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: setFillType-oQ8Xj4U  reason: not valid java name */
-    public void mo4428setFillTypeoQ8Xj4U(int i) {
+    public void mo4440setFillTypeoQ8Xj4U(int i) {
         Path.FillType fillType;
         android.graphics.Path path = this.internalPath;
-        if (PathFillType.m4827equalsimpl0(i, PathFillType.Companion.m4831getEvenOddRgk1Os())) {
+        if (PathFillType.m4839equalsimpl0(i, PathFillType.Companion.m4843getEvenOddRgk1Os())) {
             fillType = Path.FillType.EVEN_ODD;
         } else {
             fillType = Path.FillType.WINDING;
@@ -184,14 +184,14 @@ public final class AndroidPath implements Path {
         }
         float[] fArr = this.radii;
         Intrinsics.checkNotNull(fArr);
-        fArr[0] = Float.intBitsToFloat((int) (roundRect.m4343getTopLeftCornerRadiuskKHJgLs() >> 32));
-        fArr[1] = Float.intBitsToFloat((int) (roundRect.m4343getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
-        fArr[2] = Float.intBitsToFloat((int) (roundRect.m4344getTopRightCornerRadiuskKHJgLs() >> 32));
-        fArr[3] = Float.intBitsToFloat((int) (roundRect.m4344getTopRightCornerRadiuskKHJgLs() & 4294967295L));
-        fArr[4] = Float.intBitsToFloat((int) (roundRect.m4342getBottomRightCornerRadiuskKHJgLs() >> 32));
-        fArr[5] = Float.intBitsToFloat((int) (roundRect.m4342getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
-        fArr[6] = Float.intBitsToFloat((int) (roundRect.m4341getBottomLeftCornerRadiuskKHJgLs() >> 32));
-        fArr[7] = Float.intBitsToFloat((int) (roundRect.m4341getBottomLeftCornerRadiuskKHJgLs() & 4294967295L));
+        fArr[0] = Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() >> 32));
+        fArr[1] = Float.intBitsToFloat((int) (roundRect.m4355getTopLeftCornerRadiuskKHJgLs() & 4294967295L));
+        fArr[2] = Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() >> 32));
+        fArr[3] = Float.intBitsToFloat((int) (roundRect.m4356getTopRightCornerRadiuskKHJgLs() & 4294967295L));
+        fArr[4] = Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() >> 32));
+        fArr[5] = Float.intBitsToFloat((int) (roundRect.m4354getBottomRightCornerRadiuskKHJgLs() & 4294967295L));
+        fArr[6] = Float.intBitsToFloat((int) (roundRect.m4353getBottomLeftCornerRadiuskKHJgLs() >> 32));
+        fArr[7] = Float.intBitsToFloat((int) (roundRect.m4353getBottomLeftCornerRadiuskKHJgLs() & 4294967295L));
         android.graphics.Path path = this.internalPath;
         RectF rectF2 = this.rectF;
         Intrinsics.checkNotNull(rectF2);
@@ -222,7 +222,7 @@ public final class AndroidPath implements Path {
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: addPath-Uv8p0NA  reason: not valid java name */
-    public void mo4425addPathUv8p0NA(Path path, long j) {
+    public void mo4437addPathUv8p0NA(Path path, long j) {
         android.graphics.Path path2 = this.internalPath;
         if (path instanceof AndroidPath) {
             path2.addPath(((AndroidPath) path).getInternalPath(), Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)));
@@ -248,7 +248,7 @@ public final class AndroidPath implements Path {
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: translate-k-4lQ0M  reason: not valid java name */
-    public void mo4430translatek4lQ0M(long j) {
+    public void mo4442translatek4lQ0M(long j) {
         android.graphics.Matrix matrix = this.mMatrix;
         if (matrix == null) {
             this.mMatrix = new android.graphics.Matrix();
@@ -267,13 +267,13 @@ public final class AndroidPath implements Path {
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: transform-58bKbWc  reason: not valid java name */
-    public void mo4429transform58bKbWc(float[] fArr) {
+    public void mo4441transform58bKbWc(float[] fArr) {
         if (this.mMatrix == null) {
             this.mMatrix = new android.graphics.Matrix();
         }
         android.graphics.Matrix matrix = this.mMatrix;
         Intrinsics.checkNotNull(matrix);
-        AndroidMatrixConversions_androidKt.m4405setFromEL8BTi8(matrix, fArr);
+        AndroidMatrixConversions_androidKt.m4417setFromEL8BTi8(matrix, fArr);
         android.graphics.Path path = this.internalPath;
         android.graphics.Matrix matrix2 = this.mMatrix;
         Intrinsics.checkNotNull(matrix2);
@@ -293,16 +293,16 @@ public final class AndroidPath implements Path {
 
     @Override // androidx.compose.ui.graphics.Path
     /* renamed from: op-N5in7k0  reason: not valid java name */
-    public boolean mo4427opN5in7k0(Path path, Path path2, int i) {
+    public boolean mo4439opN5in7k0(Path path, Path path2, int i) {
         Path.Op op;
-        if (PathOperation.m4837equalsimpl0(i, PathOperation.Companion.m4841getDifferenceb3I0S0c())) {
+        if (PathOperation.m4849equalsimpl0(i, PathOperation.Companion.m4853getDifferenceb3I0S0c())) {
             op = Path.Op.DIFFERENCE;
-        } else if (PathOperation.m4837equalsimpl0(i, PathOperation.Companion.m4842getIntersectb3I0S0c())) {
+        } else if (PathOperation.m4849equalsimpl0(i, PathOperation.Companion.m4854getIntersectb3I0S0c())) {
             op = Path.Op.INTERSECT;
-        } else if (PathOperation.m4837equalsimpl0(i, PathOperation.Companion.m4843getReverseDifferenceb3I0S0c())) {
+        } else if (PathOperation.m4849equalsimpl0(i, PathOperation.Companion.m4855getReverseDifferenceb3I0S0c())) {
             op = Path.Op.REVERSE_DIFFERENCE;
         } else {
-            op = PathOperation.m4837equalsimpl0(i, PathOperation.Companion.m4844getUnionb3I0S0c()) ? Path.Op.UNION : Path.Op.XOR;
+            op = PathOperation.m4849equalsimpl0(i, PathOperation.Companion.m4856getUnionb3I0S0c()) ? Path.Op.UNION : Path.Op.XOR;
         }
         android.graphics.Path path3 = this.internalPath;
         if (path instanceof AndroidPath) {

@@ -13,22 +13,22 @@ public final class TransformOrigin {
     private static final long Center = TransformOriginKt.TransformOrigin(0.5f, 0.5f);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TransformOrigin m4932boximpl(long j) {
+    public static final /* synthetic */ TransformOrigin m4944boximpl(long j) {
         return new TransformOrigin(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m4935constructorimpl(long j) {
+    public static long m4947constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4938equalsimpl(long j, Object obj) {
-        return (obj instanceof TransformOrigin) && j == ((TransformOrigin) obj).m4944unboximpl();
+    public static boolean m4950equalsimpl(long j, Object obj) {
+        return (obj instanceof TransformOrigin) && j == ((TransformOrigin) obj).m4956unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4939equalsimpl0(long j, long j2) {
+    public static final boolean m4951equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -36,29 +36,29 @@ public final class TransformOrigin {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4942hashCodeimpl(long j) {
+    public static int m4954hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4943toStringimpl(long j) {
+    public static String m4955toStringimpl(long j) {
         return "TransformOrigin(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4938equalsimpl(this.packedValue, obj);
+        return m4950equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m4942hashCodeimpl(this.packedValue);
+        return m4954hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m4943toStringimpl(this.packedValue);
+        return m4955toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m4944unboximpl() {
+    public final /* synthetic */ long m4956unboximpl() {
         return this.packedValue;
     }
 
@@ -67,28 +67,28 @@ public final class TransformOrigin {
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m4933component1impl(long j) {
-        return m4940getPivotFractionXimpl(j);
+    public static final float m4945component1impl(long j) {
+        return m4952getPivotFractionXimpl(j);
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m4934component2impl(long j) {
-        return m4941getPivotFractionYimpl(j);
+    public static final float m4946component2impl(long j) {
+        return m4953getPivotFractionYimpl(j);
     }
 
     /* renamed from: copy-zey9I6w$default  reason: not valid java name */
-    public static /* synthetic */ long m4937copyzey9I6w$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m4949copyzey9I6w$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = m4940getPivotFractionXimpl(j);
+            f = m4952getPivotFractionXimpl(j);
         }
         if ((i & 2) != 0) {
-            f2 = m4941getPivotFractionYimpl(j);
+            f2 = m4953getPivotFractionYimpl(j);
         }
-        return m4936copyzey9I6w(j, f, f2);
+        return m4948copyzey9I6w(j, f, f2);
     }
 
     /* renamed from: copy-zey9I6w  reason: not valid java name */
-    public static final long m4936copyzey9I6w(long j, float f, float f2) {
+    public static final long m4948copyzey9I6w(long j, float f, float f2) {
         return TransformOriginKt.TransformOrigin(f, f2);
     }
 
@@ -104,18 +104,18 @@ public final class TransformOrigin {
         }
 
         /* renamed from: getCenter-SzJe1aQ  reason: not valid java name */
-        public final long m4945getCenterSzJe1aQ() {
+        public final long m4957getCenterSzJe1aQ() {
             return TransformOrigin.Center;
         }
     }
 
     /* renamed from: getPivotFractionX-impl  reason: not valid java name */
-    public static final float m4940getPivotFractionXimpl(long j) {
+    public static final float m4952getPivotFractionXimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getPivotFractionY-impl  reason: not valid java name */
-    public static final float m4941getPivotFractionYimpl(long j) {
+    public static final float m4953getPivotFractionYimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

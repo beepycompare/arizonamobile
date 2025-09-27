@@ -22,7 +22,7 @@ public class AdRevenue {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final BigDecimal f189a;
+        private final BigDecimal f190a;
         private final Currency b;
         private AdType c;
         private String d;
@@ -38,7 +38,7 @@ public class AdRevenue {
         }
 
         public AdRevenue build() {
-            return new AdRevenue(this.f189a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
+            return new AdRevenue(this.f190a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
         }
 
         public Builder withAdNetwork(String str) {
@@ -82,7 +82,7 @@ public class AdRevenue {
         }
 
         private Builder(BigDecimal bigDecimal, Currency currency) {
-            this.f189a = bigDecimal;
+            this.f190a = bigDecimal;
             this.b = currency;
         }
     }

@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class PathKt {
     public static final Path copy(Path path) {
         Path Path = AndroidPath_androidKt.Path();
-        Path.m4819addPathUv8p0NA$default(Path, path, 0L, 2, null);
+        Path.m4831addPathUv8p0NA$default(Path, path, 0L, 2, null);
         return Path;
     }
 }

@@ -14,22 +14,22 @@ public final class SkippableUpdater<T> {
     private final Composer composer;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ SkippableUpdater m3825boximpl(Composer composer) {
+    public static final /* synthetic */ SkippableUpdater m3837boximpl(Composer composer) {
         return new SkippableUpdater(composer);
     }
 
     /* renamed from: constructor-impl */
-    public static <T> Composer m3826constructorimpl(Composer composer) {
+    public static <T> Composer m3838constructorimpl(Composer composer) {
         return composer;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m3827equalsimpl(Composer composer, Object obj) {
-        return (obj instanceof SkippableUpdater) && Intrinsics.areEqual(composer, ((SkippableUpdater) obj).m3832unboximpl());
+    public static boolean m3839equalsimpl(Composer composer, Object obj) {
+        return (obj instanceof SkippableUpdater) && Intrinsics.areEqual(composer, ((SkippableUpdater) obj).m3844unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m3828equalsimpl0(Composer composer, Composer composer2) {
+    public static final boolean m3840equalsimpl0(Composer composer, Composer composer2) {
         return Intrinsics.areEqual(composer, composer2);
     }
 
@@ -37,29 +37,29 @@ public final class SkippableUpdater<T> {
     }
 
     /* renamed from: hashCode-impl */
-    public static int m3829hashCodeimpl(Composer composer) {
+    public static int m3841hashCodeimpl(Composer composer) {
         return composer.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m3830toStringimpl(Composer composer) {
+    public static String m3842toStringimpl(Composer composer) {
         return "SkippableUpdater(composer=" + composer + ')';
     }
 
     public boolean equals(Object obj) {
-        return m3827equalsimpl(this.composer, obj);
+        return m3839equalsimpl(this.composer, obj);
     }
 
     public int hashCode() {
-        return m3829hashCodeimpl(this.composer);
+        return m3841hashCodeimpl(this.composer);
     }
 
     public String toString() {
-        return m3830toStringimpl(this.composer);
+        return m3842toStringimpl(this.composer);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ Composer m3832unboximpl() {
+    public final /* synthetic */ Composer m3844unboximpl() {
         return this.composer;
     }
 
@@ -68,9 +68,9 @@ public final class SkippableUpdater<T> {
     }
 
     /* renamed from: update-impl */
-    public static final void m3831updateimpl(Composer composer, Function1<? super Updater<T>, Unit> function1) {
+    public static final void m3843updateimpl(Composer composer, Function1<? super Updater<T>, Unit> function1) {
         composer.startReplaceableGroup(509942095);
-        function1.invoke(Updater.m3854boximpl(Updater.m3855constructorimpl(composer)));
+        function1.invoke(Updater.m3866boximpl(Updater.m3867constructorimpl(composer)));
         composer.endReplaceableGroup();
     }
 }

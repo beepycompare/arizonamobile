@@ -28,8 +28,8 @@ public final class DrawCache {
     private ImageBitmap mCachedImage;
     private Density scopeDensity;
     private LayoutDirection layoutDirection = LayoutDirection.Ltr;
-    private long size = IntSize.Companion.m7427getZeroYbymL2g();
-    private int config = ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ();
+    private long size = IntSize.Companion.m7440getZeroYbymL2g();
+    private int config = ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ();
     private final CanvasDrawScope cacheScope = new CanvasDrawScope();
 
     public static /* synthetic */ void getMCachedImage$annotations() {
@@ -44,13 +44,13 @@ public final class DrawCache {
     }
 
     /* renamed from: drawCachedImage-FqjB98A  reason: not valid java name */
-    public final void m5266drawCachedImageFqjB98A(int i, long j, Density density, LayoutDirection layoutDirection, Function1<? super DrawScope, Unit> function1) {
+    public final void m5278drawCachedImageFqjB98A(int i, long j, Density density, LayoutDirection layoutDirection, Function1<? super DrawScope, Unit> function1) {
         this.scopeDensity = density;
         this.layoutDirection = layoutDirection;
         ImageBitmap imageBitmap = this.mCachedImage;
         Canvas canvas = this.cachedCanvas;
-        if (imageBitmap == null || canvas == null || ((int) (j >> 32)) > imageBitmap.getWidth() || ((int) (j & 4294967295L)) > imageBitmap.getHeight() || !ImageBitmapConfig.m4764equalsimpl0(this.config, i)) {
-            imageBitmap = ImageBitmapKt.m4774ImageBitmapx__hDU$default((int) (j >> 32), (int) (4294967295L & j), i, false, null, 24, null);
+        if (imageBitmap == null || canvas == null || ((int) (j >> 32)) > imageBitmap.getWidth() || ((int) (j & 4294967295L)) > imageBitmap.getHeight() || !ImageBitmapConfig.m4776equalsimpl0(this.config, i)) {
+            imageBitmap = ImageBitmapKt.m4786ImageBitmapx__hDU$default((int) (j >> 32), (int) (4294967295L & j), i, false, null, 24, null);
             canvas = CanvasKt.Canvas(imageBitmap);
             this.mCachedImage = imageBitmap;
             this.cachedCanvas = canvas;
@@ -58,17 +58,17 @@ public final class DrawCache {
         }
         this.size = j;
         CanvasDrawScope canvasDrawScope = this.cacheScope;
-        long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(j);
+        long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(j);
         CanvasDrawScope.DrawParams drawParams = canvasDrawScope.getDrawParams();
         Density component1 = drawParams.component1();
         LayoutDirection component2 = drawParams.component2();
         Canvas component3 = drawParams.component3();
-        long m5033component4NHjbRc = drawParams.m5033component4NHjbRc();
+        long m5045component4NHjbRc = drawParams.m5045component4NHjbRc();
         CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope.getDrawParams();
         drawParams2.setDensity(density);
         drawParams2.setLayoutDirection(layoutDirection);
         drawParams2.setCanvas(canvas);
-        drawParams2.m5036setSizeuvyYCjk(m7434toSizeozmzZPI);
+        drawParams2.m5048setSizeuvyYCjk(m7447toSizeozmzZPI);
         canvas.save();
         CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
         clear(canvasDrawScope2);
@@ -78,7 +78,7 @@ public final class DrawCache {
         drawParams3.setDensity(component1);
         drawParams3.setLayoutDirection(component2);
         drawParams3.setCanvas(component3);
-        drawParams3.m5036setSizeuvyYCjk(m5033component4NHjbRc);
+        drawParams3.m5048setSizeuvyYCjk(m5045component4NHjbRc);
         imageBitmap.prepareToDraw();
     }
 
@@ -97,10 +97,10 @@ public final class DrawCache {
         if (!(imageBitmap != null)) {
             InlineClassHelperKt.throwIllegalStateException("drawCachedImage must be invoked first before attempting to draw the result into another destination");
         }
-        DrawScope.m5099drawImageAZ2fEMs$default(drawScope, imageBitmap, 0L, this.size, 0L, 0L, f, null, colorFilter, 0, 0, 858, null);
+        DrawScope.m5111drawImageAZ2fEMs$default(drawScope, imageBitmap, 0L, this.size, 0L, 0L, f, null, colorFilter, 0, 0, 858, null);
     }
 
     private final void clear(DrawScope drawScope) {
-        DrawScope.m5110drawRectnJ9OG0$default(drawScope, Color.Companion.m4563getBlack0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4451getClear0nO6VwU(), 62, null);
+        DrawScope.m5122drawRectnJ9OG0$default(drawScope, Color.Companion.m4575getBlack0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 62, null);
     }
 }

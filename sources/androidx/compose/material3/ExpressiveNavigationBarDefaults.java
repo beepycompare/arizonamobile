@@ -45,8 +45,8 @@ public final class ExpressiveNavigationBarDefaults {
     }
 
     /* renamed from: getArrangement-Ebr7WPU  reason: not valid java name */
-    public final int m2205getArrangementEbr7WPU() {
-        return NavigationBarArrangement.Companion.m2368getEqualWeightEbr7WPU();
+    public final int m2215getArrangementEbr7WPU() {
+        return NavigationBarArrangement.Companion.m2378getEqualWeightEbr7WPU();
     }
 
     public final WindowInsets getWindowInsets(Composer composer, int i) {
@@ -54,11 +54,11 @@ public final class ExpressiveNavigationBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1317880490, i, -1, "androidx.compose.material3.ExpressiveNavigationBarDefaults.<get-windowInsets> (ExpressiveNavigationBar.kt:259)");
         }
-        WindowInsets m912onlybOOhFvg = WindowInsetsKt.m912onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m926plusgK_yJZ4(WindowInsetsSides.Companion.m936getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m934getBottomJoeWqyM()));
+        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m946getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m944getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m912onlybOOhFvg;
+        return m922onlybOOhFvg;
     }
 }

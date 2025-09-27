@@ -39,7 +39,7 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void mo5849onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo5862onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         boolean z;
         boolean z2;
         boolean z3;
@@ -186,9 +186,9 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
         }
         LayoutCoordinates layoutCoordinates$ui_release = getLayoutCoordinates$ui_release();
         if (layoutCoordinates$ui_release != null) {
-            long mo5965localToRootMKHz9U = layoutCoordinates$ui_release.mo5965localToRootMKHz9U(Offset.Companion.m4309getZeroF1C5BW0());
+            long mo5978localToRootMKHz9U = layoutCoordinates$ui_release.mo5978localToRootMKHz9U(Offset.Companion.m4321getZeroF1C5BW0());
             final PointerInteropFilter pointerInteropFilter = this.this$0;
-            PointerInteropUtils_androidKt.m5885toMotionEventScoped4ec7I(pointerEvent, mo5965localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$dispatchToView$2
+            PointerInteropUtils_androidKt.m5898toMotionEventScoped4ec7I(pointerEvent, mo5978localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$dispatchToView$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -247,9 +247,9 @@ public final class PointerInteropFilter$pointerInputFilter$1 extends PointerInpu
         if (this.state == PointerInteropFilter.DispatchToViewState.Dispatching) {
             LayoutCoordinates layoutCoordinates$ui_release = getLayoutCoordinates$ui_release();
             if (layoutCoordinates$ui_release != null) {
-                long mo5965localToRootMKHz9U = layoutCoordinates$ui_release.mo5965localToRootMKHz9U(Offset.Companion.m4309getZeroF1C5BW0());
+                long mo5978localToRootMKHz9U = layoutCoordinates$ui_release.mo5978localToRootMKHz9U(Offset.Companion.m4321getZeroF1C5BW0());
                 final PointerInteropFilter pointerInteropFilter = this.this$0;
-                PointerInteropUtils_androidKt.m5884toCancelMotionEventScoped4ec7I(pointerEvent, mo5965localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$stopDispatching$1
+                PointerInteropUtils_androidKt.m5897toCancelMotionEventScoped4ec7I(pointerEvent, mo5978localToRootMKHz9U, new Function1<MotionEvent, Unit>() { // from class: androidx.compose.ui.input.pointer.PointerInteropFilter$pointerInputFilter$1$stopDispatching$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(1);

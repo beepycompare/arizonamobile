@@ -215,31 +215,18 @@ public final class MainEntrench extends Hilt_MainEntrench {
     public MainEntrench() {
         final MainEntrench mainEntrench = this;
         this.mainViewModel$delegate = new ViewModelLazy(Reflection.getOrCreateKotlinClass(MainViewModel.class), new Function0<ViewModelStore>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$2
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
                 return ComponentActivity.this.getViewModelStore();
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$1
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
                 return ComponentActivity.this.getDefaultViewModelProviderFactory();
             }
         }, new Function0<CreationExtras>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$3
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final CreationExtras invoke() {
@@ -249,31 +236,18 @@ public final class MainEntrench extends Hilt_MainEntrench {
             }
         });
         this.notificationsViewModel$delegate = new ViewModelLazy(Reflection.getOrCreateKotlinClass(NotificationsViewModel.class), new Function0<ViewModelStore>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$5
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
                 return ComponentActivity.this.getViewModelStore();
             }
         }, new Function0<ViewModelProvider.Factory>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$4
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
                 return ComponentActivity.this.getDefaultViewModelProviderFactory();
             }
         }, new Function0<CreationExtras>() { // from class: com.arizona.launcher.MainEntrench$special$$inlined$viewModels$default$6
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final CreationExtras invoke() {
@@ -383,20 +357,20 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (companion2 != null) {
                 companion2.start();
             }
-            final SharedPreferences sharedPreferences = getSharedPreferences("myAppPreference", 0);
+            final SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             saveGameType();
-            String string = sharedPreferences.getString("token", "");
+            String string = defaultSharedPreferences.getString("token", "");
             if (string != null && string.length() == 0) {
                 getCurrentToken(new Function1() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
                         Unit onCreate$lambda$4;
-                        onCreate$lambda$4 = MainEntrench.onCreate$lambda$4(sharedPreferences, (String) obj);
+                        onCreate$lambda$4 = MainEntrench.onCreate$lambda$4(defaultSharedPreferences, (String) obj);
                         return onCreate$lambda$4;
                     }
                 });
             }
-            String string2 = sharedPreferences.getString("referrerUrl", "");
+            String string2 = defaultSharedPreferences.getString("referrerUrl", "");
             if (string2 != null && string2.length() == 0) {
                 initTracking();
             }
@@ -406,7 +380,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.5.2 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.5.5 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -495,7 +469,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C248@9538L269,248@9519L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C248@9508L269,248@9489L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -519,7 +493,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C249@9556L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C249@9526L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -543,18 +517,18 @@ public final class MainEntrench extends Hilt_MainEntrench {
             } else {
                 composer.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
-            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
+            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C250@9585L8,254@9710L43,252@9615L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C250@9555L8,254@9680L43,252@9585L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -581,7 +555,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)276@10215L7,277@10272L7,279@10302L48,281@10393L464,281@10360L497,296@10902L10,295@10867L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)276@10185L7,277@10242L7,279@10272L48,281@10363L464,281@10330L497,296@10872L10,295@10837L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
@@ -636,7 +610,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7251constructorimpl(1)), null, startRestartGroup, 48, 4);
+            AndroidView_androidKt.AndroidView(rememberedValue3, SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Dp.m7264constructorimpl(1)), null, startRestartGroup, 48, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1613,7 +1587,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         JSONObject put = new JSONObject().put("server", new JSONObject().put("id", defaultSharedPreferences != null ? Integer.valueOf(defaultSharedPreferences.getInt(SettingsConstants.PROJECT_ID, 0)) : null).put("serverid", 0));
         JSONObject put2 = new JSONObject().put("ip", ConnectionHolder.INSTANCE.getSettingsData().getIp());
         Integer intOrNull = StringsKt.toIntOrNull(ConnectionHolder.INSTANCE.getSettingsData().getPort());
-        bufferedWriter.write(jSONObject.put("client", put.put("test", put2.put("port", intOrNull != null ? intOrNull.intValue() : 1).put("pass", ConnectionHolder.INSTANCE.getSettingsData().getPassword()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
+        bufferedWriter.write(jSONObject.put("client", put.put("test", put2.put("port", intOrNull != null ? intOrNull.intValue() : 1).put("pass", ConnectionHolder.INSTANCE.getSettingsData().getPassword()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
         bufferedWriter.close();
         startActivity(new Intent(mainEntrench, GTASA.class));
     }
@@ -1702,7 +1676,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
         try {
-            bufferedWriter.write(new JSONObject().put("client", new JSONObject().put("server", new JSONObject().put("id", serverType2.getBackendLaunchCode()).put("serverid", ConnectionHolder.INSTANCE.getSelectedServer().getNumber()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
+            bufferedWriter.write(new JSONObject().put("client", new JSONObject().put("server", new JSONObject().put("id", serverType2.getBackendLaunchCode()).put("serverid", ConnectionHolder.INSTANCE.getSelectedServer().getNumber()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
             bufferedWriter.close();
         } catch (Exception e2) {
             e2.printStackTrace();

@@ -6,22 +6,22 @@ import org.json.JSONObject;
 public final class C0580s9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Do f1079a;
+    public final Do f1080a;
 
     public C0580s9(Do r1) {
-        this.f1079a = r1;
+        this.f1080a = r1;
     }
 
     public final void a(int i, long j) {
         JSONObject optJSONObject;
-        Do r0 = this.f1079a;
+        Do r0 = this.f1080a;
         synchronized (r0) {
-            optJSONObject = r0.f417a.a().optJSONObject("numbers_of_type");
+            optJSONObject = r0.f418a.a().optJSONObject("numbers_of_type");
         }
         if (optJSONObject == null) {
             optJSONObject = new JSONObject();
         }
         optJSONObject.put(String.valueOf(i), j);
-        this.f1079a.a(optJSONObject);
+        this.f1080a.a(optJSONObject);
     }
 }

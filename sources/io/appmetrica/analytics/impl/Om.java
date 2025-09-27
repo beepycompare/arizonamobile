@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class Om {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Nm f614a;
+    public final Nm f615a;
 
     public Om(Nm nm) {
-        this.f614a = nm;
+        this.f615a = nm;
     }
 
     public Om() {

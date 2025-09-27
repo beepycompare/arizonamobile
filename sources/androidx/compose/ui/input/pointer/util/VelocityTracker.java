@@ -27,16 +27,16 @@ public final class VelocityTracker {
         this.strategy = strategy;
         this.xVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
         this.yVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
-        this.currentPointerPositionAccumulator = Offset.Companion.m4309getZeroF1C5BW0();
+        this.currentPointerPositionAccumulator = Offset.Companion.m4321getZeroF1C5BW0();
     }
 
     /* renamed from: getCurrentPointerPositionAccumulator-F1C5BW0$ui_release  reason: not valid java name */
-    public final long m5926getCurrentPointerPositionAccumulatorF1C5BW0$ui_release() {
+    public final long m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release() {
         return this.currentPointerPositionAccumulator;
     }
 
     /* renamed from: setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release  reason: not valid java name */
-    public final void m5927setCurrentPointerPositionAccumulatork4lQ0M$ui_release(long j) {
+    public final void m5940setCurrentPointerPositionAccumulatork4lQ0M$ui_release(long j) {
         this.currentPointerPositionAccumulator = j;
     }
 
@@ -49,22 +49,22 @@ public final class VelocityTracker {
     }
 
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public final void m5923addPositionUv8p0NA(long j, long j2) {
+    public final void m5936addPositionUv8p0NA(long j, long j2) {
         this.xVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 >> 32)));
         this.yVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m5924calculateVelocity9UxMQ8M() {
-        return m5925calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
+    public final long m5937calculateVelocity9UxMQ8M() {
+        return m5938calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
     }
 
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public final long m5925calculateVelocityAH228Gc(long j) {
-        if (!(Velocity.m7489getXimpl(j) > 0.0f && Velocity.m7490getYimpl(j) > 0.0f)) {
-            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m7496toStringimpl(j)));
+    public final long m5938calculateVelocityAH228Gc(long j) {
+        if (!(Velocity.m7502getXimpl(j) > 0.0f && Velocity.m7503getYimpl(j) > 0.0f)) {
+            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m7509toStringimpl(j)));
         }
-        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m7489getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m7490getYimpl(j)));
+        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m7502getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m7503getYimpl(j)));
     }
 
     public final void resetTracking() {

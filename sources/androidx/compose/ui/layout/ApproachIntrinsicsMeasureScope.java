@@ -31,14 +31,14 @@ public final class ApproachIntrinsicsMeasureScope implements ApproachMeasureScop
 
     @Override // androidx.compose.ui.layout.ApproachIntrinsicMeasureScope
     /* renamed from: getLookaheadConstraints-msEJaDk */
-    public long mo5931getLookaheadConstraintsmsEJaDk() {
-        return this.$$delegate_0.mo5931getLookaheadConstraintsmsEJaDk();
+    public long mo5944getLookaheadConstraintsmsEJaDk() {
+        return this.$$delegate_0.mo5944getLookaheadConstraintsmsEJaDk();
     }
 
     @Override // androidx.compose.ui.layout.ApproachIntrinsicMeasureScope
     /* renamed from: getLookaheadSize-YbymL2g */
-    public long mo5932getLookaheadSizeYbymL2g() {
-        return this.$$delegate_0.mo5932getLookaheadSizeYbymL2g();
+    public long mo5945getLookaheadSizeYbymL2g() {
+        return this.$$delegate_0.mo5945getLookaheadSizeYbymL2g();
     }
 
     @Override // androidx.compose.ui.layout.IntrinsicMeasureScope
@@ -48,50 +48,50 @@ public final class ApproachIntrinsicsMeasureScope implements ApproachMeasureScop
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx--R2X_6o */
-    public int mo412roundToPxR2X_6o(long j) {
-        return this.$$delegate_0.mo412roundToPxR2X_6o(j);
+    public int mo422roundToPxR2X_6o(long j) {
+        return this.$$delegate_0.mo422roundToPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx-0680j_4 */
-    public int mo413roundToPx0680j_4(float f) {
-        return this.$$delegate_0.mo413roundToPx0680j_4(f);
+    public int mo423roundToPx0680j_4(float f) {
+        return this.$$delegate_0.mo423roundToPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo414toDpGaN1DYA(long j) {
-        return this.$$delegate_0.mo414toDpGaN1DYA(j);
+    public float mo424toDpGaN1DYA(long j) {
+        return this.$$delegate_0.mo424toDpGaN1DYA(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo415toDpu2uoSUM(float f) {
-        return this.$$delegate_0.mo415toDpu2uoSUM(f);
+    public float mo425toDpu2uoSUM(float f) {
+        return this.$$delegate_0.mo425toDpu2uoSUM(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo416toDpu2uoSUM(int i) {
-        return this.$$delegate_0.mo416toDpu2uoSUM(i);
+    public float mo426toDpu2uoSUM(int i) {
+        return this.$$delegate_0.mo426toDpu2uoSUM(i);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDpSize-k-rfVVM */
-    public long mo417toDpSizekrfVVM(long j) {
-        return this.$$delegate_0.mo417toDpSizekrfVVM(j);
+    public long mo427toDpSizekrfVVM(long j) {
+        return this.$$delegate_0.mo427toDpSizekrfVVM(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx--R2X_6o */
-    public float mo418toPxR2X_6o(long j) {
-        return this.$$delegate_0.mo418toPxR2X_6o(j);
+    public float mo428toPxR2X_6o(long j) {
+        return this.$$delegate_0.mo428toPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx-0680j_4 */
-    public float mo419toPx0680j_4(float f) {
-        return this.$$delegate_0.mo419toPx0680j_4(f);
+    public float mo429toPx0680j_4(float f) {
+        return this.$$delegate_0.mo429toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -101,26 +101,26 @@ public final class ApproachIntrinsicsMeasureScope implements ApproachMeasureScop
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSize-XkaWNTQ */
-    public long mo420toSizeXkaWNTQ(long j) {
-        return this.$$delegate_0.mo420toSizeXkaWNTQ(j);
+    public long mo430toSizeXkaWNTQ(long j) {
+        return this.$$delegate_0.mo430toSizeXkaWNTQ(j);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo421toSp0xMU5do(float f) {
-        return this.$$delegate_0.mo421toSp0xMU5do(f);
+    public long mo431toSp0xMU5do(float f) {
+        return this.$$delegate_0.mo431toSp0xMU5do(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo422toSpkPz2Gy4(float f) {
-        return this.$$delegate_0.mo422toSpkPz2Gy4(f);
+    public long mo432toSpkPz2Gy4(float f) {
+        return this.$$delegate_0.mo432toSpkPz2Gy4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo423toSpkPz2Gy4(int i) {
-        return this.$$delegate_0.mo423toSpkPz2Gy4(i);
+    public long mo433toSpkPz2Gy4(int i) {
+        return this.$$delegate_0.mo433toSpkPz2Gy4(i);
     }
 
     public ApproachIntrinsicsMeasureScope(ApproachIntrinsicMeasureScope approachIntrinsicMeasureScope, LayoutDirection layoutDirection) {

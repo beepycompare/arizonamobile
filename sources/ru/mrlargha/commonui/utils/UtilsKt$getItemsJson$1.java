@@ -20,7 +20,7 @@ import kotlinx.coroutines.Dispatchers;
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$getItemsJson$1", f = "Utils.kt", i = {0, 0, 0}, l = {369}, m = "invokeSuspend", n = {"fileName", "jsonFile", "json"}, s = {"L$0", "L$1", "L$2"}, v = 1)
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ File $baseDir;
     final /* synthetic */ Context $context;
@@ -93,7 +93,7 @@ public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Funct
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$getItemsJson$1$1", f = "Utils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: ru.mrlargha.commonui.utils.UtilsKt$getItemsJson$1$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ File $baseDir;
         final /* synthetic */ Context $context;

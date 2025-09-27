@@ -16,49 +16,49 @@ public final class ColorMatrix {
     private final float[] values;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ColorMatrix m4592boximpl(float[] fArr) {
+    public static final /* synthetic */ ColorMatrix m4604boximpl(float[] fArr) {
         return new ColorMatrix(fArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float[] m4593constructorimpl(float[] fArr) {
+    public static float[] m4605constructorimpl(float[] fArr) {
         return fArr;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4597equalsimpl(float[] fArr, Object obj) {
-        return (obj instanceof ColorMatrix) && Intrinsics.areEqual(fArr, ((ColorMatrix) obj).m4612unboximpl());
+    public static boolean m4609equalsimpl(float[] fArr, Object obj) {
+        return (obj instanceof ColorMatrix) && Intrinsics.areEqual(fArr, ((ColorMatrix) obj).m4624unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4598equalsimpl0(float[] fArr, float[] fArr2) {
+    public static final boolean m4610equalsimpl0(float[] fArr, float[] fArr2) {
         return Intrinsics.areEqual(fArr, fArr2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4600hashCodeimpl(float[] fArr) {
+    public static int m4612hashCodeimpl(float[] fArr) {
         return Arrays.hashCode(fArr);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4611toStringimpl(float[] fArr) {
+    public static String m4623toStringimpl(float[] fArr) {
         return "ColorMatrix(values=" + Arrays.toString(fArr) + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4597equalsimpl(this.values, obj);
+        return m4609equalsimpl(this.values, obj);
     }
 
     public int hashCode() {
-        return m4600hashCodeimpl(this.values);
+        return m4612hashCodeimpl(this.values);
     }
 
     public String toString() {
-        return m4611toStringimpl(this.values);
+        return m4623toStringimpl(this.values);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float[] m4612unboximpl() {
+    public final /* synthetic */ float[] m4624unboximpl() {
         return this.values;
     }
 
@@ -71,25 +71,25 @@ public final class ColorMatrix {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ float[] m4594constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ float[] m4606constructorimpl$default(float[] fArr, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             fArr = new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f};
         }
-        return m4593constructorimpl(fArr);
+        return m4605constructorimpl(fArr);
     }
 
     /* renamed from: get-impl  reason: not valid java name */
-    public static final float m4599getimpl(float[] fArr, int i, int i2) {
+    public static final float m4611getimpl(float[] fArr, int i, int i2) {
         return fArr[(i * 5) + i2];
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m4603setimpl(float[] fArr, int i, int i2, float f) {
+    public static final void m4615setimpl(float[] fArr, int i, int i2, float f) {
         fArr[(i * 5) + i2] = f;
     }
 
     /* renamed from: set-jHG-Opc  reason: not valid java name */
-    public static final void m4604setjHGOpc(float[] fArr, float[] fArr2) {
+    public static final void m4616setjHGOpc(float[] fArr, float[] fArr2) {
         if (fArr.length >= 20 && fArr2.length >= 20) {
             fArr[0] = fArr2[0];
             fArr[1] = fArr2[1];
@@ -115,7 +115,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: timesAssign-jHG-Opc  reason: not valid java name */
-    public static final void m4610timesAssignjHGOpc(float[] fArr, float[] fArr2) {
+    public static final void m4622timesAssignjHGOpc(float[] fArr, float[] fArr2) {
         if (fArr.length < 20) {
             return;
         }
@@ -192,7 +192,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: setToSaturation-impl  reason: not valid java name */
-    public static final void m4608setToSaturationimpl(float[] fArr, float f) {
+    public static final void m4620setToSaturationimpl(float[] fArr, float f) {
         if (fArr.length < 20) {
             return;
         }
@@ -232,7 +232,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: setToScale-impl  reason: not valid java name */
-    public static final void m4609setToScaleimpl(float[] fArr, float f, float f2, float f3, float f4) {
+    public static final void m4621setToScaleimpl(float[] fArr, float f, float f2, float f3, float f4) {
         if (fArr.length < 20) {
             return;
         }
@@ -263,7 +263,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: setToRotateRed-impl  reason: not valid java name */
-    public static final void m4607setToRotateRedimpl(float[] fArr, float f) {
+    public static final void m4619setToRotateRedimpl(float[] fArr, float f) {
         if (fArr.length < 20) {
             return;
         }
@@ -304,7 +304,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: setToRotateGreen-impl  reason: not valid java name */
-    public static final void m4606setToRotateGreenimpl(float[] fArr, float f) {
+    public static final void m4618setToRotateGreenimpl(float[] fArr, float f) {
         if (fArr.length < 20) {
             return;
         }
@@ -345,7 +345,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: setToRotateBlue-impl  reason: not valid java name */
-    public static final void m4605setToRotateBlueimpl(float[] fArr, float f) {
+    public static final void m4617setToRotateBlueimpl(float[] fArr, float f) {
         if (fArr.length < 20) {
             return;
         }
@@ -386,7 +386,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: convertRgbToYuv-impl  reason: not valid java name */
-    public static final void m4595convertRgbToYuvimpl(float[] fArr) {
+    public static final void m4607convertRgbToYuvimpl(float[] fArr) {
         if (fArr.length < 20) {
             return;
         }
@@ -422,7 +422,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: convertYuvToRgb-impl  reason: not valid java name */
-    public static final void m4596convertYuvToRgbimpl(float[] fArr) {
+    public static final void m4608convertYuvToRgbimpl(float[] fArr) {
         if (fArr.length < 20) {
             return;
         }
@@ -456,7 +456,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: reset-impl  reason: not valid java name */
-    public static final void m4601resetimpl(float[] fArr) {
+    public static final void m4613resetimpl(float[] fArr) {
         fArr[0] = 1.0f;
         fArr[1] = 0.0f;
         fArr[2] = 0.0f;
@@ -480,7 +480,7 @@ public final class ColorMatrix {
     }
 
     /* renamed from: rotateInternal-impl  reason: not valid java name */
-    private static final void m4602rotateInternalimpl(float[] fArr, float f, Function2<? super Float, ? super Float, Unit> function2) {
+    private static final void m4614rotateInternalimpl(float[] fArr, float f, Function2<? super Float, ? super Float, Unit> function2) {
         fArr[0] = 1.0f;
         fArr[1] = 0.0f;
         fArr[2] = 0.0f;

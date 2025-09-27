@@ -45,7 +45,7 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
-    public void mo438onDragStartedk4lQ0M(long j) {
+    public void mo448onDragStartedk4lQ0M(long j) {
     }
 
     public Scrollable2DNode(Scrollable2DState scrollable2DState, OverscrollEffect overscrollEffect, FlingBehavior flingBehavior, boolean z, MutableInteractionSource mutableInteractionSource) {
@@ -86,7 +86,7 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStopped-TH1AsA0 */
-    public void mo439onDragStoppedTH1AsA0(long j) {
+    public void mo449onDragStoppedTH1AsA0(long j) {
         BuildersKt__Builders_commonKt.launch$default(this.nestedScrollDispatcher.getCoroutineScope(), null, null, new Scrollable2DNode$onDragStopped$1(this, j, null), 3, null);
     }
 
@@ -134,12 +134,12 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode, androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         for (int i = 0; i < size; i++) {
             if (getCanDrag().invoke(changes.get(i)).booleanValue()) {
-                super.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+                super.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
                 return;
             }
         }

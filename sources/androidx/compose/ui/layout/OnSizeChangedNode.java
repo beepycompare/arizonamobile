@@ -17,7 +17,7 @@ final class OnSizeChangedNode extends Modifier.Node implements LayoutAwareModifi
     public OnSizeChangedNode(Function1<? super IntSize, Unit> function1) {
         this.onSizeChanged = function1;
         long j = Integer.MIN_VALUE;
-        this.previousSize = IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
+        this.previousSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -28,16 +28,16 @@ final class OnSizeChangedNode extends Modifier.Node implements LayoutAwareModifi
     public final void update(Function1<? super IntSize, Unit> function1) {
         this.onSizeChanged = function1;
         long j = Integer.MIN_VALUE;
-        this.previousSize = IntSize.m7417constructorimpl((j & 4294967295L) | (j << 32));
+        this.previousSize = IntSize.m7430constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo408onRemeasuredozmzZPI(long j) {
-        if (IntSize.m7420equalsimpl0(this.previousSize, j)) {
+    public void mo418onRemeasuredozmzZPI(long j) {
+        if (IntSize.m7433equalsimpl0(this.previousSize, j)) {
             return;
         }
-        this.onSizeChanged.invoke(IntSize.m7414boximpl(j));
+        this.onSizeChanged.invoke(IntSize.m7427boximpl(j));
         this.previousSize = j;
     }
 }

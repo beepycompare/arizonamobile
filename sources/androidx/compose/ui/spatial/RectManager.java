@@ -98,14 +98,14 @@ public final class RectManager {
     }
 
     /* renamed from: updateOffsets-gTq6Wqs  reason: not valid java name */
-    public final void m6483updateOffsetsgTq6Wqs(long j, long j2, float[] fArr, int i, int i2) {
-        int m6486analyzeComponents58bKbWc;
-        m6486analyzeComponents58bKbWc = RectManagerKt.m6486analyzeComponents58bKbWc(fArr);
+    public final void m6496updateOffsetsgTq6Wqs(long j, long j2, float[] fArr, int i, int i2) {
+        int m6499analyzeComponents58bKbWc;
+        m6499analyzeComponents58bKbWc = RectManagerKt.m6499analyzeComponents58bKbWc(fArr);
         ThrottledCallbacks throttledCallbacks = this.throttledCallbacks;
-        if ((m6486analyzeComponents58bKbWc & 2) != 0) {
+        if ((m6499analyzeComponents58bKbWc & 2) != 0) {
             fArr = null;
         }
-        this.isScreenOrWindowDirty = throttledCallbacks.m6500updateOffsetsLDcG7Xg(j, j2, fArr, i, i2) || this.isScreenOrWindowDirty;
+        this.isScreenOrWindowDirty = throttledCallbacks.m6513updateOffsetsLDcG7Xg(j, j2, fArr, i, i2) || this.isScreenOrWindowDirty;
     }
 
     public final void dispatchCallbacks() {
@@ -272,12 +272,12 @@ public final class RectManager {
     }
 
     public final void onLayoutLayerPositionalPropertiesChanged(LayoutNode layoutNode) {
-        boolean m6487isSetgyyYBs;
+        boolean m6500isSetgyyYBs;
         if (ComposeUiFlags.isRectTrackingEnabled) {
-            long m6482outerToInnerOffsetBjo55l4 = m6482outerToInnerOffsetBjo55l4(layoutNode);
-            m6487isSetgyyYBs = RectManagerKt.m6487isSetgyyYBs(m6482outerToInnerOffsetBjo55l4);
-            if (m6487isSetgyyYBs) {
-                layoutNode.m6160setOuterToInnerOffsetgyyYBs$ui_release(m6482outerToInnerOffsetBjo55l4);
+            long m6495outerToInnerOffsetBjo55l4 = m6495outerToInnerOffsetBjo55l4(layoutNode);
+            m6500isSetgyyYBs = RectManagerKt.m6500isSetgyyYBs(m6495outerToInnerOffsetBjo55l4);
+            if (m6500isSetgyyYBs) {
+                layoutNode.m6173setOuterToInnerOffsetgyyYBs$ui_release(m6495outerToInnerOffsetBjo55l4);
                 layoutNode.setOuterToInnerOffsetDirty$ui_release(false);
                 MutableVector<LayoutNode> mutableVector = layoutNode.get_children$ui_release();
                 LayoutNode[] layoutNodeArr = mutableVector.content;
@@ -293,67 +293,67 @@ public final class RectManager {
     }
 
     public final void onLayoutPositionChanged(LayoutNode layoutNode, boolean z) {
-        boolean m6487isSetgyyYBs;
+        boolean m6500isSetgyyYBs;
         if (ComposeUiFlags.isRectTrackingEnabled) {
             MeasurePassDelegate measurePassDelegate$ui_release = layoutNode.getMeasurePassDelegate$ui_release();
             int measuredWidth = measurePassDelegate$ui_release.getMeasuredWidth();
             int measuredHeight = measurePassDelegate$ui_release.getMeasuredHeight();
-            long m6152getOffsetFromRootnOccac$ui_release = layoutNode.m6152getOffsetFromRootnOccac$ui_release();
-            long m6151getLastSizeYbymL2g$ui_release = layoutNode.m6151getLastSizeYbymL2g$ui_release();
-            int i = (int) (m6151getLastSizeYbymL2g$ui_release >> 32);
-            int i2 = (int) (m6151getLastSizeYbymL2g$ui_release & 4294967295L);
+            long m6165getOffsetFromRootnOccac$ui_release = layoutNode.m6165getOffsetFromRootnOccac$ui_release();
+            long m6164getLastSizeYbymL2g$ui_release = layoutNode.m6164getLastSizeYbymL2g$ui_release();
+            int i = (int) (m6164getLastSizeYbymL2g$ui_release >> 32);
+            int i2 = (int) (m6164getLastSizeYbymL2g$ui_release & 4294967295L);
             recalculateOffsetFromRoot(layoutNode);
-            long m6152getOffsetFromRootnOccac$ui_release2 = layoutNode.m6152getOffsetFromRootnOccac$ui_release();
-            m6487isSetgyyYBs = RectManagerKt.m6487isSetgyyYBs(m6152getOffsetFromRootnOccac$ui_release2);
-            if (!m6487isSetgyyYBs) {
+            long m6165getOffsetFromRootnOccac$ui_release2 = layoutNode.m6165getOffsetFromRootnOccac$ui_release();
+            m6500isSetgyyYBs = RectManagerKt.m6500isSetgyyYBs(m6165getOffsetFromRootnOccac$ui_release2);
+            if (!m6500isSetgyyYBs) {
                 insertOrUpdateTransformedNode(layoutNode, z);
                 return;
             }
-            layoutNode.m6158setLastSizeozmzZPI$ui_release(IntSize.m7417constructorimpl((measuredWidth << 32) | (4294967295L & measuredHeight)));
-            int m7379getXimpl = IntOffset.m7379getXimpl(m6152getOffsetFromRootnOccac$ui_release2);
-            int m7380getYimpl = IntOffset.m7380getYimpl(m6152getOffsetFromRootnOccac$ui_release2);
-            int i3 = m7379getXimpl + measuredWidth;
-            int i4 = m7380getYimpl + measuredHeight;
-            if (!z && IntOffset.m7378equalsimpl0(m6152getOffsetFromRootnOccac$ui_release2, m6152getOffsetFromRootnOccac$ui_release) && i == measuredWidth && i2 == measuredHeight) {
+            layoutNode.m6171setLastSizeozmzZPI$ui_release(IntSize.m7430constructorimpl((measuredWidth << 32) | (4294967295L & measuredHeight)));
+            int m7392getXimpl = IntOffset.m7392getXimpl(m6165getOffsetFromRootnOccac$ui_release2);
+            int m7393getYimpl = IntOffset.m7393getYimpl(m6165getOffsetFromRootnOccac$ui_release2);
+            int i3 = m7392getXimpl + measuredWidth;
+            int i4 = m7393getYimpl + measuredHeight;
+            if (!z && IntOffset.m7391equalsimpl0(m6165getOffsetFromRootnOccac$ui_release2, m6165getOffsetFromRootnOccac$ui_release) && i == measuredWidth && i2 == measuredHeight) {
                 return;
             }
-            insertOrUpdate(layoutNode, z, m7379getXimpl, m7380getYimpl, i3, i4);
+            insertOrUpdate(layoutNode, z, m7392getXimpl, m7393getYimpl, i3, i4);
         }
     }
 
     private final void recalculateOffsetFromRoot(LayoutNode layoutNode) {
-        boolean m6487isSetgyyYBs;
-        boolean m6487isSetgyyYBs2;
-        long m6153getOuterToInnerOffsetnOccac$ui_release;
-        boolean m6487isSetgyyYBs3;
-        long mo6174getPositionnOccac = layoutNode.getOuterCoordinator$ui_release().mo6174getPositionnOccac();
+        boolean m6500isSetgyyYBs;
+        boolean m6500isSetgyyYBs2;
+        long m6166getOuterToInnerOffsetnOccac$ui_release;
+        boolean m6500isSetgyyYBs3;
+        long mo6187getPositionnOccac = layoutNode.getOuterCoordinator$ui_release().mo6187getPositionnOccac();
         LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
         if (parent$ui_release != null) {
-            m6487isSetgyyYBs = RectManagerKt.m6487isSetgyyYBs(parent$ui_release.m6152getOffsetFromRootnOccac$ui_release());
-            if (!m6487isSetgyyYBs) {
+            m6500isSetgyyYBs = RectManagerKt.m6500isSetgyyYBs(parent$ui_release.m6165getOffsetFromRootnOccac$ui_release());
+            if (!m6500isSetgyyYBs) {
                 recalculateOffsetFromRoot(parent$ui_release);
             }
-            long m6152getOffsetFromRootnOccac$ui_release = parent$ui_release.m6152getOffsetFromRootnOccac$ui_release();
-            m6487isSetgyyYBs2 = RectManagerKt.m6487isSetgyyYBs(m6152getOffsetFromRootnOccac$ui_release);
-            if (!m6487isSetgyyYBs2) {
-                mo6174getPositionnOccac = IntOffset.Companion.m7389getMaxnOccac();
+            long m6165getOffsetFromRootnOccac$ui_release = parent$ui_release.m6165getOffsetFromRootnOccac$ui_release();
+            m6500isSetgyyYBs2 = RectManagerKt.m6500isSetgyyYBs(m6165getOffsetFromRootnOccac$ui_release);
+            if (!m6500isSetgyyYBs2) {
+                mo6187getPositionnOccac = IntOffset.Companion.m7402getMaxnOccac();
             } else {
                 if (parent$ui_release.getOuterToInnerOffsetDirty$ui_release()) {
-                    m6153getOuterToInnerOffsetnOccac$ui_release = m6482outerToInnerOffsetBjo55l4(parent$ui_release);
-                    parent$ui_release.m6160setOuterToInnerOffsetgyyYBs$ui_release(m6153getOuterToInnerOffsetnOccac$ui_release);
+                    m6166getOuterToInnerOffsetnOccac$ui_release = m6495outerToInnerOffsetBjo55l4(parent$ui_release);
+                    parent$ui_release.m6173setOuterToInnerOffsetgyyYBs$ui_release(m6166getOuterToInnerOffsetnOccac$ui_release);
                     parent$ui_release.setOuterToInnerOffsetDirty$ui_release(false);
                 } else {
-                    m6153getOuterToInnerOffsetnOccac$ui_release = parent$ui_release.m6153getOuterToInnerOffsetnOccac$ui_release();
+                    m6166getOuterToInnerOffsetnOccac$ui_release = parent$ui_release.m6166getOuterToInnerOffsetnOccac$ui_release();
                 }
-                m6487isSetgyyYBs3 = RectManagerKt.m6487isSetgyyYBs(m6153getOuterToInnerOffsetnOccac$ui_release);
-                if (!m6487isSetgyyYBs3) {
-                    mo6174getPositionnOccac = IntOffset.Companion.m7389getMaxnOccac();
+                m6500isSetgyyYBs3 = RectManagerKt.m6500isSetgyyYBs(m6166getOuterToInnerOffsetnOccac$ui_release);
+                if (!m6500isSetgyyYBs3) {
+                    mo6187getPositionnOccac = IntOffset.Companion.m7402getMaxnOccac();
                 } else {
-                    mo6174getPositionnOccac = IntOffset.m7383plusqkQi6aY(IntOffset.m7383plusqkQi6aY(m6152getOffsetFromRootnOccac$ui_release, m6153getOuterToInnerOffsetnOccac$ui_release), mo6174getPositionnOccac);
+                    mo6187getPositionnOccac = IntOffset.m7396plusqkQi6aY(IntOffset.m7396plusqkQi6aY(m6165getOffsetFromRootnOccac$ui_release, m6166getOuterToInnerOffsetnOccac$ui_release), mo6187getPositionnOccac);
                 }
             }
         }
-        layoutNode.m6159setOffsetFromRootgyyYBs$ui_release(mo6174getPositionnOccac);
+        layoutNode.m6172setOffsetFromRootgyyYBs$ui_release(mo6187getPositionnOccac);
     }
 
     private final void insertOrUpdateTransformedNode(LayoutNode layoutNode, boolean z) {
@@ -371,7 +371,7 @@ public final class RectManager {
         int semanticsId = layoutNode.getSemanticsId();
         if (z || !this.rects.update(semanticsId, left, top, right, bottom)) {
             LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-            this.rects.insert(semanticsId, left, top, right, bottom, parent$ui_release != null ? parent$ui_release.getSemanticsId() : -1, layoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(1024)), layoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(16)));
+            this.rects.insert(semanticsId, left, top, right, bottom, parent$ui_release != null ? parent$ui_release.getSemanticsId() : -1, layoutNode.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(1024)), layoutNode.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(16)));
         }
         invalidate();
     }
@@ -400,48 +400,48 @@ public final class RectManager {
             i8 = i4;
         }
         LayoutNode parent$ui_release = layoutNode.getParent$ui_release();
-        this.rects.insert(semanticsId, i5, i6, i7, i8, parent$ui_release != null ? parent$ui_release.getSemanticsId() : -1, layoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(1024)), layoutNode.getNodes$ui_release().m6206hasH91voCI$ui_release(NodeKind.m6245constructorimpl(16)));
+        this.rects.insert(semanticsId, i5, i6, i7, i8, parent$ui_release != null ? parent$ui_release.getSemanticsId() : -1, layoutNode.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(1024)), layoutNode.getNodes$ui_release().m6219hasH91voCI$ui_release(NodeKind.m6258constructorimpl(16)));
         invalidate();
     }
 
     private final void boundingRectInRoot(NodeCoordinator nodeCoordinator, MutableRect mutableRect) {
         while (nodeCoordinator != null) {
             OwnedLayer layer = nodeCoordinator.getLayer();
-            long mo6174getPositionnOccac = nodeCoordinator.mo6174getPositionnOccac();
-            mutableRect.m4278translatek4lQ0M(Offset.m4285constructorimpl((Float.floatToRawIntBits(IntOffset.m7379getXimpl(mo6174getPositionnOccac)) << 32) | (Float.floatToRawIntBits(IntOffset.m7380getYimpl(mo6174getPositionnOccac)) & 4294967295L)));
+            long mo6187getPositionnOccac = nodeCoordinator.mo6187getPositionnOccac();
+            mutableRect.m4290translatek4lQ0M(Offset.m4297constructorimpl((Float.floatToRawIntBits(IntOffset.m7392getXimpl(mo6187getPositionnOccac)) << 32) | (Float.floatToRawIntBits(IntOffset.m7393getYimpl(mo6187getPositionnOccac)) & 4294967295L)));
             nodeCoordinator = nodeCoordinator.getWrappedBy$ui_release();
             if (layer != null) {
-                float[] mo6298getUnderlyingMatrixsQKQjiQ = layer.mo6298getUnderlyingMatrixsQKQjiQ();
-                if (!MatrixKt.m4804isIdentity58bKbWc(mo6298getUnderlyingMatrixsQKQjiQ)) {
-                    Matrix.m4787mapimpl(mo6298getUnderlyingMatrixsQKQjiQ, mutableRect);
+                float[] mo6311getUnderlyingMatrixsQKQjiQ = layer.mo6311getUnderlyingMatrixsQKQjiQ();
+                if (!MatrixKt.m4816isIdentity58bKbWc(mo6311getUnderlyingMatrixsQKQjiQ)) {
+                    Matrix.m4799mapimpl(mo6311getUnderlyingMatrixsQKQjiQ, mutableRect);
                 }
             }
         }
     }
 
     /* renamed from: outerToInnerOffset-Bjo55l4  reason: not valid java name */
-    private final long m6482outerToInnerOffsetBjo55l4(LayoutNode layoutNode) {
-        int m6486analyzeComponents58bKbWc;
+    private final long m6495outerToInnerOffsetBjo55l4(LayoutNode layoutNode) {
+        int m6499analyzeComponents58bKbWc;
         NodeCoordinator outerCoordinator$ui_release = layoutNode.getOuterCoordinator$ui_release();
-        long m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+        long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
         NodeCoordinator innerCoordinator$ui_release = layoutNode.getInnerCoordinator$ui_release();
         while (innerCoordinator$ui_release != null && innerCoordinator$ui_release != outerCoordinator$ui_release) {
             OwnedLayer layer = innerCoordinator$ui_release.getLayer();
-            m4309getZeroF1C5BW0 = IntOffsetKt.m7394plusNvtHpc(m4309getZeroF1C5BW0, innerCoordinator$ui_release.mo6174getPositionnOccac());
+            m4321getZeroF1C5BW0 = IntOffsetKt.m7407plusNvtHpc(m4321getZeroF1C5BW0, innerCoordinator$ui_release.mo6187getPositionnOccac());
             innerCoordinator$ui_release = innerCoordinator$ui_release.getWrappedBy$ui_release();
             if (layer != null) {
-                float[] mo6298getUnderlyingMatrixsQKQjiQ = layer.mo6298getUnderlyingMatrixsQKQjiQ();
-                m6486analyzeComponents58bKbWc = RectManagerKt.m6486analyzeComponents58bKbWc(mo6298getUnderlyingMatrixsQKQjiQ);
-                if (m6486analyzeComponents58bKbWc == 3) {
+                float[] mo6311getUnderlyingMatrixsQKQjiQ = layer.mo6311getUnderlyingMatrixsQKQjiQ();
+                m6499analyzeComponents58bKbWc = RectManagerKt.m6499analyzeComponents58bKbWc(mo6311getUnderlyingMatrixsQKQjiQ);
+                if (m6499analyzeComponents58bKbWc == 3) {
                     continue;
-                } else if ((m6486analyzeComponents58bKbWc & 2) == 0) {
-                    return IntOffset.Companion.m7389getMaxnOccac();
+                } else if ((m6499analyzeComponents58bKbWc & 2) == 0) {
+                    return IntOffset.Companion.m7402getMaxnOccac();
                 } else {
-                    m4309getZeroF1C5BW0 = Matrix.m4785mapMKHz9U(mo6298getUnderlyingMatrixsQKQjiQ, m4309getZeroF1C5BW0);
+                    m4321getZeroF1C5BW0 = Matrix.m4797mapMKHz9U(mo6311getUnderlyingMatrixsQKQjiQ, m4321getZeroF1C5BW0);
                 }
             }
         }
-        return IntOffsetKt.m7396roundk4lQ0M(m4309getZeroF1C5BW0);
+        return IntOffsetKt.m7409roundk4lQ0M(m4321getZeroF1C5BW0);
     }
 
     public final void remove(LayoutNode layoutNode) {

@@ -29,7 +29,7 @@ public abstract class DragEvent {
         }
 
         /* renamed from: getStartPoint-F1C5BW0  reason: not valid java name */
-        public final long m466getStartPointF1C5BW0() {
+        public final long m476getStartPointF1C5BW0() {
             return this.startPoint;
         }
     }
@@ -54,7 +54,7 @@ public abstract class DragEvent {
         }
 
         /* renamed from: getVelocity-9UxMQ8M  reason: not valid java name */
-        public final long m467getVelocity9UxMQ8M() {
+        public final long m477getVelocity9UxMQ8M() {
             return this.velocity;
         }
     }
@@ -88,7 +88,7 @@ public abstract class DragEvent {
         }
 
         /* renamed from: getDelta-F1C5BW0  reason: not valid java name */
-        public final long m465getDeltaF1C5BW0() {
+        public final long m475getDeltaF1C5BW0() {
             return this.delta;
         }
     }

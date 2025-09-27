@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class LockExtKt {
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <T> T m37synchronized(Lock lock, Function0<? extends T> block) {
+    public static final <T> T m47synchronized(Lock lock, Function0<? extends T> block) {
         T invoke;
         Intrinsics.checkNotNullParameter(lock, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");

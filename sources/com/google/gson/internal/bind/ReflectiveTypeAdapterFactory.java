@@ -208,11 +208,11 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
     public static class FieldsData {
-        public static final FieldsData EMPTY = new FieldsData(Collections.emptyMap(), Collections.emptyList());
-        public final Map<String, BoundField> deserializedFields;
-        public final List<BoundField> serializedFields;
+        static final FieldsData EMPTY = new FieldsData(Collections.emptyMap(), Collections.emptyList());
+        final Map<String, BoundField> deserializedFields;
+        final List<BoundField> serializedFields;
 
-        public FieldsData(Map<String, BoundField> map, List<BoundField> list) {
+        FieldsData(Map<String, BoundField> map, List<BoundField> list) {
             this.deserializedFields = map;
             this.serializedFields = list;
         }

@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NavHost.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.navigation.compose.NavHostKt$NavHost$28$1", f = "NavHost.kt", i = {}, l = {620}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "androidx.navigation.compose.NavHostKt$NavHost$28$1", f = "NavHost.kt", i = {}, l = {636}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class NavHostKt$NavHost$28$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ State<List<NavBackStackEntry>> $currentBackStack$delegate;
@@ -49,18 +49,22 @@ public final class NavHostKt$NavHost$28$1 extends SuspendLambda implements Funct
     public final Object invokeSuspend(Object obj) {
         List NavHost$lambda$38;
         List NavHost$lambda$382;
+        List NavHost$lambda$383;
         float NavHost$lambda$40;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             NavHost$lambda$38 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-            NavHost$lambda$382 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
-            SeekableTransitionState<NavBackStackEntry> seekableTransitionState = this.$transitionState;
-            NavHost$lambda$40 = NavHostKt.NavHost$lambda$40(this.$progress$delegate);
-            this.label = 1;
-            if (seekableTransitionState.seekTo(NavHost$lambda$40, (NavBackStackEntry) NavHost$lambda$38.get(NavHost$lambda$382.size() - 2), this) == coroutine_suspended) {
-                return coroutine_suspended;
+            if (NavHost$lambda$38.size() > 1) {
+                NavHost$lambda$382 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+                NavHost$lambda$383 = NavHostKt.NavHost$lambda$38(this.$currentBackStack$delegate);
+                SeekableTransitionState<NavBackStackEntry> seekableTransitionState = this.$transitionState;
+                NavHost$lambda$40 = NavHostKt.NavHost$lambda$40(this.$progress$delegate);
+                this.label = 1;
+                if (seekableTransitionState.seekTo(NavHost$lambda$40, (NavBackStackEntry) NavHost$lambda$382.get(NavHost$lambda$383.size() - 2), this) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

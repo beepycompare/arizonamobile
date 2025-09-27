@@ -41,7 +41,7 @@ final class PxCornerSize implements CornerSize, InspectableValue {
 
     @Override // androidx.compose.foundation.shape.CornerSize
     /* renamed from: toPx-TmRCtEA */
-    public float mo1188toPxTmRCtEA(long j, Density density) {
+    public float mo1198toPxTmRCtEA(long j, Density density) {
         return this.size;
     }
 

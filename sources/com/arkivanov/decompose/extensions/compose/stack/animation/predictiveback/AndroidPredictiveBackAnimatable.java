@@ -258,7 +258,7 @@ public final class AndroidPredictiveBackAnimatable implements PredictiveBackAnim
         graphicsLayerScope.setAlpha(1.0f - getExitProgress());
         graphicsLayerScope.setScaleX(1.0f - (getExitProgress() * 0.1f));
         graphicsLayerScope.setScaleY(graphicsLayerScope.getScaleX());
-        graphicsLayerScope.setTranslationX(Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc()) * 0.5f * getExitProgress());
+        graphicsLayerScope.setTranslationX(Size.m4374getWidthimpl(graphicsLayerScope.mo4744getSizeNHjbRc()) * 0.5f * getExitProgress());
         graphicsLayerScope.setShape(function2.invoke(Float.valueOf(getExitProgress()), getEdge()));
         graphicsLayerScope.setClip(true);
     }
@@ -268,7 +268,7 @@ public final class AndroidPredictiveBackAnimatable implements PredictiveBackAnim
         graphicsLayerScope.setAlpha(lerp);
         graphicsLayerScope.setScaleX(MathHelpersKt.lerp(MathHelpersKt.lerp(0.95f, 0.9f, getEnterProgress()), 1.0f, getFinishProgress()));
         graphicsLayerScope.setScaleY(graphicsLayerScope.getScaleX());
-        graphicsLayerScope.setTranslationX(MathHelpersKt.lerp((-Size.m4362getWidthimpl(graphicsLayerScope.mo4732getSizeNHjbRc())) * 0.15f, 0.0f, lerp));
+        graphicsLayerScope.setTranslationX(MathHelpersKt.lerp((-Size.m4374getWidthimpl(graphicsLayerScope.mo4744getSizeNHjbRc())) * 0.15f, 0.0f, lerp));
         graphicsLayerScope.setShape(function2.invoke(Float.valueOf(getFinishProgress()), getEdge()));
         graphicsLayerScope.setClip(true);
     }

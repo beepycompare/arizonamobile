@@ -16,7 +16,7 @@ public final class Hf extends MessageNano {
     public static volatile Hf[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public Ff f478a;
+    public Ff f479a;
     public Gf[] b;
 
     public Hf() {
@@ -35,7 +35,7 @@ public final class Hf extends MessageNano {
     }
 
     public final Hf a() {
-        this.f478a = null;
+        this.f479a = null;
         this.b = Gf.b();
         this.cachedSize = -1;
         return this;
@@ -44,7 +44,7 @@ public final class Hf extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        Ff ff = this.f478a;
+        Ff ff = this.f479a;
         if (ff != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, ff);
         }
@@ -68,7 +68,7 @@ public final class Hf extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Ff ff = this.f478a;
+        Ff ff = this.f479a;
         if (ff != null) {
             codedOutputByteBufferNano.writeMessage(1, ff);
         }
@@ -98,10 +98,10 @@ public final class Hf extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f478a == null) {
-                    this.f478a = new Ff();
+                if (this.f479a == null) {
+                    this.f479a = new Ff();
                 }
-                codedInputByteBufferNano.readMessage(this.f478a);
+                codedInputByteBufferNano.readMessage(this.f479a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

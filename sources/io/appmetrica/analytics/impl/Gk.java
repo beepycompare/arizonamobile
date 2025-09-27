@@ -8,12 +8,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Gk implements ModuleRemoteConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SdkIdentifiers f463a;
+    public final SdkIdentifiers f464a;
     public final RemoteConfigMetaInfo b;
     public final Object c;
 
     public Gk(SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj) {
-        this.f463a = sdkIdentifiers;
+        this.f464a = sdkIdentifiers;
         this.b = remoteConfigMetaInfo;
         this.c = obj;
     }
@@ -36,7 +36,7 @@ public final class Gk implements ModuleRemoteConfig {
         }
         if (obj instanceof Gk) {
             Gk gk = (Gk) obj;
-            return Intrinsics.areEqual(this.f463a, gk.f463a) && Intrinsics.areEqual(this.b, gk.b) && Intrinsics.areEqual(this.c, gk.c);
+            return Intrinsics.areEqual(this.f464a, gk.f464a) && Intrinsics.areEqual(this.b, gk.b) && Intrinsics.areEqual(this.c, gk.c);
         }
         return false;
     }
@@ -48,7 +48,7 @@ public final class Gk implements ModuleRemoteConfig {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
     public final SdkIdentifiers getIdentifiers() {
-        return this.f463a;
+        return this.f464a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig
@@ -57,22 +57,22 @@ public final class Gk implements ModuleRemoteConfig {
     }
 
     public final int hashCode() {
-        int hashCode = (this.b.hashCode() + (this.f463a.hashCode() * 31)) * 31;
+        int hashCode = (this.b.hashCode() + (this.f464a.hashCode() * 31)) * 31;
         Object obj = this.c;
         return hashCode + (obj == null ? 0 : obj.hashCode());
     }
 
     public final String toString() {
-        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f463a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
+        return "ServiceModuleRemoteConfigModel(identifiers=" + this.f464a + ", remoteConfigMetaInfo=" + this.b + ", featuresConfig=" + this.c + ')';
     }
 
     public final SdkIdentifiers a() {
-        return this.f463a;
+        return this.f464a;
     }
 
     public static Gk a(Gk gk, SdkIdentifiers sdkIdentifiers, RemoteConfigMetaInfo remoteConfigMetaInfo, Object obj, int i, Object obj2) {
         if ((i & 1) != 0) {
-            sdkIdentifiers = gk.f463a;
+            sdkIdentifiers = gk.f464a;
         }
         if ((i & 2) != 0) {
             remoteConfigMetaInfo = gk.b;

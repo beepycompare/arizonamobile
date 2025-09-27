@@ -26,7 +26,7 @@ public interface ModifierLocalModifierNode extends ModifierLocalReadScope, Deleg
         if (!getProvidedValues().contains$ui_release(modifierLocal)) {
             InlineClassHelperKt.throwIllegalArgumentException("Any provided key must be initially provided in the overridden providedValues: ModifierLocalMap property. Key " + modifierLocal + " was not found.");
         }
-        getProvidedValues().mo6082set$ui_release(modifierLocal, t);
+        getProvidedValues().mo6095set$ui_release(modifierLocal, t);
     }
 
     @Override // androidx.compose.ui.modifier.ModifierLocalReadScope
@@ -36,16 +36,16 @@ public interface ModifierLocalModifierNode extends ModifierLocalReadScope, Deleg
             InlineClassHelperKt.throwIllegalArgumentException("ModifierLocal accessed from an unattached node");
         }
         ModifierLocalModifierNode modifierLocalModifierNode = this;
-        int m6245constructorimpl = NodeKind.m6245constructorimpl(32);
+        int m6258constructorimpl = NodeKind.m6258constructorimpl(32);
         if (!modifierLocalModifierNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui_release = modifierLocalModifierNode.getNode().getParent$ui_release();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(modifierLocalModifierNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
                 while (parent$ui_release != null) {
-                    if ((parent$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                    if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                         Modifier.Node node = parent$ui_release;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -54,10 +54,10 @@ public interface ModifierLocalModifierNode extends ModifierLocalReadScope, Deleg
                                 if (modifierLocalModifierNode2.getProvidedValues().contains$ui_release(modifierLocal)) {
                                     return (T) modifierLocalModifierNode2.getProvidedValues().get$ui_release(modifierLocal);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;

@@ -9,17 +9,17 @@ public final class C0171ca implements ProtobufConverter {
     public final Am fromModel(C0145ba c0145ba) {
         Am am = new Am();
         if (c0145ba != null) {
-            am.f355a = c0145ba.f808a;
+            am.f356a = c0145ba.f809a;
         }
         return am;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C0145ba(((Am) obj).f355a);
+        return new C0145ba(((Am) obj).f356a);
     }
 
     public final C0145ba a(Am am) {
-        return new C0145ba(am.f355a);
+        return new C0145ba(am.f356a);
     }
 }

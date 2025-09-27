@@ -21,29 +21,29 @@ public final class DrawTransformKt {
     }
 
     /* renamed from: rotateRad-0AR0LA0$default  reason: not valid java name */
-    public static /* synthetic */ void m5182rotateRad0AR0LA0$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
+    public static /* synthetic */ void m5194rotateRad0AR0LA0$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = drawTransform.mo5041getCenterF1C5BW0();
+            j = drawTransform.mo5053getCenterF1C5BW0();
         }
-        drawTransform.mo5043rotateUv8p0NA(DegreesKt.degrees(f), j);
+        drawTransform.mo5055rotateUv8p0NA(DegreesKt.degrees(f), j);
     }
 
     /* renamed from: rotateRad-0AR0LA0  reason: not valid java name */
-    public static final void m5181rotateRad0AR0LA0(DrawTransform drawTransform, float f, long j) {
-        drawTransform.mo5043rotateUv8p0NA(DegreesKt.degrees(f), j);
+    public static final void m5193rotateRad0AR0LA0(DrawTransform drawTransform, float f, long j) {
+        drawTransform.mo5055rotateUv8p0NA(DegreesKt.degrees(f), j);
     }
 
     /* renamed from: scale-0AR0LA0  reason: not valid java name */
-    public static final void m5183scale0AR0LA0(DrawTransform drawTransform, float f, long j) {
-        drawTransform.mo5044scale0AR0LA0(f, f, j);
+    public static final void m5195scale0AR0LA0(DrawTransform drawTransform, float f, long j) {
+        drawTransform.mo5056scale0AR0LA0(f, f, j);
     }
 
     /* renamed from: scale-0AR0LA0$default  reason: not valid java name */
-    public static /* synthetic */ void m5184scale0AR0LA0$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
+    public static /* synthetic */ void m5196scale0AR0LA0$default(DrawTransform drawTransform, float f, long j, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = drawTransform.mo5041getCenterF1C5BW0();
+            j = drawTransform.mo5053getCenterF1C5BW0();
         }
-        drawTransform.mo5044scale0AR0LA0(f, f, j);
+        drawTransform.mo5056scale0AR0LA0(f, f, j);
     }
 
     public static final void inset(DrawTransform drawTransform, float f) {

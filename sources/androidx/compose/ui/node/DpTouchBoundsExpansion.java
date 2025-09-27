@@ -23,7 +23,7 @@ public final class DpTouchBoundsExpansion {
     }
 
     /* renamed from: copy-lDy3nrA$default  reason: not valid java name */
-    public static /* synthetic */ DpTouchBoundsExpansion m6125copylDy3nrA$default(DpTouchBoundsExpansion dpTouchBoundsExpansion, float f, float f2, float f3, float f4, boolean z, int i, Object obj) {
+    public static /* synthetic */ DpTouchBoundsExpansion m6138copylDy3nrA$default(DpTouchBoundsExpansion dpTouchBoundsExpansion, float f, float f2, float f3, float f4, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             f = dpTouchBoundsExpansion.start;
         }
@@ -41,26 +41,26 @@ public final class DpTouchBoundsExpansion {
         }
         boolean z2 = z;
         float f5 = f3;
-        return dpTouchBoundsExpansion.m6130copylDy3nrA(f, f2, f5, f4, z2);
+        return dpTouchBoundsExpansion.m6143copylDy3nrA(f, f2, f5, f4, z2);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m6126component1D9Ej5fM() {
+    public final float m6139component1D9Ej5fM() {
         return this.start;
     }
 
     /* renamed from: component2-D9Ej5fM  reason: not valid java name */
-    public final float m6127component2D9Ej5fM() {
+    public final float m6140component2D9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: component3-D9Ej5fM  reason: not valid java name */
-    public final float m6128component3D9Ej5fM() {
+    public final float m6141component3D9Ej5fM() {
         return this.end;
     }
 
     /* renamed from: component4-D9Ej5fM  reason: not valid java name */
-    public final float m6129component4D9Ej5fM() {
+    public final float m6142component4D9Ej5fM() {
         return this.bottom;
     }
 
@@ -69,7 +69,7 @@ public final class DpTouchBoundsExpansion {
     }
 
     /* renamed from: copy-lDy3nrA  reason: not valid java name */
-    public final DpTouchBoundsExpansion m6130copylDy3nrA(float f, float f2, float f3, float f4, boolean z) {
+    public final DpTouchBoundsExpansion m6143copylDy3nrA(float f, float f2, float f3, float f4, boolean z) {
         return new DpTouchBoundsExpansion(f, f2, f3, f4, z, null);
     }
 
@@ -79,17 +79,17 @@ public final class DpTouchBoundsExpansion {
         }
         if (obj instanceof DpTouchBoundsExpansion) {
             DpTouchBoundsExpansion dpTouchBoundsExpansion = (DpTouchBoundsExpansion) obj;
-            return Dp.m7256equalsimpl0(this.start, dpTouchBoundsExpansion.start) && Dp.m7256equalsimpl0(this.top, dpTouchBoundsExpansion.top) && Dp.m7256equalsimpl0(this.end, dpTouchBoundsExpansion.end) && Dp.m7256equalsimpl0(this.bottom, dpTouchBoundsExpansion.bottom) && this.isLayoutDirectionAware == dpTouchBoundsExpansion.isLayoutDirectionAware;
+            return Dp.m7269equalsimpl0(this.start, dpTouchBoundsExpansion.start) && Dp.m7269equalsimpl0(this.top, dpTouchBoundsExpansion.top) && Dp.m7269equalsimpl0(this.end, dpTouchBoundsExpansion.end) && Dp.m7269equalsimpl0(this.bottom, dpTouchBoundsExpansion.bottom) && this.isLayoutDirectionAware == dpTouchBoundsExpansion.isLayoutDirectionAware;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((Dp.m7257hashCodeimpl(this.start) * 31) + Dp.m7257hashCodeimpl(this.top)) * 31) + Dp.m7257hashCodeimpl(this.end)) * 31) + Dp.m7257hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.isLayoutDirectionAware);
+        return (((((((Dp.m7270hashCodeimpl(this.start) * 31) + Dp.m7270hashCodeimpl(this.top)) * 31) + Dp.m7270hashCodeimpl(this.end)) * 31) + Dp.m7270hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.isLayoutDirectionAware);
     }
 
     public String toString() {
-        return "DpTouchBoundsExpansion(start=" + ((Object) Dp.m7262toStringimpl(this.start)) + ", top=" + ((Object) Dp.m7262toStringimpl(this.top)) + ", end=" + ((Object) Dp.m7262toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m7262toStringimpl(this.bottom)) + ", isLayoutDirectionAware=" + this.isLayoutDirectionAware + ')';
+        return "DpTouchBoundsExpansion(start=" + ((Object) Dp.m7275toStringimpl(this.start)) + ", top=" + ((Object) Dp.m7275toStringimpl(this.top)) + ", end=" + ((Object) Dp.m7275toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m7275toStringimpl(this.bottom)) + ", isLayoutDirectionAware=" + this.isLayoutDirectionAware + ')';
     }
 
     private DpTouchBoundsExpansion(float f, float f2, float f3, float f4, boolean z) {
@@ -114,22 +114,22 @@ public final class DpTouchBoundsExpansion {
     }
 
     /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
-    public final float m6133getStartD9Ej5fM() {
+    public final float m6146getStartD9Ej5fM() {
         return this.start;
     }
 
     /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m6134getTopD9Ej5fM() {
+    public final float m6147getTopD9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
-    public final float m6132getEndD9Ej5fM() {
+    public final float m6145getEndD9Ej5fM() {
         return this.end;
     }
 
     /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m6131getBottomD9Ej5fM() {
+    public final float m6144getBottomD9Ej5fM() {
         return this.bottom;
     }
 
@@ -138,8 +138,8 @@ public final class DpTouchBoundsExpansion {
     }
 
     /* renamed from: roundToTouchBoundsExpansion-TW6G1oQ  reason: not valid java name */
-    public final long m6135roundToTouchBoundsExpansionTW6G1oQ(Density density) {
-        return TouchBoundsExpansion.m6329constructorimpl(TouchBoundsExpansion.Companion.pack$ui_release(density.mo413roundToPx0680j_4(this.start), density.mo413roundToPx0680j_4(this.top), density.mo413roundToPx0680j_4(this.end), density.mo413roundToPx0680j_4(this.bottom), this.isLayoutDirectionAware));
+    public final long m6148roundToTouchBoundsExpansionTW6G1oQ(Density density) {
+        return TouchBoundsExpansion.m6342constructorimpl(TouchBoundsExpansion.Companion.pack$ui_release(density.mo423roundToPx0680j_4(this.start), density.mo423roundToPx0680j_4(this.top), density.mo423roundToPx0680j_4(this.end), density.mo423roundToPx0680j_4(this.bottom), this.isLayoutDirectionAware));
     }
 
     /* compiled from: TouchBoundsExpansion.kt */
@@ -154,25 +154,25 @@ public final class DpTouchBoundsExpansion {
         }
 
         /* renamed from: Absolute-a9UjIt4  reason: not valid java name */
-        public final DpTouchBoundsExpansion m6137Absolutea9UjIt4(float f, float f2, float f3, float f4) {
+        public final DpTouchBoundsExpansion m6150Absolutea9UjIt4(float f, float f2, float f3, float f4) {
             return new DpTouchBoundsExpansion(f, f2, f3, f4, false, null);
         }
 
         /* renamed from: Absolute-a9UjIt4$default  reason: not valid java name */
-        public static /* synthetic */ DpTouchBoundsExpansion m6136Absolutea9UjIt4$default(Companion companion, float f, float f2, float f3, float f4, int i, Object obj) {
+        public static /* synthetic */ DpTouchBoundsExpansion m6149Absolutea9UjIt4$default(Companion companion, float f, float f2, float f3, float f4, int i, Object obj) {
             if ((i & 1) != 0) {
-                f = Dp.m7251constructorimpl(0);
+                f = Dp.m7264constructorimpl(0);
             }
             if ((i & 2) != 0) {
-                f2 = Dp.m7251constructorimpl(0);
+                f2 = Dp.m7264constructorimpl(0);
             }
             if ((i & 4) != 0) {
-                f3 = Dp.m7251constructorimpl(0);
+                f3 = Dp.m7264constructorimpl(0);
             }
             if ((i & 8) != 0) {
-                f4 = Dp.m7251constructorimpl(0);
+                f4 = Dp.m7264constructorimpl(0);
             }
-            return companion.m6137Absolutea9UjIt4(f, f2, f3, f4);
+            return companion.m6150Absolutea9UjIt4(f, f2, f3, f4);
         }
     }
 }

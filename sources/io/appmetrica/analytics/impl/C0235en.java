@@ -11,10 +11,10 @@ public final class C0235en extends Yi {
 
     @Override // io.appmetrica.analytics.impl.Yi
     public final Object a(int i) {
-        return this.f759a.getString(i);
+        return this.f760a.getString(i);
     }
 
     public final String b(int i) {
-        return this.f759a.getString(i);
+        return this.f760a.getString(i);
     }
 }

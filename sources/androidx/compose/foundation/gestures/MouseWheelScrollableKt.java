@@ -8,8 +8,8 @@ import kotlin.Metadata;
 public final class MouseWheelScrollableKt {
     private static final int MaxAnimationDuration = 100;
     private static final long ScrollProgressTimeout = 50;
-    private static final float AnimationThreshold = Dp.m7251constructorimpl(6);
-    private static final float AnimationSpeed = Dp.m7251constructorimpl(1);
+    private static final float AnimationThreshold = Dp.m7264constructorimpl(6);
+    private static final float AnimationSpeed = Dp.m7264constructorimpl(1);
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean isLowScrollingDelta(float f) {

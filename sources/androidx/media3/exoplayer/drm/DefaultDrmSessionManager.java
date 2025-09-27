@@ -586,14 +586,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7945x937f548e(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7958x937f548e(format);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m7945x937f548e(Format format) {
+        public /* synthetic */ void m7958x937f548e(Format format) {
             if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
                 return;
             }
@@ -607,14 +607,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             Util.postOrRun((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7946xce10c5c();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m7959xce10c5c();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m7946xce10c5c() {
+        public /* synthetic */ void m7959xce10c5c() {
             if (this.isReleased) {
                 return;
             }

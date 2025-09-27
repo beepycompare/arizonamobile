@@ -48,7 +48,7 @@ public final class DraggableNode extends DragGestureNode {
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
-    public void mo438onDragStartedk4lQ0M(long j) {
+    public void mo448onDragStartedk4lQ0M(long j) {
         Function3 function3;
         if (isAttached()) {
             Function3<? super CoroutineScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function32 = this.onDragStarted;
@@ -62,7 +62,7 @@ public final class DraggableNode extends DragGestureNode {
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStopped-TH1AsA0 */
-    public void mo439onDragStoppedTH1AsA0(long j) {
+    public void mo449onDragStoppedTH1AsA0(long j) {
         Function3 function3;
         if (isAttached()) {
             Function3<? super CoroutineScope, ? super Float, ? super Continuation<? super Unit>, ? extends Object> function32 = this.onDragStopped;
@@ -105,13 +105,13 @@ public final class DraggableNode extends DragGestureNode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-AH228Gc  reason: not valid java name */
-    public final long m510reverseIfNeededAH228Gc(long j) {
-        return Velocity.m7495timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
+    public final long m520reverseIfNeededAH228Gc(long j) {
+        return Velocity.m7508timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
-    public final long m511reverseIfNeededMKHz9U(long j) {
-        return Offset.m4300timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
+    public final long m521reverseIfNeededMKHz9U(long j) {
+        return Offset.m4312timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 }

@@ -31,7 +31,7 @@ public final class DeprecatedBridgeFontResourceLoader implements Font.ResourceLo
     @Override // androidx.compose.ui.text.font.Font.ResourceLoader
     @Deprecated(message = "Replaced by FontFamily.Resolver, this method should not be called", replaceWith = @ReplaceWith(expression = "FontFamily.Resolver.resolve(font, )", imports = {}))
     public Object load(Font font) {
-        return FontFamily.Resolver.m6797resolveDPcqOEQ$default(this.fontFamilyResolver, FontKt.toFontFamily(font), font.getWeight(), font.mo6778getStyle_LCdwA(), 0, 8, null).getValue();
+        return FontFamily.Resolver.m6810resolveDPcqOEQ$default(this.fontFamilyResolver, FontKt.toFontFamily(font), font.getWeight(), font.mo6791getStyle_LCdwA(), 0, 8, null).getValue();
     }
 
     /* compiled from: TextLayoutResult.kt */

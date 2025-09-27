@@ -20,7 +20,7 @@ public final class ResourceFont implements Font {
     }
 
     /* renamed from: getLoadingStrategy-PKNRLFQ$annotations  reason: not valid java name */
-    public static /* synthetic */ void m6865getLoadingStrategyPKNRLFQ$annotations() {
+    public static /* synthetic */ void m6878getLoadingStrategyPKNRLFQ$annotations() {
     }
 
     private ResourceFont(int i, FontWeight fontWeight, int i2, FontVariation.Settings settings, int i3) {
@@ -40,9 +40,9 @@ public final class ResourceFont implements Font {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ ResourceFont(int i, FontWeight fontWeight, int i2, FontVariation.Settings settings, int i3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, r2, r3, (i4 & 8) != 0 ? FontVariation.INSTANCE.m6848Settings6EWAqTQ(r2, r3, new FontVariation.Setting[0]) : settings, (i4 & 16) != 0 ? FontLoadingStrategy.Companion.m6817getAsyncPKNRLFQ() : i3, null);
+        this(i, r2, r3, (i4 & 8) != 0 ? FontVariation.INSTANCE.m6861Settings6EWAqTQ(r2, r3, new FontVariation.Setting[0]) : settings, (i4 & 16) != 0 ? FontLoadingStrategy.Companion.m6830getAsyncPKNRLFQ() : i3, null);
         FontWeight normal = (i4 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight;
-        int m6833getNormal_LCdwA = (i4 & 4) != 0 ? FontStyle.Companion.m6833getNormal_LCdwA() : i2;
+        int m6846getNormal_LCdwA = (i4 & 4) != 0 ? FontStyle.Companion.m6846getNormal_LCdwA() : i2;
     }
 
     @Override // androidx.compose.ui.text.font.Font
@@ -52,7 +52,7 @@ public final class ResourceFont implements Font {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getStyle-_-LCdwA */
-    public int mo6778getStyle_LCdwA() {
+    public int mo6791getStyle_LCdwA() {
         return this.style;
     }
 
@@ -62,12 +62,12 @@ public final class ResourceFont implements Font {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getLoadingStrategy-PKNRLFQ */
-    public int mo6770getLoadingStrategyPKNRLFQ() {
+    public int mo6783getLoadingStrategyPKNRLFQ() {
         return this.loadingStrategy;
     }
 
     /* renamed from: copy-RetOiIg$default  reason: not valid java name */
-    public static /* synthetic */ ResourceFont m6864copyRetOiIg$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, Object obj) {
+    public static /* synthetic */ ResourceFont m6877copyRetOiIg$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             i = resourceFont.resId;
         }
@@ -75,18 +75,18 @@ public final class ResourceFont implements Font {
             fontWeight = resourceFont.getWeight();
         }
         if ((i3 & 4) != 0) {
-            i2 = resourceFont.mo6778getStyle_LCdwA();
+            i2 = resourceFont.mo6791getStyle_LCdwA();
         }
-        return resourceFont.m6867copyRetOiIg(i, fontWeight, i2);
+        return resourceFont.m6880copyRetOiIg(i, fontWeight, i2);
     }
 
     /* renamed from: copy-RetOiIg  reason: not valid java name */
-    public final ResourceFont m6867copyRetOiIg(int i, FontWeight fontWeight, int i2) {
-        return m6863copyF3nL8kk$default(this, i, fontWeight, i2, mo6770getLoadingStrategyPKNRLFQ(), null, 16, null);
+    public final ResourceFont m6880copyRetOiIg(int i, FontWeight fontWeight, int i2) {
+        return m6876copyF3nL8kk$default(this, i, fontWeight, i2, mo6783getLoadingStrategyPKNRLFQ(), null, 16, null);
     }
 
     /* renamed from: copy-F3nL8kk$default  reason: not valid java name */
-    public static /* synthetic */ ResourceFont m6863copyF3nL8kk$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
+    public static /* synthetic */ ResourceFont m6876copyF3nL8kk$default(ResourceFont resourceFont, int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             i = resourceFont.resId;
         }
@@ -94,21 +94,21 @@ public final class ResourceFont implements Font {
             fontWeight = resourceFont.getWeight();
         }
         if ((i4 & 4) != 0) {
-            i2 = resourceFont.mo6778getStyle_LCdwA();
+            i2 = resourceFont.mo6791getStyle_LCdwA();
         }
         if ((i4 & 8) != 0) {
-            i3 = resourceFont.mo6770getLoadingStrategyPKNRLFQ();
+            i3 = resourceFont.mo6783getLoadingStrategyPKNRLFQ();
         }
         if ((i4 & 16) != 0) {
             settings = resourceFont.variationSettings;
         }
         FontVariation.Settings settings2 = settings;
         int i5 = i2;
-        return resourceFont.m6866copyF3nL8kk(i, fontWeight, i5, i3, settings2);
+        return resourceFont.m6879copyF3nL8kk(i, fontWeight, i5, i3, settings2);
     }
 
     /* renamed from: copy-F3nL8kk  reason: not valid java name */
-    public final ResourceFont m6866copyF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
+    public final ResourceFont m6879copyF3nL8kk(int i, FontWeight fontWeight, int i2, int i3, FontVariation.Settings settings) {
         return new ResourceFont(i, fontWeight, i2, settings, i3, null);
     }
 
@@ -118,16 +118,16 @@ public final class ResourceFont implements Font {
         }
         if (obj instanceof ResourceFont) {
             ResourceFont resourceFont = (ResourceFont) obj;
-            return this.resId == resourceFont.resId && Intrinsics.areEqual(getWeight(), resourceFont.getWeight()) && FontStyle.m6826equalsimpl0(mo6778getStyle_LCdwA(), resourceFont.mo6778getStyle_LCdwA()) && Intrinsics.areEqual(this.variationSettings, resourceFont.variationSettings) && FontLoadingStrategy.m6813equalsimpl0(mo6770getLoadingStrategyPKNRLFQ(), resourceFont.mo6770getLoadingStrategyPKNRLFQ());
+            return this.resId == resourceFont.resId && Intrinsics.areEqual(getWeight(), resourceFont.getWeight()) && FontStyle.m6839equalsimpl0(mo6791getStyle_LCdwA(), resourceFont.mo6791getStyle_LCdwA()) && Intrinsics.areEqual(this.variationSettings, resourceFont.variationSettings) && FontLoadingStrategy.m6826equalsimpl0(mo6783getLoadingStrategyPKNRLFQ(), resourceFont.mo6783getLoadingStrategyPKNRLFQ());
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.resId * 31) + getWeight().hashCode()) * 31) + FontStyle.m6827hashCodeimpl(mo6778getStyle_LCdwA())) * 31) + FontLoadingStrategy.m6814hashCodeimpl(mo6770getLoadingStrategyPKNRLFQ())) * 31) + this.variationSettings.hashCode();
+        return (((((((this.resId * 31) + getWeight().hashCode()) * 31) + FontStyle.m6840hashCodeimpl(mo6791getStyle_LCdwA())) * 31) + FontLoadingStrategy.m6827hashCodeimpl(mo6783getLoadingStrategyPKNRLFQ())) * 31) + this.variationSettings.hashCode();
     }
 
     public String toString() {
-        return "ResourceFont(resId=" + this.resId + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m6828toStringimpl(mo6778getStyle_LCdwA())) + ", loadingStrategy=" + ((Object) FontLoadingStrategy.m6815toStringimpl(mo6770getLoadingStrategyPKNRLFQ())) + ')';
+        return "ResourceFont(resId=" + this.resId + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m6841toStringimpl(mo6791getStyle_LCdwA())) + ", loadingStrategy=" + ((Object) FontLoadingStrategy.m6828toStringimpl(mo6783getLoadingStrategyPKNRLFQ())) + ')';
     }
 }

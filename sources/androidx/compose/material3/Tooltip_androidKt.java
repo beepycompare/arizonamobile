@@ -99,7 +99,7 @@ public final class Tooltip_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2955PlainTooltip7QI4Sbk(final TooltipScope tooltipScope, Modifier modifier, long j, Shape shape, long j2, long j3, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m2965PlainTooltip7QI4Sbk(final TooltipScope tooltipScope, Modifier modifier, long j, Shape shape, long j2, long j3, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         Shape shape2;
@@ -208,7 +208,7 @@ public final class Tooltip_androidKt {
                         companion = Modifier.Companion;
                     }
                     if ((i2 & 2) == 0) {
-                        j6 = DpSize.Companion.m7358getUnspecifiedMYxV2XQ();
+                        j6 = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
                         i3 &= -897;
                     } else {
                         j6 = j;
@@ -225,14 +225,14 @@ public final class Tooltip_androidKt {
                         j5 = TooltipDefaults.INSTANCE.getPlainTooltipContainerColor(startRestartGroup, 6);
                         i3 &= -458753;
                     }
-                    float m7251constructorimpl = i4 == 0 ? Dp.m7251constructorimpl(0) : f3;
+                    float m7264constructorimpl = i4 == 0 ? Dp.m7264constructorimpl(0) : f3;
                     if (i5 == 0) {
-                        f5 = m7251constructorimpl;
+                        f5 = m7264constructorimpl;
                         shape3 = shape2;
-                        f4 = Dp.m7251constructorimpl(0);
+                        f4 = Dp.m7264constructorimpl(0);
                     } else {
                         f4 = f2;
-                        f5 = m7251constructorimpl;
+                        f5 = m7264constructorimpl;
                         shape3 = shape2;
                     }
                     i6 = i3;
@@ -292,9 +292,9 @@ public final class Tooltip_androidKt {
 
                             @Override // kotlin.jvm.functions.Function2
                             public final DrawResult invoke(CacheDrawScope cacheDrawScope, LayoutCoordinates layoutCoordinates) {
-                                DrawResult m2958drawCaretWithPathJKumZY;
-                                m2958drawCaretWithPathJKumZY = Tooltip_androidKt.m2958drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Plain, Density.this, configuration, j12, j11, layoutCoordinates);
-                                return m2958drawCaretWithPathJKumZY;
+                                DrawResult m2968drawCaretWithPathJKumZY;
+                                m2968drawCaretWithPathJKumZY = Tooltip_androidKt.m2968drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Plain, Density.this, configuration, j12, j11, layoutCoordinates);
+                                return m2968drawCaretWithPathJKumZY;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -307,7 +307,7 @@ public final class Tooltip_androidKt {
                 startRestartGroup.endReplaceGroup();
                 int i10 = i6 >> 6;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2654SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
+                SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -327,7 +327,7 @@ public final class Tooltip_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1430116975, i11, -1, "androidx.compose.material3.PlainTooltip.<anonymous> (Tooltip.android.kt:97)");
                             }
-                            Modifier padding = PaddingKt.padding(SizeKt.m888sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
+                            Modifier padding = PaddingKt.padding(SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
                             long j13 = j4;
                             Function2<Composer, Integer, Unit> function22 = function2;
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -347,19 +347,19 @@ public final class Tooltip_androidKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1903647947, "C106@4266L5,108@4285L181:Tooltip.android.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
+                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             composer3.endNode();
@@ -412,7 +412,7 @@ public final class Tooltip_androidKt {
                     }
 
                     public final void invoke(Composer composer3, int i11) {
-                        Tooltip_androidKt.m2955PlainTooltip7QI4Sbk(TooltipScope.this, modifier3, j7, shape4, j9, j10, f6, f7, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        Tooltip_androidKt.m2965PlainTooltip7QI4Sbk(TooltipScope.this, modifier3, j7, shape4, j9, j10, f6, f7, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -467,7 +467,7 @@ public final class Tooltip_androidKt {
         startRestartGroup.endReplaceGroup();
         int i102 = i6 >> 6;
         composer2 = startRestartGroup;
-        SurfaceKt.m2654SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
+        SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape3, j8, 0L, f5, f4, null, ComposableLambdaKt.rememberComposableLambda(1430116975, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$PlainTooltip$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -487,7 +487,7 @@ public final class Tooltip_androidKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(1430116975, i11, -1, "androidx.compose.material3.PlainTooltip.<anonymous> (Tooltip.android.kt:97)");
                     }
-                    Modifier padding = PaddingKt.padding(SizeKt.m888sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
+                    Modifier padding = PaddingKt.padding(SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getPlainTooltipMaxWidth(), 0.0f, 8, null), TooltipKt.getPlainTooltipContentPadding());
                     long j13 = j4;
                     Function2<Composer, Integer, Unit> function22 = function2;
                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -507,19 +507,19 @@ public final class Tooltip_androidKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 1903647947, "C106@4266L5,108@4285L181:Tooltip.android.kt#uh7d8r");
-                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
+                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j13)), TextKt.getLocalTextStyle().provides(TypographyKt.getValue(PlainTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6))}, function22, composer3, ProvidedValue.$stable);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     composer3.endNode();
@@ -589,7 +589,7 @@ public final class Tooltip_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2956RichTooltipyDvdmqw(final TooltipScope tooltipScope, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, long j, Shape shape, RichTooltipColors richTooltipColors, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2) {
+    public static final void m2966RichTooltipyDvdmqw(final TooltipScope tooltipScope, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Function2<? super Composer, ? super Integer, Unit> function22, long j, Shape shape, RichTooltipColors richTooltipColors, float f, float f2, final Function2<? super Composer, ? super Integer, Unit> function23, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -701,7 +701,7 @@ public final class Tooltip_androidKt {
                                     obj2 = null;
                                 }
                                 if ((i2 & 8) != 0) {
-                                    j2 = DpSize.Companion.m7358getUnspecifiedMYxV2XQ();
+                                    j2 = DpSize.Companion.m7371getUnspecifiedMYxV2XQ();
                                     i12 &= -57345;
                                 }
                                 if ((i2 & 16) != 0) {
@@ -714,15 +714,15 @@ public final class Tooltip_androidKt {
                                 } else {
                                     richTooltipColors2 = richTooltipColors;
                                 }
-                                float m3284getLevel0D9Ej5fM = i6 != 0 ? ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM() : f;
+                                float m3294getLevel0D9Ej5fM = i6 != 0 ? ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM() : f;
                                 if (i8 != 0) {
                                     int i13 = i12;
-                                    f3 = m3284getLevel0D9Ej5fM;
+                                    f3 = m3294getLevel0D9Ej5fM;
                                     i9 = i13;
-                                    f4 = RichTooltipTokens.INSTANCE.m3582getContainerElevationD9Ej5fM();
+                                    f4 = RichTooltipTokens.INSTANCE.m3592getContainerElevationD9Ej5fM();
                                 } else {
                                     int i14 = i12;
-                                    f3 = m3284getLevel0D9Ej5fM;
+                                    f3 = m3294getLevel0D9Ej5fM;
                                     i9 = i14;
                                     f4 = f2;
                                 }
@@ -749,7 +749,7 @@ public final class Tooltip_androidKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                             Object consume = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            final long m2038applyTonalElevationRFCenO8 = ColorSchemeKt.m2038applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2510getContainerColor0d7_KjU(), Dp.m7251constructorimpl(((Dp) consume).m7265unboximpl() + f3), startRestartGroup, 0);
+                            final long m2048applyTonalElevationRFCenO8 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume).m7278unboximpl() + f3), startRestartGroup, 0);
                             Shape shape3 = obj3;
                             startRestartGroup.startReplaceGroup(1472746423);
                             ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
@@ -765,7 +765,7 @@ public final class Tooltip_androidKt {
                                 Modifier.Companion companion2 = Modifier.Companion;
                                 richTooltipColors3 = richTooltipColors2;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1472751513, "CC(remember):Tooltip.android.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(density) | startRestartGroup.changedInstance(configuration) | startRestartGroup.changed(m2038applyTonalElevationRFCenO8) | ((((57344 & i9) ^ 24576) > 16384 && startRestartGroup.changed(j2)) || (i9 & 24576) == 16384);
+                                boolean changed = startRestartGroup.changed(density) | startRestartGroup.changedInstance(configuration) | startRestartGroup.changed(m2048applyTonalElevationRFCenO8) | ((((57344 & i9) ^ 24576) > 16384 && startRestartGroup.changed(j2)) || (i9 & 24576) == 16384);
                                 Object rememberedValue = startRestartGroup.rememberedValue();
                                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                                     final long j5 = j2;
@@ -778,9 +778,9 @@ public final class Tooltip_androidKt {
 
                                         @Override // kotlin.jvm.functions.Function2
                                         public final DrawResult invoke(CacheDrawScope cacheDrawScope, LayoutCoordinates layoutCoordinates) {
-                                            DrawResult m2958drawCaretWithPathJKumZY;
-                                            m2958drawCaretWithPathJKumZY = Tooltip_androidKt.m2958drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Rich, Density.this, configuration, m2038applyTonalElevationRFCenO8, j5, layoutCoordinates);
-                                            return m2958drawCaretWithPathJKumZY;
+                                            DrawResult m2968drawCaretWithPathJKumZY;
+                                            m2968drawCaretWithPathJKumZY = Tooltip_androidKt.m2968drawCaretWithPathJKumZY(cacheDrawScope, CaretType.Rich, Density.this, configuration, m2048applyTonalElevationRFCenO8, j5, layoutCoordinates);
+                                            return m2968drawCaretWithPathJKumZY;
                                         }
                                     };
                                     j3 = j5;
@@ -799,7 +799,7 @@ public final class Tooltip_androidKt {
                             startRestartGroup.endReplaceGroup();
                             richTooltipColors4 = richTooltipColors3;
                             int i15 = i9 >> 9;
-                            SurfaceKt.m2654SurfaceT9BRK9s(SizeKt.m888sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3, richTooltipColors3.m2510getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
+                            SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
                                 /* JADX INFO: Access modifiers changed from: package-private */
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
@@ -829,7 +829,7 @@ public final class Tooltip_androidKt {
                                         TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                                         TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                                         TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                                        Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                                        Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                                         Function2<Composer, Integer, Unit> function27 = obj;
                                         Function2<Composer, Integer, Unit> function28 = obj2;
                                         RichTooltipColors richTooltipColors6 = richTooltipColors4;
@@ -839,7 +839,7 @@ public final class Tooltip_androidKt {
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                         CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -851,15 +851,15 @@ public final class Tooltip_androidKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                         ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
@@ -873,13 +873,13 @@ public final class Tooltip_androidKt {
                                             r19 = 1;
                                             function26 = function28;
                                             richTooltipColors5 = richTooltipColors6;
-                                            Modifier m662paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m662paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                                            Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                             CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m662paddingFromBaselineVpY3zN4$default);
+                                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
                                             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -891,19 +891,19 @@ public final class Tooltip_androidKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2512getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
+                                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                             composer3.endNode();
@@ -932,20 +932,20 @@ public final class Tooltip_androidKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer3);
-                                        Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
+                                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                            m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                            m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
                                         ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2511getContentColor0d7_KjU()));
+                                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
                                         providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
                                         CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -957,13 +957,13 @@ public final class Tooltip_androidKt {
                                         composer3.startReplaceGroup(955039618);
                                         ComposerKt.sourceInformation(composer3, "*201@8080L476");
                                         if (function26 != null) {
-                                            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m875requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                             CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                             Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -975,20 +975,20 @@ public final class Tooltip_androidKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer3);
-                                            Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
+                                            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                                m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                                            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
                                             ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2509getActionContentColor0d7_KjU()));
+                                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
                                             providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
                                             CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1057,7 +1057,7 @@ public final class Tooltip_androidKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i16) {
-                                    Tooltip_androidKt.m2956RichTooltipyDvdmqw(TooltipScope.this, modifier3, function25, function24, j4, shape2, richTooltipColors4, f5, f6, function23, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    Tooltip_androidKt.m2966RichTooltipyDvdmqw(TooltipScope.this, modifier3, function25, function24, j4, shape2, richTooltipColors4, f5, f6, function23, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -1095,7 +1095,7 @@ public final class Tooltip_androidKt {
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                     Object consume4 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final long m2038applyTonalElevationRFCenO82 = ColorSchemeKt.m2038applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2510getContainerColor0d7_KjU(), Dp.m7251constructorimpl(((Dp) consume4).m7265unboximpl() + f3), startRestartGroup, 0);
+                    final long m2048applyTonalElevationRFCenO82 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume4).m7278unboximpl() + f3), startRestartGroup, 0);
                     Shape shape32 = obj3;
                     startRestartGroup.startReplaceGroup(1472746423);
                     ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
@@ -1104,7 +1104,7 @@ public final class Tooltip_androidKt {
                     startRestartGroup.endReplaceGroup();
                     richTooltipColors4 = richTooltipColors3;
                     int i152 = i9 >> 9;
-                    SurfaceKt.m2654SurfaceT9BRK9s(SizeKt.m888sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32, richTooltipColors3.m2510getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
+                    SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -1134,7 +1134,7 @@ public final class Tooltip_androidKt {
                                 TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                                 TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                                 TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                                Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                                Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                                 Function2<Composer, Integer, Unit> function27 = obj;
                                 Function2<Composer, Integer, Unit> function28 = obj2;
                                 RichTooltipColors richTooltipColors6 = richTooltipColors4;
@@ -1144,7 +1144,7 @@ public final class Tooltip_androidKt {
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -1156,15 +1156,15 @@ public final class Tooltip_androidKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
@@ -1178,13 +1178,13 @@ public final class Tooltip_androidKt {
                                     r19 = 1;
                                     function26 = function28;
                                     richTooltipColors5 = richTooltipColors6;
-                                    Modifier m662paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m662paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                                    Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m662paddingFromBaselineVpY3zN4$default);
+                                    Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
                                     Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1196,19 +1196,19 @@ public final class Tooltip_androidKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                    Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2512getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
+                                    CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     composer3.endNode();
@@ -1237,20 +1237,20 @@ public final class Tooltip_androidKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                    m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                    m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                    m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                    m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
                                 ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                                providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2511getContentColor0d7_KjU()));
+                                providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
                                 providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
                                 CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1262,13 +1262,13 @@ public final class Tooltip_androidKt {
                                 composer3.startReplaceGroup(955039618);
                                 ComposerKt.sourceInformation(composer3, "*201@8080L476");
                                 if (function26 != null) {
-                                    Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m875requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                                    Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                                     ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                     MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                    Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                     Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1280,20 +1280,20 @@ public final class Tooltip_androidKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer3);
-                                    Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
+                                    Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                        m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                        m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                                    if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                        m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                        m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
                                     ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                    providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2509getActionContentColor0d7_KjU()));
+                                    providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
                                     providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
                                     CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1380,7 +1380,7 @@ public final class Tooltip_androidKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                 Object consume42 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                final long m2038applyTonalElevationRFCenO822 = ColorSchemeKt.m2038applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2510getContainerColor0d7_KjU(), Dp.m7251constructorimpl(((Dp) consume42).m7265unboximpl() + f3), startRestartGroup, 0);
+                final long m2048applyTonalElevationRFCenO822 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume42).m7278unboximpl() + f3), startRestartGroup, 0);
                 Shape shape322 = obj3;
                 startRestartGroup.startReplaceGroup(1472746423);
                 ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
@@ -1389,7 +1389,7 @@ public final class Tooltip_androidKt {
                 startRestartGroup.endReplaceGroup();
                 richTooltipColors4 = richTooltipColors3;
                 int i1522 = i9 >> 9;
-                SurfaceKt.m2654SurfaceT9BRK9s(SizeKt.m888sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape322, richTooltipColors3.m2510getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
+                SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape322, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -1419,7 +1419,7 @@ public final class Tooltip_androidKt {
                             TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                             TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                             TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                            Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                            Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                             Function2<Composer, Integer, Unit> function27 = obj;
                             Function2<Composer, Integer, Unit> function28 = obj2;
                             RichTooltipColors richTooltipColors6 = richTooltipColors4;
@@ -1429,7 +1429,7 @@ public final class Tooltip_androidKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1441,15 +1441,15 @@ public final class Tooltip_androidKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
@@ -1463,13 +1463,13 @@ public final class Tooltip_androidKt {
                                 r19 = 1;
                                 function26 = function28;
                                 richTooltipColors5 = richTooltipColors6;
-                                Modifier m662paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m662paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                                Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                 CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m662paddingFromBaselineVpY3zN4$default);
+                                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
                                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -1481,19 +1481,19 @@ public final class Tooltip_androidKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2512getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
+                                CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                 composer3.endNode();
@@ -1522,20 +1522,20 @@ public final class Tooltip_androidKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                            if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
                             ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                            providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2511getContentColor0d7_KjU()));
+                            providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
                             providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
                             CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1547,13 +1547,13 @@ public final class Tooltip_androidKt {
                             composer3.startReplaceGroup(955039618);
                             ComposerKt.sourceInformation(composer3, "*201@8080L476");
                             if (function26 != null) {
-                                Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m875requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                                Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                 CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                                Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                                 Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -1565,20 +1565,20 @@ public final class Tooltip_androidKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                    m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                    m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                                if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                    m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                    m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
                                 ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                                providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2509getActionContentColor0d7_KjU()));
+                                providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
                                 providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
                                 CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1669,7 +1669,7 @@ public final class Tooltip_androidKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume422 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final long m2038applyTonalElevationRFCenO8222 = ColorSchemeKt.m2038applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2510getContainerColor0d7_KjU(), Dp.m7251constructorimpl(((Dp) consume422).m7265unboximpl() + f3), startRestartGroup, 0);
+            final long m2048applyTonalElevationRFCenO8222 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume422).m7278unboximpl() + f3), startRestartGroup, 0);
             Shape shape3222 = obj3;
             startRestartGroup.startReplaceGroup(1472746423);
             ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
@@ -1678,7 +1678,7 @@ public final class Tooltip_androidKt {
             startRestartGroup.endReplaceGroup();
             richTooltipColors4 = richTooltipColors3;
             int i15222 = i9 >> 9;
-            SurfaceKt.m2654SurfaceT9BRK9s(SizeKt.m888sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3222, richTooltipColors3.m2510getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
+            SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape3222, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -1708,7 +1708,7 @@ public final class Tooltip_androidKt {
                         TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                         TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                         TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                        Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                        Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                         Function2<Composer, Integer, Unit> function27 = obj;
                         Function2<Composer, Integer, Unit> function28 = obj2;
                         RichTooltipColors richTooltipColors6 = richTooltipColors4;
@@ -1718,7 +1718,7 @@ public final class Tooltip_androidKt {
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -1730,15 +1730,15 @@ public final class Tooltip_androidKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                         ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
@@ -1752,13 +1752,13 @@ public final class Tooltip_androidKt {
                             r19 = 1;
                             function26 = function28;
                             richTooltipColors5 = richTooltipColors6;
-                            Modifier m662paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m662paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                            Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m662paddingFromBaselineVpY3zN4$default);
+                            Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
                             Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1770,19 +1770,19 @@ public final class Tooltip_androidKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2512getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
+                            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             composer3.endNode();
@@ -1811,20 +1811,20 @@ public final class Tooltip_androidKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                            m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                            m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
                         ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2511getContentColor0d7_KjU()));
+                        providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
                         providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
                         CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1836,13 +1836,13 @@ public final class Tooltip_androidKt {
                         composer3.startReplaceGroup(955039618);
                         ComposerKt.sourceInformation(composer3, "*201@8080L476");
                         if (function26 != null) {
-                            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m875requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                             ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                            Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                             Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1854,20 +1854,20 @@ public final class Tooltip_androidKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
                             ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2509getActionContentColor0d7_KjU()));
+                            providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
                             providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
                             CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1962,7 +1962,7 @@ public final class Tooltip_androidKt {
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume4222 = startRestartGroup.consume(SurfaceKt.getLocalAbsoluteTonalElevation());
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        final long m2038applyTonalElevationRFCenO82222 = ColorSchemeKt.m2038applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2510getContainerColor0d7_KjU(), Dp.m7251constructorimpl(((Dp) consume4222).m7265unboximpl() + f3), startRestartGroup, 0);
+        final long m2048applyTonalElevationRFCenO82222 = ColorSchemeKt.m2048applyTonalElevationRFCenO8(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), richTooltipColors2.m2520getContainerColor0d7_KjU(), Dp.m7264constructorimpl(((Dp) consume4222).m7278unboximpl() + f3), startRestartGroup, 0);
         Shape shape32222 = obj3;
         startRestartGroup.startReplaceGroup(1472746423);
         ComposerKt.sourceInformation(startRestartGroup, "153@6122L7,154@6181L7,155@6220L341");
@@ -1971,7 +1971,7 @@ public final class Tooltip_androidKt {
         startRestartGroup.endReplaceGroup();
         richTooltipColors4 = richTooltipColors3;
         int i152222 = i9 >> 9;
-        SurfaceKt.m2654SurfaceT9BRK9s(SizeKt.m888sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32222, richTooltipColors3.m2510getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
+        SurfaceKt.m2664SurfaceT9BRK9s(SizeKt.m898sizeInqDBjuR0$default(modifier2, TooltipKt.getTooltipMinWidth(), TooltipKt.getTooltipMinHeight(), TooltipKt.getRichTooltipMaxWidth(), 0.0f, 8, null), shape32222, richTooltipColors3.m2520getContainerColor0d7_KjU(), 0L, f3, f4, null, ComposableLambdaKt.rememberComposableLambda(317290958, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.Tooltip_androidKt$RichTooltip$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -2001,7 +2001,7 @@ public final class Tooltip_androidKt {
                     TextStyle value = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getActionLabelTextFont(), composer3, 6);
                     TextStyle value2 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSubheadFont(), composer3, 6);
                     TextStyle value3 = TypographyKt.getValue(RichTooltipTokens.INSTANCE.getSupportingTextFont(), composer3, 6);
-                    Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
+                    Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, TooltipKt.getRichTooltipHorizontalPadding(), 0.0f, 2, null);
                     Function2<Composer, Integer, Unit> function27 = obj;
                     Function2<Composer, Integer, Unit> function28 = obj2;
                     RichTooltipColors richTooltipColors6 = richTooltipColors4;
@@ -2011,7 +2011,7 @@ public final class Tooltip_androidKt {
                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -2023,15 +2023,15 @@ public final class Tooltip_androidKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, -459254051, "C193@7718L319:Tooltip.android.kt#uh7d8r");
@@ -2045,13 +2045,13 @@ public final class Tooltip_androidKt {
                         r19 = 1;
                         function26 = function28;
                         richTooltipColors5 = richTooltipColors6;
-                        Modifier m662paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m662paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
+                        Modifier m672paddingFromBaselineVpY3zN4$default = AlignmentLineKt.m672paddingFromBaselineVpY3zN4$default(Modifier.Companion, TooltipKt.getHeightToSubheadFirstLine(), 0.0f, 2, null);
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap2 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m662paddingFromBaselineVpY3zN4$default);
+                        Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(composer3, m672paddingFromBaselineVpY3zN4$default);
                         Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -2063,19 +2063,19 @@ public final class Tooltip_androidKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                        if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 1468424960, "C186@7446L227:Tooltip.android.kt#uh7d8r");
-                        CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2512getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
+                        CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2522getTitleContentColor0d7_KjU())), TextKt.getLocalTextStyle().provides(value2)}, function27, composer3, ProvidedValue.$stable);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
                         composer3.endNode();
@@ -2104,20 +2104,20 @@ public final class Tooltip_androidKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                        m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                        m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                    if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                        m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, -1959181329, "C194@7812L211:Tooltip.android.kt#uh7d8r");
                     ProvidedValue[] providedValueArr = new ProvidedValue[2];
-                    providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2511getContentColor0d7_KjU()));
+                    providedValueArr[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2521getContentColor0d7_KjU()));
                     providedValueArr[r19] = TextKt.getLocalTextStyle().provides(value3);
                     CompositionLocalKt.CompositionLocalProvider(providedValueArr, function29, composer3, ProvidedValue.$stable);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2129,13 +2129,13 @@ public final class Tooltip_androidKt {
                     composer3.startReplaceGroup(955039618);
                     ComposerKt.sourceInformation(composer3, "*201@8080L476");
                     if (function26 != null) {
-                        Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m875requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
+                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m885requiredHeightInVpY3zN4$default(Modifier.Companion, TooltipKt.getActionLabelMinHeight(), 0.0f, 2, null), 0.0f, 0.0f, 0.0f, TooltipKt.getActionLabelBottomPadding(), 7, null);
                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash4 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                         CompositionLocalMap currentCompositionLocalMap4 = composer3.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m836paddingqDBjuR0$default);
+                        Modifier materializeModifier4 = ComposedModifierKt.materializeModifier(composer3, m846paddingqDBjuR0$default);
                         Function0<ComposeUiNode> constructor4 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -2147,20 +2147,20 @@ public final class Tooltip_androidKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                            m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                            m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                        if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                            m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                            m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer3, 1469278235, "C206@8306L232:Tooltip.android.kt#uh7d8r");
                         ProvidedValue[] providedValueArr2 = new ProvidedValue[2];
-                        providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(richTooltipColors5.m2509getActionContentColor0d7_KjU()));
+                        providedValueArr2[0] = ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(richTooltipColors5.m2519getActionContentColor0d7_KjU()));
                         providedValueArr2[r19] = TextKt.getLocalTextStyle().provides(value);
                         CompositionLocalKt.CompositionLocalProvider(providedValueArr2, function26, composer3, ProvidedValue.$stable);
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2206,14 +2206,14 @@ public final class Tooltip_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawCaretWithPath-JKu-mZY  reason: not valid java name */
-    public static final DrawResult m2958drawCaretWithPathJKumZY(CacheDrawScope cacheDrawScope, CaretType caretType, Density density, Configuration configuration, final long j, long j2, final LayoutCoordinates layoutCoordinates) {
+    public static final DrawResult m2968drawCaretWithPathJKumZY(CacheDrawScope cacheDrawScope, CaretType caretType, Density density, Configuration configuration, final long j, long j2, final LayoutCoordinates layoutCoordinates) {
         long j3;
         final Path Path = AndroidPath_androidKt.Path();
         if (layoutCoordinates != null) {
-            int mo413roundToPx0680j_4 = density.mo413roundToPx0680j_4(DpSize.m7347getHeightD9Ej5fM(j2));
-            int mo413roundToPx0680j_42 = density.mo413roundToPx0680j_4(DpSize.m7349getWidthD9Ej5fM(j2));
-            int mo413roundToPx0680j_43 = density.mo413roundToPx0680j_4(Dp.m7251constructorimpl(configuration.screenWidthDp));
-            int mo413roundToPx0680j_44 = density.mo413roundToPx0680j_4(TooltipKt.getSpacingBetweenTooltipAndAnchor());
+            int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(DpSize.m7360getHeightD9Ej5fM(j2));
+            int mo423roundToPx0680j_42 = density.mo423roundToPx0680j_4(DpSize.m7362getWidthD9Ej5fM(j2));
+            int mo423roundToPx0680j_43 = density.mo423roundToPx0680j_4(Dp.m7264constructorimpl(configuration.screenWidthDp));
+            int mo423roundToPx0680j_44 = density.mo423roundToPx0680j_4(TooltipKt.getSpacingBetweenTooltipAndAnchor());
             Rect boundsInWindow = LayoutCoordinatesKt.boundsInWindow(layoutCoordinates);
             float left = boundsInWindow.getLeft();
             float right = boundsInWindow.getRight();
@@ -2221,52 +2221,52 @@ public final class Tooltip_androidKt {
             float f = 2;
             float f2 = (right + left) / f;
             float f3 = right - left;
-            float m4362getWidthimpl = Size.m4362getWidthimpl(cacheDrawScope.m4077getSizeNHjbRc());
-            float m4359getHeightimpl = Size.m4359getHeightimpl(cacheDrawScope.m4077getSizeNHjbRc());
-            boolean z = (top - m4359getHeightimpl) - ((float) mo413roundToPx0680j_44) < 0.0f;
+            float m4374getWidthimpl = Size.m4374getWidthimpl(cacheDrawScope.m4089getSizeNHjbRc());
+            float m4371getHeightimpl = Size.m4371getHeightimpl(cacheDrawScope.m4089getSizeNHjbRc());
+            boolean z = (top - m4371getHeightimpl) - ((float) mo423roundToPx0680j_44) < 0.0f;
             if (z) {
-                m4359getHeightimpl = 0.0f;
+                m4371getHeightimpl = 0.0f;
             }
             if (caretType == CaretType.Plain) {
-                float f4 = mo413roundToPx0680j_43;
-                if ((m4362getWidthimpl / f) + f2 > f4) {
-                    j3 = OffsetKt.Offset(m4362getWidthimpl - (f4 - f2), m4359getHeightimpl);
+                float f4 = mo423roundToPx0680j_43;
+                if ((m4374getWidthimpl / f) + f2 > f4) {
+                    j3 = OffsetKt.Offset(m4374getWidthimpl - (f4 - f2), m4371getHeightimpl);
                 } else {
-                    j3 = OffsetKt.Offset(f2 - Math.max(left - ((Size.m4362getWidthimpl(cacheDrawScope.m4077getSizeNHjbRc()) / f) - (f3 / f)), 0.0f), m4359getHeightimpl);
+                    j3 = OffsetKt.Offset(f2 - Math.max(left - ((Size.m4374getWidthimpl(cacheDrawScope.m4089getSizeNHjbRc()) / f) - (f3 / f)), 0.0f), m4371getHeightimpl);
                 }
             } else {
-                long Offset = OffsetKt.Offset(f2 - left, m4359getHeightimpl);
-                float f5 = mo413roundToPx0680j_43;
-                if (left + m4362getWidthimpl > f5) {
-                    float f6 = right - m4362getWidthimpl;
-                    Offset = OffsetKt.Offset(f2 - f6, m4359getHeightimpl);
+                long Offset = OffsetKt.Offset(f2 - left, m4371getHeightimpl);
+                float f5 = mo423roundToPx0680j_43;
+                if (left + m4374getWidthimpl > f5) {
+                    float f6 = right - m4374getWidthimpl;
+                    Offset = OffsetKt.Offset(f2 - f6, m4371getHeightimpl);
                     if (f6 < 0.0f) {
-                        float f7 = m4362getWidthimpl / f;
+                        float f7 = m4374getWidthimpl / f;
                         float f8 = f3 / f;
                         if ((left - f7) + f8 <= 0.0f) {
-                            j3 = OffsetKt.Offset(f2, m4359getHeightimpl);
+                            j3 = OffsetKt.Offset(f2, m4371getHeightimpl);
                         } else if ((right + f7) - f8 >= f5) {
-                            j3 = OffsetKt.Offset(m4362getWidthimpl - (f5 - f2), m4359getHeightimpl);
+                            j3 = OffsetKt.Offset(m4374getWidthimpl - (f5 - f2), m4371getHeightimpl);
                         } else {
-                            j3 = OffsetKt.Offset(f7, m4359getHeightimpl);
+                            j3 = OffsetKt.Offset(f7, m4371getHeightimpl);
                         }
                     }
                 }
                 j3 = Offset;
             }
             if (z) {
-                Path.moveTo(Offset.m4293getXimpl(j3), Offset.m4294getYimpl(j3));
-                float f9 = mo413roundToPx0680j_42 / 2;
-                Path.lineTo(Offset.m4293getXimpl(j3) + f9, Offset.m4294getYimpl(j3));
-                Path.lineTo(Offset.m4293getXimpl(j3), Offset.m4294getYimpl(j3) - mo413roundToPx0680j_4);
-                Path.lineTo(Offset.m4293getXimpl(j3) - f9, Offset.m4294getYimpl(j3));
+                Path.moveTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3));
+                float f9 = mo423roundToPx0680j_42 / 2;
+                Path.lineTo(Offset.m4305getXimpl(j3) + f9, Offset.m4306getYimpl(j3));
+                Path.lineTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3) - mo423roundToPx0680j_4);
+                Path.lineTo(Offset.m4305getXimpl(j3) - f9, Offset.m4306getYimpl(j3));
                 Path.close();
             } else {
-                Path.moveTo(Offset.m4293getXimpl(j3), Offset.m4294getYimpl(j3));
-                float f10 = mo413roundToPx0680j_42 / 2;
-                Path.lineTo(Offset.m4293getXimpl(j3) + f10, Offset.m4294getYimpl(j3));
-                Path.lineTo(Offset.m4293getXimpl(j3), Offset.m4294getYimpl(j3) + mo413roundToPx0680j_4);
-                Path.lineTo(Offset.m4293getXimpl(j3) - f10, Offset.m4294getYimpl(j3));
+                Path.moveTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3));
+                float f10 = mo423roundToPx0680j_42 / 2;
+                Path.lineTo(Offset.m4305getXimpl(j3) + f10, Offset.m4306getYimpl(j3));
+                Path.lineTo(Offset.m4305getXimpl(j3), Offset.m4306getYimpl(j3) + mo423roundToPx0680j_4);
+                Path.lineTo(Offset.m4305getXimpl(j3) - f10, Offset.m4306getYimpl(j3));
                 Path.close();
             }
         }
@@ -2287,7 +2287,7 @@ public final class Tooltip_androidKt {
             public final void invoke2(ContentDrawScope contentDrawScope) {
                 if (LayoutCoordinates.this != null) {
                     contentDrawScope.drawContent();
-                    DrawScope.m5106drawPathLG529CI$default(contentDrawScope, Path, j, 0.0f, null, null, 0, 60, null);
+                    DrawScope.m5118drawPathLG529CI$default(contentDrawScope, Path, j, 0.0f, null, null, 0, 60, null);
                 }
             }
         });

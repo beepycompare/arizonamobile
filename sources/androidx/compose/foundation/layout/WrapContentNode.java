@@ -57,22 +57,22 @@ public final class WrapContentNode extends Modifier.Node implements LayoutModifi
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        int m7206getMinWidthimpl = this.direction != Direction.Vertical ? 0 : Constraints.m7206getMinWidthimpl(j);
-        int m7205getMinHeightimpl = this.direction == Direction.Horizontal ? Constraints.m7205getMinHeightimpl(j) : 0;
+    public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        int m7219getMinWidthimpl = this.direction != Direction.Vertical ? 0 : Constraints.m7219getMinWidthimpl(j);
+        int m7218getMinHeightimpl = this.direction == Direction.Horizontal ? Constraints.m7218getMinHeightimpl(j) : 0;
         int i = Integer.MAX_VALUE;
-        int m7204getMaxWidthimpl = (this.direction == Direction.Vertical || !this.unbounded) ? Constraints.m7204getMaxWidthimpl(j) : Integer.MAX_VALUE;
+        int m7217getMaxWidthimpl = (this.direction == Direction.Vertical || !this.unbounded) ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE;
         if (this.direction == Direction.Horizontal || !this.unbounded) {
-            i = Constraints.m7203getMaxHeightimpl(j);
+            i = Constraints.m7216getMaxHeightimpl(j);
         }
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(ConstraintsKt.Constraints(m7206getMinWidthimpl, m7204getMaxWidthimpl, m7205getMinHeightimpl, i));
-        final int coerceIn = RangesKt.coerceIn(mo5954measureBRTryo0.getWidth(), Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j));
-        final int coerceIn2 = RangesKt.coerceIn(mo5954measureBRTryo0.getHeight(), Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j));
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.Constraints(m7219getMinWidthimpl, m7217getMaxWidthimpl, m7218getMinHeightimpl, i));
+        final int coerceIn = RangesKt.coerceIn(mo5967measureBRTryo0.getWidth(), Constraints.m7219getMinWidthimpl(j), Constraints.m7217getMaxWidthimpl(j));
+        final int coerceIn2 = RangesKt.coerceIn(mo5967measureBRTryo0.getHeight(), Constraints.m7218getMinHeightimpl(j), Constraints.m7216getMaxHeightimpl(j));
         return MeasureScope.layout$default(measureScope, coerceIn, coerceIn2, null, new Function1() { // from class: androidx.compose.foundation.layout.WrapContentNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = WrapContentNode.measure_3p2s80s$lambda$0(WrapContentNode.this, coerceIn, mo5954measureBRTryo0, coerceIn2, measureScope, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = WrapContentNode.measure_3p2s80s$lambda$0(WrapContentNode.this, coerceIn, mo5967measureBRTryo0, coerceIn2, measureScope, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);
@@ -80,7 +80,7 @@ public final class WrapContentNode extends Modifier.Node implements LayoutModifi
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit measure_3p2s80s$lambda$0(WrapContentNode wrapContentNode, int i, Placeable placeable, int i2, MeasureScope measureScope, Placeable.PlacementScope placementScope) {
-        Placeable.PlacementScope.m6019place70tqf50$default(placementScope, placeable, wrapContentNode.alignmentCallback.invoke(IntSize.m7414boximpl(IntSize.m7417constructorimpl(((i - placeable.getWidth()) << 32) | ((i2 - placeable.getHeight()) & 4294967295L))), measureScope.getLayoutDirection()).m7388unboximpl(), 0.0f, 2, null);
+        Placeable.PlacementScope.m6032place70tqf50$default(placementScope, placeable, wrapContentNode.alignmentCallback.invoke(IntSize.m7427boximpl(IntSize.m7430constructorimpl(((i - placeable.getWidth()) << 32) | ((i2 - placeable.getHeight()) & 4294967295L))), measureScope.getLayoutDirection()).m7401unboximpl(), 0.0f, 2, null);
         return Unit.INSTANCE;
     }
 }

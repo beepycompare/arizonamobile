@@ -12,7 +12,7 @@ public final class Utils {
     public static final float AngleEpsilon = 1.0E-6f;
     public static final boolean DEBUG = false;
     public static final float DistanceEpsilon = 1.0E-4f;
-    private static final long Zero = FloatFloatPair.m14constructorimpl(0.0f, 0.0f);
+    private static final long Zero = FloatFloatPair.m24constructorimpl(0.0f, 0.0f);
     private static final float FloatPi = 3.1415927f;
     private static final float TwoPi = 6.2831855f;
 
@@ -46,12 +46,12 @@ public final class Utils {
         if (distance <= 0.0f) {
             throw new IllegalArgumentException("Required distance greater than zero".toString());
         }
-        return FloatFloatPair.m14constructorimpl(f / distance, f2 / distance);
+        return FloatFloatPair.m24constructorimpl(f / distance, f2 / distance);
     }
 
     public static final long directionVector(float f) {
         double d = f;
-        return FloatFloatPair.m14constructorimpl((float) Math.cos(d), (float) Math.sin(d));
+        return FloatFloatPair.m24constructorimpl((float) Math.cos(d), (float) Math.sin(d));
     }
 
     public static final float angle(float f, float f2) {
@@ -60,21 +60,21 @@ public final class Utils {
     }
 
     /* renamed from: radialToCartesian-L6JJ3z0$default  reason: not valid java name */
-    public static /* synthetic */ long m7832radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
+    public static /* synthetic */ long m7845radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             j = Zero;
         }
-        return m7831radialToCartesianL6JJ3z0(f, f2, j);
+        return m7844radialToCartesianL6JJ3z0(f, f2, j);
     }
 
     /* renamed from: radialToCartesian-L6JJ3z0  reason: not valid java name */
-    public static final long m7831radialToCartesianL6JJ3z0(float f, float f2, long j) {
-        return PointKt.m7816plusybeJwSQ(PointKt.m7818timesso9K2fw(directionVector(f2), f), j);
+    public static final long m7844radialToCartesianL6JJ3z0(float f, float f2, long j) {
+        return PointKt.m7829plusybeJwSQ(PointKt.m7831timesso9K2fw(directionVector(f2), f), j);
     }
 
     /* renamed from: rotate90-DnnuFBc  reason: not valid java name */
-    public static final long m7833rotate90DnnuFBc(long j) {
-        return FloatFloatPair.m14constructorimpl(-PointKt.m7813getYDnnuFBc(j), PointKt.m7812getXDnnuFBc(j));
+    public static final long m7846rotate90DnnuFBc(long j) {
+        return FloatFloatPair.m24constructorimpl(-PointKt.m7826getYDnnuFBc(j), PointKt.m7825getXDnnuFBc(j));
     }
 
     public static final long getZero() {

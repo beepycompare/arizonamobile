@@ -1,13 +1,13 @@
 package ru.rustore.sdk.appupdate;
 
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class c0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map<String, Object> f1378a;
+    public final Map<String, Object> f1379a;
 
     public c0(Map<String, ? extends Object> map) {
-        this.f1378a = map;
+        this.f1379a = map;
     }
 }

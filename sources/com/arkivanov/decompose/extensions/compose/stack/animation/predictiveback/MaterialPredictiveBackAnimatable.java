@@ -208,7 +208,7 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
     public static final Unit _get_enterModifier_$lambda$5(MaterialPredictiveBackAnimatable materialPredictiveBackAnimatable, ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
-        DrawScope.m5110drawRectnJ9OG0$default(drawWithContent, Color.m4536copywmQWz5c$default(Color.Companion.m4563getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5122drawRectnJ9OG0$default(drawWithContent, Color.m4548copywmQWz5c$default(Color.Companion.m4575getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         return Unit.INSTANCE;
     }
 
@@ -225,20 +225,20 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         } else {
             f = 0.5f;
         }
-        graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(f, 0.5f));
+        graphicsLayerScope.mo4751setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(f, 0.5f));
         float progress = 1.0f - (getProgress() / 10.0f);
         graphicsLayerScope.setScaleX(progress);
         graphicsLayerScope.setScaleY(progress);
         int i2 = WhenMappings.$EnumSwitchMapping$0[getEdge().ordinal()];
         if (i2 == 1) {
-            f2 = -graphicsLayerScope.mo419toPx0680j_4(Dp.m7251constructorimpl(8));
+            f2 = -graphicsLayerScope.mo429toPx0680j_4(Dp.m7264constructorimpl(8));
         } else if (i2 == 2) {
-            f2 = graphicsLayerScope.mo419toPx0680j_4(Dp.m7251constructorimpl(8));
+            f2 = graphicsLayerScope.mo429toPx0680j_4(Dp.m7264constructorimpl(8));
         } else if (i2 != 3) {
             throw new NoWhenBranchMatchedException();
         }
         graphicsLayerScope.setTranslationX(f2 * getProgress());
-        graphicsLayerScope.setTranslationY(((Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc()) / 20.0f) - graphicsLayerScope.mo419toPx0680j_4(Dp.m7251constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc())) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f));
+        graphicsLayerScope.setTranslationY(((Size.m4371getHeightimpl(graphicsLayerScope.mo4744getSizeNHjbRc()) / 20.0f) - graphicsLayerScope.mo429toPx0680j_4(Dp.m7264constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / Size.m4371getHeightimpl(graphicsLayerScope.mo4744getSizeNHjbRc())) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f));
         graphicsLayerScope.setAlpha(getFinishProgress());
         graphicsLayerScope.setShape(shape);
         graphicsLayerScope.setClip(true);

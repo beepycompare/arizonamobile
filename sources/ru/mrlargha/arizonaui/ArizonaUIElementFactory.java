@@ -4,7 +4,6 @@ import kotlin.Metadata;
 import kotlin.TuplesKt;
 import kotlin.collections.MapsKt;
 import ru.mrlargha.arizonaui.action.presentation.Action;
-import ru.mrlargha.arizonaui.cars.CarsScreen;
 import ru.mrlargha.arizonaui.container.presentation.CurrentContainer;
 import ru.mrlargha.arizonaui.container.presentation.CurrentContainerRewards;
 import ru.mrlargha.arizonaui.family.FamilyScreen;
@@ -22,6 +21,6 @@ import ru.mrlargha.event.EventScreen;
 /* loaded from: classes5.dex */
 public final class ArizonaUIElementFactory extends UIElementFactory {
     public ArizonaUIElementFactory() {
-        getSpawnerMap().putAll(MapsKt.mapOf(TuplesKt.to(UIElementID.ARIZONA_CURRENT_CONTAINER, new CurrentContainer.Spawner()), TuplesKt.to(UIElementID.ARIZONA_CONTAINER_REWARDS, new CurrentContainerRewards.Spawner()), TuplesKt.to(UIElementID.ARIZONA_ACTION, new Action.Spawner()), TuplesKt.to(UIElementID.ARIZONA_MOBILE_PHONE, new MobilePhone.Spawner()), TuplesKt.to(UIElementID.ARIZONA_VEHICLE_PLATE, new LicensePlatesScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_SITUATION, new SituationScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_FISHING, new FishingScreen.Spawner()), TuplesKt.to(UIElementID.CARS, new CarsScreen.Spawner()), TuplesKt.to(UIElementID.HOUSES, new MyHouseScreen.Spawner()), TuplesKt.to(UIElementID.FAMILY_ARIZONA, new FamilyScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_GHETTO, new GhettoScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_EVENT, new EventScreen.Spawner()), TuplesKt.to(UIElementID.TEST, new GhettoScreen.Spawner())));
+        getSpawnerMap().putAll(MapsKt.mapOf(TuplesKt.to(UIElementID.ARIZONA_CURRENT_CONTAINER, new CurrentContainer.Spawner()), TuplesKt.to(UIElementID.ARIZONA_CONTAINER_REWARDS, new CurrentContainerRewards.Spawner()), TuplesKt.to(UIElementID.ARIZONA_ACTION, new Action.Spawner()), TuplesKt.to(UIElementID.ARIZONA_MOBILE_PHONE, new MobilePhone.Spawner()), TuplesKt.to(UIElementID.ARIZONA_VEHICLE_PLATE, new LicensePlatesScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_SITUATION, new SituationScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_FISHING, new FishingScreen.Spawner()), TuplesKt.to(UIElementID.HOUSES, new MyHouseScreen.Spawner()), TuplesKt.to(UIElementID.FAMILY_ARIZONA, new FamilyScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_GHETTO, new GhettoScreen.Spawner()), TuplesKt.to(UIElementID.ARIZONA_EVENT, new EventScreen.Spawner())));
     }
 }

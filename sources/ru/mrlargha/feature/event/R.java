@@ -1,179 +1,179 @@
 package ru.mrlargha.feature.event;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class R {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public static final class color {
         public static int color3 = 0x7f06004f;
-        public static int main = 0x7f06031d;
-        public static int main_transparent = 0x7f06031e;
-        public static int secondary = 0x7f06041a;
+        public static int main = 0x7f06031b;
+        public static int main_transparent = 0x7f06031c;
+        public static int secondary = 0x7f060418;
 
         private color() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int event_award_recieved = 0x7f080696;
-        public static int event_coin = 0x7f080697;
-        public static int event_count_container_bg = 0x7f080698;
-        public static int event_event_btn_bg = 0x7f080699;
-        public static int event_event_btn_bg_transparent = 0x7f08069a;
-        public static int event_event_btn_bg_white = 0x7f08069b;
-        public static int event_event_item_bg = 0x7f08069c;
-        public static int event_event_item_bg_test = 0x7f08069d;
-        public static int event_event_item_transparent_gray_bg = 0x7f08069e;
-        public static int event_exp_item = 0x7f08069f;
-        public static int event_first_place_icon = 0x7f0806a0;
-        public static int event_icon = 0x7f0806a1;
-        public static int event_info_prise = 0x7f0806a2;
-        public static int event_main_bg = 0x7f0806a3;
-        public static int event_main_bg2 = 0x7f0806a4;
-        public static int event_main_grey_bg = 0x7f0806a5;
-        public static int event_main_tab_select_bg = 0x7f0806a6;
-        public static int event_prise_item_bg = 0x7f0806a8;
-        public static int event_prise_item_bg1 = 0x7f0806a9;
-        public static int event_radial_gold_gradient = 0x7f0806aa;
-        public static int event_remaining_time_ic = 0x7f0806ab;
-        public static int event_secon_place_icon = 0x7f0806ac;
-        public static int event_shop_first_place_bg = 0x7f0806ad;
-        public static int event_shop_secon_place_bg = 0x7f0806ae;
-        public static int event_shop_select_button_bg = 0x7f0806af;
-        public static int event_shop_unselect_button_bg = 0x7f0806b0;
-        public static int event_tab_unselect_bg = 0x7f0806b1;
-        public static int event_tab_video_back_ic = 0x7f0806b2;
-        public static int event_task_btn_bg = 0x7f0806b3;
-        public static int event_task_btn_bg_gold = 0x7f0806b4;
-        public static int event_task_btn_bg_white = 0x7f0806b5;
-        public static int event_task_btn_bg_white_transparent = 0x7f0806b6;
-        public static int event_task_ic_everyday = 0x7f0806b7;
-        public static int event_task_ic_lock = 0x7f0806b8;
-        public static int event_task_ic_story = 0x7f0806b9;
-        public static int event_task_item_bg = 0x7f0806ba;
-        public static int event_task_item_bg_test = 0x7f0806bb;
-        public static int event_task_progress_bar_bg = 0x7f0806bc;
-        public static int event_video_poster = 0x7f0806bd;
+        public static int event_award_recieved = 0x7f08069e;
+        public static int event_coin = 0x7f08069f;
+        public static int event_count_container_bg = 0x7f0806a0;
+        public static int event_event_btn_bg = 0x7f0806a1;
+        public static int event_event_btn_bg_transparent = 0x7f0806a2;
+        public static int event_event_btn_bg_white = 0x7f0806a3;
+        public static int event_event_item_bg = 0x7f0806a4;
+        public static int event_event_item_bg_test = 0x7f0806a5;
+        public static int event_event_item_transparent_gray_bg = 0x7f0806a6;
+        public static int event_exp_item = 0x7f0806a7;
+        public static int event_first_place_icon = 0x7f0806a8;
+        public static int event_icon = 0x7f0806a9;
+        public static int event_info_prise = 0x7f0806aa;
+        public static int event_main_bg = 0x7f0806ab;
+        public static int event_main_bg2 = 0x7f0806ac;
+        public static int event_main_grey_bg = 0x7f0806ad;
+        public static int event_main_tab_select_bg = 0x7f0806ae;
+        public static int event_prise_item_bg = 0x7f0806b0;
+        public static int event_prise_item_bg1 = 0x7f0806b1;
+        public static int event_radial_gold_gradient = 0x7f0806b2;
+        public static int event_remaining_time_ic = 0x7f0806b3;
+        public static int event_secon_place_icon = 0x7f0806b4;
+        public static int event_shop_first_place_bg = 0x7f0806b5;
+        public static int event_shop_secon_place_bg = 0x7f0806b6;
+        public static int event_shop_select_button_bg = 0x7f0806b7;
+        public static int event_shop_unselect_button_bg = 0x7f0806b8;
+        public static int event_tab_unselect_bg = 0x7f0806b9;
+        public static int event_tab_video_back_ic = 0x7f0806ba;
+        public static int event_task_btn_bg = 0x7f0806bb;
+        public static int event_task_btn_bg_gold = 0x7f0806bc;
+        public static int event_task_btn_bg_white = 0x7f0806bd;
+        public static int event_task_btn_bg_white_transparent = 0x7f0806be;
+        public static int event_task_ic_everyday = 0x7f0806bf;
+        public static int event_task_ic_lock = 0x7f0806c0;
+        public static int event_task_ic_story = 0x7f0806c1;
+        public static int event_task_item_bg = 0x7f0806c2;
+        public static int event_task_item_bg_test = 0x7f0806c3;
+        public static int event_task_progress_bar_bg = 0x7f0806c4;
+        public static int event_video_poster = 0x7f0806c5;
 
         private drawable() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public static final class id {
         public static int attemps_container = 0x7f0a00ff;
         public static int award_name = 0x7f0a0147;
         public static int back_button = 0x7f0a0152;
         public static int bg = 0x7f0a019c;
-        public static int bg_img = 0x7f0a01a0;
-        public static int btn_get = 0x7f0a0218;
-        public static int btn_join = 0x7f0a021a;
-        public static int btn_select = 0x7f0a0225;
-        public static int btn_unselect = 0x7f0a022a;
-        public static int button = 0x7f0a0231;
-        public static int buy_button = 0x7f0a026a;
-        public static int complete_text_container = 0x7f0a0349;
-        public static int count = 0x7f0a0387;
-        public static int easter_battlepass_choose = 0x7f0a0461;
-        public static int error_overlay = 0x7f0a0494;
-        public static int event1 = 0x7f0a049e;
-        public static int event2 = 0x7f0a049f;
-        public static int event3 = 0x7f0a04a0;
-        public static int events = 0x7f0a04a1;
-        public static int imagePrise = 0x7f0a0669;
-        public static int info_text = 0x7f0a06a9;
-        public static int info_text_bg = 0x7f0a06aa;
-        public static int item1 = 0x7f0a06c4;
-        public static int item2 = 0x7f0a06c5;
-        public static int item3 = 0x7f0a06c8;
-        public static int item_level_ic_usually = 0x7f0a06ef;
-        public static int item_level_name_usually = 0x7f0a06f1;
-        public static int item_level_usually_container = 0x7f0a06f4;
-        public static int item_level_usually_container_full = 0x7f0a06f5;
-        public static int item_top1 = 0x7f0a06fe;
-        public static int item_top2 = 0x7f0a06ff;
-        public static int iv_award = 0x7f0a0743;
-        public static int iv_check_mark = 0x7f0a074c;
-        public static int iv_event_bg = 0x7f0a0751;
-        public static int iv_name = 0x7f0a0759;
-        public static int iv_video = 0x7f0a075f;
-        public static int level_container = 0x7f0a07a9;
-        public static int level_pass_text = 0x7f0a07ac;
-        public static int level_text = 0x7f0a07af;
-        public static int locked = 0x7f0a07d7;
-        public static int logo = 0x7f0a07d8;
-        public static int main = 0x7f0a07e6;
-        public static int main_experience_text = 0x7f0a07ef;
-        public static int money_container = 0x7f0a0877;
-        public static int money_text = 0x7f0a0878;
-        public static int playerView = 0x7f0a09f8;
-        public static int players_container = 0x7f0a09fe;
-        public static int price = 0x7f0a0a25;
-        public static int progress_bar = 0x7f0a0a47;
-        public static int progress_bar_container = 0x7f0a0a48;
-        public static int progress_experience = 0x7f0a0a4b;
-        public static int rarity = 0x7f0a0a75;
-        public static int received = 0x7f0a0a84;
-        public static int remaining_time = 0x7f0a0ac5;
-        public static int remaining_time_text_main = 0x7f0a0ac7;
-        public static int result = 0x7f0a0ad1;
-        public static int result_back = 0x7f0a0ad2;
-        public static int result_main = 0x7f0a0ad3;
-        public static int rv_items = 0x7f0a0b9c;
-        public static int rv_price = 0x7f0a0b9e;
-        public static int rv_task = 0x7f0a0ba2;
-        public static int rv_task_prise = 0x7f0a0ba3;
-        public static int shop = 0x7f0a0c12;
-        public static int tab_event = 0x7f0a0cee;
-        public static int tab_main = 0x7f0a0cf0;
-        public static int tab_shop = 0x7f0a0cf1;
-        public static int tab_task = 0x7f0a0cf2;
-        public static int tab_video_back = 0x7f0a0cf3;
-        public static int tabs_container = 0x7f0a0cfb;
-        public static int task = 0x7f0a0d0b;
-        public static int top1desc = 0x7f0a0daa;
-        public static int top1name = 0x7f0a0dab;
-        public static int top2desc = 0x7f0a0dac;
-        public static int top2name = 0x7f0a0dad;
-        public static int top_elements = 0x7f0a0db3;
-        public static int tv_attempts_available = 0x7f0a0e50;
-        public static int tv_btn_get = 0x7f0a0e5b;
-        public static int tv_complete_percent = 0x7f0a0e5f;
-        public static int tv_description = 0x7f0a0e60;
-        public static int tv_error_text = 0x7f0a0e61;
-        public static int tv_event_description = 0x7f0a0e63;
-        public static int tv_event_name = 0x7f0a0e64;
-        public static int tv_name = 0x7f0a0e6f;
-        public static int tv_participants = 0x7f0a0e75;
-        public static int tv_task_count = 0x7f0a0e82;
-        public static int tv_title = 0x7f0a0e86;
-        public static int type_everyday = 0x7f0a0e8b;
-        public static int type_story = 0x7f0a0e8d;
-        public static int video = 0x7f0a0ebd;
-        public static int video_tabs_container = 0x7f0a0ec2;
-        public static int view_after_level = 0x7f0a0ed2;
-        public static int view_before_level = 0x7f0a0ed3;
+        public static int bg_img = 0x7f0a01a2;
+        public static int btn_get = 0x7f0a021b;
+        public static int btn_join = 0x7f0a021d;
+        public static int btn_select = 0x7f0a0228;
+        public static int btn_unselect = 0x7f0a0230;
+        public static int button = 0x7f0a0237;
+        public static int buy_button = 0x7f0a0274;
+        public static int complete_text_container = 0x7f0a0355;
+        public static int count = 0x7f0a0393;
+        public static int easter_battlepass_choose = 0x7f0a046e;
+        public static int error_overlay = 0x7f0a04a1;
+        public static int event1 = 0x7f0a04ab;
+        public static int event2 = 0x7f0a04ac;
+        public static int event3 = 0x7f0a04ad;
+        public static int events = 0x7f0a04ae;
+        public static int imagePrise = 0x7f0a067e;
+        public static int info_text = 0x7f0a06bd;
+        public static int info_text_bg = 0x7f0a06be;
+        public static int item1 = 0x7f0a06d7;
+        public static int item2 = 0x7f0a06d8;
+        public static int item3 = 0x7f0a06db;
+        public static int item_level_ic_usually = 0x7f0a0702;
+        public static int item_level_name_usually = 0x7f0a0704;
+        public static int item_level_usually_container = 0x7f0a0707;
+        public static int item_level_usually_container_full = 0x7f0a0708;
+        public static int item_top1 = 0x7f0a0711;
+        public static int item_top2 = 0x7f0a0712;
+        public static int iv_award = 0x7f0a0757;
+        public static int iv_check_mark = 0x7f0a0760;
+        public static int iv_event_bg = 0x7f0a0765;
+        public static int iv_name = 0x7f0a076d;
+        public static int iv_video = 0x7f0a0775;
+        public static int level_container = 0x7f0a07c1;
+        public static int level_pass_text = 0x7f0a07c4;
+        public static int level_text = 0x7f0a07c7;
+        public static int locked = 0x7f0a07ef;
+        public static int logo = 0x7f0a07f0;
+        public static int main = 0x7f0a07fe;
+        public static int main_experience_text = 0x7f0a0807;
+        public static int money_container = 0x7f0a088f;
+        public static int money_text = 0x7f0a0890;
+        public static int playerView = 0x7f0a0a11;
+        public static int players_container = 0x7f0a0a17;
+        public static int price = 0x7f0a0a3e;
+        public static int progress_bar = 0x7f0a0a63;
+        public static int progress_bar_container = 0x7f0a0a64;
+        public static int progress_experience = 0x7f0a0a67;
+        public static int rarity = 0x7f0a0a96;
+        public static int received = 0x7f0a0aa8;
+        public static int remaining_time = 0x7f0a0ae8;
+        public static int remaining_time_text_main = 0x7f0a0aea;
+        public static int result = 0x7f0a0af4;
+        public static int result_back = 0x7f0a0af5;
+        public static int result_main = 0x7f0a0af6;
+        public static int rv_items = 0x7f0a0bc0;
+        public static int rv_price = 0x7f0a0bc3;
+        public static int rv_task = 0x7f0a0bc8;
+        public static int rv_task_prise = 0x7f0a0bc9;
+        public static int shop = 0x7f0a0c39;
+        public static int tab_event = 0x7f0a0d16;
+        public static int tab_main = 0x7f0a0d18;
+        public static int tab_shop = 0x7f0a0d19;
+        public static int tab_task = 0x7f0a0d1a;
+        public static int tab_video_back = 0x7f0a0d1b;
+        public static int tabs_container = 0x7f0a0d23;
+        public static int task = 0x7f0a0d33;
+        public static int top1desc = 0x7f0a0dd3;
+        public static int top1name = 0x7f0a0dd4;
+        public static int top2desc = 0x7f0a0dd5;
+        public static int top2name = 0x7f0a0dd6;
+        public static int top_elements = 0x7f0a0ddc;
+        public static int tv_attempts_available = 0x7f0a0e7a;
+        public static int tv_btn_get = 0x7f0a0e85;
+        public static int tv_complete_percent = 0x7f0a0e89;
+        public static int tv_description = 0x7f0a0e8b;
+        public static int tv_error_text = 0x7f0a0e8c;
+        public static int tv_event_description = 0x7f0a0e8e;
+        public static int tv_event_name = 0x7f0a0e8f;
+        public static int tv_name = 0x7f0a0e9a;
+        public static int tv_participants = 0x7f0a0ea1;
+        public static int tv_task_count = 0x7f0a0eb1;
+        public static int tv_title = 0x7f0a0eb5;
+        public static int type_everyday = 0x7f0a0ebc;
+        public static int type_story = 0x7f0a0ebe;
+        public static int video = 0x7f0a0eef;
+        public static int video_tabs_container = 0x7f0a0ef3;
+        public static int view_after_level = 0x7f0a0f03;
+        public static int view_before_level = 0x7f0a0f04;
 
         private id() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public static final class layout {
-        public static int event_award_item = 0x7f0d00ac;
-        public static int event_events_item = 0x7f0d00ad;
-        public static int event_events_screen = 0x7f0d00ae;
-        public static int event_main_result_screen = 0x7f0d00af;
-        public static int event_main_screen = 0x7f0d00b0;
-        public static int event_prise_item = 0x7f0d00b1;
-        public static int event_prise_item_event = 0x7f0d00b2;
-        public static int event_screen = 0x7f0d00b3;
-        public static int event_shop_item = 0x7f0d00b4;
-        public static int event_shop_sceen = 0x7f0d00b5;
-        public static int event_task_item = 0x7f0d00b6;
-        public static int event_task_screen = 0x7f0d00b7;
-        public static int event_topbar = 0x7f0d00b8;
-        public static int event_video_screen = 0x7f0d00b9;
+        public static int event_award_item = 0x7f0d00af;
+        public static int event_events_item = 0x7f0d00b0;
+        public static int event_events_screen = 0x7f0d00b1;
+        public static int event_main_result_screen = 0x7f0d00b2;
+        public static int event_main_screen = 0x7f0d00b3;
+        public static int event_prise_item = 0x7f0d00b4;
+        public static int event_prise_item_event = 0x7f0d00b5;
+        public static int event_screen = 0x7f0d00b6;
+        public static int event_shop_item = 0x7f0d00b7;
+        public static int event_shop_sceen = 0x7f0d00b8;
+        public static int event_task_item = 0x7f0d00b9;
+        public static int event_task_screen = 0x7f0d00ba;
+        public static int event_topbar = 0x7f0d00bb;
+        public static int event_video_screen = 0x7f0d00bc;
 
         private layout() {
         }

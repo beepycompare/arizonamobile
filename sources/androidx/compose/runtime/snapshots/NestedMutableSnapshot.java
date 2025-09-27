@@ -23,7 +23,7 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
     public NestedMutableSnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Function1<Object, Unit> function12, MutableSnapshot mutableSnapshot) {
         super(j, snapshotIdSet, function1, function12);
         this.parent = mutableSnapshot;
-        mutableSnapshot.mo3992nestedActivated$runtime(this);
+        mutableSnapshot.mo4004nestedActivated$runtime(this);
     }
 
     @Override // androidx.compose.runtime.snapshots.MutableSnapshot, androidx.compose.runtime.snapshots.Snapshot
@@ -125,6 +125,6 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
             return;
         }
         this.deactivated = true;
-        this.parent.mo3993nestedDeactivated$runtime(this);
+        this.parent.mo4005nestedDeactivated$runtime(this);
     }
 }

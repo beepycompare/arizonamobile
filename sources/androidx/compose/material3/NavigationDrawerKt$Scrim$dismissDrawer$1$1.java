@@ -58,12 +58,12 @@ public final class NavigationDrawerKt$Scrim$dismissDrawer$1$1 extends SuspendLam
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m2401invokek4lQ0M(offset.m4303unboximpl());
+                    m2411invokek4lQ0M(offset.m4315unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m2401invokek4lQ0M(long j) {
+                public final void m2411invokek4lQ0M(long j) {
                     function0.invoke();
                 }
             }, this, 7, null) == coroutine_suspended) {

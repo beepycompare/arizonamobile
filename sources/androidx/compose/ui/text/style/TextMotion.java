@@ -12,8 +12,8 @@ public final class TextMotion {
     private final int linearity;
     private final boolean subpixelTextPositioning;
     public static final Companion Companion = new Companion(null);
-    private static final TextMotion Static = new TextMotion(Linearity.Companion.m7171getFontHinting4e0Vf04(), false, null);
-    private static final TextMotion Animated = new TextMotion(Linearity.Companion.m7172getLinear4e0Vf04(), true, null);
+    private static final TextMotion Static = new TextMotion(Linearity.Companion.m7184getFontHinting4e0Vf04(), false, null);
+    private static final TextMotion Animated = new TextMotion(Linearity.Companion.m7185getLinear4e0Vf04(), true, null);
 
     public /* synthetic */ TextMotion(int i, boolean z, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, z);
@@ -25,7 +25,7 @@ public final class TextMotion {
     }
 
     /* renamed from: getLinearity-4e0Vf04$ui_text  reason: not valid java name */
-    public final int m7163getLinearity4e0Vf04$ui_text() {
+    public final int m7176getLinearity4e0Vf04$ui_text() {
         return this.linearity;
     }
 
@@ -54,18 +54,18 @@ public final class TextMotion {
     }
 
     /* renamed from: copy-JdDtMQo$ui_text$default  reason: not valid java name */
-    public static /* synthetic */ TextMotion m7161copyJdDtMQo$ui_text$default(TextMotion textMotion, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ TextMotion m7174copyJdDtMQo$ui_text$default(TextMotion textMotion, int i, boolean z, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             i = textMotion.linearity;
         }
         if ((i2 & 2) != 0) {
             z = textMotion.subpixelTextPositioning;
         }
-        return textMotion.m7162copyJdDtMQo$ui_text(i, z);
+        return textMotion.m7175copyJdDtMQo$ui_text(i, z);
     }
 
     /* renamed from: copy-JdDtMQo$ui_text  reason: not valid java name */
-    public final TextMotion m7162copyJdDtMQo$ui_text(int i, boolean z) {
+    public final TextMotion m7175copyJdDtMQo$ui_text(int i, boolean z) {
         return new TextMotion(i, z, null);
     }
 
@@ -75,13 +75,13 @@ public final class TextMotion {
         }
         if (obj instanceof TextMotion) {
             TextMotion textMotion = (TextMotion) obj;
-            return Linearity.m7167equalsimpl0(this.linearity, textMotion.linearity) && this.subpixelTextPositioning == textMotion.subpixelTextPositioning;
+            return Linearity.m7180equalsimpl0(this.linearity, textMotion.linearity) && this.subpixelTextPositioning == textMotion.subpixelTextPositioning;
         }
         return false;
     }
 
     public int hashCode() {
-        return (Linearity.m7168hashCodeimpl(this.linearity) * 31) + Boolean.hashCode(this.subpixelTextPositioning);
+        return (Linearity.m7181hashCodeimpl(this.linearity) * 31) + Boolean.hashCode(this.subpixelTextPositioning);
     }
 
     public String toString() {
@@ -95,45 +95,45 @@ public final class TextMotion {
     public static final class Linearity {
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int Linear = m7165constructorimpl(1);
-        private static final int FontHinting = m7165constructorimpl(2);
-        private static final int None = m7165constructorimpl(3);
+        private static final int Linear = m7178constructorimpl(1);
+        private static final int FontHinting = m7178constructorimpl(2);
+        private static final int None = m7178constructorimpl(3);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Linearity m7164boximpl(int i) {
+        public static final /* synthetic */ Linearity m7177boximpl(int i) {
             return new Linearity(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        private static int m7165constructorimpl(int i) {
+        private static int m7178constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m7166equalsimpl(int i, Object obj) {
-            return (obj instanceof Linearity) && i == ((Linearity) obj).m7170unboximpl();
+        public static boolean m7179equalsimpl(int i, Object obj) {
+            return (obj instanceof Linearity) && i == ((Linearity) obj).m7183unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m7167equalsimpl0(int i, int i2) {
+        public static final boolean m7180equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m7168hashCodeimpl(int i) {
+        public static int m7181hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m7166equalsimpl(this.value, obj);
+            return m7179equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m7168hashCodeimpl(this.value);
+            return m7181hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m7170unboximpl() {
+        public final /* synthetic */ int m7183unboximpl() {
             return this.value;
         }
 
@@ -149,17 +149,17 @@ public final class TextMotion {
             }
 
             /* renamed from: getLinear-4e0Vf04  reason: not valid java name */
-            public final int m7172getLinear4e0Vf04() {
+            public final int m7185getLinear4e0Vf04() {
                 return Linearity.Linear;
             }
 
             /* renamed from: getFontHinting-4e0Vf04  reason: not valid java name */
-            public final int m7171getFontHinting4e0Vf04() {
+            public final int m7184getFontHinting4e0Vf04() {
                 return Linearity.FontHinting;
             }
 
             /* renamed from: getNone-4e0Vf04  reason: not valid java name */
-            public final int m7173getNone4e0Vf04() {
+            public final int m7186getNone4e0Vf04() {
                 return Linearity.None;
             }
         }
@@ -169,12 +169,12 @@ public final class TextMotion {
         }
 
         public String toString() {
-            return m7169toStringimpl(this.value);
+            return m7182toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m7169toStringimpl(int i) {
-            return m7167equalsimpl0(i, Linear) ? "Linearity.Linear" : m7167equalsimpl0(i, FontHinting) ? "Linearity.FontHinting" : m7167equalsimpl0(i, None) ? "Linearity.None" : "Invalid";
+        public static String m7182toStringimpl(int i) {
+            return m7180equalsimpl0(i, Linear) ? "Linearity.Linear" : m7180equalsimpl0(i, FontHinting) ? "Linearity.FontHinting" : m7180equalsimpl0(i, None) ? "Linearity.None" : "Invalid";
         }
     }
 }

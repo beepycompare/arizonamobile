@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 public final class b implements LastKnownLocationExtractor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1204a;
+    public final Context f1205a;
     public final PermissionResolutionStrategy b;
     public final LocationListener c;
     public final IHandlerExecutor d;
     public final d e = new d();
 
     public b(Context context, PermissionResolutionStrategy permissionResolutionStrategy, LocationListener locationListener, IHandlerExecutor iHandlerExecutor) {
-        this.f1204a = context;
+        this.f1205a = context;
         this.b = permissionResolutionStrategy;
         this.c = locationListener;
         this.d = iHandlerExecutor;
@@ -29,10 +29,10 @@ public final class b implements LastKnownLocationExtractor {
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractor
     public final void updateLastKnownLocation() {
         IGplLibraryWrapper gplLibraryWrapper;
-        if (this.b.hasNecessaryPermissions(this.f1204a)) {
+        if (this.b.hasNecessaryPermissions(this.f1205a)) {
             try {
                 d dVar = this.e;
-                Context context = this.f1204a;
+                Context context = this.f1205a;
                 LocationListener locationListener = this.c;
                 IHandlerExecutor iHandlerExecutor = this.d;
                 dVar.getClass();

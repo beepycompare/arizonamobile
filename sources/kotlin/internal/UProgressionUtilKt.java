@@ -11,38 +11,38 @@ import kotlin.ULong;
 /* loaded from: classes5.dex */
 public final class UProgressionUtilKt {
     /* renamed from: differenceModulo-WZ9TVnA  reason: not valid java name */
-    private static final int m10315differenceModuloWZ9TVnA(int i, int i2, int i3) {
+    private static final int m10330differenceModuloWZ9TVnA(int i, int i2, int i3) {
         int compare;
         int m$1 = UByte$$ExternalSyntheticBackport0.m$1(i, i3);
         int m$12 = UByte$$ExternalSyntheticBackport0.m$1(i2, i3);
         compare = Integer.compare(m$1 ^ Integer.MIN_VALUE, m$12 ^ Integer.MIN_VALUE);
-        int m9191constructorimpl = UInt.m9191constructorimpl(m$1 - m$12);
-        return compare >= 0 ? m9191constructorimpl : UInt.m9191constructorimpl(m9191constructorimpl + i3);
+        int m9206constructorimpl = UInt.m9206constructorimpl(m$1 - m$12);
+        return compare >= 0 ? m9206constructorimpl : UInt.m9206constructorimpl(m9206constructorimpl + i3);
     }
 
     /* renamed from: differenceModulo-sambcqE  reason: not valid java name */
-    private static final long m10316differenceModulosambcqE(long j, long j2, long j3) {
+    private static final long m10331differenceModulosambcqE(long j, long j2, long j3) {
         int compare;
-        long m9160m = UByte$$ExternalSyntheticBackport0.m9160m(j, j3);
-        long m9160m2 = UByte$$ExternalSyntheticBackport0.m9160m(j2, j3);
-        compare = Long.compare(m9160m ^ Long.MIN_VALUE, m9160m2 ^ Long.MIN_VALUE);
-        long m9270constructorimpl = ULong.m9270constructorimpl(m9160m - m9160m2);
-        return compare >= 0 ? m9270constructorimpl : ULong.m9270constructorimpl(m9270constructorimpl + j3);
+        long m9175m = UByte$$ExternalSyntheticBackport0.m9175m(j, j3);
+        long m9175m2 = UByte$$ExternalSyntheticBackport0.m9175m(j2, j3);
+        compare = Long.compare(m9175m ^ Long.MIN_VALUE, m9175m2 ^ Long.MIN_VALUE);
+        long m9285constructorimpl = ULong.m9285constructorimpl(m9175m - m9175m2);
+        return compare >= 0 ? m9285constructorimpl : ULong.m9285constructorimpl(m9285constructorimpl + j3);
     }
 
     /* renamed from: getProgressionLastElement-Nkh28Cs  reason: not valid java name */
-    public static final int m10318getProgressionLastElementNkh28Cs(int i, int i2, int i3) {
+    public static final int m10333getProgressionLastElementNkh28Cs(int i, int i2, int i3) {
         int compare;
         int compare2;
         if (i3 > 0) {
             compare2 = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
             if (compare2 < 0) {
-                return UInt.m9191constructorimpl(i2 - m10315differenceModuloWZ9TVnA(i2, i, UInt.m9191constructorimpl(i3)));
+                return UInt.m9206constructorimpl(i2 - m10330differenceModuloWZ9TVnA(i2, i, UInt.m9206constructorimpl(i3)));
             }
         } else if (i3 < 0) {
             compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
             if (compare > 0) {
-                return UInt.m9191constructorimpl(i2 + m10315differenceModuloWZ9TVnA(i, i2, UInt.m9191constructorimpl(-i3)));
+                return UInt.m9206constructorimpl(i2 + m10330differenceModuloWZ9TVnA(i, i2, UInt.m9206constructorimpl(-i3)));
             }
         } else {
             throw new IllegalArgumentException("Step is zero.");
@@ -51,16 +51,16 @@ public final class UProgressionUtilKt {
     }
 
     /* renamed from: getProgressionLastElement-7ftBX0g  reason: not valid java name */
-    public static final long m10317getProgressionLastElement7ftBX0g(long j, long j2, long j3) {
+    public static final long m10332getProgressionLastElement7ftBX0g(long j, long j2, long j3) {
         int compare;
         int compare2;
         int i = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
         if (i > 0) {
             compare2 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
-            return compare2 >= 0 ? j2 : ULong.m9270constructorimpl(j2 - m10316differenceModulosambcqE(j2, j, ULong.m9270constructorimpl(j3)));
+            return compare2 >= 0 ? j2 : ULong.m9285constructorimpl(j2 - m10331differenceModulosambcqE(j2, j, ULong.m9285constructorimpl(j3)));
         } else if (i < 0) {
             compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
-            return compare <= 0 ? j2 : ULong.m9270constructorimpl(j2 + m10316differenceModulosambcqE(j, j2, ULong.m9270constructorimpl(-j3)));
+            return compare <= 0 ? j2 : ULong.m9285constructorimpl(j2 + m10331differenceModulosambcqE(j, j2, ULong.m9285constructorimpl(-j3)));
         } else {
             throw new IllegalArgumentException("Step is zero.");
         }

@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public final class C0271g7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CounterConfigurationReporterType f890a;
+    public final CounterConfigurationReporterType f891a;
     public final Ij b;
 
     public C0271g7(CounterConfigurationReporterType counterConfigurationReporterType) {
@@ -53,7 +53,7 @@ public final class C0271g7 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    C0413lk c0413lk = Kj.f542a;
+                    C0413lk c0413lk = Kj.f543a;
                     c0413lk.getClass();
                     c0413lk.a(new Lj("select_rows_to_delete_exception", th));
                     ro.a(cursor);
@@ -75,11 +75,11 @@ public final class C0271g7 {
                 }
                 int i22 = sQLiteDatabase.delete("events", str, null);
                 if (arrayList != null && arrayList.size() != 0 && i22 == arrayList.size() && z && str2 != null && (ij = this.b) != null) {
-                    CounterConfigurationReporterType counterConfigurationReporterType = this.f890a;
+                    CounterConfigurationReporterType counterConfigurationReporterType = this.f891a;
                     synchronized (ij) {
                         gj = (Gj) ij.c.get(str2);
                         if (gj == null) {
-                            gj = new Gj(str2, ij.b, counterConfigurationReporterType, ij.f501a);
+                            gj = new Gj(str2, ij.b, counterConfigurationReporterType, ij.f502a);
                             ij.c.put(str2, gj);
                         }
                     }
@@ -94,7 +94,7 @@ public final class C0271g7 {
                                 jSONArray.put(asInteger);
                                 Bb a2 = Bb.a(asInteger2.intValue());
                                 if (a2 == null) {
-                                    Map map = AbstractC0409lg.f973a;
+                                    Map map = AbstractC0409lg.f974a;
                                     num = null;
                                 } else {
                                     num = (Integer) AbstractC0409lg.c.get(a2);
@@ -106,7 +106,7 @@ public final class C0271g7 {
                         JSONObject put = new JSONObject().put("details", new JSONObject().put("reason", AbstractC0245f7.a(i)).put("cleared", jSONObject).put("actual_deleted_number", i22));
                         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str2);
                         String jSONObject2 = put.toString();
-                        Set set = W9.f725a;
+                        Set set = W9.f726a;
                         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
                         c0397l4 = new C0397l4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                     } catch (Throwable unused) {
@@ -114,9 +114,9 @@ public final class C0271g7 {
                     }
                     if (c0397l4 != null && gj.c != null) {
                         try {
-                            CounterConfiguration counterConfiguration = new CounterConfiguration(gj.f462a);
+                            CounterConfiguration counterConfiguration = new CounterConfiguration(gj.f463a);
                             counterConfiguration.setReporterType(gj.c);
-                            gj.d.f521a.reportData(1, c0397l4.d(new C0153bi(new Vf(gj.b, (ResultReceiver) null), counterConfiguration, new C0144b9(new Al(LoggerStorage.getOrCreatePublicLogger(gj.f462a), "Crash Environment")), null).c()));
+                            gj.d.f522a.reportData(1, c0397l4.d(new C0153bi(new Vf(gj.b, (ResultReceiver) null), counterConfiguration, new C0144b9(new Al(LoggerStorage.getOrCreatePublicLogger(gj.f463a), "Crash Environment")), null).c()));
                         } catch (Throwable unused2) {
                         }
                     }
@@ -127,7 +127,7 @@ public final class C0271g7 {
         arrayList = null;
         int i222 = sQLiteDatabase.delete("events", str, null);
         if (arrayList != null) {
-            CounterConfigurationReporterType counterConfigurationReporterType2 = this.f890a;
+            CounterConfigurationReporterType counterConfigurationReporterType2 = this.f891a;
             synchronized (ij) {
             }
         }
@@ -135,7 +135,7 @@ public final class C0271g7 {
     }
 
     public C0271g7(CounterConfigurationReporterType counterConfigurationReporterType, Ij ij) {
-        this.f890a = counterConfigurationReporterType;
+        this.f891a = counterConfigurationReporterType;
         this.b = ij;
     }
 }

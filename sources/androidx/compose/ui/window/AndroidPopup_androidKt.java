@@ -86,7 +86,7 @@ public final class AndroidPopup_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m7503PopupK5zGePQ(Alignment alignment, long j, Function0<Unit> function0, PopupProperties popupProperties, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m7516PopupK5zGePQ(Alignment alignment, long j, Function0<Unit> function0, PopupProperties popupProperties, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j2;
@@ -140,7 +140,7 @@ public final class AndroidPopup_androidKt {
                             alignment2 = i6 != 0 ? Alignment.Companion.getTopStart() : obj;
                             if (i7 != 0) {
                                 long j4 = 0;
-                                j3 = IntOffset.m7373constructorimpl((j4 & 4294967295L) | (j4 << 32));
+                                j3 = IntOffset.m7386constructorimpl((j4 & 4294967295L) | (j4 << 32));
                             } else {
                                 j3 = j2;
                             }
@@ -187,7 +187,7 @@ public final class AndroidPopup_androidKt {
                                 }
 
                                 public final void invoke(Composer composer2, int i8) {
-                                    AndroidPopup_androidKt.m7503PopupK5zGePQ(Alignment.this, j3, function02, popupProperties2, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                    AndroidPopup_androidKt.m7516PopupK5zGePQ(Alignment.this, j3, function02, popupProperties2, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                                 }
                             });
                             return;
@@ -401,13 +401,13 @@ public final class AndroidPopup_androidKt {
 
                                         @Override // kotlin.jvm.functions.Function1
                                         public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                                            m7504invokeozmzZPI(intSize.m7426unboximpl());
+                                            m7517invokeozmzZPI(intSize.m7439unboximpl());
                                             return Unit.INSTANCE;
                                         }
 
                                         /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                                        public final void m7504invokeozmzZPI(long j) {
-                                            PopupLayout.this.m7507setPopupContentSizefhxjrPA(IntSize.m7414boximpl(j));
+                                        public final void m7517invokeozmzZPI(long j) {
+                                            PopupLayout.this.m7520setPopupContentSizefhxjrPA(IntSize.m7427boximpl(j));
                                             PopupLayout.this.updatePosition();
                                         }
                                     };
@@ -440,15 +440,15 @@ public final class AndroidPopup_androidKt {
                                 } else {
                                     composer2.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                                Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                                Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                    m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 Popup$lambda$1.invoke(composer2, 0);
                                 composer2.endNode();
                                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -604,7 +604,7 @@ public final class AndroidPopup_androidKt {
                         rememberedValue8 = new MeasurePolicy() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$Popup$8$1
                             @Override // androidx.compose.ui.layout.MeasurePolicy
                             /* renamed from: measure-3p2s80s */
-                            public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                            public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                                 PopupLayout.this.setParentLayoutDirection(layoutDirection);
                                 return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$Popup$8$1.1
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -638,15 +638,15 @@ public final class AndroidPopup_androidKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                    Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                    Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                        m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                        m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -958253783, "C:AndroidPopup.android.kt#2oxthz");
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     startRestartGroup.endNode();
@@ -794,15 +794,15 @@ public final class AndroidPopup_androidKt {
         } else {
             composer.useNode();
         }
-        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
-        Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
+        Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         function2.invoke(composer, Integer.valueOf((i3 >> 6) & 14));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);

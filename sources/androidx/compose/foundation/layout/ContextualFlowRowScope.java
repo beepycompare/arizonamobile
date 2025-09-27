@@ -16,10 +16,10 @@ public interface ContextualFlowRowScope extends RowScope {
     int getLineIndex();
 
     /* renamed from: getMaxHeight-D9Ej5fM  reason: not valid java name */
-    float mo734getMaxHeightD9Ej5fM();
+    float mo744getMaxHeightD9Ej5fM();
 
     /* renamed from: getMaxWidthInLine-D9Ej5fM  reason: not valid java name */
-    float mo735getMaxWidthInLineD9Ej5fM();
+    float mo745getMaxWidthInLineD9Ej5fM();
 
     static /* synthetic */ Modifier fillMaxRowHeight$default(ContextualFlowRowScope contextualFlowRowScope, Modifier modifier, float f, int i, Object obj) {
         if (obj == null) {

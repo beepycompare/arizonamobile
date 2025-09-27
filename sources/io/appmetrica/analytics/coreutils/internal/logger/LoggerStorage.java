@@ -8,7 +8,7 @@ import java.util.HashMap;
 public abstract class LoggerStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap f288a = new HashMap();
+    private static HashMap f289a = new HashMap();
     private static final Object b = new Object();
     private static volatile PublicLogger c = PublicLogger.getAnonymousInstance();
 
@@ -26,13 +26,13 @@ public abstract class LoggerStorage {
         if (TextUtils.isEmpty(str)) {
             return PublicLogger.getAnonymousInstance();
         }
-        PublicLogger publicLogger2 = (PublicLogger) f288a.get(str);
+        PublicLogger publicLogger2 = (PublicLogger) f289a.get(str);
         if (publicLogger2 == null) {
             synchronized (b) {
-                publicLogger = (PublicLogger) f288a.get(str);
+                publicLogger = (PublicLogger) f289a.get(str);
                 if (publicLogger == null) {
                     publicLogger = new PublicLogger(ApiKeyUtils.createPartialApiKey(str));
-                    f288a.put(str, publicLogger);
+                    f289a.put(str, publicLogger);
                 }
             }
             return publicLogger;
@@ -41,7 +41,7 @@ public abstract class LoggerStorage {
     }
 
     public static void unsetPublicLoggers() {
-        f288a = new HashMap();
+        f289a = new HashMap();
         c = PublicLogger.getAnonymousInstance();
     }
 }

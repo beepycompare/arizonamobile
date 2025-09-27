@@ -25,7 +25,7 @@ public final class ColorSchemeKt {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // kotlin.jvm.functions.Function0
         public final ColorScheme invoke() {
-            return ColorSchemeKt.m2046lightColorSchemeCXl9yA$default(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -1, 15, null);
+            return ColorSchemeKt.m2056lightColorSchemeCXl9yA$default(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -1, 15, null);
         }
     });
     private static final ProvidableCompositionLocal<Boolean> LocalTonalElevationEnabled = CompositionLocalKt.staticCompositionLocalOf(new Function0<Boolean>() { // from class: androidx.compose.material3.ColorSchemeKt$LocalTonalElevationEnabled$1
@@ -193,246 +193,246 @@ public final class ColorSchemeKt {
     }
 
     /* renamed from: lightColorScheme-C-Xl9yA$default */
-    public static /* synthetic */ ColorScheme m2046lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
-        long m3222getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3222getPrimary0d7_KjU() : j;
-        long m3206getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3206getOnPrimary0d7_KjU() : j2;
-        long m3223getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3223getPrimaryContainer0d7_KjU() : j3;
-        long m3207getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3207getOnPrimaryContainer0d7_KjU() : j4;
-        long m3201getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3201getInversePrimary0d7_KjU() : j5;
-        long m3227getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3227getSecondary0d7_KjU() : j6;
-        long m3210getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3210getOnSecondary0d7_KjU() : j7;
-        long m3228getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3228getSecondaryContainer0d7_KjU() : j8;
-        long j37 = m3222getPrimary0d7_KjU;
-        long m3211getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3211getOnSecondaryContainer0d7_KjU() : j9;
-        long m3241getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3241getTertiary0d7_KjU() : j10;
-        long m3216getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3216getOnTertiary0d7_KjU() : j11;
-        long m3242getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3242getTertiaryContainer0d7_KjU() : j12;
-        long m3217getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3217getOnTertiaryContainer0d7_KjU() : j13;
-        long m3197getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3197getBackground0d7_KjU() : j14;
-        long m3203getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3203getOnBackground0d7_KjU() : j15;
-        long m3231getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3231getSurface0d7_KjU() : j16;
-        long m3214getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3214getOnSurface0d7_KjU() : j17;
-        long m3240getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3240getSurfaceVariant0d7_KjU() : j18;
-        long m3215getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3215getOnSurfaceVariant0d7_KjU() : j19;
+    public static /* synthetic */ ColorScheme m2056lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
+        long m3232getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3232getPrimary0d7_KjU() : j;
+        long m3216getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3216getOnPrimary0d7_KjU() : j2;
+        long m3233getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3233getPrimaryContainer0d7_KjU() : j3;
+        long m3217getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3217getOnPrimaryContainer0d7_KjU() : j4;
+        long m3211getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3211getInversePrimary0d7_KjU() : j5;
+        long m3237getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3237getSecondary0d7_KjU() : j6;
+        long m3220getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3220getOnSecondary0d7_KjU() : j7;
+        long m3238getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3238getSecondaryContainer0d7_KjU() : j8;
+        long j37 = m3232getPrimary0d7_KjU;
+        long m3221getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3221getOnSecondaryContainer0d7_KjU() : j9;
+        long m3251getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3251getTertiary0d7_KjU() : j10;
+        long m3226getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3226getOnTertiary0d7_KjU() : j11;
+        long m3252getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3252getTertiaryContainer0d7_KjU() : j12;
+        long m3227getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3227getOnTertiaryContainer0d7_KjU() : j13;
+        long m3207getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3207getBackground0d7_KjU() : j14;
+        long m3213getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3213getOnBackground0d7_KjU() : j15;
+        long m3241getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3241getSurface0d7_KjU() : j16;
+        long m3224getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3224getOnSurface0d7_KjU() : j17;
+        long m3250getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3250getSurfaceVariant0d7_KjU() : j18;
+        long m3225getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3225getOnSurfaceVariant0d7_KjU() : j19;
         long j38 = (i & 524288) != 0 ? j37 : j20;
-        long m3202getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3202getInverseSurface0d7_KjU() : j21;
-        long m3200getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3200getInverseOnSurface0d7_KjU() : j22;
-        long m3198getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3198getError0d7_KjU() : j23;
-        long m3204getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3204getOnError0d7_KjU() : j24;
-        long m3199getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3199getErrorContainer0d7_KjU() : j25;
-        long m3205getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3205getOnErrorContainer0d7_KjU() : j26;
-        long m3220getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3220getOutline0d7_KjU() : j27;
-        long m3221getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3221getOutlineVariant0d7_KjU() : j28;
-        long m3226getScrim0d7_KjU = (i & 268435456) != 0 ? ColorLightTokens.INSTANCE.m3226getScrim0d7_KjU() : j29;
-        long m3232getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3232getSurfaceBright0d7_KjU() : j30;
-        long m3233getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorLightTokens.INSTANCE.m3233getSurfaceContainer0d7_KjU() : j31;
-        long m3234getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorLightTokens.INSTANCE.m3234getSurfaceContainerHigh0d7_KjU() : j32;
-        long m3235getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorLightTokens.INSTANCE.m3235getSurfaceContainerHighest0d7_KjU() : j33;
-        long m3236getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorLightTokens.INSTANCE.m3236getSurfaceContainerLow0d7_KjU() : j34;
-        long m3237getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorLightTokens.INSTANCE.m3237getSurfaceContainerLowest0d7_KjU() : j35;
+        long m3212getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3212getInverseSurface0d7_KjU() : j21;
+        long m3210getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3210getInverseOnSurface0d7_KjU() : j22;
+        long m3208getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3208getError0d7_KjU() : j23;
+        long m3214getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3214getOnError0d7_KjU() : j24;
+        long m3209getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3209getErrorContainer0d7_KjU() : j25;
+        long m3215getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3215getOnErrorContainer0d7_KjU() : j26;
+        long m3230getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3230getOutline0d7_KjU() : j27;
+        long m3231getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3231getOutlineVariant0d7_KjU() : j28;
+        long m3236getScrim0d7_KjU = (i & 268435456) != 0 ? ColorLightTokens.INSTANCE.m3236getScrim0d7_KjU() : j29;
+        long m3242getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3242getSurfaceBright0d7_KjU() : j30;
+        long m3243getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorLightTokens.INSTANCE.m3243getSurfaceContainer0d7_KjU() : j31;
+        long m3244getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorLightTokens.INSTANCE.m3244getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3245getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorLightTokens.INSTANCE.m3245getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3246getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorLightTokens.INSTANCE.m3246getSurfaceContainerLow0d7_KjU() : j34;
+        long m3247getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorLightTokens.INSTANCE.m3247getSurfaceContainerLowest0d7_KjU() : j35;
         if ((i2 & 8) != 0) {
-            j36 = ColorLightTokens.INSTANCE.m3238getSurfaceDim0d7_KjU();
+            j36 = ColorLightTokens.INSTANCE.m3248getSurfaceDim0d7_KjU();
         }
-        return m2045lightColorSchemeCXl9yA(j37, m3206getOnPrimary0d7_KjU, m3223getPrimaryContainer0d7_KjU, m3207getOnPrimaryContainer0d7_KjU, m3201getInversePrimary0d7_KjU, m3227getSecondary0d7_KjU, m3210getOnSecondary0d7_KjU, m3228getSecondaryContainer0d7_KjU, m3211getOnSecondaryContainer0d7_KjU, m3241getTertiary0d7_KjU, m3216getOnTertiary0d7_KjU, m3242getTertiaryContainer0d7_KjU, m3217getOnTertiaryContainer0d7_KjU, m3197getBackground0d7_KjU, m3203getOnBackground0d7_KjU, m3231getSurface0d7_KjU, m3214getOnSurface0d7_KjU, m3240getSurfaceVariant0d7_KjU, m3215getOnSurfaceVariant0d7_KjU, j38, m3202getInverseSurface0d7_KjU, m3200getInverseOnSurface0d7_KjU, m3198getError0d7_KjU, m3204getOnError0d7_KjU, m3199getErrorContainer0d7_KjU, m3205getOnErrorContainer0d7_KjU, m3220getOutline0d7_KjU, m3221getOutlineVariant0d7_KjU, m3226getScrim0d7_KjU, m3232getSurfaceBright0d7_KjU, m3233getSurfaceContainer0d7_KjU, m3234getSurfaceContainerHigh0d7_KjU, m3235getSurfaceContainerHighest0d7_KjU, m3236getSurfaceContainerLow0d7_KjU, m3237getSurfaceContainerLowest0d7_KjU, j36);
+        return m2055lightColorSchemeCXl9yA(j37, m3216getOnPrimary0d7_KjU, m3233getPrimaryContainer0d7_KjU, m3217getOnPrimaryContainer0d7_KjU, m3211getInversePrimary0d7_KjU, m3237getSecondary0d7_KjU, m3220getOnSecondary0d7_KjU, m3238getSecondaryContainer0d7_KjU, m3221getOnSecondaryContainer0d7_KjU, m3251getTertiary0d7_KjU, m3226getOnTertiary0d7_KjU, m3252getTertiaryContainer0d7_KjU, m3227getOnTertiaryContainer0d7_KjU, m3207getBackground0d7_KjU, m3213getOnBackground0d7_KjU, m3241getSurface0d7_KjU, m3224getOnSurface0d7_KjU, m3250getSurfaceVariant0d7_KjU, m3225getOnSurfaceVariant0d7_KjU, j38, m3212getInverseSurface0d7_KjU, m3210getInverseOnSurface0d7_KjU, m3208getError0d7_KjU, m3214getOnError0d7_KjU, m3209getErrorContainer0d7_KjU, m3215getOnErrorContainer0d7_KjU, m3230getOutline0d7_KjU, m3231getOutlineVariant0d7_KjU, m3236getScrim0d7_KjU, m3242getSurfaceBright0d7_KjU, m3243getSurfaceContainer0d7_KjU, m3244getSurfaceContainerHigh0d7_KjU, m3245getSurfaceContainerHighest0d7_KjU, m3246getSurfaceContainerLow0d7_KjU, m3247getSurfaceContainerLowest0d7_KjU, j36);
     }
 
     /* renamed from: lightColorScheme-C-Xl9yA */
-    public static final ColorScheme m2045lightColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
+    public static final ColorScheme m2055lightColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
     }
 
     /* renamed from: lightColorScheme-G1PFc-w$default */
-    public static /* synthetic */ ColorScheme m2048lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
-        long m3222getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3222getPrimary0d7_KjU() : j;
-        long m3206getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3206getOnPrimary0d7_KjU() : j2;
-        long m3223getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3223getPrimaryContainer0d7_KjU() : j3;
-        long m3207getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3207getOnPrimaryContainer0d7_KjU() : j4;
-        long m3201getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3201getInversePrimary0d7_KjU() : j5;
-        long m3227getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3227getSecondary0d7_KjU() : j6;
-        long m3210getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3210getOnSecondary0d7_KjU() : j7;
-        long m3228getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3228getSecondaryContainer0d7_KjU() : j8;
-        long j30 = m3222getPrimary0d7_KjU;
-        long m3211getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3211getOnSecondaryContainer0d7_KjU() : j9;
-        long m3241getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3241getTertiary0d7_KjU() : j10;
-        long m3216getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3216getOnTertiary0d7_KjU() : j11;
-        long m3242getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3242getTertiaryContainer0d7_KjU() : j12;
-        long m3217getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3217getOnTertiaryContainer0d7_KjU() : j13;
-        long m3197getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3197getBackground0d7_KjU() : j14;
-        long m3203getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3203getOnBackground0d7_KjU() : j15;
-        long m3231getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3231getSurface0d7_KjU() : j16;
-        long m3214getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3214getOnSurface0d7_KjU() : j17;
-        long m3240getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3240getSurfaceVariant0d7_KjU() : j18;
-        long m3215getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3215getOnSurfaceVariant0d7_KjU() : j19;
+    public static /* synthetic */ ColorScheme m2058lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
+        long m3232getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3232getPrimary0d7_KjU() : j;
+        long m3216getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3216getOnPrimary0d7_KjU() : j2;
+        long m3233getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorLightTokens.INSTANCE.m3233getPrimaryContainer0d7_KjU() : j3;
+        long m3217getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorLightTokens.INSTANCE.m3217getOnPrimaryContainer0d7_KjU() : j4;
+        long m3211getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorLightTokens.INSTANCE.m3211getInversePrimary0d7_KjU() : j5;
+        long m3237getSecondary0d7_KjU = (i & 32) != 0 ? ColorLightTokens.INSTANCE.m3237getSecondary0d7_KjU() : j6;
+        long m3220getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorLightTokens.INSTANCE.m3220getOnSecondary0d7_KjU() : j7;
+        long m3238getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorLightTokens.INSTANCE.m3238getSecondaryContainer0d7_KjU() : j8;
+        long j30 = m3232getPrimary0d7_KjU;
+        long m3221getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorLightTokens.INSTANCE.m3221getOnSecondaryContainer0d7_KjU() : j9;
+        long m3251getTertiary0d7_KjU = (i & 512) != 0 ? ColorLightTokens.INSTANCE.m3251getTertiary0d7_KjU() : j10;
+        long m3226getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorLightTokens.INSTANCE.m3226getOnTertiary0d7_KjU() : j11;
+        long m3252getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorLightTokens.INSTANCE.m3252getTertiaryContainer0d7_KjU() : j12;
+        long m3227getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorLightTokens.INSTANCE.m3227getOnTertiaryContainer0d7_KjU() : j13;
+        long m3207getBackground0d7_KjU = (i & 8192) != 0 ? ColorLightTokens.INSTANCE.m3207getBackground0d7_KjU() : j14;
+        long m3213getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorLightTokens.INSTANCE.m3213getOnBackground0d7_KjU() : j15;
+        long m3241getSurface0d7_KjU = (i & 32768) != 0 ? ColorLightTokens.INSTANCE.m3241getSurface0d7_KjU() : j16;
+        long m3224getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorLightTokens.INSTANCE.m3224getOnSurface0d7_KjU() : j17;
+        long m3250getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorLightTokens.INSTANCE.m3250getSurfaceVariant0d7_KjU() : j18;
+        long m3225getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorLightTokens.INSTANCE.m3225getOnSurfaceVariant0d7_KjU() : j19;
         long j31 = (i & 524288) != 0 ? j30 : j20;
-        long m3202getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3202getInverseSurface0d7_KjU() : j21;
-        long m3200getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3200getInverseOnSurface0d7_KjU() : j22;
-        long m3198getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3198getError0d7_KjU() : j23;
-        long m3204getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3204getOnError0d7_KjU() : j24;
-        long m3199getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3199getErrorContainer0d7_KjU() : j25;
-        long m3205getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3205getOnErrorContainer0d7_KjU() : j26;
-        long m3220getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3220getOutline0d7_KjU() : j27;
-        long m3221getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3221getOutlineVariant0d7_KjU() : j28;
+        long m3212getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorLightTokens.INSTANCE.m3212getInverseSurface0d7_KjU() : j21;
+        long m3210getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorLightTokens.INSTANCE.m3210getInverseOnSurface0d7_KjU() : j22;
+        long m3208getError0d7_KjU = (i & 4194304) != 0 ? ColorLightTokens.INSTANCE.m3208getError0d7_KjU() : j23;
+        long m3214getOnError0d7_KjU = (i & 8388608) != 0 ? ColorLightTokens.INSTANCE.m3214getOnError0d7_KjU() : j24;
+        long m3209getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorLightTokens.INSTANCE.m3209getErrorContainer0d7_KjU() : j25;
+        long m3215getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorLightTokens.INSTANCE.m3215getOnErrorContainer0d7_KjU() : j26;
+        long m3230getOutline0d7_KjU = (i & 67108864) != 0 ? ColorLightTokens.INSTANCE.m3230getOutline0d7_KjU() : j27;
+        long m3231getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorLightTokens.INSTANCE.m3231getOutlineVariant0d7_KjU() : j28;
         if ((i & 268435456) != 0) {
-            j29 = ColorLightTokens.INSTANCE.m3226getScrim0d7_KjU();
+            j29 = ColorLightTokens.INSTANCE.m3236getScrim0d7_KjU();
         }
-        return m2046lightColorSchemeCXl9yA$default(j30, m3206getOnPrimary0d7_KjU, m3223getPrimaryContainer0d7_KjU, m3207getOnPrimaryContainer0d7_KjU, m3201getInversePrimary0d7_KjU, m3227getSecondary0d7_KjU, m3210getOnSecondary0d7_KjU, m3228getSecondaryContainer0d7_KjU, m3211getOnSecondaryContainer0d7_KjU, m3241getTertiary0d7_KjU, m3216getOnTertiary0d7_KjU, m3242getTertiaryContainer0d7_KjU, m3217getOnTertiaryContainer0d7_KjU, m3197getBackground0d7_KjU, m3203getOnBackground0d7_KjU, m3231getSurface0d7_KjU, m3214getOnSurface0d7_KjU, m3240getSurfaceVariant0d7_KjU, m3215getOnSurfaceVariant0d7_KjU, j31, m3202getInverseSurface0d7_KjU, m3200getInverseOnSurface0d7_KjU, m3198getError0d7_KjU, m3204getOnError0d7_KjU, m3199getErrorContainer0d7_KjU, m3205getOnErrorContainer0d7_KjU, m3220getOutline0d7_KjU, m3221getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
+        return m2056lightColorSchemeCXl9yA$default(j30, m3216getOnPrimary0d7_KjU, m3233getPrimaryContainer0d7_KjU, m3217getOnPrimaryContainer0d7_KjU, m3211getInversePrimary0d7_KjU, m3237getSecondary0d7_KjU, m3220getOnSecondary0d7_KjU, m3238getSecondaryContainer0d7_KjU, m3221getOnSecondaryContainer0d7_KjU, m3251getTertiary0d7_KjU, m3226getOnTertiary0d7_KjU, m3252getTertiaryContainer0d7_KjU, m3227getOnTertiaryContainer0d7_KjU, m3207getBackground0d7_KjU, m3213getOnBackground0d7_KjU, m3241getSurface0d7_KjU, m3224getOnSurface0d7_KjU, m3250getSurfaceVariant0d7_KjU, m3225getOnSurfaceVariant0d7_KjU, j31, m3212getInverseSurface0d7_KjU, m3210getInverseOnSurface0d7_KjU, m3208getError0d7_KjU, m3214getOnError0d7_KjU, m3209getErrorContainer0d7_KjU, m3215getOnErrorContainer0d7_KjU, m3230getOutline0d7_KjU, m3231getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
     }
 
     /* renamed from: darkColorScheme-C-Xl9yA$default */
-    public static /* synthetic */ ColorScheme m2042darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
-        long m3174getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3174getPrimary0d7_KjU() : j;
-        long m3158getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3158getOnPrimary0d7_KjU() : j2;
-        long m3175getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3175getPrimaryContainer0d7_KjU() : j3;
-        long m3159getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3159getOnPrimaryContainer0d7_KjU() : j4;
-        long m3153getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3153getInversePrimary0d7_KjU() : j5;
-        long m3179getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3179getSecondary0d7_KjU() : j6;
-        long m3162getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3162getOnSecondary0d7_KjU() : j7;
-        long m3180getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3180getSecondaryContainer0d7_KjU() : j8;
-        long j37 = m3174getPrimary0d7_KjU;
-        long m3163getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3163getOnSecondaryContainer0d7_KjU() : j9;
-        long m3193getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3193getTertiary0d7_KjU() : j10;
-        long m3168getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnTertiary0d7_KjU() : j11;
-        long m3194getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3194getTertiaryContainer0d7_KjU() : j12;
-        long m3169getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnTertiaryContainer0d7_KjU() : j13;
-        long m3149getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3149getBackground0d7_KjU() : j14;
-        long m3155getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3155getOnBackground0d7_KjU() : j15;
-        long m3183getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3183getSurface0d7_KjU() : j16;
-        long m3166getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnSurface0d7_KjU() : j17;
-        long m3192getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3192getSurfaceVariant0d7_KjU() : j18;
-        long m3167getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnSurfaceVariant0d7_KjU() : j19;
+    public static /* synthetic */ ColorScheme m2052darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
+        long m3184getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3184getPrimary0d7_KjU() : j;
+        long m3168getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnPrimary0d7_KjU() : j2;
+        long m3185getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3185getPrimaryContainer0d7_KjU() : j3;
+        long m3169getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnPrimaryContainer0d7_KjU() : j4;
+        long m3163getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3163getInversePrimary0d7_KjU() : j5;
+        long m3189getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3189getSecondary0d7_KjU() : j6;
+        long m3172getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3172getOnSecondary0d7_KjU() : j7;
+        long m3190getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3190getSecondaryContainer0d7_KjU() : j8;
+        long j37 = m3184getPrimary0d7_KjU;
+        long m3173getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3173getOnSecondaryContainer0d7_KjU() : j9;
+        long m3203getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3203getTertiary0d7_KjU() : j10;
+        long m3178getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3178getOnTertiary0d7_KjU() : j11;
+        long m3204getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3204getTertiaryContainer0d7_KjU() : j12;
+        long m3179getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3179getOnTertiaryContainer0d7_KjU() : j13;
+        long m3159getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3159getBackground0d7_KjU() : j14;
+        long m3165getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3165getOnBackground0d7_KjU() : j15;
+        long m3193getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3193getSurface0d7_KjU() : j16;
+        long m3176getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3176getOnSurface0d7_KjU() : j17;
+        long m3202getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3202getSurfaceVariant0d7_KjU() : j18;
+        long m3177getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3177getOnSurfaceVariant0d7_KjU() : j19;
         long j38 = (i & 524288) != 0 ? j37 : j20;
-        long m3154getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3154getInverseSurface0d7_KjU() : j21;
-        long m3152getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3152getInverseOnSurface0d7_KjU() : j22;
-        long m3150getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3150getError0d7_KjU() : j23;
-        long m3156getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3156getOnError0d7_KjU() : j24;
-        long m3151getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3151getErrorContainer0d7_KjU() : j25;
-        long m3157getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3157getOnErrorContainer0d7_KjU() : j26;
-        long m3172getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3172getOutline0d7_KjU() : j27;
-        long m3173getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3173getOutlineVariant0d7_KjU() : j28;
-        long m3178getScrim0d7_KjU = (i & 268435456) != 0 ? ColorDarkTokens.INSTANCE.m3178getScrim0d7_KjU() : j29;
-        long m3184getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3184getSurfaceBright0d7_KjU() : j30;
-        long m3185getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorDarkTokens.INSTANCE.m3185getSurfaceContainer0d7_KjU() : j31;
-        long m3186getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorDarkTokens.INSTANCE.m3186getSurfaceContainerHigh0d7_KjU() : j32;
-        long m3187getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorDarkTokens.INSTANCE.m3187getSurfaceContainerHighest0d7_KjU() : j33;
-        long m3188getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorDarkTokens.INSTANCE.m3188getSurfaceContainerLow0d7_KjU() : j34;
-        long m3189getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorDarkTokens.INSTANCE.m3189getSurfaceContainerLowest0d7_KjU() : j35;
+        long m3164getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3164getInverseSurface0d7_KjU() : j21;
+        long m3162getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3162getInverseOnSurface0d7_KjU() : j22;
+        long m3160getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3160getError0d7_KjU() : j23;
+        long m3166getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnError0d7_KjU() : j24;
+        long m3161getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3161getErrorContainer0d7_KjU() : j25;
+        long m3167getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnErrorContainer0d7_KjU() : j26;
+        long m3182getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3182getOutline0d7_KjU() : j27;
+        long m3183getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3183getOutlineVariant0d7_KjU() : j28;
+        long m3188getScrim0d7_KjU = (i & 268435456) != 0 ? ColorDarkTokens.INSTANCE.m3188getScrim0d7_KjU() : j29;
+        long m3194getSurfaceBright0d7_KjU = (i & C.BUFFER_FLAG_LAST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3194getSurfaceBright0d7_KjU() : j30;
+        long m3195getSurfaceContainer0d7_KjU = (i & 1073741824) != 0 ? ColorDarkTokens.INSTANCE.m3195getSurfaceContainer0d7_KjU() : j31;
+        long m3196getSurfaceContainerHigh0d7_KjU = (i & Integer.MIN_VALUE) != 0 ? ColorDarkTokens.INSTANCE.m3196getSurfaceContainerHigh0d7_KjU() : j32;
+        long m3197getSurfaceContainerHighest0d7_KjU = (i2 & 1) != 0 ? ColorDarkTokens.INSTANCE.m3197getSurfaceContainerHighest0d7_KjU() : j33;
+        long m3198getSurfaceContainerLow0d7_KjU = (i2 & 2) != 0 ? ColorDarkTokens.INSTANCE.m3198getSurfaceContainerLow0d7_KjU() : j34;
+        long m3199getSurfaceContainerLowest0d7_KjU = (i2 & 4) != 0 ? ColorDarkTokens.INSTANCE.m3199getSurfaceContainerLowest0d7_KjU() : j35;
         if ((i2 & 8) != 0) {
-            j36 = ColorDarkTokens.INSTANCE.m3190getSurfaceDim0d7_KjU();
+            j36 = ColorDarkTokens.INSTANCE.m3200getSurfaceDim0d7_KjU();
         }
-        return m2041darkColorSchemeCXl9yA(j37, m3158getOnPrimary0d7_KjU, m3175getPrimaryContainer0d7_KjU, m3159getOnPrimaryContainer0d7_KjU, m3153getInversePrimary0d7_KjU, m3179getSecondary0d7_KjU, m3162getOnSecondary0d7_KjU, m3180getSecondaryContainer0d7_KjU, m3163getOnSecondaryContainer0d7_KjU, m3193getTertiary0d7_KjU, m3168getOnTertiary0d7_KjU, m3194getTertiaryContainer0d7_KjU, m3169getOnTertiaryContainer0d7_KjU, m3149getBackground0d7_KjU, m3155getOnBackground0d7_KjU, m3183getSurface0d7_KjU, m3166getOnSurface0d7_KjU, m3192getSurfaceVariant0d7_KjU, m3167getOnSurfaceVariant0d7_KjU, j38, m3154getInverseSurface0d7_KjU, m3152getInverseOnSurface0d7_KjU, m3150getError0d7_KjU, m3156getOnError0d7_KjU, m3151getErrorContainer0d7_KjU, m3157getOnErrorContainer0d7_KjU, m3172getOutline0d7_KjU, m3173getOutlineVariant0d7_KjU, m3178getScrim0d7_KjU, m3184getSurfaceBright0d7_KjU, m3185getSurfaceContainer0d7_KjU, m3186getSurfaceContainerHigh0d7_KjU, m3187getSurfaceContainerHighest0d7_KjU, m3188getSurfaceContainerLow0d7_KjU, m3189getSurfaceContainerLowest0d7_KjU, j36);
+        return m2051darkColorSchemeCXl9yA(j37, m3168getOnPrimary0d7_KjU, m3185getPrimaryContainer0d7_KjU, m3169getOnPrimaryContainer0d7_KjU, m3163getInversePrimary0d7_KjU, m3189getSecondary0d7_KjU, m3172getOnSecondary0d7_KjU, m3190getSecondaryContainer0d7_KjU, m3173getOnSecondaryContainer0d7_KjU, m3203getTertiary0d7_KjU, m3178getOnTertiary0d7_KjU, m3204getTertiaryContainer0d7_KjU, m3179getOnTertiaryContainer0d7_KjU, m3159getBackground0d7_KjU, m3165getOnBackground0d7_KjU, m3193getSurface0d7_KjU, m3176getOnSurface0d7_KjU, m3202getSurfaceVariant0d7_KjU, m3177getOnSurfaceVariant0d7_KjU, j38, m3164getInverseSurface0d7_KjU, m3162getInverseOnSurface0d7_KjU, m3160getError0d7_KjU, m3166getOnError0d7_KjU, m3161getErrorContainer0d7_KjU, m3167getOnErrorContainer0d7_KjU, m3182getOutline0d7_KjU, m3183getOutlineVariant0d7_KjU, m3188getScrim0d7_KjU, m3194getSurfaceBright0d7_KjU, m3195getSurfaceContainer0d7_KjU, m3196getSurfaceContainerHigh0d7_KjU, m3197getSurfaceContainerHighest0d7_KjU, m3198getSurfaceContainerLow0d7_KjU, m3199getSurfaceContainerLowest0d7_KjU, j36);
     }
 
     /* renamed from: darkColorScheme-C-Xl9yA */
-    public static final ColorScheme m2041darkColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
+    public static final ColorScheme m2051darkColorSchemeCXl9yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, null);
     }
 
     /* renamed from: darkColorScheme-G1PFc-w$default */
-    public static /* synthetic */ ColorScheme m2044darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
-        long m3174getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3174getPrimary0d7_KjU() : j;
-        long m3158getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3158getOnPrimary0d7_KjU() : j2;
-        long m3175getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3175getPrimaryContainer0d7_KjU() : j3;
-        long m3159getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3159getOnPrimaryContainer0d7_KjU() : j4;
-        long m3153getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3153getInversePrimary0d7_KjU() : j5;
-        long m3179getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3179getSecondary0d7_KjU() : j6;
-        long m3162getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3162getOnSecondary0d7_KjU() : j7;
-        long m3180getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3180getSecondaryContainer0d7_KjU() : j8;
-        long j30 = m3174getPrimary0d7_KjU;
-        long m3163getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3163getOnSecondaryContainer0d7_KjU() : j9;
-        long m3193getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3193getTertiary0d7_KjU() : j10;
-        long m3168getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnTertiary0d7_KjU() : j11;
-        long m3194getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3194getTertiaryContainer0d7_KjU() : j12;
-        long m3169getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnTertiaryContainer0d7_KjU() : j13;
-        long m3149getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3149getBackground0d7_KjU() : j14;
-        long m3155getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3155getOnBackground0d7_KjU() : j15;
-        long m3183getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3183getSurface0d7_KjU() : j16;
-        long m3166getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnSurface0d7_KjU() : j17;
-        long m3192getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3192getSurfaceVariant0d7_KjU() : j18;
-        long m3167getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnSurfaceVariant0d7_KjU() : j19;
+    public static /* synthetic */ ColorScheme m2054darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
+        long m3184getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3184getPrimary0d7_KjU() : j;
+        long m3168getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3168getOnPrimary0d7_KjU() : j2;
+        long m3185getPrimaryContainer0d7_KjU = (i & 4) != 0 ? ColorDarkTokens.INSTANCE.m3185getPrimaryContainer0d7_KjU() : j3;
+        long m3169getOnPrimaryContainer0d7_KjU = (i & 8) != 0 ? ColorDarkTokens.INSTANCE.m3169getOnPrimaryContainer0d7_KjU() : j4;
+        long m3163getInversePrimary0d7_KjU = (i & 16) != 0 ? ColorDarkTokens.INSTANCE.m3163getInversePrimary0d7_KjU() : j5;
+        long m3189getSecondary0d7_KjU = (i & 32) != 0 ? ColorDarkTokens.INSTANCE.m3189getSecondary0d7_KjU() : j6;
+        long m3172getOnSecondary0d7_KjU = (i & 64) != 0 ? ColorDarkTokens.INSTANCE.m3172getOnSecondary0d7_KjU() : j7;
+        long m3190getSecondaryContainer0d7_KjU = (i & 128) != 0 ? ColorDarkTokens.INSTANCE.m3190getSecondaryContainer0d7_KjU() : j8;
+        long j30 = m3184getPrimary0d7_KjU;
+        long m3173getOnSecondaryContainer0d7_KjU = (i & 256) != 0 ? ColorDarkTokens.INSTANCE.m3173getOnSecondaryContainer0d7_KjU() : j9;
+        long m3203getTertiary0d7_KjU = (i & 512) != 0 ? ColorDarkTokens.INSTANCE.m3203getTertiary0d7_KjU() : j10;
+        long m3178getOnTertiary0d7_KjU = (i & 1024) != 0 ? ColorDarkTokens.INSTANCE.m3178getOnTertiary0d7_KjU() : j11;
+        long m3204getTertiaryContainer0d7_KjU = (i & 2048) != 0 ? ColorDarkTokens.INSTANCE.m3204getTertiaryContainer0d7_KjU() : j12;
+        long m3179getOnTertiaryContainer0d7_KjU = (i & 4096) != 0 ? ColorDarkTokens.INSTANCE.m3179getOnTertiaryContainer0d7_KjU() : j13;
+        long m3159getBackground0d7_KjU = (i & 8192) != 0 ? ColorDarkTokens.INSTANCE.m3159getBackground0d7_KjU() : j14;
+        long m3165getOnBackground0d7_KjU = (i & 16384) != 0 ? ColorDarkTokens.INSTANCE.m3165getOnBackground0d7_KjU() : j15;
+        long m3193getSurface0d7_KjU = (i & 32768) != 0 ? ColorDarkTokens.INSTANCE.m3193getSurface0d7_KjU() : j16;
+        long m3176getOnSurface0d7_KjU = (i & 65536) != 0 ? ColorDarkTokens.INSTANCE.m3176getOnSurface0d7_KjU() : j17;
+        long m3202getSurfaceVariant0d7_KjU = (i & 131072) != 0 ? ColorDarkTokens.INSTANCE.m3202getSurfaceVariant0d7_KjU() : j18;
+        long m3177getOnSurfaceVariant0d7_KjU = (i & 262144) != 0 ? ColorDarkTokens.INSTANCE.m3177getOnSurfaceVariant0d7_KjU() : j19;
         long j31 = (i & 524288) != 0 ? j30 : j20;
-        long m3154getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3154getInverseSurface0d7_KjU() : j21;
-        long m3152getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3152getInverseOnSurface0d7_KjU() : j22;
-        long m3150getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3150getError0d7_KjU() : j23;
-        long m3156getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3156getOnError0d7_KjU() : j24;
-        long m3151getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3151getErrorContainer0d7_KjU() : j25;
-        long m3157getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3157getOnErrorContainer0d7_KjU() : j26;
-        long m3172getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3172getOutline0d7_KjU() : j27;
-        long m3173getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3173getOutlineVariant0d7_KjU() : j28;
+        long m3164getInverseSurface0d7_KjU = (i & 1048576) != 0 ? ColorDarkTokens.INSTANCE.m3164getInverseSurface0d7_KjU() : j21;
+        long m3162getInverseOnSurface0d7_KjU = (i & 2097152) != 0 ? ColorDarkTokens.INSTANCE.m3162getInverseOnSurface0d7_KjU() : j22;
+        long m3160getError0d7_KjU = (i & 4194304) != 0 ? ColorDarkTokens.INSTANCE.m3160getError0d7_KjU() : j23;
+        long m3166getOnError0d7_KjU = (i & 8388608) != 0 ? ColorDarkTokens.INSTANCE.m3166getOnError0d7_KjU() : j24;
+        long m3161getErrorContainer0d7_KjU = (i & 16777216) != 0 ? ColorDarkTokens.INSTANCE.m3161getErrorContainer0d7_KjU() : j25;
+        long m3167getOnErrorContainer0d7_KjU = (i & 33554432) != 0 ? ColorDarkTokens.INSTANCE.m3167getOnErrorContainer0d7_KjU() : j26;
+        long m3182getOutline0d7_KjU = (i & 67108864) != 0 ? ColorDarkTokens.INSTANCE.m3182getOutline0d7_KjU() : j27;
+        long m3183getOutlineVariant0d7_KjU = (i & C.BUFFER_FLAG_FIRST_SAMPLE) != 0 ? ColorDarkTokens.INSTANCE.m3183getOutlineVariant0d7_KjU() : j28;
         if ((i & 268435456) != 0) {
-            j29 = ColorDarkTokens.INSTANCE.m3178getScrim0d7_KjU();
+            j29 = ColorDarkTokens.INSTANCE.m3188getScrim0d7_KjU();
         }
-        return m2042darkColorSchemeCXl9yA$default(j30, m3158getOnPrimary0d7_KjU, m3175getPrimaryContainer0d7_KjU, m3159getOnPrimaryContainer0d7_KjU, m3153getInversePrimary0d7_KjU, m3179getSecondary0d7_KjU, m3162getOnSecondary0d7_KjU, m3180getSecondaryContainer0d7_KjU, m3163getOnSecondaryContainer0d7_KjU, m3193getTertiary0d7_KjU, m3168getOnTertiary0d7_KjU, m3194getTertiaryContainer0d7_KjU, m3169getOnTertiaryContainer0d7_KjU, m3149getBackground0d7_KjU, m3155getOnBackground0d7_KjU, m3183getSurface0d7_KjU, m3166getOnSurface0d7_KjU, m3192getSurfaceVariant0d7_KjU, m3167getOnSurfaceVariant0d7_KjU, j31, m3154getInverseSurface0d7_KjU, m3152getInverseOnSurface0d7_KjU, m3150getError0d7_KjU, m3156getOnError0d7_KjU, m3151getErrorContainer0d7_KjU, m3157getOnErrorContainer0d7_KjU, m3172getOutline0d7_KjU, m3173getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
+        return m2052darkColorSchemeCXl9yA$default(j30, m3168getOnPrimary0d7_KjU, m3185getPrimaryContainer0d7_KjU, m3169getOnPrimaryContainer0d7_KjU, m3163getInversePrimary0d7_KjU, m3189getSecondary0d7_KjU, m3172getOnSecondary0d7_KjU, m3190getSecondaryContainer0d7_KjU, m3173getOnSecondaryContainer0d7_KjU, m3203getTertiary0d7_KjU, m3178getOnTertiary0d7_KjU, m3204getTertiaryContainer0d7_KjU, m3179getOnTertiaryContainer0d7_KjU, m3159getBackground0d7_KjU, m3165getOnBackground0d7_KjU, m3193getSurface0d7_KjU, m3176getOnSurface0d7_KjU, m3202getSurfaceVariant0d7_KjU, m3177getOnSurfaceVariant0d7_KjU, j31, m3164getInverseSurface0d7_KjU, m3162getInverseOnSurface0d7_KjU, m3160getError0d7_KjU, m3166getOnError0d7_KjU, m3161getErrorContainer0d7_KjU, m3167getOnErrorContainer0d7_KjU, m3182getOutline0d7_KjU, m3183getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 15, null);
     }
 
     /* renamed from: contentColorFor-4WTKRHQ */
-    public static final long m2039contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
-        if (Color.m4538equalsimpl0(j, colorScheme.m2021getPrimary0d7_KjU())) {
-            return colorScheme.m2011getOnPrimary0d7_KjU();
+    public static final long m2049contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
+        if (Color.m4550equalsimpl0(j, colorScheme.m2031getPrimary0d7_KjU())) {
+            return colorScheme.m2021getOnPrimary0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2024getSecondary0d7_KjU())) {
-            return colorScheme.m2013getOnSecondary0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2034getSecondary0d7_KjU())) {
+            return colorScheme.m2023getOnSecondary0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2036getTertiary0d7_KjU())) {
-            return colorScheme.m2017getOnTertiary0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2046getTertiary0d7_KjU())) {
+            return colorScheme.m2027getOnTertiary0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2002getBackground0d7_KjU())) {
-            return colorScheme.m2008getOnBackground0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2012getBackground0d7_KjU())) {
+            return colorScheme.m2018getOnBackground0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2003getError0d7_KjU())) {
-            return colorScheme.m2009getOnError0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2013getError0d7_KjU())) {
+            return colorScheme.m2019getOnError0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2022getPrimaryContainer0d7_KjU())) {
-            return colorScheme.m2012getOnPrimaryContainer0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2032getPrimaryContainer0d7_KjU())) {
+            return colorScheme.m2022getOnPrimaryContainer0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2025getSecondaryContainer0d7_KjU())) {
-            return colorScheme.m2014getOnSecondaryContainer0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2035getSecondaryContainer0d7_KjU())) {
+            return colorScheme.m2024getOnSecondaryContainer0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2037getTertiaryContainer0d7_KjU())) {
-            return colorScheme.m2018getOnTertiaryContainer0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2047getTertiaryContainer0d7_KjU())) {
+            return colorScheme.m2028getOnTertiaryContainer0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2004getErrorContainer0d7_KjU())) {
-            return colorScheme.m2010getOnErrorContainer0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2014getErrorContainer0d7_KjU())) {
+            return colorScheme.m2020getOnErrorContainer0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2007getInverseSurface0d7_KjU())) {
-            return colorScheme.m2005getInverseOnSurface0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2017getInverseSurface0d7_KjU())) {
+            return colorScheme.m2015getInverseOnSurface0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2026getSurface0d7_KjU())) {
-            return colorScheme.m2015getOnSurface0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2036getSurface0d7_KjU())) {
+            return colorScheme.m2025getOnSurface0d7_KjU();
         }
-        if (Color.m4538equalsimpl0(j, colorScheme.m2035getSurfaceVariant0d7_KjU())) {
-            return colorScheme.m2016getOnSurfaceVariant0d7_KjU();
+        if (Color.m4550equalsimpl0(j, colorScheme.m2045getSurfaceVariant0d7_KjU())) {
+            return colorScheme.m2026getOnSurfaceVariant0d7_KjU();
         }
-        if (!Color.m4538equalsimpl0(j, colorScheme.m2027getSurfaceBright0d7_KjU()) && !Color.m4538equalsimpl0(j, colorScheme.m2028getSurfaceContainer0d7_KjU()) && !Color.m4538equalsimpl0(j, colorScheme.m2029getSurfaceContainerHigh0d7_KjU()) && !Color.m4538equalsimpl0(j, colorScheme.m2030getSurfaceContainerHighest0d7_KjU()) && !Color.m4538equalsimpl0(j, colorScheme.m2031getSurfaceContainerLow0d7_KjU()) && !Color.m4538equalsimpl0(j, colorScheme.m2032getSurfaceContainerLowest0d7_KjU())) {
-            return Color.Companion.m4573getUnspecified0d7_KjU();
+        if (!Color.m4550equalsimpl0(j, colorScheme.m2037getSurfaceBright0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2038getSurfaceContainer0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2039getSurfaceContainerHigh0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2040getSurfaceContainerHighest0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2041getSurfaceContainerLow0d7_KjU()) && !Color.m4550equalsimpl0(j, colorScheme.m2042getSurfaceContainerLowest0d7_KjU())) {
+            return Color.Companion.m4585getUnspecified0d7_KjU();
         }
-        return colorScheme.m2015getOnSurface0d7_KjU();
+        return colorScheme.m2025getOnSurface0d7_KjU();
     }
 
     /* renamed from: contentColorFor-ek8zF_U */
-    public static final long m2040contentColorForek8zF_U(long j, Composer composer, int i) {
+    public static final long m2050contentColorForek8zF_U(long j, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 509589638, "C(contentColorFor)P(0:c#ui.graphics.Color):ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(509589638, i, -1, "androidx.compose.material3.contentColorFor (ColorScheme.kt:878)");
         }
         composer.startReplaceGroup(-1680936624);
         ComposerKt.sourceInformation(composer, "*878@39525L11,879@39609L7");
-        long m2039contentColorFor4WTKRHQ = m2039contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(composer, 6), j);
-        if (m2039contentColorFor4WTKRHQ == 16) {
+        long m2049contentColorFor4WTKRHQ = m2049contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(composer, 6), j);
+        if (m2049contentColorFor4WTKRHQ == 16) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume = composer.consume(ContentColorKt.getLocalContentColor());
             ComposerKt.sourceInformationMarkerEnd(composer);
-            m2039contentColorFor4WTKRHQ = ((Color) consume).m4547unboximpl();
+            m2049contentColorFor4WTKRHQ = ((Color) consume).m4559unboximpl();
         }
         composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2039contentColorFor4WTKRHQ;
+        return m2049contentColorFor4WTKRHQ;
     }
 
     /* renamed from: applyTonalElevation-RFCenO8 */
-    public static final long m2038applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
+    public static final long m2048applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, -1610977682, "C(applyTonalElevation)P(0:c#ui.graphics.Color,1:c#ui.unit.Dp)896@40465L7:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1610977682, i, -1, "androidx.compose.material3.applyTonalElevation (ColorScheme.kt:895)");
@@ -441,8 +441,8 @@ public final class ColorSchemeKt {
         Object consume = composer.consume(LocalTonalElevationEnabled);
         ComposerKt.sourceInformationMarkerEnd(composer);
         boolean booleanValue = ((Boolean) consume).booleanValue();
-        if (Color.m4538equalsimpl0(j, colorScheme.m2026getSurface0d7_KjU()) && booleanValue) {
-            j = m2049surfaceColorAtElevation3ABfNKs(colorScheme, f);
+        if (Color.m4550equalsimpl0(j, colorScheme.m2036getSurface0d7_KjU()) && booleanValue) {
+            j = m2059surfaceColorAtElevation3ABfNKs(colorScheme, f);
         }
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -452,85 +452,85 @@ public final class ColorSchemeKt {
     }
 
     public static final ColorScheme expressiveLightColorScheme() {
-        return m2046lightColorSchemeCXl9yA$default(0L, 0L, 0L, PaletteTokens.INSTANCE.m3533getPrimary300d7_KjU(), 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m3546getSecondary300d7_KjU(), 0L, 0L, 0L, PaletteTokens.INSTANCE.m3546getSecondary300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -4361, 15, null);
+        return m2056lightColorSchemeCXl9yA$default(0L, 0L, 0L, PaletteTokens.INSTANCE.m3543getPrimary300d7_KjU(), 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m3556getSecondary300d7_KjU(), 0L, 0L, 0L, PaletteTokens.INSTANCE.m3556getSecondary300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -4361, 15, null);
     }
 
     public static final long fromToken(ColorScheme colorScheme, ColorSchemeKeyTokens colorSchemeKeyTokens) {
         switch (WhenMappings.$EnumSwitchMapping$0[colorSchemeKeyTokens.ordinal()]) {
             case 1:
-                return colorScheme.m2002getBackground0d7_KjU();
+                return colorScheme.m2012getBackground0d7_KjU();
             case 2:
-                return colorScheme.m2003getError0d7_KjU();
+                return colorScheme.m2013getError0d7_KjU();
             case 3:
-                return colorScheme.m2004getErrorContainer0d7_KjU();
+                return colorScheme.m2014getErrorContainer0d7_KjU();
             case 4:
-                return colorScheme.m2005getInverseOnSurface0d7_KjU();
+                return colorScheme.m2015getInverseOnSurface0d7_KjU();
             case 5:
-                return colorScheme.m2006getInversePrimary0d7_KjU();
+                return colorScheme.m2016getInversePrimary0d7_KjU();
             case 6:
-                return colorScheme.m2007getInverseSurface0d7_KjU();
+                return colorScheme.m2017getInverseSurface0d7_KjU();
             case 7:
-                return colorScheme.m2008getOnBackground0d7_KjU();
+                return colorScheme.m2018getOnBackground0d7_KjU();
             case 8:
-                return colorScheme.m2009getOnError0d7_KjU();
+                return colorScheme.m2019getOnError0d7_KjU();
             case 9:
-                return colorScheme.m2010getOnErrorContainer0d7_KjU();
+                return colorScheme.m2020getOnErrorContainer0d7_KjU();
             case 10:
-                return colorScheme.m2011getOnPrimary0d7_KjU();
+                return colorScheme.m2021getOnPrimary0d7_KjU();
             case 11:
-                return colorScheme.m2012getOnPrimaryContainer0d7_KjU();
+                return colorScheme.m2022getOnPrimaryContainer0d7_KjU();
             case 12:
-                return colorScheme.m2013getOnSecondary0d7_KjU();
+                return colorScheme.m2023getOnSecondary0d7_KjU();
             case 13:
-                return colorScheme.m2014getOnSecondaryContainer0d7_KjU();
+                return colorScheme.m2024getOnSecondaryContainer0d7_KjU();
             case 14:
-                return colorScheme.m2015getOnSurface0d7_KjU();
+                return colorScheme.m2025getOnSurface0d7_KjU();
             case 15:
-                return colorScheme.m2016getOnSurfaceVariant0d7_KjU();
+                return colorScheme.m2026getOnSurfaceVariant0d7_KjU();
             case 16:
-                return colorScheme.m2034getSurfaceTint0d7_KjU();
+                return colorScheme.m2044getSurfaceTint0d7_KjU();
             case 17:
-                return colorScheme.m2017getOnTertiary0d7_KjU();
+                return colorScheme.m2027getOnTertiary0d7_KjU();
             case 18:
-                return colorScheme.m2018getOnTertiaryContainer0d7_KjU();
+                return colorScheme.m2028getOnTertiaryContainer0d7_KjU();
             case 19:
-                return colorScheme.m2019getOutline0d7_KjU();
+                return colorScheme.m2029getOutline0d7_KjU();
             case 20:
-                return colorScheme.m2020getOutlineVariant0d7_KjU();
+                return colorScheme.m2030getOutlineVariant0d7_KjU();
             case 21:
-                return colorScheme.m2021getPrimary0d7_KjU();
+                return colorScheme.m2031getPrimary0d7_KjU();
             case 22:
-                return colorScheme.m2022getPrimaryContainer0d7_KjU();
+                return colorScheme.m2032getPrimaryContainer0d7_KjU();
             case 23:
-                return colorScheme.m2023getScrim0d7_KjU();
+                return colorScheme.m2033getScrim0d7_KjU();
             case 24:
-                return colorScheme.m2024getSecondary0d7_KjU();
+                return colorScheme.m2034getSecondary0d7_KjU();
             case 25:
-                return colorScheme.m2025getSecondaryContainer0d7_KjU();
+                return colorScheme.m2035getSecondaryContainer0d7_KjU();
             case 26:
-                return colorScheme.m2026getSurface0d7_KjU();
+                return colorScheme.m2036getSurface0d7_KjU();
             case 27:
-                return colorScheme.m2035getSurfaceVariant0d7_KjU();
+                return colorScheme.m2045getSurfaceVariant0d7_KjU();
             case 28:
-                return colorScheme.m2027getSurfaceBright0d7_KjU();
+                return colorScheme.m2037getSurfaceBright0d7_KjU();
             case 29:
-                return colorScheme.m2028getSurfaceContainer0d7_KjU();
+                return colorScheme.m2038getSurfaceContainer0d7_KjU();
             case 30:
-                return colorScheme.m2029getSurfaceContainerHigh0d7_KjU();
+                return colorScheme.m2039getSurfaceContainerHigh0d7_KjU();
             case 31:
-                return colorScheme.m2030getSurfaceContainerHighest0d7_KjU();
+                return colorScheme.m2040getSurfaceContainerHighest0d7_KjU();
             case 32:
-                return colorScheme.m2031getSurfaceContainerLow0d7_KjU();
+                return colorScheme.m2041getSurfaceContainerLow0d7_KjU();
             case 33:
-                return colorScheme.m2032getSurfaceContainerLowest0d7_KjU();
+                return colorScheme.m2042getSurfaceContainerLowest0d7_KjU();
             case 34:
-                return colorScheme.m2033getSurfaceDim0d7_KjU();
+                return colorScheme.m2043getSurfaceDim0d7_KjU();
             case 35:
-                return colorScheme.m2036getTertiary0d7_KjU();
+                return colorScheme.m2046getTertiary0d7_KjU();
             case 36:
-                return colorScheme.m2037getTertiaryContainer0d7_KjU();
+                return colorScheme.m2047getTertiaryContainer0d7_KjU();
             default:
-                return Color.Companion.m4573getUnspecified0d7_KjU();
+                return Color.Companion.m4585getUnspecified0d7_KjU();
         }
     }
 
@@ -556,10 +556,10 @@ public final class ColorSchemeKt {
     }
 
     /* renamed from: surfaceColorAtElevation-3ABfNKs */
-    public static final long m2049surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
-        if (Dp.m7256equalsimpl0(f, Dp.m7251constructorimpl(0))) {
-            return colorScheme.m2026getSurface0d7_KjU();
+    public static final long m2059surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
+        if (Dp.m7269equalsimpl0(f, Dp.m7264constructorimpl(0))) {
+            return colorScheme.m2036getSurface0d7_KjU();
         }
-        return ColorKt.m4582compositeOverOWjLjI(Color.m4536copywmQWz5c$default(colorScheme.m2034getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2026getSurface0d7_KjU());
+        return ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(colorScheme.m2044getSurfaceTint0d7_KjU(), ((((float) Math.log(f + 1)) * 4.5f) + 2.0f) / 100.0f, 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2036getSurface0d7_KjU());
     }
 }

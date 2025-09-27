@@ -25,42 +25,42 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
     }
 
     /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
-    public final float m816getStartD9Ej5fM() {
+    public final float m826getStartD9Ej5fM() {
         return this.start;
     }
 
     /* renamed from: setStart-0680j_4  reason: not valid java name */
-    public final void m820setStart0680j_4(float f) {
+    public final void m830setStart0680j_4(float f) {
         this.start = f;
     }
 
     /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m817getTopD9Ej5fM() {
+    public final float m827getTopD9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: setTop-0680j_4  reason: not valid java name */
-    public final void m821setTop0680j_4(float f) {
+    public final void m831setTop0680j_4(float f) {
         this.top = f;
     }
 
     /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
-    public final float m815getEndD9Ej5fM() {
+    public final float m825getEndD9Ej5fM() {
         return this.end;
     }
 
     /* renamed from: setEnd-0680j_4  reason: not valid java name */
-    public final void m819setEnd0680j_4(float f) {
+    public final void m829setEnd0680j_4(float f) {
         this.end = f;
     }
 
     /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m814getBottomD9Ej5fM() {
+    public final float m824getBottomD9Ej5fM() {
         return this.bottom;
     }
 
     /* renamed from: setBottom-0680j_4  reason: not valid java name */
-    public final void m818setBottom0680j_4(float f) {
+    public final void m828setBottom0680j_4(float f) {
         this.bottom = f;
     }
 
@@ -104,22 +104,22 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(PaddingNode paddingNode) {
-        paddingNode.m844setStart0680j_4(this.start);
-        paddingNode.m845setTop0680j_4(this.top);
-        paddingNode.m843setEnd0680j_4(this.end);
-        paddingNode.m842setBottom0680j_4(this.bottom);
+        paddingNode.m854setStart0680j_4(this.start);
+        paddingNode.m855setTop0680j_4(this.top);
+        paddingNode.m853setEnd0680j_4(this.end);
+        paddingNode.m852setBottom0680j_4(this.bottom);
         paddingNode.setRtlAware(this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Dp.m7257hashCodeimpl(this.start) * 31) + Dp.m7257hashCodeimpl(this.top)) * 31) + Dp.m7257hashCodeimpl(this.end)) * 31) + Dp.m7257hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
+        return (((((((Dp.m7270hashCodeimpl(this.start) * 31) + Dp.m7270hashCodeimpl(this.top)) * 31) + Dp.m7270hashCodeimpl(this.end)) * 31) + Dp.m7270hashCodeimpl(this.bottom)) * 31) + Boolean.hashCode(this.rtlAware);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public boolean equals(Object obj) {
         PaddingElement paddingElement = obj instanceof PaddingElement ? (PaddingElement) obj : null;
-        return paddingElement != null && Dp.m7256equalsimpl0(this.start, paddingElement.start) && Dp.m7256equalsimpl0(this.top, paddingElement.top) && Dp.m7256equalsimpl0(this.end, paddingElement.end) && Dp.m7256equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
+        return paddingElement != null && Dp.m7269equalsimpl0(this.start, paddingElement.start) && Dp.m7269equalsimpl0(this.top, paddingElement.top) && Dp.m7269equalsimpl0(this.end, paddingElement.end) && Dp.m7269equalsimpl0(this.bottom, paddingElement.bottom) && this.rtlAware == paddingElement.rtlAware;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -128,6 +128,6 @@ final class PaddingElement extends ModifierNodeElement<PaddingNode> {
     }
 
     public /* synthetic */ PaddingElement(float f, float f2, float f3, float f4, boolean z, Function1 function1, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m7251constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7251constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7251constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7251constructorimpl(0) : f4, z, function1, null);
+        this((i & 1) != 0 ? Dp.m7264constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7264constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7264constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7264constructorimpl(0) : f4, z, function1, null);
     }
 }

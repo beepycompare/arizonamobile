@@ -14,7 +14,7 @@ public final class C0707xb implements Parcelable {
     public static final Parcelable.Creator<C0707xb> CREATOR = new C0682wb();
 
     /* renamed from: a  reason: collision with root package name */
-    public final ResultReceiver f1153a;
+    public final ResultReceiver f1154a;
     public final List b;
     public final HashMap c;
     public final boolean d;
@@ -22,7 +22,7 @@ public final class C0707xb implements Parcelable {
     public C0707xb(ResultReceiverC0116a7 resultReceiverC0116a7, List list, Map map, boolean z) {
         HashMap hashMap;
         this.b = list;
-        this.f1153a = resultReceiverC0116a7;
+        this.f1154a = resultReceiverC0116a7;
         if (map == null) {
             hashMap = new HashMap();
         } else {
@@ -40,7 +40,7 @@ public final class C0707xb implements Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver", this.f1153a);
+        bundle.putParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver", this.f1154a);
         if (this.b != null) {
             bundle.putStringArrayList("io.appmetrica.analytics.internal.CounterConfiguration.identifiersList", new ArrayList<>(this.b));
         }
@@ -55,7 +55,7 @@ public final class C0707xb implements Parcelable {
     public C0707xb(Parcel parcel) {
         Bundle readBundle = parcel.readBundle(ResultReceiverC0116a7.class.getClassLoader());
         if (readBundle != null) {
-            this.f1153a = (ResultReceiver) readBundle.getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver");
+            this.f1154a = (ResultReceiver) readBundle.getParcelable("io.appmetrica.analytics.internal.CounterConfiguration.receiver");
             this.b = readBundle.getStringArrayList("io.appmetrica.analytics.internal.CounterConfiguration.identifiersList");
             this.c = Pm.a(readBundle.getString("io.appmetrica.analytics.internal.CounterConfiguration.clidsForVerification"));
             this.d = readBundle.getBoolean("io.appmetrica.analytics.internal.CounterConfiguration.forceRefreshConfiguration");

@@ -8,7 +8,7 @@ public final class MenuTokens {
     public static final int $stable = 0;
     public static final MenuTokens INSTANCE = new MenuTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens ListItemSelectedContainerColor = ColorSchemeKeyTokens.SecondaryContainer;
@@ -24,7 +24,7 @@ public final class MenuTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3428getContainerElevationD9Ej5fM() {
+    public final float m3438getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 

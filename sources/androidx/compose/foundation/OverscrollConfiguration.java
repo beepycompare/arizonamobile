@@ -27,11 +27,11 @@ public final class OverscrollConfiguration {
     }
 
     public /* synthetic */ OverscrollConfiguration(long j, PaddingValues paddingValues, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? ColorKt.Color(4284900966L) : j, (i & 2) != 0 ? PaddingKt.m827PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null) : paddingValues, null);
+        this((i & 1) != 0 ? ColorKt.Color(4284900966L) : j, (i & 2) != 0 ? PaddingKt.m837PaddingValuesYgX7TsA$default(0.0f, 0.0f, 3, null) : paddingValues, null);
     }
 
     /* renamed from: getGlowColor-0d7_KjU  reason: not valid java name */
-    public final long m357getGlowColor0d7_KjU() {
+    public final long m367getGlowColor0d7_KjU() {
         return this.glowColor;
     }
 
@@ -46,16 +46,16 @@ public final class OverscrollConfiguration {
         if (Intrinsics.areEqual(getClass(), obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type androidx.compose.foundation.OverscrollConfiguration");
             OverscrollConfiguration overscrollConfiguration = (OverscrollConfiguration) obj;
-            return Color.m4538equalsimpl0(this.glowColor, overscrollConfiguration.glowColor) && Intrinsics.areEqual(this.drawPadding, overscrollConfiguration.drawPadding);
+            return Color.m4550equalsimpl0(this.glowColor, overscrollConfiguration.glowColor) && Intrinsics.areEqual(this.drawPadding, overscrollConfiguration.drawPadding);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Color.m4544hashCodeimpl(this.glowColor) * 31) + this.drawPadding.hashCode();
+        return (Color.m4556hashCodeimpl(this.glowColor) * 31) + this.drawPadding.hashCode();
     }
 
     public String toString() {
-        return "OverscrollConfiguration(glowColor=" + ((Object) Color.m4545toStringimpl(this.glowColor)) + ", drawPadding=" + this.drawPadding + ')';
+        return "OverscrollConfiguration(glowColor=" + ((Object) Color.m4557toStringimpl(this.glowColor)) + ", drawPadding=" + this.drawPadding + ')';
     }
 }

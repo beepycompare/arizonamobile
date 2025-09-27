@@ -12,7 +12,7 @@ public final class Gf extends MessageNano {
     public static volatile Gf[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f461a;
+    public String f462a;
     public String b;
     public int c;
 
@@ -32,7 +32,7 @@ public final class Gf extends MessageNano {
     }
 
     public final Gf a() {
-        this.f461a = "";
+        this.f462a = "";
         this.b = "";
         this.c = 0;
         this.cachedSize = -1;
@@ -42,8 +42,8 @@ public final class Gf extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f461a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f461a);
+        if (!this.f462a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f462a);
         }
         if (!this.b.equals("")) {
             computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
@@ -53,8 +53,8 @@ public final class Gf extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f461a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f461a);
+        if (!this.f462a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f462a);
         }
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
@@ -71,7 +71,7 @@ public final class Gf extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f461a = codedInputByteBufferNano.readString();
+                this.f462a = codedInputByteBufferNano.readString();
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag != 24) {

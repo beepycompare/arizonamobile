@@ -42,13 +42,13 @@ public interface PageSize {
         }
 
         /* renamed from: getPageSize-D9Ej5fM  reason: not valid java name */
-        public final float m1131getPageSizeD9Ej5fM() {
+        public final float m1141getPageSizeD9Ej5fM() {
             return this.pageSize;
         }
 
         @Override // androidx.compose.foundation.pager.PageSize
         public int calculateMainAxisPageSize(Density density, int i, int i2) {
-            return density.mo413roundToPx0680j_4(this.pageSize);
+            return density.mo423roundToPx0680j_4(this.pageSize);
         }
 
         public boolean equals(Object obj) {
@@ -56,13 +56,13 @@ public interface PageSize {
                 return true;
             }
             if (obj instanceof Fixed) {
-                return Dp.m7256equalsimpl0(this.pageSize, ((Fixed) obj).pageSize);
+                return Dp.m7269equalsimpl0(this.pageSize, ((Fixed) obj).pageSize);
             }
             return false;
         }
 
         public int hashCode() {
-            return Dp.m7257hashCodeimpl(this.pageSize);
+            return Dp.m7270hashCodeimpl(this.pageSize);
         }
     }
 }

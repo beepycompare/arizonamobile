@@ -59,7 +59,7 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
     */
     public final Object invokeSuspend(Object obj) {
         AwaitPointerEventScope awaitPointerEventScope;
-        long m4303unboximpl;
+        long m4315unboximpl;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -71,9 +71,9 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
             } else if (i == 1) {
                 awaitPointerEventScope = (AwaitPointerEventScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
-                m4303unboximpl = ((Offset) obj).m4303unboximpl();
-                this.$channel.mo8127trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                this.$channel.mo8127trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4303unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4309getZeroF1C5BW0(), 0.0f, null));
+                m4315unboximpl = ((Offset) obj).m4315unboximpl();
+                this.$channel.mo8140trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                this.$channel.mo8140trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4315unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4321getZeroF1C5BW0(), 0.0f, null));
                 this.L$0 = awaitPointerEventScope;
                 this.label = 2;
                 obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);
@@ -84,13 +84,13 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                 ResultKt.throwOnFailure(obj);
                 Offset offset = (Offset) obj;
                 if (offset != null) {
-                    m4303unboximpl = offset.m4303unboximpl();
-                    this.$channel.mo8127trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4303unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4309getZeroF1C5BW0(), 0.0f, null));
+                    m4315unboximpl = offset.m4315unboximpl();
+                    this.$channel.mo8140trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4315unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4321getZeroF1C5BW0(), 0.0f, null));
                     this.L$0 = awaitPointerEventScope;
                     this.label = 2;
                     obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);
                 } else {
-                    this.$channel.mo8127trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+                    this.$channel.mo8140trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
                     if (!JobKt.isActive(this.$currentContext)) {
                         this.L$0 = awaitPointerEventScope;
                         this.label = 1;
@@ -98,9 +98,9 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        m4303unboximpl = ((Offset) obj).m4303unboximpl();
-                        this.$channel.mo8127trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                        this.$channel.mo8127trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4303unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4309getZeroF1C5BW0(), 0.0f, null));
+                        m4315unboximpl = ((Offset) obj).m4315unboximpl();
+                        this.$channel.mo8140trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                        this.$channel.mo8140trySendJP2dKIU(new TransformEvent.TransformDelta((float) Math.pow(2.0f, Float.intBitsToFloat((int) (m4315unboximpl & 4294967295L)) / 545.0f), Offset.Companion.m4321getZeroF1C5BW0(), 0.0f, null));
                         this.L$0 = awaitPointerEventScope;
                         this.label = 2;
                         obj = TransformableKt.awaitCtrlMouseScrollOrNull(awaitPointerEventScope, this.$scrollConfig, this);
@@ -110,7 +110,7 @@ public final class TransformableKt$detectZoomByCtrlMouseScroll$2 extends Restric
                 }
             }
         } catch (Throwable th) {
-            this.$channel.mo8127trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+            this.$channel.mo8140trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
             throw th;
         }
     }

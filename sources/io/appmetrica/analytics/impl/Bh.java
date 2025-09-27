@@ -7,7 +7,7 @@ import java.util.Map;
 public final class Bh extends BaseRequestConfig.BaseRequestArguments {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f372a;
+    public final String f373a;
     public final boolean b;
     public final boolean c;
     public final int d;
@@ -19,7 +19,7 @@ public final class Bh extends BaseRequestConfig.BaseRequestArguments {
     public final int j;
 
     public Bh(M4 m4) {
-        this(m4.f570a, m4.b, m4.d, m4.e, m4.f, m4.g, m4.h, m4.i, m4.j, m4.k);
+        this(m4.f571a, m4.b, m4.d, m4.e, m4.f, m4.g, m4.h, m4.i, m4.j, m4.k);
     }
 
     public static Bh a() {
@@ -29,11 +29,11 @@ public final class Bh extends BaseRequestConfig.BaseRequestArguments {
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
     /* renamed from: b */
     public final Bh mergeFrom(M4 m4) {
-        return new Bh((String) WrapUtils.getOrDefaultNullable(m4.f570a, this.f372a), (Boolean) WrapUtils.getOrDefaultNullable(m4.b, Boolean.valueOf(this.b)), (Boolean) WrapUtils.getOrDefaultNullable(m4.d, Boolean.valueOf(this.c)), (Integer) WrapUtils.getOrDefaultNullable(m4.e, Integer.valueOf(this.d)), (Integer) WrapUtils.getOrDefaultNullable(m4.f, Integer.valueOf(this.e)), (Integer) WrapUtils.getOrDefaultNullable(m4.g, Integer.valueOf(this.f)), (Boolean) WrapUtils.getOrDefaultNullable(m4.h, Boolean.valueOf(this.g)), (Boolean) WrapUtils.getOrDefaultNullable(m4.i, Boolean.valueOf(this.h)), (Map) WrapUtils.getOrDefaultNullable(m4.j, this.i), (Integer) WrapUtils.getOrDefaultNullable(m4.k, Integer.valueOf(this.j)));
+        return new Bh((String) WrapUtils.getOrDefaultNullable(m4.f571a, this.f373a), (Boolean) WrapUtils.getOrDefaultNullable(m4.b, Boolean.valueOf(this.b)), (Boolean) WrapUtils.getOrDefaultNullable(m4.d, Boolean.valueOf(this.c)), (Integer) WrapUtils.getOrDefaultNullable(m4.e, Integer.valueOf(this.d)), (Integer) WrapUtils.getOrDefaultNullable(m4.f, Integer.valueOf(this.e)), (Integer) WrapUtils.getOrDefaultNullable(m4.g, Integer.valueOf(this.f)), (Boolean) WrapUtils.getOrDefaultNullable(m4.h, Boolean.valueOf(this.g)), (Boolean) WrapUtils.getOrDefaultNullable(m4.i, Boolean.valueOf(this.h)), (Map) WrapUtils.getOrDefaultNullable(m4.j, this.i), (Integer) WrapUtils.getOrDefaultNullable(m4.k, Integer.valueOf(this.j)));
     }
 
     public Bh(String str, Boolean bool, Boolean bool2, Integer num, Integer num2, Integer num3, Boolean bool3, Boolean bool4, Map map, Integer num4) {
-        this.f372a = str;
+        this.f373a = str;
         Boolean bool5 = Boolean.FALSE;
         this.b = ((Boolean) WrapUtils.getOrDefault(bool, bool5)).booleanValue();
         this.c = ((Boolean) WrapUtils.getOrDefault(bool2, bool5)).booleanValue();
@@ -65,8 +65,8 @@ public final class Bh extends BaseRequestConfig.BaseRequestArguments {
                             if (bool3 == null || this.g == bool3.booleanValue()) {
                                 Boolean bool4 = m4.i;
                                 if (bool4 == null || this.h == bool4.booleanValue()) {
-                                    String str2 = m4.f570a;
-                                    if (str2 == null || ((str = this.f372a) != null && str.equals(str2))) {
+                                    String str2 = m4.f571a;
+                                    if (str2 == null || ((str = this.f373a) != null && str.equals(str2))) {
                                         Map<String, String> map2 = m4.j;
                                         if (map2 == null || ((map = this.i) != null && map.equals(map2))) {
                                             Integer num4 = m4.k;

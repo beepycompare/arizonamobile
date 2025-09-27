@@ -47,7 +47,7 @@ public final class ComposableSingletons$RepairGameSuccessKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1248275720, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameSuccessKt.lambda$1248275720.<anonymous> (RepairGameSuccess.kt:86)");
             }
-            TextKt.m2804Text4IGK_g("НАЗАД", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
+            TextKt.m2814Text4IGK_g("НАЗАД", (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, (int) WavUtil.TYPE_WAVE_FORMAT_EXTENSIBLE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

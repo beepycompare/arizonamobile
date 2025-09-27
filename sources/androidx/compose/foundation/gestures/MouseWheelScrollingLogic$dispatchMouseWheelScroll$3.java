@@ -194,7 +194,7 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
         if (sumOrNull != null) {
             mouseWheelScrollingLogic.trackVelocity(sumOrNull);
             objectRef.element = ((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).plus(sumOrNull);
-            floatRef.element = scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m520getValueF1C5BW0()));
+            floatRef.element = scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m530getValueF1C5BW0()));
             isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef.element - f);
             booleanRef.element = !isLowScrollingDelta;
         }

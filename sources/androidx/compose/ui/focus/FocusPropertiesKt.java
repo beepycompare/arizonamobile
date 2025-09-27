@@ -26,11 +26,11 @@ public final class FocusPropertiesKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(FocusEnterExitScope focusEnterExitScope) {
-                FocusRequester invoke = function1.invoke(FocusDirection.m4169boximpl(focusEnterExitScope.mo4168getRequestedFocusDirectiondhqQ8s()));
+                FocusRequester invoke = function1.invoke(FocusDirection.m4181boximpl(focusEnterExitScope.mo4180getRequestedFocusDirectiondhqQ8s()));
                 if (invoke == FocusRequester.Companion.getCancel()) {
                     focusEnterExitScope.cancelFocusChange();
                 } else if (invoke != FocusRequester.Companion.getDefault()) {
-                    FocusRequester.m4200requestFocus3ESFkO8$default(invoke, 0, 1, null);
+                    FocusRequester.m4212requestFocus3ESFkO8$default(invoke, 0, 1, null);
                 }
             }
         };

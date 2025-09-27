@@ -17,13 +17,13 @@ public final class NoPromoShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M11.3133 60.7005L1.08105 28.7005C-3.4579 14.5056 7.13292 0 22.0358 0H378.539C388.108 0 396.579 6.18513 399.494 15.2993L409.726 47.2993C414.265 61.4942 403.674 76 388.771 76H32.2682C22.6993 76 14.2277 69.8148 11.3133 60.7005Z"), null, 1, null);
-        float[] m4779constructorimpl$default = Matrix.m4779constructorimpl$default(null, 1, null);
-        Matrix.m4795scaleimpl$default(m4779constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 427, Float.intBitsToFloat((int) (j & 4294967295L)) / 76, 0.0f, 4, null);
-        path$default.mo4429transform58bKbWc(m4779constructorimpl$default);
+        float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
+        Matrix.m4807scaleimpl$default(m4791constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / 427, Float.intBitsToFloat((int) (j & 4294967295L)) / 76, 0.0f, 4, null);
+        path$default.mo4441transform58bKbWc(m4791constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

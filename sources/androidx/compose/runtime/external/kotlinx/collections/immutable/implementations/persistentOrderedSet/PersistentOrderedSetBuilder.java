@@ -49,8 +49,8 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
         PersistentOrderedSet<E> persistentOrderedSet;
         PersistentHashMap<E, Links> build = this.hashMapBuilder.build();
         if (build == this.set.getHashMap$runtime()) {
-            CommonFunctionsKt.m3972assert(this.firstElement == this.set.getFirstElement$runtime());
-            CommonFunctionsKt.m3972assert(this.lastElement == this.set.getLastElement$runtime());
+            CommonFunctionsKt.m3984assert(this.firstElement == this.set.getFirstElement$runtime());
+            CommonFunctionsKt.m3984assert(this.lastElement == this.set.getLastElement$runtime());
             persistentOrderedSet = this.set;
         } else {
             persistentOrderedSet = new PersistentOrderedSet<>(this.firstElement, this.lastElement, build);

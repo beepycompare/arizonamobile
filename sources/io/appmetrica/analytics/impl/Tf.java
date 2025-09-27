@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Tf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f685a;
+    public final Y f686a;
     public final List b;
 
     public Tf(ECommercePrice eCommercePrice) {
@@ -31,11 +31,11 @@ public final class Tf {
     }
 
     public final String toString() {
-        return "PriceWrapper{fiat=" + this.f685a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PriceWrapper{fiat=" + this.f686a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Tf(Y y, LinkedList linkedList) {
-        this.f685a = y;
+        this.f686a = y;
         this.b = linkedList;
     }
 }

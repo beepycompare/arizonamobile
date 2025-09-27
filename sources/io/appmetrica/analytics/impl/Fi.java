@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 public final class Fi implements InterfaceC0582sb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f448a;
+    public final Context f449a;
     public final Vf b;
     public final Si c;
     public final Handler d;
@@ -28,7 +28,7 @@ public final class Fi implements InterfaceC0582sb {
     public K6 k;
 
     public Fi(Context context, Vf vf, Si si, Handler handler, Xl xl) {
-        this.f448a = context;
+        this.f449a = context;
         this.b = vf;
         this.c = si;
         this.d = handler;
@@ -116,7 +116,7 @@ public final class Fi implements InterfaceC0582sb {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
-            Context context = this.f448a;
+            Context context = this.f449a;
             Yc yc2 = new Yc(context, this.b, reporterConfig, this.c, new C0429ma(context));
             yc2.i = new Ob(this.d, yc2);
             Xl xl = this.e;

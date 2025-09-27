@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1119a;
+    public final Context f1120a;
     public final C0476o5 b;
     public final C0537qf c;
     public final C0611tf d;
@@ -50,11 +50,11 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
     public final boolean B() {
         C0493om c0493om;
         Nf nf = this.s;
-        nf.h.a(nf.f1002a);
+        nf.h.a(nf.f1003a);
         boolean z = ((Kf) nf.c()).d;
         C0436mh c0436mh = this.k;
         synchronized (c0436mh) {
-            c0493om = c0436mh.c.f949a;
+            c0493om = c0436mh.c.f950a;
         }
         return !(z && c0493om.q);
     }
@@ -78,7 +78,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
     public final void d() {
         C0316i0 c0316i0 = this.h;
         synchronized (c0316i0) {
-            c0316i0.f914a = new C0251fd();
+            c0316i0.f915a = new C0251fd();
         }
         this.i.a(this.h.a(), this.c);
     }
@@ -97,7 +97,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0223eb
     public final Context getContext() {
-        return this.f1119a;
+        return this.f1120a;
     }
 
     public final C0537qf h() {
@@ -152,7 +152,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         C0493om c0493om;
         C0436mh c0436mh = this.k;
         synchronized (c0436mh) {
-            c0493om = c0436mh.c.f949a;
+            c0493om = c0436mh.c.f950a;
         }
         return c0493om;
     }
@@ -165,7 +165,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         K9 k9 = this.n;
         int i = k9.k;
         k9.m = i;
-        k9.f536a.a(i).b();
+        k9.f537a.a(i).b();
     }
 
     public final void w() {
@@ -173,7 +173,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         int libraryApiLevel = AppMetrica.getLibraryApiLevel();
         Do r1 = this.t;
         synchronized (r1) {
-            optInt = r1.f417a.a().optInt("last_migration_api_level", 0);
+            optInt = r1.f418a.a().optInt("last_migration_api_level", 0);
         }
         Integer valueOf = Integer.valueOf(optInt);
         if (valueOf.intValue() < libraryApiLevel) {
@@ -200,7 +200,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
     public final void z() {
         C0436mh c0436mh = this.k;
         synchronized (c0436mh) {
-            c0436mh.f571a = null;
+            c0436mh.f572a = null;
         }
     }
 
@@ -212,7 +212,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         synchronized (c0341j0) {
             if (a2.b > c0537qf.d().b) {
                 c0537qf.a(a2).b();
-                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f902a);
+                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f903a);
             }
         }
     }
@@ -261,7 +261,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         }
         if (z) {
             c0673w2.a(c0673w2.e);
-            c0673w2.f1134a.a(c0673w2.e);
+            c0673w2.f1135a.a(c0673w2.e);
         }
         if (z2) {
             this.k.e();
@@ -269,7 +269,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
     }
 
     public C0651v5(Context context, C0476o5 c0476o5, C0341j0 c0341j0, TimePassedChecker timePassedChecker, A5 a5, M4 m4) {
-        this.f1119a = context.getApplicationContext();
+        this.f1120a = context.getApplicationContext();
         this.b = c0476o5;
         this.i = c0341j0;
         this.r = timePassedChecker;
@@ -294,7 +294,7 @@ public class C0651v5 implements InterfaceC0508pb, InterfaceC0223eb, Fh {
         w();
         C0156bl a7 = A5.a(this, f, new C0626u5(this));
         this.j = a7;
-        a4.info("Read app environment for component %s. Value: %s", c0476o5.toString(), a6.a().f902a);
+        a4.info("Read app environment for component %s. Value: %s", c0476o5.toString(), a6.a().f903a);
         Tk c = a5.c();
         this.u = c;
         this.n = a5.a(a2, f, a7, b, a6, c, d);

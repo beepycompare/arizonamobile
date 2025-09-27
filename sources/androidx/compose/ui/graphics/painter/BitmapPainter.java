@@ -32,9 +32,9 @@ public final class BitmapPainter extends Painter {
     */
     public /* synthetic */ BitmapPainter(ImageBitmap imageBitmap, long j, long j2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(imageBitmap, r2, j2, null);
-        long m7390getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j;
+        long m7403getZeronOccac = (i & 2) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j;
         if ((i & 4) != 0) {
-            j2 = IntSize.m7417constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
+            j2 = IntSize.m7430constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
         }
     }
 
@@ -42,18 +42,18 @@ public final class BitmapPainter extends Painter {
         this.image = imageBitmap;
         this.srcOffset = j;
         this.srcSize = j2;
-        this.filterQuality = FilterQuality.Companion.m4638getLowfv9h1I();
-        this.size = m5234validateSizeN5eqBDc(j, j2);
+        this.filterQuality = FilterQuality.Companion.m4650getLowfv9h1I();
+        this.size = m5246validateSizeN5eqBDc(j, j2);
         this.alpha = 1.0f;
     }
 
     /* renamed from: getFilterQuality-f-v9h1I$ui_graphics_release  reason: not valid java name */
-    public final int m5235getFilterQualityfv9h1I$ui_graphics_release() {
+    public final int m5247getFilterQualityfv9h1I$ui_graphics_release() {
         return this.filterQuality;
     }
 
     /* renamed from: setFilterQuality-vDHp3xo$ui_graphics_release  reason: not valid java name */
-    public final void m5237setFilterQualityvDHp3xo$ui_graphics_release(int i) {
+    public final void m5249setFilterQualityvDHp3xo$ui_graphics_release(int i) {
         this.filterQuality = i;
     }
 
@@ -63,14 +63,14 @@ public final class BitmapPainter extends Painter {
         ImageBitmap imageBitmap = this.image;
         long j = this.srcOffset;
         long j2 = this.srcSize;
-        int round = Math.round(Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32)));
-        DrawScope.m5099drawImageAZ2fEMs$default(drawScope, imageBitmap, j, j2, 0L, IntSize.m7417constructorimpl((Math.round(Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (round << 32)), this.alpha, null, this.colorFilter, 0, this.filterQuality, 328, null);
+        int round = Math.round(Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)));
+        DrawScope.m5111drawImageAZ2fEMs$default(drawScope, imageBitmap, j, j2, 0L, IntSize.m7430constructorimpl((Math.round(Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L))) & 4294967295L) | (round << 32)), this.alpha, null, this.colorFilter, 0, this.filterQuality, 328, null);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc  reason: not valid java name */
-    public long mo5236getIntrinsicSizeNHjbRc() {
-        return IntSizeKt.m7434toSizeozmzZPI(this.size);
+    public long mo5248getIntrinsicSizeNHjbRc() {
+        return IntSizeKt.m7447toSizeozmzZPI(this.size);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
@@ -86,10 +86,10 @@ public final class BitmapPainter extends Painter {
     }
 
     /* renamed from: validateSize-N5eqBDc  reason: not valid java name */
-    private final long m5234validateSizeN5eqBDc(long j, long j2) {
+    private final long m5246validateSizeN5eqBDc(long j, long j2) {
         int i;
         int i2;
-        if (IntOffset.m7379getXimpl(j) < 0 || IntOffset.m7380getYimpl(j) < 0 || (i = (int) (j2 >> 32)) < 0 || (i2 = (int) (4294967295L & j2)) < 0 || i > this.image.getWidth() || i2 > this.image.getHeight()) {
+        if (IntOffset.m7392getXimpl(j) < 0 || IntOffset.m7393getYimpl(j) < 0 || (i = (int) (j2 >> 32)) < 0 || (i2 = (int) (4294967295L & j2)) < 0 || i > this.image.getWidth() || i2 > this.image.getHeight()) {
             throw new IllegalArgumentException("Failed requirement.".toString());
         }
         return j2;
@@ -101,16 +101,16 @@ public final class BitmapPainter extends Painter {
         }
         if (obj instanceof BitmapPainter) {
             BitmapPainter bitmapPainter = (BitmapPainter) obj;
-            return Intrinsics.areEqual(this.image, bitmapPainter.image) && IntOffset.m7378equalsimpl0(this.srcOffset, bitmapPainter.srcOffset) && IntSize.m7420equalsimpl0(this.srcSize, bitmapPainter.srcSize) && FilterQuality.m4633equalsimpl0(this.filterQuality, bitmapPainter.filterQuality);
+            return Intrinsics.areEqual(this.image, bitmapPainter.image) && IntOffset.m7391equalsimpl0(this.srcOffset, bitmapPainter.srcOffset) && IntSize.m7433equalsimpl0(this.srcSize, bitmapPainter.srcSize) && FilterQuality.m4645equalsimpl0(this.filterQuality, bitmapPainter.filterQuality);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.image.hashCode() * 31) + IntOffset.m7381hashCodeimpl(this.srcOffset)) * 31) + IntSize.m7423hashCodeimpl(this.srcSize)) * 31) + FilterQuality.m4634hashCodeimpl(this.filterQuality);
+        return (((((this.image.hashCode() * 31) + IntOffset.m7394hashCodeimpl(this.srcOffset)) * 31) + IntSize.m7436hashCodeimpl(this.srcSize)) * 31) + FilterQuality.m4646hashCodeimpl(this.filterQuality);
     }
 
     public String toString() {
-        return "BitmapPainter(image=" + this.image + ", srcOffset=" + ((Object) IntOffset.m7386toStringimpl(this.srcOffset)) + ", srcSize=" + ((Object) IntSize.m7425toStringimpl(this.srcSize)) + ", filterQuality=" + ((Object) FilterQuality.m4635toStringimpl(this.filterQuality)) + ')';
+        return "BitmapPainter(image=" + this.image + ", srcOffset=" + ((Object) IntOffset.m7399toStringimpl(this.srcOffset)) + ", srcSize=" + ((Object) IntSize.m7438toStringimpl(this.srcSize)) + ", filterQuality=" + ((Object) FilterQuality.m4647toStringimpl(this.filterQuality)) + ')';
     }
 }

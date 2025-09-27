@@ -13,6 +13,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineExceptionHandler;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
@@ -26,11 +27,12 @@ import ru.mrlargha.commonui.elements.donate.utils.CustomGridLayoutManager;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: DonateOrdinaryPage.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0006\u0018\u00002\u00020\u0001BL\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012#\u0010\n\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u000b¢\u0006\u0004\b\u0011\u0010\u0012J\b\u0010#\u001a\u00020\u0010H\u0002J\u0018\u0010$\u001a\u00020\u00102\u0006\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020'H\u0016J\u0016\u0010(\u001a\u00020\u00102\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\f0*H\u0002J\b\u0010+\u001a\u00020\u0010H\u0002J\u0016\u0010,\u001a\u00020\u00102\f\u0010-\u001a\b\u0012\u0004\u0012\u00020\f0*H\u0002J\u0010\u0010.\u001a\u00020\u00102\u0006\u0010/\u001a\u00020\u0003H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R.\u0010\n\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\f0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0003X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateOrdinaryPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;", "openDialog", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lkotlin/ParameterName;", "name", "itemModelUi", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;Lkotlin/jvm/functions/Function1;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;", "getOpenDialog", "()Lkotlin/jvm/functions/Function1;", "itemAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "renderJob", "Lkotlinx/coroutines/Job;", "allItemList", "", "page", "pageSize", "isLoading", "", "setupRecycler", "onBackendMessage", "subId", "data", "", "setOrdinaryItemList", "itemList", "", "loadPage", "renderListGradually", "list", "onItemClick", "id", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0006\u0018\u00002\u00020\u0001BL\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012#\u0010\n\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u000b¢\u0006\u0004\b\u0011\u0010\u0012J\b\u0010%\u001a\u00020\u0010H\u0002J\u0018\u0010&\u001a\u00020\u00102\u0006\u0010'\u001a\u00020\u00032\u0006\u0010(\u001a\u00020)H\u0016J\u0016\u0010*\u001a\u00020\u00102\f\u0010+\u001a\b\u0012\u0004\u0012\u00020\f0,H\u0002J\b\u0010-\u001a\u00020\u0010H\u0002J\u0016\u0010.\u001a\u00020\u00102\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\f0,H\u0002J\u0010\u00100\u001a\u00020\u00102\u0006\u00101\u001a\u00020\u0003H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R.\u0010\n\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\f¢\u0006\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\f0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0003X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateOrdinaryPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;", "openDialog", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lkotlin/ParameterName;", "name", "itemModelUi", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;Lkotlin/jvm/functions/Function1;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateOrdinaryPageBinding;", "getOpenDialog", "()Lkotlin/jvm/functions/Function1;", "itemAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateAdapter;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "renderJob", "Lkotlinx/coroutines/Job;", "allItemList", "", "page", "pageSize", "isLoading", "", "setupRecycler", "onBackendMessage", "subId", "data", "", "setOrdinaryItemList", "itemList", "", "loadPage", "renderListGradually", "list", "onItemClick", "id", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class DonateOrdinaryPage extends DonatePage {
     private final List<DonateItemModelUi> allItemList;
     private final DonateOrdinaryPageBinding binding;
+    private final CoroutineExceptionHandler handler;
     private boolean isLoading;
     private final DonateAdapter itemAdapter;
     private final Function1<DonateItemModelUi, Unit> openDialog;
@@ -71,7 +73,9 @@ public final class DonateOrdinaryPage extends DonatePage {
                 return itemAdapter$lambda$2;
             }
         });
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
+        DonateOrdinaryPage$special$$inlined$CoroutineExceptionHandler$1 donateOrdinaryPage$special$$inlined$CoroutineExceptionHandler$1 = new DonateOrdinaryPage$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity);
+        this.handler = donateOrdinaryPage$special$$inlined$CoroutineExceptionHandler$1;
+        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(donateOrdinaryPage$special$$inlined$CoroutineExceptionHandler$1));
         this.allItemList = new ArrayList();
         this.pageSize = 20;
         setupRecycler();
@@ -118,7 +122,7 @@ public final class DonateOrdinaryPage extends DonatePage {
         this.allItemList.addAll(list);
         this.binding.rvItems.scrollToPosition(0);
         this.itemAdapter.submitList(CollectionsKt.emptyList());
-        renderListGradually(list);
+        renderListGradually(this.allItemList);
     }
 
     private final void loadPage() {
@@ -150,8 +154,10 @@ public final class DonateOrdinaryPage extends DonatePage {
         if (job != null) {
             Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
-        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new DonateOrdinaryPage$renderListGradually$1(list, this, null), 2, null);
+        Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + list.size());
+        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getMain(), null, new DonateOrdinaryPage$renderListGradually$1(this, list, null), 2, null);
         this.renderJob = launch$default;
+        Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + (launch$default != null ? Boolean.valueOf(launch$default.isActive()) : null));
     }
 
     private final void onItemClick(int i) {

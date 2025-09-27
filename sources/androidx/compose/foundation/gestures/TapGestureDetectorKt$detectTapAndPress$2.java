@@ -135,7 +135,7 @@ public final class TapGestureDetectorKt$detectTapAndPress$2 extends SuspendLambd
                         TapGestureDetectorKt.launchAwaitingReset$default(this.$$this$coroutineScope, job, null, new AnonymousClass3(this.$pressScope, null), 2, null);
                         Function1<Offset, Unit> function1 = this.$onTap;
                         if (function1 != null) {
-                            function1.invoke(Offset.m4282boximpl(pointerInputChange.m5826getPositionF1C5BW0()));
+                            function1.invoke(Offset.m4294boximpl(pointerInputChange.m5839getPositionF1C5BW0()));
                         }
                     }
                     return Unit.INSTANCE;
@@ -200,9 +200,9 @@ public final class TapGestureDetectorKt$detectTapAndPress$2 extends SuspendLambd
                     ResultKt.throwOnFailure(obj);
                     Function3<PressGestureScope, Offset, Continuation<? super Unit>, Object> function3 = this.$onPress;
                     PressGestureScopeImpl pressGestureScopeImpl = this.$pressScope;
-                    Offset m4282boximpl = Offset.m4282boximpl(this.$down.m5826getPositionF1C5BW0());
+                    Offset m4294boximpl = Offset.m4294boximpl(this.$down.m5839getPositionF1C5BW0());
                     this.label = 1;
-                    if (function3.invoke(pressGestureScopeImpl, m4282boximpl, this) == coroutine_suspended) {
+                    if (function3.invoke(pressGestureScopeImpl, m4294boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {

@@ -14,18 +14,18 @@ public final class NavigationBarTokens {
     private static final ColorSchemeKeyTokens ActiveHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ActiveIndicatorHeight = Dp.m7251constructorimpl((float) 32.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7264constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ActiveIndicatorWidth = Dp.m7251constructorimpl((float) 64.0d);
+    private static final float ActiveIndicatorWidth = Dp.m7264constructorimpl((float) 64.0d);
     private static final ColorSchemeKeyTokens ActiveLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActivePressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 80.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 80.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
-    private static final float IconSize = Dp.m7251constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveFocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -64,7 +64,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3429getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3439getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -73,7 +73,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3430getActiveIndicatorWidthD9Ej5fM() {
+    public final float m3440getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
@@ -94,12 +94,12 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3431getContainerElevationD9Ej5fM() {
+    public final float m3441getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3432getContainerHeightD9Ej5fM() {
+    public final float m3442getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -112,7 +112,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3433getIconSizeD9Ej5fM() {
+    public final float m3443getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

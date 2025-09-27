@@ -59,12 +59,12 @@ public final class ComposableSingletons$SearchBar_androidKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2088getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2098getLambda1$material3_release() {
         return f41lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2089getLambda2$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2099getLambda2$material3_release() {
         return f42lambda2;
     }
 }

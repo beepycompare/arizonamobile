@@ -765,8 +765,8 @@ public final class SlotWriter {
         }
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3815isNotEmptyimpl(mutableIntList) && PrioritySet.m3816peekimpl(mutableIntList) >= i) {
-                PrioritySet.m3817takeMaximpl(mutableIntList);
+            while (PrioritySet.m3825isNotEmptyimpl(mutableIntList) && PrioritySet.m3826peekimpl(mutableIntList) >= i) {
+                PrioritySet.m3827takeMaximpl(mutableIntList);
             }
         }
         boolean removeGroups = removeGroups(i, this.currentGroup - i);
@@ -1213,8 +1213,8 @@ public final class SlotWriter {
     private final void recalculateMarks() {
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m3815isNotEmptyimpl(mutableIntList)) {
-                m3833updateContainsMarkNowXpTMRCE(PrioritySet.m3817takeMaximpl(mutableIntList), mutableIntList);
+            while (PrioritySet.m3825isNotEmptyimpl(mutableIntList)) {
+                m3845updateContainsMarkNowXpTMRCE(PrioritySet.m3827takeMaximpl(mutableIntList), mutableIntList);
             }
         }
     }
@@ -1224,15 +1224,15 @@ public final class SlotWriter {
         if (i >= 0) {
             MutableIntList mutableIntList = this.pendingRecalculateMarks;
             if (mutableIntList == null) {
-                mutableIntList = PrioritySet.m3810constructorimpl$default(null, 1, null);
+                mutableIntList = PrioritySet.m3820constructorimpl$default(null, 1, null);
                 this.pendingRecalculateMarks = mutableIntList;
             }
-            PrioritySet.m3807addimpl(mutableIntList, i);
+            PrioritySet.m3817addimpl(mutableIntList, i);
         }
     }
 
     /* renamed from: updateContainsMarkNow-XpTMRCE  reason: not valid java name */
-    private final void m3833updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
+    private final void m3845updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
         int groupIndexToAddress = groupIndexToAddress(i);
         boolean childContainsAnyMarks = childContainsAnyMarks(i);
         int[] iArr = this.groups;
@@ -1240,7 +1240,7 @@ public final class SlotWriter {
             SlotTableKt.access$updateContainsMark(iArr, groupIndexToAddress, childContainsAnyMarks);
             int parent = parent(i);
             if (parent >= 0) {
-                PrioritySet.m3807addimpl(mutableIntList, parent);
+                PrioritySet.m3817addimpl(mutableIntList, parent);
             }
         }
     }

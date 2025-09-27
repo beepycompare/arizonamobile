@@ -14,27 +14,27 @@ import io.appmetrica.analytics.impl.yo;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Rn f1280a;
+    private final Rn f1281a;
     private final S6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StringAttribute(String str, C0261fn c0261fn, yo yoVar, InterfaceC0548r2 interfaceC0548r2) {
         this.b = new S6(str, yoVar, interfaceC0548r2);
-        this.f1280a = c0261fn;
+        this.f1281a = c0261fn;
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValue(String str) {
         S6 s6 = this.b;
-        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1280a, s6.f666a, new Q4(s6.b)));
+        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1281a, s6.f667a, new Q4(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueIfUndefined(String str) {
         S6 s6 = this.b;
-        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1280a, s6.f666a, new C0311hl(s6.b)));
+        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1281a, s6.f667a, new C0311hl(s6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0391ko> withValueReset() {
         S6 s6 = this.b;
-        return new UserProfileUpdate<>(new Xi(0, s6.c, s6.f666a, s6.b));
+        return new UserProfileUpdate<>(new Xi(0, s6.c, s6.f667a, s6.b));
     }
 }

@@ -71,16 +71,16 @@ public final class AndroidDragAndDropManager implements View.OnDragListener, Dra
 
     @Override // androidx.compose.ui.draganddrop.DragAndDropManager
     /* renamed from: requestDragAndDropTransfer-Uv8p0NA  reason: not valid java name */
-    public void mo4046requestDragAndDropTransferUv8p0NA(DragAndDropNode dragAndDropNode, long j) {
+    public void mo4058requestDragAndDropTransferUv8p0NA(DragAndDropNode dragAndDropNode, long j) {
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        dragAndDropNode.m4052startDragAndDropTransferd4ec7I(new DragAndDropStartTransferScope() { // from class: androidx.compose.ui.draganddrop.AndroidDragAndDropManager$requestDragAndDropTransfer$dragAndDropSourceScope$1
+        dragAndDropNode.m4064startDragAndDropTransferd4ec7I(new DragAndDropStartTransferScope() { // from class: androidx.compose.ui.draganddrop.AndroidDragAndDropManager$requestDragAndDropTransfer$dragAndDropSourceScope$1
             @Override // androidx.compose.ui.draganddrop.DragAndDropStartTransferScope
             /* renamed from: startDragAndDropTransfer-12SF9DM  reason: not valid java name */
-            public boolean mo4047startDragAndDropTransfer12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j2, Function1<? super DrawScope, Unit> function1) {
+            public boolean mo4059startDragAndDropTransfer12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j2, Function1<? super DrawScope, Unit> function1) {
                 Function3 function3;
                 Ref.BooleanRef booleanRef2 = Ref.BooleanRef.this;
                 function3 = this.startDrag;
-                booleanRef2.element = ((Boolean) function3.invoke(dragAndDropTransferData, Size.m4350boximpl(j2), function1)).booleanValue();
+                booleanRef2.element = ((Boolean) function3.invoke(dragAndDropTransferData, Size.m4362boximpl(j2), function1)).booleanValue();
                 return Ref.BooleanRef.this.element;
             }
         }, j, new Function0<Boolean>() { // from class: androidx.compose.ui.draganddrop.AndroidDragAndDropManager$requestDragAndDropTransfer$1$1

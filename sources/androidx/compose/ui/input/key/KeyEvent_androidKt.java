@@ -6,44 +6,44 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class KeyEvent_androidKt {
     /* renamed from: getKey-ZmokQxo  reason: not valid java name */
-    public static final long m5682getKeyZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final long m5695getKeyZmokQxo(android.view.KeyEvent keyEvent) {
         return Key_androidKt.Key(keyEvent.getKeyCode());
     }
 
     /* renamed from: getUtf16CodePoint-ZmokQxo  reason: not valid java name */
-    public static final int m5684getUtf16CodePointZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final int m5697getUtf16CodePointZmokQxo(android.view.KeyEvent keyEvent) {
         return keyEvent.getUnicodeChar();
     }
 
     /* renamed from: getType-ZmokQxo  reason: not valid java name */
-    public static final int m5683getTypeZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final int m5696getTypeZmokQxo(android.view.KeyEvent keyEvent) {
         int action = keyEvent.getAction();
         if (action != 0) {
             if (action == 1) {
-                return KeyEventType.Companion.m5680getKeyUpCS__XNY();
+                return KeyEventType.Companion.m5693getKeyUpCS__XNY();
             }
-            return KeyEventType.Companion.m5681getUnknownCS__XNY();
+            return KeyEventType.Companion.m5694getUnknownCS__XNY();
         }
-        return KeyEventType.Companion.m5679getKeyDownCS__XNY();
+        return KeyEventType.Companion.m5692getKeyDownCS__XNY();
     }
 
     /* renamed from: isAltPressed-ZmokQxo  reason: not valid java name */
-    public static final boolean m5685isAltPressedZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final boolean m5698isAltPressedZmokQxo(android.view.KeyEvent keyEvent) {
         return keyEvent.isAltPressed();
     }
 
     /* renamed from: isCtrlPressed-ZmokQxo  reason: not valid java name */
-    public static final boolean m5686isCtrlPressedZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final boolean m5699isCtrlPressedZmokQxo(android.view.KeyEvent keyEvent) {
         return keyEvent.isCtrlPressed();
     }
 
     /* renamed from: isMetaPressed-ZmokQxo  reason: not valid java name */
-    public static final boolean m5687isMetaPressedZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final boolean m5700isMetaPressedZmokQxo(android.view.KeyEvent keyEvent) {
         return keyEvent.isMetaPressed();
     }
 
     /* renamed from: isShiftPressed-ZmokQxo  reason: not valid java name */
-    public static final boolean m5688isShiftPressedZmokQxo(android.view.KeyEvent keyEvent) {
+    public static final boolean m5701isShiftPressedZmokQxo(android.view.KeyEvent keyEvent) {
         return keyEvent.isShiftPressed();
     }
 }

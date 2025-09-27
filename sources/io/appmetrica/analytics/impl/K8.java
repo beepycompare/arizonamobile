@@ -12,7 +12,7 @@ public final class K8 extends MessageNano {
     public static volatile K8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public J8[] f535a;
+    public J8[] f536a;
     public int b;
 
     public K8() {
@@ -31,7 +31,7 @@ public final class K8 extends MessageNano {
     }
 
     public final K8 a() {
-        this.f535a = J8.b();
+        this.f536a = J8.b();
         this.b = 0;
         this.cachedSize = -1;
         return this;
@@ -40,11 +40,11 @@ public final class K8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        J8[] j8Arr = this.f535a;
+        J8[] j8Arr = this.f536a;
         if (j8Arr != null && j8Arr.length > 0) {
             int i = 0;
             while (true) {
-                J8[] j8Arr2 = this.f535a;
+                J8[] j8Arr2 = this.f536a;
                 if (i >= j8Arr2.length) {
                     break;
                 }
@@ -61,11 +61,11 @@ public final class K8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        J8[] j8Arr = this.f535a;
+        J8[] j8Arr = this.f536a;
         if (j8Arr != null && j8Arr.length > 0) {
             int i = 0;
             while (true) {
-                J8[] j8Arr2 = this.f535a;
+                J8[] j8Arr2 = this.f536a;
                 if (i >= j8Arr2.length) {
                     break;
                 }
@@ -92,7 +92,7 @@ public final class K8 extends MessageNano {
                 break;
             } else if (readTag == 10) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                J8[] j8Arr = this.f535a;
+                J8[] j8Arr = this.f536a;
                 int length = j8Arr == null ? 0 : j8Arr.length;
                 int i = repeatedFieldArrayLength + length;
                 J8[] j8Arr2 = new J8[i];
@@ -109,7 +109,7 @@ public final class K8 extends MessageNano {
                 J8 j82 = new J8();
                 j8Arr2[length] = j82;
                 codedInputByteBufferNano.readMessage(j82);
-                this.f535a = j8Arr2;
+                this.f536a = j8Arr2;
             } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

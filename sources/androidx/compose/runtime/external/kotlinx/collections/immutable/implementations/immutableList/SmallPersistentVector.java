@@ -26,7 +26,7 @@ public final class SmallPersistentVector<E> extends AbstractPersistentList<E> im
 
     public SmallPersistentVector(Object[] objArr) {
         this.buffer = objArr;
-        CommonFunctionsKt.m3972assert(objArr.length <= 32);
+        CommonFunctionsKt.m3984assert(objArr.length <= 32);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

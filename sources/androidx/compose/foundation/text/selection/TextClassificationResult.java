@@ -19,7 +19,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: copy-Sb-Bc2M$default  reason: not valid java name */
-    public static /* synthetic */ TextClassificationResult m1806copySbBc2M$default(TextClassificationResult textClassificationResult, CharSequence charSequence, long j, TextClassification textClassification, int i, Object obj) {
+    public static /* synthetic */ TextClassificationResult m1816copySbBc2M$default(TextClassificationResult textClassificationResult, CharSequence charSequence, long j, TextClassification textClassification, int i, Object obj) {
         if ((i & 1) != 0) {
             charSequence = textClassificationResult.text;
         }
@@ -29,7 +29,7 @@ public final class TextClassificationResult {
         if ((i & 4) != 0) {
             textClassification = textClassificationResult.textClassification;
         }
-        return textClassificationResult.m1808copySbBc2M(charSequence, j, textClassification);
+        return textClassificationResult.m1818copySbBc2M(charSequence, j, textClassification);
     }
 
     public final CharSequence component1() {
@@ -37,7 +37,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: component2-d9O1mEE  reason: not valid java name */
-    public final long m1807component2d9O1mEE() {
+    public final long m1817component2d9O1mEE() {
         return this.selection;
     }
 
@@ -46,7 +46,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: copy-Sb-Bc2M  reason: not valid java name */
-    public final TextClassificationResult m1808copySbBc2M(CharSequence charSequence, long j, TextClassification textClassification) {
+    public final TextClassificationResult m1818copySbBc2M(CharSequence charSequence, long j, TextClassification textClassification) {
         return new TextClassificationResult(charSequence, j, textClassification, null);
     }
 
@@ -56,17 +56,17 @@ public final class TextClassificationResult {
         }
         if (obj instanceof TextClassificationResult) {
             TextClassificationResult textClassificationResult = (TextClassificationResult) obj;
-            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m6706equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
+            return Intrinsics.areEqual(this.text, textClassificationResult.text) && TextRange.m6719equalsimpl0(this.selection, textClassificationResult.selection) && Intrinsics.areEqual(this.textClassification, textClassificationResult.textClassification);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.text.hashCode() * 31) + TextRange.m6714hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
+        return (((this.text.hashCode() * 31) + TextRange.m6727hashCodeimpl(this.selection)) * 31) + this.textClassification.hashCode();
     }
 
     public String toString() {
-        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m6716toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
+        return "TextClassificationResult(text=" + ((Object) this.text) + ", selection=" + ((Object) TextRange.m6729toStringimpl(this.selection)) + ", textClassification=" + this.textClassification + ')';
     }
 
     private TextClassificationResult(CharSequence charSequence, long j, TextClassification textClassification) {
@@ -80,7 +80,7 @@ public final class TextClassificationResult {
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1809getSelectiond9O1mEE() {
+    public final long m1819getSelectiond9O1mEE() {
         return this.selection;
     }
 

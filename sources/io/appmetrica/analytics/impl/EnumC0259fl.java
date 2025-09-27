@@ -7,9 +7,9 @@ public enum EnumC0259fl {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f883a;
+    public final int f884a;
 
     EnumC0259fl(int i) {
-        this.f883a = i;
+        this.f884a = i;
     }
 }

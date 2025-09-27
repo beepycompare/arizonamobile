@@ -45,16 +45,16 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
     public void draw(ContentDrawScope contentDrawScope) {
         long j;
         boolean z;
-        this.overscrollEffect.m238updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5116getSizeNHjbRc());
+        this.overscrollEffect.m248updateSizeuvyYCjk$foundation_release(contentDrawScope.mo5128getSizeNHjbRc());
         Canvas nativeCanvas = AndroidCanvas_androidKt.getNativeCanvas(contentDrawScope.getDrawContext().getCanvas());
         this.overscrollEffect.getRedrawSignal$foundation_release().getValue();
-        if (Size.m4364isEmptyimpl(contentDrawScope.mo5116getSizeNHjbRc())) {
+        if (Size.m4376isEmptyimpl(contentDrawScope.mo5128getSizeNHjbRc())) {
             contentDrawScope.drawContent();
         } else if (!nativeCanvas.isHardwareAccelerated()) {
             this.edgeEffectWrapper.finishAll();
             contentDrawScope.drawContent();
         } else {
-            float f = contentDrawScope.mo419toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
+            float f = contentDrawScope.mo429toPx0680j_4(ClipScrollableContainerKt.getMaxSupportedElevation());
             EdgeEffectWrapper edgeEffectWrapper = this.edgeEffectWrapper;
             boolean shouldDrawVerticalStretch = shouldDrawVerticalStretch();
             boolean shouldDrawHorizontalStretch = shouldDrawHorizontalStretch();
@@ -79,7 +79,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 z = drawLeftStretch(orCreateLeftEffect, beginRecording);
                 if (edgeEffectWrapper.isLeftStretched()) {
                     j = 4294967295L;
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m237displacementF1C5BW0$foundation_release() & 4294967295L)));
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateLeftEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateLeftEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m247displacementF1C5BW0$foundation_release() & 4294967295L)));
                 } else {
                     j = 4294967295L;
                 }
@@ -96,7 +96,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 EdgeEffect orCreateTopEffect = edgeEffectWrapper.getOrCreateTopEffect();
                 z = drawTopStretch(orCreateTopEffect, beginRecording) || z;
                 if (edgeEffectWrapper.isTopStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m237displacementF1C5BW0$foundation_release() >> 32)));
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateTopEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateTopEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m247displacementF1C5BW0$foundation_release() >> 32)));
                 }
             }
             if (edgeEffectWrapper.isRightNegationStretched()) {
@@ -108,7 +108,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 EdgeEffect orCreateRightEffect = edgeEffectWrapper.getOrCreateRightEffect();
                 z = drawRightStretch(orCreateRightEffect, beginRecording) || z;
                 if (edgeEffectWrapper.isRightStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m237displacementF1C5BW0$foundation_release() & j)));
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateRightEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateRightEffect), Float.intBitsToFloat((int) (this.overscrollEffect.m247displacementF1C5BW0$foundation_release() & j)));
                 }
             }
             if (edgeEffectWrapper.isBottomNegationStretched()) {
@@ -120,7 +120,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 EdgeEffect orCreateBottomEffect = edgeEffectWrapper.getOrCreateBottomEffect();
                 boolean z2 = drawBottomStretch(orCreateBottomEffect, beginRecording) || z;
                 if (edgeEffectWrapper.isBottomStretched()) {
-                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m237displacementF1C5BW0$foundation_release() >> 32)));
+                    EdgeEffectCompat.INSTANCE.onPullDistanceCompat(edgeEffectWrapper.getOrCreateBottomEffectNegation(), EdgeEffectCompat.INSTANCE.getDistanceCompat(orCreateBottomEffect), 1 - Float.intBitsToFloat((int) (this.overscrollEffect.m247displacementF1C5BW0$foundation_release() >> 32)));
                 }
                 z = z2;
             }
@@ -134,17 +134,17 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
             ContentDrawScope contentDrawScope2 = contentDrawScope;
             LayoutDirection layoutDirection = contentDrawScope.getLayoutDirection();
             androidx.compose.ui.graphics.Canvas Canvas = AndroidCanvas_androidKt.Canvas(beginRecording);
-            long j2 = contentDrawScope.mo5116getSizeNHjbRc();
+            long j2 = contentDrawScope.mo5128getSizeNHjbRc();
             Density density = contentDrawScope2.getDrawContext().getDensity();
             LayoutDirection layoutDirection2 = contentDrawScope2.getDrawContext().getLayoutDirection();
             androidx.compose.ui.graphics.Canvas canvas = contentDrawScope2.getDrawContext().getCanvas();
-            long mo5037getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5037getSizeNHjbRc();
+            long mo5049getSizeNHjbRc = contentDrawScope2.getDrawContext().mo5049getSizeNHjbRc();
             GraphicsLayer graphicsLayer = contentDrawScope2.getDrawContext().getGraphicsLayer();
             DrawContext drawContext = contentDrawScope2.getDrawContext();
             drawContext.setDensity(contentDrawScope);
             drawContext.setLayoutDirection(layoutDirection);
             drawContext.setCanvas(Canvas);
-            drawContext.mo5038setSizeuvyYCjk(j2);
+            drawContext.mo5050setSizeuvyYCjk(j2);
             drawContext.setGraphicsLayer(null);
             Canvas.save();
             try {
@@ -158,7 +158,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext2.setDensity(density);
                 drawContext2.setLayoutDirection(layoutDirection2);
                 drawContext2.setCanvas(canvas);
-                drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 drawContext2.setGraphicsLayer(graphicsLayer);
                 getRenderNode().endRecording();
                 int save = nativeCanvas.save();
@@ -171,7 +171,7 @@ final class StretchOverscrollNode extends DelegatingNode implements DrawModifier
                 drawContext3.setDensity(density);
                 drawContext3.setLayoutDirection(layoutDirection2);
                 drawContext3.setCanvas(canvas);
-                drawContext3.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext3.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 drawContext3.setGraphicsLayer(graphicsLayer);
                 throw th;
             }

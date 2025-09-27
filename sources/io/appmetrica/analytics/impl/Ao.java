@@ -6,7 +6,7 @@ import org.json.JSONObject;
 public final class Ao implements zo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0118a9 f357a;
+    public final C0118a9 f358a;
 
     public Ao() {
         this(new C0118a9());
@@ -22,10 +22,10 @@ public final class Ao implements zo {
             } catch (Throwable unused) {
             }
         }
-        return this.f357a.a(c0402l9, gh);
+        return this.f358a.a(c0402l9, gh);
     }
 
     public Ao(C0118a9 c0118a9) {
-        this.f357a = c0118a9;
+        this.f358a = c0118a9;
     }
 }

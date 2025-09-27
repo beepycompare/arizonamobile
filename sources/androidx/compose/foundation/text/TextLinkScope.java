@@ -220,17 +220,17 @@ public final class TextLinkScope {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$2() {
-        return IntOffset.m7370boximpl(IntOffset.Companion.m7390getZeronOccac());
+        return IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$3() {
-        return IntOffset.m7370boximpl(IntOffset.Companion.m7390getZeronOccac());
+        return IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$5$lambda$4(IntRect intRect) {
-        return IntOffset.m7370boximpl(intRect.m7408getTopLeftnOccac());
+        return IntOffset.m7383boximpl(intRect.m7421getTopLeftnOccac());
     }
 
     private final Modifier clipLink(Modifier modifier, final AnnotatedString.Range<LinkAnnotation> range) {
@@ -259,7 +259,7 @@ public final class TextLinkScope {
         return pathForRangeInRangeCoordinates != null ? new Shape() { // from class: androidx.compose.foundation.text.TextLinkScope$shapeForRange$1$1
             @Override // androidx.compose.ui.graphics.Shape
             /* renamed from: createOutline-Pq9zytI */
-            public Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+            public Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
                 return new Outline.Generic(Path.this);
             }
         } : null;
@@ -277,7 +277,7 @@ public final class TextLinkScope {
                 path = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
                 Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
                 float min = textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f;
-                path.mo4430translatek4lQ0M(Offset.m4285constructorimpl(Offset.m4285constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
+                path.mo4442translatek4lQ0M(Offset.m4297constructorimpl(Offset.m4297constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
             }
             return path;
         }
@@ -363,7 +363,7 @@ public final class TextLinkScope {
                         startRestartGroup.updateRememberedValue(rememberedValue3);
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    BoxKt.Box(ClickableKt.m302combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
+                    BoxKt.Box(ClickableKt.m312combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
                     isNullOrEmpty = TextLinkScopeKt.isNullOrEmpty(range.getItem().getStyles());
                     if (!isNullOrEmpty) {
                         startRestartGroup.startReplaceGroup(726303039);

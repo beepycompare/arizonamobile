@@ -10,51 +10,51 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class ImeAction {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unspecified = m6880constructorimpl(-1);
-    private static final int Default = m6880constructorimpl(1);
-    private static final int None = m6880constructorimpl(0);
-    private static final int Go = m6880constructorimpl(2);
-    private static final int Search = m6880constructorimpl(3);
-    private static final int Send = m6880constructorimpl(4);
-    private static final int Previous = m6880constructorimpl(5);
-    private static final int Next = m6880constructorimpl(6);
-    private static final int Done = m6880constructorimpl(7);
+    private static final int Unspecified = m6893constructorimpl(-1);
+    private static final int Default = m6893constructorimpl(1);
+    private static final int None = m6893constructorimpl(0);
+    private static final int Go = m6893constructorimpl(2);
+    private static final int Search = m6893constructorimpl(3);
+    private static final int Send = m6893constructorimpl(4);
+    private static final int Previous = m6893constructorimpl(5);
+    private static final int Next = m6893constructorimpl(6);
+    private static final int Done = m6893constructorimpl(7);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ImeAction m6879boximpl(int i) {
+    public static final /* synthetic */ ImeAction m6892boximpl(int i) {
         return new ImeAction(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6880constructorimpl(int i) {
+    private static int m6893constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6881equalsimpl(int i, Object obj) {
-        return (obj instanceof ImeAction) && i == ((ImeAction) obj).m6885unboximpl();
+    public static boolean m6894equalsimpl(int i, Object obj) {
+        return (obj instanceof ImeAction) && i == ((ImeAction) obj).m6898unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6882equalsimpl0(int i, int i2) {
+    public static final boolean m6895equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6883hashCodeimpl(int i) {
+    public static int m6896hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6881equalsimpl(this.value, obj);
+        return m6894equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6883hashCodeimpl(this.value);
+        return m6896hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6885unboximpl() {
+    public final /* synthetic */ int m6898unboximpl() {
         return this.value;
     }
 
@@ -63,12 +63,12 @@ public final class ImeAction {
     }
 
     public String toString() {
-        return m6884toStringimpl(this.value);
+        return m6897toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6884toStringimpl(int i) {
-        return m6882equalsimpl0(i, Unspecified) ? "Unspecified" : m6882equalsimpl0(i, None) ? "None" : m6882equalsimpl0(i, Default) ? "Default" : m6882equalsimpl0(i, Go) ? "Go" : m6882equalsimpl0(i, Search) ? "Search" : m6882equalsimpl0(i, Send) ? "Send" : m6882equalsimpl0(i, Previous) ? "Previous" : m6882equalsimpl0(i, Next) ? "Next" : m6882equalsimpl0(i, Done) ? "Done" : "Invalid";
+    public static String m6897toStringimpl(int i) {
+        return m6895equalsimpl0(i, Unspecified) ? "Unspecified" : m6895equalsimpl0(i, None) ? "None" : m6895equalsimpl0(i, Default) ? "Default" : m6895equalsimpl0(i, Go) ? "Go" : m6895equalsimpl0(i, Search) ? "Search" : m6895equalsimpl0(i, Send) ? "Send" : m6895equalsimpl0(i, Previous) ? "Previous" : m6895equalsimpl0(i, Next) ? "Next" : m6895equalsimpl0(i, Done) ? "Done" : "Invalid";
     }
 
     /* compiled from: ImeAction.kt */
@@ -80,86 +80,86 @@ public final class ImeAction {
         }
 
         /* renamed from: getDefault-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6886getDefaulteUduSuo$annotations() {
+        public static /* synthetic */ void m6899getDefaulteUduSuo$annotations() {
         }
 
         /* renamed from: getDone-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6887getDoneeUduSuo$annotations() {
+        public static /* synthetic */ void m6900getDoneeUduSuo$annotations() {
         }
 
         /* renamed from: getGo-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6888getGoeUduSuo$annotations() {
+        public static /* synthetic */ void m6901getGoeUduSuo$annotations() {
         }
 
         /* renamed from: getNext-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6889getNexteUduSuo$annotations() {
+        public static /* synthetic */ void m6902getNexteUduSuo$annotations() {
         }
 
         /* renamed from: getNone-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6890getNoneeUduSuo$annotations() {
+        public static /* synthetic */ void m6903getNoneeUduSuo$annotations() {
         }
 
         /* renamed from: getPrevious-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6891getPreviouseUduSuo$annotations() {
+        public static /* synthetic */ void m6904getPreviouseUduSuo$annotations() {
         }
 
         /* renamed from: getSearch-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6892getSearcheUduSuo$annotations() {
+        public static /* synthetic */ void m6905getSearcheUduSuo$annotations() {
         }
 
         /* renamed from: getSend-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6893getSendeUduSuo$annotations() {
+        public static /* synthetic */ void m6906getSendeUduSuo$annotations() {
         }
 
         /* renamed from: getUnspecified-eUduSuo$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6894getUnspecifiedeUduSuo$annotations() {
+        public static /* synthetic */ void m6907getUnspecifiedeUduSuo$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-eUduSuo  reason: not valid java name */
-        public final int m6903getUnspecifiedeUduSuo() {
+        public final int m6916getUnspecifiedeUduSuo() {
             return ImeAction.Unspecified;
         }
 
         /* renamed from: getDefault-eUduSuo  reason: not valid java name */
-        public final int m6895getDefaulteUduSuo() {
+        public final int m6908getDefaulteUduSuo() {
             return ImeAction.Default;
         }
 
         /* renamed from: getNone-eUduSuo  reason: not valid java name */
-        public final int m6899getNoneeUduSuo() {
+        public final int m6912getNoneeUduSuo() {
             return ImeAction.None;
         }
 
         /* renamed from: getGo-eUduSuo  reason: not valid java name */
-        public final int m6897getGoeUduSuo() {
+        public final int m6910getGoeUduSuo() {
             return ImeAction.Go;
         }
 
         /* renamed from: getSearch-eUduSuo  reason: not valid java name */
-        public final int m6901getSearcheUduSuo() {
+        public final int m6914getSearcheUduSuo() {
             return ImeAction.Search;
         }
 
         /* renamed from: getSend-eUduSuo  reason: not valid java name */
-        public final int m6902getSendeUduSuo() {
+        public final int m6915getSendeUduSuo() {
             return ImeAction.Send;
         }
 
         /* renamed from: getPrevious-eUduSuo  reason: not valid java name */
-        public final int m6900getPreviouseUduSuo() {
+        public final int m6913getPreviouseUduSuo() {
             return ImeAction.Previous;
         }
 
         /* renamed from: getNext-eUduSuo  reason: not valid java name */
-        public final int m6898getNexteUduSuo() {
+        public final int m6911getNexteUduSuo() {
             return ImeAction.Next;
         }
 
         /* renamed from: getDone-eUduSuo  reason: not valid java name */
-        public final int m6896getDoneeUduSuo() {
+        public final int m6909getDoneeUduSuo() {
             return ImeAction.Done;
         }
     }

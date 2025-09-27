@@ -126,9 +126,9 @@ public final class PagerSnapLayoutInfoProviderKt {
 
     private static final float dragGestureDelta(PagerState pagerState) {
         if (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal) {
-            return Float.intBitsToFloat((int) (pagerState.m1151getUpDownDifferenceF1C5BW0$foundation_release() >> 32));
+            return Float.intBitsToFloat((int) (pagerState.m1161getUpDownDifferenceF1C5BW0$foundation_release() >> 32));
         }
-        return Float.intBitsToFloat((int) (pagerState.m1151getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L));
+        return Float.intBitsToFloat((int) (pagerState.m1161getUpDownDifferenceF1C5BW0$foundation_release() & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x008a A[RETURN] */
@@ -144,11 +144,11 @@ public final class PagerSnapLayoutInfoProviderKt {
         float dragGestureDelta = pageSize == 0 ? 0.0f : dragGestureDelta(pagerState) / pageSize;
         float f5 = dragGestureDelta - ((int) dragGestureDelta);
         int calculateFinalSnappingItem = LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(pagerState.getDensity$foundation_release(), f2);
-        if (FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m622getClosestItembbeMdSM())) {
+        if (FinalSnappingItem.m628equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m632getClosestItembbeMdSM())) {
             return (Math.abs(f5) <= f ? Math.abs(dragGestureDelta) < Math.abs(pagerState.getPositionThresholdFraction$foundation_release()) ? Math.abs(f3) >= Math.abs(f4) : !isScrollingForward : isScrollingForward) ? f4 : f3;
         }
-        if (!FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m623getNextItembbeMdSM())) {
-            if (!FinalSnappingItem.m618equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m624getPreviousItembbeMdSM())) {
+        if (!FinalSnappingItem.m628equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m633getNextItembbeMdSM())) {
+            if (!FinalSnappingItem.m628equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m634getPreviousItembbeMdSM())) {
                 return 0.0f;
             }
         }

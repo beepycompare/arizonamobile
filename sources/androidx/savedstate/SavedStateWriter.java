@@ -20,50 +20,50 @@ public final class SavedStateWriter {
     private final Bundle source;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SavedStateWriter m8247boximpl(Bundle bundle) {
+    public static final /* synthetic */ SavedStateWriter m8260boximpl(Bundle bundle) {
         return new SavedStateWriter(bundle);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Bundle m8249constructorimpl(Bundle source) {
+    public static Bundle m8262constructorimpl(Bundle source) {
         Intrinsics.checkNotNullParameter(source, "source");
         return source;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8250equalsimpl(Bundle bundle, Object obj) {
-        return (obj instanceof SavedStateWriter) && Intrinsics.areEqual(bundle, ((SavedStateWriter) obj).m8287unboximpl());
+    public static boolean m8263equalsimpl(Bundle bundle, Object obj) {
+        return (obj instanceof SavedStateWriter) && Intrinsics.areEqual(bundle, ((SavedStateWriter) obj).m8300unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8251equalsimpl0(Bundle bundle, Bundle bundle2) {
+    public static final boolean m8264equalsimpl0(Bundle bundle, Bundle bundle2) {
         return Intrinsics.areEqual(bundle, bundle2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8252hashCodeimpl(Bundle bundle) {
+    public static int m8265hashCodeimpl(Bundle bundle) {
         return bundle.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8286toStringimpl(Bundle bundle) {
+    public static String m8299toStringimpl(Bundle bundle) {
         return "SavedStateWriter(source=" + bundle + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8250equalsimpl(this.source, obj);
+        return m8263equalsimpl(this.source, obj);
     }
 
     public int hashCode() {
-        return m8252hashCodeimpl(this.source);
+        return m8265hashCodeimpl(this.source);
     }
 
     public String toString() {
-        return m8286toStringimpl(this.source);
+        return m8299toStringimpl(this.source);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Bundle m8287unboximpl() {
+    public final /* synthetic */ Bundle m8300unboximpl() {
         return this.source;
     }
 
@@ -72,229 +72,229 @@ public final class SavedStateWriter {
     }
 
     /* renamed from: putBinder-impl  reason: not valid java name */
-    public static final void m8254putBinderimpl(Bundle bundle, String key, IBinder value) {
+    public static final void m8267putBinderimpl(Bundle bundle, String key, IBinder value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putBinder(key, value);
     }
 
     /* renamed from: putBoolean-impl  reason: not valid java name */
-    public static final void m8255putBooleanimpl(Bundle bundle, String key, boolean z) {
+    public static final void m8268putBooleanimpl(Bundle bundle, String key, boolean z) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putBoolean(key, z);
     }
 
     /* renamed from: putChar-impl  reason: not valid java name */
-    public static final void m8257putCharimpl(Bundle bundle, String key, char c) {
+    public static final void m8270putCharimpl(Bundle bundle, String key, char c) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putChar(key, c);
     }
 
     /* renamed from: putCharSequence-impl  reason: not valid java name */
-    public static final void m8259putCharSequenceimpl(Bundle bundle, String key, CharSequence value) {
+    public static final void m8272putCharSequenceimpl(Bundle bundle, String key, CharSequence value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putCharSequence(key, value);
     }
 
     /* renamed from: putDouble-impl  reason: not valid java name */
-    public static final void m8262putDoubleimpl(Bundle bundle, String key, double d) {
+    public static final void m8275putDoubleimpl(Bundle bundle, String key, double d) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putDouble(key, d);
     }
 
     /* renamed from: putFloat-impl  reason: not valid java name */
-    public static final void m8264putFloatimpl(Bundle bundle, String key, float f) {
+    public static final void m8277putFloatimpl(Bundle bundle, String key, float f) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putFloat(key, f);
     }
 
     /* renamed from: putInt-impl  reason: not valid java name */
-    public static final void m8266putIntimpl(Bundle bundle, String key, int i) {
+    public static final void m8279putIntimpl(Bundle bundle, String key, int i) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putInt(key, i);
     }
 
     /* renamed from: putLong-impl  reason: not valid java name */
-    public static final void m8270putLongimpl(Bundle bundle, String key, long j) {
+    public static final void m8283putLongimpl(Bundle bundle, String key, long j) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putLong(key, j);
     }
 
     /* renamed from: putNull-impl  reason: not valid java name */
-    public static final void m8272putNullimpl(Bundle bundle, String key) {
+    public static final void m8285putNullimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.putString(key, null);
     }
 
     /* renamed from: putParcelable-impl  reason: not valid java name */
-    public static final <T extends Parcelable> void m8273putParcelableimpl(Bundle bundle, String key, T value) {
+    public static final <T extends Parcelable> void m8286putParcelableimpl(Bundle bundle, String key, T value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putParcelable(key, value);
     }
 
     /* renamed from: putJavaSerializable-impl  reason: not valid java name */
-    public static final <T extends Serializable> void m8269putJavaSerializableimpl(Bundle bundle, String key, T value) {
+    public static final <T extends Serializable> void m8282putJavaSerializableimpl(Bundle bundle, String key, T value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putSerializable(key, value);
     }
 
     /* renamed from: putSize-impl  reason: not valid java name */
-    public static final void m8279putSizeimpl(Bundle bundle, String key, Size value) {
+    public static final void m8292putSizeimpl(Bundle bundle, String key, Size value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putSize(key, value);
     }
 
     /* renamed from: putSizeF-impl  reason: not valid java name */
-    public static final void m8280putSizeFimpl(Bundle bundle, String key, SizeF value) {
+    public static final void m8293putSizeFimpl(Bundle bundle, String key, SizeF value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putSizeF(key, value);
     }
 
     /* renamed from: putString-impl  reason: not valid java name */
-    public static final void m8282putStringimpl(Bundle bundle, String key, String value) {
+    public static final void m8295putStringimpl(Bundle bundle, String key, String value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putString(key, value);
     }
 
     /* renamed from: putIntList-impl  reason: not valid java name */
-    public static final void m8268putIntListimpl(Bundle bundle, String key, List<Integer> value) {
+    public static final void m8281putIntListimpl(Bundle bundle, String key, List<Integer> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putIntegerArrayList(key, SavedStateWriterKt.toArrayListUnsafe(value));
     }
 
     /* renamed from: putCharSequenceList-impl  reason: not valid java name */
-    public static final void m8261putCharSequenceListimpl(Bundle bundle, String key, List<? extends CharSequence> value) {
+    public static final void m8274putCharSequenceListimpl(Bundle bundle, String key, List<? extends CharSequence> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putCharSequenceArrayList(key, SavedStateWriterKt.toArrayListUnsafe(value));
     }
 
     /* renamed from: putSavedStateList-impl  reason: not valid java name */
-    public static final void m8278putSavedStateListimpl(Bundle bundle, String key, List<Bundle> value) {
+    public static final void m8291putSavedStateListimpl(Bundle bundle, String key, List<Bundle> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
-        m8275putParcelableListimpl(bundle, key, value);
+        m8288putParcelableListimpl(bundle, key, value);
     }
 
     /* renamed from: putStringList-impl  reason: not valid java name */
-    public static final void m8284putStringListimpl(Bundle bundle, String key, List<String> value) {
+    public static final void m8297putStringListimpl(Bundle bundle, String key, List<String> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putStringArrayList(key, SavedStateWriterKt.toArrayListUnsafe(value));
     }
 
     /* renamed from: putParcelableList-impl  reason: not valid java name */
-    public static final <T extends Parcelable> void m8275putParcelableListimpl(Bundle bundle, String key, List<? extends T> value) {
+    public static final <T extends Parcelable> void m8288putParcelableListimpl(Bundle bundle, String key, List<? extends T> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putParcelableArrayList(key, SavedStateWriterKt.toArrayListUnsafe(value));
     }
 
     /* renamed from: putBooleanArray-impl  reason: not valid java name */
-    public static final void m8256putBooleanArrayimpl(Bundle bundle, String key, boolean[] value) {
+    public static final void m8269putBooleanArrayimpl(Bundle bundle, String key, boolean[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putBooleanArray(key, value);
     }
 
     /* renamed from: putCharArray-impl  reason: not valid java name */
-    public static final void m8258putCharArrayimpl(Bundle bundle, String key, char[] value) {
+    public static final void m8271putCharArrayimpl(Bundle bundle, String key, char[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putCharArray(key, value);
     }
 
     /* renamed from: putCharSequenceArray-impl  reason: not valid java name */
-    public static final void m8260putCharSequenceArrayimpl(Bundle bundle, String key, CharSequence[] value) {
+    public static final void m8273putCharSequenceArrayimpl(Bundle bundle, String key, CharSequence[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putCharSequenceArray(key, value);
     }
 
     /* renamed from: putDoubleArray-impl  reason: not valid java name */
-    public static final void m8263putDoubleArrayimpl(Bundle bundle, String key, double[] value) {
+    public static final void m8276putDoubleArrayimpl(Bundle bundle, String key, double[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putDoubleArray(key, value);
     }
 
     /* renamed from: putFloatArray-impl  reason: not valid java name */
-    public static final void m8265putFloatArrayimpl(Bundle bundle, String key, float[] value) {
+    public static final void m8278putFloatArrayimpl(Bundle bundle, String key, float[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putFloatArray(key, value);
     }
 
     /* renamed from: putIntArray-impl  reason: not valid java name */
-    public static final void m8267putIntArrayimpl(Bundle bundle, String key, int[] value) {
+    public static final void m8280putIntArrayimpl(Bundle bundle, String key, int[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putIntArray(key, value);
     }
 
     /* renamed from: putLongArray-impl  reason: not valid java name */
-    public static final void m8271putLongArrayimpl(Bundle bundle, String key, long[] value) {
+    public static final void m8284putLongArrayimpl(Bundle bundle, String key, long[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putLongArray(key, value);
     }
 
     /* renamed from: putSavedStateArray-impl  reason: not valid java name */
-    public static final void m8277putSavedStateArrayimpl(Bundle bundle, String key, Bundle[] value) {
+    public static final void m8290putSavedStateArrayimpl(Bundle bundle, String key, Bundle[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
-        m8274putParcelableArrayimpl(bundle, key, value);
+        m8287putParcelableArrayimpl(bundle, key, value);
     }
 
     /* renamed from: putStringArray-impl  reason: not valid java name */
-    public static final void m8283putStringArrayimpl(Bundle bundle, String key, String[] value) {
+    public static final void m8296putStringArrayimpl(Bundle bundle, String key, String[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putStringArray(key, value);
     }
 
     /* renamed from: putParcelableArray-impl  reason: not valid java name */
-    public static final <T extends Parcelable> void m8274putParcelableArrayimpl(Bundle bundle, String key, T[] value) {
+    public static final <T extends Parcelable> void m8287putParcelableArrayimpl(Bundle bundle, String key, T[] value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putParcelableArray(key, value);
     }
 
     /* renamed from: putSparseParcelableArray-impl  reason: not valid java name */
-    public static final <T extends Parcelable> void m8281putSparseParcelableArrayimpl(Bundle bundle, String key, SparseArray<T> value) {
+    public static final <T extends Parcelable> void m8294putSparseParcelableArrayimpl(Bundle bundle, String key, SparseArray<T> value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putSparseParcelableArray(key, value);
     }
 
     /* renamed from: putSavedState-impl  reason: not valid java name */
-    public static final void m8276putSavedStateimpl(Bundle bundle, String key, Bundle value) {
+    public static final void m8289putSavedStateimpl(Bundle bundle, String key, Bundle value) {
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(value, "value");
         bundle.putBundle(key, value);
     }
 
     /* renamed from: putAll-impl  reason: not valid java name */
-    public static final void m8253putAllimpl(Bundle bundle, Bundle from) {
+    public static final void m8266putAllimpl(Bundle bundle, Bundle from) {
         Intrinsics.checkNotNullParameter(from, "from");
         bundle.putAll(from);
     }
 
     /* renamed from: remove-impl  reason: not valid java name */
-    public static final void m8285removeimpl(Bundle bundle, String key) {
+    public static final void m8298removeimpl(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         bundle.remove(key);
     }
 
     /* renamed from: clear-impl  reason: not valid java name */
-    public static final void m8248clearimpl(Bundle bundle) {
+    public static final void m8261clearimpl(Bundle bundle) {
         bundle.clear();
     }
 }

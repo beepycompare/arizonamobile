@@ -88,15 +88,15 @@ final class BasicTooltipKt$TooltipPopup$2 implements Function2<Composer, Integer
         } else {
             composer.useNode();
         }
-        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
-        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
+        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 1506788405, "C151@5605L9:BasicTooltip.kt#71ulvw");
@@ -114,7 +114,7 @@ final class BasicTooltipKt$TooltipPopup$2 implements Function2<Composer, Integer
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invoke$lambda$1$lambda$0(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m6479setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6452getAssertive0phEisY());
+        SemanticsPropertiesKt.m6492setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6465getAssertive0phEisY());
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }

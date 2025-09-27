@@ -123,8 +123,8 @@ public final class TextContextMenuToolbarHandlerNode extends DelegatingNode impl
 
     @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
     /* renamed from: position-tuRUvjQ */
-    public long mo1416positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
-        return contentBounds(layoutCoordinates).m4328getTopLeftF1C5BW0();
+    public long mo1426positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
+        return contentBounds(layoutCoordinates).m4340getTopLeftF1C5BW0();
     }
 
     @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider

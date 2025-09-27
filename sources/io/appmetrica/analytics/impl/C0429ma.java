@@ -7,13 +7,13 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 public final class C0429ma {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f990a;
+    public final Context f991a;
     public final C0235en b;
     public final C0649v3 c;
     public final SafePackageManager d;
 
     public C0429ma(Context context, C0235en c0235en, C0649v3 c0649v3, SafePackageManager safePackageManager) {
-        this.f990a = context;
+        this.f991a = context;
         this.b = c0235en;
         this.c = c0649v3;
         this.d = safePackageManager;

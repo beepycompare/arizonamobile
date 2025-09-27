@@ -73,7 +73,7 @@ public final class ScrollExtensionsKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m550animateScrollByubNVwUQ(Scrollable2DState scrollable2DState, long j, AnimationSpec<Offset> animationSpec, Continuation<? super Offset> continuation) {
+    public static final Object m560animateScrollByubNVwUQ(Scrollable2DState scrollable2DState, long j, AnimationSpec<Offset> animationSpec, Continuation<? super Offset> continuation) {
         ScrollExtensionsKt$animateScrollBy$3 scrollExtensionsKt$animateScrollBy$3;
         int i;
         Ref.LongRef longRef;
@@ -88,7 +88,7 @@ public final class ScrollExtensionsKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m4309getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m4321getZeroF1C5BW0();
                     scrollExtensionsKt$animateScrollBy$32.L$0 = longRef2;
                     scrollExtensionsKt$animateScrollBy$32.label = 1;
                     if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$animateScrollBy$4(j, animationSpec, longRef2, null), scrollExtensionsKt$animateScrollBy$32, 1, null) == coroutine_suspended) {
@@ -101,7 +101,7 @@ public final class ScrollExtensionsKt {
                     longRef = (Ref.LongRef) scrollExtensionsKt$animateScrollBy$32.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m4282boximpl(longRef.element);
+                return Offset.m4294boximpl(longRef.element);
             }
         }
         scrollExtensionsKt$animateScrollBy$3 = new ScrollExtensionsKt$animateScrollBy$3(continuation);
@@ -111,15 +111,15 @@ public final class ScrollExtensionsKt {
         i = scrollExtensionsKt$animateScrollBy$322.label;
         if (i != 0) {
         }
-        return Offset.m4282boximpl(longRef.element);
+        return Offset.m4294boximpl(longRef.element);
     }
 
     /* renamed from: animateScrollBy-ubNVwUQ$default  reason: not valid java name */
-    public static /* synthetic */ Object m551animateScrollByubNVwUQ$default(Scrollable2DState scrollable2DState, long j, AnimationSpec animationSpec, Continuation continuation, int i, Object obj) {
+    public static /* synthetic */ Object m561animateScrollByubNVwUQ$default(Scrollable2DState scrollable2DState, long j, AnimationSpec animationSpec, Continuation continuation, int i, Object obj) {
         if ((i & 2) != 0) {
             animationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null);
         }
-        return m550animateScrollByubNVwUQ(scrollable2DState, j, animationSpec, continuation);
+        return m560animateScrollByubNVwUQ(scrollable2DState, j, animationSpec, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -173,7 +173,7 @@ public final class ScrollExtensionsKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m552scrollByd4ec7I(Scrollable2DState scrollable2DState, long j, Continuation<? super Offset> continuation) {
+    public static final Object m562scrollByd4ec7I(Scrollable2DState scrollable2DState, long j, Continuation<? super Offset> continuation) {
         ScrollExtensionsKt$scrollBy$3 scrollExtensionsKt$scrollBy$3;
         int i;
         Ref.LongRef longRef;
@@ -188,7 +188,7 @@ public final class ScrollExtensionsKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m4309getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m4321getZeroF1C5BW0();
                     scrollExtensionsKt$scrollBy$32.L$0 = longRef2;
                     scrollExtensionsKt$scrollBy$32.label = 1;
                     if (Scrollable2DState.scroll$default(scrollable2DState, null, new ScrollExtensionsKt$scrollBy$4(longRef2, j, null), scrollExtensionsKt$scrollBy$32, 1, null) == coroutine_suspended) {
@@ -201,7 +201,7 @@ public final class ScrollExtensionsKt {
                     longRef = (Ref.LongRef) scrollExtensionsKt$scrollBy$32.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m4282boximpl(longRef.element);
+                return Offset.m4294boximpl(longRef.element);
             }
         }
         scrollExtensionsKt$scrollBy$3 = new ScrollExtensionsKt$scrollBy$3(continuation);
@@ -211,7 +211,7 @@ public final class ScrollExtensionsKt {
         i = scrollExtensionsKt$scrollBy$322.label;
         if (i != 0) {
         }
-        return Offset.m4282boximpl(longRef.element);
+        return Offset.m4294boximpl(longRef.element);
     }
 
     public static /* synthetic */ Object stopScroll$default(ScrollableState scrollableState, MutatePriority mutatePriority, Continuation continuation, int i, Object obj) {

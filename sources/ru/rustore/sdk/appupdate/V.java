@@ -11,23 +11,23 @@ import ru.rustore.sdk.reactive.core.Dispatchers;
 import ru.rustore.sdk.reactive.single.Single;
 import ru.rustore.sdk.reactive.single.SingleSubscribeKt;
 import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class V extends Lambda implements Function1<InstallState, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Z f1371a;
+    public final /* synthetic */ Z f1372a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public V(Z z) {
         super(1);
-        this.f1371a = z;
+        this.f1372a = z;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(InstallState installState) {
         InstallState installState2 = installState;
         Intrinsics.checkNotNullParameter(installState2, "installState");
-        Z z = this.f1371a;
+        Z z = this.f1372a;
         AppUpdateOptions appUpdateOptions = z.d;
         if (appUpdateOptions != null) {
             int appUpdateType = appUpdateOptions.getAppUpdateType();
@@ -35,15 +35,15 @@ public final class V extends Lambda implements Function1<InstallState, Unit> {
             if (installStatus == 1) {
                 C0800e c0800e = z.c;
                 c0800e.getClass();
-                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0798c(c0800e, new C0804i("updateStart.downloaded", c0800e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0799d.f1379a, 1, null);
+                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0798c(c0800e, new C0804i("updateStart.downloaded", c0800e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0799d.f1380a, 1, null);
             } else if (installStatus == 3) {
                 z.c.a(appUpdateType, String.valueOf(installState2.getInstallErrorCode()));
             }
         }
         if (installState2.getInstallStatus() == 3) {
-            this.f1371a.d = null;
+            this.f1372a.d = null;
         }
-        for (InstallStateUpdateListener installStateUpdateListener : this.f1371a.b) {
+        for (InstallStateUpdateListener installStateUpdateListener : this.f1372a.b) {
             installStateUpdateListener.onStateUpdated(installState2);
         }
         return Unit.INSTANCE;

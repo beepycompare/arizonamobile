@@ -27,12 +27,12 @@ final class SelectableNode extends ClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m1165updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function0<Unit> function0) {
+    public final void m1175updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function0<Unit> function0) {
         if (this.selected != z) {
             this.selected = z;
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
-        super.m313updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, function0);
+        super.m323updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, function0);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode

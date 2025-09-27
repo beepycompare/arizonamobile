@@ -12,7 +12,7 @@ public final class C0568rm {
     public C0145ba C;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1071a;
+    public String f1072a;
     public List b;
     public String c;
     public String d;

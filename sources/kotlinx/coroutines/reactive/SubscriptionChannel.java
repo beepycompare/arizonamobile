@@ -103,7 +103,7 @@ public final class SubscriptionChannel<T> extends BufferedChannel<T> implements 
     @Override // org.reactivestreams.Subscriber
     public void onNext(T t) {
         _requested$volatile$FU.decrementAndGet(this);
-        mo8127trySendJP2dKIU(t);
+        mo8140trySendJP2dKIU(t);
     }
 
     @Override // org.reactivestreams.Subscriber

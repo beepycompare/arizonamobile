@@ -36,15 +36,15 @@ public final class AndroidPathEffect_androidKt {
     }
 
     /* renamed from: actualStampedPathEffect-7aD1DOk  reason: not valid java name */
-    public static final PathEffect m4431actualStampedPathEffect7aD1DOk(Path path, float f, float f2, int i) {
+    public static final PathEffect m4443actualStampedPathEffect7aD1DOk(Path path, float f, float f2, int i) {
         if (path instanceof AndroidPath) {
-            return new AndroidPathEffect(new PathDashPathEffect(((AndroidPath) path).getInternalPath(), f, f2, m4432toAndroidPathDashPathEffectStyleoQv6xUo(i)));
+            return new AndroidPathEffect(new PathDashPathEffect(((AndroidPath) path).getInternalPath(), f, f2, m4444toAndroidPathDashPathEffectStyleoQv6xUo(i)));
         }
         throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
     }
 
     /* renamed from: toAndroidPathDashPathEffectStyle-oQv6xUo  reason: not valid java name */
-    public static final PathDashPathEffect.Style m4432toAndroidPathDashPathEffectStyleoQv6xUo(int i) {
-        return StampedPathEffectStyle.m4893equalsimpl0(i, StampedPathEffectStyle.Companion.m4897getMorphYpspkwk()) ? PathDashPathEffect.Style.MORPH : StampedPathEffectStyle.m4893equalsimpl0(i, StampedPathEffectStyle.Companion.m4898getRotateYpspkwk()) ? PathDashPathEffect.Style.ROTATE : StampedPathEffectStyle.m4893equalsimpl0(i, StampedPathEffectStyle.Companion.m4899getTranslateYpspkwk()) ? PathDashPathEffect.Style.TRANSLATE : PathDashPathEffect.Style.TRANSLATE;
+    public static final PathDashPathEffect.Style m4444toAndroidPathDashPathEffectStyleoQv6xUo(int i) {
+        return StampedPathEffectStyle.m4905equalsimpl0(i, StampedPathEffectStyle.Companion.m4909getMorphYpspkwk()) ? PathDashPathEffect.Style.MORPH : StampedPathEffectStyle.m4905equalsimpl0(i, StampedPathEffectStyle.Companion.m4910getRotateYpspkwk()) ? PathDashPathEffect.Style.ROTATE : StampedPathEffectStyle.m4905equalsimpl0(i, StampedPathEffectStyle.Companion.m4911getTranslateYpspkwk()) ? PathDashPathEffect.Style.TRANSLATE : PathDashPathEffect.Style.TRANSLATE;
     }
 }

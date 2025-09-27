@@ -20,17 +20,17 @@ public abstract class ShadowRenderer {
     private final Outline outline;
     private Path path;
     private ColorFilter shadowTint;
-    private long shadowTintColor = Color.Companion.m4573getUnspecified0d7_KjU();
-    private long cornerRadius = CornerRadius.Companion.m4265getZerokKHJgLs();
-    private long generatedSize = Size.Companion.m4370getUnspecifiedNHjbRc();
+    private long shadowTintColor = Color.Companion.m4585getUnspecified0d7_KjU();
+    private long cornerRadius = CornerRadius.Companion.m4277getZerokKHJgLs();
+    private long generatedSize = Size.Companion.m4382getUnspecifiedNHjbRc();
     private LayoutDirection generatedLayoutDirection = LayoutDirection.Ltr;
     private float generatedDensity = 1.0f;
 
     /* renamed from: buildShadow-_SMYjrA */
-    protected abstract void mo5254buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path);
+    protected abstract void mo5266buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path);
 
     /* renamed from: onDrawShadow-MLmccfk */
-    protected abstract void mo5255onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i);
+    protected abstract void mo5267onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i);
 
     public ShadowRenderer(Outline outline) {
         this.outline = outline;
@@ -41,36 +41,36 @@ public abstract class ShadowRenderer {
     }
 
     /* renamed from: drawShadow-erFMhIw  reason: not valid java name */
-    public final void m5265drawShadowerFMhIw(DrawScope drawScope, ColorFilter colorFilter, long j, long j2, Brush brush, float f, int i) {
+    public final void m5277drawShadowerFMhIw(DrawScope drawScope, ColorFilter colorFilter, long j, long j2, Brush brush, float f, int i) {
         updateParamsFromOutline(this.outline);
         if (colorFilter == null) {
-            colorFilter = (brush != null || j2 == 16) ? null : m5264obtainTint8_81llA(j2);
+            colorFilter = (brush != null || j2 == 16) ? null : m5276obtainTint8_81llA(j2);
         }
         ColorFilter colorFilter2 = colorFilter;
         long j3 = this.generatedSize;
-        if (j3 == InlineClassHelperKt.UnspecifiedPackedFloats || !Size.m4358equalsimpl0(j3, j) || this.generatedLayoutDirection != drawScope.getLayoutDirection() || this.generatedDensity != drawScope.getDensity()) {
-            mo5254buildShadow_SMYjrA(drawScope, j, this.cornerRadius, this.path);
+        if (j3 == InlineClassHelperKt.UnspecifiedPackedFloats || !Size.m4370equalsimpl0(j3, j) || this.generatedLayoutDirection != drawScope.getLayoutDirection() || this.generatedDensity != drawScope.getDensity()) {
+            mo5266buildShadow_SMYjrA(drawScope, j, this.cornerRadius, this.path);
             this.generatedSize = j;
             this.generatedLayoutDirection = drawScope.getLayoutDirection();
             this.generatedDensity = drawScope.getDensity();
         }
-        mo5255onDrawShadowMLmccfk(drawScope, j, this.cornerRadius, this.path, f, colorFilter2, brush, i);
+        mo5267onDrawShadowMLmccfk(drawScope, j, this.cornerRadius, this.path, f, colorFilter2, brush, i);
     }
 
     public void invalidateShadow() {
-        this.generatedSize = Size.Companion.m4370getUnspecifiedNHjbRc();
+        this.generatedSize = Size.Companion.m4382getUnspecifiedNHjbRc();
         this.generatedLayoutDirection = LayoutDirection.Ltr;
         this.generatedDensity = 1.0f;
     }
 
     /* renamed from: obtainTint-8_81llA  reason: not valid java name */
-    private final ColorFilter m5264obtainTint8_81llA(long j) {
+    private final ColorFilter m5276obtainTint8_81llA(long j) {
         ColorFilter colorFilter = this.shadowTint;
-        if (colorFilter == null || !Color.m4538equalsimpl0(this.shadowTintColor, j)) {
-            ColorFilter m4578tintxETnrds$default = ColorFilter.Companion.m4578tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+        if (colorFilter == null || !Color.m4550equalsimpl0(this.shadowTintColor, j)) {
+            ColorFilter m4590tintxETnrds$default = ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
             this.shadowTintColor = j;
-            this.shadowTint = m4578tintxETnrds$default;
-            return m4578tintxETnrds$default;
+            this.shadowTint = m4590tintxETnrds$default;
+            return m4590tintxETnrds$default;
         }
         return colorFilter;
     }
@@ -78,21 +78,21 @@ public abstract class ShadowRenderer {
     private final void updateParamsFromOutline(Outline outline) {
         if (outline instanceof Outline.Generic) {
             this.path = ((Outline.Generic) outline).getPath();
-            this.cornerRadius = CornerRadius.Companion.m4265getZerokKHJgLs();
+            this.cornerRadius = CornerRadius.Companion.m4277getZerokKHJgLs();
         } else if (outline instanceof Outline.Rounded) {
             Outline.Rounded rounded = (Outline.Rounded) outline;
             if (RoundRectKt.isSimple(rounded.getRoundRect())) {
                 this.path = null;
-                this.cornerRadius = rounded.getRoundRect().m4343getTopLeftCornerRadiuskKHJgLs();
+                this.cornerRadius = rounded.getRoundRect().m4355getTopLeftCornerRadiuskKHJgLs();
                 return;
             }
             this.path = rounded.getRoundRectPath$ui_graphics_release();
-            this.cornerRadius = CornerRadius.Companion.m4265getZerokKHJgLs();
+            this.cornerRadius = CornerRadius.Companion.m4277getZerokKHJgLs();
         } else if (!(outline instanceof Outline.Rectangle)) {
             throw new NoWhenBranchMatchedException();
         } else {
             this.path = null;
-            this.cornerRadius = CornerRadius.Companion.m4265getZerokKHJgLs();
+            this.cornerRadius = CornerRadius.Companion.m4277getZerokKHJgLs();
         }
     }
 }

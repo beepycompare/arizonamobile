@@ -27,7 +27,7 @@ import kotlin.Metadata;
 public final class LocationClientImpl implements LocationClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private k f1220a;
+    private k f1221a;
     private final g b;
     private final o c;
     private i d;
@@ -52,27 +52,27 @@ public final class LocationClientImpl implements LocationClient {
     @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
     public synchronized Location getSystemLocation() {
         k kVar;
-        kVar = this.f1220a;
+        kVar = this.f1221a;
         return kVar != null ? kVar.a() : null;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationProvider
     public synchronized Location getUserLocation() {
         k kVar;
-        kVar = this.f1220a;
+        kVar = this.f1221a;
         return kVar != null ? kVar.b() : null;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void init(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, List<? extends Consumer<Location>> list) {
-        if (this.f1220a == null) {
-            this.f1220a = new k(context, permissionExtractor, iHandlerExecutor, new p(list, this.d));
+        if (this.f1221a == null) {
+            this.f1221a = new k(context, permissionExtractor, iHandlerExecutor, new p(list, this.d));
         }
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void registerSystemLocationSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.a(lastKnownLocationExtractorProvider);
         }
@@ -80,7 +80,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public synchronized void startLocationTracking() {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.startLocationTracking();
         }
@@ -88,7 +88,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationControllerObserver
     public synchronized void stopLocationTracking() {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.stopLocationTracking();
         }
@@ -96,7 +96,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void unregisterSystemLocationSource(LastKnownLocationExtractorProvider lastKnownLocationExtractorProvider) {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.b(lastKnownLocationExtractorProvider);
         }
@@ -104,9 +104,9 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void updateCacheArguments(CacheArguments cacheArguments) {
-        i iVar = new i(this.d.f1208a, cacheArguments);
+        i iVar = new i(this.d.f1209a, cacheArguments);
         this.d = iVar;
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.d.execute(new j(kVar, iVar));
         }
@@ -116,7 +116,7 @@ public final class LocationClientImpl implements LocationClient {
     public synchronized void updateLocationFilter(LocationFilter locationFilter) {
         i iVar = new i(locationFilter, this.d.b);
         this.d = iVar;
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.d.execute(new j(kVar, iVar));
         }
@@ -124,7 +124,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void updateUserLocation(Location location) {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.a(location);
         }
@@ -132,7 +132,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void registerSystemLocationSource(LocationReceiverProvider locationReceiverProvider) {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.a(locationReceiverProvider);
         }
@@ -140,7 +140,7 @@ public final class LocationClientImpl implements LocationClient {
 
     @Override // io.appmetrica.analytics.locationapi.internal.LocationClient
     public synchronized void unregisterSystemLocationSource(LocationReceiverProvider locationReceiverProvider) {
-        k kVar = this.f1220a;
+        k kVar = this.f1221a;
         if (kVar != null) {
             kVar.b(locationReceiverProvider);
         }

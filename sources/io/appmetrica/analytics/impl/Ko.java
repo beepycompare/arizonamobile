@@ -6,10 +6,10 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Ko implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f546a = "WebView interface setup failed because javascript is disabled for the WebView.";
+    public final /* synthetic */ String f547a = "WebView interface setup failed because javascript is disabled for the WebView.";
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f546a, new Object[0]);
+        ((PublicLogger) obj).warning(this.f547a, new Object[0]);
     }
 }

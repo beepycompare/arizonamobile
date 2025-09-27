@@ -26,7 +26,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoint<B> {
 
     /* renamed from: a  reason: collision with root package name */
-    private C0780k f1338a;
+    private C0780k f1339a;
     private S d;
     private final C0777h b = new C0777h();
     private final ScreenshotClientModuleEntryPoint$configUpdateListener$1 c = new ServiceConfigUpdateListener<B>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$configUpdateListener$1
@@ -47,7 +47,7 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                 } else {
                     c0780k = null;
                 }
-                screenshotClientModuleEntryPoint.f1338a = c0780k;
+                screenshotClientModuleEntryPoint.f1339a = c0780k;
                 s = screenshotClientModuleEntryPoint.d;
                 if (s != null) {
                     s2 = screenshotClientModuleEntryPoint.d;
@@ -56,7 +56,7 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     } else {
                         s3 = s2;
                     }
-                    c0780k2 = screenshotClientModuleEntryPoint.f1338a;
+                    c0780k2 = screenshotClientModuleEntryPoint.f1339a;
                     s3.a(c0780k2);
                 }
                 Unit unit = Unit.INSTANCE;
@@ -108,8 +108,8 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     Intrinsics.throwUninitializedPropertyAccessException("screenshotCaptorsController");
                     s = null;
                 }
-                C0780k c0780k = this.f1338a;
-                for (P p : s.f1304a) {
+                C0780k c0780k = this.f1339a;
+                for (P p : s.f1305a) {
                     p.a();
                 }
                 s.a(c0780k);

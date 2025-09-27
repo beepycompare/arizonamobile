@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +35,7 @@ import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: SubInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001BK\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u0016\u001a\u00020\u00072\u0006\u0010\u0017\u001a\u00020\tJ\b\u0010\u0018\u001a\u00020\u0007H\u0002J\b\u0010\u0019\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u000f*\u0004\u0018\u00010\u000e0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/SubInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "<init>", "(Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "countDownTimer", "Landroid/os/CountDownTimer;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "setDefaultCell", "setGreyColor", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     private final ItemSubInventoryBinding binding;
     private CountDownTimer countDownTimer;
@@ -62,7 +63,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
     }
 
-    /* JADX WARN: Type inference failed for: r1v55, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
+    /* JADX WARN: Type inference failed for: r1v58, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal) {
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
@@ -103,14 +104,15 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
             TextView tvDescriptionText2 = itemSubInventoryBinding.tvDescriptionText;
             Intrinsics.checkNotNullExpressionValue(tvDescriptionText2, "tvDescriptionText");
             tvDescriptionText2.setVisibility(8);
+            Log.d("sub_inventory", "bind: " + itemVal.getSlot() + ": " + getPosition());
             int inventoryType = itemVal.getInventoryType();
             if (inventoryType == RodinaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryType == ArizonaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryType == ArizonaBlockType.BLOCK_TYPE_USER_PREVIEW_IMPROV.getId()) {
-                if (itemVal.getSlot() == 0 && getPosition() == 0 && this.isArizonaType) {
+                if (getPosition() == 0 && this.isArizonaType) {
                     setDefaultCell();
                     itemSubInventoryBinding.ivItemDefaultImage.setImageResource(R.drawable.ic_shield_54);
                     setGreyColor();
                     itemSubInventoryBinding.tvTitleText.setText(this.binding.getRoot().getContext().getString(R.string.user_shield));
-                } else if (itemVal.getSlot() == 1 && getPosition() == 2 && this.isArizonaType) {
+                } else if (getPosition() == 2 && this.isArizonaType) {
                     setDefaultCell();
                     itemSubInventoryBinding.ivItemDefaultImage.setImageResource(R.drawable.ic_case_54);
                     setGreyColor();

@@ -12,13 +12,13 @@ import kotlin.Metadata;
 public final class ListItemDefaults {
     public static final int $stable = 0;
     public static final ListItemDefaults INSTANCE = new ListItemDefaults();
-    private static final float Elevation = ListTokens.INSTANCE.m3413getListItemContainerElevationD9Ej5fM();
+    private static final float Elevation = ListTokens.INSTANCE.m3423getListItemContainerElevationD9Ej5fM();
 
     private ListItemDefaults() {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2305getElevationD9Ej5fM() {
+    public final float m2315getElevationD9Ej5fM() {
         return Elevation;
     }
 
@@ -62,7 +62,7 @@ public final class ListItemDefaults {
     }
 
     /* renamed from: colors-J08w3-E  reason: not valid java name */
-    public final ListItemColors m2304colorsJ08w3E(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, Composer composer, int i, int i2) {
+    public final ListItemColors m2314colorsJ08w3E(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -352515689, "C(colors)P(0:c#ui.graphics.Color,4:c#ui.graphics.Color,5:c#ui.graphics.Color,6:c#ui.graphics.Color,7:c#ui.graphics.Color,8:c#ui.graphics.Color,1:c#ui.graphics.Color,2:c#ui.graphics.Color,3:c#ui.graphics.Color)564@22724L5,565@22796L5,566@22873L5,567@22944L5,568@23023L5,569@23102L5,571@23202L5,575@23395L5,579@23592L5:ListItem.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemContainerColor(), composer, 6) : j;
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemLabelTextColor(), composer, 6) : j2;
@@ -70,13 +70,13 @@ public final class ListItemDefaults {
         long value4 = (i2 & 8) != 0 ? ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemOverlineColor(), composer, 6) : j4;
         long value5 = (i2 & 16) != 0 ? ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemSupportingTextColor(), composer, 6) : j5;
         long value6 = (i2 & 32) != 0 ? ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemTrailingIconColor(), composer, 6) : j6;
-        long m4536copywmQWz5c$default = (i2 & 64) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledLabelTextColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j7;
-        long m4536copywmQWz5c$default2 = (i2 & 128) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledLeadingIconColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
-        long m4536copywmQWz5c$default3 = (i2 & 256) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledTrailingIconColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j9;
+        long m4548copywmQWz5c$default = (i2 & 64) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledLabelTextColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j7;
+        long m4548copywmQWz5c$default2 = (i2 & 128) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledLeadingIconColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j8;
+        long m4548copywmQWz5c$default3 = (i2 & 256) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(ListTokens.INSTANCE.getListItemDisabledTrailingIconColor(), composer, 6), ListTokens.INSTANCE.getListItemDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j9;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-352515689, i, -1, "androidx.compose.material3.ListItemDefaults.colors (ListItem.kt:583)");
         }
-        ListItemColors listItemColors = new ListItemColors(value, value2, value3, value4, value5, value6, m4536copywmQWz5c$default, m4536copywmQWz5c$default2, m4536copywmQWz5c$default3, null);
+        ListItemColors listItemColors = new ListItemColors(value, value2, value3, value4, value5, value6, m4548copywmQWz5c$default, m4548copywmQWz5c$default2, m4548copywmQWz5c$default3, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

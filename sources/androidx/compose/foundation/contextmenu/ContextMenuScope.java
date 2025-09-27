@@ -118,6 +118,6 @@ public final class ContextMenuScope {
     }
 
     public final void separator() {
-        this.composables.add(ComposableSingletons$ContextMenuUi_androidKt.INSTANCE.m374getLambda$355168742$foundation_release());
+        this.composables.add(ComposableSingletons$ContextMenuUi_androidKt.INSTANCE.m384getLambda$355168742$foundation_release());
     }
 }

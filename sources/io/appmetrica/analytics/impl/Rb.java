@@ -6,35 +6,35 @@ import java.util.HashMap;
 public final class Rb extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Sb f653a;
+    public final /* synthetic */ Sb f654a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Rb(Sb sb, String str) {
         super(str);
-        this.f653a = sb;
+        this.f654a = sb;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
         HashMap hashMap;
-        synchronized (this.f653a.f669a) {
-            Sb.a(this.f653a);
-            this.f653a.e = true;
-            this.f653a.f669a.notifyAll();
+        synchronized (this.f654a.f670a) {
+            Sb.a(this.f654a);
+            this.f654a.e = true;
+            this.f654a.f670a.notifyAll();
         }
         while (isRunning()) {
             synchronized (this) {
-                if (this.f653a.b.size() == 0) {
+                if (this.f654a.b.size() == 0) {
                     try {
                         wait();
                     } catch (InterruptedException unused) {
                     }
                 }
-                hashMap = new HashMap(this.f653a.b);
-                this.f653a.b.clear();
+                hashMap = new HashMap(this.f654a.b);
+                this.f654a.b.clear();
             }
             if (hashMap.size() > 0) {
-                Sb.a(this.f653a, hashMap);
+                Sb.a(this.f654a, hashMap);
                 hashMap.clear();
             }
         }

@@ -23,7 +23,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 public final class AndroidPlatformTextInputSession implements PlatformTextInputSessionScope, CoroutineScope {
     public static final int $stable = 8;
     private final CoroutineScope coroutineScope;
-    private final AtomicReference<SessionMutex.Session<T>> methodSessionMutex = SessionMutex.m4030constructorimpl();
+    private final AtomicReference<SessionMutex.Session<T>> methodSessionMutex = SessionMutex.m4042constructorimpl();
     private final TextInputService textInputService;
     private final View view;
 
@@ -44,7 +44,7 @@ public final class AndroidPlatformTextInputSession implements PlatformTextInputS
     }
 
     public final boolean isReadyForConnection() {
-        InputMethodSession inputMethodSession = (InputMethodSession) SessionMutex.m4034getCurrentSessionimpl(this.methodSessionMutex);
+        InputMethodSession inputMethodSession = (InputMethodSession) SessionMutex.m4046getCurrentSessionimpl(this.methodSessionMutex);
         return inputMethodSession != null && inputMethodSession.isActive();
     }
 
@@ -67,7 +67,7 @@ public final class AndroidPlatformTextInputSession implements PlatformTextInputS
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     androidPlatformTextInputSession$startInputMethod$1.label = 1;
-                    if (SessionMutex.m4037withSessionCancellingPreviousimpl(this.methodSessionMutex, new Function1<CoroutineScope, InputMethodSession>() { // from class: androidx.compose.ui.platform.AndroidPlatformTextInputSession$startInputMethod$2
+                    if (SessionMutex.m4049withSessionCancellingPreviousimpl(this.methodSessionMutex, new Function1<CoroutineScope, InputMethodSession>() { // from class: androidx.compose.ui.platform.AndroidPlatformTextInputSession$startInputMethod$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -118,7 +118,7 @@ public final class AndroidPlatformTextInputSession implements PlatformTextInputS
     }
 
     public final InputConnection createInputConnection(EditorInfo editorInfo) {
-        InputMethodSession inputMethodSession = (InputMethodSession) SessionMutex.m4034getCurrentSessionimpl(this.methodSessionMutex);
+        InputMethodSession inputMethodSession = (InputMethodSession) SessionMutex.m4046getCurrentSessionimpl(this.methodSessionMutex);
         if (inputMethodSession != null) {
             return inputMethodSession.createInputConnection(editorInfo);
         }

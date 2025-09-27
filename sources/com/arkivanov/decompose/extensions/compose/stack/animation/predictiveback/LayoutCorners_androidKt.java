@@ -58,13 +58,13 @@ public final class LayoutCorners_androidKt {
         WindowInsets windowInsets = maximumWindowMetrics.getWindowInsets();
         Intrinsics.checkNotNullExpressionValue(windowInsets, "getWindowInsets(...)");
         RoundedCorner roundedCorner = windowInsets.getRoundedCorner(0);
-        Dp m7249boximpl = roundedCorner != null ? Dp.m7249boximpl(density.mo416toDpu2uoSUM(roundedCorner.getRadius())) : null;
+        Dp m7262boximpl = roundedCorner != null ? Dp.m7262boximpl(density.mo426toDpu2uoSUM(roundedCorner.getRadius())) : null;
         RoundedCorner roundedCorner2 = windowInsets.getRoundedCorner(1);
-        Dp m7249boximpl2 = roundedCorner2 != null ? Dp.m7249boximpl(density.mo416toDpu2uoSUM(roundedCorner2.getRadius())) : null;
+        Dp m7262boximpl2 = roundedCorner2 != null ? Dp.m7262boximpl(density.mo426toDpu2uoSUM(roundedCorner2.getRadius())) : null;
         RoundedCorner roundedCorner3 = windowInsets.getRoundedCorner(2);
-        Dp m7249boximpl3 = roundedCorner3 != null ? Dp.m7249boximpl(density.mo416toDpu2uoSUM(roundedCorner3.getRadius())) : null;
+        Dp m7262boximpl3 = roundedCorner3 != null ? Dp.m7262boximpl(density.mo426toDpu2uoSUM(roundedCorner3.getRadius())) : null;
         RoundedCorner roundedCorner4 = windowInsets.getRoundedCorner(3);
-        return new ScreenInfo(new CornerRadii(m7249boximpl, m7249boximpl2, m7249boximpl3, roundedCorner4 != null ? Dp.m7249boximpl(density.mo416toDpu2uoSUM(roundedCorner4.getRadius())) : null, null), maximumWindowMetrics.getBounds().width(), maximumWindowMetrics.getBounds().height());
+        return new ScreenInfo(new CornerRadii(m7262boximpl, m7262boximpl2, m7262boximpl3, roundedCorner4 != null ? Dp.m7262boximpl(density.mo426toDpu2uoSUM(roundedCorner4.getRadius())) : null, null), maximumWindowMetrics.getBounds().width(), maximumWindowMetrics.getBounds().height());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -81,31 +81,31 @@ public final class LayoutCorners_androidKt {
         float component4 = rect.component4();
         int i = (component12 > 0.0f ? 1 : (component12 == 0.0f ? 0 : -1));
         boolean z = false;
-        LayoutCorner m8596getLayoutCorner_Y4kl1M = m8596getLayoutCorner_Y4kl1M(component1.m8590getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
+        LayoutCorner m8608getLayoutCorner_Y4kl1M = m8608getLayoutCorner_Y4kl1M(component1.m8602getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
         int i2 = (component32 > component2 ? 1 : (component32 == component2 ? 0 : -1));
-        LayoutCorner m8596getLayoutCorner_Y4kl1M2 = m8596getLayoutCorner_Y4kl1M(component1.m8591getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
-        LayoutCorner m8596getLayoutCorner_Y4kl1M3 = m8596getLayoutCorner_Y4kl1M(component1.m8589getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
-        Dp m8588getBottomLeftlTKBWiU = component1.m8588getBottomLeftlTKBWiU();
+        LayoutCorner m8608getLayoutCorner_Y4kl1M2 = m8608getLayoutCorner_Y4kl1M(component1.m8603getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
+        LayoutCorner m8608getLayoutCorner_Y4kl1M3 = m8608getLayoutCorner_Y4kl1M(component1.m8601getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
+        Dp m8600getBottomLeftlTKBWiU = component1.m8600getBottomLeftlTKBWiU();
         if (i <= 0 && component4 >= component3) {
             z = true;
         }
-        LayoutCorner m8596getLayoutCorner_Y4kl1M4 = m8596getLayoutCorner_Y4kl1M(m8588getBottomLeftlTKBWiU, z);
+        LayoutCorner m8608getLayoutCorner_Y4kl1M4 = m8608getLayoutCorner_Y4kl1M(m8600getBottomLeftlTKBWiU, z);
         int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
         if (i3 != 1) {
             if (i3 != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return new LayoutCorners(m8596getLayoutCorner_Y4kl1M2, m8596getLayoutCorner_Y4kl1M, m8596getLayoutCorner_Y4kl1M4, m8596getLayoutCorner_Y4kl1M3);
+            return new LayoutCorners(m8608getLayoutCorner_Y4kl1M2, m8608getLayoutCorner_Y4kl1M, m8608getLayoutCorner_Y4kl1M4, m8608getLayoutCorner_Y4kl1M3);
         }
-        return new LayoutCorners(m8596getLayoutCorner_Y4kl1M, m8596getLayoutCorner_Y4kl1M2, m8596getLayoutCorner_Y4kl1M3, m8596getLayoutCorner_Y4kl1M4);
+        return new LayoutCorners(m8608getLayoutCorner_Y4kl1M, m8608getLayoutCorner_Y4kl1M2, m8608getLayoutCorner_Y4kl1M3, m8608getLayoutCorner_Y4kl1M4);
     }
 
     /* renamed from: getLayoutCorner-_Y4kl1M  reason: not valid java name */
-    private static final LayoutCorner m8596getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
+    private static final LayoutCorner m8608getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
         if (dp == null) {
             return new LayoutCorner(0.0f, false, 3, null);
         }
-        return new LayoutCorner(dp.m7265unboximpl(), z, null);
+        return new LayoutCorner(dp.m7278unboximpl(), z, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

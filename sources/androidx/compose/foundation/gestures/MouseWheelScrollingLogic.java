@@ -68,8 +68,8 @@ public final class MouseWheelScrollingLogic {
     }
 
     /* renamed from: onPointerEvent-H0pRuoY  reason: not valid java name */
-    public final void m516onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        if (pointerEventPass == PointerEventPass.Main && PointerEventType.m5775equalsimpl0(pointerEvent.m5768getType7fucELk(), PointerEventType.Companion.m5784getScroll7fucELk())) {
+    public final void m526onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        if (pointerEventPass == PointerEventPass.Main && PointerEventType.m5788equalsimpl0(pointerEvent.m5781getType7fucELk(), PointerEventType.Companion.m5797getScroll7fucELk())) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
             int size = changes.size();
             for (int i = 0; i < size; i++) {
@@ -77,7 +77,7 @@ public final class MouseWheelScrollingLogic {
                     return;
                 }
             }
-            if (m515onMouseWheelO0kMr_c(pointerEvent, j)) {
+            if (m525onMouseWheelO0kMr_c(pointerEvent, j)) {
                 consume(pointerEvent);
             }
         }
@@ -116,7 +116,7 @@ public final class MouseWheelScrollingLogic {
         }
 
         /* renamed from: copy-9KIMszo$default  reason: not valid java name */
-        public static /* synthetic */ MouseWheelScrollDelta m517copy9KIMszo$default(MouseWheelScrollDelta mouseWheelScrollDelta, long j, long j2, boolean z, int i, Object obj) {
+        public static /* synthetic */ MouseWheelScrollDelta m527copy9KIMszo$default(MouseWheelScrollDelta mouseWheelScrollDelta, long j, long j2, boolean z, int i, Object obj) {
             if ((i & 1) != 0) {
                 j = mouseWheelScrollDelta.value;
             }
@@ -128,11 +128,11 @@ public final class MouseWheelScrollingLogic {
             if ((i & 4) != 0) {
                 z = mouseWheelScrollDelta.shouldApplyImmediately;
             }
-            return mouseWheelScrollDelta.m519copy9KIMszo(j3, j4, z);
+            return mouseWheelScrollDelta.m529copy9KIMszo(j3, j4, z);
         }
 
         /* renamed from: component1-F1C5BW0  reason: not valid java name */
-        public final long m518component1F1C5BW0() {
+        public final long m528component1F1C5BW0() {
             return this.value;
         }
 
@@ -145,7 +145,7 @@ public final class MouseWheelScrollingLogic {
         }
 
         /* renamed from: copy-9KIMszo  reason: not valid java name */
-        public final MouseWheelScrollDelta m519copy9KIMszo(long j, long j2, boolean z) {
+        public final MouseWheelScrollDelta m529copy9KIMszo(long j, long j2, boolean z) {
             return new MouseWheelScrollDelta(j, j2, z, null);
         }
 
@@ -155,17 +155,17 @@ public final class MouseWheelScrollingLogic {
             }
             if (obj instanceof MouseWheelScrollDelta) {
                 MouseWheelScrollDelta mouseWheelScrollDelta = (MouseWheelScrollDelta) obj;
-                return Offset.m4290equalsimpl0(this.value, mouseWheelScrollDelta.value) && this.timeMillis == mouseWheelScrollDelta.timeMillis && this.shouldApplyImmediately == mouseWheelScrollDelta.shouldApplyImmediately;
+                return Offset.m4302equalsimpl0(this.value, mouseWheelScrollDelta.value) && this.timeMillis == mouseWheelScrollDelta.timeMillis && this.shouldApplyImmediately == mouseWheelScrollDelta.shouldApplyImmediately;
             }
             return false;
         }
 
         public int hashCode() {
-            return (((Offset.m4295hashCodeimpl(this.value) * 31) + Long.hashCode(this.timeMillis)) * 31) + Boolean.hashCode(this.shouldApplyImmediately);
+            return (((Offset.m4307hashCodeimpl(this.value) * 31) + Long.hashCode(this.timeMillis)) * 31) + Boolean.hashCode(this.shouldApplyImmediately);
         }
 
         public String toString() {
-            return "MouseWheelScrollDelta(value=" + ((Object) Offset.m4301toStringimpl(this.value)) + ", timeMillis=" + this.timeMillis + ", shouldApplyImmediately=" + this.shouldApplyImmediately + ')';
+            return "MouseWheelScrollDelta(value=" + ((Object) Offset.m4313toStringimpl(this.value)) + ", timeMillis=" + this.timeMillis + ", shouldApplyImmediately=" + this.shouldApplyImmediately + ')';
         }
 
         private MouseWheelScrollDelta(long j, long j2, boolean z) {
@@ -175,7 +175,7 @@ public final class MouseWheelScrollingLogic {
         }
 
         /* renamed from: getValue-F1C5BW0  reason: not valid java name */
-        public final long m520getValueF1C5BW0() {
+        public final long m530getValueF1C5BW0() {
             return this.value;
         }
 
@@ -188,7 +188,7 @@ public final class MouseWheelScrollingLogic {
         }
 
         public final MouseWheelScrollDelta plus(MouseWheelScrollDelta mouseWheelScrollDelta) {
-            return new MouseWheelScrollDelta(Offset.m4298plusMKHz9U(this.value, mouseWheelScrollDelta.value), Math.max(this.timeMillis, mouseWheelScrollDelta.timeMillis), this.shouldApplyImmediately, null);
+            return new MouseWheelScrollDelta(Offset.m4310plusMKHz9U(this.value, mouseWheelScrollDelta.value), Math.max(this.timeMillis, mouseWheelScrollDelta.timeMillis), this.shouldApplyImmediately, null);
         }
     }
 
@@ -243,10 +243,10 @@ public final class MouseWheelScrollingLogic {
     }
 
     /* renamed from: onMouseWheel-O0kMr_c  reason: not valid java name */
-    private final boolean m515onMouseWheelO0kMr_c(PointerEvent pointerEvent, long j) {
-        long mo447calculateMouseWheelScroll8xgXZGE = this.mouseWheelScrollConfig.mo447calculateMouseWheelScroll8xgXZGE(this.density, pointerEvent, j);
-        if (m514canConsumeDeltaUv8p0NA(this.scrollingLogic, mo447calculateMouseWheelScroll8xgXZGE)) {
-            return ChannelResult.m10632isSuccessimpl(this.channel.mo8127trySendJP2dKIU(new MouseWheelScrollDelta(mo447calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
+    private final boolean m525onMouseWheelO0kMr_c(PointerEvent pointerEvent, long j) {
+        long mo457calculateMouseWheelScroll8xgXZGE = this.mouseWheelScrollConfig.mo457calculateMouseWheelScroll8xgXZGE(this.density, pointerEvent, j);
+        if (m524canConsumeDeltaUv8p0NA(this.scrollingLogic, mo457calculateMouseWheelScroll8xgXZGE)) {
+            return ChannelResult.m10647isSuccessimpl(this.channel.mo8140trySendJP2dKIU(new MouseWheelScrollDelta(mo457calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
         }
         return this.isScrolling;
     }
@@ -269,7 +269,7 @@ public final class MouseWheelScrollingLogic {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MouseWheelScrollDelta sumOrNull$lambda$4(Channel channel) {
-        return (MouseWheelScrollDelta) ChannelResult.m10627getOrNullimpl(channel.mo10615tryReceivePtdJZtk());
+        return (MouseWheelScrollDelta) ChannelResult.m10642getOrNullimpl(channel.mo10630tryReceivePtdJZtk());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -282,12 +282,12 @@ public final class MouseWheelScrollingLogic {
     }
 
     /* renamed from: canConsumeDelta-Uv8p0NA  reason: not valid java name */
-    private final boolean m514canConsumeDeltaUv8p0NA(ScrollingLogic scrollingLogic, long j) {
-        float m583toFloatk4lQ0M = scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(j));
-        if (m583toFloatk4lQ0M == 0.0f) {
+    private final boolean m524canConsumeDeltaUv8p0NA(ScrollingLogic scrollingLogic, long j) {
+        float m593toFloatk4lQ0M = scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(j));
+        if (m593toFloatk4lQ0M == 0.0f) {
             return false;
         }
-        if (m583toFloatk4lQ0M > 0.0f) {
+        if (m593toFloatk4lQ0M > 0.0f) {
             return scrollingLogic.getScrollableState().getCanScrollForward();
         }
         return scrollingLogic.getScrollableState().getCanScrollBackward();
@@ -295,7 +295,7 @@ public final class MouseWheelScrollingLogic {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void trackVelocity(MouseWheelScrollDelta mouseWheelScrollDelta) {
-        this.velocityTracker.m521addDeltaUv8p0NA(mouseWheelScrollDelta.getTimeMillis(), mouseWheelScrollDelta.m520getValueF1C5BW0());
+        this.velocityTracker.m531addDeltaUv8p0NA(mouseWheelScrollDelta.getTimeMillis(), mouseWheelScrollDelta.m530getValueF1C5BW0());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -318,7 +318,7 @@ public final class MouseWheelScrollingLogic {
         Ref.FloatRef floatRef;
         float f3;
         ScrollingLogic scrollingLogic2;
-        long m522calculateVelocity9UxMQ8M;
+        long m532calculateVelocity9UxMQ8M;
         if (continuation instanceof MouseWheelScrollingLogic$dispatchMouseWheelScroll$1) {
             mouseWheelScrollingLogic$dispatchMouseWheelScroll$1 = (MouseWheelScrollingLogic$dispatchMouseWheelScroll$1) continuation;
             if ((mouseWheelScrollingLogic$dispatchMouseWheelScroll$1.label & Integer.MIN_VALUE) != 0) {
@@ -338,7 +338,7 @@ public final class MouseWheelScrollingLogic {
                         objectRef.element = ((MouseWheelScrollDelta) objectRef.element).plus(sumOrNull);
                     }
                     Ref.FloatRef floatRef2 = new Ref.FloatRef();
-                    floatRef2.element = scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(((MouseWheelScrollDelta) objectRef.element).m520getValueF1C5BW0()));
+                    floatRef2.element = scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(((MouseWheelScrollDelta) objectRef.element).m530getValueF1C5BW0()));
                     isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef2.element);
                     if (isLowScrollingDelta) {
                         return Unit.INSTANCE;
@@ -367,12 +367,12 @@ public final class MouseWheelScrollingLogic {
                     scrollingLogic2 = (ScrollingLogic) mouseWheelScrollingLogic$dispatchMouseWheelScroll$12.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                m522calculateVelocity9UxMQ8M = this.velocityTracker.m522calculateVelocity9UxMQ8M();
-                if (Velocity.m7488equalsimpl0(m522calculateVelocity9UxMQ8M, Velocity.Companion.m7500getZero9UxMQ8M())) {
-                    m522calculateVelocity9UxMQ8M = scrollingLogic2.m585toVelocityadjELrA(scrollingLogic2.reverseIfNeeded(Math.signum(floatRef.element)) * Math.min(Math.abs(floatRef.element) / 100, f3) * 1000);
+                m532calculateVelocity9UxMQ8M = this.velocityTracker.m532calculateVelocity9UxMQ8M();
+                if (Velocity.m7501equalsimpl0(m532calculateVelocity9UxMQ8M, Velocity.Companion.m7513getZero9UxMQ8M())) {
+                    m532calculateVelocity9UxMQ8M = scrollingLogic2.m595toVelocityadjELrA(scrollingLogic2.reverseIfNeeded(Math.signum(floatRef.element)) * Math.min(Math.abs(floatRef.element) / 100, f3) * 1000);
                 }
                 Function2<Velocity, Continuation<? super Unit>, Object> function2 = this.onScrollStopped;
-                Velocity m7480boximpl = Velocity.m7480boximpl(m522calculateVelocity9UxMQ8M);
+                Velocity m7493boximpl = Velocity.m7493boximpl(m532calculateVelocity9UxMQ8M);
                 mouseWheelScrollingLogic$dispatchMouseWheelScroll$12.L$0 = null;
                 mouseWheelScrollingLogic$dispatchMouseWheelScroll$12.L$1 = null;
                 mouseWheelScrollingLogic$dispatchMouseWheelScroll$12.label = 2;
@@ -385,11 +385,11 @@ public final class MouseWheelScrollingLogic {
         i = mouseWheelScrollingLogic$dispatchMouseWheelScroll$122.label;
         if (i != 0) {
         }
-        m522calculateVelocity9UxMQ8M = this.velocityTracker.m522calculateVelocity9UxMQ8M();
-        if (Velocity.m7488equalsimpl0(m522calculateVelocity9UxMQ8M, Velocity.Companion.m7500getZero9UxMQ8M())) {
+        m532calculateVelocity9UxMQ8M = this.velocityTracker.m532calculateVelocity9UxMQ8M();
+        if (Velocity.m7501equalsimpl0(m532calculateVelocity9UxMQ8M, Velocity.Companion.m7513getZero9UxMQ8M())) {
         }
         Function2<Velocity, Continuation<? super Unit>, Object> function22 = this.onScrollStopped;
-        Velocity m7480boximpl2 = Velocity.m7480boximpl(m522calculateVelocity9UxMQ8M);
+        Velocity m7493boximpl2 = Velocity.m7493boximpl(m532calculateVelocity9UxMQ8M);
         mouseWheelScrollingLogic$dispatchMouseWheelScroll$122.L$0 = null;
         mouseWheelScrollingLogic$dispatchMouseWheelScroll$122.L$1 = null;
         mouseWheelScrollingLogic$dispatchMouseWheelScroll$122.label = 2;
@@ -453,8 +453,8 @@ public final class MouseWheelScrollingLogic {
                 }
                 mouseWheelScrollDelta = (MouseWheelScrollDelta) obj;
                 if (mouseWheelScrollDelta != null) {
-                    objectRef4.element = MouseWheelScrollDelta.m517copy9KIMszo$default(mouseWheelScrollDelta, 0L, 0L, objectRef4.element.getShouldApplyImmediately(), 3, null);
-                    floatRef2.element = scrollingLogic2.m583toFloatk4lQ0M(scrollingLogic2.m581reverseIfNeededMKHz9U(objectRef4.element.m520getValueF1C5BW0()));
+                    objectRef4.element = MouseWheelScrollDelta.m527copy9KIMszo$default(mouseWheelScrollDelta, 0L, 0L, objectRef4.element.getShouldApplyImmediately(), 3, null);
+                    floatRef2.element = scrollingLogic2.m593toFloatk4lQ0M(scrollingLogic2.m591reverseIfNeededMKHz9U(objectRef4.element.m530getValueF1C5BW0()));
                     objectRef3.element = AnimationStateKt.AnimationState$default(0.0f, 0.0f, 0L, 0L, false, 30, null);
                     mouseWheelScrollingLogic2.trackVelocity(mouseWheelScrollDelta);
                     isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef2.element);
@@ -514,6 +514,6 @@ public final class MouseWheelScrollingLogic {
     /* JADX INFO: Access modifiers changed from: private */
     public final float dispatchMouseWheelScroll(NestedScrollScope nestedScrollScope, float f) {
         ScrollingLogic scrollingLogic = this.scrollingLogic;
-        return scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(nestedScrollScope.mo523scrollByOzD1aCk(scrollingLogic.m584toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f)), NestedScrollSource.Companion.m5719getUserInputWNlRxjI())));
+        return scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m594toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f)), NestedScrollSource.Companion.m5732getUserInputWNlRxjI())));
     }
 }

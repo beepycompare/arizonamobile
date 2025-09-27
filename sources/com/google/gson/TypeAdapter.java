@@ -1,5 +1,6 @@
 package com.google.gson;
 
+import com.google.gson.internal.Streams;
 import com.google.gson.internal.bind.JsonTreeReader;
 import com.google.gson.internal.bind.JsonTreeWriter;
 import com.google.gson.stream.JsonReader;
@@ -8,7 +9,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.io.Writer;
 /* loaded from: classes4.dex */
 public abstract class TypeAdapter<T> {
@@ -21,10 +21,10 @@ public abstract class TypeAdapter<T> {
     }
 
     public final String toJson(T t) {
-        StringWriter stringWriter = new StringWriter();
+        StringBuilder sb = new StringBuilder();
         try {
-            toJson(stringWriter, t);
-            return stringWriter.toString();
+            toJson(Streams.writerForAppendable(sb), t);
+            return sb.toString();
         } catch (IOException e) {
             throw new JsonIOException(e);
         }

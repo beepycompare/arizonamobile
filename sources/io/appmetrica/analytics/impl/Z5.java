@@ -6,6 +6,6 @@ import java.util.concurrent.CountDownLatch;
 public abstract class Z5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile CountDownLatch f769a;
+    public static volatile CountDownLatch f770a;
     public static volatile PreloadInfoContentProvider b;
 }

@@ -39,8 +39,8 @@ public final class LazyLayoutMeasuredItemKt {
     }
 
     private static final int getMainAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo961getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo961getOffsetBjo55l4(0);
-        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7380getYimpl(mo961getOffsetBjo55l4) : IntOffset.m7379getXimpl(mo961getOffsetBjo55l4);
+        long mo971getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo971getOffsetBjo55l4(0);
+        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7393getYimpl(mo971getOffsetBjo55l4) : IntOffset.m7392getXimpl(mo971getOffsetBjo55l4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -19,8 +19,8 @@ public final class LayerMatrixCache<T> {
     private final Function2<T, Matrix, Unit> getMatrix;
     private boolean isDirty;
     private boolean isInverseDirty;
-    private float[] matrixCache = androidx.compose.ui.graphics.Matrix.m4779constructorimpl$default(null, 1, null);
-    private float[] inverseMatrixCache = androidx.compose.ui.graphics.Matrix.m4779constructorimpl$default(null, 1, null);
+    private float[] matrixCache = androidx.compose.ui.graphics.Matrix.m4791constructorimpl$default(null, 1, null);
+    private float[] inverseMatrixCache = androidx.compose.ui.graphics.Matrix.m4791constructorimpl$default(null, 1, null);
     private boolean isInverseValid = true;
     private boolean isIdentity = true;
 
@@ -34,8 +34,8 @@ public final class LayerMatrixCache<T> {
         this.isInverseDirty = false;
         this.isIdentity = true;
         this.isInverseValid = true;
-        androidx.compose.ui.graphics.Matrix.m4788resetimpl(this.matrixCache);
-        androidx.compose.ui.graphics.Matrix.m4788resetimpl(this.inverseMatrixCache);
+        androidx.compose.ui.graphics.Matrix.m4800resetimpl(this.matrixCache);
+        androidx.compose.ui.graphics.Matrix.m4800resetimpl(this.inverseMatrixCache);
     }
 
     public final void invalidate() {
@@ -44,7 +44,7 @@ public final class LayerMatrixCache<T> {
     }
 
     /* renamed from: calculateMatrix-GrdbGEg  reason: not valid java name */
-    public final float[] m6404calculateMatrixGrdbGEg(T t) {
+    public final float[] m6417calculateMatrixGrdbGEg(T t) {
         float[] fArr = this.matrixCache;
         if (this.isDirty) {
             Matrix matrix = this.androidMatrixCache;
@@ -53,19 +53,19 @@ public final class LayerMatrixCache<T> {
                 this.androidMatrixCache = matrix;
             }
             this.getMatrix.invoke(t, matrix);
-            AndroidMatrixConversions_androidKt.m4406setFromtUYjHk(fArr, matrix);
+            AndroidMatrixConversions_androidKt.m4418setFromtUYjHk(fArr, matrix);
             this.isDirty = false;
-            this.isIdentity = MatrixKt.m4804isIdentity58bKbWc(fArr);
+            this.isIdentity = MatrixKt.m4816isIdentity58bKbWc(fArr);
             return fArr;
         }
         return fArr;
     }
 
     /* renamed from: calculateInverseMatrix-bWbORWo  reason: not valid java name */
-    public final float[] m6403calculateInverseMatrixbWbORWo(T t) {
+    public final float[] m6416calculateInverseMatrixbWbORWo(T t) {
         float[] fArr = this.inverseMatrixCache;
         if (this.isInverseDirty) {
-            this.isInverseValid = InvertMatrixKt.m6401invertToJiSxe2E(m6404calculateMatrixGrdbGEg(t), fArr);
+            this.isInverseValid = InvertMatrixKt.m6414invertToJiSxe2E(m6417calculateMatrixGrdbGEg(t), fArr);
             this.isInverseDirty = false;
         }
         if (this.isInverseValid) {
@@ -75,34 +75,34 @@ public final class LayerMatrixCache<T> {
     }
 
     public final void map(T t, MutableRect mutableRect) {
-        float[] m6404calculateMatrixGrdbGEg = m6404calculateMatrixGrdbGEg(t);
+        float[] m6417calculateMatrixGrdbGEg = m6417calculateMatrixGrdbGEg(t);
         if (this.isIdentity) {
             return;
         }
-        androidx.compose.ui.graphics.Matrix.m4787mapimpl(m6404calculateMatrixGrdbGEg, mutableRect);
+        androidx.compose.ui.graphics.Matrix.m4799mapimpl(m6417calculateMatrixGrdbGEg, mutableRect);
     }
 
     public final void mapInverse(T t, MutableRect mutableRect) {
-        float[] m6403calculateInverseMatrixbWbORWo = m6403calculateInverseMatrixbWbORWo(t);
-        if (m6403calculateInverseMatrixbWbORWo == null) {
+        float[] m6416calculateInverseMatrixbWbORWo = m6416calculateInverseMatrixbWbORWo(t);
+        if (m6416calculateInverseMatrixbWbORWo == null) {
             mutableRect.set(0.0f, 0.0f, 0.0f, 0.0f);
         } else if (this.isIdentity) {
         } else {
-            androidx.compose.ui.graphics.Matrix.m4787mapimpl(m6403calculateInverseMatrixbWbORWo, mutableRect);
+            androidx.compose.ui.graphics.Matrix.m4799mapimpl(m6416calculateInverseMatrixbWbORWo, mutableRect);
         }
     }
 
     /* renamed from: map-R5De75A  reason: not valid java name */
-    public final long m6405mapR5De75A(T t, long j) {
-        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m4785mapMKHz9U(m6404calculateMatrixGrdbGEg(t), j) : j;
+    public final long m6418mapR5De75A(T t, long j) {
+        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m4797mapMKHz9U(m6417calculateMatrixGrdbGEg(t), j) : j;
     }
 
     /* renamed from: mapInverse-R5De75A  reason: not valid java name */
-    public final long m6406mapInverseR5De75A(T t, long j) {
-        float[] m6403calculateInverseMatrixbWbORWo = m6403calculateInverseMatrixbWbORWo(t);
-        if (m6403calculateInverseMatrixbWbORWo == null) {
-            return Offset.Companion.m4307getInfiniteF1C5BW0();
+    public final long m6419mapInverseR5De75A(T t, long j) {
+        float[] m6416calculateInverseMatrixbWbORWo = m6416calculateInverseMatrixbWbORWo(t);
+        if (m6416calculateInverseMatrixbWbORWo == null) {
+            return Offset.Companion.m4319getInfiniteF1C5BW0();
         }
-        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m4785mapMKHz9U(m6403calculateInverseMatrixbWbORWo, j) : j;
+        return !this.isIdentity ? androidx.compose.ui.graphics.Matrix.m4797mapMKHz9U(m6416calculateInverseMatrixbWbORWo, j) : j;
     }
 }

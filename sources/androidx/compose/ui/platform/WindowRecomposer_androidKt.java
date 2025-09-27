@@ -90,7 +90,7 @@ public final class WindowRecomposer_androidKt {
                 stateFlow2 = FlowKt.stateIn(FlowKt.flow(new WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1(contentResolver, uriFor, new ContentObserver(createAsync) { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1
                     @Override // android.database.ContentObserver
                     public void onChange(boolean z, Uri uri) {
-                        Channel$default.mo8127trySendJP2dKIU(Unit.INSTANCE);
+                        Channel$default.mo8140trySendJP2dKIU(Unit.INSTANCE);
                     }
                 }, Channel$default, context, null)), CoroutineScopeKt.MainScope(), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.Companion, 0L, 0L, 3, null), Float.valueOf(Settings.Global.getFloat(context.getContentResolver(), "animator_duration_scale", 1.0f)));
                 map.put(context, stateFlow2);

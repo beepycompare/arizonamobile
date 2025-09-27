@@ -1,6 +1,6 @@
 package ru.mrlargha.commonui.elements.donate.presentation.pages;
 
-import androidx.compose.material3.MenuKt;
+import android.util.Log;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,32 +24,33 @@ import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateOrdinaryPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1", f = "DonateOrdinaryPage.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {106, 117, MenuKt.InTransitionDuration}, m = "invokeSuspend", n = {"sortedList", "chunks", "addedList", "itemsShown", "readyShown", "chunk", "totalChunks", "sortedList", "chunks", "addedList", "itemsShown", "readyShown", "chunk", "totalChunks", "sortedList", "chunks", "addedList", "itemsShown", "readyShown", "totalChunks"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0"}, v = 1)
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1", f = "DonateOrdinaryPage.kt", i = {1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {107, 128, 131}, m = "invokeSuspend", n = {"sortedList", "chunks", "addedList", "readyShown", "chunk", "itemsShown", "totalChunks", "percent", "sortedList", "chunks", "addedList", "readyShown", "itemsShown", "totalChunks"}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "I$0", "I$1", "F$0", "L$0", "L$1", "L$2", "L$3", "I$0", "I$1"}, v = 1)
+/* loaded from: classes6.dex */
 public final class DonateOrdinaryPage$renderListGradually$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<DonateItemModelUi> $list;
+    float F$0;
     int I$0;
+    int I$1;
     Object L$0;
     Object L$1;
     Object L$2;
     Object L$3;
     Object L$4;
     Object L$5;
-    Object L$6;
     int label;
     final /* synthetic */ DonateOrdinaryPage this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateOrdinaryPage$renderListGradually$1(List<DonateItemModelUi> list, DonateOrdinaryPage donateOrdinaryPage, Continuation<? super DonateOrdinaryPage$renderListGradually$1> continuation) {
+    public DonateOrdinaryPage$renderListGradually$1(DonateOrdinaryPage donateOrdinaryPage, List<DonateItemModelUi> list, Continuation<? super DonateOrdinaryPage$renderListGradually$1> continuation) {
         super(2, continuation);
-        this.$list = list;
         this.this$0 = donateOrdinaryPage;
+        this.$list = list;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateOrdinaryPage$renderListGradually$1(this.$list, this.this$0, continuation);
+        return new DonateOrdinaryPage$renderListGradually$1(this.this$0, this.$list, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -57,150 +58,122 @@ public final class DonateOrdinaryPage$renderListGradually$1 extends SuspendLambd
         return ((DonateOrdinaryPage$renderListGradually$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0137, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(100, r17) != r1) goto L13;
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0075, code lost:
+        if (r2 == r1) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x017b, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1.AnonymousClass2(r12, r17.this$0, null), r17) == r1) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x012e, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(100, r18) == r1) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0170, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1.AnonymousClass1(r10, r18.this$0, null), r18) == r1) goto L23;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x013d  */
-    /* JADX WARN: Type inference failed for: r10v8, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r9v9, types: [java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0137 -> B:11:0x0055). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0136  */
+    /* JADX WARN: Type inference failed for: r11v5, types: [java.util.List] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x012e -> B:26:0x0131). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        List<DonateItemModelUi> sortForLines;
-        List chunked;
-        Ref.BooleanRef booleanRef;
-        Iterator it;
-        Ref.IntRef intRef;
-        int i;
-        ArrayList arrayList;
+        Object withContext;
+        DonateAdapter donateAdapter;
         List list;
-        List<DonateItemModelUi> list2;
-        List list3;
-        ArrayList arrayList2;
-        Ref.IntRef intRef2;
-        Ref.BooleanRef booleanRef2;
-        Iterator it2;
+        int i;
+        Ref.BooleanRef booleanRef;
+        ArrayList arrayList;
+        Iterator it;
+        List list2;
         int i2;
-        ArrayList arrayList3;
+        DonateAdapter donateAdapter2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i3 = this.label;
+        int i4 = 2;
+        boolean z = true;
         if (i3 == 0) {
             ResultKt.throwOnFailure(obj);
-            sortForLines = DonateUtilsKt.sortForLines(this.$list);
-            chunked = CollectionsKt.chunked(sortForLines, 4);
-            Ref.IntRef intRef3 = new Ref.IntRef();
-            int size = chunked.size();
-            booleanRef = new Ref.BooleanRef();
-            it = chunked.iterator();
-            intRef = intRef3;
-            i = size;
-            arrayList = new ArrayList();
-            if (it.hasNext()) {
-            }
-            return coroutine_suspended;
+            this.label = 1;
+            withContext = BuildersKt.withContext(Dispatchers.getDefault(), new DonateOrdinaryPage$renderListGradually$1$sortedList$1(this.$list, null), this);
         } else if (i3 != 1) {
             if (i3 != 2) {
                 if (i3 == 3) {
-                    Ref.BooleanRef booleanRef3 = (Ref.BooleanRef) this.L$4;
-                    Ref.IntRef intRef4 = (Ref.IntRef) this.L$3;
-                    List list4 = (List) this.L$2;
-                    List list5 = (List) this.L$1;
-                    List list6 = (List) this.L$0;
+                    Ref.BooleanRef booleanRef2 = (Ref.BooleanRef) this.L$3;
+                    List list3 = (List) this.L$2;
+                    List list4 = (List) this.L$1;
+                    List list5 = (List) this.L$0;
                     ResultKt.throwOnFailure(obj);
                     return Unit.INSTANCE;
                 }
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
+            i = this.I$1;
             i2 = this.I$0;
-            List list7 = (List) this.L$6;
-            it2 = (Iterator) this.L$5;
-            booleanRef2 = (Ref.BooleanRef) this.L$4;
-            intRef2 = (Ref.IntRef) this.L$3;
-            list3 = (List) this.L$1;
-            list2 = (List) this.L$0;
+            List list6 = (List) this.L$5;
+            it = (Iterator) this.L$4;
+            booleanRef = (Ref.BooleanRef) this.L$3;
+            list2 = (List) this.L$1;
+            list = (List) this.L$0;
             ResultKt.throwOnFailure(obj);
-            arrayList3 = (List) this.L$2;
-            List<DonateItemModelUi> list8 = list2;
-            i = i2;
-            sortForLines = list8;
-            it = it2;
-            booleanRef = booleanRef2;
-            chunked = list3;
-            intRef = intRef2;
-            arrayList = arrayList3;
+            ArrayList arrayList2 = (List) this.L$2;
+            i4 = 2;
+            z = true;
+            arrayList = arrayList2;
             if (it.hasNext()) {
-                this.L$0 = SpillingKt.nullOutSpilledVariable(sortForLines);
-                this.L$1 = SpillingKt.nullOutSpilledVariable(chunked);
+                this.L$0 = SpillingKt.nullOutSpilledVariable(list);
+                this.L$1 = SpillingKt.nullOutSpilledVariable(list2);
                 this.L$2 = SpillingKt.nullOutSpilledVariable(arrayList);
-                this.L$3 = SpillingKt.nullOutSpilledVariable(intRef);
-                this.L$4 = SpillingKt.nullOutSpilledVariable(booleanRef);
+                this.L$3 = SpillingKt.nullOutSpilledVariable(booleanRef);
+                this.L$4 = null;
                 this.L$5 = null;
-                this.L$6 = null;
-                this.I$0 = i;
+                this.I$0 = i2;
+                this.I$1 = i;
                 this.label = 3;
             } else {
-                list = (List) it.next();
-                arrayList.addAll(list);
-                this.L$0 = SpillingKt.nullOutSpilledVariable(sortForLines);
-                this.L$1 = SpillingKt.nullOutSpilledVariable(chunked);
-                this.L$2 = arrayList;
-                this.L$3 = intRef;
-                this.L$4 = booleanRef;
-                this.L$5 = it;
-                this.L$6 = SpillingKt.nullOutSpilledVariable(list);
-                this.I$0 = i;
-                this.label = 1;
-                if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.this$0, arrayList, intRef, i, booleanRef, null), this) != coroutine_suspended) {
-                    int i4 = i;
-                    list2 = sortForLines;
-                    i2 = i4;
-                    intRef2 = intRef;
-                    booleanRef2 = booleanRef;
-                    list3 = chunked;
-                    it2 = it;
-                    arrayList2 = arrayList;
-                    this.L$0 = SpillingKt.nullOutSpilledVariable(list2);
-                    this.L$1 = SpillingKt.nullOutSpilledVariable(list3);
-                    this.L$2 = arrayList2;
-                    this.L$3 = intRef2;
-                    this.L$4 = booleanRef2;
-                    this.L$5 = it2;
-                    this.L$6 = SpillingKt.nullOutSpilledVariable(list);
-                    this.I$0 = i2;
-                    this.label = 2;
-                    arrayList3 = arrayList2;
+                List list7 = (List) it.next();
+                arrayList.addAll(list7);
+                donateAdapter2 = this.this$0.itemAdapter;
+                donateAdapter2.submitList(CollectionsKt.toList(arrayList));
+                i2++;
+                float f = i2 / i;
+                if (!booleanRef.element && f >= 0.6f) {
+                    booleanRef.element = z;
+                    Log.i(DonateUtilsKt.DONATE_TAG, "renderListGradually: ");
+                    this.this$0.getOnItemCompleteListeners().itemReadyToShow();
                 }
+                this.L$0 = SpillingKt.nullOutSpilledVariable(list);
+                this.L$1 = SpillingKt.nullOutSpilledVariable(list2);
+                this.L$2 = arrayList;
+                this.L$3 = booleanRef;
+                this.L$4 = it;
+                this.L$5 = SpillingKt.nullOutSpilledVariable(list7);
+                this.I$0 = i2;
+                this.I$1 = i;
+                this.F$0 = f;
+                this.label = i4;
+                arrayList2 = arrayList;
             }
             return coroutine_suspended;
         } else {
-            i2 = this.I$0;
             ResultKt.throwOnFailure(obj);
-            list = (List) this.L$6;
-            it2 = (Iterator) this.L$5;
-            booleanRef2 = (Ref.BooleanRef) this.L$4;
-            intRef2 = (Ref.IntRef) this.L$3;
-            arrayList2 = (List) this.L$2;
-            list3 = (List) this.L$1;
-            list2 = (List) this.L$0;
-            this.L$0 = SpillingKt.nullOutSpilledVariable(list2);
-            this.L$1 = SpillingKt.nullOutSpilledVariable(list3);
-            this.L$2 = arrayList2;
-            this.L$3 = intRef2;
-            this.L$4 = booleanRef2;
-            this.L$5 = it2;
-            this.L$6 = SpillingKt.nullOutSpilledVariable(list);
-            this.I$0 = i2;
-            this.label = 2;
-            arrayList3 = arrayList2;
+            withContext = obj;
         }
+        List list8 = (List) withContext;
+        List chunked = CollectionsKt.chunked(list8, 4);
+        int size = chunked.size();
+        Ref.BooleanRef booleanRef3 = new Ref.BooleanRef();
+        donateAdapter = this.this$0.itemAdapter;
+        Log.i(DonateUtilsKt.DONATE_TAG, "itemAdapterSize: " + donateAdapter.getCurrentList().size());
+        list = list8;
+        i = size;
+        booleanRef = booleanRef3;
+        arrayList = new ArrayList();
+        it = chunked.iterator();
+        list2 = chunked;
+        i2 = 0;
+        if (it.hasNext()) {
+        }
+        return coroutine_suspended;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -208,81 +181,27 @@ public final class DonateOrdinaryPage$renderListGradually$1 extends SuspendLambd
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1$1", f = "DonateOrdinaryPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-        final /* synthetic */ List<DonateItemModelUi> $addedList;
-        final /* synthetic */ Ref.IntRef $itemsShown;
         final /* synthetic */ Ref.BooleanRef $readyShown;
-        final /* synthetic */ int $totalChunks;
         int label;
         final /* synthetic */ DonateOrdinaryPage this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        AnonymousClass1(DonateOrdinaryPage donateOrdinaryPage, List<DonateItemModelUi> list, Ref.IntRef intRef, int i, Ref.BooleanRef booleanRef, Continuation<? super AnonymousClass1> continuation) {
+        AnonymousClass1(Ref.BooleanRef booleanRef, DonateOrdinaryPage donateOrdinaryPage, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
-            this.this$0 = donateOrdinaryPage;
-            this.$addedList = list;
-            this.$itemsShown = intRef;
-            this.$totalChunks = i;
             this.$readyShown = booleanRef;
+            this.this$0 = donateOrdinaryPage;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.this$0, this.$addedList, this.$itemsShown, this.$totalChunks, this.$readyShown, continuation);
+            return new AnonymousClass1(this.$readyShown, this.this$0, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
             return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Object invokeSuspend(Object obj) {
-            DonateAdapter donateAdapter;
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            if (this.label == 0) {
-                ResultKt.throwOnFailure(obj);
-                donateAdapter = this.this$0.itemAdapter;
-                donateAdapter.submitList(CollectionsKt.toList(this.$addedList));
-                this.$itemsShown.element++;
-                float f = this.$itemsShown.element / this.$totalChunks;
-                if (!this.$readyShown.element && f >= 0.6f) {
-                    this.$readyShown.element = true;
-                    this.this$0.getOnItemCompleteListeners().itemReadyToShow();
-                }
-                return Unit.INSTANCE;
-            }
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: DonateOrdinaryPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1$2", f = "DonateOrdinaryPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
-    /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1$2  reason: invalid class name */
-    /* loaded from: classes5.dex */
-    public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-        final /* synthetic */ Ref.BooleanRef $readyShown;
-        int label;
-        final /* synthetic */ DonateOrdinaryPage this$0;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        AnonymousClass2(Ref.BooleanRef booleanRef, DonateOrdinaryPage donateOrdinaryPage, Continuation<? super AnonymousClass2> continuation) {
-            super(2, continuation);
-            this.$readyShown = booleanRef;
-            this.this$0 = donateOrdinaryPage;
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass2(this.$readyShown, this.this$0, continuation);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

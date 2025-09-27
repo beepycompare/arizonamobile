@@ -83,7 +83,7 @@ public final class TextFieldState {
         MutableState mutableStateOf$default2;
         this.textUndoManager = textUndoManager;
         String str2 = str;
-        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m6719coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
+        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m6732coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.isEditing$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new TextFieldCharSequence(str2, j, null, null, null, null, 60, null), null, 2, null);
@@ -138,13 +138,13 @@ public final class TextFieldState {
     }
 
     /* renamed from: getSelection-d9O1mEE */
-    public final long m1438getSelectiond9O1mEE() {
-        return getValue$foundation_release().m1436getSelectiond9O1mEE();
+    public final long m1448getSelectiond9O1mEE() {
+        return getValue$foundation_release().m1446getSelectiond9O1mEE();
     }
 
     /* renamed from: getComposition-MzsxiRA */
-    public final TextRange m1437getCompositionMzsxiRA() {
-        return getValue$foundation_release().m1435getCompositionMzsxiRA();
+    public final TextRange m1447getCompositionMzsxiRA() {
+        return getValue$foundation_release().m1445getCompositionMzsxiRA();
     }
 
     public final void edit(Function1<? super TextFieldBuffer, Unit> function1) {
@@ -163,7 +163,7 @@ public final class TextFieldState {
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
         Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
         try {
-            return "TextFieldState(selection=" + ((Object) TextRange.m6716toStringimpl(m1438getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
+            return "TextFieldState(selection=" + ((Object) TextRange.m6729toStringimpl(m1448getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
         } finally {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
         }
@@ -192,14 +192,14 @@ public final class TextFieldState {
     public final void commitEdit(TextFieldBuffer textFieldBuffer) {
         TextFieldBuffer textFieldBuffer2;
         boolean z = textFieldBuffer.getChanges().getChangeCount() > 0;
-        boolean m6706equalsimpl0 = TextRange.m6706equalsimpl0(textFieldBuffer.m1428getSelectiond9O1mEE(), this.mainBuffer.m1428getSelectiond9O1mEE());
-        boolean z2 = !m6706equalsimpl0;
-        if (!z && m6706equalsimpl0) {
+        boolean m6719equalsimpl0 = TextRange.m6719equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE());
+        boolean z2 = !m6719equalsimpl0;
+        if (!z && m6719equalsimpl0) {
             textFieldBuffer.setCanCallAddStyle$foundation_release(true);
         }
         if (z) {
             textFieldBuffer2 = textFieldBuffer;
-            recordEditForUndo(getValue$foundation_release(), TextFieldBuffer.m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer2, 0L, null, null, null, 15, null), textFieldBuffer2.getChanges(), TextFieldEditUndoBehavior.NeverMerge);
+            recordEditForUndo(getValue$foundation_release(), TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer2, 0L, null, null, null, 15, null), textFieldBuffer2.getChanges(), TextFieldEditUndoBehavior.NeverMerge);
         } else {
             textFieldBuffer2 = textFieldBuffer;
         }
@@ -231,7 +231,7 @@ public final class TextFieldState {
     public final void editWithNoSideEffects$foundation_release(Function1<? super TextFieldBuffer, Unit> function1) {
         getMainBuffer$foundation_release().getChangeTracker$foundation_release().clearChanges();
         function1.invoke(getMainBuffer$foundation_release());
-        updateValueAndNotifyListeners(getValue$foundation_release(), TextFieldBuffer.m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
+        updateValueAndNotifyListeners(getValue$foundation_release(), TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(getMainBuffer$foundation_release(), 0L, null, null, null, 15, null), true);
     }
 
     static /* synthetic */ void commitEditAsUser$default(TextFieldState textFieldState, InputTransformation inputTransformation, boolean z, TextFieldEditUndoBehavior textFieldEditUndoBehavior, int i, Object obj) {
@@ -245,28 +245,28 @@ public final class TextFieldState {
     }
 
     public final void commitEditAsUser(InputTransformation inputTransformation, boolean z, TextFieldEditUndoBehavior textFieldEditUndoBehavior) {
-        List m1441finalizeComposingAnnotationsitr0ztk;
-        List m1441finalizeComposingAnnotationsitr0ztk2;
+        List m1451finalizeComposingAnnotationsitr0ztk;
+        List m1451finalizeComposingAnnotationsitr0ztk2;
         TextFieldCharSequence value$foundation_release = getValue$foundation_release();
-        if (this.mainBuffer.getChangeTracker$foundation_release().getChangeCount() == 0 && TextRange.m6706equalsimpl0(value$foundation_release.m1436getSelectiond9O1mEE(), this.mainBuffer.m1428getSelectiond9O1mEE())) {
-            if (Intrinsics.areEqual(value$foundation_release.m1435getCompositionMzsxiRA(), this.mainBuffer.m1426getCompositionMzsxiRA$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getHighlight(), this.mainBuffer.getHighlight$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getComposingAnnotations(), this.mainBuffer.getComposingAnnotations$foundation_release())) {
+        if (this.mainBuffer.getChangeTracker$foundation_release().getChangeCount() == 0 && TextRange.m6719equalsimpl0(value$foundation_release.m1446getSelectiond9O1mEE(), this.mainBuffer.m1438getSelectiond9O1mEE())) {
+            if (Intrinsics.areEqual(value$foundation_release.m1445getCompositionMzsxiRA(), this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getHighlight(), this.mainBuffer.getHighlight$foundation_release()) && Intrinsics.areEqual(value$foundation_release.getComposingAnnotations(), this.mainBuffer.getComposingAnnotations$foundation_release())) {
                 return;
             }
             TextFieldCharSequence value$foundation_release2 = getValue$foundation_release();
-            long m1428getSelectiond9O1mEE = this.mainBuffer.m1428getSelectiond9O1mEE();
-            TextRange m1426getCompositionMzsxiRA$foundation_release = this.mainBuffer.m1426getCompositionMzsxiRA$foundation_release();
+            long m1438getSelectiond9O1mEE = this.mainBuffer.m1438getSelectiond9O1mEE();
+            TextRange m1436getCompositionMzsxiRA$foundation_release = this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release();
             Pair<TextHighlightType, TextRange> highlight$foundation_release = this.mainBuffer.getHighlight$foundation_release();
-            m1441finalizeComposingAnnotationsitr0ztk2 = TextFieldStateKt.m1441finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1426getCompositionMzsxiRA$foundation_release(), this.mainBuffer.getComposingAnnotations$foundation_release());
-            updateValueAndNotifyListeners(value$foundation_release2, new TextFieldCharSequence(this.mainBuffer.toString(), m1428getSelectiond9O1mEE, m1426getCompositionMzsxiRA$foundation_release, highlight$foundation_release, m1441finalizeComposingAnnotationsitr0ztk2, null, 32, null), z);
+            m1451finalizeComposingAnnotationsitr0ztk2 = TextFieldStateKt.m1451finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release(), this.mainBuffer.getComposingAnnotations$foundation_release());
+            updateValueAndNotifyListeners(value$foundation_release2, new TextFieldCharSequence(this.mainBuffer.toString(), m1438getSelectiond9O1mEE, m1436getCompositionMzsxiRA$foundation_release, highlight$foundation_release, m1451finalizeComposingAnnotationsitr0ztk2, null, 32, null), z);
             return;
         }
         boolean z2 = false;
         boolean z3 = this.mainBuffer.getChangeTracker$foundation_release().getChangeCount() != 0;
-        long m1428getSelectiond9O1mEE2 = this.mainBuffer.m1428getSelectiond9O1mEE();
-        TextRange m1426getCompositionMzsxiRA$foundation_release2 = this.mainBuffer.m1426getCompositionMzsxiRA$foundation_release();
+        long m1438getSelectiond9O1mEE2 = this.mainBuffer.m1438getSelectiond9O1mEE();
+        TextRange m1436getCompositionMzsxiRA$foundation_release2 = this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release();
         Pair<TextHighlightType, TextRange> highlight$foundation_release2 = this.mainBuffer.getHighlight$foundation_release();
-        m1441finalizeComposingAnnotationsitr0ztk = TextFieldStateKt.m1441finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1426getCompositionMzsxiRA$foundation_release(), this.mainBuffer.getComposingAnnotations$foundation_release());
-        TextFieldCharSequence textFieldCharSequence = new TextFieldCharSequence(this.mainBuffer.toString(), m1428getSelectiond9O1mEE2, m1426getCompositionMzsxiRA$foundation_release2, highlight$foundation_release2, m1441finalizeComposingAnnotationsitr0ztk, null, 32, null);
+        m1451finalizeComposingAnnotationsitr0ztk = TextFieldStateKt.m1451finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1436getCompositionMzsxiRA$foundation_release(), this.mainBuffer.getComposingAnnotations$foundation_release());
+        TextFieldCharSequence textFieldCharSequence = new TextFieldCharSequence(this.mainBuffer.toString(), m1438getSelectiond9O1mEE2, m1436getCompositionMzsxiRA$foundation_release2, highlight$foundation_release2, m1451finalizeComposingAnnotationsitr0ztk, null, 32, null);
         if (inputTransformation == null) {
             if (z3 && z) {
                 z2 = true;
@@ -279,12 +279,12 @@ public final class TextFieldState {
         inputTransformation.transformInput(textFieldBuffer);
         boolean contentEquals = StringsKt.contentEquals(textFieldBuffer.asCharSequence(), textFieldCharSequence);
         boolean z4 = !contentEquals;
-        boolean m6706equalsimpl0 = TextRange.m6706equalsimpl0(textFieldBuffer.m1428getSelectiond9O1mEE(), textFieldCharSequence.m1436getSelectiond9O1mEE());
-        boolean z5 = !m6706equalsimpl0;
-        if (!contentEquals || !m6706equalsimpl0) {
+        boolean m6719equalsimpl0 = TextRange.m6719equalsimpl0(textFieldBuffer.m1438getSelectiond9O1mEE(), textFieldCharSequence.m1446getSelectiond9O1mEE());
+        boolean z5 = !m6719equalsimpl0;
+        if (!contentEquals || !m6719equalsimpl0) {
             syncMainBufferToTemporaryBuffer$foundation_release(textFieldBuffer, z4, z5);
         } else {
-            updateValueAndNotifyListeners(value$foundation_release, TextFieldBuffer.m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, 0L, textFieldCharSequence.m1435getCompositionMzsxiRA(), null, null, 13, null), z);
+            updateValueAndNotifyListeners(value$foundation_release, TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(textFieldBuffer, 0L, textFieldCharSequence.m1445getCompositionMzsxiRA(), null, null, 13, null), z);
         }
         recordEditForUndo(value$foundation_release, getValue$foundation_release(), textFieldBuffer.getChanges(), textFieldEditUndoBehavior);
     }
@@ -296,7 +296,7 @@ public final class TextFieldState {
         NotifyImeListener[] notifyImeListenerArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
-            notifyImeListenerArr[i].onChange(textFieldCharSequence, textFieldCharSequence2, (!z || textFieldCharSequence.contentEquals(textFieldCharSequence2) || textFieldCharSequence.m1435getCompositionMzsxiRA() == null) ? false : true);
+            notifyImeListenerArr[i].onChange(textFieldCharSequence, textFieldCharSequence2, (!z || textFieldCharSequence.contentEquals(textFieldCharSequence2) || textFieldCharSequence.m1445getCompositionMzsxiRA() == null) ? false : true);
         }
     }
 
@@ -322,16 +322,16 @@ public final class TextFieldState {
     }
 
     public final void syncMainBufferToTemporaryBuffer$foundation_release(TextFieldBuffer textFieldBuffer, boolean z, boolean z2) {
-        TextFieldCharSequence m1425toTextFieldCharSequencewFTz33Y$foundation_release$default = TextFieldBuffer.m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(this.mainBuffer, 0L, null, null, null, 15, null);
+        TextFieldCharSequence m1435toTextFieldCharSequencewFTz33Y$foundation_release$default = TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(this.mainBuffer, 0L, null, null, null, 15, null);
         if (z) {
-            this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(textFieldBuffer.toString(), textFieldBuffer.m1428getSelectiond9O1mEE(), null, null, null, null, 60, null), null, null, null, 14, null);
+            this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(textFieldBuffer.toString(), textFieldBuffer.m1438getSelectiond9O1mEE(), null, null, null, null, 60, null), null, null, null, 14, null);
         } else if (z2) {
-            this.mainBuffer.m1430setSelection5zctL8(TextRangeKt.TextRange(TextRange.m6713getStartimpl(textFieldBuffer.m1428getSelectiond9O1mEE()), TextRange.m6708getEndimpl(textFieldBuffer.m1428getSelectiond9O1mEE())));
+            this.mainBuffer.m1440setSelection5zctL8(TextRangeKt.TextRange(TextRange.m6726getStartimpl(textFieldBuffer.m1438getSelectiond9O1mEE()), TextRange.m6721getEndimpl(textFieldBuffer.m1438getSelectiond9O1mEE())));
         }
-        if (z || z2 || !Intrinsics.areEqual(m1425toTextFieldCharSequencewFTz33Y$foundation_release$default.m1435getCompositionMzsxiRA(), textFieldBuffer.m1426getCompositionMzsxiRA$foundation_release())) {
+        if (z || z2 || !Intrinsics.areEqual(m1435toTextFieldCharSequencewFTz33Y$foundation_release$default.m1445getCompositionMzsxiRA(), textFieldBuffer.m1436getCompositionMzsxiRA$foundation_release())) {
             this.mainBuffer.commitComposition$foundation_release();
         }
-        updateValueAndNotifyListeners(m1425toTextFieldCharSequencewFTz33Y$foundation_release$default, TextFieldBuffer.m1425toTextFieldCharSequencewFTz33Y$foundation_release$default(this.mainBuffer, 0L, null, null, null, 15, null), true);
+        updateValueAndNotifyListeners(m1435toTextFieldCharSequencewFTz33Y$foundation_release$default, TextFieldBuffer.m1435toTextFieldCharSequencewFTz33Y$foundation_release$default(this.mainBuffer, 0L, null, null, null, 15, null), true);
     }
 
     /* compiled from: TextFieldState.kt */
@@ -346,7 +346,7 @@ public final class TextFieldState {
 
         @Override // androidx.compose.runtime.saveable.Saver
         public Object save(SaverScope saverScope, TextFieldState textFieldState) {
-            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m6713getStartimpl(textFieldState.m1438getSelectiond9O1mEE())), Integer.valueOf(TextRange.m6708getEndimpl(textFieldState.m1438getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation_release()));
+            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m6726getStartimpl(textFieldState.m1448getSelectiond9O1mEE())), Integer.valueOf(TextRange.m6721getEndimpl(textFieldState.m1448getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation_release()));
         }
 
         @Override // androidx.compose.runtime.saveable.Saver

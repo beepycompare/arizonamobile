@@ -9,10 +9,10 @@ import kotlin.collections.MapsKt;
 public final class C0634ud {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedHashMap f1109a = new LinkedHashMap();
+    public final LinkedHashMap f1110a = new LinkedHashMap();
 
     public final LinkedHashMap a(String str) {
-        LinkedHashMap linkedHashMap = this.f1109a;
+        LinkedHashMap linkedHashMap = this.f1110a;
         LinkedHashMap linkedHashMap2 = new LinkedHashMap(MapsKt.mapCapacity(linkedHashMap.size()));
         for (Map.Entry entry : linkedHashMap.entrySet()) {
             linkedHashMap2.put(entry.getKey(), ((ModuleEventServiceHandlerFactory) entry.getValue()).createEventHandler(str));

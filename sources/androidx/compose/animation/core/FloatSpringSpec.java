@@ -46,13 +46,13 @@ public final class FloatSpringSpec implements FloatAnimationSpec {
     @Override // androidx.compose.animation.core.FloatAnimationSpec
     public float getValueFromNanos(long j, float f, float f2, float f3) {
         this.spring.setFinalPosition(f2);
-        return Float.intBitsToFloat((int) (this.spring.m182updateValuesIJZedt4$animation_core(f, f3, j / 1000000) >> 32));
+        return Float.intBitsToFloat((int) (this.spring.m192updateValuesIJZedt4$animation_core(f, f3, j / 1000000) >> 32));
     }
 
     @Override // androidx.compose.animation.core.FloatAnimationSpec
     public float getVelocityFromNanos(long j, float f, float f2, float f3) {
         this.spring.setFinalPosition(f2);
-        return Float.intBitsToFloat((int) (this.spring.m182updateValuesIJZedt4$animation_core(f, f3, j / 1000000) & 4294967295L));
+        return Float.intBitsToFloat((int) (this.spring.m192updateValuesIJZedt4$animation_core(f, f3, j / 1000000) & 4294967295L));
     }
 
     @Override // androidx.compose.animation.core.FloatAnimationSpec

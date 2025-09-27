@@ -27,7 +27,7 @@ public final class LayoutNodeAlignmentLines extends AlignmentLines {
 
     @Override // androidx.compose.ui.node.AlignmentLines
     /* renamed from: calculatePositionInParent-R5De75A */
-    protected long mo6083calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j) {
-        return NodeCoordinator.m6223toParentPosition8S9VItk$default(nodeCoordinator, j, false, 2, null);
+    protected long mo6096calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j) {
+        return NodeCoordinator.m6236toParentPosition8S9VItk$default(nodeCoordinator, j, false, 2, null);
     }
 }

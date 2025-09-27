@@ -11,7 +11,7 @@ import java.util.Set;
 public final class Fg implements Bg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f447a;
+    public final boolean f448a;
     public final Si b;
     public final C0512pf c;
     public final C0349j8 d;
@@ -23,7 +23,7 @@ public final class Fg implements Bg {
     }
 
     public final void a() {
-        if (this.f447a) {
+        if (this.f448a) {
             return;
         }
         Si si = this.b;
@@ -32,11 +32,11 @@ public final class Fg implements Bg {
         Bundle bundle = new Bundle();
         bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", pg);
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = W9.f725a;
+        Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
         C0397l4 c0397l4 = new C0397l4("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
         c0397l4.m = bundle;
-        C0192d5 c0192d5 = si.f672a;
+        C0192d5 c0192d5 = si.f673a;
         si.a(Si.a(c0397l4, c0192d5), c0192d5, 1, null);
     }
 
@@ -47,7 +47,7 @@ public final class Fg implements Bg {
     public Fg(Si si, C0512pf c0512pf, Handler handler, boolean z, C0349j8 c0349j8, Ng ng) {
         this.b = si;
         this.c = c0512pf;
-        this.f447a = z;
+        this.f448a = z;
         this.d = c0349j8;
         this.e = ng;
         this.f = handler;
@@ -55,8 +55,8 @@ public final class Fg implements Bg {
 
     @Override // io.appmetrica.analytics.impl.Bg
     public final void a(Jg jg) {
-        String str = jg == null ? null : jg.f519a;
-        if (this.f447a) {
+        String str = jg == null ? null : jg.f520a;
+        if (this.f448a) {
             return;
         }
         synchronized (this) {
@@ -70,7 +70,7 @@ public final class Fg implements Bg {
     public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         C0349j8 c0349j8 = this.d;
         c0349j8.c = deferredDeeplinkParametersListener;
-        if (c0349j8.f936a) {
+        if (c0349j8.f937a) {
             c0349j8.a(1);
         } else {
             c0349j8.a();
@@ -81,7 +81,7 @@ public final class Fg implements Bg {
     public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         C0349j8 c0349j8 = this.d;
         c0349j8.b = deferredDeeplinkListener;
-        if (c0349j8.f936a) {
+        if (c0349j8.f937a) {
             c0349j8.a(1);
         } else {
             c0349j8.a();

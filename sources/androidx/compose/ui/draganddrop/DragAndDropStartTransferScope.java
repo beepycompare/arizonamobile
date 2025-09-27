@@ -9,5 +9,5 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public interface DragAndDropStartTransferScope {
     /* renamed from: startDragAndDropTransfer-12SF9DM */
-    boolean mo4047startDragAndDropTransfer12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1);
+    boolean mo4059startDragAndDropTransfer12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1);
 }

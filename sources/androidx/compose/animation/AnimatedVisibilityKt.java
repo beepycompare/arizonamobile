@@ -1455,19 +1455,19 @@ public final class AnimatedVisibilityKt {
 
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                        return m73invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                        return m83invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
                     }
 
                     /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                    public final MeasureResult m73invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                        long m7417constructorimpl;
-                        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+                    public final MeasureResult m83invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                        long m7430constructorimpl;
+                        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
                         if (measureScope.isLookingAhead() && !function1.invoke(transition.getTargetState()).booleanValue()) {
-                            m7417constructorimpl = IntSize.Companion.m7427getZeroYbymL2g();
+                            m7430constructorimpl = IntSize.Companion.m7440getZeroYbymL2g();
                         } else {
-                            m7417constructorimpl = IntSize.m7417constructorimpl((mo5954measureBRTryo0.getWidth() << 32) | (mo5954measureBRTryo0.getHeight() & 4294967295L));
+                            m7430constructorimpl = IntSize.m7430constructorimpl((mo5967measureBRTryo0.getWidth() << 32) | (mo5967measureBRTryo0.getHeight() & 4294967295L));
                         }
-                        return MeasureScope.layout$default(measureScope, (int) (m7417constructorimpl >> 32), (int) (m7417constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedVisibilityImpl$1$1.1
+                        return MeasureScope.layout$default(measureScope, (int) (m7430constructorimpl >> 32), (int) (m7430constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedVisibilityImpl$1$1.1
                             {
                                 super(1);
                             }
@@ -1718,17 +1718,17 @@ public final class AnimatedVisibilityKt {
 
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                                        return m72invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                                        return m82invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
                                     }
 
                                     /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                                    public final MeasureResult m72invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                                        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+                                    public final MeasureResult m82invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                                        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
                                         OnLookaheadMeasured onLookaheadMeasured3 = OnLookaheadMeasured.this;
                                         if (measureScope.isLookingAhead()) {
-                                            onLookaheadMeasured3.m109invokeozmzZPI(IntSize.m7417constructorimpl((mo5954measureBRTryo0.getWidth() << 32) | (mo5954measureBRTryo0.getHeight() & 4294967295L)));
+                                            onLookaheadMeasured3.m119invokeozmzZPI(IntSize.m7430constructorimpl((mo5967measureBRTryo0.getWidth() << 32) | (mo5967measureBRTryo0.getHeight() & 4294967295L)));
                                         }
-                                        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$2$1$1$1
+                                        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.AnimatedVisibilityKt$AnimatedEnterExitImpl$2$1$1$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             {
                                                 super(1);
@@ -1781,15 +1781,15 @@ public final class AnimatedVisibilityKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                        Updater.m3862setimpl(m3855constructorimpl, animatedEnterExitMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                        Updater.m3874setimpl(m3867constructorimpl, animatedEnterExitMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                            m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                            m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -1766274760, "C751@41392L9:AnimatedVisibility.kt#xbi5r1");
                         function3.invoke(animatedVisibilityScopeImpl, composer2, Integer.valueOf((i4 >> 18) & 112));
                         ComposerKt.sourceInformationMarkerEnd(composer2);

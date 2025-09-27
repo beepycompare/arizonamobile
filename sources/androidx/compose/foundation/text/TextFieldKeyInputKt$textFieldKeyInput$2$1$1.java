@@ -15,11 +15,11 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-        return m1364invokeZmokQxo(keyEvent.m5671unboximpl());
+        return m1374invokeZmokQxo(keyEvent.m5684unboximpl());
     }
 
     /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-    public final Boolean m1364invokeZmokQxo(android.view.KeyEvent keyEvent) {
-        return Boolean.valueOf(((TextFieldKeyInput) this.receiver).m1360processZmokQxo(keyEvent));
+    public final Boolean m1374invokeZmokQxo(android.view.KeyEvent keyEvent) {
+        return Boolean.valueOf(((TextFieldKeyInput) this.receiver).m1370processZmokQxo(keyEvent));
     }
 }

@@ -3,21 +3,21 @@ package ru.rustore.sdk.metrics.internal;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.rustore.sdk.metrics.MetricsEvent;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class L {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0840t f1433a;
+    public final C0840t f1434a;
 
     public L(C0840t metricsEventSerializer) {
         Intrinsics.checkNotNullParameter(metricsEventSerializer, "metricsEventSerializer");
-        this.f1433a = metricsEventSerializer;
+        this.f1434a = metricsEventSerializer;
     }
 
     public final J a(D model) {
         Intrinsics.checkNotNullParameter(model, "model");
-        String str = model.f1423a;
-        C0840t c0840t = this.f1433a;
+        String str = model.f1424a;
+        C0840t c0840t = this.f1434a;
         MetricsEvent metricsEvent = model.b;
         c0840t.getClass();
         byte[] bytes = C0840t.a(metricsEvent).getBytes(Charsets.UTF_8);

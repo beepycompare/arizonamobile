@@ -290,7 +290,7 @@ public final class ChipKt {
                                 i13 = i21;
                                 i12 = 6;
                                 i22 &= -234881025;
-                                chipElevation2 = AssistChipDefaults.INSTANCE.m1894assistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                chipElevation2 = AssistChipDefaults.INSTANCE.m1904assistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                             } else {
                                 obj5 = companion;
                                 i12 = 6;
@@ -299,7 +299,7 @@ public final class ChipKt {
                             }
                             if ((i3 & 512) == 0) {
                                 z3 = z5;
-                                borderStroke2 = AssistChipDefaults.INSTANCE.m1892assistChipBorderh1eTWw(z3, 0L, 0L, 0.0f, startRestartGroup, ((i22 >> 9) & 14) | 24576, 14);
+                                borderStroke2 = AssistChipDefaults.INSTANCE.m1902assistChipBorderh1eTWw(z3, 0L, 0L, 0.0f, startRestartGroup, ((i22 >> 9) & 14) | 24576, 14);
                                 i14 = i22 & (-1879048193);
                             } else {
                                 z3 = z5;
@@ -355,7 +355,7 @@ public final class ChipKt {
                         int i26 = i15 >> 24;
                         boolean z6 = z3;
                         ChipColors chipColors5 = chipColors2;
-                        m1984ChipnkUnTEs(modifier2, function0, z6, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors5, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i24 | (i25 & 7168) | (3670016 & i25) | (29360128 & i25) | (234881024 & i25) | (i25 & 1879048192), (i26 & 112) | (i26 & 14) | 3456 | ((i13 << 12) & 57344));
+                        m1994ChipnkUnTEs(modifier2, function0, z6, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors5, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i24 | (i25 & 7168) | (3670016 & i25) | (29360128 & i25) | (234881024 & i25) | (i25 & 1879048192), (i26 & 112) | (i26 & 14) | 3456 | ((i13 << 12) & 57344));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -447,7 +447,7 @@ public final class ChipKt {
                 int i262 = i15 >> 24;
                 boolean z62 = z3;
                 ChipColors chipColors52 = chipColors2;
-                m1984ChipnkUnTEs(modifier2, function0, z62, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors52, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i242 | (i252 & 7168) | (3670016 & i252) | (29360128 & i252) | (234881024 & i252) | (i252 & 1879048192), (i262 & 112) | (i262 & 14) | 3456 | ((i13 << 12) & 57344));
+                m1994ChipnkUnTEs(modifier2, function0, z62, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors52, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i242 | (i252 & 7168) | (3670016 & i252) | (29360128 & i252) | (234881024 & i252) | (i252 & 1879048192), (i262 & 112) | (i262 & 14) | 3456 | ((i13 << 12) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
@@ -521,7 +521,7 @@ public final class ChipKt {
             int i2622 = i15 >> 24;
             boolean z622 = z3;
             ChipColors chipColors522 = chipColors2;
-            m1984ChipnkUnTEs(modifier2, function0, z622, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors522, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i2422 | (i2522 & 7168) | (3670016 & i2522) | (29360128 & i2522) | (234881024 & i2522) | (i2522 & 1879048192), (i2622 & 112) | (i2622 & 14) | 3456 | ((i13 << 12) & 57344));
+            m1994ChipnkUnTEs(modifier2, function0, z622, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors522, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i2422 | (i2522 & 7168) | (3670016 & i2522) | (29360128 & i2522) | (234881024 & i2522) | (i2522 & 1879048192), (i2622 & 112) | (i2622 & 14) | 3456 | ((i13 << 12) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -599,7 +599,7 @@ public final class ChipKt {
         int i26222 = i15 >> 24;
         boolean z6222 = z3;
         ChipColors chipColors5222 = chipColors2;
-        m1984ChipnkUnTEs(modifier2, function0, z6222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors5222, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i24222 | (i25222 & 7168) | (3670016 & i25222) | (29360128 & i25222) | (234881024 & i25222) | (i25222 & 1879048192), (i26222 & 112) | (i26222 & 14) | 3456 | ((i13 << 12) & 57344));
+        m1994ChipnkUnTEs(modifier2, function0, z6222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), obj4, function24, shape3, chipColors5222, chipElevation3, borderStroke3, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, i24222 | (i25222 & 7168) | (3670016 & i25222) | (29360128 & i25222) | (234881024 & i25222) | (i25222 & 1879048192), (i26222 & 112) | (i26222 & 14) | 3456 | ((i13 << 12) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -832,7 +832,7 @@ public final class ChipKt {
                                 i12 = 6;
                                 i13 = i20;
                                 i21 &= -234881025;
-                                chipElevation2 = AssistChipDefaults.INSTANCE.m1894assistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
+                                chipElevation2 = AssistChipDefaults.INSTANCE.m1904assistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
                             } else {
                                 modifier3 = companion;
                                 i12 = 6;
@@ -842,7 +842,7 @@ public final class ChipKt {
                             }
                             if ((i3 & 512) == 0) {
                                 startRestartGroup = composer2;
-                                chipBorder2 = AssistChipDefaults.INSTANCE.m1891assistChipBorderd_3_b6Q(0L, 0L, 0.0f, startRestartGroup, 3072, 7);
+                                chipBorder2 = AssistChipDefaults.INSTANCE.m1901assistChipBorderd_3_b6Q(0L, 0L, 0.0f, startRestartGroup, 3072, 7);
                                 i14 = i21 & (-1879048193);
                             } else {
                                 startRestartGroup = composer2;
@@ -895,7 +895,7 @@ public final class ChipKt {
                             ComposerKt.traceEventStart(-1932300596, i14, i13, "androidx.compose.material3.AssistChip (Chip.kt:219)");
                         }
                         TextStyle value = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                        long m1975labelColorvNxB06k$material3_release = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
+                        long m1985labelColorvNxB06k$material3_release = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
                         startRestartGroup.startReplaceGroup(267317901);
                         ComposerKt.sourceInformation(startRestartGroup, "231@11104L21");
                         State<BorderStroke> borderStroke$material3_release = chipBorder2 != null ? null : chipBorder2.borderStroke$material3_release(z2, startRestartGroup, ((i14 >> 9) & 14) | ((i14 >> 24) & 112));
@@ -904,7 +904,7 @@ public final class ChipKt {
                         ChipColors chipColors5 = chipColors2;
                         composer3 = startRestartGroup;
                         boolean z5 = z2;
-                        m1984ChipnkUnTEs(modifier4, function0, z5, obj, value, m1975labelColorvNxB06k$material3_release, obj3, function24, shape3, chipColors5, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i23 & 7168) | (3670016 & i23) | (29360128 & i23) | (234881024 & i23) | (i23 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
+                        m1994ChipnkUnTEs(modifier4, function0, z5, obj, value, m1985labelColorvNxB06k$material3_release, obj3, function24, shape3, chipColors5, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i23 & 7168) | (3670016 & i23) | (29360128 & i23) | (234881024 & i23) | (i23 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -994,7 +994,7 @@ public final class ChipKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 TextStyle value2 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                long m1975labelColorvNxB06k$material3_release2 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
+                long m1985labelColorvNxB06k$material3_release2 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
                 startRestartGroup.startReplaceGroup(267317901);
                 ComposerKt.sourceInformation(startRestartGroup, "231@11104L21");
                 if (chipBorder2 != null) {
@@ -1006,7 +1006,7 @@ public final class ChipKt {
                 ChipColors chipColors52 = chipColors2;
                 composer3 = startRestartGroup;
                 boolean z52 = z2;
-                m1984ChipnkUnTEs(modifier4, function0, z52, obj, value2, m1975labelColorvNxB06k$material3_release2, obj3, function24, shape3, chipColors52, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i232 & 7168) | (3670016 & i232) | (29360128 & i232) | (234881024 & i232) | (i232 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
+                m1994ChipnkUnTEs(modifier4, function0, z52, obj, value2, m1985labelColorvNxB06k$material3_release2, obj3, function24, shape3, chipColors52, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i232 & 7168) | (3670016 & i232) | (29360128 & i232) | (234881024 & i232) | (i232 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 chipBorder3 = chipBorder2;
@@ -1078,7 +1078,7 @@ public final class ChipKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             TextStyle value22 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-            long m1975labelColorvNxB06k$material3_release22 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
+            long m1985labelColorvNxB06k$material3_release22 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
             startRestartGroup.startReplaceGroup(267317901);
             ComposerKt.sourceInformation(startRestartGroup, "231@11104L21");
             if (chipBorder2 != null) {
@@ -1090,7 +1090,7 @@ public final class ChipKt {
             ChipColors chipColors522 = chipColors2;
             composer3 = startRestartGroup;
             boolean z522 = z2;
-            m1984ChipnkUnTEs(modifier4, function0, z522, obj, value22, m1975labelColorvNxB06k$material3_release22, obj3, function24, shape3, chipColors522, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i2322 & 7168) | (3670016 & i2322) | (29360128 & i2322) | (234881024 & i2322) | (i2322 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
+            m1994ChipnkUnTEs(modifier4, function0, z522, obj, value22, m1985labelColorvNxB06k$material3_release22, obj3, function24, shape3, chipColors522, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i2322 & 7168) | (3670016 & i2322) | (29360128 & i2322) | (234881024 & i2322) | (i2322 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             chipBorder3 = chipBorder2;
@@ -1166,7 +1166,7 @@ public final class ChipKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         TextStyle value222 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-        long m1975labelColorvNxB06k$material3_release222 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
+        long m1985labelColorvNxB06k$material3_release222 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
         startRestartGroup.startReplaceGroup(267317901);
         ComposerKt.sourceInformation(startRestartGroup, "231@11104L21");
         if (chipBorder2 != null) {
@@ -1178,7 +1178,7 @@ public final class ChipKt {
         ChipColors chipColors5222 = chipColors2;
         composer3 = startRestartGroup;
         boolean z5222 = z2;
-        m1984ChipnkUnTEs(modifier4, function0, z5222, obj, value222, m1975labelColorvNxB06k$material3_release222, obj3, function24, shape3, chipColors5222, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i23222 & 7168) | (3670016 & i23222) | (29360128 & i23222) | (234881024 & i23222) | (i23222 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
+        m1994ChipnkUnTEs(modifier4, function0, z5222, obj, value222, m1985labelColorvNxB06k$material3_release222, obj3, function24, shape3, chipColors5222, chipElevation3, borderStroke$material3_release != null ? borderStroke$material3_release.getValue() : null, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, composer3, ((i14 >> 6) & 14) | ((i14 << 3) & 112) | ((i14 >> 3) & 896) | (i23222 & 7168) | (3670016 & i23222) | (29360128 & i23222) | (234881024 & i23222) | (i23222 & 1879048192), ((i14 >> 24) & 14) | 3456 | ((i13 << 12) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         chipBorder3 = chipBorder2;
@@ -1402,7 +1402,7 @@ public final class ChipKt {
                                     obj4 = companion;
                                     i15 = i21;
                                     i14 = 6;
-                                    chipElevation2 = AssistChipDefaults.INSTANCE.m1896elevatedAssistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                    chipElevation2 = AssistChipDefaults.INSTANCE.m1906elevatedAssistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                     i16 = i22 & (-234881025);
                                 } else {
                                     obj4 = companion;
@@ -1461,7 +1461,7 @@ public final class ChipKt {
                             int i25 = i16 >> 24;
                             ChipColors chipColors5 = chipColors2;
                             boolean z5 = z2;
-                            m1984ChipnkUnTEs(modifier2, function0, z5, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1975labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors5, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24 & 7168) | (3670016 & i24) | (29360128 & i24) | (234881024 & i24) | (i24 & 1879048192), (i25 & 112) | (i25 & 14) | 3456 | ((i15 << 12) & 57344));
+                            m1994ChipnkUnTEs(modifier2, function0, z5, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1985labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors5, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24 & 7168) | (3670016 & i24) | (29360128 & i24) | (234881024 & i24) | (i24 & 1879048192), (i25 & 112) | (i25 & 14) | 3456 | ((i15 << 12) & 57344));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1538,7 +1538,7 @@ public final class ChipKt {
                     int i252 = i16 >> 24;
                     ChipColors chipColors52 = chipColors2;
                     boolean z52 = z2;
-                    m1984ChipnkUnTEs(modifier2, function0, z52, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1975labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors52, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242 & 7168) | (3670016 & i242) | (29360128 & i242) | (234881024 & i242) | (i242 & 1879048192), (i252 & 112) | (i252 & 14) | 3456 | ((i15 << 12) & 57344));
+                    m1994ChipnkUnTEs(modifier2, function0, z52, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1985labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors52, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242 & 7168) | (3670016 & i242) | (29360128 & i242) | (234881024 & i242) | (i242 & 1879048192), (i252 & 112) | (i252 & 14) | 3456 | ((i15 << 12) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
@@ -1606,7 +1606,7 @@ public final class ChipKt {
                 int i2522 = i16 >> 24;
                 ChipColors chipColors522 = chipColors2;
                 boolean z522 = z2;
-                m1984ChipnkUnTEs(modifier2, function0, z522, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1975labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors522, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i2422 & 7168) | (3670016 & i2422) | (29360128 & i2422) | (234881024 & i2422) | (i2422 & 1879048192), (i2522 & 112) | (i2522 & 14) | 3456 | ((i15 << 12) & 57344));
+                m1994ChipnkUnTEs(modifier2, function0, z522, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1985labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors522, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i2422 & 7168) | (3670016 & i2422) | (29360128 & i2422) | (234881024 & i2422) | (i2422 & 1879048192), (i2522 & 112) | (i2522 & 14) | 3456 | ((i15 << 12) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
@@ -1678,7 +1678,7 @@ public final class ChipKt {
             int i25222 = i16 >> 24;
             ChipColors chipColors5222 = chipColors2;
             boolean z5222 = z2;
-            m1984ChipnkUnTEs(modifier2, function0, z5222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1975labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors5222, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24222 & 7168) | (3670016 & i24222) | (29360128 & i24222) | (234881024 & i24222) | (i24222 & 1879048192), (i25222 & 112) | (i25222 & 14) | 3456 | ((i15 << 12) & 57344));
+            m1994ChipnkUnTEs(modifier2, function0, z5222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1985labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors5222, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24222 & 7168) | (3670016 & i24222) | (29360128 & i24222) | (234881024 & i24222) | (i24222 & 1879048192), (i25222 & 112) | (i25222 & 14) | 3456 | ((i15 << 12) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -1754,7 +1754,7 @@ public final class ChipKt {
         int i252222 = i16 >> 24;
         ChipColors chipColors52222 = chipColors2;
         boolean z52222 = z2;
-        m1984ChipnkUnTEs(modifier2, function0, z52222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1975labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors52222, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242222 & 7168) | (3670016 & i242222) | (29360128 & i242222) | (234881024 & i242222) | (i242222 & 1879048192), (i252222 & 112) | (i252222 & 14) | 3456 | ((i15 << 12) & 57344));
+        m1994ChipnkUnTEs(modifier2, function0, z52222, obj, TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), chipColors2.m1985labelColorvNxB06k$material3_release(z2), function25, function24, shape3, chipColors52222, chipElevation3, borderStroke2, AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM(), AssistChipPadding, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242222 & 7168) | (3670016 & i242222) | (29360128 & i242222) | (234881024 & i242222) | (i242222 & 1879048192), (i252222 & 112) | (i252222 & 14) | 3456 | ((i15 << 12) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -1984,7 +1984,7 @@ public final class ChipKt {
                                     modifier3 = companion;
                                     i15 = i21;
                                     i14 = 6;
-                                    chipElevation2 = AssistChipDefaults.INSTANCE.m1896elevatedAssistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                    chipElevation2 = AssistChipDefaults.INSTANCE.m1906elevatedAssistChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                     i16 = i22 & (-234881025);
                                 } else {
                                     modifier3 = companion;
@@ -2042,8 +2042,8 @@ public final class ChipKt {
                             }
                             TextStyle value = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14);
                             BorderStroke borderStroke = null;
-                            long m1975labelColorvNxB06k$material3_release = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
-                            float m1897getHeightD9Ej5fM = AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM();
+                            long m1985labelColorvNxB06k$material3_release = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
+                            float m1907getHeightD9Ej5fM = AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM();
                             PaddingValues paddingValues = AssistChipPadding;
                             startRestartGroup.startReplaceGroup(1552007127);
                             ComposerKt.sourceInformation(startRestartGroup, "395@19068L21");
@@ -2055,7 +2055,7 @@ public final class ChipKt {
                             int i24 = i16 << 6;
                             ChipColors chipColors5 = chipColors2;
                             boolean z5 = z2;
-                            m1984ChipnkUnTEs(modifier4, function0, z5, obj, value, m1975labelColorvNxB06k$material3_release, function24, function25, shape3, chipColors5, chipElevation3, borderStroke, m1897getHeightD9Ej5fM, paddingValues, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24 & 7168) | (3670016 & i24) | (29360128 & i24) | (234881024 & i24) | (i24 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
+                            m1994ChipnkUnTEs(modifier4, function0, z5, obj, value, m1985labelColorvNxB06k$material3_release, function24, function25, shape3, chipColors5, chipElevation3, borderStroke, m1907getHeightD9Ej5fM, paddingValues, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24 & 7168) | (3670016 & i24) | (29360128 & i24) | (234881024 & i24) | (i24 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2136,8 +2136,8 @@ public final class ChipKt {
                     }
                     TextStyle value2 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14);
                     BorderStroke borderStroke2 = null;
-                    long m1975labelColorvNxB06k$material3_release2 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
-                    float m1897getHeightD9Ej5fM2 = AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM();
+                    long m1985labelColorvNxB06k$material3_release2 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
+                    float m1907getHeightD9Ej5fM2 = AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM();
                     PaddingValues paddingValues2 = AssistChipPadding;
                     startRestartGroup.startReplaceGroup(1552007127);
                     ComposerKt.sourceInformation(startRestartGroup, "395@19068L21");
@@ -2149,7 +2149,7 @@ public final class ChipKt {
                     int i242 = i16 << 6;
                     ChipColors chipColors52 = chipColors2;
                     boolean z52 = z2;
-                    m1984ChipnkUnTEs(modifier4, function0, z52, obj, value2, m1975labelColorvNxB06k$material3_release2, function24, function25, shape3, chipColors52, chipElevation3, borderStroke2, m1897getHeightD9Ej5fM2, paddingValues2, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242 & 7168) | (3670016 & i242) | (29360128 & i242) | (234881024 & i242) | (i242 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
+                    m1994ChipnkUnTEs(modifier4, function0, z52, obj, value2, m1985labelColorvNxB06k$material3_release2, function24, function25, shape3, chipColors52, chipElevation3, borderStroke2, m1907getHeightD9Ej5fM2, paddingValues2, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242 & 7168) | (3670016 & i242) | (29360128 & i242) | (234881024 & i242) | (i242 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     chipBorder3 = chipBorder2;
@@ -2221,8 +2221,8 @@ public final class ChipKt {
                 }
                 TextStyle value22 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14);
                 BorderStroke borderStroke22 = null;
-                long m1975labelColorvNxB06k$material3_release22 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
-                float m1897getHeightD9Ej5fM22 = AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM();
+                long m1985labelColorvNxB06k$material3_release22 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
+                float m1907getHeightD9Ej5fM22 = AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM();
                 PaddingValues paddingValues22 = AssistChipPadding;
                 startRestartGroup.startReplaceGroup(1552007127);
                 ComposerKt.sourceInformation(startRestartGroup, "395@19068L21");
@@ -2234,7 +2234,7 @@ public final class ChipKt {
                 int i2422 = i16 << 6;
                 ChipColors chipColors522 = chipColors2;
                 boolean z522 = z2;
-                m1984ChipnkUnTEs(modifier4, function0, z522, obj, value22, m1975labelColorvNxB06k$material3_release22, function24, function25, shape3, chipColors522, chipElevation3, borderStroke22, m1897getHeightD9Ej5fM22, paddingValues22, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i2422 & 7168) | (3670016 & i2422) | (29360128 & i2422) | (234881024 & i2422) | (i2422 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
+                m1994ChipnkUnTEs(modifier4, function0, z522, obj, value22, m1985labelColorvNxB06k$material3_release22, function24, function25, shape3, chipColors522, chipElevation3, borderStroke22, m1907getHeightD9Ej5fM22, paddingValues22, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i2422 & 7168) | (3670016 & i2422) | (29360128 & i2422) | (234881024 & i2422) | (i2422 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 chipBorder3 = chipBorder2;
@@ -2310,8 +2310,8 @@ public final class ChipKt {
             }
             TextStyle value222 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14);
             BorderStroke borderStroke222 = null;
-            long m1975labelColorvNxB06k$material3_release222 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
-            float m1897getHeightD9Ej5fM222 = AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM();
+            long m1985labelColorvNxB06k$material3_release222 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
+            float m1907getHeightD9Ej5fM222 = AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM();
             PaddingValues paddingValues222 = AssistChipPadding;
             startRestartGroup.startReplaceGroup(1552007127);
             ComposerKt.sourceInformation(startRestartGroup, "395@19068L21");
@@ -2323,7 +2323,7 @@ public final class ChipKt {
             int i24222 = i16 << 6;
             ChipColors chipColors5222 = chipColors2;
             boolean z5222 = z2;
-            m1984ChipnkUnTEs(modifier4, function0, z5222, obj, value222, m1975labelColorvNxB06k$material3_release222, function24, function25, shape3, chipColors5222, chipElevation3, borderStroke222, m1897getHeightD9Ej5fM222, paddingValues222, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24222 & 7168) | (3670016 & i24222) | (29360128 & i24222) | (234881024 & i24222) | (i24222 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
+            m1994ChipnkUnTEs(modifier4, function0, z5222, obj, value222, m1985labelColorvNxB06k$material3_release222, function24, function25, shape3, chipColors5222, chipElevation3, borderStroke222, m1907getHeightD9Ej5fM222, paddingValues222, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i24222 & 7168) | (3670016 & i24222) | (29360128 & i24222) | (234881024 & i24222) | (i24222 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             chipBorder3 = chipBorder2;
@@ -2403,8 +2403,8 @@ public final class ChipKt {
         }
         TextStyle value2222 = TypographyKt.getValue(AssistChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14);
         BorderStroke borderStroke2222 = null;
-        long m1975labelColorvNxB06k$material3_release2222 = chipColors2.m1975labelColorvNxB06k$material3_release(z2);
-        float m1897getHeightD9Ej5fM2222 = AssistChipDefaults.INSTANCE.m1897getHeightD9Ej5fM();
+        long m1985labelColorvNxB06k$material3_release2222 = chipColors2.m1985labelColorvNxB06k$material3_release(z2);
+        float m1907getHeightD9Ej5fM2222 = AssistChipDefaults.INSTANCE.m1907getHeightD9Ej5fM();
         PaddingValues paddingValues2222 = AssistChipPadding;
         startRestartGroup.startReplaceGroup(1552007127);
         ComposerKt.sourceInformation(startRestartGroup, "395@19068L21");
@@ -2416,7 +2416,7 @@ public final class ChipKt {
         int i242222 = i16 << 6;
         ChipColors chipColors52222 = chipColors2;
         boolean z52222 = z2;
-        m1984ChipnkUnTEs(modifier4, function0, z52222, obj, value2222, m1975labelColorvNxB06k$material3_release2222, function24, function25, shape3, chipColors52222, chipElevation3, borderStroke2222, m1897getHeightD9Ej5fM2222, paddingValues2222, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242222 & 7168) | (3670016 & i242222) | (29360128 & i242222) | (234881024 & i242222) | (i242222 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
+        m1994ChipnkUnTEs(modifier4, function0, z52222, obj, value2222, m1985labelColorvNxB06k$material3_release2222, function24, function25, shape3, chipColors52222, chipElevation3, borderStroke2222, m1907getHeightD9Ej5fM2222, paddingValues2222, mutableInteractionSource2, startRestartGroup, ((i16 >> 6) & 14) | ((i16 << 3) & 112) | ((i16 >> 3) & 896) | (i242222 & 7168) | (3670016 & i242222) | (29360128 & i242222) | (234881024 & i242222) | (i242222 & 1879048192), ((i16 >> 24) & 14) | 3456 | ((i15 << 12) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         chipBorder3 = chipBorder2;
@@ -2691,7 +2691,7 @@ public final class ChipKt {
                             obj8 = companion;
                             i13 = 6;
                             i14 = i10;
-                            selectableChipElevation2 = FilterChipDefaults.INSTANCE.m2223filterChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                            selectableChipElevation2 = FilterChipDefaults.INSTANCE.m2233filterChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                             i15 = i23 & (-1879048193);
                         } else {
                             obj8 = companion;
@@ -2702,7 +2702,7 @@ public final class ChipKt {
                         }
                         if ((i3 & 1024) != 0) {
                             z5 = z8;
-                            borderStroke2 = FilterChipDefaults.INSTANCE.m2221filterChipBorder_7El2pE(z5, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i15 >> 12) & 14) | 100663296 | ((i15 << 3) & 112), 252);
+                            borderStroke2 = FilterChipDefaults.INSTANCE.m2231filterChipBorder_7El2pE(z5, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i15 >> 12) & 14) | 100663296 | ((i15 << 3) & 112), 252);
                             i11 &= -15;
                         } else {
                             z5 = z8;
@@ -2758,7 +2758,7 @@ public final class ChipKt {
                     int i25 = i15 << 3;
                     int i26 = i15 << 6;
                     int i27 = i15 >> 24;
-                    m1986SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i25 & 896) | ((i15 >> 3) & 7168) | (57344 & i26) | (i25 & 3670016) | (234881024 & i26) | (1879048192 & i26), (i27 & 112) | (i27 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
+                    m1996SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i25 & 896) | ((i15 >> 3) & 7168) | (57344 & i26) | (i25 & 3670016) | (234881024 & i26) | (1879048192 & i26), (i27 & 112) | (i27 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -2851,7 +2851,7 @@ public final class ChipKt {
             int i252 = i15 << 3;
             int i262 = i15 << 6;
             int i272 = i15 >> 24;
-            m1986SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i252 & 896) | ((i15 >> 3) & 7168) | (57344 & i262) | (i252 & 3670016) | (234881024 & i262) | (1879048192 & i262), (i272 & 112) | (i272 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
+            m1996SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i252 & 896) | ((i15 >> 3) & 7168) | (57344 & i262) | (i252 & 3670016) | (234881024 & i262) | (1879048192 & i262), (i272 & 112) | (i272 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -2926,7 +2926,7 @@ public final class ChipKt {
         int i2522 = i15 << 3;
         int i2622 = i15 << 6;
         int i2722 = i15 >> 24;
-        m1986SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i2522 & 896) | ((i15 >> 3) & 7168) | (57344 & i2622) | (i2522 & 3670016) | (234881024 & i2622) | (1879048192 & i2622), (i2722 & 112) | (i2722 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
+        m1996SelectableChipu0RnIRE(z, modifier2, obj, z6, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i13), function24, null, function25, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, (i15 & 14) | 12582912 | ((i15 >> 6) & 112) | (i2522 & 896) | ((i15 >> 3) & 7168) | (57344 & i2622) | (i2522 & 3670016) | (234881024 & i2622) | (1879048192 & i2622), (i2722 & 112) | (i2722 & 14) | 27648 | ((i16 << 6) & 896) | ((i16 << 12) & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -3189,7 +3189,7 @@ public final class ChipKt {
                             obj8 = companion;
                             i15 = i23;
                             i14 = 6;
-                            selectableChipElevation2 = FilterChipDefaults.INSTANCE.m2220elevatedFilterChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                            selectableChipElevation2 = FilterChipDefaults.INSTANCE.m2230elevatedFilterChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                             i16 = i25 & (-1879048193);
                         } else {
                             obj8 = companion;
@@ -3254,7 +3254,7 @@ public final class ChipKt {
                     int i28 = i16 << 6;
                     int i29 = i17 | (i16 & 14) | ((i16 >> 6) & 112) | (i27 & 896) | ((i16 >> 3) & 7168) | (57344 & i28) | (i27 & 3670016) | (234881024 & i28) | (1879048192 & i28);
                     int i30 = i16 >> 24;
-                    m1986SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i29, (i30 & 112) | (i30 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
+                    m1996SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i29, (i30 & 112) | (i30 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -3345,7 +3345,7 @@ public final class ChipKt {
             int i282 = i16 << 6;
             int i292 = i17 | (i16 & 14) | ((i16 >> 6) & 112) | (i272 & 896) | ((i16 >> 3) & 7168) | (57344 & i282) | (i272 & 3670016) | (234881024 & i282) | (1879048192 & i282);
             int i302 = i16 >> 24;
-            m1986SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i292, (i302 & 112) | (i302 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
+            m1996SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i292, (i302 & 112) | (i302 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -3418,7 +3418,7 @@ public final class ChipKt {
         int i2822 = i16 << 6;
         int i2922 = i17 | (i16 & 14) | ((i16 >> 6) & 112) | (i2722 & 896) | ((i16 >> 3) & 7168) | (57344 & i2822) | (i2722 & 3670016) | (234881024 & i2822) | (1879048192 & i2822);
         int i3022 = i16 >> 24;
-        m1986SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2224getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i2922, (i3022 & 112) | (i3022 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
+        m1996SelectableChipu0RnIRE(z, modifier2, obj, z4, obj2, TypographyKt.getValue(FilterChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i14), function24, null, function25, shape3, obj7, selectableChipElevation3, borderStroke2, FilterChipDefaults.INSTANCE.m2234getHeightD9Ej5fM(), FilterChipPadding, mutableInteractionSource2, startRestartGroup, i2922, (i3022 & 112) | (i3022 & 14) | 27648 | ((i15 << 6) & 896) | ((i15 << 12) & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -3684,7 +3684,7 @@ public final class ChipKt {
                                 modifier = companion;
                                 i15 = 6;
                                 i16 = i12;
-                                selectableChipElevation2 = InputChipDefaults.INSTANCE.m2277inputChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                selectableChipElevation2 = InputChipDefaults.INSTANCE.m2287inputChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 i17 = i26 & (-15);
                             } else {
                                 modifier = companion;
@@ -3695,7 +3695,7 @@ public final class ChipKt {
                             }
                             boolean z9 = z8;
                             if ((i3 & 2048) == 0) {
-                                borderStroke2 = InputChipDefaults.INSTANCE.m2275inputChipBorder_7El2pE(z9, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i27 >> 12) & 14) | 100663296 | ((i27 << 3) & 112), 252);
+                                borderStroke2 = InputChipDefaults.INSTANCE.m2285inputChipBorder_7El2pE(z9, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i27 >> 12) & 14) | 100663296 | ((i27 << 3) & 112), 252);
                                 i17 &= -113;
                             } else {
                                 borderStroke2 = borderStroke;
@@ -3822,15 +3822,15 @@ public final class ChipKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, 1618257738, "C661@31963L8:Chip.kt#uh7d8r");
@@ -3859,7 +3859,7 @@ public final class ChipKt {
                         int i29 = (i18 & 14) | ((i18 >> 6) & 112);
                         int i30 = i18 << 3;
                         int i31 = i17 << 3;
-                        m1986SelectableChipu0RnIRE(z, modifier3, obj, z5, function2, value2, function25, composableLambda2, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2273getHeightD9Ej5fM(), inputChipPadding(composableLambda2 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i29 | (i30 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i30) | (234881024 & i30) | (i30 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i31 & 112) | (i31 & 896) | ((i17 << 9) & 458752));
+                        m1996SelectableChipu0RnIRE(z, modifier3, obj, z5, function2, value2, function25, composableLambda2, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2283getHeightD9Ej5fM(), inputChipPadding(composableLambda2 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i29 | (i30 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i30) | (234881024 & i30) | (i30 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i31 & 112) | (i31 & 896) | ((i17 << 9) & 458752));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -3981,7 +3981,7 @@ public final class ChipKt {
                 int i292 = (i18 & 14) | ((i18 >> 6) & 112);
                 int i302 = i18 << 3;
                 int i312 = i17 << 3;
-                m1986SelectableChipu0RnIRE(z, modifier32, obj, z5, function2, value22, function25, composableLambda22, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2273getHeightD9Ej5fM(), inputChipPadding(composableLambda22 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i292 | (i302 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i302) | (234881024 & i302) | (i302 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i312 & 112) | (i312 & 896) | ((i17 << 9) & 458752));
+                m1996SelectableChipu0RnIRE(z, modifier32, obj, z5, function2, value22, function25, composableLambda22, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2283getHeightD9Ej5fM(), inputChipPadding(composableLambda22 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i292 | (i302 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i302) | (234881024 & i302) | (i302 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i312 & 112) | (i312 & 896) | ((i17 << 9) & 458752));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
@@ -4073,7 +4073,7 @@ public final class ChipKt {
             int i2922 = (i18 & 14) | ((i18 >> 6) & 112);
             int i3022 = i18 << 3;
             int i3122 = i17 << 3;
-            m1986SelectableChipu0RnIRE(z, modifier322, obj, z5, function2, value222, function25, composableLambda222, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2273getHeightD9Ej5fM(), inputChipPadding(composableLambda222 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i2922 | (i3022 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i3022) | (234881024 & i3022) | (i3022 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i3122 & 112) | (i3122 & 896) | ((i17 << 9) & 458752));
+            m1996SelectableChipu0RnIRE(z, modifier322, obj, z5, function2, value222, function25, composableLambda222, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2283getHeightD9Ej5fM(), inputChipPadding(composableLambda222 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i2922 | (i3022 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i3022) | (234881024 & i3022) | (i3022 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i3122 & 112) | (i3122 & 896) | ((i17 << 9) & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -4168,7 +4168,7 @@ public final class ChipKt {
         int i29222 = (i18 & 14) | ((i18 >> 6) & 112);
         int i30222 = i18 << 3;
         int i31222 = i17 << 3;
-        m1986SelectableChipu0RnIRE(z, modifier3222, obj, z5, function2, value2222, function25, composableLambda2222, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2273getHeightD9Ej5fM(), inputChipPadding(composableLambda2222 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i29222 | (i30222 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i30222) | (234881024 & i30222) | (i30222 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i31222 & 112) | (i31222 & 896) | ((i17 << 9) & 458752));
+        m1996SelectableChipu0RnIRE(z, modifier3222, obj, z5, function2, value2222, function25, composableLambda2222, function26, shape3, selectableChipColors3, selectableChipElevation3, borderStroke3, InputChipDefaults.INSTANCE.m2283getHeightD9Ej5fM(), inputChipPadding(composableLambda2222 == null ? z6 : false, function25 == null ? z6 : false, function26 != null ? z6 : false), mutableInteractionSource2, startRestartGroup, i29222 | (i30222 & 896) | ((i18 >> 3) & 7168) | ((i18 << 6) & 57344) | (3670016 & i30222) | (234881024 & i30222) | (i30222 & 1879048192), ((i18 >> 27) & 14) | 3072 | (i31222 & 112) | (i31222 & 896) | ((i17 << 9) & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -4396,7 +4396,7 @@ public final class ChipKt {
                                 if ((i2 & 128) != 0) {
                                     i20 &= -29360129;
                                     i10 = 6;
-                                    obj5 = SuggestionChipDefaults.INSTANCE.m2653suggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                    obj5 = SuggestionChipDefaults.INSTANCE.m2663suggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 } else {
                                     i10 = 6;
                                 }
@@ -4404,7 +4404,7 @@ public final class ChipKt {
                                     modifier2 = companion;
                                     i11 = i10;
                                     z3 = z6;
-                                    borderStroke2 = SuggestionChipDefaults.INSTANCE.m2651suggestionChipBorderh1eTWw(z3, 0L, 0L, 0.0f, startRestartGroup, ((i20 >> 9) & 14) | 24576, 14);
+                                    borderStroke2 = SuggestionChipDefaults.INSTANCE.m2661suggestionChipBorderh1eTWw(z3, 0L, 0L, 0.0f, startRestartGroup, ((i20 >> 9) & 14) | 24576, 14);
                                     i12 = i20 & (-234881025);
                                 } else {
                                     modifier2 = companion;
@@ -4464,7 +4464,7 @@ public final class ChipKt {
                             ChipColors chipColors5 = chipColors2;
                             Function2<? super Composer, ? super Integer, Unit> function25 = obj;
                             Modifier modifier3 = obj2;
-                            m1984ChipnkUnTEs(modifier3, function02, z4, function25, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1975labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors5, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24, (i25 & 112) | (i25 & 14) | 3456 | ((i13 >> 15) & 57344));
+                            m1994ChipnkUnTEs(modifier3, function02, z4, function25, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1985labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors5, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24, (i25 & 112) | (i25 & 14) | 3456 | ((i13 >> 15) & 57344));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -4553,7 +4553,7 @@ public final class ChipKt {
                     ChipColors chipColors52 = chipColors2;
                     Function2<? super Composer, ? super Integer, Unit> function252 = obj;
                     Modifier modifier32 = obj2;
-                    m1984ChipnkUnTEs(modifier32, function02, z4, function252, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1975labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors52, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242, (i252 & 112) | (i252 & 14) | 3456 | ((i13 >> 15) & 57344));
+                    m1994ChipnkUnTEs(modifier32, function02, z4, function252, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1985labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors52, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242, (i252 & 112) | (i252 & 14) | 3456 | ((i13 >> 15) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
@@ -4622,7 +4622,7 @@ public final class ChipKt {
                 ChipColors chipColors522 = chipColors2;
                 Function2<? super Composer, ? super Integer, Unit> function2522 = obj;
                 Modifier modifier322 = obj2;
-                m1984ChipnkUnTEs(modifier322, function02, z4, function2522, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1975labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors522, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422, (i2522 & 112) | (i2522 & 14) | 3456 | ((i13 >> 15) & 57344));
+                m1994ChipnkUnTEs(modifier322, function02, z4, function2522, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1985labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors522, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422, (i2522 & 112) | (i2522 & 14) | 3456 | ((i13 >> 15) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
@@ -4695,7 +4695,7 @@ public final class ChipKt {
             ChipColors chipColors5222 = chipColors2;
             Function2<? super Composer, ? super Integer, Unit> function25222 = obj;
             Modifier modifier3222 = obj2;
-            m1984ChipnkUnTEs(modifier3222, function02, z4, function25222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1975labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors5222, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24222, (i25222 & 112) | (i25222 & 14) | 3456 | ((i13 >> 15) & 57344));
+            m1994ChipnkUnTEs(modifier3222, function02, z4, function25222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1985labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors5222, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24222, (i25222 & 112) | (i25222 & 14) | 3456 | ((i13 >> 15) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -4772,7 +4772,7 @@ public final class ChipKt {
         ChipColors chipColors52222 = chipColors2;
         Function2<? super Composer, ? super Integer, Unit> function252222 = obj;
         Modifier modifier32222 = obj2;
-        m1984ChipnkUnTEs(modifier32222, function02, z4, function252222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1975labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors52222, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242222, (i252222 & 112) | (i252222 & 14) | 3456 | ((i13 >> 15) & 57344));
+        m1994ChipnkUnTEs(modifier32222, function02, z4, function252222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i11), chipColors2.m1985labelColorvNxB06k$material3_release(z4), function23, null, shape3, chipColors52222, chipElevation2, borderStroke3, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242222, (i252222 & 112) | (i252222 & 14) | 3456 | ((i13 >> 15) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -5001,14 +5001,14 @@ public final class ChipKt {
                                     composer2 = startRestartGroup;
                                     i18 &= -29360129;
                                     i10 = 6;
-                                    obj6 = SuggestionChipDefaults.INSTANCE.m2653suggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
+                                    obj6 = SuggestionChipDefaults.INSTANCE.m2663suggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
                                 } else {
                                     i10 = 6;
                                     composer2 = startRestartGroup;
                                 }
                                 if ((i2 & 256) != 0) {
                                     startRestartGroup = composer2;
-                                    chipBorder2 = SuggestionChipDefaults.INSTANCE.m2650suggestionChipBorderd_3_b6Q(0L, 0L, 0.0f, startRestartGroup, 3072, 7);
+                                    chipBorder2 = SuggestionChipDefaults.INSTANCE.m2660suggestionChipBorderd_3_b6Q(0L, 0L, 0.0f, startRestartGroup, 3072, 7);
                                     i18 &= -234881025;
                                 } else {
                                     startRestartGroup = composer2;
@@ -5063,7 +5063,7 @@ public final class ChipKt {
                                 ComposerKt.traceEventStart(170629701, i11, -1, "androidx.compose.material3.SuggestionChip (Chip.kt:830)");
                             }
                             TextStyle value = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i10);
-                            long m1975labelColorvNxB06k$material3_release = chipColors3.m1975labelColorvNxB06k$material3_release(z3);
+                            long m1985labelColorvNxB06k$material3_release = chipColors3.m1985labelColorvNxB06k$material3_release(z3);
                             startRestartGroup.startReplaceGroup(1248043208);
                             ComposerKt.sourceInformation(startRestartGroup, "842@40163L21");
                             State<BorderStroke> borderStroke$material3_release = chipBorder2 == null ? null : chipBorder2.borderStroke$material3_release(z3, startRestartGroup, ((i11 >> 9) & 14) | ((i11 >> 21) & 112));
@@ -5076,7 +5076,7 @@ public final class ChipKt {
                             composer3 = startRestartGroup;
                             Function2 function25 = obj;
                             Modifier modifier2 = obj2;
-                            m1984ChipnkUnTEs(modifier2, function02, z3, function25, value, m1975labelColorvNxB06k$material3_release, function23, null, shape3, chipColors5, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i20 | (234881024 & i21) | (i21 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
+                            m1994ChipnkUnTEs(modifier2, function02, z3, function25, value, m1985labelColorvNxB06k$material3_release, function23, null, shape3, chipColors5, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i20 | (234881024 & i21) | (i21 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -5158,7 +5158,7 @@ public final class ChipKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     TextStyle value3 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i10);
-                    long m1975labelColorvNxB06k$material3_release2 = chipColors3.m1975labelColorvNxB06k$material3_release(z3);
+                    long m1985labelColorvNxB06k$material3_release2 = chipColors3.m1985labelColorvNxB06k$material3_release(z3);
                     startRestartGroup.startReplaceGroup(1248043208);
                     ComposerKt.sourceInformation(startRestartGroup, "842@40163L21");
                     if (chipBorder2 == null) {
@@ -5173,7 +5173,7 @@ public final class ChipKt {
                     composer3 = startRestartGroup;
                     Function2 function252 = obj;
                     Modifier modifier22 = obj2;
-                    m1984ChipnkUnTEs(modifier22, function02, z3, function252, value3, m1975labelColorvNxB06k$material3_release2, function23, null, shape3, chipColors52, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i202 | (234881024 & i212) | (i212 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
+                    m1994ChipnkUnTEs(modifier22, function02, z3, function252, value3, m1985labelColorvNxB06k$material3_release2, function23, null, shape3, chipColors52, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i202 | (234881024 & i212) | (i212 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     chipBorder3 = chipBorder2;
@@ -5235,7 +5235,7 @@ public final class ChipKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 TextStyle value32 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i10);
-                long m1975labelColorvNxB06k$material3_release22 = chipColors3.m1975labelColorvNxB06k$material3_release(z3);
+                long m1985labelColorvNxB06k$material3_release22 = chipColors3.m1985labelColorvNxB06k$material3_release(z3);
                 startRestartGroup.startReplaceGroup(1248043208);
                 ComposerKt.sourceInformation(startRestartGroup, "842@40163L21");
                 if (chipBorder2 == null) {
@@ -5250,7 +5250,7 @@ public final class ChipKt {
                 composer3 = startRestartGroup;
                 Function2 function2522 = obj;
                 Modifier modifier222 = obj2;
-                m1984ChipnkUnTEs(modifier222, function02, z3, function2522, value32, m1975labelColorvNxB06k$material3_release22, function23, null, shape3, chipColors522, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i2022 | (234881024 & i2122) | (i2122 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
+                m1994ChipnkUnTEs(modifier222, function02, z3, function2522, value32, m1985labelColorvNxB06k$material3_release22, function23, null, shape3, chipColors522, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i2022 | (234881024 & i2122) | (i2122 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 chipBorder3 = chipBorder2;
@@ -5316,7 +5316,7 @@ public final class ChipKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             TextStyle value322 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i10);
-            long m1975labelColorvNxB06k$material3_release222 = chipColors3.m1975labelColorvNxB06k$material3_release(z3);
+            long m1985labelColorvNxB06k$material3_release222 = chipColors3.m1985labelColorvNxB06k$material3_release(z3);
             startRestartGroup.startReplaceGroup(1248043208);
             ComposerKt.sourceInformation(startRestartGroup, "842@40163L21");
             if (chipBorder2 == null) {
@@ -5331,7 +5331,7 @@ public final class ChipKt {
             composer3 = startRestartGroup;
             Function2 function25222 = obj;
             Modifier modifier2222 = obj2;
-            m1984ChipnkUnTEs(modifier2222, function02, z3, function25222, value322, m1975labelColorvNxB06k$material3_release222, function23, null, shape3, chipColors5222, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i20222 | (234881024 & i21222) | (i21222 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
+            m1994ChipnkUnTEs(modifier2222, function02, z3, function25222, value322, m1985labelColorvNxB06k$material3_release222, function23, null, shape3, chipColors5222, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i20222 | (234881024 & i21222) | (i21222 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             chipBorder3 = chipBorder2;
@@ -5401,7 +5401,7 @@ public final class ChipKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         TextStyle value3222 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i10);
-        long m1975labelColorvNxB06k$material3_release2222 = chipColors3.m1975labelColorvNxB06k$material3_release(z3);
+        long m1985labelColorvNxB06k$material3_release2222 = chipColors3.m1985labelColorvNxB06k$material3_release(z3);
         startRestartGroup.startReplaceGroup(1248043208);
         ComposerKt.sourceInformation(startRestartGroup, "842@40163L21");
         if (chipBorder2 == null) {
@@ -5416,7 +5416,7 @@ public final class ChipKt {
         composer3 = startRestartGroup;
         Function2 function252222 = obj;
         Modifier modifier22222 = obj2;
-        m1984ChipnkUnTEs(modifier22222, function02, z3, function252222, value3222, m1975labelColorvNxB06k$material3_release2222, function23, null, shape3, chipColors52222, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i202222 | (234881024 & i212222) | (i212222 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
+        m1994ChipnkUnTEs(modifier22222, function02, z3, function252222, value3222, m1985labelColorvNxB06k$material3_release2222, function23, null, shape3, chipColors52222, chipElevation2, value2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, composer3, i202222 | (234881024 & i212222) | (i212222 & 1879048192), ((i11 >> 21) & 14) | 3456 | ((i11 >> 15) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         chipBorder3 = chipBorder2;
@@ -5637,7 +5637,7 @@ public final class ChipKt {
                                     if ((i2 & 128) == 0) {
                                         i19 &= -29360129;
                                         i12 = 6;
-                                        obj5 = SuggestionChipDefaults.INSTANCE.m2647elevatedSuggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                        obj5 = SuggestionChipDefaults.INSTANCE.m2657elevatedSuggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                     } else {
                                         i12 = 6;
                                     }
@@ -5688,7 +5688,7 @@ public final class ChipKt {
                                 ChipColors chipColors5 = chipColors2;
                                 Function2<? super Composer, ? super Integer, Unit> function25 = obj;
                                 Modifier modifier2 = companion;
-                                m1984ChipnkUnTEs(modifier2, function02, z3, function25, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors5, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24, (i25 & 112) | (i25 & 14) | 3456 | ((i13 >> 15) & 57344));
+                                m1994ChipnkUnTEs(modifier2, function02, z3, function25, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors5, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24, (i25 & 112) | (i25 & 14) | 3456 | ((i13 >> 15) & 57344));
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -5777,7 +5777,7 @@ public final class ChipKt {
                         ChipColors chipColors52 = chipColors2;
                         Function2<? super Composer, ? super Integer, Unit> function252 = obj;
                         Modifier modifier22 = companion;
-                        m1984ChipnkUnTEs(modifier22, function02, z3, function252, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors52, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242, (i252 & 112) | (i252 & 14) | 3456 | ((i13 >> 15) & 57344));
+                        m1994ChipnkUnTEs(modifier22, function02, z3, function252, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors52, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242, (i252 & 112) | (i252 & 14) | 3456 | ((i13 >> 15) & 57344));
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         composer2 = startRestartGroup;
@@ -5838,7 +5838,7 @@ public final class ChipKt {
                     ChipColors chipColors522 = chipColors2;
                     Function2<? super Composer, ? super Integer, Unit> function2522 = obj;
                     Modifier modifier222 = companion;
-                    m1984ChipnkUnTEs(modifier222, function02, z3, function2522, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors522, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422, (i2522 & 112) | (i2522 & 14) | 3456 | ((i13 >> 15) & 57344));
+                    m1994ChipnkUnTEs(modifier222, function02, z3, function2522, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors522, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422, (i2522 & 112) | (i2522 & 14) | 3456 | ((i13 >> 15) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
@@ -5909,7 +5909,7 @@ public final class ChipKt {
                 ChipColors chipColors5222 = chipColors2;
                 Function2<? super Composer, ? super Integer, Unit> function25222 = obj;
                 Modifier modifier2222 = companion;
-                m1984ChipnkUnTEs(modifier2222, function02, z3, function25222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors5222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24222, (i25222 & 112) | (i25222 & 14) | 3456 | ((i13 >> 15) & 57344));
+                m1994ChipnkUnTEs(modifier2222, function02, z3, function25222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors5222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i24222, (i25222 & 112) | (i25222 & 14) | 3456 | ((i13 >> 15) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
@@ -5984,7 +5984,7 @@ public final class ChipKt {
             ChipColors chipColors52222 = chipColors2;
             Function2<? super Composer, ? super Integer, Unit> function252222 = obj;
             Modifier modifier22222 = companion;
-            m1984ChipnkUnTEs(modifier22222, function02, z3, function252222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors52222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242222, (i252222 & 112) | (i252222 & 14) | 3456 | ((i13 >> 15) & 57344));
+            m1994ChipnkUnTEs(modifier22222, function02, z3, function252222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors52222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i242222, (i252222 & 112) | (i252222 & 14) | 3456 | ((i13 >> 15) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
@@ -6063,7 +6063,7 @@ public final class ChipKt {
         ChipColors chipColors522222 = chipColors2;
         Function2<? super Composer, ? super Integer, Unit> function2522222 = obj;
         Modifier modifier222222 = companion;
-        m1984ChipnkUnTEs(modifier222222, function02, z3, function2522222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1975labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors522222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422222, (i2522222 & 112) | (i2522222 & 14) | 3456 | ((i13 >> 15) & 57344));
+        m1994ChipnkUnTEs(modifier222222, function02, z3, function2522222, TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12), chipColors2.m1985labelColorvNxB06k$material3_release(z3), function23, null, shape3, chipColors522222, chipElevation2, borderStroke2, SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM(), SuggestionChipPadding, mutableInteractionSource2, startRestartGroup, i2422222, (i2522222 & 112) | (i2522222 & 14) | 3456 | ((i13 >> 15) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
@@ -6289,7 +6289,7 @@ public final class ChipKt {
                                     if ((i2 & 128) == 0) {
                                         i19 &= -29360129;
                                         i12 = 6;
-                                        obj5 = SuggestionChipDefaults.INSTANCE.m2647elevatedSuggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                        obj5 = SuggestionChipDefaults.INSTANCE.m2657elevatedSuggestionChipElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                     } else {
                                         i12 = 6;
                                     }
@@ -6338,8 +6338,8 @@ public final class ChipKt {
                                     ComposerKt.traceEventStart(1668751803, i13, -1, "androidx.compose.material3.ElevatedSuggestionChip (Chip.kt:986)");
                                 }
                                 TextStyle value = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                                long m1975labelColorvNxB06k$material3_release = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-                                float m2648getHeightD9Ej5fM = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+                                long m1985labelColorvNxB06k$material3_release = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+                                float m2658getHeightD9Ej5fM = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
                                 PaddingValues paddingValues = SuggestionChipPadding;
                                 startRestartGroup.startReplaceGroup(2121812626);
                                 ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6352,7 +6352,7 @@ public final class ChipKt {
                                 ChipColors chipColors5 = chipColors2;
                                 Function2 function25 = obj;
                                 Modifier modifier2 = companion;
-                                m1984ChipnkUnTEs(modifier2, function02, z3, function25, value, m1975labelColorvNxB06k$material3_release, function23, null, shape3, chipColors5, chipElevation2, value2, m2648getHeightD9Ej5fM, paddingValues, mutableInteractionSource2, startRestartGroup, i21 | (234881024 & i22) | (i22 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+                                m1994ChipnkUnTEs(modifier2, function02, z3, function25, value, m1985labelColorvNxB06k$material3_release, function23, null, shape3, chipColors5, chipElevation2, value2, m2658getHeightD9Ej5fM, paddingValues, mutableInteractionSource2, startRestartGroup, i21 | (234881024 & i22) | (i22 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -6435,8 +6435,8 @@ public final class ChipKt {
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         TextStyle value3 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                        long m1975labelColorvNxB06k$material3_release2 = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-                        float m2648getHeightD9Ej5fM2 = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+                        long m1985labelColorvNxB06k$material3_release2 = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+                        float m2658getHeightD9Ej5fM2 = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
                         PaddingValues paddingValues2 = SuggestionChipPadding;
                         startRestartGroup.startReplaceGroup(2121812626);
                         ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6451,7 +6451,7 @@ public final class ChipKt {
                         ChipColors chipColors52 = chipColors2;
                         Function2 function252 = obj;
                         Modifier modifier22 = companion;
-                        m1984ChipnkUnTEs(modifier22, function02, z3, function252, value3, m1975labelColorvNxB06k$material3_release2, function23, null, shape3, chipColors52, chipElevation2, value2, m2648getHeightD9Ej5fM2, paddingValues2, mutableInteractionSource2, startRestartGroup, i212 | (234881024 & i222) | (i222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+                        m1994ChipnkUnTEs(modifier22, function02, z3, function252, value3, m1985labelColorvNxB06k$material3_release2, function23, null, shape3, chipColors52, chipElevation2, value2, m2658getHeightD9Ej5fM2, paddingValues2, mutableInteractionSource2, startRestartGroup, i212 | (234881024 & i222) | (i222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         chipBorder3 = chipBorder2;
@@ -6506,8 +6506,8 @@ public final class ChipKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     TextStyle value32 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                    long m1975labelColorvNxB06k$material3_release22 = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-                    float m2648getHeightD9Ej5fM22 = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+                    long m1985labelColorvNxB06k$material3_release22 = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+                    float m2658getHeightD9Ej5fM22 = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
                     PaddingValues paddingValues22 = SuggestionChipPadding;
                     startRestartGroup.startReplaceGroup(2121812626);
                     ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6522,7 +6522,7 @@ public final class ChipKt {
                     ChipColors chipColors522 = chipColors2;
                     Function2 function2522 = obj;
                     Modifier modifier222 = companion;
-                    m1984ChipnkUnTEs(modifier222, function02, z3, function2522, value32, m1975labelColorvNxB06k$material3_release22, function23, null, shape3, chipColors522, chipElevation2, value2, m2648getHeightD9Ej5fM22, paddingValues22, mutableInteractionSource2, startRestartGroup, i2122 | (234881024 & i2222) | (i2222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+                    m1994ChipnkUnTEs(modifier222, function02, z3, function2522, value32, m1985labelColorvNxB06k$material3_release22, function23, null, shape3, chipColors522, chipElevation2, value2, m2658getHeightD9Ej5fM22, paddingValues22, mutableInteractionSource2, startRestartGroup, i2122 | (234881024 & i2222) | (i2222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     chipBorder3 = chipBorder2;
@@ -6587,8 +6587,8 @@ public final class ChipKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 TextStyle value322 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-                long m1975labelColorvNxB06k$material3_release222 = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-                float m2648getHeightD9Ej5fM222 = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+                long m1985labelColorvNxB06k$material3_release222 = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+                float m2658getHeightD9Ej5fM222 = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
                 PaddingValues paddingValues222 = SuggestionChipPadding;
                 startRestartGroup.startReplaceGroup(2121812626);
                 ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6603,7 +6603,7 @@ public final class ChipKt {
                 ChipColors chipColors5222 = chipColors2;
                 Function2 function25222 = obj;
                 Modifier modifier2222 = companion;
-                m1984ChipnkUnTEs(modifier2222, function02, z3, function25222, value322, m1975labelColorvNxB06k$material3_release222, function23, null, shape3, chipColors5222, chipElevation2, value2, m2648getHeightD9Ej5fM222, paddingValues222, mutableInteractionSource2, startRestartGroup, i21222 | (234881024 & i22222) | (i22222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+                m1994ChipnkUnTEs(modifier2222, function02, z3, function25222, value322, m1985labelColorvNxB06k$material3_release222, function23, null, shape3, chipColors5222, chipElevation2, value2, m2658getHeightD9Ej5fM222, paddingValues222, mutableInteractionSource2, startRestartGroup, i21222 | (234881024 & i22222) | (i22222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 chipBorder3 = chipBorder2;
@@ -6672,8 +6672,8 @@ public final class ChipKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             TextStyle value3222 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-            long m1975labelColorvNxB06k$material3_release2222 = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-            float m2648getHeightD9Ej5fM2222 = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+            long m1985labelColorvNxB06k$material3_release2222 = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+            float m2658getHeightD9Ej5fM2222 = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
             PaddingValues paddingValues2222 = SuggestionChipPadding;
             startRestartGroup.startReplaceGroup(2121812626);
             ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6688,7 +6688,7 @@ public final class ChipKt {
             ChipColors chipColors52222 = chipColors2;
             Function2 function252222 = obj;
             Modifier modifier22222 = companion;
-            m1984ChipnkUnTEs(modifier22222, function02, z3, function252222, value3222, m1975labelColorvNxB06k$material3_release2222, function23, null, shape3, chipColors52222, chipElevation2, value2, m2648getHeightD9Ej5fM2222, paddingValues2222, mutableInteractionSource2, startRestartGroup, i212222 | (234881024 & i222222) | (i222222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+            m1994ChipnkUnTEs(modifier22222, function02, z3, function252222, value3222, m1985labelColorvNxB06k$material3_release2222, function23, null, shape3, chipColors52222, chipElevation2, value2, m2658getHeightD9Ej5fM2222, paddingValues2222, mutableInteractionSource2, startRestartGroup, i212222 | (234881024 & i222222) | (i222222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
             if (ComposerKt.isTraceInProgress()) {
             }
             chipBorder3 = chipBorder2;
@@ -6761,8 +6761,8 @@ public final class ChipKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         TextStyle value32222 = TypographyKt.getValue(SuggestionChipTokens.INSTANCE.getLabelTextFont(), startRestartGroup, i12);
-        long m1975labelColorvNxB06k$material3_release22222 = chipColors2.m1975labelColorvNxB06k$material3_release(z3);
-        float m2648getHeightD9Ej5fM22222 = SuggestionChipDefaults.INSTANCE.m2648getHeightD9Ej5fM();
+        long m1985labelColorvNxB06k$material3_release22222 = chipColors2.m1985labelColorvNxB06k$material3_release(z3);
+        float m2658getHeightD9Ej5fM22222 = SuggestionChipDefaults.INSTANCE.m2658getHeightD9Ej5fM();
         PaddingValues paddingValues22222 = SuggestionChipPadding;
         startRestartGroup.startReplaceGroup(2121812626);
         ComposerKt.sourceInformation(startRestartGroup, "1000@47755L21");
@@ -6777,7 +6777,7 @@ public final class ChipKt {
         ChipColors chipColors522222 = chipColors2;
         Function2 function2522222 = obj;
         Modifier modifier222222 = companion;
-        m1984ChipnkUnTEs(modifier222222, function02, z3, function2522222, value32222, m1975labelColorvNxB06k$material3_release22222, function23, null, shape3, chipColors522222, chipElevation2, value2, m2648getHeightD9Ej5fM22222, paddingValues22222, mutableInteractionSource2, startRestartGroup, i2122222 | (234881024 & i2222222) | (i2222222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
+        m1994ChipnkUnTEs(modifier222222, function02, z3, function2522222, value32222, m1985labelColorvNxB06k$material3_release22222, function23, null, shape3, chipColors522222, chipElevation2, value2, m2658getHeightD9Ej5fM22222, paddingValues22222, mutableInteractionSource2, startRestartGroup, i2122222 | (234881024 & i2222222) | (i2222222 & 1879048192), ((i13 >> 21) & 14) | 3456 | ((i13 >> 15) & 57344));
         if (ComposerKt.isTraceInProgress()) {
         }
         chipBorder3 = chipBorder2;
@@ -6796,7 +6796,7 @@ public final class ChipKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: Chip-nkUnTEs  reason: not valid java name */
-    public static final void m1984ChipnkUnTEs(final Modifier modifier, final Function0<Unit> function0, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final long j, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Shape shape, final ChipColors chipColors, final ChipElevation chipElevation, final BorderStroke borderStroke, final float f, final PaddingValues paddingValues, final MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
+    public static final void m1994ChipnkUnTEs(final Modifier modifier, final Function0<Unit> function0, final boolean z, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final long j, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Shape shape, final ChipColors chipColors, final ChipElevation chipElevation, final BorderStroke borderStroke, final float f, final PaddingValues paddingValues, final MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -6883,10 +6883,10 @@ public final class ChipKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
+                    SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6474getButtono7Vup1c());
                 }
             }, 1, null);
-            long m1965containerColorvNxB06k$material3_release = chipColors.m1965containerColorvNxB06k$material3_release(z);
+            long m1975containerColorvNxB06k$material3_release = chipColors.m1975containerColorvNxB06k$material3_release(z);
             startRestartGroup.startReplaceGroup(1985624506);
             ComposerKt.sourceInformation(startRestartGroup, "1972@97093L43");
             State<Dp> shadowElevation$material3_release = chipElevation != null ? chipElevation.shadowElevation$material3_release(z, mutableInteractionSource2, startRestartGroup, ((i3 >> 6) & 14) | ((i5 << 6) & 896)) : null;
@@ -6894,7 +6894,7 @@ public final class ChipKt {
             composer2 = startRestartGroup;
             int i6 = i3;
             final Function2<? super Composer, ? super Integer, Unit> function24 = obj;
-            SurfaceKt.m2657Surfaceo_FOJdg(function0, semantics$default, z, shape, m1965containerColorvNxB06k$material3_release, 0L, 0.0f, shadowElevation$material3_release != null ? shadowElevation$material3_release.getValue().m7265unboximpl() : Dp.m7251constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1985962652, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$Chip$2
+            SurfaceKt.m2667Surfaceo_FOJdg(function0, semantics$default, z, shape, m1975containerColorvNxB06k$material3_release, 0L, 0.0f, shadowElevation$material3_release != null ? shadowElevation$material3_release.getValue().m7278unboximpl() : Dp.m7264constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-1985962652, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$Chip$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -6914,7 +6914,7 @@ public final class ChipKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1985962652, i7, -1, "androidx.compose.material3.Chip.<anonymous> (Chip.kt:1976)");
                         }
-                        ChipKt.m1985ChipContentfe0OD_I(function24, textStyle, j, function22, null, function23, chipColors.m1976leadingIconContentColorvNxB06k$material3_release(z), chipColors.m1977trailingIconContentColorvNxB06k$material3_release(z), f, paddingValues, composer3, 24576);
+                        ChipKt.m1995ChipContentfe0OD_I(function24, textStyle, j, function22, null, function23, chipColors.m1986leadingIconContentColorvNxB06k$material3_release(z), chipColors.m1987trailingIconContentColorvNxB06k$material3_release(z), f, paddingValues, composer3, 24576);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -6948,7 +6948,7 @@ public final class ChipKt {
                 }
 
                 public final void invoke(Composer composer3, int i7) {
-                    ChipKt.m1984ChipnkUnTEs(Modifier.this, function0, z, function2, textStyle, j, function22, function23, shape, chipColors, chipElevation, borderStroke, f, paddingValues, mutableInteractionSource, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
+                    ChipKt.m1994ChipnkUnTEs(Modifier.this, function0, z, function2, textStyle, j, function22, function23, shape, chipColors, chipElevation, borderStroke, f, paddingValues, mutableInteractionSource, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
                 }
             });
         }
@@ -6956,7 +6956,7 @@ public final class ChipKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: SelectableChip-u0RnIRE  reason: not valid java name */
-    public static final void m1986SelectableChipu0RnIRE(final boolean z, final Modifier modifier, final Function0<Unit> function0, final boolean z2, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Shape shape, final SelectableChipColors selectableChipColors, final SelectableChipElevation selectableChipElevation, final BorderStroke borderStroke, final float f, final PaddingValues paddingValues, final MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
+    public static final void m1996SelectableChipu0RnIRE(final boolean z, final Modifier modifier, final Function0<Unit> function0, final boolean z2, final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final Shape shape, final SelectableChipColors selectableChipColors, final SelectableChipElevation selectableChipElevation, final BorderStroke borderStroke, final float f, final PaddingValues paddingValues, final MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         int i3;
         int i4;
         MutableInteractionSource mutableInteractionSource2;
@@ -7045,16 +7045,16 @@ public final class ChipKt {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6463getCheckboxo7Vup1c());
+                    SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6476getCheckboxo7Vup1c());
                 }
             }, 1, null);
-            long m2570containerColorWaAFU9c$material3_release = selectableChipColors.m2570containerColorWaAFU9c$material3_release(z2, z);
+            long m2580containerColorWaAFU9c$material3_release = selectableChipColors.m2580containerColorWaAFU9c$material3_release(z2, z);
             startRestartGroup.startReplaceGroup(2072762384);
             ComposerKt.sourceInformation(startRestartGroup, "2020@98742L43");
             State<Dp> shadowElevation$material3_release = selectableChipElevation != null ? selectableChipElevation.shadowElevation$material3_release(z2, mutableInteractionSource2, startRestartGroup, ((i6 >> 9) & 14) | ((i5 << 3) & 896)) : null;
             startRestartGroup.endReplaceGroup();
             composer2 = startRestartGroup;
-            SurfaceKt.m2655Surfaced85dljk(z, function0, semantics$default, z2, shape, m2570containerColorWaAFU9c$material3_release, 0L, 0.0f, shadowElevation$material3_release != null ? shadowElevation$material3_release.getValue().m7265unboximpl() : Dp.m7251constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-577614814, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$SelectableChip$2
+            SurfaceKt.m2665Surfaced85dljk(z, function0, semantics$default, z2, shape, m2580containerColorWaAFU9c$material3_release, 0L, 0.0f, shadowElevation$material3_release != null ? shadowElevation$material3_release.getValue().m7278unboximpl() : Dp.m7264constructorimpl(0), borderStroke, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(-577614814, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$SelectableChip$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -7074,7 +7074,7 @@ public final class ChipKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-577614814, i7, -1, "androidx.compose.material3.SelectableChip.<anonymous> (Chip.kt:2024)");
                         }
-                        ChipKt.m1985ChipContentfe0OD_I(function2, textStyle, SelectableChipColors.this.m2572labelColorWaAFU9c$material3_release(z2, z), function22, function23, function24, SelectableChipColors.this.m2573leadingIconContentColorWaAFU9c$material3_release(z2, z), SelectableChipColors.this.m2574trailingIconContentColorWaAFU9c$material3_release(z2, z), f, paddingValues, composer3, 0);
+                        ChipKt.m1995ChipContentfe0OD_I(function2, textStyle, SelectableChipColors.this.m2582labelColorWaAFU9c$material3_release(z2, z), function22, function23, function24, SelectableChipColors.this.m2583leadingIconContentColorWaAFU9c$material3_release(z2, z), SelectableChipColors.this.m2584trailingIconContentColorWaAFU9c$material3_release(z2, z), f, paddingValues, composer3, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -7108,7 +7108,7 @@ public final class ChipKt {
                 }
 
                 public final void invoke(Composer composer3, int i7) {
-                    ChipKt.m1986SelectableChipu0RnIRE(z, modifier, function0, z2, function2, textStyle, function22, function23, function24, shape, selectableChipColors, selectableChipElevation, borderStroke, f, paddingValues, mutableInteractionSource, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
+                    ChipKt.m1996SelectableChipu0RnIRE(z, modifier, function0, z2, function2, textStyle, function22, function23, function24, shape, selectableChipColors, selectableChipElevation, borderStroke, f, paddingValues, mutableInteractionSource, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2));
                 }
             });
         }
@@ -7116,7 +7116,7 @@ public final class ChipKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ChipContent-fe0OD_I  reason: not valid java name */
-    public static final void m1985ChipContentfe0OD_I(final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, long j, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final long j2, final long j3, final float f, final PaddingValues paddingValues, Composer composer, final int i) {
+    public static final void m1995ChipContentfe0OD_I(final Function2<? super Composer, ? super Integer, Unit> function2, final TextStyle textStyle, long j, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final long j2, final long j3, final float f, final PaddingValues paddingValues, Composer composer, final int i) {
         int i2;
         long j4;
         Object obj;
@@ -7183,7 +7183,7 @@ public final class ChipKt {
             final Function2<? super Composer, ? super Integer, Unit> function26 = obj2;
             final Function2<? super Composer, ? super Integer, Unit> function27 = obj3;
             final long j6 = j5;
-            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j4)), TextKt.getLocalTextStyle().provides(textStyle)}, ComposableLambdaKt.rememberComposableLambda(1748799148, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$ChipContent$1
+            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j4)), TextKt.getLocalTextStyle().provides(textStyle)}, ComposableLambdaKt.rememberComposableLambda(1748799148, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ChipKt$ChipContent$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -7204,11 +7204,11 @@ public final class ChipKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(1748799148, i4, -1, "androidx.compose.material3.ChipContent.<anonymous> (Chip.kt:2056)");
                         }
-                        Modifier padding = PaddingKt.padding(SizeKt.m869defaultMinSizeVpY3zN4$default(Modifier.Companion, 0.0f, f, 1, null), paddingValues);
+                        Modifier padding = PaddingKt.padding(SizeKt.m879defaultMinSizeVpY3zN4$default(Modifier.Companion, 0.0f, f, 1, null), paddingValues);
                         AnonymousClass1 anonymousClass1 = new MeasurePolicy() { // from class: androidx.compose.material3.ChipKt$ChipContent$1.1
                             @Override // androidx.compose.ui.layout.MeasurePolicy
                             /* renamed from: measure-3p2s80s */
-                            public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j7) {
+                            public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j7) {
                                 Measurable measurable;
                                 Measurable measurable2;
                                 int size = list.size();
@@ -7225,9 +7225,9 @@ public final class ChipKt {
                                     i5++;
                                 }
                                 Measurable measurable3 = measurable;
-                                final Placeable mo5954measureBRTryo0 = measurable3 != null ? measurable3.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j7, 0, 0, 0, 0, 10, null)) : null;
-                                final int widthOrZero = TextFieldImplKt.widthOrZero(mo5954measureBRTryo0);
-                                final int heightOrZero = TextFieldImplKt.heightOrZero(mo5954measureBRTryo0);
+                                final Placeable mo5967measureBRTryo0 = measurable3 != null ? measurable3.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j7, 0, 0, 0, 0, 10, null)) : null;
+                                final int widthOrZero = TextFieldImplKt.widthOrZero(mo5967measureBRTryo0);
+                                final int heightOrZero = TextFieldImplKt.heightOrZero(mo5967measureBRTryo0);
                                 int size2 = list.size();
                                 int i6 = 0;
                                 while (true) {
@@ -7242,17 +7242,17 @@ public final class ChipKt {
                                     i6++;
                                 }
                                 Measurable measurable4 = measurable2;
-                                Placeable mo5954measureBRTryo02 = measurable4 != null ? measurable4.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j7, 0, 0, 0, 0, 10, null)) : null;
-                                int widthOrZero2 = TextFieldImplKt.widthOrZero(mo5954measureBRTryo02);
-                                final int heightOrZero2 = TextFieldImplKt.heightOrZero(mo5954measureBRTryo02);
+                                Placeable mo5967measureBRTryo02 = measurable4 != null ? measurable4.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j7, 0, 0, 0, 0, 10, null)) : null;
+                                int widthOrZero2 = TextFieldImplKt.widthOrZero(mo5967measureBRTryo02);
+                                final int heightOrZero2 = TextFieldImplKt.heightOrZero(mo5967measureBRTryo02);
                                 int size3 = list.size();
                                 for (int i7 = 0; i7 < size3; i7++) {
                                     Measurable measurable5 = list.get(i7);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable5), Constants.ScionAnalytics.PARAM_LABEL)) {
-                                        final Placeable mo5954measureBRTryo03 = measurable5.mo5954measureBRTryo0(ConstraintsKt.m7224offsetNN6EwU$default(j7, -(widthOrZero + widthOrZero2), 0, 2, null));
-                                        final int max = Math.max(heightOrZero, Math.max(mo5954measureBRTryo03.getHeight(), heightOrZero2));
-                                        final Placeable placeable = mo5954measureBRTryo02;
-                                        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ChipKt.ChipContent.1.1.1
+                                        final Placeable mo5967measureBRTryo03 = measurable5.mo5967measureBRTryo0(ConstraintsKt.m7237offsetNN6EwU$default(j7, -(widthOrZero + widthOrZero2), 0, 2, null));
+                                        final int max = Math.max(heightOrZero, Math.max(mo5967measureBRTryo03.getHeight(), heightOrZero2));
+                                        final Placeable placeable = mo5967measureBRTryo02;
+                                        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo03.getWidth() + widthOrZero + widthOrZero2, max, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.ChipKt.ChipContent.1.1.1
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                             {
                                                 super(1);
@@ -7274,10 +7274,10 @@ public final class ChipKt {
                                                 } else {
                                                     placementScope2 = placementScope;
                                                 }
-                                                Placeable.PlacementScope.placeRelative$default(placementScope2, mo5954measureBRTryo03, widthOrZero, 0, 0.0f, 4, null);
+                                                Placeable.PlacementScope.placeRelative$default(placementScope2, mo5967measureBRTryo03, widthOrZero, 0, 0.0f, 4, null);
                                                 Placeable placeable3 = placeable;
                                                 if (placeable3 != null) {
-                                                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable3, widthOrZero + mo5954measureBRTryo03.getWidth(), Alignment.Companion.getCenterVertically().align(heightOrZero2, max), 0.0f, 4, null);
+                                                    Placeable.PlacementScope.placeRelative$default(placementScope2, placeable3, widthOrZero + mo5967measureBRTryo03.getWidth(), Alignment.Companion.getCenterVertically().align(heightOrZero2, max), 0.0f, 4, null);
                                                 }
                                             }
                                         }, 4, null);
@@ -7307,15 +7307,15 @@ public final class ChipKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                        Updater.m3862setimpl(m3855constructorimpl, anonymousClass1, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                        Updater.m3874setimpl(m3867constructorimpl, anonymousClass1, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -1433527257, "C2075@100797L325:Chip.kt#uh7d8r");
                         composer2.startReplaceGroup(-1293169671);
                         ComposerKt.sourceInformation(composer2, "2060@100124L638");
@@ -7339,15 +7339,15 @@ public final class ChipKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer2);
-                            Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer2);
+                            Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 832670363, "C:Chip.kt#uh7d8r");
@@ -7359,7 +7359,7 @@ public final class ChipKt {
                             } else if (function29 != null) {
                                 composer2.startReplaceGroup(832788565);
                                 ComposerKt.sourceInformation(composer2, "2067@100486L198");
-                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j7)), function29, composer2, ProvidedValue.$stable);
+                                CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j7)), function29, composer2, ProvidedValue.$stable);
                                 composer2.endReplaceGroup();
                             } else {
                                 composer2.startReplaceGroup(833040347);
@@ -7375,7 +7375,7 @@ public final class ChipKt {
                         composer2.endReplaceGroup();
                         Modifier layoutId2 = LayoutIdKt.layoutId(Modifier.Companion, Constants.ScionAnalytics.PARAM_LABEL);
                         f2 = ChipKt.HorizontalElementsPadding;
-                        Modifier m833paddingVpY3zN4 = PaddingKt.m833paddingVpY3zN4(layoutId2, f2, Dp.m7251constructorimpl(0));
+                        Modifier m843paddingVpY3zN4 = PaddingKt.m843paddingVpY3zN4(layoutId2, f2, Dp.m7264constructorimpl(0));
                         Arrangement.Horizontal start = Arrangement.INSTANCE.getStart();
                         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                         ComposerKt.sourceInformationMarkerStart(composer2, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
@@ -7383,7 +7383,7 @@ public final class ChipKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap3 = composer2.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer2, m833paddingVpY3zN4);
+                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer2, m843paddingVpY3zN4);
                         Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -7395,15 +7395,15 @@ public final class ChipKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3855constructorimpl3 = Updater.m3855constructorimpl(composer2);
-                        Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl3 = Updater.m3867constructorimpl(composer2);
+                        Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                            m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                            m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                        if (m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, 833418517, "C2080@101095L7:Chip.kt#uh7d8r");
@@ -7436,19 +7436,19 @@ public final class ChipKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3855constructorimpl4 = Updater.m3855constructorimpl(composer2);
-                            Updater.m3862setimpl(m3855constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl4 = Updater.m3867constructorimpl(composer2);
+                            Updater.m3874setimpl(m3867constructorimpl4, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl4.getInserting() || !Intrinsics.areEqual(m3855constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                m3855constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                m3855constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                            if (m3867constructorimpl4.getInserting() || !Intrinsics.areEqual(m3867constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                m3867constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                m3867constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer2, 833719744, "C2087@101393L188:Chip.kt#uh7d8r");
-                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j8)), function210, composer2, ProvidedValue.$stable);
+                            CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j8)), function210, composer2, ProvidedValue.$stable);
                             ComposerKt.sourceInformationMarkerEnd(composer2);
                             ComposerKt.sourceInformationMarkerEnd(composer2);
                             composer2.endNode();
@@ -7494,7 +7494,7 @@ public final class ChipKt {
                 }
 
                 public final void invoke(Composer composer2, int i4) {
-                    ChipKt.m1985ChipContentfe0OD_I(function2, textStyle, j7, function22, function23, function24, j2, j3, f, paddingValues, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    ChipKt.m1995ChipContentfe0OD_I(function2, textStyle, j7, function22, function23, function24, j2, j3, f, paddingValues, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }
@@ -7503,7 +7503,7 @@ public final class ChipKt {
     public static final ChipColors getDefaultSuggestionChipColors(ColorScheme colorScheme) {
         ChipColors defaultSuggestionChipColorsCached$material3_release = colorScheme.getDefaultSuggestionChipColorsCached$material3_release();
         if (defaultSuggestionChipColorsCached$material3_release == null) {
-            ChipColors chipColors = new ChipColors(Color.Companion.m4572getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getLeadingIconColor()), Color.Companion.m4573getUnspecified0d7_KjU(), Color.Companion.m4572getTransparent0d7_KjU(), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getDisabledLabelTextColor()), SuggestionChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getDisabledLeadingIconColor()), SuggestionChipTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m4573getUnspecified0d7_KjU(), null);
+            ChipColors chipColors = new ChipColors(Color.Companion.m4584getTransparent0d7_KjU(), ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getLabelTextColor()), ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getLeadingIconColor()), Color.Companion.m4585getUnspecified0d7_KjU(), Color.Companion.m4584getTransparent0d7_KjU(), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getDisabledLabelTextColor()), SuggestionChipTokens.INSTANCE.getDisabledLabelTextOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SuggestionChipTokens.INSTANCE.getDisabledLeadingIconColor()), SuggestionChipTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.Companion.m4585getUnspecified0d7_KjU(), null);
             colorScheme.setDefaultSuggestionChipColorsCached$material3_release(chipColors);
             return chipColors;
         }
@@ -7524,14 +7524,14 @@ public final class ChipKt {
     }
 
     private static final PaddingValues inputChipPadding(boolean z, boolean z2, boolean z3) {
-        return PaddingKt.m829PaddingValuesa9UjIt4$default(Dp.m7251constructorimpl((z || !z2) ? 4 : 8), 0.0f, Dp.m7251constructorimpl(z3 ? 8 : 4), 0.0f, 10, null);
+        return PaddingKt.m839PaddingValuesa9UjIt4$default(Dp.m7264constructorimpl((z || !z2) ? 4 : 8), 0.0f, Dp.m7264constructorimpl(z3 ? 8 : 4), 0.0f, 10, null);
     }
 
     static {
-        float m7251constructorimpl = Dp.m7251constructorimpl(8);
-        HorizontalElementsPadding = m7251constructorimpl;
-        AssistChipPadding = PaddingKt.m827PaddingValuesYgX7TsA$default(m7251constructorimpl, 0.0f, 2, null);
-        FilterChipPadding = PaddingKt.m827PaddingValuesYgX7TsA$default(m7251constructorimpl, 0.0f, 2, null);
-        SuggestionChipPadding = PaddingKt.m827PaddingValuesYgX7TsA$default(m7251constructorimpl, 0.0f, 2, null);
+        float m7264constructorimpl = Dp.m7264constructorimpl(8);
+        HorizontalElementsPadding = m7264constructorimpl;
+        AssistChipPadding = PaddingKt.m837PaddingValuesYgX7TsA$default(m7264constructorimpl, 0.0f, 2, null);
+        FilterChipPadding = PaddingKt.m837PaddingValuesYgX7TsA$default(m7264constructorimpl, 0.0f, 2, null);
+        SuggestionChipPadding = PaddingKt.m837PaddingValuesYgX7TsA$default(m7264constructorimpl, 0.0f, 2, null);
     }
 }

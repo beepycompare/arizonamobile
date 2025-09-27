@@ -28,27 +28,27 @@ public final class ContextMenuColors {
     }
 
     /* renamed from: getBackgroundColor-0d7_KjU  reason: not valid java name */
-    public final long m377getBackgroundColor0d7_KjU() {
+    public final long m387getBackgroundColor0d7_KjU() {
         return this.backgroundColor;
     }
 
     /* renamed from: getTextColor-0d7_KjU  reason: not valid java name */
-    public final long m381getTextColor0d7_KjU() {
+    public final long m391getTextColor0d7_KjU() {
         return this.textColor;
     }
 
     /* renamed from: getIconColor-0d7_KjU  reason: not valid java name */
-    public final long m380getIconColor0d7_KjU() {
+    public final long m390getIconColor0d7_KjU() {
         return this.iconColor;
     }
 
     /* renamed from: getDisabledTextColor-0d7_KjU  reason: not valid java name */
-    public final long m379getDisabledTextColor0d7_KjU() {
+    public final long m389getDisabledTextColor0d7_KjU() {
         return this.disabledTextColor;
     }
 
     /* renamed from: getDisabledIconColor-0d7_KjU  reason: not valid java name */
-    public final long m378getDisabledIconColor0d7_KjU() {
+    public final long m388getDisabledIconColor0d7_KjU() {
         return this.disabledIconColor;
     }
 
@@ -60,14 +60,14 @@ public final class ContextMenuColors {
             return false;
         }
         ContextMenuColors contextMenuColors = (ContextMenuColors) obj;
-        return Color.m4538equalsimpl0(this.backgroundColor, contextMenuColors.backgroundColor) && Color.m4538equalsimpl0(this.textColor, contextMenuColors.textColor) && Color.m4538equalsimpl0(this.iconColor, contextMenuColors.iconColor) && Color.m4538equalsimpl0(this.disabledTextColor, contextMenuColors.disabledTextColor) && Color.m4538equalsimpl0(this.disabledIconColor, contextMenuColors.disabledIconColor);
+        return Color.m4550equalsimpl0(this.backgroundColor, contextMenuColors.backgroundColor) && Color.m4550equalsimpl0(this.textColor, contextMenuColors.textColor) && Color.m4550equalsimpl0(this.iconColor, contextMenuColors.iconColor) && Color.m4550equalsimpl0(this.disabledTextColor, contextMenuColors.disabledTextColor) && Color.m4550equalsimpl0(this.disabledIconColor, contextMenuColors.disabledIconColor);
     }
 
     public int hashCode() {
-        return (((((((Color.m4544hashCodeimpl(this.backgroundColor) * 31) + Color.m4544hashCodeimpl(this.textColor)) * 31) + Color.m4544hashCodeimpl(this.iconColor)) * 31) + Color.m4544hashCodeimpl(this.disabledTextColor)) * 31) + Color.m4544hashCodeimpl(this.disabledIconColor);
+        return (((((((Color.m4556hashCodeimpl(this.backgroundColor) * 31) + Color.m4556hashCodeimpl(this.textColor)) * 31) + Color.m4556hashCodeimpl(this.iconColor)) * 31) + Color.m4556hashCodeimpl(this.disabledTextColor)) * 31) + Color.m4556hashCodeimpl(this.disabledIconColor);
     }
 
     public String toString() {
-        return "ContextMenuColors(backgroundColor=" + ((Object) Color.m4545toStringimpl(this.backgroundColor)) + ", textColor=" + ((Object) Color.m4545toStringimpl(this.textColor)) + ", iconColor=" + ((Object) Color.m4545toStringimpl(this.iconColor)) + ", disabledTextColor=" + ((Object) Color.m4545toStringimpl(this.disabledTextColor)) + ", disabledIconColor=" + ((Object) Color.m4545toStringimpl(this.disabledIconColor)) + ')';
+        return "ContextMenuColors(backgroundColor=" + ((Object) Color.m4557toStringimpl(this.backgroundColor)) + ", textColor=" + ((Object) Color.m4557toStringimpl(this.textColor)) + ", iconColor=" + ((Object) Color.m4557toStringimpl(this.iconColor)) + ", disabledTextColor=" + ((Object) Color.m4557toStringimpl(this.disabledTextColor)) + ", disabledIconColor=" + ((Object) Color.m4557toStringimpl(this.disabledIconColor)) + ')';
     }
 }

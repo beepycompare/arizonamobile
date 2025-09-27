@@ -7,14 +7,14 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextFieldCharSequenceKt {
     public static final CharSequence getTextBeforeSelection(TextFieldCharSequence textFieldCharSequence, int i) {
-        return textFieldCharSequence.subSequence(Math.max(0, TextRange.m6711getMinimpl(textFieldCharSequence.m1436getSelectiond9O1mEE()) - i), TextRange.m6711getMinimpl(textFieldCharSequence.m1436getSelectiond9O1mEE()));
+        return textFieldCharSequence.subSequence(Math.max(0, TextRange.m6724getMinimpl(textFieldCharSequence.m1446getSelectiond9O1mEE()) - i), TextRange.m6724getMinimpl(textFieldCharSequence.m1446getSelectiond9O1mEE()));
     }
 
     public static final CharSequence getTextAfterSelection(TextFieldCharSequence textFieldCharSequence, int i) {
-        return textFieldCharSequence.subSequence(TextRange.m6710getMaximpl(textFieldCharSequence.m1436getSelectiond9O1mEE()), Math.min(TextRange.m6710getMaximpl(textFieldCharSequence.m1436getSelectiond9O1mEE()) + i, textFieldCharSequence.length()));
+        return textFieldCharSequence.subSequence(TextRange.m6723getMaximpl(textFieldCharSequence.m1446getSelectiond9O1mEE()), Math.min(TextRange.m6723getMaximpl(textFieldCharSequence.m1446getSelectiond9O1mEE()) + i, textFieldCharSequence.length()));
     }
 
     public static final CharSequence getSelectedText(TextFieldCharSequence textFieldCharSequence) {
-        return textFieldCharSequence.subSequence(TextRange.m6711getMinimpl(textFieldCharSequence.m1436getSelectiond9O1mEE()), TextRange.m6710getMaximpl(textFieldCharSequence.m1436getSelectiond9O1mEE()));
+        return textFieldCharSequence.subSequence(TextRange.m6724getMinimpl(textFieldCharSequence.m1446getSelectiond9O1mEE()), TextRange.m6723getMaximpl(textFieldCharSequence.m1446getSelectiond9O1mEE()));
     }
 }

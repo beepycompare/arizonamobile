@@ -26,7 +26,7 @@ public final class SingleValueAnimationKt {
     private static final SpringSpec<Color> colorDefaultSpring = AnimationSpecKt.spring$default(0.0f, 0.0f, null, 7, null);
 
     /* renamed from: animateColorAsState-euL9pac  reason: not valid java name */
-    public static final State<Color> m120animateColorAsStateeuL9pac(long j, AnimationSpec<Color> animationSpec, String str, Function1<? super Color, Unit> function1, Composer composer, int i, int i2) {
+    public static final State<Color> m130animateColorAsStateeuL9pac(long j, AnimationSpec<Color> animationSpec, String str, Function1<? super Color, Unit> function1, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -451899108, "C(animateColorAsState)P(3:c#ui.graphics.Color!1,2)63@2906L84,64@3002L157:SingleValueAnimation.kt#xbi5r1");
         SpringSpec<Color> springSpec = (i2 & 2) != 0 ? colorDefaultSpring : animationSpec;
         String str2 = (i2 & 4) != 0 ? "ColorAnimation" : str;
@@ -34,17 +34,17 @@ public final class SingleValueAnimationKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-451899108, i, -1, "androidx.compose.animation.animateColorAsState (SingleValueAnimation.kt:61)");
         }
-        ColorSpace m4541getColorSpaceimpl = Color.m4541getColorSpaceimpl(j);
+        ColorSpace m4553getColorSpaceimpl = Color.m4553getColorSpaceimpl(j);
         ComposerKt.sourceInformationMarkerStart(composer, -483337392, "CC(remember):SingleValueAnimation.kt#9igjgp");
-        boolean changed = composer.changed(m4541getColorSpaceimpl);
+        boolean changed = composer.changed(m4553getColorSpaceimpl);
         TwoWayConverter<Color, AnimationVector4D> rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4541getColorSpaceimpl(j));
+            rememberedValue = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4553getColorSpaceimpl(j));
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         int i3 = i << 6;
-        State<Color> animateValueAsState = AnimateAsStateKt.animateValueAsState(Color.m4527boximpl(j), (TwoWayConverter) rememberedValue, springSpec, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
+        State<Color> animateValueAsState = AnimateAsStateKt.animateValueAsState(Color.m4539boximpl(j), (TwoWayConverter) rememberedValue, springSpec, null, str2, function12, composer, (i & 14) | ((i << 3) & 896) | (57344 & i3) | (i3 & 458752), 8);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -54,7 +54,7 @@ public final class SingleValueAnimationKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "animate*AsState APIs now have a new label parameter added.")
     /* renamed from: animateColorAsState-KTwxG1Y  reason: not valid java name */
-    public static final /* synthetic */ State m119animateColorAsStateKTwxG1Y(long j, AnimationSpec animationSpec, Function1 function1, Composer composer, int i, int i2) {
+    public static final /* synthetic */ State m129animateColorAsStateKTwxG1Y(long j, AnimationSpec animationSpec, Function1 function1, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1942442407, "C(animateColorAsState)P(2:c#ui.graphics.Color)83@3489L84:SingleValueAnimation.kt#xbi5r1");
         if ((i2 & 2) != 0) {
             animationSpec = colorDefaultSpring;
@@ -67,16 +67,16 @@ public final class SingleValueAnimationKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1942442407, i, -1, "androidx.compose.animation.animateColorAsState (SingleValueAnimation.kt:82)");
         }
-        State<Color> m120animateColorAsStateeuL9pac = m120animateColorAsStateeuL9pac(j, animationSpec2, null, function12, composer, (i & WebSocketProtocol.PAYLOAD_SHORT) | ((i << 3) & 7168), 4);
+        State<Color> m130animateColorAsStateeuL9pac = m130animateColorAsStateeuL9pac(j, animationSpec2, null, function12, composer, (i & WebSocketProtocol.PAYLOAD_SHORT) | ((i << 3) & 7168), 4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m120animateColorAsStateeuL9pac;
+        return m130animateColorAsStateeuL9pac;
     }
 
     /* renamed from: Animatable-8_81llA  reason: not valid java name */
-    public static final Animatable<Color, AnimationVector4D> m118Animatable8_81llA(long j) {
-        return new Animatable<>(Color.m4527boximpl(j), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4541getColorSpaceimpl(j)), null, null, 12, null);
+    public static final Animatable<Color, AnimationVector4D> m128Animatable8_81llA(long j) {
+        return new Animatable<>(Color.m4539boximpl(j), ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(Color.m4553getColorSpaceimpl(j)), null, null, 12, null);
     }
 }

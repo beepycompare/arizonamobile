@@ -14,7 +14,7 @@ public final class TextFieldSize {
     private Density density;
     private FontFamily.Resolver fontFamilyResolver;
     private LayoutDirection layoutDirection;
-    private long minSize = m1371computeMinSizeYbymL2g();
+    private long minSize = m1381computeMinSizeYbymL2g();
     private TextStyle resolvedStyle;
     private Object typeface;
 
@@ -67,7 +67,7 @@ public final class TextFieldSize {
     }
 
     /* renamed from: getMinSize-YbymL2g  reason: not valid java name */
-    public final long m1372getMinSizeYbymL2g() {
+    public final long m1382getMinSizeYbymL2g() {
         return this.minSize;
     }
 
@@ -80,11 +80,11 @@ public final class TextFieldSize {
         this.fontFamilyResolver = resolver;
         this.resolvedStyle = textStyle;
         this.typeface = obj;
-        this.minSize = m1371computeMinSizeYbymL2g();
+        this.minSize = m1381computeMinSizeYbymL2g();
     }
 
     /* renamed from: computeMinSize-YbymL2g  reason: not valid java name */
-    private final long m1371computeMinSizeYbymL2g() {
+    private final long m1381computeMinSizeYbymL2g() {
         return TextFieldDelegateKt.computeSizeForDefaultText$default(this.resolvedStyle, this.density, this.fontFamilyResolver, null, 0, 24, null);
     }
 }

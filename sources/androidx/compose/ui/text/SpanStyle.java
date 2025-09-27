@@ -90,11 +90,11 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     public /* synthetic */ SpanStyle(TextForegroundStyle textForegroundStyle, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(textForegroundStyle, (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j, (i & 4) != 0 ? null : fontWeight, (i & 8) != 0 ? null : fontStyle, (i & 16) != 0 ? null : fontSynthesis, (i & 32) != 0 ? null : fontFamily, (i & 64) != 0 ? null : str, (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i & 256) != 0 ? null : baselineShift, (i & 512) != 0 ? null : textGeometricTransform, (i & 1024) != 0 ? null : localeList, (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, (i & 16384) != 0 ? null : platformSpanStyle, (i & 32768) != 0 ? null : drawStyle, (DefaultConstructorMarker) null);
+        this(textForegroundStyle, (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j, (i & 4) != 0 ? null : fontWeight, (i & 8) != 0 ? null : fontStyle, (i & 16) != 0 ? null : fontSynthesis, (i & 32) != 0 ? null : fontFamily, (i & 64) != 0 ? null : str, (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i & 256) != 0 ? null : baselineShift, (i & 512) != 0 ? null : textGeometricTransform, (i & 1024) != 0 ? null : localeList, (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, (i & 16384) != 0 ? null : platformSpanStyle, (i & 32768) != 0 ? null : drawStyle, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getFontSize-XSAIIZE  reason: not valid java name */
-    public final long m6655getFontSizeXSAIIZE() {
+    public final long m6668getFontSizeXSAIIZE() {
         return this.fontSize;
     }
 
@@ -103,12 +103,12 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getFontStyle-4Lr2A7w  reason: not valid java name */
-    public final FontStyle m6656getFontStyle4Lr2A7w() {
+    public final FontStyle m6669getFontStyle4Lr2A7w() {
         return this.fontStyle;
     }
 
     /* renamed from: getFontSynthesis-ZQGJjVo  reason: not valid java name */
-    public final FontSynthesis m6657getFontSynthesisZQGJjVo() {
+    public final FontSynthesis m6670getFontSynthesisZQGJjVo() {
         return this.fontSynthesis;
     }
 
@@ -121,12 +121,12 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getLetterSpacing-XSAIIZE  reason: not valid java name */
-    public final long m6658getLetterSpacingXSAIIZE() {
+    public final long m6671getLetterSpacingXSAIIZE() {
         return this.letterSpacing;
     }
 
     /* renamed from: getBaselineShift-5SSeXJ0  reason: not valid java name */
-    public final BaselineShift m6653getBaselineShift5SSeXJ0() {
+    public final BaselineShift m6666getBaselineShift5SSeXJ0() {
         return this.baselineShift;
     }
 
@@ -139,7 +139,7 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getBackground-0d7_KjU  reason: not valid java name */
-    public final long m6652getBackground0d7_KjU() {
+    public final long m6665getBackground0d7_KjU() {
         return this.background;
     }
 
@@ -165,22 +165,22 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     */
     public /* synthetic */ SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(r1, r3, r5, r7, r8, r9, r10, r11, r13, r14, r15, r16, (i & 4096) != 0 ? null : textDecoration, (i & 8192) != 0 ? null : shadow, (DefaultConstructorMarker) null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
     }
 
     private SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow) {
-        this(TextForegroundStyle.Companion.m7156from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, (PlatformSpanStyle) null, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
+        this(TextForegroundStyle.Companion.m7169from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, (PlatformSpanStyle) null, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -189,34 +189,34 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     */
     public /* synthetic */ SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(r18, r3, r5, r27, r28, r29, r30, r31, r33, r34, r35, r36, r6, r1, (i & 16384) != 0 ? null : platformSpanStyle, (DefaultConstructorMarker) null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j5 = m4573getUnspecified0d7_KjU;
+        long j5 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j6 = m7456getUnspecifiedXSAIIZE2;
+        long j6 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j7 = m4573getUnspecified0d7_KjU2;
+        long j7 = m4585getUnspecified0d7_KjU2;
     }
 
     private SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle) {
-        this(TextForegroundStyle.Companion.m7156from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
+        this(TextForegroundStyle.Companion.m7169from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -225,38 +225,38 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     */
     public /* synthetic */ SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(r18, r3, r5, r28, r29, r30, r31, r32, r34, r35, r36, r37, r6, r1, (i & 16384) != 0 ? null : platformSpanStyle, (i & 32768) != 0 ? null : drawStyle, (DefaultConstructorMarker) null);
-        long m4573getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m7456getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2;
+        long m4585getUnspecified0d7_KjU = (i & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m7469getUnspecifiedXSAIIZE = (i & 2) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? null : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? null : fontStyle;
         FontSynthesis fontSynthesis2 = (i & 16) != 0 ? null : fontSynthesis;
         FontFamily fontFamily2 = (i & 32) != 0 ? null : fontFamily;
         String str2 = (i & 64) != 0 ? null : str;
-        long m7456getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j3;
+        long m7469getUnspecifiedXSAIIZE2 = (i & 128) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j3;
         BaselineShift baselineShift2 = (i & 256) != 0 ? null : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? null : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? null : localeList;
-        long m4573getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU2 = (i & 2048) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? null : textDecoration;
-        long j5 = m4573getUnspecified0d7_KjU;
+        long j5 = m4585getUnspecified0d7_KjU;
         Shadow shadow2 = (i & 8192) != 0 ? null : shadow;
         FontStyle fontStyle3 = fontStyle2;
         FontSynthesis fontSynthesis3 = fontSynthesis2;
         FontFamily fontFamily3 = fontFamily2;
         String str3 = str2;
-        long j6 = m7456getUnspecifiedXSAIIZE2;
+        long j6 = m7469getUnspecifiedXSAIIZE2;
         BaselineShift baselineShift3 = baselineShift2;
         TextGeometricTransform textGeometricTransform3 = textGeometricTransform2;
         LocaleList localeList3 = localeList2;
-        long j7 = m4573getUnspecified0d7_KjU2;
+        long j7 = m4585getUnspecified0d7_KjU2;
     }
 
     private SpanStyle(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
-        this(TextForegroundStyle.Companion.m7156from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, drawStyle, (DefaultConstructorMarker) null);
+        this(TextForegroundStyle.Companion.m7169from8_81llA(j), j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, drawStyle, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ SpanStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(brush, (i & 2) != 0 ? Float.NaN : f, (i & 4) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : fontWeight, (i & 16) != 0 ? null : fontStyle, (i & 32) != 0 ? null : fontSynthesis, (i & 64) != 0 ? null : fontFamily, (i & 128) != 0 ? null : str, (i & 256) != 0 ? TextUnit.Companion.m7456getUnspecifiedXSAIIZE() : j2, (i & 512) != 0 ? null : baselineShift, (i & 1024) != 0 ? null : textGeometricTransform, (i & 2048) != 0 ? null : localeList, (i & 4096) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3, (i & 8192) != 0 ? null : textDecoration, (i & 16384) != 0 ? null : shadow, (32768 & i) != 0 ? null : platformSpanStyle, (i & 65536) != 0 ? null : drawStyle, (DefaultConstructorMarker) null);
+        this(brush, (i & 2) != 0 ? Float.NaN : f, (i & 4) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : fontWeight, (i & 16) != 0 ? null : fontStyle, (i & 32) != 0 ? null : fontSynthesis, (i & 64) != 0 ? null : fontFamily, (i & 128) != 0 ? null : str, (i & 256) != 0 ? TextUnit.Companion.m7469getUnspecifiedXSAIIZE() : j2, (i & 512) != 0 ? null : baselineShift, (i & 1024) != 0 ? null : textGeometricTransform, (i & 2048) != 0 ? null : localeList, (i & 4096) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3, (i & 8192) != 0 ? null : textDecoration, (i & 16384) != 0 ? null : shadow, (32768 & i) != 0 ? null : platformSpanStyle, (i & 65536) != 0 ? null : drawStyle, (DefaultConstructorMarker) null);
     }
 
     private SpanStyle(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
@@ -264,8 +264,8 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m6654getColor0d7_KjU() {
-        return this.textForegroundStyle.mo7021getColor0d7_KjU();
+    public final long m6667getColor0d7_KjU() {
+        return this.textForegroundStyle.mo7034getColor0d7_KjU();
     }
 
     public final Brush getBrush() {
@@ -284,7 +284,7 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     public final SpanStyle merge(SpanStyle spanStyle) {
-        return spanStyle == null ? this : SpanStyleKt.m6659fastMergedSHsh3o(this, spanStyle.textForegroundStyle.mo7021getColor0d7_KjU(), spanStyle.textForegroundStyle.getBrush(), spanStyle.textForegroundStyle.getAlpha(), spanStyle.fontSize, spanStyle.fontWeight, spanStyle.fontStyle, spanStyle.fontSynthesis, spanStyle.fontFamily, spanStyle.fontFeatureSettings, spanStyle.letterSpacing, spanStyle.baselineShift, spanStyle.textGeometricTransform, spanStyle.localeList, spanStyle.background, spanStyle.textDecoration, spanStyle.shadow, spanStyle.platformStyle, spanStyle.drawStyle);
+        return spanStyle == null ? this : SpanStyleKt.m6672fastMergedSHsh3o(this, spanStyle.textForegroundStyle.mo7034getColor0d7_KjU(), spanStyle.textForegroundStyle.getBrush(), spanStyle.textForegroundStyle.getAlpha(), spanStyle.fontSize, spanStyle.fontWeight, spanStyle.fontStyle, spanStyle.fontSynthesis, spanStyle.fontFamily, spanStyle.fontFeatureSettings, spanStyle.letterSpacing, spanStyle.baselineShift, spanStyle.textGeometricTransform, spanStyle.localeList, spanStyle.background, spanStyle.textDecoration, spanStyle.shadow, spanStyle.platformStyle, spanStyle.drawStyle);
     }
 
     public final SpanStyle plus(SpanStyle spanStyle) {
@@ -292,44 +292,44 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: copy-IuqyXdg$default  reason: not valid java name */
-    public static /* synthetic */ SpanStyle m6646copyIuqyXdg$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, int i, Object obj) {
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6654getColor0d7_KjU() : j;
-        return spanStyle.m6650copyIuqyXdg(m6654getColor0d7_KjU, (i & 2) != 0 ? spanStyle.fontSize : j2, (i & 4) != 0 ? spanStyle.fontWeight : fontWeight, (i & 8) != 0 ? spanStyle.fontStyle : fontStyle, (i & 16) != 0 ? spanStyle.fontSynthesis : fontSynthesis, (i & 32) != 0 ? spanStyle.fontFamily : fontFamily, (i & 64) != 0 ? spanStyle.fontFeatureSettings : str, (i & 128) != 0 ? spanStyle.letterSpacing : j3, (i & 256) != 0 ? spanStyle.baselineShift : baselineShift, (i & 512) != 0 ? spanStyle.textGeometricTransform : textGeometricTransform, (i & 1024) != 0 ? spanStyle.localeList : localeList, (i & 2048) != 0 ? spanStyle.background : j4, (i & 4096) != 0 ? spanStyle.textDecoration : textDecoration, (i & 8192) != 0 ? spanStyle.shadow : shadow);
+    public static /* synthetic */ SpanStyle m6659copyIuqyXdg$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, int i, Object obj) {
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6667getColor0d7_KjU() : j;
+        return spanStyle.m6663copyIuqyXdg(m6667getColor0d7_KjU, (i & 2) != 0 ? spanStyle.fontSize : j2, (i & 4) != 0 ? spanStyle.fontWeight : fontWeight, (i & 8) != 0 ? spanStyle.fontStyle : fontStyle, (i & 16) != 0 ? spanStyle.fontSynthesis : fontSynthesis, (i & 32) != 0 ? spanStyle.fontFamily : fontFamily, (i & 64) != 0 ? spanStyle.fontFeatureSettings : str, (i & 128) != 0 ? spanStyle.letterSpacing : j3, (i & 256) != 0 ? spanStyle.baselineShift : baselineShift, (i & 512) != 0 ? spanStyle.textGeometricTransform : textGeometricTransform, (i & 1024) != 0 ? spanStyle.localeList : localeList, (i & 2048) != 0 ? spanStyle.background : j4, (i & 4096) != 0 ? spanStyle.textDecoration : textDecoration, (i & 8192) != 0 ? spanStyle.shadow : shadow);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "SpanStyle copy constructors that do not take new stable parameters like PlatformStyle, DrawStyle are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-IuqyXdg  reason: not valid java name */
-    public final /* synthetic */ SpanStyle m6650copyIuqyXdg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.textForegroundStyle;
+    public final /* synthetic */ SpanStyle m6663copyIuqyXdg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.textForegroundStyle;
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, this.platformStyle, this.drawStyle, (DefaultConstructorMarker) null);
+        return new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, this.platformStyle, this.drawStyle, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-2BkPm_w$default  reason: not valid java name */
-    public static /* synthetic */ SpanStyle m6644copy2BkPm_w$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, int i, Object obj) {
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6654getColor0d7_KjU() : j;
-        return spanStyle.m6648copy2BkPm_w(m6654getColor0d7_KjU, (i & 2) != 0 ? spanStyle.fontSize : j2, (i & 4) != 0 ? spanStyle.fontWeight : fontWeight, (i & 8) != 0 ? spanStyle.fontStyle : fontStyle, (i & 16) != 0 ? spanStyle.fontSynthesis : fontSynthesis, (i & 32) != 0 ? spanStyle.fontFamily : fontFamily, (i & 64) != 0 ? spanStyle.fontFeatureSettings : str, (i & 128) != 0 ? spanStyle.letterSpacing : j3, (i & 256) != 0 ? spanStyle.baselineShift : baselineShift, (i & 512) != 0 ? spanStyle.textGeometricTransform : textGeometricTransform, (i & 1024) != 0 ? spanStyle.localeList : localeList, (i & 2048) != 0 ? spanStyle.background : j4, (i & 4096) != 0 ? spanStyle.textDecoration : textDecoration, (i & 8192) != 0 ? spanStyle.shadow : shadow, (i & 16384) != 0 ? spanStyle.platformStyle : platformSpanStyle);
+    public static /* synthetic */ SpanStyle m6657copy2BkPm_w$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, int i, Object obj) {
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6667getColor0d7_KjU() : j;
+        return spanStyle.m6661copy2BkPm_w(m6667getColor0d7_KjU, (i & 2) != 0 ? spanStyle.fontSize : j2, (i & 4) != 0 ? spanStyle.fontWeight : fontWeight, (i & 8) != 0 ? spanStyle.fontStyle : fontStyle, (i & 16) != 0 ? spanStyle.fontSynthesis : fontSynthesis, (i & 32) != 0 ? spanStyle.fontFamily : fontFamily, (i & 64) != 0 ? spanStyle.fontFeatureSettings : str, (i & 128) != 0 ? spanStyle.letterSpacing : j3, (i & 256) != 0 ? spanStyle.baselineShift : baselineShift, (i & 512) != 0 ? spanStyle.textGeometricTransform : textGeometricTransform, (i & 1024) != 0 ? spanStyle.localeList : localeList, (i & 2048) != 0 ? spanStyle.background : j4, (i & 4096) != 0 ? spanStyle.textDecoration : textDecoration, (i & 8192) != 0 ? spanStyle.shadow : shadow, (i & 16384) != 0 ? spanStyle.platformStyle : platformSpanStyle);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "SpanStyle copy constructors that do not take new stable parameters like PlatformStyle, DrawStyle are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-2BkPm_w  reason: not valid java name */
-    public final /* synthetic */ SpanStyle m6648copy2BkPm_w(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.textForegroundStyle;
+    public final /* synthetic */ SpanStyle m6661copy2BkPm_w(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.textForegroundStyle;
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
+        return new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, (DrawStyle) null, 32768, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-GSF8kmg$default  reason: not valid java name */
-    public static /* synthetic */ SpanStyle m6645copyGSF8kmg$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, Object obj) {
-        long m6654getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6654getColor0d7_KjU() : j;
+    public static /* synthetic */ SpanStyle m6658copyGSF8kmg$default(SpanStyle spanStyle, long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, Object obj) {
+        long m6667getColor0d7_KjU = (i & 1) != 0 ? spanStyle.m6667getColor0d7_KjU() : j;
         long j5 = (i & 2) != 0 ? spanStyle.fontSize : j2;
         FontWeight fontWeight2 = (i & 4) != 0 ? spanStyle.fontWeight : fontWeight;
         FontStyle fontStyle2 = (i & 8) != 0 ? spanStyle.fontStyle : fontStyle;
@@ -340,25 +340,25 @@ public final class SpanStyle implements AnnotatedString.Annotation {
         BaselineShift baselineShift2 = (i & 256) != 0 ? spanStyle.baselineShift : baselineShift;
         TextGeometricTransform textGeometricTransform2 = (i & 512) != 0 ? spanStyle.textGeometricTransform : textGeometricTransform;
         LocaleList localeList2 = (i & 1024) != 0 ? spanStyle.localeList : localeList;
-        long j7 = m6654getColor0d7_KjU;
+        long j7 = m6667getColor0d7_KjU;
         long j8 = (i & 2048) != 0 ? spanStyle.background : j4;
         TextDecoration textDecoration2 = (i & 4096) != 0 ? spanStyle.textDecoration : textDecoration;
-        return spanStyle.m6649copyGSF8kmg(j7, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j8, textDecoration2, (i & 8192) != 0 ? spanStyle.shadow : shadow, (i & 16384) != 0 ? spanStyle.platformStyle : platformSpanStyle, (i & 32768) != 0 ? spanStyle.drawStyle : drawStyle);
+        return spanStyle.m6662copyGSF8kmg(j7, j5, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j8, textDecoration2, (i & 8192) != 0 ? spanStyle.shadow : shadow, (i & 16384) != 0 ? spanStyle.platformStyle : platformSpanStyle, (i & 32768) != 0 ? spanStyle.drawStyle : drawStyle);
     }
 
     /* renamed from: copy-GSF8kmg  reason: not valid java name */
-    public final SpanStyle m6649copyGSF8kmg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
-        TextForegroundStyle m7156from8_81llA;
-        if (Color.m4538equalsimpl0(j, m6654getColor0d7_KjU())) {
-            m7156from8_81llA = this.textForegroundStyle;
+    public final SpanStyle m6662copyGSF8kmg(long j, long j2, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j3, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j4, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
+        TextForegroundStyle m7169from8_81llA;
+        if (Color.m4550equalsimpl0(j, m6667getColor0d7_KjU())) {
+            m7169from8_81llA = this.textForegroundStyle;
         } else {
-            m7156from8_81llA = TextForegroundStyle.Companion.m7156from8_81llA(j);
+            m7169from8_81llA = TextForegroundStyle.Companion.m7169from8_81llA(j);
         }
-        return new SpanStyle(m7156from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, drawStyle, (DefaultConstructorMarker) null);
+        return new SpanStyle(m7169from8_81llA, j2, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j3, baselineShift, textGeometricTransform, localeList, j4, textDecoration, shadow, platformSpanStyle, drawStyle, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-NcG25M8$default  reason: not valid java name */
-    public static /* synthetic */ SpanStyle m6647copyNcG25M8$default(SpanStyle spanStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, Object obj) {
+    public static /* synthetic */ SpanStyle m6660copyNcG25M8$default(SpanStyle spanStyle, Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle, int i, Object obj) {
         DrawStyle drawStyle2;
         PlatformSpanStyle platformSpanStyle2;
         long j4;
@@ -424,11 +424,11 @@ public final class SpanStyle implements AnnotatedString.Annotation {
             localeList2 = localeList3;
             shadow2 = shadow3;
         }
-        return spanStyle.m6651copyNcG25M8(brush, f2, j4, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j5, textDecoration2, shadow2, platformSpanStyle2, drawStyle2);
+        return spanStyle.m6664copyNcG25M8(brush, f2, j4, fontWeight2, fontStyle2, fontSynthesis2, fontFamily2, str2, j6, baselineShift2, textGeometricTransform2, localeList2, j5, textDecoration2, shadow2, platformSpanStyle2, drawStyle2);
     }
 
     /* renamed from: copy-NcG25M8  reason: not valid java name */
-    public final SpanStyle m6651copyNcG25M8(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
+    public final SpanStyle m6664copyNcG25M8(Brush brush, float f, long j, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis, FontFamily fontFamily, String str, long j2, BaselineShift baselineShift, TextGeometricTransform textGeometricTransform, LocaleList localeList, long j3, TextDecoration textDecoration, Shadow shadow, PlatformSpanStyle platformSpanStyle, DrawStyle drawStyle) {
         return new SpanStyle(TextForegroundStyle.Companion.from(brush, f), j, fontWeight, fontStyle, fontSynthesis, fontFamily, str, j2, baselineShift, textGeometricTransform, localeList, j3, textDecoration, shadow, platformSpanStyle, drawStyle, (DefaultConstructorMarker) null);
     }
 
@@ -447,7 +447,7 @@ public final class SpanStyle implements AnnotatedString.Annotation {
         if (this == spanStyle) {
             return true;
         }
-        return TextUnit.m7442equalsimpl0(this.fontSize, spanStyle.fontSize) && Intrinsics.areEqual(this.fontWeight, spanStyle.fontWeight) && Intrinsics.areEqual(this.fontStyle, spanStyle.fontStyle) && Intrinsics.areEqual(this.fontSynthesis, spanStyle.fontSynthesis) && Intrinsics.areEqual(this.fontFamily, spanStyle.fontFamily) && Intrinsics.areEqual(this.fontFeatureSettings, spanStyle.fontFeatureSettings) && TextUnit.m7442equalsimpl0(this.letterSpacing, spanStyle.letterSpacing) && Intrinsics.areEqual(this.baselineShift, spanStyle.baselineShift) && Intrinsics.areEqual(this.textGeometricTransform, spanStyle.textGeometricTransform) && Intrinsics.areEqual(this.localeList, spanStyle.localeList) && Color.m4538equalsimpl0(this.background, spanStyle.background) && Intrinsics.areEqual(this.platformStyle, spanStyle.platformStyle);
+        return TextUnit.m7455equalsimpl0(this.fontSize, spanStyle.fontSize) && Intrinsics.areEqual(this.fontWeight, spanStyle.fontWeight) && Intrinsics.areEqual(this.fontStyle, spanStyle.fontStyle) && Intrinsics.areEqual(this.fontSynthesis, spanStyle.fontSynthesis) && Intrinsics.areEqual(this.fontFamily, spanStyle.fontFamily) && Intrinsics.areEqual(this.fontFeatureSettings, spanStyle.fontFeatureSettings) && TextUnit.m7455equalsimpl0(this.letterSpacing, spanStyle.letterSpacing) && Intrinsics.areEqual(this.baselineShift, spanStyle.baselineShift) && Intrinsics.areEqual(this.textGeometricTransform, spanStyle.textGeometricTransform) && Intrinsics.areEqual(this.localeList, spanStyle.localeList) && Color.m4550equalsimpl0(this.background, spanStyle.background) && Intrinsics.areEqual(this.platformStyle, spanStyle.platformStyle);
     }
 
     public final boolean hasSameNonLayoutAttributes$ui_text(SpanStyle spanStyle) {
@@ -455,25 +455,25 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     public int hashCode() {
-        int m4544hashCodeimpl = Color.m4544hashCodeimpl(m6654getColor0d7_KjU()) * 31;
+        int m4556hashCodeimpl = Color.m4556hashCodeimpl(m6667getColor0d7_KjU()) * 31;
         Brush brush = getBrush();
-        int hashCode = (((((m4544hashCodeimpl + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(getAlpha())) * 31) + TextUnit.m7446hashCodeimpl(this.fontSize)) * 31;
+        int hashCode = (((((m4556hashCodeimpl + (brush != null ? brush.hashCode() : 0)) * 31) + Float.hashCode(getAlpha())) * 31) + TextUnit.m7459hashCodeimpl(this.fontSize)) * 31;
         FontWeight fontWeight = this.fontWeight;
         int hashCode2 = (hashCode + (fontWeight != null ? fontWeight.hashCode() : 0)) * 31;
         FontStyle fontStyle = this.fontStyle;
-        int m6827hashCodeimpl = (hashCode2 + (fontStyle != null ? FontStyle.m6827hashCodeimpl(fontStyle.m6829unboximpl()) : 0)) * 31;
+        int m6840hashCodeimpl = (hashCode2 + (fontStyle != null ? FontStyle.m6840hashCodeimpl(fontStyle.m6842unboximpl()) : 0)) * 31;
         FontSynthesis fontSynthesis = this.fontSynthesis;
-        int m6838hashCodeimpl = (m6827hashCodeimpl + (fontSynthesis != null ? FontSynthesis.m6838hashCodeimpl(fontSynthesis.m6842unboximpl()) : 0)) * 31;
+        int m6851hashCodeimpl = (m6840hashCodeimpl + (fontSynthesis != null ? FontSynthesis.m6851hashCodeimpl(fontSynthesis.m6855unboximpl()) : 0)) * 31;
         FontFamily fontFamily = this.fontFamily;
-        int hashCode3 = (m6838hashCodeimpl + (fontFamily != null ? fontFamily.hashCode() : 0)) * 31;
+        int hashCode3 = (m6851hashCodeimpl + (fontFamily != null ? fontFamily.hashCode() : 0)) * 31;
         String str = this.fontFeatureSettings;
-        int hashCode4 = (((hashCode3 + (str != null ? str.hashCode() : 0)) * 31) + TextUnit.m7446hashCodeimpl(this.letterSpacing)) * 31;
+        int hashCode4 = (((hashCode3 + (str != null ? str.hashCode() : 0)) * 31) + TextUnit.m7459hashCodeimpl(this.letterSpacing)) * 31;
         BaselineShift baselineShift = this.baselineShift;
-        int m7011hashCodeimpl = (hashCode4 + (baselineShift != null ? BaselineShift.m7011hashCodeimpl(baselineShift.m7013unboximpl()) : 0)) * 31;
+        int m7024hashCodeimpl = (hashCode4 + (baselineShift != null ? BaselineShift.m7024hashCodeimpl(baselineShift.m7026unboximpl()) : 0)) * 31;
         TextGeometricTransform textGeometricTransform = this.textGeometricTransform;
-        int hashCode5 = (m7011hashCodeimpl + (textGeometricTransform != null ? textGeometricTransform.hashCode() : 0)) * 31;
+        int hashCode5 = (m7024hashCodeimpl + (textGeometricTransform != null ? textGeometricTransform.hashCode() : 0)) * 31;
         LocaleList localeList = this.localeList;
-        int hashCode6 = (((hashCode5 + (localeList != null ? localeList.hashCode() : 0)) * 31) + Color.m4544hashCodeimpl(this.background)) * 31;
+        int hashCode6 = (((hashCode5 + (localeList != null ? localeList.hashCode() : 0)) * 31) + Color.m4556hashCodeimpl(this.background)) * 31;
         TextDecoration textDecoration = this.textDecoration;
         int hashCode7 = (hashCode6 + (textDecoration != null ? textDecoration.hashCode() : 0)) * 31;
         Shadow shadow = this.shadow;
@@ -485,31 +485,31 @@ public final class SpanStyle implements AnnotatedString.Annotation {
     }
 
     public final int hashCodeLayoutAffectingAttributes$ui_text() {
-        int m7446hashCodeimpl = TextUnit.m7446hashCodeimpl(this.fontSize) * 31;
+        int m7459hashCodeimpl = TextUnit.m7459hashCodeimpl(this.fontSize) * 31;
         FontWeight fontWeight = this.fontWeight;
-        int hashCode = (m7446hashCodeimpl + (fontWeight != null ? fontWeight.hashCode() : 0)) * 31;
+        int hashCode = (m7459hashCodeimpl + (fontWeight != null ? fontWeight.hashCode() : 0)) * 31;
         FontStyle fontStyle = this.fontStyle;
-        int m6827hashCodeimpl = (hashCode + (fontStyle != null ? FontStyle.m6827hashCodeimpl(fontStyle.m6829unboximpl()) : 0)) * 31;
+        int m6840hashCodeimpl = (hashCode + (fontStyle != null ? FontStyle.m6840hashCodeimpl(fontStyle.m6842unboximpl()) : 0)) * 31;
         FontSynthesis fontSynthesis = this.fontSynthesis;
-        int m6838hashCodeimpl = (m6827hashCodeimpl + (fontSynthesis != null ? FontSynthesis.m6838hashCodeimpl(fontSynthesis.m6842unboximpl()) : 0)) * 31;
+        int m6851hashCodeimpl = (m6840hashCodeimpl + (fontSynthesis != null ? FontSynthesis.m6851hashCodeimpl(fontSynthesis.m6855unboximpl()) : 0)) * 31;
         FontFamily fontFamily = this.fontFamily;
-        int hashCode2 = (m6838hashCodeimpl + (fontFamily != null ? fontFamily.hashCode() : 0)) * 31;
+        int hashCode2 = (m6851hashCodeimpl + (fontFamily != null ? fontFamily.hashCode() : 0)) * 31;
         String str = this.fontFeatureSettings;
-        int hashCode3 = (((hashCode2 + (str != null ? str.hashCode() : 0)) * 31) + TextUnit.m7446hashCodeimpl(this.letterSpacing)) * 31;
+        int hashCode3 = (((hashCode2 + (str != null ? str.hashCode() : 0)) * 31) + TextUnit.m7459hashCodeimpl(this.letterSpacing)) * 31;
         BaselineShift baselineShift = this.baselineShift;
-        int m7011hashCodeimpl = (hashCode3 + (baselineShift != null ? BaselineShift.m7011hashCodeimpl(baselineShift.m7013unboximpl()) : 0)) * 31;
+        int m7024hashCodeimpl = (hashCode3 + (baselineShift != null ? BaselineShift.m7024hashCodeimpl(baselineShift.m7026unboximpl()) : 0)) * 31;
         TextGeometricTransform textGeometricTransform = this.textGeometricTransform;
-        int hashCode4 = (m7011hashCodeimpl + (textGeometricTransform != null ? textGeometricTransform.hashCode() : 0)) * 31;
+        int hashCode4 = (m7024hashCodeimpl + (textGeometricTransform != null ? textGeometricTransform.hashCode() : 0)) * 31;
         LocaleList localeList = this.localeList;
-        int hashCode5 = (((hashCode4 + (localeList != null ? localeList.hashCode() : 0)) * 31) + Color.m4544hashCodeimpl(this.background)) * 31;
+        int hashCode5 = (((hashCode4 + (localeList != null ? localeList.hashCode() : 0)) * 31) + Color.m4556hashCodeimpl(this.background)) * 31;
         PlatformSpanStyle platformSpanStyle = this.platformStyle;
         return hashCode5 + (platformSpanStyle != null ? platformSpanStyle.hashCode() : 0);
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("SpanStyle(color=");
-        sb.append((Object) Color.m4545toStringimpl(m6654getColor0d7_KjU())).append(", brush=").append(getBrush()).append(", alpha=").append(getAlpha()).append(", fontSize=").append((Object) TextUnit.m7452toStringimpl(this.fontSize)).append(", fontWeight=").append(this.fontWeight).append(", fontStyle=").append(this.fontStyle).append(", fontSynthesis=").append(this.fontSynthesis).append(", fontFamily=").append(this.fontFamily).append(", fontFeatureSettings=").append(this.fontFeatureSettings).append(", letterSpacing=").append((Object) TextUnit.m7452toStringimpl(this.letterSpacing)).append(", baselineShift=").append(this.baselineShift).append(", textGeometricTransform=");
-        sb.append(this.textGeometricTransform).append(", localeList=").append(this.localeList).append(", background=").append((Object) Color.m4545toStringimpl(this.background)).append(", textDecoration=").append(this.textDecoration).append(", shadow=").append(this.shadow).append(", platformStyle=").append(this.platformStyle).append(", drawStyle=").append(this.drawStyle).append(')');
+        sb.append((Object) Color.m4557toStringimpl(m6667getColor0d7_KjU())).append(", brush=").append(getBrush()).append(", alpha=").append(getAlpha()).append(", fontSize=").append((Object) TextUnit.m7465toStringimpl(this.fontSize)).append(", fontWeight=").append(this.fontWeight).append(", fontStyle=").append(this.fontStyle).append(", fontSynthesis=").append(this.fontSynthesis).append(", fontFamily=").append(this.fontFamily).append(", fontFeatureSettings=").append(this.fontFeatureSettings).append(", letterSpacing=").append((Object) TextUnit.m7465toStringimpl(this.letterSpacing)).append(", baselineShift=").append(this.baselineShift).append(", textGeometricTransform=");
+        sb.append(this.textGeometricTransform).append(", localeList=").append(this.localeList).append(", background=").append((Object) Color.m4557toStringimpl(this.background)).append(", textDecoration=").append(this.textDecoration).append(", shadow=").append(this.shadow).append(", platformStyle=").append(this.platformStyle).append(", drawStyle=").append(this.drawStyle).append(')');
         return sb.toString();
     }
 }

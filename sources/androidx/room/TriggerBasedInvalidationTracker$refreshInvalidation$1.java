@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker", f = "InvalidationTracker.kt", i = {0, 0}, l = {367}, m = "refreshInvalidation$room_runtime_release", n = {"onRefreshCompleted", "tableIds"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker", f = "InvalidationTracker.kt", i = {0, 0}, l = {372}, m = "refreshInvalidation$room_runtime", n = {"onRefreshCompleted", "tableIds"}, s = {"L$0", "L$1"})
 /* loaded from: classes3.dex */
 public final class TriggerBasedInvalidationTracker$refreshInvalidation$1 extends ContinuationImpl {
     Object L$0;
@@ -27,6 +27,6 @@ public final class TriggerBasedInvalidationTracker$refreshInvalidation$1 extends
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.refreshInvalidation$room_runtime_release(null, null, null, this);
+        return this.this$0.refreshInvalidation$room_runtime(null, null, null, this);
     }
 }

@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LegacyYouTubePlayerView.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\b\u0000\u0018\u00002\u00020\u0001B\u000f\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b\u0012\b\b\u0002\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bJ\u000e\u0010#\u001a\u00020\u00132\u0006\u0010$\u001a\u00020\rJ\u000e\u0010%\u001a\u00020\u00132\u0006\u0010&\u001a\u00020\"J\u0010\u0010'\u001a\u00020(2\b\b\u0001\u0010)\u001a\u00020\nJ\u000e\u0010\u0011\u001a\u00020\u00132\u0006\u0010*\u001a\u00020+J\u0016\u0010\u0011\u001a\u00020\u00132\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\rJ\u001e\u0010\u0011\u001a\u00020\u00132\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\r2\u0006\u0010-\u001a\u00020.J(\u0010\u0011\u001a\u00020\u00132\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\r2\u0006\u0010-\u001a\u00020.2\b\u0010/\u001a\u0004\u0018\u000100J\r\u00101\u001a\u00020\rH\u0000¢\u0006\u0002\b2J\r\u00103\u001a\u00020\u0013H\u0000¢\u0006\u0002\b4J\r\u00105\u001a\u00020\u0013H\u0000¢\u0006\u0002\b6J\u0006\u00107\u001a\u00020\u0013J\u000e\u00108\u001a\u00020\u00132\u0006\u00109\u001a\u00020(R\u001e\u0010\u000e\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\r@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0014\u001a\u00020\rX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\u00020\u001dX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/LegacyYouTubePlayerView;", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/SixteenByNineFrameLayout;", "context", "Landroid/content/Context;", "(Landroid/content/Context;)V", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "(Landroid/content/Context;Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;Landroid/util/AttributeSet;I)V", "<set-?>", "", "canPlay", "getCanPlay$core_release", "()Z", "initialize", "Lkotlin/Function0;", "", "isYouTubePlayerReady", "isYouTubePlayerReady$core_release", "setYouTubePlayerReady$core_release", "(Z)V", "networkObserver", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver;", "playbackResumer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/PlaybackResumer;", "webViewYouTubePlayer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "getWebViewYouTubePlayer$core_release", "()Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "youTubePlayerCallbacks", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerCallback;", "enableBackgroundPlayback", "enable", "getYouTubePlayerWhenReady", "youTubePlayerCallback", "inflateCustomPlayerUi", "Landroid/view/View;", "layoutId", "youTubePlayerListener", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "handleNetworkEvents", "playerOptions", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/options/IFramePlayerOptions;", "videoId", "", "isEligibleForPlayback", "isEligibleForPlayback$core_release", "onResume", "onResume$core_release", "onStop", "onStop$core_release", "release", "setCustomPlayerUi", "view", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\r\b\u0000\u0018\u00002\u00020\u0001B-\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bB\u0011\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\n\u0010\fJ(\u0010\u001b\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00162\u0006\u0010'\u001a\u00020(2\b\u0010)\u001a\u0004\u0018\u00010*J\u001e\u0010\u001b\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00162\u0006\u0010'\u001a\u00020(J\u0016\u0010\u001b\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0016J\u000e\u0010\u001b\u001a\u00020\u001d2\u0006\u0010$\u001a\u00020%J\u000e\u0010+\u001a\u00020\u001d2\u0006\u0010,\u001a\u00020 J\u0010\u0010-\u001a\u00020.2\b\b\u0001\u0010/\u001a\u00020\tJ\u000e\u00100\u001a\u00020\u001d2\u0006\u00101\u001a\u00020.J\u0006\u00102\u001a\u00020\u001dJ\r\u00103\u001a\u00020\u001dH\u0000¢\u0006\u0002\b4J\r\u00105\u001a\u00020\u001dH\u0000¢\u0006\u0002\b6J\r\u00107\u001a\u00020\u0016H\u0000¢\u0006\u0002\b8J\u000e\u00109\u001a\u00020\u001d2\u0006\u0010:\u001a\u00020\u0016R\u0014\u0010\r\u001a\u00020\u000eX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u00020\u0016X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0004\b\u0019\u0010\u001aR\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020 0\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\"\u001a\u00020\u00162\u0006\u0010!\u001a\u00020\u0016@BX\u0080\u000e¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0018¨\u0006;"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/LegacyYouTubePlayerView;", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/SixteenByNineFrameLayout;", "context", "Landroid/content/Context;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/FullscreenListener;Landroid/util/AttributeSet;I)V", "(Landroid/content/Context;)V", "webViewYouTubePlayer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "getWebViewYouTubePlayer$core_release", "()Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/views/WebViewYouTubePlayer;", "networkObserver", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/NetworkObserver;", "playbackResumer", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/utils/PlaybackResumer;", "isYouTubePlayerReady", "", "isYouTubePlayerReady$core_release", "()Z", "setYouTubePlayerReady$core_release", "(Z)V", "initialize", "Lkotlin/Function0;", "", "youTubePlayerCallbacks", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerCallback;", "value", "canPlay", "getCanPlay$core_release", "youTubePlayerListener", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/listeners/YouTubePlayerListener;", "handleNetworkEvents", "playerOptions", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/options/IFramePlayerOptions;", "videoId", "", "getYouTubePlayerWhenReady", "youTubePlayerCallback", "inflateCustomPlayerUi", "Landroid/view/View;", "layoutId", "setCustomPlayerUi", "view", "release", "onResume", "onResume$core_release", "onStop", "onStop$core_release", "isEligibleForPlayback", "isEligibleForPlayback$core_release", "enableBackgroundPlayback", "enable", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
     private boolean canPlay;
@@ -46,20 +46,17 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
         WebViewYouTubePlayer webViewYouTubePlayer = new WebViewYouTubePlayer(context, listener, null, 0, 12, null);
         this.webViewYouTubePlayer = webViewYouTubePlayer;
         Context applicationContext = context.getApplicationContext();
-        Intrinsics.checkNotNullExpressionValue(applicationContext, "context.applicationContext");
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         NetworkObserver networkObserver = new NetworkObserver(applicationContext);
         this.networkObserver = networkObserver;
         PlaybackResumer playbackResumer = new PlaybackResumer();
         this.playbackResumer = playbackResumer;
-        this.initialize = new Function0<Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$initialize$1
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-            }
-
+        this.initialize = new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
+            public final Object invoke() {
+                Unit unit;
+                unit = Unit.INSTANCE;
+                return unit;
             }
         };
         this.youTubePlayerCallbacks = new LinkedHashSet();
@@ -136,40 +133,12 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
         if (z) {
             this.networkObserver.observeNetwork();
         }
-        Function0<Unit> function0 = new Function0<Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$initialize$2
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
+        Function0<Unit> function0 = new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                WebViewYouTubePlayer webViewYouTubePlayer$core_release = LegacyYouTubePlayerView.this.getWebViewYouTubePlayer$core_release();
-                final YouTubePlayerListener youTubePlayerListener2 = youTubePlayerListener;
-                webViewYouTubePlayer$core_release.initialize$core_release(new Function1<YouTubePlayer, Unit>() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$initialize$2.1
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Unit invoke(YouTubePlayer youTubePlayer) {
-                        invoke2(youTubePlayer);
-                        return Unit.INSTANCE;
-                    }
-
-                    /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                    public final void invoke2(YouTubePlayer it) {
-                        Intrinsics.checkNotNullParameter(it, "it");
-                        it.addListener(YouTubePlayerListener.this);
-                    }
-                }, playerOptions, str);
+            public final Object invoke() {
+                Unit initialize$lambda$2;
+                initialize$lambda$2 = LegacyYouTubePlayerView.initialize$lambda$2(LegacyYouTubePlayerView.this, playerOptions, str, youTubePlayerListener);
+                return initialize$lambda$2;
             }
         };
         this.initialize = function0;
@@ -177,6 +146,26 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
             return;
         }
         function0.invoke();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit initialize$lambda$2(LegacyYouTubePlayerView legacyYouTubePlayerView, IFramePlayerOptions iFramePlayerOptions, String str, final YouTubePlayerListener youTubePlayerListener) {
+        legacyYouTubePlayerView.webViewYouTubePlayer.initialize$core_release(new Function1() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit initialize$lambda$2$lambda$1;
+                initialize$lambda$2$lambda$1 = LegacyYouTubePlayerView.initialize$lambda$2$lambda$1(YouTubePlayerListener.this, (YouTubePlayer) obj);
+                return initialize$lambda$2$lambda$1;
+            }
+        }, iFramePlayerOptions, str);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit initialize$lambda$2$lambda$1(YouTubePlayerListener youTubePlayerListener, YouTubePlayer it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        it.addListener(youTubePlayerListener);
+        return Unit.INSTANCE;
     }
 
     public final void initialize(YouTubePlayerListener youTubePlayerListener, boolean z, IFramePlayerOptions playerOptions) {
@@ -187,7 +176,10 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
 
     public final void initialize(YouTubePlayerListener youTubePlayerListener, boolean z) {
         Intrinsics.checkNotNullParameter(youTubePlayerListener, "youTubePlayerListener");
-        initialize(youTubePlayerListener, z, IFramePlayerOptions.Companion.getDefault());
+        IFramePlayerOptions.Companion companion = IFramePlayerOptions.Companion;
+        Context context = getContext();
+        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+        initialize(youTubePlayerListener, z, companion.getDefault(context));
     }
 
     public final void initialize(YouTubePlayerListener youTubePlayerListener) {
@@ -207,7 +199,7 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
     public final View inflateCustomPlayerUi(int i) {
         removeViews(1, getChildCount() - 1);
         View inflate = View.inflate(getContext(), i, this);
-        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(context, layoutId, this)");
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return inflate;
     }
 

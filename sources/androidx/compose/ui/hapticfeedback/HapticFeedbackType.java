@@ -14,40 +14,40 @@ public final class HapticFeedbackType {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ HapticFeedbackType m5311boximpl(int i) {
+    public static final /* synthetic */ HapticFeedbackType m5324boximpl(int i) {
         return new HapticFeedbackType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5312constructorimpl(int i) {
+    public static int m5325constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5313equalsimpl(int i, Object obj) {
-        return (obj instanceof HapticFeedbackType) && i == ((HapticFeedbackType) obj).m5317unboximpl();
+    public static boolean m5326equalsimpl(int i, Object obj) {
+        return (obj instanceof HapticFeedbackType) && i == ((HapticFeedbackType) obj).m5330unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5314equalsimpl0(int i, int i2) {
+    public static final boolean m5327equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5315hashCodeimpl(int i) {
+    public static int m5328hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5313equalsimpl(this.value, obj);
+        return m5326equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5315hashCodeimpl(this.value);
+        return m5328hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5317unboximpl() {
+    public final /* synthetic */ int m5330unboximpl() {
         return this.value;
     }
 
@@ -56,13 +56,13 @@ public final class HapticFeedbackType {
     }
 
     public String toString() {
-        return m5316toStringimpl(this.value);
+        return m5329toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5316toStringimpl(int i) {
+    public static String m5329toStringimpl(int i) {
         Companion companion = Companion;
-        return m5314equalsimpl0(i, companion.m5318getConfirm5zf0vsI()) ? "Confirm" : m5314equalsimpl0(i, companion.m5319getContextClick5zf0vsI()) ? "ContextClick" : m5314equalsimpl0(i, companion.m5320getGestureEnd5zf0vsI()) ? "GestureEnd" : m5314equalsimpl0(i, companion.m5321getGestureThresholdActivate5zf0vsI()) ? "GestureThresholdActivate" : m5314equalsimpl0(i, companion.m5322getKeyboardTap5zf0vsI()) ? "KeyboardTap" : m5314equalsimpl0(i, companion.m5323getLongPress5zf0vsI()) ? "LongPress" : m5314equalsimpl0(i, companion.m5324getReject5zf0vsI()) ? "Reject" : m5314equalsimpl0(i, companion.m5325getSegmentFrequentTick5zf0vsI()) ? "SegmentFrequentTick" : m5314equalsimpl0(i, companion.m5326getSegmentTick5zf0vsI()) ? "SegmentTick" : m5314equalsimpl0(i, companion.m5327getTextHandleMove5zf0vsI()) ? "TextHandleMove" : m5314equalsimpl0(i, companion.m5328getToggleOff5zf0vsI()) ? "ToggleOff" : m5314equalsimpl0(i, companion.m5329getToggleOn5zf0vsI()) ? "ToggleOn" : m5314equalsimpl0(i, companion.m5330getVirtualKey5zf0vsI()) ? "VirtualKey" : "Invalid";
+        return m5327equalsimpl0(i, companion.m5331getConfirm5zf0vsI()) ? "Confirm" : m5327equalsimpl0(i, companion.m5332getContextClick5zf0vsI()) ? "ContextClick" : m5327equalsimpl0(i, companion.m5333getGestureEnd5zf0vsI()) ? "GestureEnd" : m5327equalsimpl0(i, companion.m5334getGestureThresholdActivate5zf0vsI()) ? "GestureThresholdActivate" : m5327equalsimpl0(i, companion.m5335getKeyboardTap5zf0vsI()) ? "KeyboardTap" : m5327equalsimpl0(i, companion.m5336getLongPress5zf0vsI()) ? "LongPress" : m5327equalsimpl0(i, companion.m5337getReject5zf0vsI()) ? "Reject" : m5327equalsimpl0(i, companion.m5338getSegmentFrequentTick5zf0vsI()) ? "SegmentFrequentTick" : m5327equalsimpl0(i, companion.m5339getSegmentTick5zf0vsI()) ? "SegmentTick" : m5327equalsimpl0(i, companion.m5340getTextHandleMove5zf0vsI()) ? "TextHandleMove" : m5327equalsimpl0(i, companion.m5341getToggleOff5zf0vsI()) ? "ToggleOff" : m5327equalsimpl0(i, companion.m5342getToggleOn5zf0vsI()) ? "ToggleOn" : m5327equalsimpl0(i, companion.m5343getVirtualKey5zf0vsI()) ? "VirtualKey" : "Invalid";
     }
 
     /* compiled from: HapticFeedbackType.kt */
@@ -77,72 +77,72 @@ public final class HapticFeedbackType {
         }
 
         /* renamed from: getConfirm-5zf0vsI  reason: not valid java name */
-        public final int m5318getConfirm5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5331getConfirm5zf0vsI();
+        public final int m5331getConfirm5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5344getConfirm5zf0vsI();
         }
 
         /* renamed from: getContextClick-5zf0vsI  reason: not valid java name */
-        public final int m5319getContextClick5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5332getContextClick5zf0vsI();
+        public final int m5332getContextClick5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5345getContextClick5zf0vsI();
         }
 
         /* renamed from: getGestureEnd-5zf0vsI  reason: not valid java name */
-        public final int m5320getGestureEnd5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5333getGestureEnd5zf0vsI();
+        public final int m5333getGestureEnd5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5346getGestureEnd5zf0vsI();
         }
 
         /* renamed from: getGestureThresholdActivate-5zf0vsI  reason: not valid java name */
-        public final int m5321getGestureThresholdActivate5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5334getGestureThresholdActivate5zf0vsI();
+        public final int m5334getGestureThresholdActivate5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5347getGestureThresholdActivate5zf0vsI();
         }
 
         /* renamed from: getKeyboardTap-5zf0vsI  reason: not valid java name */
-        public final int m5322getKeyboardTap5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5335getKeyboardTap5zf0vsI();
+        public final int m5335getKeyboardTap5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5348getKeyboardTap5zf0vsI();
         }
 
         /* renamed from: getLongPress-5zf0vsI  reason: not valid java name */
-        public final int m5323getLongPress5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5336getLongPress5zf0vsI();
+        public final int m5336getLongPress5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5349getLongPress5zf0vsI();
         }
 
         /* renamed from: getReject-5zf0vsI  reason: not valid java name */
-        public final int m5324getReject5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5337getReject5zf0vsI();
+        public final int m5337getReject5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5350getReject5zf0vsI();
         }
 
         /* renamed from: getSegmentFrequentTick-5zf0vsI  reason: not valid java name */
-        public final int m5325getSegmentFrequentTick5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5338getSegmentFrequentTick5zf0vsI();
+        public final int m5338getSegmentFrequentTick5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5351getSegmentFrequentTick5zf0vsI();
         }
 
         /* renamed from: getSegmentTick-5zf0vsI  reason: not valid java name */
-        public final int m5326getSegmentTick5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5339getSegmentTick5zf0vsI();
+        public final int m5339getSegmentTick5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5352getSegmentTick5zf0vsI();
         }
 
         /* renamed from: getTextHandleMove-5zf0vsI  reason: not valid java name */
-        public final int m5327getTextHandleMove5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5340getTextHandleMove5zf0vsI();
+        public final int m5340getTextHandleMove5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5353getTextHandleMove5zf0vsI();
         }
 
         /* renamed from: getToggleOff-5zf0vsI  reason: not valid java name */
-        public final int m5328getToggleOff5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5341getToggleOff5zf0vsI();
+        public final int m5341getToggleOff5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5354getToggleOff5zf0vsI();
         }
 
         /* renamed from: getToggleOn-5zf0vsI  reason: not valid java name */
-        public final int m5329getToggleOn5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5342getToggleOn5zf0vsI();
+        public final int m5342getToggleOn5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5355getToggleOn5zf0vsI();
         }
 
         /* renamed from: getVirtualKey-5zf0vsI  reason: not valid java name */
-        public final int m5330getVirtualKey5zf0vsI() {
-            return PlatformHapticFeedbackType.INSTANCE.m5343getVirtualKey5zf0vsI();
+        public final int m5343getVirtualKey5zf0vsI() {
+            return PlatformHapticFeedbackType.INSTANCE.m5356getVirtualKey5zf0vsI();
         }
 
         public final List<HapticFeedbackType> values() {
-            return CollectionsKt.listOf((Object[]) new HapticFeedbackType[]{HapticFeedbackType.m5311boximpl(m5318getConfirm5zf0vsI()), HapticFeedbackType.m5311boximpl(m5319getContextClick5zf0vsI()), HapticFeedbackType.m5311boximpl(m5320getGestureEnd5zf0vsI()), HapticFeedbackType.m5311boximpl(m5321getGestureThresholdActivate5zf0vsI()), HapticFeedbackType.m5311boximpl(m5322getKeyboardTap5zf0vsI()), HapticFeedbackType.m5311boximpl(m5323getLongPress5zf0vsI()), HapticFeedbackType.m5311boximpl(m5324getReject5zf0vsI()), HapticFeedbackType.m5311boximpl(m5325getSegmentFrequentTick5zf0vsI()), HapticFeedbackType.m5311boximpl(m5326getSegmentTick5zf0vsI()), HapticFeedbackType.m5311boximpl(m5327getTextHandleMove5zf0vsI()), HapticFeedbackType.m5311boximpl(m5328getToggleOff5zf0vsI()), HapticFeedbackType.m5311boximpl(m5329getToggleOn5zf0vsI()), HapticFeedbackType.m5311boximpl(m5330getVirtualKey5zf0vsI())});
+            return CollectionsKt.listOf((Object[]) new HapticFeedbackType[]{HapticFeedbackType.m5324boximpl(m5331getConfirm5zf0vsI()), HapticFeedbackType.m5324boximpl(m5332getContextClick5zf0vsI()), HapticFeedbackType.m5324boximpl(m5333getGestureEnd5zf0vsI()), HapticFeedbackType.m5324boximpl(m5334getGestureThresholdActivate5zf0vsI()), HapticFeedbackType.m5324boximpl(m5335getKeyboardTap5zf0vsI()), HapticFeedbackType.m5324boximpl(m5336getLongPress5zf0vsI()), HapticFeedbackType.m5324boximpl(m5337getReject5zf0vsI()), HapticFeedbackType.m5324boximpl(m5338getSegmentFrequentTick5zf0vsI()), HapticFeedbackType.m5324boximpl(m5339getSegmentTick5zf0vsI()), HapticFeedbackType.m5324boximpl(m5340getTextHandleMove5zf0vsI()), HapticFeedbackType.m5324boximpl(m5341getToggleOff5zf0vsI()), HapticFeedbackType.m5324boximpl(m5342getToggleOn5zf0vsI()), HapticFeedbackType.m5324boximpl(m5343getVirtualKey5zf0vsI())});
         }
     }
 }

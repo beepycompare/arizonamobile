@@ -46,12 +46,12 @@ public final class TextFieldSelectionManager$copy$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        TextFieldValue m1815createTextFieldValueFDrldGo;
+        TextFieldValue m1825createTextFieldValueFDrldGo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (TextRange.m6707getCollapsedimpl(this.this$0.getValue$foundation_release().m6964getSelectiond9O1mEE())) {
+            if (TextRange.m6720getCollapsedimpl(this.this$0.getValue$foundation_release().m6977getSelectiond9O1mEE())) {
                 return Unit.INSTANCE;
             }
             Clipboard clipboard$foundation_release = this.this$0.getClipboard$foundation_release();
@@ -67,11 +67,11 @@ public final class TextFieldSelectionManager$copy$1 extends SuspendLambda implem
             ResultKt.throwOnFailure(obj);
         }
         if (this.$cancelSelection) {
-            int m6710getMaximpl = TextRange.m6710getMaximpl(this.this$0.getValue$foundation_release().m6964getSelectiond9O1mEE());
+            int m6723getMaximpl = TextRange.m6723getMaximpl(this.this$0.getValue$foundation_release().m6977getSelectiond9O1mEE());
             TextFieldSelectionManager textFieldSelectionManager = this.this$0;
-            m1815createTextFieldValueFDrldGo = textFieldSelectionManager.m1815createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRangeKt.TextRange(m6710getMaximpl, m6710getMaximpl));
-            this.this$0.getOnValueChange$foundation_release().invoke(m1815createTextFieldValueFDrldGo);
-            this.this$0.m1827setLatestSelectionOEnZFl4$foundation_release(TextRange.m6701boximpl(m1815createTextFieldValueFDrldGo.m6964getSelectiond9O1mEE()));
+            m1825createTextFieldValueFDrldGo = textFieldSelectionManager.m1825createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation_release().getAnnotatedString(), TextRangeKt.TextRange(m6723getMaximpl, m6723getMaximpl));
+            this.this$0.getOnValueChange$foundation_release().invoke(m1825createTextFieldValueFDrldGo);
+            this.this$0.m1837setLatestSelectionOEnZFl4$foundation_release(TextRange.m6714boximpl(m1825createTextFieldValueFDrldGo.m6977getSelectiond9O1mEE()));
             this.this$0.setHandleState(HandleState.None);
             return Unit.INSTANCE;
         }

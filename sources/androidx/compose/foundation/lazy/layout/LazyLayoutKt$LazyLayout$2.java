@@ -156,6 +156,6 @@ public final class LazyLayoutKt$LazyLayout$2 implements Function3<SaveableStateH
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult invoke$lambda$8$lambda$7(LazyLayoutItemContentFactory lazyLayoutItemContentFactory, LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        return lazyLayoutMeasurePolicy.mo949measure0kLqBqw(new LazyLayoutMeasureScopeImpl(lazyLayoutItemContentFactory, subcomposeMeasureScope), constraints.m7210unboximpl());
+        return lazyLayoutMeasurePolicy.mo959measure0kLqBqw(new LazyLayoutMeasureScopeImpl(lazyLayoutItemContentFactory, subcomposeMeasureScope), constraints.m7223unboximpl());
     }
 }

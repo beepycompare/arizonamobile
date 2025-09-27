@@ -69,7 +69,7 @@ public final class Savers_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object PlatformParagraphStyleSaver$lambda$0(SaverScope saverScope, PlatformParagraphStyle platformParagraphStyle) {
-        return CollectionsKt.arrayListOf(SaversKt.save(Boolean.valueOf(platformParagraphStyle.getIncludeFontPadding())), SaversKt.save(EmojiSupportMatch.m6540boximpl(platformParagraphStyle.m6622getEmojiSupportMatch_3YsG6Y())));
+        return CollectionsKt.arrayListOf(SaversKt.save(Boolean.valueOf(platformParagraphStyle.getIncludeFontPadding())), SaversKt.save(EmojiSupportMatch.m6553boximpl(platformParagraphStyle.m6635getEmojiSupportMatch_3YsG6Y())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -83,7 +83,7 @@ public final class Savers_androidKt {
         Object obj3 = list.get(1);
         EmojiSupportMatch emojiSupportMatch = obj3 != null ? (EmojiSupportMatch) obj3 : null;
         Intrinsics.checkNotNull(emojiSupportMatch);
-        return new PlatformParagraphStyle(emojiSupportMatch.m6546unboximpl(), booleanValue, (DefaultConstructorMarker) null);
+        return new PlatformParagraphStyle(emojiSupportMatch.m6559unboximpl(), booleanValue, (DefaultConstructorMarker) null);
     }
 
     public static final Saver<LineBreak, Object> getSaver(LineBreak.Companion companion) {
@@ -92,13 +92,13 @@ public final class Savers_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object LineBreakSaver$lambda$2(SaverScope saverScope, LineBreak lineBreak) {
-        return Integer.valueOf(lineBreak.m7048unboximpl());
+        return Integer.valueOf(lineBreak.m7061unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final LineBreak LineBreakSaver$lambda$3(Object obj) {
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
-        return LineBreak.m7036boximpl(LineBreak.m7037constructorimpl(((Integer) obj).intValue()));
+        return LineBreak.m7049boximpl(LineBreak.m7050constructorimpl(((Integer) obj).intValue()));
     }
 
     public static final Saver<TextMotion, Object> getSaver(TextMotion.Companion companion) {
@@ -107,7 +107,7 @@ public final class Savers_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Object TextMotionSaver$lambda$4(SaverScope saverScope, TextMotion textMotion) {
-        return CollectionsKt.arrayListOf(SaversKt.save(TextMotion.Linearity.m7164boximpl(textMotion.m7163getLinearity4e0Vf04$ui_text())), SaversKt.save(Boolean.valueOf(textMotion.getSubpixelTextPositioning$ui_text())));
+        return CollectionsKt.arrayListOf(SaversKt.save(TextMotion.Linearity.m7177boximpl(textMotion.m7176getLinearity4e0Vf04$ui_text())), SaversKt.save(Boolean.valueOf(textMotion.getSubpixelTextPositioning$ui_text())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -117,10 +117,10 @@ public final class Savers_androidKt {
         Object obj2 = list.get(0);
         TextMotion.Linearity linearity = obj2 != null ? (TextMotion.Linearity) obj2 : null;
         Intrinsics.checkNotNull(linearity);
-        int m7170unboximpl = linearity.m7170unboximpl();
+        int m7183unboximpl = linearity.m7183unboximpl();
         Object obj3 = list.get(1);
         Boolean bool = obj3 != null ? (Boolean) obj3 : null;
         Intrinsics.checkNotNull(bool);
-        return new TextMotion(m7170unboximpl, bool.booleanValue(), null);
+        return new TextMotion(m7183unboximpl, bool.booleanValue(), null);
     }
 }

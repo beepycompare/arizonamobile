@@ -9,12 +9,12 @@ import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 public final class C0373k6 extends BaseRequestConfig.DataSource {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0493om f949a;
+    public final C0493om f950a;
     public final SdkEnvironmentProvider b;
 
     public C0373k6(C0493om c0493om, SdkEnvironmentProvider sdkEnvironmentProvider, PlatformIdentifiers platformIdentifiers, Object obj) {
         super(new SdkIdentifiers(c0493om.e(), c0493om.a(), c0493om.b()), sdkEnvironmentProvider, platformIdentifiers, obj);
-        this.f949a = c0493om;
+        this.f950a = c0493om;
         this.b = sdkEnvironmentProvider;
     }
 }

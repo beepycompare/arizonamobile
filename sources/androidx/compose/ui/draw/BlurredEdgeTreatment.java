@@ -12,32 +12,32 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class BlurredEdgeTreatment {
     public static final Companion Companion = new Companion(null);
-    private static final Shape Rectangle = m4067constructorimpl(RectangleShapeKt.getRectangleShape());
-    private static final Shape Unbounded = m4067constructorimpl(null);
+    private static final Shape Rectangle = m4079constructorimpl(RectangleShapeKt.getRectangleShape());
+    private static final Shape Unbounded = m4079constructorimpl(null);
     private final Shape shape;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BlurredEdgeTreatment m4066boximpl(Shape shape) {
+    public static final /* synthetic */ BlurredEdgeTreatment m4078boximpl(Shape shape) {
         return new BlurredEdgeTreatment(shape);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Shape m4067constructorimpl(Shape shape) {
+    public static Shape m4079constructorimpl(Shape shape) {
         return shape;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4068equalsimpl(Shape shape, Object obj) {
-        return (obj instanceof BlurredEdgeTreatment) && Intrinsics.areEqual(shape, ((BlurredEdgeTreatment) obj).m4072unboximpl());
+    public static boolean m4080equalsimpl(Shape shape, Object obj) {
+        return (obj instanceof BlurredEdgeTreatment) && Intrinsics.areEqual(shape, ((BlurredEdgeTreatment) obj).m4084unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4069equalsimpl0(Shape shape, Shape shape2) {
+    public static final boolean m4081equalsimpl0(Shape shape, Shape shape2) {
         return Intrinsics.areEqual(shape, shape2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4070hashCodeimpl(Shape shape) {
+    public static int m4082hashCodeimpl(Shape shape) {
         if (shape == null) {
             return 0;
         }
@@ -45,24 +45,24 @@ public final class BlurredEdgeTreatment {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4071toStringimpl(Shape shape) {
+    public static String m4083toStringimpl(Shape shape) {
         return "BlurredEdgeTreatment(shape=" + shape + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4068equalsimpl(this.shape, obj);
+        return m4080equalsimpl(this.shape, obj);
     }
 
     public int hashCode() {
-        return m4070hashCodeimpl(this.shape);
+        return m4082hashCodeimpl(this.shape);
     }
 
     public String toString() {
-        return m4071toStringimpl(this.shape);
+        return m4083toStringimpl(this.shape);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Shape m4072unboximpl() {
+    public final /* synthetic */ Shape m4084unboximpl() {
         return this.shape;
     }
 
@@ -86,12 +86,12 @@ public final class BlurredEdgeTreatment {
         }
 
         /* renamed from: getRectangle---Goahg  reason: not valid java name */
-        public final Shape m4073getRectangleGoahg() {
+        public final Shape m4085getRectangleGoahg() {
             return BlurredEdgeTreatment.Rectangle;
         }
 
         /* renamed from: getUnbounded---Goahg  reason: not valid java name */
-        public final Shape m4074getUnboundedGoahg() {
+        public final Shape m4086getUnboundedGoahg() {
             return BlurredEdgeTreatment.Unbounded;
         }
     }

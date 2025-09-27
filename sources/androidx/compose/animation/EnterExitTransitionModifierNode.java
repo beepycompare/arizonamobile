@@ -203,7 +203,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: setLookaheadConstraints-BRTryo0  reason: not valid java name */
-    private final void m102setLookaheadConstraintsBRTryo0(long j) {
+    private final void m112setLookaheadConstraintsBRTryo0(long j) {
         this.lookaheadConstraintsAvailable = true;
         this.lookaheadConstraints = j;
     }
@@ -246,7 +246,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: sizeByState-Uzc_VyU  reason: not valid java name */
-    public final long m103sizeByStateUzc_VyU(EnterExitState enterExitState, long j) {
+    public final long m113sizeByStateUzc_VyU(EnterExitState enterExitState, long j) {
         Function1<IntSize, IntSize> size;
         Function1<IntSize, IntSize> size2;
         int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
@@ -254,14 +254,14 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             if (i == 2) {
                 ChangeSize changeSize = this.enter.getData$animation().getChangeSize();
                 if (changeSize != null && (size = changeSize.getSize()) != null) {
-                    return size.invoke(IntSize.m7414boximpl(j)).m7426unboximpl();
+                    return size.invoke(IntSize.m7427boximpl(j)).m7439unboximpl();
                 }
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {
                 ChangeSize changeSize2 = this.exit.getData$animation().getChangeSize();
                 if (changeSize2 != null && (size2 = changeSize2.getSize()) != null) {
-                    return size2.invoke(IntSize.m7414boximpl(j)).m7426unboximpl();
+                    return size2.invoke(IntSize.m7427boximpl(j)).m7439unboximpl();
                 }
             }
         }
@@ -276,7 +276,7 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: targetOffsetByState-oFUgxo0  reason: not valid java name */
-    public final long m105targetOffsetByStateoFUgxo0(EnterExitState enterExitState, long j) {
+    public final long m115targetOffsetByStateoFUgxo0(EnterExitState enterExitState, long j) {
         if (this.currentAlignment != null && getAlignment() != null && !Intrinsics.areEqual(this.currentAlignment, getAlignment())) {
             int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
             if (i != 1) {
@@ -286,26 +286,26 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
                     }
                     ChangeSize changeSize = this.exit.getData$animation().getChangeSize();
                     if (changeSize != null) {
-                        long m7426unboximpl = changeSize.getSize().invoke(IntSize.m7414boximpl(j)).m7426unboximpl();
+                        long m7439unboximpl = changeSize.getSize().invoke(IntSize.m7427boximpl(j)).m7439unboximpl();
                         Alignment alignment = getAlignment();
                         Intrinsics.checkNotNull(alignment);
-                        long mo4016alignKFBX0sM = alignment.mo4016alignKFBX0sM(j, m7426unboximpl, LayoutDirection.Ltr);
+                        long mo4028alignKFBX0sM = alignment.mo4028alignKFBX0sM(j, m7439unboximpl, LayoutDirection.Ltr);
                         Alignment alignment2 = this.currentAlignment;
                         Intrinsics.checkNotNull(alignment2);
-                        return IntOffset.m7382minusqkQi6aY(mo4016alignKFBX0sM, alignment2.mo4016alignKFBX0sM(j, m7426unboximpl, LayoutDirection.Ltr));
+                        return IntOffset.m7395minusqkQi6aY(mo4028alignKFBX0sM, alignment2.mo4028alignKFBX0sM(j, m7439unboximpl, LayoutDirection.Ltr));
                     }
-                    return IntOffset.Companion.m7390getZeronOccac();
+                    return IntOffset.Companion.m7403getZeronOccac();
                 }
-                return IntOffset.Companion.m7390getZeronOccac();
+                return IntOffset.Companion.m7403getZeronOccac();
             }
-            return IntOffset.Companion.m7390getZeronOccac();
+            return IntOffset.Companion.m7403getZeronOccac();
         }
-        return IntOffset.Companion.m7390getZeronOccac();
+        return IntOffset.Companion.m7403getZeronOccac();
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         State<IntOffset> animate;
         State<IntOffset> animate2;
         if (this.transition.getCurrentState() == this.transition.getTargetState()) {
@@ -318,11 +318,11 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             this.currentAlignment = alignment;
         }
         if (measureScope.isLookingAhead()) {
-            final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-            long m7417constructorimpl = IntSize.m7417constructorimpl((mo5954measureBRTryo0.getWidth() << 32) | (mo5954measureBRTryo0.getHeight() & 4294967295L));
-            this.lookaheadSize = m7417constructorimpl;
-            m102setLookaheadConstraintsBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, (int) (m7417constructorimpl >> 32), (int) (m7417constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$1
+            final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+            long m7430constructorimpl = IntSize.m7430constructorimpl((mo5967measureBRTryo0.getWidth() << 32) | (mo5967measureBRTryo0.getHeight() & 4294967295L));
+            this.lookaheadSize = m7430constructorimpl;
+            m112setLookaheadConstraintsBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, (int) (m7430constructorimpl >> 32), (int) (m7430constructorimpl & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -341,9 +341,9 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
             }, 4, null);
         } else if (this.isEnabled.invoke().booleanValue()) {
             final Function1<GraphicsLayerScope, Unit> init = this.graphicsLayerBlock.init();
-            final Placeable mo5954measureBRTryo02 = measurable.mo5954measureBRTryo0(j);
-            long m7417constructorimpl2 = IntSize.m7417constructorimpl((mo5954measureBRTryo02.getWidth() << 32) | (mo5954measureBRTryo02.getHeight() & 4294967295L));
-            final long j2 = AnimationModifierKt.m74isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m7417constructorimpl2;
+            final Placeable mo5967measureBRTryo02 = measurable.mo5967measureBRTryo0(j);
+            long m7430constructorimpl2 = IntSize.m7430constructorimpl((mo5967measureBRTryo02.getWidth() << 32) | (mo5967measureBRTryo02.getHeight() & 4294967295L));
+            final long j2 = AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m7430constructorimpl2;
             Transition<EnterExitState>.DeferredAnimation<IntSize, AnimationVector2D> deferredAnimation = this.sizeAnimation;
             State<IntSize> animate3 = deferredAnimation != null ? deferredAnimation.animate(this.sizeTransitionSpec, new Function1<EnterExitState, IntSize>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$animSize$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -354,20 +354,20 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntSize invoke(EnterExitState enterExitState) {
-                    return IntSize.m7414boximpl(m106invokeYEO4UFw(enterExitState));
+                    return IntSize.m7427boximpl(m116invokeYEO4UFw(enterExitState));
                 }
 
                 /* renamed from: invoke-YEO4UFw  reason: not valid java name */
-                public final long m106invokeYEO4UFw(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m103sizeByStateUzc_VyU(enterExitState, j2);
+                public final long m116invokeYEO4UFw(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m113sizeByStateUzc_VyU(enterExitState, j2);
                 }
             }) : null;
             if (animate3 != null) {
-                m7417constructorimpl2 = animate3.getValue().m7426unboximpl();
+                m7430constructorimpl2 = animate3.getValue().m7439unboximpl();
             }
-            long m7218constrain4WqzIAM = ConstraintsKt.m7218constrain4WqzIAM(j, m7417constructorimpl2);
+            long m7231constrain4WqzIAM = ConstraintsKt.m7231constrain4WqzIAM(j, m7430constructorimpl2);
             Transition<EnterExitState>.DeferredAnimation<IntOffset, AnimationVector2D> deferredAnimation2 = this.offsetAnimation;
-            long m7390getZeronOccac = (deferredAnimation2 == null || (animate2 = deferredAnimation2.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<IntOffset>>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$offsetDelta$1
+            long m7403getZeronOccac = (deferredAnimation2 == null || (animate2 = deferredAnimation2.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<IntOffset>>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$offsetDelta$1
                 @Override // kotlin.jvm.functions.Function1
                 public final FiniteAnimationSpec<IntOffset> invoke(Transition.Segment<EnterExitState> segment) {
                     SpringSpec springSpec;
@@ -383,16 +383,16 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntOffset invoke(EnterExitState enterExitState) {
-                    return IntOffset.m7370boximpl(m107invokeBjo55l4(enterExitState));
+                    return IntOffset.m7383boximpl(m117invokeBjo55l4(enterExitState));
                 }
 
                 /* renamed from: invoke-Bjo55l4  reason: not valid java name */
-                public final long m107invokeBjo55l4(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m105targetOffsetByStateoFUgxo0(enterExitState, j2);
+                public final long m117invokeBjo55l4(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m115targetOffsetByStateoFUgxo0(enterExitState, j2);
                 }
-            })) == null) ? IntOffset.Companion.m7390getZeronOccac() : animate2.getValue().m7388unboximpl();
+            })) == null) ? IntOffset.Companion.m7403getZeronOccac() : animate2.getValue().m7401unboximpl();
             Transition<EnterExitState>.DeferredAnimation<IntOffset, AnimationVector2D> deferredAnimation3 = this.slideAnimation;
-            long m7390getZeronOccac2 = (deferredAnimation3 == null || (animate = deferredAnimation3.animate(this.slideSpec, new Function1<EnterExitState, IntOffset>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$slideOffset$1
+            long m7403getZeronOccac2 = (deferredAnimation3 == null || (animate = deferredAnimation3.animate(this.slideSpec, new Function1<EnterExitState, IntOffset>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$slideOffset$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -401,18 +401,18 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntOffset invoke(EnterExitState enterExitState) {
-                    return IntOffset.m7370boximpl(m108invokeBjo55l4(enterExitState));
+                    return IntOffset.m7383boximpl(m118invokeBjo55l4(enterExitState));
                 }
 
                 /* renamed from: invoke-Bjo55l4  reason: not valid java name */
-                public final long m108invokeBjo55l4(EnterExitState enterExitState) {
-                    return EnterExitTransitionModifierNode.this.m104slideTargetValueByStateoFUgxo0(enterExitState, j2);
+                public final long m118invokeBjo55l4(EnterExitState enterExitState) {
+                    return EnterExitTransitionModifierNode.this.m114slideTargetValueByStateoFUgxo0(enterExitState, j2);
                 }
-            })) == null) ? IntOffset.Companion.m7390getZeronOccac() : animate.getValue().m7388unboximpl();
+            })) == null) ? IntOffset.Companion.m7403getZeronOccac() : animate.getValue().m7401unboximpl();
             Alignment alignment2 = this.currentAlignment;
-            final long m7383plusqkQi6aY = IntOffset.m7383plusqkQi6aY(alignment2 != null ? alignment2.mo4016alignKFBX0sM(j2, m7218constrain4WqzIAM, LayoutDirection.Ltr) : IntOffset.Companion.m7390getZeronOccac(), m7390getZeronOccac2);
-            final long j3 = m7390getZeronOccac;
-            return MeasureScope.layout$default(measureScope, (int) (m7218constrain4WqzIAM >> 32), (int) (m7218constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$2
+            final long m7396plusqkQi6aY = IntOffset.m7396plusqkQi6aY(alignment2 != null ? alignment2.mo4028alignKFBX0sM(j2, m7231constrain4WqzIAM, LayoutDirection.Ltr) : IntOffset.Companion.m7403getZeronOccac(), m7403getZeronOccac2);
+            final long j3 = m7403getZeronOccac;
+            return MeasureScope.layout$default(measureScope, (int) (m7231constrain4WqzIAM >> 32), (int) (m7231constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -428,12 +428,12 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(Placeable.PlacementScope placementScope) {
-                    placementScope.placeWithLayer(Placeable.this, IntOffset.m7379getXimpl(j3) + IntOffset.m7379getXimpl(m7383plusqkQi6aY), IntOffset.m7380getYimpl(j3) + IntOffset.m7380getYimpl(m7383plusqkQi6aY), 0.0f, init);
+                    placementScope.placeWithLayer(Placeable.this, IntOffset.m7392getXimpl(j3) + IntOffset.m7392getXimpl(m7396plusqkQi6aY), IntOffset.m7393getYimpl(j3) + IntOffset.m7393getYimpl(m7396plusqkQi6aY), 0.0f, init);
                 }
             }, 4, null);
         } else {
-            final Placeable mo5954measureBRTryo03 = measurable.mo5954measureBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, mo5954measureBRTryo03.getWidth(), mo5954measureBRTryo03.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$3$1
+            final Placeable mo5967measureBRTryo03 = measurable.mo5967measureBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, mo5967measureBRTryo03.getWidth(), mo5967measureBRTryo03.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionModifierNode$measure$3$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
@@ -458,23 +458,23 @@ final class EnterExitTransitionModifierNode extends LayoutModifierNodeWithPassTh
     }
 
     /* renamed from: slideTargetValueByState-oFUgxo0  reason: not valid java name */
-    public final long m104slideTargetValueByStateoFUgxo0(EnterExitState enterExitState, long j) {
+    public final long m114slideTargetValueByStateoFUgxo0(EnterExitState enterExitState, long j) {
         Function1<IntSize, IntOffset> slideOffset;
         Function1<IntSize, IntOffset> slideOffset2;
         Slide slide = this.enter.getData$animation().getSlide();
-        long m7390getZeronOccac = (slide == null || (slideOffset2 = slide.getSlideOffset()) == null) ? IntOffset.Companion.m7390getZeronOccac() : slideOffset2.invoke(IntSize.m7414boximpl(j)).m7388unboximpl();
+        long m7403getZeronOccac = (slide == null || (slideOffset2 = slide.getSlideOffset()) == null) ? IntOffset.Companion.m7403getZeronOccac() : slideOffset2.invoke(IntSize.m7427boximpl(j)).m7401unboximpl();
         Slide slide2 = this.exit.getData$animation().getSlide();
-        long m7390getZeronOccac2 = (slide2 == null || (slideOffset = slide2.getSlideOffset()) == null) ? IntOffset.Companion.m7390getZeronOccac() : slideOffset.invoke(IntSize.m7414boximpl(j)).m7388unboximpl();
+        long m7403getZeronOccac2 = (slide2 == null || (slideOffset = slide2.getSlideOffset()) == null) ? IntOffset.Companion.m7403getZeronOccac() : slideOffset.invoke(IntSize.m7427boximpl(j)).m7401unboximpl();
         int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return m7390getZeronOccac2;
+                    return m7403getZeronOccac2;
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return m7390getZeronOccac;
+            return m7403getZeronOccac;
         }
-        return IntOffset.Companion.m7390getZeronOccac();
+        return IntOffset.Companion.m7403getZeronOccac();
     }
 }

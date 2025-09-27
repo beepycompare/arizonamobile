@@ -35,8 +35,8 @@ public final class AndroidViewHolder_androidKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final int toNestedScrollSource(int i) {
         if (i == 0) {
-            return NestedScrollSource.Companion.m5719getUserInputWNlRxjI();
+            return NestedScrollSource.Companion.m5732getUserInputWNlRxjI();
         }
-        return NestedScrollSource.Companion.m5718getSideEffectWNlRxjI();
+        return NestedScrollSource.Companion.m5731getSideEffectWNlRxjI();
     }
 }

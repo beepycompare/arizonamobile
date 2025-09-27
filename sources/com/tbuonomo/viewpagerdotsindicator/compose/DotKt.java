@@ -21,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class DotKt {
     public static final void Dot(final DotGraphic graphic, final Modifier modifier, Composer composer, final int i) {
         int i2;
-        Modifier m269borderxT4_qwU;
+        Modifier m279borderxT4_qwU;
         Intrinsics.checkNotNullParameter(graphic, "graphic");
         Intrinsics.checkNotNullParameter(modifier, "modifier");
         Composer startRestartGroup = composer.startRestartGroup(1695287159);
@@ -37,12 +37,12 @@ public final class DotKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1695287159, i2, -1, "com.tbuonomo.viewpagerdotsindicator.compose.Dot (Dot.kt:14)");
             }
-            Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(BackgroundKt.m256backgroundbw27NRU(modifier, graphic.m9070getColor0d7_KjU(), graphic.getShape()), graphic.m9071getSizeD9Ej5fM());
-            Dp m9069getBorderWidthlTKBWiU = graphic.m9069getBorderWidthlTKBWiU();
-            if (m9069getBorderWidthlTKBWiU != null && (m269borderxT4_qwU = BorderKt.m269borderxT4_qwU(m884size3ABfNKs, m9069getBorderWidthlTKBWiU.m7265unboximpl(), graphic.m9068getBorderColor0d7_KjU(), graphic.getShape())) != null) {
-                m884size3ABfNKs = m269borderxT4_qwU;
+            Modifier m894size3ABfNKs = SizeKt.m894size3ABfNKs(BackgroundKt.m266backgroundbw27NRU(modifier, graphic.m9085getColor0d7_KjU(), graphic.getShape()), graphic.m9086getSizeD9Ej5fM());
+            Dp m9084getBorderWidthlTKBWiU = graphic.m9084getBorderWidthlTKBWiU();
+            if (m9084getBorderWidthlTKBWiU != null && (m279borderxT4_qwU = BorderKt.m279borderxT4_qwU(m894size3ABfNKs, m9084getBorderWidthlTKBWiU.m7278unboximpl(), graphic.m9083getBorderColor0d7_KjU(), graphic.getShape())) != null) {
+                m894size3ABfNKs = m279borderxT4_qwU;
             }
-            BoxKt.Box(m884size3ABfNKs, startRestartGroup, 0);
+            BoxKt.Box(m894size3ABfNKs, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -39,7 +39,7 @@ public class ClickableNode extends AbstractClickableNode {
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyDownEvent-ZmokQxo */
-    protected final boolean mo224onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
+    protected final boolean mo234onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
         return false;
     }
 
@@ -57,15 +57,15 @@ public class ClickableNode extends AbstractClickableNode {
     }
 
     /* renamed from: getExtendedTouchPadding-hWWAJMo  reason: not valid java name */
-    private final long m312getExtendedTouchPaddinghWWAJMo(long j) {
-        long mo420toSizeXkaWNTQ = DelegatableNodeKt.requireDensity(this).mo420toSizeXkaWNTQ(((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration())).mo6161getMinimumTouchTargetSizeMYxV2XQ());
-        return Size.m4353constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo420toSizeXkaWNTQ & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo420toSizeXkaWNTQ >> 32)) - ((int) (j >> 32))) / 2.0f) << 32));
+    private final long m322getExtendedTouchPaddinghWWAJMo(long j) {
+        long mo430toSizeXkaWNTQ = DelegatableNodeKt.requireDensity(this).mo430toSizeXkaWNTQ(((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration())).mo6174getMinimumTouchTargetSizeMYxV2XQ());
+        return Size.m4365constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo430toSizeXkaWNTQ & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f) & 4294967295L) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (mo430toSizeXkaWNTQ >> 32)) - ((int) (j >> 32))) / 2.0f) << 32));
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode, androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        super.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        super.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
         if (this.isSuspendingPointerInputEnabled) {
             return;
         }
@@ -78,7 +78,7 @@ public class ClickableNode extends AbstractClickableNode {
                     pointerInputChange2.consume();
                     this.downEvent = pointerInputChange2;
                     if (getEnabled()) {
-                        m223handlePressInteractionStartk4lQ0M(pointerInputChange2.m5826getPositionF1C5BW0());
+                        m233handlePressInteractionStartk4lQ0M(pointerInputChange2.m5839getPositionF1C5BW0());
                         return;
                     }
                     return;
@@ -89,12 +89,12 @@ public class ClickableNode extends AbstractClickableNode {
             int size = changes.size();
             for (int i2 = 0; i2 < size; i2++) {
                 if (!PointerEventKt.changedToUp(changes.get(i2))) {
-                    long m312getExtendedTouchPaddinghWWAJMo = m312getExtendedTouchPaddinghWWAJMo(j);
+                    long m322getExtendedTouchPaddinghWWAJMo = m322getExtendedTouchPaddinghWWAJMo(j);
                     List<PointerInputChange> changes2 = pointerEvent.getChanges();
                     int size2 = changes2.size();
                     while (i < size2) {
                         PointerInputChange pointerInputChange3 = changes2.get(i);
-                        if (pointerInputChange3.isConsumed() || PointerEventKt.m5771isOutOfBoundsjwHxaWs(pointerInputChange3, j, m312getExtendedTouchPaddinghWWAJMo)) {
+                        if (pointerInputChange3.isConsumed() || PointerEventKt.m5784isOutOfBoundsjwHxaWs(pointerInputChange3, j, m322getExtendedTouchPaddinghWWAJMo)) {
                             this.downEvent = null;
                             handlePressInteractionCancel();
                             return;
@@ -106,7 +106,7 @@ public class ClickableNode extends AbstractClickableNode {
             }
             pointerEvent.getChanges().get(0).consume();
             if (getEnabled()) {
-                m222handlePressInteractionReleasek4lQ0M(pointerInputChange.m5826getPositionF1C5BW0());
+                m232handlePressInteractionReleasek4lQ0M(pointerInputChange.m5839getPositionF1C5BW0());
                 getOnClick().invoke();
             }
             this.downEvent = null;
@@ -135,13 +135,13 @@ public class ClickableNode extends AbstractClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m313updateO2vRcR0(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
-        m229updateCommonO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, str, role, function0);
+    public final void m323updateO2vRcR0(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
+        m239updateCommonO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, str, role, function0);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyUpEvent-ZmokQxo */
-    protected final boolean mo225onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
+    protected final boolean mo235onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
         getOnClick().invoke();
         return true;
     }

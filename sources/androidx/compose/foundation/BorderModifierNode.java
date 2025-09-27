@@ -88,13 +88,13 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public final float m278getWidthD9Ej5fM() {
+    public final float m288getWidthD9Ej5fM() {
         return this.width;
     }
 
     /* renamed from: setWidth-0680j_4  reason: not valid java name */
-    public final void m279setWidth0680j_4(float f) {
-        if (Dp.m7256equalsimpl0(this.width, f)) {
+    public final void m289setWidth0680j_4(float f) {
+        if (Dp.m7269equalsimpl0(this.width, f)) {
             return;
         }
         this.width = f;
@@ -128,33 +128,33 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult drawWithCacheModifierNode$lambda$0(BorderModifierNode borderModifierNode, CacheDrawScope cacheDrawScope) {
         DrawResult drawContentWithoutBorder;
-        DrawResult m272drawRectBorderNsqcLGU;
-        if (cacheDrawScope.mo419toPx0680j_4(borderModifierNode.width) < 0.0f || Size.m4361getMinDimensionimpl(cacheDrawScope.m4077getSizeNHjbRc()) <= 0.0f) {
+        DrawResult m282drawRectBorderNsqcLGU;
+        if (cacheDrawScope.mo429toPx0680j_4(borderModifierNode.width) < 0.0f || Size.m4373getMinDimensionimpl(cacheDrawScope.m4089getSizeNHjbRc()) <= 0.0f) {
             drawContentWithoutBorder = BorderKt.drawContentWithoutBorder(cacheDrawScope);
             return drawContentWithoutBorder;
         }
         float f = 2;
-        float min = Math.min(Dp.m7256equalsimpl0(borderModifierNode.width, Dp.Companion.m7269getHairlineD9Ej5fM()) ? 1.0f : (float) Math.ceil(cacheDrawScope.mo419toPx0680j_4(borderModifierNode.width)), (float) Math.ceil(Size.m4361getMinDimensionimpl(cacheDrawScope.m4077getSizeNHjbRc()) / f));
+        float min = Math.min(Dp.m7269equalsimpl0(borderModifierNode.width, Dp.Companion.m7282getHairlineD9Ej5fM()) ? 1.0f : (float) Math.ceil(cacheDrawScope.mo429toPx0680j_4(borderModifierNode.width)), (float) Math.ceil(Size.m4373getMinDimensionimpl(cacheDrawScope.m4089getSizeNHjbRc()) / f));
         float f2 = min / f;
-        long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
-        long m4353constructorimpl = Size.m4353constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (cacheDrawScope.m4077getSizeNHjbRc() & 4294967295L)) - min) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (cacheDrawScope.m4077getSizeNHjbRc() >> 32)) - min) << 32));
-        boolean z = f * min > Size.m4361getMinDimensionimpl(cacheDrawScope.m4077getSizeNHjbRc());
-        Outline mo321createOutlinePq9zytI = borderModifierNode.shape.mo321createOutlinePq9zytI(cacheDrawScope.m4077getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope);
-        if (mo321createOutlinePq9zytI instanceof Outline.Generic) {
-            return borderModifierNode.drawGenericBorder(cacheDrawScope, borderModifierNode.brush, (Outline.Generic) mo321createOutlinePq9zytI, z, min);
+        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
+        long m4365constructorimpl = Size.m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() & 4294967295L)) - min) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() >> 32)) - min) << 32));
+        boolean z = f * min > Size.m4373getMinDimensionimpl(cacheDrawScope.m4089getSizeNHjbRc());
+        Outline mo331createOutlinePq9zytI = borderModifierNode.shape.mo331createOutlinePq9zytI(cacheDrawScope.m4089getSizeNHjbRc(), cacheDrawScope.getLayoutDirection(), cacheDrawScope);
+        if (mo331createOutlinePq9zytI instanceof Outline.Generic) {
+            return borderModifierNode.drawGenericBorder(cacheDrawScope, borderModifierNode.brush, (Outline.Generic) mo331createOutlinePq9zytI, z, min);
         }
-        if (mo321createOutlinePq9zytI instanceof Outline.Rounded) {
-            return borderModifierNode.m277drawRoundRectBorderJqoCqck(cacheDrawScope, borderModifierNode.brush, (Outline.Rounded) mo321createOutlinePq9zytI, m4285constructorimpl, m4353constructorimpl, z, min);
-        } else if (mo321createOutlinePq9zytI instanceof Outline.Rectangle) {
-            m272drawRectBorderNsqcLGU = BorderKt.m272drawRectBorderNsqcLGU(cacheDrawScope, borderModifierNode.brush, m4285constructorimpl, m4353constructorimpl, z, min);
-            return m272drawRectBorderNsqcLGU;
+        if (mo331createOutlinePq9zytI instanceof Outline.Rounded) {
+            return borderModifierNode.m287drawRoundRectBorderJqoCqck(cacheDrawScope, borderModifierNode.brush, (Outline.Rounded) mo331createOutlinePq9zytI, m4297constructorimpl, m4365constructorimpl, z, min);
+        } else if (mo331createOutlinePq9zytI instanceof Outline.Rectangle) {
+            m282drawRectBorderNsqcLGU = BorderKt.m282drawRectBorderNsqcLGU(cacheDrawScope, borderModifierNode.brush, m4297constructorimpl, m4365constructorimpl, z, min);
+            return m282drawRectBorderNsqcLGU;
         } else {
             throw new NoWhenBranchMatchedException();
         }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x00f8, code lost:
-        if (androidx.compose.ui.graphics.ImageBitmapConfig.m4763equalsimpl(r8, r7 != null ? androidx.compose.ui.graphics.ImageBitmapConfig.m4761boximpl(r7.mo4402getConfig_sVssgQ()) : null) != false) goto L64;
+        if (androidx.compose.ui.graphics.ImageBitmapConfig.m4775equalsimpl(r8, r7 != null ? androidx.compose.ui.graphics.ImageBitmapConfig.m4773boximpl(r7.mo4414getConfig_sVssgQ()) : null) != false) goto L64;
      */
     /* JADX WARN: Removed duplicated region for block: B:40:0x015e  */
     /* JADX WARN: Type inference failed for: r24v3, types: [T, androidx.compose.ui.graphics.ImageBitmap] */
@@ -162,7 +162,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final DrawResult drawGenericBorder(CacheDrawScope cacheDrawScope, final Brush brush, final Outline.Generic generic, boolean z, float f) {
-        int m4769getArgb8888_sVssgQ;
+        int m4781getArgb8888_sVssgQ;
         ColorFilter colorFilter;
         Rect rect;
         BorderCache borderCache;
@@ -175,7 +175,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
         float f3;
         float f4;
         DrawContext drawContext;
-        long mo5037getSizeNHjbRc;
+        long mo5049getSizeNHjbRc;
         DrawContext drawContext2;
         long j;
         if (z) {
@@ -189,13 +189,13 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
             });
         }
         if (brush instanceof SolidColor) {
-            m4769getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ();
-            colorFilter = ColorFilter.Companion.m4578tintxETnrds$default(ColorFilter.Companion, Color.m4536copywmQWz5c$default(((SolidColor) brush).m4889getValue0d7_KjU(), 1.0f, 0.0f, 0.0f, 0.0f, 14, null), 0, 2, null);
+            m4781getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ();
+            colorFilter = ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, Color.m4548copywmQWz5c$default(((SolidColor) brush).m4901getValue0d7_KjU(), 1.0f, 0.0f, 0.0f, 0.0f, 14, null), 0, 2, null);
         } else {
-            m4769getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ();
+            m4781getArgb8888_sVssgQ = ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ();
             colorFilter = null;
         }
-        int i = m4769getArgb8888_sVssgQ;
+        int i = m4781getArgb8888_sVssgQ;
         Rect bounds = generic.getPath().getBounds();
         if (this.borderCache == null) {
             this.borderCache = new BorderCache(null, null, null, null, 15, null);
@@ -205,16 +205,16 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
         Path obtainPath = borderCache2.obtainPath();
         obtainPath.reset();
         Path.addRect$default(obtainPath, bounds, null, 2, null);
-        obtainPath.mo4427opN5in7k0(obtainPath, generic.getPath(), PathOperation.Companion.m4841getDifferenceb3I0S0c());
+        obtainPath.mo4439opN5in7k0(obtainPath, generic.getPath(), PathOperation.Companion.m4853getDifferenceb3I0S0c());
         Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
-        final long m7417constructorimpl = IntSize.m7417constructorimpl((((int) Math.ceil(bounds.getBottom() - bounds.getTop())) & 4294967295L) | (((int) Math.ceil(bounds.getRight() - bounds.getLeft())) << 32));
+        final long m7430constructorimpl = IntSize.m7430constructorimpl((((int) Math.ceil(bounds.getBottom() - bounds.getTop())) & 4294967295L) | (((int) Math.ceil(bounds.getRight() - bounds.getLeft())) << 32));
         BorderCache borderCache3 = this.borderCache;
         Intrinsics.checkNotNull(borderCache3);
         ImageBitmap imageBitmap2 = borderCache3.imageBitmap;
         Canvas canvas2 = borderCache3.canvas;
-        ImageBitmapConfig m4761boximpl = imageBitmap2 != null ? ImageBitmapConfig.m4761boximpl(imageBitmap2.mo4402getConfig_sVssgQ()) : null;
+        ImageBitmapConfig m4773boximpl = imageBitmap2 != null ? ImageBitmapConfig.m4773boximpl(imageBitmap2.mo4414getConfig_sVssgQ()) : null;
         boolean z2 = false;
-        if (!(m4761boximpl == null ? false : ImageBitmapConfig.m4764equalsimpl0(m4761boximpl.m4767unboximpl(), ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ()))) {
+        if (!(m4773boximpl == null ? false : ImageBitmapConfig.m4776equalsimpl0(m4773boximpl.m4779unboximpl(), ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ()))) {
         }
         z2 = true;
         try {
@@ -225,7 +225,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                             rect = bounds;
                         } else {
                             rect = bounds;
-                            if (Float.intBitsToFloat((int) (cacheDrawScope.m4077getSizeNHjbRc() >> 32)) <= imageBitmap2.getWidth() && Float.intBitsToFloat((int) (cacheDrawScope.m4077getSizeNHjbRc() & 4294967295L)) <= imageBitmap2.getHeight() && z2) {
+                            if (Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() >> 32)) <= imageBitmap2.getWidth() && Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() & 4294967295L)) <= imageBitmap2.getHeight() && z2) {
                                 borderCache = borderCache3;
                                 objectRef = objectRef2;
                                 canvas = canvas2;
@@ -236,21 +236,21 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                                     borderCache.canvasDrawScope = canvasDrawScope;
                                 }
                                 CanvasDrawScope canvasDrawScope3 = canvasDrawScope;
-                                long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(m7417constructorimpl);
+                                long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(m7430constructorimpl);
                                 LayoutDirection layoutDirection = cacheDrawScope.getLayoutDirection();
                                 CanvasDrawScope.DrawParams drawParams = canvasDrawScope3.getDrawParams();
                                 Density component1 = drawParams.component1();
                                 LayoutDirection component2 = drawParams.component2();
                                 Canvas component3 = drawParams.component3();
-                                long m5033component4NHjbRc = drawParams.m5033component4NHjbRc();
+                                long m5045component4NHjbRc = drawParams.m5045component4NHjbRc();
                                 CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope3.getDrawParams();
                                 drawParams2.setDensity(cacheDrawScope);
                                 drawParams2.setLayoutDirection(layoutDirection);
                                 drawParams2.setCanvas(canvas);
-                                drawParams2.m5036setSizeuvyYCjk(m7434toSizeozmzZPI);
+                                drawParams2.m5048setSizeuvyYCjk(m7447toSizeozmzZPI);
                                 canvas.save();
                                 canvasDrawScope2 = canvasDrawScope3;
-                                DrawScope.m5110drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m4563getBlack0d7_KjU(), 0L, m7434toSizeozmzZPI, 0.0f, null, null, BlendMode.Companion.m4451getClear0nO6VwU(), 58, null);
+                                DrawScope.m5122drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m4575getBlack0d7_KjU(), 0L, m7447toSizeozmzZPI, 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 58, null);
                                 f2 = -rect.getLeft();
                                 f3 = -rect.getTop();
                                 canvasDrawScope2.getDrawContext().getTransform().translate(f2, f3);
@@ -258,27 +258,27 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                                 f4 = f3;
                                 final ColorFilter colorFilter2 = colorFilter;
                                 Canvas canvas3 = canvas;
-                                DrawScope.m5105drawPathGBMwjPU$default(canvasDrawScope2, generic.getPath(), brush, 0.0f, new Stroke(f * 2, 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
+                                DrawScope.m5117drawPathGBMwjPU$default(canvasDrawScope2, generic.getPath(), brush, 0.0f, new Stroke(f * 2, 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
                                 float f5 = 1;
-                                float intBitsToFloat = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() >> 32)) + f5) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() >> 32));
-                                float intBitsToFloat2 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() & 4294967295L)) + f5) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() & 4294967295L));
-                                long mo5115getCenterF1C5BW0 = canvasDrawScope2.mo5115getCenterF1C5BW0();
+                                float intBitsToFloat = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() >> 32)) + f5) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() >> 32));
+                                float intBitsToFloat2 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() & 4294967295L)) + f5) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() & 4294967295L));
+                                long mo5127getCenterF1C5BW0 = canvasDrawScope2.mo5127getCenterF1C5BW0();
                                 drawContext = canvasDrawScope2.getDrawContext();
-                                mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                                mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                                 drawContext.getCanvas().save();
-                                drawContext.getTransform().mo5044scale0AR0LA0(intBitsToFloat, intBitsToFloat2, mo5115getCenterF1C5BW0);
+                                drawContext.getTransform().mo5056scale0AR0LA0(intBitsToFloat, intBitsToFloat2, mo5127getCenterF1C5BW0);
                                 final Ref.ObjectRef objectRef3 = objectRef;
-                                j = mo5037getSizeNHjbRc;
-                                DrawScope.m5105drawPathGBMwjPU$default(canvasDrawScope2, obtainPath, brush, 0.0f, null, null, BlendMode.Companion.m4451getClear0nO6VwU(), 28, null);
+                                j = mo5049getSizeNHjbRc;
+                                DrawScope.m5117drawPathGBMwjPU$default(canvasDrawScope2, obtainPath, brush, 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 28, null);
                                 drawContext.getCanvas().restore();
-                                drawContext.mo5038setSizeuvyYCjk(j);
+                                drawContext.mo5050setSizeuvyYCjk(j);
                                 canvasDrawScope2.getDrawContext().getTransform().translate(-f2, -f4);
                                 canvas3.restore();
                                 CanvasDrawScope.DrawParams drawParams3 = canvasDrawScope3.getDrawParams();
                                 drawParams3.setDensity(component1);
                                 drawParams3.setLayoutDirection(component2);
                                 drawParams3.setCanvas(component3);
-                                drawParams3.m5036setSizeuvyYCjk(m5033component4NHjbRc);
+                                drawParams3.m5048setSizeuvyYCjk(m5045component4NHjbRc);
                                 r24.prepareToDraw();
                                 objectRef3.element = r24;
                                 final Rect rect2 = rect;
@@ -286,22 +286,22 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
                                         Unit drawGenericBorder$lambda$8;
-                                        drawGenericBorder$lambda$8 = BorderModifierNode.drawGenericBorder$lambda$8(Rect.this, objectRef3, m7417constructorimpl, colorFilter2, (ContentDrawScope) obj);
+                                        drawGenericBorder$lambda$8 = BorderModifierNode.drawGenericBorder$lambda$8(Rect.this, objectRef3, m7430constructorimpl, colorFilter2, (ContentDrawScope) obj);
                                         return drawGenericBorder$lambda$8;
                                     }
                                 });
                             }
                         }
-                        DrawScope.m5105drawPathGBMwjPU$default(canvasDrawScope2, obtainPath, brush, 0.0f, null, null, BlendMode.Companion.m4451getClear0nO6VwU(), 28, null);
+                        DrawScope.m5117drawPathGBMwjPU$default(canvasDrawScope2, obtainPath, brush, 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 28, null);
                         drawContext.getCanvas().restore();
-                        drawContext.mo5038setSizeuvyYCjk(j);
+                        drawContext.mo5050setSizeuvyYCjk(j);
                         canvasDrawScope2.getDrawContext().getTransform().translate(-f2, -f4);
                         canvas3.restore();
                         CanvasDrawScope.DrawParams drawParams32 = canvasDrawScope3.getDrawParams();
                         drawParams32.setDensity(component1);
                         drawParams32.setLayoutDirection(component2);
                         drawParams32.setCanvas(component3);
-                        drawParams32.m5036setSizeuvyYCjk(m5033component4NHjbRc);
+                        drawParams32.m5048setSizeuvyYCjk(m5045component4NHjbRc);
                         r24.prepareToDraw();
                         objectRef3.element = r24;
                         final Rect rect22 = rect;
@@ -309,7 +309,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
                                 Unit drawGenericBorder$lambda$8;
-                                drawGenericBorder$lambda$8 = BorderModifierNode.drawGenericBorder$lambda$8(Rect.this, objectRef3, m7417constructorimpl, colorFilter2, (ContentDrawScope) obj);
+                                drawGenericBorder$lambda$8 = BorderModifierNode.drawGenericBorder$lambda$8(Rect.this, objectRef3, m7430constructorimpl, colorFilter2, (ContentDrawScope) obj);
                                 return drawGenericBorder$lambda$8;
                             }
                         });
@@ -317,24 +317,24 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
                         th = th;
                         drawContext2 = drawContext;
                         drawContext2.getCanvas().restore();
-                        drawContext2.mo5038setSizeuvyYCjk(j);
+                        drawContext2.mo5050setSizeuvyYCjk(j);
                         throw th;
                     }
-                    drawContext.getTransform().mo5044scale0AR0LA0(intBitsToFloat, intBitsToFloat2, mo5115getCenterF1C5BW0);
+                    drawContext.getTransform().mo5056scale0AR0LA0(intBitsToFloat, intBitsToFloat2, mo5127getCenterF1C5BW0);
                     final Ref.ObjectRef objectRef32 = objectRef;
-                    j = mo5037getSizeNHjbRc;
+                    j = mo5049getSizeNHjbRc;
                 } catch (Throwable th2) {
                     th = th2;
                     drawContext2 = drawContext;
-                    j = mo5037getSizeNHjbRc;
+                    j = mo5049getSizeNHjbRc;
                 }
-                DrawScope.m5105drawPathGBMwjPU$default(canvasDrawScope2, generic.getPath(), brush, 0.0f, new Stroke(f * 2, 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
+                DrawScope.m5117drawPathGBMwjPU$default(canvasDrawScope2, generic.getPath(), brush, 0.0f, new Stroke(f * 2, 0.0f, 0, 0, null, 30, null), null, 0, 52, null);
                 float f52 = 1;
-                float intBitsToFloat3 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() >> 32)) + f52) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() >> 32));
-                float intBitsToFloat22 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() & 4294967295L)) + f52) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5116getSizeNHjbRc() & 4294967295L));
-                long mo5115getCenterF1C5BW02 = canvasDrawScope2.mo5115getCenterF1C5BW0();
+                float intBitsToFloat3 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() >> 32)) + f52) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() >> 32));
+                float intBitsToFloat22 = (Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() & 4294967295L)) + f52) / Float.intBitsToFloat((int) (canvasDrawScope2.mo5128getSizeNHjbRc() & 4294967295L));
+                long mo5127getCenterF1C5BW02 = canvasDrawScope2.mo5127getCenterF1C5BW0();
                 drawContext = canvasDrawScope2.getDrawContext();
-                mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                 drawContext.getCanvas().save();
             } catch (Throwable th3) {
                 th = th3;
@@ -351,31 +351,31 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
         }
         borderCache = borderCache3;
         objectRef = objectRef2;
-        ImageBitmap m4774ImageBitmapx__hDU$default = ImageBitmapKt.m4774ImageBitmapx__hDU$default((int) (m7417constructorimpl >> 32), (int) (m7417constructorimpl & 4294967295L), i, false, null, 24, null);
-        borderCache.imageBitmap = m4774ImageBitmapx__hDU$default;
-        Canvas Canvas = androidx.compose.ui.graphics.CanvasKt.Canvas(m4774ImageBitmapx__hDU$default);
+        ImageBitmap m4786ImageBitmapx__hDU$default = ImageBitmapKt.m4786ImageBitmapx__hDU$default((int) (m7430constructorimpl >> 32), (int) (m7430constructorimpl & 4294967295L), i, false, null, 24, null);
+        borderCache.imageBitmap = m4786ImageBitmapx__hDU$default;
+        Canvas Canvas = androidx.compose.ui.graphics.CanvasKt.Canvas(m4786ImageBitmapx__hDU$default);
         borderCache.canvas = Canvas;
-        imageBitmap = m4774ImageBitmapx__hDU$default;
+        imageBitmap = m4786ImageBitmapx__hDU$default;
         canvas = Canvas;
         canvasDrawScope = borderCache.canvasDrawScope;
         if (canvasDrawScope == null) {
         }
         CanvasDrawScope canvasDrawScope32 = canvasDrawScope;
-        long m7434toSizeozmzZPI2 = IntSizeKt.m7434toSizeozmzZPI(m7417constructorimpl);
+        long m7447toSizeozmzZPI2 = IntSizeKt.m7447toSizeozmzZPI(m7430constructorimpl);
         LayoutDirection layoutDirection2 = cacheDrawScope.getLayoutDirection();
         CanvasDrawScope.DrawParams drawParams4 = canvasDrawScope32.getDrawParams();
         Density component12 = drawParams4.component1();
         LayoutDirection component22 = drawParams4.component2();
         Canvas component32 = drawParams4.component3();
-        long m5033component4NHjbRc2 = drawParams4.m5033component4NHjbRc();
+        long m5045component4NHjbRc2 = drawParams4.m5045component4NHjbRc();
         CanvasDrawScope.DrawParams drawParams22 = canvasDrawScope32.getDrawParams();
         drawParams22.setDensity(cacheDrawScope);
         drawParams22.setLayoutDirection(layoutDirection2);
         drawParams22.setCanvas(canvas);
-        drawParams22.m5036setSizeuvyYCjk(m7434toSizeozmzZPI2);
+        drawParams22.m5048setSizeuvyYCjk(m7447toSizeozmzZPI2);
         canvas.save();
         canvasDrawScope2 = canvasDrawScope32;
-        DrawScope.m5110drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m4563getBlack0d7_KjU(), 0L, m7434toSizeozmzZPI2, 0.0f, null, null, BlendMode.Companion.m4451getClear0nO6VwU(), 58, null);
+        DrawScope.m5122drawRectnJ9OG0$default(canvasDrawScope2, Color.Companion.m4575getBlack0d7_KjU(), 0L, m7447toSizeozmzZPI2, 0.0f, null, null, BlendMode.Companion.m4463getClear0nO6VwU(), 58, null);
         f2 = -rect.getLeft();
         f3 = -rect.getTop();
         canvasDrawScope2.getDrawContext().getTransform().translate(f2, f3);
@@ -384,7 +384,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit drawGenericBorder$lambda$1(Outline.Generic generic, Brush brush, ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
-        DrawScope.m5105drawPathGBMwjPU$default(contentDrawScope, generic.getPath(), brush, 0.0f, null, null, 0, 60, null);
+        DrawScope.m5117drawPathGBMwjPU$default(contentDrawScope, generic.getPath(), brush, 0.0f, null, null, 0, 60, null);
         return Unit.INSTANCE;
     }
 
@@ -402,7 +402,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
             f = top;
         }
         try {
-            DrawScope.m5099drawImageAZ2fEMs$default(contentDrawScope2, (ImageBitmap) objectRef.element, 0L, j, 0L, 0L, 0.0f, null, colorFilter, 0, 0, 890, null);
+            DrawScope.m5111drawImageAZ2fEMs$default(contentDrawScope2, (ImageBitmap) objectRef.element, 0L, j, 0L, 0L, 0.0f, null, colorFilter, 0, 0, 890, null);
             contentDrawScope2.getDrawContext().getTransform().translate(-left, -top);
             return Unit.INSTANCE;
         } catch (Throwable th2) {
@@ -415,17 +415,17 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
     }
 
     /* renamed from: drawRoundRectBorder-JqoCqck  reason: not valid java name */
-    private final DrawResult m277drawRoundRectBorderJqoCqck(CacheDrawScope cacheDrawScope, final Brush brush, Outline.Rounded rounded, final long j, final long j2, final boolean z, final float f) {
+    private final DrawResult m287drawRoundRectBorderJqoCqck(CacheDrawScope cacheDrawScope, final Brush brush, Outline.Rounded rounded, final long j, final long j2, final boolean z, final float f) {
         final Path createRoundRectPath;
         if (RoundRectKt.isSimple(rounded.getRoundRect())) {
-            final long m4343getTopLeftCornerRadiuskKHJgLs = rounded.getRoundRect().m4343getTopLeftCornerRadiuskKHJgLs();
+            final long m4355getTopLeftCornerRadiuskKHJgLs = rounded.getRoundRect().m4355getTopLeftCornerRadiuskKHJgLs();
             final float f2 = f / 2;
             final Stroke stroke = new Stroke(f, 0.0f, 0, 0, null, 30, null);
             return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.BorderModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit drawRoundRectBorder_JqoCqck$lambda$10;
-                    drawRoundRectBorder_JqoCqck$lambda$10 = BorderModifierNode.drawRoundRectBorder_JqoCqck$lambda$10(z, brush, m4343getTopLeftCornerRadiuskKHJgLs, f2, f, j, j2, stroke, (ContentDrawScope) obj);
+                    drawRoundRectBorder_JqoCqck$lambda$10 = BorderModifierNode.drawRoundRectBorder_JqoCqck$lambda$10(z, brush, m4355getTopLeftCornerRadiuskKHJgLs, f2, f, j, j2, stroke, (ContentDrawScope) obj);
                     return drawRoundRectBorder_JqoCqck$lambda$10;
                 }
             });
@@ -448,27 +448,27 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit drawRoundRectBorder_JqoCqck$lambda$10(boolean z, Brush brush, long j, float f, float f2, long j2, long j3, Stroke stroke, ContentDrawScope contentDrawScope) {
-        long m273shrinkKibmq7A;
+        long m283shrinkKibmq7A;
         contentDrawScope.drawContent();
         if (z) {
-            DrawScope.m5111drawRoundRectZuiqVtQ$default(contentDrawScope, brush, 0L, 0L, j, 0.0f, null, null, 0, 246, null);
+            DrawScope.m5123drawRoundRectZuiqVtQ$default(contentDrawScope, brush, 0L, 0L, j, 0.0f, null, null, 0, 246, null);
         } else if (Float.intBitsToFloat((int) (j >> 32)) >= f) {
-            m273shrinkKibmq7A = BorderKt.m273shrinkKibmq7A(j, f);
-            DrawScope.m5111drawRoundRectZuiqVtQ$default(contentDrawScope, brush, j2, j3, m273shrinkKibmq7A, 0.0f, stroke, null, 0, 208, null);
+            m283shrinkKibmq7A = BorderKt.m283shrinkKibmq7A(j, f);
+            DrawScope.m5123drawRoundRectZuiqVtQ$default(contentDrawScope, brush, j2, j3, m283shrinkKibmq7A, 0.0f, stroke, null, 0, 208, null);
         } else {
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5116getSizeNHjbRc() >> 32)) - f2;
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope.mo5116getSizeNHjbRc() & 4294967295L)) - f2;
-            int m4525getDifferencertfAjoo = ClipOp.Companion.m4525getDifferencertfAjoo();
+            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5128getSizeNHjbRc() >> 32)) - f2;
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope.mo5128getSizeNHjbRc() & 4294967295L)) - f2;
+            int m4537getDifferencertfAjoo = ClipOp.Companion.m4537getDifferencertfAjoo();
             DrawContext drawContext = contentDrawScope2.getDrawContext();
-            long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+            long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5040clipRectN_I0leg(f2, f2, intBitsToFloat, intBitsToFloat2, m4525getDifferencertfAjoo);
-                DrawScope.m5111drawRoundRectZuiqVtQ$default(contentDrawScope2, brush, 0L, 0L, j, 0.0f, null, null, 0, 246, null);
+                drawContext.getTransform().mo5052clipRectN_I0leg(f2, f2, intBitsToFloat, intBitsToFloat2, m4537getDifferencertfAjoo);
+                DrawScope.m5123drawRoundRectZuiqVtQ$default(contentDrawScope2, brush, 0L, 0L, j, 0.0f, null, null, 0, 246, null);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             }
         }
         return Unit.INSTANCE;
@@ -477,7 +477,7 @@ public final class BorderModifierNode extends DelegatingNode implements Semantic
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit drawRoundRectBorder_JqoCqck$lambda$11(Path path, Brush brush, ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
-        DrawScope.m5105drawPathGBMwjPU$default(contentDrawScope, path, brush, 0.0f, null, null, 0, 60, null);
+        DrawScope.m5117drawPathGBMwjPU$default(contentDrawScope, path, brush, 0.0f, null, null, 0, 60, null);
         return Unit.INSTANCE;
     }
 }

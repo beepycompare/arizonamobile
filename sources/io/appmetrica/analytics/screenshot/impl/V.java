@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class V implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0776g f1307a;
+    public final C0776g f1308a;
     public final Z b;
     public final C0786q c;
 
@@ -18,8 +18,8 @@ public final class V implements Converter {
     /* renamed from: a */
     public final N fromModel(T t) {
         N n = new N();
-        C0774e c0774e = t.f1305a;
-        n.f1302a = c0774e != null ? this.f1307a.fromModel(c0774e) : null;
+        C0774e c0774e = t.f1306a;
+        n.f1303a = c0774e != null ? this.f1308a.fromModel(c0774e) : null;
         X x = t.b;
         n.b = x != null ? this.b.fromModel(x) : null;
         C0784o c0784o = t.c;
@@ -28,7 +28,7 @@ public final class V implements Converter {
     }
 
     public V(C0776g c0776g, Z z, C0786q c0786q) {
-        this.f1307a = c0776g;
+        this.f1308a = c0776g;
         this.b = z;
         this.c = c0786q;
     }
@@ -42,17 +42,17 @@ public final class V implements Converter {
     public final T toModel(N n) {
         C0774e c0774e;
         X x;
-        K k = n.f1302a;
+        K k = n.f1303a;
         if (k != null) {
-            this.f1307a.getClass();
-            c0774e = new C0774e(k.f1299a);
+            this.f1308a.getClass();
+            c0774e = new C0774e(k.f1300a);
         } else {
             c0774e = null;
         }
         M m = n.b;
         if (m != null) {
             this.b.getClass();
-            x = new X(m.f1301a, m.b);
+            x = new X(m.f1302a, m.b);
         } else {
             x = null;
         }

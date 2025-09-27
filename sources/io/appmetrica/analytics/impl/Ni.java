@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class Ni {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ah f597a;
+    public final Ah f598a;
     public final Jh b;
     public final Lh c;
     public final Mh d;
@@ -28,7 +28,7 @@ public final class Ni {
     public final C0300ha u;
 
     public Ni(C0651v5 c0651v5) {
-        this.f597a = new Ah(c0651v5);
+        this.f598a = new Ah(c0651v5);
         this.b = new Jh(c0651v5);
         this.c = new Lh(c0651v5);
         this.d = new Mh(c0651v5);

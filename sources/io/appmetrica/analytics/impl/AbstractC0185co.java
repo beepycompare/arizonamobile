@@ -4,9 +4,9 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0185co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0607tb f830a;
+    public final InterfaceC0607tb f831a;
 
     public AbstractC0185co(InterfaceC0607tb interfaceC0607tb) {
-        this.f830a = interfaceC0607tb;
+        this.f831a = interfaceC0607tb;
     }
 }

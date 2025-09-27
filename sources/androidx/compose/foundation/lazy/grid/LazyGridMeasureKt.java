@@ -67,7 +67,7 @@ public final class LazyGridMeasureKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final LazyGridMeasureResult m997measureLazyGridt1x4au0(int i, final LazyGridMeasuredLineProvider lazyGridMeasuredLineProvider, LazyGridMeasuredItemProvider lazyGridMeasuredItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, float f, long j, boolean z, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, boolean z2, Density density, LazyLayoutItemAnimator<LazyGridMeasuredItem> lazyLayoutItemAnimator, int i8, List<Integer> list, boolean z3, final boolean z4, LazyGridLayoutInfo lazyGridLayoutInfo, CoroutineScope coroutineScope, final MutableState<Unit> mutableState, GraphicsContext graphicsContext, Function1<? super Integer, ? extends List<Pair<Integer, Constraints>>> function1, Function1<? super Integer, Integer> function12, StickyItemsPlacement stickyItemsPlacement, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3) {
+    public static final LazyGridMeasureResult m1007measureLazyGridt1x4au0(int i, final LazyGridMeasuredLineProvider lazyGridMeasuredLineProvider, LazyGridMeasuredItemProvider lazyGridMeasuredItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, float f, long j, boolean z, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, boolean z2, Density density, LazyLayoutItemAnimator<LazyGridMeasuredItem> lazyLayoutItemAnimator, int i8, List<Integer> list, boolean z3, final boolean z4, LazyGridLayoutInfo lazyGridLayoutInfo, CoroutineScope coroutineScope, final MutableState<Unit> mutableState, GraphicsContext graphicsContext, Function1<? super Integer, ? extends List<Pair<Integer, Constraints>>> function1, Function1<? super Integer, Integer> function12, StickyItemsPlacement stickyItemsPlacement, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3) {
         int i9;
         int i10;
         int i11;
@@ -88,8 +88,8 @@ public final class LazyGridMeasureKt {
         int i17;
         int size3;
         int i18;
-        int m7221constrainWidthK40F9xA;
-        int m7203getMaxHeightimpl;
+        int m7234constrainWidthK40F9xA;
+        int m7216getMaxHeightimpl;
         List plus;
         final LazyGridMeasuredItemProvider lazyGridMeasuredItemProvider2;
         int i19;
@@ -126,17 +126,17 @@ public final class LazyGridMeasureKt {
             InlineClassHelperKt.throwIllegalArgumentException("negative afterContentPadding");
         }
         if (i35 <= 0) {
-            int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(j);
-            int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(j);
-            lazyLayoutItemAnimator.onMeasured(0, m7206getMinWidthimpl, m7205getMinHeightimpl, new ArrayList(), lazyGridMeasuredItemProvider.getKeyIndexMap(), lazyGridMeasuredItemProvider, z, z4, i8, z3, 0, 0, coroutineScope, graphicsContext);
+            int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(j);
+            int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(j);
+            lazyLayoutItemAnimator.onMeasured(0, m7219getMinWidthimpl, m7218getMinHeightimpl, new ArrayList(), lazyGridMeasuredItemProvider.getKeyIndexMap(), lazyGridMeasuredItemProvider, z, z4, i8, z3, 0, 0, coroutineScope, graphicsContext);
             if (!z4) {
-                long m1030getMinSizeToFitDisappearingItemsYbymL2g = lazyLayoutItemAnimator.m1030getMinSizeToFitDisappearingItemsYbymL2g();
-                if (!IntSize.m7420equalsimpl0(m1030getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m7427getZeroYbymL2g())) {
-                    m7206getMinWidthimpl = ConstraintsKt.m7221constrainWidthK40F9xA(j, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g >> 32));
-                    m7205getMinHeightimpl = ConstraintsKt.m7220constrainHeightK40F9xA(j, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
+                long m1040getMinSizeToFitDisappearingItemsYbymL2g = lazyLayoutItemAnimator.m1040getMinSizeToFitDisappearingItemsYbymL2g();
+                if (!IntSize.m7433equalsimpl0(m1040getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m7440getZeroYbymL2g())) {
+                    m7219getMinWidthimpl = ConstraintsKt.m7234constrainWidthK40F9xA(j, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g >> 32));
+                    m7218getMinHeightimpl = ConstraintsKt.m7233constrainHeightK40F9xA(j, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
                 }
             }
-            return new LazyGridMeasureResult(null, 0, false, 0.0f, function3.invoke(Integer.valueOf(m7206getMinWidthimpl), Integer.valueOf(m7205getMinHeightimpl), new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridMeasureKt$$ExternalSyntheticLambda0
+            return new LazyGridMeasureResult(null, 0, false, 0.0f, function3.invoke(Integer.valueOf(m7219getMinWidthimpl), Integer.valueOf(m7218getMinHeightimpl), new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridMeasureKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measureLazyGrid_t1x4au0$lambda$2;
@@ -283,9 +283,9 @@ public final class LazyGridMeasureKt {
                         i31 = i47;
                         i30 = i43;
                         i27 = i10;
-                        LazyGridMeasuredItem mo963getAndMeasurehBUhpc = lazyGridMeasuredItemProvider.mo963getAndMeasurehBUhpc(intValue, 0, spanOf, lazyGridMeasuredLineProvider.m1001childConstraintsJhjzzOo$foundation_release(0, spanOf));
+                        LazyGridMeasuredItem mo973getAndMeasurehBUhpc = lazyGridMeasuredItemProvider.mo973getAndMeasurehBUhpc(intValue, 0, spanOf, lazyGridMeasuredLineProvider.m1011childConstraintsJhjzzOo$foundation_release(0, spanOf));
                         ArrayList arrayList2 = list2 == null ? new ArrayList() : list2;
-                        arrayList2.add(mo963getAndMeasurehBUhpc);
+                        arrayList2.add(mo973getAndMeasurehBUhpc);
                         list2 = arrayList2;
                     }
                     i15 = i29 + 1;
@@ -343,12 +343,12 @@ public final class LazyGridMeasureKt {
                         int spanOf2 = lazyGridMeasuredLineProvider2.spanOf(intValue2);
                         i25 = size2;
                         i26 = i64;
-                        LazyGridMeasuredItem mo963getAndMeasurehBUhpc2 = lazyGridMeasuredItemProvider.mo963getAndMeasurehBUhpc(intValue2, 0, spanOf2, lazyGridMeasuredLineProvider2.m1001childConstraintsJhjzzOo$foundation_release(0, spanOf2));
+                        LazyGridMeasuredItem mo973getAndMeasurehBUhpc2 = lazyGridMeasuredItemProvider.mo973getAndMeasurehBUhpc(intValue2, 0, spanOf2, lazyGridMeasuredLineProvider2.m1011childConstraintsJhjzzOo$foundation_release(0, spanOf2));
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
                         List list5 = arrayList;
-                        list5.add(mo963getAndMeasurehBUhpc2);
+                        list5.add(mo973getAndMeasurehBUhpc2);
                         arrayList = list5;
                         i17 = i26 + 1;
                         i58 = i;
@@ -381,17 +381,17 @@ public final class LazyGridMeasureKt {
                 int i65 = i11;
                 LazyGridMeasuredLine lazyGridMeasuredLine3 = lazyGridMeasuredLine2;
                 if (!z) {
-                    m7221constrainWidthK40F9xA = Constraints.m7204getMaxWidthimpl(j);
+                    m7234constrainWidthK40F9xA = Constraints.m7217getMaxWidthimpl(j);
                 } else {
-                    m7221constrainWidthK40F9xA = ConstraintsKt.m7221constrainWidthK40F9xA(j, i54);
+                    m7234constrainWidthK40F9xA = ConstraintsKt.m7234constrainWidthK40F9xA(j, i54);
                 }
-                int i66 = m7221constrainWidthK40F9xA;
+                int i66 = m7234constrainWidthK40F9xA;
                 if (!z) {
-                    m7203getMaxHeightimpl = ConstraintsKt.m7220constrainHeightK40F9xA(j, i54);
+                    m7216getMaxHeightimpl = ConstraintsKt.m7233constrainHeightK40F9xA(j, i54);
                 } else {
-                    m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(j);
+                    m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(j);
                 }
-                int i67 = m7203getMaxHeightimpl;
+                int i67 = m7216getMaxHeightimpl;
                 if (linesRetainedForLookahead.isEmpty()) {
                     plus = CollectionsKt.plus((Collection) arrayDeque, (Iterable) linesRetainedForLookahead);
                     lazyGridMeasuredItemProvider2 = lazyGridMeasuredItemProvider;
@@ -424,19 +424,19 @@ public final class LazyGridMeasureKt {
                 int i69 = i19;
                 lazyLayoutItemAnimator.onMeasured((int) f7, i21, i67, calculateItemsOffsets, lazyGridMeasuredItemProvider2.getKeyIndexMap(), lazyGridMeasuredItemProvider2, z, z4, i8, z3, i65, i68, coroutineScope, graphicsContext);
                 if (!z4) {
-                    long m1030getMinSizeToFitDisappearingItemsYbymL2g2 = lazyLayoutItemAnimator.m1030getMinSizeToFitDisappearingItemsYbymL2g();
-                    if (!IntSize.m7420equalsimpl0(m1030getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7427getZeroYbymL2g())) {
+                    long m1040getMinSizeToFitDisappearingItemsYbymL2g2 = lazyLayoutItemAnimator.m1040getMinSizeToFitDisappearingItemsYbymL2g();
+                    if (!IntSize.m7433equalsimpl0(m1040getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7440getZeroYbymL2g())) {
                         int i70 = z ? i67 : i21;
-                        int m7221constrainWidthK40F9xA2 = ConstraintsKt.m7221constrainWidthK40F9xA(j, Math.max(i21, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g2 >> 32)));
-                        i67 = ConstraintsKt.m7220constrainHeightK40F9xA(j, Math.max(i67, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
-                        int i71 = z ? i67 : m7221constrainWidthK40F9xA2;
+                        int m7234constrainWidthK40F9xA2 = ConstraintsKt.m7234constrainWidthK40F9xA(j, Math.max(i21, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g2 >> 32)));
+                        i67 = ConstraintsKt.m7233constrainHeightK40F9xA(j, Math.max(i67, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
+                        int i71 = z ? i67 : m7234constrainWidthK40F9xA2;
                         if (i71 != i70) {
                             int size5 = calculateItemsOffsets.size();
                             for (int i72 = i23; i72 < size5; i72++) {
                                 calculateItemsOffsets.get(i72).updateMainAxisLayoutSize(i71);
                             }
                         }
-                        i24 = m7221constrainWidthK40F9xA2;
+                        i24 = m7234constrainWidthK40F9xA2;
                         int i73 = i67;
                         final List applyStickyItems = LazyLayoutStickyItemsKt.applyStickyItems(stickyItemsPlacement, i57, i16, calculateItemsOffsets, lazyGridMeasuredItemProvider2.getHeaderIndices(), i3, i4, i24, i73, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridMeasureKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
@@ -543,10 +543,10 @@ public final class LazyGridMeasureKt {
         LazyGridMeasuredLine lazyGridMeasuredLine32 = lazyGridMeasuredLine22;
         if (!z) {
         }
-        int i662 = m7221constrainWidthK40F9xA;
+        int i662 = m7234constrainWidthK40F9xA;
         if (!z) {
         }
-        int i672 = m7203getMaxHeightimpl;
+        int i672 = m7216getMaxHeightimpl;
         if (linesRetainedForLookahead.isEmpty()) {
         }
         final List calculateItemsOffsets2 = calculateItemsOffsets(plus, list3, list62, i21, i672, i20, i19, i22, z5, vertical, horizontal2, z2, density2);
@@ -585,7 +585,7 @@ public final class LazyGridMeasureKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final LazyGridMeasuredItem measureLazyGrid_t1x4au0$lambda$9(LazyGridMeasuredLineProvider lazyGridMeasuredLineProvider, LazyGridMeasuredItemProvider lazyGridMeasuredItemProvider, int i) {
         int spanOf = lazyGridMeasuredLineProvider.spanOf(i);
-        return lazyGridMeasuredItemProvider.mo963getAndMeasurehBUhpc(i, 0, spanOf, lazyGridMeasuredLineProvider.m1001childConstraintsJhjzzOo$foundation_release(0, spanOf));
+        return lazyGridMeasuredItemProvider.mo973getAndMeasurehBUhpc(i, 0, spanOf, lazyGridMeasuredLineProvider.m1011childConstraintsJhjzzOo$foundation_release(0, spanOf));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -598,7 +598,7 @@ public final class LazyGridMeasureKt {
                 return measureLazyGrid_t1x4au0$lambda$13$lambda$12;
             }
         });
-        ObservableScopeInvalidator.m1061attachToScopeimpl(mutableState);
+        ObservableScopeInvalidator.m1071attachToScopeimpl(mutableState);
         return Unit.INSTANCE;
     }
 
@@ -765,11 +765,11 @@ public final class LazyGridMeasureKt {
             if (function1.invoke(Integer.valueOf(intValue)).booleanValue()) {
                 int spanOf = lazyGridMeasuredLineProvider.spanOf(intValue);
                 lazyGridMeasuredItemProvider2 = lazyGridMeasuredItemProvider;
-                LazyGridMeasuredItem mo963getAndMeasurehBUhpc = lazyGridMeasuredItemProvider2.mo963getAndMeasurehBUhpc(intValue, 0, spanOf, lazyGridMeasuredLineProvider.m1001childConstraintsJhjzzOo$foundation_release(0, spanOf));
+                LazyGridMeasuredItem mo973getAndMeasurehBUhpc = lazyGridMeasuredItemProvider2.mo973getAndMeasurehBUhpc(intValue, 0, spanOf, lazyGridMeasuredLineProvider.m1011childConstraintsJhjzzOo$foundation_release(0, spanOf));
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
-                arrayList.add(mo963getAndMeasurehBUhpc);
+                arrayList.add(mo973getAndMeasurehBUhpc);
             } else {
                 lazyGridMeasuredItemProvider2 = lazyGridMeasuredItemProvider;
             }

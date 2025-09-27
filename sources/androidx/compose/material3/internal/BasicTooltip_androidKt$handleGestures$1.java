@@ -214,8 +214,8 @@ final class BasicTooltip_androidKt$handleGestures$1 extends SuspendLambda implem
                         mutableStateFlow = (MutableStateFlow) this.L$1;
                         awaitFirstDown$default = obj;
                     }
-                    int m5829getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m5829getTypeT8wyACA();
-                    if (PointerType.m5897equalsimpl0(m5829getTypeT8wyACA, PointerType.Companion.m5904getTouchT8wyACA()) || PointerType.m5897equalsimpl0(m5829getTypeT8wyACA, PointerType.Companion.m5903getStylusT8wyACA())) {
+                    int m5842getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m5842getTypeT8wyACA();
+                    if (PointerType.m5910equalsimpl0(m5842getTypeT8wyACA, PointerType.Companion.m5917getTouchT8wyACA()) || PointerType.m5910equalsimpl0(m5842getTypeT8wyACA, PointerType.Companion.m5916getStylusT8wyACA())) {
                         try {
                             this.L$0 = awaitPointerEventScope;
                             this.L$1 = mutableStateFlow;

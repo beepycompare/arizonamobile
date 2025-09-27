@@ -10,5 +10,5 @@ public interface DragAndDropSourceModifierNode extends LayoutAwareModifierNode {
     boolean isRequestDragAndDropTransferRequired();
 
     /* renamed from: requestDragAndDropTransfer-k-4lQ0M */
-    void mo4050requestDragAndDropTransferk4lQ0M(long j);
+    void mo4062requestDragAndDropTransferk4lQ0M(long j);
 }

@@ -8,7 +8,7 @@ import androidx.media3.ui.PlayerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class EventVideoScreenBinding implements ViewBinding {
     public final PlayerView playerView;
     private final ConstraintLayout rootView;

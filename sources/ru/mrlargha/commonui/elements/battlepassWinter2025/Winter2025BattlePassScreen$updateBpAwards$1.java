@@ -18,8 +18,8 @@ import ru.mrlargha.commonui.elements.battlepassWinter2025.data.AwardItemData;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1", f = "Winter2025BattlePass.kt", i = {0, 1, 2}, l = {292, 297, 307}, m = "invokeSuspend", n = {"url", "url", "pairList"}, s = {"L$0", "L$0", "L$0"}, v = 1)
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1", f = "Winter2025BattlePass.kt", i = {0, 1, 2}, l = {294, 299, 309}, m = "invokeSuspend", n = {"url", "url", "pairList"}, s = {"L$0", "L$0", "L$0"}, v = 1)
+/* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen$updateBpAwards$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<List<Integer>> $awardsStatusList;
     Object L$0;
@@ -184,7 +184,7 @@ public final class Winter2025BattlePassScreen$updateBpAwards$1 extends SuspendLa
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1$2", f = "Winter2025BattlePass.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: ru.mrlargha.commonui.elements.battlepassWinter2025.Winter2025BattlePassScreen$updateBpAwards$1$2  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<Pair<AwardItemData, AwardItemData>> $pairList;
         int label;

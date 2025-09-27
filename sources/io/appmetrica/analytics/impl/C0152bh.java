@@ -8,6 +8,6 @@ public final class C0152bh extends AbstractC0601t5 {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0601t5
     public final <C extends InterfaceC0223eb> Tl a() {
-        return new C0229eh(this.f1090a);
+        return new C0229eh(this.f1091a);
     }
 }

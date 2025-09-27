@@ -130,7 +130,7 @@ public final class ScrollableKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean CanDragCalculation$lambda$0(PointerInputChange pointerInputChange) {
-        return !PointerType.m5897equalsimpl0(pointerInputChange.m5829getTypeT8wyACA(), PointerType.Companion.m5902getMouseT8wyACA());
+        return !PointerType.m5910equalsimpl0(pointerInputChange.m5842getTypeT8wyACA(), PointerType.Companion.m5915getMouseT8wyACA());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -153,7 +153,7 @@ public final class ScrollableKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m565semanticsScrollByd4ec7I(ScrollingLogic scrollingLogic, long j, Continuation<? super Offset> continuation) {
+    public static final Object m575semanticsScrollByd4ec7I(ScrollingLogic scrollingLogic, long j, Continuation<? super Offset> continuation) {
         ScrollableKt$semanticsScrollBy$1 scrollableKt$semanticsScrollBy$1;
         int i;
         Ref.FloatRef floatRef;
@@ -182,7 +182,7 @@ public final class ScrollableKt {
                     floatRef = (Ref.FloatRef) scrollableKt$semanticsScrollBy$1.L$1;
                     scrollingLogic2 = (ScrollingLogic) scrollableKt$semanticsScrollBy$1.L$0;
                 }
-                return Offset.m4282boximpl(scrollingLogic2.m584toOffsettuRUvjQ(floatRef.element));
+                return Offset.m4294boximpl(scrollingLogic2.m594toOffsettuRUvjQ(floatRef.element));
             }
         }
         scrollableKt$semanticsScrollBy$1 = new ScrollableKt$semanticsScrollBy$1(continuation);
@@ -191,6 +191,6 @@ public final class ScrollableKt {
         i = scrollableKt$semanticsScrollBy$1.label;
         if (i != 0) {
         }
-        return Offset.m4282boximpl(scrollingLogic2.m584toOffsettuRUvjQ(floatRef.element));
+        return Offset.m4294boximpl(scrollingLogic2.m594toOffsettuRUvjQ(floatRef.element));
     }
 }

@@ -5,28 +5,31 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.MediaController;
 import android.widget.Toast;
-import android.widget.VideoView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
+import androidx.media3.common.Player;
+import androidx.media3.exoplayer.ExoPlayer;
 import com.arizona.game.BuildConfig;
 import com.google.common.net.HttpHeaders;
+import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
 import java.io.File;
+import java.util.Set;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Unit;
+import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
+import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.BackgroundVideoBinding;
 import ru.mrlargha.commonui.elements.authorization.domain.controller.RegistrationInterfaceType;
 import ru.mrlargha.commonui.elements.authorization.domain.controller.RegistrationServerResponse;
@@ -34,11 +37,12 @@ import ru.mrlargha.commonui.elements.authorization.domain.controller.Registratio
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
 /* compiled from: RegistrationVideoBackground.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0013\u0018\u00002\u00020\u00012\u00020\u0002:\u0001-B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0013H\u0016J\u000e\u0010\u0017\u001a\u00020\u00152\u0006\u0010\u0018\u001a\u00020\u000eJ\u0018\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0006H\u0016J\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001e\u001a\u00020\u001bH\u0002J\u0010\u0010\u001f\u001a\u00020\u00152\u0006\u0010 \u001a\u00020\u001bH\u0002J\u0010\u0010!\u001a\u00020\u00152\u0006\u0010\"\u001a\u00020\u001bH\u0002J\u0010\u0010#\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\u0010\u0010%\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0018\u0010&\u001a\u00020\u00152\u0006\u0010'\u001a\u00020\u00062\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010(\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010)\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\n\u0010*\u001a\u0004\u0018\u00010\u001bH\u0002J\u0006\u0010+\u001a\u00020\fJ\u0010\u0010,\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0013H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "lastChoseVideo", "Lru/mrlargha/commonui/elements/authorization/domain/controller/RegistrationVideoModeType;", "sharedPref", "Landroid/content/SharedPreferences;", "sharedPreferencesUI", "isVisible", "", "setVisibility", "", "visible", "selectVideoMode", "videoMode", "onBackendMessage", "data", "", "subId", "preload", "flavorType", "gameFlavorType", "type", "setAwaitText", "text", "pushSelectSpawnData", "showAuthInterface", "pushRecoveryResponse", "pushAuthServerInfo", "actionId", "pushRegistrationAccountResponse", "pushPedSettingsResponse", "getSAMPPath", "getMainBinding", "setVisible", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0016\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016J\u000e\u0010\u0019\u001a\u00020\u00172\u0006\u0010\u001a\u001a\u00020\u000eJ\u0018\u0010\u001b\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0006H\u0016J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020\u001dH\u0002J\u0010\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\u001dH\u0002J\u0010\u0010#\u001a\u00020\u00172\u0006\u0010$\u001a\u00020\u001dH\u0002J\u0010\u0010%\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010&\u001a\u00020\u0017H\u0002J\u0010\u0010'\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0018\u0010(\u001a\u00020\u00172\u0006\u0010)\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010*\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010+\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\n\u0010,\u001a\u0004\u0018\u00010\u001dH\u0002J\u0006\u0010-\u001a\u00020\fJ\b\u0010.\u001a\u00020\u0017H\u0002J\u0010\u0010/\u001a\u00020\u00172\u0006\u00100\u001a\u00020\u001dH\u0002J\u0010\u00101\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0013H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "videoBackground", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBackgroundBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "lastChoseVideo", "Lru/mrlargha/commonui/elements/authorization/domain/controller/RegistrationVideoModeType;", "sharedPref", "Landroid/content/SharedPreferences;", "sharedPreferencesUI", "isVisible", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "setVisibility", "", "visible", "selectVideoMode", "videoMode", "onBackendMessage", "data", "", "subId", "preload", "flavorType", "gameFlavorType", "type", "setAwaitText", "text", "pushSelectSpawnData", "showAuthInterface", "pushRecoveryResponse", "pushAuthServerInfo", "actionId", "pushRegistrationAccountResponse", "pushPedSettingsResponse", "getSAMPPath", "getMainBinding", "stopVideo", "setVideo", BreakpointSQLiteKey.FILENAME, "setVisible", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class RegistrationVideoBackground extends SAMPUIElement implements InterfaceController {
     private boolean isVisible;
     private RegistrationVideoModeType lastChoseVideo;
+    private ExoPlayer player;
     private final SharedPreferences sharedPref;
     private final SharedPreferences sharedPreferencesUI;
     private final ConstraintLayout videoBackground;
@@ -46,7 +50,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
 
     /* compiled from: RegistrationVideoBackground.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -94,6 +98,9 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         SharedPreferences sharedPreferences2 = targetActivity.getSharedPreferences("UI_ELEMENTS_SP", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences2, "getSharedPreferences(...)");
         this.sharedPreferencesUI = sharedPreferences2;
+        ExoPlayer build = new ExoPlayer.Builder(targetActivity).build();
+        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
+        this.player = build;
         InterfaceManager.Companion.putInterface(RegistrationInterfaceType.VIDEO_BACKGROUND.getId(), this);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         bind.exitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda0
@@ -123,12 +130,13 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
 
     public final void selectVideoMode(RegistrationVideoModeType videoMode) {
         Intrinsics.checkNotNullParameter(videoMode, "videoMode");
-        if (this.lastChoseVideo == videoMode && this.videoBackgroundBinding.videoBg.isPlaying()) {
-            return;
+        if (this.lastChoseVideo == videoMode) {
+            Player player = this.videoBackgroundBinding.playerView.getPlayer();
+            if (player != null ? player.isPlaying() : false) {
+                return;
+            }
         }
-        if (getTargetActivity().findViewById(R.id.video) == null) {
-            Log.e(MimeTypes.BASE_TYPE_VIDEO, "selectVideoMode: is haven't");
-        } else {
+        if (getTargetActivity().findViewById(R.id.video) != null) {
             Log.e(MimeTypes.BASE_TYPE_VIDEO, "selectVideoMode: is has " + this.isVisible);
             if (!this.isVisible) {
                 setVisibility(true);
@@ -136,6 +144,8 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                 Intrinsics.checkNotNullExpressionValue(video, "video");
                 video.setVisibility(0);
             }
+        } else {
+            Log.e(MimeTypes.BASE_TYPE_VIDEO, "selectVideoMode: is haven't");
         }
         ConstraintLayout root = this.videoBackgroundBinding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
@@ -143,115 +153,32 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         int i = WhenMappings.$EnumSwitchMapping$0[videoMode.ordinal()];
         if (i == 1) {
             this.lastChoseVideo = videoMode;
-            MediaController mediaController = new MediaController(getTargetActivity());
-            mediaController.setVisibility(8);
+            new MediaController(getTargetActivity()).setVisibility(8);
             this.videoBackground.setVisibility(0);
             this.videoBackgroundBinding.video.setVisibility(0);
-            this.videoBackgroundBinding.videoBg.setVisibility(0);
-            VideoView videoView = this.videoBackgroundBinding.videoBg;
-            try {
-                videoView.setMediaController(mediaController);
-                File file = new File(Environment.getExternalStorageDirectory(), getSAMPPath() + "auth_video.webm");
-                if (file.exists()) {
-                    Uri parse = Uri.parse(file.getPath());
-                    Intrinsics.checkNotNullExpressionValue(parse, "parse(...)");
-                    this.videoBackgroundBinding.videoBg.setVideoURI(parse);
-                    this.videoBackgroundBinding.videoBg.setOnErrorListener(new MediaPlayer.OnErrorListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda1
-                        @Override // android.media.MediaPlayer.OnErrorListener
-                        public final boolean onError(MediaPlayer mediaPlayer, int i2, int i3) {
-                            boolean selectVideoMode$lambda$0$0;
-                            selectVideoMode$lambda$0$0 = RegistrationVideoBackground.selectVideoMode$lambda$0$0(RegistrationVideoBackground.this, mediaPlayer, i2, i3);
-                            return selectVideoMode$lambda$0$0;
-                        }
-                    });
-                    this.videoBackgroundBinding.videoBg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda2
-                        @Override // android.media.MediaPlayer.OnPreparedListener
-                        public final void onPrepared(MediaPlayer mediaPlayer) {
-                            RegistrationVideoBackground.selectVideoMode$lambda$0$1(mediaPlayer);
-                        }
-                    });
-                } else {
-                    Toast.makeText(getTargetActivity(), "Видео файл не найден в памяти устройства. Сбросьте игру!", 1).show();
-                }
-            } catch (Exception e) {
-                Toast.makeText(getTargetActivity(), "Ошибка воспроизведения видео. Сбросьте игру!", 1).show();
-                e.printStackTrace();
-                Log.e("videoBackgroundBinding", "Can't start video");
+            this.videoBackgroundBinding.playerView.setVisibility(0);
+            setVideo("/SAMP/auth_video.webm");
+        } else if (i == 2) {
+            this.lastChoseVideo = videoMode;
+            new MediaController(getTargetActivity()).setVisibility(8);
+            this.videoBackground.setVisibility(0);
+            this.videoBackgroundBinding.video.setVisibility(0);
+            this.videoBackgroundBinding.playerView.setVisibility(0);
+            setVideo("/SAMP/registration_video.webm");
+        } else if (i != 3) {
+            if (i != 4) {
+                throw new NoWhenBranchMatchedException();
             }
-            Intrinsics.checkNotNull(videoView);
-        } else if (i != 2) {
-            if (i != 3) {
-                if (i != 4) {
-                    throw new NoWhenBranchMatchedException();
-                }
-                this.videoBackgroundBinding.videoBg.stopPlayback();
-                if (this.videoBackgroundBinding.videoBg.getVisibility() != 4) {
-                    this.videoBackgroundBinding.videoBg.setVisibility(4);
-                    return;
-                }
-                return;
-            }
-            this.videoBackgroundBinding.videoBg.stopPlayback();
+            stopVideo();
+        } else {
+            stopVideo();
             if (this.videoBackground.getVisibility() != 8) {
                 this.videoBackground.setVisibility(8);
             }
             if (this.videoBackgroundBinding.video.getVisibility() != 8) {
                 this.videoBackgroundBinding.video.setVisibility(8);
             }
-            if (this.videoBackgroundBinding.videoBg.getVisibility() != 4) {
-                this.videoBackgroundBinding.videoBg.setVisibility(4);
-            }
-        } else {
-            this.lastChoseVideo = videoMode;
-            MediaController mediaController2 = new MediaController(getTargetActivity());
-            mediaController2.setVisibility(8);
-            this.videoBackground.setVisibility(0);
-            this.videoBackgroundBinding.video.setVisibility(0);
-            this.videoBackgroundBinding.videoBg.setVisibility(0);
-            try {
-                this.videoBackgroundBinding.videoBg.setMediaController(mediaController2);
-                File file2 = new File(Environment.getExternalStorageDirectory(), getSAMPPath() + "registration_video.webm");
-                if (file2.exists()) {
-                    Uri parse2 = Uri.parse(file2.getPath());
-                    Intrinsics.checkNotNullExpressionValue(parse2, "parse(...)");
-                    this.videoBackgroundBinding.videoBg.setVideoURI(parse2);
-                    this.videoBackgroundBinding.videoBg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground$$ExternalSyntheticLambda3
-                        @Override // android.media.MediaPlayer.OnPreparedListener
-                        public final void onPrepared(MediaPlayer mediaPlayer) {
-                            RegistrationVideoBackground.selectVideoMode$lambda$1(mediaPlayer);
-                        }
-                    });
-                } else {
-                    Toast.makeText(getTargetActivity(), "Видео файл не найден в памяти устройства. Сбросьте игру!", 1).show();
-                }
-                Unit unit = Unit.INSTANCE;
-            } catch (Exception e2) {
-                Toast.makeText(getTargetActivity(), "Ошибка воспроизведения видео. Сбросьте игру!", 1).show();
-                e2.printStackTrace();
-                Integer.valueOf(Log.e("videoBackgroundBinding", "Can't start video step 2"));
-            }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean selectVideoMode$lambda$0$0(RegistrationVideoBackground registrationVideoBackground, MediaPlayer mediaPlayer, int i, int i2) {
-        Log.e("VideoPlayer", "Ошибка при воспроизведении видео: what=" + i + ", extra=" + i2);
-        Toast.makeText(registrationVideoBackground.getTargetActivity(), "Ошибка загрузки видео", 0).show();
-        return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void selectVideoMode$lambda$0$1(MediaPlayer mediaPlayer) {
-        mediaPlayer.setVolume(0.2f, 0.2f);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void selectVideoMode$lambda$1(MediaPlayer mediaPlayer) {
-        mediaPlayer.setVolume(0.2f, 0.2f);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -370,14 +297,55 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         return this.videoBackgroundBinding;
     }
 
+    private final void stopVideo() {
+        this.videoBackgroundBinding.playerView.setVisibility(8);
+        this.player.stop();
+        this.player.release();
+    }
+
+    private final void setVideo(String str) {
+        try {
+            this.player.stop();
+            this.player.release();
+            this.videoBackgroundBinding.playerView.setVisibility(0);
+            File file = new File(getTargetActivity().getExternalFilesDir(null), str);
+            if (file.exists()) {
+                Uri parse = Uri.parse(file.getPath());
+                Intrinsics.checkNotNullExpressionValue(parse, "parse(...)");
+                ExoPlayer build = new ExoPlayer.Builder(getTargetActivity()).build();
+                Intrinsics.checkNotNullExpressionValue(build, "build(...)");
+                this.player = build;
+                this.videoBackgroundBinding.playerView.setPlayer(this.player);
+                MediaItem fromUri = MediaItem.fromUri(parse);
+                Intrinsics.checkNotNullExpressionValue(fromUri, "fromUri(...)");
+                this.player.setMediaItem(fromUri);
+                this.player.prepare();
+                this.player.play();
+                return;
+            }
+            Toast.makeText(getTargetActivity(), "Видео файл не найден в памяти устройства. Сбросьте игру!", 1).show();
+        } catch (Exception e) {
+            Toast.makeText(getTargetActivity(), "Ошибка воспроизведения видео. Сбросьте игру!", 1).show();
+            e.printStackTrace();
+            Log.e("videoEasterBinding", "Can't start video");
+        }
+    }
+
     /* compiled from: RegistrationVideoBackground.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationVideoBackground$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
+        private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.AUTHORIZATION);
+
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {
             Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
             return new RegistrationVideoBackground(targetActivity, i);
+        }
+
+        @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
+        public Set<UIElementID> getCorrectIds() {
+            return this.correctIds;
         }
     }
 }

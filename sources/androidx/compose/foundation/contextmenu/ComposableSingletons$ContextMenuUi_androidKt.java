@@ -37,7 +37,7 @@ public final class ComposableSingletons$ContextMenuUi_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-355168742, i, -1, "androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUi_androidKt.lambda$-355168742.<anonymous> (ContextMenuUi.android.kt:305)");
             }
-            BoxKt.Box(BackgroundKt.m257backgroundbw27NRU$default(SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m834paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m388getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m387getDividerHeightD9Ej5fM()), contextMenuColors.m380getIconColor0d7_KjU(), null, 2, null), composer, 0);
+            BoxKt.Box(BackgroundKt.m267backgroundbw27NRU$default(SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m844paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m398getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m397getDividerHeightD9Ej5fM()), contextMenuColors.m390getIconColor0d7_KjU(), null, 2, null), composer, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -45,7 +45,7 @@ public final class ComposableSingletons$ContextMenuUi_androidKt {
     });
 
     /* renamed from: getLambda$-355168742$foundation_release  reason: not valid java name */
-    public final Function3<ContextMenuColors, Composer, Integer, Unit> m374getLambda$355168742$foundation_release() {
+    public final Function3<ContextMenuColors, Composer, Integer, Unit> m384getLambda$355168742$foundation_release() {
         return f0lambda$355168742;
     }
 }

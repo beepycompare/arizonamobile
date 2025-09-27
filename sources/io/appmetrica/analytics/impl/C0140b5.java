@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0140b5 implements U2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ S4 f804a;
+    public final /* synthetic */ S4 f805a;
 
     public C0140b5(S4 s4) {
-        this.f804a = s4;
+        this.f805a = s4;
     }
 
     @Override // io.appmetrica.analytics.impl.U2
     public final boolean a(Object obj, C0477o6 c0477o6) {
-        return ((Y4) obj).a(c0477o6, this.f804a);
+        return ((Y4) obj).a(c0477o6, this.f805a);
     }
 }

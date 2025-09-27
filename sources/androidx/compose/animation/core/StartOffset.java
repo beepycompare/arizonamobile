@@ -12,49 +12,49 @@ public final class StartOffset {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StartOffset m183boximpl(long j) {
+    public static final /* synthetic */ StartOffset m193boximpl(long j) {
         return new StartOffset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m185constructorimpl(long j) {
+    private static long m195constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m187equalsimpl(long j, Object obj) {
-        return (obj instanceof StartOffset) && j == ((StartOffset) obj).m193unboximpl();
+    public static boolean m197equalsimpl(long j, Object obj) {
+        return (obj instanceof StartOffset) && j == ((StartOffset) obj).m203unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m188equalsimpl0(long j, long j2) {
+    public static final boolean m198equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m191hashCodeimpl(long j) {
+    public static int m201hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m192toStringimpl(long j) {
+    public static String m202toStringimpl(long j) {
         return "StartOffset(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m187equalsimpl(this.value, obj);
+        return m197equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m191hashCodeimpl(this.value);
+        return m201hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m192toStringimpl(this.value);
+        return m202toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m193unboximpl() {
+    public final /* synthetic */ long m203unboximpl() {
         return this.value;
     }
 
@@ -63,32 +63,32 @@ public final class StartOffset {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ long m186constructorimpl$default(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ long m196constructorimpl$default(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i3 & 2) != 0) {
-            i2 = StartOffsetType.Companion.m201getDelayEo1U57Q();
+            i2 = StartOffsetType.Companion.m211getDelayEo1U57Q();
         }
-        return m184constructorimpl(i, i2);
+        return m194constructorimpl(i, i2);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m184constructorimpl(int i, int i2) {
-        return m185constructorimpl(i * i2);
+    public static long m194constructorimpl(int i, int i2) {
+        return m195constructorimpl(i * i2);
     }
 
     /* renamed from: getOffsetMillis-impl  reason: not valid java name */
-    public static final int m189getOffsetMillisimpl(long j) {
+    public static final int m199getOffsetMillisimpl(long j) {
         return Math.abs((int) j);
     }
 
     /* renamed from: getOffsetType-Eo1U57Q  reason: not valid java name */
-    public static final int m190getOffsetTypeEo1U57Q(long j) {
+    public static final int m200getOffsetTypeEo1U57Q(long j) {
         boolean z = j > 0;
         if (z) {
-            return StartOffsetType.Companion.m202getFastForwardEo1U57Q();
+            return StartOffsetType.Companion.m212getFastForwardEo1U57Q();
         }
         if (z) {
             throw new NoWhenBranchMatchedException();
         }
-        return StartOffsetType.Companion.m201getDelayEo1U57Q();
+        return StartOffsetType.Companion.m211getDelayEo1U57Q();
     }
 }

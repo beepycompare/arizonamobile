@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class LazyGridLayoutInfoKt {
     public static final int visibleLinesAverageMainAxisSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        long mo991getSizeYbymL2g;
+        long mo1001getSizeYbymL2g;
         boolean z = lazyGridLayoutInfo.getOrientation() == Orientation.Vertical;
         List<LazyGridItemInfo> visibleItemsInfo = lazyGridLayoutInfo.getVisibleItemsInfo();
         int i = 0;
@@ -22,11 +22,11 @@ public final class LazyGridLayoutInfoKt {
                 int i4 = 0;
                 while (i < visibleItemsInfo.size() && visibleLinesAverageMainAxisSize$lineOf(z, lazyGridLayoutInfo, i) == visibleLinesAverageMainAxisSize$lineOf) {
                     if (z) {
-                        mo991getSizeYbymL2g = visibleItemsInfo.get(i).mo991getSizeYbymL2g() & 4294967295L;
+                        mo1001getSizeYbymL2g = visibleItemsInfo.get(i).mo1001getSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo991getSizeYbymL2g = visibleItemsInfo.get(i).mo991getSizeYbymL2g() >> 32;
+                        mo1001getSizeYbymL2g = visibleItemsInfo.get(i).mo1001getSizeYbymL2g() >> 32;
                     }
-                    i4 = Math.max(i4, (int) mo991getSizeYbymL2g);
+                    i4 = Math.max(i4, (int) mo1001getSizeYbymL2g);
                     i++;
                 }
                 i2 += i4;
@@ -41,6 +41,6 @@ public final class LazyGridLayoutInfoKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        return (int) (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical ? lazyGridLayoutInfo.mo995getViewportSizeYbymL2g() & 4294967295L : lazyGridLayoutInfo.mo995getViewportSizeYbymL2g() >> 32);
+        return (int) (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical ? lazyGridLayoutInfo.mo1005getViewportSizeYbymL2g() & 4294967295L : lazyGridLayoutInfo.mo1005getViewportSizeYbymL2g() >> 32);
     }
 }

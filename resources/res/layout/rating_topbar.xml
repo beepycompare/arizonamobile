@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/card1" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginRight="@dimen/_4sdp" android:layout_weight="1" app:backgroundMainColor="#0d1011" app:corners="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#e6ffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="общий" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/card2" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginRight="@dimen/_4sdp" android:layout_weight="1" app:backgroundMainColor="#0d1011" app:corners="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#e6ffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Хлам" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/card3" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginRight="@dimen/_4sdp" android:layout_weight="1" app:backgroundMainColor="#0d1011" app:corners="@dimen/_6sdp">
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#e6ffffff" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Идеальное" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/search" android:layout_width="@dimen/_100sdp" android:layout_height="match_parent" android:layout_marginRight="@dimen/_4sdp" android:layout_weight="1" app:backgroundMainColor="#0d1011" app:corners="@dimen/_6sdp">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_9sdp" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_6sdp" android:src="@drawable/ic_search"/>
+        <androidx.appcompat.widget.AppCompatEditText android:textSize="@dimen/_8sdp" android:textColor="#99ffffff" android:textColorHint="#99ffffff" android:id="@+id/edit_text" android:background="@color/transparent100" android:paddingLeft="@dimen/_10sdp" android:paddingTop="@dimen/_7sdp" android:paddingRight="@dimen/_10sdp" android:paddingBottom="@dimen/_7sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_20sdp" android:hint="ПОИСК ПО МОДЕЛИ" android:maxLines="1" android:imeOptions="actionDone" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:paddingHorizontal="@dimen/_10sdp" android:paddingVertical="@dimen/_7sdp"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/filter" android:layout_width="@dimen/_28sdp" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#fd0e42" app:backgroundSecondColor="#aa0022" app:corners="@dimen/_6sdp">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_8sdp" android:layout_height="wrap_content" android:src="@drawable/filter_ic"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</LinearLayout>

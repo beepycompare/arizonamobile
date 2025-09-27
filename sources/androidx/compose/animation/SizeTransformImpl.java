@@ -33,7 +33,7 @@ final class SizeTransformImpl implements SizeTransform {
 
     @Override // androidx.compose.animation.SizeTransform
     /* renamed from: createAnimationSpec-TemP2vQ */
-    public FiniteAnimationSpec<IntSize> mo129createAnimationSpecTemP2vQ(long j, long j2) {
-        return this.sizeAnimationSpec.invoke(IntSize.m7414boximpl(j), IntSize.m7414boximpl(j2));
+    public FiniteAnimationSpec<IntSize> mo139createAnimationSpecTemP2vQ(long j, long j2) {
+        return this.sizeAnimationSpec.invoke(IntSize.m7427boximpl(j), IntSize.m7427boximpl(j2));
     }
 }

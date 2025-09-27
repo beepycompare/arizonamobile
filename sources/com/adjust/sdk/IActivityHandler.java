@@ -68,6 +68,8 @@ public interface IActivityHandler {
 
     void sendInstallReferrer(ReferrerDetails referrerDetails, String str);
 
+    void sendLicenseVerificationData(LicenseData licenseData);
+
     void sendPreinstallReferrer();
 
     void sendReftagReferrer();

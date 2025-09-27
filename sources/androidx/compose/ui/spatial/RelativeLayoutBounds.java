@@ -42,24 +42,24 @@ public final class RelativeLayoutBounds {
     }
 
     /* renamed from: getPositionInRoot-nOcc-ac  reason: not valid java name */
-    public final long m6489getPositionInRootnOccac() {
-        return IntOffset.m7373constructorimpl(this.topLeft);
+    public final long m6502getPositionInRootnOccac() {
+        return IntOffset.m7386constructorimpl(this.topLeft);
     }
 
     /* renamed from: getPositionInWindow-nOcc-ac  reason: not valid java name */
-    public final long m6491getPositionInWindownOccac() {
-        int m7379getXimpl = IntOffset.m7379getXimpl(this.screenOffset) - IntOffset.m7379getXimpl(this.windowOffset);
-        int m7380getYimpl = IntOffset.m7380getYimpl(this.screenOffset) - IntOffset.m7380getYimpl(this.windowOffset);
+    public final long m6504getPositionInWindownOccac() {
+        int m7392getXimpl = IntOffset.m7392getXimpl(this.screenOffset) - IntOffset.m7392getXimpl(this.windowOffset);
+        int m7393getYimpl = IntOffset.m7393getYimpl(this.screenOffset) - IntOffset.m7393getYimpl(this.windowOffset);
         long j = this.topLeft;
-        return IntOffset.m7373constructorimpl(((((int) (j >> 32)) + m7379getXimpl) << 32) | ((((int) j) + m7380getYimpl) & 4294967295L));
+        return IntOffset.m7386constructorimpl(((((int) (j >> 32)) + m7392getXimpl) << 32) | ((((int) j) + m7393getYimpl) & 4294967295L));
     }
 
     /* renamed from: getPositionInScreen-nOcc-ac  reason: not valid java name */
-    public final long m6490getPositionInScreennOccac() {
-        int m7379getXimpl = IntOffset.m7379getXimpl(this.screenOffset);
-        int m7380getYimpl = IntOffset.m7380getYimpl(this.screenOffset);
+    public final long m6503getPositionInScreennOccac() {
+        int m7392getXimpl = IntOffset.m7392getXimpl(this.screenOffset);
+        int m7393getYimpl = IntOffset.m7393getYimpl(this.screenOffset);
         long j = this.topLeft;
-        return IntOffset.m7373constructorimpl(((((int) (j >> 32)) + m7379getXimpl) << 32) | ((((int) j) + m7380getYimpl) & 4294967295L));
+        return IntOffset.m7386constructorimpl(((((int) (j >> 32)) + m7392getXimpl) << 32) | ((((int) j) + m7393getYimpl) & 4294967295L));
     }
 
     public final int getWidth() {
@@ -85,25 +85,25 @@ public final class RelativeLayoutBounds {
         int i4 = (int) j2;
         float[] fArr = this.viewToWindowMatrix;
         if (fArr != null) {
-            return IntRectKt.roundToIntRect(Matrix.m4786mapimpl(fArr, new Rect(i, i2, i3, i4)));
+            return IntRectKt.roundToIntRect(Matrix.m4798mapimpl(fArr, new Rect(i, i2, i3, i4)));
         }
-        int m7379getXimpl = IntOffset.m7379getXimpl(this.screenOffset) - IntOffset.m7379getXimpl(this.windowOffset);
-        int m7380getYimpl = IntOffset.m7380getYimpl(this.screenOffset) - IntOffset.m7380getYimpl(this.windowOffset);
-        return new IntRect(i + m7379getXimpl, i2 + m7380getYimpl, i3 + m7379getXimpl, i4 + m7380getYimpl);
+        int m7392getXimpl = IntOffset.m7392getXimpl(this.screenOffset) - IntOffset.m7392getXimpl(this.windowOffset);
+        int m7393getYimpl = IntOffset.m7393getYimpl(this.screenOffset) - IntOffset.m7393getYimpl(this.windowOffset);
+        return new IntRect(i + m7392getXimpl, i2 + m7393getYimpl, i3 + m7392getXimpl, i4 + m7393getYimpl);
     }
 
     public final IntRect getBoundsInScreen() {
         if (this.viewToWindowMatrix != null) {
             IntRect boundsInWindow = getBoundsInWindow();
             long j = this.windowOffset;
-            return new IntRect(boundsInWindow.getLeft() + IntOffset.m7379getXimpl(j), boundsInWindow.getTop() + IntOffset.m7380getYimpl(j), boundsInWindow.getRight() + IntOffset.m7379getXimpl(j), boundsInWindow.getBottom() + IntOffset.m7380getYimpl(j));
+            return new IntRect(boundsInWindow.getLeft() + IntOffset.m7392getXimpl(j), boundsInWindow.getTop() + IntOffset.m7393getYimpl(j), boundsInWindow.getRight() + IntOffset.m7392getXimpl(j), boundsInWindow.getBottom() + IntOffset.m7393getYimpl(j));
         }
         long j2 = this.topLeft;
         long j3 = this.bottomRight;
         int i = (int) j3;
-        int m7379getXimpl = IntOffset.m7379getXimpl(this.screenOffset);
-        int m7380getYimpl = IntOffset.m7380getYimpl(this.screenOffset);
-        return new IntRect(((int) (j2 >> 32)) + m7379getXimpl, ((int) j2) + m7380getYimpl, ((int) (j3 >> 32)) + m7379getXimpl, i + m7380getYimpl);
+        int m7392getXimpl = IntOffset.m7392getXimpl(this.screenOffset);
+        int m7393getYimpl = IntOffset.m7393getYimpl(this.screenOffset);
+        return new IntRect(((int) (j2 >> 32)) + m7392getXimpl, ((int) j2) + m7393getYimpl, ((int) (j3 >> 32)) + m7392getXimpl, i + m7393getYimpl);
     }
 
     public final List<IntRect> calculateOcclusions() {
@@ -173,15 +173,15 @@ public final class RelativeLayoutBounds {
     }
 
     /* renamed from: fractionVisibleInWindowWithInsets-E1MhUcY  reason: not valid java name */
-    public final float m6488fractionVisibleInWindowWithInsetsE1MhUcY(long j, long j2) {
+    public final float m6501fractionVisibleInWindowWithInsetsE1MhUcY(long j, long j2) {
         long j3 = this.windowSize;
-        int m7379getXimpl = IntOffset.m7379getXimpl(this.windowOffset);
-        int m7380getYimpl = IntOffset.m7380getYimpl(this.windowOffset);
-        return fractionVisibleInRect(IntOffset.m7379getXimpl(j) + m7379getXimpl, IntOffset.m7380getYimpl(j) + m7380getYimpl, (m7379getXimpl + ((int) (j3 >> 32))) - IntOffset.m7379getXimpl(j2), (m7380getYimpl + ((int) j3)) - IntOffset.m7380getYimpl(j2));
+        int m7392getXimpl = IntOffset.m7392getXimpl(this.windowOffset);
+        int m7393getYimpl = IntOffset.m7393getYimpl(this.windowOffset);
+        return fractionVisibleInRect(IntOffset.m7392getXimpl(j) + m7392getXimpl, IntOffset.m7393getYimpl(j) + m7393getYimpl, (m7392getXimpl + ((int) (j3 >> 32))) - IntOffset.m7392getXimpl(j2), (m7393getYimpl + ((int) j3)) - IntOffset.m7393getYimpl(j2));
     }
 
     public boolean equals(Object obj) {
-        boolean m4781equalsimpl0;
+        boolean m4793equalsimpl0;
         if (this == obj) {
             return true;
         }
@@ -189,28 +189,28 @@ public final class RelativeLayoutBounds {
             return false;
         }
         RelativeLayoutBounds relativeLayoutBounds = (RelativeLayoutBounds) obj;
-        if (this.topLeft == relativeLayoutBounds.topLeft && this.bottomRight == relativeLayoutBounds.bottomRight && this.windowSize == relativeLayoutBounds.windowSize && IntOffset.m7378equalsimpl0(this.windowOffset, relativeLayoutBounds.windowOffset) && IntOffset.m7378equalsimpl0(this.screenOffset, relativeLayoutBounds.screenOffset)) {
+        if (this.topLeft == relativeLayoutBounds.topLeft && this.bottomRight == relativeLayoutBounds.bottomRight && this.windowSize == relativeLayoutBounds.windowSize && IntOffset.m7391equalsimpl0(this.windowOffset, relativeLayoutBounds.windowOffset) && IntOffset.m7391equalsimpl0(this.screenOffset, relativeLayoutBounds.screenOffset)) {
             float[] fArr = this.viewToWindowMatrix;
             float[] fArr2 = relativeLayoutBounds.viewToWindowMatrix;
             if (fArr == null) {
                 if (fArr2 == null) {
-                    m4781equalsimpl0 = true;
+                    m4793equalsimpl0 = true;
                 }
-                m4781equalsimpl0 = false;
+                m4793equalsimpl0 = false;
             } else {
                 if (fArr2 != null) {
-                    m4781equalsimpl0 = Matrix.m4781equalsimpl0(fArr, fArr2);
+                    m4793equalsimpl0 = Matrix.m4793equalsimpl0(fArr, fArr2);
                 }
-                m4781equalsimpl0 = false;
+                m4793equalsimpl0 = false;
             }
-            return m4781equalsimpl0 && Intrinsics.areEqual(this.node, relativeLayoutBounds.node);
+            return m4793equalsimpl0 && Intrinsics.areEqual(this.node, relativeLayoutBounds.node);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((Long.hashCode(this.topLeft) * 31) + Long.hashCode(this.bottomRight)) * 31) + Long.hashCode(this.windowSize)) * 31) + IntOffset.m7381hashCodeimpl(this.windowOffset)) * 31) + IntOffset.m7381hashCodeimpl(this.screenOffset)) * 31;
+        int hashCode = ((((((((Long.hashCode(this.topLeft) * 31) + Long.hashCode(this.bottomRight)) * 31) + Long.hashCode(this.windowSize)) * 31) + IntOffset.m7394hashCodeimpl(this.windowOffset)) * 31) + IntOffset.m7394hashCodeimpl(this.screenOffset)) * 31;
         float[] fArr = this.viewToWindowMatrix;
-        return ((hashCode + (fArr != null ? Matrix.m4783hashCodeimpl(fArr) : 0)) * 31) + this.node.hashCode();
+        return ((hashCode + (fArr != null ? Matrix.m4795hashCodeimpl(fArr) : 0)) * 31) + this.node.hashCode();
     }
 }

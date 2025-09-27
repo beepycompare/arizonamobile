@@ -183,7 +183,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             this.inOutAnimation.addUpdateListener(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.model.layer.BaseLayer$$ExternalSyntheticLambda0
                 @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
                 public final void onValueChanged() {
-                    BaseLayer.this.m8485xf49bd987();
+                    BaseLayer.this.m8497xf49bd987();
                 }
             });
             setVisible(this.inOutAnimation.getValue().floatValue() == 1.0f);
@@ -195,7 +195,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setupInOutAnimations$0$com-airbnb-lottie-model-layer-BaseLayer  reason: not valid java name */
-    public /* synthetic */ void m8485xf49bd987() {
+    public /* synthetic */ void m8497xf49bd987() {
         setVisible(this.inOutAnimation.getFloatValue() == 1.0f);
     }
 
@@ -235,7 +235,16 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
         this.boundsMatrix.preConcat(this.transform.getMatrix());
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01c6  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x021a  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0226  */
     @Override // com.airbnb.lottie.animation.content.DrawingContent
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void draw(Canvas canvas, Matrix matrix, int i, DropShadow dropShadow) {
         Canvas canvas2;
         Paint paint;
@@ -305,8 +314,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             }
             if (getBlendMode() != LBlendMode.MULTIPLY) {
                 clearCanvas(canvas);
-                canvas2 = canvas;
-            } else {
+            } else if (Build.VERSION.SDK_INT < 29) {
                 if (this.solidWhitePaint == null) {
                     LPaint lPaint = new LPaint();
                     this.solidWhitePaint = lPaint;
@@ -314,43 +322,58 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
                 }
                 canvas2 = canvas;
                 canvas2.drawRect(this.rect.left - 1.0f, this.rect.top - 1.0f, this.rect.right + 1.0f, this.rect.bottom + 1.0f, this.solidWhitePaint);
-            }
-            if (L.isTraceEnabled()) {
-                L.beginSection("Layer#drawLayer");
-            }
-            drawLayer(canvas2, this.matrix, intValue, dropShadow);
-            if (L.isTraceEnabled()) {
-                L.endSection("Layer#drawLayer");
-            }
-            if (hasMasksOnThisLayer()) {
-                applyMasks(canvas2, this.matrix);
-            }
-            if (hasMatteOnThisLayer()) {
                 if (L.isTraceEnabled()) {
-                    L.beginSection("Layer#drawMatte");
-                    L.beginSection("Layer#saveLayer");
+                    L.beginSection("Layer#drawLayer");
                 }
-                Utils.saveLayerCompat(canvas2, this.rect, this.mattePaint, 19);
+                drawLayer(canvas2, this.matrix, intValue, dropShadow);
                 if (L.isTraceEnabled()) {
-                    L.endSection("Layer#saveLayer");
+                    L.endSection("Layer#drawLayer");
                 }
-                clearCanvas(canvas2);
-                this.matteLayer.draw(canvas2, matrix, i, null);
+                if (hasMasksOnThisLayer()) {
+                    applyMasks(canvas2, this.matrix);
+                }
+                if (hasMatteOnThisLayer()) {
+                    if (L.isTraceEnabled()) {
+                        L.beginSection("Layer#drawMatte");
+                        L.beginSection("Layer#saveLayer");
+                    }
+                    Utils.saveLayerCompat(canvas2, this.rect, this.mattePaint, 19);
+                    if (L.isTraceEnabled()) {
+                        L.endSection("Layer#saveLayer");
+                    }
+                    clearCanvas(canvas2);
+                    this.matteLayer.draw(canvas2, matrix, i, null);
+                    if (L.isTraceEnabled()) {
+                        L.beginSection("Layer#restoreLayer");
+                    }
+                    canvas2.restore();
+                    if (L.isTraceEnabled()) {
+                        L.endSection("Layer#restoreLayer");
+                        L.endSection("Layer#drawMatte");
+                    }
+                }
                 if (L.isTraceEnabled()) {
                     L.beginSection("Layer#restoreLayer");
                 }
                 canvas2.restore();
                 if (L.isTraceEnabled()) {
                     L.endSection("Layer#restoreLayer");
-                    L.endSection("Layer#drawMatte");
                 }
             }
+            canvas2 = canvas;
             if (L.isTraceEnabled()) {
-                L.beginSection("Layer#restoreLayer");
+            }
+            drawLayer(canvas2, this.matrix, intValue, dropShadow);
+            if (L.isTraceEnabled()) {
+            }
+            if (hasMasksOnThisLayer()) {
+            }
+            if (hasMatteOnThisLayer()) {
+            }
+            if (L.isTraceEnabled()) {
             }
             canvas2.restore();
             if (L.isTraceEnabled()) {
-                L.endSection("Layer#restoreLayer");
             }
         }
         if (this.outlineMasksAndMattes && (paint = this.outlineMasksAndMattesPaint) != null) {

@@ -3,5 +3,5 @@ package com.adjust.sdk.sig;
 public abstract class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final char[] f186a = "0123456789ABCDEF".toCharArray();
+    public static final char[] f187a = "0123456789ABCDEF".toCharArray();
 }

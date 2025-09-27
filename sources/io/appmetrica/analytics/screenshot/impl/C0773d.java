@@ -11,13 +11,13 @@ import kotlin.LazyKt;
 public final class C0773d implements P {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1316a;
+    public final ClientContext f1317a;
     public final Q b;
     public volatile C0778i c;
     public final Lazy d = LazyKt.lazy(new C0770a(this));
 
     public C0773d(ClientContext clientContext, Q q) {
-        this.f1316a = clientContext;
+        this.f1317a = clientContext;
         this.b = q;
     }
 
@@ -27,7 +27,7 @@ public final class C0773d implements P {
 
     @Override // io.appmetrica.analytics.screenshot.impl.P
     public final void a(C0781l c0781l) {
-        this.c = c0781l != null ? c0781l.f1327a : null;
+        this.c = c0781l != null ? c0781l.f1328a : null;
     }
 
     public final String b() {
@@ -37,7 +37,7 @@ public final class C0773d implements P {
     @Override // io.appmetrica.analytics.screenshot.impl.P
     public final void a() {
         if (AndroidUtils.isApiAchieved(34)) {
-            this.f1316a.getActivityLifecycleRegistry().registerListener(new C0772c(this), ActivityEvent.STARTED, ActivityEvent.STOPPED);
+            this.f1317a.getActivityLifecycleRegistry().registerListener(new C0772c(this), ActivityEvent.STARTED, ActivityEvent.STOPPED);
         }
     }
 }

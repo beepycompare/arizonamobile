@@ -10,7 +10,7 @@ public final class xo implements yo {
         LinkedList linkedList = new LinkedList();
         boolean z = true;
         for (wo woVar : list) {
-            if (!woVar.f1145a) {
+            if (!woVar.f1146a) {
                 linkedList.add(woVar.b);
                 z = false;
             }

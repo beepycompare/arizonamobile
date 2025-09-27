@@ -25,9 +25,9 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class LazyLayoutScrollScopeKt {
     private static final boolean DEBUG = false;
-    private static final float TargetDistance = Dp.m7251constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
-    private static final float BoundDistance = Dp.m7251constructorimpl((float) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED);
-    private static final float MinimumDistance = Dp.m7251constructorimpl(50);
+    private static final float TargetDistance = Dp.m7264constructorimpl((float) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS);
+    private static final float BoundDistance = Dp.m7264constructorimpl((float) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED);
+    private static final float MinimumDistance = Dp.m7264constructorimpl(50);
 
     private static final void debugLog(Function0<String> function0) {
     }
@@ -72,9 +72,9 @@ public final class LazyLayoutScrollScopeKt {
         int i5;
         int i6;
         int i7;
-        float mo419toPx0680j_4;
-        float mo419toPx0680j_42;
-        float mo419toPx0680j_43;
+        float mo429toPx0680j_4;
+        float mo429toPx0680j_42;
+        float mo429toPx0680j_43;
         Ref.BooleanRef booleanRef;
         Ref.ObjectRef objectRef;
         final int i8;
@@ -121,9 +121,9 @@ public final class LazyLayoutScrollScopeKt {
                         InlineClassHelperKt.throwIllegalArgumentException("Index should be non-negative");
                     }
                     try {
-                        mo419toPx0680j_4 = density.mo419toPx0680j_4(TargetDistance);
-                        mo419toPx0680j_42 = density.mo419toPx0680j_4(BoundDistance);
-                        mo419toPx0680j_43 = density.mo419toPx0680j_4(MinimumDistance);
+                        mo429toPx0680j_4 = density.mo429toPx0680j_4(TargetDistance);
+                        mo429toPx0680j_42 = density.mo429toPx0680j_4(BoundDistance);
+                        mo429toPx0680j_43 = density.mo429toPx0680j_4(MinimumDistance);
                         booleanRef = new Ref.BooleanRef();
                         booleanRef.element = true;
                         objectRef = new Ref.ObjectRef();
@@ -174,11 +174,11 @@ public final class LazyLayoutScrollScopeKt {
                         intRef2.element = 1;
                         i8 = i2;
                         i9 = i3;
-                        f2 = mo419toPx0680j_42;
+                        f2 = mo429toPx0680j_42;
                         intRef = intRef2;
-                        f3 = mo419toPx0680j_4;
+                        f3 = mo429toPx0680j_4;
                         lazyLayoutScrollScopeKt$animateScrollToItem$12 = lazyLayoutScrollScopeKt$animateScrollToItem$1;
-                        f4 = mo419toPx0680j_43;
+                        f4 = mo429toPx0680j_43;
                         i10 = i;
                         i11 = i19;
                         lazyLayoutScrollScope3 = lazyLayoutScrollScope;

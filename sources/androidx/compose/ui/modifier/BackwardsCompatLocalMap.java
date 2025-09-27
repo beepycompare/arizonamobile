@@ -25,7 +25,7 @@ public final class BackwardsCompatLocalMap extends ModifierLocalMap {
 
     @Override // androidx.compose.ui.modifier.ModifierLocalMap
     /* renamed from: set$ui_release */
-    public <T> void mo6082set$ui_release(ModifierLocal<T> modifierLocal, T t) {
+    public <T> void mo6095set$ui_release(ModifierLocal<T> modifierLocal, T t) {
         throw new IllegalStateException("Set is not allowed on a backwards compat provider".toString());
     }
 

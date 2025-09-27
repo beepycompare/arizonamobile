@@ -34,20 +34,20 @@ final class KeyInputNode extends Modifier.Node implements KeyInputModifierNode {
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
-    public boolean mo226onKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
+    public boolean mo236onKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
         Function1<? super KeyEvent, Boolean> function1 = this.onEvent;
         if (function1 != null) {
-            return function1.invoke(KeyEvent.m5665boximpl(keyEvent)).booleanValue();
+            return function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue();
         }
         return false;
     }
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    public boolean mo228onPreKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
+    public boolean mo238onPreKeyEventZmokQxo(android.view.KeyEvent keyEvent) {
         Function1<? super KeyEvent, Boolean> function1 = this.onPreEvent;
         if (function1 != null) {
-            return function1.invoke(KeyEvent.m5665boximpl(keyEvent)).booleanValue();
+            return function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue();
         }
         return false;
     }

@@ -6,13 +6,13 @@ import java.util.LinkedHashMap;
 public final class Go {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f465a;
+    public final Context f466a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final Co c;
     public final Co d;
 
     public Go(Context context) {
-        this.f465a = context;
+        this.f466a = context;
         Ba ba = new Ba(context, "appmetrica_vital.dat");
         this.c = new Co(Na.j().x(), ba);
         this.d = new Co(new C0611tf(C0728y7.a(context).d()), ba);

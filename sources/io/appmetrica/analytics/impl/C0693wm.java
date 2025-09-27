@@ -13,7 +13,7 @@ public final class C0693wm extends MessageNano {
     public static volatile C0693wm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0668vm[] f1144a;
+    public C0668vm[] f1145a;
 
     public C0693wm() {
         a();
@@ -31,7 +31,7 @@ public final class C0693wm extends MessageNano {
     }
 
     public final C0693wm a() {
-        this.f1144a = C0668vm.b();
+        this.f1145a = C0668vm.b();
         this.cachedSize = -1;
         return this;
     }
@@ -39,11 +39,11 @@ public final class C0693wm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0668vm[] c0668vmArr = this.f1144a;
+        C0668vm[] c0668vmArr = this.f1145a;
         if (c0668vmArr != null && c0668vmArr.length > 0) {
             int i = 0;
             while (true) {
-                C0668vm[] c0668vmArr2 = this.f1144a;
+                C0668vm[] c0668vmArr2 = this.f1145a;
                 if (i >= c0668vmArr2.length) {
                     break;
                 }
@@ -59,11 +59,11 @@ public final class C0693wm extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0668vm[] c0668vmArr = this.f1144a;
+        C0668vm[] c0668vmArr = this.f1145a;
         if (c0668vmArr != null && c0668vmArr.length > 0) {
             int i = 0;
             while (true) {
-                C0668vm[] c0668vmArr2 = this.f1144a;
+                C0668vm[] c0668vmArr2 = this.f1145a;
                 if (i >= c0668vmArr2.length) {
                     break;
                 }
@@ -90,7 +90,7 @@ public final class C0693wm extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                C0668vm[] c0668vmArr = this.f1144a;
+                C0668vm[] c0668vmArr = this.f1145a;
                 int length = c0668vmArr == null ? 0 : c0668vmArr.length;
                 int i = repeatedFieldArrayLength + length;
                 C0668vm[] c0668vmArr2 = new C0668vm[i];
@@ -107,7 +107,7 @@ public final class C0693wm extends MessageNano {
                 C0668vm c0668vm2 = new C0668vm();
                 c0668vmArr2[length] = c0668vm2;
                 codedInputByteBufferNano.readMessage(c0668vm2);
-                this.f1144a = c0668vmArr2;
+                this.f1145a = c0668vmArr2;
             }
         }
         return this;

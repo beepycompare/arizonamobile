@@ -12,7 +12,7 @@ import java.nio.channels.FileLock;
 public final class C0731ya {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f1169a;
+    public final File f1170a;
     public FileLock b;
     public RandomAccessFile c;
     public FileChannel d;
@@ -23,7 +23,7 @@ public final class C0731ya {
     }
 
     public final synchronized void a() {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f1169a, "rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f1170a, "rw");
         this.c = randomAccessFile;
         FileChannel channel = randomAccessFile.getChannel();
         this.d = channel;
@@ -34,7 +34,7 @@ public final class C0731ya {
     }
 
     public final synchronized void b() {
-        this.f1169a.getAbsolutePath();
+        this.f1170a.getAbsolutePath();
         int i = this.e - 1;
         this.e = i;
         if (i == 0) {
@@ -53,7 +53,7 @@ public final class C0731ya {
 
     public C0731ya(File file) {
         this.e = 0;
-        this.f1169a = file;
+        this.f1170a = file;
     }
 
     public static File a(Context context, String str) {

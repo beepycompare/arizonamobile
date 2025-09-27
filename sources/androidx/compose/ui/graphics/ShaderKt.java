@@ -10,70 +10,70 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ShaderKt {
     /* renamed from: LinearGradientShader-VjE6UOU$default  reason: not valid java name */
-    public static /* synthetic */ Shader m4868LinearGradientShaderVjE6UOU$default(long j, long j2, List list, List list2, int i, int i2, Object obj) {
+    public static /* synthetic */ Shader m4880LinearGradientShaderVjE6UOU$default(long j, long j2, List list, List list2, int i, int i2, Object obj) {
         if ((i2 & 8) != 0) {
             list2 = null;
         }
         List list3 = list2;
         if ((i2 & 16) != 0) {
-            i = TileMode.Companion.m4927getClamp3opZhB0();
+            i = TileMode.Companion.m4939getClamp3opZhB0();
         }
-        return m4867LinearGradientShaderVjE6UOU(j, j2, list, list3, i);
+        return m4879LinearGradientShaderVjE6UOU(j, j2, list, list3, i);
     }
 
     /* renamed from: LinearGradientShader-VjE6UOU  reason: not valid java name */
-    public static final Shader m4867LinearGradientShaderVjE6UOU(long j, long j2, List<Color> list, List<Float> list2, int i) {
-        return AndroidShader_androidKt.m4437ActualLinearGradientShaderVjE6UOU(j, j2, list, list2, i);
+    public static final Shader m4879LinearGradientShaderVjE6UOU(long j, long j2, List<Color> list, List<Float> list2, int i) {
+        return AndroidShader_androidKt.m4449ActualLinearGradientShaderVjE6UOU(j, j2, list, list2, i);
     }
 
     /* renamed from: RadialGradientShader-8uybcMk$default  reason: not valid java name */
-    public static /* synthetic */ Shader m4870RadialGradientShader8uybcMk$default(long j, float f, List list, List list2, int i, int i2, Object obj) {
+    public static /* synthetic */ Shader m4882RadialGradientShader8uybcMk$default(long j, float f, List list, List list2, int i, int i2, Object obj) {
         if ((i2 & 8) != 0) {
             list2 = null;
         }
         List list3 = list2;
         if ((i2 & 16) != 0) {
-            i = TileMode.Companion.m4927getClamp3opZhB0();
+            i = TileMode.Companion.m4939getClamp3opZhB0();
         }
-        return m4869RadialGradientShader8uybcMk(j, f, list, list3, i);
+        return m4881RadialGradientShader8uybcMk(j, f, list, list3, i);
     }
 
     /* renamed from: RadialGradientShader-8uybcMk  reason: not valid java name */
-    public static final Shader m4869RadialGradientShader8uybcMk(long j, float f, List<Color> list, List<Float> list2, int i) {
-        return AndroidShader_androidKt.m4438ActualRadialGradientShader8uybcMk(j, f, list, list2, i);
+    public static final Shader m4881RadialGradientShader8uybcMk(long j, float f, List<Color> list, List<Float> list2, int i) {
+        return AndroidShader_androidKt.m4450ActualRadialGradientShader8uybcMk(j, f, list, list2, i);
     }
 
     /* renamed from: SweepGradientShader-9KIMszo$default  reason: not valid java name */
-    public static /* synthetic */ Shader m4872SweepGradientShader9KIMszo$default(long j, List list, List list2, int i, Object obj) {
+    public static /* synthetic */ Shader m4884SweepGradientShader9KIMszo$default(long j, List list, List list2, int i, Object obj) {
         if ((i & 4) != 0) {
             list2 = null;
         }
-        return m4871SweepGradientShader9KIMszo(j, list, list2);
+        return m4883SweepGradientShader9KIMszo(j, list, list2);
     }
 
     /* renamed from: SweepGradientShader-9KIMszo  reason: not valid java name */
-    public static final Shader m4871SweepGradientShader9KIMszo(long j, List<Color> list, List<Float> list2) {
-        return AndroidShader_androidKt.m4439ActualSweepGradientShader9KIMszo(j, list, list2);
+    public static final Shader m4883SweepGradientShader9KIMszo(long j, List<Color> list, List<Float> list2) {
+        return AndroidShader_androidKt.m4451ActualSweepGradientShader9KIMszo(j, list, list2);
     }
 
     /* renamed from: ImageShader-F49vj9s$default  reason: not valid java name */
-    public static /* synthetic */ Shader m4866ImageShaderF49vj9s$default(ImageBitmap imageBitmap, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ Shader m4878ImageShaderF49vj9s$default(ImageBitmap imageBitmap, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
-            i = TileMode.Companion.m4927getClamp3opZhB0();
+            i = TileMode.Companion.m4939getClamp3opZhB0();
         }
         if ((i3 & 4) != 0) {
-            i2 = TileMode.Companion.m4927getClamp3opZhB0();
+            i2 = TileMode.Companion.m4939getClamp3opZhB0();
         }
-        return m4865ImageShaderF49vj9s(imageBitmap, i, i2);
+        return m4877ImageShaderF49vj9s(imageBitmap, i, i2);
     }
 
     /* renamed from: ImageShader-F49vj9s  reason: not valid java name */
-    public static final Shader m4865ImageShaderF49vj9s(ImageBitmap imageBitmap, int i, int i2) {
-        return AndroidShader_androidKt.m4436ActualImageShaderF49vj9s(imageBitmap, i, i2);
+    public static final Shader m4877ImageShaderF49vj9s(ImageBitmap imageBitmap, int i, int i2) {
+        return AndroidShader_androidKt.m4448ActualImageShaderF49vj9s(imageBitmap, i, i2);
     }
 
     /* renamed from: CompositeShader-7EN7VTw  reason: not valid java name */
-    public static final Shader m4864CompositeShader7EN7VTw(Shader shader, Shader shader2, int i) {
-        return AndroidShader_androidKt.m4435ActualCompositeShader7EN7VTw(shader, shader2, i);
+    public static final Shader m4876CompositeShader7EN7VTw(Shader shader, Shader shader2, int i) {
+        return AndroidShader_androidKt.m4447ActualCompositeShader7EN7VTw(shader, shader2, i);
     }
 }

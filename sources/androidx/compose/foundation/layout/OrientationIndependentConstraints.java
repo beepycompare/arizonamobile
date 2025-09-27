@@ -12,49 +12,49 @@ public final class OrientationIndependentConstraints {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ OrientationIndependentConstraints m795boximpl(long j) {
+    public static final /* synthetic */ OrientationIndependentConstraints m805boximpl(long j) {
         return new OrientationIndependentConstraints(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m797constructorimpl(long j) {
+    private static long m807constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m801equalsimpl(long j, Object obj) {
-        return (obj instanceof OrientationIndependentConstraints) && Constraints.m7197equalsimpl0(j, ((OrientationIndependentConstraints) obj).m813unboximpl());
+    public static boolean m811equalsimpl(long j, Object obj) {
+        return (obj instanceof OrientationIndependentConstraints) && Constraints.m7210equalsimpl0(j, ((OrientationIndependentConstraints) obj).m823unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m802equalsimpl0(long j, long j2) {
-        return Constraints.m7197equalsimpl0(j, j2);
+    public static final boolean m812equalsimpl0(long j, long j2) {
+        return Constraints.m7210equalsimpl0(j, j2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m807hashCodeimpl(long j) {
-        return Constraints.m7207hashCodeimpl(j);
+    public static int m817hashCodeimpl(long j) {
+        return Constraints.m7220hashCodeimpl(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m812toStringimpl(long j) {
-        return "OrientationIndependentConstraints(value=" + ((Object) Constraints.m7209toStringimpl(j)) + ')';
+    public static String m822toStringimpl(long j) {
+        return "OrientationIndependentConstraints(value=" + ((Object) Constraints.m7222toStringimpl(j)) + ')';
     }
 
     public boolean equals(Object obj) {
-        return m801equalsimpl(this.value, obj);
+        return m811equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m807hashCodeimpl(this.value);
+        return m817hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m812toStringimpl(this.value);
+        return m822toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m813unboximpl() {
+    public final /* synthetic */ long m823unboximpl() {
         return this.value;
     }
 
@@ -63,86 +63,86 @@ public final class OrientationIndependentConstraints {
     }
 
     /* renamed from: getMainAxisMin-impl  reason: not valid java name */
-    public static final int m806getMainAxisMinimpl(long j) {
-        return Constraints.m7206getMinWidthimpl(j);
+    public static final int m816getMainAxisMinimpl(long j) {
+        return Constraints.m7219getMinWidthimpl(j);
     }
 
     /* renamed from: getMainAxisMax-impl  reason: not valid java name */
-    public static final int m805getMainAxisMaximpl(long j) {
-        return Constraints.m7204getMaxWidthimpl(j);
+    public static final int m815getMainAxisMaximpl(long j) {
+        return Constraints.m7217getMaxWidthimpl(j);
     }
 
     /* renamed from: getCrossAxisMin-impl  reason: not valid java name */
-    public static final int m804getCrossAxisMinimpl(long j) {
-        return Constraints.m7205getMinHeightimpl(j);
+    public static final int m814getCrossAxisMinimpl(long j) {
+        return Constraints.m7218getMinHeightimpl(j);
     }
 
     /* renamed from: getCrossAxisMax-impl  reason: not valid java name */
-    public static final int m803getCrossAxisMaximpl(long j) {
-        return Constraints.m7203getMaxHeightimpl(j);
+    public static final int m813getCrossAxisMaximpl(long j) {
+        return Constraints.m7216getMaxHeightimpl(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m796constructorimpl(int i, int i2, int i3, int i4) {
-        return m797constructorimpl(ConstraintsKt.Constraints(i, i2, i3, i4));
+    public static long m806constructorimpl(int i, int i2, int i3, int i4) {
+        return m807constructorimpl(ConstraintsKt.Constraints(i, i2, i3, i4));
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m798constructorimpl(long j, LayoutOrientation layoutOrientation) {
-        return m796constructorimpl(layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7206getMinWidthimpl(j) : Constraints.m7205getMinHeightimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7204getMaxWidthimpl(j) : Constraints.m7203getMaxHeightimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7205getMinHeightimpl(j) : Constraints.m7206getMinWidthimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7203getMaxHeightimpl(j) : Constraints.m7204getMaxWidthimpl(j));
+    public static long m808constructorimpl(long j, LayoutOrientation layoutOrientation) {
+        return m806constructorimpl(layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7219getMinWidthimpl(j) : Constraints.m7218getMinHeightimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7217getMaxWidthimpl(j) : Constraints.m7216getMaxHeightimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7218getMinHeightimpl(j) : Constraints.m7219getMinWidthimpl(j), layoutOrientation == LayoutOrientation.Horizontal ? Constraints.m7216getMaxHeightimpl(j) : Constraints.m7217getMaxWidthimpl(j));
     }
 
     /* renamed from: toBoxConstraints-OenEA2s  reason: not valid java name */
-    public static final long m811toBoxConstraintsOenEA2s(long j, LayoutOrientation layoutOrientation) {
+    public static final long m821toBoxConstraintsOenEA2s(long j, LayoutOrientation layoutOrientation) {
         if (layoutOrientation == LayoutOrientation.Horizontal) {
-            return ConstraintsKt.Constraints(Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j), Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j));
+            return ConstraintsKt.Constraints(Constraints.m7219getMinWidthimpl(j), Constraints.m7217getMaxWidthimpl(j), Constraints.m7218getMinHeightimpl(j), Constraints.m7216getMaxHeightimpl(j));
         }
-        return ConstraintsKt.Constraints(Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j), Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j));
+        return ConstraintsKt.Constraints(Constraints.m7218getMinHeightimpl(j), Constraints.m7216getMaxHeightimpl(j), Constraints.m7219getMinWidthimpl(j), Constraints.m7217getMaxWidthimpl(j));
     }
 
     /* renamed from: maxWidth-impl  reason: not valid java name */
-    public static final int m809maxWidthimpl(long j, LayoutOrientation layoutOrientation) {
+    public static final int m819maxWidthimpl(long j, LayoutOrientation layoutOrientation) {
         if (layoutOrientation == LayoutOrientation.Horizontal) {
-            return Constraints.m7204getMaxWidthimpl(j);
+            return Constraints.m7217getMaxWidthimpl(j);
         }
-        return Constraints.m7203getMaxHeightimpl(j);
+        return Constraints.m7216getMaxHeightimpl(j);
     }
 
     /* renamed from: maxHeight-impl  reason: not valid java name */
-    public static final int m808maxHeightimpl(long j, LayoutOrientation layoutOrientation) {
+    public static final int m818maxHeightimpl(long j, LayoutOrientation layoutOrientation) {
         if (layoutOrientation == LayoutOrientation.Horizontal) {
-            return Constraints.m7203getMaxHeightimpl(j);
+            return Constraints.m7216getMaxHeightimpl(j);
         }
-        return Constraints.m7204getMaxWidthimpl(j);
+        return Constraints.m7217getMaxWidthimpl(j);
     }
 
     /* renamed from: copy-yUG9Ft0  reason: not valid java name */
-    public static final long m799copyyUG9Ft0(long j, int i, int i2, int i3, int i4) {
-        return m796constructorimpl(i, i2, i3, i4);
+    public static final long m809copyyUG9Ft0(long j, int i, int i2, int i3, int i4) {
+        return m806constructorimpl(i, i2, i3, i4);
     }
 
     /* renamed from: stretchCrossAxis-q4ezo7Y  reason: not valid java name */
-    public static final long m810stretchCrossAxisq4ezo7Y(long j) {
-        return m796constructorimpl(Constraints.m7206getMinWidthimpl(j), Constraints.m7204getMaxWidthimpl(j), Constraints.m7203getMaxHeightimpl(j) != Integer.MAX_VALUE ? Constraints.m7203getMaxHeightimpl(j) : Constraints.m7205getMinHeightimpl(j), Constraints.m7203getMaxHeightimpl(j));
+    public static final long m820stretchCrossAxisq4ezo7Y(long j) {
+        return m806constructorimpl(Constraints.m7219getMinWidthimpl(j), Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j) != Integer.MAX_VALUE ? Constraints.m7216getMaxHeightimpl(j) : Constraints.m7218getMinHeightimpl(j), Constraints.m7216getMaxHeightimpl(j));
     }
 
     /* renamed from: copy-yUG9Ft0$default  reason: not valid java name */
-    public static /* synthetic */ long m800copyyUG9Ft0$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
+    public static /* synthetic */ long m810copyyUG9Ft0$default(long j, int i, int i2, int i3, int i4, int i5, Object obj) {
         if ((i5 & 1) != 0) {
-            i = Constraints.m7206getMinWidthimpl(j);
+            i = Constraints.m7219getMinWidthimpl(j);
         }
         int i6 = i;
         if ((i5 & 2) != 0) {
-            i2 = Constraints.m7204getMaxWidthimpl(j);
+            i2 = Constraints.m7217getMaxWidthimpl(j);
         }
         int i7 = i2;
         if ((i5 & 4) != 0) {
-            i3 = Constraints.m7205getMinHeightimpl(j);
+            i3 = Constraints.m7218getMinHeightimpl(j);
         }
         int i8 = i3;
         if ((i5 & 8) != 0) {
-            i4 = Constraints.m7203getMaxHeightimpl(j);
+            i4 = Constraints.m7216getMaxHeightimpl(j);
         }
-        return m799copyyUG9Ft0(j, i6, i7, i8, i4);
+        return m809copyyUG9Ft0(j, i6, i7, i8, i4);
     }
 }

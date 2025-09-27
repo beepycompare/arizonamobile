@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class C0312hm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xa f913a;
+    public final Xa f914a;
     public final C0681wa b;
     public final C0154bj c;
     public final Te d;
@@ -83,10 +83,10 @@ public final class C0312hm {
         Fm fm = new Fm();
         JSONObject optJSONObject9 = fb.optJSONObject("stat_sending");
         if (optJSONObject9 != null) {
-            fm.f450a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject9, "disabled_reporting_interval_seconds", fm.f450a);
+            fm.f451a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject9, "disabled_reporting_interval_seconds", fm.f451a);
         }
         this.e.getClass();
-        c0441mm.p = new Qm(fm.f450a);
+        c0441mm.p = new Qm(fm.f451a);
         this.b.getClass();
         Bm bm = new Bm();
         try {
@@ -98,7 +98,7 @@ public final class C0312hm {
             JSONObject optJSONObject10 = ((JSONObject) jSONObject2).optJSONObject("list");
             if (optJSONObject10 != null) {
                 H4 h4 = new H4();
-                h4.f471a = C0681wa.a(optJSONObject10, "permissions_collecting", bm.f375a);
+                h4.f472a = C0681wa.a(optJSONObject10, "permissions_collecting", bm.f376a);
                 h4.b = C0681wa.a(optJSONObject10, "features_collecting", bm.b);
                 h4.c = C0681wa.a(optJSONObject10, "google_aid", bm.c);
                 h4.d = C0681wa.a(optJSONObject10, "sim_info", bm.d);
@@ -108,7 +108,7 @@ public final class C0312hm {
             }
         } catch (Throwable unused4) {
         }
-        this.f913a.getClass();
+        this.f914a.getClass();
         try {
             Object jSONObject3 = new JSONObject();
             try {
@@ -148,7 +148,7 @@ public final class C0312hm {
                 Iterator<String> keys2 = optJSONObject11.keys();
                 while (keys2.hasNext()) {
                     String next2 = keys2.next();
-                    if (!Xa.f740a.contains(next2) && (a2 = Xa.a(optJSONObject11, next2)) != null) {
+                    if (!Xa.f741a.contains(next2) && (a2 = Xa.a(optJSONObject11, next2)) != null) {
                         hashMap2.put(next2, a2);
                     }
                 }
@@ -167,36 +167,36 @@ public final class C0312hm {
         }
         c0441mm.q = new RetryPolicyConfig(i, i2);
         this.d.getClass();
-        if (c0441mm.b.f509a) {
+        if (c0441mm.b.f510a) {
             JSONObject optJSONObject13 = fb.optJSONObject("permissions_collecting");
             Dm dm = new Dm();
             if (optJSONObject13 != null) {
-                j = optJSONObject13.optLong("check_interval_seconds", dm.f415a);
+                j = optJSONObject13.optLong("check_interval_seconds", dm.f416a);
                 j2 = optJSONObject13.optLong("force_send_interval_seconds", dm.b);
             } else {
-                j = dm.f415a;
+                j = dm.f416a;
                 j2 = dm.b;
             }
             c0441mm.k = new Re(j, j2);
         }
-        C0698x2 c0698x2 = this.f.f1163a;
+        C0698x2 c0698x2 = this.f.f1164a;
         C0718xm c0718xm = new C0718xm();
         JSONObject optJSONObject14 = fb.optJSONObject("auto_inapp_collecting");
         if (optJSONObject14 != null) {
-            c0718xm.f1160a = optJSONObject14.optInt("send_frequency_seconds", c0718xm.f1160a);
+            c0718xm.f1161a = optJSONObject14.optInt("send_frequency_seconds", c0718xm.f1161a);
             c0718xm.b = optJSONObject14.optInt("first_collecting_inapp_max_age_seconds", c0718xm.b);
         }
         c0698x2.getClass();
-        c0441mm.r = new BillingConfig(c0718xm.f1160a, c0718xm.b);
+        c0441mm.r = new BillingConfig(c0718xm.f1161a, c0718xm.b);
         F3 f3 = this.g;
         f3.getClass();
         C0743ym c0743ym = new C0743ym();
         JSONObject optJSONObject15 = fb.optJSONObject("cache_control");
         if (optJSONObject15 != null) {
-            c0743ym.f1176a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject15, "last_known_location_ttl", c0743ym.f1176a);
+            c0743ym.f1177a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject15, "last_known_location_ttl", c0743ym.f1177a);
         }
-        f3.f436a.getClass();
-        c0441mm.s = new C3(c0743ym.f1176a);
+        f3.f437a.getClass();
+        c0441mm.s = new C3(c0743ym.f1177a);
         this.h.getClass();
         C0648v2.a(c0441mm, fb);
         Om om = this.j;
@@ -205,11 +205,11 @@ public final class C0312hm {
         Em em = new Em();
         Integer a6 = Gb.a(optJSONObject16, "interval_seconds", null);
         if (a6 != null) {
-            em.f431a = a6.intValue();
+            em.f432a = a6.intValue();
         }
-        om.f614a.getClass();
-        c0441mm.u = new Mm(em.f431a);
-        Map<String, C0734yd> c = this.k.f594a.c();
+        om.f615a.getClass();
+        c0441mm.u = new Mm(em.f432a);
+        Map<String, C0734yd> c = this.k.f595a.c();
         Md md = new Md(fb);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Map.Entry<String, C0734yd> entry : c.entrySet()) {
@@ -219,18 +219,18 @@ public final class C0312hm {
             }
         }
         c0441mm.v = linkedHashMap;
-        C0171ca c0171ca = this.l.f840a;
+        C0171ca c0171ca = this.l.f841a;
         Am am = new Am();
         JSONObject optJSONObject17 = fb.optJSONObject("external_attribution");
         if (optJSONObject17 != null) {
-            am.f355a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject17, "collecting_interval_seconds", am.f355a);
+            am.f356a = RemoteConfigJsonUtils.extractMillisFromSecondsOrDefault(optJSONObject17, "collecting_interval_seconds", am.f356a);
         }
         c0171ca.getClass();
-        c0441mm.w = new C0145ba(am.f355a);
+        c0441mm.w = new C0145ba(am.f356a);
     }
 
     public C0312hm(Hb hb, Xa xa, C0681wa c0681wa, C0154bj c0154bj, Te te, Rm rm, F3 f3, C0723y2 c0723y2, C0648v2 c0648v2, Om om, Nd nd, C0197da c0197da) {
-        this.f913a = xa;
+        this.f914a = xa;
         this.b = c0681wa;
         this.c = c0154bj;
         this.d = te;

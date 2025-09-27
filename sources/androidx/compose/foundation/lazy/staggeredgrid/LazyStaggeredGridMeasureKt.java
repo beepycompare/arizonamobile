@@ -44,9 +44,9 @@ public final class LazyStaggeredGridMeasureKt {
     }
 
     /* renamed from: measureStaggeredGrid-C6celF4  reason: not valid java name */
-    public static final LazyStaggeredGridMeasureResult m1101measureStaggeredGridC6celF4(LazyLayoutMeasureScope lazyLayoutMeasureScope, LazyStaggeredGridState lazyStaggeredGridState, List<Integer> list, LazyStaggeredGridItemProvider lazyStaggeredGridItemProvider, LazyStaggeredGridSlots lazyStaggeredGridSlots, long j, boolean z, boolean z2, long j2, int i, int i2, int i3, int i4, CoroutineScope coroutineScope, boolean z3, boolean z4, LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo, GraphicsContext graphicsContext) {
+    public static final LazyStaggeredGridMeasureResult m1111measureStaggeredGridC6celF4(LazyLayoutMeasureScope lazyLayoutMeasureScope, LazyStaggeredGridState lazyStaggeredGridState, List<Integer> list, LazyStaggeredGridItemProvider lazyStaggeredGridItemProvider, LazyStaggeredGridSlots lazyStaggeredGridSlots, long j, boolean z, boolean z2, long j2, int i, int i2, int i3, int i4, CoroutineScope coroutineScope, boolean z3, boolean z4, LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo, GraphicsContext graphicsContext) {
         int i5;
-        int m1100maxInRangejy6DScQ;
+        int m1110maxInRangejy6DScQ;
         LazyStaggeredGridMeasureContext lazyStaggeredGridMeasureContext = new LazyStaggeredGridMeasureContext(lazyStaggeredGridState, list, lazyStaggeredGridItemProvider, lazyStaggeredGridSlots, j, z, lazyLayoutMeasureScope, i, j2, i3, i4, z2, i2, coroutineScope, z3, z4, lazyStaggeredGridLayoutInfo, graphicsContext, null);
         int[] updateScrollPositionIfTheFirstItemWasMoved$foundation_release = lazyStaggeredGridState.updateScrollPositionIfTheFirstItemWasMoved$foundation_release(lazyStaggeredGridItemProvider, lazyStaggeredGridState.getScrollPosition$foundation_release().getIndices());
         int[] scrollOffsets = lazyStaggeredGridState.getScrollPosition$foundation_release().getScrollOffsets();
@@ -56,10 +56,10 @@ public final class LazyStaggeredGridMeasureKt {
             int[] iArr = new int[laneCount];
             int i6 = 0;
             while (i6 < laneCount) {
-                if (i6 >= updateScrollPositionIfTheFirstItemWasMoved$foundation_release.length || (m1100maxInRangejy6DScQ = updateScrollPositionIfTheFirstItemWasMoved$foundation_release[i6]) == -1) {
-                    m1100maxInRangejy6DScQ = i6 == 0 ? 0 : m1100maxInRangejy6DScQ(iArr, SpanRange.m1113constructorimpl(0, i6)) + 1;
+                if (i6 >= updateScrollPositionIfTheFirstItemWasMoved$foundation_release.length || (m1110maxInRangejy6DScQ = updateScrollPositionIfTheFirstItemWasMoved$foundation_release[i6]) == -1) {
+                    m1110maxInRangejy6DScQ = i6 == 0 ? 0 : m1110maxInRangejy6DScQ(iArr, SpanRange.m1123constructorimpl(0, i6)) + 1;
                 }
-                iArr[i6] = m1100maxInRangejy6DScQ;
+                iArr[i6] = m1110maxInRangejy6DScQ;
                 lazyStaggeredGridMeasureContext.getLaneInfo().setLane(iArr[i6], i6);
                 i6++;
             }
@@ -173,7 +173,7 @@ public final class LazyStaggeredGridMeasureKt {
         r10 = r28;
         r25 = r1;
         r24 = r2;
-        r1 = r0.m1096getSpanRangelOCCd4c(r0.getItemProvider(), r7, r6);
+        r1 = r0.m1106getSpanRangelOCCd4c(r0.getItemProvider(), r7, r6);
         r6 = r0.getLaneInfo();
         r30 = r12;
         r27 = r13;
@@ -203,8 +203,8 @@ public final class LazyStaggeredGridMeasureKt {
      */
     /* JADX WARN: Code restructure failed: missing block: B:181:0x038e, code lost:
         r6.setLane(r7, r15);
-        r6 = r0.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(r7, r1);
-        r1 = m1100maxInRangejy6DScQ(r9, r1);
+        r6 = r0.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(r7, r1);
+        r1 = m1110maxInRangejy6DScQ(r9, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:182:0x039e, code lost:
         if (r4 == 1) goto L510;
@@ -264,7 +264,7 @@ public final class LazyStaggeredGridMeasureKt {
         r24 = r3;
         r15 = r26;
         r11 = r27;
-        r3 = r0.m1096getSpanRangelOCCd4c(r0.getItemProvider(), r1, r6);
+        r3 = r0.m1106getSpanRangelOCCd4c(r0.getItemProvider(), r1, r6);
         r6 = r0.getLaneInfo();
         r47 = r8;
         r7 = (int) (r3 & 4294967295L);
@@ -282,8 +282,8 @@ public final class LazyStaggeredGridMeasureKt {
      */
     /* JADX WARN: Code restructure failed: missing block: B:463:0x09b7, code lost:
         r6.setLane(r1, r0);
-        r0 = r46.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(r1, r3);
-        r3 = m1100maxInRangejy6DScQ(r14, r3);
+        r0 = r46.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(r1, r3);
+        r3 = m1110maxInRangejy6DScQ(r14, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:464:0x09c7, code lost:
         if (r9 == 1) goto L142;
@@ -376,8 +376,8 @@ public final class LazyStaggeredGridMeasureKt {
         String str2;
         int[] iArr6;
         float f;
-        int m7221constrainWidthK40F9xA;
-        int m7203getMaxHeightimpl;
+        int m7234constrainWidthK40F9xA;
+        int m7216getMaxHeightimpl;
         int[] iArr7;
         List list;
         List<LazyStaggeredGridMeasuredItem> list2;
@@ -426,24 +426,24 @@ public final class LazyStaggeredGridMeasureKt {
         LazyLayoutMeasureScope measureScope = lazyStaggeredGridMeasureContext2.getMeasureScope();
         int itemCount = lazyStaggeredGridMeasureContext2.getItemProvider().getItemCount();
         if (itemCount <= 0 || lazyStaggeredGridMeasureContext2.getLaneCount() == 0) {
-            int m7206getMinWidthimpl = Constraints.m7206getMinWidthimpl(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk());
-            int m7205getMinHeightimpl = Constraints.m7205getMinHeightimpl(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk());
-            lazyStaggeredGridMeasureContext.getState().getItemAnimator$foundation_release().onMeasured(0, m7206getMinWidthimpl, m7205getMinHeightimpl, new ArrayList(), lazyStaggeredGridMeasureContext.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext.isVertical(), measureScope.isLookingAhead(), lazyStaggeredGridMeasureContext.getLaneCount(), lazyStaggeredGridMeasureContext.isInLookaheadScope(), 0, 0, lazyStaggeredGridMeasureContext.getCoroutineScope(), lazyStaggeredGridMeasureContext.getGraphicsContext());
+            int m7219getMinWidthimpl = Constraints.m7219getMinWidthimpl(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk());
+            int m7218getMinHeightimpl = Constraints.m7218getMinHeightimpl(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk());
+            lazyStaggeredGridMeasureContext.getState().getItemAnimator$foundation_release().onMeasured(0, m7219getMinWidthimpl, m7218getMinHeightimpl, new ArrayList(), lazyStaggeredGridMeasureContext.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext.isVertical(), measureScope.isLookingAhead(), lazyStaggeredGridMeasureContext.getLaneCount(), lazyStaggeredGridMeasureContext.isInLookaheadScope(), 0, 0, lazyStaggeredGridMeasureContext.getCoroutineScope(), lazyStaggeredGridMeasureContext.getGraphicsContext());
             if (!measureScope.isLookingAhead()) {
-                long m1030getMinSizeToFitDisappearingItemsYbymL2g = lazyStaggeredGridMeasureContext.getState().getItemAnimator$foundation_release().m1030getMinSizeToFitDisappearingItemsYbymL2g();
-                if (!IntSize.m7420equalsimpl0(m1030getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m7427getZeroYbymL2g())) {
-                    m7206getMinWidthimpl = ConstraintsKt.m7221constrainWidthK40F9xA(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk(), (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g >> 32));
-                    m7205getMinHeightimpl = ConstraintsKt.m7220constrainHeightK40F9xA(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk(), (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
+                long m1040getMinSizeToFitDisappearingItemsYbymL2g = lazyStaggeredGridMeasureContext.getState().getItemAnimator$foundation_release().m1040getMinSizeToFitDisappearingItemsYbymL2g();
+                if (!IntSize.m7433equalsimpl0(m1040getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m7440getZeroYbymL2g())) {
+                    m7219getMinWidthimpl = ConstraintsKt.m7234constrainWidthK40F9xA(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk(), (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g >> 32));
+                    m7218getMinHeightimpl = ConstraintsKt.m7233constrainHeightK40F9xA(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk(), (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
                 }
             }
-            return new LazyStaggeredGridMeasureResult(iArr, iArr2, 0.0f, MeasureScope.layout$default(measureScope, m7206getMinWidthimpl, m7205getMinHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda1
+            return new LazyStaggeredGridMeasureResult(iArr, iArr2, 0.0f, MeasureScope.layout$default(measureScope, m7219getMinWidthimpl, m7218getMinHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit measure$lambda$49$lambda$4;
                     measure$lambda$49$lambda$4 = LazyStaggeredGridMeasureKt.measure$lambda$49$lambda$4((Placeable.PlacementScope) obj);
                     return measure$lambda$49$lambda$4;
                 }
-            }, 4, null), 0.0f, false, lazyStaggeredGridMeasureContext.isVertical(), false, lazyStaggeredGridMeasureContext.getResolvedSlots(), lazyStaggeredGridMeasureContext.getItemProvider().getSpanProvider(), measureScope, itemCount, CollectionsKt.emptyList(), IntSize.m7417constructorimpl((Constraints.m7205getMinHeightimpl(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk()) & 4294967295L) | (Constraints.m7206getMinWidthimpl(lazyStaggeredGridMeasureContext.m1093getConstraintsmsEJaDk()) << 32)), -lazyStaggeredGridMeasureContext.getBeforeContentPadding(), lazyStaggeredGridMeasureContext.getMainAxisAvailableSize() + lazyStaggeredGridMeasureContext.getAfterContentPadding(), lazyStaggeredGridMeasureContext.getBeforeContentPadding(), lazyStaggeredGridMeasureContext.getAfterContentPadding(), lazyStaggeredGridMeasureContext.getMainAxisSpacing(), lazyStaggeredGridMeasureContext.getCoroutineScope(), null);
+            }, 4, null), 0.0f, false, lazyStaggeredGridMeasureContext.isVertical(), false, lazyStaggeredGridMeasureContext.getResolvedSlots(), lazyStaggeredGridMeasureContext.getItemProvider().getSpanProvider(), measureScope, itemCount, CollectionsKt.emptyList(), IntSize.m7430constructorimpl((Constraints.m7218getMinHeightimpl(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk()) & 4294967295L) | (Constraints.m7219getMinWidthimpl(lazyStaggeredGridMeasureContext.m1103getConstraintsmsEJaDk()) << 32)), -lazyStaggeredGridMeasureContext.getBeforeContentPadding(), lazyStaggeredGridMeasureContext.getMainAxisAvailableSize() + lazyStaggeredGridMeasureContext.getAfterContentPadding(), lazyStaggeredGridMeasureContext.getBeforeContentPadding(), lazyStaggeredGridMeasureContext.getAfterContentPadding(), lazyStaggeredGridMeasureContext.getMainAxisSpacing(), lazyStaggeredGridMeasureContext.getCoroutineScope(), null);
         }
         int[] copyOf = Arrays.copyOf(iArr, iArr.length);
         String str4 = "copyOf(...)";
@@ -484,20 +484,20 @@ public final class LazyStaggeredGridMeasureKt {
             if (findPreviousItemIndex < 0) {
                 break;
             }
-            long m1096getSpanRangelOCCd4c = lazyStaggeredGridMeasureContext2.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), findPreviousItemIndex, i3);
-            int i36 = (int) (m1096getSpanRangelOCCd4c & 4294967295L);
+            long m1106getSpanRangelOCCd4c = lazyStaggeredGridMeasureContext2.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), findPreviousItemIndex, i3);
+            int i36 = (int) (m1106getSpanRangelOCCd4c & 4294967295L);
             ArrayDeque[] arrayDequeArr3 = arrayDequeArr2;
             boolean z15 = z14;
-            int i37 = (int) (m1096getSpanRangelOCCd4c >> 32);
+            int i37 = (int) (m1106getSpanRangelOCCd4c >> 32);
             int i38 = i36 - i37;
             lazyStaggeredGridMeasureContext2.getLaneInfo().setLane(findPreviousItemIndex, i38 != 1 ? -2 : i37);
-            LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(findPreviousItemIndex, m1096getSpanRangelOCCd4c);
-            int m1100maxInRangejy6DScQ = m1100maxInRangejy6DScQ(copyOf2, m1096getSpanRangelOCCd4c);
+            LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(findPreviousItemIndex, m1106getSpanRangelOCCd4c);
+            int m1110maxInRangejy6DScQ = m1110maxInRangejy6DScQ(copyOf2, m1106getSpanRangelOCCd4c);
             int[] gaps = i38 != 1 ? lazyStaggeredGridMeasureContext2.getLaneInfo().getGaps(findPreviousItemIndex) : null;
             boolean z16 = z15;
             while (i37 < i36) {
                 copyOf[i37] = findPreviousItemIndex;
-                int mainAxisSizeWithSpacings = m1100maxInRangejy6DScQ + m1104getAndMeasurejy6DScQ.getMainAxisSizeWithSpacings() + (gaps == null ? 0 : gaps[i37]);
+                int mainAxisSizeWithSpacings = m1110maxInRangejy6DScQ + m1114getAndMeasurejy6DScQ.getMainAxisSizeWithSpacings() + (gaps == null ? 0 : gaps[i37]);
                 copyOf2[i37] = mainAxisSizeWithSpacings;
                 if (lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize() + mainAxisSizeWithSpacings <= 0) {
                     z16 = true;
@@ -558,14 +558,14 @@ public final class LazyStaggeredGridMeasureKt {
             if (i46 >= 0) {
                 LazyLayoutMeasureScope lazyLayoutMeasureScope2 = measureScope;
                 int i47 = i4;
-                long m1096getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext2.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i46, indexOfMinValue$default);
-                LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(i46, m1096getSpanRangelOCCd4c2);
+                long m1106getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext2.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i46, indexOfMinValue$default);
+                LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(i46, m1106getSpanRangelOCCd4c2);
                 LazyStaggeredGridLaneInfo laneInfo = lazyStaggeredGridMeasureContext2.getLaneInfo();
                 int[] iArr13 = copyOf;
                 int[] iArr14 = copyOf2;
-                int i48 = (int) (m1096getSpanRangelOCCd4c2 & 4294967295L);
+                int i48 = (int) (m1106getSpanRangelOCCd4c2 & 4294967295L);
                 int i49 = itemCount;
-                int i50 = (int) (m1096getSpanRangelOCCd4c2 >> c);
+                int i50 = (int) (m1106getSpanRangelOCCd4c2 >> c);
                 int i51 = i48 - i50;
                 if (i51 != 1) {
                     lazyStaggeredGridLaneInfo = laneInfo;
@@ -575,16 +575,16 @@ public final class LazyStaggeredGridMeasureKt {
                     i30 = i50;
                 }
                 lazyStaggeredGridLaneInfo.setLane(i46, i30);
-                int m1100maxInRangejy6DScQ2 = m1100maxInRangejy6DScQ(iArr12, m1096getSpanRangelOCCd4c2);
+                int m1110maxInRangejy6DScQ2 = m1110maxInRangejy6DScQ(iArr12, m1106getSpanRangelOCCd4c2);
                 for (int i52 = i50; i52 < i48; i52++) {
-                    iArr12[i52] = m1104getAndMeasurejy6DScQ2.getMainAxisSizeWithSpacings() + m1100maxInRangejy6DScQ2;
+                    iArr12[i52] = m1114getAndMeasurejy6DScQ2.getMainAxisSizeWithSpacings() + m1110maxInRangejy6DScQ2;
                     copyOf3[i52] = i46;
-                    arrayDequeArr5[i52].addLast(m1104getAndMeasurejy6DScQ2);
+                    arrayDequeArr5[i52].addLast(m1114getAndMeasurejy6DScQ2);
                 }
-                if (m1100maxInRangejy6DScQ2 >= mainAxisSpacing || iArr12[i50] > mainAxisSpacing) {
+                if (m1110maxInRangejy6DScQ2 >= mainAxisSpacing || iArr12[i50] > mainAxisSpacing) {
                     z13 = z17;
                 } else {
-                    m1104getAndMeasurejy6DScQ2.setVisible(false);
+                    m1114getAndMeasurejy6DScQ2.setVisible(false);
                     z13 = true;
                 }
                 if (i51 != 1) {
@@ -770,17 +770,17 @@ public final class LazyStaggeredGridMeasureKt {
         }
         int beforeContentPadding = lazyStaggeredGridMeasureContext2.getBeforeContentPadding() + lazyStaggeredGridMeasureContext2.getAfterContentPadding();
         if (lazyStaggeredGridMeasureContext2.isVertical()) {
-            m7221constrainWidthK40F9xA = Constraints.m7204getMaxWidthimpl(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk());
+            m7234constrainWidthK40F9xA = Constraints.m7217getMaxWidthimpl(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk());
         } else {
-            m7221constrainWidthK40F9xA = ConstraintsKt.m7221constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
+            m7234constrainWidthK40F9xA = ConstraintsKt.m7234constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
         }
-        int i66 = m7221constrainWidthK40F9xA;
+        int i66 = m7234constrainWidthK40F9xA;
         if (lazyStaggeredGridMeasureContext2.isVertical()) {
-            m7203getMaxHeightimpl = ConstraintsKt.m7220constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
+            m7216getMaxHeightimpl = ConstraintsKt.m7233constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk(), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding);
         } else {
-            m7203getMaxHeightimpl = Constraints.m7203getMaxHeightimpl(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk());
+            m7216getMaxHeightimpl = Constraints.m7216getMaxHeightimpl(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk());
         }
-        int i67 = m7203getMaxHeightimpl;
+        int i67 = m7216getMaxHeightimpl;
         int afterContentPadding = lazyStaggeredGridMeasureContext2.getAfterContentPadding() + (Math.min(lazyStaggeredGridMeasureContext2.isVertical() ? i67 : i66, lazyStaggeredGridMeasureContext2.getMainAxisAvailableSize()) - lazyStaggeredGridMeasureContext2.getBeforeContentPadding());
         int i68 = copyOf4[0];
         List<Integer> pinnedItems = lazyStaggeredGridMeasureContext2.getPinnedItems();
@@ -807,14 +807,14 @@ public final class LazyStaggeredGridMeasureKt {
                 }
                 if (z11) {
                     iArr7 = copyOf4;
-                    long m1096getSpanRangelOCCd4c3 = lazyStaggeredGridMeasureContext2.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue, 0);
+                    long m1106getSpanRangelOCCd4c3 = lazyStaggeredGridMeasureContext2.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue, 0);
                     if (arrayList5 == null) {
                         arrayList5 = new ArrayList();
                     }
-                    LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ3 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(intValue, m1096getSpanRangelOCCd4c3);
-                    int mainAxisSizeWithSpacings3 = i71 - m1104getAndMeasurejy6DScQ3.getMainAxisSizeWithSpacings();
-                    m1104getAndMeasurejy6DScQ3.position(mainAxisSizeWithSpacings3, 0, afterContentPadding);
-                    arrayList5.add(m1104getAndMeasurejy6DScQ3);
+                    LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ3 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(intValue, m1106getSpanRangelOCCd4c3);
+                    int mainAxisSizeWithSpacings3 = i71 - m1114getAndMeasurejy6DScQ3.getMainAxisSizeWithSpacings();
+                    m1114getAndMeasurejy6DScQ3.position(mainAxisSizeWithSpacings3, 0, afterContentPadding);
+                    arrayList5.add(m1114getAndMeasurejy6DScQ3);
                     i68 = mainAxisSizeWithSpacings3;
                 } else {
                     iArr7 = copyOf4;
@@ -899,11 +899,11 @@ public final class LazyStaggeredGridMeasureKt {
                                 LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo5 = lazyStaggeredGridItemInfo2;
                                 int lane2 = lazyStaggeredGridItemInfo5 != null ? lazyStaggeredGridItemInfo5.getLane() : 0;
                                 f2 = f5;
-                                LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ4 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(i75, lazyStaggeredGridMeasureContext2.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i75, lane2));
-                                arrayList6.add(m1104getAndMeasurejy6DScQ4);
+                                LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ4 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(i75, lazyStaggeredGridMeasureContext2.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), i75, lane2));
+                                arrayList6.add(m1114getAndMeasurejy6DScQ4);
                                 int[] positions = lazyStaggeredGridMeasureContext2.getResolvedSlots().getPositions();
-                                m1104getAndMeasurejy6DScQ4.position(i76, positions.length > lane2 ? positions[lane2] : 0, afterContentPadding);
-                                i76 += m1104getAndMeasurejy6DScQ4.getMainAxisSizeWithSpacings();
+                                m1114getAndMeasurejy6DScQ4.position(i76, positions.length > lane2 ? positions[lane2] : 0, afterContentPadding);
+                                i76 += m1114getAndMeasurejy6DScQ4.getMainAxisSizeWithSpacings();
                             } else {
                                 iArr8 = iArr6;
                                 f2 = f5;
@@ -972,16 +972,16 @@ public final class LazyStaggeredGridMeasureKt {
                                         i25 = i18;
                                     } else {
                                         i24 = size;
-                                        long m1096getSpanRangelOCCd4c4 = lazyStaggeredGridMeasureContext2.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue2, 0);
+                                        long m1106getSpanRangelOCCd4c4 = lazyStaggeredGridMeasureContext2.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext2.getItemProvider(), intValue2, 0);
                                         if (arrayList2 == null) {
                                             arrayList2 = new ArrayList();
                                         }
                                         i25 = i18;
                                         List list6 = arrayList2;
-                                        LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ5 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(intValue2, m1096getSpanRangelOCCd4c4);
-                                        m1104getAndMeasurejy6DScQ5.position(i74, 0, afterContentPadding);
-                                        i74 += m1104getAndMeasurejy6DScQ5.getMainAxisSizeWithSpacings();
-                                        list6.add(m1104getAndMeasurejy6DScQ5);
+                                        LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ5 = lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(intValue2, m1106getSpanRangelOCCd4c4);
+                                        m1114getAndMeasurejy6DScQ5.position(i74, 0, afterContentPadding);
+                                        i74 += m1114getAndMeasurejy6DScQ5.getMainAxisSizeWithSpacings();
+                                        list6.add(m1114getAndMeasurejy6DScQ5);
                                         arrayList2 = list6;
                                     }
                                     i18 = i25 + 1;
@@ -1022,20 +1022,20 @@ public final class LazyStaggeredGridMeasureKt {
                 arrayList7.addAll(arrayList2);
                 lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation_release().onMeasured((int) f, i66, i67, arrayList7, lazyStaggeredGridMeasureContext2.getMeasuredItemProvider().getKeyIndexMap(), lazyStaggeredGridMeasureContext2.getMeasuredItemProvider(), lazyStaggeredGridMeasureContext2.isVertical(), lazyLayoutMeasureScope3.isLookingAhead(), lazyStaggeredGridMeasureContext2.getLaneCount(), lazyStaggeredGridMeasureContext2.isInLookaheadScope(), ArraysKt.minOrThrow(iArr3), ArraysKt.maxOrThrow(iArr12) + beforeContentPadding, lazyStaggeredGridMeasureContext2.getCoroutineScope(), lazyStaggeredGridMeasureContext2.getGraphicsContext());
                 if (!lazyLayoutMeasureScope3.isLookingAhead()) {
-                    long m1030getMinSizeToFitDisappearingItemsYbymL2g2 = lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation_release().m1030getMinSizeToFitDisappearingItemsYbymL2g();
-                    if (!IntSize.m7420equalsimpl0(m1030getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7427getZeroYbymL2g())) {
+                    long m1040getMinSizeToFitDisappearingItemsYbymL2g2 = lazyStaggeredGridMeasureContext2.getState().getItemAnimator$foundation_release().m1040getMinSizeToFitDisappearingItemsYbymL2g();
+                    if (!IntSize.m7433equalsimpl0(m1040getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7440getZeroYbymL2g())) {
                         int i84 = lazyStaggeredGridMeasureContext2.isVertical() ? i67 : i66;
-                        int m7221constrainWidthK40F9xA2 = ConstraintsKt.m7221constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk(), Math.max(i66, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g2 >> c)));
-                        int m7220constrainHeightK40F9xA = ConstraintsKt.m7220constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1093getConstraintsmsEJaDk(), Math.max(i67, (int) (m1030getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
-                        int i85 = lazyStaggeredGridMeasureContext2.isVertical() ? m7220constrainHeightK40F9xA : m7221constrainWidthK40F9xA2;
+                        int m7234constrainWidthK40F9xA2 = ConstraintsKt.m7234constrainWidthK40F9xA(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk(), Math.max(i66, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g2 >> c)));
+                        int m7233constrainHeightK40F9xA = ConstraintsKt.m7233constrainHeightK40F9xA(lazyStaggeredGridMeasureContext2.m1103getConstraintsmsEJaDk(), Math.max(i67, (int) (m1040getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
+                        int i85 = lazyStaggeredGridMeasureContext2.isVertical() ? m7233constrainHeightK40F9xA : m7234constrainWidthK40F9xA2;
                         if (i85 != i84) {
                             int size8 = arrayList7.size();
                             for (int i86 = 0; i86 < size8; i86++) {
                                 arrayList7.get(i86).updateMainAxisLayoutSize(i85);
                             }
                         }
-                        i19 = m7221constrainWidthK40F9xA2;
-                        i20 = m7220constrainHeightK40F9xA;
+                        i19 = m7234constrainWidthK40F9xA2;
+                        i20 = m7233constrainHeightK40F9xA;
                         i21 = i11;
                         i22 = 0;
                         while (true) {
@@ -1074,7 +1074,7 @@ public final class LazyStaggeredGridMeasureKt {
                                         measure$lambda$49$lambda$48 = LazyStaggeredGridMeasureKt.measure$lambda$49$lambda$48(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope4, (Placeable.PlacementScope) obj);
                                         return measure$lambda$49$lambda$48;
                                     }
-                                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4, i23, list2, IntSize.m7417constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4, i23, list2, IntSize.m7430constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
                             }
                         }
                         i23 = i83;
@@ -1087,7 +1087,7 @@ public final class LazyStaggeredGridMeasureKt {
                                 measure$lambda$49$lambda$48 = LazyStaggeredGridMeasureKt.measure$lambda$49$lambda$48(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope42, (Placeable.PlacementScope) obj);
                                 return measure$lambda$49$lambda$48;
                             }
-                        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope42, i23, list2, IntSize.m7417constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope42, i23, list2, IntSize.m7430constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
                     }
                 }
                 i19 = i66;
@@ -1111,7 +1111,7 @@ public final class LazyStaggeredGridMeasureKt {
                         measure$lambda$49$lambda$48 = LazyStaggeredGridMeasureKt.measure$lambda$49$lambda$48(LazyStaggeredGridMeasureContext.this, arrayList7, lazyLayoutMeasureScope422, (Placeable.PlacementScope) obj);
                         return measure$lambda$49$lambda$48;
                     }
-                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope422, i23, list2, IntSize.m7417constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+                }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope422, i23, list2, IntSize.m7430constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
             }
         }
         list2 = calculateVisibleItems;
@@ -1158,7 +1158,7 @@ public final class LazyStaggeredGridMeasureKt {
                 measure$lambda$49$lambda$48 = LazyStaggeredGridMeasureKt.measure$lambda$49$lambda$48(LazyStaggeredGridMeasureContext.this, arrayList72, lazyLayoutMeasureScope4222, (Placeable.PlacementScope) obj);
                 return measure$lambda$49$lambda$48;
             }
-        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4222, i23, list2, IntSize.m7417constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
+        }, 4, null), f2, z4, lazyStaggeredGridMeasureContext2.isVertical(), z17, lazyStaggeredGridMeasureContext2.getResolvedSlots(), lazyStaggeredGridMeasureContext2.getItemProvider().getSpanProvider(), lazyLayoutMeasureScope4222, i23, list2, IntSize.m7430constructorimpl((i20 & 4294967295L) | (i19 << c)), i39, i73, lazyStaggeredGridMeasureContext2.getBeforeContentPadding(), lazyStaggeredGridMeasureContext2.getAfterContentPadding(), lazyStaggeredGridMeasureContext2.getMainAxisSpacing(), lazyStaggeredGridMeasureContext2.getCoroutineScope(), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1204,7 +1204,7 @@ public final class LazyStaggeredGridMeasureKt {
                 return measure$lambda$49$lambda$48$lambda$47;
             }
         });
-        ObservableScopeInvalidator.m1061attachToScopeimpl(lazyStaggeredGridMeasureContext.getState().m1110getPlacementScopeInvalidatorzYiylxw$foundation_release());
+        ObservableScopeInvalidator.m1071attachToScopeimpl(lazyStaggeredGridMeasureContext.getState().m1120getPlacementScopeInvalidatorzYiylxw$foundation_release());
         return Unit.INSTANCE;
     }
 
@@ -1230,16 +1230,16 @@ public final class LazyStaggeredGridMeasureKt {
                     }
                     LazyStaggeredGridMeasuredItem removeFirst = arrayDequeArr[i5].removeFirst();
                     if (removeFirst.getLane() == i5) {
-                        long m1113constructorimpl = SpanRange.m1113constructorimpl(removeFirst.getLane(), removeFirst.getSpan());
-                        int m1100maxInRangejy6DScQ = m1100maxInRangejy6DScQ(iArr, m1113constructorimpl);
+                        long m1123constructorimpl = SpanRange.m1123constructorimpl(removeFirst.getLane(), removeFirst.getSpan());
+                        int m1110maxInRangejy6DScQ = m1110maxInRangejy6DScQ(iArr, m1123constructorimpl);
                         int i8 = lazyStaggeredGridMeasureContext.getResolvedSlots().getPositions()[i5];
-                        if (removeFirst.getMainAxisSize() + m1100maxInRangejy6DScQ >= i2 && m1100maxInRangejy6DScQ <= i3) {
-                            removeFirst.position(m1100maxInRangejy6DScQ, i8, i);
+                        if (removeFirst.getMainAxisSize() + m1110maxInRangejy6DScQ >= i2 && m1110maxInRangejy6DScQ <= i3) {
+                            removeFirst.position(m1110maxInRangejy6DScQ, i8, i);
                             arrayList.add(removeFirst);
                         }
-                        int i9 = (int) (m1113constructorimpl & 4294967295L);
-                        for (int i10 = (int) (m1113constructorimpl >> 32); i10 < i9; i10++) {
-                            iArr[i10] = removeFirst.getMainAxisSizeWithSpacings() + m1100maxInRangejy6DScQ;
+                        int i9 = (int) (m1123constructorimpl & 4294967295L);
+                        for (int i10 = (int) (m1123constructorimpl >> 32); i10 < i9; i10++) {
+                            iArr[i10] = removeFirst.getMainAxisSizeWithSpacings() + m1110maxInRangejy6DScQ;
                         }
                     }
                 }
@@ -1301,10 +1301,10 @@ public final class LazyStaggeredGridMeasureKt {
                     }
                     LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo4 = lazyStaggeredGridItemInfo2;
                     int lane = lazyStaggeredGridItemInfo4 != null ? lazyStaggeredGridItemInfo4.getLane() : 0;
-                    LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(index, lazyStaggeredGridMeasureContext.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), index, lane));
-                    arrayList.add(m1104getAndMeasurejy6DScQ);
+                    LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(index, lazyStaggeredGridMeasureContext.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), index, lane));
+                    arrayList.add(m1114getAndMeasurejy6DScQ);
                     int[] positions = lazyStaggeredGridMeasureContext.getResolvedSlots().getPositions();
-                    function2.invoke(m1104getAndMeasurejy6DScQ, Integer.valueOf(positions.length > lane ? positions[lane] : 0));
+                    function2.invoke(m1114getAndMeasurejy6DScQ, Integer.valueOf(positions.length > lane ? positions[lane] : 0));
                     if (index == min) {
                         return arrayList;
                     }
@@ -1325,13 +1325,13 @@ public final class LazyStaggeredGridMeasureKt {
                     int i = size - 1;
                     int intValue = pinnedItems.get(size).intValue();
                     if (function12.invoke(Integer.valueOf(intValue)).booleanValue()) {
-                        long m1096getSpanRangelOCCd4c = lazyStaggeredGridMeasureContext.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), intValue, 0);
+                        long m1106getSpanRangelOCCd4c = lazyStaggeredGridMeasureContext.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), intValue, 0);
                         if (arrayList == null) {
                             arrayList = new ArrayList();
                         }
-                        LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(intValue, m1096getSpanRangelOCCd4c);
-                        function1.invoke(m1104getAndMeasurejy6DScQ);
-                        arrayList.add(m1104getAndMeasurejy6DScQ);
+                        LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(intValue, m1106getSpanRangelOCCd4c);
+                        function1.invoke(m1114getAndMeasurejy6DScQ);
+                        arrayList.add(m1114getAndMeasurejy6DScQ);
                     }
                     if (i < 0) {
                         break;
@@ -1344,13 +1344,13 @@ public final class LazyStaggeredGridMeasureKt {
             for (int i2 = 0; i2 < size2; i2++) {
                 int intValue2 = pinnedItems.get(i2).intValue();
                 if (function12.invoke(Integer.valueOf(intValue2)).booleanValue()) {
-                    long m1096getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext.m1096getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), intValue2, 0);
+                    long m1106getSpanRangelOCCd4c2 = lazyStaggeredGridMeasureContext.m1106getSpanRangelOCCd4c(lazyStaggeredGridMeasureContext.getItemProvider(), intValue2, 0);
                     if (arrayList == null) {
                         arrayList = new ArrayList();
                     }
-                    LazyStaggeredGridMeasuredItem m1104getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1104getAndMeasurejy6DScQ(intValue2, m1096getSpanRangelOCCd4c2);
-                    function1.invoke(m1104getAndMeasurejy6DScQ2);
-                    arrayList.add(m1104getAndMeasurejy6DScQ2);
+                    LazyStaggeredGridMeasuredItem m1114getAndMeasurejy6DScQ2 = lazyStaggeredGridMeasureContext.getMeasuredItemProvider().m1114getAndMeasurejy6DScQ(intValue2, m1106getSpanRangelOCCd4c2);
+                    function1.invoke(m1114getAndMeasurejy6DScQ2);
+                    arrayList.add(m1114getAndMeasurejy6DScQ2);
                 }
             }
         }
@@ -1358,7 +1358,7 @@ public final class LazyStaggeredGridMeasureKt {
     }
 
     /* renamed from: forEach-nIS5qE8  reason: not valid java name */
-    private static final void m1099forEachnIS5qE8(long j, Function1<? super Integer, Unit> function1) {
+    private static final void m1109forEachnIS5qE8(long j, Function1<? super Integer, Unit> function1) {
         int i = (int) (j & 4294967295L);
         for (int i2 = (int) (j >> 32); i2 < i; i2++) {
             function1.invoke(Integer.valueOf(i2));
@@ -1373,7 +1373,7 @@ public final class LazyStaggeredGridMeasureKt {
     }
 
     /* renamed from: maxInRange-jy6DScQ  reason: not valid java name */
-    private static final int m1100maxInRangejy6DScQ(int[] iArr, long j) {
+    private static final int m1110maxInRangejy6DScQ(int[] iArr, long j) {
         int i = (int) (j & 4294967295L);
         int i2 = Integer.MIN_VALUE;
         for (int i3 = (int) (j >> 32); i3 < i; i3++) {

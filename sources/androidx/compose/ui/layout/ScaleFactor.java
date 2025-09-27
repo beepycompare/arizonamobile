@@ -10,26 +10,26 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class ScaleFactor {
     public static final Companion Companion = new Companion(null);
-    private static final long Unspecified = m6038constructorimpl((Float.floatToRawIntBits(Float.NaN) << 32) | (Float.floatToRawIntBits(Float.NaN) & 4294967295L));
+    private static final long Unspecified = m6051constructorimpl((Float.floatToRawIntBits(Float.NaN) << 32) | (Float.floatToRawIntBits(Float.NaN) & 4294967295L));
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ScaleFactor m6035boximpl(long j) {
+    public static final /* synthetic */ ScaleFactor m6048boximpl(long j) {
         return new ScaleFactor(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6038constructorimpl(long j) {
+    public static long m6051constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6042equalsimpl(long j, Object obj) {
-        return (obj instanceof ScaleFactor) && j == ((ScaleFactor) obj).m6049unboximpl();
+    public static boolean m6055equalsimpl(long j, Object obj) {
+        return (obj instanceof ScaleFactor) && j == ((ScaleFactor) obj).m6062unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6043equalsimpl0(long j, long j2) {
+    public static final boolean m6056equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -40,20 +40,20 @@ public final class ScaleFactor {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6046hashCodeimpl(long j) {
+    public static int m6059hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m6042equalsimpl(this.packedValue, obj);
+        return m6055equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m6046hashCodeimpl(this.packedValue);
+        return m6059hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6049unboximpl() {
+    public final /* synthetic */ long m6062unboximpl() {
         return this.packedValue;
     }
 
@@ -66,12 +66,12 @@ public final class ScaleFactor {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6048toStringimpl(long j) {
+    public static String m6061toStringimpl(long j) {
         return "ScaleFactor(" + Float.intBitsToFloat((int) (j >> 32)) + ", " + Float.intBitsToFloat((int) (j & 4294967295L)) + ')';
     }
 
     public String toString() {
-        return m6048toStringimpl(this.packedValue);
+        return m6061toStringimpl(this.packedValue);
     }
 
     /* compiled from: ScaleFactor.kt */
@@ -83,61 +83,61 @@ public final class ScaleFactor {
         }
 
         /* renamed from: getUnspecified-_hLwfpc$annotations  reason: not valid java name */
-        public static /* synthetic */ void m6050getUnspecified_hLwfpc$annotations() {
+        public static /* synthetic */ void m6063getUnspecified_hLwfpc$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getUnspecified-_hLwfpc  reason: not valid java name */
-        public final long m6051getUnspecified_hLwfpc() {
+        public final long m6064getUnspecified_hLwfpc() {
             return ScaleFactor.Unspecified;
         }
     }
 
     /* renamed from: getScaleX-impl  reason: not valid java name */
-    public static final float m6044getScaleXimpl(long j) {
+    public static final float m6057getScaleXimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getScaleY-impl  reason: not valid java name */
-    public static final float m6045getScaleYimpl(long j) {
+    public static final float m6058getScaleYimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m6036component1impl(long j) {
+    public static final float m6049component1impl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m6037component2impl(long j) {
+    public static final float m6050component2impl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: copy-8GGzs04  reason: not valid java name */
-    public static final long m6039copy8GGzs04(long j, float f, float f2) {
-        return m6038constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m6052copy8GGzs04(long j, float f, float f2) {
+        return m6051constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 
     /* renamed from: copy-8GGzs04$default  reason: not valid java name */
-    public static /* synthetic */ long m6040copy8GGzs04$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m6053copy8GGzs04$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = Float.intBitsToFloat((int) (j >> 32));
         }
         if ((i & 2) != 0) {
             f2 = Float.intBitsToFloat((int) (4294967295L & j));
         }
-        return m6039copy8GGzs04(j, f, f2);
+        return m6052copy8GGzs04(j, f, f2);
     }
 
     /* renamed from: times-44nBxM0  reason: not valid java name */
-    public static final long m6047times44nBxM0(long j, float f) {
-        return m6038constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
+    public static final long m6060times44nBxM0(long j, float f) {
+        return m6051constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) * f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * f) & 4294967295L));
     }
 
     /* renamed from: div-44nBxM0  reason: not valid java name */
-    public static final long m6041div44nBxM0(long j, float f) {
-        return m6038constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
+    public static final long m6054div44nBxM0(long j, float f) {
+        return m6051constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) / f) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) / f) & 4294967295L));
     }
 }

@@ -11,51 +11,51 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Role {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Button = m6455constructorimpl(0);
-    private static final int Checkbox = m6455constructorimpl(1);
-    private static final int Switch = m6455constructorimpl(2);
-    private static final int RadioButton = m6455constructorimpl(3);
-    private static final int Tab = m6455constructorimpl(4);
-    private static final int Image = m6455constructorimpl(5);
-    private static final int DropdownList = m6455constructorimpl(6);
-    private static final int ValuePicker = m6455constructorimpl(7);
-    private static final int Carousel = m6455constructorimpl(8);
+    private static final int Button = m6468constructorimpl(0);
+    private static final int Checkbox = m6468constructorimpl(1);
+    private static final int Switch = m6468constructorimpl(2);
+    private static final int RadioButton = m6468constructorimpl(3);
+    private static final int Tab = m6468constructorimpl(4);
+    private static final int Image = m6468constructorimpl(5);
+    private static final int DropdownList = m6468constructorimpl(6);
+    private static final int ValuePicker = m6468constructorimpl(7);
+    private static final int Carousel = m6468constructorimpl(8);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Role m6454boximpl(int i) {
+    public static final /* synthetic */ Role m6467boximpl(int i) {
         return new Role(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6455constructorimpl(int i) {
+    private static int m6468constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6456equalsimpl(int i, Object obj) {
-        return (obj instanceof Role) && i == ((Role) obj).m6460unboximpl();
+    public static boolean m6469equalsimpl(int i, Object obj) {
+        return (obj instanceof Role) && i == ((Role) obj).m6473unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6457equalsimpl0(int i, int i2) {
+    public static final boolean m6470equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6458hashCodeimpl(int i) {
+    public static int m6471hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6456equalsimpl(this.value, obj);
+        return m6469equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6458hashCodeimpl(this.value);
+        return m6471hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6460unboximpl() {
+    public final /* synthetic */ int m6473unboximpl() {
         return this.value;
     }
 
@@ -71,47 +71,47 @@ public final class Role {
         }
 
         /* renamed from: getButton-o7Vup1c  reason: not valid java name */
-        public final int m6461getButtono7Vup1c() {
+        public final int m6474getButtono7Vup1c() {
             return Role.Button;
         }
 
         /* renamed from: getCheckbox-o7Vup1c  reason: not valid java name */
-        public final int m6463getCheckboxo7Vup1c() {
+        public final int m6476getCheckboxo7Vup1c() {
             return Role.Checkbox;
         }
 
         /* renamed from: getSwitch-o7Vup1c  reason: not valid java name */
-        public final int m6467getSwitcho7Vup1c() {
+        public final int m6480getSwitcho7Vup1c() {
             return Role.Switch;
         }
 
         /* renamed from: getRadioButton-o7Vup1c  reason: not valid java name */
-        public final int m6466getRadioButtono7Vup1c() {
+        public final int m6479getRadioButtono7Vup1c() {
             return Role.RadioButton;
         }
 
         /* renamed from: getTab-o7Vup1c  reason: not valid java name */
-        public final int m6468getTabo7Vup1c() {
+        public final int m6481getTabo7Vup1c() {
             return Role.Tab;
         }
 
         /* renamed from: getImage-o7Vup1c  reason: not valid java name */
-        public final int m6465getImageo7Vup1c() {
+        public final int m6478getImageo7Vup1c() {
             return Role.Image;
         }
 
         /* renamed from: getDropdownList-o7Vup1c  reason: not valid java name */
-        public final int m6464getDropdownListo7Vup1c() {
+        public final int m6477getDropdownListo7Vup1c() {
             return Role.DropdownList;
         }
 
         /* renamed from: getValuePicker-o7Vup1c  reason: not valid java name */
-        public final int m6469getValuePickero7Vup1c() {
+        public final int m6482getValuePickero7Vup1c() {
             return Role.ValuePicker;
         }
 
         /* renamed from: getCarousel-o7Vup1c  reason: not valid java name */
-        public final int m6462getCarouselo7Vup1c() {
+        public final int m6475getCarouselo7Vup1c() {
             return Role.Carousel;
         }
     }
@@ -121,11 +121,11 @@ public final class Role {
     }
 
     public String toString() {
-        return m6459toStringimpl(this.value);
+        return m6472toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6459toStringimpl(int i) {
-        return m6457equalsimpl0(i, Button) ? "Button" : m6457equalsimpl0(i, Checkbox) ? "Checkbox" : m6457equalsimpl0(i, Switch) ? "Switch" : m6457equalsimpl0(i, RadioButton) ? "RadioButton" : m6457equalsimpl0(i, Tab) ? "Tab" : m6457equalsimpl0(i, Image) ? "Image" : m6457equalsimpl0(i, DropdownList) ? "DropdownList" : m6457equalsimpl0(i, ValuePicker) ? "Picker" : m6457equalsimpl0(i, Carousel) ? "Carousel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m6472toStringimpl(int i) {
+        return m6470equalsimpl0(i, Button) ? "Button" : m6470equalsimpl0(i, Checkbox) ? "Checkbox" : m6470equalsimpl0(i, Switch) ? "Switch" : m6470equalsimpl0(i, RadioButton) ? "RadioButton" : m6470equalsimpl0(i, Tab) ? "Tab" : m6470equalsimpl0(i, Image) ? "Image" : m6470equalsimpl0(i, DropdownList) ? "DropdownList" : m6470equalsimpl0(i, ValuePicker) ? "Picker" : m6470equalsimpl0(i, Carousel) ? "Carousel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

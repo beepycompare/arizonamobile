@@ -7,7 +7,7 @@ import org.json.JSONObject;
 public final class C0182cl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f828a;
+    public final String f829a;
     public final String b;
     public final String c;
     public final String d;
@@ -16,7 +16,7 @@ public final class C0182cl {
     public final int g;
 
     public C0182cl(JSONObject jSONObject) {
-        this.f828a = jSONObject.optString("analyticsSdkVersionName", "");
+        this.f829a = jSONObject.optString("analyticsSdkVersionName", "");
         this.b = jSONObject.optString("kitBuildNumber", "");
         this.c = jSONObject.optString("appVer", "");
         this.d = jSONObject.optString(RemoteConfigConstants.RequestFieldKey.APP_BUILD, "");
@@ -26,6 +26,6 @@ public final class C0182cl {
     }
 
     public final String toString() {
-        return "SessionRequestParams(kitVersionName='" + this.f828a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
+        return "SessionRequestParams(kitVersionName='" + this.f829a + "', kitBuildNumber='" + this.b + "', appVersion='" + this.c + "', appBuild='" + this.d + "', osVersion='" + this.e + "', apiLevel=" + this.f + ", attributionId=" + this.g + ')';
     }
 }

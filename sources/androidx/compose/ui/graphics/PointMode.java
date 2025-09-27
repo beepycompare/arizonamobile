@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PointMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Points = m4848constructorimpl(0);
-    private static final int Lines = m4848constructorimpl(1);
-    private static final int Polygon = m4848constructorimpl(2);
+    private static final int Points = m4860constructorimpl(0);
+    private static final int Lines = m4860constructorimpl(1);
+    private static final int Polygon = m4860constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointMode m4847boximpl(int i) {
+    public static final /* synthetic */ PointMode m4859boximpl(int i) {
         return new PointMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4848constructorimpl(int i) {
+    public static int m4860constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4849equalsimpl(int i, Object obj) {
-        return (obj instanceof PointMode) && i == ((PointMode) obj).m4853unboximpl();
+    public static boolean m4861equalsimpl(int i, Object obj) {
+        return (obj instanceof PointMode) && i == ((PointMode) obj).m4865unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4850equalsimpl0(int i, int i2) {
+    public static final boolean m4862equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4851hashCodeimpl(int i) {
+    public static int m4863hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4849equalsimpl(this.value, obj);
+        return m4861equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4851hashCodeimpl(this.value);
+        return m4863hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4853unboximpl() {
+    public final /* synthetic */ int m4865unboximpl() {
         return this.value;
     }
 
@@ -65,17 +65,17 @@ public final class PointMode {
         }
 
         /* renamed from: getPoints-r_lszbg  reason: not valid java name */
-        public final int m4855getPointsr_lszbg() {
+        public final int m4867getPointsr_lszbg() {
             return PointMode.Points;
         }
 
         /* renamed from: getLines-r_lszbg  reason: not valid java name */
-        public final int m4854getLinesr_lszbg() {
+        public final int m4866getLinesr_lszbg() {
             return PointMode.Lines;
         }
 
         /* renamed from: getPolygon-r_lszbg  reason: not valid java name */
-        public final int m4856getPolygonr_lszbg() {
+        public final int m4868getPolygonr_lszbg() {
             return PointMode.Polygon;
         }
     }
@@ -85,11 +85,11 @@ public final class PointMode {
     }
 
     public String toString() {
-        return m4852toStringimpl(this.value);
+        return m4864toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4852toStringimpl(int i) {
-        return m4850equalsimpl0(i, Points) ? "Points" : m4850equalsimpl0(i, Lines) ? "Lines" : m4850equalsimpl0(i, Polygon) ? "Polygon" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m4864toStringimpl(int i) {
+        return m4862equalsimpl0(i, Points) ? "Points" : m4862equalsimpl0(i, Lines) ? "Lines" : m4862equalsimpl0(i, Polygon) ? "Polygon" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

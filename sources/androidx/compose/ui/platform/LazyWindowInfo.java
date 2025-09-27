@@ -37,13 +37,13 @@ public final class LazyWindowInfo implements WindowInfo {
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getKeyboardModifiers-k7X9c1A */
-    public int mo6408getKeyboardModifiersk7X9c1A() {
-        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().getValue().m5893unboximpl();
+    public int mo6421getKeyboardModifiersk7X9c1A() {
+        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().getValue().m5906unboximpl();
     }
 
     /* renamed from: setKeyboardModifiers-5xRPYO0 */
-    public void m6409setKeyboardModifiers5xRPYO0(int i) {
-        WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().setValue(PointerKeyboardModifiers.m5887boximpl(i));
+    public void m6422setKeyboardModifiers5xRPYO0(int i) {
+        WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui_release().setValue(PointerKeyboardModifiers.m5900boximpl(i));
     }
 
     public final void updateContainerSizeIfObserved(Function0<IntSize> function0) {
@@ -61,16 +61,16 @@ public final class LazyWindowInfo implements WindowInfo {
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getContainerSize-YbymL2g */
-    public long mo6407getContainerSizeYbymL2g() {
+    public long mo6420getContainerSizeYbymL2g() {
         MutableState<IntSize> mutableStateOf$default;
         if (this._containerSize == null) {
             Function0<IntSize> function0 = this.onInitializeContainerSize;
-            mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7414boximpl(function0 != null ? function0.invoke().m7426unboximpl() : IntSize.Companion.m7427getZeroYbymL2g()), null, 2, null);
+            mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7427boximpl(function0 != null ? function0.invoke().m7439unboximpl() : IntSize.Companion.m7440getZeroYbymL2g()), null, 2, null);
             this._containerSize = mutableStateOf$default;
             this.onInitializeContainerSize = null;
         }
         MutableState<IntSize> mutableState = this._containerSize;
         Intrinsics.checkNotNull(mutableState);
-        return mutableState.getValue().m7426unboximpl();
+        return mutableState.getValue().m7439unboximpl();
     }
 }

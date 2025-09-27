@@ -14,7 +14,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class NetworkCore extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedBlockingQueue f1261a;
+    private final LinkedBlockingQueue f1262a;
     private final Object b;
     private final Object c;
     private volatile d d;
@@ -32,8 +32,8 @@ public class NetworkCore extends InterruptionSafeThread {
             try {
                 synchronized (this.c) {
                 }
-                this.d = (d) this.f1261a.take();
-                networkTask = this.d.f1250a;
+                this.d = (d) this.f1262a.take();
+                networkTask = this.d.f1251a;
                 Executor executor = networkTask.getExecutor();
                 this.e.getClass();
                 executor.execute(new h(networkTask, this, new f()));
@@ -68,8 +68,8 @@ public class NetworkCore extends InterruptionSafeThread {
         if (this.f.canBeExecuted()) {
             synchronized (this.b) {
                 d dVar = new d(networkTask);
-                if (isRunning() && !this.f1261a.contains(dVar) && !dVar.equals(this.d) && networkTask.onTaskAdded()) {
-                    this.f1261a.offer(dVar);
+                if (isRunning() && !this.f1262a.contains(dVar) && !dVar.equals(this.d) && networkTask.onTaskAdded()) {
+                    this.f1262a.offer(dVar);
                 }
             }
         }
@@ -77,17 +77,17 @@ public class NetworkCore extends InterruptionSafeThread {
 
     public void stopTasks() {
         synchronized (this.c) {
-            ArrayList arrayList = new ArrayList(this.f1261a.size());
-            this.f1261a.drainTo(arrayList);
+            ArrayList arrayList = new ArrayList(this.f1262a.size());
+            this.f1262a.drainTo(arrayList);
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                ((d) it.next()).f1250a.onTaskRemoved();
+                ((d) it.next()).f1251a.onTaskRemoved();
             }
         }
     }
 
     NetworkCore(IExecutionPolicy iExecutionPolicy, g gVar) {
-        this.f1261a = new LinkedBlockingQueue();
+        this.f1262a = new LinkedBlockingQueue();
         this.b = new Object();
         this.c = new Object();
         this.f = iExecutionPolicy;

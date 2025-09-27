@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Re {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f655a;
+    public final long f656a;
     public final long b;
 
     public Re(long j, long j2) {
-        this.f655a = j;
+        this.f656a = j;
         this.b = j2;
     }
 }

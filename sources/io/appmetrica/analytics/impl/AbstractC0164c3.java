@@ -6,12 +6,12 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class AbstractC0164c3 implements Rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f819a;
+    public final int f820a;
     public final String b;
     protected final PublicLogger c;
 
     public AbstractC0164c3(int i, String str, PublicLogger publicLogger) {
-        this.f819a = i;
+        this.f820a = i;
         this.b = str;
         this.c = publicLogger;
     }

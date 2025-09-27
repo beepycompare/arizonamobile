@@ -16,7 +16,7 @@ public final class Eh extends AbstractC0399l6 {
     /* renamed from: b */
     public final Gh load(C0373k6 c0373k6) {
         Gh gh = (Gh) super.load(c0373k6);
-        gh.m = ((Bh) c0373k6.componentArguments).f372a;
+        gh.m = ((Bh) c0373k6.componentArguments).f373a;
         gh.r = this.b.t.a();
         gh.w = this.b.q.a();
         Bh bh = (Bh) c0373k6.componentArguments;
@@ -32,12 +32,12 @@ public final class Eh extends AbstractC0399l6 {
         gh.k = dh;
         Bh bh2 = (Bh) c0373k6.componentArguments;
         gh.v = bh2.j;
-        C0493om c0493om = c0373k6.f949a;
+        C0493om c0493om = c0373k6.f950a;
         J4 j4 = c0493om.n;
-        gh.n = j4.f509a;
+        gh.n = j4.f510a;
         Re re = c0493om.s;
         if (re != null) {
-            gh.s = re.f655a;
+            gh.s = re.f656a;
             gh.t = re.b;
         }
         gh.o = j4.b;

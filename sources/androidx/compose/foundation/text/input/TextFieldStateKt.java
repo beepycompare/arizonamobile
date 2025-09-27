@@ -31,7 +31,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class TextFieldStateKt {
     /* renamed from: rememberTextFieldState-Le-punE */
-    public static final TextFieldState m1442rememberTextFieldStateLepunE(final String str, final long j, Composer composer, int i, int i2) {
+    public static final TextFieldState m1452rememberTextFieldStateLepunE(final String str, final long j, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1125389485, "C(rememberTextFieldState)N(initialText,initialSelection:c#ui.text.TextRange)660@29526L49,660@29479L96:TextFieldState.kt#hp9ohv");
         if ((i2 & 1) != 0) {
             str = "";
@@ -59,7 +59,7 @@ public final class TextFieldStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m3983rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) rememberedValue, composer, 48);
+        TextFieldState textFieldState = (TextFieldState) RememberSaveableKt.m3995rememberSaveable(objArr, (Saver<Object, ? extends Object>) saver, (Function0<? extends Object>) rememberedValue, composer, 48);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -111,12 +111,12 @@ public final class TextFieldStateKt {
     }
 
     /* renamed from: finalizeComposingAnnotations-itr0ztk */
-    public static final List<AnnotatedString.Range<AnnotatedString.Annotation>> m1441finalizeComposingAnnotationsitr0ztk(TextRange textRange, MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector) {
+    public static final List<AnnotatedString.Range<AnnotatedString.Annotation>> m1451finalizeComposingAnnotationsitr0ztk(TextRange textRange, MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector) {
         if (mutableVector != null && mutableVector.getSize() != 0) {
             return CollectionsKt.toList(mutableVector.asMutableList());
         }
-        if (textRange != null && !TextRange.m6707getCollapsedimpl(textRange.m6717unboximpl())) {
-            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m6711getMinimpl(textRange.m6717unboximpl()), TextRange.m6710getMaximpl(textRange.m6717unboximpl())));
+        if (textRange != null && !TextRange.m6720getCollapsedimpl(textRange.m6730unboximpl())) {
+            return CollectionsKt.listOf(new AnnotatedString.Range(new SpanStyle(0L, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, TextDecoration.Companion.getUnderline(), (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 61439, (DefaultConstructorMarker) null), TextRange.m6724getMinimpl(textRange.m6730unboximpl()), TextRange.m6723getMaximpl(textRange.m6730unboximpl())));
         }
         return CollectionsKt.emptyList();
     }

@@ -12,11 +12,11 @@ public final class AutofillHighlightKt {
     private static final ProvidableCompositionLocal<Color> LocalAutofillHighlightColor = CompositionLocalKt.compositionLocalOf$default(null, new Function0<Color>() { // from class: androidx.compose.foundation.text.AutofillHighlightKt$LocalAutofillHighlightColor$1
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Color invoke() {
-            return Color.m4527boximpl(m1204invoke0d7_KjU());
+            return Color.m4539boximpl(m1214invoke0d7_KjU());
         }
 
         /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-        public final long m1204invoke0d7_KjU() {
+        public final long m1214invoke0d7_KjU() {
             return AutofillHighlight_androidKt.autofillHighlightColor();
         }
     }, 1, null);

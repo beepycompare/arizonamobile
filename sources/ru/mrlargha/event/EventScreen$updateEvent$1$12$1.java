@@ -19,8 +19,8 @@ import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventEventsItemBinding;
 /* compiled from: EventScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {376}, m = "invokeSuspend", n = {}, s = {}, v = 1)
-/* loaded from: classes3.dex */
+@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateEvent$1$12$1", f = "EventScreen.kt", i = {}, l = {377}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+/* loaded from: classes6.dex */
 final class EventScreen$updateEvent$1$12$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $it;
     final /* synthetic */ EventEventsItemBinding $this_apply;

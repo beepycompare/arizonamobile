@@ -33,17 +33,17 @@ public final class CursorAnchorInfoController {
     private final Object lock = new Object();
     private Function1<? super Matrix, Unit> textFieldToRootTransform = new Function1<Matrix, Unit>() { // from class: androidx.compose.ui.text.input.CursorAnchorInfoController$textFieldToRootTransform$1
         /* renamed from: invoke-58bKbWc  reason: not valid java name */
-        public final void m6875invoke58bKbWc(float[] fArr) {
+        public final void m6888invoke58bKbWc(float[] fArr) {
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-            m6875invoke58bKbWc(matrix.m4802unboximpl());
+            m6888invoke58bKbWc(matrix.m4814unboximpl());
             return Unit.INSTANCE;
         }
     };
     private final CursorAnchorInfo.Builder builder = new CursorAnchorInfo.Builder();
-    private final float[] matrix = Matrix.m4779constructorimpl$default(null, 1, null);
+    private final float[] matrix = Matrix.m4791constructorimpl$default(null, 1, null);
     private final android.graphics.Matrix androidMatrix = new android.graphics.Matrix();
 
     public CursorAnchorInfoController(MatrixPositionCalculator matrixPositionCalculator, InputMethodManager inputMethodManager) {
@@ -90,12 +90,12 @@ public final class CursorAnchorInfoController {
             this.textLayoutResult = null;
             this.textFieldToRootTransform = new Function1<Matrix, Unit>() { // from class: androidx.compose.ui.text.input.CursorAnchorInfoController$invalidate$1$1
                 /* renamed from: invoke-58bKbWc  reason: not valid java name */
-                public final void m6874invoke58bKbWc(float[] fArr) {
+                public final void m6887invoke58bKbWc(float[] fArr) {
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-                    m6874invoke58bKbWc(matrix.m4802unboximpl());
+                    m6887invoke58bKbWc(matrix.m4814unboximpl());
                     return Unit.INSTANCE;
                 }
             };
@@ -107,9 +107,9 @@ public final class CursorAnchorInfoController {
 
     private final void updateCursorAnchorInfo() {
         if (this.inputMethodManager.isActive()) {
-            this.textFieldToRootTransform.invoke(Matrix.m4777boximpl(this.matrix));
-            this.rootPositionCalculator.mo5755localToScreen58bKbWc(this.matrix);
-            AndroidMatrixConversions_androidKt.m4405setFromEL8BTi8(this.androidMatrix, this.matrix);
+            this.textFieldToRootTransform.invoke(Matrix.m4789boximpl(this.matrix));
+            this.rootPositionCalculator.mo5768localToScreen58bKbWc(this.matrix);
+            AndroidMatrixConversions_androidKt.m4417setFromEL8BTi8(this.androidMatrix, this.matrix);
             InputMethodManager inputMethodManager = this.inputMethodManager;
             CursorAnchorInfo.Builder builder = this.builder;
             TextFieldValue textFieldValue = this.textFieldValue;

@@ -11,17 +11,17 @@ public final class TopAppBarSmallCenteredTokens {
     private static final float TrailingIconSize;
     public static final TopAppBarSmallCenteredTokens INSTANCE = new TopAppBarSmallCenteredTokens();
     private static final ShapeKeyTokens AvatarShape = ShapeKeyTokens.CornerFull;
-    private static final float AvatarSize = Dp.m7251constructorimpl((float) 30.0d);
+    private static final float AvatarSize = Dp.m7264constructorimpl((float) 30.0d);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m7251constructorimpl((float) 64.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7264constructorimpl((float) 64.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens ContainerSurfaceTintLayerColor = ColorSchemeKeyTokens.SurfaceTint;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.TitleLarge;
     private static final ColorSchemeKeyTokens LeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens OnScrollContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
+    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
     private static final ColorSchemeKeyTokens TrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
 
     private TopAppBarSmallCenteredTokens() {
@@ -29,8 +29,8 @@ public final class TopAppBarSmallCenteredTokens {
 
     static {
         float f = (float) 24.0d;
-        LeadingIconSize = Dp.m7251constructorimpl(f);
-        TrailingIconSize = Dp.m7251constructorimpl(f);
+        LeadingIconSize = Dp.m7264constructorimpl(f);
+        TrailingIconSize = Dp.m7264constructorimpl(f);
     }
 
     public final ShapeKeyTokens getAvatarShape() {
@@ -38,7 +38,7 @@ public final class TopAppBarSmallCenteredTokens {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3671getAvatarSizeD9Ej5fM() {
+    public final float m3681getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -47,12 +47,12 @@ public final class TopAppBarSmallCenteredTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3672getContainerElevationD9Ej5fM() {
+    public final float m3682getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3673getContainerHeightD9Ej5fM() {
+    public final float m3683getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -77,7 +77,7 @@ public final class TopAppBarSmallCenteredTokens {
     }
 
     /* renamed from: getLeadingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3674getLeadingIconSizeD9Ej5fM() {
+    public final float m3684getLeadingIconSizeD9Ej5fM() {
         return LeadingIconSize;
     }
 
@@ -86,7 +86,7 @@ public final class TopAppBarSmallCenteredTokens {
     }
 
     /* renamed from: getOnScrollContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3675getOnScrollContainerElevationD9Ej5fM() {
+    public final float m3685getOnScrollContainerElevationD9Ej5fM() {
         return OnScrollContainerElevation;
     }
 
@@ -95,7 +95,7 @@ public final class TopAppBarSmallCenteredTokens {
     }
 
     /* renamed from: getTrailingIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3676getTrailingIconSizeD9Ej5fM() {
+    public final float m3686getTrailingIconSizeD9Ej5fM() {
         return TrailingIconSize;
     }
 }

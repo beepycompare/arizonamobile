@@ -26,19 +26,19 @@ final class LimitInsets implements WindowInsets {
     }
 
     /* renamed from: getSides-JoeWqyM  reason: not valid java name */
-    public final int m781getSidesJoeWqyM() {
+    public final int m791getSidesJoeWqyM() {
         return this.sides;
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        int m931getAllowLeftInRtlJoeWqyM$foundation_layout;
+        int m941getAllowLeftInRtlJoeWqyM$foundation_layout;
         if (layoutDirection == LayoutDirection.Ltr) {
-            m931getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m930getAllowLeftInLtrJoeWqyM$foundation_layout();
+            m941getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m940getAllowLeftInLtrJoeWqyM$foundation_layout();
         } else {
-            m931getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m931getAllowLeftInRtlJoeWqyM$foundation_layout();
+            m941getAllowLeftInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m941getAllowLeftInRtlJoeWqyM$foundation_layout();
         }
-        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, m931getAllowLeftInRtlJoeWqyM$foundation_layout)) {
+        if (WindowInsetsSides.m934hasAnybkgdKaI$foundation_layout(this.sides, m941getAllowLeftInRtlJoeWqyM$foundation_layout)) {
             return this.insets.getLeft(density, layoutDirection);
         }
         return 0;
@@ -46,7 +46,7 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m940getTopJoeWqyM())) {
+        if (WindowInsetsSides.m934hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m950getTopJoeWqyM())) {
             return this.insets.getTop(density);
         }
         return 0;
@@ -54,13 +54,13 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        int m933getAllowRightInRtlJoeWqyM$foundation_layout;
+        int m943getAllowRightInRtlJoeWqyM$foundation_layout;
         if (layoutDirection == LayoutDirection.Ltr) {
-            m933getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m932getAllowRightInLtrJoeWqyM$foundation_layout();
+            m943getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m942getAllowRightInLtrJoeWqyM$foundation_layout();
         } else {
-            m933getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m933getAllowRightInRtlJoeWqyM$foundation_layout();
+            m943getAllowRightInRtlJoeWqyM$foundation_layout = WindowInsetsSides.Companion.m943getAllowRightInRtlJoeWqyM$foundation_layout();
         }
-        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, m933getAllowRightInRtlJoeWqyM$foundation_layout)) {
+        if (WindowInsetsSides.m934hasAnybkgdKaI$foundation_layout(this.sides, m943getAllowRightInRtlJoeWqyM$foundation_layout)) {
             return this.insets.getRight(density, layoutDirection);
         }
         return 0;
@@ -68,7 +68,7 @@ final class LimitInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        if (WindowInsetsSides.m924hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m934getBottomJoeWqyM())) {
+        if (WindowInsetsSides.m934hasAnybkgdKaI$foundation_layout(this.sides, WindowInsetsSides.Companion.m944getBottomJoeWqyM())) {
             return this.insets.getBottom(density);
         }
         return 0;
@@ -80,16 +80,16 @@ final class LimitInsets implements WindowInsets {
         }
         if (obj instanceof LimitInsets) {
             LimitInsets limitInsets = (LimitInsets) obj;
-            return Intrinsics.areEqual(this.insets, limitInsets.insets) && WindowInsetsSides.m923equalsimpl0(this.sides, limitInsets.sides);
+            return Intrinsics.areEqual(this.insets, limitInsets.insets) && WindowInsetsSides.m933equalsimpl0(this.sides, limitInsets.sides);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.insets.hashCode() * 31) + WindowInsetsSides.m925hashCodeimpl(this.sides);
+        return (this.insets.hashCode() * 31) + WindowInsetsSides.m935hashCodeimpl(this.sides);
     }
 
     public String toString() {
-        return "(" + this.insets + " only " + ((Object) WindowInsetsSides.m927toStringimpl(this.sides)) + ')';
+        return "(" + this.insets + " only " + ((Object) WindowInsetsSides.m937toStringimpl(this.sides)) + ')';
     }
 }

@@ -43,7 +43,7 @@ import kotlin.jvm.functions.Function3;
 @Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a8\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\b\b\u0002\u0010\t\u001a\u00020\nH\u0007ø\u0001\u0000¢\u0006\u0004\b\u000b\u0010\f\u001a3\u0010\u0002\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2\b\u0010\t\u001a\u0004\u0018\u00010\u000f2\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\b\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0010\u001a8\u0010\u0002\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u000e2\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\b\b\u0002\u0010\t\u001a\u00020\nH\u0007ø\u0001\u0000¢\u0006\u0004\b\u000b\u0010\u0011\u001a8\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00132\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\b\u001a\u00020\u00012\b\b\u0002\u0010\t\u001a\u00020\nH\u0007ø\u0001\u0000¢\u0006\u0004\b\u000b\u0010\u0014\u001a\u0014\u0010\u0015\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0014\u0010\u0016\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0016\u0010\u0017\u001a\u00020\u0018*\u00020\u0019H\u0002ø\u0001\u0000¢\u0006\u0004\b\u001a\u0010\u001b\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001c"}, d2 = {"DefaultIconSizeModifier", "Landroidx/compose/ui/Modifier;", "Icon", "", "bitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", "contentDescription", "", "modifier", "tint", "Landroidx/compose/ui/graphics/Color;", "Icon-ww6aTOc", "(Landroidx/compose/ui/graphics/ImageBitmap;Ljava/lang/String;Landroidx/compose/ui/Modifier;JLandroidx/compose/runtime/Composer;II)V", "painter", "Landroidx/compose/ui/graphics/painter/Painter;", "Landroidx/compose/ui/graphics/ColorProducer;", "(Landroidx/compose/ui/graphics/painter/Painter;Landroidx/compose/ui/graphics/ColorProducer;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;Landroidx/compose/ui/Modifier;JLandroidx/compose/runtime/Composer;II)V", "imageVector", "Landroidx/compose/ui/graphics/vector/ImageVector;", "(Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;JLandroidx/compose/runtime/Composer;II)V", "defaultSizeFor", "defaultSizeForColorProducer", "isInfinite", "", "Landroidx/compose/ui/geometry/Size;", "isInfinite-uvyYCjk", "(J)Z", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class IconKt {
-    private static final Modifier DefaultIconSizeModifier = SizeKt.m884size3ABfNKs(Modifier.Companion, IconButtonTokens.INSTANCE.m3401getIconSizeD9Ej5fM());
+    private static final Modifier DefaultIconSizeModifier = SizeKt.m894size3ABfNKs(Modifier.Companion, IconButtonTokens.INSTANCE.m3411getIconSizeD9Ej5fM());
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0062  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0077  */
@@ -57,13 +57,13 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2261Iconww6aTOc(final ImageVector imageVector, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m2271Iconww6aTOc(final ImageVector imageVector, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         String str2;
         final Object obj;
         final long j2;
         Modifier modifier2;
-        long m4547unboximpl;
+        long m4559unboximpl;
         int i4;
         Composer startRestartGroup = composer.startRestartGroup(-126890956);
         ComposerKt.sourceInformation(startRestartGroup, "C(Icon)P(1!,3:c#ui.graphics.Color)69@3394L7,72@3434L34,71@3410L163:Icon.kt#uh7d8r");
@@ -114,17 +114,17 @@ public final class IconKt {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         i3 &= -7169;
                         modifier2 = companion;
-                        m4547unboximpl = ((Color) consume).m4547unboximpl();
+                        m4559unboximpl = ((Color) consume).m4559unboximpl();
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-126890956, i3, -1, "androidx.compose.material3.Icon (Icon.kt:70)");
                         }
-                        m2260Iconww6aTOc(VectorPainterKt.rememberVectorPainter(imageVector, startRestartGroup, i3 & 14), str2, modifier2, m4547unboximpl, startRestartGroup, VectorPainter.$stable | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
+                        m2270Iconww6aTOc(VectorPainterKt.rememberVectorPainter(imageVector, startRestartGroup, i3 & 14), str2, modifier2, m4559unboximpl, startRestartGroup, VectorPainter.$stable | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
                         obj = modifier2;
-                        j2 = m4547unboximpl;
+                        j2 = m4559unboximpl;
                     } else {
                         modifier2 = companion;
                     }
@@ -135,15 +135,15 @@ public final class IconKt {
                     }
                     modifier2 = obj;
                 }
-                m4547unboximpl = j2;
+                m4559unboximpl = j2;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                m2260Iconww6aTOc(VectorPainterKt.rememberVectorPainter(imageVector, startRestartGroup, i3 & 14), str2, modifier2, m4547unboximpl, startRestartGroup, VectorPainter.$stable | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
+                m2270Iconww6aTOc(VectorPainterKt.rememberVectorPainter(imageVector, startRestartGroup, i3 & 14), str2, modifier2, m4559unboximpl, startRestartGroup, VectorPainter.$stable | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 obj = modifier2;
-                j2 = m4547unboximpl;
+                j2 = m4559unboximpl;
             } else {
                 startRestartGroup.skipToGroupEnd();
             }
@@ -163,7 +163,7 @@ public final class IconKt {
                     }
 
                     public final void invoke(Composer composer2, int i6) {
-                        IconKt.m2261Iconww6aTOc(ImageVector.this, str, obj, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        IconKt.m2271Iconww6aTOc(ImageVector.this, str, obj, j2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -196,14 +196,14 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2259Iconww6aTOc(final ImageBitmap imageBitmap, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m2269Iconww6aTOc(final ImageBitmap imageBitmap, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         String str2;
         Object obj;
         long j2;
         int i4;
         Object obj2;
-        long m4547unboximpl;
+        long m4559unboximpl;
         boolean changed;
         Object rememberedValue;
         final Modifier modifier2;
@@ -258,7 +258,7 @@ public final class IconKt {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         i4 = i3 & (-7169);
                         obj2 = companion;
-                        m4547unboximpl = ((Color) consume).m4547unboximpl();
+                        m4559unboximpl = ((Color) consume).m4559unboximpl();
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1092052280, i4, -1, "androidx.compose.material3.Icon (Icon.kt:106)");
@@ -272,12 +272,12 @@ public final class IconKt {
                             rememberedValue = bitmapPainter;
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        m2260Iconww6aTOc((BitmapPainter) rememberedValue, str2, obj2, m4547unboximpl, startRestartGroup, i4 & 8176, 0);
+                        m2270Iconww6aTOc((BitmapPainter) rememberedValue, str2, obj2, m4559unboximpl, startRestartGroup, i4 & 8176, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
                         modifier2 = obj2;
-                        j3 = m4547unboximpl;
+                        j3 = m4559unboximpl;
                     } else {
                         i4 = i3;
                         obj2 = companion;
@@ -290,7 +290,7 @@ public final class IconKt {
                     i4 = i3;
                     obj2 = obj;
                 }
-                m4547unboximpl = j2;
+                m4559unboximpl = j2;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -303,11 +303,11 @@ public final class IconKt {
                 startRestartGroup.updateRememberedValue(bitmapPainter2);
                 rememberedValue = bitmapPainter2;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                m2260Iconww6aTOc((BitmapPainter) rememberedValue, str2, obj2, m4547unboximpl, startRestartGroup, i4 & 8176, 0);
+                m2270Iconww6aTOc((BitmapPainter) rememberedValue, str2, obj2, m4559unboximpl, startRestartGroup, i4 & 8176, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = obj2;
-                j3 = m4547unboximpl;
+                j3 = m4559unboximpl;
             } else {
                 startRestartGroup.skipToGroupEnd();
                 modifier2 = obj;
@@ -329,7 +329,7 @@ public final class IconKt {
                     }
 
                     public final void invoke(Composer composer2, int i7) {
-                        IconKt.m2259Iconww6aTOc(ImageBitmap.this, str, modifier2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        IconKt.m2269Iconww6aTOc(ImageBitmap.this, str, modifier2, j3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -368,7 +368,7 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2260Iconww6aTOc(final Painter painter, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m2270Iconww6aTOc(final Painter painter, final String str, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         long j2;
@@ -417,7 +417,7 @@ public final class IconKt {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         i3 &= -7169;
                         modifier2 = companion2;
-                        j3 = ((Color) consume).m4547unboximpl();
+                        j3 = ((Color) consume).m4559unboximpl();
                     } else {
                         j3 = j2;
                         modifier2 = companion2;
@@ -438,7 +438,7 @@ public final class IconKt {
                 z = (((i3 & 7168) ^ 3072) <= 2048 && startRestartGroup.changed(j3)) || (i3 & 3072) == 2048;
                 rememberedValue = startRestartGroup.rememberedValue();
                 if (!z || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = !Color.m4538equalsimpl0(j3, Color.Companion.m4573getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m4578tintxETnrds$default(ColorFilter.Companion, j3, 0, 2, null);
+                    rememberedValue = !Color.m4550equalsimpl0(j3, Color.Companion.m4585getUnspecified0d7_KjU()) ? null : ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, j3, 0, 2, null);
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
                 ColorFilter colorFilter = (ColorFilter) rememberedValue;
@@ -467,7 +467,7 @@ public final class IconKt {
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
-                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6465getImageo7Vup1c());
+                                SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6478getImageo7Vup1c());
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -507,7 +507,7 @@ public final class IconKt {
                     }
 
                     public final void invoke(Composer composer2, int i6) {
-                        IconKt.m2260Iconww6aTOc(Painter.this, str, modifier3, j4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        IconKt.m2270Iconww6aTOc(Painter.this, str, modifier3, j4, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -535,7 +535,7 @@ public final class IconKt {
         rememberedValue = startRestartGroup.rememberedValue();
         if (!z) {
         }
-        if (!Color.m4538equalsimpl0(j3, Color.Companion.m4573getUnspecified0d7_KjU())) {
+        if (!Color.m4550equalsimpl0(j3, Color.Companion.m4585getUnspecified0d7_KjU())) {
         }
         startRestartGroup.updateRememberedValue(rememberedValue);
         ColorFilter colorFilter2 = (ColorFilter) rememberedValue;
@@ -614,7 +614,7 @@ public final class IconKt {
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                             SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
-                            SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6465getImageo7Vup1c());
+                            SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6478getImageo7Vup1c());
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -648,13 +648,13 @@ public final class IconKt {
                         ColorFilter colorFilter;
                         Painter painter2 = Painter.this;
                         ColorProducer colorProducer2 = colorProducer;
-                        long mo5116getSizeNHjbRc = drawScope.mo5116getSizeNHjbRc();
+                        long mo5128getSizeNHjbRc = drawScope.mo5128getSizeNHjbRc();
                         if (colorProducer2 != null) {
-                            colorFilter = ColorFilter.Companion.m4578tintxETnrds$default(ColorFilter.Companion, colorProducer2.mo2171invoke0d7_KjU(), 0, 2, null);
+                            colorFilter = ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, colorProducer2.mo2181invoke0d7_KjU(), 0, 2, null);
                         } else {
                             colorFilter = null;
                         }
-                        Painter.m5241drawx_KDEd0$default(painter2, drawScope, mo5116getSizeNHjbRc, 0.0f, colorFilter, 2, null);
+                        Painter.m5253drawx_KDEd0$default(painter2, drawScope, mo5128getSizeNHjbRc, 0.0f, colorFilter, 2, null);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -692,12 +692,12 @@ public final class IconKt {
 
     private static final Modifier defaultSizeForColorProducer(Modifier modifier, Painter painter) {
         Modifier modifier2;
-        if (Size.m4358equalsimpl0(painter.mo5236getIntrinsicSizeNHjbRc(), Size.Companion.m4370getUnspecifiedNHjbRc()) || m2262isInfiniteuvyYCjk(painter.mo5236getIntrinsicSizeNHjbRc())) {
+        if (Size.m4370equalsimpl0(painter.mo5248getIntrinsicSizeNHjbRc(), Size.Companion.m4382getUnspecifiedNHjbRc()) || m2272isInfiniteuvyYCjk(painter.mo5248getIntrinsicSizeNHjbRc())) {
             modifier2 = DefaultIconSizeModifier;
         } else {
-            long mo5236getIntrinsicSizeNHjbRc = painter.mo5236getIntrinsicSizeNHjbRc();
-            final float m4362getWidthimpl = Size.m4362getWidthimpl(mo5236getIntrinsicSizeNHjbRc);
-            final float m4359getHeightimpl = Size.m4359getHeightimpl(mo5236getIntrinsicSizeNHjbRc);
+            long mo5248getIntrinsicSizeNHjbRc = painter.mo5248getIntrinsicSizeNHjbRc();
+            final float m4374getWidthimpl = Size.m4374getWidthimpl(mo5248getIntrinsicSizeNHjbRc);
+            final float m4371getHeightimpl = Size.m4371getHeightimpl(mo5248getIntrinsicSizeNHjbRc);
             modifier2 = LayoutModifierKt.layout(Modifier.Companion, new Function3<MeasureScope, Measurable, Constraints, MeasureResult>() { // from class: androidx.compose.material3.IconKt$defaultSizeForColorProducer$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -707,13 +707,13 @@ public final class IconKt {
 
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                    return m2263invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                    return m2273invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
                 }
 
                 /* renamed from: invoke-3p2s80s  reason: not valid java name */
-                public final MeasureResult m2263invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                    final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo((int) m4362getWidthimpl, (int) m4359getHeightimpl));
-                    return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.IconKt$defaultSizeForColorProducer$1.1
+                public final MeasureResult m2273invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                    final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo((int) m4374getWidthimpl, (int) m4371getHeightimpl));
+                    return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.IconKt$defaultSizeForColorProducer$1.1
                         {
                             super(1);
                         }
@@ -737,7 +737,7 @@ public final class IconKt {
 
     private static final Modifier defaultSizeFor(Modifier modifier, Painter painter) {
         Modifier.Companion companion;
-        if (Size.m4358equalsimpl0(painter.mo5236getIntrinsicSizeNHjbRc(), Size.Companion.m4370getUnspecifiedNHjbRc()) || m2262isInfiniteuvyYCjk(painter.mo5236getIntrinsicSizeNHjbRc())) {
+        if (Size.m4370equalsimpl0(painter.mo5248getIntrinsicSizeNHjbRc(), Size.Companion.m4382getUnspecifiedNHjbRc()) || m2272isInfiniteuvyYCjk(painter.mo5248getIntrinsicSizeNHjbRc())) {
             companion = DefaultIconSizeModifier;
         } else {
             companion = Modifier.Companion;
@@ -746,7 +746,7 @@ public final class IconKt {
     }
 
     /* renamed from: isInfinite-uvyYCjk  reason: not valid java name */
-    private static final boolean m2262isInfiniteuvyYCjk(long j) {
-        return Float.isInfinite(Size.m4362getWidthimpl(j)) && Float.isInfinite(Size.m4359getHeightimpl(j));
+    private static final boolean m2272isInfiniteuvyYCjk(long j) {
+        return Float.isInfinite(Size.m4374getWidthimpl(j)) && Float.isInfinite(Size.m4371getHeightimpl(j));
     }
 }

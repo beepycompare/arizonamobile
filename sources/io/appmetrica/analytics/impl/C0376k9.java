@@ -8,12 +8,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0376k9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f952a;
+    public final int f953a;
     public final C0506p9 b;
     public C0428m9 c;
 
     public C0376k9(C0506p9 c0506p9, int i) {
-        this.f952a = i;
+        this.f953a = i;
         this.b = c0506p9;
     }
 
@@ -32,27 +32,27 @@ public final class C0376k9 {
         try {
             bArr = c0506p9.c.get("event_hashes");
         } catch (Throwable unused) {
-            C0454n9 c0454n9 = c0506p9.f1033a;
+            C0454n9 c0454n9 = c0506p9.f1034a;
             c0506p9.b.getClass();
             U9 u9 = new U9();
             c0454n9.getClass();
-            c0428m9 = new C0428m9(u9.f697a, u9.b, u9.c, CollectionUtils.hashSetFromIntArray(u9.d));
+            c0428m9 = new C0428m9(u9.f698a, u9.b, u9.c, CollectionUtils.hashSetFromIntArray(u9.d));
         }
         if (bArr != null && bArr.length != 0) {
-            C0454n9 c0454n92 = c0506p9.f1033a;
+            C0454n9 c0454n92 = c0506p9.f1034a;
             U9 state = c0506p9.b.toState(bArr);
             c0454n92.getClass();
-            c0428m9 = new C0428m9(state.f697a, state.b, state.c, CollectionUtils.hashSetFromIntArray(state.d));
+            c0428m9 = new C0428m9(state.f698a, state.b, state.c, CollectionUtils.hashSetFromIntArray(state.d));
             this.c = c0428m9;
             i = c0428m9.c;
-            i2 = this.f952a;
+            i2 = this.f953a;
             if (i == i2) {
                 c0428m9.c = i2;
                 c0428m9.d = 0;
                 C0506p9 c0506p92 = this.b;
                 IBinaryDataHelper iBinaryDataHelper = c0506p92.c;
                 C0480o9 c0480o9 = c0506p92.b;
-                c0506p92.f1033a.getClass();
+                c0506p92.f1034a.getClass();
                 U9 a2 = C0454n9.a(c0428m9);
                 c0480o9.getClass();
                 iBinaryDataHelper.insert("event_hashes", MessageNano.toByteArray(a2));
@@ -60,14 +60,14 @@ public final class C0376k9 {
             }
             return;
         }
-        C0454n9 c0454n93 = c0506p9.f1033a;
+        C0454n9 c0454n93 = c0506p9.f1034a;
         c0506p9.b.getClass();
         U9 u92 = new U9();
         c0454n93.getClass();
-        c0428m9 = new C0428m9(u92.f697a, u92.b, u92.c, CollectionUtils.hashSetFromIntArray(u92.d));
+        c0428m9 = new C0428m9(u92.f698a, u92.b, u92.c, CollectionUtils.hashSetFromIntArray(u92.d));
         this.c = c0428m9;
         i = c0428m9.c;
-        i2 = this.f952a;
+        i2 = this.f953a;
         if (i == i2) {
         }
     }

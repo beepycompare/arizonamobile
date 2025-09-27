@@ -3,7 +3,6 @@ package com.google.gson;
 import com.google.gson.internal.Streams;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 /* loaded from: classes4.dex */
@@ -105,11 +104,11 @@ public abstract class JsonElement {
 
     public String toString() {
         try {
-            StringWriter stringWriter = new StringWriter();
-            JsonWriter jsonWriter = new JsonWriter(stringWriter);
+            StringBuilder sb = new StringBuilder();
+            JsonWriter jsonWriter = new JsonWriter(Streams.writerForAppendable(sb));
             jsonWriter.setStrictness(Strictness.LENIENT);
             Streams.write(this, jsonWriter);
-            return stringWriter.toString();
+            return sb.toString();
         } catch (IOException e) {
             throw new AssertionError(e);
         }

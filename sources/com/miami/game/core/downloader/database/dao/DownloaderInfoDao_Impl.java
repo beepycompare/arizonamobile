@@ -43,61 +43,61 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
             public void bind(SQLiteStatement statement, DownloaderInfoDbModel entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo8151bindLong(1, entity.getId());
+                statement.mo8164bindLong(1, entity.getId());
                 String path = entity.getPath();
                 if (path == null) {
-                    statement.mo8152bindNull(2);
+                    statement.mo8165bindNull(2);
                 } else {
-                    statement.mo8153bindText(2, path);
+                    statement.mo8166bindText(2, path);
                 }
                 String nameFromGameInfoFile = entity.getNameFromGameInfoFile();
                 if (nameFromGameInfoFile == null) {
-                    statement.mo8152bindNull(3);
+                    statement.mo8165bindNull(3);
                 } else {
-                    statement.mo8153bindText(3, nameFromGameInfoFile);
+                    statement.mo8166bindText(3, nameFromGameInfoFile);
                 }
                 Long sizeFromGameInfoFile = entity.getSizeFromGameInfoFile();
                 if (sizeFromGameInfoFile == null) {
-                    statement.mo8152bindNull(4);
+                    statement.mo8165bindNull(4);
                 } else {
-                    statement.mo8151bindLong(4, sizeFromGameInfoFile.longValue());
+                    statement.mo8164bindLong(4, sizeFromGameInfoFile.longValue());
                 }
                 String hashFromGameInfoFile = entity.getHashFromGameInfoFile();
                 if (hashFromGameInfoFile == null) {
-                    statement.mo8152bindNull(5);
+                    statement.mo8165bindNull(5);
                 } else {
-                    statement.mo8153bindText(5, hashFromGameInfoFile);
+                    statement.mo8166bindText(5, hashFromGameInfoFile);
                 }
                 Long dateChangeFromGameInfoFile = entity.getDateChangeFromGameInfoFile();
                 if (dateChangeFromGameInfoFile == null) {
-                    statement.mo8152bindNull(6);
+                    statement.mo8165bindNull(6);
                 } else {
-                    statement.mo8151bindLong(6, dateChangeFromGameInfoFile.longValue());
+                    statement.mo8164bindLong(6, dateChangeFromGameInfoFile.longValue());
                 }
                 String gpuTypeFromGameInfoFile = entity.getGpuTypeFromGameInfoFile();
                 if (gpuTypeFromGameInfoFile == null) {
-                    statement.mo8152bindNull(7);
+                    statement.mo8165bindNull(7);
                 } else {
-                    statement.mo8153bindText(7, gpuTypeFromGameInfoFile);
+                    statement.mo8166bindText(7, gpuTypeFromGameInfoFile);
                 }
-                statement.mo8151bindLong(8, entity.isCompletedDownload() ? 1L : 0L);
+                statement.mo8164bindLong(8, entity.isCompletedDownload() ? 1L : 0L);
                 Long downloadStartAt = entity.getDownloadStartAt();
                 if (downloadStartAt == null) {
-                    statement.mo8152bindNull(9);
+                    statement.mo8165bindNull(9);
                 } else {
-                    statement.mo8151bindLong(9, downloadStartAt.longValue());
+                    statement.mo8164bindLong(9, downloadStartAt.longValue());
                 }
                 Long downloadFinishAt = entity.getDownloadFinishAt();
                 if (downloadFinishAt == null) {
-                    statement.mo8152bindNull(10);
+                    statement.mo8165bindNull(10);
                 } else {
-                    statement.mo8151bindLong(10, downloadFinishAt.longValue());
+                    statement.mo8164bindLong(10, downloadFinishAt.longValue());
                 }
                 Long createdAt = entity.getCreatedAt();
                 if (createdAt == null) {
-                    statement.mo8152bindNull(11);
+                    statement.mo8165bindNull(11);
                 } else {
-                    statement.mo8151bindLong(11, createdAt.longValue());
+                    statement.mo8164bindLong(11, createdAt.longValue());
                 }
             }
         };
@@ -139,7 +139,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         SQLiteStatement prepare = _connection.prepare(str);
         boolean z = true;
         try {
-            prepare.mo8151bindLong(1, j);
+            prepare.mo8164bindLong(1, j);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "path");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "name_from_game_info_file");
@@ -188,7 +188,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8151bindLong(1, z ? 1L : 0L);
+            prepare.mo8164bindLong(1, z ? 1L : 0L);
             ArrayList arrayList = new ArrayList();
             while (prepare.step()) {
                 arrayList.add(Long.valueOf(prepare.getLong(0)));
@@ -316,8 +316,8 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8151bindLong(1, z ? 1L : 0L);
-            prepare.mo8151bindLong(2, j);
+            prepare.mo8164bindLong(1, z ? 1L : 0L);
+            prepare.mo8164bindLong(2, j);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;
@@ -369,7 +369,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo8153bindText(1, str2);
+            prepare.mo8166bindText(1, str2);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;

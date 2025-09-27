@@ -7,8 +7,8 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface NestedScrollScope {
     /* renamed from: scrollBy-OzD1aCk  reason: not valid java name */
-    long mo523scrollByOzD1aCk(long j, int i);
+    long mo533scrollByOzD1aCk(long j, int i);
 
     /* renamed from: scrollByWithOverscroll-OzD1aCk  reason: not valid java name */
-    long mo524scrollByWithOverscrollOzD1aCk(long j, int i);
+    long mo534scrollByWithOverscrollOzD1aCk(long j, int i);
 }

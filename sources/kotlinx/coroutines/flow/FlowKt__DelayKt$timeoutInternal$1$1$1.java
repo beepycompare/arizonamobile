@@ -38,12 +38,12 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$1<T> extends SuspendLambda imple
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Boolean> continuation) {
-        return m10655invokeWpGqRn0(((ChannelResult) obj).m10634unboximpl(), continuation);
+        return m10670invokeWpGqRn0(((ChannelResult) obj).m10649unboximpl(), continuation);
     }
 
     /* renamed from: invoke-WpGqRn0  reason: not valid java name */
-    public final Object m10655invokeWpGqRn0(Object obj, Continuation<? super Boolean> continuation) {
-        return ((FlowKt__DelayKt$timeoutInternal$1$1$1) create(ChannelResult.m10622boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m10670invokeWpGqRn0(Object obj, Continuation<? super Boolean> continuation) {
+        return ((FlowKt__DelayKt$timeoutInternal$1$1$1) create(ChannelResult.m10637boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -54,28 +54,28 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$1<T> extends SuspendLambda imple
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object m10634unboximpl;
+        Object m10649unboximpl;
         Object obj2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            m10634unboximpl = ((ChannelResult) this.L$0).m10634unboximpl();
+            m10649unboximpl = ((ChannelResult) this.L$0).m10649unboximpl();
             FlowCollector<T> flowCollector = this.$downStream;
-            if (!(m10634unboximpl instanceof ChannelResult.Failed)) {
-                this.L$0 = m10634unboximpl;
+            if (!(m10649unboximpl instanceof ChannelResult.Failed)) {
+                this.L$0 = m10649unboximpl;
                 this.label = 1;
-                if (flowCollector.emit(m10634unboximpl, this) == coroutine_suspended) {
+                if (flowCollector.emit(m10649unboximpl, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                obj2 = m10634unboximpl;
+                obj2 = m10649unboximpl;
             }
-            if (m10634unboximpl instanceof ChannelResult.Closed) {
+            if (m10649unboximpl instanceof ChannelResult.Closed) {
                 return Boxing.boxBoolean(true);
             }
-            Throwable m10626exceptionOrNullimpl = ChannelResult.m10626exceptionOrNullimpl(m10634unboximpl);
-            if (m10626exceptionOrNullimpl != null) {
-                throw m10626exceptionOrNullimpl;
+            Throwable m10641exceptionOrNullimpl = ChannelResult.m10641exceptionOrNullimpl(m10649unboximpl);
+            if (m10641exceptionOrNullimpl != null) {
+                throw m10641exceptionOrNullimpl;
             }
             return Boxing.boxBoolean(false);
         } else if (i != 1) {
@@ -84,8 +84,8 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$1<T> extends SuspendLambda imple
             obj2 = this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        m10634unboximpl = obj2;
-        if (m10634unboximpl instanceof ChannelResult.Closed) {
+        m10649unboximpl = obj2;
+        if (m10649unboximpl instanceof ChannelResult.Closed) {
         }
     }
 }

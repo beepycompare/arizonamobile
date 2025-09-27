@@ -42,7 +42,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(1425358052, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda-1.<anonymous> (TimePicker.kt:1277)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m2804Text4IGK_g(Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_time_picker_am), composer, 0), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 0, 0, 131070);
+            TextKt.m2814Text4IGK_g(Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_time_picker_am), composer, 0), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -67,7 +67,7 @@ public final class ComposableSingletons$TimePickerKt {
                 ComposerKt.traceEventStart(-1179219109, i, -1, "androidx.compose.material3.ComposableSingletons$TimePickerKt.lambda-2.<anonymous> (TimePicker.kt:1291)");
             }
             Strings.Companion companion = Strings.Companion;
-            TextKt.m2804Text4IGK_g(Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_time_picker_pm), composer, 0), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 0, 0, 131070);
+            TextKt.m2814Text4IGK_g(Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_time_picker_pm), composer, 0), (Modifier) null, 0L, 0L, (FontStyle) null, (FontWeight) null, (FontFamily) null, 0L, (TextDecoration) null, (TextAlign) null, 0L, 0, false, 0, 0, (Function1<? super TextLayoutResult, Unit>) null, (TextStyle) null, composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -75,12 +75,12 @@ public final class ComposableSingletons$TimePickerKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2100getLambda1$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2110getLambda1$material3_release() {
         return f53lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2101getLambda2$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2111getLambda2$material3_release() {
         return f54lambda2;
     }
 }

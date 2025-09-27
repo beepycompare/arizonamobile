@@ -63,11 +63,11 @@ public final class LazyLayoutItemAnimation {
         this.isDisappearanceAnimationFinished$delegate = mutableStateOf$default4;
         long j = NotInitialized;
         this.rawOffset = j;
-        this.finalOffset = IntOffset.Companion.m7390getZeronOccac();
+        this.finalOffset = IntOffset.Companion.m7403getZeronOccac();
         this.layer = graphicsContext != null ? graphicsContext.createGraphicsLayer() : null;
-        this.placementDeltaAnimation = new Animatable<>(IntOffset.m7370boximpl(IntOffset.Companion.m7390getZeronOccac()), VectorConvertersKt.getVectorConverter(IntOffset.Companion), null, null, 12, null);
+        this.placementDeltaAnimation = new Animatable<>(IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac()), VectorConvertersKt.getVectorConverter(IntOffset.Companion), null, null, 12, null);
         this.visibilityAnimation = new Animatable<>(Float.valueOf(1.0f), VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE), null, null, 12, null);
-        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m7370boximpl(IntOffset.Companion.m7390getZeronOccac()), null, 2, null);
+        mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m7383boximpl(IntOffset.Companion.m7403getZeronOccac()), null, 2, null);
         this.placementDelta$delegate = mutableStateOf$default5;
         this.lookaheadOffset = j;
     }
@@ -148,22 +148,22 @@ public final class LazyLayoutItemAnimation {
     }
 
     /* renamed from: getRawOffset-nOcc-ac  reason: not valid java name */
-    public final long m1024getRawOffsetnOccac() {
+    public final long m1034getRawOffsetnOccac() {
         return this.rawOffset;
     }
 
     /* renamed from: setRawOffset--gyyYBs  reason: not valid java name */
-    public final void m1027setRawOffsetgyyYBs(long j) {
+    public final void m1037setRawOffsetgyyYBs(long j) {
         this.rawOffset = j;
     }
 
     /* renamed from: getFinalOffset-nOcc-ac  reason: not valid java name */
-    public final long m1021getFinalOffsetnOccac() {
+    public final long m1031getFinalOffsetnOccac() {
         return this.finalOffset;
     }
 
     /* renamed from: setFinalOffset--gyyYBs  reason: not valid java name */
-    public final void m1025setFinalOffsetgyyYBs(long j) {
+    public final void m1035setFinalOffsetgyyYBs(long j) {
         this.finalOffset = j;
     }
 
@@ -173,13 +173,13 @@ public final class LazyLayoutItemAnimation {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setPlacementDelta--gyyYBs  reason: not valid java name */
-    public final void m1019setPlacementDeltagyyYBs(long j) {
-        this.placementDelta$delegate.setValue(IntOffset.m7370boximpl(j));
+    public final void m1029setPlacementDeltagyyYBs(long j) {
+        this.placementDelta$delegate.setValue(IntOffset.m7383boximpl(j));
     }
 
     /* renamed from: getPlacementDelta-nOcc-ac  reason: not valid java name */
-    public final long m1023getPlacementDeltanOccac() {
-        return ((IntOffset) this.placementDelta$delegate.getValue()).m7388unboximpl();
+    public final long m1033getPlacementDeltanOccac() {
+        return ((IntOffset) this.placementDelta$delegate.getValue()).m7401unboximpl();
     }
 
     public final void cancelPlacementAnimation() {
@@ -189,26 +189,26 @@ public final class LazyLayoutItemAnimation {
     }
 
     /* renamed from: getLookaheadOffset-nOcc-ac  reason: not valid java name */
-    public final long m1022getLookaheadOffsetnOccac() {
+    public final long m1032getLookaheadOffsetnOccac() {
         return this.lookaheadOffset;
     }
 
     /* renamed from: setLookaheadOffset--gyyYBs  reason: not valid java name */
-    public final void m1026setLookaheadOffsetgyyYBs(long j) {
+    public final void m1036setLookaheadOffsetgyyYBs(long j) {
         this.lookaheadOffset = j;
     }
 
     /* renamed from: animatePlacementDelta-ar5cAso  reason: not valid java name */
-    public final void m1020animatePlacementDeltaar5cAso(long j, boolean z) {
+    public final void m1030animatePlacementDeltaar5cAso(long j, boolean z) {
         FiniteAnimationSpec<IntOffset> finiteAnimationSpec = this.placementSpec;
         if (finiteAnimationSpec == null) {
             return;
         }
-        long m7382minusqkQi6aY = IntOffset.m7382minusqkQi6aY(m1023getPlacementDeltanOccac(), j);
-        m1019setPlacementDeltagyyYBs(m7382minusqkQi6aY);
+        long m7395minusqkQi6aY = IntOffset.m7395minusqkQi6aY(m1033getPlacementDeltanOccac(), j);
+        m1029setPlacementDeltagyyYBs(m7395minusqkQi6aY);
         setPlacementAnimationInProgress(true);
         this.isRunningMovingAwayAnimation = z;
-        BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$animatePlacementDelta$1(this, finiteAnimationSpec, m7382minusqkQi6aY, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$animatePlacementDelta$1(this, finiteAnimationSpec, m7395minusqkQi6aY, null), 3, null);
     }
 
     public final void animateAppearance() {
@@ -258,7 +258,7 @@ public final class LazyLayoutItemAnimation {
             BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, null, null, new LazyLayoutItemAnimation$release$3(this, null), 3, null);
         }
         this.isRunningMovingAwayAnimation = false;
-        m1019setPlacementDeltagyyYBs(IntOffset.Companion.m7390getZeronOccac());
+        m1029setPlacementDeltagyyYBs(IntOffset.Companion.m7403getZeronOccac());
         this.rawOffset = NotInitialized;
         GraphicsLayer graphicsLayer = this.layer;
         if (graphicsLayer != null && (graphicsContext = this.graphicsContext) != null) {
@@ -282,13 +282,13 @@ public final class LazyLayoutItemAnimation {
         }
 
         /* renamed from: getNotInitialized-nOcc-ac  reason: not valid java name */
-        public final long m1028getNotInitializednOccac() {
+        public final long m1038getNotInitializednOccac() {
             return LazyLayoutItemAnimation.NotInitialized;
         }
     }
 
     static {
         long j = Integer.MAX_VALUE;
-        NotInitialized = IntOffset.m7373constructorimpl((j & 4294967295L) | (j << 32));
+        NotInitialized = IntOffset.m7386constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

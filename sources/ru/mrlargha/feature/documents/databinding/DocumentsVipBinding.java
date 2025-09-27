@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.documents.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DocumentsVipBinding implements ViewBinding {
     public final LinearLayout documentsButton1;
     public final TextView documentsButton1Desc;

@@ -26,8 +26,8 @@ public final class LinksTextMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo42measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7204getMaxWidthimpl(j), Constraints.m7203getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.LinksTextMeasurePolicy$$ExternalSyntheticLambda0
+    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.LinksTextMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;
@@ -47,7 +47,7 @@ public final class LinksTextMeasurePolicy implements MeasurePolicy {
                 Pair pair = (Pair) measureWithTextRangeMeasureConstraints.get(i);
                 Placeable placeable = (Placeable) pair.component1();
                 Function0 function0 = (Function0) pair.component2();
-                Placeable.PlacementScope.m6019place70tqf50$default(placementScope, placeable, function0 != null ? ((IntOffset) function0.invoke()).m7388unboximpl() : IntOffset.Companion.m7390getZeronOccac(), 0.0f, 2, null);
+                Placeable.PlacementScope.m6032place70tqf50$default(placementScope, placeable, function0 != null ? ((IntOffset) function0.invoke()).m7401unboximpl() : IntOffset.Companion.m7403getZeronOccac(), 0.0f, 2, null);
             }
         }
         return Unit.INSTANCE;

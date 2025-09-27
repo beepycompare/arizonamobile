@@ -9,43 +9,43 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes.dex */
 public final class OffsetKt {
     /* renamed from: isFinite-k-4lQ0M  reason: not valid java name */
-    public static final boolean m4310isFinitek4lQ0M(long j) {
+    public static final boolean m4322isFinitek4lQ0M(long j) {
         return ((((j & InlineClassHelperKt.DualFloatInfinityBase) ^ InlineClassHelperKt.DualFloatInfinityBase) - InlineClassHelperKt.Uint64Low32) & (-9223372034707292160L)) == 0;
     }
 
     /* renamed from: isFinite-k-4lQ0M$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4311isFinitek4lQ0M$annotations(long j) {
+    public static /* synthetic */ void m4323isFinitek4lQ0M$annotations(long j) {
     }
 
     /* renamed from: isSpecified-k-4lQ0M  reason: not valid java name */
-    public static final boolean m4312isSpecifiedk4lQ0M(long j) {
+    public static final boolean m4324isSpecifiedk4lQ0M(long j) {
         return (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isSpecified-k-4lQ0M$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4313isSpecifiedk4lQ0M$annotations(long j) {
+    public static /* synthetic */ void m4325isSpecifiedk4lQ0M$annotations(long j) {
     }
 
     /* renamed from: isUnspecified-k-4lQ0M  reason: not valid java name */
-    public static final boolean m4314isUnspecifiedk4lQ0M(long j) {
+    public static final boolean m4326isUnspecifiedk4lQ0M(long j) {
         return (j & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats;
     }
 
     /* renamed from: isUnspecified-k-4lQ0M$annotations  reason: not valid java name */
-    public static /* synthetic */ void m4315isUnspecifiedk4lQ0M$annotations(long j) {
+    public static /* synthetic */ void m4327isUnspecifiedk4lQ0M$annotations(long j) {
     }
 
     /* renamed from: takeOrElse-3MmeM6k  reason: not valid java name */
-    public static final long m4317takeOrElse3MmeM6k(long j, Function0<Offset> function0) {
-        return (9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m4303unboximpl();
+    public static final long m4329takeOrElse3MmeM6k(long j, Function0<Offset> function0) {
+        return (9223372034707292159L & j) != InlineClassHelperKt.UnspecifiedPackedFloats ? j : function0.invoke().m4315unboximpl();
     }
 
     public static final long Offset(float f, float f2) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: lerp-Wko1d7g  reason: not valid java name */
-    public static final long m4316lerpWko1d7g(long j, long j2, float f) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
+    public static final long m4328lerpWko1d7g(long j, long j2, float f) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
     }
 }

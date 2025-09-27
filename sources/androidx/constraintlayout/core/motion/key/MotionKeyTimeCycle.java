@@ -42,7 +42,7 @@ public class MotionKeyTimeCycle extends MotionKey {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00d6, code lost:
         if (r1.equals("rotationY") == false) goto L12;
      */
     /*
@@ -396,7 +396,7 @@ public class MotionKeyTimeCycle extends MotionKey {
 
     @Override // androidx.constraintlayout.core.motion.key.MotionKey
     /* renamed from: clone */
-    public MotionKey mo7731clone() {
+    public MotionKey mo7744clone() {
         return new MotionKeyTimeCycle().copy((MotionKey) this);
     }
 

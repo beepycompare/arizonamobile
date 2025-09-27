@@ -174,7 +174,7 @@ public final class Selection {
     }
 
     /* renamed from: toTextRange-d9O1mEE  reason: not valid java name */
-    public final long m1745toTextRanged9O1mEE() {
+    public final long m1755toTextRanged9O1mEE() {
         return TextRangeKt.TextRange(this.start.getOffset(), this.end.getOffset());
     }
 }

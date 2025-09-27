@@ -7,23 +7,23 @@ import kotlin.Metadata;
 public final class ContentScaleKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeFillMaxDimension-iLBOSCw  reason: not valid java name */
-    public static final float m5951computeFillMaxDimensioniLBOSCw(long j, long j2) {
+    public static final float m5964computeFillMaxDimensioniLBOSCw(long j, long j2) {
         return Math.max(Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeFillMinDimension-iLBOSCw  reason: not valid java name */
-    public static final float m5952computeFillMinDimensioniLBOSCw(long j, long j2) {
+    public static final float m5965computeFillMinDimensioniLBOSCw(long j, long j2) {
         return Math.min(Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* renamed from: computeFillWidth-iLBOSCw  reason: not valid java name */
-    private static final float m5953computeFillWidthiLBOSCw(long j, long j2) {
+    private static final float m5966computeFillWidthiLBOSCw(long j, long j2) {
         return Float.intBitsToFloat((int) (j2 >> 32)) / Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: computeFillHeight-iLBOSCw  reason: not valid java name */
-    private static final float m5950computeFillHeightiLBOSCw(long j, long j2) {
+    private static final float m5963computeFillHeightiLBOSCw(long j, long j2) {
         return Float.intBitsToFloat((int) (j2 & 4294967295L)) / Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

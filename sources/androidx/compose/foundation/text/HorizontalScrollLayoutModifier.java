@@ -106,21 +106,21 @@ public final class HorizontalScrollLayoutModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo738measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo748measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
         long j2;
-        if (measurable.maxIntrinsicWidth(Constraints.m7203getMaxHeightimpl(j)) < Constraints.m7204getMaxWidthimpl(j)) {
+        if (measurable.maxIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j)) < Constraints.m7217getMaxWidthimpl(j)) {
             j2 = j;
         } else {
             j2 = j;
-            j = Constraints.m7194copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
+            j = Constraints.m7207copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
         }
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        final int min = Math.min(mo5954measureBRTryo0.getWidth(), Constraints.m7204getMaxWidthimpl(j2));
-        return MeasureScope.layout$default(measureScope, min, mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$$ExternalSyntheticLambda0
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        final int min = Math.min(mo5967measureBRTryo0.getWidth(), Constraints.m7217getMaxWidthimpl(j2));
+        return MeasureScope.layout$default(measureScope, min, mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = HorizontalScrollLayoutModifier.measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier.this, measureScope, mo5954measureBRTryo0, min, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = HorizontalScrollLayoutModifier.measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier.this, measureScope, mo5967measureBRTryo0, min, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);

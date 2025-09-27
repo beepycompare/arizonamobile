@@ -106,7 +106,7 @@ public final class ComposeExtensionsKt {
         } else if (i2 == 2) {
             composer.startReplaceGroup(-351485176);
             composer.endReplaceGroup();
-            indicationNodeFactory = RippleKt.m2515rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
+            indicationNodeFactory = RippleKt.m2525rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
         } else if (i2 != 3) {
             composer.startReplaceGroup(-351489068);
             composer.endReplaceGroup();
@@ -146,12 +146,12 @@ public final class ComposeExtensionsKt {
             composer.updateRememberedValue(rememberedValue3);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m294clickableO2vRcR0$default = ClickableKt.m294clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
+        Modifier m304clickableO2vRcR0$default = ClickableKt.m304clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m294clickableO2vRcR0$default;
+        return m304clickableO2vRcR0$default;
     }
 
     public static final Unit clickWithDelay$lambda$1$2$0(MultipleClicksCutter multipleClicksCutter, final Function0 function0) {
@@ -220,13 +220,13 @@ public final class ComposeExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1680139201, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7414boximpl(IntSize.Companion.m7427getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7427boximpl(IntSize.Companion.m7440getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), AnimationSpecKt.m151infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
-        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m4487linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4527boximpl(ColorKt.Color(4279446612L)), Color.m4527boximpl(ColorKt.Color(4280499561L)), Color.m4527boximpl(ColorKt.Color(4279446612L))}), Offset.m4285constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4285constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$0$1(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat) + ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
+        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), AnimationSpecKt.m161infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
+        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m4499linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4539boximpl(ColorKt.Color(4279446612L)), Color.m4539boximpl(ColorKt.Color(4280499561L)), Color.m4539boximpl(ColorKt.Color(4279446612L))}), Offset.m4297constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4297constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$0$1(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat) + ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
         ComposerKt.sourceInformationMarkerStart(composer, -1680115216, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -250,16 +250,16 @@ public final class ComposeExtensionsKt {
     }
 
     private static final long shimmerEffect$lambda$0$1(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m7426unboximpl();
+        return mutableState.getValue().m7439unboximpl();
     }
 
     private static final void shimmerEffect$lambda$0$2(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m7414boximpl(j));
+        mutableState.setValue(IntSize.m7427boximpl(j));
     }
 
     public static final Unit shimmerEffect$lambda$0$4$0(MutableState mutableState, LayoutCoordinates it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        shimmerEffect$lambda$0$2(mutableState, it.mo5962getSizeYbymL2g());
+        shimmerEffect$lambda$0$2(mutableState, it.mo5975getSizeYbymL2g());
         return Unit.INSTANCE;
     }
 

@@ -173,7 +173,7 @@ public abstract class PreferenceHeaderFragmentCompat extends Fragment implements
         getChildFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() { // from class: androidx.preference.PreferenceHeaderFragmentCompat$$ExternalSyntheticLambda0
             @Override // androidx.fragment.app.FragmentManager.OnBackStackChangedListener
             public final void onBackStackChanged() {
-                PreferenceHeaderFragmentCompat.m8129onViewCreated$lambda10(PreferenceHeaderFragmentCompat.this);
+                PreferenceHeaderFragmentCompat.m8142onViewCreated$lambda10(PreferenceHeaderFragmentCompat.this);
             }
         });
         OnBackPressedDispatcherOwner onBackPressedDispatcherOwner = ViewTreeOnBackPressedDispatcherOwner.get(view);
@@ -188,7 +188,7 @@ public abstract class PreferenceHeaderFragmentCompat extends Fragment implements
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onViewCreated$lambda-10  reason: not valid java name */
-    public static final void m8129onViewCreated$lambda10(PreferenceHeaderFragmentCompat this$0) {
+    public static final void m8142onViewCreated$lambda10(PreferenceHeaderFragmentCompat this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         OnBackPressedCallback onBackPressedCallback = this$0.onBackPressedCallback;
         Intrinsics.checkNotNull(onBackPressedCallback);

@@ -7,14 +7,14 @@ import java.util.Map;
 public final class Xk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f746a;
+    public final String f747a;
     public final Sk b;
     public final Wk c;
     public final IBinaryDataHelper d;
 
     public Xk(Context context, C0476o5 c0476o5) {
         c0476o5.a();
-        this.f746a = "session_extras";
+        this.f747a = "session_extras";
         this.b = new Sk();
         this.c = new Wk();
         this.d = C0728y7.a(context).a(c0476o5);
@@ -22,7 +22,7 @@ public final class Xk {
 
     public final Map a() {
         try {
-            byte[] bArr = this.d.get(this.f746a);
+            byte[] bArr = this.d.get(this.f747a);
             if (bArr != null) {
                 if (!(bArr.length == 0)) {
                     return this.b.toModel(this.c.toState(bArr));

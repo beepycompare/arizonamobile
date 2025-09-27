@@ -56,16 +56,16 @@ public final class TextFieldScrollKt {
     public static final Modifier defaultTextFieldScroll(Modifier modifier, TextFieldScrollerPosition textFieldScrollerPosition, TextFieldValue textFieldValue, VisualTransformation visualTransformation, Function0<TextLayoutResultProxy> function0) {
         VerticalScrollLayoutModifier verticalScrollLayoutModifier;
         Orientation orientation = textFieldScrollerPosition.getOrientation();
-        int m1368getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1368getOffsetToFollow5zctL8(textFieldValue.m6964getSelectiond9O1mEE());
-        textFieldScrollerPosition.m1370setPreviousSelection5zctL8(textFieldValue.m6964getSelectiond9O1mEE());
+        int m1378getOffsetToFollow5zctL8 = textFieldScrollerPosition.m1378getOffsetToFollow5zctL8(textFieldValue.m6977getSelectiond9O1mEE());
+        textFieldScrollerPosition.m1380setPreviousSelection5zctL8(textFieldValue.m6977getSelectiond9O1mEE());
         TransformedText filterWithValidation = ValidatingOffsetMappingKt.filterWithValidation(visualTransformation, textFieldValue.getAnnotatedString());
         int i = WhenMappings.$EnumSwitchMapping$0[orientation.ordinal()];
         if (i == 1) {
-            verticalScrollLayoutModifier = new VerticalScrollLayoutModifier(textFieldScrollerPosition, m1368getOffsetToFollow5zctL8, filterWithValidation, function0);
+            verticalScrollLayoutModifier = new VerticalScrollLayoutModifier(textFieldScrollerPosition, m1378getOffsetToFollow5zctL8, filterWithValidation, function0);
         } else if (i != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            verticalScrollLayoutModifier = new HorizontalScrollLayoutModifier(textFieldScrollerPosition, m1368getOffsetToFollow5zctL8, filterWithValidation, function0);
+            verticalScrollLayoutModifier = new HorizontalScrollLayoutModifier(textFieldScrollerPosition, m1378getOffsetToFollow5zctL8, filterWithValidation, function0);
         }
         return ClipKt.clipToBounds(modifier).then(verticalScrollLayoutModifier);
     }
@@ -79,9 +79,9 @@ public final class TextFieldScrollKt {
             zero = Rect.Companion.getZero();
         }
         Rect rect = zero;
-        int mo413roundToPx0680j_4 = density.mo413roundToPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness());
+        int mo423roundToPx0680j_4 = density.mo423roundToPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness());
         if (z) {
-            left = (i2 - rect.getLeft()) - mo413roundToPx0680j_4;
+            left = (i2 - rect.getLeft()) - mo423roundToPx0680j_4;
         } else {
             left = rect.getLeft();
         }
@@ -89,7 +89,7 @@ public final class TextFieldScrollKt {
         if (z) {
             left2 = i2 - rect.getLeft();
         } else {
-            left2 = mo413roundToPx0680j_4 + rect.getLeft();
+            left2 = mo423roundToPx0680j_4 + rect.getLeft();
         }
         return Rect.copy$default(rect, f, 0.0f, left2, 0.0f, 10, null);
     }

@@ -61,30 +61,30 @@ public final class CardDefaults {
     }
 
     /* renamed from: cardElevation-aqJV_2Y  reason: not valid java name */
-    public final CardElevation m1940cardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
+    public final CardElevation m1950cardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -574898487, "C(cardElevation)P(0:c#ui.unit.Dp,5:c#ui.unit.Dp,3:c#ui.unit.Dp,4:c#ui.unit.Dp,2:c#ui.unit.Dp,1:c#ui.unit.Dp):Card.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = FilledCardTokens.INSTANCE.m3358getContainerElevationD9Ej5fM();
+            f = FilledCardTokens.INSTANCE.m3368getContainerElevationD9Ej5fM();
         }
         float f7 = f;
         if ((i2 & 2) != 0) {
-            f2 = FilledCardTokens.INSTANCE.m3364getPressedContainerElevationD9Ej5fM();
+            f2 = FilledCardTokens.INSTANCE.m3374getPressedContainerElevationD9Ej5fM();
         }
         float f8 = f2;
         if ((i2 & 4) != 0) {
-            f3 = FilledCardTokens.INSTANCE.m3361getFocusContainerElevationD9Ej5fM();
+            f3 = FilledCardTokens.INSTANCE.m3371getFocusContainerElevationD9Ej5fM();
         }
         float f9 = f3;
         if ((i2 & 8) != 0) {
-            f4 = FilledCardTokens.INSTANCE.m3362getHoverContainerElevationD9Ej5fM();
+            f4 = FilledCardTokens.INSTANCE.m3372getHoverContainerElevationD9Ej5fM();
         }
         float f10 = f4;
-        float m3360getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? FilledCardTokens.INSTANCE.m3360getDraggedContainerElevationD9Ej5fM() : f5;
-        float m3359getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? FilledCardTokens.INSTANCE.m3359getDisabledContainerElevationD9Ej5fM() : f6;
+        float m3370getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? FilledCardTokens.INSTANCE.m3370getDraggedContainerElevationD9Ej5fM() : f5;
+        float m3369getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? FilledCardTokens.INSTANCE.m3369getDisabledContainerElevationD9Ej5fM() : f6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-574898487, i, -1, "androidx.compose.material3.CardDefaults.cardElevation (Card.kt:405)");
         }
-        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3360getDraggedContainerElevationD9Ej5fM, m3359getDisabledContainerElevationD9Ej5fM, null);
+        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3370getDraggedContainerElevationD9Ej5fM, m3369getDisabledContainerElevationD9Ej5fM, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -93,30 +93,30 @@ public final class CardDefaults {
     }
 
     /* renamed from: elevatedCardElevation-aqJV_2Y  reason: not valid java name */
-    public final CardElevation m1942elevatedCardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
+    public final CardElevation m1952elevatedCardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 1154241939, "C(elevatedCardElevation)P(0:c#ui.unit.Dp,5:c#ui.unit.Dp,3:c#ui.unit.Dp,4:c#ui.unit.Dp,2:c#ui.unit.Dp,1:c#ui.unit.Dp):Card.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = ElevatedCardTokens.INSTANCE.m3277getContainerElevationD9Ej5fM();
+            f = ElevatedCardTokens.INSTANCE.m3287getContainerElevationD9Ej5fM();
         }
         float f7 = f;
         if ((i2 & 2) != 0) {
-            f2 = ElevatedCardTokens.INSTANCE.m3283getPressedContainerElevationD9Ej5fM();
+            f2 = ElevatedCardTokens.INSTANCE.m3293getPressedContainerElevationD9Ej5fM();
         }
         float f8 = f2;
         if ((i2 & 4) != 0) {
-            f3 = ElevatedCardTokens.INSTANCE.m3280getFocusContainerElevationD9Ej5fM();
+            f3 = ElevatedCardTokens.INSTANCE.m3290getFocusContainerElevationD9Ej5fM();
         }
         float f9 = f3;
         if ((i2 & 8) != 0) {
-            f4 = ElevatedCardTokens.INSTANCE.m3281getHoverContainerElevationD9Ej5fM();
+            f4 = ElevatedCardTokens.INSTANCE.m3291getHoverContainerElevationD9Ej5fM();
         }
         float f10 = f4;
-        float m3279getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? ElevatedCardTokens.INSTANCE.m3279getDraggedContainerElevationD9Ej5fM() : f5;
-        float m3278getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? ElevatedCardTokens.INSTANCE.m3278getDisabledContainerElevationD9Ej5fM() : f6;
+        float m3289getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? ElevatedCardTokens.INSTANCE.m3289getDraggedContainerElevationD9Ej5fM() : f5;
+        float m3288getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? ElevatedCardTokens.INSTANCE.m3288getDisabledContainerElevationD9Ej5fM() : f6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1154241939, i, -1, "androidx.compose.material3.CardDefaults.elevatedCardElevation (Card.kt:434)");
         }
-        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3279getDraggedContainerElevationD9Ej5fM, m3278getDisabledContainerElevationD9Ej5fM, null);
+        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3289getDraggedContainerElevationD9Ej5fM, m3288getDisabledContainerElevationD9Ej5fM, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -125,21 +125,21 @@ public final class CardDefaults {
     }
 
     /* renamed from: outlinedCardElevation-aqJV_2Y  reason: not valid java name */
-    public final CardElevation m1944outlinedCardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
+    public final CardElevation m1954outlinedCardElevationaqJV_2Y(float f, float f2, float f3, float f4, float f5, float f6, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -97678773, "C(outlinedCardElevation)P(0:c#ui.unit.Dp,5:c#ui.unit.Dp,3:c#ui.unit.Dp,4:c#ui.unit.Dp,2:c#ui.unit.Dp,1:c#ui.unit.Dp):Card.kt#uh7d8r");
         if ((i2 & 1) != 0) {
-            f = OutlinedCardTokens.INSTANCE.m3457getContainerElevationD9Ej5fM();
+            f = OutlinedCardTokens.INSTANCE.m3467getContainerElevationD9Ej5fM();
         }
         float f7 = f;
         float f8 = (i2 & 2) != 0 ? f7 : f2;
         float f9 = (i2 & 4) != 0 ? f7 : f3;
         float f10 = (i2 & 8) != 0 ? f7 : f4;
-        float m3459getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? OutlinedCardTokens.INSTANCE.m3459getDraggedContainerElevationD9Ej5fM() : f5;
-        float m3458getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? OutlinedCardTokens.INSTANCE.m3458getDisabledContainerElevationD9Ej5fM() : f6;
+        float m3469getDraggedContainerElevationD9Ej5fM = (i2 & 16) != 0 ? OutlinedCardTokens.INSTANCE.m3469getDraggedContainerElevationD9Ej5fM() : f5;
+        float m3468getDisabledContainerElevationD9Ej5fM = (i2 & 32) != 0 ? OutlinedCardTokens.INSTANCE.m3468getDisabledContainerElevationD9Ej5fM() : f6;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-97678773, i, -1, "androidx.compose.material3.CardDefaults.outlinedCardElevation (Card.kt:463)");
         }
-        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3459getDraggedContainerElevationD9Ej5fM, m3458getDisabledContainerElevationD9Ej5fM, null);
+        CardElevation cardElevation = new CardElevation(f7, f8, f9, f10, m3469getDraggedContainerElevationD9Ej5fM, m3468getDisabledContainerElevationD9Ej5fM, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -161,27 +161,27 @@ public final class CardDefaults {
     }
 
     /* renamed from: cardColors-ro_MJ88  reason: not valid java name */
-    public final CardColors m1939cardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final CardColors m1949cardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1589582123, "C(cardColors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color,2:c#ui.graphics.Color,3:c#ui.graphics.Color)490@21903L31,494@22109L11:Card.kt#uh7d8r");
-        long m4573getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m2040contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2040contentColorForek8zF_U(m4573getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4573getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
-        long m4536copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4536copywmQWz5c$default(m2040contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        long m4585getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m2050contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2050contentColorForek8zF_U(m4585getUnspecified0d7_KjU, composer, i & 14) : j2;
+        long m4585getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
+        long m4548copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4548copywmQWz5c$default(m2050contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1589582123, i, -1, "androidx.compose.material3.CardDefaults.cardColors (Card.kt:494)");
         }
-        CardColors m1934copyjRlVdoo = getDefaultCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1934copyjRlVdoo(m4573getUnspecified0d7_KjU, m2040contentColorForek8zF_U, m4573getUnspecified0d7_KjU2, m4536copywmQWz5c$default);
+        CardColors m1944copyjRlVdoo = getDefaultCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1944copyjRlVdoo(m4585getUnspecified0d7_KjU, m2050contentColorForek8zF_U, m4585getUnspecified0d7_KjU2, m4548copywmQWz5c$default);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1934copyjRlVdoo;
+        return m1944copyjRlVdoo;
     }
 
     public final CardColors getDefaultCardColors$material3_release(ColorScheme colorScheme) {
         CardColors defaultCardColorsCached$material3_release = colorScheme.getDefaultCardColorsCached$material3_release();
         if (defaultCardColorsCached$material3_release == null) {
-            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), ColorKt.m4582compositeOverOWjLjI(Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getDisabledContainerColor()), FilledCardTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), Color.m4536copywmQWz5c$default(ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getDisabledContainerColor()), FilledCardTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), Color.m4548copywmQWz5c$default(ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, FilledCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultCardColorsCached$material3_release(cardColors);
             return cardColors;
         }
@@ -202,27 +202,27 @@ public final class CardDefaults {
     }
 
     /* renamed from: elevatedCardColors-ro_MJ88  reason: not valid java name */
-    public final CardColors m1941elevatedCardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final CardColors m1951elevatedCardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, 139558303, "C(elevatedCardColors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color,2:c#ui.graphics.Color,3:c#ui.graphics.Color)536@24145L31,540@24351L11:Card.kt#uh7d8r");
-        long m4573getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m2040contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2040contentColorForek8zF_U(m4573getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4573getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
-        long m4536copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4536copywmQWz5c$default(m2040contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        long m4585getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m2050contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2050contentColorForek8zF_U(m4585getUnspecified0d7_KjU, composer, i & 14) : j2;
+        long m4585getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
+        long m4548copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4548copywmQWz5c$default(m2050contentColorForek8zF_U, 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(139558303, i, -1, "androidx.compose.material3.CardDefaults.elevatedCardColors (Card.kt:540)");
         }
-        CardColors m1934copyjRlVdoo = getDefaultElevatedCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1934copyjRlVdoo(m4573getUnspecified0d7_KjU, m2040contentColorForek8zF_U, m4573getUnspecified0d7_KjU2, m4536copywmQWz5c$default);
+        CardColors m1944copyjRlVdoo = getDefaultElevatedCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1944copyjRlVdoo(m4585getUnspecified0d7_KjU, m2050contentColorForek8zF_U, m4585getUnspecified0d7_KjU2, m4548copywmQWz5c$default);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1934copyjRlVdoo;
+        return m1944copyjRlVdoo;
     }
 
     public final CardColors getDefaultElevatedCardColors$material3_release(ColorScheme colorScheme) {
         CardColors defaultElevatedCardColorsCached$material3_release = colorScheme.getDefaultElevatedCardColorsCached$material3_release();
         if (defaultElevatedCardColorsCached$material3_release == null) {
-            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor())), ColorKt.m4582compositeOverOWjLjI(Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getDisabledContainerColor()), ElevatedCardTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getDisabledContainerColor())), Color.m4536copywmQWz5c$default(ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor())), ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getDisabledContainerColor()), ElevatedCardTokens.INSTANCE.getDisabledContainerOpacity(), 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getDisabledContainerColor())), Color.m4548copywmQWz5c$default(ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, ElevatedCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultElevatedCardColorsCached$material3_release(cardColors);
             return cardColors;
         }
@@ -243,27 +243,27 @@ public final class CardDefaults {
     }
 
     /* renamed from: outlinedCardColors-ro_MJ88  reason: not valid java name */
-    public final CardColors m1943outlinedCardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final CardColors m1953outlinedCardColorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1112362409, "C(outlinedCardColors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color,2:c#ui.graphics.Color,3:c#ui.graphics.Color)585@26537L31,587@26667L31,589@26762L11:Card.kt#uh7d8r");
-        long m4573getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m2040contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2040contentColorForek8zF_U(m4573getUnspecified0d7_KjU, composer, i & 14) : j2;
-        long m4573getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
-        long m4536copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.m2040contentColorForek8zF_U(m4573getUnspecified0d7_KjU, composer, i & 14), 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
+        long m4585getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m2050contentColorForek8zF_U = (i2 & 2) != 0 ? ColorSchemeKt.m2050contentColorForek8zF_U(m4585getUnspecified0d7_KjU, composer, i & 14) : j2;
+        long m4585getUnspecified0d7_KjU2 = (i2 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
+        long m4548copywmQWz5c$default = (i2 & 8) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.m2050contentColorForek8zF_U(m4585getUnspecified0d7_KjU, composer, i & 14), 0.38f, 0.0f, 0.0f, 0.0f, 14, null) : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1112362409, i, -1, "androidx.compose.material3.CardDefaults.outlinedCardColors (Card.kt:589)");
         }
-        CardColors m1934copyjRlVdoo = getDefaultOutlinedCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1934copyjRlVdoo(m4573getUnspecified0d7_KjU, m2040contentColorForek8zF_U, m4573getUnspecified0d7_KjU2, m4536copywmQWz5c$default);
+        CardColors m1944copyjRlVdoo = getDefaultOutlinedCardColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m1944copyjRlVdoo(m4585getUnspecified0d7_KjU, m2050contentColorForek8zF_U, m4585getUnspecified0d7_KjU2, m4548copywmQWz5c$default);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1934copyjRlVdoo;
+        return m1944copyjRlVdoo;
     }
 
     public final CardColors getDefaultOutlinedCardColors$material3_release(ColorScheme colorScheme) {
         CardColors defaultOutlinedCardColorsCached$material3_release = colorScheme.getDefaultOutlinedCardColorsCached$material3_release();
         if (defaultOutlinedCardColorsCached$material3_release == null) {
-            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor())), ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor()), Color.m4536copywmQWz5c$default(ColorSchemeKt.m2039contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            CardColors cardColors = new CardColors(ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor()), ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor())), ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor()), Color.m4548copywmQWz5c$default(ColorSchemeKt.m2049contentColorFor4WTKRHQ(colorScheme, ColorSchemeKt.fromToken(colorScheme, OutlinedCardTokens.INSTANCE.getContainerColor())), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultOutlinedCardColorsCached$material3_release(cardColors);
             return cardColors;
         }
@@ -271,7 +271,7 @@ public final class CardDefaults {
     }
 
     public final BorderStroke outlinedCardBorder(boolean z, Composer composer, int i, int i2) {
-        long m4582compositeOverOWjLjI;
+        long m4594compositeOverOWjLjI;
         ComposerKt.sourceInformationMarkerStart(composer, -392936593, "C(outlinedCardBorder)626@28402L72:Card.kt#uh7d8r");
         if ((i2 & 1) != 0) {
             z = true;
@@ -282,19 +282,19 @@ public final class CardDefaults {
         if (z) {
             composer.startReplaceGroup(-134409770);
             ComposerKt.sourceInformation(composer, "620@28131L5");
-            m4582compositeOverOWjLjI = ColorSchemeKt.getValue(OutlinedCardTokens.INSTANCE.getOutlineColor(), composer, 6);
+            m4594compositeOverOWjLjI = ColorSchemeKt.getValue(OutlinedCardTokens.INSTANCE.getOutlineColor(), composer, 6);
             composer.endReplaceGroup();
         } else {
             composer.startReplaceGroup(-134330379);
             ComposerKt.sourceInformation(composer, "622@28214L5,624@28366L5");
-            m4582compositeOverOWjLjI = ColorKt.m4582compositeOverOWjLjI(Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedCardTokens.INSTANCE.getDisabledOutlineColor(), composer, 6), 0.12f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(ElevatedCardTokens.INSTANCE.getContainerColor(), composer, 6));
+            m4594compositeOverOWjLjI = ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(OutlinedCardTokens.INSTANCE.getDisabledOutlineColor(), composer, 6), 0.12f, 0.0f, 0.0f, 0.0f, 14, null), ColorSchemeKt.getValue(ElevatedCardTokens.INSTANCE.getContainerColor(), composer, 6));
             composer.endReplaceGroup();
         }
         ComposerKt.sourceInformationMarkerStart(composer, -974156849, "CC(remember):Card.kt#9igjgp");
-        boolean changed = composer.changed(m4582compositeOverOWjLjI);
+        boolean changed = composer.changed(m4594compositeOverOWjLjI);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = BorderStrokeKt.m287BorderStrokecXLIe8U(OutlinedCardTokens.INSTANCE.m3463getOutlineWidthD9Ej5fM(), m4582compositeOverOWjLjI);
+            rememberedValue = BorderStrokeKt.m297BorderStrokecXLIe8U(OutlinedCardTokens.INSTANCE.m3473getOutlineWidthD9Ej5fM(), m4594compositeOverOWjLjI);
             composer.updateRememberedValue(rememberedValue);
         }
         BorderStroke borderStroke = (BorderStroke) rememberedValue;

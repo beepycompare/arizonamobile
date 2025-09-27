@@ -103,13 +103,13 @@ public final class TextFieldSelectionManager_androidKt {
         AnnotatedString transformedText$foundation_release = textFieldSelectionManager.getTransformedText$foundation_release();
         TextRange textRange = null;
         String text = transformedText$foundation_release != null ? transformedText$foundation_release.getText() : null;
-        TextRange m1824getLatestSelectionMzsxiRA$foundation_release = textFieldSelectionManager.m1824getLatestSelectionMzsxiRA$foundation_release();
-        if (m1824getLatestSelectionMzsxiRA$foundation_release != null) {
-            long m6717unboximpl = m1824getLatestSelectionMzsxiRA$foundation_release.m6717unboximpl();
+        TextRange m1834getLatestSelectionMzsxiRA$foundation_release = textFieldSelectionManager.m1834getLatestSelectionMzsxiRA$foundation_release();
+        if (m1834getLatestSelectionMzsxiRA$foundation_release != null) {
+            long m6730unboximpl = m1834getLatestSelectionMzsxiRA$foundation_release.m6730unboximpl();
             OffsetMapping offsetMapping$foundation_release = textFieldSelectionManager.getOffsetMapping$foundation_release();
-            textRange = TextRange.m6701boximpl(TextRangeKt.TextRange(offsetMapping$foundation_release.originalToTransformed(TextRange.m6713getStartimpl(m6717unboximpl)), offsetMapping$foundation_release.originalToTransformed(TextRange.m6708getEndimpl(m6717unboximpl))));
+            textRange = TextRange.m6714boximpl(TextRangeKt.TextRange(offsetMapping$foundation_release.originalToTransformed(TextRange.m6726getStartimpl(m6730unboximpl)), offsetMapping$foundation_release.originalToTransformed(TextRange.m6721getEndimpl(m6730unboximpl))));
         }
-        PlatformSelectionBehaviors_androidKt.m1743addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, editable, text, textRange, textFieldSelectionManager.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda1
+        PlatformSelectionBehaviors_androidKt.m1753addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, editable, text, textRange, textFieldSelectionManager.getPlatformSelectionBehaviors$foundation_release(), new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit addBasicTextFieldTextContextMenuComponents$lambda$8$lambda$7;
@@ -185,8 +185,8 @@ public final class TextFieldSelectionManager_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit contextMenuBuilder$lambda$15(State state, final TextFieldSelectionManager textFieldSelectionManager, ContextMenuState contextMenuState, ContextMenuScope contextMenuScope) {
-        int m1325unboximpl = ((MenuItemsAvailability) state.getValue()).m1325unboximpl();
-        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Cut, MenuItemsAvailability.m1320getCanCutimpl(m1325unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda0
+        int m1335unboximpl = ((MenuItemsAvailability) state.getValue()).m1335unboximpl();
+        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Cut, MenuItemsAvailability.m1330getCanCutimpl(m1335unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$15$lambda$10;
@@ -194,7 +194,7 @@ public final class TextFieldSelectionManager_androidKt {
                 return contextMenuBuilder$lambda$15$lambda$10;
             }
         });
-        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Copy, MenuItemsAvailability.m1319getCanCopyimpl(m1325unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda4
+        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Copy, MenuItemsAvailability.m1329getCanCopyimpl(m1335unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$15$lambda$11;
@@ -202,7 +202,7 @@ public final class TextFieldSelectionManager_androidKt {
                 return contextMenuBuilder$lambda$15$lambda$11;
             }
         });
-        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Paste, MenuItemsAvailability.m1321getCanPasteimpl(m1325unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda5
+        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Paste, MenuItemsAvailability.m1331getCanPasteimpl(m1335unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$15$lambda$12;
@@ -210,7 +210,7 @@ public final class TextFieldSelectionManager_androidKt {
                 return contextMenuBuilder$lambda$15$lambda$12;
             }
         });
-        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1322getCanSelectAllimpl(m1325unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda6
+        contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1332getCanSelectAllimpl(m1335unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$15$lambda$13;
@@ -219,7 +219,7 @@ public final class TextFieldSelectionManager_androidKt {
             }
         });
         if (Build.VERSION.SDK_INT >= 26) {
-            contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1318getCanAutofillimpl(m1325unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda7
+            contextMenuBuilder$lambda$15$textFieldItem$9(contextMenuScope, contextMenuState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1328getCanAutofillimpl(m1335unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager_androidKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit contextMenuBuilder$lambda$15$lambda$14;

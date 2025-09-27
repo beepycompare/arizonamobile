@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 final class BasicTextFieldDefaults {
     public static final BasicTextFieldDefaults INSTANCE = new BasicTextFieldDefaults();
-    private static final SolidColor CursorBrush = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+    private static final SolidColor CursorBrush = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
 
     private BasicTextFieldDefaults() {
     }

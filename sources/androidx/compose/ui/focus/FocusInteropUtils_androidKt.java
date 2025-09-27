@@ -24,67 +24,67 @@ public final class FocusInteropUtils_androidKt {
                             if (i != 130) {
                                 return null;
                             }
-                            return FocusDirection.m4169boximpl(FocusDirection.Companion.m4176getDowndhqQ8s());
+                            return FocusDirection.m4181boximpl(FocusDirection.Companion.m4188getDowndhqQ8s());
                         }
-                        return FocusDirection.m4169boximpl(FocusDirection.Companion.m4182getRightdhqQ8s());
+                        return FocusDirection.m4181boximpl(FocusDirection.Companion.m4194getRightdhqQ8s());
                     }
-                    return FocusDirection.m4169boximpl(FocusDirection.Companion.m4183getUpdhqQ8s());
+                    return FocusDirection.m4181boximpl(FocusDirection.Companion.m4195getUpdhqQ8s());
                 }
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4179getLeftdhqQ8s());
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4191getLeftdhqQ8s());
             }
-            return FocusDirection.m4169boximpl(FocusDirection.Companion.m4180getNextdhqQ8s());
+            return FocusDirection.m4181boximpl(FocusDirection.Companion.m4192getNextdhqQ8s());
         }
-        return FocusDirection.m4169boximpl(FocusDirection.Companion.m4181getPreviousdhqQ8s());
+        return FocusDirection.m4181boximpl(FocusDirection.Companion.m4193getPreviousdhqQ8s());
     }
 
     /* renamed from: toAndroidFocusDirection-3ESFkO8  reason: not valid java name */
-    public static final Integer m4184toAndroidFocusDirection3ESFkO8(int i) {
-        if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4183getUpdhqQ8s())) {
+    public static final Integer m4196toAndroidFocusDirection3ESFkO8(int i) {
+        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4195getUpdhqQ8s())) {
             return 33;
         }
-        if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4176getDowndhqQ8s())) {
+        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4188getDowndhqQ8s())) {
             return Integer.valueOf((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
         }
-        if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4179getLeftdhqQ8s())) {
+        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4191getLeftdhqQ8s())) {
             return 17;
         }
-        if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4182getRightdhqQ8s())) {
+        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4194getRightdhqQ8s())) {
             return 66;
         }
-        if (FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4180getNextdhqQ8s())) {
+        if (FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4192getNextdhqQ8s())) {
             return 2;
         }
-        return FocusDirection.m4172equalsimpl0(i, FocusDirection.Companion.m4181getPreviousdhqQ8s()) ? 1 : null;
+        return FocusDirection.m4184equalsimpl0(i, FocusDirection.Companion.m4193getPreviousdhqQ8s()) ? 1 : null;
     }
 
     /* renamed from: toFocusDirection-ZmokQxo  reason: not valid java name */
-    public static final FocusDirection m4185toFocusDirectionZmokQxo(KeyEvent keyEvent) {
-        long m5682getKeyZmokQxo = KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent);
-        if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5534getNavigatePreviousEK5gGoQ())) {
-            return FocusDirection.m4169boximpl(FocusDirection.Companion.m4181getPreviousdhqQ8s());
+    public static final FocusDirection m4197toFocusDirectionZmokQxo(KeyEvent keyEvent) {
+        long m5695getKeyZmokQxo = KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent);
+        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5547getNavigatePreviousEK5gGoQ())) {
+            return FocusDirection.m4181boximpl(FocusDirection.Companion.m4193getPreviousdhqQ8s());
         }
-        if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5532getNavigateNextEK5gGoQ())) {
-            return FocusDirection.m4169boximpl(FocusDirection.Companion.m4180getNextdhqQ8s());
+        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5545getNavigateNextEK5gGoQ())) {
+            return FocusDirection.m4181boximpl(FocusDirection.Companion.m4192getNextdhqQ8s());
         }
-        if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5610getTabEK5gGoQ())) {
-            return FocusDirection.m4169boximpl(KeyEvent_androidKt.m5688isShiftPressedZmokQxo(keyEvent) ? FocusDirection.Companion.m4181getPreviousdhqQ8s() : FocusDirection.Companion.m4180getNextdhqQ8s());
-        } else if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5451getDirectionRightEK5gGoQ())) {
-            return FocusDirection.m4169boximpl(FocusDirection.Companion.m4182getRightdhqQ8s());
+        if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5623getTabEK5gGoQ())) {
+            return FocusDirection.m4181boximpl(KeyEvent_androidKt.m5701isShiftPressedZmokQxo(keyEvent) ? FocusDirection.Companion.m4193getPreviousdhqQ8s() : FocusDirection.Companion.m4192getNextdhqQ8s());
+        } else if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5464getDirectionRightEK5gGoQ())) {
+            return FocusDirection.m4181boximpl(FocusDirection.Companion.m4194getRightdhqQ8s());
         } else {
-            if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5450getDirectionLeftEK5gGoQ())) {
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4179getLeftdhqQ8s());
+            if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5463getDirectionLeftEK5gGoQ())) {
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4191getLeftdhqQ8s());
             }
-            if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5452getDirectionUpEK5gGoQ()) || Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5563getPageUpEK5gGoQ())) {
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4183getUpdhqQ8s());
+            if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5465getDirectionUpEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5576getPageUpEK5gGoQ())) {
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4195getUpdhqQ8s());
             }
-            if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5447getDirectionDownEK5gGoQ()) || Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5562getPageDownEK5gGoQ())) {
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4176getDowndhqQ8s());
+            if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5460getDirectionDownEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5575getPageDownEK5gGoQ())) {
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4188getDowndhqQ8s());
             }
-            if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5446getDirectionCenterEK5gGoQ()) || Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5460getEnterEK5gGoQ()) || Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5552getNumPadEnterEK5gGoQ())) {
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4177getEnterdhqQ8s());
+            if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5459getDirectionCenterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5473getEnterEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5565getNumPadEnterEK5gGoQ())) {
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4189getEnterdhqQ8s());
             }
-            if (Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5389getBackEK5gGoQ()) || Key.m5374equalsimpl0(m5682getKeyZmokQxo, Key.Companion.m5463getEscapeEK5gGoQ())) {
-                return FocusDirection.m4169boximpl(FocusDirection.Companion.m4178getExitdhqQ8s());
+            if (Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5402getBackEK5gGoQ()) || Key.m5387equalsimpl0(m5695getKeyZmokQxo, Key.Companion.m5476getEscapeEK5gGoQ())) {
+                return FocusDirection.m4181boximpl(FocusDirection.Companion.m4190getExitdhqQ8s());
             }
             return null;
         }

@@ -11,64 +11,64 @@ public final class SpanRange {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SpanRange m1112boximpl(long j) {
+    public static final /* synthetic */ SpanRange m1122boximpl(long j) {
         return new SpanRange(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m1114constructorimpl(long j) {
+    private static long m1124constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1115equalsimpl(long j, Object obj) {
-        return (obj instanceof SpanRange) && j == ((SpanRange) obj).m1122unboximpl();
+    public static boolean m1125equalsimpl(long j, Object obj) {
+        return (obj instanceof SpanRange) && j == ((SpanRange) obj).m1132unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1116equalsimpl0(long j, long j2) {
+    public static final boolean m1126equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getEnd-impl  reason: not valid java name */
-    public static final int m1117getEndimpl(long j) {
+    public static final int m1127getEndimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static final int m1118getSizeimpl(long j) {
+    public static final int m1128getSizeimpl(long j) {
         return ((int) (4294967295L & j)) - ((int) (j >> 32));
     }
 
     /* renamed from: getStart-impl  reason: not valid java name */
-    public static final int m1119getStartimpl(long j) {
+    public static final int m1129getStartimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1120hashCodeimpl(long j) {
+    public static int m1130hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1121toStringimpl(long j) {
+    public static String m1131toStringimpl(long j) {
         return "SpanRange(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1115equalsimpl(this.packedValue, obj);
+        return m1125equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m1120hashCodeimpl(this.packedValue);
+        return m1130hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m1121toStringimpl(this.packedValue);
+        return m1131toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m1122unboximpl() {
+    public final /* synthetic */ long m1132unboximpl() {
         return this.packedValue;
     }
 
@@ -81,7 +81,7 @@ public final class SpanRange {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1113constructorimpl(int i, int i2) {
-        return m1114constructorimpl(((i2 + i) & 4294967295L) | (i << 32));
+    public static long m1123constructorimpl(int i, int i2) {
+        return m1124constructorimpl(((i2 + i) & 4294967295L) | (i << 32));
     }
 }

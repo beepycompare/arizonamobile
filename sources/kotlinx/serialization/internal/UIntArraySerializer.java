@@ -19,22 +19,22 @@ public final class UIntArraySerializer extends PrimitiveArraySerializer<UInt, UI
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ int collectionSize(Object obj) {
-        return m10817collectionSizeajY9A(((UIntArray) obj).m9260unboximpl());
+        return m10832collectionSizeajY9A(((UIntArray) obj).m9275unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ UIntArray empty() {
-        return UIntArray.m9244boximpl(m10818emptyhP7Qyg());
+        return UIntArray.m9259boximpl(m10833emptyhP7Qyg());
     }
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ Object toBuilder(Object obj) {
-        return m10819toBuilderajY9A(((UIntArray) obj).m9260unboximpl());
+        return m10834toBuilderajY9A(((UIntArray) obj).m9275unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ void writeContent(CompositeEncoder compositeEncoder, UIntArray uIntArray, int i) {
-        m10820writeContentCPlH8fI(compositeEncoder, uIntArray.m9260unboximpl(), i);
+        m10835writeContentCPlH8fI(compositeEncoder, uIntArray.m9275unboximpl(), i);
     }
 
     private UIntArraySerializer() {
@@ -42,20 +42,20 @@ public final class UIntArraySerializer extends PrimitiveArraySerializer<UInt, UI
     }
 
     /* renamed from: collectionSize--ajY-9A  reason: not valid java name */
-    protected int m10817collectionSizeajY9A(int[] collectionSize) {
+    protected int m10832collectionSizeajY9A(int[] collectionSize) {
         Intrinsics.checkNotNullParameter(collectionSize, "$this$collectionSize");
-        return UIntArray.m9252getSizeimpl(collectionSize);
+        return UIntArray.m9267getSizeimpl(collectionSize);
     }
 
     /* renamed from: toBuilder--ajY-9A  reason: not valid java name */
-    protected UIntArrayBuilder m10819toBuilderajY9A(int[] toBuilder) {
+    protected UIntArrayBuilder m10834toBuilderajY9A(int[] toBuilder) {
         Intrinsics.checkNotNullParameter(toBuilder, "$this$toBuilder");
         return new UIntArrayBuilder(toBuilder, null);
     }
 
     /* renamed from: empty--hP7Qyg  reason: not valid java name */
-    protected int[] m10818emptyhP7Qyg() {
-        return UIntArray.m9245constructorimpl(0);
+    protected int[] m10833emptyhP7Qyg() {
+        return UIntArray.m9260constructorimpl(0);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,15 +63,15 @@ public final class UIntArraySerializer extends PrimitiveArraySerializer<UInt, UI
     public void readElement(CompositeDecoder decoder, int i, UIntArrayBuilder builder, boolean z) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         Intrinsics.checkNotNullParameter(builder, "builder");
-        builder.m10815appendWZ4Q5Ns$kotlinx_serialization_core(UInt.m9191constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeInt()));
+        builder.m10830appendWZ4Q5Ns$kotlinx_serialization_core(UInt.m9206constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeInt()));
     }
 
     /* renamed from: writeContent-CPlH8fI  reason: not valid java name */
-    protected void m10820writeContentCPlH8fI(CompositeEncoder encoder, int[] content, int i) {
+    protected void m10835writeContentCPlH8fI(CompositeEncoder encoder, int[] content, int i) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(content, "content");
         for (int i2 = 0; i2 < i; i2++) {
-            encoder.encodeInlineElement(getDescriptor(), i2).encodeInt(UIntArray.m9251getpVg5ArA(content, i2));
+            encoder.encodeInlineElement(getDescriptor(), i2).encodeInt(UIntArray.m9266getpVg5ArA(content, i2));
         }
     }
 }

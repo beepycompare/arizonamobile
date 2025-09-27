@@ -24,7 +24,7 @@ public final class r extends MessageNano {
     public static volatile boolean v;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1057a;
+    public byte[] f1058a;
     public C0521q b;
     public byte[] c;
     public int d;
@@ -60,7 +60,7 @@ public final class r extends MessageNano {
     }
 
     public final r a() {
-        this.f1057a = (byte[]) u.clone();
+        this.f1058a = (byte[]) u.clone();
         this.b = null;
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
         this.c = bArr;
@@ -79,8 +79,8 @@ public final class r extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!Arrays.equals(this.f1057a, u)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1057a);
+        if (!Arrays.equals(this.f1058a, u)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1058a);
         }
         C0521q c0521q = this.b;
         if (c0521q != null) {
@@ -118,8 +118,8 @@ public final class r extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f1057a, u)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1057a);
+        if (!Arrays.equals(this.f1058a, u)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f1058a);
         }
         C0521q c0521q = this.b;
         if (c0521q != null) {
@@ -171,7 +171,7 @@ public final class r extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    this.f1057a = codedInputByteBufferNano.readBytes();
+                    this.f1058a = codedInputByteBufferNano.readBytes();
                     break;
                 case 18:
                     if (this.b == null) {

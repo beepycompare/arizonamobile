@@ -28,16 +28,16 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 import ru.rustore.sdk.reactive.single.SingleMapErrorKt;
 import ru.rustore.sdk.reactive.single.SingleTimeoutKt;
 /* renamed from: ru.rustore.sdk.appupdate.r  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0813r {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1409a;
+    public final Context f1410a;
     public final C0810o b;
 
     /* JADX INFO: Add missing generic type declarations: [T] */
     /* renamed from: ru.rustore.sdk.appupdate.r$a */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class a<T> extends Lambda implements Function1<SingleEmitter<T>, Unit> {
         public final /* synthetic */ Function1<SingleEmitter<T>, ServiceConnection> b;
 
@@ -50,7 +50,7 @@ public final class C0813r {
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Object obj) {
-            Object m9091constructorimpl;
+            Object m9106constructorimpl;
             SingleEmitter<T> emitter = (SingleEmitter) obj;
             Intrinsics.checkNotNullParameter(emitter, "emitter");
             C0813r c0813r = C0813r.this;
@@ -59,26 +59,26 @@ public final class C0813r {
                 Result.Companion companion = Result.Companion;
                 ServiceConnection invoke = function1.invoke(emitter);
                 emitter.onFinish(new C0811p(c0813r, invoke));
-                C0813r.a(c0813r, c0813r.f1409a, new C0812q(emitter), invoke);
-                m9091constructorimpl = Result.m9091constructorimpl(Unit.INSTANCE);
+                C0813r.a(c0813r, c0813r.f1410a, new C0812q(emitter), invoke);
+                m9106constructorimpl = Result.m9106constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
+                m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9094exceptionOrNullimpl = Result.m9094exceptionOrNullimpl(m9091constructorimpl);
-            if (m9094exceptionOrNullimpl != null) {
-                emitter.error(m9094exceptionOrNullimpl);
+            Throwable m9109exceptionOrNullimpl = Result.m9109exceptionOrNullimpl(m9106constructorimpl);
+            if (m9109exceptionOrNullimpl != null) {
+                emitter.error(m9109exceptionOrNullimpl);
             }
             return Unit.INSTANCE;
         }
     }
 
     /* renamed from: ru.rustore.sdk.appupdate.r$b */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class b extends Lambda implements Function1<Throwable, Throwable> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final b f1411a = new b();
+        public static final b f1412a = new b();
 
         public b() {
             super(1);
@@ -95,7 +95,7 @@ public final class C0813r {
     public C0813r(Context context, C0810o appUpdateInfoMapper) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
-        this.f1409a = context;
+        this.f1410a = context;
         this.b = appUpdateInfoMapper;
     }
 
@@ -132,6 +132,6 @@ public final class C0813r {
     }
 
     public final <T> Single<T> a(Function1<? super SingleEmitter<T>, ? extends ServiceConnection> function1) {
-        return SingleMapErrorKt.mapError(SingleTimeoutKt.timeout$default(Single.Companion.create(new a(function1)), 20000L, TimeUnit.MILLISECONDS, null, 4, null), b.f1411a);
+        return SingleMapErrorKt.mapError(SingleTimeoutKt.timeout$default(Single.Companion.create(new a(function1)), 20000L, TimeUnit.MILLISECONDS, null, 4, null), b.f1412a);
     }
 }

@@ -75,7 +75,7 @@ public final class ProcessTextApi23Impl {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onClickProcessTextItem$lambda$2(Context context, ResolveInfo resolveInfo, boolean z, CharSequence charSequence, TextRange textRange) {
-        String obj = charSequence.subSequence(TextRange.m6711getMinimpl(textRange.m6717unboximpl()), TextRange.m6710getMaximpl(textRange.m6717unboximpl())).toString();
+        String obj = charSequence.subSequence(TextRange.m6724getMinimpl(textRange.m6730unboximpl()), TextRange.m6723getMaximpl(textRange.m6730unboximpl())).toString();
         Intent createProcessTextIntentForResolveInfo = INSTANCE.createProcessTextIntentForResolveInfo(resolveInfo, z);
         createProcessTextIntentForResolveInfo.putExtra("android.intent.extra.PROCESS_TEXT", obj);
         context.startActivity(createProcessTextIntentForResolveInfo);

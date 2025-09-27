@@ -9,56 +9,56 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes2.dex */
 public final class GridFlag {
     public static final Companion Companion = new Companion(null);
-    private static final int None = m7613constructorimpl$default(false, false, 3, null);
-    private static final int PlaceLayoutsOnSpansFirst = m7613constructorimpl$default(true, false, 2, null);
-    private static final int SubGridByColRow = m7613constructorimpl$default(false, true, 1, null);
+    private static final int None = m7626constructorimpl$default(false, false, 3, null);
+    private static final int PlaceLayoutsOnSpansFirst = m7626constructorimpl$default(true, false, 2, null);
+    private static final int SubGridByColRow = m7626constructorimpl$default(false, true, 1, null);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ GridFlag m7610boximpl(int i) {
+    public static final /* synthetic */ GridFlag m7623boximpl(int i) {
         return new GridFlag(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7611constructorimpl(int i) {
+    private static int m7624constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7614equalsimpl(int i, Object obj) {
-        return (obj instanceof GridFlag) && i == ((GridFlag) obj).m7621unboximpl();
+    public static boolean m7627equalsimpl(int i, Object obj) {
+        return (obj instanceof GridFlag) && i == ((GridFlag) obj).m7634unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7615equalsimpl0(int i, int i2) {
+    public static final boolean m7628equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7616hashCodeimpl(int i) {
+    public static int m7629hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: isPlaceLayoutsOnSpansFirst-impl  reason: not valid java name */
-    public static final boolean m7617isPlaceLayoutsOnSpansFirstimpl(int i) {
+    public static final boolean m7630isPlaceLayoutsOnSpansFirstimpl(int i) {
         return (i & 2) == 0;
     }
 
     /* renamed from: isSubGridByColRow-impl$constraintlayout_compose_release  reason: not valid java name */
-    public static final boolean m7618isSubGridByColRowimpl$constraintlayout_compose_release(int i) {
+    public static final boolean m7631isSubGridByColRowimpl$constraintlayout_compose_release(int i) {
         return (i & 1) > 0;
     }
 
     public boolean equals(Object obj) {
-        return m7614equalsimpl(this.value, obj);
+        return m7627equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7616hashCodeimpl(this.value);
+        return m7629hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7621unboximpl() {
+    public final /* synthetic */ int m7634unboximpl() {
         return this.value;
     }
 
@@ -67,33 +67,33 @@ public final class GridFlag {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    static /* synthetic */ int m7613constructorimpl$default(boolean z, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    static /* synthetic */ int m7626constructorimpl$default(boolean z, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             z = false;
         }
         if ((i & 2) != 0) {
             z2 = false;
         }
-        return m7612constructorimpl(z, z2);
+        return m7625constructorimpl(z, z2);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7612constructorimpl(boolean z, boolean z2) {
-        return m7611constructorimpl((z ? 0 : 2) | (z2 ? 1 : 0));
+    private static int m7625constructorimpl(boolean z, boolean z2) {
+        return m7624constructorimpl((z ? 0 : 2) | (z2 ? 1 : 0));
     }
 
     /* renamed from: or-90j8xCw  reason: not valid java name */
-    public static final int m7619or90j8xCw(int i, int i2) {
-        return m7612constructorimpl(m7617isPlaceLayoutsOnSpansFirstimpl(i) | m7617isPlaceLayoutsOnSpansFirstimpl(i2), m7618isSubGridByColRowimpl$constraintlayout_compose_release(i) | m7618isSubGridByColRowimpl$constraintlayout_compose_release(i2));
+    public static final int m7632or90j8xCw(int i, int i2) {
+        return m7625constructorimpl(m7630isPlaceLayoutsOnSpansFirstimpl(i) | m7630isPlaceLayoutsOnSpansFirstimpl(i2), m7631isSubGridByColRowimpl$constraintlayout_compose_release(i) | m7631isSubGridByColRowimpl$constraintlayout_compose_release(i2));
     }
 
     public String toString() {
-        return m7620toStringimpl(this.value);
+        return m7633toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7620toStringimpl(int i) {
-        return "GridFlag(isPlaceLayoutsOnSpansFirst = " + m7617isPlaceLayoutsOnSpansFirstimpl(i) + ')';
+    public static String m7633toStringimpl(int i) {
+        return "GridFlag(isPlaceLayoutsOnSpansFirst = " + m7630isPlaceLayoutsOnSpansFirstimpl(i) + ')';
     }
 
     /* compiled from: ConstraintLayoutBaseScope.kt */
@@ -108,17 +108,17 @@ public final class GridFlag {
         }
 
         /* renamed from: getNone-dTRCCdc  reason: not valid java name */
-        public final int m7622getNonedTRCCdc() {
+        public final int m7635getNonedTRCCdc() {
             return GridFlag.None;
         }
 
         /* renamed from: getPlaceLayoutsOnSpansFirst-dTRCCdc  reason: not valid java name */
-        public final int m7623getPlaceLayoutsOnSpansFirstdTRCCdc() {
+        public final int m7636getPlaceLayoutsOnSpansFirstdTRCCdc() {
             return GridFlag.PlaceLayoutsOnSpansFirst;
         }
 
         /* renamed from: getSubGridByColRow-dTRCCdc$constraintlayout_compose_release  reason: not valid java name */
-        public final int m7624getSubGridByColRowdTRCCdc$constraintlayout_compose_release() {
+        public final int m7637getSubGridByColRowdTRCCdc$constraintlayout_compose_release() {
             return GridFlag.SubGridByColRow;
         }
     }

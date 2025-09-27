@@ -7,28 +7,28 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class c0 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ d0 f1315a;
+    public final /* synthetic */ d0 f1316a;
 
     public c0(d0 d0Var) {
-        this.f1315a = d0Var;
+        this.f1316a = d0Var;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
     public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = b0.f1313a[activityEvent.ordinal()];
+        int i = b0.f1314a[activityEvent.ordinal()];
         try {
             if (i != 1) {
                 if (i == 2) {
-                    this.f1315a.d = true;
+                    this.f1316a.d = true;
                     return;
                 }
             }
-            C0782m c0782m = this.f1315a.e;
-            if (c0782m == null || !c0782m.f1328a) {
+            C0782m c0782m = this.f1316a.e;
+            if (c0782m == null || !c0782m.f1329a) {
                 return;
             }
-            this.f1315a.d = false;
-            d0 d0Var = this.f1315a;
+            this.f1316a.d = false;
+            d0 d0Var = this.f1316a;
             d0Var.c.postDelayed(d0Var.f, 0L);
         } catch (Throwable unused) {
         }

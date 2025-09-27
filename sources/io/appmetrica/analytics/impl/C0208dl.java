@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0208dl {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f849a;
+    public long f850a;
     public long b;
     public long c;
     public EnumC0259fl d;

@@ -9,6 +9,6 @@ public class Ib extends Oa {
 
     @Override // io.appmetrica.analytics.impl.Oa
     public void a(List<AbstractC0462nh> list) {
-        list.add(this.f607a.b);
+        list.add(this.f608a.b);
     }
 }

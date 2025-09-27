@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.documents.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DocumentsTransportBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final TextView transportEmpty;

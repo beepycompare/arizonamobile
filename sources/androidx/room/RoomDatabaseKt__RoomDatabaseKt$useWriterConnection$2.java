@@ -1,5 +1,6 @@
 package androidx.room;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,8 +13,8 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: RoomDatabase.kt */
-@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "R", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2", f = "RoomDatabase.kt", i = {}, l = {496}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "R", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.room.RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2", f = "RoomDatabase.kt", i = {}, l = {TypedValues.PositionType.TYPE_DRAWPATH}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2<R> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super R>, Object> {
     final /* synthetic */ Function2<Transactor, Continuation<? super R>, Object> $block;
@@ -56,7 +57,7 @@ public final class RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2<R> exten
         }
         ResultKt.throwOnFailure(obj);
         this.label = 1;
-        Object useConnection$room_runtime_release = this.$this_useWriterConnection.useConnection$room_runtime_release(false, this.$block, this);
-        return useConnection$room_runtime_release == coroutine_suspended ? coroutine_suspended : useConnection$room_runtime_release;
+        Object useConnection = this.$this_useWriterConnection.useConnection(false, this.$block, this);
+        return useConnection == coroutine_suspended ? coroutine_suspended : useConnection;
     }
 }

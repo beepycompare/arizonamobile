@@ -98,7 +98,7 @@ public final class LazyGridKt {
         final FlingBehavior flingBehavior2;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        PaddingValues m825PaddingValues0680j_4;
+        PaddingValues m835PaddingValues0680j_4;
         boolean z6;
         FlingBehavior flingBehavior3;
         int i8;
@@ -185,12 +185,12 @@ public final class LazyGridKt {
                                 if ((i3 & 64) != 0) {
                                     i4 &= -3670017;
                                 }
-                                m825PaddingValues0680j_4 = obj2;
+                                m835PaddingValues0680j_4 = obj2;
                                 z6 = z4;
                                 companion = obj;
                             } else {
                                 companion = i9 != 0 ? Modifier.Companion : obj;
-                                m825PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m825PaddingValues0680j_4(Dp.m7251constructorimpl(0)) : obj2;
+                                m835PaddingValues0680j_4 = i10 != 0 ? PaddingKt.m835PaddingValues0680j_4(Dp.m7264constructorimpl(0)) : obj2;
                                 z6 = i5 == 0 ? z4 : false;
                                 if ((i3 & 64) != 0) {
                                     flingBehavior3 = ScrollableDefaults.INSTANCE.flingBehavior(startRestartGroup, 6);
@@ -223,8 +223,8 @@ public final class LazyGridKt {
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     Modifier modifier3 = companion;
                                     int i13 = i8;
-                                    LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda, lazyGridState, lazyGridSlotsProvider, m825PaddingValues0680j_4, z6, z2, horizontal, vertical, coroutineScope, graphicsContext, ((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, (524272 & i8) | ((i7 << 18) & 3670016) | ((i8 >> 6) & 29360128), 0);
-                                    PaddingValues paddingValues3 = m825PaddingValues0680j_4;
+                                    LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda, lazyGridState, lazyGridSlotsProvider, m835PaddingValues0680j_4, z6, z2, horizontal, vertical, coroutineScope, graphicsContext, ((Boolean) consume2).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, (524272 & i8) | ((i7 << 18) & 3670016) | ((i8 >> 6) & 29360128), 0);
+                                    PaddingValues paddingValues3 = m835PaddingValues0680j_4;
                                     Orientation orientation = !z2 ? Orientation.Vertical : Orientation.Horizontal;
                                     if (!z3) {
                                         startRestartGroup.startReplaceGroup(27343139);
@@ -277,8 +277,8 @@ public final class LazyGridKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             Modifier modifier32 = companion;
                             int i132 = i8;
-                            LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy2 = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda2, lazyGridState, lazyGridSlotsProvider, m825PaddingValues0680j_4, z6, z2, horizontal, vertical, coroutineScope2, graphicsContext2, ((Boolean) consume22).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, (524272 & i8) | ((i7 << 18) & 3670016) | ((i8 >> 6) & 29360128), 0);
-                            PaddingValues paddingValues32 = m825PaddingValues0680j_4;
+                            LazyLayoutMeasurePolicy rememberLazyGridMeasurePolicy2 = rememberLazyGridMeasurePolicy(rememberLazyGridItemProviderLambda2, lazyGridState, lazyGridSlotsProvider, m835PaddingValues0680j_4, z6, z2, horizontal, vertical, coroutineScope2, graphicsContext2, ((Boolean) consume22).booleanValue() ? StickyItemsPlacement.Companion.getStickToTopPlacement() : null, startRestartGroup, (524272 & i8) | ((i7 << 18) & 3670016) | ((i8 >> 6) & 29360128), 0);
+                            PaddingValues paddingValues32 = m835PaddingValues0680j_4;
                             Orientation orientation2 = !z2 ? Orientation.Vertical : Orientation.Horizontal;
                             if (!z3) {
                             }

@@ -54,7 +54,7 @@ public abstract class Painter {
     }
 
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public abstract long mo5236getIntrinsicSizeNHjbRc();
+    public abstract long mo5248getIntrinsicSizeNHjbRc();
 
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract void onDraw(DrawScope drawScope);
@@ -115,7 +115,7 @@ public abstract class Painter {
     }
 
     /* renamed from: draw-x_KDEd0$default  reason: not valid java name */
-    public static /* synthetic */ void m5241drawx_KDEd0$default(Painter painter, DrawScope drawScope, long j, float f, ColorFilter colorFilter, int i, Object obj) {
+    public static /* synthetic */ void m5253drawx_KDEd0$default(Painter painter, DrawScope drawScope, long j, float f, ColorFilter colorFilter, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: draw-x_KDEd0");
         }
@@ -126,29 +126,29 @@ public abstract class Painter {
         if ((i & 4) != 0) {
             colorFilter = null;
         }
-        painter.m5242drawx_KDEd0(drawScope, j, f2, colorFilter);
+        painter.m5254drawx_KDEd0(drawScope, j, f2, colorFilter);
     }
 
     /* renamed from: draw-x_KDEd0  reason: not valid java name */
-    public final void m5242drawx_KDEd0(DrawScope drawScope, long j, float f, ColorFilter colorFilter) {
+    public final void m5254drawx_KDEd0(DrawScope drawScope, long j, float f, ColorFilter colorFilter) {
         configureAlpha(f);
         configureColorFilter(colorFilter);
         configureLayoutDirection(drawScope.getLayoutDirection());
         int i = (int) (j >> 32);
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32)) - Float.intBitsToFloat(i);
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32)) - Float.intBitsToFloat(i);
         int i2 = (int) (j & 4294967295L);
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L)) - Float.intBitsToFloat(i2);
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L)) - Float.intBitsToFloat(i2);
         drawScope.getDrawContext().getTransform().inset(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2);
         int i3 = (f > 0.0f ? 1 : (f == 0.0f ? 0 : -1));
         if (i3 > 0) {
             try {
                 if (Float.intBitsToFloat(i) > 0.0f && Float.intBitsToFloat(i2) > 0.0f) {
                     if (this.useLayer) {
-                        long m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+                        long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
                         float intBitsToFloat3 = Float.intBitsToFloat(i);
-                        Rect m4333Recttz77jQw = RectKt.m4333Recttz77jQw(m4309getZeroF1C5BW0, Size.m4353constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2)) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32)));
+                        Rect m4345Recttz77jQw = RectKt.m4345Recttz77jQw(m4321getZeroF1C5BW0, Size.m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2)) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32)));
                         Canvas canvas = drawScope.getDrawContext().getCanvas();
-                        canvas.saveLayer(m4333Recttz77jQw, obtainPaint());
+                        canvas.saveLayer(m4345Recttz77jQw, obtainPaint());
                         onDraw(drawScope);
                         canvas.restore();
                     } else {

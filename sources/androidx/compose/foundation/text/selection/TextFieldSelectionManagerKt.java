@@ -103,15 +103,15 @@ public final class TextFieldSelectionManagerKt {
                 rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$TextFieldSelectionHandle$1$1
                     @Override // androidx.compose.foundation.text.selection.OffsetProvider
                     /* renamed from: provide-F1C5BW0 */
-                    public final long mo1219provideF1C5BW0() {
-                        return TextFieldSelectionManager.this.m1823getHandlePositiontuRUvjQ$foundation_release(z);
+                    public final long mo1229provideF1C5BW0() {
+                        return TextFieldSelectionManager.this.m1833getHandlePositiontuRUvjQ$foundation_release(z);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             OffsetProvider offsetProvider = (OffsetProvider) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            boolean m6712getReversedimpl = TextRange.m6712getReversedimpl(textFieldSelectionManager.getValue$foundation_release().m6964getSelectiond9O1mEE());
+            boolean m6725getReversedimpl = TextRange.m6725getReversedimpl(textFieldSelectionManager.getValue$foundation_release().m6977getSelectiond9O1mEE());
             float handleLineHeight$foundation_release = textFieldSelectionManager.getHandleLineHeight$foundation_release(z);
             Modifier.Companion companion = Modifier.Companion;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 664053515, "CC(remember):TextFieldSelectionManager.kt#9igjgp");
@@ -128,7 +128,7 @@ public final class TextFieldSelectionManagerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidSelectionHandles_androidKt.m1721SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, m6712getReversedimpl, 0L, handleLineHeight$foundation_release, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), startRestartGroup, (i2 << 3) & 1008, 16);
+            AndroidSelectionHandles_androidKt.m1731SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, m6725getReversedimpl, 0L, handleLineHeight$foundation_release, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), startRestartGroup, (i2 << 3) & 1008, 16);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -153,55 +153,55 @@ public final class TextFieldSelectionManagerKt {
         if (state$foundation_release == null || (layoutCoordinates = state$foundation_release.getLayoutCoordinates()) == null || (visibleBounds = SelectionManagerKt.visibleBounds(layoutCoordinates)) == null) {
             return false;
         }
-        return SelectionManagerKt.m1792containsInclusiveUv8p0NA(visibleBounds, textFieldSelectionManager.m1823getHandlePositiontuRUvjQ$foundation_release(z));
+        return SelectionManagerKt.m1802containsInclusiveUv8p0NA(visibleBounds, textFieldSelectionManager.m1833getHandlePositiontuRUvjQ$foundation_release(z));
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-O0kMr_c  reason: not valid java name */
-    public static final long m1832calculateSelectionMagnifierCenterAndroidO0kMr_c(TextFieldSelectionManager textFieldSelectionManager, long j) {
-        int m6713getStartimpl;
+    public static final long m1842calculateSelectionMagnifierCenterAndroidO0kMr_c(TextFieldSelectionManager textFieldSelectionManager, long j) {
+        int m6726getStartimpl;
         TextLayoutResultProxy layoutResult;
         TextDelegate textDelegate;
         AnnotatedString text;
-        Offset m1821getCurrentDragPosition_m7T9E = textFieldSelectionManager.m1821getCurrentDragPosition_m7T9E();
-        if (m1821getCurrentDragPosition_m7T9E == null) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+        Offset m1831getCurrentDragPosition_m7T9E = textFieldSelectionManager.m1831getCurrentDragPosition_m7T9E();
+        if (m1831getCurrentDragPosition_m7T9E == null) {
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
-        long m4303unboximpl = m1821getCurrentDragPosition_m7T9E.m4303unboximpl();
+        long m4315unboximpl = m1831getCurrentDragPosition_m7T9E.m4315unboximpl();
         AnnotatedString transformedText$foundation_release = textFieldSelectionManager.getTransformedText$foundation_release();
         if (transformedText$foundation_release == null || transformedText$foundation_release.length() == 0) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
         Handle draggingHandle = textFieldSelectionManager.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
         if (i == -1) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
         if (i == 1 || i == 2) {
-            m6713getStartimpl = TextRange.m6713getStartimpl(textFieldSelectionManager.getValue$foundation_release().m6964getSelectiond9O1mEE());
+            m6726getStartimpl = TextRange.m6726getStartimpl(textFieldSelectionManager.getValue$foundation_release().m6977getSelectiond9O1mEE());
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            m6713getStartimpl = TextRange.m6708getEndimpl(textFieldSelectionManager.getValue$foundation_release().m6964getSelectiond9O1mEE());
+            m6726getStartimpl = TextRange.m6721getEndimpl(textFieldSelectionManager.getValue$foundation_release().m6977getSelectiond9O1mEE());
         }
         LegacyTextFieldState state$foundation_release = textFieldSelectionManager.getState$foundation_release();
         if (state$foundation_release == null || (layoutResult = state$foundation_release.getLayoutResult()) == null) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
         LegacyTextFieldState state$foundation_release2 = textFieldSelectionManager.getState$foundation_release();
         if (state$foundation_release2 == null || (textDelegate = state$foundation_release2.getTextDelegate()) == null || (text = textDelegate.getText()) == null) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
-        int coerceIn = RangesKt.coerceIn(textFieldSelectionManager.getOffsetMapping$foundation_release().originalToTransformed(m6713getStartimpl), 0, text.length());
-        float intBitsToFloat = Float.intBitsToFloat((int) (layoutResult.m1379translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m4303unboximpl) >> 32));
+        int coerceIn = RangesKt.coerceIn(textFieldSelectionManager.getOffsetMapping$foundation_release().originalToTransformed(m6726getStartimpl), 0, text.length());
+        float intBitsToFloat = Float.intBitsToFloat((int) (layoutResult.m1389translateDecorationToInnerCoordinatesMKHz9U$foundation_release(m4315unboximpl) >> 32));
         TextLayoutResult value = layoutResult.getValue();
         int lineForOffset = value.getLineForOffset(coerceIn);
         float lineLeft = value.getLineLeft(lineForOffset);
         float lineRight = value.getLineRight(lineForOffset);
         float coerceIn2 = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
-        if (!IntSize.m7420equalsimpl0(j, IntSize.Companion.m7427getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn2) > ((int) (j >> 32)) / 2) {
-            return Offset.Companion.m4308getUnspecifiedF1C5BW0();
+        if (!IntSize.m7433equalsimpl0(j, IntSize.Companion.m7440getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn2) > ((int) (j >> 32)) / 2) {
+            return Offset.Companion.m4320getUnspecifiedF1C5BW0();
         }
         float lineTop = value.getLineTop(lineForOffset);
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L));
     }
 }

@@ -7,19 +7,19 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C0370k3 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ProductInfo f946a;
+    public final /* synthetic */ ProductInfo f947a;
     public final /* synthetic */ C0396l3 b;
 
     public C0370k3(C0396l3 c0396l3, ProductInfo productInfo) {
         this.b = c0396l3;
-        this.f946a = productInfo;
+        this.f947a = productInfo;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
         C0396l3 c0396l3 = this.b;
-        InterfaceC0508pb interfaceC0508pb = c0396l3.f963a;
-        ProductInfo productInfo = this.f946a;
+        InterfaceC0508pb interfaceC0508pb = c0396l3.f964a;
+        ProductInfo productInfo = this.f947a;
         c0396l3.getClass();
         ((C0651v5) interfaceC0508pb).a(C0477o6.a(new C0177cg(productInfo)));
     }

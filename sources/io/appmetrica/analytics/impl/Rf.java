@@ -7,7 +7,7 @@ import java.util.List;
 public final class Rf implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X f656a;
+    public final X f657a;
     public final Sf b;
 
     public Rf() {
@@ -19,17 +19,17 @@ public final class Rf implements Converter {
     public final Zi fromModel(Tf tf) {
         int i;
         L8 l8 = new L8();
-        Zi fromModel = this.f656a.fromModel(tf.f685a);
-        l8.f555a = (B8) fromModel.f776a;
+        Zi fromModel = this.f657a.fromModel(tf.f686a);
+        l8.f556a = (B8) fromModel.f777a;
         Sn a2 = this.b.a(tf.b);
-        if (ro.a((Collection) a2.f675a)) {
+        if (ro.a((Collection) a2.f676a)) {
             i = 0;
         } else {
-            l8.b = new B8[((List) a2.f675a).size()];
+            l8.b = new B8[((List) a2.f676a).size()];
             i = 0;
-            for (int i2 = 0; i2 < ((List) a2.f675a).size(); i2++) {
-                Zi fromModel2 = this.f656a.fromModel((Y) ((List) a2.f675a).get(i2));
-                l8.b[i2] = (B8) fromModel2.f776a;
+            for (int i2 = 0; i2 < ((List) a2.f676a).size(); i2++) {
+                Zi fromModel2 = this.f657a.fromModel((Y) ((List) a2.f676a).get(i2));
+                l8.b[i2] = (B8) fromModel2.f777a;
                 i += fromModel2.b.getBytesTruncated();
             }
         }
@@ -43,7 +43,7 @@ public final class Rf implements Converter {
     }
 
     public Rf(X x, Sf sf) {
-        this.f656a = x;
+        this.f657a = x;
         this.b = sf;
     }
 

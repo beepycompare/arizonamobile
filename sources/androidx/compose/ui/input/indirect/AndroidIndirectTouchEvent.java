@@ -26,7 +26,7 @@ public final class AndroidIndirectTouchEvent implements PlatformIndirectTouchEve
 
     @Override // androidx.compose.ui.input.indirect.IndirectTouchEvent
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public long mo5356getPositionF1C5BW0() {
+    public long mo5369getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -37,7 +37,7 @@ public final class AndroidIndirectTouchEvent implements PlatformIndirectTouchEve
 
     @Override // androidx.compose.ui.input.indirect.IndirectTouchEvent
     /* renamed from: getType-LxEHWp8  reason: not valid java name */
-    public int mo5357getTypeLxEHWp8() {
+    public int mo5370getTypeLxEHWp8() {
         return this.type;
     }
 

@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: DBUtil.kt */
-@Metadata(d1 = {"\u0000\n\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "R", "transactor", "Landroidx/room/Transactor;", "androidx/room/util/DBUtil__DBUtilKt$internalPerform$2"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "R", "transactor", "Landroidx/room/Transactor;", "androidx/room/util/DBUtil__DBUtilKt$internalPerform$2"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.room.util.DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1", f = "DBUtil.android.kt", i = {0, 0, 1, 1, 2, 3}, l = {56, 57, 59, 60}, m = "invokeSuspend", n = {"transactor", "type", "transactor", "type", "transactor", "result"}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1<R> extends SuspendLambda implements Function2<Transactor, Continuation<? super R>, Object> {
@@ -51,6 +51,51 @@ public final class DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Transactor transactor, Object obj) {
         return invoke(transactor, (Continuation) ((Continuation) obj));
+    }
+
+    /* compiled from: DBUtil.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "R", "Landroidx/room/TransactionScope;", "androidx/room/util/DBUtil__DBUtilKt$internalPerform$2$result$1"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.room.util.DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1$1", f = "DBUtil.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    /* renamed from: androidx.room.util.DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1$1  reason: invalid class name */
+    /* loaded from: classes3.dex */
+    public static final class AnonymousClass1 extends SuspendLambda implements Function2<TransactionScope<R>, Continuation<? super R>, Object> {
+        final /* synthetic */ Function1 $block$inlined;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnonymousClass1(Continuation continuation, Function1 function1) {
+            super(2, continuation);
+            this.$block$inlined = function1;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(continuation, this.$block$inlined);
+            anonymousClass1.L$0 = obj;
+            return anonymousClass1;
+        }
+
+        public final Object invoke(TransactionScope<R> transactionScope, Continuation<? super R> continuation) {
+            return ((AnonymousClass1) create(transactionScope, continuation)).invokeSuspend(Unit.INSTANCE);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+            return invoke((TransactionScope) ((TransactionScope) obj), (Continuation) ((Continuation) obj2));
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) {
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            if (this.label != 0) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.throwOnFailure(obj);
+            TransactionScope transactionScope = (TransactionScope) this.L$0;
+            Intrinsics.checkNotNull(transactionScope, "null cannot be cast to non-null type androidx.room.coroutines.RawConnectionAccessor");
+            return this.$block$inlined.invoke(((RawConnectionAccessor) transactionScope).getRawConnection());
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00ae, code lost:
@@ -149,7 +194,7 @@ public final class DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$
             this.L$0 = transactor2;
             this.L$1 = sQLiteTransactionType;
             this.label = 2;
-            if (this.$this_internalPerform.getInvalidationTracker().sync$room_runtime_release(this) != coroutine_suspended) {
+            if (this.$this_internalPerform.getInvalidationTracker().sync$room_runtime(this) != coroutine_suspended) {
                 transactor3 = transactor2;
                 sQLiteTransactionType2 = sQLiteTransactionType;
                 transactor = transactor3;
@@ -166,50 +211,5 @@ public final class DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$
         this.L$1 = null;
         this.label = 3;
         obj = transactor.withTransaction(sQLiteTransactionType2, new AnonymousClass1(null, this.$block$inlined), this);
-    }
-
-    /* compiled from: DBUtil.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\b\u0012\u0004\u0012\u0002H\u00010\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "R", "Landroidx/room/TransactionScope;", "androidx/room/util/DBUtil__DBUtilKt$internalPerform$2$result$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.room.util.DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1$1", f = "DBUtil.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
-    /* renamed from: androidx.room.util.DBUtil__DBUtil_androidKt$performSuspending$lambda$1$$inlined$internalPerform$1$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
-    public static final class AnonymousClass1 extends SuspendLambda implements Function2<TransactionScope<R>, Continuation<? super R>, Object> {
-        final /* synthetic */ Function1 $block$inlined;
-        private /* synthetic */ Object L$0;
-        int label;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Continuation continuation, Function1 function1) {
-            super(2, continuation);
-            this.$block$inlined = function1;
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(continuation, this.$block$inlined);
-            anonymousClass1.L$0 = obj;
-            return anonymousClass1;
-        }
-
-        public final Object invoke(TransactionScope<R> transactionScope, Continuation<? super R> continuation) {
-            return ((AnonymousClass1) create(transactionScope, continuation)).invokeSuspend(Unit.INSTANCE);
-        }
-
-        @Override // kotlin.jvm.functions.Function2
-        public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-            return invoke((TransactionScope) ((TransactionScope) obj), (Continuation) ((Continuation) obj2));
-        }
-
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-        public final Object invokeSuspend(Object obj) {
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            if (this.label == 0) {
-                ResultKt.throwOnFailure(obj);
-                TransactionScope transactionScope = (TransactionScope) this.L$0;
-                Intrinsics.checkNotNull(transactionScope, "null cannot be cast to non-null type androidx.room.coroutines.RawConnectionAccessor");
-                return this.$block$inlined.invoke(((RawConnectionAccessor) transactionScope).getRawConnection());
-            }
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
     }
 }

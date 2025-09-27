@@ -7,13 +7,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class I5 implements Q9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V9 f489a;
+    public final V9 f490a;
     public final List b;
     public final List c;
     public final AtomicBoolean d;
 
     public I5(V9 v9, List<? extends InterfaceC0196d9> list, List<? extends InterfaceC0196d9> list2, C0476o5 c0476o5) {
-        this.f489a = v9;
+        this.f490a = v9;
         this.b = list;
         this.c = list2;
         Objects.toString(c0476o5);
@@ -59,19 +59,19 @@ public final class I5 implements Q9 {
                     }
                 }
             }
-            ((C0594sn) this.f489a).c();
+            ((C0594sn) this.f490a).c();
         }
     }
 
     public final void e() {
         if (this.d.get() && a()) {
-            ((C0594sn) this.f489a).c();
+            ((C0594sn) this.f490a).c();
         }
     }
 
     public final void f() {
         if (this.d.get() && a()) {
-            ((C0594sn) this.f489a).b();
+            ((C0594sn) this.f490a).b();
         }
     }
 }

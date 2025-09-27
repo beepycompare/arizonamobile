@@ -7,7 +7,7 @@ import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
 /* renamed from: ru.rustore.sdk.metrics.internal.w  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0843w {
     public static C0842v a(String uuid, String jsonString) {
         Intrinsics.checkNotNullParameter(uuid, "uuid");

@@ -18,15 +18,15 @@ public final class NavigationRailTokens {
     private static final ColorSchemeKeyTokens ActiveHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ActiveIndicatorHeight = Dp.m7251constructorimpl((float) 32.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7264constructorimpl((float) 32.0d);
     private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens ActiveLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActivePressedLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerWidth = Dp.m7251constructorimpl((float) 80.0d);
+    private static final float ContainerWidth = Dp.m7264constructorimpl((float) 80.0d);
     private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveFocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -47,11 +47,11 @@ public final class NavigationRailTokens {
 
     static {
         float f = (float) 56.0d;
-        ActiveIndicatorWidth = Dp.m7251constructorimpl(f);
+        ActiveIndicatorWidth = Dp.m7264constructorimpl(f);
         float f2 = (float) 24.0d;
-        IconSize = Dp.m7251constructorimpl(f2);
-        MenuIconSize = Dp.m7251constructorimpl(f2);
-        NoLabelActiveIndicatorHeight = Dp.m7251constructorimpl(f);
+        IconSize = Dp.m7264constructorimpl(f2);
+        MenuIconSize = Dp.m7264constructorimpl(f2);
+        NoLabelActiveIndicatorHeight = Dp.m7264constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getActiveFocusIconColor() {
@@ -79,7 +79,7 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3440getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3450getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -88,7 +88,7 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3441getActiveIndicatorWidthD9Ej5fM() {
+    public final float m3451getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
@@ -109,7 +109,7 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3442getContainerElevationD9Ej5fM() {
+    public final float m3452getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -118,12 +118,12 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3443getContainerWidthD9Ej5fM() {
+    public final float m3453getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3444getIconSizeD9Ej5fM() {
+    public final float m3454getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -176,7 +176,7 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getMenuIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3445getMenuIconSizeD9Ej5fM() {
+    public final float m3455getMenuIconSizeD9Ej5fM() {
         return MenuIconSize;
     }
 
@@ -185,7 +185,7 @@ public final class NavigationRailTokens {
     }
 
     /* renamed from: getNoLabelActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3446getNoLabelActiveIndicatorHeightD9Ej5fM() {
+    public final float m3456getNoLabelActiveIndicatorHeightD9Ej5fM() {
         return NoLabelActiveIndicatorHeight;
     }
 

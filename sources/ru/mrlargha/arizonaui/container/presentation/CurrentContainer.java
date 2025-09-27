@@ -12,7 +12,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import androidx.recyclerview.widget.GridLayoutManager;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.Set;
 import kotlin.Metadata;
+import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -23,6 +25,7 @@ import ru.mrlargha.arizonaui.databinding.AuctionCurrentContainerBinding;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
+import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: CurrentContainer.kt */
 @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0007\u0018\u0000 \u001d2\u00020\u0001:\u0002\u001d\u001eB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0012\u001a\u00020\u0013H\u0002J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\b\u0010\u0015\u001a\u00020\u0013H\u0002J\u000e\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u000e\u0010\u001c\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentContainer", "Landroidx/constraintlayout/widget/ConstraintLayout;", "timer", "Landroid/os/CountDownTimer;", "auctionCurrentContainerBinding", "Lru/mrlargha/arizonaui/databinding/AuctionCurrentContainerBinding;", "currentContainerAdapter", "Lru/mrlargha/arizonaui/container/presentation/CurrentContainerAdapter;", "createCurrentContainerItems", "", "showSetBetMenu", "hiddenSetBetMenu", "addContainer", "message", "", "onBackendMessage", "data", "subId", "addRewards", "Companion", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
@@ -115,19 +118,19 @@ public final class CurrentContainer extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(15:1|(2:3|(13:5|6|(1:8)(1:38)|(1:10)|11|12|(1:14)(1:35)|(7:18|(2:(1:21)|22)|23|24|(3:26|(1:28)|(1:30))|31|32)|34|24|(0)|31|32))|39|6|(0)(0)|(0)|11|12|(0)(0)|(7:18|(0)|23|24|(0)|31|32)|34|24|(0)|31|32) */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0110, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0111, code lost:
         r0.printStackTrace();
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x009b  */
     /* JADX WARN: Removed duplicated region for block: B:11:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00ca A[Catch: NumberFormatException -> 0x0112, TryCatch #0 {NumberFormatException -> 0x0112, blocks: (B:14:0x00b5, B:16:0x00ca, B:21:0x00d5, B:24:0x00ed, B:25:0x00f3, B:26:0x00f6, B:27:0x00ff), top: B:40:0x00b5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00c9 A[Catch: NumberFormatException -> 0x0110, TryCatch #0 {NumberFormatException -> 0x0110, blocks: (B:14:0x00b4, B:16:0x00c9, B:21:0x00d4, B:24:0x00ec, B:25:0x00f2, B:26:0x00f5, B:27:0x00fe), top: B:40:0x00b4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x011f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -323,13 +326,20 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     /* compiled from: CurrentContainer.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016¨\u0006\n"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
+        private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_CURRENT_CONTAINER);
+
         @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
         public SAMPUIElement create(Activity targetActivity, int i) {
             Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
             return new CurrentContainer(targetActivity, i);
+        }
+
+        @Override // ru.mrlargha.commonui.core.UIElementAbstractSpawner
+        public Set<UIElementID> getCorrectIds() {
+            return this.correctIds;
         }
     }
 }

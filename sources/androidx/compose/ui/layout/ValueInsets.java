@@ -12,60 +12,60 @@ public final class ValueInsets {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ValueInsets m6061boximpl(long j) {
+    public static final /* synthetic */ ValueInsets m6074boximpl(long j) {
         return new ValueInsets(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6062constructorimpl(long j) {
+    public static long m6075constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6063equalsimpl(long j, Object obj) {
-        return (obj instanceof ValueInsets) && j == ((ValueInsets) obj).m6071unboximpl();
+    public static boolean m6076equalsimpl(long j, Object obj) {
+        return (obj instanceof ValueInsets) && j == ((ValueInsets) obj).m6084unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6064equalsimpl0(long j, long j2) {
+    public static final boolean m6077equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getBottom-impl  reason: not valid java name */
-    public static final int m6065getBottomimpl(long j) {
+    public static final int m6078getBottomimpl(long j) {
         return (int) (j & WebSocketProtocol.PAYLOAD_SHORT_MAX);
     }
 
     /* renamed from: getLeft-impl  reason: not valid java name */
-    public static final int m6066getLeftimpl(long j) {
+    public static final int m6079getLeftimpl(long j) {
         return (int) ((j >>> 48) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
     }
 
     /* renamed from: getRight-impl  reason: not valid java name */
-    public static final int m6067getRightimpl(long j) {
+    public static final int m6080getRightimpl(long j) {
         return (int) ((j >>> 16) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
     }
 
     /* renamed from: getTop-impl  reason: not valid java name */
-    public static final int m6068getTopimpl(long j) {
+    public static final int m6081getTopimpl(long j) {
         return (int) ((j >>> 32) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6069hashCodeimpl(long j) {
+    public static int m6082hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m6063equalsimpl(this.packedValue, obj);
+        return m6076equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m6069hashCodeimpl(this.packedValue);
+        return m6082hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6071unboximpl() {
+    public final /* synthetic */ long m6084unboximpl() {
         return this.packedValue;
     }
 
@@ -78,11 +78,11 @@ public final class ValueInsets {
     }
 
     public String toString() {
-        return m6070toStringimpl(this.packedValue);
+        return m6083toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6070toStringimpl(long j) {
+    public static String m6083toStringimpl(long j) {
         return "ValueInsets(" + ((int) ((j >>> 48) & WebSocketProtocol.PAYLOAD_SHORT_MAX)) + ", " + ((int) ((j >>> 32) & WebSocketProtocol.PAYLOAD_SHORT_MAX)) + ", " + ((int) ((j >>> 16) & WebSocketProtocol.PAYLOAD_SHORT_MAX)) + ", " + ((int) (j & WebSocketProtocol.PAYLOAD_SHORT_MAX)) + ')';
     }
 }

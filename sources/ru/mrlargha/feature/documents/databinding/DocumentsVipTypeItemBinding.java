@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.documents.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DocumentsVipTypeItemBinding implements ViewBinding {
     public final ImageView documentsTransportItemIc;
     public final TextView documentsVipDescType;

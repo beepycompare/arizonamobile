@@ -145,6 +145,7 @@ public class SdkClickHandler implements ISdkClickHandler {
         }
         Boolean bool4 = bool2;
         boolean z5 = str5 != null && str5.equals(Constants.PREINSTALL);
+        boolean z6 = str5 != null && str5.equals(Constants.LICENSE_VERIFICATION);
         ResponseData sendActivityPackageSync = this.activityPackageSender.sendActivityPackageSync(activityPackage, generateSendingParametersI());
         if (sendActivityPackageSync instanceof SdkClickResponseData) {
             SdkClickResponseData sdkClickResponseData = (SdkClickResponseData) sendActivityPackageSync;
@@ -188,6 +189,9 @@ public class SdkClickHandler implements ISdkClickHandler {
                 } else {
                     defaultInstance.setPreinstallPayloadReadStatus(PreinstallUtil.markAsRead(str4, defaultInstance.getPreinstallPayloadReadStatus()));
                 }
+            }
+            if (z6) {
+                SharedPreferencesManager.getDefaultInstance(iActivityHandler.getContext()).setLicenseVerificationTracked();
             }
             iActivityHandler.finishedTrackingActivity(sdkClickResponseData);
         }

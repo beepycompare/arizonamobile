@@ -9,16 +9,16 @@ import kotlin.Metadata;
 public final class SinglePermissionStrategy implements PermissionResolutionStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private final PermissionExtractor f290a;
+    private final PermissionExtractor f291a;
     private final String b;
 
     public SinglePermissionStrategy(PermissionExtractor permissionExtractor, String str) {
-        this.f290a = permissionExtractor;
+        this.f291a = permissionExtractor;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.permission.PermissionResolutionStrategy
     public boolean hasNecessaryPermissions(Context context) {
-        return this.f290a.hasPermission(context, this.b);
+        return this.f291a.hasPermission(context, this.b);
     }
 }

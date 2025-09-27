@@ -69,7 +69,7 @@ public final class BiasAlignment implements Alignment {
 
     @Override // androidx.compose.ui.Alignment
     /* renamed from: align-KFBX0sM */
-    public long mo4016alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
+    public long mo4028alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
         float f;
         float f2 = (((int) (j2 >> 32)) - ((int) (j >> 32))) / 2.0f;
         float f3 = (((int) (j2 & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f;
@@ -79,7 +79,7 @@ public final class BiasAlignment implements Alignment {
             f = (-1) * this.horizontalBias;
         }
         float f4 = 1;
-        return IntOffset.m7373constructorimpl((Math.round(f2 * (f + f4)) << 32) | (Math.round(f3 * (f4 + this.verticalBias)) & 4294967295L));
+        return IntOffset.m7386constructorimpl((Math.round(f2 * (f + f4)) << 32) | (Math.round(f3 * (f4 + this.verticalBias)) & 4294967295L));
     }
 
     /* compiled from: Alignment.kt */

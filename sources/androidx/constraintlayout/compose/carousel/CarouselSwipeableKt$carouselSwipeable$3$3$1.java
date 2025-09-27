@@ -78,7 +78,7 @@ final class CarouselSwipeableKt$carouselSwipeable$3$3$1 extends SuspendLambda im
                     return Float.valueOf(function2.invoke(MapsKt.getValue(map, Float.valueOf(f)), MapsKt.getValue(map, Float.valueOf(f2))).computeThreshold(density, f, f2));
                 }
             });
-            this.$state.setVelocityThreshold$constraintlayout_compose_release(this.$density.mo419toPx0680j_4(this.$velocityThreshold));
+            this.$state.setVelocityThreshold$constraintlayout_compose_release(this.$density.mo429toPx0680j_4(this.$velocityThreshold));
             this.label = 1;
             if (this.$state.processNewAnchors$constraintlayout_compose_release(anchors$constraintlayout_compose_release, this.$anchors, this) == coroutine_suspended) {
                 return coroutine_suspended;

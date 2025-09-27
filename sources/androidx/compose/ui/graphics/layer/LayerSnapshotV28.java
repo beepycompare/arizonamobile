@@ -50,12 +50,12 @@ public final class LayerSnapshotV28 implements LayerSnapshotImpl {
 
         @Override // android.graphics.Picture
         public int getWidth() {
-            return (int) (this.graphicsLayer.m5207getSizeYbymL2g() >> 32);
+            return (int) (this.graphicsLayer.m5219getSizeYbymL2g() >> 32);
         }
 
         @Override // android.graphics.Picture
         public int getHeight() {
-            return (int) (this.graphicsLayer.m5207getSizeYbymL2g() & 4294967295L);
+            return (int) (this.graphicsLayer.m5219getSizeYbymL2g() & 4294967295L);
         }
 
         @Override // android.graphics.Picture

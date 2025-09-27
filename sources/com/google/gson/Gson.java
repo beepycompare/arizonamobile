@@ -27,7 +27,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
@@ -370,7 +369,7 @@ public final class Gson {
                 }
                 return typeAdapter3;
             }
-            throw new IllegalArgumentException("GSON (2.13.1) cannot handle " + typeToken);
+            throw new IllegalArgumentException("GSON (2.13.2) cannot handle " + typeToken);
         } finally {
             if (z) {
                 this.threadLocalAdapterResults.remove();
@@ -426,9 +425,9 @@ public final class Gson {
     }
 
     public String toJson(Object obj, Type type) {
-        StringWriter stringWriter = new StringWriter();
-        toJson(obj, type, stringWriter);
-        return stringWriter.toString();
+        StringBuilder sb = new StringBuilder();
+        toJson(obj, type, sb);
+        return sb.toString();
     }
 
     public void toJson(Object obj, Appendable appendable) throws JsonIOException {
@@ -465,7 +464,7 @@ public final class Gson {
                 try {
                     adapter.write(jsonWriter, obj);
                 } catch (AssertionError e) {
-                    throw new AssertionError("AssertionError (GSON 2.13.1): " + e.getMessage(), e);
+                    throw new AssertionError("AssertionError (GSON 2.13.2): " + e.getMessage(), e);
                 }
             } catch (IOException e2) {
                 throw new JsonIOException(e2);
@@ -478,9 +477,9 @@ public final class Gson {
     }
 
     public String toJson(JsonElement jsonElement) {
-        StringWriter stringWriter = new StringWriter();
-        toJson(jsonElement, (Appendable) stringWriter);
-        return stringWriter.toString();
+        StringBuilder sb = new StringBuilder();
+        toJson(jsonElement, (Appendable) sb);
+        return sb.toString();
     }
 
     public void toJson(JsonElement jsonElement, Appendable appendable) throws JsonIOException {
@@ -509,7 +508,7 @@ public final class Gson {
             } catch (IOException e) {
                 throw new JsonIOException(e);
             } catch (AssertionError e2) {
-                throw new AssertionError("AssertionError (GSON 2.13.1): " + e2.getMessage(), e2);
+                throw new AssertionError("AssertionError (GSON 2.13.2): " + e2.getMessage(), e2);
             }
         } finally {
             jsonWriter.setStrictness(strictness);
@@ -624,7 +623,7 @@ public final class Gson {
                 throw new JsonSyntaxException(e4);
             }
         } catch (AssertionError e5) {
-            throw new AssertionError("AssertionError (GSON 2.13.1): " + e5.getMessage(), e5);
+            throw new AssertionError("AssertionError (GSON 2.13.2): " + e5.getMessage(), e5);
         }
     }
 

@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CoroutinesRoom.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.room.CoroutinesRoom$Companion", f = "CoroutinesRoom.android.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {64, 94}, m = "execute", n = {"db", "cancellationSignal", "callable", "db", "cancellationSignal", "callable", "context"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3"})
 /* loaded from: classes3.dex */
 public final class CoroutinesRoom$Companion$execute$3<R> extends ContinuationImpl {

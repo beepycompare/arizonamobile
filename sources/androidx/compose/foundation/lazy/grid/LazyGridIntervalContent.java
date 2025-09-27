@@ -186,7 +186,7 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final GridItemSpan stickyHeader$lambda$6(LazyGridItemSpanScope lazyGridItemSpanScope) {
-        return GridItemSpan.m972boximpl(LazyGridSpanKt.GridItemSpan(lazyGridItemSpanScope.getMaxLineSpan()));
+        return GridItemSpan.m982boximpl(LazyGridSpanKt.GridItemSpan(lazyGridItemSpanScope.getMaxLineSpan()));
     }
 
     /* compiled from: LazyGridIntervalContent.kt */
@@ -207,6 +207,6 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final GridItemSpan DefaultSpan$lambda$7(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
-        return GridItemSpan.m972boximpl(LazyGridSpanKt.GridItemSpan(1));
+        return GridItemSpan.m982boximpl(LazyGridSpanKt.GridItemSpan(1));
     }
 }

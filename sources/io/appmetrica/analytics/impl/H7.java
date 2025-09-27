@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class H7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f473a;
+    public final Context f474a;
     public final int b;
     public final C0555r9 c;
     public final X8 d;
@@ -20,14 +20,14 @@ public final class H7 {
     public final C0477o6 h;
 
     public H7(Context context, C0208dl c0208dl, int i, C0555r9 c0555r9, X8 x8, C0290h0 c0290h0, C0299h9 c0299h9, K7 k7) {
-        this.f473a = context;
+        this.f474a = context;
         this.b = i;
         this.c = c0555r9;
         this.d = x8;
         this.e = c0290h0;
         this.f = c0299h9;
         this.g = k7;
-        this.h = x8.f738a;
+        this.h = x8.f739a;
     }
 
     public static String b() {
@@ -48,12 +48,12 @@ public final class H7 {
         String value = this.h.getValue();
         C0555r9 c0555r9 = this.c;
         int i = this.b;
-        Do r7 = c0555r9.f1063a.f1079a;
+        Do r7 = c0555r9.f1064a.f1080a;
         synchronized (r7) {
-            optJSONObject = r7.f417a.a().optJSONObject("numbers_of_type");
+            optJSONObject = r7.f418a.a().optJSONObject("numbers_of_type");
         }
         long optLong = optJSONObject != null ? optJSONObject.optLong(String.valueOf(i)) : 0L;
-        c0555r9.f1063a.a(i, 1 + optLong);
+        c0555r9.f1064a.a(i, 1 + optLong);
         Long valueOf2 = Long.valueOf(optLong);
         K7 k7 = this.g;
         k7.getClass();
@@ -69,21 +69,21 @@ public final class H7 {
             Location systemLocation = l.getSystemLocation();
             no = systemLocation != null ? new No(new Location(systemLocation), "") : null;
         }
-        boolean z = k7.f534a.d;
+        boolean z = k7.f535a.d;
         Double valueOf3 = no != null ? Double.valueOf(no.getLatitude()) : null;
         Double valueOf4 = no != null ? Double.valueOf(no.getLongitude()) : null;
         Long valueOf5 = no != null ? Long.valueOf(no.getTime()) : null;
         Integer valueOf6 = no != null ? Integer.valueOf((int) no.getAccuracy()) : null;
         Integer valueOf7 = no != null ? Integer.valueOf((int) no.getBearing()) : null;
         Integer valueOf8 = no != null ? Integer.valueOf((int) no.getSpeed()) : null;
-        I7 i7 = new I7(Boolean.valueOf(z), valueOf4, valueOf3, no != null ? Integer.valueOf((int) no.getAltitude()) : null, valueOf7, valueOf6, valueOf8, valueOf5, no != null ? no.getProvider() : null, no != null ? no.f600a : null);
+        I7 i7 = new I7(Boolean.valueOf(z), valueOf4, valueOf3, no != null ? Integer.valueOf((int) no.getAltitude()) : null, valueOf7, valueOf6, valueOf8, valueOf5, no != null ? no.getProvider() : null, no != null ? no.f601a : null);
         String str = this.h.c;
         C0290h0 c0290h0 = this.e;
-        String str2 = c0290h0.f902a;
+        String str2 = c0290h0.f903a;
         Long valueOf9 = Long.valueOf(c0290h0.b);
         Integer valueOf10 = Integer.valueOf(this.h.g);
-        Context context = this.f473a;
-        Ve ve = AbstractC0124af.f793a;
+        Context context = this.f474a;
+        Ve ve = AbstractC0124af.f794a;
         Integer valueOf11 = Integer.valueOf(((Integer) AbstractC0124af.c.a((Ze) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Ze.UNDEFINED, new Ye()))).intValue());
         String b = b();
         EnumC0273g9 enumC0273g9 = this.d.b;

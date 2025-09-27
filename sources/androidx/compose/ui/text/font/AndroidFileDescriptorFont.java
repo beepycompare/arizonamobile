@@ -23,7 +23,7 @@ public final class AndroidFileDescriptorFont extends AndroidPreloadedFont {
     }
 
     public /* synthetic */ AndroidFileDescriptorFont(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(parcelFileDescriptor, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m6833getNormal_LCdwA() : i, settings, null);
+        this(parcelFileDescriptor, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m6846getNormal_LCdwA() : i, settings, null);
     }
 
     private AndroidFileDescriptorFont(ParcelFileDescriptor parcelFileDescriptor, FontWeight fontWeight, int i, FontVariation.Settings settings) {
@@ -46,6 +46,6 @@ public final class AndroidFileDescriptorFont extends AndroidPreloadedFont {
     }
 
     public String toString() {
-        return "Font(fileDescriptor=" + this.fileDescriptor + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m6828toStringimpl(mo6778getStyle_LCdwA())) + ')';
+        return "Font(fileDescriptor=" + this.fileDescriptor + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m6841toStringimpl(mo6791getStyle_LCdwA())) + ')';
     }
 }

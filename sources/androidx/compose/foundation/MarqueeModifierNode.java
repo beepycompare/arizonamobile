@@ -109,7 +109,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         this.hasFocus$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(marqueeSpacing, null, 2, null);
         this.spacing$delegate = mutableStateOf$default2;
-        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m339boximpl(i2), null, 2, null);
+        mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(MarqueeAnimationMode.m349boximpl(i2), null, 2, null);
         this.animationMode$delegate = mutableStateOf$default3;
         this.offset = AnimatableKt.Animatable$default(0.0f, 0.0f, 2, null);
         this.spacingPx$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda2
@@ -158,13 +158,13 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     }
 
     /* renamed from: getAnimationMode-ZbEOnfQ  reason: not valid java name */
-    public final int m354getAnimationModeZbEOnfQ() {
-        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m345unboximpl();
+    public final int m364getAnimationModeZbEOnfQ() {
+        return ((MarqueeAnimationMode) this.animationMode$delegate.getValue()).m355unboximpl();
     }
 
     /* renamed from: setAnimationMode-97h66l8  reason: not valid java name */
-    public final void m355setAnimationMode97h66l8(int i) {
-        this.animationMode$delegate.setValue(MarqueeAnimationMode.m339boximpl(i));
+    public final void m365setAnimationMode97h66l8(int i) {
+        this.animationMode$delegate.setValue(MarqueeAnimationMode.m349boximpl(i));
     }
 
     private final float getDirection() {
@@ -216,10 +216,10 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
     }
 
     /* renamed from: update-lWfNwf4  reason: not valid java name */
-    public final void m356updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
+    public final void m366updatelWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
         setSpacing(marqueeSpacing);
-        m355setAnimationMode97h66l8(i2);
-        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m7256equalsimpl0(this.velocity, f)) {
+        m365setAnimationMode97h66l8(i2);
+        if (this.iterations == i && this.delayMillis == i3 && this.initialDelayMillis == i4 && Dp.m7269equalsimpl0(this.velocity, f)) {
             return;
         }
         this.iterations = i;
@@ -236,11 +236,11 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
-        setContainerWidth(ConstraintsKt.m7221constrainWidthK40F9xA(j, mo5954measureBRTryo0.getWidth()));
-        setContentWidth(mo5954measureBRTryo0.getWidth());
-        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda1
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, 0, Integer.MAX_VALUE, 0, 0, 13, null));
+        setContainerWidth(ConstraintsKt.m7234constrainWidthK40F9xA(j, mo5967measureBRTryo0.getWidth()));
+        setContentWidth(mo5967measureBRTryo0.getWidth());
+        return MeasureScope.layout$default(measureScope, getContainerWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$2;
@@ -283,10 +283,10 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
             spacingPx = (-getContentWidth()) - getSpacingPx();
         }
         float f = spacingPx;
-        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5116getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope.mo5128getSizeNHjbRc() & 4294967295L));
         GraphicsLayer graphicsLayer = this.marqueeLayer;
         if (graphicsLayer != null) {
-            contentDrawScope.mo5117recordJVtK1S4(graphicsLayer, IntSize.m7417constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat) & 4294967295L)), new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda0
+            contentDrawScope.mo5129recordJVtK1S4(graphicsLayer, IntSize.m7430constructorimpl((getContentWidth() << 32) | (MathKt.roundToInt(intBitsToFloat) & 4294967295L)), new Function1() { // from class: androidx.compose.foundation.MarqueeModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Unit draw$lambda$4$lambda$3;
@@ -297,13 +297,13 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         float containerWidth = floatValue + getContainerWidth();
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & contentDrawScope2.mo5116getSizeNHjbRc()));
-        int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (4294967295L & contentDrawScope2.mo5128getSizeNHjbRc()));
+        int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5040clipRectN_I0leg(floatValue, 0.0f, containerWidth, intBitsToFloat2, m4526getIntersectrtfAjoo);
+            drawContext.getTransform().mo5052clipRectN_I0leg(floatValue, 0.0f, containerWidth, intBitsToFloat2, m4538getIntersectrtfAjoo);
             GraphicsLayer graphicsLayer2 = this.marqueeLayer;
             if (graphicsLayer2 != null) {
                 if (z) {
@@ -326,7 +326,7 @@ public final class MarqueeModifierNode extends Modifier.Node implements LayoutMo
             }
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 

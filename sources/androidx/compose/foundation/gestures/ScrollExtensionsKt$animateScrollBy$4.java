@@ -56,12 +56,12 @@ public final class ScrollExtensionsKt$animateScrollBy$4 extends SuspendLambda im
             ResultKt.throwOnFailure(obj);
             final Scroll2DScope scroll2DScope = (Scroll2DScope) this.L$0;
             TwoWayConverter<Offset, AnimationVector2D> vectorConverter = VectorConvertersKt.getVectorConverter(Offset.Companion);
-            Offset m4282boximpl = Offset.m4282boximpl(Offset.Companion.m4309getZeroF1C5BW0());
-            Offset m4282boximpl2 = Offset.m4282boximpl(this.$value);
+            Offset m4294boximpl = Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0());
+            Offset m4294boximpl2 = Offset.m4294boximpl(this.$value);
             AnimationSpec<Offset> animationSpec = this.$animationSpec;
             final Ref.LongRef longRef = this.$previousValue;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(vectorConverter, m4282boximpl, m4282boximpl2, null, animationSpec, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollExtensionsKt$animateScrollBy$4$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(vectorConverter, m4294boximpl, m4294boximpl2, null, animationSpec, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollExtensionsKt$animateScrollBy$4$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     Unit invokeSuspend$lambda$0;
@@ -81,7 +81,7 @@ public final class ScrollExtensionsKt$animateScrollBy$4 extends SuspendLambda im
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, Scroll2DScope scroll2DScope, Offset offset, Offset offset2) {
-        longRef.element = Offset.m4298plusMKHz9U(longRef.element, scroll2DScope.mo463scrollByMKHz9U(Offset.m4297minusMKHz9U(offset.m4303unboximpl(), longRef.element)));
+        longRef.element = Offset.m4310plusMKHz9U(longRef.element, scroll2DScope.mo473scrollByMKHz9U(Offset.m4309minusMKHz9U(offset.m4315unboximpl(), longRef.element)));
         return Unit.INSTANCE;
     }
 }

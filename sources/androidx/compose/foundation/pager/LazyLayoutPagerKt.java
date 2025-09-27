@@ -67,7 +67,7 @@ import kotlinx.coroutines.CoroutineScopeKt;
 public final class LazyLayoutPagerKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit Pager_eLwUrMk$lambda$7(Modifier modifier, PagerState pagerState, PaddingValues paddingValues, boolean z, Orientation orientation, TargetedFlingBehavior targetedFlingBehavior, boolean z2, OverscrollEffect overscrollEffect, int i, float f, PageSize pageSize, NestedScrollConnection nestedScrollConnection, Function1 function1, Alignment.Horizontal horizontal, Alignment.Vertical vertical, SnapPosition snapPosition, Function4 function4, int i2, int i3, int i4, Composer composer, int i5) {
-        m1128PagereLwUrMk(modifier, pagerState, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i, f, pageSize, nestedScrollConnection, function1, horizontal, vertical, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1138PagereLwUrMk(modifier, pagerState, paddingValues, z, orientation, targetedFlingBehavior, z2, overscrollEffect, i, f, pageSize, nestedScrollConnection, function1, horizontal, vertical, snapPosition, function4, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
@@ -108,7 +108,7 @@ public final class LazyLayoutPagerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1128PagereLwUrMk(final Modifier modifier, final PagerState pagerState, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final TargetedFlingBehavior targetedFlingBehavior, final boolean z2, final OverscrollEffect overscrollEffect, int i, float f, final PageSize pageSize, NestedScrollConnection nestedScrollConnection, final Function1<? super Integer, ? extends Object> function1, final Alignment.Horizontal horizontal, final Alignment.Vertical vertical, final SnapPosition snapPosition, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1138PagereLwUrMk(final Modifier modifier, final PagerState pagerState, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final TargetedFlingBehavior targetedFlingBehavior, final boolean z2, final OverscrollEffect overscrollEffect, int i, float f, final PageSize pageSize, NestedScrollConnection nestedScrollConnection, final Function1<? super Integer, ? extends Object> function1, final Alignment.Horizontal horizontal, final Alignment.Vertical vertical, final SnapPosition snapPosition, final Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit> function4, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         int i6;
         int i7;
@@ -231,7 +231,7 @@ public final class LazyLayoutPagerKt {
                                 i12 = i7;
                             } else {
                                 int i15 = i6 != 0 ? 0 : i7;
-                                float m7251constructorimpl = i8 != 0 ? Dp.m7251constructorimpl(0) : f;
+                                float m7264constructorimpl = i8 != 0 ? Dp.m7264constructorimpl(0) : f;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-572816025, i5, i11, "androidx.compose.foundation.pager.Pager (LazyLayoutPager.kt:102)");
                                 }
@@ -288,9 +288,9 @@ public final class LazyLayoutPagerKt {
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 int i22 = i20 >> 9;
                                 int i23 = i11 << 15;
-                                LazyLayoutMeasurePolicy m1144rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1144rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i21, m7251constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, (i20 & 65520) | (i22 & 458752) | (i22 & 3670016) | ((i11 << 21) & 29360128) | (i23 & 234881024) | (i23 & 1879048192), i19 & 14);
+                                LazyLayoutMeasurePolicy m1154rememberPagerMeasurePolicy8u0NR3k = PagerMeasurePolicyKt.m1154rememberPagerMeasurePolicy8u0NR3k(rememberPagerItemProviderLambda, pagerState, paddingValues, z, orientation, i21, m7264constructorimpl, pageSize, horizontal, vertical, snapPosition, coroutineScope, (Function0) rememberedValue3, startRestartGroup, (i20 & 65520) | (i22 & 458752) | (i22 & 3670016) | ((i11 << 21) & 29360128) | (i23 & 234881024) | (i23 & 1879048192), i19 & 14);
                                 pagerState2 = pagerState;
-                                float f3 = m7251constructorimpl;
+                                float f3 = m7264constructorimpl;
                                 LazyLayoutSemanticState rememberPagerSemanticState = PagerSemanticsKt.rememberPagerSemanticState(pagerState2, orientation == Orientation.Vertical, startRestartGroup, i18);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -720289735, "CC(remember):LazyLayoutPager.kt#9igjgp");
                                 boolean z5 = (i16 == 32) | ((i20 & 458752) == 131072);
@@ -325,7 +325,7 @@ public final class LazyLayoutPagerKt {
                                     companion = Modifier.Companion;
                                 }
                                 nestedScrollConnection2 = nestedScrollConnection;
-                                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollingContainerKt.scrollingContainer(PagerKt.pagerSemantics(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(pagerState2.getRemeasurementModifier$foundation_release()).then(pagerState2.getAwaitLayoutModifier$foundation_release()), rememberPagerItemProviderLambda, rememberPagerSemanticState, orientation, z2, z, startRestartGroup, ((i20 << 6) & 458752) | (i17 & 7168) | ((i20 >> 6) & 57344)), pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation_release(), false, overscrollEffect, pagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation_release(), m1144rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
+                                LazyLayoutKt.LazyLayout(rememberPagerItemProviderLambda, NestedScrollModifierKt.nestedScroll$default(dragDirectionDetector(ScrollingContainerKt.scrollingContainer(PagerKt.pagerSemantics(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier.then(pagerState2.getRemeasurementModifier$foundation_release()).then(pagerState2.getAwaitLayoutModifier$foundation_release()), rememberPagerItemProviderLambda, rememberPagerSemanticState, orientation, z2, z, startRestartGroup, ((i20 << 6) & 458752) | (i17 & 7168) | ((i20 >> 6) & 57344)), pagerState2, orientation == Orientation.Vertical, coroutineScope, z2).then(companion), pagerState2, orientation, z2, z, pagerWrapperFlingBehavior, pagerState2.getInternalInteractionSource$foundation_release(), false, overscrollEffect, pagerBringIntoViewSpec), pagerState2), nestedScrollConnection2, null, 2, null), pagerState2.getPrefetchState$foundation_release(), m1154rememberPagerMeasurePolicy8u0NR3k, startRestartGroup, 0, 0);
                                 composer2 = startRestartGroup;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
@@ -632,11 +632,11 @@ public final class LazyLayoutPagerKt {
                                 this.label = 2;
                                 obj = awaitPointerEventScope2.awaitPointerEvent(PointerEventPass.Initial, this);
                             } else {
-                                this.$state.m1153setUpDownDifferencek4lQ0M$foundation_release(Offset.m4297minusMKHz9U(pointerInputChange.m5826getPositionF1C5BW0(), pointerInputChange2.m5826getPositionF1C5BW0()));
+                                this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.m4309minusMKHz9U(pointerInputChange.m5839getPositionF1C5BW0(), pointerInputChange2.m5839getPositionF1C5BW0()));
                                 return Unit.INSTANCE;
                             }
                         }
-                        this.$state.m1153setUpDownDifferencek4lQ0M$foundation_release(Offset.Companion.m4309getZeroF1C5BW0());
+                        this.$state.m1163setUpDownDifferencek4lQ0M$foundation_release(Offset.Companion.m4321getZeroF1C5BW0());
                         awaitPointerEventScope2 = awaitPointerEventScope;
                         pointerInputChange = null;
                         pointerInputChange2 = (PointerInputChange) obj;

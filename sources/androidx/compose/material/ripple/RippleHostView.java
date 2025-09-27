@@ -73,7 +73,7 @@ public final class RippleHostView extends View {
     }
 
     /* renamed from: addRipple-KOepWvA  reason: not valid java name */
-    public final void m1851addRippleKOepWvA(PressInteraction.Press press, boolean z, long j, int i, long j2, float f, Function0<Unit> function0) {
+    public final void m1861addRippleKOepWvA(PressInteraction.Press press, boolean z, long j, int i, long j2, float f, Function0<Unit> function0) {
         if (this.ripple == null || !Intrinsics.areEqual(Boolean.valueOf(z), this.bounded)) {
             createRipple(z);
             this.bounded = Boolean.valueOf(z);
@@ -81,9 +81,9 @@ public final class RippleHostView extends View {
         UnprojectedRipple unprojectedRipple = this.ripple;
         Intrinsics.checkNotNull(unprojectedRipple);
         this.onInvalidateRipple = function0;
-        m1852setRipplePropertiesbiQXAtU(j, i, j2, f);
+        m1862setRipplePropertiesbiQXAtU(j, i, j2, f);
         if (z) {
-            unprojectedRipple.setHotspot(Offset.m4293getXimpl(press.m628getPressPositionF1C5BW0()), Offset.m4294getYimpl(press.m628getPressPositionF1C5BW0()));
+            unprojectedRipple.setHotspot(Offset.m4305getXimpl(press.m638getPressPositionF1C5BW0()), Offset.m4306getYimpl(press.m638getPressPositionF1C5BW0()));
         } else {
             unprojectedRipple.setHotspot(unprojectedRipple.getBounds().centerX(), unprojectedRipple.getBounds().centerY());
         }
@@ -95,14 +95,14 @@ public final class RippleHostView extends View {
     }
 
     /* renamed from: setRippleProperties-biQXAtU  reason: not valid java name */
-    public final void m1852setRipplePropertiesbiQXAtU(long j, int i, long j2, float f) {
+    public final void m1862setRipplePropertiesbiQXAtU(long j, int i, long j2, float f) {
         UnprojectedRipple unprojectedRipple = this.ripple;
         if (unprojectedRipple == null) {
             return;
         }
         unprojectedRipple.trySetRadius(i);
-        unprojectedRipple.m1864setColorDxMtmZc(j2, f);
-        Rect rect = new Rect(0, 0, MathKt.roundToInt(Size.m4362getWidthimpl(j)), MathKt.roundToInt(Size.m4359getHeightimpl(j)));
+        unprojectedRipple.m1874setColorDxMtmZc(j2, f);
+        Rect rect = new Rect(0, 0, MathKt.roundToInt(Size.m4374getWidthimpl(j)), MathKt.roundToInt(Size.m4371getHeightimpl(j)));
         setLeft(rect.left);
         setTop(rect.top);
         setRight(rect.right);

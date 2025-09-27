@@ -46,9 +46,9 @@ public class ReflectionAccessFilterHelper {
 
     /* loaded from: classes4.dex */
     private static abstract class AccessChecker {
-        public static final AccessChecker INSTANCE;
+        static final AccessChecker INSTANCE;
 
-        public abstract boolean canAccess(AccessibleObject accessibleObject, Object obj);
+        abstract boolean canAccess(AccessibleObject accessibleObject, Object obj);
 
         private AccessChecker() {
         }

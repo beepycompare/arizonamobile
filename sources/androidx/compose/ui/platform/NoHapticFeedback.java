@@ -10,6 +10,6 @@ public final class NoHapticFeedback implements HapticFeedback {
 
     @Override // androidx.compose.ui.hapticfeedback.HapticFeedback
     /* renamed from: performHapticFeedback-CdsT49E */
-    public void mo5310performHapticFeedbackCdsT49E(int i) {
+    public void mo5323performHapticFeedbackCdsT49E(int i) {
     }
 }

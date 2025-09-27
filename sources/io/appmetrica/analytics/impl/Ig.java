@@ -7,9 +7,9 @@ public enum Ig {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f499a;
+    public final String f500a;
 
     Ig(String str) {
-        this.f499a = str;
+        this.f500a = str;
     }
 }

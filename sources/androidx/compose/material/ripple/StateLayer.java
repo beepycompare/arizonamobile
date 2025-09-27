@@ -80,39 +80,39 @@ final class StateLayer {
     }
 
     /* renamed from: drawStateLayer-mxwnekA  reason: not valid java name */
-    public final void m1862drawStateLayermxwnekA(DrawScope drawScope, float f, long j) {
+    public final void m1872drawStateLayermxwnekA(DrawScope drawScope, float f, long j) {
         long j2;
         float floatValue = this.animatedAlpha.getValue().floatValue();
         if (floatValue <= 0.0f) {
             return;
         }
-        long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(j, floatValue, 0.0f, 0.0f, 0.0f, 14, null);
+        long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(j, floatValue, 0.0f, 0.0f, 0.0f, 14, null);
         if (!this.bounded) {
-            DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, m4536copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
+            DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, m4548copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
             return;
         }
-        float m4362getWidthimpl = Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc());
-        float m4359getHeightimpl = Size.m4359getHeightimpl(drawScope.mo5116getSizeNHjbRc());
-        int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
+        float m4374getWidthimpl = Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc());
+        float m4371getHeightimpl = Size.m4371getHeightimpl(drawScope.mo5128getSizeNHjbRc());
+        int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5040clipRectN_I0leg(0.0f, 0.0f, m4362getWidthimpl, m4359getHeightimpl, m4526getIntersectrtfAjoo);
-            j2 = mo5037getSizeNHjbRc;
+            drawContext.getTransform().mo5052clipRectN_I0leg(0.0f, 0.0f, m4374getWidthimpl, m4371getHeightimpl, m4538getIntersectrtfAjoo);
+            j2 = mo5049getSizeNHjbRc;
             try {
-                DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, m4536copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
+                DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, m4548copywmQWz5c$default, f, 0L, 0.0f, null, null, 0, 124, null);
                 drawContext.getCanvas().restore();
-                drawContext.mo5038setSizeuvyYCjk(j2);
+                drawContext.mo5050setSizeuvyYCjk(j2);
             } catch (Throwable th) {
                 th = th;
                 drawContext.getCanvas().restore();
-                drawContext.mo5038setSizeuvyYCjk(j2);
+                drawContext.mo5050setSizeuvyYCjk(j2);
                 throw th;
             }
         } catch (Throwable th2) {
             th = th2;
-            j2 = mo5037getSizeNHjbRc;
+            j2 = mo5049getSizeNHjbRc;
         }
     }
 }

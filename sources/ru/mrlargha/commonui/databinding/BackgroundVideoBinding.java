@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.VideoView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.ui.PlayerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
@@ -16,17 +16,17 @@ public final class BackgroundVideoBinding implements ViewBinding {
     public final AppCompatImageView exitButton;
     public final ProgressBar loaderBar;
     public final TextView loadingText;
+    public final PlayerView playerView;
     private final ConstraintLayout rootView;
     public final ConstraintLayout video;
-    public final VideoView videoBg;
 
-    private BackgroundVideoBinding(ConstraintLayout rootView, AppCompatImageView exitButton, ProgressBar loaderBar, TextView loadingText, ConstraintLayout video, VideoView videoBg) {
+    private BackgroundVideoBinding(ConstraintLayout rootView, AppCompatImageView exitButton, ProgressBar loaderBar, TextView loadingText, PlayerView playerView, ConstraintLayout video) {
         this.rootView = rootView;
         this.exitButton = exitButton;
         this.loaderBar = loaderBar;
         this.loadingText = loadingText;
+        this.playerView = playerView;
         this.video = video;
-        this.videoBg = videoBg;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -56,11 +56,11 @@ public final class BackgroundVideoBinding implements ViewBinding {
                 i = R.id.loading_text;
                 TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView != null) {
-                    ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-                    i = R.id.video_bg;
-                    VideoView videoView = (VideoView) ViewBindings.findChildViewById(rootView, i);
-                    if (videoView != null) {
-                        return new BackgroundVideoBinding(constraintLayout, appCompatImageView, progressBar, textView, constraintLayout, videoView);
+                    i = R.id.playerView;
+                    PlayerView playerView = (PlayerView) ViewBindings.findChildViewById(rootView, i);
+                    if (playerView != null) {
+                        ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
+                        return new BackgroundVideoBinding(constraintLayout, appCompatImageView, progressBar, textView, playerView, constraintLayout);
                     }
                 }
             }

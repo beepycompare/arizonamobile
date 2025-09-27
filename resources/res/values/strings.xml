@@ -74,7 +74,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f130049_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f13004a_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"9240b639d617f28b4e9d019b80d6358e3d953932\"\n}\n</string>
+    <string name="res_0x7f13004a_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"4ef6c0c77fcff0a54b0d2eee10b4c3b57ee152f9\"\n}\n</string>
     <string name="common_google_play_services_enable_button">Enable</string>
     <string name="common_google_play_services_enable_text">%1$s won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title">Enable Google Play services</string>
@@ -468,6 +468,7 @@
     <string name="project_id">arizona-21</string>
     <string name="public_debug">public_debug</string>
     <string name="purchase_title">Покупка AZ-коинов</string>
+    <string name="radar_info">Частота моргания индикатора обозначает близость к пришельцу</string>
     <string name="range_end">Range end</string>
     <string name="range_start">Range start</string>
     <string name="rcon_password">RCON Password</string>
@@ -505,6 +506,7 @@
     <string name="server_list">Список серверов</string>
     <string name="server_password">Server Password</string>
     <string name="server_unreachable">Сервер недоступен</string>
+    <string name="set_i">СЕТ №%1$d</string>
     <string name="settings">Настройки</string>
     <string name="sharpening">заточка</string>
     <string name="shop">магазин</string>
@@ -549,6 +551,7 @@
     <string name="txt_number">№</string>
     <string name="unavailable">недоступно</string>
     <string name="unknown">Неизвестно</string>
+    <string name="unlock">Разоблачить</string>
     <string name="unsupported_version">Не поддерживается</string>
     <string name="unsupported_version_info">Требуется версия Android не ниже 5.0</string>
     <string name="update">Обновление</string>

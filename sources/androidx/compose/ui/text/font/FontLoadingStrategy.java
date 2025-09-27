@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FontLoadingStrategy {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Blocking = m6811constructorimpl(0);
-    private static final int OptionalLocal = m6811constructorimpl(1);
-    private static final int Async = m6811constructorimpl(2);
+    private static final int Blocking = m6824constructorimpl(0);
+    private static final int OptionalLocal = m6824constructorimpl(1);
+    private static final int Async = m6824constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FontLoadingStrategy m6810boximpl(int i) {
+    public static final /* synthetic */ FontLoadingStrategy m6823boximpl(int i) {
         return new FontLoadingStrategy(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6811constructorimpl(int i) {
+    private static int m6824constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6812equalsimpl(int i, Object obj) {
-        return (obj instanceof FontLoadingStrategy) && i == ((FontLoadingStrategy) obj).m6816unboximpl();
+    public static boolean m6825equalsimpl(int i, Object obj) {
+        return (obj instanceof FontLoadingStrategy) && i == ((FontLoadingStrategy) obj).m6829unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6813equalsimpl0(int i, int i2) {
+    public static final boolean m6826equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6814hashCodeimpl(int i) {
+    public static int m6827hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6812equalsimpl(this.value, obj);
+        return m6825equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6814hashCodeimpl(this.value);
+        return m6827hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6816unboximpl() {
+    public final /* synthetic */ int m6829unboximpl() {
         return this.value;
     }
 
@@ -61,12 +61,12 @@ public final class FontLoadingStrategy {
     }
 
     public String toString() {
-        return m6815toStringimpl(this.value);
+        return m6828toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6815toStringimpl(int i) {
-        return m6813equalsimpl0(i, Blocking) ? "Blocking" : m6813equalsimpl0(i, OptionalLocal) ? "Optional" : m6813equalsimpl0(i, Async) ? "Async" : "Invalid(value=" + i + ')';
+    public static String m6828toStringimpl(int i) {
+        return m6826equalsimpl0(i, Blocking) ? "Blocking" : m6826equalsimpl0(i, OptionalLocal) ? "Optional" : m6826equalsimpl0(i, Async) ? "Async" : "Invalid(value=" + i + ')';
     }
 
     /* compiled from: FontLoadingStrategy.kt */
@@ -81,17 +81,17 @@ public final class FontLoadingStrategy {
         }
 
         /* renamed from: getBlocking-PKNRLFQ  reason: not valid java name */
-        public final int m6818getBlockingPKNRLFQ() {
+        public final int m6831getBlockingPKNRLFQ() {
             return FontLoadingStrategy.Blocking;
         }
 
         /* renamed from: getOptionalLocal-PKNRLFQ  reason: not valid java name */
-        public final int m6819getOptionalLocalPKNRLFQ() {
+        public final int m6832getOptionalLocalPKNRLFQ() {
             return FontLoadingStrategy.OptionalLocal;
         }
 
         /* renamed from: getAsync-PKNRLFQ  reason: not valid java name */
-        public final int m6817getAsyncPKNRLFQ() {
+        public final int m6830getAsyncPKNRLFQ() {
             return FontLoadingStrategy.Async;
         }
     }

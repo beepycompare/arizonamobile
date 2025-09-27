@@ -1265,7 +1265,7 @@ public final class BasicTextFieldKt {
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     EffectsKt.DisposableEffect(textFieldSelectionState, (Function1) rememberedValue10, startRestartGroup, 0);
-                                    final boolean z20 = (z14 || KeyboardType.m6935equalsimpl0(keyboardOptions4.m1275getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6954getPasswordPjHm6EE()) || KeyboardType.m6935equalsimpl0(keyboardOptions4.m1275getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6953getNumberPasswordPjHm6EE())) ? false : true;
+                                    final boolean z20 = (z14 || KeyboardType.m6948equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6967getPasswordPjHm6EE()) || KeyboardType.m6948equalsimpl0(keyboardOptions4.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6966getNumberPasswordPjHm6EE())) ? false : true;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -204081328, "CC(remember):BasicTextField.kt#9igjgp");
                                     boolean changed5 = startRestartGroup.changed(z20) | startRestartGroup.changedInstance(mutableSharedFlow);
                                     Object rememberedValue11 = startRestartGroup.rememberedValue();
@@ -1302,15 +1302,15 @@ public final class BasicTextFieldKt {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                                        m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                                        m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1520421984, "C451@24194L3042,451@24144L3092:BasicTextField.kt#423gt5");
@@ -1377,7 +1377,7 @@ public final class BasicTextFieldKt {
                                                         i38 = 1;
                                                         i39 = 1;
                                                     }
-                                                    Modifier then = ClipKt.clipToBounds(TextFieldSizeKt.textFieldMinSize(HeightInLinesModifierKt.heightInLines(SizeKt.m872heightInVpY3zN4$default(Modifier.Companion, textLayoutState2.m1573getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle4, i38, i39), textStyle4)).then(new TextFieldCoreModifier(z22, z23, textLayoutState2, transformedTextFieldState3, textFieldSelectionState2, brush4, z24 && !z25, scrollState5, orientation3, toolbarRequesterImpl2, platformSelectionBehaviors2));
+                                                    Modifier then = ClipKt.clipToBounds(TextFieldSizeKt.textFieldMinSize(HeightInLinesModifierKt.heightInLines(SizeKt.m882heightInVpY3zN4$default(Modifier.Companion, textLayoutState2.m1583getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle4, i38, i39), textStyle4)).then(new TextFieldCoreModifier(z22, z23, textLayoutState2, transformedTextFieldState3, textFieldSelectionState2, brush4, z24 && !z25, scrollState5, orientation3, toolbarRequesterImpl2, platformSelectionBehaviors2));
                                                     TextLayoutState textLayoutState3 = textLayoutState2;
                                                     TransformedTextFieldState transformedTextFieldState4 = transformedTextFieldState3;
                                                     TextStyle textStyle5 = textStyle4;
@@ -1405,15 +1405,15 @@ public final class BasicTextFieldKt {
                                                     } else {
                                                         composer4.useNode();
                                                     }
-                                                    Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer4);
-                                                    Updater.m3862setimpl(m3855constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                    Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer4);
+                                                    Updater.m3874setimpl(m3867constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                    if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
-                                                        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
-                                                        m3855constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
+                                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(hashCode2))) {
+                                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(hashCode2));
+                                                        m3867constructorimpl2.apply(Integer.valueOf(hashCode2), setCompositeKeyHash2);
                                                     }
-                                                    Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                                     ComposerKt.sourceInformationMarkerStart(composer4, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                                     BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                                                     ComposerKt.sourceInformationMarkerStart(composer4, -811364182, "C491@26181L530:BasicTextField.kt#423gt5");
@@ -1841,8 +1841,8 @@ public final class BasicTextFieldKt {
                     rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldCursorHandle$1$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0  reason: not valid java name */
-                        public final long mo1219provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getCursorHandleState$foundation_release(true).m1619getPositionF1C5BW0();
+                        public final long mo1229provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getCursorHandleState$foundation_release(true).m1629getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1864,7 +1864,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidCursorHandle_androidKt.m1201CursorHandleUSBMPiE(offsetProvider, SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), MinTouchTargetSizeForHandles, startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+                AndroidCursorHandle_androidKt.m1211CursorHandleUSBMPiE(offsetProvider, SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), MinTouchTargetSizeForHandles, startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(535837437);
@@ -1928,8 +1928,8 @@ public final class BasicTextFieldKt {
                     rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldSelectionHandles$1$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0 */
-                        public final long mo1219provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getSelectionHandleState$foundation_release(true, true).m1619getPositionF1C5BW0();
+                        public final long mo1229provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getSelectionHandleState$foundation_release(true, true).m1629getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1953,7 +1953,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidSelectionHandles_androidKt.m1721SelectionHandlewLIcFTc(offsetProvider, true, direction, handlesCrossed, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$26(state).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), startRestartGroup, 24624, 0);
+                AndroidSelectionHandles_androidKt.m1731SelectionHandlewLIcFTc(offsetProvider, true, direction, handlesCrossed, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$26(state).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), startRestartGroup, 24624, 0);
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(-354040354);
@@ -1985,8 +1985,8 @@ public final class BasicTextFieldKt {
                     rememberedValue5 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldSelectionHandles$3$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0 */
-                        public final long mo1219provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getSelectionHandleState$foundation_release(false, true).m1619getPositionF1C5BW0();
+                        public final long mo1229provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getSelectionHandleState$foundation_release(false, true).m1629getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -2010,7 +2010,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue6);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidSelectionHandles_androidKt.m1721SelectionHandlewLIcFTc(offsetProvider2, false, direction2, handlesCrossed2, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$31(state2).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion2, textFieldSelectionState, (PointerInputEventHandler) rememberedValue6), startRestartGroup, 24624, 0);
+                AndroidSelectionHandles_androidKt.m1731SelectionHandlewLIcFTc(offsetProvider2, false, direction2, handlesCrossed2, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$31(state2).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion2, textFieldSelectionState, (PointerInputEventHandler) rememberedValue6), startRestartGroup, 24624, 0);
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(-352997762);
@@ -2035,7 +2035,7 @@ public final class BasicTextFieldKt {
 
     static {
         float f = 40;
-        MinTouchTargetSizeForHandles = DpKt.m7273DpSizeYgX7TsA(Dp.m7251constructorimpl(f), Dp.m7251constructorimpl(f));
+        MinTouchTargetSizeForHandles = DpKt.m7286DpSizeYgX7TsA(Dp.m7264constructorimpl(f), Dp.m7264constructorimpl(f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2351,7 +2351,7 @@ public final class BasicTextFieldKt {
                                     if (i22 != 0) {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
@@ -2402,10 +2402,10 @@ public final class BasicTextFieldKt {
                                 }
                                 final MutableState mutableState = (MutableState) rememberedValue2;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final TextFieldValue m6960copy3r_uNRQ$default = TextFieldValue.m6960copy3r_uNRQ$default(BasicTextField$lambda$38(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
+                                final TextFieldValue m6973copy3r_uNRQ$default = TextFieldValue.m6973copy3r_uNRQ$default(BasicTextField$lambda$38(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
                                 KeyboardActions keyboardActions6 = keyboardActions4;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2015285970, "CC(remember):BasicTextField.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(m6960copy3r_uNRQ$default);
+                                boolean changed = startRestartGroup.changed(m6973copy3r_uNRQ$default);
                                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                                 if (changed) {
                                     modifier4 = modifier3;
@@ -2455,7 +2455,7 @@ public final class BasicTextFieldKt {
                                 int i41 = i38 << 9;
                                 Modifier modifier5 = modifier4;
                                 composer2 = startRestartGroup;
-                                CoreTextFieldKt.CoreTextField(m6960copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation_release, keyboardActions6, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
+                                CoreTextFieldKt.CoreTextField(m6973copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation_release, keyboardActions6, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2658,7 +2658,7 @@ public final class BasicTextFieldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicTextField$lambda$41$lambda$40(TextFieldValue textFieldValue, MutableState mutableState) {
-        if (!TextRange.m6706equalsimpl0(textFieldValue.m6964getSelectiond9O1mEE(), BasicTextField$lambda$38(mutableState).m6964getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m6963getCompositionMzsxiRA(), BasicTextField$lambda$38(mutableState).m6963getCompositionMzsxiRA())) {
+        if (!TextRange.m6719equalsimpl0(textFieldValue.m6977getSelectiond9O1mEE(), BasicTextField$lambda$38(mutableState).m6977getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m6976getCompositionMzsxiRA(), BasicTextField$lambda$38(mutableState).m6976getCompositionMzsxiRA())) {
             mutableState.setValue(textFieldValue);
         }
         return Unit.INSTANCE;
@@ -2988,7 +2988,7 @@ public final class BasicTextFieldKt {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
@@ -3545,7 +3545,7 @@ public final class BasicTextFieldKt {
                                 }
                                 if (i27 != 0) {
                                     composer2 = startRestartGroup;
-                                    solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+                                    solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
                                     i28 = i24;
                                 } else {
                                     composer2 = startRestartGroup;
@@ -4061,20 +4061,20 @@ public final class BasicTextFieldKt {
                                 }
                                 if (i27 != 0) {
                                     composer2 = startRestartGroup;
-                                    solidColor = new SolidColor(Color.Companion.m4563getBlack0d7_KjU(), null);
+                                    solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
                                     i28 = i24;
                                 } else {
                                     composer2 = startRestartGroup;
                                     solidColor = brush;
                                     i28 = i24;
                                 }
-                                Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1242getLambda$665310900$foundation_release = i28 != 0 ? ComposableSingletons$BasicTextFieldKt.INSTANCE.m1242getLambda$665310900$foundation_release() : function3;
+                                Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1252getLambda$665310900$foundation_release = i28 != 0 ? ComposableSingletons$BasicTextFieldKt.INSTANCE.m1252getLambda$665310900$foundation_release() : function3;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(1742344466, i5, i25, "androidx.compose.foundation.text.BasicTextField (BasicTextField.kt:978)");
                                 }
                                 int i34 = i25 << 3;
                                 boolean z10 = z8;
-                                BasicTextField(obj, function1, companion, z7, z10, textStyle3, keyboardOptions3, keyboardActions3, z9, i33, 1, none, function14, mutableInteractionSource3, solidColor, m1242getLambda$665310900$foundation_release, composer2, i5 & 2147483646, (i34 & 112) | 6 | (i34 & 896) | (i34 & 7168) | (57344 & i34) | (i34 & 458752), 0);
+                                BasicTextField(obj, function1, companion, z7, z10, textStyle3, keyboardOptions3, keyboardActions3, z9, i33, 1, none, function14, mutableInteractionSource3, solidColor, m1252getLambda$665310900$foundation_release, composer2, i5 & 2147483646, (i34 & 112) | 6 | (i34 & 896) | (i34 & 7168) | (57344 & i34) | (i34 & 458752), 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -4090,7 +4090,7 @@ public final class BasicTextFieldKt {
                                 function13 = function14;
                                 mutableInteractionSource2 = mutableInteractionSource3;
                                 brush2 = solidColor;
-                                function32 = m1242getLambda$665310900$foundation_release;
+                                function32 = m1252getLambda$665310900$foundation_release;
                             }
                             endRestartGroup = composer2.endRestartGroup();
                             if (endRestartGroup == null) {

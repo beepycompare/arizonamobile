@@ -204,8 +204,8 @@ public final class VectorComposeKt {
                                         } else {
                                             startRestartGroup.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                                        Updater.m3862setimpl(m3855constructorimpl, obj, new Function2<GroupComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$1
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                                        Updater.m3874setimpl(m3867constructorimpl, obj, new Function2<GroupComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$1
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, String str2) {
                                                 invoke2(groupComponent, str2);
@@ -217,7 +217,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setName(str2);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f8), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$2
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f8), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$2
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -228,7 +228,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setRotation(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f9), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$3
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f9), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$3
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -239,7 +239,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setPivotX(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f10), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$4
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f10), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$4
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -250,7 +250,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setPivotY(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f11), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$5
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f11), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$5
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -261,7 +261,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setScaleX(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f16), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$6
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f16), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$6
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -272,7 +272,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setScaleY(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f12), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$7
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f12), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$7
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -283,7 +283,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setTranslationX(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f18), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$8
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f18), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$8
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                                 invoke(groupComponent, f19.floatValue());
@@ -294,7 +294,7 @@ public final class VectorComposeKt {
                                                 groupComponent.setTranslationY(f19);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, list2, new Function2<GroupComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$9
+                                        Updater.m3874setimpl(m3867constructorimpl, list2, new Function2<GroupComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$9
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, List<? extends PathNode> list3) {
                                                 invoke2(groupComponent, list3);
@@ -343,8 +343,8 @@ public final class VectorComposeKt {
                                 startRestartGroup.startNode();
                                 if (!startRestartGroup.getInserting()) {
                                 }
-                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-                                Updater.m3862setimpl(m3855constructorimpl2, obj, new Function2<GroupComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$1
+                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+                                Updater.m3874setimpl(m3867constructorimpl2, obj, new Function2<GroupComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, String str2) {
                                         invoke2(groupComponent, str2);
@@ -356,7 +356,7 @@ public final class VectorComposeKt {
                                         groupComponent.setName(str2);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f8), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$2
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f8), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$2
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -367,7 +367,7 @@ public final class VectorComposeKt {
                                         groupComponent.setRotation(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f9), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$3
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f9), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$3
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -378,7 +378,7 @@ public final class VectorComposeKt {
                                         groupComponent.setPivotX(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f10), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$4
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f10), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$4
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -389,7 +389,7 @@ public final class VectorComposeKt {
                                         groupComponent.setPivotY(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f11), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$5
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f11), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$5
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -400,7 +400,7 @@ public final class VectorComposeKt {
                                         groupComponent.setScaleX(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f16), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$6
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f16), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$6
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -411,7 +411,7 @@ public final class VectorComposeKt {
                                         groupComponent.setScaleY(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f12), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$7
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f12), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$7
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -422,7 +422,7 @@ public final class VectorComposeKt {
                                         groupComponent.setTranslationX(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, Float.valueOf(f18), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$8
+                                Updater.m3874setimpl(m3867constructorimpl2, Float.valueOf(f18), new Function2<GroupComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$8
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, Float f19) {
                                         invoke(groupComponent, f19.floatValue());
@@ -433,7 +433,7 @@ public final class VectorComposeKt {
                                         groupComponent.setTranslationY(f19);
                                     }
                                 });
-                                Updater.m3862setimpl(m3855constructorimpl2, list2, new Function2<GroupComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$9
+                                Updater.m3874setimpl(m3867constructorimpl2, list2, new Function2<GroupComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Group$2$9
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(GroupComponent groupComponent, List<? extends PathNode> list3) {
                                         invoke2(groupComponent, list3);
@@ -655,7 +655,7 @@ public final class VectorComposeKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m5286Path9cdaXJ4(final List<? extends PathNode> list, int i, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i2, int i3, float f4, float f5, float f6, float f7, Composer composer, final int i4, final int i5, final int i6) {
+    public static final void m5298Path9cdaXJ4(final List<? extends PathNode> list, int i, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i2, int i3, float f4, float f5, float f6, float f7, Composer composer, final int i4, final int i5, final int i6) {
         int i7;
         int i8;
         int i9;
@@ -871,8 +871,8 @@ public final class VectorComposeKt {
                                         } else {
                                             startRestartGroup.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                                        Updater.m3862setimpl(m3855constructorimpl, str3, new Function2<PathComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$1
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                                        Updater.m3874setimpl(m3867constructorimpl, str3, new Function2<PathComponent, String, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$1
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, String str4) {
                                                 invoke2(pathComponent, str4);
@@ -884,7 +884,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setName(str4);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, list, new Function2<PathComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$2
+                                        Updater.m3874setimpl(m3867constructorimpl, list, new Function2<PathComponent, List<? extends PathNode>, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$2
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, List<? extends PathNode> list2) {
                                                 invoke2(pathComponent, list2);
@@ -896,19 +896,19 @@ public final class VectorComposeKt {
                                                 pathComponent.setPathData(list2);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, PathFillType.m4824boximpl(i30), new Function2<PathComponent, PathFillType, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$3
+                                        Updater.m3874setimpl(m3867constructorimpl, PathFillType.m4836boximpl(i30), new Function2<PathComponent, PathFillType, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$3
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, PathFillType pathFillType) {
-                                                m5288invokepweu1eQ(pathComponent, pathFillType.m4830unboximpl());
+                                                m5300invokepweu1eQ(pathComponent, pathFillType.m4842unboximpl());
                                                 return Unit.INSTANCE;
                                             }
 
                                             /* renamed from: invoke-pweu1eQ  reason: not valid java name */
-                                            public final void m5288invokepweu1eQ(PathComponent pathComponent, int i34) {
-                                                pathComponent.m5280setPathFillTypeoQ8Xj4U(i34);
+                                            public final void m5300invokepweu1eQ(PathComponent pathComponent, int i34) {
+                                                pathComponent.m5292setPathFillTypeoQ8Xj4U(i34);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, obj, new Function2<PathComponent, Brush, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$4
+                                        Updater.m3874setimpl(m3867constructorimpl, obj, new Function2<PathComponent, Brush, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$4
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Brush brush5) {
                                                 invoke2(pathComponent, brush5);
@@ -920,7 +920,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setFill(brush5);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f8), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$5
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f8), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$5
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -931,7 +931,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setFillAlpha(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, obj2, new Function2<PathComponent, Brush, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$6
+                                        Updater.m3874setimpl(m3867constructorimpl, obj2, new Function2<PathComponent, Brush, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$6
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Brush brush5) {
                                                 invoke2(pathComponent, brush5);
@@ -943,7 +943,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setStroke(brush5);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f9), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$7
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f9), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$7
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -954,7 +954,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setStrokeAlpha(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f17), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$8
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f17), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$8
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -965,31 +965,31 @@ public final class VectorComposeKt {
                                                 pathComponent.setStrokeLineWidth(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, StrokeJoin.m4910boximpl(defaultStrokeLineJoin), new Function2<PathComponent, StrokeJoin, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$9
+                                        Updater.m3874setimpl(m3867constructorimpl, StrokeJoin.m4922boximpl(defaultStrokeLineJoin), new Function2<PathComponent, StrokeJoin, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$9
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, StrokeJoin strokeJoin) {
-                                                m5289invokekLtJ_vA(pathComponent, strokeJoin.m4916unboximpl());
+                                                m5301invokekLtJ_vA(pathComponent, strokeJoin.m4928unboximpl());
                                                 return Unit.INSTANCE;
                                             }
 
                                             /* renamed from: invoke-kLtJ_vA  reason: not valid java name */
-                                            public final void m5289invokekLtJ_vA(PathComponent pathComponent, int i34) {
-                                                pathComponent.m5282setStrokeLineJoinWw9F2mQ(i34);
+                                            public final void m5301invokekLtJ_vA(PathComponent pathComponent, int i34) {
+                                                pathComponent.m5294setStrokeLineJoinWw9F2mQ(i34);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, StrokeCap.m4900boximpl(defaultStrokeLineCap), new Function2<PathComponent, StrokeCap, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$10
+                                        Updater.m3874setimpl(m3867constructorimpl, StrokeCap.m4912boximpl(defaultStrokeLineCap), new Function2<PathComponent, StrokeCap, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$10
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, StrokeCap strokeCap) {
-                                                m5287invokeCSYIeUk(pathComponent, strokeCap.m4906unboximpl());
+                                                m5299invokeCSYIeUk(pathComponent, strokeCap.m4918unboximpl());
                                                 return Unit.INSTANCE;
                                             }
 
                                             /* renamed from: invoke-CSYIeUk  reason: not valid java name */
-                                            public final void m5287invokeCSYIeUk(PathComponent pathComponent, int i34) {
-                                                pathComponent.m5281setStrokeLineCapBeK7IIE(i34);
+                                            public final void m5299invokeCSYIeUk(PathComponent pathComponent, int i34) {
+                                                pathComponent.m5293setStrokeLineCapBeK7IIE(i34);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f18), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$11
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f18), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$11
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -1000,7 +1000,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setStrokeLineMiter(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f19), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$12
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f19), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$12
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -1011,7 +1011,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setTrimPathStart(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f20), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$13
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f20), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$13
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -1022,7 +1022,7 @@ public final class VectorComposeKt {
                                                 pathComponent.setTrimPathEnd(f22);
                                             }
                                         });
-                                        Updater.m3862setimpl(m3855constructorimpl, Float.valueOf(f21), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$14
+                                        Updater.m3874setimpl(m3867constructorimpl, Float.valueOf(f21), new Function2<PathComponent, Float, Unit>() { // from class: androidx.compose.ui.graphics.vector.VectorComposeKt$Path$2$14
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ Unit invoke(PathComponent pathComponent, Float f22) {
                                                 invoke(pathComponent, f22.floatValue());
@@ -1070,7 +1070,7 @@ public final class VectorComposeKt {
                                             }
 
                                             public final void invoke(Composer composer3, int i34) {
-                                                VectorComposeKt.m5286Path9cdaXJ4(list, i27, str2, brush3, f13, brush4, f14, f10, i28, i29, f15, f11, f16, f12, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
+                                                VectorComposeKt.m5298Path9cdaXJ4(list, i27, str2, brush3, f13, brush4, f14, f10, i28, i29, f15, f11, f16, f12, composer3, RecomposeScopeImplKt.updateChangedFlags(i4 | 1), RecomposeScopeImplKt.updateChangedFlags(i5), i6);
                                             }
                                         });
                                         return;

@@ -17,27 +17,27 @@ final class PaddingValuesInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        return density.mo413roundToPx0680j_4(this.paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection));
+        return density.mo423roundToPx0680j_4(this.paddingValues.mo786calculateLeftPaddingu2uoSUM(layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        return density.mo413roundToPx0680j_4(this.paddingValues.mo778calculateTopPaddingD9Ej5fM());
+        return density.mo423roundToPx0680j_4(this.paddingValues.mo788calculateTopPaddingD9Ej5fM());
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        return density.mo413roundToPx0680j_4(this.paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection));
+        return density.mo423roundToPx0680j_4(this.paddingValues.mo787calculateRightPaddingu2uoSUM(layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        return density.mo413roundToPx0680j_4(this.paddingValues.mo775calculateBottomPaddingD9Ej5fM());
+        return density.mo423roundToPx0680j_4(this.paddingValues.mo785calculateBottomPaddingD9Ej5fM());
     }
 
     public String toString() {
         LayoutDirection layoutDirection = LayoutDirection.Ltr;
-        return "PaddingValues(" + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo776calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo778calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo777calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7262toStringimpl(this.paddingValues.mo775calculateBottomPaddingD9Ej5fM())) + ')';
+        return "PaddingValues(" + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo786calculateLeftPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo788calculateTopPaddingD9Ej5fM())) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo787calculateRightPaddingu2uoSUM(layoutDirection))) + ", " + ((Object) Dp.m7275toStringimpl(this.paddingValues.mo785calculateBottomPaddingD9Ej5fM())) + ')';
     }
 
     public boolean equals(Object obj) {

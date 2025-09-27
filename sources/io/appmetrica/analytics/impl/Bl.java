@@ -7,10 +7,10 @@ import io.appmetrica.analytics.networktasks.internal.CacheControlHttpsConnection
 public final class Bl implements SimpleNetworkApi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CacheControlHttpsConnectionPerformer f374a = new CacheControlHttpsConnectionPerformer(((Jl) Na.j().y()).getSslSocketFactory());
+    public final CacheControlHttpsConnectionPerformer f375a = new CacheControlHttpsConnectionPerformer(((Jl) Na.j().y()).getSslSocketFactory());
 
     @Override // io.appmetrica.analytics.modulesapi.internal.network.SimpleNetworkApi
     public final void performRequestWithCacheControl(String str, NetworkClientWithCacheControl networkClientWithCacheControl) {
-        this.f374a.performConnection(str, new D3(networkClientWithCacheControl));
+        this.f375a.performConnection(str, new D3(networkClientWithCacheControl));
     }
 }

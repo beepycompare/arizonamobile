@@ -38,59 +38,59 @@ public interface DrawScope extends Density {
     public static final Companion Companion = Companion.$$INSTANCE;
 
     /* renamed from: drawArc-illE91I */
-    void mo5013drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5025drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawArc-yD3GUKo */
-    void mo5014drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5026drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawCircle-V9BoPsw */
-    void mo5015drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5027drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawCircle-VaOC9Bg */
-    void mo5016drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5028drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Prefer usage of drawImage that consumes an optional FilterQuality parameter", replaceWith = @ReplaceWith(expression = "drawImage(image, srcOffset, srcSize, dstOffset, dstSize, alpha, style, colorFilter, blendMode, FilterQuality.Low)", imports = {"androidx.compose.ui.graphics.drawscope", "androidx.compose.ui.graphics.FilterQuality"}))
     /* renamed from: drawImage-9jGpkUE */
-    /* synthetic */ void mo5017drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    /* synthetic */ void mo5029drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawImage-gbVJVH8 */
-    void mo5019drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5031drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawLine-1RTmtNc */
-    void mo5020drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2);
+    void mo5032drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2);
 
     /* renamed from: drawLine-NGM6Ib0 */
-    void mo5021drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2);
+    void mo5033drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2);
 
     /* renamed from: drawOval-AsUm42w */
-    void mo5022drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5034drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawOval-n-J9OG0 */
-    void mo5023drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5035drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawPath-GBMwjPU */
-    void mo5024drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5036drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawPath-LG529CI */
-    void mo5025drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5037drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawPoints-F8ZwMP8 */
-    void mo5026drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3);
+    void mo5038drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3);
 
     /* renamed from: drawPoints-Gsft0Ws */
-    void mo5027drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3);
+    void mo5039drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3);
 
     /* renamed from: drawRect-AsUm42w */
-    void mo5028drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5040drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawRect-n-J9OG0 */
-    void mo5029drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5041drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawRoundRect-ZuiqVtQ */
-    void mo5030drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
+    void mo5042drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i);
 
     /* renamed from: drawRoundRect-u-Aw5IA */
-    void mo5031drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i);
+    void mo5043drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i);
 
     DrawContext getDrawContext();
 
@@ -102,50 +102,50 @@ public interface DrawScope extends Density {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m5144roundToPxR2X_6o(DrawScope drawScope, long j) {
-            return DrawScope.super.mo412roundToPxR2X_6o(j);
+        public static int m5156roundToPxR2X_6o(DrawScope drawScope, long j) {
+            return DrawScope.super.mo422roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m5145roundToPx0680j_4(DrawScope drawScope, float f) {
-            return DrawScope.super.mo413roundToPx0680j_4(f);
+        public static int m5157roundToPx0680j_4(DrawScope drawScope, float f) {
+            return DrawScope.super.mo423roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m5146toDpGaN1DYA(DrawScope drawScope, long j) {
-            return DrawScope.super.mo414toDpGaN1DYA(j);
+        public static float m5158toDpGaN1DYA(DrawScope drawScope, long j) {
+            return DrawScope.super.mo424toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5147toDpu2uoSUM(DrawScope drawScope, float f) {
-            return DrawScope.super.mo415toDpu2uoSUM(f);
+        public static float m5159toDpu2uoSUM(DrawScope drawScope, float f) {
+            return DrawScope.super.mo425toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5148toDpu2uoSUM(DrawScope drawScope, int i) {
-            return DrawScope.super.mo416toDpu2uoSUM(i);
+        public static float m5160toDpu2uoSUM(DrawScope drawScope, int i) {
+            return DrawScope.super.mo426toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m5149toDpSizekrfVVM(DrawScope drawScope, long j) {
-            return DrawScope.super.mo417toDpSizekrfVVM(j);
+        public static long m5161toDpSizekrfVVM(DrawScope drawScope, long j) {
+            return DrawScope.super.mo427toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m5150toPxR2X_6o(DrawScope drawScope, long j) {
-            return DrawScope.super.mo418toPxR2X_6o(j);
+        public static float m5162toPxR2X_6o(DrawScope drawScope, long j) {
+            return DrawScope.super.mo428toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m5151toPx0680j_4(DrawScope drawScope, float f) {
-            return DrawScope.super.mo419toPx0680j_4(f);
+        public static float m5163toPx0680j_4(DrawScope drawScope, float f) {
+            return DrawScope.super.mo429toPx0680j_4(f);
         }
 
         @Deprecated
@@ -155,242 +155,242 @@ public interface DrawScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m5152toSizeXkaWNTQ(DrawScope drawScope, long j) {
-            return DrawScope.super.mo420toSizeXkaWNTQ(j);
+        public static long m5164toSizeXkaWNTQ(DrawScope drawScope, long j) {
+            return DrawScope.super.mo430toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m5153toSp0xMU5do(DrawScope drawScope, float f) {
-            return DrawScope.super.mo421toSp0xMU5do(f);
+        public static long m5165toSp0xMU5do(DrawScope drawScope, float f) {
+            return DrawScope.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5154toSpkPz2Gy4(DrawScope drawScope, float f) {
-            return DrawScope.super.mo422toSpkPz2Gy4(f);
+        public static long m5166toSpkPz2Gy4(DrawScope drawScope, float f) {
+            return DrawScope.super.mo432toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5155toSpkPz2Gy4(DrawScope drawScope, int i) {
-            return DrawScope.super.mo423toSpkPz2Gy4(i);
+        public static long m5167toSpkPz2Gy4(DrawScope drawScope, int i) {
+            return DrawScope.super.mo433toSpkPz2Gy4(i);
         }
 
         @Deprecated
         /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-        public static long m5140getCenterF1C5BW0(DrawScope drawScope) {
-            return DrawScope.super.mo5115getCenterF1C5BW0();
+        public static long m5152getCenterF1C5BW0(DrawScope drawScope) {
+            return DrawScope.super.mo5127getCenterF1C5BW0();
         }
 
         @Deprecated
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public static long m5141getSizeNHjbRc(DrawScope drawScope) {
-            return DrawScope.super.mo5116getSizeNHjbRc();
+        public static long m5153getSizeNHjbRc(DrawScope drawScope) {
+            return DrawScope.super.mo5128getSizeNHjbRc();
         }
 
         @Deprecated
         /* renamed from: drawImage-AZ2fEMs  reason: not valid java name */
-        public static void m5125drawImageAZ2fEMs(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
-            DrawScope.super.mo5018drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
+        public static void m5137drawImageAZ2fEMs(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
+            DrawScope.super.mo5030drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
         }
 
         @Deprecated
         /* renamed from: record-JVtK1S4  reason: not valid java name */
-        public static void m5142recordJVtK1S4(DrawScope drawScope, GraphicsLayer graphicsLayer, long j, Function1<? super DrawScope, Unit> function1) {
-            DrawScope.super.mo5117recordJVtK1S4(graphicsLayer, j, function1);
+        public static void m5154recordJVtK1S4(DrawScope drawScope, GraphicsLayer graphicsLayer, long j, Function1<? super DrawScope, Unit> function1) {
+            DrawScope.super.mo5129recordJVtK1S4(graphicsLayer, j, function1);
         }
     }
 
     /* renamed from: getCenter-F1C5BW0  reason: not valid java name */
-    default long mo5115getCenterF1C5BW0() {
-        return SizeKt.m4372getCenteruvyYCjk(getDrawContext().mo5037getSizeNHjbRc());
+    default long mo5127getCenterF1C5BW0() {
+        return SizeKt.m4384getCenteruvyYCjk(getDrawContext().mo5049getSizeNHjbRc());
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    default long mo5116getSizeNHjbRc() {
-        return getDrawContext().mo5037getSizeNHjbRc();
+    default long mo5128getSizeNHjbRc() {
+        return getDrawContext().mo5049getSizeNHjbRc();
     }
 
     /* renamed from: drawLine-1RTmtNc$default  reason: not valid java name */
-    static /* synthetic */ void m5101drawLine1RTmtNc$default(DrawScope drawScope, Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2, int i3, Object obj) {
+    static /* synthetic */ void m5113drawLine1RTmtNc$default(DrawScope drawScope, Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2, int i3, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawLine-1RTmtNc");
         }
-        drawScope.mo5020drawLine1RTmtNc(brush, j, j2, (i3 & 8) != 0 ? 0.0f : f, (i3 & 16) != 0 ? Stroke.Companion.m5187getDefaultCapKaPHkGw() : i, (i3 & 32) != 0 ? null : pathEffect, (i3 & 64) != 0 ? 1.0f : f2, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i2);
+        drawScope.mo5032drawLine1RTmtNc(brush, j, j2, (i3 & 8) != 0 ? 0.0f : f, (i3 & 16) != 0 ? Stroke.Companion.m5199getDefaultCapKaPHkGw() : i, (i3 & 32) != 0 ? null : pathEffect, (i3 & 64) != 0 ? 1.0f : f2, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i2);
     }
 
     /* renamed from: drawLine-NGM6Ib0$default  reason: not valid java name */
-    static /* synthetic */ void m5102drawLineNGM6Ib0$default(DrawScope drawScope, long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2, int i3, Object obj) {
+    static /* synthetic */ void m5114drawLineNGM6Ib0$default(DrawScope drawScope, long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2, int i3, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawLine-NGM6Ib0");
         }
-        drawScope.mo5021drawLineNGM6Ib0(j, j2, j3, (i3 & 8) != 0 ? 0.0f : f, (i3 & 16) != 0 ? Stroke.Companion.m5187getDefaultCapKaPHkGw() : i, (i3 & 32) != 0 ? null : pathEffect, (i3 & 64) != 0 ? 1.0f : f2, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i2);
+        drawScope.mo5033drawLineNGM6Ib0(j, j2, j3, (i3 & 8) != 0 ? 0.0f : f, (i3 & 16) != 0 ? Stroke.Companion.m5199getDefaultCapKaPHkGw() : i, (i3 & 32) != 0 ? null : pathEffect, (i3 & 64) != 0 ? 1.0f : f2, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i2);
     }
 
     /* renamed from: drawRect-AsUm42w$default  reason: not valid java name */
-    static /* synthetic */ void m5109drawRectAsUm42w$default(DrawScope drawScope, Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5121drawRectAsUm42w$default(DrawScope drawScope, Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawRect-AsUm42w");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j;
-        drawScope.mo5028drawRectAsUm42w(brush, m4309getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j;
+        drawScope.mo5040drawRectAsUm42w(brush, m4321getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawRect-n-J9OG0$default  reason: not valid java name */
-    static /* synthetic */ void m5110drawRectnJ9OG0$default(DrawScope drawScope, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5122drawRectnJ9OG0$default(DrawScope drawScope, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawRect-n-J9OG0");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j2;
-        drawScope.mo5029drawRectnJ9OG0(j, m4309getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0) : j3, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j2;
+        drawScope.mo5041drawRectnJ9OG0(j, m4321getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0) : j3, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawImage-gbVJVH8$default  reason: not valid java name */
-    static /* synthetic */ void m5100drawImagegbVJVH8$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5112drawImagegbVJVH8$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawImage-gbVJVH8");
         }
-        drawScope.mo5019drawImagegbVJVH8(imageBitmap, (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j, (i2 & 4) != 0 ? 1.0f : f, (i2 & 8) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 16) != 0 ? null : colorFilter, (i2 & 32) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope.mo5031drawImagegbVJVH8(imageBitmap, (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j, (i2 & 4) != 0 ? 1.0f : f, (i2 & 8) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 16) != 0 ? null : colorFilter, (i2 & 32) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawImage-9jGpkUE$default  reason: not valid java name */
-    static /* synthetic */ void m5098drawImage9jGpkUE$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5110drawImage9jGpkUE$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         long j5;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawImage-9jGpkUE");
         }
-        long m7390getZeronOccac = (i2 & 2) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j;
+        long m7403getZeronOccac = (i2 & 2) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j;
         if ((i2 & 4) != 0) {
-            j5 = IntSize.m7417constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
+            j5 = IntSize.m7430constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
         } else {
             j5 = j2;
         }
-        drawScope.mo5017drawImage9jGpkUE(imageBitmap, m7390getZeronOccac, j5, (i2 & 8) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j3, (i2 & 16) != 0 ? j5 : j4, (i2 & 32) != 0 ? 1.0f : f, (i2 & 64) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 128) != 0 ? null : colorFilter, (i2 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope.mo5029drawImage9jGpkUE(imageBitmap, m7403getZeronOccac, j5, (i2 & 8) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j3, (i2 & 16) != 0 ? j5 : j4, (i2 & 32) != 0 ? 1.0f : f, (i2 & 64) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 128) != 0 ? null : colorFilter, (i2 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawImage-AZ2fEMs$default  reason: not valid java name */
-    static /* synthetic */ void m5099drawImageAZ2fEMs$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
+    static /* synthetic */ void m5111drawImageAZ2fEMs$default(DrawScope drawScope, ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
         long j5;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawImage-AZ2fEMs");
         }
-        long m7390getZeronOccac = (i3 & 2) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j;
+        long m7403getZeronOccac = (i3 & 2) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j;
         if ((i3 & 4) != 0) {
-            j5 = IntSize.m7417constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
+            j5 = IntSize.m7430constructorimpl((imageBitmap.getHeight() & 4294967295L) | (imageBitmap.getWidth() << 32));
         } else {
             j5 = j2;
         }
-        drawScope.mo5018drawImageAZ2fEMs(imageBitmap, m7390getZeronOccac, j5, (i3 & 8) != 0 ? IntOffset.Companion.m7390getZeronOccac() : j3, (i3 & 16) != 0 ? j5 : j4, (i3 & 32) != 0 ? 1.0f : f, (i3 & 64) != 0 ? Fill.INSTANCE : drawStyle, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i, (i3 & 512) != 0 ? Companion.m5119getDefaultFilterQualityfv9h1I() : i2);
+        drawScope.mo5030drawImageAZ2fEMs(imageBitmap, m7403getZeronOccac, j5, (i3 & 8) != 0 ? IntOffset.Companion.m7403getZeronOccac() : j3, (i3 & 16) != 0 ? j5 : j4, (i3 & 32) != 0 ? 1.0f : f, (i3 & 64) != 0 ? Fill.INSTANCE : drawStyle, (i3 & 128) != 0 ? null : colorFilter, (i3 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i, (i3 & 512) != 0 ? Companion.m5131getDefaultFilterQualityfv9h1I() : i2);
     }
 
     /* renamed from: drawImage-AZ2fEMs */
-    default void mo5018drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
-        m5099drawImageAZ2fEMs$default(this, imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, 0, 512, null);
+    default void mo5030drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
+        m5111drawImageAZ2fEMs$default(this, imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, 0, 512, null);
     }
 
     /* renamed from: drawRoundRect-ZuiqVtQ$default  reason: not valid java name */
-    static /* synthetic */ void m5111drawRoundRectZuiqVtQ$default(DrawScope drawScope, Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5123drawRoundRectZuiqVtQ$default(DrawScope drawScope, Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawRoundRect-ZuiqVtQ");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j;
-        drawScope.mo5030drawRoundRectZuiqVtQ(brush, m4309getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j3, (i2 & 16) != 0 ? 1.0f : f, (i2 & 32) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 64) != 0 ? null : colorFilter, (i2 & 128) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j;
+        drawScope.mo5042drawRoundRectZuiqVtQ(brush, m4321getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j3, (i2 & 16) != 0 ? 1.0f : f, (i2 & 32) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 64) != 0 ? null : colorFilter, (i2 & 128) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawRoundRect-u-Aw5IA$default  reason: not valid java name */
-    static /* synthetic */ void m5112drawRoundRectuAw5IA$default(DrawScope drawScope, long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5124drawRoundRectuAw5IA$default(DrawScope drawScope, long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, Object obj) {
         DrawScope drawScope2;
         long j5;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawRoundRect-u-Aw5IA");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j2;
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j2;
         if ((i2 & 4) != 0) {
             drawScope2 = drawScope;
-            j5 = drawScope2.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0);
+            j5 = drawScope2.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0);
         } else {
             drawScope2 = drawScope;
             j5 = j3;
         }
-        drawScope2.mo5031drawRoundRectuAw5IA(j, m4309getZeroF1C5BW0, j5, (i2 & 8) != 0 ? CornerRadius.Companion.m4265getZerokKHJgLs() : j4, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? 1.0f : f, (i2 & 64) != 0 ? null : colorFilter, (i2 & 128) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope2.mo5043drawRoundRectuAw5IA(j, m4321getZeroF1C5BW0, j5, (i2 & 8) != 0 ? CornerRadius.Companion.m4277getZerokKHJgLs() : j4, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? 1.0f : f, (i2 & 64) != 0 ? null : colorFilter, (i2 & 128) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawCircle-V9BoPsw$default  reason: not valid java name */
-    static /* synthetic */ void m5096drawCircleV9BoPsw$default(DrawScope drawScope, Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5108drawCircleV9BoPsw$default(DrawScope drawScope, Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawCircle-V9BoPsw");
         }
-        drawScope.mo5015drawCircleV9BoPsw(brush, (i2 & 2) != 0 ? Size.m4361getMinDimensionimpl(drawScope.mo5116getSizeNHjbRc()) / 2.0f : f, (i2 & 4) != 0 ? drawScope.mo5115getCenterF1C5BW0() : j, (i2 & 8) != 0 ? 1.0f : f2, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope.mo5027drawCircleV9BoPsw(brush, (i2 & 2) != 0 ? Size.m4373getMinDimensionimpl(drawScope.mo5128getSizeNHjbRc()) / 2.0f : f, (i2 & 4) != 0 ? drawScope.mo5127getCenterF1C5BW0() : j, (i2 & 8) != 0 ? 1.0f : f2, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawCircle-VaOC9Bg$default  reason: not valid java name */
-    static /* synthetic */ void m5097drawCircleVaOC9Bg$default(DrawScope drawScope, long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5109drawCircleVaOC9Bg$default(DrawScope drawScope, long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawCircle-VaOC9Bg");
         }
         if ((i2 & 2) != 0) {
-            f = Size.m4361getMinDimensionimpl(drawScope.mo5116getSizeNHjbRc()) / 2.0f;
+            f = Size.m4373getMinDimensionimpl(drawScope.mo5128getSizeNHjbRc()) / 2.0f;
         }
-        drawScope.mo5016drawCircleVaOC9Bg(j, f, (i2 & 4) != 0 ? drawScope.mo5115getCenterF1C5BW0() : j2, (i2 & 8) != 0 ? 1.0f : f2, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope.mo5028drawCircleVaOC9Bg(j, f, (i2 & 4) != 0 ? drawScope.mo5127getCenterF1C5BW0() : j2, (i2 & 8) != 0 ? 1.0f : f2, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawOval-AsUm42w$default  reason: not valid java name */
-    static /* synthetic */ void m5103drawOvalAsUm42w$default(DrawScope drawScope, Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5115drawOvalAsUm42w$default(DrawScope drawScope, Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawOval-AsUm42w");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j;
-        drawScope.mo5022drawOvalAsUm42w(brush, m4309getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j;
+        drawScope.mo5034drawOvalAsUm42w(brush, m4321getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0) : j2, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawOval-n-J9OG0$default  reason: not valid java name */
-    static /* synthetic */ void m5104drawOvalnJ9OG0$default(DrawScope drawScope, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5116drawOvalnJ9OG0$default(DrawScope drawScope, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawOval-n-J9OG0");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j2;
-        drawScope.mo5023drawOvalnJ9OG0(j, m4309getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0) : j3, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        long m4321getZeroF1C5BW0 = (i2 & 2) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j2;
+        drawScope.mo5035drawOvalnJ9OG0(j, m4321getZeroF1C5BW0, (i2 & 4) != 0 ? drawScope.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0) : j3, (i2 & 8) != 0 ? 1.0f : f, (i2 & 16) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 32) != 0 ? null : colorFilter, (i2 & 64) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawArc-illE91I$default  reason: not valid java name */
-    static /* synthetic */ void m5094drawArcillE91I$default(DrawScope drawScope, Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5106drawArcillE91I$default(DrawScope drawScope, Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         DrawScope drawScope2;
         long j3;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawArc-illE91I");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 16) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j;
+        long m4321getZeroF1C5BW0 = (i2 & 16) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j;
         if ((i2 & 32) != 0) {
             drawScope2 = drawScope;
-            j3 = drawScope2.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0);
+            j3 = drawScope2.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0);
         } else {
             drawScope2 = drawScope;
             j3 = j2;
         }
-        drawScope2.mo5013drawArcillE91I(brush, f, f2, z, m4309getZeroF1C5BW0, j3, (i2 & 64) != 0 ? 1.0f : f3, (i2 & 128) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 256) != 0 ? null : colorFilter, (i2 & 512) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope2.mo5025drawArcillE91I(brush, f, f2, z, m4321getZeroF1C5BW0, j3, (i2 & 64) != 0 ? 1.0f : f3, (i2 & 128) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 256) != 0 ? null : colorFilter, (i2 & 512) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawArc-yD3GUKo$default  reason: not valid java name */
-    static /* synthetic */ void m5095drawArcyD3GUKo$default(DrawScope drawScope, long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5107drawArcyD3GUKo$default(DrawScope drawScope, long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         DrawScope drawScope2;
         long j4;
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawArc-yD3GUKo");
         }
-        long m4309getZeroF1C5BW0 = (i2 & 16) != 0 ? Offset.Companion.m4309getZeroF1C5BW0() : j2;
+        long m4321getZeroF1C5BW0 = (i2 & 16) != 0 ? Offset.Companion.m4321getZeroF1C5BW0() : j2;
         if ((i2 & 32) != 0) {
             drawScope2 = drawScope;
-            j4 = drawScope2.m5113offsetSizePENXr5M(drawScope.mo5116getSizeNHjbRc(), m4309getZeroF1C5BW0);
+            j4 = drawScope2.m5125offsetSizePENXr5M(drawScope.mo5128getSizeNHjbRc(), m4321getZeroF1C5BW0);
         } else {
             drawScope2 = drawScope;
             j4 = j3;
         }
-        drawScope2.mo5014drawArcyD3GUKo(j, f, f2, z, m4309getZeroF1C5BW0, j4, (i2 & 64) != 0 ? 1.0f : f3, (i2 & 128) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 256) != 0 ? null : colorFilter, (i2 & 512) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope2.mo5026drawArcyD3GUKo(j, f, f2, z, m4321getZeroF1C5BW0, j4, (i2 & 64) != 0 ? 1.0f : f3, (i2 & 128) != 0 ? Fill.INSTANCE : drawStyle, (i2 & 256) != 0 ? null : colorFilter, (i2 & 512) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawPath-LG529CI$default  reason: not valid java name */
-    static /* synthetic */ void m5106drawPathLG529CI$default(DrawScope drawScope, Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5118drawPathLG529CI$default(DrawScope drawScope, Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawPath-LG529CI");
         }
@@ -405,11 +405,11 @@ public interface DrawScope extends Density {
         if ((i2 & 16) != 0) {
             colorFilter = null;
         }
-        drawScope.mo5025drawPathLG529CI(path, j, f2, drawStyle2, colorFilter, (i2 & 32) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i);
+        drawScope.mo5037drawPathLG529CI(path, j, f2, drawStyle2, colorFilter, (i2 & 32) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i);
     }
 
     /* renamed from: drawPath-GBMwjPU$default  reason: not valid java name */
-    static /* synthetic */ void m5105drawPathGBMwjPU$default(DrawScope drawScope, Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
+    static /* synthetic */ void m5117drawPathGBMwjPU$default(DrawScope drawScope, Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawPath-GBMwjPU");
         }
@@ -426,41 +426,41 @@ public interface DrawScope extends Density {
         }
         ColorFilter colorFilter2 = colorFilter;
         if ((i2 & 32) != 0) {
-            i = Companion.m5118getDefaultBlendMode0nO6VwU();
+            i = Companion.m5130getDefaultBlendMode0nO6VwU();
         }
-        drawScope.mo5024drawPathGBMwjPU(path, brush, f2, drawStyle2, colorFilter2, i);
+        drawScope.mo5036drawPathGBMwjPU(path, brush, f2, drawStyle2, colorFilter2, i);
     }
 
     /* renamed from: drawPoints-F8ZwMP8$default  reason: not valid java name */
-    static /* synthetic */ void m5107drawPointsF8ZwMP8$default(DrawScope drawScope, List list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3, int i4, Object obj) {
+    static /* synthetic */ void m5119drawPointsF8ZwMP8$default(DrawScope drawScope, List list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3, int i4, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawPoints-F8ZwMP8");
         }
-        drawScope.mo5026drawPointsF8ZwMP8(list, i, j, (i4 & 8) != 0 ? 0.0f : f, (i4 & 16) != 0 ? StrokeCap.Companion.m4907getButtKaPHkGw() : i2, (i4 & 32) != 0 ? null : pathEffect, (i4 & 64) != 0 ? 1.0f : f2, (i4 & 128) != 0 ? null : colorFilter, (i4 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i3);
+        drawScope.mo5038drawPointsF8ZwMP8(list, i, j, (i4 & 8) != 0 ? 0.0f : f, (i4 & 16) != 0 ? StrokeCap.Companion.m4919getButtKaPHkGw() : i2, (i4 & 32) != 0 ? null : pathEffect, (i4 & 64) != 0 ? 1.0f : f2, (i4 & 128) != 0 ? null : colorFilter, (i4 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i3);
     }
 
     /* renamed from: drawPoints-Gsft0Ws$default  reason: not valid java name */
-    static /* synthetic */ void m5108drawPointsGsft0Ws$default(DrawScope drawScope, List list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3, int i4, Object obj) {
+    static /* synthetic */ void m5120drawPointsGsft0Ws$default(DrawScope drawScope, List list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3, int i4, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: drawPoints-Gsft0Ws");
         }
-        drawScope.mo5027drawPointsGsft0Ws(list, i, brush, (i4 & 8) != 0 ? 0.0f : f, (i4 & 16) != 0 ? StrokeCap.Companion.m4907getButtKaPHkGw() : i2, (i4 & 32) != 0 ? null : pathEffect, (i4 & 64) != 0 ? 1.0f : f2, (i4 & 128) != 0 ? null : colorFilter, (i4 & 256) != 0 ? Companion.m5118getDefaultBlendMode0nO6VwU() : i3);
+        drawScope.mo5039drawPointsGsft0Ws(list, i, brush, (i4 & 8) != 0 ? 0.0f : f, (i4 & 16) != 0 ? StrokeCap.Companion.m4919getButtKaPHkGw() : i2, (i4 & 32) != 0 ? null : pathEffect, (i4 & 64) != 0 ? 1.0f : f2, (i4 & 128) != 0 ? null : colorFilter, (i4 & 256) != 0 ? Companion.m5130getDefaultBlendMode0nO6VwU() : i3);
     }
 
     /* renamed from: record-JVtK1S4$default  reason: not valid java name */
-    static /* synthetic */ void m5114recordJVtK1S4$default(DrawScope drawScope, GraphicsLayer graphicsLayer, long j, Function1 function1, int i, Object obj) {
+    static /* synthetic */ void m5126recordJVtK1S4$default(DrawScope drawScope, GraphicsLayer graphicsLayer, long j, Function1 function1, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: record-JVtK1S4");
         }
         if ((i & 1) != 0) {
-            j = IntSizeKt.m7433toIntSizeuvyYCjk(drawScope.mo5116getSizeNHjbRc());
+            j = IntSizeKt.m7446toIntSizeuvyYCjk(drawScope.mo5128getSizeNHjbRc());
         }
-        drawScope.mo5117recordJVtK1S4(graphicsLayer, j, function1);
+        drawScope.mo5129recordJVtK1S4(graphicsLayer, j, function1);
     }
 
     /* renamed from: record-JVtK1S4  reason: not valid java name */
-    default void mo5117recordJVtK1S4(GraphicsLayer graphicsLayer, long j, final Function1<? super DrawScope, Unit> function1) {
-        graphicsLayer.m5210recordmLhObY(this, getLayoutDirection(), j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.graphics.drawscope.DrawScope$record$1
+    default void mo5129recordJVtK1S4(GraphicsLayer graphicsLayer, long j, final Function1<? super DrawScope, Unit> function1) {
+        graphicsLayer.m5222recordmLhObY(this, getLayoutDirection(), j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.graphics.drawscope.DrawScope$record$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -480,19 +480,19 @@ public interface DrawScope extends Density {
                 Density density = drawScope.getDrawContext().getDensity();
                 LayoutDirection layoutDirection = drawScope.getDrawContext().getLayoutDirection();
                 Canvas canvas = drawScope.getDrawContext().getCanvas();
-                long mo5037getSizeNHjbRc = drawScope.getDrawContext().mo5037getSizeNHjbRc();
+                long mo5049getSizeNHjbRc = drawScope.getDrawContext().mo5049getSizeNHjbRc();
                 GraphicsLayer graphicsLayer2 = drawScope.getDrawContext().getGraphicsLayer();
                 Function1<DrawScope, Unit> function12 = function1;
                 Density density2 = drawScope2.getDrawContext().getDensity();
                 LayoutDirection layoutDirection2 = drawScope2.getDrawContext().getLayoutDirection();
                 Canvas canvas2 = drawScope2.getDrawContext().getCanvas();
-                long mo5037getSizeNHjbRc2 = drawScope2.getDrawContext().mo5037getSizeNHjbRc();
+                long mo5049getSizeNHjbRc2 = drawScope2.getDrawContext().mo5049getSizeNHjbRc();
                 GraphicsLayer graphicsLayer3 = drawScope2.getDrawContext().getGraphicsLayer();
                 DrawContext drawContext = drawScope2.getDrawContext();
                 drawContext.setDensity(density);
                 drawContext.setLayoutDirection(layoutDirection);
                 drawContext.setCanvas(canvas);
-                drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 drawContext.setGraphicsLayer(graphicsLayer2);
                 canvas.save();
                 try {
@@ -503,7 +503,7 @@ public interface DrawScope extends Density {
                     drawContext2.setDensity(density2);
                     drawContext2.setLayoutDirection(layoutDirection2);
                     drawContext2.setCanvas(canvas2);
-                    drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc2);
+                    drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc2);
                     drawContext2.setGraphicsLayer(graphicsLayer3);
                 }
             }
@@ -515,25 +515,25 @@ public interface DrawScope extends Density {
     /* loaded from: classes.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
-        private static final int DefaultBlendMode = BlendMode.Companion.m4478getSrcOver0nO6VwU();
-        private static final int DefaultFilterQuality = FilterQuality.Companion.m4638getLowfv9h1I();
+        private static final int DefaultBlendMode = BlendMode.Companion.m4490getSrcOver0nO6VwU();
+        private static final int DefaultFilterQuality = FilterQuality.Companion.m4650getLowfv9h1I();
 
         private Companion() {
         }
 
         /* renamed from: getDefaultBlendMode-0nO6VwU  reason: not valid java name */
-        public final int m5118getDefaultBlendMode0nO6VwU() {
+        public final int m5130getDefaultBlendMode0nO6VwU() {
             return DefaultBlendMode;
         }
 
         /* renamed from: getDefaultFilterQuality-f-v9h1I  reason: not valid java name */
-        public final int m5119getDefaultFilterQualityfv9h1I() {
+        public final int m5131getDefaultFilterQualityfv9h1I() {
             return DefaultFilterQuality;
         }
     }
 
     /* renamed from: offsetSize-PENXr5M  reason: not valid java name */
-    private default long m5113offsetSizePENXr5M(long j, long j2) {
-        return Size.m4353constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    private default long m5125offsetSizePENXr5M(long j, long j2) {
+        return Size.m4365constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 }

@@ -27,7 +27,7 @@ public final class DimensionDescription implements Dimension.Coercible, Dimensio
     }
 
     private DimensionDescription(float f) {
-        this(Dp.m7249boximpl(f), (String) null);
+        this(Dp.m7262boximpl(f), (String) null);
     }
 
     public DimensionDescription(String str) {

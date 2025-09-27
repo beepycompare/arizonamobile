@@ -7,13 +7,13 @@ import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDum
 public final class Wd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Vf f727a;
+    public final Vf f728a;
     public final NativeCrashClientModule b;
     public final F0 c;
     public E0 d;
 
     public Wd(Vf vf) {
-        this.f727a = vf;
+        this.f728a = vf;
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
         NativeCrashClientModule nativeCrashClientModule = (NativeCrashClientModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashClientModuleImpl", NativeCrashClientModule.class);
         this.b = nativeCrashClientModule == null ? new NativeCrashClientModuleDummy() : nativeCrashClientModule;

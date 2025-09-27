@@ -224,7 +224,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndAncestors-5BbP62I */
-    public static final /* synthetic */ <T> void m6106visitSelfAndAncestors5BbP62I(DelegatableNode delegatableNode, int i, int i2, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6119visitSelfAndAncestors5BbP62I(DelegatableNode delegatableNode, int i, int i2, Function1<? super T, Unit> function1) {
         NodeChain nodes$ui_release;
         Modifier.Node node = delegatableNode.getNode();
         int i3 = i | i2;
@@ -286,7 +286,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndChildren-Y-YKmho */
-    public static final /* synthetic */ <T> void m6107visitSelfAndChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6120visitSelfAndChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         Modifier.Node node = delegatableNode.getNode();
         MutableVector mutableVector = null;
         while (node != null) {
@@ -382,7 +382,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndChildren-Y-YKmho$default */
-    public static /* synthetic */ void m6108visitSelfAndChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6121visitSelfAndChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -481,15 +481,15 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: has-64DMado */
-    public static final boolean m6097has64DMado(DelegatableNode delegatableNode, int i) {
+    public static final boolean m6110has64DMado(DelegatableNode delegatableNode, int i) {
         return (delegatableNode.getNode().getAggregateChildKindSet$ui_release() & i) != 0;
     }
 
     /* renamed from: requireCoordinator-64DMado */
-    public static final NodeCoordinator m6099requireCoordinator64DMado(DelegatableNode delegatableNode, int i) {
+    public static final NodeCoordinator m6112requireCoordinator64DMado(DelegatableNode delegatableNode, int i) {
         NodeCoordinator coordinator$ui_release = delegatableNode.getNode().getCoordinator$ui_release();
         Intrinsics.checkNotNull(coordinator$ui_release);
-        if (coordinator$ui_release.getTail() == delegatableNode && NodeKindKt.m6254getIncludeSelfInTraversalH91voCI(i)) {
+        if (coordinator$ui_release.getTail() == delegatableNode && NodeKindKt.m6267getIncludeSelfInTraversalH91voCI(i)) {
             NodeCoordinator wrapped$ui_release = coordinator$ui_release.getWrapped$ui_release();
             Intrinsics.checkNotNull(wrapped$ui_release);
             return wrapped$ui_release;
@@ -539,7 +539,7 @@ public final class DelegatableNodeKt {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("Cannot get LayoutCoordinates, Modifier.Node is not attached.");
         }
-        LayoutCoordinates coordinates = m6099requireCoordinator64DMado(delegatableNode, NodeKind.m6245constructorimpl(2)).getCoordinates();
+        LayoutCoordinates coordinates = m6112requireCoordinator64DMado(delegatableNode, NodeKind.m6258constructorimpl(2)).getCoordinates();
         if (!coordinates.isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("LayoutCoordinates is not attached.");
         }
@@ -553,12 +553,12 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: dispatchOnScrollChanged-Uv8p0NA */
-    public static final void m6096dispatchOnScrollChangedUv8p0NA(DelegatableNode delegatableNode, long j) {
-        requireOwner(delegatableNode).mo6307dispatchOnScrollChangedk4lQ0M(j);
+    public static final void m6109dispatchOnScrollChangedUv8p0NA(DelegatableNode delegatableNode, long j) {
+        requireOwner(delegatableNode).mo6320dispatchOnScrollChangedk4lQ0M(j);
     }
 
     /* renamed from: dispatchForKind-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6095dispatchForKind6rFNWt0(Modifier.Node node, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6108dispatchForKind6rFNWt0(Modifier.Node node, int i, Function1<? super T, Unit> function1) {
         MutableVector mutableVector = null;
         while (node != null) {
             Intrinsics.reifiedOperationMarker(3, ExifInterface.GPS_DIRECTION_TRUE);
@@ -609,7 +609,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSelfAndLocalDescendants-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6109visitSelfAndLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6122visitSelfAndLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
@@ -658,7 +658,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitLocalDescendants-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6105visitLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6118visitLocalDescendants6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
@@ -706,7 +706,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitLocalAncestors-6rFNWt0 */
-    public static final /* synthetic */ <T> void m6104visitLocalAncestors6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6117visitLocalAncestors6rFNWt0(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalAncestors called on an unattached node");
         }
@@ -751,7 +751,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitAncestors-Y-YKmho */
-    public static final /* synthetic */ <T> void m6100visitAncestorsYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6113visitAncestorsYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         NodeChain nodes$ui_release;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -806,7 +806,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitAncestors-Y-YKmho$default */
-    public static /* synthetic */ void m6101visitAncestorsYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6114visitAncestorsYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         NodeChain nodes$ui_release;
         if ((i2 & 2) != 0) {
             z = false;
@@ -866,7 +866,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: ancestors-64DMado */
-    public static final /* synthetic */ <T> List<T> m6094ancestors64DMado(DelegatableNode delegatableNode, int i) {
+    public static final /* synthetic */ <T> List<T> m6107ancestors64DMado(DelegatableNode delegatableNode, int i) {
         NodeChain nodes$ui_release;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -930,7 +930,7 @@ public final class DelegatableNodeKt {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: nearestAncestor-64DMado */
-    public static final /* synthetic */ <T> T m6098nearestAncestor64DMado(DelegatableNode delegatableNode, int i) {
+    public static final /* synthetic */ <T> T m6111nearestAncestor64DMado(DelegatableNode delegatableNode, int i) {
         NodeChain nodes$ui_release;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -990,7 +990,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitChildren-Y-YKmho */
-    public static final /* synthetic */ <T> void m6102visitChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6115visitChildrenYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -1052,7 +1052,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitChildren-Y-YKmho$default */
-    public static /* synthetic */ void m6103visitChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6116visitChildrenYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1119,7 +1119,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtreeIf-Y-YKmho */
-    public static final /* synthetic */ <T> void m6112visitSubtreeIfYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Boolean> function1) {
+    public static final /* synthetic */ <T> void m6125visitSubtreeIfYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Boolean> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -1180,7 +1180,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtreeIf-Y-YKmho$default */
-    public static /* synthetic */ void m6113visitSubtreeIfYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6126visitSubtreeIfYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1244,7 +1244,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtree-Y-YKmho */
-    public static final /* synthetic */ <T> void m6110visitSubtreeYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
+    public static final /* synthetic */ <T> void m6123visitSubtreeYYKmho(DelegatableNode delegatableNode, int i, boolean z, Function1<? super T, Unit> function1) {
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -1302,7 +1302,7 @@ public final class DelegatableNodeKt {
     }
 
     /* renamed from: visitSubtree-Y-YKmho$default */
-    public static /* synthetic */ void m6111visitSubtreeYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m6124visitSubtreeYYKmho$default(DelegatableNode delegatableNode, int i, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             z = false;
         }
@@ -1365,7 +1365,7 @@ public final class DelegatableNodeKt {
     }
 
     public static final LayoutModifierNode asLayoutModifierNode(Modifier.Node node) {
-        if ((NodeKind.m6245constructorimpl(2) & node.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(2) & node.getKindSet$ui_release()) != 0) {
             if (node instanceof LayoutModifierNode) {
                 return (LayoutModifierNode) node;
             }
@@ -1375,7 +1375,7 @@ public final class DelegatableNodeKt {
                     if (delegate$ui_release instanceof LayoutModifierNode) {
                         return (LayoutModifierNode) delegate$ui_release;
                     }
-                    if ((delegate$ui_release instanceof DelegatingNode) && (NodeKind.m6245constructorimpl(2) & delegate$ui_release.getKindSet$ui_release()) != 0) {
+                    if ((delegate$ui_release instanceof DelegatingNode) && (NodeKind.m6258constructorimpl(2) & delegate$ui_release.getKindSet$ui_release()) != 0) {
                         delegate$ui_release = ((DelegatingNode) delegate$ui_release).getDelegate$ui_release();
                     } else {
                         delegate$ui_release = delegate$ui_release.getChild$ui_release();

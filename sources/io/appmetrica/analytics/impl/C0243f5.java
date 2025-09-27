@@ -7,7 +7,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class C0243f5 implements InterfaceC0678w7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f872a;
+    public final String f873a;
     public final String b;
 
     public C0243f5(C0476o5 c0476o5) {
@@ -17,7 +17,7 @@ public final class C0243f5 implements InterfaceC0678w7 {
         } else {
             b = c0476o5.b();
         }
-        this.f872a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.f873a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
         this.b = "db_metrica_" + c0476o5;
     }
 
@@ -28,6 +28,6 @@ public final class C0243f5 implements InterfaceC0678w7 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0678w7
     public final String b() {
-        return this.f872a;
+        return this.f873a;
     }
 }

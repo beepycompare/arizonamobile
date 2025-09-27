@@ -49,11 +49,14 @@ import ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider;
 import ru.mrlargha.commonui.elements.dialogs.playerlist.Player;
 import ru.mrlargha.commonui.elements.dialogs.playerlist.PlayerListDialog;
 import ru.mrlargha.commonui.elements.hud.presentation.Hud;
+import ru.mrlargha.commonui.elements.items3d.ItemScene;
+import ru.mrlargha.commonui.elements.items3d.ListenerKt;
+import ru.mrlargha.commonui.elements.items3d.Position;
 import ru.mrlargha.commonui.elements.video.StreamVideo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.common_factory.CommonElementsFactory;
 /* loaded from: classes3.dex */
-public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener, CommandBinder.BinderListener, IBackendNotifier, IAutocompleteStateProvider, ArizonaSnackbar.SnackBarListener, Hud.HudListener {
+public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener, CommandBinder.BinderListener, IBackendNotifier, IAutocompleteStateProvider, ArizonaSnackbar.SnackBarListener, Hud.HudListener, ItemScene {
     private static final String TAG = "GTASAMainClass";
     SharedPreferences settings;
     public SettingsRepository settingsRepository;
@@ -75,10 +78,11 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     private StreamVideo streamVideo = null;
     private ArizonaSnackbar arizonaSnackbar = null;
     private String snackbarJson = "";
+    private Boolean isHudEnabled = true;
     @Deprecated
     private final ConcurrentHashMap<Integer, SAMPUIElement> uiElements = new ConcurrentHashMap<>();
 
-    private native void InitSetting(boolean is_new_interface, int show_fps, boolean is_new_keyboard, boolean is_streamer, String version, int interfaces_count, String model, String notify_hash, String channels_state);
+    private native void InitSetting(boolean is_new_interface, int show_fps, boolean is_new_keyboard, boolean is_streamer, String version, int interfaces_count, String model, String notify_hash, String channels_state, boolean ambient_mode);
 
     private native void OnInputEnd(String str);
 
@@ -103,6 +107,22 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     private native void switchStatusChanged(int viewBackendID, int elementID, boolean state);
 
     private native void viewShownStatusChanged(int viewBackendID, boolean shown);
+
+    public native void Cef3DAddModel(int model, boolean isSimple);
+
+    public native void Cef3DRemoveModels();
+
+    public native void Cef3DRotateModel(int model, boolean isSimple, float x, float y, float z);
+
+    public native void Cef3DScaleModel(int model, boolean isSimple, float scale);
+
+    public native void Cef3DSetBackground(String txd, String texture, int x, int y, int width, int height);
+
+    public native void Cef3DSetVehicleColors(int model, byte main, byte second);
+
+    public native void Cef3DSetVehicleComponent(int model, int component, boolean isSimple, boolean remove);
+
+    public native void Cef3DSetupScene(int x, int y, int width, int height, int frameRate, byte red, byte green, byte blue);
 
     public void SetDonateJsonURL(String text) {
     }
@@ -333,8 +353,12 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         try {
             String channelsState = FirebaseConfigHelper.INSTANCE.getChannelsState();
             String str = Build.MANUFACTURER + StringUtils.PROCESS_POSTFIX_DELIMITER + Build.MODEL + StringUtils.PROCESS_POSTFIX_DELIMITER + getUniqueID() + StringUtils.PROCESS_POSTFIX_DELIMITER + (this.notifyChecker.isNotificationEnabled() ? "notify_on" : "notify_off");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false) + "\n5. Version: (release) 2.1 - v16.5.2\n6. Last element ID: " + UIElementID.getLastUIElementID() + "\n7. Device name: " + str + "\n8. Token: " + getSettingsPreferences().getString("token", "") + "\n9. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, PreferenceManager.getDefaultSharedPreferences(this).getBoolean(SettingsConstants.STREAMER_MODE, false), "(release) 2.1 - v16.5.2", UIElementID.getLastUIElementID(), str, getSettingsPreferences().getString("token", ""), channelsState);
+            SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
+            boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
+            String string = defaultSharedPreferences.getString("token", "");
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v16.5.5\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v16.5.5", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -928,6 +952,9 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         } catch (IllegalStateException e) {
             Log.w(TAG, "setUIElementVisible: we couldn't find instance from crashlytics " + e);
         }
+        if (!this.isHudEnabled.booleanValue() && i == UIElementID.HUD.getId() && z) {
+            return;
+        }
         if (uIElementID.getId() == UIElementID.INVENTORY.getId() && !z) {
             if (uIElementID.getId() != UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
                 setUIElementVisible(UIElementID.INVENTORY_SECURITY_SCREEN.getId(), false);
@@ -1263,27 +1290,27 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void setChatPageSize(int pageSize) {
-        getSettingsPreferences().edit().putInt(SettingsConstants.CHAT_PAGE_SIZE, pageSize).apply();
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putInt(SettingsConstants.CHAT_PAGE_SIZE, pageSize).apply();
     }
 
     public void setChatFontSize(float fontSize) {
-        getSettingsPreferences().edit().putFloat(SettingsConstants.CHAT_FONT_SIZE, fontSize).apply();
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putFloat(SettingsConstants.CHAT_FONT_SIZE, fontSize).apply();
     }
 
     public void setChatPrintTimestamp(boolean needPrintTimestamp) {
-        getSettingsPreferences().edit().putBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, needPrintTimestamp).apply();
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(SettingsConstants.CHAT_PRINT_TIMESTAMP, needPrintTimestamp).apply();
+    }
+
+    public void setAmbientSounds(boolean state) {
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(SettingsConstants.STREAMER_MODE, state).apply();
     }
 
     public void setStreamerMode(boolean streamerMode) {
-        getSettingsPreferences().edit().putBoolean(SettingsConstants.STREAMER_MODE, streamerMode).apply();
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(SettingsConstants.STREAMER_MODE, streamerMode).apply();
     }
 
     public void setIsHeadMoving(boolean isHeadMoving) {
-        getSettingsPreferences().edit().putBoolean(SettingsConstants.IS_HEAD_MOVING, isHeadMoving).apply();
-    }
-
-    private SharedPreferences getSettingsPreferences() {
-        return getSharedPreferences("myAppPreference", 0);
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean(SettingsConstants.IS_HEAD_MOVING, isHeadMoving).apply();
     }
 
     @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
@@ -1304,6 +1331,52 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
     public String t_GetKeyboardHistoryText(int index) {
         return this.inputStorage.GetKeyboardHistoryText(index);
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void setupScene() {
+        Log.d("setCarModel", "setupScene: ");
+        this.isHudEnabled = false;
+        setUIElementVisible(UIElementID.HUD.getId(), false);
+        Position positionModelCentered = ListenerKt.positionModelCentered(this, 1.0f);
+        Cef3DSetupScene(positionModelCentered.getX(), positionModelCentered.getY(), positionModelCentered.getW(), positionModelCentered.getH(), 60, (byte) 0, (byte) 0, (byte) 0);
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void setCarModel(int id, String bg) {
+        Cef3DRemoveModels();
+        Log.d("setCarModel", "1: $id");
+        Cef3DAddModel(id, false);
+        Log.d("setCarModel", "2: $id");
+        Cef3DSetBackground("hud", bg, 0, 0, 512, 512);
+        Cef3DRotateModel(id, false, 45.0f, 0.0f, 45.0f);
+        Log.d("setCarModel", "3: $id");
+        Cef3DScaleModel(id, false, 1.5f);
+        Log.d("setCarModel", "4: $id");
+        Cef3DSetVehicleColors(id, (byte) 1, (byte) 0);
+        Log.d("setCarModel", "5: $id");
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void closeScene() {
+        this.isHudEnabled = true;
+        setUIElementVisible(UIElementID.HUD.getId(), true);
+        Cef3DRemoveModels();
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void rotateModel(int id, float x, float y, float z) {
+        Cef3DRotateModel(id, false, x, y, z);
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void scaleModel(int id, float scale) {
+        Cef3DScaleModel(id, false, scale);
+    }
+
+    @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
+    public void setCarModule(int id, int module) {
+        Cef3DSetVehicleComponent(id, module, false, false);
     }
 
     public void exitGame() {

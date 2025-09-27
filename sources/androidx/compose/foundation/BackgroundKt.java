@@ -16,11 +16,11 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class BackgroundKt {
     /* renamed from: background-bw27NRU$default */
-    public static /* synthetic */ Modifier m257backgroundbw27NRU$default(Modifier modifier, long j, Shape shape, int i, Object obj) {
+    public static /* synthetic */ Modifier m267backgroundbw27NRU$default(Modifier modifier, long j, Shape shape, int i, Object obj) {
         if ((i & 2) != 0) {
             shape = RectangleShapeKt.getRectangleShape();
         }
-        return m256backgroundbw27NRU(modifier, j, shape);
+        return m266backgroundbw27NRU(modifier, j, shape);
     }
 
     public static /* synthetic */ Modifier background$default(Modifier modifier, Brush brush, Shape shape, float f, int i, Object obj) {
@@ -57,7 +57,7 @@ public final class BackgroundKt {
     }
 
     /* renamed from: background-bw27NRU */
-    public static final Modifier m256backgroundbw27NRU(Modifier modifier, final long j, final Shape shape) {
+    public static final Modifier m266backgroundbw27NRU(Modifier modifier, final long j, final Shape shape) {
         return modifier.then(new BackgroundElement(j, null, 1.0f, shape, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.BackgroundKt$background-bw27NRU$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -73,8 +73,8 @@ public final class BackgroundKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName(O2.g);
-                inspectorInfo.setValue(Color.m4527boximpl(j));
-                inspectorInfo.getProperties().set("color", Color.m4527boximpl(j));
+                inspectorInfo.setValue(Color.m4539boximpl(j));
+                inspectorInfo.getProperties().set("color", Color.m4539boximpl(j));
                 inspectorInfo.getProperties().set("shape", shape);
             }
         } : InspectableValueKt.getNoInspectorInfo(), 2, null));

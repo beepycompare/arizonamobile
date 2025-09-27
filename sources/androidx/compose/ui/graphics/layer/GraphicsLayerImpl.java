@@ -29,10 +29,10 @@ public interface GraphicsLayerImpl {
     float getAlpha();
 
     /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-    long mo5219getAmbientShadowColor0d7_KjU();
+    long mo5231getAmbientShadowColor0d7_KjU();
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    int mo5220getBlendMode0nO6VwU();
+    int mo5232getBlendMode0nO6VwU();
 
     float getCameraDistance();
 
@@ -41,7 +41,7 @@ public interface GraphicsLayerImpl {
     ColorFilter getColorFilter();
 
     /* renamed from: getCompositingStrategy-ke2Ky5w  reason: not valid java name */
-    int mo5221getCompositingStrategyke2Ky5w();
+    int mo5233getCompositingStrategyke2Ky5w();
 
     default boolean getHasDisplayList() {
         return true;
@@ -52,7 +52,7 @@ public interface GraphicsLayerImpl {
     long getOwnerId();
 
     /* renamed from: getPivotOffset-F1C5BW0  reason: not valid java name */
-    long mo5222getPivotOffsetF1C5BW0();
+    long mo5234getPivotOffsetF1C5BW0();
 
     RenderEffect getRenderEffect();
 
@@ -69,7 +69,7 @@ public interface GraphicsLayerImpl {
     float getShadowElevation();
 
     /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-    long mo5223getSpotShadowColor0d7_KjU();
+    long mo5235getSpotShadowColor0d7_KjU();
 
     default boolean getSupportsSoftwareRendering() {
         return false;
@@ -86,10 +86,10 @@ public interface GraphicsLayerImpl {
     void setAlpha(float f);
 
     /* renamed from: setAmbientShadowColor-8_81llA  reason: not valid java name */
-    void mo5224setAmbientShadowColor8_81llA(long j);
+    void mo5236setAmbientShadowColor8_81llA(long j);
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    void mo5225setBlendModes9anfk8(int i);
+    void mo5237setBlendModes9anfk8(int i);
 
     void setCameraDistance(float f);
 
@@ -98,18 +98,18 @@ public interface GraphicsLayerImpl {
     void setColorFilter(ColorFilter colorFilter);
 
     /* renamed from: setCompositingStrategy-Wpw9cng  reason: not valid java name */
-    void mo5226setCompositingStrategyWpw9cng(int i);
+    void mo5238setCompositingStrategyWpw9cng(int i);
 
     void setInvalidated(boolean z);
 
     /* renamed from: setOutline-O0kMr_c  reason: not valid java name */
-    void mo5227setOutlineO0kMr_c(Outline outline, long j);
+    void mo5239setOutlineO0kMr_c(Outline outline, long j);
 
     /* renamed from: setPivotOffset-k-4lQ0M  reason: not valid java name */
-    void mo5228setPivotOffsetk4lQ0M(long j);
+    void mo5240setPivotOffsetk4lQ0M(long j);
 
     /* renamed from: setPosition-H0pRuoY  reason: not valid java name */
-    void mo5229setPositionH0pRuoY(int i, int i2, long j);
+    void mo5241setPositionH0pRuoY(int i, int i2, long j);
 
     void setRenderEffect(RenderEffect renderEffect);
 
@@ -126,7 +126,7 @@ public interface GraphicsLayerImpl {
     void setShadowElevation(float f);
 
     /* renamed from: setSpotShadowColor-8_81llA  reason: not valid java name */
-    void mo5230setSpotShadowColor8_81llA(long j);
+    void mo5242setSpotShadowColor8_81llA(long j);
 
     void setTranslationX(float f);
 
@@ -146,7 +146,7 @@ public interface GraphicsLayerImpl {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(DrawScope drawScope) {
-                DrawScope.m5110drawRectnJ9OG0$default(drawScope, Color.Companion.m4572getTransparent0d7_KjU(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+                DrawScope.m5122drawRectnJ9OG0$default(drawScope, Color.Companion.m4584getTransparent0d7_KjU(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
             }
         };
 

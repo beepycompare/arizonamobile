@@ -4,11 +4,11 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.rustore.sdk.metrics.internal.X;
 import ru.rustore.sdk.reactive.core.Dispatcher;
 /* renamed from: ru.rustore.sdk.metrics.internal.n  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0835n {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f1462a;
+    public final U f1463a;
     public final C0824c b;
     public final V c;
     public final Dispatcher d;
@@ -21,7 +21,7 @@ public final class C0835n {
         Intrinsics.checkNotNullParameter(sendMetricsEventJobScheduler, "sendMetricsEventJobScheduler");
         Intrinsics.checkNotNullParameter(singleThreadDispatcher, "singleThreadDispatcher");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1462a = sendMetricsEventInteractor;
+        this.f1463a = sendMetricsEventInteractor;
         this.b = enqueueMetricsEventUseCase;
         this.c = sendMetricsEventJobScheduler;
         this.d = singleThreadDispatcher;

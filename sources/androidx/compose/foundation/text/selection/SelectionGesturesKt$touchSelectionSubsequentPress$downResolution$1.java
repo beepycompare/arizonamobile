@@ -59,7 +59,7 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
             final Ref.LongRef longRef = this.$overSlop;
             this.L$0 = awaitPointerEventScope2;
             this.label = 1;
-            Object m481awaitTouchSlopOrCancellationjO51t88 = DragGestureDetectorKt.m481awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, j, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1$$ExternalSyntheticLambda0
+            Object m491awaitTouchSlopOrCancellationjO51t88 = DragGestureDetectorKt.m491awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, j, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     Unit invokeSuspend$lambda$0;
@@ -67,11 +67,11 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
                     return invokeSuspend$lambda$0;
                 }
             }, this);
-            if (m481awaitTouchSlopOrCancellationjO51t88 == coroutine_suspended) {
+            if (m491awaitTouchSlopOrCancellationjO51t88 == coroutine_suspended) {
                 return coroutine_suspended;
             }
             awaitPointerEventScope = awaitPointerEventScope2;
-            obj = m481awaitTouchSlopOrCancellationjO51t88;
+            obj = m491awaitTouchSlopOrCancellationjO51t88;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
@@ -92,7 +92,7 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, PointerInputChange pointerInputChange, Offset offset) {
         pointerInputChange.consume();
-        longRef.element = offset.m4303unboximpl();
+        longRef.element = offset.m4315unboximpl();
         return Unit.INSTANCE;
     }
 }

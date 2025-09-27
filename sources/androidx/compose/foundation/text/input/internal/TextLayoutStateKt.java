@@ -10,7 +10,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextLayoutStateKt {
     /* renamed from: fromTextLayoutToCore-Uv8p0NA  reason: not valid java name */
-    public static final long m1580fromTextLayoutToCoreUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1590fromTextLayoutToCoreUv8p0NA(TextLayoutState textLayoutState, long j) {
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             Offset offset = null;
@@ -24,11 +24,11 @@ public final class TextLayoutStateKt {
                         coreNodeCoordinates = null;
                     }
                     if (coreNodeCoordinates != null) {
-                        offset = Offset.m4282boximpl(coreNodeCoordinates.mo5963localPositionOfR5De75A(textLayoutNodeCoordinates, j));
+                        offset = Offset.m4294boximpl(coreNodeCoordinates.mo5976localPositionOfR5De75A(textLayoutNodeCoordinates, j));
                     }
                 }
                 if (offset != null) {
-                    return offset.m4303unboximpl();
+                    return offset.m4315unboximpl();
                 }
             }
         }
@@ -36,31 +36,31 @@ public final class TextLayoutStateKt {
     }
 
     /* renamed from: fromDecorationToTextLayout-Uv8p0NA  reason: not valid java name */
-    public static final long m1579fromDecorationToTextLayoutUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1589fromDecorationToTextLayoutUv8p0NA(TextLayoutState textLayoutState, long j) {
         Offset offset;
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
             if (decoratorNodeCoordinates != null) {
-                offset = Offset.m4282boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo5963localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
+                offset = Offset.m4294boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo5976localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
             } else {
                 offset = null;
             }
             if (offset != null) {
-                return offset.m4303unboximpl();
+                return offset.m4315unboximpl();
             }
         }
         return j;
     }
 
     /* renamed from: fromWindowToDecoration-Uv8p0NA  reason: not valid java name */
-    public static final long m1581fromWindowToDecorationUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1591fromWindowToDecorationUv8p0NA(TextLayoutState textLayoutState, long j) {
         LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
-        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo5971windowToLocalMKHz9U(j);
+        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo5984windowToLocalMKHz9U(j);
     }
 
     /* renamed from: coerceIn-3MmeM6k  reason: not valid java name */
-    public static final long m1578coerceIn3MmeM6k(long j, Rect rect) {
+    public static final long m1588coerceIn3MmeM6k(long j, Rect rect) {
         float right;
         float bottom;
         int i = (int) (j >> 32);
@@ -75,6 +75,6 @@ public final class TextLayoutStateKt {
         } else {
             bottom = Float.intBitsToFloat(i2) > rect.getBottom() ? rect.getBottom() : Float.intBitsToFloat(i2);
         }
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
     }
 }

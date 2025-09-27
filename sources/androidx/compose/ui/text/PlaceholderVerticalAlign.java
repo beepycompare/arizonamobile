@@ -10,49 +10,49 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class PlaceholderVerticalAlign {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int AboveBaseline = m6609constructorimpl(1);
-    private static final int Top = m6609constructorimpl(2);
-    private static final int Bottom = m6609constructorimpl(3);
-    private static final int Center = m6609constructorimpl(4);
-    private static final int TextTop = m6609constructorimpl(5);
-    private static final int TextBottom = m6609constructorimpl(6);
-    private static final int TextCenter = m6609constructorimpl(7);
+    private static final int AboveBaseline = m6622constructorimpl(1);
+    private static final int Top = m6622constructorimpl(2);
+    private static final int Bottom = m6622constructorimpl(3);
+    private static final int Center = m6622constructorimpl(4);
+    private static final int TextTop = m6622constructorimpl(5);
+    private static final int TextBottom = m6622constructorimpl(6);
+    private static final int TextCenter = m6622constructorimpl(7);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PlaceholderVerticalAlign m6608boximpl(int i) {
+    public static final /* synthetic */ PlaceholderVerticalAlign m6621boximpl(int i) {
         return new PlaceholderVerticalAlign(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6609constructorimpl(int i) {
+    public static int m6622constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6610equalsimpl(int i, Object obj) {
-        return (obj instanceof PlaceholderVerticalAlign) && i == ((PlaceholderVerticalAlign) obj).m6614unboximpl();
+    public static boolean m6623equalsimpl(int i, Object obj) {
+        return (obj instanceof PlaceholderVerticalAlign) && i == ((PlaceholderVerticalAlign) obj).m6627unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6611equalsimpl0(int i, int i2) {
+    public static final boolean m6624equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6612hashCodeimpl(int i) {
+    public static int m6625hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m6610equalsimpl(this.value, obj);
+        return m6623equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6612hashCodeimpl(this.value);
+        return m6625hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6614unboximpl() {
+    public final /* synthetic */ int m6627unboximpl() {
         return this.value;
     }
 
@@ -61,12 +61,12 @@ public final class PlaceholderVerticalAlign {
     }
 
     public String toString() {
-        return m6613toStringimpl(this.value);
+        return m6626toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6613toStringimpl(int i) {
-        return m6611equalsimpl0(i, AboveBaseline) ? "AboveBaseline" : m6611equalsimpl0(i, Top) ? "Top" : m6611equalsimpl0(i, Bottom) ? "Bottom" : m6611equalsimpl0(i, Center) ? "Center" : m6611equalsimpl0(i, TextTop) ? "TextTop" : m6611equalsimpl0(i, TextBottom) ? "TextBottom" : m6611equalsimpl0(i, TextCenter) ? "TextCenter" : "Invalid";
+    public static String m6626toStringimpl(int i) {
+        return m6624equalsimpl0(i, AboveBaseline) ? "AboveBaseline" : m6624equalsimpl0(i, Top) ? "Top" : m6624equalsimpl0(i, Bottom) ? "Bottom" : m6624equalsimpl0(i, Center) ? "Center" : m6624equalsimpl0(i, TextTop) ? "TextTop" : m6624equalsimpl0(i, TextBottom) ? "TextBottom" : m6624equalsimpl0(i, TextCenter) ? "TextCenter" : "Invalid";
     }
 
     /* compiled from: Placeholder.kt */
@@ -81,37 +81,37 @@ public final class PlaceholderVerticalAlign {
         }
 
         /* renamed from: getAboveBaseline-J6kI3mc  reason: not valid java name */
-        public final int m6615getAboveBaselineJ6kI3mc() {
+        public final int m6628getAboveBaselineJ6kI3mc() {
             return PlaceholderVerticalAlign.AboveBaseline;
         }
 
         /* renamed from: getTop-J6kI3mc  reason: not valid java name */
-        public final int m6621getTopJ6kI3mc() {
+        public final int m6634getTopJ6kI3mc() {
             return PlaceholderVerticalAlign.Top;
         }
 
         /* renamed from: getBottom-J6kI3mc  reason: not valid java name */
-        public final int m6616getBottomJ6kI3mc() {
+        public final int m6629getBottomJ6kI3mc() {
             return PlaceholderVerticalAlign.Bottom;
         }
 
         /* renamed from: getCenter-J6kI3mc  reason: not valid java name */
-        public final int m6617getCenterJ6kI3mc() {
+        public final int m6630getCenterJ6kI3mc() {
             return PlaceholderVerticalAlign.Center;
         }
 
         /* renamed from: getTextTop-J6kI3mc  reason: not valid java name */
-        public final int m6620getTextTopJ6kI3mc() {
+        public final int m6633getTextTopJ6kI3mc() {
             return PlaceholderVerticalAlign.TextTop;
         }
 
         /* renamed from: getTextBottom-J6kI3mc  reason: not valid java name */
-        public final int m6618getTextBottomJ6kI3mc() {
+        public final int m6631getTextBottomJ6kI3mc() {
             return PlaceholderVerticalAlign.TextBottom;
         }
 
         /* renamed from: getTextCenter-J6kI3mc  reason: not valid java name */
-        public final int m6619getTextCenterJ6kI3mc() {
+        public final int m6632getTextCenterJ6kI3mc() {
             return PlaceholderVerticalAlign.TextCenter;
         }
     }

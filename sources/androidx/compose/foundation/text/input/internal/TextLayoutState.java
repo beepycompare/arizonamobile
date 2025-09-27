@@ -41,7 +41,7 @@ public final class TextLayoutState {
         this.textLayoutNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.coreNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
         this.decoratorNodeCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7249boximpl(Dp.m7251constructorimpl(0)), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7262boximpl(Dp.m7264constructorimpl(0)), null, 2, null);
         this.minHeightForSingleLineField$delegate = mutableStateOf$default;
         this.bringIntoViewRequester = BringIntoViewRequesterKt.BringIntoViewRequester();
     }
@@ -83,13 +83,13 @@ public final class TextLayoutState {
     }
 
     /* renamed from: getMinHeightForSingleLineField-D9Ej5fM  reason: not valid java name */
-    public final float m1573getMinHeightForSingleLineFieldD9Ej5fM() {
-        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m7265unboximpl();
+    public final float m1583getMinHeightForSingleLineFieldD9Ej5fM() {
+        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m7278unboximpl();
     }
 
     /* renamed from: setMinHeightForSingleLineField-0680j_4  reason: not valid java name */
-    public final void m1577setMinHeightForSingleLineField0680j_4(float f) {
-        this.minHeightForSingleLineField$delegate.setValue(Dp.m7249boximpl(f));
+    public final void m1587setMinHeightForSingleLineField0680j_4(float f) {
+        this.minHeightForSingleLineField$delegate.setValue(Dp.m7262boximpl(f));
     }
 
     public final BringIntoViewRequester getBringIntoViewRequester() {
@@ -101,8 +101,8 @@ public final class TextLayoutState {
     }
 
     /* renamed from: layoutWithNewMeasureInputs--hBUhpc  reason: not valid java name */
-    public final TextLayoutResult m1576layoutWithNewMeasureInputshBUhpc(Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
-        TextLayoutResult m1564layoutWithNewMeasureInputshBUhpc = this.layoutCache.m1564layoutWithNewMeasureInputshBUhpc(density, layoutDirection, resolver, j);
+    public final TextLayoutResult m1586layoutWithNewMeasureInputshBUhpc(Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
+        TextLayoutResult m1574layoutWithNewMeasureInputshBUhpc = this.layoutCache.m1574layoutWithNewMeasureInputshBUhpc(density, layoutDirection, resolver, j);
         Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function2 = this.onTextLayout;
         if (function2 != null) {
             function2.invoke(density, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextLayoutState$$ExternalSyntheticLambda0
@@ -114,7 +114,7 @@ public final class TextLayoutState {
                 }
             });
         }
-        return m1564layoutWithNewMeasureInputshBUhpc;
+        return m1574layoutWithNewMeasureInputshBUhpc;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -123,34 +123,34 @@ public final class TextLayoutState {
     }
 
     /* renamed from: getOffsetForPosition-3MmeM6k$default  reason: not valid java name */
-    public static /* synthetic */ int m1571getOffsetForPosition3MmeM6k$default(TextLayoutState textLayoutState, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ int m1581getOffsetForPosition3MmeM6k$default(TextLayoutState textLayoutState, long j, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             z = true;
         }
-        return textLayoutState.m1574getOffsetForPosition3MmeM6k(j, z);
+        return textLayoutState.m1584getOffsetForPosition3MmeM6k(j, z);
     }
 
     /* renamed from: getOffsetForPosition-3MmeM6k  reason: not valid java name */
-    public final int m1574getOffsetForPosition3MmeM6k(long j, boolean z) {
+    public final int m1584getOffsetForPosition3MmeM6k(long j, boolean z) {
         TextLayoutResult layoutResult = getLayoutResult();
         if (layoutResult == null) {
             return -1;
         }
         if (z) {
-            j = m1572coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(j);
+            j = m1582coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(j);
         }
-        return layoutResult.m6683getOffsetForPositionk4lQ0M(TextLayoutStateKt.m1579fromDecorationToTextLayoutUv8p0NA(this, j));
+        return layoutResult.m6696getOffsetForPositionk4lQ0M(TextLayoutStateKt.m1589fromDecorationToTextLayoutUv8p0NA(this, j));
     }
 
     /* renamed from: isPositionOnText-k-4lQ0M  reason: not valid java name */
-    public final boolean m1575isPositionOnTextk4lQ0M(long j) {
+    public final boolean m1585isPositionOnTextk4lQ0M(long j) {
         TextLayoutResult layoutResult = getLayoutResult();
         if (layoutResult == null) {
             return false;
         }
-        long m1579fromDecorationToTextLayoutUv8p0NA = TextLayoutStateKt.m1579fromDecorationToTextLayoutUv8p0NA(this, m1572coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(j));
-        int lineForVerticalPosition = layoutResult.getLineForVerticalPosition(Float.intBitsToFloat((int) (4294967295L & m1579fromDecorationToTextLayoutUv8p0NA)));
-        int i = (int) (m1579fromDecorationToTextLayoutUv8p0NA >> 32);
+        long m1589fromDecorationToTextLayoutUv8p0NA = TextLayoutStateKt.m1589fromDecorationToTextLayoutUv8p0NA(this, m1582coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(j));
+        int lineForVerticalPosition = layoutResult.getLineForVerticalPosition(Float.intBitsToFloat((int) (4294967295L & m1589fromDecorationToTextLayoutUv8p0NA)));
+        int i = (int) (m1589fromDecorationToTextLayoutUv8p0NA >> 32);
         return Float.intBitsToFloat(i) >= layoutResult.getLineLeft(lineForVerticalPosition) && Float.intBitsToFloat(i) <= layoutResult.getLineRight(lineForVerticalPosition);
     }
 
@@ -161,7 +161,7 @@ public final class TextLayoutState {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long m1572coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(long j) {
+    public final long m1582coercedInVisibleBoundsOfInputTextMKHz9U$foundation_release(long j) {
         Rect zero;
         LayoutCoordinates textLayoutNodeCoordinates = getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
@@ -176,6 +176,6 @@ public final class TextLayoutState {
             }
         }
         zero = Rect.Companion.getZero();
-        return TextLayoutStateKt.m1578coerceIn3MmeM6k(j, zero);
+        return TextLayoutStateKt.m1588coerceIn3MmeM6k(j, zero);
     }
 }

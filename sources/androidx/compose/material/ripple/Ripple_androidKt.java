@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes.dex */
 public final class Ripple_androidKt {
     /* renamed from: createPlatformRippleNode-TDGSqEk  reason: not valid java name */
-    public static final DelegatableNode m1861createPlatformRippleNodeTDGSqEk(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
+    public static final DelegatableNode m1871createPlatformRippleNodeTDGSqEk(InteractionSource interactionSource, boolean z, float f, ColorProducer colorProducer, Function0<RippleAlpha> function0) {
         return new AndroidRippleNode(interactionSource, z, f, colorProducer, function0, null);
     }
 

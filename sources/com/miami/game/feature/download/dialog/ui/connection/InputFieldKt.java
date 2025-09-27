@@ -49,12 +49,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class InputFieldKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit InputField_rAjV9yQ$lambda$1(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
-        m8955InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m8967InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: InputField-rAjV9yQ  reason: not valid java name */
-    public static final void m8955InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
+    public static final void m8967InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(state, "state");
         Composer startRestartGroup = composer.startRestartGroup(-155401538);
@@ -95,24 +95,24 @@ public final class InputFieldKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
             }
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -561676279, "C41@1521L21,41@1505L166,49@1880L10,50@1934L13,51@1978L13,48@1804L36,45@1681L518:InputField.kt#yp5s1q");
             int i4 = i3;
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i3 >> 6) & 14), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, 25008, 104);
-            Modifier m889width3ABfNKs = SizeKt.m889width3ABfNKs(Modifier.Companion, f);
+            Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
             float f2 = 24;
-            TextStyle m6726copyp1EtxEg$default = TextStyle.m6726copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4536copywmQWz5c$default(Color.Companion.m4574getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9048dpToSp8Feqmps(Dp.m7251constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m6739copyp1EtxEg$default = TextStyle.m6739copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4548copywmQWz5c$default(Color.Companion.m4586getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9061dpToSp8Feqmps(Dp.m7264constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -128,7 +128,7 @@ public final class InputFieldKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m889width3ABfNKs, false, false, m6726copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m8951getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
+            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m899width3ABfNKs, false, false, m6739copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m8963getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

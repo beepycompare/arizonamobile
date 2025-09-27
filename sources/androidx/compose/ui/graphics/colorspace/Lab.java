@@ -31,7 +31,7 @@ public final class Lab extends ColorSpace {
     }
 
     public Lab(String str, int i) {
-        super(str, ColorModel.Companion.m4968getLabxdoWZVw(), i, null);
+        super(str, ColorModel.Companion.m4980getLabxdoWZVw(), i, null);
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
@@ -110,7 +110,7 @@ public final class Lab extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics_release */
-    public long mo4972xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo4984xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         float f5 = f / Illuminant.INSTANCE.getD50Xyz$ui_graphics_release()[0];
         float f6 = f2 / Illuminant.INSTANCE.getD50Xyz$ui_graphics_release()[1];
         float f7 = f3 / Illuminant.INSTANCE.getD50Xyz$ui_graphics_release()[2];

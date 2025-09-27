@@ -7,7 +7,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class AndroidVertexMode_androidKt {
     /* renamed from: toAndroidVertexMode-JOOmi9M  reason: not valid java name */
-    public static final Canvas.VertexMode m4442toAndroidVertexModeJOOmi9M(int i) {
-        return VertexMode.m4950equalsimpl0(i, VertexMode.Companion.m4956getTrianglesc2xauaI()) ? Canvas.VertexMode.TRIANGLES : VertexMode.m4950equalsimpl0(i, VertexMode.Companion.m4955getTriangleStripc2xauaI()) ? Canvas.VertexMode.TRIANGLE_STRIP : VertexMode.m4950equalsimpl0(i, VertexMode.Companion.m4954getTriangleFanc2xauaI()) ? Canvas.VertexMode.TRIANGLE_FAN : Canvas.VertexMode.TRIANGLES;
+    public static final Canvas.VertexMode m4454toAndroidVertexModeJOOmi9M(int i) {
+        return VertexMode.m4962equalsimpl0(i, VertexMode.Companion.m4968getTrianglesc2xauaI()) ? Canvas.VertexMode.TRIANGLES : VertexMode.m4962equalsimpl0(i, VertexMode.Companion.m4967getTriangleStripc2xauaI()) ? Canvas.VertexMode.TRIANGLE_STRIP : VertexMode.m4962equalsimpl0(i, VertexMode.Companion.m4966getTriangleFanc2xauaI()) ? Canvas.VertexMode.TRIANGLE_FAN : Canvas.VertexMode.TRIANGLES;
     }
 }

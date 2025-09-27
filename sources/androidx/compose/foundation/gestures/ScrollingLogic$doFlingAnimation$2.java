@@ -52,11 +52,11 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic scrollingLogic;
         FlingBehavior flingBehavior;
-        float m578toFloatTH1AsA0;
+        float m588toFloatTH1AsA0;
         Ref.LongRef longRef;
         ScrollingLogic scrollingLogic2;
         long j;
-        long m579updateQWom1Mo;
+        long m589updateQWom1Mo;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -78,7 +78,7 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
                         throw new FlingCancellationException();
                     }
                     ScrollingLogic scrollingLogic4 = ScrollingLogic.this;
-                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m583toFloatk4lQ0M(nestedScrollScope.mo524scrollByWithOverscrollOzD1aCk(scrollingLogic4.m581reverseIfNeededMKHz9U(scrollingLogic4.m584toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5718getSideEffectWNlRxjI())));
+                    return scrollingLogic4.reverseIfNeeded(scrollingLogic4.m593toFloatk4lQ0M(nestedScrollScope.mo534scrollByWithOverscrollOzD1aCk(scrollingLogic4.m591reverseIfNeededMKHz9U(scrollingLogic4.m594toOffsettuRUvjQ(f)), NestedScrollSource.Companion.m5731getSideEffectWNlRxjI())));
                 }
             };
             scrollingLogic = this.this$0;
@@ -86,8 +86,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
             long j2 = this.$available;
             flingBehavior = scrollingLogic.flingBehavior;
             long j3 = longRef2.element;
-            m578toFloatTH1AsA0 = scrollingLogic.m578toFloatTH1AsA0(j2);
-            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m578toFloatTH1AsA0);
+            m588toFloatTH1AsA0 = scrollingLogic.m588toFloatTH1AsA0(j2);
+            float reverseIfNeeded = scrollingLogic.reverseIfNeeded(m588toFloatTH1AsA0);
             this.L$0 = scrollingLogic;
             this.L$1 = scrollingLogic;
             this.L$2 = longRef2;
@@ -110,8 +110,8 @@ public final class ScrollingLogic$doFlingAnimation$2 extends SuspendLambda imple
             scrollingLogic2 = (ScrollingLogic) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        m579updateQWom1Mo = scrollingLogic.m579updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
-        longRef.element = m579updateQWom1Mo;
+        m589updateQWom1Mo = scrollingLogic.m589updateQWom1Mo(j, scrollingLogic2.reverseIfNeeded(((Number) obj).floatValue()));
+        longRef.element = m589updateQWom1Mo;
         return Unit.INSTANCE;
     }
 }

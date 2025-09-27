@@ -7,6 +7,9 @@
             <ImageView android:id="@+id/item_level_btn_usually" android:layout_width="match_parent" android:layout_height="@dimen/_12sdp" android:layout_marginTop="@dimen/_4sdp" android:src="@drawable/battlepass_2025_btn_get_item_pass_red"/>
         </LinearLayout>
         <ImageView android:layout_gravity="center_horizontal" android:id="@+id/item_level_background_usual" android:layout_width="@dimen/_64sdp" android:layout_height="@dimen/_81sdp" android:src="@drawable/battlepass_2025_background_item_locked_usual"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="right" android:id="@+id/quality_button" android:visibility="gone" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_8sdp" android:layout_margin="@dimen/_1sdp" app:backgroundMainColor="@color/black" app:corners="@dimen/_2sdp">
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="i" android:fontFamily="@font/heading_now_64_regular"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
     </FrameLayout>
     <androidx.constraintlayout.widget.ConstraintLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_23sdp">
         <View android:id="@+id/view_before_level" android:background="@color/battlepass1" android:layout_width="@dimen/_31sdp" android:layout_height="@dimen/_3sdp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintTop_toTopOf="0"/>
@@ -27,5 +30,8 @@
             <ImageView android:id="@+id/item_level_btn_premium" android:layout_width="match_parent" android:layout_height="@dimen/_12sdp" android:layout_marginTop="@dimen/_4sdp" android:src="@drawable/battlepass_2025_ic_battlepass_lock_premium"/>
         </LinearLayout>
         <ImageView android:layout_gravity="center_horizontal" android:id="@+id/item_level_background_premium" android:layout_width="@dimen/_64sdp" android:layout_height="@dimen/_81sdp" android:src="@drawable/battlepass_2025_background_battlepass_item_locked_premium"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="right" android:id="@+id/quality_button1" android:visibility="gone" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_8sdp" android:layout_margin="@dimen/_1sdp" app:backgroundMainColor="@color/black" app:corners="@dimen/_2sdp">
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="i" android:fontFamily="@font/heading_now_64_regular"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
     </FrameLayout>
 </LinearLayout>

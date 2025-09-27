@@ -64,6 +64,13 @@ public class PackageFactory {
         return packageBuilder.buildClickPackage(Constants.INSTALL_REFERRER);
     }
 
+    public static ActivityPackage buildLicenseVerificationSdkClickPackage(LicenseData licenseData, ActivityState activityState, AdjustConfig adjustConfig, DeviceInfo deviceInfo, GlobalParameters globalParameters, FirstSessionDelayManager firstSessionDelayManager, ActivityHandler.InternalState internalState) {
+        PackageBuilder packageBuilder = new PackageBuilder(adjustConfig, deviceInfo, activityState, globalParameters, firstSessionDelayManager, System.currentTimeMillis());
+        packageBuilder.internalState = internalState;
+        packageBuilder.licenseData = licenseData;
+        return packageBuilder.buildClickPackage(Constants.LICENSE_VERIFICATION);
+    }
+
     public static ActivityPackage buildPreinstallSdkClickPackage(String str, String str2, ActivityState activityState, AdjustConfig adjustConfig, DeviceInfo deviceInfo, GlobalParameters globalParameters, FirstSessionDelayManager firstSessionDelayManager) {
         if (str == null || str.length() == 0) {
             return null;

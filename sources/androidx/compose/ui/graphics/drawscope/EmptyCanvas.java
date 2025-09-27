@@ -56,25 +56,25 @@ public final class EmptyCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: concat-58bKbWc */
-    public void mo4389concat58bKbWc(float[] fArr) {
+    public void mo4401concat58bKbWc(float[] fArr) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: clipRect-N_I0leg */
-    public void mo4388clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
+    public void mo4400clipRectN_I0leg(float f, float f2, float f3, float f4, int i) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: clipPath-mtrdD-E */
-    public void mo4387clipPathmtrdDE(Path path, int i) {
+    public void mo4399clipPathmtrdDE(Path path, int i) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawLine-Wko1d7g */
-    public void mo4393drawLineWko1d7g(long j, long j2, Paint paint) {
+    public void mo4405drawLineWko1d7g(long j, long j2, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
@@ -95,7 +95,7 @@ public final class EmptyCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawCircle-9KIMszo */
-    public void mo4390drawCircle9KIMszo(long j, float f, Paint paint) {
+    public void mo4402drawCircle9KIMszo(long j, float f, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
@@ -111,31 +111,31 @@ public final class EmptyCanvas implements Canvas {
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawImage-d-4ec7I */
-    public void mo4391drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint) {
+    public void mo4403drawImaged4ec7I(ImageBitmap imageBitmap, long j, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawImageRect-HPBpro0 */
-    public void mo4392drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint) {
+    public void mo4404drawImageRectHPBpro0(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawPoints-O7TthRY */
-    public void mo4394drawPointsO7TthRY(int i, List<Offset> list, Paint paint) {
+    public void mo4406drawPointsO7TthRY(int i, List<Offset> list, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawRawPoints-O7TthRY */
-    public void mo4395drawRawPointsO7TthRY(int i, float[] fArr, Paint paint) {
+    public void mo4407drawRawPointsO7TthRY(int i, float[] fArr, Paint paint) {
         throw new UnsupportedOperationException();
     }
 
     @Override // androidx.compose.ui.graphics.Canvas
     /* renamed from: drawVertices-TPEHhCM */
-    public void mo4396drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint) {
+    public void mo4408drawVerticesTPEHhCM(Vertices vertices, int i, Paint paint) {
         throw new UnsupportedOperationException();
     }
 

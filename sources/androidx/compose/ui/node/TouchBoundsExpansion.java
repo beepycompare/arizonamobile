@@ -20,54 +20,54 @@ public final class TouchBoundsExpansion {
     private static final long None = TouchBoundsExpansionKt.TouchBoundsExpansion$default(0, 0, 0, 0, 14, null);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TouchBoundsExpansion m6326boximpl(long j) {
+    public static final /* synthetic */ TouchBoundsExpansion m6339boximpl(long j) {
         return new TouchBoundsExpansion(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6329constructorimpl(long j) {
+    public static long m6342constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6330equalsimpl(long j, Object obj) {
-        return (obj instanceof TouchBoundsExpansion) && j == ((TouchBoundsExpansion) obj).m6339unboximpl();
+    public static boolean m6343equalsimpl(long j, Object obj) {
+        return (obj instanceof TouchBoundsExpansion) && j == ((TouchBoundsExpansion) obj).m6352unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6331equalsimpl0(long j, long j2) {
+    public static final boolean m6344equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6336hashCodeimpl(long j) {
+    public static int m6349hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: isLayoutDirectionAware-impl  reason: not valid java name */
-    public static final boolean m6337isLayoutDirectionAwareimpl(long j) {
+    public static final boolean m6350isLayoutDirectionAwareimpl(long j) {
         return (j & Long.MIN_VALUE) != 0;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6338toStringimpl(long j) {
+    public static String m6351toStringimpl(long j) {
         return "TouchBoundsExpansion(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6330equalsimpl(this.packedValue, obj);
+        return m6343equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m6336hashCodeimpl(this.packedValue);
+        return m6349hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m6338toStringimpl(this.packedValue);
+        return m6351toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6339unboximpl() {
+    public final /* synthetic */ long m6352unboximpl() {
         return this.packedValue;
     }
 
@@ -92,7 +92,7 @@ public final class TouchBoundsExpansion {
         }
 
         /* renamed from: Absolute-vsh68fg$default  reason: not valid java name */
-        public static /* synthetic */ long m6340Absolutevsh68fg$default(Companion companion, int i, int i2, int i3, int i4, int i5, Object obj) {
+        public static /* synthetic */ long m6353Absolutevsh68fg$default(Companion companion, int i, int i2, int i3, int i4, int i5, Object obj) {
             if ((i5 & 1) != 0) {
                 i = 0;
             }
@@ -105,11 +105,11 @@ public final class TouchBoundsExpansion {
             if ((i5 & 8) != 0) {
                 i4 = 0;
             }
-            return companion.m6341Absolutevsh68fg(i, i2, i3, i4);
+            return companion.m6354Absolutevsh68fg(i, i2, i3, i4);
         }
 
         /* renamed from: Absolute-vsh68fg  reason: not valid java name */
-        public final long m6341Absolutevsh68fg(int i, int i2, int i3, int i4) {
+        public final long m6354Absolutevsh68fg(int i, int i2, int i3, int i4) {
             boolean z = true;
             if (!(i >= 0 && i < 32768)) {
                 InlineClassHelperKt.throwIllegalArgumentException("Start must be in the range of 0 .. 32767");
@@ -126,11 +126,11 @@ public final class TouchBoundsExpansion {
             if (!z) {
                 InlineClassHelperKt.throwIllegalArgumentException("Bottom must be in the range of 0 .. 32767");
             }
-            return TouchBoundsExpansion.m6329constructorimpl(pack$ui_release(i, i2, i3, i4, false));
+            return TouchBoundsExpansion.m6342constructorimpl(pack$ui_release(i, i2, i3, i4, false));
         }
 
         /* renamed from: getNone-RZrCHBk  reason: not valid java name */
-        public final long m6342getNoneRZrCHBk() {
+        public final long m6355getNoneRZrCHBk() {
             return TouchBoundsExpansion.None;
         }
 
@@ -144,38 +144,38 @@ public final class TouchBoundsExpansion {
     }
 
     /* renamed from: getStart-impl  reason: not valid java name */
-    public static final int m6334getStartimpl(long j) {
+    public static final int m6347getStartimpl(long j) {
         return Companion.unpack(j, 0);
     }
 
     /* renamed from: getTop-impl  reason: not valid java name */
-    public static final int m6335getTopimpl(long j) {
+    public static final int m6348getTopimpl(long j) {
         return Companion.unpack(j, 1);
     }
 
     /* renamed from: getEnd-impl  reason: not valid java name */
-    public static final int m6333getEndimpl(long j) {
+    public static final int m6346getEndimpl(long j) {
         return Companion.unpack(j, 2);
     }
 
     /* renamed from: getBottom-impl  reason: not valid java name */
-    public static final int m6332getBottomimpl(long j) {
+    public static final int m6345getBottomimpl(long j) {
         return Companion.unpack(j, 3);
     }
 
     /* renamed from: computeLeft-impl$ui_release  reason: not valid java name */
-    public static final int m6327computeLeftimpl$ui_release(long j, LayoutDirection layoutDirection) {
-        if (!m6337isLayoutDirectionAwareimpl(j) || layoutDirection == LayoutDirection.Ltr) {
-            return m6334getStartimpl(j);
+    public static final int m6340computeLeftimpl$ui_release(long j, LayoutDirection layoutDirection) {
+        if (!m6350isLayoutDirectionAwareimpl(j) || layoutDirection == LayoutDirection.Ltr) {
+            return m6347getStartimpl(j);
         }
-        return m6333getEndimpl(j);
+        return m6346getEndimpl(j);
     }
 
     /* renamed from: computeRight-impl$ui_release  reason: not valid java name */
-    public static final int m6328computeRightimpl$ui_release(long j, LayoutDirection layoutDirection) {
-        if (!m6337isLayoutDirectionAwareimpl(j) || layoutDirection == LayoutDirection.Ltr) {
-            return m6333getEndimpl(j);
+    public static final int m6341computeRightimpl$ui_release(long j, LayoutDirection layoutDirection) {
+        if (!m6350isLayoutDirectionAwareimpl(j) || layoutDirection == LayoutDirection.Ltr) {
+            return m6346getEndimpl(j);
         }
-        return m6334getStartimpl(j);
+        return m6347getStartimpl(j);
     }
 }

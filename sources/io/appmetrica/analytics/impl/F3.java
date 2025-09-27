@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class F3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final E3 f436a;
+    public final E3 f437a;
 
     public F3() {
         this(new E3());
     }
 
     public F3(E3 e3) {
-        this.f436a = e3;
+        this.f437a = e3;
     }
 }

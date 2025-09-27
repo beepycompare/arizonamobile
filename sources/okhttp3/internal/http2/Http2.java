@@ -1,6 +1,7 @@
 package okhttp3.internal.http2;
 
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
+import com.miami.game.core.settings.SettingsInteractor;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -32,7 +33,7 @@ public final class Http2 {
     public static final int TYPE_WINDOW_UPDATE = 8;
     public static final Http2 INSTANCE = new Http2();
     public static final ByteString CONNECTION_PREFACE = ByteString.Companion.encodeUtf8("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
-    private static final String[] FRAME_NAMES = {"DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION"};
+    private static final String[] FRAME_NAMES = {"DATA", "HEADERS", "PRIORITY", "RST_STREAM", SettingsInteractor.SettingsKey, "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION"};
     private static final String[] FLAGS = new String[64];
 
     private Http2() {

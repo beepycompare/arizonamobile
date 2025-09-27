@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0174cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0261fn f823a;
+    public final C0261fn f824a;
     public final C0261fn b;
     public final K4 c;
     public final PublicLogger d;
@@ -18,7 +18,7 @@ public final class C0174cd {
 
     public C0174cd(K4 k4, C0261fn c0261fn, C0261fn c0261fn2, String str, PublicLogger publicLogger) {
         this.c = k4;
-        this.f823a = c0261fn;
+        this.f824a = c0261fn;
         this.b = c0261fn2;
         this.e = str;
         this.d = publicLogger;

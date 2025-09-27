@@ -9,13 +9,13 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
-import com.google.gson.internal.GsonPreconditions;
 import com.google.gson.internal.Streams;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Objects;
 /* loaded from: classes4.dex */
 public final class TreeTypeAdapter<T> extends SerializationDelegatingTypeAdapter<T> {
     private final TreeTypeAdapter<T>.GsonContextImpl context;
@@ -106,7 +106,10 @@ public final class TreeTypeAdapter<T> extends SerializationDelegatingTypeAdapter
             this.serializer = jsonSerializer;
             JsonDeserializer<?> jsonDeserializer = obj instanceof JsonDeserializer ? (JsonDeserializer) obj : null;
             this.deserializer = jsonDeserializer;
-            GsonPreconditions.checkArgument((jsonSerializer == null && jsonDeserializer == null) ? false : true);
+            if (jsonSerializer == null && jsonDeserializer == null) {
+                Objects.requireNonNull(obj);
+                throw new IllegalArgumentException("Type adapter " + obj.getClass().getName() + " must implement JsonSerializer or JsonDeserializer");
+            }
             this.exactType = typeToken;
             this.matchRawType = z;
             this.hierarchyType = cls;

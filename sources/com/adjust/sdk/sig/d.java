@@ -12,7 +12,7 @@ import java.util.Set;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f185a = false;
+    public static boolean f186a = false;
 
     public static void a(Set set, Map map, Map map2) {
         Iterator it = set.iterator();
@@ -26,7 +26,7 @@ public final class d {
 
     public static void a(Context context, c cVar, a aVar, Map map, String str, String str2) {
         byte[] bArr;
-        if (f185a) {
+        if (f186a) {
             Log.e("SignerInstance", "sign: library received error. It has locked down");
         } else if (map != null && map.size() != 0 && str != null && str2 != null) {
             map.put("activity_kind", str);
@@ -43,7 +43,7 @@ public final class d {
                     break;
                 } catch (b e) {
                     Log.e("SignerInstance", "sign: Api is less than JellyBean-4-18");
-                    f185a = true;
+                    f186a = true;
                     map.remove("activity_kind");
                     map.remove("client_sdk");
                     throw e;
@@ -63,12 +63,12 @@ public final class d {
                 cVar.a(context);
             }
             if (i == 0) {
-                f185a = true;
+                f186a = true;
                 map.remove("activity_kind");
                 map.remove("client_sdk");
                 return;
             }
-            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f184a);
+            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f185a);
             if (a2 == null) {
                 Log.e("SignerInstance", "sign: Returned an null signature. Exiting...");
                 map.remove("activity_kind");
@@ -76,12 +76,12 @@ public final class d {
                 return;
             }
             int length = a2.length;
-            char[] cArr = e.f186a;
+            char[] cArr = e.f187a;
             char[] cArr2 = new char[length * 2];
             for (int i2 = 0; i2 < length; i2++) {
                 byte b = a2[i2];
                 int i3 = i2 * 2;
-                char[] cArr3 = e.f186a;
+                char[] cArr3 = e.f187a;
                 cArr2[i3] = cArr3[(b & 255) >>> 4];
                 cArr2[i3 + 1] = cArr3[b & Ascii.SI];
             }

@@ -19,13 +19,13 @@ public final class AndroidImageBitmap_androidKt {
     }
 
     /* renamed from: ActualImageBitmap-x__-hDU  reason: not valid java name */
-    public static final ImageBitmap m4403ActualImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
+    public static final ImageBitmap m4415ActualImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
         Bitmap createBitmap;
-        Bitmap.Config m4404toBitmapConfig1JJdX4A = m4404toBitmapConfig1JJdX4A(i3);
+        Bitmap.Config m4416toBitmapConfig1JJdX4A = m4416toBitmapConfig1JJdX4A(i3);
         if (Build.VERSION.SDK_INT >= 26) {
-            createBitmap = Api26Bitmap.m4443createBitmapx__hDU$ui_graphics_release(i, i2, i3, z, colorSpace);
+            createBitmap = Api26Bitmap.m4455createBitmapx__hDU$ui_graphics_release(i, i2, i3, z, colorSpace);
         } else {
-            createBitmap = Bitmap.createBitmap((DisplayMetrics) null, i, i2, m4404toBitmapConfig1JJdX4A);
+            createBitmap = Bitmap.createBitmap((DisplayMetrics) null, i, i2, m4416toBitmapConfig1JJdX4A);
             createBitmap.setHasAlpha(z);
         }
         return new AndroidImageBitmap(createBitmap);
@@ -39,20 +39,20 @@ public final class AndroidImageBitmap_androidKt {
     }
 
     /* renamed from: toBitmapConfig-1JJdX4A  reason: not valid java name */
-    public static final Bitmap.Config m4404toBitmapConfig1JJdX4A(int i) {
-        if (ImageBitmapConfig.m4764equalsimpl0(i, ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ())) {
+    public static final Bitmap.Config m4416toBitmapConfig1JJdX4A(int i) {
+        if (ImageBitmapConfig.m4776equalsimpl0(i, ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ())) {
             return Bitmap.Config.ARGB_8888;
         }
-        if (ImageBitmapConfig.m4764equalsimpl0(i, ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ())) {
+        if (ImageBitmapConfig.m4776equalsimpl0(i, ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ())) {
             return Bitmap.Config.ALPHA_8;
         }
-        if (ImageBitmapConfig.m4764equalsimpl0(i, ImageBitmapConfig.Companion.m4772getRgb565_sVssgQ())) {
+        if (ImageBitmapConfig.m4776equalsimpl0(i, ImageBitmapConfig.Companion.m4784getRgb565_sVssgQ())) {
             return Bitmap.Config.RGB_565;
         }
-        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4764equalsimpl0(i, ImageBitmapConfig.Companion.m4770getF16_sVssgQ())) {
+        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4776equalsimpl0(i, ImageBitmapConfig.Companion.m4782getF16_sVssgQ())) {
             return Bitmap.Config.RGBA_F16;
         }
-        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4764equalsimpl0(i, ImageBitmapConfig.Companion.m4771getGpu_sVssgQ())) {
+        if (Build.VERSION.SDK_INT >= 26 && ImageBitmapConfig.m4776equalsimpl0(i, ImageBitmapConfig.Companion.m4783getGpu_sVssgQ())) {
             return Bitmap.Config.HARDWARE;
         }
         return Bitmap.Config.ARGB_8888;
@@ -60,20 +60,20 @@ public final class AndroidImageBitmap_androidKt {
 
     public static final int toImageConfig(Bitmap.Config config) {
         if (config == Bitmap.Config.ALPHA_8) {
-            return ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ();
+            return ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ();
         }
         if (config == Bitmap.Config.RGB_565) {
-            return ImageBitmapConfig.Companion.m4772getRgb565_sVssgQ();
+            return ImageBitmapConfig.Companion.m4784getRgb565_sVssgQ();
         }
         if (config == Bitmap.Config.ARGB_4444) {
-            return ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ();
+            return ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ();
         }
         if (Build.VERSION.SDK_INT >= 26 && config == Bitmap.Config.RGBA_F16) {
-            return ImageBitmapConfig.Companion.m4770getF16_sVssgQ();
+            return ImageBitmapConfig.Companion.m4782getF16_sVssgQ();
         }
         if (Build.VERSION.SDK_INT >= 26 && config == Bitmap.Config.HARDWARE) {
-            return ImageBitmapConfig.Companion.m4771getGpu_sVssgQ();
+            return ImageBitmapConfig.Companion.m4783getGpu_sVssgQ();
         }
-        return ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ();
+        return ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ();
     }
 }

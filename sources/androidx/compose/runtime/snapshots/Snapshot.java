@@ -65,15 +65,15 @@ public abstract class Snapshot {
     public abstract boolean hasPendingChanges();
 
     /* renamed from: nestedActivated$runtime */
-    public abstract void mo3992nestedActivated$runtime(Snapshot snapshot);
+    public abstract void mo4004nestedActivated$runtime(Snapshot snapshot);
 
     /* renamed from: nestedDeactivated$runtime */
-    public abstract void mo3993nestedDeactivated$runtime(Snapshot snapshot);
+    public abstract void mo4005nestedDeactivated$runtime(Snapshot snapshot);
 
     public abstract void notifyObjectsInitialized$runtime();
 
     /* renamed from: recordModified$runtime */
-    public abstract void mo3994recordModified$runtime(StateObject stateObject);
+    public abstract void mo4006recordModified$runtime(StateObject stateObject);
 
     public abstract Snapshot takeNestedSnapshot(Function1<Object, Unit> function1);
 

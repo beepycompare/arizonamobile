@@ -16,7 +16,7 @@ public final class C0514ph extends AbstractC0462nh {
     public final boolean a(C0477o6 c0477o6) {
         C0277gd c0277gd = (C0277gd) C0277gd.c.get(c0477o6.d);
         HashMap hashMap = new HashMap();
-        hashMap.put("type", c0277gd.f894a);
+        hashMap.put("type", c0277gd.f895a);
         hashMap.put("delivery_method", c0277gd.b);
         this.b.reportEvent("crash_saved", hashMap);
         return false;

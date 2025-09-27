@@ -10,42 +10,42 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class IntOffsetKt {
     public static final long IntOffset(int i, int i2) {
-        return IntOffset.m7373constructorimpl((i2 & 4294967295L) | (i << 32));
+        return IntOffset.m7386constructorimpl((i2 & 4294967295L) | (i << 32));
     }
 
     /* renamed from: lerp-81ZRxRo  reason: not valid java name */
-    public static final long m7391lerp81ZRxRo(long j, long j2, float f) {
-        return IntOffset.m7373constructorimpl((MathHelpersKt.lerp(IntOffset.m7379getXimpl(j), IntOffset.m7379getXimpl(j2), f) << 32) | (MathHelpersKt.lerp(IntOffset.m7380getYimpl(j), IntOffset.m7380getYimpl(j2), f) & 4294967295L));
+    public static final long m7404lerp81ZRxRo(long j, long j2, float f) {
+        return IntOffset.m7386constructorimpl((MathHelpersKt.lerp(IntOffset.m7392getXimpl(j), IntOffset.m7392getXimpl(j2), f) << 32) | (MathHelpersKt.lerp(IntOffset.m7393getYimpl(j), IntOffset.m7393getYimpl(j2), f) & 4294967295L));
     }
 
     /* renamed from: toOffset--gyyYBs  reason: not valid java name */
-    public static final long m7397toOffsetgyyYBs(long j) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(IntOffset.m7380getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m7379getXimpl(j)) << 32));
+    public static final long m7410toOffsetgyyYBs(long j) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(IntOffset.m7393getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(IntOffset.m7392getXimpl(j)) << 32));
     }
 
     /* renamed from: plus-oCl6YwE  reason: not valid java name */
-    public static final long m7395plusoCl6YwE(long j, long j2) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(IntOffset.m7379getXimpl(j) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7380getYimpl(j) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m7408plusoCl6YwE(long j, long j2) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(IntOffset.m7392getXimpl(j) + Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7393getYimpl(j) + Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: minus-oCl6YwE  reason: not valid java name */
-    public static final long m7393minusoCl6YwE(long j, long j2) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(IntOffset.m7379getXimpl(j) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7380getYimpl(j) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
+    public static final long m7406minusoCl6YwE(long j, long j2) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(IntOffset.m7392getXimpl(j) - Float.intBitsToFloat((int) (j2 >> 32))) << 32) | (Float.floatToRawIntBits(IntOffset.m7393getYimpl(j) - Float.intBitsToFloat((int) (j2 & 4294967295L))) & 4294967295L));
     }
 
     /* renamed from: plus-Nv-tHpc  reason: not valid java name */
-    public static final long m7394plusNvtHpc(long j, long j2) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + IntOffset.m7379getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + IntOffset.m7380getYimpl(j2)) & 4294967295L));
+    public static final long m7407plusNvtHpc(long j, long j2) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) + IntOffset.m7392getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) + IntOffset.m7393getYimpl(j2)) & 4294967295L));
     }
 
     /* renamed from: minus-Nv-tHpc  reason: not valid java name */
-    public static final long m7392minusNvtHpc(long j, long j2) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - IntOffset.m7379getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - IntOffset.m7380getYimpl(j2)) & 4294967295L));
+    public static final long m7405minusNvtHpc(long j, long j2) {
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32)) - IntOffset.m7392getXimpl(j2)) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - IntOffset.m7393getYimpl(j2)) & 4294967295L));
     }
 
     /* renamed from: round-k-4lQ0M  reason: not valid java name */
-    public static final long m7396roundk4lQ0M(long j) {
+    public static final long m7409roundk4lQ0M(long j) {
         int round = Math.round(Float.intBitsToFloat((int) (j >> 32)));
-        return IntOffset.m7373constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
+        return IntOffset.m7386constructorimpl((Math.round(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (round << 32));
     }
 }

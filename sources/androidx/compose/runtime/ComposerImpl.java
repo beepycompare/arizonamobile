@@ -101,7 +101,7 @@ public final class ComposerImpl implements Composer {
     private boolean sourceMarkersEnabled;
     private SlotWriter writer;
     private boolean writerHasAProvider;
-    private final ArrayList<T> pendingStack = Stack.m3839constructorimpl$default(null, 1, null);
+    private final ArrayList<T> pendingStack = Stack.m3851constructorimpl$default(null, 1, null);
     private final IntStack parentStateStack = new IntStack();
     private final List<Invalidation> invalidations = new ArrayList();
     private final IntStack entersStack = new IntStack();
@@ -150,7 +150,7 @@ public final class ComposerImpl implements Composer {
                 ComposerImpl.this.childrenComposing--;
             }
         };
-        this.invalidateStack = Stack.m3839constructorimpl$default(null, 1, null);
+        this.invalidateStack = Stack.m3851constructorimpl$default(null, 1, null);
         SlotReader openReader = slotTable.openReader();
         openReader.close();
         this.reader = openReader;
@@ -247,7 +247,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startReplaceableGroup(int i) {
-        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+        m3794startBaiHCIY(i, null, GroupKind.Companion.m3811getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -260,7 +260,7 @@ public final class ComposerImpl implements Composer {
     @ComposeCompilerApi
     public void startReplaceGroup(int i) {
         if (this.pending != null) {
-            m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+            m3794startBaiHCIY(i, null, GroupKind.Companion.m3811getGroupULZAiWs(), null);
             return;
         }
         validateNodeNotExpected();
@@ -304,7 +304,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startDefaults() {
-        m3784startBaiHCIY(ComposerKt.defaultsKey, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+        m3794startBaiHCIY(ComposerKt.defaultsKey, null, GroupKind.Companion.m3811getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -327,7 +327,7 @@ public final class ComposerImpl implements Composer {
     @Override // androidx.compose.runtime.Composer
     @ComposeCompilerApi
     public void startMovableGroup(int i, Object obj) {
-        m3784startBaiHCIY(i, obj, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+        m3794startBaiHCIY(i, obj, GroupKind.Companion.m3811getGroupULZAiWs(), null);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -383,7 +383,7 @@ public final class ComposerImpl implements Composer {
 
     private final void abortRoot() {
         cleanUpCompose();
-        Stack.m3837clearimpl(this.pendingStack);
+        Stack.m3849clearimpl(this.pendingStack);
         this.parentStateStack.clear();
         this.entersStack.clear();
         this.providersInvalidStack.clear();
@@ -449,7 +449,7 @@ public final class ComposerImpl implements Composer {
     }
 
     public final void deactivate$runtime() {
-        Stack.m3837clearimpl(this.invalidateStack);
+        Stack.m3849clearimpl(this.invalidateStack);
         this.invalidations.clear();
         this.changes.clear();
         this.providerUpdates = null;
@@ -465,11 +465,11 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void startGroup(int i) {
-        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+        m3794startBaiHCIY(i, null, GroupKind.Companion.m3811getGroupULZAiWs(), null);
     }
 
     private final void startGroup(int i, Object obj) {
-        m3784startBaiHCIY(i, obj, GroupKind.Companion.m3801getGroupULZAiWs(), null);
+        m3794startBaiHCIY(i, obj, GroupKind.Companion.m3811getGroupULZAiWs(), null);
     }
 
     private final void endGroup() {
@@ -482,13 +482,13 @@ public final class ComposerImpl implements Composer {
 
     @Override // androidx.compose.runtime.Composer
     public void startNode() {
-        m3784startBaiHCIY(125, null, GroupKind.Companion.m3802getNodeULZAiWs(), null);
+        m3794startBaiHCIY(125, null, GroupKind.Companion.m3812getNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
     @Override // androidx.compose.runtime.Composer
     public void startReusableNode() {
-        m3784startBaiHCIY(125, null, GroupKind.Companion.m3803getReusableNodeULZAiWs(), null);
+        m3794startBaiHCIY(125, null, GroupKind.Companion.m3813getReusableNodeULZAiWs(), null);
         this.nodeExpected = true;
     }
 
@@ -529,7 +529,7 @@ public final class ComposerImpl implements Composer {
             this.reusingGroup = this.reader.getCurrentGroup();
             this.reusing = true;
         }
-        m3784startBaiHCIY(i, null, GroupKind.Companion.m3801getGroupULZAiWs(), obj);
+        m3794startBaiHCIY(i, null, GroupKind.Companion.m3811getGroupULZAiWs(), obj);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -938,7 +938,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = currentCompositionLocalScope;
-        m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), currentCompositionLocalScope);
+        m3794startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3811getGroupULZAiWs(), currentCompositionLocalScope);
     }
 
     private final void recordProviderUpdate(PersistentCompositionLocalMap persistentCompositionLocalMap) {
@@ -998,7 +998,7 @@ public final class ComposerImpl implements Composer {
         intStack.push(asInt);
         this.providersInvalid = z2;
         this.providerCache = updateProviderMapGroup;
-        m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), updateProviderMapGroup);
+        m3794startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3811getGroupULZAiWs(), updateProviderMapGroup);
     }
 
     @Override // androidx.compose.runtime.Composer
@@ -1046,8 +1046,8 @@ public final class ComposerImpl implements Composer {
 
     public final RecomposeScopeImpl getCurrentRecomposeScope$runtime() {
         ArrayList<T> arrayList = this.invalidateStack;
-        if (this.childrenComposing == 0 && Stack.m3845isNotEmptyimpl(arrayList)) {
-            return (RecomposeScopeImpl) Stack.m3846peekimpl(arrayList);
+        if (this.childrenComposing == 0 && Stack.m3857isNotEmptyimpl(arrayList)) {
+            return (RecomposeScopeImpl) Stack.m3858peekimpl(arrayList);
         }
         return null;
     }
@@ -1103,7 +1103,7 @@ public final class ComposerImpl implements Composer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private final void m3784startBaiHCIY(int i, Object obj, int i2, Object obj2) {
+    private final void m3794startBaiHCIY(int i, Object obj, int i2, Object obj2) {
         long rotateLeft;
         Object obj3 = obj;
         validateNodeNotExpected();
@@ -1114,7 +1114,7 @@ public final class ComposerImpl implements Composer {
                 if (obj3 == null) {
                     this.rGroupIndex++;
                 }
-                boolean z = i2 == GroupKind.Companion.m3801getGroupULZAiWs();
+                boolean z = i2 == GroupKind.Companion.m3811getGroupULZAiWs();
                 Pending pending = null;
                 if (!getInserting()) {
                     this.reader.beginEmpty();
@@ -1143,7 +1143,7 @@ public final class ComposerImpl implements Composer {
                     enterGroup(z, null);
                     return;
                 }
-                boolean z2 = i2 == GroupKind.Companion.m3802getNodeULZAiWs() && this.reusing;
+                boolean z2 = i2 == GroupKind.Companion.m3812getNodeULZAiWs() && this.reusing;
                 if (this.pending == null) {
                     int groupKey = this.reader.getGroupKey();
                     if (!z2 && groupKey == i && Intrinsics.areEqual(obj, this.reader.getGroupObjectKey())) {
@@ -1207,7 +1207,7 @@ public final class ComposerImpl implements Composer {
         this.compositeKeyHashCode = rotateLeft;
         if (obj3 == null) {
         }
-        if (i2 == GroupKind.Companion.m3801getGroupULZAiWs()) {
+        if (i2 == GroupKind.Companion.m3811getGroupULZAiWs()) {
         }
         Pending pending4 = null;
         if (!getInserting()) {
@@ -1215,7 +1215,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void enterGroup(boolean z, Pending pending) {
-        Stack.m3849pushimpl(this.pendingStack, this.pending);
+        Stack.m3861pushimpl(this.pendingStack, this.pending);
         this.pending = pending;
         this.parentStateStack.push(this.groupNodeCount);
         this.parentStateStack.push(this.rGroupIndex);
@@ -1228,7 +1228,7 @@ public final class ComposerImpl implements Composer {
     }
 
     private final void exitGroup(int i, boolean z) {
-        Pending pending = (Pending) Stack.m3848popimpl(this.pendingStack);
+        Pending pending = (Pending) Stack.m3860popimpl(this.pendingStack);
         if (pending != null && !z) {
             pending.setGroupIndex(pending.getGroupIndex() + 1);
         }
@@ -1423,7 +1423,7 @@ public final class ComposerImpl implements Composer {
                 z2 = true;
                 i4 = currentGroup;
             } else {
-                Stack.m3849pushimpl(this.invalidateStack, scope);
+                Stack.m3861pushimpl(this.invalidateStack, scope);
                 CompositionObserver current = this.observerHolder.current();
                 if (current != null) {
                     try {
@@ -1435,7 +1435,7 @@ public final class ComposerImpl implements Composer {
                 } else {
                     scope.rereadTrackedInstances();
                 }
-                Stack.m3848popimpl(this.invalidateStack);
+                Stack.m3860popimpl(this.invalidateStack);
             }
             firstInRange = ComposerKt.firstInRange(this.invalidations, this.reader.getCurrentGroup(), groupSize);
         }
@@ -1457,16 +1457,16 @@ public final class ComposerImpl implements Composer {
         int updatedNodeCount = updatedNodeCount(i);
         if (updatedNodeCount != i2) {
             int i3 = i2 - updatedNodeCount;
-            int m3842getSizeimpl = Stack.m3842getSizeimpl(this.pendingStack) - 1;
+            int m3854getSizeimpl = Stack.m3854getSizeimpl(this.pendingStack) - 1;
             while (i != -1) {
                 int updatedNodeCount2 = updatedNodeCount(i) + i3;
                 updateNodeCount(i, updatedNodeCount2);
-                int i4 = m3842getSizeimpl;
+                int i4 = m3854getSizeimpl;
                 while (true) {
                     if (-1 < i4) {
-                        Pending pending = (Pending) Stack.m3847peekimpl(this.pendingStack, i4);
+                        Pending pending = (Pending) Stack.m3859peekimpl(this.pendingStack, i4);
                         if (pending != null && pending.updateNodeCount(i, updatedNodeCount2)) {
-                            m3842getSizeimpl = i4 - 1;
+                            m3854getSizeimpl = i4 - 1;
                             break;
                         }
                         i4--;
@@ -1688,7 +1688,7 @@ public final class ComposerImpl implements Composer {
             return z || !getSkipping();
         }
         ShouldPauseCallback shouldPauseCallback = this.shouldPauseCallback;
-        if (shouldPauseCallback == null || (currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime()) == null || !shouldPauseCallback.shouldPause()) {
+        if (shouldPauseCallback == null || (currentRecomposeScope$runtime = getCurrentRecomposeScope$runtime()) == null || !shouldPauseCallback.shouldPause() || currentRecomposeScope$runtime.getResuming()) {
             return true;
         }
         currentRecomposeScope$runtime.setUsed(true);
@@ -1776,7 +1776,7 @@ public final class ComposerImpl implements Composer {
                 if (!forcedRecompose) {
                     z = false;
                     recomposeScopeImpl.setRequiresRecompose(z);
-                    Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl);
+                    Stack.m3861pushimpl(this.invalidateStack, recomposeScopeImpl);
                     enterRecomposeScope(recomposeScopeImpl);
                     if (recomposeScopeImpl.getPaused()) {
                         return;
@@ -1794,7 +1794,7 @@ public final class ComposerImpl implements Composer {
             }
             z = true;
             recomposeScopeImpl.setRequiresRecompose(z);
-            Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl);
+            Stack.m3861pushimpl(this.invalidateStack, recomposeScopeImpl);
             enterRecomposeScope(recomposeScopeImpl);
             if (recomposeScopeImpl.getPaused()) {
             }
@@ -1802,7 +1802,7 @@ public final class ComposerImpl implements Composer {
             CompositionImpl composition2 = getComposition();
             Intrinsics.checkNotNull(composition2, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
             RecomposeScopeImpl recomposeScopeImpl2 = new RecomposeScopeImpl(composition2);
-            Stack.m3849pushimpl(this.invalidateStack, recomposeScopeImpl2);
+            Stack.m3861pushimpl(this.invalidateStack, recomposeScopeImpl2);
             updateValue(recomposeScopeImpl2);
             enterRecomposeScope(recomposeScopeImpl2);
         }
@@ -1821,7 +1821,7 @@ public final class ComposerImpl implements Composer {
     public ScopeUpdateScope endRestartGroup() {
         Anchor anchor;
         RecomposeScopeImpl recomposeScopeImpl = null;
-        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m3845isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m3848popimpl(this.invalidateStack) : null;
+        RecomposeScopeImpl recomposeScopeImpl2 = Stack.m3857isNotEmptyimpl(this.invalidateStack) ? (RecomposeScopeImpl) Stack.m3860popimpl(this.invalidateStack) : null;
         if (recomposeScopeImpl2 != null) {
             recomposeScopeImpl2.setRequiresRecompose(false);
             Function1<Composition, Unit> exitRecomposeScope = exitRecomposeScope(recomposeScopeImpl2);
@@ -1889,7 +1889,7 @@ public final class ComposerImpl implements Composer {
             if (!getInserting() && !Intrinsics.areEqual(this.reader.getGroupAux(), persistentCompositionLocalMap)) {
                 z2 = true;
             }
-            m3784startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3801getGroupULZAiWs(), persistentCompositionLocalMap);
+            m3794startBaiHCIY(ComposerKt.compositionLocalMapKey, ComposerKt.getCompositionLocalMap(), GroupKind.Companion.m3811getGroupULZAiWs(), persistentCompositionLocalMap);
             this.providerCache = null;
             if (getInserting() && !z) {
                 this.writerHasAProvider = true;
@@ -1906,7 +1906,7 @@ public final class ComposerImpl implements Composer {
                     }
 
                     public final void invoke(Composer composer, int i) {
-                        ComposerKt.sourceInformation(composer, "C3477@141575L18:Composer.kt#9igjgp");
+                        ComposerKt.sourceInformation(composer, "C3477@141594L18:Composer.kt#9igjgp");
                         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
                             composer.skipToGroupEnd();
                             return;
@@ -2369,13 +2369,13 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: composeContent--ZbOJvo$runtime  reason: not valid java name */
-    public final void m3785composeContentZbOJvo$runtime(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
+    public final void m3795composeContentZbOJvo$runtime(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
         this.shouldPauseCallback = shouldPauseCallback;
         try {
-            m3783doComposeaFTiNEg(mutableScatterMap, function2);
+            m3793doComposeaFTiNEg(mutableScatterMap, function2);
         } finally {
             this.shouldPauseCallback = null;
         }
@@ -2394,14 +2394,14 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: recompose-aFTiNEg$runtime  reason: not valid java name */
-    public final boolean m3786recomposeaFTiNEg$runtime(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
+    public final boolean m3796recomposeaFTiNEg$runtime(MutableScatterMap<Object, Object> mutableScatterMap, ShouldPauseCallback shouldPauseCallback) {
         if (!this.changes.isEmpty()) {
             ComposerKt.composeImmediateRuntimeError("Expected applyChanges() to have been called");
         }
-        if (ScopeMap.m3961getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
+        if (ScopeMap.m3973getSizeimpl(mutableScatterMap) > 0 || !this.invalidations.isEmpty() || this.forciblyRecompose) {
             this.shouldPauseCallback = shouldPauseCallback;
             try {
-                m3783doComposeaFTiNEg(mutableScatterMap, null);
+                m3793doComposeaFTiNEg(mutableScatterMap, null);
                 this.shouldPauseCallback = null;
                 return this.changes.isNotEmpty();
             } catch (Throwable th) {
@@ -2413,7 +2413,7 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: updateComposerInvalidations-RY85e9Y  reason: not valid java name */
-    public final void m3787updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public final void m3797updateComposerInvalidationsRY85e9Y(MutableScatterMap<Object, Object> mutableScatterMap) {
         Comparator comparator;
         for (int lastIndex = CollectionsKt.getLastIndex(this.invalidations); -1 < lastIndex; lastIndex--) {
             Invalidation invalidation = this.invalidations.get(lastIndex);
@@ -2472,7 +2472,7 @@ public final class ComposerImpl implements Composer {
     }
 
     /* renamed from: doCompose-aFTiNEg  reason: not valid java name */
-    private final void m3783doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
+    private final void m3793doComposeaFTiNEg(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Composer, ? super Integer, Unit> function2) {
         if (this.isComposing) {
             ComposerKt.composeImmediateRuntimeError("Reentrant composition is not supported");
         }
@@ -2481,7 +2481,7 @@ public final class ComposerImpl implements Composer {
         try {
             this.compositionToken = Long.hashCode(SnapshotKt.currentSnapshot().getSnapshotId());
             this.providerUpdates = null;
-            m3787updateComposerInvalidationsRY85e9Y(mutableScatterMap);
+            m3797updateComposerInvalidationsRY85e9Y(mutableScatterMap);
             this.nodeIndex = 0;
             this.isComposing = true;
             if (current != null) {
@@ -2705,7 +2705,7 @@ public final class ComposerImpl implements Composer {
 
     private final void finalizeCompose() {
         this.changeListWriter.finalizeComposition();
-        if (!Stack.m3844isEmptyimpl(this.pendingStack)) {
+        if (!Stack.m3856isEmptyimpl(this.pendingStack)) {
             ComposerKt.composeImmediateRuntimeError("Start/end imbalance");
         }
         cleanUpCompose();
@@ -2718,7 +2718,7 @@ public final class ComposerImpl implements Composer {
         this.compositeKeyHashCode = 0L;
         this.nodeExpected = false;
         this.changeListWriter.resetTransientState();
-        Stack.m3837clearimpl(this.invalidateStack);
+        Stack.m3849clearimpl(this.invalidateStack);
         clearUpdatedNodeCounts();
     }
 
@@ -3006,7 +3006,7 @@ public final class ComposerImpl implements Composer {
     }
 
     public final int stacksSize$runtime() {
-        return this.entersStack.tos + Stack.m3842getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m3842getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
+        return this.entersStack.tos + Stack.m3854getSizeimpl(this.invalidateStack) + this.providersInvalidStack.tos + Stack.m3854getSizeimpl(this.pendingStack) + this.parentStateStack.tos;
     }
 
     @Override // androidx.compose.runtime.Composer

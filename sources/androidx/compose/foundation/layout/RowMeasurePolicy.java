@@ -82,9 +82,9 @@ public final class RowMeasurePolicy implements MeasurePolicy, RowColumnMeasurePo
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         MeasureResult measure;
-        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7206getMinWidthimpl(j), Constraints.m7205getMinHeightimpl(j), Constraints.m7204getMaxWidthimpl(j), Constraints.m7203getMaxHeightimpl(j), measureScope.mo413roundToPx0680j_4(this.horizontalArrangement.mo698getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
+        measure = RowColumnMeasurePolicyKt.measure(this, Constraints.m7219getMinWidthimpl(j), Constraints.m7218getMinHeightimpl(j), Constraints.m7217getMaxWidthimpl(j), Constraints.m7216getMaxHeightimpl(j), measureScope.mo423roundToPx0680j_4(this.horizontalArrangement.mo708getSpacingD9Ej5fM()), measureScope, list, new Placeable[list.size()], 0, list.size(), (r28 & 1024) != 0 ? null : null, (r28 & 2048) != 0 ? 0 : 0);
         return measure;
     }
 
@@ -107,7 +107,7 @@ public final class RowMeasurePolicy implements MeasurePolicy, RowColumnMeasurePo
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q */
-    public long mo726createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    public long mo736createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         return RowKt.createRowConstraints(z, i, i2, i3, i4);
     }
 
@@ -121,22 +121,22 @@ public final class RowMeasurePolicy implements MeasurePolicy, RowColumnMeasurePo
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMinWidth(list, i, intrinsicMeasureScope.mo413roundToPx0680j_4(this.horizontalArrangement.mo698getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMinWidth(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.horizontalArrangement.mo708getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMinHeight(list, i, intrinsicMeasureScope.mo413roundToPx0680j_4(this.horizontalArrangement.mo698getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMinHeight(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.horizontalArrangement.mo708getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMaxWidth(list, i, intrinsicMeasureScope.mo413roundToPx0680j_4(this.horizontalArrangement.mo698getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMaxWidth(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.horizontalArrangement.mo708getSpacingD9Ej5fM()));
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
-        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMaxHeight(list, i, intrinsicMeasureScope.mo413roundToPx0680j_4(this.horizontalArrangement.mo698getSpacingD9Ej5fM()));
+        return IntrinsicMeasureBlocks.INSTANCE.HorizontalMaxHeight(list, i, intrinsicMeasureScope.mo423roundToPx0680j_4(this.horizontalArrangement.mo708getSpacingD9Ej5fM()));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

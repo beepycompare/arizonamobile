@@ -457,7 +457,7 @@ public final class CodecSpecificDataUtil {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x009e, code lost:
         if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AC4) == false) goto L11;
      */
     /*

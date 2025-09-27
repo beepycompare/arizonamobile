@@ -19,7 +19,7 @@ public final class CombinedAlignment implements Alignment {
 
     @Override // androidx.compose.ui.Alignment
     /* renamed from: align-KFBX0sM */
-    public long mo4016alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
-        return IntOffset.m7373constructorimpl((this.horizontal.align((int) (j >> 32), (int) (j2 >> 32), layoutDirection) << 32) | (this.vertical.align((int) (j & 4294967295L), (int) (j2 & 4294967295L)) & 4294967295L));
+    public long mo4028alignKFBX0sM(long j, long j2, LayoutDirection layoutDirection) {
+        return IntOffset.m7386constructorimpl((this.horizontal.align((int) (j >> 32), (int) (j2 >> 32), layoutDirection) << 32) | (this.vertical.align((int) (j & 4294967295L), (int) (j2 & 4294967295L)) & 4294967295L));
     }
 }

@@ -22,12 +22,12 @@ import kotlin.jvm.internal.Intrinsics;
 
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Matrix matrix) {
-        m1464invoke58bKbWc(matrix.m4802unboximpl());
+        m1474invoke58bKbWc(matrix.m4814unboximpl());
         return Unit.INSTANCE;
     }
 
     /* renamed from: invoke-58bKbWc  reason: not valid java name */
-    public final void m1464invoke58bKbWc(float[] fArr) {
+    public final void m1474invoke58bKbWc(float[] fArr) {
         AndroidLegacyPlatformTextInputServiceAdapter.startInput$localToScreen(this.$node, fArr);
     }
 }

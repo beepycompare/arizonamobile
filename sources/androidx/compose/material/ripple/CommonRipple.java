@@ -26,7 +26,7 @@ public final class CommonRipple extends Ripple {
 
     @Override // androidx.compose.material.ripple.Ripple
     /* renamed from: rememberUpdatedRippleInstance-942rkJo  reason: not valid java name */
-    public RippleIndicationInstance mo1844rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
+    public RippleIndicationInstance mo1854rememberUpdatedRippleInstance942rkJo(InteractionSource interactionSource, boolean z, float f, State<Color> state, State<RippleAlpha> state2, Composer composer, int i) {
         composer.startReplaceGroup(-1768051227);
         ComposerKt.sourceInformation(composer, "C(rememberUpdatedRippleInstance)N(interactionSource,bounded,radius:c#ui.unit.Dp,color,rippleAlpha)57@2186L125:CommonRipple.kt#vhb33q");
         if (ComposerKt.isTraceInProgress()) {

@@ -7,7 +7,7 @@ public final class C0277gd {
     public static final SparseArray c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f894a;
+    public final String f895a;
     public final String b;
 
     static {
@@ -26,7 +26,7 @@ public final class C0277gd {
     }
 
     public C0277gd(String str, String str2) {
-        this.f894a = str;
+        this.f895a = str;
         this.b = str2;
     }
 }

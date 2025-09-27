@@ -12,60 +12,60 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ListItemType implements Comparable<ListItemType> {
     private final int lines;
     public static final Companion Companion = new Companion(null);
-    private static final int OneLine = m2317constructorimpl(1);
-    private static final int TwoLine = m2317constructorimpl(2);
-    private static final int ThreeLine = m2317constructorimpl(3);
+    private static final int OneLine = m2327constructorimpl(1);
+    private static final int TwoLine = m2327constructorimpl(2);
+    private static final int ThreeLine = m2327constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ListItemType m2315boximpl(int i) {
+    public static final /* synthetic */ ListItemType m2325boximpl(int i) {
         return new ListItemType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m2317constructorimpl(int i) {
+    private static int m2327constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2318equalsimpl(int i, Object obj) {
-        return (obj instanceof ListItemType) && i == ((ListItemType) obj).m2323unboximpl();
+    public static boolean m2328equalsimpl(int i, Object obj) {
+        return (obj instanceof ListItemType) && i == ((ListItemType) obj).m2333unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2319equalsimpl0(int i, int i2) {
+    public static final boolean m2329equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2320hashCodeimpl(int i) {
+    public static int m2330hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2321toStringimpl(int i) {
+    public static String m2331toStringimpl(int i) {
         return "ListItemType(lines=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m2318equalsimpl(this.lines, obj);
+        return m2328equalsimpl(this.lines, obj);
     }
 
     public int hashCode() {
-        return m2320hashCodeimpl(this.lines);
+        return m2330hashCodeimpl(this.lines);
     }
 
     public String toString() {
-        return m2321toStringimpl(this.lines);
+        return m2331toStringimpl(this.lines);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2323unboximpl() {
+    public final /* synthetic */ int m2333unboximpl() {
         return this.lines;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(ListItemType listItemType) {
-        return m2322compareToyh95HIg(listItemType.m2323unboximpl());
+        return m2332compareToyh95HIg(listItemType.m2333unboximpl());
     }
 
     private /* synthetic */ ListItemType(int i) {
@@ -73,13 +73,13 @@ public final class ListItemType implements Comparable<ListItemType> {
     }
 
     /* renamed from: compareTo-yh95HIg  reason: not valid java name */
-    public static int m2316compareToyh95HIg(int i, int i2) {
+    public static int m2326compareToyh95HIg(int i, int i2) {
         return Intrinsics.compare(i, i2);
     }
 
     /* renamed from: compareTo-yh95HIg  reason: not valid java name */
-    public int m2322compareToyh95HIg(int i) {
-        return m2316compareToyh95HIg(this.lines, i);
+    public int m2332compareToyh95HIg(int i) {
+        return m2326compareToyh95HIg(this.lines, i);
     }
 
     /* compiled from: ListItem.kt */
@@ -94,29 +94,29 @@ public final class ListItemType implements Comparable<ListItemType> {
         }
 
         /* renamed from: getOneLine-AlXitO8  reason: not valid java name */
-        public final int m2324getOneLineAlXitO8() {
+        public final int m2334getOneLineAlXitO8() {
             return ListItemType.OneLine;
         }
 
         /* renamed from: getTwoLine-AlXitO8  reason: not valid java name */
-        public final int m2326getTwoLineAlXitO8() {
+        public final int m2336getTwoLineAlXitO8() {
             return ListItemType.TwoLine;
         }
 
         /* renamed from: getThreeLine-AlXitO8  reason: not valid java name */
-        public final int m2325getThreeLineAlXitO8() {
+        public final int m2335getThreeLineAlXitO8() {
             return ListItemType.ThreeLine;
         }
 
         /* renamed from: invoke-Z-LSjz4$material3_release  reason: not valid java name */
-        public final int m2327invokeZLSjz4$material3_release(boolean z, boolean z2, boolean z3) {
+        public final int m2337invokeZLSjz4$material3_release(boolean z, boolean z2, boolean z3) {
             if ((z && z2) || z3) {
-                return m2325getThreeLineAlXitO8();
+                return m2335getThreeLineAlXitO8();
             }
             if (z || z2) {
-                return m2326getTwoLineAlXitO8();
+                return m2336getTwoLineAlXitO8();
             }
-            return m2324getOneLineAlXitO8();
+            return m2334getOneLineAlXitO8();
         }
     }
 }

@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 public final class F5 extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final F5 f438a = new F5();
+    public static final F5 f439a = new F5();
 
     public F5() {
         super(1);

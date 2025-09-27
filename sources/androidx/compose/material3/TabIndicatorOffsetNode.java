@@ -64,8 +64,8 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        float m2696getWidthD9Ej5fM;
+    public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        float m2706getWidthD9Ej5fM;
         if (this.tabPositionsState.getValue().isEmpty()) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$measure$1
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -80,9 +80,9 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
             }, 4, null);
         }
         if (this.followContentSize) {
-            m2696getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2693getContentWidthD9Ej5fM();
+            m2706getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2703getContentWidthD9Ej5fM();
         } else {
-            m2696getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2696getWidthD9Ej5fM();
+            m2706getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2706getWidthD9Ej5fM();
         }
         if (this.initialWidth != null) {
             Animatable<Dp, AnimationVector1D> animatable = this.widthAnimatable;
@@ -93,13 +93,13 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.widthAnimatable = animatable2;
                 animatable = animatable2;
             }
-            if (!Dp.m7256equalsimpl0(m2696getWidthD9Ej5fM, animatable.getTargetValue().m7265unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m2696getWidthD9Ej5fM, null), 3, null);
+            if (!Dp.m7269equalsimpl0(m2706getWidthD9Ej5fM, animatable.getTargetValue().m7278unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m2706getWidthD9Ej5fM, null), 3, null);
             }
         } else {
-            this.initialWidth = Dp.m7249boximpl(m2696getWidthD9Ej5fM);
+            this.initialWidth = Dp.m7262boximpl(m2706getWidthD9Ej5fM);
         }
-        float m2694getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2694getLeftD9Ej5fM();
+        float m2704getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2704getLeftD9Ej5fM();
         if (this.initialOffset != null) {
             Animatable<Dp, AnimationVector1D> animatable3 = this.offsetAnimatable;
             if (animatable3 == null) {
@@ -109,31 +109,31 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.offsetAnimatable = animatable4;
                 animatable3 = animatable4;
             }
-            if (!Dp.m7256equalsimpl0(m2694getLeftD9Ej5fM, animatable3.getTargetValue().m7265unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m2694getLeftD9Ej5fM, null), 3, null);
+            if (!Dp.m7269equalsimpl0(m2704getLeftD9Ej5fM, animatable3.getTargetValue().m7278unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m2704getLeftD9Ej5fM, null), 3, null);
             }
         } else {
-            this.initialOffset = Dp.m7249boximpl(m2694getLeftD9Ej5fM);
+            this.initialOffset = Dp.m7262boximpl(m2704getLeftD9Ej5fM);
         }
         if (measureScope.getLayoutDirection() == LayoutDirection.Ltr) {
             Animatable<Dp, AnimationVector1D> animatable5 = this.offsetAnimatable;
             if (animatable5 != null) {
-                m2694getLeftD9Ej5fM = animatable5.getValue().m7265unboximpl();
+                m2704getLeftD9Ej5fM = animatable5.getValue().m7278unboximpl();
             }
         } else {
             Animatable<Dp, AnimationVector1D> animatable6 = this.offsetAnimatable;
             if (animatable6 != null) {
-                m2694getLeftD9Ej5fM = animatable6.getValue().m7265unboximpl();
+                m2704getLeftD9Ej5fM = animatable6.getValue().m7278unboximpl();
             }
-            m2694getLeftD9Ej5fM = Dp.m7251constructorimpl(-m2694getLeftD9Ej5fM);
+            m2704getLeftD9Ej5fM = Dp.m7264constructorimpl(-m2704getLeftD9Ej5fM);
         }
         Animatable<Dp, AnimationVector1D> animatable7 = this.widthAnimatable;
         if (animatable7 != null) {
-            m2696getWidthD9Ej5fM = animatable7.getValue().m7265unboximpl();
+            m2706getWidthD9Ej5fM = animatable7.getValue().m7278unboximpl();
         }
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, measureScope.mo413roundToPx0680j_4(m2696getWidthD9Ej5fM), measureScope.mo413roundToPx0680j_4(m2696getWidthD9Ej5fM), 0, 0, 12, null));
-        final float f = m2694getLeftD9Ej5fM;
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$measure$4
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, measureScope.mo423roundToPx0680j_4(m2706getWidthD9Ej5fM), measureScope.mo423roundToPx0680j_4(m2706getWidthD9Ej5fM), 0, 0, 12, null));
+        final float f = m2704getLeftD9Ej5fM;
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$measure$4
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -148,7 +148,7 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.place$default(placementScope, Placeable.this, measureScope.mo413roundToPx0680j_4(f), 0, 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, Placeable.this, measureScope.mo423roundToPx0680j_4(f), 0, 0.0f, 4, null);
             }
         }, 4, null);
     }

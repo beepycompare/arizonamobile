@@ -183,6 +183,6 @@ public final class MultiParagraphIntrinsics implements ParagraphIntrinsics {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ParagraphStyle resolveTextDirection(ParagraphStyle paragraphStyle, ParagraphStyle paragraphStyle2) {
-        return !TextDirection.m7145equalsimpl0(paragraphStyle.m6601getTextDirections_7Xco(), TextDirection.Companion.m7154getUnspecifieds_7Xco()) ? paragraphStyle : ParagraphStyle.m6583copyykzQM6k$default(paragraphStyle, 0, paragraphStyle2.m6601getTextDirections_7Xco(), 0L, null, null, null, 0, 0, null, 509, null);
+        return !TextDirection.m7158equalsimpl0(paragraphStyle.m6614getTextDirections_7Xco(), TextDirection.Companion.m7167getUnspecifieds_7Xco()) ? paragraphStyle : ParagraphStyle.m6596copyykzQM6k$default(paragraphStyle, 0, paragraphStyle2.m6614getTextDirections_7Xco(), 0L, null, null, null, 0, 0, null, 509, null);
     }
 }

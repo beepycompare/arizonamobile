@@ -14,7 +14,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: DBUtil.kt */
-@Metadata(d1 = {"\u0000\b\n\u0002\b\u0003\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "R", "transactor", "Landroidx/room/Transactor;"}, k = 3, mv = {2, 0, 0}, xi = 176)
+@Metadata(d1 = {"\u0000\b\n\u0002\b\u0003\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "R", "transactor", "Landroidx/room/Transactor;"}, k = 3, mv = {2, 1, 0}, xi = 176)
 @DebugMetadata(c = "androidx.room.util.DBUtil__DBUtilKt$internalPerform$2", f = "DBUtil.kt", i = {0, 0, 1, 1, 2, 3}, l = {56, 57, 59, 60, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, m = "invokeSuspend", n = {"transactor", "type", "transactor", "type", "transactor", "result"}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class DBUtil__DBUtilKt$internalPerform$2<R> extends SuspendLambda implements Function2<Transactor, Continuation<? super R>, Object> {
@@ -53,7 +53,7 @@ public final class DBUtil__DBUtilKt$internalPerform$2<R> extends SuspendLambda i
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:32:0x0092, code lost:
-        if (r8.$this_internalPerform.getInvalidationTracker().sync$room_runtime_release(r8) == r0) goto L24;
+        if (r8.$this_internalPerform.getInvalidationTracker().sync$room_runtime(r8) == r0) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:37:0x00b2, code lost:
         if (r9 == r0) goto L24;
@@ -179,7 +179,7 @@ public final class DBUtil__DBUtilKt$internalPerform$2<R> extends SuspendLambda i
             if (!this.$isReadOnly) {
                 DBUtil__DBUtilKt$internalPerform$2<R> dBUtil__DBUtilKt$internalPerform$2 = this;
                 if (!((Boolean) transactor.inTransaction(dBUtil__DBUtilKt$internalPerform$2)).booleanValue()) {
-                    this.$this_internalPerform.getInvalidationTracker().sync$room_runtime_release(dBUtil__DBUtilKt$internalPerform$2);
+                    this.$this_internalPerform.getInvalidationTracker().sync$room_runtime(dBUtil__DBUtilKt$internalPerform$2);
                 }
             }
             DBUtil__DBUtilKt$internalPerform$2<R> dBUtil__DBUtilKt$internalPerform$22 = this;

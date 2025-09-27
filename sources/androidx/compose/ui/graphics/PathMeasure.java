@@ -9,12 +9,12 @@ public interface PathMeasure {
     float getLength();
 
     /* renamed from: getPosition-tuRUvjQ */
-    long mo4433getPositiontuRUvjQ(float f);
+    long mo4445getPositiontuRUvjQ(float f);
 
     boolean getSegment(float f, float f2, Path path, boolean z);
 
     /* renamed from: getTangent-tuRUvjQ */
-    long mo4434getTangenttuRUvjQ(float f);
+    long mo4446getTangenttuRUvjQ(float f);
 
     void setPath(Path path, boolean z);
 

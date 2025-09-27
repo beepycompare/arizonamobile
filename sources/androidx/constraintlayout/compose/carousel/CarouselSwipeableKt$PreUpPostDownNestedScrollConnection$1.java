@@ -22,21 +22,21 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk */
-    public long mo918onPreScrollOzD1aCk(long j, int i) {
+    public long mo928onPreScrollOzD1aCk(long j, int i) {
         float f = toFloat(j);
-        if (f < 0.0f && NestedScrollSource.m5707equalsimpl0(i, NestedScrollSource.Companion.m5719getUserInputWNlRxjI())) {
+        if (f < 0.0f && NestedScrollSource.m5720equalsimpl0(i, NestedScrollSource.Companion.m5732getUserInputWNlRxjI())) {
             return toOffset(this.$this_PreUpPostDownNestedScrollConnection.performDrag(f));
         }
-        return Offset.Companion.m4309getZeroF1C5BW0();
+        return Offset.Companion.m4321getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
-    public long mo567onPostScrollDzOQY0M(long j, long j2, int i) {
-        if (NestedScrollSource.m5707equalsimpl0(i, NestedScrollSource.Companion.m5719getUserInputWNlRxjI())) {
+    public long mo577onPostScrollDzOQY0M(long j, long j2, int i) {
+        if (NestedScrollSource.m5720equalsimpl0(i, NestedScrollSource.Companion.m5732getUserInputWNlRxjI())) {
             return toOffset(this.$this_PreUpPostDownNestedScrollConnection.performDrag(toFloat(j2)));
         }
-        return Offset.Companion.m4309getZeroF1C5BW0();
+        return Offset.Companion.m4321getZeroF1C5BW0();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -46,7 +46,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo917onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public Object mo927onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1 carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1;
         int i;
         if (continuation instanceof CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1) {
@@ -58,7 +58,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
                 i = carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    float f = toFloat(OffsetKt.Offset(Velocity.m7489getXimpl(j), Velocity.m7490getYimpl(j)));
+                    float f = toFloat(OffsetKt.Offset(Velocity.m7502getXimpl(j), Velocity.m7503getYimpl(j)));
                     if (f < 0.0f && this.$this_PreUpPostDownNestedScrollConnection.getOffset().getFloatValue() > this.$this_PreUpPostDownNestedScrollConnection.getMinBound$constraintlayout_compose_release()) {
                         CarouselSwipeableState<T> carouselSwipeableState = this.$this_PreUpPostDownNestedScrollConnection;
                         carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1.J$0 = j;
@@ -67,7 +67,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
                             return coroutine_suspended;
                         }
                     } else {
-                        j = Velocity.Companion.m7500getZero9UxMQ8M();
+                        j = Velocity.Companion.m7513getZero9UxMQ8M();
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -75,7 +75,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
                     j = carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1.J$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Velocity.m7480boximpl(j);
+                return Velocity.m7493boximpl(j);
             }
         }
         carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1 = new CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1(this, continuation);
@@ -84,7 +84,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
         i = carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPreFling$1.label;
         if (i != 0) {
         }
-        return Velocity.m7480boximpl(j);
+        return Velocity.m7493boximpl(j);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -94,7 +94,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo566onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public Object mo576onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1 carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1;
         int i;
         if (continuation instanceof CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1) {
@@ -107,7 +107,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     CarouselSwipeableState<T> carouselSwipeableState = this.$this_PreUpPostDownNestedScrollConnection;
-                    float f = toFloat(OffsetKt.Offset(Velocity.m7489getXimpl(j2), Velocity.m7490getYimpl(j2)));
+                    float f = toFloat(OffsetKt.Offset(Velocity.m7502getXimpl(j2), Velocity.m7503getYimpl(j2)));
                     carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1.J$0 = j2;
                     carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1.label = 1;
                     if (carouselSwipeableState.performFling(f, carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1) == coroutine_suspended) {
@@ -119,7 +119,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
                     j2 = carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1.J$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Velocity.m7480boximpl(j2);
+                return Velocity.m7493boximpl(j2);
             }
         }
         carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1 = new CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1(this, continuation);
@@ -128,7 +128,7 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
         i = carouselSwipeableKt$PreUpPostDownNestedScrollConnection$1$onPostFling$1.label;
         if (i != 0) {
         }
-        return Velocity.m7480boximpl(j2);
+        return Velocity.m7493boximpl(j2);
     }
 
     private final long toOffset(float f) {
@@ -136,6 +136,6 @@ public final class CarouselSwipeableKt$PreUpPostDownNestedScrollConnection$1 imp
     }
 
     private final float toFloat(long j) {
-        return Offset.m4294getYimpl(j);
+        return Offset.m4306getYimpl(j);
     }
 }

@@ -19,7 +19,7 @@ public interface PointerInputScope extends Density {
     }
 
     /* renamed from: getSize-YbymL2g */
-    long mo410getSizeYbymL2g();
+    long mo420getSizeYbymL2g();
 
     ViewConfiguration getViewConfiguration();
 
@@ -35,50 +35,50 @@ public interface PointerInputScope extends Density {
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m5864roundToPxR2X_6o(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo412roundToPxR2X_6o(j);
+        public static int m5877roundToPxR2X_6o(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo422roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m5865roundToPx0680j_4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo413roundToPx0680j_4(f);
+        public static int m5878roundToPx0680j_4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo423roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m5866toDpGaN1DYA(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo414toDpGaN1DYA(j);
+        public static float m5879toDpGaN1DYA(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo424toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5867toDpu2uoSUM(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo415toDpu2uoSUM(f);
+        public static float m5880toDpu2uoSUM(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo425toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5868toDpu2uoSUM(PointerInputScope pointerInputScope, int i) {
-            return PointerInputScope.super.mo416toDpu2uoSUM(i);
+        public static float m5881toDpu2uoSUM(PointerInputScope pointerInputScope, int i) {
+            return PointerInputScope.super.mo426toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m5869toDpSizekrfVVM(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo417toDpSizekrfVVM(j);
+        public static long m5882toDpSizekrfVVM(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo427toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m5870toPxR2X_6o(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo418toPxR2X_6o(j);
+        public static float m5883toPxR2X_6o(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo428toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m5871toPx0680j_4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo419toPx0680j_4(f);
+        public static float m5884toPx0680j_4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo429toPx0680j_4(f);
         }
 
         @Deprecated
@@ -88,32 +88,32 @@ public interface PointerInputScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m5872toSizeXkaWNTQ(PointerInputScope pointerInputScope, long j) {
-            return PointerInputScope.super.mo420toSizeXkaWNTQ(j);
+        public static long m5885toSizeXkaWNTQ(PointerInputScope pointerInputScope, long j) {
+            return PointerInputScope.super.mo430toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m5873toSp0xMU5do(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo421toSp0xMU5do(f);
+        public static long m5886toSp0xMU5do(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5874toSpkPz2Gy4(PointerInputScope pointerInputScope, float f) {
-            return PointerInputScope.super.mo422toSpkPz2Gy4(f);
+        public static long m5887toSpkPz2Gy4(PointerInputScope pointerInputScope, float f) {
+            return PointerInputScope.super.mo432toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5875toSpkPz2Gy4(PointerInputScope pointerInputScope, int i) {
-            return PointerInputScope.super.mo423toSpkPz2Gy4(i);
+        public static long m5888toSpkPz2Gy4(PointerInputScope pointerInputScope, int i) {
+            return PointerInputScope.super.mo433toSpkPz2Gy4(i);
         }
 
         @Deprecated
         /* renamed from: getExtendedTouchPadding-NH-jbRc  reason: not valid java name */
-        public static long m5863getExtendedTouchPaddingNHjbRc(PointerInputScope pointerInputScope) {
-            return PointerInputScope.super.mo409getExtendedTouchPaddingNHjbRc();
+        public static long m5876getExtendedTouchPaddingNHjbRc(PointerInputScope pointerInputScope) {
+            return PointerInputScope.super.mo419getExtendedTouchPaddingNHjbRc();
         }
 
         @Deprecated
@@ -128,7 +128,7 @@ public interface PointerInputScope extends Density {
     }
 
     /* renamed from: getExtendedTouchPadding-NH-jbRc */
-    default long mo409getExtendedTouchPaddingNHjbRc() {
-        return Size.Companion.m4371getZeroNHjbRc();
+    default long mo419getExtendedTouchPaddingNHjbRc() {
+        return Size.Companion.m4383getZeroNHjbRc();
     }
 }

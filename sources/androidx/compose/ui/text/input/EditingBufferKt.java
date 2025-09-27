@@ -9,30 +9,30 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class EditingBufferKt {
     /* renamed from: updateRangeAfterDelete-pWDy79M  reason: not valid java name */
-    public static final long m6878updateRangeAfterDeletepWDy79M(long j, long j2) {
-        int m6709getLengthimpl;
-        int m6711getMinimpl = TextRange.m6711getMinimpl(j);
-        int m6710getMaximpl = TextRange.m6710getMaximpl(j);
-        if (TextRange.m6715intersects5zctL8(j2, j)) {
-            if (TextRange.m6703contains5zctL8(j2, j)) {
-                m6711getMinimpl = TextRange.m6711getMinimpl(j2);
-                m6710getMaximpl = m6711getMinimpl;
+    public static final long m6891updateRangeAfterDeletepWDy79M(long j, long j2) {
+        int m6722getLengthimpl;
+        int m6724getMinimpl = TextRange.m6724getMinimpl(j);
+        int m6723getMaximpl = TextRange.m6723getMaximpl(j);
+        if (TextRange.m6728intersects5zctL8(j2, j)) {
+            if (TextRange.m6716contains5zctL8(j2, j)) {
+                m6724getMinimpl = TextRange.m6724getMinimpl(j2);
+                m6723getMaximpl = m6724getMinimpl;
             } else {
-                if (TextRange.m6703contains5zctL8(j, j2)) {
-                    m6709getLengthimpl = TextRange.m6709getLengthimpl(j2);
-                } else if (TextRange.m6704containsimpl(j2, m6711getMinimpl)) {
-                    m6711getMinimpl = TextRange.m6711getMinimpl(j2);
-                    m6709getLengthimpl = TextRange.m6709getLengthimpl(j2);
+                if (TextRange.m6716contains5zctL8(j, j2)) {
+                    m6722getLengthimpl = TextRange.m6722getLengthimpl(j2);
+                } else if (TextRange.m6717containsimpl(j2, m6724getMinimpl)) {
+                    m6724getMinimpl = TextRange.m6724getMinimpl(j2);
+                    m6722getLengthimpl = TextRange.m6722getLengthimpl(j2);
                 } else {
-                    m6710getMaximpl = TextRange.m6711getMinimpl(j2);
+                    m6723getMaximpl = TextRange.m6724getMinimpl(j2);
                 }
-                m6710getMaximpl -= m6709getLengthimpl;
+                m6723getMaximpl -= m6722getLengthimpl;
             }
-        } else if (m6710getMaximpl > TextRange.m6711getMinimpl(j2)) {
-            m6711getMinimpl -= TextRange.m6709getLengthimpl(j2);
-            m6709getLengthimpl = TextRange.m6709getLengthimpl(j2);
-            m6710getMaximpl -= m6709getLengthimpl;
+        } else if (m6723getMaximpl > TextRange.m6724getMinimpl(j2)) {
+            m6724getMinimpl -= TextRange.m6722getLengthimpl(j2);
+            m6722getLengthimpl = TextRange.m6722getLengthimpl(j2);
+            m6723getMaximpl -= m6722getLengthimpl;
         }
-        return TextRangeKt.TextRange(m6711getMinimpl, m6710getMaximpl);
+        return TextRangeKt.TextRange(m6724getMinimpl, m6723getMaximpl);
     }
 }

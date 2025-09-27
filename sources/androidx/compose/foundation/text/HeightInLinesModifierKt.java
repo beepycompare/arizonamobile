@@ -122,10 +122,10 @@ public final class HeightInLinesModifierKt {
                     if (fontWeight == null) {
                         fontWeight = FontWeight.Companion.getNormal();
                     }
-                    FontStyle m6745getFontStyle4Lr2A7w = textStyle3.m6745getFontStyle4Lr2A7w();
-                    int m6829unboximpl = m6745getFontStyle4Lr2A7w != null ? m6745getFontStyle4Lr2A7w.m6829unboximpl() : FontStyle.Companion.m6833getNormal_LCdwA();
-                    FontSynthesis m6746getFontSynthesisZQGJjVo = textStyle3.m6746getFontSynthesisZQGJjVo();
-                    rememberedValue2 = resolver.mo6798resolveDPcqOEQ(fontFamily, fontWeight, m6829unboximpl, m6746getFontSynthesisZQGJjVo != null ? m6746getFontSynthesisZQGJjVo.m6842unboximpl() : FontSynthesis.Companion.m6843getAllGVVA2EU());
+                    FontStyle m6758getFontStyle4Lr2A7w = textStyle3.m6758getFontStyle4Lr2A7w();
+                    int m6842unboximpl = m6758getFontStyle4Lr2A7w != null ? m6758getFontStyle4Lr2A7w.m6842unboximpl() : FontStyle.Companion.m6846getNormal_LCdwA();
+                    FontSynthesis m6759getFontSynthesisZQGJjVo = textStyle3.m6759getFontSynthesisZQGJjVo();
+                    rememberedValue2 = resolver.mo6811resolveDPcqOEQ(fontFamily, fontWeight, m6842unboximpl, m6759getFontSynthesisZQGJjVo != null ? m6759getFontSynthesisZQGJjVo.m6855unboximpl() : FontSynthesis.Companion.m6856getAllGVVA2EU());
                     composer.updateRememberedValue(rememberedValue2);
                 }
                 State state = (State) rememberedValue2;
@@ -155,12 +155,12 @@ public final class HeightInLinesModifierKt {
                 Integer valueOf = i5 == 1 ? null : Integer.valueOf(((i5 - 1) * i4) + intValue);
                 int i6 = i2;
                 Integer valueOf2 = i6 != Integer.MAX_VALUE ? Integer.valueOf(intValue + (i4 * (i6 - 1))) : null;
-                Modifier m871heightInVpY3zN4 = SizeKt.m871heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo416toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m7271getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo416toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m7271getUnspecifiedD9Ej5fM());
+                Modifier m881heightInVpY3zN4 = SizeKt.m881heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo426toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m7284getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo426toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m7284getUnspecifiedD9Ej5fM());
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m871heightInVpY3zN4;
+                return m881heightInVpY3zN4;
             }
         });
     }

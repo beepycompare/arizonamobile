@@ -113,4 +113,10 @@
             <Button android:textSize="@dimen/_9sdp" android:textColor="@color/battlepass_text" android:id="@+id/btnGetInfo_winter_welcome" android:background="@drawable/border_radius_10" android:padding="@dimen/_8sdp" android:layout_width="@dimen/_180sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_3sdp" android:text="ОТПРАВИТЬСЯ В ПРИКЛЮЧЕНИЕ!" android:textAllCaps="false" android:fontFamily="@font/heading_now_65" android:backgroundTint="@color/battlepass5"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <View android:id="@+id/overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/card_info" android:padding="@dimen/_6sdp" android:visibility="gone" android:layout_width="@dimen/_200sdp" android:layout_height="wrap_content" app:backgroundMainColor="@color/white" app:corners="@dimen/_12sdp" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintLeft_toLeftOf="0" app:layout_constraintRight_toRightOf="0" app:layout_constraintTop_toTopOf="0">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/_9sdp" android:textColor="#223144" android:id="@+id/text_bonus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Бонусы:" android:textAllCaps="true" android:fontFamily="@font/heading_now_64_regular"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

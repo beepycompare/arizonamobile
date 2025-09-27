@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface Measurable extends IntrinsicMeasurable {
     /* renamed from: measure-BRTryo0 */
-    Placeable mo5954measureBRTryo0(long j);
+    Placeable mo5967measureBRTryo0(long j);
 }

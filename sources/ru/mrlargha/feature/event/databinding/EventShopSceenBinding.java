@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class EventShopSceenBinding implements ViewBinding {
     public final TextView awardName;
     public final TextView count;

@@ -282,14 +282,11 @@ public abstract class IntSet {
                 }
                 i5++;
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            return sb2;
         }
         sb.append(postfix);
-        String sb22 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb22, "toString(...)");
-        return sb22;
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
+        return sb2;
     }
 
     public final String joinToString(CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1<? super Integer, ? extends CharSequence> transform) {

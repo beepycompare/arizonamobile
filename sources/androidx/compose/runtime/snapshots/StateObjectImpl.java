@@ -10,18 +10,18 @@ public abstract class StateObjectImpl implements StateObject {
     private final AtomicInt readerKind = new AtomicInt(0);
 
     /* renamed from: recordReadIn-h_f27i8$runtime  reason: not valid java name */
-    public final void m4014recordReadInh_f27i8$runtime(int i) {
-        int m3996constructorimpl;
+    public final void m4026recordReadInh_f27i8$runtime(int i) {
+        int m4008constructorimpl;
         do {
-            m3996constructorimpl = ReaderKind.m3996constructorimpl(this.readerKind.get());
-            if ((m3996constructorimpl & i) != 0) {
+            m4008constructorimpl = ReaderKind.m4008constructorimpl(this.readerKind.get());
+            if ((m4008constructorimpl & i) != 0) {
                 return;
             }
-        } while (!this.readerKind.compareAndSet(m3996constructorimpl, ReaderKind.m3996constructorimpl(m3996constructorimpl | i)));
+        } while (!this.readerKind.compareAndSet(m4008constructorimpl, ReaderKind.m4008constructorimpl(m4008constructorimpl | i)));
     }
 
     /* renamed from: isReadIn-h_f27i8$runtime  reason: not valid java name */
-    public final boolean m4013isReadInh_f27i8$runtime(int i) {
-        return (i & ReaderKind.m3996constructorimpl(this.readerKind.get())) != 0;
+    public final boolean m4025isReadInh_f27i8$runtime(int i) {
+        return (i & ReaderKind.m4008constructorimpl(this.readerKind.get())) != 0;
     }
 }

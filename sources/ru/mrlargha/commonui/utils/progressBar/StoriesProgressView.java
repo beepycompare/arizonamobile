@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.progressBar.PausableProgressBar;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public class StoriesProgressView extends LinearLayout {
     private static final String TAG = "StoriesProgressView";
     private final LinearLayout.LayoutParams PROGRESS_BAR_LAYOUT_PARAM;
@@ -22,7 +22,7 @@ public class StoriesProgressView extends LinearLayout {
     private int storiesCount;
     private StoriesListener storiesListener;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes6.dex */
     public interface StoriesListener {
         void onComplete();
 

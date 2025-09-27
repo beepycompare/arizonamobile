@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class Ki {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f541a = new HashMap();
+    public final HashMap f542a = new HashMap();
     public final C0671w0 b;
 
     public Ki(C0671w0 c0671w0) {
@@ -15,15 +15,15 @@ public final class Ki {
     }
 
     public static Ki a() {
-        return Ji.f520a;
+        return Ji.f521a;
     }
 
     public final Ci a(Context context, String str) {
         Ci ci;
-        Ci ci2 = (Ci) this.f541a.get(str);
+        Ci ci2 = (Ci) this.f542a.get(str);
         if (ci2 == null) {
-            synchronized (this.f541a) {
-                ci = (Ci) this.f541a.get(str);
+            synchronized (this.f542a) {
+                ci = (Ci) this.f542a.get(str);
                 if (ci == null) {
                     IHandlerExecutor a2 = A4.l().c.a();
                     this.b.getClass();
@@ -31,7 +31,7 @@ public final class Ki {
                         ((Z9) a2).b.post(new Ii(this, context));
                     }
                     ci = new Ci(context.getApplicationContext(), str, new C0671w0());
-                    this.f541a.put(str, ci);
+                    this.f542a.put(str, ci);
                     ci.d(str);
                 }
             }

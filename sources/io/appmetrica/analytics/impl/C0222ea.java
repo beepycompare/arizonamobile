@@ -10,7 +10,7 @@ public final class C0222ea extends Ib {
 
     @Override // io.appmetrica.analytics.impl.Ib, io.appmetrica.analytics.impl.Oa
     public final void a(List<AbstractC0462nh> list) {
-        list.add(this.f607a.u);
+        list.add(this.f608a.u);
         super.a(list);
     }
 }

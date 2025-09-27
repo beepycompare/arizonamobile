@@ -75,12 +75,12 @@ public final class PullToRefreshKt {
     private static final float MaxAlpha = 1.0f;
     private static final float MaxProgressArc = 0.8f;
     private static final float MinAlpha = 0.3f;
-    private static final float StrokeWidth = Dp.m7251constructorimpl((float) 2.5d);
-    private static final float ArcRadius = Dp.m7251constructorimpl((float) 5.5d);
-    private static final float SpinnerSize = Dp.m7251constructorimpl(16);
-    private static final float SpinnerContainerSize = Dp.m7251constructorimpl(40);
-    private static final float ArrowWidth = Dp.m7251constructorimpl(10);
-    private static final float ArrowHeight = Dp.m7251constructorimpl(5);
+    private static final float StrokeWidth = Dp.m7264constructorimpl((float) 2.5d);
+    private static final float ArcRadius = Dp.m7264constructorimpl((float) 5.5d);
+    private static final float SpinnerSize = Dp.m7264constructorimpl(16);
+    private static final float SpinnerContainerSize = Dp.m7264constructorimpl(40);
+    private static final float ArrowWidth = Dp.m7264constructorimpl(10);
+    private static final float ArrowHeight = Dp.m7264constructorimpl(5);
     private static final TweenSpec<Float> AlphaTween = AnimationSpecKt.tween$default(300, 0, EasingKt.getLinearEasing(), 2, null);
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0117  */
@@ -122,7 +122,7 @@ public final class PullToRefreshKt {
         Modifier.Companion companion;
         int i6;
         int currentCompositeKeyHash;
-        Composer m3855constructorimpl;
+        Composer m3867constructorimpl;
         final Modifier modifier2;
         final PullToRefreshState pullToRefreshState3;
         ScopeUpdateScope endRestartGroup;
@@ -221,7 +221,7 @@ public final class PullToRefreshKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(1989171225, i10, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshBox.<anonymous> (PullToRefresh.kt:127)");
                                             }
-                                            PullToRefreshDefaults.INSTANCE.m3095Indicator2poqoh4(PullToRefreshState.this, z, boxScope.align(Modifier.Companion, Alignment.Companion.getTopCenter()), 0L, 0L, 0.0f, composer2, 1572864, 56);
+                                            PullToRefreshDefaults.INSTANCE.m3105Indicator2poqoh4(PullToRefreshState.this, z, boxScope.align(Modifier.Companion, Alignment.Companion.getTopCenter()), 0L, 0L, 0.0f, composer2, 1572864, 56);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                                 return;
@@ -248,13 +248,13 @@ public final class PullToRefreshKt {
                             ComposerKt.traceEventStart(1902956467, i6, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshBox (PullToRefresh.kt:134)");
                         }
                         Modifier modifier3 = companion;
-                        Modifier m3109pullToRefreshZ4HSEVQ$default = m3109pullToRefreshZ4HSEVQ$default(modifier3, z, pullToRefreshState4, false, 0.0f, function02, 12, null);
+                        Modifier m3119pullToRefreshZ4HSEVQ$default = m3119pullToRefreshZ4HSEVQ$default(modifier3, z, pullToRefreshState4, false, 0.0f, function02, 12, null);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(obj2, false);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m3109pullToRefreshZ4HSEVQ$default);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m3119pullToRefreshZ4HSEVQ$default);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -266,15 +266,15 @@ public final class PullToRefreshKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (!m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1101976897, "C139@6095L9,140@6113L11:PullToRefresh.kt#djiw08");
@@ -343,13 +343,13 @@ public final class PullToRefreshKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 Modifier modifier32 = companion;
-                Modifier m3109pullToRefreshZ4HSEVQ$default2 = m3109pullToRefreshZ4HSEVQ$default(modifier32, z, pullToRefreshState42, false, 0.0f, function02, 12, null);
+                Modifier m3119pullToRefreshZ4HSEVQ$default2 = m3119pullToRefreshZ4HSEVQ$default(modifier32, z, pullToRefreshState42, false, 0.0f, function02, 12, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy2 = BoxKt.maybeCachedBoxMeasurePolicy(obj2, false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                 currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m3109pullToRefreshZ4HSEVQ$default2);
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m3119pullToRefreshZ4HSEVQ$default2);
                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -357,15 +357,15 @@ public final class PullToRefreshKt {
                 startRestartGroup.startReusableNode();
                 if (!startRestartGroup.getInserting()) {
                 }
-                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3855constructorimpl.getInserting()) {
+                if (!m3867constructorimpl.getInserting()) {
                 }
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
-                Updater.m3862setimpl(m3855constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash2);
+                Updater.m3874setimpl(m3867constructorimpl, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1101976897, "C139@6095L9,140@6113L11:PullToRefresh.kt#djiw08");
@@ -412,13 +412,13 @@ public final class PullToRefreshKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             Modifier modifier322 = companion;
-            Modifier m3109pullToRefreshZ4HSEVQ$default22 = m3109pullToRefreshZ4HSEVQ$default(modifier322, z, pullToRefreshState422, false, 0.0f, function02, 12, null);
+            Modifier m3119pullToRefreshZ4HSEVQ$default22 = m3119pullToRefreshZ4HSEVQ$default(modifier322, z, pullToRefreshState422, false, 0.0f, function02, 12, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy22 = BoxKt.maybeCachedBoxMeasurePolicy(obj2, false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
             currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap22 = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier22 = ComposedModifierKt.materializeModifier(startRestartGroup, m3109pullToRefreshZ4HSEVQ$default22);
+            Modifier materializeModifier22 = ComposedModifierKt.materializeModifier(startRestartGroup, m3119pullToRefreshZ4HSEVQ$default22);
             Function0<ComposeUiNode> constructor22 = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -426,15 +426,15 @@ public final class PullToRefreshKt {
             startRestartGroup.startReusableNode();
             if (!startRestartGroup.getInserting()) {
             }
-            m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3855constructorimpl.getInserting()) {
+            if (!m3867constructorimpl.getInserting()) {
             }
-            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash22);
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance22 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1101976897, "C139@6095L9,140@6113L11:PullToRefresh.kt#djiw08");
@@ -487,13 +487,13 @@ public final class PullToRefreshKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         Modifier modifier3222 = companion;
-        Modifier m3109pullToRefreshZ4HSEVQ$default222 = m3109pullToRefreshZ4HSEVQ$default(modifier3222, z, pullToRefreshState4222, false, 0.0f, function02, 12, null);
+        Modifier m3119pullToRefreshZ4HSEVQ$default222 = m3119pullToRefreshZ4HSEVQ$default(modifier3222, z, pullToRefreshState4222, false, 0.0f, function02, 12, null);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy222 = BoxKt.maybeCachedBoxMeasurePolicy(obj2, false);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
         currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
         CompositionLocalMap currentCompositionLocalMap222 = startRestartGroup.getCurrentCompositionLocalMap();
-        Modifier materializeModifier222 = ComposedModifierKt.materializeModifier(startRestartGroup, m3109pullToRefreshZ4HSEVQ$default222);
+        Modifier materializeModifier222 = ComposedModifierKt.materializeModifier(startRestartGroup, m3119pullToRefreshZ4HSEVQ$default222);
         Function0<ComposeUiNode> constructor222 = ComposeUiNode.Companion.getConstructor();
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -501,15 +501,15 @@ public final class PullToRefreshKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3855constructorimpl.getInserting()) {
+        if (!m3867constructorimpl.getInserting()) {
         }
-        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
-        Updater.m3862setimpl(m3855constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
+        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash222);
+        Updater.m3874setimpl(m3867constructorimpl, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance222 = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1101976897, "C139@6095L9,140@6113L11:PullToRefresh.kt#djiw08");
@@ -533,9 +533,9 @@ public final class PullToRefreshKt {
     }
 
     /* renamed from: pullToRefreshIndicator-wUdLESc$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m3111pullToRefreshIndicatorwUdLESc$default(Modifier modifier, PullToRefreshState pullToRefreshState, boolean z, float f, Shape shape, long j, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m3121pullToRefreshIndicatorwUdLESc$default(Modifier modifier, PullToRefreshState pullToRefreshState, boolean z, float f, Shape shape, long j, float f2, int i, Object obj) {
         if ((i & 4) != 0) {
-            f = PullToRefreshDefaults.INSTANCE.m3097getPositionalThresholdD9Ej5fM();
+            f = PullToRefreshDefaults.INSTANCE.m3107getPositionalThresholdD9Ej5fM();
         }
         float f3 = f;
         if ((i & 8) != 0) {
@@ -543,14 +543,14 @@ public final class PullToRefreshKt {
         }
         Shape shape2 = shape;
         if ((i & 16) != 0) {
-            j = Color.Companion.m4573getUnspecified0d7_KjU();
+            j = Color.Companion.m4585getUnspecified0d7_KjU();
         }
-        return m3110pullToRefreshIndicatorwUdLESc(modifier, pullToRefreshState, z, f3, shape2, j, (i & 32) != 0 ? PullToRefreshDefaults.INSTANCE.m3096getElevationD9Ej5fM() : f2);
+        return m3120pullToRefreshIndicatorwUdLESc(modifier, pullToRefreshState, z, f3, shape2, j, (i & 32) != 0 ? PullToRefreshDefaults.INSTANCE.m3106getElevationD9Ej5fM() : f2);
     }
 
     /* renamed from: pullToRefreshIndicator-wUdLESc  reason: not valid java name */
-    public static final Modifier m3110pullToRefreshIndicatorwUdLESc(Modifier modifier, final PullToRefreshState pullToRefreshState, final boolean z, final float f, final Shape shape, long j, final float f2) {
-        return BackgroundKt.m256backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(DrawModifierKt.drawWithContent(SizeKt.m884size3ABfNKs(modifier, SpinnerContainerSize), new Function1<ContentDrawScope, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshKt$pullToRefreshIndicator$1
+    public static final Modifier m3120pullToRefreshIndicatorwUdLESc(Modifier modifier, final PullToRefreshState pullToRefreshState, final boolean z, final float f, final Shape shape, long j, final float f2) {
+        return BackgroundKt.m266backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(DrawModifierKt.drawWithContent(SizeKt.m894size3ABfNKs(modifier, SpinnerContainerSize), new Function1<ContentDrawScope, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshKt$pullToRefreshIndicator$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ContentDrawScope contentDrawScope) {
                 invoke2(contentDrawScope);
@@ -559,16 +559,16 @@ public final class PullToRefreshKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(ContentDrawScope contentDrawScope) {
-                int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
+                int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
                 DrawContext drawContext = contentDrawScope.getDrawContext();
-                long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                 drawContext.getCanvas().save();
                 try {
-                    drawContext.getTransform().mo5040clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m4526getIntersectrtfAjoo);
+                    drawContext.getTransform().mo5052clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m4538getIntersectrtfAjoo);
                     contentDrawScope.drawContent();
                 } finally {
                     drawContext.getCanvas().restore();
-                    drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                    drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 }
             }
         }), new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshKt$pullToRefreshIndicator$2
@@ -587,8 +587,8 @@ public final class PullToRefreshKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
                 boolean z2 = PullToRefreshState.this.getDistanceFraction() > 0.0f || z;
-                graphicsLayerScope.setTranslationY((PullToRefreshState.this.getDistanceFraction() * graphicsLayerScope.mo413roundToPx0680j_4(f)) - Size.m4359getHeightimpl(graphicsLayerScope.mo4732getSizeNHjbRc()));
-                graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo419toPx0680j_4(f2) : 0.0f);
+                graphicsLayerScope.setTranslationY((PullToRefreshState.this.getDistanceFraction() * graphicsLayerScope.mo423roundToPx0680j_4(f)) - Size.m4371getHeightimpl(graphicsLayerScope.mo4744getSizeNHjbRc()));
+                graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo429toPx0680j_4(f2) : 0.0f);
                 graphicsLayerScope.setShape(shape);
                 graphicsLayerScope.setClip(true);
             }
@@ -596,19 +596,19 @@ public final class PullToRefreshKt {
     }
 
     /* renamed from: pullToRefresh-Z4HSEVQ$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m3109pullToRefreshZ4HSEVQ$default(Modifier modifier, boolean z, PullToRefreshState pullToRefreshState, boolean z2, float f, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m3119pullToRefreshZ4HSEVQ$default(Modifier modifier, boolean z, PullToRefreshState pullToRefreshState, boolean z2, float f, Function0 function0, int i, Object obj) {
         if ((i & 4) != 0) {
             z2 = true;
         }
         boolean z3 = z2;
         if ((i & 8) != 0) {
-            f = PullToRefreshDefaults.INSTANCE.m3097getPositionalThresholdD9Ej5fM();
+            f = PullToRefreshDefaults.INSTANCE.m3107getPositionalThresholdD9Ej5fM();
         }
-        return m3108pullToRefreshZ4HSEVQ(modifier, z, pullToRefreshState, z3, f, function0);
+        return m3118pullToRefreshZ4HSEVQ(modifier, z, pullToRefreshState, z3, f, function0);
     }
 
     /* renamed from: pullToRefresh-Z4HSEVQ  reason: not valid java name */
-    public static final Modifier m3108pullToRefreshZ4HSEVQ(Modifier modifier, boolean z, PullToRefreshState pullToRefreshState, boolean z2, float f, Function0<Unit> function0) {
+    public static final Modifier m3118pullToRefreshZ4HSEVQ(Modifier modifier, boolean z, PullToRefreshState pullToRefreshState, boolean z2, float f, Function0<Unit> function0) {
         return modifier.then(new PullToRefreshElement(z, function0, z2, pullToRefreshState, f, null));
     }
 
@@ -617,7 +617,7 @@ public final class PullToRefreshKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(318623070, i, -1, "androidx.compose.material3.pulltorefresh.rememberPullToRefreshState (PullToRefresh.kt:512)");
         }
-        PullToRefreshStateImpl pullToRefreshStateImpl = (PullToRefreshStateImpl) RememberSaveableKt.m3982rememberSaveable(new Object[0], PullToRefreshStateImpl.Companion.getSaver(), (String) null, (Function0<? extends Object>) new Function0<PullToRefreshStateImpl>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshKt$rememberPullToRefreshState$1
+        PullToRefreshStateImpl pullToRefreshStateImpl = (PullToRefreshStateImpl) RememberSaveableKt.m3994rememberSaveable(new Object[0], PullToRefreshStateImpl.Companion.getSaver(), (String) null, (Function0<? extends Object>) new Function0<PullToRefreshStateImpl>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshKt$rememberPullToRefreshState$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final PullToRefreshStateImpl invoke() {
@@ -637,7 +637,7 @@ public final class PullToRefreshKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: CircularArrowProgressIndicator-RPmYEkk  reason: not valid java name */
-    public static final void m3102CircularArrowProgressIndicatorRPmYEkk(final Function0<Float> function0, final long j, Composer composer, final int i) {
+    public static final void m3112CircularArrowProgressIndicatorRPmYEkk(final Function0<Float> function0, final long j, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-569718810);
         ComposerKt.sourceInformation(startRestartGroup, "C(CircularArrowProgressIndicator)P(1,0:c#ui.graphics.Color)562@20583L61,564@20745L76,565@20843L74,567@20982L98,571@21118L443,566@20922L639:PullToRefresh.kt#djiw08");
@@ -658,7 +658,7 @@ public final class PullToRefreshKt {
             Path path = rememberedValue;
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 Path Path = AndroidPath_androidKt.Path();
-                Path.mo4428setFillTypeoQ8Xj4U(PathFillType.Companion.m4831getEvenOddRgk1Os());
+                Path.mo4440setFillTypeoQ8Xj4U(PathFillType.Companion.m4843getEvenOddRgk1Os());
                 startRestartGroup.updateRememberedValue(Path);
                 path = Path;
             }
@@ -711,7 +711,7 @@ public final class PullToRefreshKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier m884size3ABfNKs = SizeKt.m884size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue3), SpinnerSize);
+            Modifier m894size3ABfNKs = SizeKt.m894size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue3), SpinnerSize);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1136660265, "CC(remember):PullToRefresh.kt#9igjgp");
             boolean changed = (i3 == 4) | startRestartGroup.changed(animateFloatAsState) | ((i2 & 112) == 32) | startRestartGroup.changedInstance(path2);
             Object rememberedValue4 = startRestartGroup.rememberedValue();
@@ -741,30 +741,30 @@ public final class PullToRefreshKt {
                         float rotation = ArrowValues.getRotation();
                         long j2 = j;
                         Path path3 = path2;
-                        long mo5115getCenterF1C5BW0 = drawScope.mo5115getCenterF1C5BW0();
+                        long mo5127getCenterF1C5BW0 = drawScope.mo5127getCenterF1C5BW0();
                         DrawContext drawContext = drawScope.getDrawContext();
-                        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                         drawContext.getCanvas().save();
                         try {
-                            drawContext.getTransform().mo5043rotateUv8p0NA(rotation, mo5115getCenterF1C5BW0);
+                            drawContext.getTransform().mo5055rotateUv8p0NA(rotation, mo5127getCenterF1C5BW0);
                             f = PullToRefreshKt.ArcRadius;
-                            float f5 = drawScope.mo419toPx0680j_4(f);
+                            float f5 = drawScope.mo429toPx0680j_4(f);
                             f2 = PullToRefreshKt.StrokeWidth;
-                            Rect m4332Rect3MmeM6k = RectKt.m4332Rect3MmeM6k(androidx.compose.ui.geometry.SizeKt.m4372getCenteruvyYCjk(drawScope.mo5116getSizeNHjbRc()), f5 + (drawScope.mo419toPx0680j_4(f2) / 2.0f));
+                            Rect m4344Rect3MmeM6k = RectKt.m4344Rect3MmeM6k(androidx.compose.ui.geometry.SizeKt.m4384getCenteruvyYCjk(drawScope.mo5128getSizeNHjbRc()), f5 + (drawScope.mo429toPx0680j_4(f2) / 2.0f));
                             f3 = PullToRefreshKt.StrokeWidth;
-                            PullToRefreshKt.m3107drawCircularIndicatorKzyDr3Q(drawScope, j2, floatValue, ArrowValues, m4332Rect3MmeM6k, f3);
+                            PullToRefreshKt.m3117drawCircularIndicatorKzyDr3Q(drawScope, j2, floatValue, ArrowValues, m4344Rect3MmeM6k, f3);
                             f4 = PullToRefreshKt.StrokeWidth;
-                            PullToRefreshKt.m3106drawArrowuDrxG_w(drawScope, path3, m4332Rect3MmeM6k, j2, floatValue, ArrowValues, f4);
+                            PullToRefreshKt.m3116drawArrowuDrxG_w(drawScope, path3, m4344Rect3MmeM6k, j2, floatValue, ArrowValues, f4);
                         } finally {
                             drawContext.getCanvas().restore();
-                            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                         }
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue4);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CanvasKt.Canvas(m884size3ABfNKs, (Function1) rememberedValue4, startRestartGroup, 0);
+            CanvasKt.Canvas(m894size3ABfNKs, (Function1) rememberedValue4, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -787,7 +787,7 @@ public final class PullToRefreshKt {
                 }
 
                 public final void invoke(Composer composer2, int i4) {
-                    PullToRefreshKt.m3102CircularArrowProgressIndicatorRPmYEkk(function0, j, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    PullToRefreshKt.m3112CircularArrowProgressIndicatorRPmYEkk(function0, j, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }
@@ -795,8 +795,8 @@ public final class PullToRefreshKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawCircularIndicator-KzyDr3Q  reason: not valid java name */
-    public static final void m3107drawCircularIndicatorKzyDr3Q(DrawScope drawScope, long j, float f, ArrowValues arrowValues, Rect rect, float f2) {
-        DrawScope.m5095drawArcyD3GUKo$default(drawScope, j, arrowValues.getStartAngle(), arrowValues.getEndAngle() - arrowValues.getStartAngle(), false, rect.m4328getTopLeftF1C5BW0(), rect.m4326getSizeNHjbRc(), f, new Stroke(drawScope.mo419toPx0680j_4(f2), 0.0f, StrokeCap.Companion.m4907getButtKaPHkGw(), 0, null, 26, null), null, 0, ViewUtils.EDGE_TO_EDGE_FLAGS, null);
+    public static final void m3117drawCircularIndicatorKzyDr3Q(DrawScope drawScope, long j, float f, ArrowValues arrowValues, Rect rect, float f2) {
+        DrawScope.m5107drawArcyD3GUKo$default(drawScope, j, arrowValues.getStartAngle(), arrowValues.getEndAngle() - arrowValues.getStartAngle(), false, rect.m4340getTopLeftF1C5BW0(), rect.m4338getSizeNHjbRc(), f, new Stroke(drawScope.mo429toPx0680j_4(f2), 0.0f, StrokeCap.Companion.m4919getButtKaPHkGw(), 0, null, 26, null), null, 0, ViewUtils.EDGE_TO_EDGE_FLAGS, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -810,24 +810,24 @@ public final class PullToRefreshKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawArrow-uDrxG_w  reason: not valid java name */
-    public static final void m3106drawArrowuDrxG_w(DrawScope drawScope, Path path, Rect rect, long j, float f, ArrowValues arrowValues, float f2) {
+    public static final void m3116drawArrowuDrxG_w(DrawScope drawScope, Path path, Rect rect, long j, float f, ArrowValues arrowValues, float f2) {
         path.reset();
         path.moveTo(0.0f, 0.0f);
         float f3 = ArrowWidth;
-        path.lineTo((drawScope.mo419toPx0680j_4(f3) * arrowValues.getScale()) / 2, drawScope.mo419toPx0680j_4(ArrowHeight) * arrowValues.getScale());
-        path.lineTo(drawScope.mo419toPx0680j_4(f3) * arrowValues.getScale(), 0.0f);
-        path.mo4430translatek4lQ0M(OffsetKt.Offset(((Math.min(rect.getWidth(), rect.getHeight()) / 2.0f) + Offset.m4293getXimpl(rect.m4323getCenterF1C5BW0())) - ((drawScope.mo419toPx0680j_4(f3) * arrowValues.getScale()) / 2.0f), Offset.m4294getYimpl(rect.m4323getCenterF1C5BW0()) - drawScope.mo419toPx0680j_4(f2)));
-        float endAngle = arrowValues.getEndAngle() - drawScope.mo419toPx0680j_4(f2);
-        long mo5115getCenterF1C5BW0 = drawScope.mo5115getCenterF1C5BW0();
+        path.lineTo((drawScope.mo429toPx0680j_4(f3) * arrowValues.getScale()) / 2, drawScope.mo429toPx0680j_4(ArrowHeight) * arrowValues.getScale());
+        path.lineTo(drawScope.mo429toPx0680j_4(f3) * arrowValues.getScale(), 0.0f);
+        path.mo4442translatek4lQ0M(OffsetKt.Offset(((Math.min(rect.getWidth(), rect.getHeight()) / 2.0f) + Offset.m4305getXimpl(rect.m4335getCenterF1C5BW0())) - ((drawScope.mo429toPx0680j_4(f3) * arrowValues.getScale()) / 2.0f), Offset.m4306getYimpl(rect.m4335getCenterF1C5BW0()) - drawScope.mo429toPx0680j_4(f2)));
+        float endAngle = arrowValues.getEndAngle() - drawScope.mo429toPx0680j_4(f2);
+        long mo5127getCenterF1C5BW0 = drawScope.mo5127getCenterF1C5BW0();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5043rotateUv8p0NA(endAngle, mo5115getCenterF1C5BW0);
-            DrawScope.m5106drawPathLG529CI$default(drawScope, path, j, f, new Stroke(drawScope.mo419toPx0680j_4(f2), 0.0f, 0, 0, null, 30, null), null, 0, 48, null);
+            drawContext.getTransform().mo5055rotateUv8p0NA(endAngle, mo5127getCenterF1C5BW0);
+            DrawScope.m5118drawPathLG529CI$default(drawScope, path, j, f, new Stroke(drawScope.mo429toPx0680j_4(f2), 0.0f, 0, 0, null, 30, null), null, 0, 48, null);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 

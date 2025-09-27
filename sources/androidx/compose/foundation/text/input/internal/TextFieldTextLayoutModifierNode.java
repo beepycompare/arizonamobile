@@ -72,29 +72,29 @@ public final class TextFieldTextLayoutModifierNode extends DelegatingNode implem
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        float m7251constructorimpl;
-        TextLayoutResult m1576layoutWithNewMeasureInputshBUhpc = this.textLayoutState.m1576layoutWithNewMeasureInputshBUhpc(measureScope, measureScope.getLayoutDirection(), (FontFamily.Resolver) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFontFamilyResolver()), j);
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.Companion.m7213fitPrioritizingWidthZbe2FdA((int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() >> 32), (int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() >> 32), (int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() & 4294967295L), (int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() & 4294967295L)));
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        float m7264constructorimpl;
+        TextLayoutResult m1586layoutWithNewMeasureInputshBUhpc = this.textLayoutState.m1586layoutWithNewMeasureInputshBUhpc(measureScope, measureScope.getLayoutDirection(), (FontFamily.Resolver) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFontFamilyResolver()), j);
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.Companion.m7226fitPrioritizingWidthZbe2FdA((int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L), (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L)));
         TextLayoutState textLayoutState = this.textLayoutState;
         if (this.singleLine) {
-            m7251constructorimpl = measureScope.mo416toDpu2uoSUM(TextDelegateKt.ceilToIntPx(m1576layoutWithNewMeasureInputshBUhpc.getLineBottom(0)));
+            m7264constructorimpl = measureScope.mo426toDpu2uoSUM(TextDelegateKt.ceilToIntPx(m1586layoutWithNewMeasureInputshBUhpc.getLineBottom(0)));
         } else {
-            m7251constructorimpl = Dp.m7251constructorimpl(0);
+            m7264constructorimpl = Dp.m7264constructorimpl(0);
         }
-        textLayoutState.m1577setMinHeightForSingleLineField0680j_4(m7251constructorimpl);
+        textLayoutState.m1587setMinHeightForSingleLineField0680j_4(m7264constructorimpl);
         LinkedHashMap linkedHashMap = this.baselineCache;
         if (linkedHashMap == null) {
             linkedHashMap = new LinkedHashMap(2);
         }
-        linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(m1576layoutWithNewMeasureInputshBUhpc.getFirstBaseline())));
-        linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(m1576layoutWithNewMeasureInputshBUhpc.getLastBaseline())));
+        linkedHashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(m1586layoutWithNewMeasureInputshBUhpc.getFirstBaseline())));
+        linkedHashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(m1586layoutWithNewMeasureInputshBUhpc.getLastBaseline())));
         this.baselineCache = linkedHashMap;
-        int m6684getSizeYbymL2g = (int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() >> 32);
-        int m6684getSizeYbymL2g2 = (int) (m1576layoutWithNewMeasureInputshBUhpc.m6684getSizeYbymL2g() & 4294967295L);
+        int m6697getSizeYbymL2g = (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() >> 32);
+        int m6697getSizeYbymL2g2 = (int) (m1586layoutWithNewMeasureInputshBUhpc.m6697getSizeYbymL2g() & 4294967295L);
         Map<AlignmentLine, Integer> map = this.baselineCache;
         Intrinsics.checkNotNull(map);
-        return measureScope.layout(m6684getSizeYbymL2g, m6684getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
+        return measureScope.layout(m6697getSizeYbymL2g, m6697getSizeYbymL2g2, map, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldTextLayoutModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;

@@ -18,15 +18,15 @@ import ru.rustore.sdk.reactive.single.SingleDoOnDisposeKt;
 import ru.rustore.sdk.reactive.single.SingleSubscribeKt;
 import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lru/rustore/sdk/metrics/internal/presentation/SendMetricsEventJobService;", "Landroid/app/job/JobService;", "<init>", "()V", "sdk-public-metrics_release"}, k = 1, mv = {1, 7, 0})
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class SendMetricsEventJobService extends JobService {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lazy f1465a = LazyKt.lazy(new a());
+    public final Lazy f1466a = LazyKt.lazy(new a());
     public Disposable b;
     public volatile boolean c;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class a extends Lambda implements Function0<X> {
         public a() {
             super(0);
@@ -38,7 +38,7 @@ public final class SendMetricsEventJobService extends JobService {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class b extends Lambda implements Function0<Unit> {
         public b() {
             super(0);
@@ -46,12 +46,12 @@ public final class SendMetricsEventJobService extends JobService {
 
         @Override // kotlin.jvm.functions.Function0
         public final Unit invoke() {
-            ((X) SendMetricsEventJobService.this.f1465a.getValue()).f1444a.a();
+            ((X) SendMetricsEventJobService.this.f1466a.getValue()).f1445a.a();
             return Unit.INSTANCE;
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class c extends Lambda implements Function0<Unit> {
         public final /* synthetic */ JobParameters b;
 
@@ -68,7 +68,7 @@ public final class SendMetricsEventJobService extends JobService {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class d extends Lambda implements Function1<Throwable, Unit> {
         public final /* synthetic */ JobParameters b;
 
@@ -86,7 +86,7 @@ public final class SendMetricsEventJobService extends JobService {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class e extends Lambda implements Function1<Unit, Unit> {
         public final /* synthetic */ JobParameters b;
 

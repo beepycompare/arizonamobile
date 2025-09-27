@@ -28,23 +28,23 @@ public final class DefaultIntrinsicMeasurable implements Measurable {
 
     @Override // androidx.compose.ui.layout.Measurable
     /* renamed from: measure-BRTryo0  reason: not valid java name */
-    public Placeable mo5954measureBRTryo0(long j) {
+    public Placeable mo5967measureBRTryo0(long j) {
         int minIntrinsicHeight;
         int minIntrinsicWidth;
         if (this.widthHeight == IntrinsicWidthHeight.Width) {
             if (this.minMax == IntrinsicMinMax.Max) {
-                minIntrinsicWidth = this.measurable.maxIntrinsicWidth(Constraints.m7203getMaxHeightimpl(j));
+                minIntrinsicWidth = this.measurable.maxIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j));
             } else {
-                minIntrinsicWidth = this.measurable.minIntrinsicWidth(Constraints.m7203getMaxHeightimpl(j));
+                minIntrinsicWidth = this.measurable.minIntrinsicWidth(Constraints.m7216getMaxHeightimpl(j));
             }
-            return new FixedSizeIntrinsicsPlaceable(minIntrinsicWidth, Constraints.m7199getHasBoundedHeightimpl(j) ? Constraints.m7203getMaxHeightimpl(j) : 32767);
+            return new FixedSizeIntrinsicsPlaceable(minIntrinsicWidth, Constraints.m7212getHasBoundedHeightimpl(j) ? Constraints.m7216getMaxHeightimpl(j) : 32767);
         }
         if (this.minMax == IntrinsicMinMax.Max) {
-            minIntrinsicHeight = this.measurable.maxIntrinsicHeight(Constraints.m7204getMaxWidthimpl(j));
+            minIntrinsicHeight = this.measurable.maxIntrinsicHeight(Constraints.m7217getMaxWidthimpl(j));
         } else {
-            minIntrinsicHeight = this.measurable.minIntrinsicHeight(Constraints.m7204getMaxWidthimpl(j));
+            minIntrinsicHeight = this.measurable.minIntrinsicHeight(Constraints.m7217getMaxWidthimpl(j));
         }
-        return new FixedSizeIntrinsicsPlaceable(Constraints.m7200getHasBoundedWidthimpl(j) ? Constraints.m7204getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
+        return new FixedSizeIntrinsicsPlaceable(Constraints.m7213getHasBoundedWidthimpl(j) ? Constraints.m7217getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
     }
 
     @Override // androidx.compose.ui.layout.IntrinsicMeasurable

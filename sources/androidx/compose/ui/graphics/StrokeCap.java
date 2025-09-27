@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class StrokeCap {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Butt = m4901constructorimpl(0);
-    private static final int Round = m4901constructorimpl(1);
-    private static final int Square = m4901constructorimpl(2);
+    private static final int Butt = m4913constructorimpl(0);
+    private static final int Round = m4913constructorimpl(1);
+    private static final int Square = m4913constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StrokeCap m4900boximpl(int i) {
+    public static final /* synthetic */ StrokeCap m4912boximpl(int i) {
         return new StrokeCap(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4901constructorimpl(int i) {
+    public static int m4913constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4902equalsimpl(int i, Object obj) {
-        return (obj instanceof StrokeCap) && i == ((StrokeCap) obj).m4906unboximpl();
+    public static boolean m4914equalsimpl(int i, Object obj) {
+        return (obj instanceof StrokeCap) && i == ((StrokeCap) obj).m4918unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4903equalsimpl0(int i, int i2) {
+    public static final boolean m4915equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4904hashCodeimpl(int i) {
+    public static int m4916hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4902equalsimpl(this.value, obj);
+        return m4914equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4904hashCodeimpl(this.value);
+        return m4916hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4906unboximpl() {
+    public final /* synthetic */ int m4918unboximpl() {
         return this.value;
     }
 
@@ -65,17 +65,17 @@ public final class StrokeCap {
         }
 
         /* renamed from: getButt-KaPHkGw  reason: not valid java name */
-        public final int m4907getButtKaPHkGw() {
+        public final int m4919getButtKaPHkGw() {
             return StrokeCap.Butt;
         }
 
         /* renamed from: getRound-KaPHkGw  reason: not valid java name */
-        public final int m4908getRoundKaPHkGw() {
+        public final int m4920getRoundKaPHkGw() {
             return StrokeCap.Round;
         }
 
         /* renamed from: getSquare-KaPHkGw  reason: not valid java name */
-        public final int m4909getSquareKaPHkGw() {
+        public final int m4921getSquareKaPHkGw() {
             return StrokeCap.Square;
         }
     }
@@ -85,11 +85,11 @@ public final class StrokeCap {
     }
 
     public String toString() {
-        return m4905toStringimpl(this.value);
+        return m4917toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4905toStringimpl(int i) {
-        return m4903equalsimpl0(i, Butt) ? "Butt" : m4903equalsimpl0(i, Round) ? "Round" : m4903equalsimpl0(i, Square) ? "Square" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m4917toStringimpl(int i) {
+        return m4915equalsimpl0(i, Butt) ? "Butt" : m4915equalsimpl0(i, Round) ? "Round" : m4915equalsimpl0(i, Square) ? "Square" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

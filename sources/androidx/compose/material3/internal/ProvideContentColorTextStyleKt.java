@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public final class ProvideContentColorTextStyleKt {
     /* renamed from: ProvideContentColorTextStyle-3J-VO9M  reason: not valid java name */
-    public static final void m3014ProvideContentColorTextStyle3JVO9M(final long j, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
+    public static final void m3024ProvideContentColorTextStyle3JVO9M(final long j, final TextStyle textStyle, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(-716124955);
         ComposerKt.sourceInformation(startRestartGroup, "C(ProvideContentColorTextStyle)P(1:c#ui.graphics.Color,2)39@1423L7,40@1452L151:ProvideContentColorTextStyle.kt#mqatfk");
@@ -42,7 +42,7 @@ public final class ProvideContentColorTextStyleKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(TextKt.getLocalTextStyle());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4527boximpl(j)), TextKt.getLocalTextStyle().provides(((TextStyle) consume).merge(textStyle))}, function2, startRestartGroup, ProvidedValue.$stable | ((i2 >> 3) & 112));
+            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{ContentColorKt.getLocalContentColor().provides(Color.m4539boximpl(j)), TextKt.getLocalTextStyle().provides(((TextStyle) consume).merge(textStyle))}, function2, startRestartGroup, ProvidedValue.$stable | ((i2 >> 3) & 112));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -66,7 +66,7 @@ public final class ProvideContentColorTextStyleKt {
                 }
 
                 public final void invoke(Composer composer2, int i3) {
-                    ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j, textStyle, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }

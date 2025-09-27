@@ -34,7 +34,7 @@ public final class BitmapCompat {
         return bitmap.getAllocationByteCount();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x01a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x01a4, code lost:
         if (androidx.core.graphics.BitmapCompat.Api27Impl.isAlreadyF16AndLinear(r10) == false) goto L96;
      */
     /*

@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class ImageVectorKt {
     /* renamed from: path-R_LF-3I$default */
-    public static /* synthetic */ ImageVector.Builder m5276pathR_LF3I$default(ImageVector.Builder builder, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i, int i2, float f4, int i3, Function1 function1, int i4, Object obj) {
-        ImageVector.Builder m5274addPathoIyEayM;
+    public static /* synthetic */ ImageVector.Builder m5288pathR_LF3I$default(ImageVector.Builder builder, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i, int i2, float f4, int i3, Function1 function1, int i4, Object obj) {
+        ImageVector.Builder m5286addPathoIyEayM;
         String str2 = (i4 & 1) != 0 ? "" : str;
         Brush brush3 = (i4 & 2) != 0 ? null : brush;
         float f5 = (i4 & 4) != 0 ? 1.0f : f;
@@ -28,8 +28,8 @@ public final class ImageVectorKt {
         int defaultFillType = (i4 & 512) != 0 ? VectorKt.getDefaultFillType() : i3;
         PathBuilder pathBuilder = new PathBuilder();
         function1.invoke(pathBuilder);
-        m5274addPathoIyEayM = builder.m5274addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : str2, (r30 & 8) != 0 ? null : brush3, (r30 & 16) != 0 ? 1.0f : f5, (r30 & 32) == 0 ? brush4 : null, (r30 & 64) != 0 ? 1.0f : f6, (r30 & 128) != 0 ? 0.0f : f7, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : defaultStrokeLineCap, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : defaultStrokeLineJoin, (r30 & 1024) != 0 ? 4.0f : f8, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        return m5274addPathoIyEayM;
+        m5286addPathoIyEayM = builder.m5286addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : str2, (r30 & 8) != 0 ? null : brush3, (r30 & 16) != 0 ? 1.0f : f5, (r30 & 32) == 0 ? brush4 : null, (r30 & 64) != 0 ? 1.0f : f6, (r30 & 128) != 0 ? 0.0f : f7, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : defaultStrokeLineCap, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : defaultStrokeLineJoin, (r30 & 1024) != 0 ? 4.0f : f8, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        return m5286addPathoIyEayM;
     }
 
     public static /* synthetic */ ImageVector.Builder group$default(ImageVector.Builder builder, String str, float f, float f2, float f3, float f4, float f5, float f6, float f7, List list, Function1 function1, int i, Object obj) {
@@ -66,11 +66,11 @@ public final class ImageVectorKt {
     }
 
     /* renamed from: path-R_LF-3I */
-    public static final ImageVector.Builder m5275pathR_LF3I(ImageVector.Builder builder, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i, int i2, float f4, int i3, Function1<? super PathBuilder, Unit> function1) {
-        ImageVector.Builder m5274addPathoIyEayM;
+    public static final ImageVector.Builder m5287pathR_LF3I(ImageVector.Builder builder, String str, Brush brush, float f, Brush brush2, float f2, float f3, int i, int i2, float f4, int i3, Function1<? super PathBuilder, Unit> function1) {
+        ImageVector.Builder m5286addPathoIyEayM;
         PathBuilder pathBuilder = new PathBuilder();
         function1.invoke(pathBuilder);
-        m5274addPathoIyEayM = builder.m5274addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : i3, (r30 & 4) != 0 ? "" : str, (r30 & 8) != 0 ? null : brush, (r30 & 16) != 0 ? 1.0f : f, (r30 & 32) == 0 ? brush2 : null, (r30 & 64) != 0 ? 1.0f : f2, (r30 & 128) != 0 ? 0.0f : f3, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : i, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : i2, (r30 & 1024) != 0 ? 4.0f : f4, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        return m5274addPathoIyEayM;
+        m5286addPathoIyEayM = builder.m5286addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : i3, (r30 & 4) != 0 ? "" : str, (r30 & 8) != 0 ? null : brush, (r30 & 16) != 0 ? 1.0f : f, (r30 & 32) == 0 ? brush2 : null, (r30 & 64) != 0 ? 1.0f : f2, (r30 & 128) != 0 ? 0.0f : f3, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : i, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : i2, (r30 & 1024) != 0 ? 4.0f : f4, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        return m5286addPathoIyEayM;
     }
 }

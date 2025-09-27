@@ -40,7 +40,7 @@ public final class PixelMap {
     }
 
     /* renamed from: get-WaAFU9c  reason: not valid java name */
-    public final long m4846getWaAFU9c(int i, int i2) {
+    public final long m4858getWaAFU9c(int i, int i2) {
         return ColorKt.Color(this.buffer[this.bufferOffset + (i2 * this.stride) + i]);
     }
 }

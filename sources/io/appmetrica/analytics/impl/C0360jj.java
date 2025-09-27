@@ -8,12 +8,12 @@ import java.util.List;
 public final class C0360jj implements yo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final xo f941a = new xo();
+    public final xo f942a = new xo();
 
     @Override // io.appmetrica.analytics.impl.yo
     public final wo a(Revenue revenue) {
         wo woVar;
-        xo xoVar = this.f941a;
+        xo xoVar = this.f942a;
         wo[] woVarArr = new wo[1];
         C0487og c0487og = new C0487og();
         Integer num = revenue.quantity;

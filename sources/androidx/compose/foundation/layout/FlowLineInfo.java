@@ -41,27 +41,27 @@ public final class FlowLineInfo {
     }
 
     /* renamed from: getMaxMainAxisSize-D9Ej5fM$foundation_layout  reason: not valid java name */
-    public final float m757getMaxMainAxisSizeD9Ej5fM$foundation_layout() {
+    public final float m767getMaxMainAxisSizeD9Ej5fM$foundation_layout() {
         return this.maxMainAxisSize;
     }
 
     /* renamed from: setMaxMainAxisSize-0680j_4$foundation_layout  reason: not valid java name */
-    public final void m759setMaxMainAxisSize0680j_4$foundation_layout(float f) {
+    public final void m769setMaxMainAxisSize0680j_4$foundation_layout(float f) {
         this.maxMainAxisSize = f;
     }
 
     /* renamed from: getMaxCrossAxisSize-D9Ej5fM$foundation_layout  reason: not valid java name */
-    public final float m756getMaxCrossAxisSizeD9Ej5fM$foundation_layout() {
+    public final float m766getMaxCrossAxisSizeD9Ej5fM$foundation_layout() {
         return this.maxCrossAxisSize;
     }
 
     /* renamed from: setMaxCrossAxisSize-0680j_4$foundation_layout  reason: not valid java name */
-    public final void m758setMaxCrossAxisSize0680j_4$foundation_layout(float f) {
+    public final void m768setMaxCrossAxisSize0680j_4$foundation_layout(float f) {
         this.maxCrossAxisSize = f;
     }
 
     /* renamed from: update-4j6BHR0$foundation_layout  reason: not valid java name */
-    public final void m760update4j6BHR0$foundation_layout(int i, int i2, float f, float f2) {
+    public final void m770update4j6BHR0$foundation_layout(int i, int i2, float f, float f2) {
         this.lineIndex = i;
         this.positionInLine = i2;
         this.maxMainAxisSize = f;
@@ -69,6 +69,6 @@ public final class FlowLineInfo {
     }
 
     public /* synthetic */ FlowLineInfo(int i, int i2, float f, float f2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m7251constructorimpl(0) : f, (i3 & 8) != 0 ? Dp.m7251constructorimpl(0) : f2, null);
+        this((i3 & 1) != 0 ? 0 : i, (i3 & 2) != 0 ? 0 : i2, (i3 & 4) != 0 ? Dp.m7264constructorimpl(0) : f, (i3 & 8) != 0 ? Dp.m7264constructorimpl(0) : f2, null);
     }
 }

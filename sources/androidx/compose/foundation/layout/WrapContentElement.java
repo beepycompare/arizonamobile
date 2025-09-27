@@ -92,7 +92,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final IntOffset width$lambda$0(Alignment.Horizontal horizontal, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m7370boximpl(IntOffset.m7373constructorimpl((horizontal.align(0, (int) (intSize.m7426unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
+            return IntOffset.m7383boximpl(IntOffset.m7386constructorimpl((horizontal.align(0, (int) (intSize.m7439unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
         }
 
         public final WrapContentElement height(final Alignment.Vertical vertical, boolean z) {
@@ -108,7 +108,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final IntOffset height$lambda$1(Alignment.Vertical vertical, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m7370boximpl(IntOffset.m7373constructorimpl((0 << 32) | (4294967295L & vertical.align(0, (int) (intSize.m7426unboximpl() & 4294967295L)))));
+            return IntOffset.m7383boximpl(IntOffset.m7386constructorimpl((0 << 32) | (4294967295L & vertical.align(0, (int) (intSize.m7439unboximpl() & 4294967295L)))));
         }
 
         public final WrapContentElement size(final Alignment alignment, boolean z) {
@@ -124,7 +124,7 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final IntOffset size$lambda$2(Alignment alignment, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m7370boximpl(alignment.mo4016alignKFBX0sM(IntSize.Companion.m7427getZeroYbymL2g(), intSize.m7426unboximpl(), layoutDirection));
+            return IntOffset.m7383boximpl(alignment.mo4028alignKFBX0sM(IntSize.Companion.m7440getZeroYbymL2g(), intSize.m7439unboximpl(), layoutDirection));
         }
     }
 }

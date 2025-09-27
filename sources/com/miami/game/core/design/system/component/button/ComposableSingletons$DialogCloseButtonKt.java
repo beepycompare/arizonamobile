@@ -35,7 +35,7 @@ public final class ComposableSingletons$DialogCloseButtonKt {
     });
 
     /* renamed from: getLambda$-1894286437$design_system_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m8924getLambda$1894286437$design_system_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m8936getLambda$1894286437$design_system_release() {
         return f64lambda$1894286437;
     }
 
@@ -52,7 +52,7 @@ public final class ComposableSingletons$DialogCloseButtonKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1894286437, i, -1, "com.miami.game.core.design.system.component.button.ComposableSingletons$DialogCloseButtonKt.lambda$-1894286437.<anonymous> (DialogCloseButton.kt:42)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.icon_close, composer, 0), (String) null, ScalingButton.align(SizeKt.m884size3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(16)), Alignment.Companion.getCenter()), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 48, (int) MenuKt.InTransitionDuration);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.icon_close, composer, 0), (String) null, ScalingButton.align(SizeKt.m894size3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(16)), Alignment.Companion.getCenter()), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, 48, (int) MenuKt.InTransitionDuration);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

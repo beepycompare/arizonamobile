@@ -49,11 +49,11 @@ public final class StringArrayNavType extends CollectionNavType<String[]> {
     public void put(Bundle bundle, String key, String[] strArr) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m8249constructorimpl = SavedStateWriter.m8249constructorimpl(bundle);
+        Bundle m8262constructorimpl = SavedStateWriter.m8262constructorimpl(bundle);
         if (strArr != null) {
-            SavedStateWriter.m8283putStringArrayimpl(m8249constructorimpl, key, strArr);
+            SavedStateWriter.m8296putStringArrayimpl(m8262constructorimpl, key, strArr);
         } else {
-            SavedStateWriter.m8272putNullimpl(m8249constructorimpl, key);
+            SavedStateWriter.m8285putNullimpl(m8262constructorimpl, key);
         }
     }
 
@@ -61,11 +61,11 @@ public final class StringArrayNavType extends CollectionNavType<String[]> {
     public String[] get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m8163constructorimpl = SavedStateReader.m8163constructorimpl(bundle);
-        if (!SavedStateReader.m8164containsimpl(m8163constructorimpl, key) || SavedStateReader.m8242isNullimpl(m8163constructorimpl, key)) {
+        Bundle m8176constructorimpl = SavedStateReader.m8176constructorimpl(bundle);
+        if (!SavedStateReader.m8177containsimpl(m8176constructorimpl, key) || SavedStateReader.m8255isNullimpl(m8176constructorimpl, key)) {
             return null;
         }
-        return SavedStateReader.m8235getStringArrayimpl(m8163constructorimpl, key);
+        return SavedStateReader.m8248getStringArrayimpl(m8176constructorimpl, key);
     }
 
     @Override // androidx.navigation.CollectionNavType

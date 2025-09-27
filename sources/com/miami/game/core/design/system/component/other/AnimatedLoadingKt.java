@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function2;
 public final class AnimatedLoadingKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit AnimatedLoading_uFdPcIQ$lambda$1(boolean z, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m8929AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m8941AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -50,7 +50,7 @@ public final class AnimatedLoadingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m8929AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m8941AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         int i4;
@@ -83,7 +83,7 @@ public final class AnimatedLoadingKt {
                     f3 = f2;
                     modifier2 = obj;
                 } else {
-                    float m7251constructorimpl = i5 != 0 ? Dp.m7251constructorimpl(60) : f2;
+                    float m7264constructorimpl = i5 != 0 ? Dp.m7264constructorimpl(60) : f2;
                     Modifier.Companion companion = i4 != 0 ? Modifier.Companion : obj;
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-113788150, i3, -1, "com.miami.game.core.design.system.component.other.AnimatedLoading (AnimatedLoading.kt:21)");
@@ -92,21 +92,21 @@ public final class AnimatedLoadingKt {
                         startRestartGroup.startReplaceGroup(-1133444200);
                         ComposerKt.sourceInformation(startRestartGroup, "23@999L28,24@1071L418,39@1624L84,35@1498L260");
                         modifier3 = companion;
-                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m889width3ABfNKs(companion, m7251constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m151infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 48, (int) MenuKt.InTransitionDuration);
+                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m899width3ABfNKs(companion, m7264constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m161infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, 48, (int) MenuKt.InTransitionDuration);
                         startRestartGroup = startRestartGroup;
                         startRestartGroup.endReplaceGroup();
                     } else {
                         modifier3 = companion;
                         startRestartGroup.startReplaceGroup(-1132659373);
                         ComposerKt.sourceInformation(startRestartGroup, "47@1788L53");
-                        SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(60)), startRestartGroup, 6);
+                        SpacerKt.Spacer(SizeKt.m899width3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(60)), startRestartGroup, 6);
                         startRestartGroup.endReplaceGroup();
                     }
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                     modifier2 = modifier3;
-                    f3 = m7251constructorimpl;
+                    f3 = m7264constructorimpl;
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {

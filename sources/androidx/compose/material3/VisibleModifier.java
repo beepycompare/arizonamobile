@@ -28,8 +28,8 @@ public final class VisibleModifier extends InspectorValueInfo implements LayoutM
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo738measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+    public MeasureResult mo748measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
         if (!this.visible) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.VisibleModifier$measure$1
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -43,7 +43,7 @@ public final class VisibleModifier extends InspectorValueInfo implements LayoutM
                 }
             }, 4, null);
         }
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.VisibleModifier$measure$2
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.VisibleModifier$measure$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

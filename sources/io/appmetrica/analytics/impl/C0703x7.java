@@ -12,14 +12,14 @@ import java.util.Collection;
 public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1151a;
+    public final String f1152a;
     public final PublicLogger b;
     public final C0545qn c;
 
     public C0703x7(Context context, String str, C0545qn c0545qn, PublicLogger publicLogger) {
         super(context, str, (SQLiteDatabase.CursorFactory) null, V5.b);
         this.c = c0545qn;
-        this.f1151a = str;
+        this.f1152a = str;
         this.b = publicLogger;
     }
 
@@ -28,8 +28,8 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getReadableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1151a);
-            C0413lk c0413lk = Kj.f542a;
+            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1152a);
+            C0413lk c0413lk = Kj.f543a;
             c0413lk.getClass();
             c0413lk.a(new Lj("db_read_error", th));
             return null;
@@ -41,8 +41,8 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getWritableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1151a);
-            C0413lk c0413lk = Kj.f542a;
+            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f1152a);
+            C0413lk c0413lk = Kj.f543a;
             c0413lk.getClass();
             c0413lk.a(new Lj("db_write_error", th));
             return null;
@@ -52,7 +52,7 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.c.f1056a.runScript(sQLiteDatabase);
+            this.c.f1057a.runScript(sQLiteDatabase);
         } catch (Throwable unused) {
         }
     }
@@ -66,7 +66,7 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
             } catch (Throwable unused) {
             }
             try {
-                c0545qn.f1056a.runScript(sQLiteDatabase);
+                c0545qn.f1057a.runScript(sQLiteDatabase);
                 return;
             } catch (Throwable unused2) {
                 return;
@@ -89,7 +89,7 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
                 c0545qn.b.runScript(sQLiteDatabase);
             } catch (Throwable unused) {
             }
-            c0545qn.f1056a.runScript(sQLiteDatabase);
+            c0545qn.f1057a.runScript(sQLiteDatabase);
         } catch (Throwable unused2) {
         }
     }
@@ -107,7 +107,7 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
         if (i2 > i) {
             for (int i3 = i + 1; i3 <= i2; i3++) {
                 try {
-                    Collection<DatabaseScript> collection = (Collection) c0545qn.c.f623a.get(Integer.valueOf(i3));
+                    Collection<DatabaseScript> collection = (Collection) c0545qn.c.f624a.get(Integer.valueOf(i3));
                     if (collection != null) {
                         for (DatabaseScript databaseScript : collection) {
                             databaseScript.runScript(sQLiteDatabase);
@@ -123,7 +123,7 @@ public final class C0703x7 extends SQLiteOpenHelper implements Closeable {
                 } catch (Throwable unused2) {
                 }
                 try {
-                    c0545qn.f1056a.runScript(sQLiteDatabase);
+                    c0545qn.f1057a.runScript(sQLiteDatabase);
                     return;
                 } catch (Throwable unused3) {
                     return;

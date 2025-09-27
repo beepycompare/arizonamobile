@@ -103,7 +103,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                             z = this.this$0.autoSwitchToMinute;
                             if (z) {
                                 analogTimePickerState2 = this.this$0.state;
-                                analogTimePickerState2.mo1870setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2863getMinuteyecRtBI());
+                                analogTimePickerState2.mo1880setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2873getMinuteyecRtBI());
                             }
                             analogTimePickerState = this.this$0.state;
                             this.label = 1;
@@ -130,7 +130,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange, Offset offset) {
-                    m1994invokeUv8p0NA(pointerInputChange, offset.m4303unboximpl());
+                    m2004invokeUv8p0NA(pointerInputChange, offset.m4315unboximpl());
                     return Unit.INSTANCE;
                 }
 
@@ -178,17 +178,17 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                             ResultKt.throwOnFailure(obj);
                             ClockDialNode clockDialNode = this.this$0;
                             f = clockDialNode.offsetX;
-                            clockDialNode.offsetX = f + Offset.m4293getXimpl(this.$dragAmount);
+                            clockDialNode.offsetX = f + Offset.m4305getXimpl(this.$dragAmount);
                             ClockDialNode clockDialNode2 = this.this$0;
                             f2 = clockDialNode2.offsetY;
-                            clockDialNode2.offsetY = f2 + Offset.m4294getYimpl(this.$dragAmount);
+                            clockDialNode2.offsetY = f2 + Offset.m4306getYimpl(this.$dragAmount);
                             analogTimePickerState = this.this$0.state;
                             f3 = this.this$0.offsetY;
                             j = this.this$0.center;
-                            float m7380getYimpl = f3 - IntOffset.m7380getYimpl(j);
+                            float m7393getYimpl = f3 - IntOffset.m7393getYimpl(j);
                             f4 = this.this$0.offsetX;
                             j2 = this.this$0.center;
-                            atan = TimePickerKt.atan(m7380getYimpl, f4 - IntOffset.m7379getXimpl(j2));
+                            atan = TimePickerKt.atan(m7393getYimpl, f4 - IntOffset.m7392getXimpl(j2));
                             this.label = 1;
                             if (AnalogTimePickerState.rotateTo$default(analogTimePickerState, atan, false, this, 2, null) == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -203,7 +203,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                 }
 
                 /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                public final void m1994invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
+                public final void m2004invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
                     AnalogTimePickerState analogTimePickerState;
                     float f;
                     float f2;
@@ -215,7 +215,7 @@ public final class ClockDialNode$pointerInputDragNode$1 extends SuspendLambda im
                     f2 = ClockDialNode.this.offsetY;
                     maxDist = ClockDialNode.this.getMaxDist();
                     j2 = ClockDialNode.this.center;
-                    TimePickerKt.m2840moveSelectord3b8Pxo(analogTimePickerState, f, f2, maxDist, j2);
+                    TimePickerKt.m2850moveSelectord3b8Pxo(analogTimePickerState, f, f2, maxDist, j2);
                 }
             }, this, 5, null) == coroutine_suspended) {
                 return coroutine_suspended;

@@ -168,7 +168,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
     public void applySemantics(final SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, this.value.getAnnotatedString());
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, this.transformedText.getText());
-        SemanticsPropertiesKt.m6481setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, this.value.m6964getSelectiond9O1mEE());
+        SemanticsPropertiesKt.m6494setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, this.value.m6977getSelectiond9O1mEE());
         SemanticsPropertiesKt.setContentDataType(semanticsPropertyReceiver, ContentDataType.Companion.getText());
         SemanticsPropertiesKt.onAutofillText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
@@ -220,7 +220,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
                 return Boolean.valueOf(applySemantics$lambda$7);
             }
         }, 1, null);
-        SemanticsPropertiesKt.m6477onImeAction9UiTYpY$default(semanticsPropertyReceiver, this.imeOptions.m6911getImeActioneUduSuo(), null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda11
+        SemanticsPropertiesKt.m6490onImeAction9UiTYpY$default(semanticsPropertyReceiver, this.imeOptions.m6924getImeActioneUduSuo(), null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean applySemantics$lambda$8;
@@ -244,7 +244,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
                 return Boolean.valueOf(applySemantics$lambda$10);
             }
         }, 1, null);
-        if (!TextRange.m6707getCollapsedimpl(this.value.m6964getSelectiond9O1mEE()) && !this.isPassword) {
+        if (!TextRange.m6720getCollapsedimpl(this.value.m6977getSelectiond9O1mEE()) && !this.isPassword) {
             SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.CoreTextFieldSemanticsModifierNode$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
@@ -311,7 +311,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         if (inputSession != null) {
             TextFieldDelegate.Companion.onEditCommand$foundation_release(CollectionsKt.listOf((Object[]) new EditCommand[]{new FinishComposingTextCommand(), new CommitTextCommand(annotatedString, 1)}), coreTextFieldSemanticsModifierNode.state.getProcessor(), coreTextFieldSemanticsModifierNode.state.getOnValueChange(), inputSession);
         } else {
-            coreTextFieldSemanticsModifierNode.state.getOnValueChange().invoke(new TextFieldValue(StringsKt.replaceRange((CharSequence) coreTextFieldSemanticsModifierNode.value.getText(), TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()), TextRange.m6708getEndimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()), (CharSequence) annotatedString).toString(), TextRangeKt.TextRange(TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()) + annotatedString.length()), (TextRange) null, 4, (DefaultConstructorMarker) null));
+            coreTextFieldSemanticsModifierNode.state.getOnValueChange().invoke(new TextFieldValue(StringsKt.replaceRange((CharSequence) coreTextFieldSemanticsModifierNode.value.getText(), TextRange.m6726getStartimpl(coreTextFieldSemanticsModifierNode.value.m6977getSelectiond9O1mEE()), TextRange.m6721getEndimpl(coreTextFieldSemanticsModifierNode.value.m6977getSelectiond9O1mEE()), (CharSequence) annotatedString).toString(), TextRangeKt.TextRange(TextRange.m6726getStartimpl(coreTextFieldSemanticsModifierNode.value.m6977getSelectiond9O1mEE()) + annotatedString.length()), (TextRange) null, 4, (DefaultConstructorMarker) null));
         }
         return true;
     }
@@ -325,7 +325,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
             i2 = coreTextFieldSemanticsModifierNode.offsetMapping.transformedToOriginal(i2);
         }
         if (coreTextFieldSemanticsModifierNode.enabled) {
-            if (i == TextRange.m6713getStartimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE()) && i2 == TextRange.m6708getEndimpl(coreTextFieldSemanticsModifierNode.value.m6964getSelectiond9O1mEE())) {
+            if (i == TextRange.m6726getStartimpl(coreTextFieldSemanticsModifierNode.value.m6977getSelectiond9O1mEE()) && i2 == TextRange.m6721getEndimpl(coreTextFieldSemanticsModifierNode.value.m6977getSelectiond9O1mEE())) {
                 return false;
             }
             if (Math.min(i, i2) >= 0 && Math.max(i, i2) <= coreTextFieldSemanticsModifierNode.value.getAnnotatedString().length()) {
@@ -345,7 +345,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean applySemantics$lambda$8(CoreTextFieldSemanticsModifierNode coreTextFieldSemanticsModifierNode) {
-        coreTextFieldSemanticsModifierNode.state.getOnImeActionPerformed().invoke(ImeAction.m6879boximpl(coreTextFieldSemanticsModifierNode.imeOptions.m6911getImeActioneUduSuo()));
+        coreTextFieldSemanticsModifierNode.state.getOnImeActionPerformed().invoke(ImeAction.m6892boximpl(coreTextFieldSemanticsModifierNode.imeOptions.m6924getImeActioneUduSuo()));
         return true;
     }
 
@@ -398,7 +398,7 @@ public final class CoreTextFieldSemanticsModifierNode extends DelegatingNode imp
         this.manager = textFieldSelectionManager;
         this.imeOptions = imeOptions;
         this.focusRequester = focusRequester;
-        if (z2 != z4 || z5 != z6 || !Intrinsics.areEqual(imeOptions, imeOptions2) || z3 != z7 || !TextRange.m6707getCollapsedimpl(textFieldValue.m6964getSelectiond9O1mEE())) {
+        if (z2 != z4 || z5 != z6 || !Intrinsics.areEqual(imeOptions, imeOptions2) || z3 != z7 || !TextRange.m6720getCollapsedimpl(textFieldValue.m6977getSelectiond9O1mEE())) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (Intrinsics.areEqual(textFieldSelectionManager, textFieldSelectionManager2)) {

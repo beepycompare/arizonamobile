@@ -141,7 +141,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                         PointerInputChange pointerInputChange8 = pointerInputChange4;
                         if (!pointerInputChange8.isConsumed()) {
                             pointerInputChange3 = pointerInputChange;
-                            if (PointerId.m5808equalsimpl0(pointerInputChange8.m5824getIdJ3iCeTQ(), pointerInputChange3.m5824getIdJ3iCeTQ()) && pointerInputChange8.getPressed()) {
+                            if (PointerId.m5821equalsimpl0(pointerInputChange8.m5837getIdJ3iCeTQ(), pointerInputChange3.m5837getIdJ3iCeTQ()) && pointerInputChange8.getPressed()) {
                                 break;
                             }
                         } else {
@@ -152,7 +152,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                     }
                     PointerInputChange pointerInputChange9 = pointerInputChange4;
                     if (pointerInputChange9 != null && pointerInputChange9.getUptimeMillis() - pointerInputChange3.getUptimeMillis() < awaitPointerEventScope2.getViewConfiguration().getLongPressTimeoutMillis() && !TapGestureDetector_androidKt.isDeepPress(pointerEvent)) {
-                        if (Offset.m4291getDistanceimpl(Offset.m4297minusMKHz9U(pointerInputChange9.m5826getPositionF1C5BW0(), pointerInputChange3.m5826getPositionF1C5BW0())) > awaitPointerEventScope2.getViewConfiguration().getHandwritingSlop()) {
+                        if (Offset.m4303getDistanceimpl(Offset.m4309minusMKHz9U(pointerInputChange9.m5839getPositionF1C5BW0(), pointerInputChange3.m5839getPositionF1C5BW0())) > awaitPointerEventScope2.getViewConfiguration().getHandwritingSlop()) {
                             pointerInputChange2 = pointerInputChange9;
                         } else {
                             pointerInputChange = pointerInputChange3;
@@ -199,7 +199,7 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                         }
                         pointerInputChange7 = changes2.get(i4);
                         PointerInputChange pointerInputChange10 = pointerInputChange7;
-                        if (!pointerInputChange10.isConsumed() && PointerId.m5808equalsimpl0(pointerInputChange10.m5824getIdJ3iCeTQ(), pointerInputChange5.m5824getIdJ3iCeTQ()) && pointerInputChange10.getPressed()) {
+                        if (!pointerInputChange10.isConsumed() && PointerId.m5821equalsimpl0(pointerInputChange10.m5837getIdJ3iCeTQ(), pointerInputChange5.m5837getIdJ3iCeTQ()) && pointerInputChange10.getPressed()) {
                             break;
                         }
                         i4++;
@@ -217,10 +217,10 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
                     awaitPointerEvent2 = awaitPointerEventScope3.awaitPointerEvent(PointerEventPass.Initial, this);
                 }
                 PointerInputChange pointerInputChange12 = (PointerInputChange) awaitFirstDown;
-                if (!PointerType.m5897equalsimpl0(pointerInputChange12.m5829getTypeT8wyACA(), PointerType.Companion.m5903getStylusT8wyACA()) && !PointerType.m5897equalsimpl0(pointerInputChange12.m5829getTypeT8wyACA(), PointerType.Companion.m5901getEraserT8wyACA())) {
+                if (!PointerType.m5910equalsimpl0(pointerInputChange12.m5842getTypeT8wyACA(), PointerType.Companion.m5916getStylusT8wyACA()) && !PointerType.m5910equalsimpl0(pointerInputChange12.m5842getTypeT8wyACA(), PointerType.Companion.m5914getEraserT8wyACA())) {
                     return Unit.INSTANCE;
                 }
-                z3 = (Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() >> 32)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() >> 32)) >= ((float) ((int) (awaitPointerEventScope.mo5735getSizeYbymL2g() >> 32))) || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() & 4294967295L)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5826getPositionF1C5BW0() & 4294967295L)) >= ((float) ((int) (awaitPointerEventScope.mo5735getSizeYbymL2g() & 4294967295L)))) ? false : false;
+                z3 = (Float.intBitsToFloat((int) (pointerInputChange12.m5839getPositionF1C5BW0() >> 32)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5839getPositionF1C5BW0() >> 32)) >= ((float) ((int) (awaitPointerEventScope.mo5748getSizeYbymL2g() >> 32))) || Float.intBitsToFloat((int) (pointerInputChange12.m5839getPositionF1C5BW0() & 4294967295L)) < 0.0f || Float.intBitsToFloat((int) (pointerInputChange12.m5839getPositionF1C5BW0() & 4294967295L)) >= ((float) ((int) (awaitPointerEventScope.mo5748getSizeYbymL2g() & 4294967295L)))) ? false : false;
                 z = this.this$0.focused;
                 awaitPointerEventScope2 = awaitPointerEventScope;
                 pointerEventPass = (z || z3) ? PointerEventPass.Initial : PointerEventPass.Main;
@@ -260,14 +260,14 @@ public class StylusHandwritingNode extends DelegatingNode implements PointerInpu
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: getTouchBoundsExpansion-RZrCHBk */
-    public long mo1421getTouchBoundsExpansionRZrCHBk() {
-        return StylusHandwritingKt.getHandwritingBoundsExpansion().m6135roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this));
+    public long mo1431getTouchBoundsExpansionRZrCHBk() {
+        return StylusHandwritingKt.getHandwritingBoundsExpansion().m6148roundToTouchBoundsExpansionTW6G1oQ(DelegatableNodeKt.requireDensity(this));
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.suspendingPointerInputModifierNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.suspendingPointerInputModifierNode.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode

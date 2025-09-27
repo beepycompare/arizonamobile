@@ -107,22 +107,22 @@ public final class GraphicsLayer {
                 return;
             }
             GraphicsLayer graphicsLayer = GraphicsLayer.this;
-            int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
+            int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+            long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5039clipPathmtrdDE(path, m4526getIntersectrtfAjoo);
+                drawContext.getTransform().mo5051clipPathmtrdDE(path, m4538getIntersectrtfAjoo);
                 graphicsLayer.drawWithChildTracking(drawScope);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             }
         }
     };
     private boolean outlineDirty = true;
-    private long roundRectOutlineTopLeft = Offset.Companion.m4309getZeroF1C5BW0();
-    private long roundRectOutlineSize = Size.Companion.m4370getUnspecifiedNHjbRc();
+    private long roundRectOutlineTopLeft = Offset.Companion.m4321getZeroF1C5BW0();
+    private long roundRectOutlineSize = Size.Companion.m4382getUnspecifiedNHjbRc();
     private final ChildLayerDependenciesTracker childDependenciesTracker = new ChildLayerDependenciesTracker();
 
     public static /* synthetic */ void getClip$annotations() {
@@ -131,9 +131,9 @@ public final class GraphicsLayer {
     public GraphicsLayer(GraphicsLayerImpl graphicsLayerImpl) {
         this.impl = graphicsLayerImpl;
         graphicsLayerImpl.setClip(false);
-        this.topLeft = IntOffset.Companion.m7390getZeronOccac();
-        this.size = IntSize.Companion.m7427getZeroYbymL2g();
-        this.pivotOffset = Offset.Companion.m4308getUnspecifiedF1C5BW0();
+        this.topLeft = IntOffset.Companion.m7403getZeronOccac();
+        this.size = IntSize.Companion.m7440getZeroYbymL2g();
+        this.pivotOffset = Offset.Companion.m4320getUnspecifiedF1C5BW0();
     }
 
     public final GraphicsLayerImpl getImpl$ui_graphics_release() {
@@ -145,44 +145,44 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: getCompositingStrategy-ke2Ky5w  reason: not valid java name */
-    public final int m5205getCompositingStrategyke2Ky5w() {
-        return this.impl.mo5221getCompositingStrategyke2Ky5w();
+    public final int m5217getCompositingStrategyke2Ky5w() {
+        return this.impl.mo5233getCompositingStrategyke2Ky5w();
     }
 
     /* renamed from: setCompositingStrategy-Wpw9cng  reason: not valid java name */
-    public final void m5213setCompositingStrategyWpw9cng(int i) {
-        if (CompositingStrategy.m5192equalsimpl0(this.impl.mo5221getCompositingStrategyke2Ky5w(), i)) {
+    public final void m5225setCompositingStrategyWpw9cng(int i) {
+        if (CompositingStrategy.m5204equalsimpl0(this.impl.mo5233getCompositingStrategyke2Ky5w(), i)) {
             return;
         }
-        this.impl.mo5226setCompositingStrategyWpw9cng(i);
+        this.impl.mo5238setCompositingStrategyWpw9cng(i);
     }
 
     /* renamed from: getTopLeft-nOcc-ac  reason: not valid java name */
-    public final long m5209getTopLeftnOccac() {
+    public final long m5221getTopLeftnOccac() {
         return this.topLeft;
     }
 
     /* renamed from: setTopLeft--gyyYBs  reason: not valid java name */
-    public final void m5218setTopLeftgyyYBs(long j) {
-        if (IntOffset.m7378equalsimpl0(this.topLeft, j)) {
+    public final void m5230setTopLeftgyyYBs(long j) {
+        if (IntOffset.m7391equalsimpl0(this.topLeft, j)) {
             return;
         }
         this.topLeft = j;
-        m5199setPositionVbeCjmY(j, this.size);
+        m5211setPositionVbeCjmY(j, this.size);
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m5207getSizeYbymL2g() {
+    public final long m5219getSizeYbymL2g() {
         return this.size;
     }
 
     /* renamed from: setSize-ozmzZPI  reason: not valid java name */
-    private final void m5202setSizeozmzZPI(long j) {
-        if (IntSize.m7420equalsimpl0(this.size, j)) {
+    private final void m5214setSizeozmzZPI(long j) {
+        if (IntSize.m7433equalsimpl0(this.size, j)) {
             return;
         }
         this.size = j;
-        m5199setPositionVbeCjmY(this.topLeft, j);
+        m5211setPositionVbeCjmY(this.topLeft, j);
         if (this.roundRectOutlineSize == InlineClassHelperKt.UnspecifiedPackedFloats) {
             this.outlineDirty = true;
             configureOutlineAndClip();
@@ -201,16 +201,16 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m5204getBlendMode0nO6VwU() {
-        return this.impl.mo5220getBlendMode0nO6VwU();
+    public final int m5216getBlendMode0nO6VwU() {
+        return this.impl.mo5232getBlendMode0nO6VwU();
     }
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public final void m5212setBlendModes9anfk8(int i) {
-        if (BlendMode.m4447equalsimpl0(this.impl.mo5220getBlendMode0nO6VwU(), i)) {
+    public final void m5224setBlendModes9anfk8(int i) {
+        if (BlendMode.m4459equalsimpl0(this.impl.mo5232getBlendMode0nO6VwU(), i)) {
             return;
         }
-        this.impl.mo5225setBlendModes9anfk8(i);
+        this.impl.mo5237setBlendModes9anfk8(i);
     }
 
     public final ColorFilter getColorFilter() {
@@ -225,17 +225,17 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: getPivotOffset-F1C5BW0  reason: not valid java name */
-    public final long m5206getPivotOffsetF1C5BW0() {
+    public final long m5218getPivotOffsetF1C5BW0() {
         return this.pivotOffset;
     }
 
     /* renamed from: setPivotOffset-k-4lQ0M  reason: not valid java name */
-    public final void m5214setPivotOffsetk4lQ0M(long j) {
-        if (Offset.m4290equalsimpl0(this.pivotOffset, j)) {
+    public final void m5226setPivotOffsetk4lQ0M(long j) {
+        if (Offset.m4302equalsimpl0(this.pivotOffset, j)) {
             return;
         }
         this.pivotOffset = j;
-        this.impl.mo5228setPivotOffsetk4lQ0M(j);
+        this.impl.mo5240setPivotOffsetk4lQ0M(j);
     }
 
     public final float getScaleX() {
@@ -311,19 +311,19 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: setRoundRectOutline-TNW_H78$default  reason: not valid java name */
-    public static /* synthetic */ void m5201setRoundRectOutlineTNW_H78$default(GraphicsLayer graphicsLayer, long j, long j2, float f, int i, Object obj) {
+    public static /* synthetic */ void m5213setRoundRectOutlineTNW_H78$default(GraphicsLayer graphicsLayer, long j, long j2, float f, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = Offset.Companion.m4309getZeroF1C5BW0();
+            j = Offset.Companion.m4321getZeroF1C5BW0();
         }
         long j3 = j;
         if ((i & 2) != 0) {
-            j2 = Size.Companion.m4370getUnspecifiedNHjbRc();
+            j2 = Size.Companion.m4382getUnspecifiedNHjbRc();
         }
         long j4 = j2;
         if ((i & 4) != 0) {
             f = 0.0f;
         }
-        graphicsLayer.m5216setRoundRectOutlineTNW_H78(j3, j4, f);
+        graphicsLayer.m5228setRoundRectOutlineTNW_H78(j3, j4, f);
     }
 
     public final void setRotationY(float f) {
@@ -345,14 +345,14 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: setRectOutline-tz77jQw$default  reason: not valid java name */
-    public static /* synthetic */ void m5200setRectOutlinetz77jQw$default(GraphicsLayer graphicsLayer, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ void m5212setRectOutlinetz77jQw$default(GraphicsLayer graphicsLayer, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = Offset.Companion.m4309getZeroF1C5BW0();
+            j = Offset.Companion.m4321getZeroF1C5BW0();
         }
         if ((i & 2) != 0) {
-            j2 = Size.Companion.m4370getUnspecifiedNHjbRc();
+            j2 = Size.Companion.m4382getUnspecifiedNHjbRc();
         }
-        graphicsLayer.m5215setRectOutlinetz77jQw(j, j2);
+        graphicsLayer.m5227setRectOutlinetz77jQw(j, j2);
     }
 
     public final float getCameraDistance() {
@@ -390,13 +390,13 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: setPosition-VbeCjmY  reason: not valid java name */
-    private final void m5199setPositionVbeCjmY(long j, long j2) {
-        this.impl.mo5229setPositionH0pRuoY(IntOffset.m7379getXimpl(j), IntOffset.m7380getYimpl(j), j2);
+    private final void m5211setPositionVbeCjmY(long j, long j2) {
+        this.impl.mo5241setPositionH0pRuoY(IntOffset.m7392getXimpl(j), IntOffset.m7393getYimpl(j), j2);
     }
 
     /* renamed from: record-mL-hObY  reason: not valid java name */
-    public final void m5210recordmLhObY(Density density, LayoutDirection layoutDirection, long j, Function1<? super DrawScope, Unit> function1) {
-        m5202setSizeozmzZPI(j);
+    public final void m5222recordmLhObY(Density density, LayoutDirection layoutDirection, long j, Function1<? super DrawScope, Unit> function1) {
+        m5214setSizeozmzZPI(j);
         this.density = density;
         this.layoutDirection = layoutDirection;
         this.drawBlock = function1;
@@ -470,29 +470,29 @@ public final class GraphicsLayer {
 
     private final void transformCanvas(Canvas canvas) {
         Canvas canvas2;
-        float m7379getXimpl = IntOffset.m7379getXimpl(this.topLeft);
-        float m7380getYimpl = IntOffset.m7380getYimpl(this.topLeft);
-        float m7379getXimpl2 = IntOffset.m7379getXimpl(this.topLeft) + ((int) (this.size >> 32));
-        float m7380getYimpl2 = IntOffset.m7380getYimpl(this.topLeft) + ((int) (this.size & 4294967295L));
+        float m7392getXimpl = IntOffset.m7392getXimpl(this.topLeft);
+        float m7393getYimpl = IntOffset.m7393getYimpl(this.topLeft);
+        float m7392getXimpl2 = IntOffset.m7392getXimpl(this.topLeft) + ((int) (this.size >> 32));
+        float m7393getYimpl2 = IntOffset.m7393getYimpl(this.topLeft) + ((int) (this.size & 4294967295L));
         float alpha = getAlpha();
         ColorFilter colorFilter = getColorFilter();
-        int m5204getBlendMode0nO6VwU = m5204getBlendMode0nO6VwU();
-        if (alpha < 1.0f || !BlendMode.m4447equalsimpl0(m5204getBlendMode0nO6VwU, BlendMode.Companion.m4478getSrcOver0nO6VwU()) || colorFilter != null || CompositingStrategy.m5192equalsimpl0(m5205getCompositingStrategyke2Ky5w(), CompositingStrategy.Companion.m5198getOffscreenke2Ky5w())) {
+        int m5216getBlendMode0nO6VwU = m5216getBlendMode0nO6VwU();
+        if (alpha < 1.0f || !BlendMode.m4459equalsimpl0(m5216getBlendMode0nO6VwU, BlendMode.Companion.m4490getSrcOver0nO6VwU()) || colorFilter != null || CompositingStrategy.m5204equalsimpl0(m5217getCompositingStrategyke2Ky5w(), CompositingStrategy.Companion.m5210getOffscreenke2Ky5w())) {
             Paint paint = this.softwareLayerPaint;
             if (paint == null) {
                 paint = AndroidPaint_androidKt.Paint();
                 this.softwareLayerPaint = paint;
             }
             paint.setAlpha(alpha);
-            paint.mo4413setBlendModes9anfk8(m5204getBlendMode0nO6VwU);
+            paint.mo4425setBlendModes9anfk8(m5216getBlendMode0nO6VwU);
             paint.setColorFilter(colorFilter);
             canvas2 = canvas;
-            canvas2.saveLayer(m7379getXimpl, m7380getYimpl, m7379getXimpl2, m7380getYimpl2, paint.asFrameworkPaint());
+            canvas2.saveLayer(m7392getXimpl, m7393getYimpl, m7392getXimpl2, m7393getYimpl2, paint.asFrameworkPaint());
         } else {
             canvas.save();
             canvas2 = canvas;
         }
-        canvas2.translate(m7379getXimpl, m7380getYimpl);
+        canvas2.translate(m7392getXimpl, m7393getYimpl);
         canvas2.concat(this.impl.calculateMatrix());
     }
 
@@ -538,7 +538,7 @@ public final class GraphicsLayer {
             canvas.save();
             androidx.compose.ui.graphics.Outline outline = getOutline();
             if (outline instanceof Outline.Rectangle) {
-                androidx.compose.ui.graphics.Canvas.m4510clipRectmtrdDE$default(canvas, ((Outline.Rectangle) outline).getBounds(), 0, 2, null);
+                androidx.compose.ui.graphics.Canvas.m4522clipRectmtrdDE$default(canvas, ((Outline.Rectangle) outline).getBounds(), 0, 2, null);
             } else if (outline instanceof Outline.Rounded) {
                 Path path = this.roundRectClipPath;
                 if (path != null) {
@@ -548,11 +548,11 @@ public final class GraphicsLayer {
                     this.roundRectClipPath = path;
                 }
                 Path.addRoundRect$default(path, ((Outline.Rounded) outline).getRoundRect(), null, 2, null);
-                androidx.compose.ui.graphics.Canvas.m4508clipPathmtrdDE$default(canvas, path, 0, 2, null);
+                androidx.compose.ui.graphics.Canvas.m4520clipPathmtrdDE$default(canvas, path, 0, 2, null);
             } else if (!(outline instanceof Outline.Generic)) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                androidx.compose.ui.graphics.Canvas.m4508clipPathmtrdDE$default(canvas, ((Outline.Generic) outline).getPath(), 0, 2, null);
+                androidx.compose.ui.graphics.Canvas.m4520clipPathmtrdDE$default(canvas, ((Outline.Generic) outline).getPath(), 0, 2, null);
             }
         }
         if (graphicsLayer != null) {
@@ -571,11 +571,11 @@ public final class GraphicsLayer {
             CanvasDrawScope canvasDrawScope2 = canvasDrawScope;
             Density density = this.density;
             LayoutDirection layoutDirection = this.layoutDirection;
-            long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(this.size);
+            long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(this.size);
             Density density2 = canvasDrawScope2.getDrawContext().getDensity();
             LayoutDirection layoutDirection2 = canvasDrawScope2.getDrawContext().getLayoutDirection();
             androidx.compose.ui.graphics.Canvas canvas2 = canvasDrawScope2.getDrawContext().getCanvas();
-            long mo5037getSizeNHjbRc = canvasDrawScope2.getDrawContext().mo5037getSizeNHjbRc();
+            long mo5049getSizeNHjbRc = canvasDrawScope2.getDrawContext().mo5049getSizeNHjbRc();
             z = z4;
             GraphicsLayer graphicsLayer2 = canvasDrawScope2.getDrawContext().getGraphicsLayer();
             z2 = z3;
@@ -583,7 +583,7 @@ public final class GraphicsLayer {
             drawContext.setDensity(density);
             drawContext.setLayoutDirection(layoutDirection);
             drawContext.setCanvas(canvas);
-            drawContext.mo5038setSizeuvyYCjk(m7434toSizeozmzZPI);
+            drawContext.mo5050setSizeuvyYCjk(m7447toSizeozmzZPI);
             drawContext.setGraphicsLayer(this);
             canvas.save();
             try {
@@ -594,7 +594,7 @@ public final class GraphicsLayer {
                 drawContext2.setDensity(density2);
                 drawContext2.setLayoutDirection(layoutDirection2);
                 drawContext2.setCanvas(canvas2);
-                drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 drawContext2.setGraphicsLayer(graphicsLayer2);
             }
         }
@@ -634,7 +634,7 @@ public final class GraphicsLayer {
             android.graphics.Outline outline = null;
             if (!this.clip && getShadowElevation() <= 0.0f) {
                 this.impl.setClip(false);
-                this.impl.mo5227setOutlineO0kMr_c(null, IntSize.Companion.m7427getZeroYbymL2g());
+                this.impl.mo5239setOutlineO0kMr_c(null, IntSize.Companion.m7440getZeroYbymL2g());
             } else {
                 Path path = this.outlinePath;
                 if (path != null) {
@@ -646,7 +646,7 @@ public final class GraphicsLayer {
                             updatePathOutline.setAlpha(getAlpha());
                             outline = updatePathOutline;
                         }
-                        this.impl.mo5227setOutlineO0kMr_c(outline, IntSize.m7417constructorimpl((4294967295L & Math.round(obtainPathBounds.height())) | (Math.round(obtainPathBounds.width()) << 32)));
+                        this.impl.mo5239setOutlineO0kMr_c(outline, IntSize.m7430constructorimpl((4294967295L & Math.round(obtainPathBounds.height())) | (Math.round(obtainPathBounds.width()) << 32)));
                         if (this.usePathForClip && this.clip) {
                             this.impl.setClip(false);
                             this.impl.discardDisplayList();
@@ -658,17 +658,17 @@ public final class GraphicsLayer {
                     }
                 } else {
                     this.impl.setClip(this.clip);
-                    Size.Companion.m4371getZeroNHjbRc();
+                    Size.Companion.m4383getZeroNHjbRc();
                     android.graphics.Outline obtainAndroidOutline = obtainAndroidOutline();
-                    long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(this.size);
+                    long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(this.size);
                     long j = this.roundRectOutlineTopLeft;
                     long j2 = this.roundRectOutlineSize;
-                    long j3 = j2 == InlineClassHelperKt.UnspecifiedPackedFloats ? m7434toSizeozmzZPI : j2;
+                    long j3 = j2 == InlineClassHelperKt.UnspecifiedPackedFloats ? m7447toSizeozmzZPI : j2;
                     int i = (int) (j >> 32);
                     int i2 = (int) (j & 4294967295L);
                     obtainAndroidOutline.setRoundRect(Math.round(Float.intBitsToFloat(i)), Math.round(Float.intBitsToFloat(i2)), Math.round(Float.intBitsToFloat(i) + Float.intBitsToFloat((int) (j3 >> 32))), Math.round(Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 & 4294967295L))), this.roundRectCornerRadius);
                     obtainAndroidOutline.setAlpha(getAlpha());
-                    this.impl.mo5227setOutlineO0kMr_c(obtainAndroidOutline, IntSizeKt.m7430roundToIntSizeuvyYCjk(j3));
+                    this.impl.mo5239setOutlineO0kMr_c(obtainAndroidOutline, IntSizeKt.m7443roundToIntSizeuvyYCjk(j3));
                 }
             }
         }
@@ -676,13 +676,13 @@ public final class GraphicsLayer {
     }
 
     private final <T> T resolveOutlinePosition(Function2<? super Offset, ? super Size, ? extends T> function2) {
-        long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(this.size);
+        long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(this.size);
         long j = this.roundRectOutlineTopLeft;
         long j2 = this.roundRectOutlineSize;
         if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m7434toSizeozmzZPI = j2;
+            m7447toSizeozmzZPI = j2;
         }
-        return function2.invoke(Offset.m4282boximpl(j), Size.m4350boximpl(m7434toSizeozmzZPI));
+        return function2.invoke(Offset.m4294boximpl(j), Size.m4362boximpl(m7447toSizeozmzZPI));
     }
 
     private final android.graphics.Outline updatePathOutline(Path path) {
@@ -798,19 +798,19 @@ public final class GraphicsLayer {
             this.internalOutline = generic;
             return generic;
         }
-        long m7434toSizeozmzZPI = IntSizeKt.m7434toSizeozmzZPI(this.size);
+        long m7447toSizeozmzZPI = IntSizeKt.m7447toSizeozmzZPI(this.size);
         long j = this.roundRectOutlineTopLeft;
         long j2 = this.roundRectOutlineSize;
         if (j2 != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m7434toSizeozmzZPI = j2;
+            m7447toSizeozmzZPI = j2;
         }
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        float intBitsToFloat3 = Float.intBitsToFloat((int) (m7434toSizeozmzZPI >> 32)) + intBitsToFloat;
-        float intBitsToFloat4 = intBitsToFloat2 + Float.intBitsToFloat((int) (m7434toSizeozmzZPI & 4294967295L));
+        float intBitsToFloat3 = Float.intBitsToFloat((int) (m7447toSizeozmzZPI >> 32)) + intBitsToFloat;
+        float intBitsToFloat4 = intBitsToFloat2 + Float.intBitsToFloat((int) (m7447toSizeozmzZPI & 4294967295L));
         float f = this.roundRectCornerRadius;
         if (f > 0.0f) {
-            rectangle = new Outline.Rounded(RoundRectKt.m4347RoundRectgG7oq9Y(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, intBitsToFloat4, CornerRadius.m4247constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f)))));
+            rectangle = new Outline.Rounded(RoundRectKt.m4359RoundRectgG7oq9Y(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, intBitsToFloat4, CornerRadius.m4259constructorimpl((Float.floatToRawIntBits(f) << 32) | (4294967295L & Float.floatToRawIntBits(f)))));
         } else {
             rectangle = new Outline.Rectangle(new Rect(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, intBitsToFloat4));
         }
@@ -821,8 +821,8 @@ public final class GraphicsLayer {
     private final void resetOutlineParams() {
         this.internalOutline = null;
         this.outlinePath = null;
-        this.roundRectOutlineSize = Size.Companion.m4370getUnspecifiedNHjbRc();
-        this.roundRectOutlineTopLeft = Offset.Companion.m4309getZeroF1C5BW0();
+        this.roundRectOutlineSize = Size.Companion.m4382getUnspecifiedNHjbRc();
+        this.roundRectOutlineTopLeft = Offset.Companion.m4321getZeroF1C5BW0();
         this.roundRectCornerRadius = 0.0f;
         this.outlineDirty = true;
         this.usePathForClip = false;
@@ -835,8 +835,8 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: setRoundRectOutline-TNW_H78  reason: not valid java name */
-    public final void m5216setRoundRectOutlineTNW_H78(long j, long j2, float f) {
-        if (Offset.m4290equalsimpl0(this.roundRectOutlineTopLeft, j) && Size.m4358equalsimpl0(this.roundRectOutlineSize, j2) && this.roundRectCornerRadius == f && this.outlinePath == null) {
+    public final void m5228setRoundRectOutlineTNW_H78(long j, long j2, float f) {
+        if (Offset.m4302equalsimpl0(this.roundRectOutlineTopLeft, j) && Size.m4370equalsimpl0(this.roundRectOutlineSize, j2) && this.roundRectCornerRadius == f && this.outlinePath == null) {
             return;
         }
         resetOutlineParams();
@@ -847,34 +847,34 @@ public final class GraphicsLayer {
     }
 
     /* renamed from: setRectOutline-tz77jQw  reason: not valid java name */
-    public final void m5215setRectOutlinetz77jQw(long j, long j2) {
-        m5216setRoundRectOutlineTNW_H78(j, j2, 0.0f);
+    public final void m5227setRectOutlinetz77jQw(long j, long j2) {
+        m5228setRoundRectOutlineTNW_H78(j, j2, 0.0f);
     }
 
     /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m5203getAmbientShadowColor0d7_KjU() {
-        return this.impl.mo5219getAmbientShadowColor0d7_KjU();
+    public final long m5215getAmbientShadowColor0d7_KjU() {
+        return this.impl.mo5231getAmbientShadowColor0d7_KjU();
     }
 
     /* renamed from: setAmbientShadowColor-8_81llA  reason: not valid java name */
-    public final void m5211setAmbientShadowColor8_81llA(long j) {
-        if (Color.m4538equalsimpl0(j, this.impl.mo5219getAmbientShadowColor0d7_KjU())) {
+    public final void m5223setAmbientShadowColor8_81llA(long j) {
+        if (Color.m4550equalsimpl0(j, this.impl.mo5231getAmbientShadowColor0d7_KjU())) {
             return;
         }
-        this.impl.mo5224setAmbientShadowColor8_81llA(j);
+        this.impl.mo5236setAmbientShadowColor8_81llA(j);
     }
 
     /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m5208getSpotShadowColor0d7_KjU() {
-        return this.impl.mo5223getSpotShadowColor0d7_KjU();
+    public final long m5220getSpotShadowColor0d7_KjU() {
+        return this.impl.mo5235getSpotShadowColor0d7_KjU();
     }
 
     /* renamed from: setSpotShadowColor-8_81llA  reason: not valid java name */
-    public final void m5217setSpotShadowColor8_81llA(long j) {
-        if (Color.m4538equalsimpl0(j, this.impl.mo5223getSpotShadowColor0d7_KjU())) {
+    public final void m5229setSpotShadowColor8_81llA(long j) {
+        if (Color.m4550equalsimpl0(j, this.impl.mo5235getSpotShadowColor0d7_KjU())) {
             return;
         }
-        this.impl.mo5230setSpotShadowColor8_81llA(j);
+        this.impl.mo5242setSpotShadowColor8_81llA(j);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */

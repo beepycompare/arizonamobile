@@ -35,7 +35,7 @@ final class SelectionContainerKt$sam$androidx_compose_foundation_text_selection_
 
     @Override // androidx.compose.foundation.text.selection.OffsetProvider
     /* renamed from: provide-F1C5BW0 */
-    public final /* synthetic */ long mo1219provideF1C5BW0() {
-        return ((Offset) this.function.invoke()).m4303unboximpl();
+    public final /* synthetic */ long mo1229provideF1C5BW0() {
+        return ((Offset) this.function.invoke()).m4315unboximpl();
     }
 }

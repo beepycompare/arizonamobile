@@ -10,52 +10,52 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class DpOffset {
     private final long packedValue;
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m7307constructorimpl(0);
-    private static final long Unspecified = m7307constructorimpl(androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats);
+    private static final long Zero = m7320constructorimpl(0);
+    private static final long Unspecified = m7320constructorimpl(androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DpOffset m7306boximpl(long j) {
+    public static final /* synthetic */ DpOffset m7319boximpl(long j) {
         return new DpOffset(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7307constructorimpl(long j) {
+    public static long m7320constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7310equalsimpl(long j, Object obj) {
-        return (obj instanceof DpOffset) && j == ((DpOffset) obj).m7320unboximpl();
+    public static boolean m7323equalsimpl(long j, Object obj) {
+        return (obj instanceof DpOffset) && j == ((DpOffset) obj).m7333unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7311equalsimpl0(long j, long j2) {
+    public static final boolean m7324equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getX-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7313getXD9Ej5fM$annotations() {
+    public static /* synthetic */ void m7326getXD9Ej5fM$annotations() {
     }
 
     /* renamed from: getY-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7315getYD9Ej5fM$annotations() {
+    public static /* synthetic */ void m7328getYD9Ej5fM$annotations() {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7316hashCodeimpl(long j) {
+    public static int m7329hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m7310equalsimpl(this.packedValue, obj);
+        return m7323equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7316hashCodeimpl(this.packedValue);
+        return m7329hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7320unboximpl() {
+    public final /* synthetic */ long m7333unboximpl() {
         return this.packedValue;
     }
 
@@ -68,34 +68,34 @@ public final class DpOffset {
     }
 
     /* renamed from: copy-tPigGR8$default  reason: not valid java name */
-    public static /* synthetic */ long m7309copytPigGR8$default(long j, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ long m7322copytPigGR8$default(long j, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = m7312getXD9Ej5fM(j);
+            f = m7325getXD9Ej5fM(j);
         }
         if ((i & 2) != 0) {
-            f2 = m7314getYD9Ej5fM(j);
+            f2 = m7327getYD9Ej5fM(j);
         }
-        return m7308copytPigGR8(j, f, f2);
+        return m7321copytPigGR8(j, f, f2);
     }
 
     /* renamed from: minus-CB-Mgk4  reason: not valid java name */
-    public static final long m7317minusCBMgk4(long j, long j2) {
-        return m7307constructorimpl((Float.floatToRawIntBits(Dp.m7251constructorimpl(m7312getXD9Ej5fM(j) - m7312getXD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7251constructorimpl(m7314getYD9Ej5fM(j) - m7314getYD9Ej5fM(j2)))));
+    public static final long m7330minusCBMgk4(long j, long j2) {
+        return m7320constructorimpl((Float.floatToRawIntBits(Dp.m7264constructorimpl(m7325getXD9Ej5fM(j) - m7325getXD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7264constructorimpl(m7327getYD9Ej5fM(j) - m7327getYD9Ej5fM(j2)))));
     }
 
     /* renamed from: plus-CB-Mgk4  reason: not valid java name */
-    public static final long m7318plusCBMgk4(long j, long j2) {
-        return m7307constructorimpl((Float.floatToRawIntBits(Dp.m7251constructorimpl(m7312getXD9Ej5fM(j) + m7312getXD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7251constructorimpl(m7314getYD9Ej5fM(j) + m7314getYD9Ej5fM(j2)))));
+    public static final long m7331plusCBMgk4(long j, long j2) {
+        return m7320constructorimpl((Float.floatToRawIntBits(Dp.m7264constructorimpl(m7325getXD9Ej5fM(j) + m7325getXD9Ej5fM(j2))) << 32) | (4294967295L & Float.floatToRawIntBits(Dp.m7264constructorimpl(m7327getYD9Ej5fM(j) + m7327getYD9Ej5fM(j2)))));
     }
 
     public String toString() {
-        return m7319toStringimpl(this.packedValue);
+        return m7332toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7319toStringimpl(long j) {
+    public static String m7332toStringimpl(long j) {
         if (j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return "(" + ((Object) Dp.m7262toStringimpl(m7312getXD9Ej5fM(j))) + ", " + ((Object) Dp.m7262toStringimpl(m7314getYD9Ej5fM(j))) + ')';
+            return "(" + ((Object) Dp.m7275toStringimpl(m7325getXD9Ej5fM(j))) + ", " + ((Object) Dp.m7275toStringimpl(m7327getYD9Ej5fM(j))) + ')';
         }
         return "DpOffset.Unspecified";
     }
@@ -112,28 +112,28 @@ public final class DpOffset {
         }
 
         /* renamed from: getZero-RKDOV3M  reason: not valid java name */
-        public final long m7322getZeroRKDOV3M() {
+        public final long m7335getZeroRKDOV3M() {
             return DpOffset.Zero;
         }
 
         /* renamed from: getUnspecified-RKDOV3M  reason: not valid java name */
-        public final long m7321getUnspecifiedRKDOV3M() {
+        public final long m7334getUnspecifiedRKDOV3M() {
             return DpOffset.Unspecified;
         }
     }
 
     /* renamed from: getX-D9Ej5fM  reason: not valid java name */
-    public static final float m7312getXD9Ej5fM(long j) {
-        return Dp.m7251constructorimpl(Float.intBitsToFloat((int) (j >> 32)));
+    public static final float m7325getXD9Ej5fM(long j) {
+        return Dp.m7264constructorimpl(Float.intBitsToFloat((int) (j >> 32)));
     }
 
     /* renamed from: getY-D9Ej5fM  reason: not valid java name */
-    public static final float m7314getYD9Ej5fM(long j) {
-        return Dp.m7251constructorimpl(Float.intBitsToFloat((int) (j & 4294967295L)));
+    public static final float m7327getYD9Ej5fM(long j) {
+        return Dp.m7264constructorimpl(Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 
     /* renamed from: copy-tPigGR8  reason: not valid java name */
-    public static final long m7308copytPigGR8(long j, float f, float f2) {
-        return m7307constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
+    public static final long m7321copytPigGR8(long j, float f, float f2) {
+        return m7320constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L));
     }
 }

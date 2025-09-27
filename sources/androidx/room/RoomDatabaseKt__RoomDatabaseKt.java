@@ -2,6 +2,7 @@ package androidx.room;
 
 import androidx.room.migration.AutoMigrationSpec;
 import androidx.room.migration.Migration;
+import androidx.room.util.DBUtil;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Set;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
@@ -17,15 +19,78 @@ import kotlin.reflect.KClass;
 import kotlinx.coroutines.BuildersKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RoomDatabase.kt */
-@Metadata(d1 = {"\u00008\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a<\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u00022\"\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086@¢\u0006\u0002\u0010\b\u001a<\u0010\t\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u00022\"\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086@¢\u0006\u0002\u0010\b\u001a$\u0010\n\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rH\u0000\u001a\u0014\u0010\u0010\u001a\u00020\u000b*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u0012H\u0000\u001a\u0014\u0010\u0013\u001a\u00020\u000b*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u0012H\u0000¨\u0006\u0014"}, d2 = {"useReaderConnection", "R", "Landroidx/room/RoomDatabase;", "block", "Lkotlin/Function2;", "Landroidx/room/Transactor;", "Lkotlin/coroutines/Continuation;", "", "(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "useWriterConnection", "validateMigrationsNotRequired", "", "migrationStartAndEndVersions", "", "", "migrationsNotRequiredFrom", "validateAutoMigrations", "configuration", "Landroidx/room/DatabaseConfiguration;", "validateTypeConverters", "room-runtime_release"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/room/RoomDatabaseKt")
+@Metadata(d1 = {"\u00008\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\"\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a<\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u00022\"\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086@¢\u0006\u0002\u0010\b\u001a<\u0010\t\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u00022\"\u0010\u0003\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00010\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0004H\u0086@¢\u0006\u0002\u0010\b\u001a$\u0010\n\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rH\u0000\u001a\u0014\u0010\u0010\u001a\u00020\u000b*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u0012H\u0000\u001a\u0014\u0010\u0013\u001a\u00020\u000b*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u0012H\u0000¨\u0006\u0014"}, d2 = {"useReaderConnection", "R", "Landroidx/room/RoomDatabase;", "block", "Lkotlin/Function2;", "Landroidx/room/Transactor;", "Lkotlin/coroutines/Continuation;", "", "(Landroidx/room/RoomDatabase;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "useWriterConnection", "validateMigrationsNotRequired", "", "migrationStartAndEndVersions", "", "", "migrationsNotRequiredFrom", "validateAutoMigrations", "configuration", "Landroidx/room/DatabaseConfiguration;", "validateTypeConverters", "room-runtime"}, k = 5, mv = {2, 1, 0}, xi = 48, xs = "androidx/room/RoomDatabaseKt")
 /* loaded from: classes3.dex */
 public final /* synthetic */ class RoomDatabaseKt__RoomDatabaseKt {
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0050, code lost:
+        if (r7 == r1) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0071 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0072 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static final <R> Object useReaderConnection(RoomDatabase roomDatabase, Function2<? super Transactor, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
-        return BuildersKt.withContext(roomDatabase.getCoroutineScope().getCoroutineContext(), new RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$2(roomDatabase, function2, null), continuation);
+        RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$1 roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1;
+        int i;
+        if (continuation instanceof RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$1) {
+            roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1 = (RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$1) continuation;
+            if ((roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label & Integer.MIN_VALUE) != 0) {
+                roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label -= Integer.MIN_VALUE;
+                Object obj = roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$0 = roomDatabase;
+                    roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$1 = function2;
+                    roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label = 1;
+                    obj = DBUtil.getCoroutineContext(roomDatabase, false, roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1);
+                } else if (i != 1) {
+                    if (i == 2) {
+                        ResultKt.throwOnFailure(obj);
+                        return obj;
+                    }
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    function2 = (Function2) roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$1;
+                    roomDatabase = (RoomDatabase) roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$0 = null;
+                roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$1 = null;
+                roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label = 2;
+                Object withContext = BuildersKt.withContext(((CoroutineContext) obj).plus(RoomExternalOperationElement.INSTANCE), new RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$2(roomDatabase, function2, null), roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1);
+                return withContext != coroutine_suspended ? coroutine_suspended : withContext;
+            }
+        }
+        roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1 = new RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$1(continuation);
+        Object obj2 = roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label;
+        if (i != 0) {
+        }
+        roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$0 = null;
+        roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.L$1 = null;
+        roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1.label = 2;
+        Object withContext2 = BuildersKt.withContext(((CoroutineContext) obj2).plus(RoomExternalOperationElement.INSTANCE), new RoomDatabaseKt__RoomDatabaseKt$useReaderConnection$2(roomDatabase, function2, null), roomDatabaseKt__RoomDatabaseKt$useReaderConnection$1);
+        if (withContext2 != coroutine_suspended2) {
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0054, code lost:
+        if (r7 == r1) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0073, code lost:
+        if (r7 != r1) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0075, code lost:
+        return r1;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0046  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -42,19 +107,26 @@ public final /* synthetic */ class RoomDatabaseKt__RoomDatabaseKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$0 = roomDatabase;
+                    roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$1 = function2;
                     roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.label = 1;
-                    obj = BuildersKt.withContext(roomDatabase.getCoroutineScope().getCoroutineContext(), new RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2(roomDatabase, function2, null), roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
+                    obj = DBUtil.getCoroutineContext(roomDatabase, false, roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1);
                 } else if (i != 1) {
+                    if (i == 2) {
+                        roomDatabase = (RoomDatabase) roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        roomDatabase.getInvalidationTracker().refreshAsync();
+                        return obj;
+                    }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
+                    function2 = (Function2) roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$1;
                     roomDatabase = (RoomDatabase) roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                roomDatabase.getInvalidationTracker().refreshAsync();
-                return obj;
+                roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$0 = roomDatabase;
+                roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$1 = null;
+                roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.label = 2;
+                obj = BuildersKt.withContext(((CoroutineContext) obj).plus(RoomExternalOperationElement.INSTANCE), new RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2(roomDatabase, function2, null), roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1);
             }
         }
         roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1 = new RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$1(continuation);
@@ -63,8 +135,10 @@ public final /* synthetic */ class RoomDatabaseKt__RoomDatabaseKt {
         i = roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.label;
         if (i != 0) {
         }
-        roomDatabase.getInvalidationTracker().refreshAsync();
-        return obj2;
+        roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$0 = roomDatabase;
+        roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.L$1 = null;
+        roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1.label = 2;
+        obj2 = BuildersKt.withContext(((CoroutineContext) obj2).plus(RoomExternalOperationElement.INSTANCE), new RoomDatabaseKt__RoomDatabaseKt$useWriterConnection$2(roomDatabase, function2, null), roomDatabaseKt__RoomDatabaseKt$useWriterConnection$1);
     }
 
     public static final void validateMigrationsNotRequired(Set<Integer> migrationStartAndEndVersions, Set<Integer> migrationsNotRequiredFrom) {
@@ -145,9 +219,9 @@ public final /* synthetic */ class RoomDatabaseKt__RoomDatabaseKt {
     public static final void validateTypeConverters(RoomDatabase roomDatabase, DatabaseConfiguration configuration) {
         Intrinsics.checkNotNullParameter(roomDatabase, "<this>");
         Intrinsics.checkNotNullParameter(configuration, "configuration");
-        Map<KClass<?>, List<KClass<?>>> requiredTypeConverterClassesMap$room_runtime_release = roomDatabase.getRequiredTypeConverterClassesMap$room_runtime_release();
+        Map<KClass<?>, List<KClass<?>>> requiredTypeConverterClassesMap$room_runtime = roomDatabase.getRequiredTypeConverterClassesMap$room_runtime();
         boolean[] zArr = new boolean[configuration.typeConverters.size()];
-        for (Map.Entry<KClass<?>, List<KClass<?>>> entry : requiredTypeConverterClassesMap$room_runtime_release.entrySet()) {
+        for (Map.Entry<KClass<?>, List<KClass<?>>> entry : requiredTypeConverterClassesMap$room_runtime.entrySet()) {
             KClass<?> key = entry.getKey();
             for (KClass<?> kClass : entry.getValue()) {
                 int size = configuration.typeConverters.size() - 1;
@@ -166,7 +240,7 @@ public final /* synthetic */ class RoomDatabaseKt__RoomDatabaseKt {
                     if (size >= 0) {
                         throw new IllegalArgumentException(("A required type converter (" + kClass.getQualifiedName() + ") for " + key.getQualifiedName() + " is missing in the database configuration.").toString());
                     }
-                    roomDatabase.addTypeConverter$room_runtime_release(kClass, configuration.typeConverters.get(size));
+                    roomDatabase.addTypeConverter$room_runtime(kClass, configuration.typeConverters.get(size));
                 }
                 size = -1;
                 if (size >= 0) {

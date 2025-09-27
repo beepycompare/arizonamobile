@@ -26,7 +26,7 @@ public final class HorizontalRuler extends Ruler {
 
     @Override // androidx.compose.ui.layout.Ruler
     public float calculateCoordinate$ui_release(float f, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2) {
-        return Float.intBitsToFloat((int) (layoutCoordinates2.mo5963localPositionOfR5De75A(layoutCoordinates, Offset.m4285constructorimpl((Float.floatToRawIntBits(((int) (layoutCoordinates.mo5962getSizeYbymL2g() >> 32)) / 2.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L))) & 4294967295L));
+        return Float.intBitsToFloat((int) (layoutCoordinates2.mo5976localPositionOfR5De75A(layoutCoordinates, Offset.m4297constructorimpl((Float.floatToRawIntBits(((int) (layoutCoordinates.mo5975getSizeYbymL2g() >> 32)) / 2.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L))) & 4294967295L));
     }
 
     /* compiled from: Ruler.kt */

@@ -21,7 +21,7 @@ public final class AndroidFontLoader implements PlatformFontLoader {
 
     @Override // androidx.compose.ui.text.font.PlatformFontLoader
     public android.graphics.Typeface loadBlocking(Font font) {
-        Object m9091constructorimpl;
+        Object m9106constructorimpl;
         android.graphics.Typeface typeface;
         android.graphics.Typeface load;
         if (font instanceof AndroidFont) {
@@ -30,24 +30,24 @@ public final class AndroidFontLoader implements PlatformFontLoader {
         }
         if (font instanceof ResourceFont) {
             ResourceFont resourceFont = (ResourceFont) font;
-            int mo6770getLoadingStrategyPKNRLFQ = resourceFont.mo6770getLoadingStrategyPKNRLFQ();
-            if (FontLoadingStrategy.m6813equalsimpl0(mo6770getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6818getBlockingPKNRLFQ())) {
+            int mo6783getLoadingStrategyPKNRLFQ = resourceFont.mo6783getLoadingStrategyPKNRLFQ();
+            if (FontLoadingStrategy.m6826equalsimpl0(mo6783getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6831getBlockingPKNRLFQ())) {
                 typeface = AndroidFontLoader_androidKt.load(resourceFont, this.context);
-            } else if (FontLoadingStrategy.m6813equalsimpl0(mo6770getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6819getOptionalLocalPKNRLFQ())) {
+            } else if (FontLoadingStrategy.m6826equalsimpl0(mo6783getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6832getOptionalLocalPKNRLFQ())) {
                 try {
                     Result.Companion companion = Result.Companion;
                     AndroidFontLoader androidFontLoader = this;
                     load = AndroidFontLoader_androidKt.load((ResourceFont) font, this.context);
-                    m9091constructorimpl = Result.m9091constructorimpl(load);
+                    m9106constructorimpl = Result.m9106constructorimpl(load);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
+                    m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
                 }
-                typeface = Result.m9097isFailureimpl(m9091constructorimpl) ? null : m9091constructorimpl;
-            } else if (FontLoadingStrategy.m6813equalsimpl0(mo6770getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6817getAsyncPKNRLFQ())) {
+                typeface = Result.m9112isFailureimpl(m9106constructorimpl) ? null : m9106constructorimpl;
+            } else if (FontLoadingStrategy.m6826equalsimpl0(mo6783getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m6830getAsyncPKNRLFQ())) {
                 throw new UnsupportedOperationException("Unsupported Async font load path");
             } else {
-                throw new IllegalArgumentException("Unknown loading type " + ((Object) FontLoadingStrategy.m6815toStringimpl(resourceFont.mo6770getLoadingStrategyPKNRLFQ())));
+                throw new IllegalArgumentException("Unknown loading type " + ((Object) FontLoadingStrategy.m6828toStringimpl(resourceFont.mo6783getLoadingStrategyPKNRLFQ())));
             }
             return PlatformTypefaces_androidKt.setFontVariationSettings(typeface, resourceFont.getVariationSettings(), this.context);
         }

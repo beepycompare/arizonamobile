@@ -20,8 +20,8 @@ public final class RecordingInputConnection_androidKt {
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = textFieldValue.getText().length();
         extractedText.partialStartOffset = -1;
-        extractedText.selectionStart = TextRange.m6711getMinimpl(textFieldValue.m6964getSelectiond9O1mEE());
-        extractedText.selectionEnd = TextRange.m6710getMaximpl(textFieldValue.m6964getSelectiond9O1mEE());
+        extractedText.selectionStart = TextRange.m6724getMinimpl(textFieldValue.m6977getSelectiond9O1mEE());
+        extractedText.selectionEnd = TextRange.m6723getMaximpl(textFieldValue.m6977getSelectiond9O1mEE());
         extractedText.flags = !StringsKt.contains$default((CharSequence) textFieldValue.getText(), '\n', false, 2, (Object) null) ? 1 : 0;
         return extractedText;
     }

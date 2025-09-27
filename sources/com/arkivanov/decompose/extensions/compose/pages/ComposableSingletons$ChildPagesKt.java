@@ -52,7 +52,7 @@ public final class ComposableSingletons$ChildPagesKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1649886492, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-1.<anonymous> (ChildPages.kt:104)");
                 }
-                PagerKt.m1137HorizontalPageroI3XNZo(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, pageContent, composer, ((i2 >> 3) & 14) | ((i2 << 3) & 112), ((i2 >> 6) & 14) | (i2 & 7168), 7164);
+                PagerKt.m1147HorizontalPageroI3XNZo(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, pageContent, composer, ((i2 >> 3) & 14) | ((i2 << 3) & 112), ((i2 >> 6) & 14) | (i2 & 7168), 7164);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -95,7 +95,7 @@ public final class ComposableSingletons$ChildPagesKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-896049490, i2, -1, "com.arkivanov.decompose.extensions.compose.pages.ComposableSingletons$ChildPagesKt.lambda-2.<anonymous> (ChildPages.kt:114)");
                 }
-                PagerKt.m1139VerticalPageroI3XNZo(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, pageContent, composer, ((i2 >> 3) & 14) | ((i2 << 3) & 112), ((i2 >> 6) & 14) | (i2 & 7168), 7164);
+                PagerKt.m1149VerticalPageroI3XNZo(state, modifier, null, null, 0, 0.0f, null, null, false, false, key, null, null, pageContent, composer, ((i2 >> 3) & 14) | ((i2 << 3) & 112), ((i2 >> 6) & 14) | (i2 & 7168), 7164);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -107,12 +107,12 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: getLambda-1$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8570getLambda1$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8582getLambda1$extensions_compose_release() {
         return f60lambda1;
     }
 
     /* renamed from: getLambda-2$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8571getLambda2$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m8583getLambda2$extensions_compose_release() {
         return f61lambda2;
     }
 }

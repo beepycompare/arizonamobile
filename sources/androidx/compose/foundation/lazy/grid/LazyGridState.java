@@ -133,8 +133,8 @@ public final class LazyGridState implements ScrollableState {
         this.prefetchScope = new LazyGridState$prefetchScope$1(this);
         this.pinnedItems = new LazyLayoutPinnedItemList();
         lazyGridScrollPosition.getNearestRangeState();
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1064constructorimpl$default(null, 1, null);
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1064constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1074constructorimpl$default(null, 1, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollForward$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -266,7 +266,7 @@ public final class LazyGridState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1004getPlacementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1014getPlacementScopeInvalidatorzYiylxw$foundation_release() {
         return this.placementScopeInvalidator;
     }
 
@@ -283,7 +283,7 @@ public final class LazyGridState implements ScrollableState {
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation_release  reason: not valid java name */
-    public final MutableState<Unit> m1003getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
+    public final MutableState<Unit> m1013getMeasurementScopeInvalidatorzYiylxw$foundation_release() {
         return this.measurementScopeInvalidator;
     }
 
@@ -319,7 +319,7 @@ public final class LazyGridState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m1068invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1078invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0051, code lost:
@@ -442,7 +442,7 @@ public final class LazyGridState implements ScrollableState {
                 }
                 if (copyWithScrollDeltaWithoutRemeasure != null) {
                     applyMeasureResult$foundation_release(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-                    ObservableScopeInvalidator.m1068invalidateScopeimpl(this.placementScopeInvalidator);
+                    ObservableScopeInvalidator.m1078invalidateScopeimpl(this.placementScopeInvalidator);
                     notifyPrefetchOnScroll(f3 - this.scrollToBeConsumed, copyWithScrollDeltaWithoutRemeasure);
                 } else {
                     Remeasurement remeasurement = this.remeasurement;

@@ -8,12 +8,12 @@ import kotlin.Unit;
 public final class Ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Boolean f387a;
+    public volatile Boolean f388a;
 
     public final void a(Context context) {
-        if (this.f387a == null) {
+        if (this.f388a == null) {
             synchronized (this) {
-                if (this.f387a == null) {
+                if (this.f388a == null) {
                     boolean z = false;
                     try {
                         File fileFromAppStorage = FileUtils.getFileFromAppStorage(context, "uuid.dat");
@@ -25,7 +25,7 @@ public final class Ca {
                         }
                     } catch (Throwable unused) {
                     }
-                    this.f387a = Boolean.valueOf(z);
+                    this.f388a = Boolean.valueOf(z);
                 }
                 Unit unit = Unit.INSTANCE;
             }

@@ -64,7 +64,7 @@ final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLamb
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(DragAndDropStartDetectorScope dragAndDropStartDetectorScope, Offset offset) {
-        dragAndDropStartDetectorScope.mo411requestDragAndDropTransferk4lQ0M(offset.m4303unboximpl());
+        dragAndDropStartDetectorScope.mo421requestDragAndDropTransferk4lQ0M(offset.m4315unboximpl());
         return Unit.INSTANCE;
     }
 }

@@ -28,6 +28,6 @@ public final class DragAndDrop_androidKt {
     }
 
     public static final long getPositionInRoot(DragAndDropEvent dragAndDropEvent) {
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(dragAndDropEvent.getDragEvent$ui_release().getX()) << 32) | (Float.floatToRawIntBits(dragAndDropEvent.getDragEvent$ui_release().getY()) & 4294967295L));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(dragAndDropEvent.getDragEvent$ui_release().getX()) << 32) | (Float.floatToRawIntBits(dragAndDropEvent.getDragEvent$ui_release().getY()) & 4294967295L));
     }
 }

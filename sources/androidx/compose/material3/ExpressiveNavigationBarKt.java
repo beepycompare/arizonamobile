@@ -64,7 +64,7 @@ public final class ExpressiveNavigationBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2206ExpressiveNavigationBarNiJtXQ4(Modifier modifier, long j, long j2, WindowInsets windowInsets, int i, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i2, final int i3) {
+    public static final void m2216ExpressiveNavigationBarNiJtXQ4(Modifier modifier, long j, long j2, WindowInsets windowInsets, int i, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -72,7 +72,7 @@ public final class ExpressiveNavigationBarKt {
         final Object obj2;
         int i5;
         final Modifier.Companion companion;
-        final int m2205getArrangementEbr7WPU;
+        final int m2215getArrangementEbr7WPU;
         long j5;
         long j6;
         Composer composer2;
@@ -170,7 +170,7 @@ public final class ExpressiveNavigationBarKt {
                     obj2 = ExpressiveNavigationBarDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                 }
                 if ((i3 & 16) != 0) {
-                    m2205getArrangementEbr7WPU = ExpressiveNavigationBarDefaults.INSTANCE.m2205getArrangementEbr7WPU();
+                    m2215getArrangementEbr7WPU = ExpressiveNavigationBarDefaults.INSTANCE.m2215getArrangementEbr7WPU();
                     i4 &= -57345;
                     j5 = j3;
                     j6 = j4;
@@ -180,7 +180,7 @@ public final class ExpressiveNavigationBarKt {
                     }
                     int i11 = i4 << 3;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2654SurfaceT9BRK9s(null, null, j5, j6, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1573697866, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExpressiveNavigationBarKt$ExpressiveNavigationBar$1
+                    SurfaceKt.m2664SurfaceT9BRK9s(null, null, j5, j6, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1573697866, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExpressiveNavigationBarKt$ExpressiveNavigationBar$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -204,11 +204,11 @@ public final class ExpressiveNavigationBarKt {
                                 }
                                 Modifier windowInsetsPadding = WindowInsetsPaddingKt.windowInsetsPadding(Modifier.this, obj2);
                                 f = ExpressiveNavigationBarKt.NavigationBarHeight;
-                                Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m869defaultMinSizeVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null));
-                                int i13 = m2205getArrangementEbr7WPU;
-                                if (NavigationBarArrangement.m2363equalsimpl0(i13, NavigationBarArrangement.Companion.m2368getEqualWeightEbr7WPU())) {
+                                Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m879defaultMinSizeVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null));
+                                int i13 = m2215getArrangementEbr7WPU;
+                                if (NavigationBarArrangement.m2373equalsimpl0(i13, NavigationBarArrangement.Companion.m2378getEqualWeightEbr7WPU())) {
                                     centeredContentMeasurePolicy = new EqualWeightContentMeasurePolicy();
-                                } else if (NavigationBarArrangement.m2363equalsimpl0(i13, NavigationBarArrangement.Companion.m2367getCenteredEbr7WPU())) {
+                                } else if (NavigationBarArrangement.m2373equalsimpl0(i13, NavigationBarArrangement.Companion.m2377getCenteredEbr7WPU())) {
                                     centeredContentMeasurePolicy = new CenteredContentMeasurePolicy();
                                 } else {
                                     throw new IllegalArgumentException("Invalid ItemsArrangement value.");
@@ -229,15 +229,15 @@ public final class ExpressiveNavigationBarKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 function22.invoke(composer3, 0);
                                 composer3.endNode();
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -257,7 +257,7 @@ public final class ExpressiveNavigationBarKt {
                     modifier2 = companion;
                     windowInsets2 = obj2;
                     j7 = j6;
-                    i6 = m2205getArrangementEbr7WPU;
+                    i6 = m2215getArrangementEbr7WPU;
                     j8 = j5;
                 }
             } else {
@@ -277,14 +277,14 @@ public final class ExpressiveNavigationBarKt {
                 companion = obj;
             }
             j6 = j4;
-            m2205getArrangementEbr7WPU = i5;
+            m2215getArrangementEbr7WPU = i5;
             j5 = j3;
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
             int i112 = i4 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(null, null, j5, j6, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1573697866, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExpressiveNavigationBarKt$ExpressiveNavigationBar$1
+            SurfaceKt.m2664SurfaceT9BRK9s(null, null, j5, j6, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1573697866, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExpressiveNavigationBarKt$ExpressiveNavigationBar$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -308,11 +308,11 @@ public final class ExpressiveNavigationBarKt {
                         }
                         Modifier windowInsetsPadding = WindowInsetsPaddingKt.windowInsetsPadding(Modifier.this, obj2);
                         f = ExpressiveNavigationBarKt.NavigationBarHeight;
-                        Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m869defaultMinSizeVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null));
-                        int i13 = m2205getArrangementEbr7WPU;
-                        if (NavigationBarArrangement.m2363equalsimpl0(i13, NavigationBarArrangement.Companion.m2368getEqualWeightEbr7WPU())) {
+                        Modifier selectableGroup = SelectableGroupKt.selectableGroup(SizeKt.m879defaultMinSizeVpY3zN4$default(windowInsetsPadding, 0.0f, f, 1, null));
+                        int i13 = m2215getArrangementEbr7WPU;
+                        if (NavigationBarArrangement.m2373equalsimpl0(i13, NavigationBarArrangement.Companion.m2378getEqualWeightEbr7WPU())) {
                             centeredContentMeasurePolicy = new EqualWeightContentMeasurePolicy();
-                        } else if (NavigationBarArrangement.m2363equalsimpl0(i13, NavigationBarArrangement.Companion.m2367getCenteredEbr7WPU())) {
+                        } else if (NavigationBarArrangement.m2373equalsimpl0(i13, NavigationBarArrangement.Companion.m2377getCenteredEbr7WPU())) {
                             centeredContentMeasurePolicy = new CenteredContentMeasurePolicy();
                         } else {
                             throw new IllegalArgumentException("Invalid ItemsArrangement value.");
@@ -333,15 +333,15 @@ public final class ExpressiveNavigationBarKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, centeredContentMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         function22.invoke(composer3, 0);
                         composer3.endNode();
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -360,7 +360,7 @@ public final class ExpressiveNavigationBarKt {
             modifier2 = companion;
             windowInsets2 = obj2;
             j7 = j6;
-            i6 = m2205getArrangementEbr7WPU;
+            i6 = m2215getArrangementEbr7WPU;
             j8 = j5;
         } else {
             startRestartGroup.skipToGroupEnd();
@@ -388,7 +388,7 @@ public final class ExpressiveNavigationBarKt {
                 }
 
                 public final void invoke(Composer composer3, int i12) {
-                    ExpressiveNavigationBarKt.m2206ExpressiveNavigationBarNiJtXQ4(Modifier.this, j8, j7, windowInsets2, i6, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                    ExpressiveNavigationBarKt.m2216ExpressiveNavigationBarNiJtXQ4(Modifier.this, j8, j7, windowInsets2, i6, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                 }
             });
         }
@@ -433,7 +433,7 @@ public final class ExpressiveNavigationBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2207ExpressiveNavigationBarItemplit6k(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
+    public static final void m2217ExpressiveNavigationBarItemplit6k(final boolean z, final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, boolean z2, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, int i, NavigationItemColors navigationItemColors, MutableInteractionSource mutableInteractionSource, Composer composer, final int i2, final int i3) {
         boolean z3;
         int i4;
         Function0<Unit> function02;
@@ -450,7 +450,7 @@ public final class ExpressiveNavigationBarKt {
         int i10;
         int i11;
         int i12;
-        int m2421getTopxw1Ddg;
+        int m2431getTopxw1Ddg;
         NavigationItemColors navigationItemColors2;
         int i13;
         MutableInteractionSource mutableInteractionSource2;
@@ -460,7 +460,7 @@ public final class ExpressiveNavigationBarKt {
         Function2<? super Composer, ? super Integer, Unit> function24;
         Function2<? super Composer, ? super Integer, Unit> function25;
         MutableInteractionSource mutableInteractionSource3;
-        boolean m2416equalsimpl0;
+        boolean m2426equalsimpl0;
         float f;
         float f2;
         Composer composer2;
@@ -560,7 +560,7 @@ public final class ExpressiveNavigationBarKt {
                                             if (i8 != 0) {
                                                 obj3 = null;
                                             }
-                                            m2421getTopxw1Ddg = i10 == 0 ? NavigationItemIconPosition.Companion.m2421getTopxw1Ddg() : i;
+                                            m2431getTopxw1Ddg = i10 == 0 ? NavigationItemIconPosition.Companion.m2431getTopxw1Ddg() : i;
                                             if ((i3 & 256) == 0) {
                                                 navigationItemColors2 = ExpressiveNavigationBarItemDefaults.INSTANCE.colors(startRestartGroup, 6);
                                                 i13 = i16 & (-234881025);
@@ -574,7 +574,7 @@ public final class ExpressiveNavigationBarKt {
                                         } else {
                                             startRestartGroup.skipToGroupEnd();
                                             if ((i3 & 256) != 0) {
-                                                m2421getTopxw1Ddg = i;
+                                                m2431getTopxw1Ddg = i;
                                                 navigationItemColors3 = navigationItemColors;
                                                 i13 = i16 & (-234881025);
                                                 modifier2 = companion;
@@ -601,22 +601,22 @@ public final class ExpressiveNavigationBarKt {
                                                     mutableInteractionSource3 = mutableInteractionSource2;
                                                 }
                                                 startRestartGroup.endReplaceGroup();
-                                                m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                                                if (m2416equalsimpl0) {
+                                                m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                                                if (m2426equalsimpl0) {
                                                     f = TopIconIndicatorHorizontalPadding;
                                                 } else {
                                                     f = StartIconIndicatorHorizontalPadding;
                                                 }
                                                 float f3 = f;
-                                                if (m2416equalsimpl0) {
+                                                if (m2426equalsimpl0) {
                                                     f2 = TopIconIndicatorVerticalPadding;
                                                 } else {
                                                     f2 = StartIconIndicatorVerticalPadding;
                                                 }
                                                 int i17 = i13 >> 3;
                                                 composer2 = startRestartGroup;
-                                                int i18 = m2421getTopxw1Ddg;
-                                                NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17 & 896) | (i17 & 7168) | (57344 & i17) | (458752 & i17) | (i17 & 3670016));
+                                                int i18 = m2431getTopxw1Ddg;
+                                                NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17 & 896) | (i17 & 7168) | (57344 & i17) | (458752 & i17) | (i17 & 3670016));
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                 }
@@ -628,7 +628,7 @@ public final class ExpressiveNavigationBarKt {
                                                 function27 = function25;
                                                 i14 = i18;
                                             } else {
-                                                m2421getTopxw1Ddg = i;
+                                                m2431getTopxw1Ddg = i;
                                                 navigationItemColors3 = navigationItemColors;
                                                 mutableInteractionSource2 = mutableInteractionSource;
                                                 i13 = i16;
@@ -646,16 +646,16 @@ public final class ExpressiveNavigationBarKt {
                                         if (mutableInteractionSource2 == null) {
                                         }
                                         startRestartGroup.endReplaceGroup();
-                                        m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                                        if (m2416equalsimpl0) {
+                                        m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                                        if (m2426equalsimpl0) {
                                         }
                                         float f32 = f;
-                                        if (m2416equalsimpl0) {
+                                        if (m2426equalsimpl0) {
                                         }
                                         int i172 = i13 >> 3;
                                         composer2 = startRestartGroup;
-                                        int i182 = m2421getTopxw1Ddg;
-                                        NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172 & 896) | (i172 & 7168) | (57344 & i172) | (458752 & i172) | (i172 & 3670016));
+                                        int i182 = m2431getTopxw1Ddg;
+                                        NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172 & 896) | (i172 & 7168) | (57344 & i172) | (458752 & i172) | (i172 & 3670016));
                                         if (ComposerKt.isTraceInProgress()) {
                                         }
                                         mutableInteractionSource4 = mutableInteractionSource2;
@@ -693,7 +693,7 @@ public final class ExpressiveNavigationBarKt {
                                             }
 
                                             public final void invoke(Composer composer3, int i19) {
-                                                ExpressiveNavigationBarKt.m2207ExpressiveNavigationBarItemplit6k(z, function0, function2, modifier3, z6, function26, function27, i14, navigationItemColors4, mutableInteractionSource4, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                                ExpressiveNavigationBarKt.m2217ExpressiveNavigationBarItemplit6k(z, function0, function2, modifier3, z6, function26, function27, i14, navigationItemColors4, mutableInteractionSource4, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                             }
                                         });
                                         return;
@@ -734,16 +734,16 @@ public final class ExpressiveNavigationBarKt {
                                 if (mutableInteractionSource2 == null) {
                                 }
                                 startRestartGroup.endReplaceGroup();
-                                m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                                if (m2416equalsimpl0) {
+                                m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                                if (m2426equalsimpl0) {
                                 }
                                 float f322 = f;
-                                if (m2416equalsimpl0) {
+                                if (m2426equalsimpl0) {
                                 }
                                 int i1722 = i13 >> 3;
                                 composer2 = startRestartGroup;
-                                int i1822 = m2421getTopxw1Ddg;
-                                NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722 & 896) | (i1722 & 7168) | (57344 & i1722) | (458752 & i1722) | (i1722 & 3670016));
+                                int i1822 = m2431getTopxw1Ddg;
+                                NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722 & 896) | (i1722 & 7168) | (57344 & i1722) | (458752 & i1722) | (i1722 & 3670016));
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 mutableInteractionSource4 = mutableInteractionSource2;
@@ -797,16 +797,16 @@ public final class ExpressiveNavigationBarKt {
                             if (mutableInteractionSource2 == null) {
                             }
                             startRestartGroup.endReplaceGroup();
-                            m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                            if (m2416equalsimpl0) {
+                            m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                            if (m2426equalsimpl0) {
                             }
                             float f3222 = f;
-                            if (m2416equalsimpl0) {
+                            if (m2426equalsimpl0) {
                             }
                             int i17222 = i13 >> 3;
                             composer2 = startRestartGroup;
-                            int i18222 = m2421getTopxw1Ddg;
-                            NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17222 & 896) | (i17222 & 7168) | (57344 & i17222) | (458752 & i17222) | (i17222 & 3670016));
+                            int i18222 = m2431getTopxw1Ddg;
+                            NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17222 & 896) | (i17222 & 7168) | (57344 & i17222) | (458752 & i17222) | (i17222 & 3670016));
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             mutableInteractionSource4 = mutableInteractionSource2;
@@ -864,16 +864,16 @@ public final class ExpressiveNavigationBarKt {
                         if (mutableInteractionSource2 == null) {
                         }
                         startRestartGroup.endReplaceGroup();
-                        m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                        if (m2416equalsimpl0) {
+                        m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                        if (m2426equalsimpl0) {
                         }
                         float f32222 = f;
-                        if (m2416equalsimpl0) {
+                        if (m2426equalsimpl0) {
                         }
                         int i172222 = i13 >> 3;
                         composer2 = startRestartGroup;
-                        int i182222 = m2421getTopxw1Ddg;
-                        NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172222 & 896) | (i172222 & 7168) | (57344 & i172222) | (458752 & i172222) | (i172222 & 3670016));
+                        int i182222 = m2431getTopxw1Ddg;
+                        NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172222 & 896) | (i172222 & 7168) | (57344 & i172222) | (458752 & i172222) | (i172222 & 3670016));
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         mutableInteractionSource4 = mutableInteractionSource2;
@@ -935,16 +935,16 @@ public final class ExpressiveNavigationBarKt {
                     if (mutableInteractionSource2 == null) {
                     }
                     startRestartGroup.endReplaceGroup();
-                    m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                    if (m2416equalsimpl0) {
+                    m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                    if (m2426equalsimpl0) {
                     }
                     float f322222 = f;
-                    if (m2416equalsimpl0) {
+                    if (m2426equalsimpl0) {
                     }
                     int i1722222 = i13 >> 3;
                     composer2 = startRestartGroup;
-                    int i1822222 = m2421getTopxw1Ddg;
-                    NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722222 & 896) | (i1722222 & 7168) | (57344 & i1722222) | (458752 & i1722222) | (i1722222 & 3670016));
+                    int i1822222 = m2431getTopxw1Ddg;
+                    NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722222 & 896) | (i1722222 & 7168) | (57344 & i1722222) | (458752 & i1722222) | (i1722222 & 3670016));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     mutableInteractionSource4 = mutableInteractionSource2;
@@ -1010,16 +1010,16 @@ public final class ExpressiveNavigationBarKt {
                 if (mutableInteractionSource2 == null) {
                 }
                 startRestartGroup.endReplaceGroup();
-                m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-                if (m2416equalsimpl0) {
+                m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+                if (m2426equalsimpl0) {
                 }
                 float f3222222 = f;
-                if (m2416equalsimpl0) {
+                if (m2426equalsimpl0) {
                 }
                 int i17222222 = i13 >> 3;
                 composer2 = startRestartGroup;
-                int i18222222 = m2421getTopxw1Ddg;
-                NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17222222 & 896) | (i17222222 & 7168) | (57344 & i17222222) | (458752 & i17222222) | (i17222222 & 3670016));
+                int i18222222 = m2431getTopxw1Ddg;
+                NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f3222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i18222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i17222222 & 896) | (i17222222 & 7168) | (57344 & i17222222) | (458752 & i17222222) | (i17222222 & 3670016));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 mutableInteractionSource4 = mutableInteractionSource2;
@@ -1089,16 +1089,16 @@ public final class ExpressiveNavigationBarKt {
             if (mutableInteractionSource2 == null) {
             }
             startRestartGroup.endReplaceGroup();
-            m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-            if (m2416equalsimpl0) {
+            m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+            if (m2426equalsimpl0) {
             }
             float f32222222 = f;
-            if (m2416equalsimpl0) {
+            if (m2426equalsimpl0) {
             }
             int i172222222 = i13 >> 3;
             composer2 = startRestartGroup;
-            int i182222222 = m2421getTopxw1Ddg;
-            NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172222222 & 896) | (i172222222 & 7168) | (57344 & i172222222) | (458752 & i172222222) | (i172222222 & 3670016));
+            int i182222222 = m2431getTopxw1Ddg;
+            NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f32222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i182222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i172222222 & 896) | (i172222222 & 7168) | (57344 & i172222222) | (458752 & i172222222) | (i172222222 & 3670016));
             if (ComposerKt.isTraceInProgress()) {
             }
             mutableInteractionSource4 = mutableInteractionSource2;
@@ -1172,16 +1172,16 @@ public final class ExpressiveNavigationBarKt {
         if (mutableInteractionSource2 == null) {
         }
         startRestartGroup.endReplaceGroup();
-        m2416equalsimpl0 = NavigationItemIconPosition.m2416equalsimpl0(m2421getTopxw1Ddg, NavigationItemIconPosition.Companion.m2421getTopxw1Ddg());
-        if (m2416equalsimpl0) {
+        m2426equalsimpl0 = NavigationItemIconPosition.m2426equalsimpl0(m2431getTopxw1Ddg, NavigationItemIconPosition.Companion.m2431getTopxw1Ddg());
+        if (m2426equalsimpl0) {
         }
         float f322222222 = f;
-        if (m2416equalsimpl0) {
+        if (m2426equalsimpl0) {
         }
         int i1722222222 = i13 >> 3;
         composer2 = startRestartGroup;
-        int i1822222222 = m2421getTopxw1Ddg;
-        NavigationItemKt.m2422NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722222222 & 896) | (i1722222222 & 7168) | (57344 & i1722222222) | (458752 & i1722222222) | (i1722222222 & 3670016));
+        int i1822222222 = m2431getTopxw1Ddg;
+        NavigationItemKt.m2432NavigationItemSHbi2eg(z3, function02, obj, TypographyKt.getValue(LabelTextFont, startRestartGroup, 6), ShapesKt.getValue(ActiveIndicatorShape, startRestartGroup, 6), TopIconItemActiveIndicatorWidth, f322222222, f2, TopIconIndicatorToLabelPadding, StartIconToLabelPadding, TopIconItemVerticalPadding, navigationItemColors3, modifier2, z5, function24, function25, i1822222222, mutableInteractionSource3, composer2, (i13 & 14) | 906166272 | (i13 & 112) | (i13 & 896), 6 | ((i13 >> 21) & 112) | (i1722222222 & 896) | (i1722222222 & 7168) | (57344 & i1722222222) | (458752 & i1722222222) | (i1722222222 & 3670016));
         if (ComposerKt.isTraceInProgress()) {
         }
         mutableInteractionSource4 = mutableInteractionSource2;
@@ -1233,14 +1233,14 @@ public final class ExpressiveNavigationBarKt {
     }
 
     static {
-        float m7251constructorimpl = Dp.m7251constructorimpl((float) 24.0d);
-        IconSize = m7251constructorimpl;
-        float m7251constructorimpl2 = Dp.m7251constructorimpl(56);
-        TopIconItemActiveIndicatorWidth = m7251constructorimpl2;
-        float m7251constructorimpl3 = Dp.m7251constructorimpl(32);
-        TopIconItemActiveIndicatorHeight = m7251constructorimpl3;
-        float m7251constructorimpl4 = Dp.m7251constructorimpl(40);
-        StartIconItemActiveIndicatorHeight = m7251constructorimpl4;
+        float m7264constructorimpl = Dp.m7264constructorimpl((float) 24.0d);
+        IconSize = m7264constructorimpl;
+        float m7264constructorimpl2 = Dp.m7264constructorimpl(56);
+        TopIconItemActiveIndicatorWidth = m7264constructorimpl2;
+        float m7264constructorimpl3 = Dp.m7264constructorimpl(32);
+        TopIconItemActiveIndicatorHeight = m7264constructorimpl3;
+        float m7264constructorimpl4 = Dp.m7264constructorimpl(40);
+        StartIconItemActiveIndicatorHeight = m7264constructorimpl4;
         LabelTextFont = TypographyKeyTokens.LabelMedium;
         ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
         ActiveIconColor = ColorSchemeKeyTokens.Secondary;
@@ -1248,15 +1248,15 @@ public final class ExpressiveNavigationBarKt {
         ActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
         InactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
         InactiveLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
-        NavigationBarHeight = Dp.m7251constructorimpl(64);
-        TopIconItemVerticalPadding = Dp.m7251constructorimpl(6);
+        NavigationBarHeight = Dp.m7264constructorimpl(64);
+        TopIconItemVerticalPadding = Dp.m7264constructorimpl(6);
         float f = 2;
-        TopIconIndicatorVerticalPadding = Dp.m7251constructorimpl(Dp.m7251constructorimpl(m7251constructorimpl3 - m7251constructorimpl) / f);
-        TopIconIndicatorHorizontalPadding = Dp.m7251constructorimpl(Dp.m7251constructorimpl(m7251constructorimpl2 - m7251constructorimpl) / f);
-        StartIconIndicatorVerticalPadding = Dp.m7251constructorimpl(Dp.m7251constructorimpl(m7251constructorimpl4 - m7251constructorimpl) / f);
+        TopIconIndicatorVerticalPadding = Dp.m7264constructorimpl(Dp.m7264constructorimpl(m7264constructorimpl3 - m7264constructorimpl) / f);
+        TopIconIndicatorHorizontalPadding = Dp.m7264constructorimpl(Dp.m7264constructorimpl(m7264constructorimpl2 - m7264constructorimpl) / f);
+        StartIconIndicatorVerticalPadding = Dp.m7264constructorimpl(Dp.m7264constructorimpl(m7264constructorimpl4 - m7264constructorimpl) / f);
         float f2 = 4;
-        TopIconIndicatorToLabelPadding = Dp.m7251constructorimpl(f2);
-        StartIconIndicatorHorizontalPadding = Dp.m7251constructorimpl(16);
-        StartIconToLabelPadding = Dp.m7251constructorimpl(f2);
+        TopIconIndicatorToLabelPadding = Dp.m7264constructorimpl(f2);
+        StartIconIndicatorHorizontalPadding = Dp.m7264constructorimpl(16);
+        StartIconToLabelPadding = Dp.m7264constructorimpl(f2);
     }
 }

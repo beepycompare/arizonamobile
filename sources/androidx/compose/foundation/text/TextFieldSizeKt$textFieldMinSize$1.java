@@ -81,10 +81,10 @@ final class TextFieldSizeKt$textFieldMinSize$1 implements Function3<Modifier, Co
             if (fontWeight == null) {
                 fontWeight = FontWeight.Companion.getNormal();
             }
-            FontStyle m6745getFontStyle4Lr2A7w = textStyle2.m6745getFontStyle4Lr2A7w();
-            int m6829unboximpl = m6745getFontStyle4Lr2A7w != null ? m6745getFontStyle4Lr2A7w.m6829unboximpl() : FontStyle.Companion.m6833getNormal_LCdwA();
-            FontSynthesis m6746getFontSynthesisZQGJjVo = textStyle2.m6746getFontSynthesisZQGJjVo();
-            rememberedValue2 = resolver.mo6798resolveDPcqOEQ(fontFamily, fontWeight, m6829unboximpl, m6746getFontSynthesisZQGJjVo != null ? m6746getFontSynthesisZQGJjVo.m6842unboximpl() : FontSynthesis.Companion.m6843getAllGVVA2EU());
+            FontStyle m6758getFontStyle4Lr2A7w = textStyle2.m6758getFontStyle4Lr2A7w();
+            int m6842unboximpl = m6758getFontStyle4Lr2A7w != null ? m6758getFontStyle4Lr2A7w.m6842unboximpl() : FontStyle.Companion.m6846getNormal_LCdwA();
+            FontSynthesis m6759getFontSynthesisZQGJjVo = textStyle2.m6759getFontSynthesisZQGJjVo();
+            rememberedValue2 = resolver.mo6811resolveDPcqOEQ(fontFamily, fontWeight, m6842unboximpl, m6759getFontSynthesisZQGJjVo != null ? m6759getFontSynthesisZQGJjVo.m6855unboximpl() : FontSynthesis.Companion.m6856getAllGVVA2EU());
             composer.updateRememberedValue(rememberedValue2);
         }
         State state = rememberedValue2;
@@ -125,9 +125,9 @@ final class TextFieldSizeKt$textFieldMinSize$1 implements Function3<Modifier, Co
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult invoke$lambda$6$lambda$5(TextFieldSize textFieldSize, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        long m1372getMinSizeYbymL2g = textFieldSize.m1372getMinSizeYbymL2g();
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(constraints.m7210unboximpl(), RangesKt.coerceIn((int) (m1372getMinSizeYbymL2g >> 32), Constraints.m7206getMinWidthimpl(constraints.m7210unboximpl()), Constraints.m7204getMaxWidthimpl(constraints.m7210unboximpl())), 0, RangesKt.coerceIn((int) (m1372getMinSizeYbymL2g & 4294967295L), Constraints.m7205getMinHeightimpl(constraints.m7210unboximpl()), Constraints.m7203getMaxHeightimpl(constraints.m7210unboximpl())), 0, 10, null));
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.TextFieldSizeKt$textFieldMinSize$1$$ExternalSyntheticLambda0
+        long m1382getMinSizeYbymL2g = textFieldSize.m1382getMinSizeYbymL2g();
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(constraints.m7223unboximpl(), RangesKt.coerceIn((int) (m1382getMinSizeYbymL2g >> 32), Constraints.m7219getMinWidthimpl(constraints.m7223unboximpl()), Constraints.m7217getMaxWidthimpl(constraints.m7223unboximpl())), 0, RangesKt.coerceIn((int) (m1382getMinSizeYbymL2g & 4294967295L), Constraints.m7218getMinHeightimpl(constraints.m7223unboximpl()), Constraints.m7216getMaxHeightimpl(constraints.m7223unboximpl())), 0, 10, null));
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.TextFieldSizeKt$textFieldMinSize$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit invoke$lambda$6$lambda$5$lambda$4;

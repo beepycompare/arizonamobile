@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes3.dex */
 public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final ImageView backButton;
@@ -39,6 +40,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final ImageView buyLevelsBtn;
     public final LinearLayout buyPremiumBtn;
     public final TextView buyPremiumText;
+    public final CustomCardView cardInfo;
     public final View clickBlocker;
     public final TextView daysCount;
     public final LinearLayout donateNavMenuButton;
@@ -59,6 +61,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final LinearLayout mainNavMenuContainer;
     public final LinearLayout mainNavMenuHeadersContainer;
     public final TextView mainPageTitle;
+    public final View overlay;
     public final LinearProgressIndicator progressExperience;
     public final LinearLayout remainingTime;
     public final TextView remainingTimeTextMain;
@@ -72,6 +75,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final LinearLayout tasksNavMenuButton;
     public final ImageView tasksNavMenuButtonIcon;
     public final TextView tasksNavMenuButtonText;
+    public final TextView textBonus;
     public final TextView textBuyAzCoins;
     public final TextView textBuyBattlePoints;
     public final WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice1;
@@ -79,7 +83,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
     public final WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice3;
     public final ConstraintLayout winterBattlepassWelcome;
 
-    private WinterBattlepassLayoutBinding(ConstraintLayout rootView, ImageView backButton, ImageView backWelcomeButton, ConstraintLayout battlePassMainPageContainer, ConstraintLayout battlepass, ConstraintLayout battlepass2023Container, ImageView battlepassContainerBg, WinterBattlepassConvertBattlecoinsLayoutBinding battlepassConvertBattlecoinsPage, WinterBattlepassBuyPremiumLayoutBinding battlepassLevelPremiumPage, WinterBattlepassLevelSetsLayoutBinding battlepassLevelSetsPage, WinterBattlepassLevelSetsLayoutMaximumBinding battlepassLevelSetsPageMaximum, WinterBattlepassRouletteLayoutBinding battlepassRoulettePage, WinterBattlepassRouletteMainScreenBinding battlepassRouletteView, WinterBattlepassShopLayoutBinding battlepassShopPage, WinterBattlepassTasksLayoutBinding battlepassTasksPage, ImageView battlepassWelcomeContainerBg, Button btnGetInfoWinterWelcome, ImageView btnPremium, ImageView btnUsually, LinearLayout buttonBuyAzCoins, LinearLayout buttonBuyBattlePoints, LinearLayout buyContainer, ImageView buyLevelsBtn, LinearLayout buyPremiumBtn, TextView buyPremiumText, View clickBlocker, TextView daysCount, LinearLayout donateNavMenuButton, ImageView donateNavMenuButtonIcon, TextView donateNavMenuButtonText, LinearLayout infoNavMenuButton, ImageView infoNavMenuButtonIcon, TextView infoNavMenuButtonText, LinearLayout levelContainer, RecyclerView levelItemsRc, TextView levelPassText, ImageView logo, ImageView logoWelcome, TextView mainExperienceText, LinearLayout mainNavMenuButton, ImageView mainNavMenuButtonIcon, TextView mainNavMenuButtonText, LinearLayout mainNavMenuContainer, LinearLayout mainNavMenuHeadersContainer, TextView mainPageTitle, LinearProgressIndicator progressExperience, LinearLayout remainingTime, TextView remainingTimeTextMain, LinearLayout rouletteNavMenuButton, ImageView rouletteNavMenuButtonIcon, TextView rouletteNavMenuButtonText, LinearLayout shopNavMenuButton, ImageView shopNavMenuButtonIcon, TextView shopNavMenuButtonText, LinearLayout tasksNavMenuButton, ImageView tasksNavMenuButtonIcon, TextView tasksNavMenuButtonText, TextView textBuyAzCoins, TextView textBuyBattlePoints, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice1, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice2, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice3, ConstraintLayout winterBattlepassWelcome) {
+    private WinterBattlepassLayoutBinding(ConstraintLayout rootView, ImageView backButton, ImageView backWelcomeButton, ConstraintLayout battlePassMainPageContainer, ConstraintLayout battlepass, ConstraintLayout battlepass2023Container, ImageView battlepassContainerBg, WinterBattlepassConvertBattlecoinsLayoutBinding battlepassConvertBattlecoinsPage, WinterBattlepassBuyPremiumLayoutBinding battlepassLevelPremiumPage, WinterBattlepassLevelSetsLayoutBinding battlepassLevelSetsPage, WinterBattlepassLevelSetsLayoutMaximumBinding battlepassLevelSetsPageMaximum, WinterBattlepassRouletteLayoutBinding battlepassRoulettePage, WinterBattlepassRouletteMainScreenBinding battlepassRouletteView, WinterBattlepassShopLayoutBinding battlepassShopPage, WinterBattlepassTasksLayoutBinding battlepassTasksPage, ImageView battlepassWelcomeContainerBg, Button btnGetInfoWinterWelcome, ImageView btnPremium, ImageView btnUsually, LinearLayout buttonBuyAzCoins, LinearLayout buttonBuyBattlePoints, LinearLayout buyContainer, ImageView buyLevelsBtn, LinearLayout buyPremiumBtn, TextView buyPremiumText, CustomCardView cardInfo, View clickBlocker, TextView daysCount, LinearLayout donateNavMenuButton, ImageView donateNavMenuButtonIcon, TextView donateNavMenuButtonText, LinearLayout infoNavMenuButton, ImageView infoNavMenuButtonIcon, TextView infoNavMenuButtonText, LinearLayout levelContainer, RecyclerView levelItemsRc, TextView levelPassText, ImageView logo, ImageView logoWelcome, TextView mainExperienceText, LinearLayout mainNavMenuButton, ImageView mainNavMenuButtonIcon, TextView mainNavMenuButtonText, LinearLayout mainNavMenuContainer, LinearLayout mainNavMenuHeadersContainer, TextView mainPageTitle, View overlay, LinearProgressIndicator progressExperience, LinearLayout remainingTime, TextView remainingTimeTextMain, LinearLayout rouletteNavMenuButton, ImageView rouletteNavMenuButtonIcon, TextView rouletteNavMenuButtonText, LinearLayout shopNavMenuButton, ImageView shopNavMenuButtonIcon, TextView shopNavMenuButtonText, LinearLayout tasksNavMenuButton, ImageView tasksNavMenuButtonIcon, TextView tasksNavMenuButtonText, TextView textBonus, TextView textBuyAzCoins, TextView textBuyBattlePoints, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice1, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice2, WinterBattlepassRouletteOldPriseItemWelcomeBinding welcomePrice3, ConstraintLayout winterBattlepassWelcome) {
         this.rootView = rootView;
         this.backButton = backButton;
         this.backWelcomeButton = backWelcomeButton;
@@ -105,6 +109,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
         this.buyLevelsBtn = buyLevelsBtn;
         this.buyPremiumBtn = buyPremiumBtn;
         this.buyPremiumText = buyPremiumText;
+        this.cardInfo = cardInfo;
         this.clickBlocker = clickBlocker;
         this.daysCount = daysCount;
         this.donateNavMenuButton = donateNavMenuButton;
@@ -125,6 +130,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
         this.mainNavMenuContainer = mainNavMenuContainer;
         this.mainNavMenuHeadersContainer = mainNavMenuHeadersContainer;
         this.mainPageTitle = mainPageTitle;
+        this.overlay = overlay;
         this.progressExperience = progressExperience;
         this.remainingTime = remainingTime;
         this.remainingTimeTextMain = remainingTimeTextMain;
@@ -137,6 +143,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
         this.tasksNavMenuButton = tasksNavMenuButton;
         this.tasksNavMenuButtonIcon = tasksNavMenuButtonIcon;
         this.tasksNavMenuButtonText = tasksNavMenuButtonText;
+        this.textBonus = textBonus;
         this.textBuyAzCoins = textBuyAzCoins;
         this.textBuyBattlePoints = textBuyBattlePoints;
         this.welcomePrice1 = welcomePrice1;
@@ -166,6 +173,7 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
         View findChildViewById;
         View findChildViewById2;
         View findChildViewById3;
+        View findChildViewById4;
         int i = R.id.back_button;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
         if (imageView != null) {
@@ -184,33 +192,33 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
                         if (imageView3 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.battlepass_convert_battlecoins_page))) != null) {
                             WinterBattlepassConvertBattlecoinsLayoutBinding bind = WinterBattlepassConvertBattlecoinsLayoutBinding.bind(findChildViewById);
                             i = R.id.battlepass_level_premium_page;
-                            View findChildViewById4 = ViewBindings.findChildViewById(rootView, i);
-                            if (findChildViewById4 != null) {
-                                WinterBattlepassBuyPremiumLayoutBinding bind2 = WinterBattlepassBuyPremiumLayoutBinding.bind(findChildViewById4);
+                            View findChildViewById5 = ViewBindings.findChildViewById(rootView, i);
+                            if (findChildViewById5 != null) {
+                                WinterBattlepassBuyPremiumLayoutBinding bind2 = WinterBattlepassBuyPremiumLayoutBinding.bind(findChildViewById5);
                                 i = R.id.battlepass_level_sets_page;
-                                View findChildViewById5 = ViewBindings.findChildViewById(rootView, i);
-                                if (findChildViewById5 != null) {
-                                    WinterBattlepassLevelSetsLayoutBinding bind3 = WinterBattlepassLevelSetsLayoutBinding.bind(findChildViewById5);
+                                View findChildViewById6 = ViewBindings.findChildViewById(rootView, i);
+                                if (findChildViewById6 != null) {
+                                    WinterBattlepassLevelSetsLayoutBinding bind3 = WinterBattlepassLevelSetsLayoutBinding.bind(findChildViewById6);
                                     i = R.id.battlepass_level_sets_page_maximum;
-                                    View findChildViewById6 = ViewBindings.findChildViewById(rootView, i);
-                                    if (findChildViewById6 != null) {
-                                        WinterBattlepassLevelSetsLayoutMaximumBinding bind4 = WinterBattlepassLevelSetsLayoutMaximumBinding.bind(findChildViewById6);
+                                    View findChildViewById7 = ViewBindings.findChildViewById(rootView, i);
+                                    if (findChildViewById7 != null) {
+                                        WinterBattlepassLevelSetsLayoutMaximumBinding bind4 = WinterBattlepassLevelSetsLayoutMaximumBinding.bind(findChildViewById7);
                                         i = R.id.battlepass_roulette_page;
-                                        View findChildViewById7 = ViewBindings.findChildViewById(rootView, i);
-                                        if (findChildViewById7 != null) {
-                                            WinterBattlepassRouletteLayoutBinding bind5 = WinterBattlepassRouletteLayoutBinding.bind(findChildViewById7);
+                                        View findChildViewById8 = ViewBindings.findChildViewById(rootView, i);
+                                        if (findChildViewById8 != null) {
+                                            WinterBattlepassRouletteLayoutBinding bind5 = WinterBattlepassRouletteLayoutBinding.bind(findChildViewById8);
                                             i = R.id.battlepass_roulette_view;
-                                            View findChildViewById8 = ViewBindings.findChildViewById(rootView, i);
-                                            if (findChildViewById8 != null) {
-                                                WinterBattlepassRouletteMainScreenBinding bind6 = WinterBattlepassRouletteMainScreenBinding.bind(findChildViewById8);
+                                            View findChildViewById9 = ViewBindings.findChildViewById(rootView, i);
+                                            if (findChildViewById9 != null) {
+                                                WinterBattlepassRouletteMainScreenBinding bind6 = WinterBattlepassRouletteMainScreenBinding.bind(findChildViewById9);
                                                 i = R.id.battlepass_shop_page;
-                                                View findChildViewById9 = ViewBindings.findChildViewById(rootView, i);
-                                                if (findChildViewById9 != null) {
-                                                    WinterBattlepassShopLayoutBinding bind7 = WinterBattlepassShopLayoutBinding.bind(findChildViewById9);
+                                                View findChildViewById10 = ViewBindings.findChildViewById(rootView, i);
+                                                if (findChildViewById10 != null) {
+                                                    WinterBattlepassShopLayoutBinding bind7 = WinterBattlepassShopLayoutBinding.bind(findChildViewById10);
                                                     i = R.id.battlepass_tasks_page;
-                                                    View findChildViewById10 = ViewBindings.findChildViewById(rootView, i);
-                                                    if (findChildViewById10 != null) {
-                                                        WinterBattlepassTasksLayoutBinding bind8 = WinterBattlepassTasksLayoutBinding.bind(findChildViewById10);
+                                                    View findChildViewById11 = ViewBindings.findChildViewById(rootView, i);
+                                                    if (findChildViewById11 != null) {
+                                                        WinterBattlepassTasksLayoutBinding bind8 = WinterBattlepassTasksLayoutBinding.bind(findChildViewById11);
                                                         i = R.id.battlepass_welcome_container_bg;
                                                         ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                         if (imageView4 != null) {
@@ -240,119 +248,127 @@ public final class WinterBattlepassLayoutBinding implements ViewBinding {
                                                                                         if (linearLayout4 != null) {
                                                                                             i = R.id.buy_premium_text;
                                                                                             TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                            if (textView != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.clickBlocker))) != null) {
-                                                                                                i = R.id.daysCount;
-                                                                                                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                if (textView2 != null) {
-                                                                                                    i = R.id.donate_nav_menu_button;
-                                                                                                    LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                    if (linearLayout5 != null) {
-                                                                                                        i = R.id.donate_nav_menu_button_icon;
-                                                                                                        ImageView imageView8 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                        if (imageView8 != null) {
-                                                                                                            i = R.id.donate_nav_menu_button_text;
-                                                                                                            TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                            if (textView3 != null) {
-                                                                                                                i = R.id.info_nav_menu_button;
-                                                                                                                LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                if (linearLayout6 != null) {
-                                                                                                                    i = R.id.info_nav_menu_button_icon;
-                                                                                                                    ImageView imageView9 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                    if (imageView9 != null) {
-                                                                                                                        i = R.id.info_nav_menu_button_text;
-                                                                                                                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                        if (textView4 != null) {
-                                                                                                                            i = R.id.level_container;
-                                                                                                                            LinearLayout linearLayout7 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                            if (linearLayout7 != null) {
-                                                                                                                                i = R.id.level_items_rc;
-                                                                                                                                RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                if (recyclerView != null) {
-                                                                                                                                    i = R.id.level_pass_text;
-                                                                                                                                    TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                    if (textView5 != null) {
-                                                                                                                                        i = R.id.logo;
-                                                                                                                                        ImageView imageView10 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                        if (imageView10 != null) {
-                                                                                                                                            i = R.id.logo_welcome;
-                                                                                                                                            ImageView imageView11 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                            if (imageView11 != null) {
-                                                                                                                                                i = R.id.main_experience_text;
-                                                                                                                                                TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                if (textView6 != null) {
-                                                                                                                                                    i = R.id.main_nav_menu_button;
-                                                                                                                                                    LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                    if (linearLayout8 != null) {
-                                                                                                                                                        i = R.id.main_nav_menu_button_icon;
-                                                                                                                                                        ImageView imageView12 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                        if (imageView12 != null) {
-                                                                                                                                                            i = R.id.main_nav_menu_button_text;
-                                                                                                                                                            TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                            if (textView7 != null) {
-                                                                                                                                                                i = R.id.main_nav_menu_container;
-                                                                                                                                                                LinearLayout linearLayout9 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                if (linearLayout9 != null) {
-                                                                                                                                                                    i = R.id.main_nav_menu_headers_container;
-                                                                                                                                                                    LinearLayout linearLayout10 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                    if (linearLayout10 != null) {
-                                                                                                                                                                        i = R.id.main_page_title;
-                                                                                                                                                                        TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                        if (textView8 != null) {
-                                                                                                                                                                            i = R.id.progress_experience;
-                                                                                                                                                                            LinearProgressIndicator linearProgressIndicator = (LinearProgressIndicator) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                            if (linearProgressIndicator != null) {
-                                                                                                                                                                                i = R.id.remaining_time;
-                                                                                                                                                                                LinearLayout linearLayout11 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                if (linearLayout11 != null) {
-                                                                                                                                                                                    i = R.id.remaining_time_text_main;
-                                                                                                                                                                                    TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                    if (textView9 != null) {
-                                                                                                                                                                                        i = R.id.roulette_nav_menu_button;
-                                                                                                                                                                                        LinearLayout linearLayout12 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                        if (linearLayout12 != null) {
-                                                                                                                                                                                            i = R.id.roulette_nav_menu_button_icon;
-                                                                                                                                                                                            ImageView imageView13 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                            if (imageView13 != null) {
-                                                                                                                                                                                                i = R.id.roulette_nav_menu_button_text;
-                                                                                                                                                                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                if (textView10 != null) {
-                                                                                                                                                                                                    i = R.id.shop_nav_menu_button;
-                                                                                                                                                                                                    LinearLayout linearLayout13 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                    if (linearLayout13 != null) {
-                                                                                                                                                                                                        i = R.id.shop_nav_menu_button_icon;
-                                                                                                                                                                                                        ImageView imageView14 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                        if (imageView14 != null) {
-                                                                                                                                                                                                            i = R.id.shop_nav_menu_button_text;
-                                                                                                                                                                                                            TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                            if (textView11 != null) {
-                                                                                                                                                                                                                i = R.id.tasks_nav_menu_button;
-                                                                                                                                                                                                                LinearLayout linearLayout14 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                if (linearLayout14 != null) {
-                                                                                                                                                                                                                    i = R.id.tasks_nav_menu_button_icon;
-                                                                                                                                                                                                                    ImageView imageView15 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                    if (imageView15 != null) {
-                                                                                                                                                                                                                        i = R.id.tasks_nav_menu_button_text;
-                                                                                                                                                                                                                        TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                        if (textView12 != null) {
-                                                                                                                                                                                                                            i = R.id.text_buy_az_coins;
-                                                                                                                                                                                                                            TextView textView13 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                            if (textView13 != null) {
-                                                                                                                                                                                                                                i = R.id.text_buy_battle_points;
-                                                                                                                                                                                                                                TextView textView14 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                                if (textView14 != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.welcome_price_1))) != null) {
-                                                                                                                                                                                                                                    WinterBattlepassRouletteOldPriseItemWelcomeBinding bind9 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById3);
-                                                                                                                                                                                                                                    i = R.id.welcome_price_2;
-                                                                                                                                                                                                                                    View findChildViewById11 = ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                                    if (findChildViewById11 != null) {
-                                                                                                                                                                                                                                        WinterBattlepassRouletteOldPriseItemWelcomeBinding bind10 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById11);
-                                                                                                                                                                                                                                        i = R.id.welcome_price_3;
-                                                                                                                                                                                                                                        View findChildViewById12 = ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                                        if (findChildViewById12 != null) {
-                                                                                                                                                                                                                                            WinterBattlepassRouletteOldPriseItemWelcomeBinding bind11 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById12);
-                                                                                                                                                                                                                                            i = R.id.winter_battlepass_welcome;
-                                                                                                                                                                                                                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                                                                                                                                            if (constraintLayout4 != null) {
-                                                                                                                                                                                                                                                return new WinterBattlepassLayoutBinding(constraintLayout2, imageView, imageView2, constraintLayout, constraintLayout2, constraintLayout3, imageView3, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, imageView4, button, imageView5, imageView6, linearLayout, linearLayout2, linearLayout3, imageView7, linearLayout4, textView, findChildViewById2, textView2, linearLayout5, imageView8, textView3, linearLayout6, imageView9, textView4, linearLayout7, recyclerView, textView5, imageView10, imageView11, textView6, linearLayout8, imageView12, textView7, linearLayout9, linearLayout10, textView8, linearProgressIndicator, linearLayout11, textView9, linearLayout12, imageView13, textView10, linearLayout13, imageView14, textView11, linearLayout14, imageView15, textView12, textView13, textView14, bind9, bind10, bind11, constraintLayout4);
+                                                                                            if (textView != null) {
+                                                                                                i = R.id.card_info;
+                                                                                                CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                if (customCardView != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.clickBlocker))) != null) {
+                                                                                                    i = R.id.daysCount;
+                                                                                                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                    if (textView2 != null) {
+                                                                                                        i = R.id.donate_nav_menu_button;
+                                                                                                        LinearLayout linearLayout5 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                        if (linearLayout5 != null) {
+                                                                                                            i = R.id.donate_nav_menu_button_icon;
+                                                                                                            ImageView imageView8 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                            if (imageView8 != null) {
+                                                                                                                i = R.id.donate_nav_menu_button_text;
+                                                                                                                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                if (textView3 != null) {
+                                                                                                                    i = R.id.info_nav_menu_button;
+                                                                                                                    LinearLayout linearLayout6 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                    if (linearLayout6 != null) {
+                                                                                                                        i = R.id.info_nav_menu_button_icon;
+                                                                                                                        ImageView imageView9 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                        if (imageView9 != null) {
+                                                                                                                            i = R.id.info_nav_menu_button_text;
+                                                                                                                            TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                            if (textView4 != null) {
+                                                                                                                                i = R.id.level_container;
+                                                                                                                                LinearLayout linearLayout7 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                if (linearLayout7 != null) {
+                                                                                                                                    i = R.id.level_items_rc;
+                                                                                                                                    RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                    if (recyclerView != null) {
+                                                                                                                                        i = R.id.level_pass_text;
+                                                                                                                                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                        if (textView5 != null) {
+                                                                                                                                            i = R.id.logo;
+                                                                                                                                            ImageView imageView10 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                            if (imageView10 != null) {
+                                                                                                                                                i = R.id.logo_welcome;
+                                                                                                                                                ImageView imageView11 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                if (imageView11 != null) {
+                                                                                                                                                    i = R.id.main_experience_text;
+                                                                                                                                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                    if (textView6 != null) {
+                                                                                                                                                        i = R.id.main_nav_menu_button;
+                                                                                                                                                        LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                        if (linearLayout8 != null) {
+                                                                                                                                                            i = R.id.main_nav_menu_button_icon;
+                                                                                                                                                            ImageView imageView12 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                            if (imageView12 != null) {
+                                                                                                                                                                i = R.id.main_nav_menu_button_text;
+                                                                                                                                                                TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                if (textView7 != null) {
+                                                                                                                                                                    i = R.id.main_nav_menu_container;
+                                                                                                                                                                    LinearLayout linearLayout9 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                    if (linearLayout9 != null) {
+                                                                                                                                                                        i = R.id.main_nav_menu_headers_container;
+                                                                                                                                                                        LinearLayout linearLayout10 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                        if (linearLayout10 != null) {
+                                                                                                                                                                            i = R.id.main_page_title;
+                                                                                                                                                                            TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                            if (textView8 != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.overlay))) != null) {
+                                                                                                                                                                                i = R.id.progress_experience;
+                                                                                                                                                                                LinearProgressIndicator linearProgressIndicator = (LinearProgressIndicator) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                if (linearProgressIndicator != null) {
+                                                                                                                                                                                    i = R.id.remaining_time;
+                                                                                                                                                                                    LinearLayout linearLayout11 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                    if (linearLayout11 != null) {
+                                                                                                                                                                                        i = R.id.remaining_time_text_main;
+                                                                                                                                                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                        if (textView9 != null) {
+                                                                                                                                                                                            i = R.id.roulette_nav_menu_button;
+                                                                                                                                                                                            LinearLayout linearLayout12 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                            if (linearLayout12 != null) {
+                                                                                                                                                                                                i = R.id.roulette_nav_menu_button_icon;
+                                                                                                                                                                                                ImageView imageView13 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                if (imageView13 != null) {
+                                                                                                                                                                                                    i = R.id.roulette_nav_menu_button_text;
+                                                                                                                                                                                                    TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                    if (textView10 != null) {
+                                                                                                                                                                                                        i = R.id.shop_nav_menu_button;
+                                                                                                                                                                                                        LinearLayout linearLayout13 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                        if (linearLayout13 != null) {
+                                                                                                                                                                                                            i = R.id.shop_nav_menu_button_icon;
+                                                                                                                                                                                                            ImageView imageView14 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                            if (imageView14 != null) {
+                                                                                                                                                                                                                i = R.id.shop_nav_menu_button_text;
+                                                                                                                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                if (textView11 != null) {
+                                                                                                                                                                                                                    i = R.id.tasks_nav_menu_button;
+                                                                                                                                                                                                                    LinearLayout linearLayout14 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                    if (linearLayout14 != null) {
+                                                                                                                                                                                                                        i = R.id.tasks_nav_menu_button_icon;
+                                                                                                                                                                                                                        ImageView imageView15 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                        if (imageView15 != null) {
+                                                                                                                                                                                                                            i = R.id.tasks_nav_menu_button_text;
+                                                                                                                                                                                                                            TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                            if (textView12 != null) {
+                                                                                                                                                                                                                                i = R.id.text_bonus;
+                                                                                                                                                                                                                                TextView textView13 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                if (textView13 != null) {
+                                                                                                                                                                                                                                    i = R.id.text_buy_az_coins;
+                                                                                                                                                                                                                                    TextView textView14 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                    if (textView14 != null) {
+                                                                                                                                                                                                                                        i = R.id.text_buy_battle_points;
+                                                                                                                                                                                                                                        TextView textView15 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                        if (textView15 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.welcome_price_1))) != null) {
+                                                                                                                                                                                                                                            WinterBattlepassRouletteOldPriseItemWelcomeBinding bind9 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById4);
+                                                                                                                                                                                                                                            i = R.id.welcome_price_2;
+                                                                                                                                                                                                                                            View findChildViewById12 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                            if (findChildViewById12 != null) {
+                                                                                                                                                                                                                                                WinterBattlepassRouletteOldPriseItemWelcomeBinding bind10 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById12);
+                                                                                                                                                                                                                                                i = R.id.welcome_price_3;
+                                                                                                                                                                                                                                                View findChildViewById13 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                                if (findChildViewById13 != null) {
+                                                                                                                                                                                                                                                    WinterBattlepassRouletteOldPriseItemWelcomeBinding bind11 = WinterBattlepassRouletteOldPriseItemWelcomeBinding.bind(findChildViewById13);
+                                                                                                                                                                                                                                                    i = R.id.winter_battlepass_welcome;
+                                                                                                                                                                                                                                                    ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                                                                                                                                                    if (constraintLayout4 != null) {
+                                                                                                                                                                                                                                                        return new WinterBattlepassLayoutBinding(constraintLayout2, imageView, imageView2, constraintLayout, constraintLayout2, constraintLayout3, imageView3, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, imageView4, button, imageView5, imageView6, linearLayout, linearLayout2, linearLayout3, imageView7, linearLayout4, textView, customCardView, findChildViewById2, textView2, linearLayout5, imageView8, textView3, linearLayout6, imageView9, textView4, linearLayout7, recyclerView, textView5, imageView10, imageView11, textView6, linearLayout8, imageView12, textView7, linearLayout9, linearLayout10, textView8, findChildViewById3, linearProgressIndicator, linearLayout11, textView9, linearLayout12, imageView13, textView10, linearLayout13, imageView14, textView11, linearLayout14, imageView15, textView12, textView13, textView14, textView15, bind9, bind10, bind11, constraintLayout4);
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                }
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                     }

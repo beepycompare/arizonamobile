@@ -14,27 +14,27 @@ public final class PointerInputChangeEventProducer {
     public final InternalPointerEvent produce(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator) {
         long uptime;
         boolean down;
-        long mo5907screenToLocalMKHz9U;
+        long mo5920screenToLocalMKHz9U;
         LongSparseArray longSparseArray = new LongSparseArray(pointerInputEvent.getPointers().size());
         List<PointerInputEventData> pointers = pointerInputEvent.getPointers();
         int size = pointers.size();
         for (int i = 0; i < size; i++) {
             PointerInputEventData pointerInputEventData = pointers.get(i);
-            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m5840getIdJ3iCeTQ());
+            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m5853getIdJ3iCeTQ());
             if (pointerInputData == null) {
                 down = false;
                 uptime = pointerInputEventData.getUptime();
-                mo5907screenToLocalMKHz9U = pointerInputEventData.m5842getPositionF1C5BW0();
+                mo5920screenToLocalMKHz9U = pointerInputEventData.m5855getPositionF1C5BW0();
             } else {
                 uptime = pointerInputData.getUptime();
                 down = pointerInputData.getDown();
-                mo5907screenToLocalMKHz9U = positionCalculator.mo5907screenToLocalMKHz9U(pointerInputData.m5831getPositionOnScreenF1C5BW0());
+                mo5920screenToLocalMKHz9U = positionCalculator.mo5920screenToLocalMKHz9U(pointerInputData.m5844getPositionOnScreenF1C5BW0());
             }
-            longSparseArray.put(pointerInputEventData.m5840getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m5840getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m5842getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo5907screenToLocalMKHz9U, down, false, pointerInputEventData.m5845getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m5844getScrollDeltaF1C5BW0(), pointerInputEventData.m5841getOriginalEventPositionF1C5BW0(), null));
+            longSparseArray.put(pointerInputEventData.m5853getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m5853getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m5855getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo5920screenToLocalMKHz9U, down, false, pointerInputEventData.m5858getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m5857getScrollDeltaF1C5BW0(), pointerInputEventData.m5854getOriginalEventPositionF1C5BW0(), null));
             if (pointerInputEventData.getDown()) {
-                this.previousPointerInputData.put(pointerInputEventData.m5840getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m5843getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
+                this.previousPointerInputData.put(pointerInputEventData.m5853getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m5856getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
             } else {
-                this.previousPointerInputData.remove(pointerInputEventData.m5840getIdJ3iCeTQ());
+                this.previousPointerInputData.remove(pointerInputEventData.m5853getIdJ3iCeTQ());
             }
         }
         return new InternalPointerEvent(longSparseArray, pointerInputEvent);
@@ -67,7 +67,7 @@ public final class PointerInputChangeEventProducer {
         }
 
         /* renamed from: getPositionOnScreen-F1C5BW0  reason: not valid java name */
-        public final long m5831getPositionOnScreenF1C5BW0() {
+        public final long m5844getPositionOnScreenF1C5BW0() {
             return this.positionOnScreen;
         }
 

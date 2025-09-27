@@ -57,8 +57,8 @@ public final class FontListFontFamilyTypefaceAdapter implements FontFamilyTypefa
             int size = fonts2.size();
             for (int i = 0; i < size; i++) {
                 Font font = fonts2.get(i);
-                if (FontLoadingStrategy.m6813equalsimpl0(font.mo6770getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m6817getAsyncPKNRLFQ())) {
-                    arrayList.add(TuplesKt.to(font.getWeight(), FontStyle.m6823boximpl(font.mo6778getStyle_LCdwA())));
+                if (FontLoadingStrategy.m6826equalsimpl0(font.mo6783getLoadingStrategyPKNRLFQ(), FontLoadingStrategy.Companion.m6830getAsyncPKNRLFQ())) {
+                    arrayList.add(TuplesKt.to(font.getWeight(), FontStyle.m6836boximpl(font.mo6791getStyle_LCdwA())));
                 }
             }
             ArrayList arrayList2 = arrayList;
@@ -78,8 +78,8 @@ public final class FontListFontFamilyTypefaceAdapter implements FontFamilyTypefa
             while (i3 < size3) {
                 Pair pair = (Pair) arrayList4.get(i3);
                 FontWeight fontWeight = (FontWeight) pair.component1();
-                int m6829unboximpl = ((FontStyle) pair.component2()).m6829unboximpl();
-                List list = (List) FontListFontFamilyTypefaceAdapterKt.access$firstImmediatelyAvailable(fontMatcher.m6822matchFontRetOiIg(fonts, fontWeight, m6829unboximpl), new TypefaceRequest(fontFamily2, fontWeight, m6829unboximpl, FontSynthesis.Companion.m6843getAllGVVA2EU(), platformFontLoader.getCacheKey(), null), this.asyncTypefaceCache, platformFontLoader, new Function1() { // from class: androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$$ExternalSyntheticLambda0
+                int m6842unboximpl = ((FontStyle) pair.component2()).m6842unboximpl();
+                List list = (List) FontListFontFamilyTypefaceAdapterKt.access$firstImmediatelyAvailable(fontMatcher.m6835matchFontRetOiIg(fonts, fontWeight, m6842unboximpl), new TypefaceRequest(fontFamily2, fontWeight, m6842unboximpl, FontSynthesis.Companion.m6856getAllGVVA2EU(), platformFontLoader.getCacheKey(), null), this.asyncTypefaceCache, platformFontLoader, new Function1() { // from class: androidx.compose.ui.text.font.FontListFontFamilyTypefaceAdapter$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
                         Unit preload$lambda$4$lambda$3;
@@ -107,7 +107,7 @@ public final class FontListFontFamilyTypefaceAdapter implements FontFamilyTypefa
     @Override // androidx.compose.ui.text.font.FontFamilyTypefaceAdapter
     public TypefaceResult resolve(TypefaceRequest typefaceRequest, PlatformFontLoader platformFontLoader, Function1<? super TypefaceResult.Immutable, Unit> function1, Function1<? super TypefaceRequest, ? extends Object> function12) {
         if (typefaceRequest.getFontFamily() instanceof FontListFontFamily) {
-            Pair access$firstImmediatelyAvailable = FontListFontFamilyTypefaceAdapterKt.access$firstImmediatelyAvailable(fontMatcher.m6822matchFontRetOiIg(((FontListFontFamily) typefaceRequest.getFontFamily()).getFonts(), typefaceRequest.getFontWeight(), typefaceRequest.m6872getFontStyle_LCdwA()), typefaceRequest, this.asyncTypefaceCache, platformFontLoader, function12);
+            Pair access$firstImmediatelyAvailable = FontListFontFamilyTypefaceAdapterKt.access$firstImmediatelyAvailable(fontMatcher.m6835matchFontRetOiIg(((FontListFontFamily) typefaceRequest.getFontFamily()).getFonts(), typefaceRequest.getFontWeight(), typefaceRequest.m6885getFontStyle_LCdwA()), typefaceRequest, this.asyncTypefaceCache, platformFontLoader, function12);
             List list = (List) access$firstImmediatelyAvailable.component1();
             Object component2 = access$firstImmediatelyAvailable.component2();
             if (list == null) {

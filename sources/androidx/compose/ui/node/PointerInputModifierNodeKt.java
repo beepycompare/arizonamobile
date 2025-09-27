@@ -11,6 +11,6 @@ public final class PointerInputModifierNodeKt {
     }
 
     public static final LayoutCoordinates getLayoutCoordinates(PointerInputModifierNode pointerInputModifierNode) {
-        return DelegatableNodeKt.m6099requireCoordinator64DMado(pointerInputModifierNode, NodeKind.m6245constructorimpl(16));
+        return DelegatableNodeKt.m6112requireCoordinator64DMado(pointerInputModifierNode, NodeKind.m6258constructorimpl(16));
     }
 }

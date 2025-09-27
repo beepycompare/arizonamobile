@@ -35,20 +35,20 @@ public final class AccessibilityUtilKt {
     }
 
     static {
-        float m7251constructorimpl = Dp.m7251constructorimpl(10);
-        HorizontalSemanticsBoundsPadding = m7251constructorimpl;
-        IncreaseHorizontalSemanticsBounds = PaddingKt.m834paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3<MeasureScope, Measurable, Constraints, MeasureResult>() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$IncreaseHorizontalSemanticsBounds$1
+        float m7264constructorimpl = Dp.m7264constructorimpl(10);
+        HorizontalSemanticsBoundsPadding = m7264constructorimpl;
+        IncreaseHorizontalSemanticsBounds = PaddingKt.m844paddingVpY3zN4$default(SemanticsModifierKt.semantics(LayoutModifierKt.layout(Modifier.Companion, new Function3<MeasureScope, Measurable, Constraints, MeasureResult>() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$IncreaseHorizontalSemanticsBounds$1
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ MeasureResult invoke(MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-                return m3001invoke3p2s80s(measureScope, measurable, constraints.m7210unboximpl());
+                return m3011invoke3p2s80s(measureScope, measurable, constraints.m7223unboximpl());
             }
 
             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-            public final MeasureResult m3001invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-                final int i = measureScope.mo413roundToPx0680j_4(AccessibilityUtilKt.getHorizontalSemanticsBoundsPadding());
+            public final MeasureResult m3011invoke3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+                final int i = measureScope.mo423roundToPx0680j_4(AccessibilityUtilKt.getHorizontalSemanticsBoundsPadding());
                 int i2 = i * 2;
-                final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(ConstraintsKt.m7223offsetNN6EwU(j, i2, 0));
-                return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth() - i2, mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$IncreaseHorizontalSemanticsBounds$1.1
+                final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(ConstraintsKt.m7236offsetNN6EwU(j, i2, 0));
+                return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth() - i2, mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.internal.AccessibilityUtilKt$IncreaseHorizontalSemanticsBounds$1.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
@@ -76,6 +76,6 @@ public final class AccessibilityUtilKt {
                 invoke2(semanticsPropertyReceiver);
                 return Unit.INSTANCE;
             }
-        }), m7251constructorimpl, 0.0f, 2, null);
+        }), m7264constructorimpl, 0.0f, 2, null);
     }
 }

@@ -19,7 +19,7 @@ public final class LayerSnapshot_androidKt {
         plane.getBuffer().asIntBuffer().get(iArr);
         for (int i = 0; i < width; i++) {
             int i2 = iArr[i];
-            iArr[i] = ColorKt.m4591toArgb8_81llA(ColorKt.Color(i2 & 255, (i2 >> 8) & 255, (i2 >> 16) & 255, (i2 >> 24) & 255));
+            iArr[i] = ColorKt.m4603toArgb8_81llA(ColorKt.Color(i2 & 255, (i2 >> 8) & 255, (i2 >> 16) & 255, (i2 >> 24) & 255));
         }
         return Bitmap.createBitmap(iArr, image.getWidth(), image.getHeight(), Bitmap.Config.ARGB_8888);
     }

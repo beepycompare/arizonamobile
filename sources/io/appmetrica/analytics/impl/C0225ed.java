@@ -6,16 +6,16 @@ import kotlin.jvm.functions.Function0;
 public final class C0225ed implements InterfaceC0196d9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Oe f859a;
+    public final Oe f860a;
     public final Function0 b;
 
     public C0225ed(Oe oe, Function0<Integer> function0) {
-        this.f859a = oe;
+        this.f860a = oe;
         this.b = function0;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0196d9
     public final boolean b() {
-        return ((Ne) this.f859a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
+        return ((Ne) this.f860a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
     }
 }

@@ -6,16 +6,16 @@ import io.appmetrica.analytics.StartupParamsCallback;
 public final class Wl implements Z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ StartupParamsCallback f730a;
+    public final /* synthetic */ StartupParamsCallback f731a;
     public final /* synthetic */ Xl b;
 
     public Wl(Xl xl, StartupParamsCallback startupParamsCallback) {
         this.b = xl;
-        this.f730a = startupParamsCallback;
+        this.f731a = startupParamsCallback;
     }
 
     @Override // io.appmetrica.analytics.impl.Z6
     public final void a(int i, Bundle bundle) {
-        this.b.b(bundle, this.f730a);
+        this.b.b(bundle, this.f731a);
     }
 }

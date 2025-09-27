@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes3.dex */
 public final class WinterBattlepassLevelItemBinding implements ViewBinding {
     public final View boost1;
@@ -32,11 +33,13 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
     public final FrameLayout itemLevelUsuallyContainerFull;
     public final ImageView levelContainer;
     public final TextView levelText;
+    public final CustomCardView qualityButton;
+    public final CustomCardView qualityButton1;
     private final LinearLayout rootView;
     public final View viewAfterLevel;
     public final View viewBeforeLevel;
 
-    private WinterBattlepassLevelItemBinding(LinearLayout rootView, View boost1, View boost2, View boost3, View boost4, RelativeLayout center, ImageView itemLevelBackgroundPremium, ImageView itemLevelBackgroundUsual, ImageView itemLevelBtnPremium, ImageView itemLevelBtnUsually, ImageView itemLevelIcPremium, ImageView itemLevelIcUsually, TextView itemLevelNamePremium, TextView itemLevelNameUsually, LinearLayout itemLevelPremiumContainer, FrameLayout itemLevelPremiumContainerFull, LinearLayout itemLevelUsuallyContainer, FrameLayout itemLevelUsuallyContainerFull, ImageView levelContainer, TextView levelText, View viewAfterLevel, View viewBeforeLevel) {
+    private WinterBattlepassLevelItemBinding(LinearLayout rootView, View boost1, View boost2, View boost3, View boost4, RelativeLayout center, ImageView itemLevelBackgroundPremium, ImageView itemLevelBackgroundUsual, ImageView itemLevelBtnPremium, ImageView itemLevelBtnUsually, ImageView itemLevelIcPremium, ImageView itemLevelIcUsually, TextView itemLevelNamePremium, TextView itemLevelNameUsually, LinearLayout itemLevelPremiumContainer, FrameLayout itemLevelPremiumContainerFull, LinearLayout itemLevelUsuallyContainer, FrameLayout itemLevelUsuallyContainerFull, ImageView levelContainer, TextView levelText, CustomCardView qualityButton, CustomCardView qualityButton1, View viewAfterLevel, View viewBeforeLevel) {
         this.rootView = rootView;
         this.boost1 = boost1;
         this.boost2 = boost2;
@@ -57,6 +60,8 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
         this.itemLevelUsuallyContainerFull = itemLevelUsuallyContainerFull;
         this.levelContainer = levelContainer;
         this.levelText = levelText;
+        this.qualityButton = qualityButton;
+        this.qualityButton1 = qualityButton1;
         this.viewAfterLevel = viewAfterLevel;
         this.viewBeforeLevel = viewBeforeLevel;
     }
@@ -131,8 +136,16 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
                                                                 if (imageView7 != null) {
                                                                     i = R.id.level_text;
                                                                     TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                    if (textView3 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.view_after_level))) != null && (findChildViewById5 = ViewBindings.findChildViewById(rootView, (i = R.id.view_before_level))) != null) {
-                                                                        return new WinterBattlepassLevelItemBinding((LinearLayout) rootView, findChildViewById6, findChildViewById, findChildViewById2, findChildViewById3, relativeLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, textView, textView2, linearLayout, frameLayout, linearLayout2, frameLayout2, imageView7, textView3, findChildViewById4, findChildViewById5);
+                                                                    if (textView3 != null) {
+                                                                        i = R.id.quality_button;
+                                                                        CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (customCardView != null) {
+                                                                            i = R.id.quality_button1;
+                                                                            CustomCardView customCardView2 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                            if (customCardView2 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.view_after_level))) != null && (findChildViewById5 = ViewBindings.findChildViewById(rootView, (i = R.id.view_before_level))) != null) {
+                                                                                return new WinterBattlepassLevelItemBinding((LinearLayout) rootView, findChildViewById6, findChildViewById, findChildViewById2, findChildViewById3, relativeLayout, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, textView, textView2, linearLayout, frameLayout, linearLayout2, frameLayout2, imageView7, textView3, customCardView, customCardView2, findChildViewById4, findChildViewById5);
+                                                                            }
+                                                                        }
                                                                     }
                                                                 }
                                                             }

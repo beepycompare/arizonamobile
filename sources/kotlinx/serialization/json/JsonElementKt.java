@@ -44,25 +44,25 @@ public final class JsonElementKt {
 
     @ExperimentalSerializationApi
     /* renamed from: JsonPrimitive-7apg3OU  reason: not valid java name */
-    public static final JsonPrimitive m10840JsonPrimitive7apg3OU(byte b) {
-        return m10841JsonPrimitiveVKZWuLQ(ULong.m9270constructorimpl(b & 255));
+    public static final JsonPrimitive m10855JsonPrimitive7apg3OU(byte b) {
+        return m10856JsonPrimitiveVKZWuLQ(ULong.m9285constructorimpl(b & 255));
     }
 
     @ExperimentalSerializationApi
     /* renamed from: JsonPrimitive-xj2QHRw  reason: not valid java name */
-    public static final JsonPrimitive m10843JsonPrimitivexj2QHRw(short s) {
-        return m10841JsonPrimitiveVKZWuLQ(ULong.m9270constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
+    public static final JsonPrimitive m10858JsonPrimitivexj2QHRw(short s) {
+        return m10856JsonPrimitiveVKZWuLQ(ULong.m9285constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
     }
 
     @ExperimentalSerializationApi
     /* renamed from: JsonPrimitive-WZ4Q5Ns  reason: not valid java name */
-    public static final JsonPrimitive m10842JsonPrimitiveWZ4Q5Ns(int i) {
-        return m10841JsonPrimitiveVKZWuLQ(ULong.m9270constructorimpl(i & 4294967295L));
+    public static final JsonPrimitive m10857JsonPrimitiveWZ4Q5Ns(int i) {
+        return m10856JsonPrimitiveVKZWuLQ(ULong.m9285constructorimpl(i & 4294967295L));
     }
 
     @ExperimentalSerializationApi
     /* renamed from: JsonPrimitive-VKZWuLQ  reason: not valid java name */
-    public static final JsonPrimitive m10841JsonPrimitiveVKZWuLQ(long j) {
+    public static final JsonPrimitive m10856JsonPrimitiveVKZWuLQ(long j) {
         String m;
         m = UByte$$ExternalSyntheticBackport0.m(j, 10);
         return JsonUnquotedLiteral(m);

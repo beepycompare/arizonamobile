@@ -20,7 +20,7 @@ import ru.rustore.sdk.core.tasks.OnSuccessListener;
 import ru.rustore.sdk.core.tasks.Task;
 /* compiled from: TaskCoroutineExtensions.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a$\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u0086@¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"toSuspendResult", "Lkotlin/Result;", ExifInterface.GPS_DIRECTION_TRUE, "Lru/rustore/sdk/core/tasks/Task;", "(Lru/rustore/sdk/core/tasks/Task;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "sdk-public-core_release"}, k = 2, mv = {1, 7, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class TaskCoroutineExtensionsKt {
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
@@ -53,7 +53,7 @@ public final class TaskCoroutineExtensionsKt {
                             public final void onSuccess(T t) {
                                 CancellableContinuation<Result<? extends T>> cancellableContinuation = cancellableContinuationImpl2;
                                 Result.Companion companion = Result.Companion;
-                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9090boximpl(Result.m9091constructorimpl(t)));
+                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9105boximpl(Result.m9106constructorimpl(t)));
                             }
                         });
                         task.addOnFailureListener(new OnFailureListener() { // from class: ru.rustore.sdk.core.util.TaskCoroutineExtensionsKt$toSuspendResult$2$2
@@ -62,7 +62,7 @@ public final class TaskCoroutineExtensionsKt {
                                 Intrinsics.checkNotNullParameter(throwable, "throwable");
                                 CancellableContinuation<Result<? extends T>> cancellableContinuation = cancellableContinuationImpl2;
                                 Result.Companion companion = Result.Companion;
-                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9090boximpl(Result.m9091constructorimpl(ResultKt.createFailure(throwable))));
+                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9105boximpl(Result.m9106constructorimpl(ResultKt.createFailure(throwable))));
                             }
                         });
                     } else {
@@ -71,7 +71,7 @@ public final class TaskCoroutineExtensionsKt {
                             public final void onSuccess(T t) {
                                 CancellableContinuation<Result<? extends T>> cancellableContinuation = cancellableContinuationImpl2;
                                 Result.Companion companion = Result.Companion;
-                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9090boximpl(Result.m9091constructorimpl(t)));
+                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9105boximpl(Result.m9106constructorimpl(t)));
                             }
                         });
                         task.addOnFailureListener(asExecutor, new OnFailureListener() { // from class: ru.rustore.sdk.core.util.TaskCoroutineExtensionsKt$toSuspendResult$2$4
@@ -80,7 +80,7 @@ public final class TaskCoroutineExtensionsKt {
                                 Intrinsics.checkNotNullParameter(throwable, "throwable");
                                 CancellableContinuation<Result<? extends T>> cancellableContinuation = cancellableContinuationImpl2;
                                 Result.Companion companion = Result.Companion;
-                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9090boximpl(Result.m9091constructorimpl(ResultKt.createFailure(throwable))));
+                                CancellableContinuationExtKt.resumeIfActive(cancellableContinuation, Result.m9105boximpl(Result.m9106constructorimpl(ResultKt.createFailure(throwable))));
                             }
                         });
                     }
@@ -116,7 +116,7 @@ public final class TaskCoroutineExtensionsKt {
                     Task task2 = (Task) taskCoroutineExtensionsKt$toSuspendResult$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return ((Result) obj).m9100unboximpl();
+                return ((Result) obj).m9115unboximpl();
             }
         }
         taskCoroutineExtensionsKt$toSuspendResult$1 = new TaskCoroutineExtensionsKt$toSuspendResult$1(continuation);
@@ -125,6 +125,6 @@ public final class TaskCoroutineExtensionsKt {
         i = taskCoroutineExtensionsKt$toSuspendResult$1.label;
         if (i != 0) {
         }
-        return ((Result) obj2).m9100unboximpl();
+        return ((Result) obj2).m9115unboximpl();
     }
 }

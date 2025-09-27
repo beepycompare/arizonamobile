@@ -177,7 +177,7 @@ public final class CardKt {
                     }
                     if ((i2 & 8) == 0) {
                         interactionSource = null;
-                        cardElevation2 = CardDefaults.INSTANCE.m1940cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                        cardElevation2 = CardDefaults.INSTANCE.m1950cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                         i3 &= -7169;
                     } else {
                         interactionSource = null;
@@ -215,7 +215,7 @@ public final class CardKt {
                     ComposerKt.traceEventStart(1179621553, i3, -1, "androidx.compose.material3.Card (Card.kt:87)");
                 }
                 CardElevation cardElevation6 = cardElevation3;
-                SurfaceKt.m2654SurfaceT9BRK9s(modifier2, shape4, cardColors3.m1932containerColorvNxB06k$material3_release(true), cardColors3.m1933contentColorvNxB06k$material3_release(true), 0.0f, cardElevation3.shadowElevation$material3_release(true, interactionSource, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m7265unboximpl(), borderStroke2, ComposableLambdaKt.rememberComposableLambda(664103990, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
+                SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape4, cardColors3.m1942containerColorvNxB06k$material3_release(true), cardColors3.m1943contentColorvNxB06k$material3_release(true), 0.0f, cardElevation3.shadowElevation$material3_release(true, interactionSource, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m7278unboximpl(), borderStroke2, ComposableLambdaKt.rememberComposableLambda(664103990, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -256,15 +256,15 @@ public final class CardKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                         function32.invoke(ColumnScopeInstance.INSTANCE, composer2, 6);
                         ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -343,7 +343,7 @@ public final class CardKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         CardElevation cardElevation62 = cardElevation3;
-        SurfaceKt.m2654SurfaceT9BRK9s(modifier2, shape4, cardColors3.m1932containerColorvNxB06k$material3_release(true), cardColors3.m1933contentColorvNxB06k$material3_release(true), 0.0f, cardElevation3.shadowElevation$material3_release(true, interactionSource, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m7265unboximpl(), borderStroke2, ComposableLambdaKt.rememberComposableLambda(664103990, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
+        SurfaceKt.m2664SurfaceT9BRK9s(modifier2, shape4, cardColors3.m1942containerColorvNxB06k$material3_release(true), cardColors3.m1943contentColorvNxB06k$material3_release(true), 0.0f, cardElevation3.shadowElevation$material3_release(true, interactionSource, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m7278unboximpl(), borderStroke2, ComposableLambdaKt.rememberComposableLambda(664103990, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -384,15 +384,15 @@ public final class CardKt {
                 } else {
                     composer2.useNode();
                 }
-                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer2, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                 function32.invoke(ColumnScopeInstance.INSTANCE, composer2, 6);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -591,7 +591,7 @@ public final class CardKt {
                             if ((i2 & 32) == 0) {
                                 z3 = true;
                                 i7 = i6;
-                                cardElevation2 = CardDefaults.INSTANCE.m1940cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                cardElevation2 = CardDefaults.INSTANCE.m1950cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 composer2 = startRestartGroup;
                                 i3 &= -458753;
                             } else {
@@ -629,7 +629,7 @@ public final class CardKt {
                                 }
                                 composer2.endReplaceGroup();
                                 composer3 = composer2;
-                                SurfaceKt.m2657Surfaceo_FOJdg(function0, modifier2, z4, shape2, cardColors3.m1932containerColorvNxB06k$material3_release(z4), cardColors3.m1933contentColorvNxB06k$material3_release(z4), 0.0f, cardElevation2.shadowElevation$material3_release(z4, mutableInteractionSource3, composer2, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7265unboximpl(), borderStroke2, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(776921067, z3, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
+                                SurfaceKt.m2667Surfaceo_FOJdg(function0, modifier2, z4, shape2, cardColors3.m1942containerColorvNxB06k$material3_release(z4), cardColors3.m1943contentColorvNxB06k$material3_release(z4), 0.0f, cardElevation2.shadowElevation$material3_release(z4, mutableInteractionSource3, composer2, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7278unboximpl(), borderStroke2, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(776921067, z3, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
                                     /* JADX INFO: Access modifiers changed from: package-private */
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                     /* JADX WARN: Multi-variable type inference failed */
@@ -670,15 +670,15 @@ public final class CardKt {
                                         } else {
                                             composer4.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer4);
-                                        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
+                                        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                         function32.invoke(ColumnScopeInstance.INSTANCE, composer4, 6);
                                         ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -739,7 +739,7 @@ public final class CardKt {
                         }
                         composer2.endReplaceGroup();
                         composer3 = composer2;
-                        SurfaceKt.m2657Surfaceo_FOJdg(function0, modifier2, z4, shape2, cardColors3.m1932containerColorvNxB06k$material3_release(z4), cardColors3.m1933contentColorvNxB06k$material3_release(z4), 0.0f, cardElevation2.shadowElevation$material3_release(z4, mutableInteractionSource3, composer2, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7265unboximpl(), borderStroke2, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(776921067, z3, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
+                        SurfaceKt.m2667Surfaceo_FOJdg(function0, modifier2, z4, shape2, cardColors3.m1942containerColorvNxB06k$material3_release(z4), cardColors3.m1943contentColorvNxB06k$material3_release(z4), 0.0f, cardElevation2.shadowElevation$material3_release(z4, mutableInteractionSource3, composer2, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7278unboximpl(), borderStroke2, mutableInteractionSource3, ComposableLambdaKt.rememberComposableLambda(776921067, z3, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -780,15 +780,15 @@ public final class CardKt {
                                 } else {
                                     composer4.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer4);
-                                Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
+                                Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer4, -384862393, "C87@4365L9:Column.kt#2w3rfo");
                                 function32.invoke(ColumnScopeInstance.INSTANCE, composer4, 6);
                                 ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -1069,7 +1069,7 @@ public final class CardKt {
                         modifier2 = companion;
                         shape3 = shape2;
                         cardColors3 = cardColors2;
-                        cardElevation2 = CardDefaults.INSTANCE.m1942elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
+                        cardElevation2 = CardDefaults.INSTANCE.m1952elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
                     } else {
                         composer2 = startRestartGroup;
                         shape3 = shape2;
@@ -1332,7 +1332,7 @@ public final class CardKt {
                                 if ((i2 & 32) != 0) {
                                     composer2 = startRestartGroup;
                                     i3 &= -458753;
-                                    obj4 = CardDefaults.INSTANCE.m1942elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
+                                    obj4 = CardDefaults.INSTANCE.m1952elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
                                 } else {
                                     composer2 = startRestartGroup;
                                 }
@@ -1743,7 +1743,7 @@ public final class CardKt {
                     }
                     if ((i2 & 8) == 0) {
                         composer2 = startRestartGroup;
-                        cardElevation2 = CardDefaults.INSTANCE.m1944outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
+                        cardElevation2 = CardDefaults.INSTANCE.m1954outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer2, 1572864, 63);
                         i3 &= -7169;
                     } else {
                         composer2 = startRestartGroup;
@@ -2044,7 +2044,7 @@ public final class CardKt {
                                     i6 = i5;
                                     composer2 = startRestartGroup;
                                     i3 &= -458753;
-                                    obj3 = CardDefaults.INSTANCE.m1944outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                    obj3 = CardDefaults.INSTANCE.m1954outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 } else {
                                     composer2 = startRestartGroup;
                                     i6 = i5;

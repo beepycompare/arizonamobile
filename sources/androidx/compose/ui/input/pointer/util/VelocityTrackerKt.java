@@ -43,43 +43,43 @@ public final class VelocityTrackerKt {
     }
 
     public static final void addPointerInputChange(VelocityTracker velocityTracker, PointerInputChange pointerInputChange) {
-        m5928addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m4309getZeroF1C5BW0());
+        m5941addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m4321getZeroF1C5BW0());
     }
 
     /* renamed from: addPointerInputChange-0AR0LA0  reason: not valid java name */
-    public static final void m5928addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
+    public static final void m5941addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
         if (VelocityTrackerAddPointsFix) {
-            m5930addPointerInputChangeWithFix0AR0LA0(velocityTracker, pointerInputChange, j);
+            m5943addPointerInputChangeWithFix0AR0LA0(velocityTracker, pointerInputChange, j);
         } else {
-            m5929addPointerInputChangeLegacy0AR0LA0(velocityTracker, pointerInputChange, j);
+            m5942addPointerInputChangeLegacy0AR0LA0(velocityTracker, pointerInputChange, j);
         }
     }
 
     /* renamed from: addPointerInputChangeLegacy-0AR0LA0  reason: not valid java name */
-    private static final void m5929addPointerInputChangeLegacy0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
+    private static final void m5942addPointerInputChangeLegacy0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
         if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
-            velocityTracker.m5927setCurrentPointerPositionAccumulatork4lQ0M$ui_release(pointerInputChange.m5826getPositionF1C5BW0());
+            velocityTracker.m5940setCurrentPointerPositionAccumulatork4lQ0M$ui_release(pointerInputChange.m5839getPositionF1C5BW0());
             velocityTracker.resetTracking();
         }
-        long m5827getPreviousPositionF1C5BW0 = pointerInputChange.m5827getPreviousPositionF1C5BW0();
+        long m5840getPreviousPositionF1C5BW0 = pointerInputChange.m5840getPreviousPositionF1C5BW0();
         List<HistoricalChange> historical = pointerInputChange.getHistorical();
         int size = historical.size();
         int i = 0;
         while (i < size) {
             HistoricalChange historicalChange = historical.get(i);
-            long m4297minusMKHz9U = Offset.m4297minusMKHz9U(historicalChange.m5750getPositionF1C5BW0(), m5827getPreviousPositionF1C5BW0);
-            long m5750getPositionF1C5BW0 = historicalChange.m5750getPositionF1C5BW0();
-            velocityTracker.m5927setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m4298plusMKHz9U(velocityTracker.m5926getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), m4297minusMKHz9U));
-            velocityTracker.m5923addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4298plusMKHz9U(velocityTracker.m5926getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
+            long m4309minusMKHz9U = Offset.m4309minusMKHz9U(historicalChange.m5763getPositionF1C5BW0(), m5840getPreviousPositionF1C5BW0);
+            long m5763getPositionF1C5BW0 = historicalChange.m5763getPositionF1C5BW0();
+            velocityTracker.m5940setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m4310plusMKHz9U(velocityTracker.m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), m4309minusMKHz9U));
+            velocityTracker.m5936addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4310plusMKHz9U(velocityTracker.m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
             i++;
-            m5827getPreviousPositionF1C5BW0 = m5750getPositionF1C5BW0;
+            m5840getPreviousPositionF1C5BW0 = m5763getPositionF1C5BW0;
         }
-        velocityTracker.m5927setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m4298plusMKHz9U(velocityTracker.m5926getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), Offset.m4297minusMKHz9U(pointerInputChange.m5826getPositionF1C5BW0(), m5827getPreviousPositionF1C5BW0)));
-        velocityTracker.m5923addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4298plusMKHz9U(velocityTracker.m5926getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
+        velocityTracker.m5940setCurrentPointerPositionAccumulatork4lQ0M$ui_release(Offset.m4310plusMKHz9U(velocityTracker.m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), Offset.m4309minusMKHz9U(pointerInputChange.m5839getPositionF1C5BW0(), m5840getPreviousPositionF1C5BW0)));
+        velocityTracker.m5936addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4310plusMKHz9U(velocityTracker.m5939getCurrentPointerPositionAccumulatorF1C5BW0$ui_release(), j));
     }
 
     /* renamed from: addPointerInputChangeWithFix-0AR0LA0  reason: not valid java name */
-    private static final void m5930addPointerInputChangeWithFix0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
+    private static final void m5943addPointerInputChangeWithFix0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
         if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
             velocityTracker.resetTracking();
         }
@@ -88,9 +88,9 @@ public final class VelocityTrackerKt {
             int size = historical.size();
             for (int i = 0; i < size; i++) {
                 HistoricalChange historicalChange = historical.get(i);
-                velocityTracker.m5923addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4298plusMKHz9U(historicalChange.m5749getOriginalEventPositionF1C5BW0$ui_release(), j));
+                velocityTracker.m5936addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4310plusMKHz9U(historicalChange.m5762getOriginalEventPositionF1C5BW0$ui_release(), j));
             }
-            velocityTracker.m5923addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4298plusMKHz9U(pointerInputChange.m5825getOriginalEventPositionF1C5BW0$ui_release(), j));
+            velocityTracker.m5936addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4310plusMKHz9U(pointerInputChange.m5838getOriginalEventPositionF1C5BW0$ui_release(), j));
         }
         if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange) && pointerInputChange.getUptimeMillis() - velocityTracker.getLastMoveEventTimeStamp$ui_release() > 40) {
             velocityTracker.resetTracking();

@@ -8,5 +8,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface Shape {
     /* renamed from: createOutline-Pq9zytI */
-    Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density);
+    Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density);
 }

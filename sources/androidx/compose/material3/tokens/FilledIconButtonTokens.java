@@ -20,7 +20,7 @@ public final class FilledIconButtonTokens {
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HoverColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens Color = ColorSchemeKeyTokens.OnPrimary;
-    private static final float Size = Dp.m7251constructorimpl((float) 24.0d);
+    private static final float Size = Dp.m7264constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens PressedColor = ColorSchemeKeyTokens.OnPrimary;
     private static final ColorSchemeKeyTokens SelectedContainerColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ToggleSelectedFocusColor = ColorSchemeKeyTokens.OnPrimary;
@@ -38,8 +38,8 @@ public final class FilledIconButtonTokens {
 
     static {
         float f = (float) 40.0d;
-        ContainerHeight = Dp.m7251constructorimpl(f);
-        ContainerWidth = Dp.m7251constructorimpl(f);
+        ContainerHeight = Dp.m7264constructorimpl(f);
+        ContainerWidth = Dp.m7264constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -47,7 +47,7 @@ public final class FilledIconButtonTokens {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3365getContainerHeightD9Ej5fM() {
+    public final float m3375getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -56,7 +56,7 @@ public final class FilledIconButtonTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3366getContainerWidthD9Ej5fM() {
+    public final float m3376getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
@@ -93,7 +93,7 @@ public final class FilledIconButtonTokens {
     }
 
     /* renamed from: getSize-D9Ej5fM  reason: not valid java name */
-    public final float m3367getSizeD9Ej5fM() {
+    public final float m3377getSizeD9Ej5fM() {
         return Size;
     }
 

@@ -8,9 +8,9 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.android.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
-public /* synthetic */ class InvalidationTracker$implementation$1 extends FunctionReferenceImpl implements Function1<Set<? extends Integer>, Unit> {
+public final /* synthetic */ class InvalidationTracker$implementation$1 extends FunctionReferenceImpl implements Function1<Set<? extends Integer>, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public InvalidationTracker$implementation$1(Object obj) {
         super(1, obj, InvalidationTracker.class, "notifyInvalidatedObservers", "notifyInvalidatedObservers(Ljava/util/Set;)V", 0);

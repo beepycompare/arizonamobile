@@ -31,14 +31,14 @@ public final class UnprojectedRipple extends RippleDrawable {
     }
 
     /* renamed from: setColor-DxMtmZc  reason: not valid java name */
-    public final void m1864setColorDxMtmZc(long j, float f) {
-        long m1863calculateRippleColor5vOe2sY = m1863calculateRippleColor5vOe2sY(j, f);
+    public final void m1874setColorDxMtmZc(long j, float f) {
+        long m1873calculateRippleColor5vOe2sY = m1873calculateRippleColor5vOe2sY(j, f);
         Color color = this.rippleColor;
-        if (color == null ? false : Color.m4538equalsimpl0(color.m4547unboximpl(), m1863calculateRippleColor5vOe2sY)) {
+        if (color == null ? false : Color.m4550equalsimpl0(color.m4559unboximpl(), m1873calculateRippleColor5vOe2sY)) {
             return;
         }
-        this.rippleColor = Color.m4527boximpl(m1863calculateRippleColor5vOe2sY);
-        setColor(ColorStateList.valueOf(ColorKt.m4591toArgb8_81llA(m1863calculateRippleColor5vOe2sY)));
+        this.rippleColor = Color.m4539boximpl(m1873calculateRippleColor5vOe2sY);
+        setColor(ColorStateList.valueOf(ColorKt.m4603toArgb8_81llA(m1873calculateRippleColor5vOe2sY)));
     }
 
     @Override // android.graphics.drawable.RippleDrawable, android.graphics.drawable.LayerDrawable, android.graphics.drawable.Drawable
@@ -66,11 +66,11 @@ public final class UnprojectedRipple extends RippleDrawable {
     }
 
     /* renamed from: calculateRippleColor-5vOe2sY  reason: not valid java name */
-    private final long m1863calculateRippleColor5vOe2sY(long j, float f) {
+    private final long m1873calculateRippleColor5vOe2sY(long j, float f) {
         if (Build.VERSION.SDK_INT < 28) {
             f *= 2;
         }
-        return Color.m4536copywmQWz5c$default(j, RangesKt.coerceAtMost(f, 1.0f), 0.0f, 0.0f, 0.0f, 14, null);
+        return Color.m4548copywmQWz5c$default(j, RangesKt.coerceAtMost(f, 1.0f), 0.0f, 0.0f, 0.0f, 14, null);
     }
 
     /* compiled from: RippleHostView.android.kt */

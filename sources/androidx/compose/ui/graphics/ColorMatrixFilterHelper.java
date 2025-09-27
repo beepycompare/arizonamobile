@@ -11,9 +11,9 @@ final class ColorMatrixFilterHelper {
     }
 
     /* renamed from: getColorMatrix-8unuwjk  reason: not valid java name */
-    public final float[] m4616getColorMatrix8unuwjk(android.graphics.ColorMatrixColorFilter colorMatrixColorFilter) {
+    public final float[] m4628getColorMatrix8unuwjk(android.graphics.ColorMatrixColorFilter colorMatrixColorFilter) {
         android.graphics.ColorMatrix colorMatrix = new android.graphics.ColorMatrix();
         colorMatrixColorFilter.getColorMatrix(colorMatrix);
-        return ColorMatrix.m4593constructorimpl(colorMatrix.getArray());
+        return ColorMatrix.m4605constructorimpl(colorMatrix.getArray());
     }
 }

@@ -82,7 +82,7 @@ public final class C0389km extends C0425m6 {
         if (!ro.a((Collection) this.e)) {
             linkedHashSet.addAll(this.e);
         }
-        String[] strArr = (String[]) this.p.f874a.a();
+        String[] strArr = (String[]) this.p.f875a.a();
         if (strArr != null) {
             arrayList = new ArrayList();
             for (String str : strArr) {

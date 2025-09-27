@@ -10,40 +10,40 @@ public final class FloatFloatPair {
     public final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FloatFloatPair m11boximpl(long j) {
+    public static final /* synthetic */ FloatFloatPair m21boximpl(long j) {
         return new FloatFloatPair(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m15constructorimpl(long j) {
+    public static long m25constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m16equalsimpl(long j, Object obj) {
-        return (obj instanceof FloatFloatPair) && j == ((FloatFloatPair) obj).m22unboximpl();
+    public static boolean m26equalsimpl(long j, Object obj) {
+        return (obj instanceof FloatFloatPair) && j == ((FloatFloatPair) obj).m32unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m17equalsimpl0(long j, long j2) {
+    public static final boolean m27equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m20hashCodeimpl(long j) {
+    public static int m30hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m16equalsimpl(this.packedValue, obj);
+        return m26equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m20hashCodeimpl(this.packedValue);
+        return m30hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m22unboximpl() {
+    public final /* synthetic */ long m32unboximpl() {
         return this.packedValue;
     }
 
@@ -52,36 +52,36 @@ public final class FloatFloatPair {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m21toStringimpl(long j) {
+    public static String m31toStringimpl(long j) {
         return "(" + Float.intBitsToFloat((int) (j >> 32)) + ", " + Float.intBitsToFloat((int) (j & 4294967295L)) + ')';
     }
 
     public String toString() {
-        return m21toStringimpl(this.packedValue);
+        return m31toStringimpl(this.packedValue);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m14constructorimpl(float f, float f2) {
-        return m15constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static long m24constructorimpl(float f, float f2) {
+        return m25constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getFirst-impl  reason: not valid java name */
-    public static final float m18getFirstimpl(long j) {
+    public static final float m28getFirstimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getSecond-impl  reason: not valid java name */
-    public static final float m19getSecondimpl(long j) {
+    public static final float m29getSecondimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final float m12component1impl(long j) {
+    public static final float m22component1impl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final float m13component2impl(long j) {
+    public static final float m23component2impl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

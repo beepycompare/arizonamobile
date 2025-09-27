@@ -13,7 +13,7 @@ public final class C0752z6 extends MessageNano {
     public static volatile C0752z6[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1184a;
+    public String f1185a;
     public int b;
     public long c;
     public String d;
@@ -36,7 +36,7 @@ public final class C0752z6 extends MessageNano {
     }
 
     public final C0752z6 a() {
-        this.f1184a = "";
+        this.f1185a = "";
         this.b = 0;
         this.c = 0L;
         this.d = "";
@@ -48,7 +48,7 @@ public final class C0752z6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeSInt64Size = CodedOutputByteBufferNano.computeSInt64Size(3, this.c) + CodedOutputByteBufferNano.computeSInt32Size(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f1184a) + super.computeSerializedSize();
+        int computeSInt64Size = CodedOutputByteBufferNano.computeSInt64Size(3, this.c) + CodedOutputByteBufferNano.computeSInt32Size(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f1185a) + super.computeSerializedSize();
         if (!this.d.equals("")) {
             computeSInt64Size += CodedOutputByteBufferNano.computeStringSize(4, this.d);
         }
@@ -76,7 +76,7 @@ public final class C0752z6 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeString(1, this.f1184a);
+        codedOutputByteBufferNano.writeString(1, this.f1185a);
         codedOutputByteBufferNano.writeSInt32(2, this.b);
         codedOutputByteBufferNano.writeSInt64(3, this.c);
         if (!this.d.equals("")) {
@@ -112,7 +112,7 @@ public final class C0752z6 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1184a = codedInputByteBufferNano.readString();
+                this.f1185a = codedInputByteBufferNano.readString();
             } else if (readTag == 16) {
                 this.b = codedInputByteBufferNano.readSInt32();
             } else if (readTag == 24) {

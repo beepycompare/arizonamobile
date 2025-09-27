@@ -43,9 +43,9 @@ final class AndroidSelectionHandles_androidKt$drawSelectionHandle$1 implements F
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final long m1840getHandleColor0d7_KjU = ((TextSelectionColors) consume).m1840getHandleColor0d7_KjU();
+        final long m1850getHandleColor0d7_KjU = ((TextSelectionColors) consume).m1850getHandleColor0d7_KjU();
         ComposerKt.sourceInformationMarkerStart(composer, -124837472, "CC(remember):AndroidSelectionHandles.android.kt#9igjgp");
-        boolean changed = composer.changed(m1840getHandleColor0d7_KjU) | composer.changed(this.$iconVisible) | composer.changed(this.$isLeft);
+        boolean changed = composer.changed(m1850getHandleColor0d7_KjU) | composer.changed(this.$iconVisible) | composer.changed(this.$isLeft);
         final Function0<Boolean> function0 = this.$iconVisible;
         final boolean z = this.$isLeft;
         Object rememberedValue = composer.rememberedValue();
@@ -54,7 +54,7 @@ final class AndroidSelectionHandles_androidKt$drawSelectionHandle$1 implements F
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     DrawResult invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = AndroidSelectionHandles_androidKt$drawSelectionHandle$1.invoke$lambda$3$lambda$2(m1840getHandleColor0d7_KjU, function0, z, (CacheDrawScope) obj);
+                    invoke$lambda$3$lambda$2 = AndroidSelectionHandles_androidKt$drawSelectionHandle$1.invoke$lambda$3$lambda$2(m1850getHandleColor0d7_KjU, function0, z, (CacheDrawScope) obj);
                     return invoke$lambda$3$lambda$2;
                 }
             };
@@ -71,13 +71,13 @@ final class AndroidSelectionHandles_androidKt$drawSelectionHandle$1 implements F
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult invoke$lambda$3$lambda$2(long j, final Function0 function0, final boolean z, CacheDrawScope cacheDrawScope) {
-        final ImageBitmap createHandleImage = AndroidSelectionHandles_androidKt.createHandleImage(cacheDrawScope, Float.intBitsToFloat((int) (cacheDrawScope.m4077getSizeNHjbRc() >> 32)) / 2.0f);
-        final ColorFilter m4578tintxETnrds$default = ColorFilter.Companion.m4578tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+        final ImageBitmap createHandleImage = AndroidSelectionHandles_androidKt.createHandleImage(cacheDrawScope, Float.intBitsToFloat((int) (cacheDrawScope.m4089getSizeNHjbRc() >> 32)) / 2.0f);
+        final ColorFilter m4590tintxETnrds$default = ColorFilter.Companion.m4590tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.text.selection.AndroidSelectionHandles_androidKt$drawSelectionHandle$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit invoke$lambda$3$lambda$2$lambda$1;
-                invoke$lambda$3$lambda$2$lambda$1 = AndroidSelectionHandles_androidKt$drawSelectionHandle$1.invoke$lambda$3$lambda$2$lambda$1(Function0.this, z, createHandleImage, m4578tintxETnrds$default, (ContentDrawScope) obj);
+                invoke$lambda$3$lambda$2$lambda$1 = AndroidSelectionHandles_androidKt$drawSelectionHandle$1.invoke$lambda$3$lambda$2$lambda$1(Function0.this, z, createHandleImage, m4590tintxETnrds$default, (ContentDrawScope) obj);
                 return invoke$lambda$3$lambda$2$lambda$1;
             }
         });
@@ -89,19 +89,19 @@ final class AndroidSelectionHandles_androidKt$drawSelectionHandle$1 implements F
         if (((Boolean) function0.invoke()).booleanValue()) {
             if (z) {
                 ContentDrawScope contentDrawScope2 = contentDrawScope;
-                long mo5115getCenterF1C5BW0 = contentDrawScope2.mo5115getCenterF1C5BW0();
+                long mo5127getCenterF1C5BW0 = contentDrawScope2.mo5127getCenterF1C5BW0();
                 DrawContext drawContext = contentDrawScope2.getDrawContext();
-                long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                 drawContext.getCanvas().save();
                 try {
-                    drawContext.getTransform().mo5044scale0AR0LA0(-1.0f, 1.0f, mo5115getCenterF1C5BW0);
-                    DrawScope.m5100drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
+                    drawContext.getTransform().mo5056scale0AR0LA0(-1.0f, 1.0f, mo5127getCenterF1C5BW0);
+                    DrawScope.m5112drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
                 } finally {
                     drawContext.getCanvas().restore();
-                    drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                    drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                 }
             } else {
-                DrawScope.m5100drawImagegbVJVH8$default(contentDrawScope, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
+                DrawScope.m5112drawImagegbVJVH8$default(contentDrawScope, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
             }
             return Unit.INSTANCE;
         }

@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 public final class K1 implements InterfaceC0747z1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f529a;
+    public final ICommonExecutor f530a;
     public final InterfaceC0747z1 b;
     public boolean c;
 
@@ -19,33 +19,33 @@ public final class K1 implements InterfaceC0747z1 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void a(Intent intent, int i) {
-        this.f529a.execute(new C1(this, intent, i));
+        this.f530a.execute(new C1(this, intent, i));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void b(Intent intent) {
-        this.f529a.execute(new G1(this, intent));
+        this.f530a.execute(new G1(this, intent));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void c(Intent intent) {
-        this.f529a.execute(new F1(this, intent));
+        this.f530a.execute(new F1(this, intent));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void onConfigurationChanged(Configuration configuration) {
-        this.f529a.execute(new A1(this, configuration));
+        this.f530a.execute(new A1(this, configuration));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final synchronized void onCreate() {
         this.c = true;
-        this.f529a.execute(new B1(this));
+        this.f530a.execute(new B1(this));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void onDestroy() {
-        this.f529a.removeAll();
+        this.f530a.removeAll();
         synchronized (this) {
             this.c = false;
         }
@@ -54,33 +54,33 @@ public final class K1 implements InterfaceC0747z1 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void pauseUserSession(Bundle bundle) {
-        this.f529a.execute(new J1(this, bundle));
+        this.f530a.execute(new J1(this, bundle));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void reportData(int i, Bundle bundle) {
-        this.f529a.execute(new H1(this, i, bundle));
+        this.f530a.execute(new H1(this, i, bundle));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void resumeUserSession(Bundle bundle) {
-        this.f529a.execute(new I1(this, bundle));
+        this.f530a.execute(new I1(this, bundle));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void a(Intent intent, int i, int i2) {
-        this.f529a.execute(new D1(this, intent, i, i2));
+        this.f530a.execute(new D1(this, intent, i, i2));
     }
 
     public K1(IHandlerExecutor iHandlerExecutor, InterfaceC0747z1 interfaceC0747z1) {
         this.c = false;
-        this.f529a = iHandlerExecutor;
+        this.f530a = iHandlerExecutor;
         this.b = interfaceC0747z1;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1
     public final void a(Intent intent) {
-        this.f529a.execute(new E1(this, intent));
+        this.f530a.execute(new E1(this, intent));
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0747z1

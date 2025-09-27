@@ -55,7 +55,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
             ResultKt.throwOnFailure(obj);
             localRepository = this.this$0.localRepository;
             this.label = 1;
-            if (localRepository.save2(SettingsInteractor.Companion.getSettingsKey(), (String) this.$settings, (Continuation<? super Unit>) this) == coroutine_suspended) {
+            if (localRepository.save2(SettingsInteractor.SettingsKey, (String) this.$settings, (Continuation<? super Unit>) this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -66,7 +66,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
         localRepository2 = this.this$0.localRepository;
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(localRepository2.getContext());
         Intrinsics.checkNotNullExpressionValue(defaultSharedPreferences, "getDefaultSharedPreferences(...)");
-        defaultSharedPreferences.edit().putBoolean(SettingsConstants.SHOW_FPS, this.$settings.getShowFps()).putBoolean(SettingsConstants.USE_FULLSCREEN, this.$settings.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, this.$settings.getStreamerMode()).apply();
+        defaultSharedPreferences.edit().putBoolean(SettingsConstants.SHOW_FPS, this.$settings.getShowFps()).putBoolean(SettingsConstants.USE_FULLSCREEN, this.$settings.getFullScreen()).putBoolean(SettingsConstants.STREAMER_MODE, this.$settings.getStreamerMode()).putBoolean(SettingsConstants.AMBIENT_SOUNDS, this.$settings.getAmbientSounds()).apply();
         mutableStateFlow = this.this$0.stateStore;
         SettingState settingState = this.$settings;
         do {

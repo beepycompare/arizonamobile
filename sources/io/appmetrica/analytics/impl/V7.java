@@ -20,15 +20,15 @@ public final class V7 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final F8 fromModel(BigDecimal bigDecimal) {
-        BigInteger bigInteger = X7.f737a;
+        BigInteger bigInteger = X7.f738a;
         int i = -bigDecimal.scale();
         BigInteger unscaledValue = bigDecimal.unscaledValue();
         while (true) {
-            if (unscaledValue.compareTo(X7.f737a) <= 0 && unscaledValue.compareTo(X7.b) >= 0) {
+            if (unscaledValue.compareTo(X7.f738a) <= 0 && unscaledValue.compareTo(X7.b) >= 0) {
                 Pair pair = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i));
                 W7 w7 = new W7(((Number) pair.getSecond()).intValue(), ((Number) pair.getFirst()).longValue());
                 F8 f8 = new F8();
-                f8.f441a = w7.f724a;
+                f8.f442a = w7.f725a;
                 f8.b = w7.b;
                 return f8;
             }

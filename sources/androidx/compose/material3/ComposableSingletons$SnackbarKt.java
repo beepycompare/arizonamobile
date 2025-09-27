@@ -34,7 +34,7 @@ public final class ComposableSingletons$SnackbarKt {
                 }
                 ImageVector close = CloseKt.getClose(Icons.Filled.INSTANCE);
                 Strings.Companion companion = Strings.Companion;
-                IconKt.m2261Iconww6aTOc(close, Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
+                IconKt.m2271Iconww6aTOc(close, Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_snackbar_dismiss), composer, 0), (Modifier) null, 0L, composer, 0, 12);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                     return;
@@ -46,7 +46,7 @@ public final class ComposableSingletons$SnackbarKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2092getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2102getLambda1$material3_release() {
         return f45lambda1;
     }
 }

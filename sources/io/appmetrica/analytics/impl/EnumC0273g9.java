@@ -8,17 +8,17 @@ public enum EnumC0273g9 {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f892a;
+    public final int f893a;
 
     EnumC0273g9(int i) {
-        this.f892a = i;
+        this.f893a = i;
     }
 
     public static EnumC0273g9 a(Integer num) {
         EnumC0273g9[] values;
         if (num != null) {
             for (EnumC0273g9 enumC0273g9 : values()) {
-                if (enumC0273g9.f892a == num.intValue()) {
+                if (enumC0273g9.f893a == num.intValue()) {
                     return enumC0273g9;
                 }
             }

@@ -70,6 +70,14 @@ public class Reflection {
         }
     }
 
+    public static LicenseData getLicenseRequiredData(Context context, ILogger iLogger, long j) {
+        try {
+            return (LicenseData) invokeStaticMethod("com.adjust.sdk.google.lvl.Util", "getLicenseRequiredData", new Class[]{Context.class, ILogger.class, Long.TYPE}, context, iLogger, Long.valueOf(j));
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
     public static ReferrerDetails getMetaReferrer(Context context, String str, ILogger iLogger) {
         try {
             return (ReferrerDetails) invokeStaticMethod("com.adjust.sdk.meta.Util", "getMetaInstallReferrerDetails", new Class[]{Context.class, String.class, ILogger.class}, context, str, iLogger);

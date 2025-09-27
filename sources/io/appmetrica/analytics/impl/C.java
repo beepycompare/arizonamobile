@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Lambda;
 public final class C extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ r f377a;
+    public final /* synthetic */ r f378a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C(r rVar) {
         super(1);
-        this.f377a = rVar;
+        this.f378a = rVar;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        this.f377a.c = (byte[]) obj;
+        this.f378a.c = (byte[]) obj;
         return Unit.INSTANCE;
     }
 }

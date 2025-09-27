@@ -151,7 +151,7 @@ public class NavDestinationBuilder<D extends NavDestination> {
         deepLink(Reflection.getOrCreateKotlinClass(Object.class), basePath, navDeepLink);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0035  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

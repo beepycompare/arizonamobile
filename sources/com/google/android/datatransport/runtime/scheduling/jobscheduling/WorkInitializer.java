@@ -25,25 +25,25 @@ public class WorkInitializer {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                WorkInitializer.this.m8667xb85b87dc();
+                WorkInitializer.this.m8679xb85b87dc();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$ensureContextsScheduled$1$com-google-android-datatransport-runtime-scheduling-jobscheduling-WorkInitializer  reason: not valid java name */
-    public /* synthetic */ void m8667xb85b87dc() {
+    public /* synthetic */ void m8679xb85b87dc() {
         this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.WorkInitializer$$ExternalSyntheticLambda1
             @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
             public final Object execute() {
-                return WorkInitializer.this.m8666x10dfae1b();
+                return WorkInitializer.this.m8678x10dfae1b();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$ensureContextsScheduled$0$com-google-android-datatransport-runtime-scheduling-jobscheduling-WorkInitializer  reason: not valid java name */
-    public /* synthetic */ Object m8666x10dfae1b() {
+    public /* synthetic */ Object m8678x10dfae1b() {
         for (TransportContext transportContext : this.store.loadActiveContexts()) {
             this.scheduler.schedule(transportContext, 1);
         }

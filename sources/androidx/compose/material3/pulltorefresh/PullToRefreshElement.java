@@ -25,7 +25,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
     }
 
     /* renamed from: copy-M2VBTUQ$default  reason: not valid java name */
-    public static /* synthetic */ PullToRefreshElement m3098copyM2VBTUQ$default(PullToRefreshElement pullToRefreshElement, boolean z, Function0 function0, boolean z2, PullToRefreshState pullToRefreshState, float f, int i, Object obj) {
+    public static /* synthetic */ PullToRefreshElement m3108copyM2VBTUQ$default(PullToRefreshElement pullToRefreshElement, boolean z, Function0 function0, boolean z2, PullToRefreshState pullToRefreshState, float f, int i, Object obj) {
         if ((i & 1) != 0) {
             z = pullToRefreshElement.isRefreshing;
         }
@@ -44,7 +44,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         }
         float f2 = f;
         boolean z3 = z2;
-        return pullToRefreshElement.m3100copyM2VBTUQ(z, function02, z3, pullToRefreshState, f2);
+        return pullToRefreshElement.m3110copyM2VBTUQ(z, function02, z3, pullToRefreshState, f2);
     }
 
     public final boolean component1() {
@@ -64,12 +64,12 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
     }
 
     /* renamed from: component5-D9Ej5fM  reason: not valid java name */
-    public final float m3099component5D9Ej5fM() {
+    public final float m3109component5D9Ej5fM() {
         return this.threshold;
     }
 
     /* renamed from: copy-M2VBTUQ  reason: not valid java name */
-    public final PullToRefreshElement m3100copyM2VBTUQ(boolean z, Function0<Unit> function0, boolean z2, PullToRefreshState pullToRefreshState, float f) {
+    public final PullToRefreshElement m3110copyM2VBTUQ(boolean z, Function0<Unit> function0, boolean z2, PullToRefreshState pullToRefreshState, float f) {
         return new PullToRefreshElement(z, function0, z2, pullToRefreshState, f, null);
     }
 
@@ -80,18 +80,18 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         }
         if (obj instanceof PullToRefreshElement) {
             PullToRefreshElement pullToRefreshElement = (PullToRefreshElement) obj;
-            return this.isRefreshing == pullToRefreshElement.isRefreshing && Intrinsics.areEqual(this.onRefresh, pullToRefreshElement.onRefresh) && this.enabled == pullToRefreshElement.enabled && Intrinsics.areEqual(this.state, pullToRefreshElement.state) && Dp.m7256equalsimpl0(this.threshold, pullToRefreshElement.threshold);
+            return this.isRefreshing == pullToRefreshElement.isRefreshing && Intrinsics.areEqual(this.onRefresh, pullToRefreshElement.onRefresh) && this.enabled == pullToRefreshElement.enabled && Intrinsics.areEqual(this.state, pullToRefreshElement.state) && Dp.m7269equalsimpl0(this.threshold, pullToRefreshElement.threshold);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((Boolean.hashCode(this.isRefreshing) * 31) + this.onRefresh.hashCode()) * 31) + Boolean.hashCode(this.enabled)) * 31) + this.state.hashCode()) * 31) + Dp.m7257hashCodeimpl(this.threshold);
+        return (((((((Boolean.hashCode(this.isRefreshing) * 31) + this.onRefresh.hashCode()) * 31) + Boolean.hashCode(this.enabled)) * 31) + this.state.hashCode()) * 31) + Dp.m7270hashCodeimpl(this.threshold);
     }
 
     public String toString() {
-        return "PullToRefreshElement(isRefreshing=" + this.isRefreshing + ", onRefresh=" + this.onRefresh + ", enabled=" + this.enabled + ", state=" + this.state + ", threshold=" + ((Object) Dp.m7262toStringimpl(this.threshold)) + ')';
+        return "PullToRefreshElement(isRefreshing=" + this.isRefreshing + ", onRefresh=" + this.onRefresh + ", enabled=" + this.enabled + ", state=" + this.state + ", threshold=" + ((Object) Dp.m7275toStringimpl(this.threshold)) + ')';
     }
 
     public final boolean isRefreshing() {
@@ -111,7 +111,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
     }
 
     /* renamed from: getThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m3101getThresholdD9Ej5fM() {
+    public final float m3111getThresholdD9Ej5fM() {
         return this.threshold;
     }
 
@@ -134,7 +134,7 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         pullToRefreshModifierNode.setOnRefresh(this.onRefresh);
         pullToRefreshModifierNode.setEnabled(this.enabled);
         pullToRefreshModifierNode.setState(this.state);
-        pullToRefreshModifierNode.m3114setThreshold0680j_4(this.threshold);
+        pullToRefreshModifierNode.m3124setThreshold0680j_4(this.threshold);
         boolean isRefreshing = pullToRefreshModifierNode.isRefreshing();
         boolean z = this.isRefreshing;
         if (isRefreshing != z) {
@@ -150,6 +150,6 @@ public final class PullToRefreshElement extends ModifierNodeElement<PullToRefres
         inspectorInfo.getProperties().set("onRefresh", this.onRefresh);
         inspectorInfo.getProperties().set("enabled", Boolean.valueOf(this.enabled));
         inspectorInfo.getProperties().set(RemoteConfigConstants.ResponseFieldKey.STATE, this.state);
-        inspectorInfo.getProperties().set("threshold", Dp.m7249boximpl(this.threshold));
+        inspectorInfo.getProperties().set("threshold", Dp.m7262boximpl(this.threshold));
     }
 }

@@ -7,9 +7,9 @@ public enum M9 {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f575a;
+    public final int f576a;
 
     M9(int i) {
-        this.f575a = i;
+        this.f576a = i;
     }
 }

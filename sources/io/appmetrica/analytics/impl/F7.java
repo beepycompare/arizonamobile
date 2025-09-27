@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class F7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C7 f440a;
+    public final C7 f441a;
 
     public F7() {
         this(null, 1, null);
@@ -18,13 +18,13 @@ public final class F7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(E7 e7) {
         ContentValues contentValues = new ContentValues();
-        Long l = e7.f423a;
+        Long l = e7.f424a;
         if (l != null) {
             contentValues.put("session_id", Long.valueOf(l.longValue()));
         }
         EnumC0259fl enumC0259fl = e7.b;
         if (enumC0259fl != null) {
-            contentValues.put("session_type", Integer.valueOf(enumC0259fl.f883a));
+            contentValues.put("session_type", Integer.valueOf(enumC0259fl.f884a));
         }
         Long l2 = e7.c;
         if (l2 != null) {
@@ -32,7 +32,7 @@ public final class F7 implements Converter {
         }
         Bb bb = e7.d;
         if (bb != null) {
-            contentValues.put("type", Integer.valueOf(bb.f368a));
+            contentValues.put("type", Integer.valueOf(bb.f369a));
         }
         Long l3 = e7.e;
         if (l3 != null) {
@@ -42,13 +42,13 @@ public final class F7 implements Converter {
         if (l4 != null) {
             contentValues.put("time", Long.valueOf(l4.longValue()));
         }
-        C7 c7 = this.f440a;
-        contentValues.put("event_description", MessageNano.toByteArray(c7.f384a.fromModel(e7.g)));
+        C7 c7 = this.f441a;
+        contentValues.put("event_description", MessageNano.toByteArray(c7.f385a.fromModel(e7.g)));
         return contentValues;
     }
 
     public F7(C7 c7) {
-        this.f440a = c7;
+        this.f441a = c7;
     }
 
     public /* synthetic */ F7(C7 c7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -73,6 +73,6 @@ public final class F7 implements Converter {
         }
         Long asLong2 = contentValues.getAsLong("number_in_session");
         Integer asInteger2 = contentValues.getAsInteger("type");
-        return new E7(asLong, enumC0259fl, asLong2, asInteger2 != null ? Bb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f440a.toModel(contentValues.getAsByteArray("event_description")));
+        return new E7(asLong, enumC0259fl, asLong2, asInteger2 != null ? Bb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f441a.toModel(contentValues.getAsByteArray("event_description")));
     }
 }

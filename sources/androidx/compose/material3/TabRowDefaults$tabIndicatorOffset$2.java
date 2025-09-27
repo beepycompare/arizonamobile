@@ -44,15 +44,15 @@ public final class TabRowDefaults$tabIndicatorOffset$2 extends Lambda implements
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1541271084, i, -1, "androidx.compose.material3.TabRowDefaults.tabIndicatorOffset.<anonymous> (TabRow.kt:1271)");
         }
-        float m2696getWidthD9Ej5fM = this.$currentTabPosition.m2696getWidthD9Ej5fM();
+        float m2706getWidthD9Ej5fM = this.$currentTabPosition.m2706getWidthD9Ej5fM();
         animationSpec = TabRowKt.TabRowIndicatorSpec;
-        State<Dp> m140animateDpAsStateAjpBEmI = AnimateAsStateKt.m140animateDpAsStateAjpBEmI(m2696getWidthD9Ej5fM, animationSpec, null, null, composer, 0, 12);
-        float m2694getLeftD9Ej5fM = this.$currentTabPosition.m2694getLeftD9Ej5fM();
+        State<Dp> m150animateDpAsStateAjpBEmI = AnimateAsStateKt.m150animateDpAsStateAjpBEmI(m2706getWidthD9Ej5fM, animationSpec, null, null, composer, 0, 12);
+        float m2704getLeftD9Ej5fM = this.$currentTabPosition.m2704getLeftD9Ej5fM();
         animationSpec2 = TabRowKt.TabRowIndicatorSpec;
-        final State<Dp> m140animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m140animateDpAsStateAjpBEmI(m2694getLeftD9Ej5fM, animationSpec2, null, null, composer, 0, 12);
+        final State<Dp> m150animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m150animateDpAsStateAjpBEmI(m2704getLeftD9Ej5fM, animationSpec2, null, null, composer, 0, 12);
         Modifier wrapContentSize$default = SizeKt.wrapContentSize$default(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Alignment.Companion.getBottomStart(), false, 2, null);
         ComposerKt.sourceInformationMarkerStart(composer, -1825070699, "CC(remember):TabRow.kt#9igjgp");
-        boolean changed = composer.changed(m140animateDpAsStateAjpBEmI2);
+        boolean changed = composer.changed(m150animateDpAsStateAjpBEmI2);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = (Function1) new Function1<Density, IntOffset>() { // from class: androidx.compose.material3.TabRowDefaults$tabIndicatorOffset$2$1$1
@@ -64,33 +64,33 @@ public final class TabRowDefaults$tabIndicatorOffset$2 extends Lambda implements
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntOffset invoke(Density density) {
-                    return IntOffset.m7370boximpl(m2701invokeBjo55l4(density));
+                    return IntOffset.m7383boximpl(m2711invokeBjo55l4(density));
                 }
 
                 /* renamed from: invoke-Bjo55l4  reason: not valid java name */
-                public final long m2701invokeBjo55l4(Density density) {
+                public final long m2711invokeBjo55l4(Density density) {
                     float invoke$lambda$1;
-                    invoke$lambda$1 = TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$1(m140animateDpAsStateAjpBEmI2);
-                    return IntOffsetKt.IntOffset(density.mo413roundToPx0680j_4(invoke$lambda$1), 0);
+                    invoke$lambda$1 = TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$1(m150animateDpAsStateAjpBEmI2);
+                    return IntOffsetKt.IntOffset(density.mo423roundToPx0680j_4(invoke$lambda$1), 0);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m889width3ABfNKs = SizeKt.m889width3ABfNKs(OffsetKt.offset(wrapContentSize$default, (Function1) rememberedValue), invoke$lambda$0(m140animateDpAsStateAjpBEmI));
+        Modifier m899width3ABfNKs = SizeKt.m899width3ABfNKs(OffsetKt.offset(wrapContentSize$default, (Function1) rememberedValue), invoke$lambda$0(m150animateDpAsStateAjpBEmI));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m889width3ABfNKs;
+        return m899width3ABfNKs;
     }
 
     private static final float invoke$lambda$0(State<Dp> state) {
-        return state.getValue().m7265unboximpl();
+        return state.getValue().m7278unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final float invoke$lambda$1(State<Dp> state) {
-        return state.getValue().m7265unboximpl();
+        return state.getValue().m7278unboximpl();
     }
 }

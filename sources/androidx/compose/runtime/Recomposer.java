@@ -160,10 +160,10 @@ public final class Recomposer extends CompositionContext {
         this.compositionInvalidations = new MutableVector<>(new ControlledComposition[16], 0);
         this.compositionsAwaitingApply = new ArrayList();
         this.movableContentAwaitingInsert = new ArrayList();
-        this.movableContentRemoved = MultiValueMap.m3935constructorimpl$default(null, 1, null);
+        this.movableContentRemoved = MultiValueMap.m3947constructorimpl$default(null, 1, null);
         this.movableContentNestedStatesAvailable = new NestedContentMap();
         this.movableContentStatesAvailable = ScatterMapKt.mutableScatterMapOf();
-        this.movableContentNestedExtractionsPending = MultiValueMap.m3935constructorimpl$default(null, 1, null);
+        this.movableContentNestedExtractionsPending = MultiValueMap.m3947constructorimpl$default(null, 1, null);
         this._state = StateFlowKt.MutableStateFlow(State.Inactive);
         this.pausedScopes = new SnapshotThreadLocal<>();
         CompletableJob Job = JobKt.Job((Job) coroutineContext.get(Job.Key));
@@ -195,7 +195,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -287,7 +287,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -359,7 +359,7 @@ public final class Recomposer extends CompositionContext {
             this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
             this.compositionInvalidations.clear();
             state = getHasBroadcastFrameClockAwaitersLocked() ? State.InactivePendingWork : State.Inactive;
-        } else if (this.compositionInvalidations.getSize() != 0 || this.snapshotInvalidations.isNotEmpty() || !this.compositionsAwaitingApply.isEmpty() || !this.movableContentAwaitingInsert.isEmpty() || this.concurrentCompositionsOutstanding > 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved)) {
+        } else if (this.compositionInvalidations.getSize() != 0 || this.snapshotInvalidations.isNotEmpty() || !this.compositionsAwaitingApply.isEmpty() || !this.movableContentAwaitingInsert.isEmpty() || this.concurrentCompositionsOutstanding > 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3955isNotEmptyimpl(this.movableContentRemoved)) {
             state = State.PendingWork;
         } else {
             state = State.Idle;
@@ -500,7 +500,7 @@ public final class Recomposer extends CompositionContext {
 
         public final void clearContent() {
             if (this.composition.isRoot()) {
-                this.composition.setContent(ComposableSingletons$RecomposerKt.INSTANCE.m3781getLambda$1091980426$runtime());
+                this.composition.setContent(ComposableSingletons$RecomposerKt.INSTANCE.m3791getLambda$1091980426$runtime());
             }
         }
 
@@ -654,7 +654,7 @@ public final class Recomposer extends CompositionContext {
                 this.compositionInvalidations.clear();
                 this.snapshotInvalidations = new MutableScatterSet<>(0, 1, null);
                 this.movableContentAwaitingInsert.clear();
-                MultiValueMap.m3933clearimpl(this.movableContentRemoved);
+                MultiValueMap.m3945clearimpl(this.movableContentRemoved);
                 this.movableContentStatesAvailable.clear();
                 this.errorState = new RecomposerErrorState(z, th);
                 if (controlledComposition != null) {
@@ -732,7 +732,6 @@ public final class Recomposer extends CompositionContext {
     private final void addKnownCompositionLocked(ControlledComposition controlledComposition) {
         this._knownCompositions.add(controlledComposition);
         this._knownCompositionsCache = null;
-        registerCompositionLocked(controlledComposition);
     }
 
     private final void registerCompositionLocked(ControlledComposition controlledComposition) {
@@ -1091,7 +1090,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuationImpl2 != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl2.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            cancellableContinuationImpl2.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -1135,6 +1134,7 @@ public final class Recomposer extends CompositionContext {
         Throwable th;
         boolean z;
         Recomposer recomposer;
+        Throwable th2;
         boolean isComposing = controlledComposition.isComposing();
         synchronized (this.stateLock) {
             try {
@@ -1143,10 +1143,10 @@ public final class Recomposer extends CompositionContext {
                         boolean contains = knownCompositionsLocked().contains(controlledComposition);
                         z = !contains;
                         if (!contains) {
-                            addKnownCompositionLocked(controlledComposition);
+                            registerCompositionLocked(controlledComposition);
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
+                    } catch (Throwable th3) {
+                        th = th3;
                         throw th;
                     }
                 } else {
@@ -1162,56 +1162,77 @@ public final class Recomposer extends CompositionContext {
                             Unit unit = Unit.INSTANCE;
                             mutableSnapshot.restoreCurrent(makeCurrent);
                             applyAndCheck(takeMutableSnapshot);
-                            if (!isComposing) {
-                                Snapshot.Companion.notifyObjectsInitialized();
-                            }
-                            try {
-                                performInitialMovableContentInserts(controlledComposition);
+                            synchronized (this.stateLock) {
                                 try {
-                                    controlledComposition.applyChanges();
-                                    controlledComposition.applyLateChanges();
-                                    if (isComposing) {
-                                        return;
+                                    if (this._state.getValue().compareTo(State.ShuttingDown) > 0) {
+                                        try {
+                                            if (!knownCompositionsLocked().contains(controlledComposition)) {
+                                                addKnownCompositionLocked(controlledComposition);
+                                            }
+                                        } catch (Throwable th4) {
+                                            th2 = th4;
+                                            throw th2;
+                                        }
+                                    } else {
+                                        unregisterCompositionLocked(controlledComposition);
                                     }
-                                    Snapshot.Companion.notifyObjectsInitialized();
-                                } catch (Throwable th3) {
-                                    processCompositionError$default(this, th3, null, false, 6, null);
+                                    Unit unit2 = Unit.INSTANCE;
+                                    if (!isComposing) {
+                                        Snapshot.Companion.notifyObjectsInitialized();
+                                    }
+                                    try {
+                                        performInitialMovableContentInserts(controlledComposition);
+                                        try {
+                                            controlledComposition.applyChanges();
+                                            controlledComposition.applyLateChanges();
+                                            if (isComposing) {
+                                                return;
+                                            }
+                                            Snapshot.Companion.notifyObjectsInitialized();
+                                        } catch (Throwable th5) {
+                                            processCompositionError$default(this, th5, null, false, 6, null);
+                                        }
+                                    } catch (Throwable th6) {
+                                        processCompositionError(th6, controlledComposition, true);
+                                    }
+                                } catch (Throwable th7) {
+                                    th2 = th7;
                                 }
-                            } catch (Throwable th4) {
-                                processCompositionError(th4, controlledComposition, true);
                             }
-                        } catch (Throwable th5) {
+                        } catch (Throwable th8) {
                             recomposer = this;
                             try {
                                 mutableSnapshot.restoreCurrent(makeCurrent);
-                                throw th5;
-                            } catch (Throwable th6) {
-                                th = th6;
+                                throw th8;
+                            } catch (Throwable th9) {
+                                th = th9;
+                                Throwable th10 = th;
                                 try {
                                     applyAndCheck(takeMutableSnapshot);
-                                    throw th;
-                                } catch (Throwable th7) {
-                                    th = th7;
-                                    processCompositionError(th, controlledComposition, true);
+                                    throw th10;
+                                } catch (Throwable th11) {
+                                    th = th11;
+                                    Throwable th12 = th;
                                     if (z) {
                                         synchronized (recomposer.stateLock) {
-                                            removeKnownCompositionLocked(controlledComposition);
-                                            Unit unit2 = Unit.INSTANCE;
+                                            unregisterCompositionLocked(controlledComposition);
+                                            Unit unit3 = Unit.INSTANCE;
                                         }
                                     }
+                                    processCompositionError(th12, controlledComposition, true);
                                 }
                             }
                         }
-                    } catch (Throwable th8) {
-                        th = th8;
+                    } catch (Throwable th13) {
+                        th = th13;
                         recomposer = this;
                     }
-                } catch (Throwable th9) {
-                    th = th9;
+                } catch (Throwable th14) {
+                    th = th14;
                     recomposer = this;
                 }
-            } catch (Throwable th10) {
-                th = th10;
+            } catch (Throwable th15) {
+                th = th15;
             }
         }
     }
@@ -1295,9 +1316,9 @@ public final class Recomposer extends CompositionContext {
                 controlledComposition.prepareCompose(new Function0() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit performRecompose$lambda$68$lambda$67;
-                        performRecompose$lambda$68$lambda$67 = Recomposer.performRecompose$lambda$68$lambda$67(MutableScatterSet.this, controlledComposition);
-                        return performRecompose$lambda$68$lambda$67;
+                        Unit performRecompose$lambda$69$lambda$68;
+                        performRecompose$lambda$69$lambda$68 = Recomposer.performRecompose$lambda$69$lambda$68(MutableScatterSet.this, controlledComposition);
+                        return performRecompose$lambda$69$lambda$68;
                     }
                 });
             }
@@ -1313,7 +1334,7 @@ public final class Recomposer extends CompositionContext {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit performRecompose$lambda$68$lambda$67(MutableScatterSet mutableScatterSet, ControlledComposition controlledComposition) {
+    public static final Unit performRecompose$lambda$69$lambda$68(MutableScatterSet mutableScatterSet, ControlledComposition controlledComposition) {
         MutableScatterSet mutableScatterSet2 = mutableScatterSet;
         Object[] objArr = mutableScatterSet2.elements;
         long[] jArr = mutableScatterSet2.metadata;
@@ -1348,14 +1369,14 @@ public final class Recomposer extends CompositionContext {
         int i;
         MutableObjectList emptyObjectList;
         synchronized (this.stateLock) {
-            if (MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved)) {
-                ObjectList m3948valuesimpl = MultiValueMap.m3948valuesimpl(this.movableContentRemoved);
-                MultiValueMap.m3933clearimpl(this.movableContentRemoved);
+            if (MultiValueMap.m3955isNotEmptyimpl(this.movableContentRemoved)) {
+                ObjectList m3960valuesimpl = MultiValueMap.m3960valuesimpl(this.movableContentRemoved);
+                MultiValueMap.m3945clearimpl(this.movableContentRemoved);
                 this.movableContentNestedStatesAvailable.clear();
-                MultiValueMap.m3933clearimpl(this.movableContentNestedExtractionsPending);
-                MutableObjectList mutableObjectList = new MutableObjectList(m3948valuesimpl.getSize());
-                Object[] objArr = m3948valuesimpl.content;
-                int i2 = m3948valuesimpl._size;
+                MultiValueMap.m3945clearimpl(this.movableContentNestedExtractionsPending);
+                MutableObjectList mutableObjectList = new MutableObjectList(m3960valuesimpl.getSize());
+                Object[] objArr = m3960valuesimpl.content;
+                int i2 = m3960valuesimpl._size;
                 for (int i3 = 0; i3 < i2; i3++) {
                     MovableContentStateReference movableContentStateReference = (MovableContentStateReference) objArr[i3];
                     mutableObjectList.add(TuplesKt.to(movableContentStateReference, this.movableContentStatesAvailable.get(movableContentStateReference)));
@@ -1382,15 +1403,15 @@ public final class Recomposer extends CompositionContext {
         return new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit readObserverOf$lambda$85;
-                readObserverOf$lambda$85 = Recomposer.readObserverOf$lambda$85(ControlledComposition.this, obj);
-                return readObserverOf$lambda$85;
+                Unit readObserverOf$lambda$86;
+                readObserverOf$lambda$86 = Recomposer.readObserverOf$lambda$86(ControlledComposition.this, obj);
+                return readObserverOf$lambda$86;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit readObserverOf$lambda$85(ControlledComposition controlledComposition, Object obj) {
+    public static final Unit readObserverOf$lambda$86(ControlledComposition controlledComposition, Object obj) {
         controlledComposition.recordReadOf(obj);
         return Unit.INSTANCE;
     }
@@ -1399,15 +1420,15 @@ public final class Recomposer extends CompositionContext {
         return new Function1() { // from class: androidx.compose.runtime.Recomposer$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit writeObserverOf$lambda$86;
-                writeObserverOf$lambda$86 = Recomposer.writeObserverOf$lambda$86(ControlledComposition.this, mutableScatterSet, obj);
-                return writeObserverOf$lambda$86;
+                Unit writeObserverOf$lambda$87;
+                writeObserverOf$lambda$87 = Recomposer.writeObserverOf$lambda$87(ControlledComposition.this, mutableScatterSet, obj);
+                return writeObserverOf$lambda$87;
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit writeObserverOf$lambda$86(ControlledComposition controlledComposition, MutableScatterSet mutableScatterSet, Object obj) {
+    public static final Unit writeObserverOf$lambda$87(ControlledComposition controlledComposition, MutableScatterSet mutableScatterSet, Object obj) {
         controlledComposition.recordWriteOf(obj);
         if (mutableScatterSet != null) {
             mutableScatterSet.add(obj);
@@ -1442,14 +1463,14 @@ public final class Recomposer extends CompositionContext {
         boolean z;
         synchronized (this.stateLock) {
             if (!this.snapshotInvalidations.isNotEmpty() && this.compositionInvalidations.getSize() == 0 && this.concurrentCompositionsOutstanding <= 0 && this.compositionsAwaitingApply.isEmpty() && !getHasBroadcastFrameClockAwaitersLocked()) {
-                z = MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved);
+                z = MultiValueMap.m3955isNotEmptyimpl(this.movableContentRemoved);
             }
         }
         return z;
     }
 
     private final boolean getHasFrameWorkLocked() {
-        return this.compositionInvalidations.getSize() != 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3943isNotEmptyimpl(this.movableContentRemoved);
+        return this.compositionInvalidations.getSize() != 0 || getHasBroadcastFrameClockAwaitersLocked() || MultiValueMap.m3955isNotEmptyimpl(this.movableContentRemoved);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1481,7 +1502,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1518,7 +1539,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1531,7 +1552,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1544,7 +1565,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1552,26 +1573,26 @@ public final class Recomposer extends CompositionContext {
     public void deletedMovableContent$runtime(MovableContentStateReference movableContentStateReference) {
         CancellableContinuation<Unit> deriveStateLocked;
         synchronized (this.stateLock) {
-            MultiValueMap.m3931addimpl(this.movableContentRemoved, movableContentStateReference.getContent$runtime(), movableContentStateReference);
+            MultiValueMap.m3943addimpl(this.movableContentRemoved, movableContentStateReference.getContent$runtime(), movableContentStateReference);
             if (movableContentStateReference.getNestedReferences$runtime() != null) {
-                deletedMovableContent$lambda$95$recordNestedStatesOf(this, movableContentStateReference, movableContentStateReference);
+                deletedMovableContent$lambda$96$recordNestedStatesOf(this, movableContentStateReference, movableContentStateReference);
             }
             deriveStateLocked = deriveStateLocked();
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
     }
 
-    private static final void deletedMovableContent$lambda$95$recordNestedStatesOf(Recomposer recomposer, MovableContentStateReference movableContentStateReference, MovableContentStateReference movableContentStateReference2) {
+    private static final void deletedMovableContent$lambda$96$recordNestedStatesOf(Recomposer recomposer, MovableContentStateReference movableContentStateReference, MovableContentStateReference movableContentStateReference2) {
         List<MovableContentStateReference> nestedReferences$runtime = movableContentStateReference2.getNestedReferences$runtime();
         if (nestedReferences$runtime != null) {
             int size = nestedReferences$runtime.size();
             for (int i = 0; i < size; i++) {
                 MovableContentStateReference movableContentStateReference3 = nestedReferences$runtime.get(i);
                 recomposer.movableContentNestedStatesAvailable.add(movableContentStateReference3.getContent$runtime(), new NestedMovableContent(movableContentStateReference3, movableContentStateReference));
-                deletedMovableContent$lambda$95$recordNestedStatesOf(recomposer, movableContentStateReference, movableContentStateReference3);
+                deletedMovableContent$lambda$96$recordNestedStatesOf(recomposer, movableContentStateReference, movableContentStateReference3);
             }
         }
     }
@@ -1580,9 +1601,9 @@ public final class Recomposer extends CompositionContext {
     public void movableContentStateReleased$runtime(MovableContentStateReference movableContentStateReference, MovableContentState movableContentState, Applier<?> applier) {
         synchronized (this.stateLock) {
             this.movableContentStatesAvailable.set(movableContentStateReference, movableContentState);
-            ObjectList<MovableContentStateReference> m3940getimpl = MultiValueMap.m3940getimpl(this.movableContentNestedExtractionsPending, movableContentStateReference);
-            if (m3940getimpl.isNotEmpty()) {
-                ScatterMap<MovableContentStateReference, MovableContentState> extractNestedStates$runtime = movableContentState.extractNestedStates$runtime(applier, m3940getimpl);
+            ObjectList<MovableContentStateReference> m3952getimpl = MultiValueMap.m3952getimpl(this.movableContentNestedExtractionsPending, movableContentStateReference);
+            if (m3952getimpl.isNotEmpty()) {
+                ScatterMap<MovableContentStateReference, MovableContentState> extractNestedStates$runtime = movableContentState.extractNestedStates$runtime(applier, m3952getimpl);
                 Object[] objArr = extractNestedStates$runtime.keys;
                 Object[] objArr2 = extractNestedStates$runtime.values;
                 long[] jArr = extractNestedStates$runtime.metadata;
@@ -1886,15 +1907,15 @@ public final class Recomposer extends CompositionContext {
                         ArrayList arrayList3 = arrayList2;
                         MovableContentStateReference movableContentStateReference2 = (MovableContentStateReference) list2.get(i2);
                         Iterator it3 = it2;
-                        Object m3945removeLastimpl = MultiValueMap.m3945removeLastimpl(this.movableContentRemoved, movableContentStateReference2.getContent$runtime());
-                        MovableContentStateReference movableContentStateReference3 = (MovableContentStateReference) m3945removeLastimpl;
+                        Object m3957removeLastimpl = MultiValueMap.m3957removeLastimpl(this.movableContentRemoved, movableContentStateReference2.getContent$runtime());
+                        MovableContentStateReference movableContentStateReference3 = (MovableContentStateReference) m3957removeLastimpl;
                         if (movableContentStateReference3 != null) {
                             hashMap2 = hashMap5;
                             this.movableContentNestedStatesAvailable.usedContainer(movableContentStateReference3);
                         } else {
                             hashMap2 = hashMap5;
                         }
-                        arrayList3.add(TuplesKt.to(movableContentStateReference2, m3945removeLastimpl));
+                        arrayList3.add(TuplesKt.to(movableContentStateReference2, m3957removeLastimpl));
                         i2++;
                         it2 = it3;
                         hashMap5 = hashMap2;
@@ -1916,7 +1937,7 @@ public final class Recomposer extends CompositionContext {
                                 for (Pair pair2 : arrayList4) {
                                     if (pair2.getSecond() == null && (removeLast = this.movableContentNestedStatesAvailable.removeLast(((MovableContentStateReference) pair2.getFirst()).getContent$runtime())) != null) {
                                         MovableContentStateReference content = removeLast.getContent();
-                                        MultiValueMap.m3931addimpl(this.movableContentNestedExtractionsPending, removeLast.getContainer(), content);
+                                        MultiValueMap.m3943addimpl(this.movableContentNestedExtractionsPending, removeLast.getContainer(), content);
                                         pair2 = TuplesKt.to(pair2.getFirst(), content);
                                     }
                                     arrayList5.add(pair2);

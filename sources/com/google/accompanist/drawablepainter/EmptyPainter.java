@@ -23,7 +23,7 @@ public final class EmptyPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5236getIntrinsicSizeNHjbRc() {
-        return Size.Companion.m4370getUnspecifiedNHjbRc();
+    public long mo5248getIntrinsicSizeNHjbRc() {
+        return Size.Companion.m4382getUnspecifiedNHjbRc();
     }
 }

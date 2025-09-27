@@ -2,7 +2,6 @@ package com.google.gson;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.gson.internal.Excluder;
-import com.google.gson.internal.GsonPreconditions;
 import com.google.gson.internal.bind.DefaultDateTypeAdapter;
 import com.google.gson.internal.bind.TreeTypeAdapter;
 import com.google.gson.internal.bind.TypeAdapters;
@@ -253,8 +252,11 @@ public final class GsonBuilder {
 
     public GsonBuilder registerTypeAdapter(Type type, Object obj) {
         Objects.requireNonNull(type);
+        Objects.requireNonNull(obj);
         boolean z = obj instanceof JsonSerializer;
-        GsonPreconditions.checkArgument(z || (obj instanceof JsonDeserializer) || (obj instanceof InstanceCreator) || (obj instanceof TypeAdapter));
+        if (!z && !(obj instanceof JsonDeserializer) && !(obj instanceof InstanceCreator) && !(obj instanceof TypeAdapter)) {
+            throw new IllegalArgumentException("Class " + obj.getClass().getName() + " does not implement any supported type adapter class or interface");
+        }
         if (hasNonOverridableAdapter(type)) {
             throw new IllegalArgumentException("Cannot override built-in adapter for " + type);
         }
@@ -282,8 +284,11 @@ public final class GsonBuilder {
 
     public GsonBuilder registerTypeHierarchyAdapter(Class<?> cls, Object obj) {
         Objects.requireNonNull(cls);
+        Objects.requireNonNull(obj);
         boolean z = obj instanceof JsonSerializer;
-        GsonPreconditions.checkArgument(z || (obj instanceof JsonDeserializer) || (obj instanceof TypeAdapter));
+        if (!z && !(obj instanceof JsonDeserializer) && !(obj instanceof TypeAdapter)) {
+            throw new IllegalArgumentException("Class " + obj.getClass().getName() + " does not implement any supported type adapter class or interface");
+        }
         if ((obj instanceof JsonDeserializer) || z) {
             this.hierarchyFactories.add(TreeTypeAdapter.newTypeHierarchyFactory(cls, obj));
         }

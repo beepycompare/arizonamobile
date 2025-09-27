@@ -1,110 +1,62 @@
 package androidx.compose.material.icons.outlined;
 
+import androidx.compose.material.icons.Icons;
+import androidx.compose.ui.graphics.Color;
+import androidx.compose.ui.graphics.SolidColor;
+import androidx.compose.ui.graphics.StrokeCap;
+import androidx.compose.ui.graphics.StrokeJoin;
 import androidx.compose.ui.graphics.vector.ImageVector;
+import androidx.compose.ui.graphics.vector.PathBuilder;
+import androidx.compose.ui.graphics.vector.VectorKt;
+import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Home.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\"\u0010\u0010\u0000\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000\"\u0015\u0010\u0002\u001a\u00020\u0001*\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005¨\u0006\u0006"}, d2 = {"_home", "Landroidx/compose/ui/graphics/vector/ImageVector;", "Home", "Landroidx/compose/material/icons/Icons$Outlined;", "getHome", "(Landroidx/compose/material/icons/Icons$Outlined;)Landroidx/compose/ui/graphics/vector/ImageVector;", "material-icons-core_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class HomeKt {
     private static ImageVector _home;
 
-    /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
-        jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.compose.ui.graphics.vector.ImageVector.Builder.addPath-oIyEayM$default(androidx.compose.ui.graphics.vector.ImageVector$Builder, java.util.List, int, java.lang.String, androidx.compose.ui.graphics.Brush, float, androidx.compose.ui.graphics.Brush, float, float, int, int, float, float, float, float, int, java.lang.Object):androidx.compose.ui.graphics.vector.ImageVector$Builder
-        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
-        	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException
-        */
-    public static final androidx.compose.ui.graphics.vector.ImageVector getHome(androidx.compose.material.icons.Icons.Outlined r18) {
-        /*
-            androidx.compose.ui.graphics.vector.ImageVector r0 = androidx.compose.material.icons.outlined.HomeKt._home
-            if (r0 == 0) goto L8
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r0)
-            return r0
-        L8:
-            androidx.compose.ui.graphics.vector.ImageVector$Builder r1 = new androidx.compose.ui.graphics.vector.ImageVector$Builder
-            r0 = 1103101952(0x41c00000, float:24.0)
-            float r3 = androidx.compose.ui.unit.Dp.m7251constructorimpl(r0)
-            float r4 = androidx.compose.ui.unit.Dp.m7251constructorimpl(r0)
-            r11 = 96
-            r12 = 0
-            java.lang.String r2 = "Outlined.Home"
-            r5 = 1103101952(0x41c00000, float:24.0)
-            r6 = 1103101952(0x41c00000, float:24.0)
-            r7 = 0
-            r9 = 0
-            r10 = 0
-            r1.<init>(r2, r3, r4, r5, r6, r7, r9, r10, r11, r12)
-            int r3 = androidx.compose.ui.graphics.vector.VectorKt.getDefaultFillType()
-            androidx.compose.ui.graphics.SolidColor r0 = new androidx.compose.ui.graphics.SolidColor
-            androidx.compose.ui.graphics.Color$Companion r2 = androidx.compose.ui.graphics.Color.Companion
-            long r4 = r2.m4563getBlack0d7_KjU()
-            r2 = 0
-            r0.<init>(r4, r2)
-            r5 = r0
-            androidx.compose.ui.graphics.Brush r5 = (androidx.compose.ui.graphics.Brush) r5
-            androidx.compose.ui.graphics.StrokeCap$Companion r0 = androidx.compose.ui.graphics.StrokeCap.Companion
-            int r10 = r0.m4907getButtKaPHkGw()
-            androidx.compose.ui.graphics.StrokeJoin$Companion r0 = androidx.compose.ui.graphics.StrokeJoin.Companion
-            int r11 = r0.m4917getBevelLxFBmk8()
-            androidx.compose.ui.graphics.vector.PathBuilder r0 = new androidx.compose.ui.graphics.vector.PathBuilder
-            r0.<init>()
-            r2 = 1085674619(0x40b6147b, float:5.69)
-            r4 = 1094713344(0x41400000, float:12.0)
-            r0.moveTo(r4, r2)
-            r2 = 1083179008(0x40900000, float:4.5)
-            r6 = 1084227584(0x40a00000, float:5.0)
-            r0.lineToRelative(r6, r2)
-            r2 = 1099956224(0x41900000, float:18.0)
-            r0.verticalLineTo(r2)
-            r2 = -1073741824(0xffffffffc0000000, float:-2.0)
-            r0.horizontalLineToRelative(r2)
-            r2 = -1061158912(0xffffffffc0c00000, float:-6.0)
-            r0.verticalLineToRelative(r2)
-            r7 = 1091567616(0x41100000, float:9.0)
-            r0.horizontalLineTo(r7)
-            r7 = 1086324736(0x40c00000, float:6.0)
-            r0.verticalLineToRelative(r7)
-            r8 = 1088421888(0x40e00000, float:7.0)
-            r0.horizontalLineTo(r8)
-            r8 = -1057363067(0xffffffffc0f9eb85, float:-7.81)
-            r0.verticalLineToRelative(r8)
-            r8 = -1064304640(0xffffffffc0900000, float:-4.5)
-            r0.lineToRelative(r6, r8)
-            r6 = 1077936128(0x40400000, float:3.0)
-            r0.moveTo(r4, r6)
-            r8 = 1073741824(0x40000000, float:2.0)
-            r0.lineTo(r8, r4)
-            r0.horizontalLineToRelative(r6)
-            r9 = 1090519040(0x41000000, float:8.0)
-            r0.verticalLineToRelative(r9)
-            r0.horizontalLineToRelative(r7)
-            r0.verticalLineToRelative(r2)
-            r0.horizontalLineToRelative(r8)
-            r0.verticalLineToRelative(r7)
-            r0.horizontalLineToRelative(r7)
-            r2 = -1056964608(0xffffffffc1000000, float:-8.0)
-            r0.verticalLineToRelative(r2)
-            r0.horizontalLineToRelative(r6)
-            r0.lineTo(r4, r6)
-            r0.close()
-            java.util.List r2 = r0.getNodes()
-            r16 = 14336(0x3800, float:2.0089E-41)
-            r17 = 0
-            java.lang.String r4 = ""
-            r6 = 1065353216(0x3f800000, float:1.0)
-            r7 = 0
-            r8 = 1065353216(0x3f800000, float:1.0)
-            r9 = 1065353216(0x3f800000, float:1.0)
-            r12 = 1065353216(0x3f800000, float:1.0)
-            r13 = 0
-            r14 = 0
-            r15 = 0
-            androidx.compose.ui.graphics.vector.ImageVector$Builder r0 = androidx.compose.ui.graphics.vector.ImageVector.Builder.m5273addPathoIyEayM$default(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17)
-            androidx.compose.ui.graphics.vector.ImageVector r0 = r0.build()
-            androidx.compose.material.icons.outlined.HomeKt._home = r0
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r0)
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.compose.material.icons.outlined.HomeKt.getHome(androidx.compose.material.icons.Icons$Outlined):androidx.compose.ui.graphics.vector.ImageVector");
+    public static final ImageVector getHome(Icons.Outlined outlined) {
+        ImageVector.Builder m5286addPathoIyEayM;
+        ImageVector imageVector = _home;
+        if (imageVector != null) {
+            Intrinsics.checkNotNull(imageVector);
+            return imageVector;
+        }
+        ImageVector.Builder builder = new ImageVector.Builder("Outlined.Home", Dp.m7264constructorimpl(24.0f), Dp.m7264constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 96, null);
+        int defaultFillType = VectorKt.getDefaultFillType();
+        SolidColor solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
+        int m4919getButtKaPHkGw = StrokeCap.Companion.m4919getButtKaPHkGw();
+        int m4929getBevelLxFBmk8 = StrokeJoin.Companion.m4929getBevelLxFBmk8();
+        PathBuilder pathBuilder = new PathBuilder();
+        pathBuilder.moveTo(12.0f, 5.69f);
+        pathBuilder.lineToRelative(5.0f, 4.5f);
+        pathBuilder.verticalLineTo(18.0f);
+        pathBuilder.horizontalLineToRelative(-2.0f);
+        pathBuilder.verticalLineToRelative(-6.0f);
+        pathBuilder.horizontalLineTo(9.0f);
+        pathBuilder.verticalLineToRelative(6.0f);
+        pathBuilder.horizontalLineTo(7.0f);
+        pathBuilder.verticalLineToRelative(-7.81f);
+        pathBuilder.lineToRelative(5.0f, -4.5f);
+        pathBuilder.moveTo(12.0f, 3.0f);
+        pathBuilder.lineTo(2.0f, 12.0f);
+        pathBuilder.horizontalLineToRelative(3.0f);
+        pathBuilder.verticalLineToRelative(8.0f);
+        pathBuilder.horizontalLineToRelative(6.0f);
+        pathBuilder.verticalLineToRelative(-6.0f);
+        pathBuilder.horizontalLineToRelative(2.0f);
+        pathBuilder.verticalLineToRelative(6.0f);
+        pathBuilder.horizontalLineToRelative(6.0f);
+        pathBuilder.verticalLineToRelative(-8.0f);
+        pathBuilder.horizontalLineToRelative(3.0f);
+        pathBuilder.lineTo(12.0f, 3.0f);
+        pathBuilder.close();
+        m5286addPathoIyEayM = builder.m5286addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4919getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4929getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
+        ImageVector build = m5286addPathoIyEayM.build();
+        _home = build;
+        Intrinsics.checkNotNull(build);
+        return build;
     }
 }

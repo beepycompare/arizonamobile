@@ -26,7 +26,7 @@ public final class ScrollingLogic2D implements ScrollLogic {
     private FlingBehavior flingBehavior;
     private boolean isFlinging;
     private final Function0<Boolean> isScrollableNodeAttached;
-    private int latestScrollSource = NestedScrollSource.Companion.m5719getUserInputWNlRxjI();
+    private int latestScrollSource = NestedScrollSource.Companion.m5732getUserInputWNlRxjI();
     private NestedScrollDispatcher nestedScrollDispatcher;
     private final ScrollingLogic2D$nestedScrollScope$1 nestedScrollScope;
     private Scroll2DScope outerStateScope;
@@ -47,32 +47,32 @@ public final class ScrollingLogic2D implements ScrollLogic {
         this.nestedScrollScope = new NestedScrollScope() { // from class: androidx.compose.foundation.gestures.ScrollingLogic2D$nestedScrollScope$1
             @Override // androidx.compose.foundation.gestures.NestedScrollScope
             /* renamed from: scrollBy-OzD1aCk */
-            public long mo523scrollByOzD1aCk(long j, int i) {
+            public long mo533scrollByOzD1aCk(long j, int i) {
                 Scroll2DScope scroll2DScope2;
-                long m590performScroll3eAAhYA;
+                long m600performScroll3eAAhYA;
                 scroll2DScope2 = ScrollingLogic2D.this.outerStateScope;
-                m590performScroll3eAAhYA = ScrollingLogic2D.this.m590performScroll3eAAhYA(scroll2DScope2, j, i);
-                return m590performScroll3eAAhYA;
+                m600performScroll3eAAhYA = ScrollingLogic2D.this.m600performScroll3eAAhYA(scroll2DScope2, j, i);
+                return m600performScroll3eAAhYA;
             }
 
             @Override // androidx.compose.foundation.gestures.NestedScrollScope
             /* renamed from: scrollByWithOverscroll-OzD1aCk */
-            public long mo524scrollByWithOverscrollOzD1aCk(long j, int i) {
+            public long mo534scrollByWithOverscrollOzD1aCk(long j, int i) {
                 OverscrollEffect overscrollEffect2;
                 Scroll2DScope scroll2DScope2;
-                long m590performScroll3eAAhYA;
+                long m600performScroll3eAAhYA;
                 int i2;
                 Function1<? super Offset, Offset> function1;
                 ScrollingLogic2D.this.latestScrollSource = i;
                 overscrollEffect2 = ScrollingLogic2D.this.overscrollEffect;
-                if (overscrollEffect2 == null || !ScrollingLogic2D.this.m594shouldDispatchOverscrollk4lQ0M(j)) {
+                if (overscrollEffect2 == null || !ScrollingLogic2D.this.m604shouldDispatchOverscrollk4lQ0M(j)) {
                     scroll2DScope2 = ScrollingLogic2D.this.outerStateScope;
-                    m590performScroll3eAAhYA = ScrollingLogic2D.this.m590performScroll3eAAhYA(scroll2DScope2, j, i);
-                    return m590performScroll3eAAhYA;
+                    m600performScroll3eAAhYA = ScrollingLogic2D.this.m600performScroll3eAAhYA(scroll2DScope2, j, i);
+                    return m600performScroll3eAAhYA;
                 }
                 i2 = ScrollingLogic2D.this.latestScrollSource;
                 function1 = ScrollingLogic2D.this.performScrollForOverscroll;
-                return overscrollEffect2.mo236applyToScrollRhakbz0(j, i2, function1);
+                return overscrollEffect2.mo246applyToScrollRhakbz0(j, i2, function1);
             }
         };
         this.performScrollForOverscroll = new Function1() { // from class: androidx.compose.foundation.gestures.ScrollingLogic2D$$ExternalSyntheticLambda0
@@ -100,60 +100,60 @@ public final class ScrollingLogic2D implements ScrollLogic {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset performScrollForOverscroll$lambda$1(ScrollingLogic2D scrollingLogic2D, Offset offset) {
-        return Offset.m4282boximpl(scrollingLogic2D.m590performScroll3eAAhYA(scrollingLogic2D.outerStateScope, offset.m4303unboximpl(), scrollingLogic2D.latestScrollSource));
+        return Offset.m4294boximpl(scrollingLogic2D.m600performScroll3eAAhYA(scrollingLogic2D.outerStateScope, offset.m4315unboximpl(), scrollingLogic2D.latestScrollSource));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: performScroll-3eAAhYA  reason: not valid java name */
-    public final long m590performScroll3eAAhYA(Scroll2DScope scroll2DScope, long j, int i) {
-        long m5703dispatchPreScrollOzD1aCk = this.nestedScrollDispatcher.m5703dispatchPreScrollOzD1aCk(j, i);
-        long m4297minusMKHz9U = Offset.m4297minusMKHz9U(j, m5703dispatchPreScrollOzD1aCk);
-        long mo463scrollByMKHz9U = scroll2DScope.mo463scrollByMKHz9U(m4297minusMKHz9U);
-        return Offset.m4298plusMKHz9U(Offset.m4298plusMKHz9U(m5703dispatchPreScrollOzD1aCk, mo463scrollByMKHz9U), this.nestedScrollDispatcher.m5701dispatchPostScrollDzOQY0M(mo463scrollByMKHz9U, Offset.m4297minusMKHz9U(m4297minusMKHz9U, mo463scrollByMKHz9U), i));
+    public final long m600performScroll3eAAhYA(Scroll2DScope scroll2DScope, long j, int i) {
+        long m5716dispatchPreScrollOzD1aCk = this.nestedScrollDispatcher.m5716dispatchPreScrollOzD1aCk(j, i);
+        long m4309minusMKHz9U = Offset.m4309minusMKHz9U(j, m5716dispatchPreScrollOzD1aCk);
+        long mo473scrollByMKHz9U = scroll2DScope.mo473scrollByMKHz9U(m4309minusMKHz9U);
+        return Offset.m4310plusMKHz9U(Offset.m4310plusMKHz9U(m5716dispatchPreScrollOzD1aCk, mo473scrollByMKHz9U), this.nestedScrollDispatcher.m5714dispatchPostScrollDzOQY0M(mo473scrollByMKHz9U, Offset.m4309minusMKHz9U(m4309minusMKHz9U, mo473scrollByMKHz9U), i));
     }
 
     /* renamed from: shouldDispatchOverscroll-k-4lQ0M  reason: not valid java name */
-    public final boolean m594shouldDispatchOverscrollk4lQ0M(long j) {
-        return this.scrollableState.mo461canScrollk4lQ0M(j);
+    public final boolean m604shouldDispatchOverscrollk4lQ0M(long j) {
+        return this.scrollableState.mo471canScrollk4lQ0M(j);
     }
 
     /* renamed from: shouldDispatchOverscroll-TH1AsA0  reason: not valid java name */
-    public final boolean m593shouldDispatchOverscrollTH1AsA0(long j) {
+    public final boolean m603shouldDispatchOverscrollTH1AsA0(long j) {
         Scrollable2DState scrollable2DState = this.scrollableState;
-        float m7489getXimpl = Velocity.m7489getXimpl(j);
-        return scrollable2DState.mo461canScrollk4lQ0M(Offset.m4285constructorimpl((Float.floatToRawIntBits(Velocity.m7490getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(m7489getXimpl) << 32)));
+        float m7502getXimpl = Velocity.m7502getXimpl(j);
+        return scrollable2DState.mo471canScrollk4lQ0M(Offset.m4297constructorimpl((Float.floatToRawIntBits(Velocity.m7503getYimpl(j)) & 4294967295L) | (Float.floatToRawIntBits(m7502getXimpl) << 32)));
     }
 
     @Override // androidx.compose.foundation.gestures.ScrollLogic
     /* renamed from: performRawScroll-MK-Hz9U */
-    public long mo554performRawScrollMKHz9U(long j) {
+    public long mo564performRawScrollMKHz9U(long j) {
         if (this.scrollableState.isScrollInProgress()) {
-            return Offset.Companion.m4309getZeroF1C5BW0();
+            return Offset.Companion.m4321getZeroF1C5BW0();
         }
-        return m589dispatchRawDeltaMKHz9U(j);
+        return m599dispatchRawDeltaMKHz9U(j);
     }
 
     /* renamed from: dispatchRawDelta-MK-Hz9U  reason: not valid java name */
-    private final long m589dispatchRawDeltaMKHz9U(long j) {
-        return this.scrollableState.mo462dispatchRawDeltaMKHz9U(j);
+    private final long m599dispatchRawDeltaMKHz9U(long j) {
+        return this.scrollableState.mo472dispatchRawDeltaMKHz9U(j);
     }
 
     /* renamed from: onScrollStopped-sF-c-tU  reason: not valid java name */
-    public final Object m592onScrollStoppedsFctU(long j, Continuation<? super Unit> continuation) {
+    public final Object m602onScrollStoppedsFctU(long j, Continuation<? super Unit> continuation) {
         ScrollingLogic2D$onScrollStopped$performFling$1 scrollingLogic2D$onScrollStopped$performFling$1 = new ScrollingLogic2D$onScrollStopped$performFling$1(this, null);
         OverscrollEffect overscrollEffect = this.overscrollEffect;
-        if (overscrollEffect != null && m593shouldDispatchOverscrollTH1AsA0(j)) {
-            Object mo235applyToFlingBMRW4eQ = overscrollEffect.mo235applyToFlingBMRW4eQ(j, scrollingLogic2D$onScrollStopped$performFling$1, continuation);
-            return mo235applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo235applyToFlingBMRW4eQ : Unit.INSTANCE;
+        if (overscrollEffect != null && m603shouldDispatchOverscrollTH1AsA0(j)) {
+            Object mo245applyToFlingBMRW4eQ = overscrollEffect.mo245applyToFlingBMRW4eQ(j, scrollingLogic2D$onScrollStopped$performFling$1, continuation);
+            return mo245applyToFlingBMRW4eQ == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? mo245applyToFlingBMRW4eQ : Unit.INSTANCE;
         }
-        Object invoke = scrollingLogic2D$onScrollStopped$performFling$1.invoke(Velocity.m7480boximpl(j), continuation);
+        Object invoke = scrollingLogic2D$onScrollStopped$performFling$1.invoke(Velocity.m7493boximpl(j), continuation);
         return invoke == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invoke : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: shouldCancelFling-k-4lQ0M  reason: not valid java name */
-    public final boolean m591shouldCancelFlingk4lQ0M(long j) {
-        return (this.scrollableState.mo461canScrollk4lQ0M(j) && this.isScrollableNodeAttached.invoke().booleanValue()) ? false : true;
+    public final boolean m601shouldCancelFlingk4lQ0M(long j) {
+        return (this.scrollableState.mo471canScrollk4lQ0M(j) && this.isScrollableNodeAttached.invoke().booleanValue()) ? false : true;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -163,7 +163,7 @@ public final class ScrollingLogic2D implements ScrollLogic {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo553doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public Object mo563doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         ScrollingLogic2D$doFlingAnimation$1 scrollingLogic2D$doFlingAnimation$1;
         int i;
         ScrollingLogic2D scrollingLogic2D;
@@ -216,7 +216,7 @@ public final class ScrollingLogic2D implements ScrollLogic {
                     }
                 }
                 scrollingLogic2D.isFlinging = false;
-                return Velocity.m7480boximpl(longRef.element);
+                return Velocity.m7493boximpl(longRef.element);
             }
         }
         scrollingLogic2D$doFlingAnimation$1 = new ScrollingLogic2D$doFlingAnimation$1(this, continuation);
@@ -226,35 +226,35 @@ public final class ScrollingLogic2D implements ScrollLogic {
         if (i != 0) {
         }
         scrollingLogic2D.isFlinging = false;
-        return Velocity.m7480boximpl(longRef.element);
+        return Velocity.m7493boximpl(longRef.element);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long doFlingAnimation_QWom1Mo$toDecomposedOffset(float f, long j) {
-        float m558getAngleTH1AsA0;
-        float m558getAngleTH1AsA02;
-        float m558getAngleTH1AsA03;
-        m558getAngleTH1AsA0 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-        if (!Float.isNaN(m558getAngleTH1AsA0)) {
-            m558getAngleTH1AsA02 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-            float abs = Math.abs(((float) Math.cos(m558getAngleTH1AsA02)) * f) * Math.signum(Velocity.m7489getXimpl(j));
-            m558getAngleTH1AsA03 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-            return Offset.m4285constructorimpl((Float.floatToRawIntBits(abs) << 32) | (Float.floatToRawIntBits(Math.abs(((float) Math.sin(m558getAngleTH1AsA03)) * f) * Math.signum(Velocity.m7490getYimpl(j))) & 4294967295L));
+        float m568getAngleTH1AsA0;
+        float m568getAngleTH1AsA02;
+        float m568getAngleTH1AsA03;
+        m568getAngleTH1AsA0 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+        if (!Float.isNaN(m568getAngleTH1AsA0)) {
+            m568getAngleTH1AsA02 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+            float abs = Math.abs(((float) Math.cos(m568getAngleTH1AsA02)) * f) * Math.signum(Velocity.m7502getXimpl(j));
+            m568getAngleTH1AsA03 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+            return Offset.m4297constructorimpl((Float.floatToRawIntBits(abs) << 32) | (Float.floatToRawIntBits(Math.abs(((float) Math.sin(m568getAngleTH1AsA03)) * f) * Math.signum(Velocity.m7503getYimpl(j))) & 4294967295L));
         }
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long doFlingAnimation_QWom1Mo$toDecomposedVelocity(float f, long j) {
-        float m558getAngleTH1AsA0;
-        float m558getAngleTH1AsA02;
-        float m558getAngleTH1AsA03;
-        m558getAngleTH1AsA0 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-        if (!Float.isNaN(m558getAngleTH1AsA0)) {
-            m558getAngleTH1AsA02 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-            float abs = Math.abs(((float) Math.cos(m558getAngleTH1AsA02)) * f) * Math.signum(Velocity.m7489getXimpl(j));
-            m558getAngleTH1AsA03 = Scrollable2DKt.m558getAngleTH1AsA0(j);
-            return VelocityKt.Velocity(abs, Math.abs(((float) Math.sin(m558getAngleTH1AsA03)) * f) * Math.signum(Velocity.m7490getYimpl(j)));
+        float m568getAngleTH1AsA0;
+        float m568getAngleTH1AsA02;
+        float m568getAngleTH1AsA03;
+        m568getAngleTH1AsA0 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+        if (!Float.isNaN(m568getAngleTH1AsA0)) {
+            m568getAngleTH1AsA02 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+            float abs = Math.abs(((float) Math.cos(m568getAngleTH1AsA02)) * f) * Math.signum(Velocity.m7502getXimpl(j));
+            m568getAngleTH1AsA03 = Scrollable2DKt.m568getAngleTH1AsA0(j);
+            return VelocityKt.Velocity(abs, Math.abs(((float) Math.sin(m568getAngleTH1AsA03)) * f) * Math.signum(Velocity.m7503getYimpl(j)));
         }
         return VelocityKt.Velocity(0.0f, f);
     }

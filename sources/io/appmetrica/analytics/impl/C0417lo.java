@@ -17,7 +17,7 @@ public final class C0417lo extends MessageNano {
     public static volatile C0417lo[] i;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f980a;
+    public byte[] f981a;
     public int b;
     public C0443mo c;
     public C0469no d;
@@ -38,7 +38,7 @@ public final class C0417lo extends MessageNano {
     }
 
     public final C0417lo a() {
-        this.f980a = WireFormatNano.EMPTY_BYTES;
+        this.f981a = WireFormatNano.EMPTY_BYTES;
         this.b = 0;
         this.c = null;
         this.d = null;
@@ -48,7 +48,7 @@ public final class C0417lo extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeInt32Size = CodedOutputByteBufferNano.computeInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBytesSize(1, this.f980a) + super.computeSerializedSize();
+        int computeInt32Size = CodedOutputByteBufferNano.computeInt32Size(2, this.b) + CodedOutputByteBufferNano.computeBytesSize(1, this.f981a) + super.computeSerializedSize();
         C0443mo c0443mo = this.c;
         if (c0443mo != null) {
             computeInt32Size += CodedOutputByteBufferNano.computeMessageSize(3, c0443mo);
@@ -59,7 +59,7 @@ public final class C0417lo extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeBytes(1, this.f980a);
+        codedOutputByteBufferNano.writeBytes(1, this.f981a);
         codedOutputByteBufferNano.writeInt32(2, this.b);
         C0443mo c0443mo = this.c;
         if (c0443mo != null) {
@@ -80,7 +80,7 @@ public final class C0417lo extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f980a = codedInputByteBufferNano.readBytes();
+                this.f981a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 16) {
                 int readInt32 = codedInputByteBufferNano.readInt32();
                 if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {

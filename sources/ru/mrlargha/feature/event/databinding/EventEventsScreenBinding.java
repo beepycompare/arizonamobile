@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class EventEventsScreenBinding implements ViewBinding {
     public final EventEventsItemBinding event1;
     public final EventEventsItemBinding event2;

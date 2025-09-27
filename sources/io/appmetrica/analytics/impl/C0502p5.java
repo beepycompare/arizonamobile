@@ -7,17 +7,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class C0502p5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f1031a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f1032a = new CopyOnWriteArrayList();
 
     public final void a(D4 d4) {
-        this.f1031a.add(d4);
+        this.f1032a.add(d4);
     }
 
     public final void b(D4 d4) {
-        this.f1031a.remove(d4);
+        this.f1032a.remove(d4);
     }
 
     public final List<D4> a() {
-        return this.f1031a;
+        return this.f1032a;
     }
 }

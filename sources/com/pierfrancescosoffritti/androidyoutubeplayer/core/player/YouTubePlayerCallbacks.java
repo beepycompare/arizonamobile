@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: YouTubePlayerCallbacks.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u000e\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u0006J\u0018\u0010\r\u001a\u00020\u000e2\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0010H\u0007R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerCallbacks;", "", "()V", "booleanCallbacks", "Ljava/util/concurrent/ConcurrentHashMap;", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/BooleanProvider;", "mainThreadHandler", "Landroid/os/Handler;", "requestId", "Ljava/util/concurrent/atomic/AtomicLong;", "registerBooleanCallback", "callback", "sendBooleanValue", "", "value", "", "core_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\f\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\tJ\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\n\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\u0011H\u0007R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayerCallbacks;", "", "<init>", "()V", "mainThreadHandler", "Landroid/os/Handler;", "booleanCallbacks", "Ljava/util/concurrent/ConcurrentHashMap;", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/BooleanProvider;", "requestId", "Ljava/util/concurrent/atomic/AtomicLong;", "registerBooleanCallback", "callback", "sendBooleanValue", "", "value", "", "core_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class YouTubePlayerCallbacks {
     private final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
@@ -33,9 +33,8 @@ public final class YouTubePlayerCallbacks {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendBooleanValue$lambda$0(YouTubePlayerCallbacks this$0, long j, boolean z) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        BooleanProvider remove = this$0.booleanCallbacks.remove(Long.valueOf(j));
+    public static final void sendBooleanValue$lambda$0(YouTubePlayerCallbacks youTubePlayerCallbacks, long j, boolean z) {
+        BooleanProvider remove = youTubePlayerCallbacks.booleanCallbacks.remove(Long.valueOf(j));
         if (remove != null) {
             remove.accept(z);
         }

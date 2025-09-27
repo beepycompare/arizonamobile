@@ -3,40 +3,40 @@ package ru.rustore.sdk.metrics.internal;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public abstract class W {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class a extends W {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1442a = new a();
+        public static final a f1443a = new a();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class b extends W {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<D> f1443a;
+        public final List<D> f1444a;
 
         public b(ArrayList values) {
             Intrinsics.checkNotNullParameter(values, "values");
-            this.f1443a = values;
+            this.f1444a = values;
         }
 
         public final boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof b) && Intrinsics.areEqual(this.f1443a, ((b) obj).f1443a);
+            return (obj instanceof b) && Intrinsics.areEqual(this.f1444a, ((b) obj).f1444a);
         }
 
         public final int hashCode() {
-            return this.f1443a.hashCode();
+            return this.f1444a.hashCode();
         }
 
         public final String toString() {
-            return "Sent(values=" + this.f1443a + ')';
+            return "Sent(values=" + this.f1444a + ')';
         }
     }
 }

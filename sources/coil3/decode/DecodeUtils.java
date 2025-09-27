@@ -99,7 +99,7 @@ public final class DecodeUtils {
 
     @JvmStatic
     /* renamed from: computeDstSize-sEdh43o  reason: not valid java name */
-    public static final long m8356computeDstSizesEdh43o(int i, int i2, Size size, Scale scale, Size size2) {
+    public static final long m8368computeDstSizesEdh43o(int i, int i2, Size size, Scale scale, Size size2) {
         if (!SizeKt.isOriginal(size)) {
             DecodeUtils decodeUtils = INSTANCE;
             int px = decodeUtils.toPx(size.getWidth(), scale);
@@ -107,17 +107,17 @@ public final class DecodeUtils {
             i = px;
         }
         if ((size2.getWidth() instanceof Dimension.Pixels) && !UtilsKt.isMinOrMax(i)) {
-            i = RangesKt.coerceAtMost(i, ((Dimension.Pixels) size2.getWidth()).m8405unboximpl());
+            i = RangesKt.coerceAtMost(i, ((Dimension.Pixels) size2.getWidth()).m8417unboximpl());
         }
         if ((size2.getHeight() instanceof Dimension.Pixels) && !UtilsKt.isMinOrMax(i2)) {
-            i2 = RangesKt.coerceAtMost(i2, ((Dimension.Pixels) size2.getHeight()).m8405unboximpl());
+            i2 = RangesKt.coerceAtMost(i2, ((Dimension.Pixels) size2.getHeight()).m8417unboximpl());
         }
-        return IntPair.m8410constructorimpl(i, i2);
+        return IntPair.m8422constructorimpl(i, i2);
     }
 
     private final int toPx(Dimension dimension, Scale scale) {
         if (dimension instanceof Dimension.Pixels) {
-            return ((Dimension.Pixels) dimension).m8405unboximpl();
+            return ((Dimension.Pixels) dimension).m8417unboximpl();
         }
         int i = WhenMappings.$EnumSwitchMapping$0[scale.ordinal()];
         if (i != 1) {

@@ -6,17 +6,17 @@ import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 public final class RunnableC0463ni implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f1006a;
+    public final /* synthetic */ ECommerceEvent f1007a;
     public final /* synthetic */ Ci b;
 
     public RunnableC0463ni(Ci ci, ECommerceEvent eCommerceEvent) {
         this.b = ci;
-        this.f1006a = eCommerceEvent;
+        this.f1007a = eCommerceEvent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Ci ci = this.b;
-        Ci.a(ci.f392a, ci.d, ci.e).reportECommerce(this.f1006a);
+        Ci.a(ci.f393a, ci.d, ci.e).reportECommerce(this.f1007a);
     }
 }

@@ -12,18 +12,24 @@ import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 /* compiled from: ActivityResultRegistry.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\bÇ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0019\u0010\t\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\n2\u0006\u0010\u000b\u001a\u00020\u0005H\u0086\u0004R\u0016\u0010\u0003\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00050\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u00058G¢\u0006\u0006\u001a\u0004\b\u0007\u0010\b¨\u0006\f"}, d2 = {"Landroidx/activity/compose/LocalActivityResultRegistryOwner;", "", "()V", "LocalComposition", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/activity/result/ActivityResultRegistryOwner;", "current", "getCurrent", "(Landroidx/compose/runtime/Composer;I)Landroidx/activity/result/ActivityResultRegistryOwner;", "provides", "Landroidx/compose/runtime/ProvidedValue;", "registryOwner", "activity-compose_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0019\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u000b2\u0006\u0010\f\u001a\u00020\u0006H\u0086\u0004R\u0016\u0010\u0004\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u00068G¢\u0006\u0006\u001a\u0004\b\b\u0010\t¨\u0006\r"}, d2 = {"Landroidx/activity/compose/LocalActivityResultRegistryOwner;", "", "<init>", "()V", "LocalComposition", "Landroidx/compose/runtime/ProvidableCompositionLocal;", "Landroidx/activity/result/ActivityResultRegistryOwner;", "current", "getCurrent", "(Landroidx/compose/runtime/Composer;I)Landroidx/activity/result/ActivityResultRegistryOwner;", "provides", "Landroidx/compose/runtime/ProvidedValue;", "registryOwner", "activity-compose_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LocalActivityResultRegistryOwner {
     public static final int $stable = 0;
     public static final LocalActivityResultRegistryOwner INSTANCE = new LocalActivityResultRegistryOwner();
-    private static final ProvidableCompositionLocal<ActivityResultRegistryOwner> LocalComposition = CompositionLocalKt.compositionLocalOf$default(null, new Function0<ActivityResultRegistryOwner>() { // from class: androidx.activity.compose.LocalActivityResultRegistryOwner$LocalComposition$1
-        /* JADX WARN: Can't rename method to resolve collision */
+    private static final ProvidableCompositionLocal<ActivityResultRegistryOwner> LocalComposition = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.activity.compose.LocalActivityResultRegistryOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
-        public final ActivityResultRegistryOwner invoke() {
-            return null;
+        public final Object invoke() {
+            ActivityResultRegistryOwner LocalComposition$lambda$0;
+            LocalComposition$lambda$0 = LocalActivityResultRegistryOwner.LocalComposition$lambda$0();
+            return LocalComposition$lambda$0;
         }
     }, 1, null);
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final ActivityResultRegistryOwner LocalComposition$lambda$0() {
+        return null;
+    }
 
     private LocalActivityResultRegistryOwner() {
     }
@@ -38,8 +44,8 @@ public final class LocalActivityResultRegistryOwner {
         ComposerKt.sourceInformationMarkerEnd(composer);
         ActivityResultRegistryOwner activityResultRegistryOwner = (ActivityResultRegistryOwner) consume;
         if (activityResultRegistryOwner == null) {
-            composer.startReplaceGroup(1006590171);
-            ComposerKt.sourceInformation(composer, "*48@2022L7");
+            composer.startReplaceGroup(1213380307);
+            ComposerKt.sourceInformation(composer, "48@2022L7");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -56,7 +62,7 @@ public final class LocalActivityResultRegistryOwner {
             }
             activityResultRegistryOwner = (ActivityResultRegistryOwner) context;
         } else {
-            composer.startReplaceGroup(1006589303);
+            composer.startReplaceGroup(1213379439);
         }
         composer.endReplaceGroup();
         if (ComposerKt.isTraceInProgress()) {

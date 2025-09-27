@@ -6,11 +6,11 @@ import io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo;
 public final class C0281gh implements RemoteConfigMetaInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f897a;
+    public final long f898a;
     public final long b;
 
     public C0281gh(long j, long j2) {
-        this.f897a = j;
+        this.f898a = j;
         this.b = j2;
     }
 
@@ -28,14 +28,14 @@ public final class C0281gh implements RemoteConfigMetaInfo {
         }
         if (obj instanceof C0281gh) {
             C0281gh c0281gh = (C0281gh) obj;
-            return this.f897a == c0281gh.f897a && this.b == c0281gh.b;
+            return this.f898a == c0281gh.f898a && this.b == c0281gh.b;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
     public final long getFirstSendTime() {
-        return this.f897a;
+        return this.f898a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
@@ -44,20 +44,20 @@ public final class C0281gh implements RemoteConfigMetaInfo {
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f897a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f898a) * 31);
     }
 
     public final String toString() {
-        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f897a + ", lastUpdateTime=" + this.b + ')';
+        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f898a + ", lastUpdateTime=" + this.b + ')';
     }
 
     public final long a() {
-        return this.f897a;
+        return this.f898a;
     }
 
     public static C0281gh a(C0281gh c0281gh, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = c0281gh.f897a;
+            j = c0281gh.f898a;
         }
         if ((i & 2) != 0) {
             j2 = c0281gh.b;

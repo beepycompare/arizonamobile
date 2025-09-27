@@ -20,50 +20,50 @@ public interface PressGestureScope extends Density {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m538roundToPxR2X_6o(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo412roundToPxR2X_6o(j);
+        public static int m548roundToPxR2X_6o(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo422roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m539roundToPx0680j_4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo413roundToPx0680j_4(f);
+        public static int m549roundToPx0680j_4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo423roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m540toDpGaN1DYA(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo414toDpGaN1DYA(j);
+        public static float m550toDpGaN1DYA(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo424toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m541toDpu2uoSUM(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo415toDpu2uoSUM(f);
+        public static float m551toDpu2uoSUM(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo425toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m542toDpu2uoSUM(PressGestureScope pressGestureScope, int i) {
-            return PressGestureScope.super.mo416toDpu2uoSUM(i);
+        public static float m552toDpu2uoSUM(PressGestureScope pressGestureScope, int i) {
+            return PressGestureScope.super.mo426toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m543toDpSizekrfVVM(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo417toDpSizekrfVVM(j);
+        public static long m553toDpSizekrfVVM(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo427toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m544toPxR2X_6o(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo418toPxR2X_6o(j);
+        public static float m554toPxR2X_6o(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo428toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m545toPx0680j_4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo419toPx0680j_4(f);
+        public static float m555toPx0680j_4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo429toPx0680j_4(f);
         }
 
         @Deprecated
@@ -73,26 +73,26 @@ public interface PressGestureScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m546toSizeXkaWNTQ(PressGestureScope pressGestureScope, long j) {
-            return PressGestureScope.super.mo420toSizeXkaWNTQ(j);
+        public static long m556toSizeXkaWNTQ(PressGestureScope pressGestureScope, long j) {
+            return PressGestureScope.super.mo430toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m547toSp0xMU5do(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo421toSp0xMU5do(f);
+        public static long m557toSp0xMU5do(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo431toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m548toSpkPz2Gy4(PressGestureScope pressGestureScope, float f) {
-            return PressGestureScope.super.mo422toSpkPz2Gy4(f);
+        public static long m558toSpkPz2Gy4(PressGestureScope pressGestureScope, float f) {
+            return PressGestureScope.super.mo432toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m549toSpkPz2Gy4(PressGestureScope pressGestureScope, int i) {
-            return PressGestureScope.super.mo423toSpkPz2Gy4(i);
+        public static long m559toSpkPz2Gy4(PressGestureScope pressGestureScope, int i) {
+            return PressGestureScope.super.mo433toSpkPz2Gy4(i);
         }
     }
 }

@@ -29,28 +29,28 @@ public final class AndroidConfig implements ScrollConfig {
         if (Build.VERSION.SDK_INT > 26) {
             return ViewConfigurationApi26Impl.INSTANCE.getVerticalScrollFactor(this.viewConfiguration);
         }
-        return density.mo419toPx0680j_4(Dp.m7251constructorimpl(64));
+        return density.mo429toPx0680j_4(Dp.m7264constructorimpl(64));
     }
 
     public final float getHorizontalScrollFactor$foundation_release(Density density) {
         if (Build.VERSION.SDK_INT > 26) {
             return ViewConfigurationApi26Impl.INSTANCE.getHorizontalScrollFactor(this.viewConfiguration);
         }
-        return density.mo419toPx0680j_4(Dp.m7251constructorimpl(64));
+        return density.mo429toPx0680j_4(Dp.m7264constructorimpl(64));
     }
 
     @Override // androidx.compose.foundation.gestures.ScrollConfig
     /* renamed from: calculateMouseWheelScroll-8xgXZGE  reason: not valid java name */
-    public long mo447calculateMouseWheelScroll8xgXZGE(Density density, PointerEvent pointerEvent, long j) {
+    public long mo457calculateMouseWheelScroll8xgXZGE(Density density, PointerEvent pointerEvent, long j) {
         float f = -getVerticalScrollFactor$foundation_release(density);
         float f2 = -getHorizontalScrollFactor$foundation_release(density);
         List<PointerInputChange> changes = pointerEvent.getChanges();
-        Offset m4282boximpl = Offset.m4282boximpl(Offset.Companion.m4309getZeroF1C5BW0());
+        Offset m4294boximpl = Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0());
         int size = changes.size();
         for (int i = 0; i < size; i++) {
-            m4282boximpl = Offset.m4282boximpl(Offset.m4298plusMKHz9U(m4282boximpl.m4303unboximpl(), changes.get(i).m5828getScrollDeltaF1C5BW0()));
+            m4294boximpl = Offset.m4294boximpl(Offset.m4310plusMKHz9U(m4294boximpl.m4315unboximpl(), changes.get(i).m5841getScrollDeltaF1C5BW0()));
         }
-        long m4303unboximpl = m4282boximpl.m4303unboximpl();
-        return Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4303unboximpl >> 32)) * f2) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4303unboximpl & 4294967295L)) * f) & 4294967295L));
+        long m4315unboximpl = m4294boximpl.m4315unboximpl();
+        return Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4315unboximpl >> 32)) * f2) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (m4315unboximpl & 4294967295L)) * f) & 4294967295L));
     }
 }

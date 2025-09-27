@@ -10,17 +10,17 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
 public final class C0459ne implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final D5 f1004a;
+    public final D5 f1005a;
     public final String b = new C0339io().a();
     public final Bl c = new Bl();
 
     public C0459ne(Context context) {
-        this.f1004a = new D5(new N5(context), new Li(Na.j().g()));
+        this.f1005a = new D5(new N5(context), new Li(Na.j().g()));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
     public final IExecutionPolicy getExecutionPolicy() {
-        return this.f1004a;
+        return this.f1005a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext

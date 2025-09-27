@@ -43,36 +43,36 @@ public final class InnerShadowRenderer extends ShadowRenderer {
     }
 
     /* renamed from: obtainMatrix-sQKQjiQ  reason: not valid java name */
-    private final float[] m5258obtainMatrixsQKQjiQ() {
+    private final float[] m5270obtainMatrixsQKQjiQ() {
         float[] fArr = this.matrix;
         if (fArr == null) {
-            float[] m4779constructorimpl$default = Matrix.m4779constructorimpl$default(null, 1, null);
-            this.matrix = m4779constructorimpl$default;
-            return m4779constructorimpl$default;
+            float[] m4791constructorimpl$default = Matrix.m4791constructorimpl$default(null, 1, null);
+            this.matrix = m4791constructorimpl$default;
+            return m4791constructorimpl$default;
         }
         return fArr;
     }
 
     @Override // androidx.compose.ui.graphics.shadow.ShadowRenderer
     /* renamed from: buildShadow-_SMYjrA */
-    protected void mo5254buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path) {
-        ShaderBrush m5257createInnerShadowBrushu1Psq8;
-        float f = drawScope.mo419toPx0680j_4(this.shadow.m5262getRadiusD9Ej5fM());
-        float f2 = drawScope.mo419toPx0680j_4(this.shadow.m5263getSpreadD9Ej5fM());
-        float f3 = drawScope.mo419toPx0680j_4(DpOffset.m7312getXD9Ej5fM(this.shadow.m5261getOffsetRKDOV3M()));
-        float f4 = drawScope.mo419toPx0680j_4(DpOffset.m7314getYD9Ej5fM(this.shadow.m5261getOffsetRKDOV3M()));
+    protected void mo5266buildShadow_SMYjrA(DrawScope drawScope, long j, long j2, Path path) {
+        ShaderBrush m5269createInnerShadowBrushu1Psq8;
+        float f = drawScope.mo429toPx0680j_4(this.shadow.m5274getRadiusD9Ej5fM());
+        float f2 = drawScope.mo429toPx0680j_4(this.shadow.m5275getSpreadD9Ej5fM());
+        float f3 = drawScope.mo429toPx0680j_4(DpOffset.m7325getXD9Ej5fM(this.shadow.m5273getOffsetRKDOV3M()));
+        float f4 = drawScope.mo429toPx0680j_4(DpOffset.m7327getYD9Ej5fM(this.shadow.m5273getOffsetRKDOV3M()));
         if (path != null) {
-            m5257createInnerShadowBrushu1Psq8 = m5256createInnerPathShadowBrushLjSzlW0(j, path, f, f2, f3, f4);
+            m5269createInnerShadowBrushu1Psq8 = m5268createInnerPathShadowBrushLjSzlW0(j, path, f, f2, f3, f4);
         } else {
-            m5257createInnerShadowBrushu1Psq8 = m5257createInnerShadowBrushu1Psq8(j, f, f2, f3, f4, j2);
+            m5269createInnerShadowBrushu1Psq8 = m5269createInnerShadowBrushu1Psq8(j, f, f2, f3, f4, j2);
         }
-        this.shadowMask = m5257createInnerShadowBrushu1Psq8;
+        this.shadowMask = m5269createInnerShadowBrushu1Psq8;
     }
 
     private final CompositeShaderBrush obtainCompositeBrush(ShaderBrush shaderBrush, Brush brush) {
         CompositeShaderBrush compositeShaderBrush = this.compositeShader;
         if (compositeShaderBrush == null || !Intrinsics.areEqual(compositeShaderBrush.getSrcBrush(), brush)) {
-            CompositeShaderBrush compositeShaderBrush2 = new CompositeShaderBrush(BrushKt.toShaderBrush(shaderBrush), BrushKt.toShaderBrush(brush), BlendMode.Companion.m4476getSrcIn0nO6VwU(), null);
+            CompositeShaderBrush compositeShaderBrush2 = new CompositeShaderBrush(BrushKt.toShaderBrush(shaderBrush), BrushKt.toShaderBrush(brush), BlendMode.Companion.m4488getSrcIn0nO6VwU(), null);
             this.compositeShader = compositeShaderBrush2;
             return compositeShaderBrush2;
         }
@@ -81,24 +81,24 @@ public final class InnerShadowRenderer extends ShadowRenderer {
 
     @Override // androidx.compose.ui.graphics.shadow.ShadowRenderer
     /* renamed from: onDrawShadow-MLmccfk */
-    protected void mo5255onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i) {
+    protected void mo5267onDrawShadowMLmccfk(DrawScope drawScope, long j, long j2, Path path, float f, ColorFilter colorFilter, Brush brush, int i) {
         CompositeShaderBrush compositeShaderBrush = this.shadowMask;
         if (compositeShaderBrush != null) {
             if (this.shadow.getBrush() instanceof ShaderBrush) {
                 compositeShaderBrush = obtainCompositeBrush(compositeShaderBrush, this.shadow.getBrush());
             }
             if (path != null) {
-                DrawScope.m5105drawPathGBMwjPU$default(drawScope, path, compositeShaderBrush, f, null, colorFilter, i, 8, null);
-            } else if (CornerRadius.m4252equalsimpl0(j2, CornerRadius.Companion.m4265getZerokKHJgLs())) {
-                DrawScope.m5109drawRectAsUm42w$default(drawScope, compositeShaderBrush, 0L, 0L, f, null, colorFilter, i, 22, null);
+                DrawScope.m5117drawPathGBMwjPU$default(drawScope, path, compositeShaderBrush, f, null, colorFilter, i, 8, null);
+            } else if (CornerRadius.m4264equalsimpl0(j2, CornerRadius.Companion.m4277getZerokKHJgLs())) {
+                DrawScope.m5121drawRectAsUm42w$default(drawScope, compositeShaderBrush, 0L, 0L, f, null, colorFilter, i, 22, null);
             } else {
-                DrawScope.m5111drawRoundRectZuiqVtQ$default(drawScope, compositeShaderBrush, 0L, 0L, j2, f, null, colorFilter, this.shadow.m5259getBlendMode0nO6VwU(), 38, null);
+                DrawScope.m5123drawRoundRectZuiqVtQ$default(drawScope, compositeShaderBrush, 0L, 0L, j2, f, null, colorFilter, this.shadow.m5271getBlendMode0nO6VwU(), 38, null);
             }
         }
     }
 
     /* renamed from: createInnerPathShadowBrush-LjSzlW0  reason: not valid java name */
-    private final ShaderBrush m5256createInnerPathShadowBrushLjSzlW0(long j, Path path, float f, float f2, float f3, float f4) {
+    private final ShaderBrush m5268createInnerPathShadowBrushLjSzlW0(long j, Path path, float f, float f2, float f3, float f4) {
         ImageBitmap imageBitmap;
         int ceil = (int) Math.ceil(Float.intBitsToFloat((int) (j >> 32)));
         int ceil2 = (int) Math.ceil(Float.intBitsToFloat((int) (j & 4294967295L)));
@@ -106,43 +106,43 @@ public final class InnerShadowRenderer extends ShadowRenderer {
             Rect bounds = path.getBounds();
             float right = bounds.getRight() - bounds.getLeft();
             float bottom = bounds.getBottom() - bounds.getTop();
-            imageBitmap = ImageBitmapKt.m4774ImageBitmapx__hDU$default((int) Math.ceil(right), (int) Math.ceil(bottom), ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ(), false, null, 24, null);
+            imageBitmap = ImageBitmapKt.m4786ImageBitmapx__hDU$default((int) Math.ceil(right), (int) Math.ceil(bottom), ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ(), false, null, 24, null);
             Canvas Canvas = CanvasKt.Canvas(imageBitmap);
             Canvas.drawPath(path, this.paint);
-            Canvas.m4509clipRectN_I0leg$default(Canvas, 0.0f, 0.0f, right, bottom, 0, 16, null);
-            Paint m5251configureShadowFoewPVk$default = BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4451getClear0nO6VwU(), null, PaintingStyle.Companion.m4817getStrokeTiuSbCo(), 5, null);
-            m5251configureShadowFoewPVk$default.setStrokeWidth(2.0f * f2);
+            Canvas.m4521clipRectN_I0leg$default(Canvas, 0.0f, 0.0f, right, bottom, 0, 16, null);
+            Paint m5263configureShadowFoewPVk$default = BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4463getClear0nO6VwU(), null, PaintingStyle.Companion.m4829getStrokeTiuSbCo(), 5, null);
+            m5263configureShadowFoewPVk$default.setStrokeWidth(2.0f * f2);
             Unit unit = Unit.INSTANCE;
-            Canvas.drawPath(path, m5251configureShadowFoewPVk$default);
+            Canvas.drawPath(path, m5263configureShadowFoewPVk$default);
         } else {
             imageBitmap = null;
         }
         int ceil3 = ((int) Math.ceil(f)) * 2;
-        ImageBitmap m4774ImageBitmapx__hDU$default = ImageBitmapKt.m4774ImageBitmapx__hDU$default(ceil + ceil3, ceil2 + ceil3, ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ(), false, null, 24, null);
-        Canvas Canvas2 = CanvasKt.Canvas(m4774ImageBitmapx__hDU$default);
+        ImageBitmap m4786ImageBitmapx__hDU$default = ImageBitmapKt.m4786ImageBitmapx__hDU$default(ceil + ceil3, ceil2 + ceil3, ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ(), false, null, 24, null);
+        Canvas Canvas2 = CanvasKt.Canvas(m4786ImageBitmapx__hDU$default);
         if (imageBitmap != null) {
-            Canvas2.drawRect(0.0f, 0.0f, m4774ImageBitmapx__hDU$default.getWidth(), m4774ImageBitmapx__hDU$default.getHeight(), BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, 0, null, 0, 15, null));
-            Canvas2.mo4391drawImaged4ec7I(imageBitmap, Offset.m4285constructorimpl((4294967295L & Float.floatToRawIntBits(f4)) | (Float.floatToRawIntBits(f3) << 32)), BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4479getXor0nO6VwU(), f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 9, null));
-            return BrushKt.ShaderBrush(ShaderKt.m4866ImageShaderF49vj9s$default(m4774ImageBitmapx__hDU$default, 0, 0, 6, null));
+            Canvas2.drawRect(0.0f, 0.0f, m4786ImageBitmapx__hDU$default.getWidth(), m4786ImageBitmapx__hDU$default.getHeight(), BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, 0, null, 0, 15, null));
+            Canvas2.mo4403drawImaged4ec7I(imageBitmap, Offset.m4297constructorimpl((4294967295L & Float.floatToRawIntBits(f4)) | (Float.floatToRawIntBits(f3) << 32)), BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4491getXor0nO6VwU(), f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 9, null));
+            return BrushKt.ShaderBrush(ShaderKt.m4878ImageShaderF49vj9s$default(m4786ImageBitmapx__hDU$default, 0, 0, 6, null));
         }
         Canvas2.save();
         Canvas2.translate(f3, f4);
-        Canvas2.drawPath(path, BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 11, null));
+        Canvas2.drawPath(path, BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 11, null));
         Canvas2.restore();
-        Canvas2.drawRect(0.0f, 0.0f, m4774ImageBitmapx__hDU$default.getWidth(), m4774ImageBitmapx__hDU$default.getHeight(), BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4479getXor0nO6VwU(), null, 0, 13, null));
-        return BrushKt.ShaderBrush(ShaderKt.m4866ImageShaderF49vj9s$default(m4774ImageBitmapx__hDU$default, 0, 0, 6, null));
+        Canvas2.drawRect(0.0f, 0.0f, m4786ImageBitmapx__hDU$default.getWidth(), m4786ImageBitmapx__hDU$default.getHeight(), BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4491getXor0nO6VwU(), null, 0, 13, null));
+        return BrushKt.ShaderBrush(ShaderKt.m4878ImageShaderF49vj9s$default(m4786ImageBitmapx__hDU$default, 0, 0, 6, null));
     }
 
     /* renamed from: createInnerShadowBrush-u1Psq-8  reason: not valid java name */
-    private final ShaderBrush m5257createInnerShadowBrushu1Psq8(long j, float f, float f2, float f3, float f4, long j2) {
+    private final ShaderBrush m5269createInnerShadowBrushu1Psq8(long j, float f, float f2, float f3, float f4, long j2) {
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
-        ImageBitmap m4774ImageBitmapx__hDU$default = ImageBitmapKt.m4774ImageBitmapx__hDU$default((int) Math.ceil(Float.intBitsToFloat(i)), (int) Math.ceil(Float.intBitsToFloat(i2)), ImageBitmapConfig.Companion.m4768getAlpha8_sVssgQ(), false, null, 24, null);
-        Canvas Canvas = CanvasKt.Canvas(m4774ImageBitmapx__hDU$default);
+        ImageBitmap m4786ImageBitmapx__hDU$default = ImageBitmapKt.m4786ImageBitmapx__hDU$default((int) Math.ceil(Float.intBitsToFloat(i)), (int) Math.ceil(Float.intBitsToFloat(i2)), ImageBitmapConfig.Companion.m4780getAlpha8_sVssgQ(), false, null, 24, null);
+        Canvas Canvas = CanvasKt.Canvas(m4786ImageBitmapx__hDU$default);
         float f5 = f3 + f2;
         float f6 = f4 + f2;
-        Canvas.drawRoundRect(f5, f6, Math.max(f5, (f3 + Float.intBitsToFloat(i)) - f2), Math.max(f6, (f4 + Float.intBitsToFloat(i2)) - f2), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 11, null));
-        Canvas.drawRect(0.0f, 0.0f, m4774ImageBitmapx__hDU$default.getWidth(), m4774ImageBitmapx__hDU$default.getHeight(), BlurKt.m5251configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4479getXor0nO6VwU(), null, 0, 13, null));
-        return BrushKt.ShaderBrush(ShaderKt.m4866ImageShaderF49vj9s$default(m4774ImageBitmapx__hDU$default, 0, 0, 6, null));
+        Canvas.drawRoundRect(f5, f6, Math.max(f5, (f3 + Float.intBitsToFloat(i)) - f2), Math.max(f6, (f4 + Float.intBitsToFloat(i2)) - f2), Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat((int) (j2 & 4294967295L)), BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, 0, f > 0.0f ? Blur_androidKt.BlurFilter(f) : null, 0, 11, null));
+        Canvas.drawRect(0.0f, 0.0f, m4786ImageBitmapx__hDU$default.getWidth(), m4786ImageBitmapx__hDU$default.getHeight(), BlurKt.m5263configureShadowFoewPVk$default(this.paint, 0L, BlendMode.Companion.m4491getXor0nO6VwU(), null, 0, 13, null));
+        return BrushKt.ShaderBrush(ShaderKt.m4878ImageShaderF49vj9s$default(m4786ImageBitmapx__hDU$default, 0, 0, 6, null));
     }
 }

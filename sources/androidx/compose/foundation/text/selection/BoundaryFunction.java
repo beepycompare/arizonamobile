@@ -8,5 +8,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface BoundaryFunction {
     /* renamed from: getBoundary-fzxv0v0  reason: not valid java name */
-    long mo1727getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i);
+    long mo1737getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i);
 }

@@ -345,7 +345,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
         int i2 = (i >> 5) << 5;
         int size = (((size() - i2) + collection.size()) - 1) / 32;
         if (size == 0) {
-            CommonFunctionsKt.m3972assert(i >= rootSize());
+            CommonFunctionsKt.m3984assert(i >= rootSize());
             int i3 = i & 31;
             Object[] objArr2 = this.tail;
             Object[] copyInto2 = ArraysKt.copyInto(objArr2, makeMutable(objArr2), (((i + collection.size()) - 1) & 31) + 1, i3, tailSize());
@@ -495,7 +495,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
 
     private final Object removeFromTailAt(Object[] objArr, int i, int i2, int i3) {
         int size = size() - i;
-        CommonFunctionsKt.m3972assert(i3 < size);
+        CommonFunctionsKt.m3984assert(i3 < size);
         if (size == 1) {
             Object obj = this.tail[0];
             pullLastBufferFromRoot(objArr, i, i2);
@@ -622,7 +622,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
             i = removeAll(function1, leafBufferIterator.next(), 32, objectRef);
         }
         if (i == 32) {
-            CommonFunctionsKt.m3972assert(!leafBufferIterator.hasNext());
+            CommonFunctionsKt.m3984assert(!leafBufferIterator.hasNext());
             int removeAllFromTail = removeAllFromTail(function1, tailSize, objectRef);
             if (removeAllFromTail == 0) {
                 pullLastBufferFromRoot(this.root, size(), this.rootShift);
@@ -707,7 +707,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
     private final int removeAllFromTail(Function1<? super E, Boolean> function1, int i, ObjectRef objectRef) {
         int removeAll = removeAll(function1, this.tail, i, objectRef);
         if (removeAll == i) {
-            CommonFunctionsKt.m3972assert(objectRef.getValue() == this.tail);
+            CommonFunctionsKt.m3984assert(objectRef.getValue() == this.tail);
             return i;
         }
         Object value = objectRef.getValue();

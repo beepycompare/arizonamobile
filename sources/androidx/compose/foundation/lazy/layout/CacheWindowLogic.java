@@ -223,7 +223,7 @@ public abstract class CacheWindowLogic {
         }
         this.prefetchWindowEndExtraSpace = i5 - i3;
         this.prefetchWindowEndLine = i2;
-        while (this.prefetchWindowEndExtraSpace > 0 && (i7 = this.prefetchWindowEndLine) < i6 && this.windowCache.containsKey(i7 + 1)) {
+        while (this.prefetchWindowEndExtraSpace > 0 && (i7 = this.prefetchWindowEndLine) < i6 - 1 && this.windowCache.containsKey(i7 + 1)) {
             int i9 = this.windowCache.get(this.prefetchWindowEndLine + 1);
             this.prefetchWindowEndLine++;
             this.prefetchWindowEndExtraSpace -= i9;

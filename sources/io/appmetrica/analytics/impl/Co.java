@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public final class Co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Eo f397a;
+    public final Eo f398a;
 
     public Co(C0611tf c0611tf, Ba ba) {
-        this.f397a = new Eo(c0611tf, ba, new Fo() { // from class: io.appmetrica.analytics.impl.Co$$ExternalSyntheticLambda0
+        this.f398a = new Eo(c0611tf, ba, new Fo() { // from class: io.appmetrica.analytics.impl.Co$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Fo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Co.a(jSONObject, jSONObject2);
@@ -31,23 +31,23 @@ public final class Co {
     }
 
     public final synchronized void b(String str) {
-        Eo eo = this.f397a;
+        Eo eo = this.f398a;
         eo.a(eo.a().put("device_id_hash", str));
     }
 
     public final synchronized boolean c() {
-        return this.f397a.a().optBoolean("referrer_checked", false);
+        return this.f398a.a().optBoolean("referrer_checked", false);
     }
 
     public final synchronized void d() {
-        Eo eo = this.f397a;
+        Eo eo = this.f398a;
         eo.a(eo.a().put("referrer_checked", true));
     }
 
     public final synchronized Jg b() {
         byte[] decode;
         Jg jg;
-        String optStringOrNull = JsonUtils.optStringOrNull(this.f397a.a(), Constants.REFERRER);
+        String optStringOrNull = JsonUtils.optStringOrNull(this.f398a.a(), Constants.REFERRER);
         if (optStringOrNull != null) {
             try {
                 decode = Base64.decode(optStringOrNull.getBytes(Charsets.UTF_8), 0);
@@ -62,16 +62,16 @@ public final class Co {
     }
 
     public final synchronized void a(String str) {
-        Eo eo = this.f397a;
+        Eo eo = this.f398a;
         eo.a(eo.a().put("device_id", str));
     }
 
     public final synchronized String a() {
-        return JsonUtils.optStringOrNull(this.f397a.a(), "device_id_hash");
+        return JsonUtils.optStringOrNull(this.f398a.a(), "device_id_hash");
     }
 
     public final synchronized void a(Jg jg) {
-        Eo eo = this.f397a;
+        Eo eo = this.f398a;
         eo.a(eo.a().put(Constants.REFERRER, jg != null ? new String(Base64.encode(jg.a(), 0), Charsets.UTF_8) : null));
     }
 }

@@ -45,7 +45,7 @@ public final class CarouselStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        CarouselState carouselState = (CarouselState) RememberSaveableKt.m3982rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
+        CarouselState carouselState = (CarouselState) RememberSaveableKt.m3994rememberSaveable(objArr, saver, (String) null, (Function0<? extends Object>) rememberedValue, composer, 0, 4);
         carouselState.getItemCountState().setValue(function0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();

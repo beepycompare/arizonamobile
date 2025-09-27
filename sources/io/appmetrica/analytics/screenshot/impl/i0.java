@@ -3,11 +3,11 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1324a;
+    public final boolean f1325a;
     public final long b;
 
     public i0(boolean z, long j) {
-        this.f1324a = z;
+        this.f1325a = z;
         this.b = j;
     }
 
@@ -16,11 +16,11 @@ public final class i0 {
     }
 
     public final boolean b() {
-        return this.f1324a;
+        return this.f1325a;
     }
 
     public final String toString() {
-        return "ServiceSideServiceCaptorConfig(enabled=" + this.f1324a + ", delaySeconds=" + this.b + ')';
+        return "ServiceSideServiceCaptorConfig(enabled=" + this.f1325a + ", delaySeconds=" + this.b + ')';
     }
 
     public i0(X x) {

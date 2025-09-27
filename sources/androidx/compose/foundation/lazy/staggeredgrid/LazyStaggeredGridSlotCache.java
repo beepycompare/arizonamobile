@@ -22,15 +22,15 @@ final class LazyStaggeredGridSlotCache implements LazyGridStaggeredGridSlotsProv
 
     @Override // androidx.compose.foundation.lazy.staggeredgrid.LazyGridStaggeredGridSlotsProvider
     /* renamed from: invoke-0kLqBqw */
-    public LazyStaggeredGridSlots mo1081invoke0kLqBqw(Density density, long j) {
-        if (this.cachedSizes != null && Constraints.m7197equalsimpl0(this.cachedConstraints, j) && this.cachedDensity == density.getDensity()) {
+    public LazyStaggeredGridSlots mo1091invoke0kLqBqw(Density density, long j) {
+        if (this.cachedSizes != null && Constraints.m7210equalsimpl0(this.cachedConstraints, j) && this.cachedDensity == density.getDensity()) {
             LazyStaggeredGridSlots lazyStaggeredGridSlots = this.cachedSizes;
             Intrinsics.checkNotNull(lazyStaggeredGridSlots);
             return lazyStaggeredGridSlots;
         }
         this.cachedConstraints = j;
         this.cachedDensity = density.getDensity();
-        LazyStaggeredGridSlots invoke = this.calculation.invoke(density, Constraints.m7191boximpl(j));
+        LazyStaggeredGridSlots invoke = this.calculation.invoke(density, Constraints.m7204boximpl(j));
         this.cachedSizes = invoke;
         return invoke;
     }

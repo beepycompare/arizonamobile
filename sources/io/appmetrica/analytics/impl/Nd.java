@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public final class Nd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hk f594a = Na.j().o();
+    public final Hk f595a = Na.j().o();
 }

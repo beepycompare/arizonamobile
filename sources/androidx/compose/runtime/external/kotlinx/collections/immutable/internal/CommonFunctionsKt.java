@@ -6,6 +6,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class CommonFunctionsKt {
     /* renamed from: assert  reason: not valid java name */
-    public static final void m3972assert(boolean z) {
+    public static final void m3984assert(boolean z) {
     }
 }

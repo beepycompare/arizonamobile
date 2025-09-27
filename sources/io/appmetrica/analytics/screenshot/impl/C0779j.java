@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0779j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1325a;
+    public final boolean f1326a;
     public final List b;
     public final long c;
 
     public C0779j(boolean z, List list, long j) {
-        this.f1325a = z;
+        this.f1326a = z;
         this.b = list;
         this.c = j;
     }
@@ -24,7 +24,7 @@ public final class C0779j {
         if (Intrinsics.areEqual(C0779j.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 C0779j c0779j = (C0779j) obj;
-                return this.f1325a == c0779j.f1325a && Intrinsics.areEqual(this.b, c0779j.b) && this.c == c0779j.c;
+                return this.f1326a == c0779j.f1326a && Intrinsics.areEqual(this.b, c0779j.b) && this.c == c0779j.c;
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.screenshot.impl.config.client.model.ClientSideContentObserverCaptorConfig");
         }
@@ -33,11 +33,11 @@ public final class C0779j {
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return Long.hashCode(this.c) + ((hashCode + (Boolean.hashCode(this.f1325a) * 31)) * 31);
+        return Long.hashCode(this.c) + ((hashCode + (Boolean.hashCode(this.f1326a) * 31)) * 31);
     }
 
     public final String toString() {
-        return "ClientSideContentObserverCaptorConfig(enabled=" + this.f1325a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
+        return "ClientSideContentObserverCaptorConfig(enabled=" + this.f1326a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 
     public C0779j(C0794z c0794z) {

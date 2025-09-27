@@ -8,7 +8,7 @@ import kotlin.Unit;
 public final class Xf implements Wf {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f743a;
+    private volatile String f744a;
 
     private final String b() {
         try {
@@ -25,15 +25,15 @@ public final class Xf implements Wf {
 
     @Override // io.appmetrica.analytics.impl.Wf
     public String a() {
-        if (this.f743a != null) {
-            return this.f743a;
+        if (this.f744a != null) {
+            return this.f744a;
         }
         synchronized (this) {
-            if (this.f743a == null) {
-                this.f743a = b();
+            if (this.f744a == null) {
+                this.f744a = b();
             }
             Unit unit = Unit.INSTANCE;
         }
-        return this.f743a;
+        return this.f744a;
     }
 }

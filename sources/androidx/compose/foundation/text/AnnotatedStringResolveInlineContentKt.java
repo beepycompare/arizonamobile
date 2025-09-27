@@ -108,15 +108,15 @@ public final class AnnotatedStringResolveInlineContentKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-                    m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+                    m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
                 }
-                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 374106383, "C69@2668L42:AnnotatedStringResolveInlineContent.kt#423gt5");
                 component1.invoke(annotatedString.subSequence(component2, component3).getText(), startRestartGroup, Integer.valueOf(i5));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

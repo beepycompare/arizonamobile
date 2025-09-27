@@ -328,7 +328,7 @@ public final class SnapshotStateObserver {
         private int deriveStateScopeCount;
         private final Function1<Object, Unit> onChanged;
         private int currentToken = -1;
-        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m3956constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> valueToScopes = ScopeMap.m3968constructorimpl$default(null, 1, null);
         private final MutableScatterMap<Object, MutableObjectIntMap<Object>> scopeToValues = new MutableScatterMap<>(0, 1, null);
         private final MutableScatterSet<Object> invalidated = new MutableScatterSet<>(0, 1, null);
         private final MutableVector<DerivedState<?>> statesToReread = new MutableVector<>(new DerivedState[16], 0);
@@ -347,7 +347,7 @@ public final class SnapshotStateObserver {
                 SnapshotStateObserver.ObservedScopeMap.this.deriveStateScopeCount = i - 1;
             }
         };
-        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m3956constructorimpl$default(null, 1, null);
+        private final MutableScatterMap<Object, Object> dependencyToDerivedStates = ScopeMap.m3968constructorimpl$default(null, 1, null);
         private final HashMap<DerivedState<?>, Object> recordedDerivedStateValues = new HashMap<>();
 
         public ObservedScopeMap(Function1<Object, Unit> function1) {
@@ -393,7 +393,7 @@ public final class SnapshotStateObserver {
                 this.recordedDerivedStateValues.put(obj, currentRecord.getCurrentValue());
                 ObjectIntMap<StateObject> dependencies = currentRecord.getDependencies();
                 MutableScatterMap<Object, Object> mutableScatterMap = this.dependencyToDerivedStates;
-                ScopeMap.m3965removeScopeimpl(mutableScatterMap, obj);
+                ScopeMap.m3977removeScopeimpl(mutableScatterMap, obj);
                 Object[] objArr = dependencies.keys;
                 long[] jArr = dependencies.metadata;
                 int length = jArr.length - 2;
@@ -410,9 +410,9 @@ public final class SnapshotStateObserver {
                                     StateObject stateObject = (StateObject) objArr[(i6 << 3) + i8];
                                     if (stateObject instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
-                                        ((StateObjectImpl) stateObject).m4014recordReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(i4));
+                                        ((StateObjectImpl) stateObject).m4026recordReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(i4));
                                     }
-                                    ScopeMap.m3950addimpl(mutableScatterMap, stateObject, obj);
+                                    ScopeMap.m3962addimpl(mutableScatterMap, stateObject, obj);
                                 } else {
                                     i4 = i5;
                                 }
@@ -441,9 +441,9 @@ public final class SnapshotStateObserver {
             if (put == i3) {
                 if (obj instanceof StateObjectImpl) {
                     ReaderKind.Companion companion2 = ReaderKind.Companion;
-                    ((StateObjectImpl) obj).m4014recordReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(i2));
+                    ((StateObjectImpl) obj).m4026recordReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(i2));
                 }
-                ScopeMap.m3950addimpl(this.valueToScopes, obj, obj2);
+                ScopeMap.m3962addimpl(this.valueToScopes, obj, obj2);
             }
         }
 
@@ -672,18 +672,18 @@ public final class SnapshotStateObserver {
         }
 
         private final void removeObservation(Object obj, Object obj2) {
-            ScopeMap.m3963removeimpl(this.valueToScopes, obj2, obj);
-            if (!(obj2 instanceof DerivedState) || ScopeMap.m3957containsimpl(this.valueToScopes, obj2)) {
+            ScopeMap.m3975removeimpl(this.valueToScopes, obj2, obj);
+            if (!(obj2 instanceof DerivedState) || ScopeMap.m3969containsimpl(this.valueToScopes, obj2)) {
                 return;
             }
-            ScopeMap.m3965removeScopeimpl(this.dependencyToDerivedStates, obj2);
+            ScopeMap.m3977removeScopeimpl(this.dependencyToDerivedStates, obj2);
             this.recordedDerivedStateValues.remove(obj2);
         }
 
         public final void clear() {
-            ScopeMap.m3954clearimpl(this.valueToScopes);
+            ScopeMap.m3966clearimpl(this.valueToScopes);
             this.scopeToValues.clear();
-            ScopeMap.m3954clearimpl(this.dependencyToDerivedStates);
+            ScopeMap.m3966clearimpl(this.dependencyToDerivedStates);
             this.recordedDerivedStateValues.clear();
         }
 
@@ -754,7 +754,7 @@ public final class SnapshotStateObserver {
                                     if (obj6 instanceof StateObjectImpl) {
                                         ReaderKind.Companion companion = ReaderKind.Companion;
                                         objArr4 = objArr5;
-                                        if (!((StateObjectImpl) obj6).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(2))) {
+                                        if (!((StateObjectImpl) obj6).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(2))) {
                                             str2 = str4;
                                             i3 = length;
                                             i4 = i11;
@@ -765,7 +765,7 @@ public final class SnapshotStateObserver {
                                     } else {
                                         objArr4 = objArr5;
                                     }
-                                    if (ScopeMap.m3957containsimpl(mutableScatterMap3, obj6)) {
+                                    if (ScopeMap.m3969containsimpl(mutableScatterMap3, obj6)) {
                                         Object obj7 = mutableScatterMap3.get(obj6);
                                         if (obj7 == null) {
                                             str2 = str4;
@@ -1070,14 +1070,14 @@ public final class SnapshotStateObserver {
                     Object next = it3.next();
                     if (next instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (!((StateObjectImpl) next).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(2))) {
+                        if (!((StateObjectImpl) next).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(2))) {
                             it = it3;
                             mutableScatterMap = mutableScatterMap3;
                             it3 = it;
                             mutableScatterMap3 = mutableScatterMap;
                         }
                     }
-                    if (ScopeMap.m3957containsimpl(mutableScatterMap3, next) && (obj2 = mutableScatterMap3.get(next)) != null) {
+                    if (ScopeMap.m3969containsimpl(mutableScatterMap3, next) && (obj2 = mutableScatterMap3.get(next)) != null) {
                         if (obj2 instanceof MutableScatterSet) {
                             MutableScatterSet mutableScatterSet6 = (MutableScatterSet) obj2;
                             Object[] objArr10 = mutableScatterSet6.elements;

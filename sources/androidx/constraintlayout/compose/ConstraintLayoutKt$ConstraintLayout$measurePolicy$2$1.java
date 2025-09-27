@@ -30,14 +30,14 @@ public final class ConstraintLayoutKt$ConstraintLayout$measurePolicy$2$1 impleme
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo42measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
+    public final MeasureResult mo52measure3p2s80s(MeasureScope measureScope, final List<? extends Measurable> list, long j) {
         final LinkedHashMap linkedHashMap = new LinkedHashMap();
         this.$contentTracker.getValue();
-        long m7651performMeasureDjhGOtQ = this.$measurer.m7651performMeasureDjhGOtQ(j, measureScope.getLayoutDirection(), this.$constraintSet, list, linkedHashMap, this.$optimizationLevel);
-        int m7422getWidthimpl = IntSize.m7422getWidthimpl(m7651performMeasureDjhGOtQ);
-        int m7421getHeightimpl = IntSize.m7421getHeightimpl(m7651performMeasureDjhGOtQ);
+        long m7664performMeasureDjhGOtQ = this.$measurer.m7664performMeasureDjhGOtQ(j, measureScope.getLayoutDirection(), this.$constraintSet, list, linkedHashMap, this.$optimizationLevel);
+        int m7435getWidthimpl = IntSize.m7435getWidthimpl(m7664performMeasureDjhGOtQ);
+        int m7434getHeightimpl = IntSize.m7434getHeightimpl(m7664performMeasureDjhGOtQ);
         final Measurer2 measurer2 = this.$measurer;
-        return MeasureScope.layout$default(measureScope, m7422getWidthimpl, m7421getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutKt$ConstraintLayout$measurePolicy$2$1.1
+        return MeasureScope.layout$default(measureScope, m7435getWidthimpl, m7434getHeightimpl, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.constraintlayout.compose.ConstraintLayoutKt$ConstraintLayout$measurePolicy$2$1.1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
             {

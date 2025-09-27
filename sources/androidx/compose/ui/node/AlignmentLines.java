@@ -32,7 +32,7 @@ public abstract class AlignmentLines {
     }
 
     /* renamed from: calculatePositionInParent-R5De75A  reason: not valid java name */
-    protected abstract long mo6083calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j);
+    protected abstract long mo6096calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j);
 
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract Map<AlignmentLine, Integer> getAlignmentLinesMap(NodeCoordinator nodeCoordinator);
@@ -216,22 +216,22 @@ public abstract class AlignmentLines {
     public final void addAlignmentLine(AlignmentLine alignmentLine, int i, NodeCoordinator nodeCoordinator) {
         float intBitsToFloat;
         float f = i;
-        long m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        long m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
         while (true) {
-            m4285constructorimpl = mo6083calculatePositionInParentR5De75A(nodeCoordinator, m4285constructorimpl);
+            m4297constructorimpl = mo6096calculatePositionInParentR5De75A(nodeCoordinator, m4297constructorimpl);
             nodeCoordinator = nodeCoordinator.getWrappedBy$ui_release();
             Intrinsics.checkNotNull(nodeCoordinator);
             if (Intrinsics.areEqual(nodeCoordinator, this.alignmentLinesOwner.getInnerCoordinator())) {
                 break;
             } else if (getAlignmentLinesMap(nodeCoordinator).containsKey(alignmentLine)) {
                 float positionFor = getPositionFor(nodeCoordinator, alignmentLine);
-                m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(positionFor) << 32) | (Float.floatToRawIntBits(positionFor) & 4294967295L));
+                m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(positionFor) << 32) | (Float.floatToRawIntBits(positionFor) & 4294967295L));
             }
         }
         if (alignmentLine instanceof HorizontalAlignmentLine) {
-            intBitsToFloat = Float.intBitsToFloat((int) (m4285constructorimpl & 4294967295L));
+            intBitsToFloat = Float.intBitsToFloat((int) (m4297constructorimpl & 4294967295L));
         } else {
-            intBitsToFloat = Float.intBitsToFloat((int) (m4285constructorimpl >> 32));
+            intBitsToFloat = Float.intBitsToFloat((int) (m4297constructorimpl >> 32));
         }
         int round = Math.round(intBitsToFloat);
         Map<AlignmentLine, Integer> map = this.alignmentLineMap;

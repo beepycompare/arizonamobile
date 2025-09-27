@@ -3315,7 +3315,7 @@ public final class NavHostKt {
         MutableState mutableState3;
         int i14;
         Composer startRestartGroup = composer.startRestartGroup(-1964664536);
-        ComposerKt.sourceInformation(startRestartGroup, "C(NavHost)P(5,3,4)491@19672L7,493@19756L7,508@20361L16,510@20399L36,511@20464L34,512@20552L987,512@20503L1036,539@21578L138,539@21545L171,545@21748L29,547@21837L16,550@21942L186,560@22223L46,729@30462L27:NavHost.kt#opm8kd");
+        ComposerKt.sourceInformation(startRestartGroup, "C(NavHost)P(5,3,4)491@19672L7,493@19756L7,508@20361L16,510@20399L36,511@20464L34,512@20552L1634,512@20503L1683,553@22225L138,553@22192L171,559@22395L29,561@22484L16,564@22589L186,574@22870L46,746@31279L27:NavHost.kt#opm8kd");
         if ((i2 & 1) != 0) {
             i3 = i | 6;
         } else if ((i & 6) == 0) {
@@ -3499,7 +3499,7 @@ public final class NavHostKt {
                                             MutableState mutableState4 = (MutableState) rememberedValue4;
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             boolean z = NavHost$lambda$38(collectAsState).size() > 1;
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743055619, str);
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743056266, str);
                                             boolean changed = startRestartGroup.changed(collectAsState) | startRestartGroup.changedInstance(composeNavigator);
                                             Object rememberedValue5 = startRestartGroup.rememberedValue();
                                             if (changed || rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -3517,7 +3517,7 @@ public final class NavHostKt {
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             int i15 = i11;
                                             NavComposeUtils_androidKt.PredictiveBackHandler(z, navHostKt$NavHost$25$1, startRestartGroup, 0, 0);
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743087602, str);
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743108306, str);
                                             boolean changedInstance = startRestartGroup.changedInstance(navHostController) | startRestartGroup.changedInstance(lifecycleOwner);
                                             Object rememberedValue6 = startRestartGroup.rememberedValue();
                                             if (changedInstance || rememberedValue6 == Composer.Companion.getEmpty()) {
@@ -3535,7 +3535,7 @@ public final class NavHostKt {
                                             EffectsKt.DisposableEffect(lifecycleOwner, (Function1) rememberedValue6, startRestartGroup, 0);
                                             final SaveableStateHolder rememberSaveableStateHolder = SaveableStateHolderKt.rememberSaveableStateHolder(startRestartGroup, 0);
                                             final State collectAsState2 = SnapshotStateKt.collectAsState(navHostController.getVisibleEntries(), null, startRestartGroup, 0, 1);
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743099298, str);
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743120002, str);
                                             Object rememberedValue7 = startRestartGroup.rememberedValue();
                                             if (rememberedValue7 == Composer.Companion.getEmpty()) {
                                                 rememberedValue7 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda27
@@ -3551,7 +3551,7 @@ public final class NavHostKt {
                                             final State state = (State) rememberedValue7;
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             final NavBackStackEntry navBackStackEntry = (NavBackStackEntry) CollectionsKt.lastOrNull((List<? extends Object>) NavHost$lambda$53(state));
-                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743108150, str);
+                                            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743128854, str);
                                             Object rememberedValue8 = startRestartGroup.rememberedValue();
                                             if (rememberedValue8 == Composer.Companion.getEmpty()) {
                                                 rememberedValue8 = ObjectFloatMapKt.mutableObjectFloatMapOf();
@@ -3560,9 +3560,9 @@ public final class NavHostKt {
                                             final MutableObjectFloatMap mutableObjectFloatMap2 = (MutableObjectFloatMap) rememberedValue8;
                                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                             if (navBackStackEntry != null) {
-                                                startRestartGroup.startReplaceGroup(-1797897781);
-                                                ComposerKt.sourceInformation(startRestartGroup, "563@22403L597,577@23098L597,593@23826L301,601@24160L146,601@24137L169,607@24338L348,614@24713L52,655@26687L1175,680@27919L9,681@27939L1465,653@26619L2785,708@29477L771,708@29413L835");
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743114461, str);
+                                                startRestartGroup.startReplaceGroup(-1797250687);
+                                                ComposerKt.sourceInformation(startRestartGroup, "577@23050L597,591@23745L597,607@24473L301,615@24807L146,615@24784L169,621@24985L348,628@25360L52,672@27504L1175,697@28736L9,698@28756L1465,670@27436L2785,725@30294L771,725@30230L835");
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743135165, str);
                                                 boolean changedInstance2 = startRestartGroup.changedInstance(composeNavigator) | ((((i15 & 3670016) ^ 1572864) > 1048576 && startRestartGroup.changed(function122)) || (i15 & 1572864) == 1048576) | ((i15 & 57344) == 16384);
                                                 Object rememberedValue9 = startRestartGroup.rememberedValue();
                                                 if (changedInstance2 || rememberedValue9 == Composer.Companion.getEmpty()) {
@@ -3578,7 +3578,7 @@ public final class NavHostKt {
                                                 }
                                                 final Function1 function127 = (Function1) rememberedValue9;
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743136701, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743157405, str);
                                                 function114 = function123;
                                                 boolean changedInstance3 = startRestartGroup.changedInstance(composeNavigator) | ((((i15 & 29360128) ^ 12582912) > 8388608 && startRestartGroup.changed(function125)) || (i15 & 12582912) == 8388608) | ((i15 & 458752) == 131072);
                                                 Object rememberedValue10 = startRestartGroup.rememberedValue();
@@ -3595,7 +3595,7 @@ public final class NavHostKt {
                                                 }
                                                 final Function1 function128 = (Function1) rememberedValue10;
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743159701, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743180405, str);
                                                 function112 = function125;
                                                 boolean z2 = (i15 & 234881024) == 67108864;
                                                 Object rememberedValue11 = startRestartGroup.rememberedValue();
@@ -3613,7 +3613,7 @@ public final class NavHostKt {
                                                 final Function1 function129 = (Function1) rememberedValue11;
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                                 function113 = function126;
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743170234, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743190938, str);
                                                 boolean changedInstance4 = startRestartGroup.changedInstance(composeNavigator);
                                                 Object rememberedValue12 = startRestartGroup.rememberedValue();
                                                 if (changedInstance4) {
@@ -3632,7 +3632,7 @@ public final class NavHostKt {
                                                 startRestartGroup.updateRememberedValue(rememberedValue12);
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                                 EffectsKt.DisposableEffect((Object) true, (Function1<? super DisposableEffectScope, ? extends DisposableEffectResult>) rememberedValue12, startRestartGroup, 6);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743176132, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743196836, str);
                                                 Object rememberedValue13 = startRestartGroup.rememberedValue();
                                                 if (rememberedValue13 == Composer.Companion.getEmpty()) {
                                                     rememberedValue13 = new SeekableTransitionState(navBackStackEntry);
@@ -3643,10 +3643,10 @@ public final class NavHostKt {
                                                 function115 = function122;
                                                 Transition rememberTransition = TransitionKt.rememberTransition(seekableTransitionState, "entry", startRestartGroup, SeekableTransitionState.$stable | 48, 0);
                                                 if (NavHost$lambda$43(mutableState2)) {
-                                                    startRestartGroup.startReplaceGroup(-1795663766);
-                                                    ComposerKt.sourceInformation(startRestartGroup, "617@24836L159,617@24811L184");
+                                                    startRestartGroup.startReplaceGroup(-1795016672);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "631@25483L329,631@25458L354");
                                                     Float valueOf = Float.valueOf(NavHost$lambda$40(mutableFloatState2));
-                                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743191879, str);
+                                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743212753, str);
                                                     boolean changed2 = startRestartGroup.changed(collectAsState) | startRestartGroup.changedInstance(seekableTransitionState);
                                                     NavHostKt$NavHost$28$1 rememberedValue14 = startRestartGroup.rememberedValue();
                                                     if (changed2 || rememberedValue14 == Composer.Companion.getEmpty()) {
@@ -3659,9 +3659,9 @@ public final class NavHostKt {
                                                     i13 = 0;
                                                     dialogNavigator2 = null;
                                                 } else {
-                                                    startRestartGroup.startReplaceGroup(-1795408729);
-                                                    ComposerKt.sourceInformation(startRestartGroup, "622@25056L1532,622@25025L1563");
-                                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743200292, str);
+                                                    startRestartGroup.startReplaceGroup(-1794598265);
+                                                    ComposerKt.sourceInformation(startRestartGroup, "639@25873L1532,639@25842L1563");
+                                                    ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743226436, str);
                                                     boolean changedInstance5 = startRestartGroup.changedInstance(seekableTransitionState) | startRestartGroup.changedInstance(navBackStackEntry) | startRestartGroup.changed(rememberTransition);
                                                     NavHostKt$NavHost$29$1 rememberedValue15 = startRestartGroup.rememberedValue();
                                                     if (changedInstance5 || rememberedValue15 == Composer.Companion.getEmpty()) {
@@ -3676,7 +3676,7 @@ public final class NavHostKt {
                                                     EffectsKt.LaunchedEffect(navBackStackEntry, (Function2) rememberedValue15, startRestartGroup, 0);
                                                     startRestartGroup.endReplaceGroup();
                                                 }
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743252127, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743278271, str);
                                                 boolean changedInstance6 = startRestartGroup.changedInstance(mutableObjectFloatMap2) | startRestartGroup.changedInstance(composeNavigator) | startRestartGroup.changed(function127) | startRestartGroup.changed(function128) | startRestartGroup.changed(function129);
                                                 Object rememberedValue16 = startRestartGroup.rememberedValue();
                                                 if (changedInstance6 || rememberedValue16 == Composer.Companion.getEmpty()) {
@@ -3699,7 +3699,7 @@ public final class NavHostKt {
                                                 }
                                                 Function1 function130 = (Function1) rememberedValue16;
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743290385, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743316529, str);
                                                 Object rememberedValue17 = startRestartGroup.rememberedValue();
                                                 if (rememberedValue17 == Composer.Companion.getEmpty()) {
                                                     rememberedValue17 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda11
@@ -3734,7 +3734,7 @@ public final class NavHostKt {
                                                         ?? r0;
                                                         ComposerKt.sourceInformation(composer3, "C:NavHost.kt#opm8kd");
                                                         if (ComposerKt.isTraceInProgress()) {
-                                                            ComposerKt.traceEventStart(820763100, i16, -1, "androidx.navigation.compose.NavHost.<anonymous> (NavHost.kt:688)");
+                                                            ComposerKt.traceEventStart(820763100, i16, -1, "androidx.navigation.compose.NavHost.<anonymous> (NavHost.kt:705)");
                                                         }
                                                         boolean areEqual = Intrinsics.areEqual(seekableTransitionState.getCurrentState(), navBackStackEntry);
                                                         NavHost$lambda$43 = NavHostKt.NavHost$lambda$43(mutableState6);
@@ -3757,7 +3757,7 @@ public final class NavHostKt {
                                                             composer3.startReplaceGroup(105930796);
                                                         } else {
                                                             composer3.startReplaceGroup(-1520603531);
-                                                            ComposerKt.sourceInformation(composer3, "701@29218L176,701@29177L217");
+                                                            ComposerKt.sourceInformation(composer3, "718@30035L176,718@29994L217");
                                                             NavBackStackEntryProviderKt.LocalOwnersProvider(navBackStackEntry2, rememberSaveableStateHolder, ComposableLambdaKt.rememberComposableLambda(-1263531443, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.navigation.compose.NavHostKt$NavHost$32.1
                                                                 @Override // kotlin.jvm.functions.Function2
                                                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
@@ -3766,10 +3766,10 @@ public final class NavHostKt {
                                                                 }
 
                                                                 public final void invoke(Composer composer4, int i17) {
-                                                                    ComposerKt.sourceInformation(composer4, "C702@29295L85:NavHost.kt#opm8kd");
+                                                                    ComposerKt.sourceInformation(composer4, "C719@30112L85:NavHost.kt#opm8kd");
                                                                     if ((i17 & 3) != 2 || !composer4.getSkipping()) {
                                                                         if (ComposerKt.isTraceInProgress()) {
-                                                                            ComposerKt.traceEventStart(-1263531443, i17, -1, "androidx.navigation.compose.NavHost.<anonymous>.<anonymous> (NavHost.kt:702)");
+                                                                            ComposerKt.traceEventStart(-1263531443, i17, -1, "androidx.navigation.compose.NavHost.<anonymous>.<anonymous> (NavHost.kt:719)");
                                                                         }
                                                                         NavDestination destination = NavBackStackEntry.this.getDestination();
                                                                         Intrinsics.checkNotNull(destination, "null cannot be cast to non-null type androidx.navigation.compose.ComposeNavigator.Destination");
@@ -3793,7 +3793,7 @@ public final class NavHostKt {
                                                 modifier3 = modifier4;
                                                 Object currentState = rememberTransition.getCurrentState();
                                                 Object targetState = rememberTransition.getTargetState();
-                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743341003, str);
+                                                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1743367147, str);
                                                 boolean changed3 = startRestartGroup.changed(rememberTransition) | startRestartGroup.changedInstance(navHostController) | startRestartGroup.changedInstance(navBackStackEntry) | startRestartGroup.changedInstance(composeNavigator) | startRestartGroup.changedInstance(mutableObjectFloatMap);
                                                 NavHostKt$NavHost$33$1 rememberedValue18 = startRestartGroup.rememberedValue();
                                                 if (changed3 || rememberedValue18 == Composer.Companion.getEmpty()) {
@@ -3812,7 +3812,7 @@ public final class NavHostKt {
                                                 function115 = function122;
                                                 i12 = 0;
                                                 dialogNavigator = null;
-                                                startRestartGroup.startReplaceGroup(-1790256870);
+                                                startRestartGroup.startReplaceGroup(-1789446406);
                                                 startRestartGroup.endReplaceGroup();
                                             }
                                             Navigator navigator2 = navHostController.getNavigatorProvider().getNavigator(DialogNavigator.NAME);

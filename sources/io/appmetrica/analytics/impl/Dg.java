@@ -7,11 +7,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class Dg implements InstallReferrerStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Eg f411a;
+    public final /* synthetic */ Eg f412a;
     public final /* synthetic */ Og b;
 
     public Dg(Eg eg, Og og) {
-        this.f411a = eg;
+        this.f412a = eg;
         this.b = og;
     }
 
@@ -31,8 +31,8 @@ public final class Dg implements InstallReferrerStateListener {
     @Override // com.android.installreferrer.api.InstallReferrerStateListener
     public final void onInstallReferrerSetupFinished(int i) {
         if (i == 0) {
-            final Eg eg = this.f411a;
-            ICommonExecutor iCommonExecutor = eg.f428a;
+            final Eg eg = this.f412a;
+            ICommonExecutor iCommonExecutor = eg.f429a;
             final Og og = this.b;
             iCommonExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Dg$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -42,6 +42,6 @@ public final class Dg implements InstallReferrerStateListener {
             });
             return;
         }
-        this.f411a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
+        this.f412a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
     }
 }

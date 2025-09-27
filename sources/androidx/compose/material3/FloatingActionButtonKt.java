@@ -59,10 +59,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000`\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\u001a|\u0010\n\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u001c\u0010\u0019\u001a\u0018\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u000b0\u001a¢\u0006\u0002\b\u001c¢\u0006\u0002\b\u001dH\u0007ø\u0001\u0000¢\u0006\u0004\b\u001e\u0010\u001f\u001a\u008e\u0001\u0010\n\u001a\u00020\u000b2\u0011\u0010 \u001a\r\u0012\u0004\u0012\u00020\u000b0\r¢\u0006\u0002\b\u001c2\u0011\u0010!\u001a\r\u0012\u0004\u0012\u00020\u000b0\r¢\u0006\u0002\b\u001c2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\"\u001a\u00020#2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u0018H\u0007ø\u0001\u0000¢\u0006\u0004\b$\u0010%\u001aq\u0010&\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u0011\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u000b0\r¢\u0006\u0002\b\u001cH\u0007ø\u0001\u0000¢\u0006\u0004\b'\u0010(\u001aq\u0010)\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u0011\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u000b0\r¢\u0006\u0002\b\u001cH\u0007ø\u0001\u0000¢\u0006\u0004\b*\u0010(\u001aq\u0010+\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\u0011\u0010\u0019\u001a\r\u0012\u0004\u0012\u00020\u000b0\r¢\u0006\u0002\b\u001cH\u0007ø\u0001\u0000¢\u0006\u0004\b,\u0010(\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0004\"\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0010\u0010\u0007\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0004\"\u0010\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0004\"\u0010\u0010\t\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0004\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006-"}, d2 = {"ExtendedFabCollapseAnimation", "Landroidx/compose/animation/ExitTransition;", "ExtendedFabEndIconPadding", "Landroidx/compose/ui/unit/Dp;", "F", "ExtendedFabExpandAnimation", "Landroidx/compose/animation/EnterTransition;", "ExtendedFabMinimumWidth", "ExtendedFabStartIconPadding", "ExtendedFabTextPadding", "ExtendedFloatingActionButton", "", "onClick", "Lkotlin/Function0;", "modifier", "Landroidx/compose/ui/Modifier;", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "elevation", "Landroidx/compose/material3/FloatingActionButtonElevation;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "ExtendedFloatingActionButton-X-z6DiA", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;JJLandroidx/compose/material3/FloatingActionButtonElevation;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "text", "icon", "expanded", "", "ExtendedFloatingActionButton-ElI5-7k", "(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/Shape;JJLandroidx/compose/material3/FloatingActionButtonElevation;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;II)V", "FloatingActionButton", "FloatingActionButton-X-z6DiA", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;JJLandroidx/compose/material3/FloatingActionButtonElevation;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "LargeFloatingActionButton", "LargeFloatingActionButton-X-z6DiA", "SmallFloatingActionButton", "SmallFloatingActionButton-X-z6DiA", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class FloatingActionButtonKt {
-    private static final float ExtendedFabStartIconPadding = Dp.m7251constructorimpl(16);
-    private static final float ExtendedFabEndIconPadding = Dp.m7251constructorimpl(12);
-    private static final float ExtendedFabTextPadding = Dp.m7251constructorimpl(20);
-    private static final float ExtendedFabMinimumWidth = Dp.m7251constructorimpl(80);
+    private static final float ExtendedFabStartIconPadding = Dp.m7264constructorimpl(16);
+    private static final float ExtendedFabEndIconPadding = Dp.m7264constructorimpl(12);
+    private static final float ExtendedFabTextPadding = Dp.m7264constructorimpl(20);
+    private static final float ExtendedFabMinimumWidth = Dp.m7264constructorimpl(80);
     private static final ExitTransition ExtendedFabCollapseAnimation = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(100, 0, MotionTokens.INSTANCE.getEasingLinearCubicBezier(), 2, null), 0.0f, 2, null).plus(EnterExitTransitionKt.shrinkHorizontally$default(AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, MotionTokens.INSTANCE.getEasingEmphasizedCubicBezier(), 2, null), Alignment.Companion.getStart(), false, null, 12, null));
     private static final EnterTransition ExtendedFabExpandAnimation = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween(200, 100, MotionTokens.INSTANCE.getEasingLinearCubicBezier()), 0.0f, 2, null).plus(EnterExitTransitionKt.expandHorizontally$default(AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, MotionTokens.INSTANCE.getEasingEmphasizedCubicBezier(), 2, null), Alignment.Companion.getStart(), false, null, 12, null));
 
@@ -98,7 +98,7 @@ public final class FloatingActionButtonKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2236FloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m2246FloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         Function0<Unit> function02;
         int i3;
         Modifier modifier2;
@@ -221,14 +221,14 @@ public final class FloatingActionButtonKt {
                     }
                     if ((i2 & 16) != 0) {
                         i5 &= -57345;
-                        j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
+                        j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
                     }
                     int i12 = i5;
                     if ((i2 & 32) == 0) {
                         j6 = j5;
                         modifier3 = companion;
                         mutableInteractionSource2 = null;
-                        obj2 = FloatingActionButtonDefaults.INSTANCE.m2228elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
+                        obj2 = FloatingActionButtonDefaults.INSTANCE.m2238elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
                         i6 = i12 & (-458753);
                     } else {
                         modifier3 = companion;
@@ -265,7 +265,7 @@ public final class FloatingActionButtonKt {
                         int i13 = i7 & 14;
                         int i14 = i7 << 3;
                         long j10 = j4;
-                        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
+                        SurfaceKt.m2667Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                                 invoke2(semanticsPropertyReceiver);
@@ -274,9 +274,9 @@ public final class FloatingActionButtonKt {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
+                                SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6474getButtono7Vup1c());
                             }
-                        }, 1, mutableInteractionSource2), false, shape3, j7, j10, obj2.m2231tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7265unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
+                        }, 1, mutableInteractionSource2), false, shape3, j7, j10, obj2.m2241tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7278unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -299,7 +299,7 @@ public final class FloatingActionButtonKt {
                                     long j11 = j4;
                                     TextStyle value = TypographyKt.getValue(ExtendedFabPrimaryTokens.INSTANCE.getLabelTextFont(), composer3, 6);
                                     final Function2<Composer, Integer, Unit> function22 = function2;
-                                    ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
+                                    ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                         /* JADX WARN: Multi-variable type inference failed */
                                         {
@@ -318,7 +318,7 @@ public final class FloatingActionButtonKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-1771489750, i16, -1, "androidx.compose.material3.FloatingActionButton.<anonymous>.<anonymous> (FloatingActionButton.kt:123)");
                                                 }
-                                                Modifier m868defaultMinSizeVpY3zN4 = SizeKt.m868defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3323getContainerHeightD9Ej5fM());
+                                                Modifier m878defaultMinSizeVpY3zN4 = SizeKt.m878defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3333getContainerHeightD9Ej5fM());
                                                 Alignment center = Alignment.Companion.getCenter();
                                                 Function2<Composer, Integer, Unit> function23 = function22;
                                                 ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -326,7 +326,7 @@ public final class FloatingActionButtonKt {
                                                 ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                                 CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m868defaultMinSizeVpY3zN4);
+                                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m878defaultMinSizeVpY3zN4);
                                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                                 ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                                 if (!(composer4.getApplier() instanceof Applier)) {
@@ -338,15 +338,15 @@ public final class FloatingActionButtonKt {
                                                 } else {
                                                     composer4.useNode();
                                                 }
-                                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer4);
-                                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
+                                                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                                 }
-                                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                                 ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                                 ComposerKt.sourceInformationMarkerStart(composer4, -1494899604, "C131@6289L9:FloatingActionButton.kt#uh7d8r");
@@ -418,7 +418,7 @@ public final class FloatingActionButtonKt {
                 int i132 = i7 & 14;
                 int i142 = i7 << 3;
                 long j102 = j4;
-                SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
+                SurfaceKt.m2667Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                         invoke2(semanticsPropertyReceiver);
@@ -427,9 +427,9 @@ public final class FloatingActionButtonKt {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
+                        SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6474getButtono7Vup1c());
                     }
-                }, 1, mutableInteractionSource2), false, shape3, j7, j102, obj2.m2231tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7265unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
+                }, 1, mutableInteractionSource2), false, shape3, j7, j102, obj2.m2241tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7278unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -452,7 +452,7 @@ public final class FloatingActionButtonKt {
                             long j11 = j4;
                             TextStyle value = TypographyKt.getValue(ExtendedFabPrimaryTokens.INSTANCE.getLabelTextFont(), composer3, 6);
                             final Function2<? super Composer, ? super Integer, Unit> function22 = function2;
-                            ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
+                            ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
                                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                 /* JADX WARN: Multi-variable type inference failed */
                                 {
@@ -471,7 +471,7 @@ public final class FloatingActionButtonKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-1771489750, i16, -1, "androidx.compose.material3.FloatingActionButton.<anonymous>.<anonymous> (FloatingActionButton.kt:123)");
                                         }
-                                        Modifier m868defaultMinSizeVpY3zN4 = SizeKt.m868defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3323getContainerHeightD9Ej5fM());
+                                        Modifier m878defaultMinSizeVpY3zN4 = SizeKt.m878defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3333getContainerHeightD9Ej5fM());
                                         Alignment center = Alignment.Companion.getCenter();
                                         Function2<Composer, Integer, Unit> function23 = function22;
                                         ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -479,7 +479,7 @@ public final class FloatingActionButtonKt {
                                         ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                         CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m868defaultMinSizeVpY3zN4);
+                                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m878defaultMinSizeVpY3zN4);
                                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                         if (!(composer4.getApplier() instanceof Applier)) {
@@ -491,15 +491,15 @@ public final class FloatingActionButtonKt {
                                         } else {
                                             composer4.useNode();
                                         }
-                                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer4);
-                                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
+                                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer4, -1494899604, "C131@6289L9:FloatingActionButton.kt#uh7d8r");
@@ -564,7 +564,7 @@ public final class FloatingActionButtonKt {
                     }
 
                     public final void invoke(Composer composer3, int i15) {
-                        FloatingActionButtonKt.m2236FloatingActionButtonXz6DiA(function0, modifier4, shape4, j8, j9, floatingActionButtonElevation2, mutableInteractionSource5, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        FloatingActionButtonKt.m2246FloatingActionButtonXz6DiA(function0, modifier4, shape4, j8, j9, floatingActionButtonElevation2, mutableInteractionSource5, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -620,7 +620,7 @@ public final class FloatingActionButtonKt {
         int i1322 = i7 & 14;
         int i1422 = i7 << 3;
         long j1022 = j4;
-        SurfaceKt.m2657Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
+        SurfaceKt.m2667Surfaceo_FOJdg(function02, SemanticsModifierKt.semantics$default(modifier2, false, new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SemanticsPropertyReceiver semanticsPropertyReceiver) {
                 invoke2(semanticsPropertyReceiver);
@@ -629,9 +629,9 @@ public final class FloatingActionButtonKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.m6480setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6461getButtono7Vup1c());
+                SemanticsPropertiesKt.m6493setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6474getButtono7Vup1c());
             }
-        }, 1, mutableInteractionSource2), false, shape3, j7, j1022, obj2.m2231tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7265unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
+        }, 1, mutableInteractionSource2), false, shape3, j7, j1022, obj2.m2241tonalElevationD9Ej5fM$material3_release(), obj2.shadowElevation$material3_release(mutableInteractionSource4, startRestartGroup, (i7 >> 12) & 112).getValue().m7278unboximpl(), null, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(1249316354, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -654,7 +654,7 @@ public final class FloatingActionButtonKt {
                     long j11 = j4;
                     TextStyle value = TypographyKt.getValue(ExtendedFabPrimaryTokens.INSTANCE.getLabelTextFont(), composer3, 6);
                     final Function2<? super Composer, ? super Integer, Unit> function22 = function2;
-                    ProvideContentColorTextStyleKt.m3014ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
+                    ProvideContentColorTextStyleKt.m3024ProvideContentColorTextStyle3JVO9M(j11, value, ComposableLambdaKt.rememberComposableLambda(-1771489750, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$FloatingActionButton$2.1
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
                         {
@@ -673,7 +673,7 @@ public final class FloatingActionButtonKt {
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-1771489750, i16, -1, "androidx.compose.material3.FloatingActionButton.<anonymous>.<anonymous> (FloatingActionButton.kt:123)");
                                 }
-                                Modifier m868defaultMinSizeVpY3zN4 = SizeKt.m868defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3323getContainerHeightD9Ej5fM());
+                                Modifier m878defaultMinSizeVpY3zN4 = SizeKt.m878defaultMinSizeVpY3zN4(Modifier.Companion, FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM(), FabPrimaryTokens.INSTANCE.m3333getContainerHeightD9Ej5fM());
                                 Alignment center = Alignment.Companion.getCenter();
                                 Function2<Composer, Integer, Unit> function23 = function22;
                                 ComposerKt.sourceInformationMarkerStart(composer4, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
@@ -681,7 +681,7 @@ public final class FloatingActionButtonKt {
                                 ComposerKt.sourceInformationMarkerStart(composer4, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer4, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer4.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m868defaultMinSizeVpY3zN4);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer4, m878defaultMinSizeVpY3zN4);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer4, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer4.getApplier() instanceof Applier)) {
@@ -693,15 +693,15 @@ public final class FloatingActionButtonKt {
                                 } else {
                                     composer4.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer4);
-                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer4);
+                                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer4, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer4, -1494899604, "C131@6289L9:FloatingActionButton.kt#uh7d8r");
@@ -777,7 +777,7 @@ public final class FloatingActionButtonKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2238SmallFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m2248SmallFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         Function0<Unit> function02;
         int i3;
         Object obj;
@@ -897,12 +897,12 @@ public final class FloatingActionButtonKt {
                             }
                             if ((i2 & 16) != 0) {
                                 i5 &= -57345;
-                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
+                                j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
                             }
                             int i10 = i5;
                             if ((i2 & 32) == 0) {
                                 j6 = j5;
-                                obj3 = FloatingActionButtonDefaults.INSTANCE.m2228elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
+                                obj3 = FloatingActionButtonDefaults.INSTANCE.m2238elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
                                 i3 = i10 & (-458753);
                             } else {
                                 j6 = j5;
@@ -949,7 +949,7 @@ public final class FloatingActionButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(i6, i3, -1, "androidx.compose.material3.SmallFloatingActionButton (FloatingActionButton.kt:176)");
                         }
-                        m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3313getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3312getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+                        m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3323getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3322getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -987,7 +987,7 @@ public final class FloatingActionButtonKt {
                             }
 
                             public final void invoke(Composer composer3, int i11) {
-                                FloatingActionButtonKt.m2238SmallFloatingActionButtonXz6DiA(function0, modifier2, shape3, j9, j10, floatingActionButtonElevation3, mutableInteractionSource2, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                FloatingActionButtonKt.m2248SmallFloatingActionButtonXz6DiA(function0, modifier2, shape3, j9, j10, floatingActionButtonElevation3, mutableInteractionSource2, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -1016,7 +1016,7 @@ public final class FloatingActionButtonKt {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3313getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3312getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+                m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3323getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3322getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = obj;
@@ -1055,7 +1055,7 @@ public final class FloatingActionButtonKt {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3313getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3312getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+            m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3323getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3322getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = obj;
@@ -1106,7 +1106,7 @@ public final class FloatingActionButtonKt {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3313getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3312getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+        m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimarySmallTokens.INSTANCE.m3323getContainerWidthD9Ej5fM(), FabPrimarySmallTokens.INSTANCE.m3322getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = obj;
@@ -1154,7 +1154,7 @@ public final class FloatingActionButtonKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2237LargeFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m2247LargeFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         Function0<Unit> function02;
         int i3;
         Object obj;
@@ -1274,12 +1274,12 @@ public final class FloatingActionButtonKt {
                             }
                             if ((i2 & 16) != 0) {
                                 i5 &= -57345;
-                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
+                                j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
                             }
                             int i10 = i5;
                             if ((i2 & 32) == 0) {
                                 j6 = j5;
-                                obj3 = FloatingActionButtonDefaults.INSTANCE.m2228elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
+                                obj3 = FloatingActionButtonDefaults.INSTANCE.m2238elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
                                 i3 = i10 & (-458753);
                             } else {
                                 j6 = j5;
@@ -1326,7 +1326,7 @@ public final class FloatingActionButtonKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(i6, i3, -1, "androidx.compose.material3.LargeFloatingActionButton (FloatingActionButton.kt:232)");
                         }
-                        m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3302getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3301getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+                        m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3312getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3311getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -1364,7 +1364,7 @@ public final class FloatingActionButtonKt {
                             }
 
                             public final void invoke(Composer composer3, int i11) {
-                                FloatingActionButtonKt.m2237LargeFloatingActionButtonXz6DiA(function0, modifier2, shape3, j9, j10, floatingActionButtonElevation3, mutableInteractionSource2, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                FloatingActionButtonKt.m2247LargeFloatingActionButtonXz6DiA(function0, modifier2, shape3, j9, j10, floatingActionButtonElevation3, mutableInteractionSource2, function2, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -1393,7 +1393,7 @@ public final class FloatingActionButtonKt {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3302getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3301getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+                m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3312getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3311getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = obj;
@@ -1432,7 +1432,7 @@ public final class FloatingActionButtonKt {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3302getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3301getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+            m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3312getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3311getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier2 = obj;
@@ -1483,7 +1483,7 @@ public final class FloatingActionButtonKt {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        m2236FloatingActionButtonXz6DiA(function02, SizeKt.m888sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3302getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3301getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
+        m2246FloatingActionButtonXz6DiA(function02, SizeKt.m898sizeInqDBjuR0$default(obj, FabPrimaryLargeTokens.INSTANCE.m3312getContainerWidthD9Ej5fM(), FabPrimaryLargeTokens.INSTANCE.m3311getContainerHeightD9Ej5fM(), 0.0f, 0.0f, 12, null), obj6, j7, j8, floatingActionButtonElevation2, obj5, function2, startRestartGroup, i3 & 33554318, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier2 = obj;
@@ -1529,7 +1529,7 @@ public final class FloatingActionButtonKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2235ExtendedFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2245ExtendedFloatingActionButtonXz6DiA(final Function0<Unit> function0, Modifier modifier, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Function0<Unit> function02;
         int i3;
         Object obj;
@@ -1651,12 +1651,12 @@ public final class FloatingActionButtonKt {
                     }
                     if ((i2 & 16) != 0) {
                         i5 &= -57345;
-                        j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
+                        j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j5, startRestartGroup, (i5 >> 9) & 14);
                     }
                     int i11 = i5;
                     if ((i2 & 32) == 0) {
                         j6 = j5;
-                        obj3 = FloatingActionButtonDefaults.INSTANCE.m2228elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
+                        obj3 = FloatingActionButtonDefaults.INSTANCE.m2238elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
                         i3 = i11 & (-458753);
                     } else {
                         j6 = j5;
@@ -1708,7 +1708,7 @@ public final class FloatingActionButtonKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(i7, i3, -1, "androidx.compose.material3.ExtendedFloatingActionButton (FloatingActionButton.kt:291)");
                 }
-                m2236FloatingActionButtonXz6DiA(function02, modifier2, shape3, j8, j7, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(398457247, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$1
+                m2246FloatingActionButtonXz6DiA(function02, modifier2, shape3, j8, j7, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(398457247, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -1731,9 +1731,9 @@ public final class FloatingActionButtonKt {
                                 ComposerKt.traceEventStart(398457247, i12, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:301)");
                             }
                             f = FloatingActionButtonKt.ExtendedFabMinimumWidth;
-                            Modifier m888sizeInqDBjuR0$default = SizeKt.m888sizeInqDBjuR0$default(Modifier.Companion, f, 0.0f, 0.0f, 0.0f, 14, null);
+                            Modifier m898sizeInqDBjuR0$default = SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, f, 0.0f, 0.0f, 0.0f, 14, null);
                             f2 = FloatingActionButtonKt.ExtendedFabTextPadding;
-                            Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(m888sizeInqDBjuR0$default, f2, 0.0f, 2, null);
+                            Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(m898sizeInqDBjuR0$default, f2, 0.0f, 2, null);
                             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                             Function3<RowScope, Composer, Integer, Unit> function32 = function3;
                             ComposerKt.sourceInformationMarkerStart(composer3, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
@@ -1741,7 +1741,7 @@ public final class FloatingActionButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer3.getApplier() instanceof Applier)) {
@@ -1753,15 +1753,15 @@ public final class FloatingActionButtonKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                             function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1815,7 +1815,7 @@ public final class FloatingActionButtonKt {
                     }
 
                     public final void invoke(Composer composer3, int i12) {
-                        FloatingActionButtonKt.m2235ExtendedFloatingActionButtonXz6DiA(function0, modifier3, shape4, j9, j10, floatingActionButtonElevation3, mutableInteractionSource3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                        FloatingActionButtonKt.m2245ExtendedFloatingActionButtonXz6DiA(function0, modifier3, shape4, j9, j10, floatingActionButtonElevation3, mutableInteractionSource3, function3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                     }
                 });
                 return;
@@ -1857,7 +1857,7 @@ public final class FloatingActionButtonKt {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        m2236FloatingActionButtonXz6DiA(function02, modifier2, shape3, j8, j7, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(398457247, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$1
+        m2246FloatingActionButtonXz6DiA(function02, modifier2, shape3, j8, j7, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(398457247, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -1880,9 +1880,9 @@ public final class FloatingActionButtonKt {
                         ComposerKt.traceEventStart(398457247, i12, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:301)");
                     }
                     f = FloatingActionButtonKt.ExtendedFabMinimumWidth;
-                    Modifier m888sizeInqDBjuR0$default = SizeKt.m888sizeInqDBjuR0$default(Modifier.Companion, f, 0.0f, 0.0f, 0.0f, 14, null);
+                    Modifier m898sizeInqDBjuR0$default = SizeKt.m898sizeInqDBjuR0$default(Modifier.Companion, f, 0.0f, 0.0f, 0.0f, 14, null);
                     f2 = FloatingActionButtonKt.ExtendedFabTextPadding;
-                    Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(m888sizeInqDBjuR0$default, f2, 0.0f, 2, null);
+                    Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(m898sizeInqDBjuR0$default, f2, 0.0f, 2, null);
                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                     Function3<RowScope, Composer, Integer, Unit> function32 = function3;
                     ComposerKt.sourceInformationMarkerStart(composer3, 693286680, "CC(Row)P(2,1,3)98@4939L58,99@5002L130:Row.kt#2w3rfo");
@@ -1890,7 +1890,7 @@ public final class FloatingActionButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m834paddingVpY3zN4$default);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m844paddingVpY3zN4$default);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -1902,15 +1902,15 @@ public final class FloatingActionButtonKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                     function32.invoke(RowScopeInstance.INSTANCE, composer3, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1972,7 +1972,7 @@ public final class FloatingActionButtonKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2234ExtendedFloatingActionButtonElI57k(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final Function0<Unit> function0, Modifier modifier, boolean z, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
+    public static final void m2244ExtendedFloatingActionButtonElI57k(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final Function0<Unit> function0, Modifier modifier, boolean z, Shape shape, long j, long j2, FloatingActionButtonElevation floatingActionButtonElevation, MutableInteractionSource mutableInteractionSource, Composer composer, final int i, final int i2) {
         int i3;
         Function0<Unit> function02;
         Modifier.Companion companion;
@@ -2109,14 +2109,14 @@ public final class FloatingActionButtonKt {
                                 i3 &= -3670017;
                             }
                             if ((i2 & 128) == 0) {
-                                j4 = ColorSchemeKt.m2040contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 18) & 14);
+                                j4 = ColorSchemeKt.m2050contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 18) & 14);
                                 i3 &= -29360129;
                             } else {
                                 j4 = j2;
                             }
                             if ((i2 & 256) != 0) {
                                 i3 &= -234881025;
-                                obj2 = FloatingActionButtonDefaults.INSTANCE.m2228elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
+                                obj2 = FloatingActionButtonDefaults.INSTANCE.m2238elevationxZ9QkE(0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 24576, 15);
                             }
                             mutableInteractionSource2 = i6 == 0 ? null : mutableInteractionSource;
                             shape2 = obj;
@@ -2150,7 +2150,7 @@ public final class FloatingActionButtonKt {
                         int i11 = i3 >> 6;
                         int i12 = i3 >> 9;
                         Modifier modifier3 = companion;
-                        m2236FloatingActionButtonXz6DiA(function02, modifier3, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
+                        m2246FloatingActionButtonXz6DiA(function02, modifier3, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -2165,9 +2165,9 @@ public final class FloatingActionButtonKt {
                             }
 
                             public final void invoke(Composer composer2, int i13) {
-                                float m7251constructorimpl;
-                                float m7251constructorimpl2;
-                                float m3324getContainerWidthD9Ej5fM;
+                                float m7264constructorimpl;
+                                float m7264constructorimpl2;
+                                float m3334getContainerWidthD9Ej5fM;
                                 EnterTransition enterTransition;
                                 ExitTransition exitTransition;
                                 ComposerKt.sourceInformation(composer2, "C377@18029L885:FloatingActionButton.kt#uh7d8r");
@@ -2176,24 +2176,24 @@ public final class FloatingActionButtonKt {
                                         ComposerKt.traceEventStart(1172118032, i13, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:374)");
                                     }
                                     if (z2) {
-                                        m7251constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
+                                        m7264constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
                                     } else {
-                                        m7251constructorimpl = Dp.m7251constructorimpl(0);
+                                        m7264constructorimpl = Dp.m7264constructorimpl(0);
                                     }
-                                    float f = m7251constructorimpl;
+                                    float f = m7264constructorimpl;
                                     if (z2) {
-                                        m7251constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
+                                        m7264constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
                                     } else {
-                                        m7251constructorimpl2 = Dp.m7251constructorimpl(0);
+                                        m7264constructorimpl2 = Dp.m7264constructorimpl(0);
                                     }
-                                    float f2 = m7251constructorimpl2;
+                                    float f2 = m7264constructorimpl2;
                                     Modifier.Companion companion2 = Modifier.Companion;
                                     if (z2) {
-                                        m3324getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
+                                        m3334getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
                                     } else {
-                                        m3324getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM();
+                                        m3334getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM();
                                     }
-                                    Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m888sizeInqDBjuR0$default(companion2, m3324getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
+                                    Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m898sizeInqDBjuR0$default(companion2, m3334getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
                                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                     Arrangement.HorizontalOrVertical start = z2 ? Arrangement.INSTANCE.getStart() : Arrangement.INSTANCE.getCenter();
                                     Function2<Composer, Integer, Unit> function23 = function22;
@@ -2204,7 +2204,7 @@ public final class FloatingActionButtonKt {
                                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m836paddingqDBjuR0$default);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -2216,15 +2216,15 @@ public final class FloatingActionButtonKt {
                                     } else {
                                         composer2.useNode();
                                     }
-                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer2, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                     ComposerKt.sourceInformationMarkerStart(composer2, 1618821151, "C388@18524L6,393@18718L186,389@18543L361:FloatingActionButton.kt#uh7d8r");
                                     function23.invoke(composer2, 0);
@@ -2279,20 +2279,20 @@ public final class FloatingActionButtonKt {
                                             } else {
                                                 composer3.useNode();
                                             }
-                                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                            Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer3, 1967858577, "C395@18796L49,396@18866L6:FloatingActionButton.kt#uh7d8r");
                                             f3 = FloatingActionButtonKt.ExtendedFabEndIconPadding;
-                                            SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, f3), composer3, 6);
+                                            SpacerKt.Spacer(SizeKt.m899width3ABfNKs(Modifier.Companion, f3), composer3, 6);
                                             function25.invoke(composer3, 0);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
                                             ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2357,7 +2357,7 @@ public final class FloatingActionButtonKt {
                             }
 
                             public final void invoke(Composer composer2, int i13) {
-                                FloatingActionButtonKt.m2234ExtendedFloatingActionButtonElI57k(function2, function22, function0, modifier2, z3, shape3, j7, j8, floatingActionButtonElevation3, mutableInteractionSource3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                FloatingActionButtonKt.m2244ExtendedFloatingActionButtonElI57k(function2, function22, function0, modifier2, z3, shape3, j7, j8, floatingActionButtonElevation3, mutableInteractionSource3, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -2393,7 +2393,7 @@ public final class FloatingActionButtonKt {
                 int i112 = i3 >> 6;
                 int i122 = i3 >> 9;
                 Modifier modifier32 = companion;
-                m2236FloatingActionButtonXz6DiA(function02, modifier32, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
+                m2246FloatingActionButtonXz6DiA(function02, modifier32, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -2408,9 +2408,9 @@ public final class FloatingActionButtonKt {
                     }
 
                     public final void invoke(Composer composer2, int i13) {
-                        float m7251constructorimpl;
-                        float m7251constructorimpl2;
-                        float m3324getContainerWidthD9Ej5fM;
+                        float m7264constructorimpl;
+                        float m7264constructorimpl2;
+                        float m3334getContainerWidthD9Ej5fM;
                         EnterTransition enterTransition;
                         ExitTransition exitTransition;
                         ComposerKt.sourceInformation(composer2, "C377@18029L885:FloatingActionButton.kt#uh7d8r");
@@ -2419,24 +2419,24 @@ public final class FloatingActionButtonKt {
                                 ComposerKt.traceEventStart(1172118032, i13, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:374)");
                             }
                             if (z2) {
-                                m7251constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
+                                m7264constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
                             } else {
-                                m7251constructorimpl = Dp.m7251constructorimpl(0);
+                                m7264constructorimpl = Dp.m7264constructorimpl(0);
                             }
-                            float f = m7251constructorimpl;
+                            float f = m7264constructorimpl;
                             if (z2) {
-                                m7251constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
+                                m7264constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
                             } else {
-                                m7251constructorimpl2 = Dp.m7251constructorimpl(0);
+                                m7264constructorimpl2 = Dp.m7264constructorimpl(0);
                             }
-                            float f2 = m7251constructorimpl2;
+                            float f2 = m7264constructorimpl2;
                             Modifier.Companion companion2 = Modifier.Companion;
                             if (z2) {
-                                m3324getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
+                                m3334getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
                             } else {
-                                m3324getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM();
+                                m3334getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM();
                             }
-                            Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m888sizeInqDBjuR0$default(companion2, m3324getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
+                            Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m898sizeInqDBjuR0$default(companion2, m3334getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
                             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                             Arrangement.HorizontalOrVertical start = z2 ? Arrangement.INSTANCE.getStart() : Arrangement.INSTANCE.getCenter();
                             Function2<Composer, Integer, Unit> function23 = function22;
@@ -2447,7 +2447,7 @@ public final class FloatingActionButtonKt {
                             ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m836paddingqDBjuR0$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer2.getApplier() instanceof Applier)) {
@@ -2459,15 +2459,15 @@ public final class FloatingActionButtonKt {
                             } else {
                                 composer2.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                            Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                            Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer2, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                             ComposerKt.sourceInformationMarkerStart(composer2, 1618821151, "C388@18524L6,393@18718L186,389@18543L361:FloatingActionButton.kt#uh7d8r");
                             function23.invoke(composer2, 0);
@@ -2522,20 +2522,20 @@ public final class FloatingActionButtonKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                    Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                    Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                     RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, 1967858577, "C395@18796L49,396@18866L6:FloatingActionButton.kt#uh7d8r");
                                     f3 = FloatingActionButtonKt.ExtendedFabEndIconPadding;
-                                    SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, f3), composer3, 6);
+                                    SpacerKt.Spacer(SizeKt.m899width3ABfNKs(Modifier.Companion, f3), composer3, 6);
                                     function25.invoke(composer3, 0);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2617,7 +2617,7 @@ public final class FloatingActionButtonKt {
             int i1122 = i3 >> 6;
             int i1222 = i3 >> 9;
             Modifier modifier322 = companion;
-            m2236FloatingActionButtonXz6DiA(function02, modifier322, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
+            m2246FloatingActionButtonXz6DiA(function02, modifier322, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -2632,9 +2632,9 @@ public final class FloatingActionButtonKt {
                 }
 
                 public final void invoke(Composer composer2, int i13) {
-                    float m7251constructorimpl;
-                    float m7251constructorimpl2;
-                    float m3324getContainerWidthD9Ej5fM;
+                    float m7264constructorimpl;
+                    float m7264constructorimpl2;
+                    float m3334getContainerWidthD9Ej5fM;
                     EnterTransition enterTransition;
                     ExitTransition exitTransition;
                     ComposerKt.sourceInformation(composer2, "C377@18029L885:FloatingActionButton.kt#uh7d8r");
@@ -2643,24 +2643,24 @@ public final class FloatingActionButtonKt {
                             ComposerKt.traceEventStart(1172118032, i13, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:374)");
                         }
                         if (z2) {
-                            m7251constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
+                            m7264constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
                         } else {
-                            m7251constructorimpl = Dp.m7251constructorimpl(0);
+                            m7264constructorimpl = Dp.m7264constructorimpl(0);
                         }
-                        float f = m7251constructorimpl;
+                        float f = m7264constructorimpl;
                         if (z2) {
-                            m7251constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
+                            m7264constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
                         } else {
-                            m7251constructorimpl2 = Dp.m7251constructorimpl(0);
+                            m7264constructorimpl2 = Dp.m7264constructorimpl(0);
                         }
-                        float f2 = m7251constructorimpl2;
+                        float f2 = m7264constructorimpl2;
                         Modifier.Companion companion2 = Modifier.Companion;
                         if (z2) {
-                            m3324getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
+                            m3334getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
                         } else {
-                            m3324getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM();
+                            m3334getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM();
                         }
-                        Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m888sizeInqDBjuR0$default(companion2, m3324getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
+                        Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m898sizeInqDBjuR0$default(companion2, m3334getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
                         Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                         Arrangement.HorizontalOrVertical start = z2 ? Arrangement.INSTANCE.getStart() : Arrangement.INSTANCE.getCenter();
                         Function2<Composer, Integer, Unit> function23 = function22;
@@ -2671,7 +2671,7 @@ public final class FloatingActionButtonKt {
                         ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                         CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m836paddingqDBjuR0$default);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                         if (!(composer2.getApplier() instanceof Applier)) {
@@ -2683,15 +2683,15 @@ public final class FloatingActionButtonKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                        Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                        Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         ComposerKt.sourceInformationMarkerStart(composer2, 1618821151, "C388@18524L6,393@18718L186,389@18543L361:FloatingActionButton.kt#uh7d8r");
                         function23.invoke(composer2, 0);
@@ -2746,20 +2746,20 @@ public final class FloatingActionButtonKt {
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                                Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                                Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                    m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                    m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                    m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                    m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 1967858577, "C395@18796L49,396@18866L6:FloatingActionButton.kt#uh7d8r");
                                 f3 = FloatingActionButtonKt.ExtendedFabEndIconPadding;
-                                SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, f3), composer3, 6);
+                                SpacerKt.Spacer(SizeKt.m899width3ABfNKs(Modifier.Companion, f3), composer3, 6);
                                 function25.invoke(composer3, 0);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
                                 ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2845,7 +2845,7 @@ public final class FloatingActionButtonKt {
         int i11222 = i3 >> 6;
         int i12222 = i3 >> 9;
         Modifier modifier3222 = companion;
-        m2236FloatingActionButtonXz6DiA(function02, modifier3222, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
+        m2246FloatingActionButtonXz6DiA(function02, modifier3222, shape2, j6, j5, floatingActionButtonElevation2, mutableInteractionSource2, ComposableLambdaKt.rememberComposableLambda(1172118032, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.FloatingActionButtonKt$ExtendedFloatingActionButton$3
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -2860,9 +2860,9 @@ public final class FloatingActionButtonKt {
             }
 
             public final void invoke(Composer composer2, int i13) {
-                float m7251constructorimpl;
-                float m7251constructorimpl2;
-                float m3324getContainerWidthD9Ej5fM;
+                float m7264constructorimpl;
+                float m7264constructorimpl2;
+                float m3334getContainerWidthD9Ej5fM;
                 EnterTransition enterTransition;
                 ExitTransition exitTransition;
                 ComposerKt.sourceInformation(composer2, "C377@18029L885:FloatingActionButton.kt#uh7d8r");
@@ -2871,24 +2871,24 @@ public final class FloatingActionButtonKt {
                         ComposerKt.traceEventStart(1172118032, i13, -1, "androidx.compose.material3.ExtendedFloatingActionButton.<anonymous> (FloatingActionButton.kt:374)");
                     }
                     if (z2) {
-                        m7251constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
+                        m7264constructorimpl = FloatingActionButtonKt.ExtendedFabStartIconPadding;
                     } else {
-                        m7251constructorimpl = Dp.m7251constructorimpl(0);
+                        m7264constructorimpl = Dp.m7264constructorimpl(0);
                     }
-                    float f = m7251constructorimpl;
+                    float f = m7264constructorimpl;
                     if (z2) {
-                        m7251constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
+                        m7264constructorimpl2 = FloatingActionButtonKt.ExtendedFabTextPadding;
                     } else {
-                        m7251constructorimpl2 = Dp.m7251constructorimpl(0);
+                        m7264constructorimpl2 = Dp.m7264constructorimpl(0);
                     }
-                    float f2 = m7251constructorimpl2;
+                    float f2 = m7264constructorimpl2;
                     Modifier.Companion companion2 = Modifier.Companion;
                     if (z2) {
-                        m3324getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
+                        m3334getContainerWidthD9Ej5fM = FloatingActionButtonKt.ExtendedFabMinimumWidth;
                     } else {
-                        m3324getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3324getContainerWidthD9Ej5fM();
+                        m3334getContainerWidthD9Ej5fM = FabPrimaryTokens.INSTANCE.m3334getContainerWidthD9Ej5fM();
                     }
-                    Modifier m836paddingqDBjuR0$default = PaddingKt.m836paddingqDBjuR0$default(SizeKt.m888sizeInqDBjuR0$default(companion2, m3324getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
+                    Modifier m846paddingqDBjuR0$default = PaddingKt.m846paddingqDBjuR0$default(SizeKt.m898sizeInqDBjuR0$default(companion2, m3334getContainerWidthD9Ej5fM, 0.0f, 0.0f, 0.0f, 14, null), f, 0.0f, f2, 0.0f, 10, null);
                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                     Arrangement.HorizontalOrVertical start = z2 ? Arrangement.INSTANCE.getStart() : Arrangement.INSTANCE.getCenter();
                     Function2<Composer, Integer, Unit> function23 = function22;
@@ -2899,7 +2899,7 @@ public final class FloatingActionButtonKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer2, 0);
                     CompositionLocalMap currentCompositionLocalMap = composer2.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m836paddingqDBjuR0$default);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer2, m846paddingqDBjuR0$default);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(composer2, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                     if (!(composer2.getApplier() instanceof Applier)) {
@@ -2911,15 +2911,15 @@ public final class FloatingActionButtonKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer2);
-                    Updater.m3862setimpl(m3855constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer2);
+                    Updater.m3874setimpl(m3867constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                     ComposerKt.sourceInformationMarkerStart(composer2, 1618821151, "C388@18524L6,393@18718L186,389@18543L361:FloatingActionButton.kt#uh7d8r");
                     function23.invoke(composer2, 0);
@@ -2974,20 +2974,20 @@ public final class FloatingActionButtonKt {
                             } else {
                                 composer3.useNode();
                             }
-                            Composer m3855constructorimpl2 = Updater.m3855constructorimpl(composer3);
-                            Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl2 = Updater.m3867constructorimpl(composer3);
+                            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer3, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer3, 1967858577, "C395@18796L49,396@18866L6:FloatingActionButton.kt#uh7d8r");
                             f3 = FloatingActionButtonKt.ExtendedFabEndIconPadding;
-                            SpacerKt.Spacer(SizeKt.m889width3ABfNKs(Modifier.Companion, f3), composer3, 6);
+                            SpacerKt.Spacer(SizeKt.m899width3ABfNKs(Modifier.Companion, f3), composer3, 6);
                             function25.invoke(composer3, 0);
                             ComposerKt.sourceInformationMarkerEnd(composer3);
                             ComposerKt.sourceInformationMarkerEnd(composer3);

@@ -17,16 +17,16 @@ final class UnspecifiedConstraintsElement extends ModifierNodeElement<Unspecifie
     }
 
     public /* synthetic */ UnspecifiedConstraintsElement(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7271getUnspecifiedD9Ej5fM() : f2, null);
+        this((i & 1) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f, (i & 2) != 0 ? Dp.Companion.m7284getUnspecifiedD9Ej5fM() : f2, null);
     }
 
     /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
-    public final float m904getMinWidthD9Ej5fM() {
+    public final float m914getMinWidthD9Ej5fM() {
         return this.minWidth;
     }
 
     /* renamed from: getMinHeight-D9Ej5fM  reason: not valid java name */
-    public final float m903getMinHeightD9Ej5fM() {
+    public final float m913getMinHeightD9Ej5fM() {
         return this.minHeight;
     }
 
@@ -43,28 +43,28 @@ final class UnspecifiedConstraintsElement extends ModifierNodeElement<Unspecifie
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(UnspecifiedConstraintsNode unspecifiedConstraintsNode) {
-        unspecifiedConstraintsNode.m908setMinWidth0680j_4(this.minWidth);
-        unspecifiedConstraintsNode.m907setMinHeight0680j_4(this.minHeight);
+        unspecifiedConstraintsNode.m918setMinWidth0680j_4(this.minWidth);
+        unspecifiedConstraintsNode.m917setMinHeight0680j_4(this.minHeight);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void inspectableProperties(InspectorInfo inspectorInfo) {
         inspectorInfo.setName("defaultMinSize");
-        inspectorInfo.getProperties().set("minWidth", Dp.m7249boximpl(this.minWidth));
-        inspectorInfo.getProperties().set("minHeight", Dp.m7249boximpl(this.minHeight));
+        inspectorInfo.getProperties().set("minWidth", Dp.m7262boximpl(this.minWidth));
+        inspectorInfo.getProperties().set("minHeight", Dp.m7262boximpl(this.minHeight));
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public boolean equals(Object obj) {
         if (obj instanceof UnspecifiedConstraintsElement) {
             UnspecifiedConstraintsElement unspecifiedConstraintsElement = (UnspecifiedConstraintsElement) obj;
-            return Dp.m7256equalsimpl0(this.minWidth, unspecifiedConstraintsElement.minWidth) && Dp.m7256equalsimpl0(this.minHeight, unspecifiedConstraintsElement.minHeight);
+            return Dp.m7269equalsimpl0(this.minWidth, unspecifiedConstraintsElement.minWidth) && Dp.m7269equalsimpl0(this.minHeight, unspecifiedConstraintsElement.minHeight);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (Dp.m7257hashCodeimpl(this.minWidth) * 31) + Dp.m7257hashCodeimpl(this.minHeight);
+        return (Dp.m7270hashCodeimpl(this.minWidth) * 31) + Dp.m7270hashCodeimpl(this.minHeight);
     }
 }

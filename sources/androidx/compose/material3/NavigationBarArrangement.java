@@ -11,44 +11,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NavigationBarArrangement {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int EqualWeight = m2361constructorimpl(0);
-    private static final int Centered = m2361constructorimpl(1);
+    private static final int EqualWeight = m2371constructorimpl(0);
+    private static final int Centered = m2371constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ NavigationBarArrangement m2360boximpl(int i) {
+    public static final /* synthetic */ NavigationBarArrangement m2370boximpl(int i) {
         return new NavigationBarArrangement(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m2361constructorimpl(int i) {
+    private static int m2371constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2362equalsimpl(int i, Object obj) {
-        return (obj instanceof NavigationBarArrangement) && i == ((NavigationBarArrangement) obj).m2366unboximpl();
+    public static boolean m2372equalsimpl(int i, Object obj) {
+        return (obj instanceof NavigationBarArrangement) && i == ((NavigationBarArrangement) obj).m2376unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m2363equalsimpl0(int i, int i2) {
+    public static final boolean m2373equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2364hashCodeimpl(int i) {
+    public static int m2374hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m2362equalsimpl(this.value, obj);
+        return m2372equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m2364hashCodeimpl(this.value);
+        return m2374hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m2366unboximpl() {
+    public final /* synthetic */ int m2376unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class NavigationBarArrangement {
         }
 
         /* renamed from: getEqualWeight-Ebr7WPU  reason: not valid java name */
-        public final int m2368getEqualWeightEbr7WPU() {
+        public final int m2378getEqualWeightEbr7WPU() {
             return NavigationBarArrangement.EqualWeight;
         }
 
         /* renamed from: getCentered-Ebr7WPU  reason: not valid java name */
-        public final int m2367getCenteredEbr7WPU() {
+        public final int m2377getCenteredEbr7WPU() {
             return NavigationBarArrangement.Centered;
         }
     }
@@ -79,11 +79,11 @@ public final class NavigationBarArrangement {
     }
 
     public String toString() {
-        return m2365toStringimpl(this.value);
+        return m2375toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2365toStringimpl(int i) {
-        return m2363equalsimpl0(i, EqualWeight) ? "EqualWeight" : m2363equalsimpl0(i, Centered) ? "Centered" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m2375toStringimpl(int i) {
+        return m2373equalsimpl0(i, EqualWeight) ? "EqualWeight" : m2373equalsimpl0(i, Centered) ? "Centered" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

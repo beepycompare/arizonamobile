@@ -59,12 +59,12 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
-    public void mo438onDragStartedk4lQ0M(long j) {
+    public void mo448onDragStartedk4lQ0M(long j) {
     }
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    public boolean mo228onPreKeyEventZmokQxo(KeyEvent keyEvent) {
+    public boolean mo238onPreKeyEventZmokQxo(KeyEvent keyEvent) {
         return false;
     }
 
@@ -93,7 +93,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
         ContentInViewNode contentInViewNode = (ContentInViewNode) delegate(new ContentInViewNode(orientation, scrollingLogic, z2, bringIntoViewSpec));
         this.contentInViewNode = contentInViewNode;
         delegate(NestedScrollNodeKt.nestedScrollModifierNode(scrollableNestedScrollConnection, nestedScrollDispatcher));
-        delegate(FocusTargetModifierNodeKt.m4207FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4228getNeverLCbbffg(), null, 2, null));
+        delegate(FocusTargetModifierNodeKt.m4219FocusTargetModifierNodePYyLHbc$default(Focusability.Companion.m4240getNeverLCbbffg(), null, 2, null));
         delegate(new BringIntoViewResponderNode(contentInViewNode));
         delegate(new FocusedBoundsObserverNode(new Function1() { // from class: androidx.compose.foundation.gestures.ScrollableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -118,9 +118,9 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     @Override // androidx.compose.foundation.gestures.OnScrollChangedDispatcher
     /* renamed from: dispatchScrollDeltaInfo-k-4lQ0M */
-    public void mo525dispatchScrollDeltaInfok4lQ0M(long j) {
+    public void mo535dispatchScrollDeltaInfok4lQ0M(long j) {
         if (isAttached()) {
-            DelegatableNodeKt.m6096dispatchOnScrollChangedUv8p0NA(this, j);
+            DelegatableNodeKt.m6109dispatchOnScrollChangedUv8p0NA(this, j);
         }
     }
 
@@ -133,12 +133,12 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStopped-TH1AsA0 */
-    public void mo439onDragStoppedTH1AsA0(long j) {
+    public void mo449onDragStoppedTH1AsA0(long j) {
         BuildersKt__Builders_commonKt.launch$default(this.nestedScrollDispatcher.getCoroutineScope(), null, null, new ScrollableNode$onDragStopped$1(this, j, null), 3, null);
     }
 
     /* renamed from: onWheelScrollStopped-TH1AsA0  reason: not valid java name */
-    private final void m568onWheelScrollStoppedTH1AsA0(long j) {
+    private final void m578onWheelScrollStoppedTH1AsA0(long j) {
         BuildersKt__Builders_commonKt.launch$default(this.nestedScrollDispatcher.getCoroutineScope(), null, null, new ScrollableNode$onWheelScrollStopped$1(this, j, null), 3, null);
     }
 
@@ -159,7 +159,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final /* synthetic */ Object ensureMouseWheelScrollNodeInitialized$onWheelScrollStopped(ScrollableNode scrollableNode, long j, Continuation continuation) {
-        scrollableNode.m568onWheelScrollStoppedTH1AsA0(j);
+        scrollableNode.m578onWheelScrollStoppedTH1AsA0(j);
         return Unit.INSTANCE;
     }
 
@@ -211,18 +211,18 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
-    public boolean mo226onKeyEventZmokQxo(KeyEvent keyEvent) {
-        long m4285constructorimpl;
+    public boolean mo236onKeyEventZmokQxo(KeyEvent keyEvent) {
+        long m4297constructorimpl;
         if (getEnabled()) {
-            if ((Key.m5374equalsimpl0(KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent), Key.Companion.m5562getPageDownEK5gGoQ()) || Key.m5374equalsimpl0(KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent), Key.Companion.m5563getPageUpEK5gGoQ())) && KeyEventType.m5675equalsimpl0(KeyEvent_androidKt.m5683getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5679getKeyDownCS__XNY()) && !KeyEvent_androidKt.m5686isCtrlPressedZmokQxo(keyEvent)) {
+            if ((Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5575getPageDownEK5gGoQ()) || Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ())) && KeyEventType.m5688equalsimpl0(KeyEvent_androidKt.m5696getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5692getKeyDownCS__XNY()) && !KeyEvent_androidKt.m5699isCtrlPressedZmokQxo(keyEvent)) {
                 if (this.scrollingLogic.isVertical()) {
-                    int m458getViewportSizeYbymL2g$foundation_release = (int) (this.contentInViewNode.m458getViewportSizeYbymL2g$foundation_release() & 4294967295L);
-                    m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Key.m5374equalsimpl0(KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent), Key.Companion.m5563getPageUpEK5gGoQ()) ? m458getViewportSizeYbymL2g$foundation_release : -m458getViewportSizeYbymL2g$foundation_release)));
+                    int m468getViewportSizeYbymL2g$foundation_release = (int) (this.contentInViewNode.m468getViewportSizeYbymL2g$foundation_release() & 4294967295L);
+                    m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (4294967295L & Float.floatToRawIntBits(Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release : -m468getViewportSizeYbymL2g$foundation_release)));
                 } else {
-                    int m458getViewportSizeYbymL2g$foundation_release2 = (int) (this.contentInViewNode.m458getViewportSizeYbymL2g$foundation_release() >> 32);
-                    m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Key.m5374equalsimpl0(KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent), Key.Companion.m5563getPageUpEK5gGoQ()) ? m458getViewportSizeYbymL2g$foundation_release2 : -m458getViewportSizeYbymL2g$foundation_release2) << 32));
+                    int m468getViewportSizeYbymL2g$foundation_release2 = (int) (this.contentInViewNode.m468getViewportSizeYbymL2g$foundation_release() >> 32);
+                    m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Key.m5387equalsimpl0(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent), Key.Companion.m5576getPageUpEK5gGoQ()) ? m468getViewportSizeYbymL2g$foundation_release2 : -m468getViewportSizeYbymL2g$foundation_release2) << 32));
                 }
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new ScrollableNode$onKeyEvent$1(this, m4285constructorimpl, null), 3, null);
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new ScrollableNode$onKeyEvent$1(this, m4297constructorimpl, null), 3, null);
                 return true;
             }
             return false;
@@ -232,7 +232,7 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode, androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         int i = 0;
@@ -241,18 +241,18 @@ public final class ScrollableNode extends DragGestureNode implements KeyInputMod
                 break;
             }
             if (getCanDrag().invoke(changes.get(i)).booleanValue()) {
-                super.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+                super.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
                 break;
             }
             i++;
         }
         if (getEnabled()) {
-            if (pointerEventPass == PointerEventPass.Initial && PointerEventType.m5775equalsimpl0(pointerEvent.m5768getType7fucELk(), PointerEventType.Companion.m5784getScroll7fucELk())) {
+            if (pointerEventPass == PointerEventPass.Initial && PointerEventType.m5788equalsimpl0(pointerEvent.m5781getType7fucELk(), PointerEventType.Companion.m5797getScroll7fucELk())) {
                 ensureMouseWheelScrollNodeInitialized();
             }
             MouseWheelScrollingLogic mouseWheelScrollingLogic = this.mouseWheelScrollingLogic;
             if (mouseWheelScrollingLogic != null) {
-                mouseWheelScrollingLogic.m516onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+                mouseWheelScrollingLogic.m526onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
             }
         }
     }

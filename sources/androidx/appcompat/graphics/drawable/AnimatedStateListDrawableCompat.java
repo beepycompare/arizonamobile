@@ -441,8 +441,8 @@ public class AnimatedStateListDrawableCompat extends StateListDrawableCompat imp
 
         @Override // androidx.appcompat.graphics.drawable.StateListDrawableCompat.StateListState, androidx.appcompat.graphics.drawable.DrawableContainerCompat.DrawableContainerState
         void mutate() {
-            this.mTransitions = this.mTransitions.m35clone();
-            this.mStateIds = this.mStateIds.m36clone();
+            this.mTransitions = this.mTransitions.m45clone();
+            this.mStateIds = this.mStateIds.m46clone();
         }
 
         int addTransition(int i, int i2, Drawable drawable, boolean z) {

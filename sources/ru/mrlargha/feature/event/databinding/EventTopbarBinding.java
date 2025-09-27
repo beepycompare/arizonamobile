@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class EventTopbarBinding implements ViewBinding {
     public final ImageView backButton;
     public final LinearLayout moneyContainer;

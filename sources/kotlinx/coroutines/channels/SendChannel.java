@@ -19,7 +19,7 @@ public interface SendChannel<E> {
     SelectClause2<E, SendChannel<E>> getOnSend();
 
     /* renamed from: invokeOnClose */
-    void mo10691invokeOnClose(Function1<? super Throwable, Unit> function1);
+    void mo10706invokeOnClose(Function1<? super Throwable, Unit> function1);
 
     boolean isClosedForSend();
 
@@ -29,7 +29,7 @@ public interface SendChannel<E> {
     Object send(E e, Continuation<? super Unit> continuation);
 
     /* renamed from: trySend-JP2dKIU */
-    Object mo8127trySendJP2dKIU(E e);
+    Object mo8140trySendJP2dKIU(E e);
 
     /* compiled from: Channel.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
@@ -51,15 +51,15 @@ public interface SendChannel<E> {
         /* JADX WARN: Multi-variable type inference failed */
         @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated in the favour of 'trySend' method", replaceWith = @ReplaceWith(expression = "trySend(element).isSuccess", imports = {}))
         public static <E> boolean offer(SendChannel<? super E> sendChannel, E e) {
-            Object mo8127trySendJP2dKIU = sendChannel.mo8127trySendJP2dKIU(e);
-            if (ChannelResult.m10632isSuccessimpl(mo8127trySendJP2dKIU)) {
+            Object mo8140trySendJP2dKIU = sendChannel.mo8140trySendJP2dKIU(e);
+            if (ChannelResult.m10647isSuccessimpl(mo8140trySendJP2dKIU)) {
                 return true;
             }
-            Throwable m10626exceptionOrNullimpl = ChannelResult.m10626exceptionOrNullimpl(mo8127trySendJP2dKIU);
-            if (m10626exceptionOrNullimpl == null) {
+            Throwable m10641exceptionOrNullimpl = ChannelResult.m10641exceptionOrNullimpl(mo8140trySendJP2dKIU);
+            if (m10641exceptionOrNullimpl == null) {
                 return false;
             }
-            throw StackTraceRecoveryKt.recoverStackTrace(m10626exceptionOrNullimpl);
+            throw StackTraceRecoveryKt.recoverStackTrace(m10641exceptionOrNullimpl);
         }
     }
 }

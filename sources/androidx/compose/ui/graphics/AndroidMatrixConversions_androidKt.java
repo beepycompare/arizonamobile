@@ -6,7 +6,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class AndroidMatrixConversions_androidKt {
     /* renamed from: setFrom-tU-YjHk  reason: not valid java name */
-    public static final void m4406setFromtUYjHk(float[] fArr, android.graphics.Matrix matrix) {
+    public static final void m4418setFromtUYjHk(float[] fArr, android.graphics.Matrix matrix) {
         matrix.getValues(fArr);
         float f = fArr[0];
         float f2 = fArr[1];
@@ -36,7 +36,7 @@ public final class AndroidMatrixConversions_androidKt {
     }
 
     /* renamed from: setFrom-EL8BTi8  reason: not valid java name */
-    public static final void m4405setFromEL8BTi8(android.graphics.Matrix matrix, float[] fArr) {
+    public static final void m4417setFromEL8BTi8(android.graphics.Matrix matrix, float[] fArr) {
         float f = fArr[0];
         float f2 = fArr[1];
         float f3 = fArr[2];

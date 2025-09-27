@@ -34,18 +34,18 @@ public final class DropShadowPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5236getIntrinsicSizeNHjbRc() {
-        return Size.Companion.m4370getUnspecifiedNHjbRc();
+    public long mo5248getIntrinsicSizeNHjbRc() {
+        return Size.Companion.m4382getUnspecifiedNHjbRc();
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     protected void onDraw(DrawScope drawScope) {
-        DropShadowRenderer mo5243obtainDropShadowRenderereZhPAX0 = this.renderCreator.mo5243obtainDropShadowRenderereZhPAX0(this.shape, drawScope.mo5116getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow);
-        float f = drawScope.mo419toPx0680j_4(DpOffset.m7312getXD9Ej5fM(this.shadow.m5261getOffsetRKDOV3M()));
-        float f2 = drawScope.mo419toPx0680j_4(DpOffset.m7314getYD9Ej5fM(this.shadow.m5261getOffsetRKDOV3M()));
+        DropShadowRenderer mo5255obtainDropShadowRenderereZhPAX0 = this.renderCreator.mo5255obtainDropShadowRenderereZhPAX0(this.shape, drawScope.mo5128getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow);
+        float f = drawScope.mo429toPx0680j_4(DpOffset.m7325getXD9Ej5fM(this.shadow.m5273getOffsetRKDOV3M()));
+        float f2 = drawScope.mo429toPx0680j_4(DpOffset.m7327getYD9Ej5fM(this.shadow.m5273getOffsetRKDOV3M()));
         drawScope.getDrawContext().getTransform().translate(f, f2);
         try {
-            mo5243obtainDropShadowRenderereZhPAX0.m5265drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo5116getSizeNHjbRc(), mo5243obtainDropShadowRenderereZhPAX0.getShadow().m5260getColor0d7_KjU(), mo5243obtainDropShadowRenderereZhPAX0.getShadow().getBrush(), RangesKt.coerceIn(this.alpha * mo5243obtainDropShadowRenderereZhPAX0.getShadow().getAlpha(), 0.0f, 1.0f), mo5243obtainDropShadowRenderereZhPAX0.getShadow().m5259getBlendMode0nO6VwU());
+            mo5255obtainDropShadowRenderereZhPAX0.m5277drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo5128getSizeNHjbRc(), mo5255obtainDropShadowRenderereZhPAX0.getShadow().m5272getColor0d7_KjU(), mo5255obtainDropShadowRenderereZhPAX0.getShadow().getBrush(), RangesKt.coerceIn(this.alpha * mo5255obtainDropShadowRenderereZhPAX0.getShadow().getAlpha(), 0.0f, 1.0f), mo5255obtainDropShadowRenderereZhPAX0.getShadow().m5271getBlendMode0nO6VwU());
         } finally {
             drawScope.getDrawContext().getTransform().translate(-f, -f2);
         }

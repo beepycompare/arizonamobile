@@ -8,7 +8,7 @@ import java.util.List;
 public final class C0228eg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ra f862a;
+    public final Ra f863a;
 
     public C0228eg() {
         this(new Ra(20, 100));
@@ -17,15 +17,15 @@ public final class C0228eg implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Zi fromModel(List<String> list) {
-        Sn a2 = this.f862a.a((List<Object>) list);
-        List list2 = (List) a2.f675a;
+        Sn a2 = this.f863a.a((List<Object>) list);
+        List list2 = (List) a2.f676a;
         N8[] n8Arr = new N8[0];
         if (list2 != null) {
             n8Arr = new N8[list2.size()];
             for (int i = 0; i < list2.size(); i++) {
                 N8 n8 = new N8();
                 n8Arr[i] = n8;
-                n8.f591a = StringUtils.getUTF8Bytes((String) list2.get(i));
+                n8.f592a = StringUtils.getUTF8Bytes((String) list2.get(i));
             }
         }
         a2.b.getBytesTruncated();
@@ -39,7 +39,7 @@ public final class C0228eg implements Converter {
     }
 
     public C0228eg(Ra ra) {
-        this.f862a = ra;
+        this.f863a = ra;
     }
 
     public final List<String> a(Zi zi) {

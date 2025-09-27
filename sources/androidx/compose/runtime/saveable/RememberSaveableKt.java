@@ -27,7 +27,7 @@ public final class RememberSaveableKt {
 
     @Deprecated(message = " 'rememberSaveable' with a custom 'key' is no longer supported. It bypasses positional scoping, leading to state bugs and inconsistent behavior (e.g., unintentional state sharing or loss, issues in nested LazyLayouts). Please remove the 'key' parameter to use positional scoping for consistent, locally-scoped state. See https://r.android.com/3610053 for details.")
     /* renamed from: rememberSaveable  reason: collision with other method in class */
-    public static final <T> T m3982rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, String str, Function0<? extends T> function0, Composer composer, int i, int i2) {
+    public static final <T> T m3994rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, String str, Function0<? extends T> function0, Composer composer, int i, int i2) {
         Object[] objArr2;
         final T t;
         Object consumeRestored;
@@ -117,7 +117,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1564532345, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:135)");
         }
-        T t = (T) m3982rememberSaveable(Arrays.copyOf(objArr, objArr.length), SaverKt.autoSaver(), (String) null, function0, composer, ((i << 6) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        T t = (T) m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), SaverKt.autoSaver(), (String) null, function0, composer, ((i << 6) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -126,12 +126,12 @@ public final class RememberSaveableKt {
     }
 
     /* renamed from: rememberSaveable  reason: collision with other method in class */
-    public static final <T> T m3983rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, Function0<? extends T> function0, Composer composer, int i) {
+    public static final <T> T m3995rememberSaveable(Object[] objArr, Saver<T, ? extends Object> saver, Function0<? extends T> function0, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 674689872, "C(rememberSaveable)N(inputs,saver,init)182@8584L65:RememberSaveable.kt#r2ddri");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(674689872, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:180)");
         }
-        T t = (T) m3982rememberSaveable(Arrays.copyOf(objArr, objArr.length), saver, (String) null, function0, composer, (i & 112) | RendererCapabilities.DECODER_SUPPORT_MASK | ((i << 3) & 7168), 0);
+        T t = (T) m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), saver, (String) null, function0, composer, (i & 112) | RendererCapabilities.DECODER_SUPPORT_MASK | ((i << 3) & 7168), 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -144,7 +144,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-746165481, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:208)");
         }
-        MutableState<T> mutableState = (MutableState) m3982rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), (String) null, (Function0<? extends Object>) function0, composer, ((i << 3) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+        MutableState<T> mutableState = (MutableState) m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), (String) null, (Function0<? extends Object>) function0, composer, ((i << 3) & 7168) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -162,7 +162,7 @@ public final class RememberSaveableKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-202053668, i, -1, "androidx.compose.runtime.saveable.rememberSaveable (RememberSaveable.kt:248)");
         }
-        MutableState<T> mutableState = (MutableState) m3982rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), str2, (Function0<? extends Object>) function0, composer, i & 8064, 0);
+        MutableState<T> mutableState = (MutableState) m3994rememberSaveable(Arrays.copyOf(objArr, objArr.length), (Saver<Object, ? extends Object>) mutableStateSaver(saver), str2, (Function0<? extends Object>) function0, composer, i & 8064, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

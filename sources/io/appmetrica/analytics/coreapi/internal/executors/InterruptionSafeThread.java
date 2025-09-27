@@ -3,35 +3,35 @@ package io.appmetrica.analytics.coreapi.internal.executors;
 public class InterruptionSafeThread extends Thread implements IInterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f251a;
+    private volatile boolean f252a;
 
     public InterruptionSafeThread() {
-        this.f251a = true;
+        this.f252a = true;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public synchronized boolean isRunning() {
-        return this.f251a;
+        return this.f252a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public synchronized void stopRunning() {
-        this.f251a = false;
+        this.f252a = false;
         interrupt();
     }
 
     public InterruptionSafeThread(Runnable runnable, String str) {
         super(runnable, str);
-        this.f251a = true;
+        this.f252a = true;
     }
 
     public InterruptionSafeThread(String str) {
         super(str);
-        this.f251a = true;
+        this.f252a = true;
     }
 
     public InterruptionSafeThread(Runnable runnable) {
         super(runnable);
-        this.f251a = true;
+        this.f252a = true;
     }
 }

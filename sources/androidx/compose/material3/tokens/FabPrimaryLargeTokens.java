@@ -11,19 +11,19 @@ public final class FabPrimaryLargeTokens {
     private static final float ContainerWidth;
     public static final FabPrimaryLargeTokens INSTANCE = new FabPrimaryLargeTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3287getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
-    private static final float FocusContainerElevation = ElevationTokens.INSTANCE.m3287getLevel3D9Ej5fM();
+    private static final float FocusContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
-    private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3288getLevel4D9Ej5fM();
+    private static final float HoverContainerElevation = ElevationTokens.INSTANCE.m3298getLevel4D9Ej5fM();
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
-    private static final float IconSize = Dp.m7251constructorimpl((float) 36.0d);
-    private static final float LoweredContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
-    private static final float LoweredFocusContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
-    private static final float LoweredHoverContainerElevation = ElevationTokens.INSTANCE.m3286getLevel2D9Ej5fM();
-    private static final float LoweredPressedContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
-    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3287getLevel3D9Ej5fM();
+    private static final float IconSize = Dp.m7264constructorimpl((float) 36.0d);
+    private static final float LoweredContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
+    private static final float LoweredFocusContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
+    private static final float LoweredHoverContainerElevation = ElevationTokens.INSTANCE.m3296getLevel2D9Ej5fM();
+    private static final float LoweredPressedContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
+    private static final float PressedContainerElevation = ElevationTokens.INSTANCE.m3297getLevel3D9Ej5fM();
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnPrimaryContainer;
 
     private FabPrimaryLargeTokens() {
@@ -31,8 +31,8 @@ public final class FabPrimaryLargeTokens {
 
     static {
         float f = (float) 96.0d;
-        ContainerHeight = Dp.m7251constructorimpl(f);
-        ContainerWidth = Dp.m7251constructorimpl(f);
+        ContainerHeight = Dp.m7264constructorimpl(f);
+        ContainerWidth = Dp.m7264constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -40,12 +40,12 @@ public final class FabPrimaryLargeTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3300getContainerElevationD9Ej5fM() {
+    public final float m3310getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3301getContainerHeightD9Ej5fM() {
+    public final float m3311getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -54,12 +54,12 @@ public final class FabPrimaryLargeTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3302getContainerWidthD9Ej5fM() {
+    public final float m3312getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3303getFocusContainerElevationD9Ej5fM() {
+    public final float m3313getFocusContainerElevationD9Ej5fM() {
         return FocusContainerElevation;
     }
 
@@ -68,7 +68,7 @@ public final class FabPrimaryLargeTokens {
     }
 
     /* renamed from: getHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3304getHoverContainerElevationD9Ej5fM() {
+    public final float m3314getHoverContainerElevationD9Ej5fM() {
         return HoverContainerElevation;
     }
 
@@ -81,32 +81,32 @@ public final class FabPrimaryLargeTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3305getIconSizeD9Ej5fM() {
+    public final float m3315getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLoweredContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3306getLoweredContainerElevationD9Ej5fM() {
+    public final float m3316getLoweredContainerElevationD9Ej5fM() {
         return LoweredContainerElevation;
     }
 
     /* renamed from: getLoweredFocusContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3307getLoweredFocusContainerElevationD9Ej5fM() {
+    public final float m3317getLoweredFocusContainerElevationD9Ej5fM() {
         return LoweredFocusContainerElevation;
     }
 
     /* renamed from: getLoweredHoverContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3308getLoweredHoverContainerElevationD9Ej5fM() {
+    public final float m3318getLoweredHoverContainerElevationD9Ej5fM() {
         return LoweredHoverContainerElevation;
     }
 
     /* renamed from: getLoweredPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3309getLoweredPressedContainerElevationD9Ej5fM() {
+    public final float m3319getLoweredPressedContainerElevationD9Ej5fM() {
         return LoweredPressedContainerElevation;
     }
 
     /* renamed from: getPressedContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3310getPressedContainerElevationD9Ej5fM() {
+    public final float m3320getPressedContainerElevationD9Ej5fM() {
         return PressedContainerElevation;
     }
 

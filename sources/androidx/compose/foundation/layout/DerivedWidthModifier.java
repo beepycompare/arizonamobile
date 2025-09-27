@@ -47,7 +47,7 @@ final class DerivedWidthModifier extends InspectorValueInfo implements LayoutMod
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo738measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo748measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         int intValue = this.widthCalc.invoke(getUnconsumedInsets(), measureScope.getLayoutDirection(), measureScope).intValue();
         if (intValue == 0) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifier$$ExternalSyntheticLambda0
@@ -59,8 +59,8 @@ final class DerivedWidthModifier extends InspectorValueInfo implements LayoutMod
                 }
             }, 4, null);
         }
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
-        return MeasureScope.layout$default(measureScope, intValue, mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifier$$ExternalSyntheticLambda1
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
+        return MeasureScope.layout$default(measureScope, intValue, mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifier$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;

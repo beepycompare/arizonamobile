@@ -37,12 +37,12 @@ public final class AndroidWindowInfo_androidKt {
         if (findActivity != null) {
             Rect currentWindowBounds = BoundsHelper.Companion.getInstance().currentWindowBounds(findActivity);
             int width = currentWindowBounds.width();
-            return IntSize.m7417constructorimpl((currentWindowBounds.height() & 4294967295L) | (width << 32));
+            return IntSize.m7430constructorimpl((currentWindowBounds.height() & 4294967295L) | (width << 32));
         }
         Configuration configuration = context.getResources().getConfiguration();
         float f = context.getResources().getDisplayMetrics().density;
         int round = Math.round(configuration.screenWidthDp * f);
-        return IntSize.m7417constructorimpl((Math.round(configuration.screenHeightDp * f) & 4294967295L) | (round << 32));
+        return IntSize.m7430constructorimpl((Math.round(configuration.screenHeightDp * f) & 4294967295L) | (round << 32));
     }
 
     private static final Activity findActivity(Context context) {

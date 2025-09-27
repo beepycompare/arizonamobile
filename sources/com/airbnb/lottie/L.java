@@ -15,7 +15,7 @@ public class L {
     public static boolean DBG = false;
     public static final String TAG = "LOTTIE";
     private static LottieNetworkCacheProvider cacheProvider = null;
-    private static boolean disablePathInterpolatorCache = true;
+    private static boolean disablePathInterpolatorCache = false;
     private static LottieNetworkFetcher fetcher = null;
     private static ThreadLocal<LottieTrace> lottieTrace = null;
     private static volatile NetworkCache networkCache = null;

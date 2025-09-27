@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface MatrixPositionCalculator extends PositionCalculator {
     /* renamed from: localToScreen-58bKbWc  reason: not valid java name */
-    void mo5755localToScreen58bKbWc(float[] fArr);
+    void mo5768localToScreen58bKbWc(float[] fArr);
 }

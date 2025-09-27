@@ -35,9 +35,9 @@ import kotlin.jvm.functions.Function2;
 public final class BottomSheetDefaults {
     public static final int $stable = 0;
     public static final BottomSheetDefaults INSTANCE = new BottomSheetDefaults();
-    private static final float Elevation = SheetBottomTokens.INSTANCE.m3595getDockedModalContainerElevationD9Ej5fM();
-    private static final float SheetPeekHeight = Dp.m7251constructorimpl(56);
-    private static final float SheetMaxWidth = Dp.m7251constructorimpl(640);
+    private static final float Elevation = SheetBottomTokens.INSTANCE.m3605getDockedModalContainerElevationD9Ej5fM();
+    private static final float SheetPeekHeight = Dp.m7264constructorimpl(56);
+    private static final float SheetMaxWidth = Dp.m7264constructorimpl(640);
 
     private BottomSheetDefaults() {
     }
@@ -82,7 +82,7 @@ public final class BottomSheetDefaults {
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1902getElevationD9Ej5fM() {
+    public final float m1912getElevationD9Ej5fM() {
         return Elevation;
     }
 
@@ -91,21 +91,21 @@ public final class BottomSheetDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2040719176, i, -1, "androidx.compose.material3.BottomSheetDefaults.<get-ScrimColor> (SheetDefaults.kt:306)");
         }
-        long m4536copywmQWz5c$default = Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
+        long m4548copywmQWz5c$default = Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m4536copywmQWz5c$default;
+        return m4548copywmQWz5c$default;
     }
 
     /* renamed from: getSheetPeekHeight-D9Ej5fM  reason: not valid java name */
-    public final float m1904getSheetPeekHeightD9Ej5fM() {
+    public final float m1914getSheetPeekHeightD9Ej5fM() {
         return SheetPeekHeight;
     }
 
     /* renamed from: getSheetMaxWidth-D9Ej5fM  reason: not valid java name */
-    public final float m1903getSheetMaxWidthD9Ej5fM() {
+    public final float m1913getSheetMaxWidthD9Ej5fM() {
         return SheetMaxWidth;
     }
 
@@ -114,12 +114,12 @@ public final class BottomSheetDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-511309409, i, -1, "androidx.compose.material3.BottomSheetDefaults.<get-windowInsets> (SheetDefaults.kt:316)");
         }
-        WindowInsets m912onlybOOhFvg = WindowInsetsKt.m912onlybOOhFvg(WindowInsets_androidKt.getSafeDrawing(WindowInsets.Companion, composer, 6), WindowInsetsSides.Companion.m934getBottomJoeWqyM());
+        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(WindowInsets_androidKt.getSafeDrawing(WindowInsets.Companion, composer, 6), WindowInsetsSides.Companion.m944getBottomJoeWqyM());
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m912onlybOOhFvg;
+        return m922onlybOOhFvg;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x019d  */
@@ -145,7 +145,7 @@ public final class BottomSheetDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m1901DragHandlelgZ2HuY(Modifier modifier, float f, float f2, Shape shape, long j, Composer composer, final int i, final int i2) {
+    public final void m1911DragHandlelgZ2HuY(Modifier modifier, float f, float f2, Shape shape, long j, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         final float f3;
@@ -222,10 +222,10 @@ public final class BottomSheetDefaults {
                     if ((i & 1) != 0 || startRestartGroup.getDefaultsInvalid()) {
                         companion = i7 != 0 ? Modifier.Companion : obj;
                         if (i8 != 0) {
-                            f3 = SheetBottomTokens.INSTANCE.m3594getDockedDragHandleWidthD9Ej5fM();
+                            f3 = SheetBottomTokens.INSTANCE.m3604getDockedDragHandleWidthD9Ej5fM();
                         }
                         if (i4 != 0) {
-                            f4 = SheetBottomTokens.INSTANCE.m3593getDockedDragHandleHeightD9Ej5fM();
+                            f4 = SheetBottomTokens.INSTANCE.m3603getDockedDragHandleHeightD9Ej5fM();
                         }
                         if ((i2 & 8) != 0) {
                             i3 &= -7169;
@@ -251,11 +251,11 @@ public final class BottomSheetDefaults {
                         ComposerKt.traceEventStart(-1364277227, i3, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle (SheetDefaults.kt:326)");
                     }
                     Strings.Companion companion2 = Strings.Companion;
-                    final String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
+                    final String m3096getString2EP1pXo = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
                     f5 = SheetDefaultsKt.DragHandleVerticalPadding;
-                    Modifier m834paddingVpY3zN4$default = PaddingKt.m834paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
+                    Modifier m844paddingVpY3zN4$default = PaddingKt.m844paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1620989881, "CC(remember):SheetDefaults.kt#9igjgp");
-                    changed = startRestartGroup.changed(m3086getString2EP1pXo);
+                    changed = startRestartGroup.changed(m3096getString2EP1pXo);
                     rememberedValue = startRestartGroup.rememberedValue();
                     if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
                         rememberedValue = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$1$1
@@ -273,7 +273,7 @@ public final class BottomSheetDefaults {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo);
+                                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -281,7 +281,7 @@ public final class BottomSheetDefaults {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     int i9 = i3 >> 6;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2654SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m834paddingVpY3zN4$default, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
+                    SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m844paddingVpY3zN4$default, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -303,7 +303,7 @@ public final class BottomSheetDefaults {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1039573072, i10, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle.<anonymous> (SheetDefaults.kt:336)");
                             }
-                            BoxKt.Box(SizeKt.m886sizeVpY3zN4(Modifier.Companion, f3, f7), composer3, 0);
+                            BoxKt.Box(SizeKt.m896sizeVpY3zN4(Modifier.Companion, f3, f7), composer3, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -338,7 +338,7 @@ public final class BottomSheetDefaults {
                         }
 
                         public final void invoke(Composer composer3, int i10) {
-                            BottomSheetDefaults.this.m1901DragHandlelgZ2HuY(companion, f8, f6, shape2, j3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                            BottomSheetDefaults.this.m1911DragHandlelgZ2HuY(companion, f8, f6, shape2, j3, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                         }
                     });
                     return;
@@ -370,11 +370,11 @@ public final class BottomSheetDefaults {
             if (ComposerKt.isTraceInProgress()) {
             }
             Strings.Companion companion22 = Strings.Companion;
-            final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
+            final String m3096getString2EP1pXo2 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
             f5 = SheetDefaultsKt.DragHandleVerticalPadding;
-            Modifier m834paddingVpY3zN4$default2 = PaddingKt.m834paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
+            Modifier m844paddingVpY3zN4$default2 = PaddingKt.m844paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1620989881, "CC(remember):SheetDefaults.kt#9igjgp");
-            changed = startRestartGroup.changed(m3086getString2EP1pXo2);
+            changed = startRestartGroup.changed(m3096getString2EP1pXo2);
             rememberedValue = startRestartGroup.rememberedValue();
             if (!changed) {
             }
@@ -393,14 +393,14 @@ public final class BottomSheetDefaults {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo2);
+                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo2);
                 }
             };
             startRestartGroup.updateRememberedValue(rememberedValue);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             int i92 = i3 >> 6;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m834paddingVpY3zN4$default2, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
+            SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m844paddingVpY3zN4$default2, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -422,7 +422,7 @@ public final class BottomSheetDefaults {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-1039573072, i10, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle.<anonymous> (SheetDefaults.kt:336)");
                     }
-                    BoxKt.Box(SizeKt.m886sizeVpY3zN4(Modifier.Companion, f3, f72), composer3, 0);
+                    BoxKt.Box(SizeKt.m896sizeVpY3zN4(Modifier.Companion, f3, f72), composer3, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -467,11 +467,11 @@ public final class BottomSheetDefaults {
         if (ComposerKt.isTraceInProgress()) {
         }
         Strings.Companion companion222 = Strings.Companion;
-        final String m3086getString2EP1pXo22 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
+        final String m3096getString2EP1pXo22 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
         f5 = SheetDefaultsKt.DragHandleVerticalPadding;
-        Modifier m834paddingVpY3zN4$default22 = PaddingKt.m834paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
+        Modifier m844paddingVpY3zN4$default22 = PaddingKt.m844paddingVpY3zN4$default(companion, 0.0f, f5, 1, null);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1620989881, "CC(remember):SheetDefaults.kt#9igjgp");
-        changed = startRestartGroup.changed(m3086getString2EP1pXo22);
+        changed = startRestartGroup.changed(m3096getString2EP1pXo22);
         rememberedValue = startRestartGroup.rememberedValue();
         if (!changed) {
         }
@@ -490,14 +490,14 @@ public final class BottomSheetDefaults {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo22);
+                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo22);
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue);
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         int i922 = i3 >> 6;
         composer2 = startRestartGroup;
-        SurfaceKt.m2654SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m834paddingVpY3zN4$default22, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
+        SurfaceKt.m2664SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m844paddingVpY3zN4$default22, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -519,7 +519,7 @@ public final class BottomSheetDefaults {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1039573072, i10, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle.<anonymous> (SheetDefaults.kt:336)");
                 }
-                BoxKt.Box(SizeKt.m886sizeVpY3zN4(Modifier.Companion, f3, f722), composer3, 0);
+                BoxKt.Box(SizeKt.m896sizeVpY3zN4(Modifier.Companion, f3, f722), composer3, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

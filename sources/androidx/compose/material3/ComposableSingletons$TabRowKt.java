@@ -29,7 +29,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-932273607, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-1.<anonymous> (TabRow.kt:163)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -53,7 +53,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1371931157, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-2.<anonymous> (TabRow.kt:217)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -77,7 +77,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-711844679, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-3.<anonymous> (TabRow.kt:313)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -101,7 +101,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-764008582, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-4.<anonymous> (TabRow.kt:369)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -125,7 +125,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(11728904, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-5.<anonymous> (TabRow.kt:438)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -149,7 +149,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-713969278, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-6.<anonymous> (TabRow.kt:505)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -173,7 +173,7 @@ public final class ComposableSingletons$TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2134461426, i, -1, "androidx.compose.material3.ComposableSingletons$TabRowKt.lambda-7.<anonymous> (TabRow.kt:1017)");
             }
-            DividerKt.m2183HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
+            DividerKt.m2193HorizontalDivider9IZ8Weo(null, 0.0f, 0L, composer, 0, 7);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -181,37 +181,37 @@ public final class ComposableSingletons$TabRowKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2093getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2103getLambda1$material3_release() {
         return f46lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2094getLambda2$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2104getLambda2$material3_release() {
         return f47lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2095getLambda3$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2105getLambda3$material3_release() {
         return f48lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2096getLambda4$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2106getLambda4$material3_release() {
         return f49lambda4;
     }
 
     /* renamed from: getLambda-5$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2097getLambda5$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2107getLambda5$material3_release() {
         return f50lambda5;
     }
 
     /* renamed from: getLambda-6$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2098getLambda6$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2108getLambda6$material3_release() {
         return f51lambda6;
     }
 
     /* renamed from: getLambda-7$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2099getLambda7$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2109getLambda7$material3_release() {
         return f52lambda7;
     }
 }

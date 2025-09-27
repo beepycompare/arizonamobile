@@ -5,18 +5,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import kotlin.jvm.internal.Intrinsics;
 /* renamed from: ru.rustore.sdk.metrics.internal.o  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0836o extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B f1463a;
+    public final B f1464a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0836o(Context context, B migrationVer1to2) {
         super(context, "MetricsEvent.db", (SQLiteDatabase.CursorFactory) null, 2);
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(migrationVer1to2, "migrationVer1to2");
-        this.f1463a = migrationVer1to2;
+        this.f1464a = migrationVer1to2;
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
@@ -28,7 +28,7 @@ public final class C0836o extends SQLiteOpenHelper {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
         if (i == 1 && i2 == 2 && sQLiteDatabase != null) {
-            this.f1463a.a(sQLiteDatabase);
+            this.f1464a.a(sQLiteDatabase);
         }
     }
 }

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.MobilePhoneBinding;
@@ -26,9 +26,11 @@ import ru.mrlargha.arizonaui.mobile.presentation.adapter.MobilePhoneDriverOrders
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 /* compiled from: DriverOrders.kt */
-@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0012\u001a\u00020\u00132\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\u0006\u0010\u0017\u001a\u00020\u0013J\u000e\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u001aJ\u000e\u0010\u001b\u001a\u00020\u00132\u0006\u0010\u001c\u001a\u00020\u001dJ\b\u0010\u001e\u001a\u00020\u0013H\u0016J\b\u0010\u001f\u001a\u00020\u0013H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/driver/DriverOrders;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "driverOrders", "Landroidx/constraintlayout/widget/ConstraintLayout;", "driverOrdersBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneDriverOrdersPageBinding;", "driverOrdersAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneDriverOrdersAdapter;", "addOrders", "", "orders", "", "Lru/mrlargha/arizonaui/mobile/domain/obj/MobilePhoneDriverOrder;", "clearOrders", "setWorkingButton", "workingButton", "", "setWorkingInfo", "workInfo", "Lru/mrlargha/arizonaui/mobile/domain/obj/MobilePhoneDriverWorkInfo;", "renderPage", "removePage", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000  2\u00020\u0001:\u0001 B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0012\u001a\u00020\u00132\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\u0006\u0010\u0017\u001a\u00020\u0013J\u000e\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u001aJ\u000e\u0010\u001b\u001a\u00020\u00132\u0006\u0010\u001c\u001a\u00020\u001dJ\b\u0010\u001e\u001a\u00020\u0013H\u0016J\b\u0010\u001f\u001a\u00020\u0013H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/driver/DriverOrders;", "Lru/mrlargha/arizonaui/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "driverOrders", "Landroidx/constraintlayout/widget/ConstraintLayout;", "driverOrdersBinding", "Lru/mrlargha/arizonaui/databinding/MobilePhoneDriverOrdersPageBinding;", "driverOrdersAdapter", "Lru/mrlargha/arizonaui/mobile/presentation/adapter/MobilePhoneDriverOrdersAdapter;", "addOrders", "", "orders", "", "Lru/mrlargha/arizonaui/mobile/domain/obj/MobilePhoneDriverOrder;", "clearOrders", "setWorkingButton", "workingButton", "", "setWorkingInfo", "workInfo", "Lru/mrlargha/arizonaui/mobile/domain/obj/MobilePhoneDriverWorkInfo;", "renderPage", "removePage", "Companion", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DriverOrders implements MobileController {
+    public static final Companion Companion = new Companion(null);
+    private static String currentButtonName = "Начать работу";
     private final Activity context;
     private final ConstraintLayout driverOrders;
     private final MobilePhoneDriverOrdersAdapter driverOrdersAdapter;
@@ -86,6 +88,7 @@ public final class DriverOrders implements MobileController {
                 DriverOrders._init_$lambda$1(DriverOrders.this, view);
             }
         });
+        bind.driverJobButton.setText(currentButtonName);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -111,20 +114,6 @@ public final class DriverOrders implements MobileController {
         this.driverOrdersAdapter.clearOrders();
     }
 
-    public final void setWorkingButton(String workingButton) {
-        Intrinsics.checkNotNullParameter(workingButton, "workingButton");
-        TextView textView = this.driverOrdersBinding.driverJobButton;
-        String str = workingButton;
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            char charAt = str.charAt(i);
-            if (charAt != '\"') {
-                sb.append(charAt);
-            }
-        }
-        textView.setText(sb.toString());
-    }
-
     public final void setWorkingInfo(MobilePhoneDriverWorkInfo workInfo) {
         Intrinsics.checkNotNullParameter(workInfo, "workInfo");
         this.driverOrdersBinding.driverName.setText(workInfo.getName());
@@ -143,5 +132,32 @@ public final class DriverOrders implements MobileController {
     public void removePage() {
         HistoryManager.Companion.clearThisPage(MobilePhonePage.DRIVER_ORDERS.getId());
         this.driverOrders.removeAllViews();
+    }
+
+    /* compiled from: DriverOrders.kt */
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizonaui/mobile/presentation/page/driver/DriverOrders$Companion;", "", "<init>", "()V", "currentButtonName", "", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+    }
+
+    public final void setWorkingButton(String workingButton) {
+        Intrinsics.checkNotNullParameter(workingButton, "workingButton");
+        String str = workingButton;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char charAt = str.charAt(i);
+            if (charAt != '\"') {
+                sb.append(charAt);
+            }
+        }
+        String sb2 = sb.toString();
+        currentButtonName = sb2;
+        this.driverOrdersBinding.driverJobButton.setText(sb2);
     }
 }

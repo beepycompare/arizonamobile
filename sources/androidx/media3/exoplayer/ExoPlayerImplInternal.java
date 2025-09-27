@@ -288,14 +288,14 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         createHandler2.obtainMessage(35, new VideoFrameMetadataListener() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda3
             @Override // androidx.media3.exoplayer.video.VideoFrameMetadataListener
             public final void onVideoFrameAboutToBeRendered(long j2, long j3, Format format, MediaFormat mediaFormat) {
-                ExoPlayerImplInternal.this.m7892lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(videoFrameMetadataListener, j2, j3, format, mediaFormat);
+                ExoPlayerImplInternal.this.m7905lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(videoFrameMetadataListener, j2, j3, format, mediaFormat);
             }
         }).sendToTarget();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m7892lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(VideoFrameMetadataListener videoFrameMetadataListener, long j, long j2, Format format, MediaFormat mediaFormat) {
+    public /* synthetic */ void m7905lambda$new$0$androidxmedia3exoplayerExoPlayerImplInternal(VideoFrameMetadataListener videoFrameMetadataListener, long j, long j2, Format format, MediaFormat mediaFormat) {
         videoFrameMetadataListener.onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
         onVideoFrameAboutToBeRendered(j, j2, format, mediaFormat);
     }
@@ -1164,7 +1164,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
             this.applicationLooperHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ExoPlayerImplInternal.this.m7891x6a39ddd9(i, z);
+                    ExoPlayerImplInternal.this.m7904x6a39ddd9(i, z);
                 }
             });
         }
@@ -1172,7 +1172,7 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeTriggerOnRendererReadyChanged$1$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m7891x6a39ddd9(int i, boolean z) {
+    public /* synthetic */ void m7904x6a39ddd9(int i, boolean z) {
         this.analyticsCollector.onRendererReadyChanged(i, this.renderers[i].getTrackType(), z);
     }
 
@@ -1674,14 +1674,14 @@ public final class ExoPlayerImplInternal implements Handler.Callback, MediaPerio
         this.clock.createHandler(looper, null).post(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImplInternal$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ExoPlayerImplInternal.this.m7893x7ddc96d2(playerMessage);
+                ExoPlayerImplInternal.this.m7906x7ddc96d2(playerMessage);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$sendMessageToTargetThread$2$androidx-media3-exoplayer-ExoPlayerImplInternal  reason: not valid java name */
-    public /* synthetic */ void m7893x7ddc96d2(PlayerMessage playerMessage) {
+    public /* synthetic */ void m7906x7ddc96d2(PlayerMessage playerMessage) {
         try {
             deliverMessage(playerMessage);
         } catch (ExoPlaybackException e) {

@@ -37,7 +37,7 @@ public final class ComposableSingletons$SegmentedButtonKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2090getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2100getLambda1$material3_release() {
         return f43lambda1;
     }
 }

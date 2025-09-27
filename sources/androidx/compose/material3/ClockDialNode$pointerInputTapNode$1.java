@@ -60,7 +60,7 @@ public final class ClockDialNode$pointerInputTapNode$1 extends SuspendLambda imp
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m1996invokek4lQ0M(offset.m4303unboximpl());
+                    m2006invokek4lQ0M(offset.m4315unboximpl());
                     return Unit.INSTANCE;
                 }
 
@@ -98,20 +98,20 @@ public final class ClockDialNode$pointerInputTapNode$1 extends SuspendLambda imp
                         float maxDist;
                         boolean z;
                         long j;
-                        Object m2842onTaprOwcSBo;
+                        Object m2852onTaprOwcSBo;
                         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                         int i = this.label;
                         if (i == 0) {
                             ResultKt.throwOnFailure(obj);
                             analogTimePickerState = this.this$0.state;
-                            float m4293getXimpl = Offset.m4293getXimpl(this.$it);
-                            float m4294getYimpl = Offset.m4294getYimpl(this.$it);
+                            float m4305getXimpl = Offset.m4305getXimpl(this.$it);
+                            float m4306getYimpl = Offset.m4306getYimpl(this.$it);
                             maxDist = this.this$0.getMaxDist();
                             z = this.this$0.autoSwitchToMinute;
                             j = this.this$0.center;
                             this.label = 1;
-                            m2842onTaprOwcSBo = TimePickerKt.m2842onTaprOwcSBo(analogTimePickerState, m4293getXimpl, m4294getYimpl, maxDist, z, j, this);
-                            if (m2842onTaprOwcSBo == coroutine_suspended) {
+                            m2852onTaprOwcSBo = TimePickerKt.m2852onTaprOwcSBo(analogTimePickerState, m4305getXimpl, m4306getYimpl, maxDist, z, j, this);
+                            if (m2852onTaprOwcSBo == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -124,7 +124,7 @@ public final class ClockDialNode$pointerInputTapNode$1 extends SuspendLambda imp
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m1996invokek4lQ0M(long j) {
+                public final void m2006invokek4lQ0M(long j) {
                     BuildersKt__Builders_commonKt.launch$default(ClockDialNode.this.getCoroutineScope(), null, null, new AnonymousClass1(ClockDialNode.this, j, null), 3, null);
                 }
             }, this, 3, null) == coroutine_suspended) {
@@ -157,11 +157,11 @@ public final class ClockDialNode$pointerInputTapNode$1 extends SuspendLambda imp
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m1995invoked4ec7I(pressGestureScope, offset.m4303unboximpl(), continuation);
+            return m2005invoked4ec7I(pressGestureScope, offset.m4315unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m1995invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m2005invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);
@@ -175,8 +175,8 @@ public final class ClockDialNode$pointerInputTapNode$1 extends SuspendLambda imp
             }
             ResultKt.throwOnFailure(obj);
             long j = this.J$0;
-            this.this$0.offsetX = Offset.m4293getXimpl(j);
-            this.this$0.offsetY = Offset.m4294getYimpl(j);
+            this.this$0.offsetX = Offset.m4305getXimpl(j);
+            this.this$0.offsetY = Offset.m4306getYimpl(j);
             return Unit.INSTANCE;
         }
     }

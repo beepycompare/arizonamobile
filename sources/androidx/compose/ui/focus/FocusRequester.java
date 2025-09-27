@@ -29,19 +29,19 @@ public final class FocusRequester {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "use the version the has a FocusDirection", replaceWith = @ReplaceWith(expression = "this.requestFocus()", imports = {}))
     public final /* synthetic */ void requestFocus() {
-        m4201requestFocus3ESFkO8(FocusDirection.Companion.m4177getEnterdhqQ8s());
+        m4213requestFocus3ESFkO8(FocusDirection.Companion.m4189getEnterdhqQ8s());
     }
 
     /* renamed from: requestFocus-3ESFkO8$default  reason: not valid java name */
-    public static /* synthetic */ boolean m4200requestFocus3ESFkO8$default(FocusRequester focusRequester, int i, int i2, Object obj) {
+    public static /* synthetic */ boolean m4212requestFocus3ESFkO8$default(FocusRequester focusRequester, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = FocusDirection.Companion.m4177getEnterdhqQ8s();
+            i = FocusDirection.Companion.m4189getEnterdhqQ8s();
         }
-        return focusRequester.m4201requestFocus3ESFkO8(i);
+        return focusRequester.m4213requestFocus3ESFkO8(i);
     }
 
     /* renamed from: requestFocus-3ESFkO8  reason: not valid java name */
-    public final boolean m4201requestFocus3ESFkO8(final int i) {
+    public final boolean m4213requestFocus3ESFkO8(final int i) {
         return findFocusTargetNode$ui_release(new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusRequester$requestFocus$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -51,7 +51,7 @@ public final class FocusRequester {
 
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                return Boolean.valueOf(focusTargetNode.mo4204requestFocus3ESFkO8(i));
+                return Boolean.valueOf(focusTargetNode.mo4216requestFocus3ESFkO8(i));
             }
         });
     }
@@ -240,7 +240,7 @@ public final class FocusRequester {
         boolean z = false;
         for (int i = 0; i < size; i++) {
             FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i];
-            int m6245constructorimpl = NodeKind.m6245constructorimpl(1024);
+            int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
             if (!focusRequesterModifierNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
@@ -254,13 +254,13 @@ public final class FocusRequester {
             while (true) {
                 if (mutableVector2.getSize() != 0) {
                     Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-                    if ((node.getAggregateChildKindSet$ui_release() & m6245constructorimpl) == 0) {
+                    if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
                         DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
                     } else {
                         while (true) {
                             if (node == null) {
                                 break;
-                            } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                 MutableVector mutableVector3 = null;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
@@ -268,10 +268,10 @@ public final class FocusRequester {
                                             z = true;
                                             break;
                                         }
-                                    } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         int i2 = 0;
                                         for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                            if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                                 i2++;
                                                 if (i2 == 1) {
                                                     node = delegate$ui_release;
@@ -314,7 +314,7 @@ public final class FocusRequester {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean findFocusTargetNode$ui_release(Function1<? super FocusTargetNode, Boolean> function1) {
-        boolean m4239findChildCorrespondingToFocusEnterOMvw8;
+        boolean m4251findChildCorrespondingToFocusEnterOMvw8;
         Companion companion = Companion;
         if (this == companion.getDefault()) {
             throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
@@ -332,7 +332,7 @@ public final class FocusRequester {
         boolean z = false;
         for (int i = 0; i < size; i++) {
             FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i];
-            int m6245constructorimpl = NodeKind.m6245constructorimpl(1024);
+            int m6258constructorimpl = NodeKind.m6258constructorimpl(1024);
             if (!focusRequesterModifierNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
             }
@@ -346,30 +346,30 @@ public final class FocusRequester {
             while (true) {
                 if (mutableVector2.getSize() != 0) {
                     Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-                    if ((node.getAggregateChildKindSet$ui_release() & m6245constructorimpl) == 0) {
+                    if ((node.getAggregateChildKindSet$ui_release() & m6258constructorimpl) == 0) {
                         DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
                     } else {
                         while (true) {
                             if (node == null) {
                                 break;
-                            } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                 MutableVector mutableVector3 = null;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
                                         FocusTargetNode focusTargetNode = (FocusTargetNode) node;
                                         if (focusTargetNode.fetchFocusProperties$ui_release().getCanFocus()) {
-                                            m4239findChildCorrespondingToFocusEnterOMvw8 = function1.invoke(focusTargetNode).booleanValue();
+                                            m4251findChildCorrespondingToFocusEnterOMvw8 = function1.invoke(focusTargetNode).booleanValue();
                                         } else {
-                                            m4239findChildCorrespondingToFocusEnterOMvw8 = TwoDimensionalFocusSearchKt.m4239findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, FocusDirection.Companion.m4177getEnterdhqQ8s(), function1);
+                                            m4251findChildCorrespondingToFocusEnterOMvw8 = TwoDimensionalFocusSearchKt.m4251findChildCorrespondingToFocusEnterOMvw8(focusTargetNode, FocusDirection.Companion.m4189getEnterdhqQ8s(), function1);
                                         }
-                                        if (m4239findChildCorrespondingToFocusEnterOMvw8) {
+                                        if (m4251findChildCorrespondingToFocusEnterOMvw8) {
                                             z = true;
                                             break;
                                         }
-                                    } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         int i2 = 0;
                                         for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                            if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                            if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                                 i2++;
                                                 if (i2 == 1) {
                                                     node = delegate$ui_release;

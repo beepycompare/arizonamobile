@@ -54,7 +54,7 @@ public final class LazyLayoutItemContentFactory$CachedItemContent$createContentL
             ComposerKt.sourceInformation(composer, "94@3678L205");
             saveableStateHolder = this.this$0.saveableStateHolder;
             composer2 = composer;
-            LazyLayoutItemContentFactoryKt.m1035SkippableItemJVlU9Rs(invoke, StableValue.m1075constructorimpl(saveableStateHolder), i2, StableValue.m1075constructorimpl(this.this$1.getKey()), composer2, 0);
+            LazyLayoutItemContentFactoryKt.m1045SkippableItemJVlU9Rs(invoke, StableValue.m1085constructorimpl(saveableStateHolder), i2, StableValue.m1085constructorimpl(this.this$1.getKey()), composer2, 0);
             composer2.endReplaceGroup();
         } else {
             composer2 = composer;

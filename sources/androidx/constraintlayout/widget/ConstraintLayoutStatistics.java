@@ -49,7 +49,7 @@ public class ConstraintLayoutStatistics {
     }
 
     /* renamed from: clone */
-    public ConstraintLayoutStatistics m7736clone() {
+    public ConstraintLayoutStatistics m7749clone() {
         return new ConstraintLayoutStatistics(this);
     }
 

@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class CompositingStrategy {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Auto = m4621constructorimpl(0);
-    private static final int Offscreen = m4621constructorimpl(1);
-    private static final int ModulateAlpha = m4621constructorimpl(2);
+    private static final int Auto = m4633constructorimpl(0);
+    private static final int Offscreen = m4633constructorimpl(1);
+    private static final int ModulateAlpha = m4633constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ CompositingStrategy m4620boximpl(int i) {
+    public static final /* synthetic */ CompositingStrategy m4632boximpl(int i) {
         return new CompositingStrategy(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4621constructorimpl(int i) {
+    public static int m4633constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4622equalsimpl(int i, Object obj) {
-        return (obj instanceof CompositingStrategy) && i == ((CompositingStrategy) obj).m4626unboximpl();
+    public static boolean m4634equalsimpl(int i, Object obj) {
+        return (obj instanceof CompositingStrategy) && i == ((CompositingStrategy) obj).m4638unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4623equalsimpl0(int i, int i2) {
+    public static final boolean m4635equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4624hashCodeimpl(int i) {
+    public static int m4636hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4625toStringimpl(int i) {
+    public static String m4637toStringimpl(int i) {
         return "CompositingStrategy(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4622equalsimpl(this.value, obj);
+        return m4634equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4624hashCodeimpl(this.value);
+        return m4636hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m4625toStringimpl(this.value);
+        return m4637toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4626unboximpl() {
+    public final /* synthetic */ int m4638unboximpl() {
         return this.value;
     }
 
@@ -77,17 +77,17 @@ public final class CompositingStrategy {
         }
 
         /* renamed from: getAuto--NrFUSI  reason: not valid java name */
-        public final int m4627getAutoNrFUSI() {
+        public final int m4639getAutoNrFUSI() {
             return CompositingStrategy.Auto;
         }
 
         /* renamed from: getOffscreen--NrFUSI  reason: not valid java name */
-        public final int m4629getOffscreenNrFUSI() {
+        public final int m4641getOffscreenNrFUSI() {
             return CompositingStrategy.Offscreen;
         }
 
         /* renamed from: getModulateAlpha--NrFUSI  reason: not valid java name */
-        public final int m4628getModulateAlphaNrFUSI() {
+        public final int m4640getModulateAlphaNrFUSI() {
             return CompositingStrategy.ModulateAlpha;
         }
     }

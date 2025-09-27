@@ -98,16 +98,16 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$onImeActionPerformed$1
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m6966invokeKlQnJC8(int i) {
+            public final void m6979invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m6966invokeKlQnJC8(imeAction.m6885unboximpl());
+                m6979invokeKlQnJC8(imeAction.m6898unboximpl());
                 return Unit.INSTANCE;
             }
         };
-        this.state = new TextFieldValue("", TextRange.Companion.m6718getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+        this.state = new TextFieldValue("", TextRange.Companion.m6731getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
         this.imeOptions = ImeOptions.Companion.getDefault();
         this.ics = new ArrayList();
         this.baseInputConnection$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, (Function0) new Function0<BaseInputConnection>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$baseInputConnection$2
@@ -201,10 +201,10 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
                 /* renamed from: onImeAction-KlQnJC8 */
-                public void mo6914onImeActionKlQnJC8(int i) {
+                public void mo6927onImeActionKlQnJC8(int i) {
                     Function1 function1;
                     function1 = TextInputServiceAndroid.this.onImeActionPerformed;
-                    function1.invoke(ImeAction.m6879boximpl(i));
+                    function1.invoke(ImeAction.m6892boximpl(i));
                 }
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
@@ -279,12 +279,12 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$stopInput$2
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m6967invokeKlQnJC8(int i) {
+            public final void m6980invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m6967invokeKlQnJC8(imeAction.m6885unboximpl());
+                m6980invokeKlQnJC8(imeAction.m6898unboximpl());
                 return Unit.INSTANCE;
             }
         };
@@ -373,7 +373,7 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
 
     @Override // androidx.compose.ui.text.input.PlatformTextInputService
     public void updateState(TextFieldValue textFieldValue, TextFieldValue textFieldValue2) {
-        boolean z = (TextRange.m6706equalsimpl0(this.state.m6964getSelectiond9O1mEE(), textFieldValue2.m6964getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m6963getCompositionMzsxiRA(), textFieldValue2.m6963getCompositionMzsxiRA())) ? false : true;
+        boolean z = (TextRange.m6719equalsimpl0(this.state.m6977getSelectiond9O1mEE(), textFieldValue2.m6977getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m6976getCompositionMzsxiRA(), textFieldValue2.m6976getCompositionMzsxiRA())) ? false : true;
         this.state = textFieldValue2;
         int size = this.ics.size();
         for (int i = 0; i < size; i++) {
@@ -386,14 +386,14 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         if (Intrinsics.areEqual(textFieldValue, textFieldValue2)) {
             if (z) {
                 InputMethodManager inputMethodManager = this.inputMethodManager;
-                int m6711getMinimpl = TextRange.m6711getMinimpl(textFieldValue2.m6964getSelectiond9O1mEE());
-                int m6710getMaximpl = TextRange.m6710getMaximpl(textFieldValue2.m6964getSelectiond9O1mEE());
-                TextRange m6963getCompositionMzsxiRA = this.state.m6963getCompositionMzsxiRA();
-                int m6711getMinimpl2 = m6963getCompositionMzsxiRA != null ? TextRange.m6711getMinimpl(m6963getCompositionMzsxiRA.m6717unboximpl()) : -1;
-                TextRange m6963getCompositionMzsxiRA2 = this.state.m6963getCompositionMzsxiRA();
-                inputMethodManager.updateSelection(m6711getMinimpl, m6710getMaximpl, m6711getMinimpl2, m6963getCompositionMzsxiRA2 != null ? TextRange.m6710getMaximpl(m6963getCompositionMzsxiRA2.m6717unboximpl()) : -1);
+                int m6724getMinimpl = TextRange.m6724getMinimpl(textFieldValue2.m6977getSelectiond9O1mEE());
+                int m6723getMaximpl = TextRange.m6723getMaximpl(textFieldValue2.m6977getSelectiond9O1mEE());
+                TextRange m6976getCompositionMzsxiRA = this.state.m6976getCompositionMzsxiRA();
+                int m6724getMinimpl2 = m6976getCompositionMzsxiRA != null ? TextRange.m6724getMinimpl(m6976getCompositionMzsxiRA.m6730unboximpl()) : -1;
+                TextRange m6976getCompositionMzsxiRA2 = this.state.m6976getCompositionMzsxiRA();
+                inputMethodManager.updateSelection(m6724getMinimpl, m6723getMaximpl, m6724getMinimpl2, m6976getCompositionMzsxiRA2 != null ? TextRange.m6723getMaximpl(m6976getCompositionMzsxiRA2.m6730unboximpl()) : -1);
             }
-        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6706equalsimpl0(textFieldValue.m6964getSelectiond9O1mEE(), textFieldValue2.m6964getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m6963getCompositionMzsxiRA(), textFieldValue2.m6963getCompositionMzsxiRA())))) {
+        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6719equalsimpl0(textFieldValue.m6977getSelectiond9O1mEE(), textFieldValue2.m6977getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m6976getCompositionMzsxiRA(), textFieldValue2.m6976getCompositionMzsxiRA())))) {
             restartInputImmediately();
         } else {
             int size2 = this.ics.size();

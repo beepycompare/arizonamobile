@@ -13,11 +13,11 @@ import ru.rustore.sdk.appupdate.errors.RemoteProviderErrors;
 import ru.rustore.sdk.appupdate.g0;
 import ru.rustore.sdk.core.exception.RuStoreException;
 import ru.rustore.sdk.core.util.ContextExtKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class h0 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1396a;
+    public final Context f1397a;
     public final String b;
     public final Function0<Unit> c;
     public final Function1<RuStoreException, Unit> d;
@@ -27,7 +27,7 @@ public final class h0 implements ServiceConnection {
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onError, "onError");
-        this.f1396a = context;
+        this.f1397a = context;
         this.b = applicationId;
         this.c = onSuccess;
         this.d = onError;
@@ -46,17 +46,17 @@ public final class h0 implements ServiceConnection {
                 message = "";
             }
             function1.invoke(new RuStoreException(message));
-            ContextExtKt.unbindServiceSafely(this.f1396a, this);
+            ContextExtKt.unbindServiceSafely(this.f1397a, this);
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
         this.d.invoke(new RuStoreException("onServiceDisconnected"));
-        ContextExtKt.unbindServiceSafely(this.f1396a, this);
+        ContextExtKt.unbindServiceSafely(this.f1397a, this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class a extends g0.a {
         public final /* synthetic */ h0 b;
 
@@ -68,13 +68,13 @@ public final class h0 implements ServiceConnection {
         public final void a(int i, String errorMessage) {
             Intrinsics.checkNotNullParameter(errorMessage, "errorMessage");
             h0.this.d.invoke(RemoteProviderErrors.INSTANCE.toRuStoreException(i, errorMessage));
-            ContextExtKt.unbindServiceSafely(h0.this.f1396a, this.b);
+            ContextExtKt.unbindServiceSafely(h0.this.f1397a, this.b);
         }
 
         @Override // ru.rustore.sdk.appupdate.g0
         public final void a() {
             h0.this.c.invoke();
-            ContextExtKt.unbindServiceSafely(h0.this.f1396a, this.b);
+            ContextExtKt.unbindServiceSafely(h0.this.f1397a, this.b);
         }
     }
 }

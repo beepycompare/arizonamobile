@@ -11,46 +11,46 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class IndirectTouchEventType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Unknown = m5359constructorimpl(0);
-    private static final int Press = m5359constructorimpl(1);
-    private static final int Release = m5359constructorimpl(2);
-    private static final int Move = m5359constructorimpl(3);
+    private static final int Unknown = m5372constructorimpl(0);
+    private static final int Press = m5372constructorimpl(1);
+    private static final int Release = m5372constructorimpl(2);
+    private static final int Move = m5372constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ IndirectTouchEventType m5358boximpl(int i) {
+    public static final /* synthetic */ IndirectTouchEventType m5371boximpl(int i) {
         return new IndirectTouchEventType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m5359constructorimpl(int i) {
+    private static int m5372constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5360equalsimpl(int i, Object obj) {
-        return (obj instanceof IndirectTouchEventType) && i == ((IndirectTouchEventType) obj).m5364unboximpl();
+    public static boolean m5373equalsimpl(int i, Object obj) {
+        return (obj instanceof IndirectTouchEventType) && i == ((IndirectTouchEventType) obj).m5377unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5361equalsimpl0(int i, int i2) {
+    public static final boolean m5374equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5362hashCodeimpl(int i) {
+    public static int m5375hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5360equalsimpl(this.value, obj);
+        return m5373equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5362hashCodeimpl(this.value);
+        return m5375hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5364unboximpl() {
+    public final /* synthetic */ int m5377unboximpl() {
         return this.value;
     }
 
@@ -66,22 +66,22 @@ public final class IndirectTouchEventType {
         }
 
         /* renamed from: getUnknown-LxEHWp8  reason: not valid java name */
-        public final int m5368getUnknownLxEHWp8() {
+        public final int m5381getUnknownLxEHWp8() {
             return IndirectTouchEventType.Unknown;
         }
 
         /* renamed from: getPress-LxEHWp8  reason: not valid java name */
-        public final int m5366getPressLxEHWp8() {
+        public final int m5379getPressLxEHWp8() {
             return IndirectTouchEventType.Press;
         }
 
         /* renamed from: getRelease-LxEHWp8  reason: not valid java name */
-        public final int m5367getReleaseLxEHWp8() {
+        public final int m5380getReleaseLxEHWp8() {
             return IndirectTouchEventType.Release;
         }
 
         /* renamed from: getMove-LxEHWp8  reason: not valid java name */
-        public final int m5365getMoveLxEHWp8() {
+        public final int m5378getMoveLxEHWp8() {
             return IndirectTouchEventType.Move;
         }
     }
@@ -91,11 +91,11 @@ public final class IndirectTouchEventType {
     }
 
     public String toString() {
-        return m5363toStringimpl(this.value);
+        return m5376toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5363toStringimpl(int i) {
-        return m5361equalsimpl0(i, Press) ? "Press" : m5361equalsimpl0(i, Release) ? "Release" : m5361equalsimpl0(i, Move) ? "Move" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5376toStringimpl(int i) {
+        return m5374equalsimpl0(i, Press) ? "Press" : m5374equalsimpl0(i, Release) ? "Release" : m5374equalsimpl0(i, Move) ? "Move" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

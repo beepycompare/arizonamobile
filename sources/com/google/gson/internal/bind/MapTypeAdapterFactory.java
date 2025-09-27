@@ -61,7 +61,7 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory {
             write(jsonWriter, (Map) ((Map) obj));
         }
 
-        public Adapter(TypeAdapter<K> typeAdapter, TypeAdapter<V> typeAdapter2, ObjectConstructor<? extends Map<K, V>> objectConstructor) {
+        Adapter(TypeAdapter<K> typeAdapter, TypeAdapter<V> typeAdapter2, ObjectConstructor<? extends Map<K, V>> objectConstructor) {
             this.keyTypeAdapter = typeAdapter;
             this.valueTypeAdapter = typeAdapter2;
             this.constructor = objectConstructor;

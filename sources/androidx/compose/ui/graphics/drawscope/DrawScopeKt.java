@@ -61,115 +61,115 @@ public final class DrawScopeKt {
     }
 
     /* renamed from: rotate-Rg1IO4c$default  reason: not valid java name */
-    public static /* synthetic */ void m5164rotateRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m5176rotateRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = drawScope.mo5115getCenterF1C5BW0();
+            j = drawScope.mo5127getCenterF1C5BW0();
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5043rotateUv8p0NA(f, j);
+            drawContext.getTransform().mo5055rotateUv8p0NA(f, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: rotateRad-Rg1IO4c$default  reason: not valid java name */
-    public static /* synthetic */ void m5166rotateRadRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m5178rotateRadRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = drawScope.mo5115getCenterF1C5BW0();
+            j = drawScope.mo5127getCenterF1C5BW0();
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5043rotateUv8p0NA(DegreesKt.degrees(f), j);
+            drawContext.getTransform().mo5055rotateUv8p0NA(DegreesKt.degrees(f), j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: scale-Fgt4K4Q$default  reason: not valid java name */
-    public static /* synthetic */ void m5168scaleFgt4K4Q$default(DrawScope drawScope, float f, float f2, long j, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m5180scaleFgt4K4Q$default(DrawScope drawScope, float f, float f2, long j, Function1 function1, int i, Object obj) {
         if ((i & 4) != 0) {
-            j = drawScope.mo5115getCenterF1C5BW0();
+            j = drawScope.mo5127getCenterF1C5BW0();
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5044scale0AR0LA0(f, f2, j);
+            drawContext.getTransform().mo5056scale0AR0LA0(f, f2, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: scale-Rg1IO4c$default  reason: not valid java name */
-    public static /* synthetic */ void m5170scaleRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m5182scaleRg1IO4c$default(DrawScope drawScope, float f, long j, Function1 function1, int i, Object obj) {
         if ((i & 2) != 0) {
-            j = drawScope.mo5115getCenterF1C5BW0();
+            j = drawScope.mo5127getCenterF1C5BW0();
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5044scale0AR0LA0(f, f, j);
+            drawContext.getTransform().mo5056scale0AR0LA0(f, f, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: clipRect-rOu3jXo$default  reason: not valid java name */
-    public static /* synthetic */ void m5159clipRectrOu3jXo$default(DrawScope drawScope, float f, float f2, float f3, float f4, int i, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m5171clipRectrOu3jXo$default(DrawScope drawScope, float f, float f2, float f3, float f4, int i, Function1 function1, int i2, Object obj) {
         float f5 = (i2 & 1) != 0 ? 0.0f : f;
         float f6 = (i2 & 2) != 0 ? 0.0f : f2;
         if ((i2 & 4) != 0) {
-            f3 = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() >> 32));
+            f3 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() >> 32));
         }
         float f7 = f3;
         if ((i2 & 8) != 0) {
-            f4 = Float.intBitsToFloat((int) (drawScope.mo5116getSizeNHjbRc() & 4294967295L));
+            f4 = Float.intBitsToFloat((int) (drawScope.mo5128getSizeNHjbRc() & 4294967295L));
         }
         float f8 = f4;
         if ((i2 & 16) != 0) {
-            i = ClipOp.Companion.m4526getIntersectrtfAjoo();
+            i = ClipOp.Companion.m4538getIntersectrtfAjoo();
         }
         int i3 = i;
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5040clipRectN_I0leg(f5, f6, f7, f8, i3);
+            drawContext.getTransform().mo5052clipRectN_I0leg(f5, f6, f7, f8, i3);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: clipPath-KD09W0M$default  reason: not valid java name */
-    public static /* synthetic */ void m5157clipPathKD09W0M$default(DrawScope drawScope, Path path, int i, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ void m5169clipPathKD09W0M$default(DrawScope drawScope, Path path, int i, Function1 function1, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = ClipOp.Companion.m4526getIntersectrtfAjoo();
+            i = ClipOp.Companion.m4538getIntersectrtfAjoo();
         }
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5039clipPathmtrdDE(path, i);
+            drawContext.getTransform().mo5051clipPathmtrdDE(path, i);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
@@ -179,29 +179,29 @@ public final class DrawScopeKt {
 
     public static final void withTransform(DrawScope drawScope, Function1<? super DrawTransform, Unit> function1, Function1<? super DrawScope, Unit> function12) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             function1.invoke(drawContext.getTransform());
             function12.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: draw-ymL40Pk  reason: not valid java name */
-    public static final void m5161drawymL40Pk(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, GraphicsLayer graphicsLayer, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5173drawymL40Pk(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, GraphicsLayer graphicsLayer, Function1<? super DrawScope, Unit> function1) {
         Density density2 = drawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = drawScope.getDrawContext().getLayoutDirection();
         Canvas canvas2 = drawScope.getDrawContext().getCanvas();
-        long mo5037getSizeNHjbRc = drawScope.getDrawContext().mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawScope.getDrawContext().mo5049getSizeNHjbRc();
         GraphicsLayer graphicsLayer2 = drawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = drawScope.getDrawContext();
         drawContext.setDensity(density);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(canvas);
-        drawContext.mo5038setSizeuvyYCjk(j);
+        drawContext.mo5050setSizeuvyYCjk(j);
         drawContext.setGraphicsLayer(graphicsLayer);
         canvas.save();
         try {
@@ -212,26 +212,26 @@ public final class DrawScopeKt {
             drawContext2.setDensity(density2);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer2);
         }
     }
 
     /* renamed from: draw-ymL40Pk$default  reason: not valid java name */
-    public static /* synthetic */ void m5162drawymL40Pk$default(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, GraphicsLayer graphicsLayer, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m5174drawymL40Pk$default(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, GraphicsLayer graphicsLayer, Function1 function1, int i, Object obj) {
         if ((i & 16) != 0) {
             graphicsLayer = null;
         }
         Density density2 = drawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = drawScope.getDrawContext().getLayoutDirection();
         Canvas canvas2 = drawScope.getDrawContext().getCanvas();
-        long mo5037getSizeNHjbRc = drawScope.getDrawContext().mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawScope.getDrawContext().mo5049getSizeNHjbRc();
         GraphicsLayer graphicsLayer2 = drawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = drawScope.getDrawContext();
         drawContext.setDensity(density);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(canvas);
-        drawContext.mo5038setSizeuvyYCjk(j);
+        drawContext.mo5050setSizeuvyYCjk(j);
         drawContext.setGraphicsLayer(graphicsLayer);
         canvas.save();
         try {
@@ -242,7 +242,7 @@ public final class DrawScopeKt {
             drawContext2.setDensity(density2);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer2);
         }
     }
@@ -276,102 +276,102 @@ public final class DrawScopeKt {
     }
 
     /* renamed from: rotate-Rg1IO4c  reason: not valid java name */
-    public static final void m5163rotateRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5175rotateRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5043rotateUv8p0NA(f, j);
+            drawContext.getTransform().mo5055rotateUv8p0NA(f, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: rotateRad-Rg1IO4c  reason: not valid java name */
-    public static final void m5165rotateRadRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5177rotateRadRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5043rotateUv8p0NA(DegreesKt.degrees(f), j);
+            drawContext.getTransform().mo5055rotateUv8p0NA(DegreesKt.degrees(f), j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: scale-Fgt4K4Q  reason: not valid java name */
-    public static final void m5167scaleFgt4K4Q(DrawScope drawScope, float f, float f2, long j, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5179scaleFgt4K4Q(DrawScope drawScope, float f, float f2, long j, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5044scale0AR0LA0(f, f2, j);
+            drawContext.getTransform().mo5056scale0AR0LA0(f, f2, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: scale-Rg1IO4c  reason: not valid java name */
-    public static final void m5169scaleRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5181scaleRg1IO4c(DrawScope drawScope, float f, long j, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5044scale0AR0LA0(f, f, j);
+            drawContext.getTransform().mo5056scale0AR0LA0(f, f, j);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: clipRect-rOu3jXo  reason: not valid java name */
-    public static final void m5158clipRectrOu3jXo(DrawScope drawScope, float f, float f2, float f3, float f4, int i, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5170clipRectrOu3jXo(DrawScope drawScope, float f, float f2, float f3, float f4, int i, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5040clipRectN_I0leg(f, f2, f3, f4, i);
+            drawContext.getTransform().mo5052clipRectN_I0leg(f, f2, f3, f4, i);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     /* renamed from: clipPath-KD09W0M  reason: not valid java name */
-    public static final void m5156clipPathKD09W0M(DrawScope drawScope, Path path, int i, Function1<? super DrawScope, Unit> function1) {
+    public static final void m5168clipPathKD09W0M(DrawScope drawScope, Path path, int i, Function1<? super DrawScope, Unit> function1) {
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5039clipPathmtrdDE(path, i);
+            drawContext.getTransform().mo5051clipPathmtrdDE(path, i);
             function1.invoke(drawScope);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
         }
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Please use a new overload accepting nullable GraphicsLayer")
     /* renamed from: draw-GRGpd60  reason: not valid java name */
-    public static final /* synthetic */ void m5160drawGRGpd60(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, Function1<? super DrawScope, Unit> function1) {
+    public static final /* synthetic */ void m5172drawGRGpd60(DrawScope drawScope, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, Function1<? super DrawScope, Unit> function1) {
         Density density2 = drawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = drawScope.getDrawContext().getLayoutDirection();
         Canvas canvas2 = drawScope.getDrawContext().getCanvas();
-        long mo5037getSizeNHjbRc = drawScope.getDrawContext().mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = drawScope.getDrawContext().mo5049getSizeNHjbRc();
         GraphicsLayer graphicsLayer = drawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = drawScope.getDrawContext();
         drawContext.setDensity(density);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(canvas);
-        drawContext.mo5038setSizeuvyYCjk(j);
+        drawContext.mo5050setSizeuvyYCjk(j);
         drawContext.setGraphicsLayer(null);
         canvas.save();
         try {
@@ -382,7 +382,7 @@ public final class DrawScopeKt {
             drawContext2.setDensity(density2);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer);
         }
     }

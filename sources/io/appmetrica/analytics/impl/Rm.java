@@ -5,23 +5,23 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class Rm implements ProtobufConverter {
     public final Fm a(Qm qm) {
         Fm fm = new Fm();
-        fm.f450a = qm.f645a;
+        fm.f451a = qm.f646a;
         return fm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
         Fm fm = new Fm();
-        fm.f450a = ((Qm) obj).f645a;
+        fm.f451a = ((Qm) obj).f646a;
         return fm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new Qm(((Fm) obj).f450a);
+        return new Qm(((Fm) obj).f451a);
     }
 
     public final Qm a(Fm fm) {
-        return new Qm(fm.f450a);
+        return new Qm(fm.f451a);
     }
 }

@@ -35,7 +35,7 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class SnapFlingBehaviorKt {
     private static final boolean DEBUG = false;
-    private static final float MinFlingVelocityDp = Dp.m7251constructorimpl(400);
+    private static final float MinFlingVelocityDp = Dp.m7264constructorimpl(400);
     public static final float NoDistance = 0.0f;
     public static final float NoVelocity = 0.0f;
 
@@ -280,10 +280,10 @@ public final class SnapFlingBehaviorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final float m627calculateFinalOffsetFhqu1e0(int i, float f, float f2) {
-        if (!FinalSnappingItem.m618equalsimpl0(i, FinalSnappingItem.Companion.m622getClosestItembbeMdSM())) {
-            if (!FinalSnappingItem.m618equalsimpl0(i, FinalSnappingItem.Companion.m623getNextItembbeMdSM())) {
-                if (!FinalSnappingItem.m618equalsimpl0(i, FinalSnappingItem.Companion.m624getPreviousItembbeMdSM())) {
+    public static final float m637calculateFinalOffsetFhqu1e0(int i, float f, float f2) {
+        if (!FinalSnappingItem.m628equalsimpl0(i, FinalSnappingItem.Companion.m632getClosestItembbeMdSM())) {
+            if (!FinalSnappingItem.m628equalsimpl0(i, FinalSnappingItem.Companion.m633getNextItembbeMdSM())) {
+                if (!FinalSnappingItem.m628equalsimpl0(i, FinalSnappingItem.Companion.m634getPreviousItembbeMdSM())) {
                     f = 0.0f;
                 }
             }

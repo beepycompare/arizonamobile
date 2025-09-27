@@ -56,9 +56,9 @@ public final class SimpleActor<T> {
                     onComplete.invoke(th);
                     ((SimpleActor) this).messageQueue.close(th);
                     do {
-                        Object m10627getOrNullimpl = ChannelResult.m10627getOrNullimpl(((SimpleActor) this).messageQueue.mo10615tryReceivePtdJZtk());
-                        if (m10627getOrNullimpl != null) {
-                            onUndeliveredElement.invoke(m10627getOrNullimpl, th);
+                        Object m10642getOrNullimpl = ChannelResult.m10642getOrNullimpl(((SimpleActor) this).messageQueue.mo10630tryReceivePtdJZtk());
+                        if (m10642getOrNullimpl != null) {
+                            onUndeliveredElement.invoke(m10642getOrNullimpl, th);
                             unit = Unit.INSTANCE;
                             continue;
                         } else {
@@ -72,14 +72,14 @@ public final class SimpleActor<T> {
     }
 
     public final void offer(T t) {
-        Object obj = this.messageQueue.mo8127trySendJP2dKIU(t);
+        Object obj = this.messageQueue.mo8140trySendJP2dKIU(t);
         if (obj instanceof ChannelResult.Closed) {
-            Throwable m10626exceptionOrNullimpl = ChannelResult.m10626exceptionOrNullimpl(obj);
-            if (m10626exceptionOrNullimpl != null) {
-                throw m10626exceptionOrNullimpl;
+            Throwable m10641exceptionOrNullimpl = ChannelResult.m10641exceptionOrNullimpl(obj);
+            if (m10641exceptionOrNullimpl != null) {
+                throw m10641exceptionOrNullimpl;
             }
             throw new ClosedSendChannelException("Channel was closed normally");
-        } else if (!ChannelResult.m10632isSuccessimpl(obj)) {
+        } else if (!ChannelResult.m10647isSuccessimpl(obj)) {
             throw new IllegalStateException("Check failed.".toString());
         } else {
             if (this.remainingMessages.getAndIncrement() == 0) {

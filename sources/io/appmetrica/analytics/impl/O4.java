@@ -9,11 +9,11 @@ public final class O4 extends P4 {
 
     public final void a(Bb bb, List<AbstractC0462nh> list) {
         if (!W9.h.contains(bb)) {
-            list.add(this.f619a.s);
+            list.add(this.f620a.s);
         }
         if (W9.b.contains(bb)) {
             return;
         }
-        list.add(this.f619a.c);
+        list.add(this.f620a.c);
     }
 }

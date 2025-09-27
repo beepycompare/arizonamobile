@@ -65,7 +65,7 @@ final class HomeComponent$observeSettings$1 extends SuspendLambda implements Fun
             }
             i = i2;
         }
-        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), i3, i, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), settingState.getShowFps(), settingState.getFullScreen(), null, null, null, 896, null));
+        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), i3, i, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getFullScreen(), null, null, null, 1824, null));
         return Unit.INSTANCE;
     }
 }

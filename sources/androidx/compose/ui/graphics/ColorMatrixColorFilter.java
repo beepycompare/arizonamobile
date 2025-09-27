@@ -25,20 +25,20 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     }
 
     private ColorMatrixColorFilter(float[] fArr) {
-        this(fArr, AndroidColorFilter_androidKt.m4398actualColorMatrixColorFilterjHGOpc(fArr), null);
+        this(fArr, AndroidColorFilter_androidKt.m4410actualColorMatrixColorFilterjHGOpc(fArr), null);
     }
 
     /* renamed from: copyColorMatrix-gBh15pI$default  reason: not valid java name */
-    public static /* synthetic */ float[] m4613copyColorMatrixgBh15pI$default(ColorMatrixColorFilter colorMatrixColorFilter, float[] fArr, int i, Object obj) {
+    public static /* synthetic */ float[] m4625copyColorMatrixgBh15pI$default(ColorMatrixColorFilter colorMatrixColorFilter, float[] fArr, int i, Object obj) {
         if ((i & 1) != 0) {
-            fArr = ColorMatrix.m4594constructorimpl$default(null, 1, null);
+            fArr = ColorMatrix.m4606constructorimpl$default(null, 1, null);
         }
-        return colorMatrixColorFilter.m4615copyColorMatrixgBh15pI(fArr);
+        return colorMatrixColorFilter.m4627copyColorMatrixgBh15pI(fArr);
     }
 
     /* renamed from: copyColorMatrix-gBh15pI  reason: not valid java name */
-    public final float[] m4615copyColorMatrixgBh15pI(float[] fArr) {
-        ArraysKt.copyInto$default(m4614obtainColorMatrixp10uLo(), fArr, 0, 0, 0, 14, (Object) null);
+    public final float[] m4627copyColorMatrixgBh15pI(float[] fArr) {
+        ArraysKt.copyInto$default(m4626obtainColorMatrixp10uLo(), fArr, 0, 0, 0, 14, (Object) null);
         return fArr;
     }
 
@@ -46,11 +46,11 @@ public final class ColorMatrixColorFilter extends ColorFilter {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ColorMatrixColorFilter) && Arrays.equals(m4614obtainColorMatrixp10uLo(), ((ColorMatrixColorFilter) obj).m4614obtainColorMatrixp10uLo());
+        return (obj instanceof ColorMatrixColorFilter) && Arrays.equals(m4626obtainColorMatrixp10uLo(), ((ColorMatrixColorFilter) obj).m4626obtainColorMatrixp10uLo());
     }
 
     /* renamed from: obtainColorMatrix-p10-uLo  reason: not valid java name */
-    private final float[] m4614obtainColorMatrixp10uLo() {
+    private final float[] m4626obtainColorMatrixp10uLo() {
         float[] fArr = this.colorMatrix;
         if (fArr == null) {
             float[] actualColorMatrixFromFilter = AndroidColorFilter_androidKt.actualColorMatrixFromFilter(getNativeColorFilter$ui_graphics_release());
@@ -63,7 +63,7 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     public int hashCode() {
         float[] fArr = this.colorMatrix;
         if (fArr != null) {
-            return ColorMatrix.m4600hashCodeimpl(fArr);
+            return ColorMatrix.m4612hashCodeimpl(fArr);
         }
         return 0;
     }
@@ -71,6 +71,6 @@ public final class ColorMatrixColorFilter extends ColorFilter {
     public String toString() {
         StringBuilder sb = new StringBuilder("ColorMatrixColorFilter(colorMatrix=");
         float[] fArr = this.colorMatrix;
-        return sb.append((Object) (fArr == null ? AbstractJsonLexerKt.NULL : ColorMatrix.m4611toStringimpl(fArr))).append(')').toString();
+        return sb.append((Object) (fArr == null ? AbstractJsonLexerKt.NULL : ColorMatrix.m4623toStringimpl(fArr))).append(')').toString();
     }
 }

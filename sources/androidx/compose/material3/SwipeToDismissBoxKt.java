@@ -49,7 +49,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\u001ay\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u001c\u0010\u0007\u001a\u0018\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\n¢\u0006\u0002\b\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\u000f2\u001c\u0010\u0012\u001a\u0018\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00040\b¢\u0006\u0002\b\n¢\u0006\u0002\b\u000bH\u0007¢\u0006\u0002\u0010\u0013\u001aR\u0010\u0014\u001a\u00020\u00062\b\b\u0002\u0010\u0015\u001a\u00020\u00162\u0014\b\u0002\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\b2#\b\u0002\u0010\u0018\u001a\u001d\u0012\u0013\u0012\u00110\u0019¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u00190\bH\u0007¢\u0006\u0002\u0010\u001d\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002¨\u0006\u001e"}, d2 = {"DismissVelocityThreshold", "Landroidx/compose/ui/unit/Dp;", "F", "SwipeToDismissBox", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/SwipeToDismissBoxState;", "backgroundContent", "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enableDismissFromStartToEnd", "", "enableDismissFromEndToStart", "gesturesEnabled", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "rememberSwipeToDismissBoxState", "initialValue", "Landroidx/compose/material3/SwipeToDismissBoxValue;", "confirmValueChange", "positionalThreshold", "", "Lkotlin/ParameterName;", "name", "totalDistance", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SwipeToDismissBoxKt {
-    private static final float DismissVelocityThreshold = Dp.m7251constructorimpl(125);
+    private static final float DismissVelocityThreshold = Dp.m7264constructorimpl(125);
 
     public static final /* synthetic */ float access$getDismissVelocityThreshold$p() {
         return DismissVelocityThreshold;
@@ -104,7 +104,7 @@ public final class SwipeToDismissBoxKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m3982rememberSaveable(objArr, Saver, (String) null, (Function0<? extends Object>) rememberedValue, (Composer) composer, 0, 4);
+        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m3994rememberSaveable(objArr, Saver, (String) null, (Function0<? extends Object>) rememberedValue, (Composer) composer, 0, 4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -166,13 +166,13 @@ public final class SwipeToDismissBoxKt {
         boolean z6;
         final boolean z7;
         int currentCompositeKeyHash;
-        Composer m3855constructorimpl;
+        Composer m3867constructorimpl;
         int currentCompositeKeyHash2;
-        Composer m3855constructorimpl2;
+        Composer m3867constructorimpl2;
         boolean changed;
         Object rememberedValue;
         int currentCompositeKeyHash3;
-        Composer m3855constructorimpl3;
+        Composer m3867constructorimpl3;
         final boolean z8;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(-402577235);
@@ -259,15 +259,15 @@ public final class SwipeToDismissBoxKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (!m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
                         Modifier matchParentSize = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
@@ -289,15 +289,15 @@ public final class SwipeToDismissBoxKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-                        Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+                        Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3855constructorimpl2.getInserting() || !Intrinsics.areEqual(m3855constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                        if (!m3867constructorimpl2.getInserting() || !Intrinsics.areEqual(m3867constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8 >> 6) & 112) | 6));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -321,12 +321,12 @@ public final class SwipeToDismissBoxKt {
 
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                                    return m2663invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
+                                    return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
                                 }
 
                                 /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2663invokeGpV2Q24(long j, long j2) {
-                                    final float m7422getWidthimpl = IntSize.m7422getWidthimpl(j);
+                                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
+                                    final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
                                     final boolean z10 = z4;
                                     final boolean z11 = z7;
                                     final boolean z12 = z5;
@@ -346,10 +346,10 @@ public final class SwipeToDismissBoxKt {
                                         public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
                                             draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
                                             if (z10) {
-                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11 ? -m7422getWidthimpl : m7422getWidthimpl);
+                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11 ? -m7435getWidthimpl : m7435getWidthimpl);
                                             }
                                             if (z12) {
-                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11 ? m7422getWidthimpl : -m7422getWidthimpl);
+                                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11 ? m7435getWidthimpl : -m7435getWidthimpl);
                                             }
                                         }
                                     }), SwipeToDismissBoxState.this.getTargetValue());
@@ -377,15 +377,15 @@ public final class SwipeToDismissBoxKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-                        Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+                        Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (!m3855constructorimpl3.getInserting() || !Intrinsics.areEqual(m3855constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                            m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                            m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                        if (!m3867constructorimpl3.getInserting() || !Intrinsics.areEqual(m3867constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                         function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i9 >> 6) & 112) | 6));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -473,15 +473,15 @@ public final class SwipeToDismissBoxKt {
                 startRestartGroup.startReusableNode();
                 if (!startRestartGroup.getInserting()) {
                 }
-                m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3855constructorimpl.getInserting()) {
+                if (!m3867constructorimpl.getInserting()) {
                 }
-                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
-                Updater.m3862setimpl(m3855constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
+                Updater.m3874setimpl(m3867constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
                 Modifier matchParentSize2 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
@@ -499,15 +499,15 @@ public final class SwipeToDismissBoxKt {
                 startRestartGroup.startReusableNode();
                 if (!startRestartGroup.getInserting()) {
                 }
-                m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-                Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+                Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3855constructorimpl2.getInserting()) {
+                if (!m3867constructorimpl2.getInserting()) {
                 }
-                m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
-                Updater.m3862setimpl(m3855constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+                m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
+                Updater.m3874setimpl(m3867constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                 function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i82 >> 6) & 112) | 6));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -532,12 +532,12 @@ public final class SwipeToDismissBoxKt {
 
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                        return m2663invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
+                        return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
                     }
 
                     /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                    public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2663invokeGpV2Q24(long j, long j2) {
-                        final float m7422getWidthimpl = IntSize.m7422getWidthimpl(j);
+                    public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
+                        final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
                         final boolean z102 = z4;
                         final boolean z112 = z7;
                         final boolean z12 = z5;
@@ -557,10 +557,10 @@ public final class SwipeToDismissBoxKt {
                             public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
                                 draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
                                 if (z102) {
-                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z112 ? -m7422getWidthimpl : m7422getWidthimpl);
+                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z112 ? -m7435getWidthimpl : m7435getWidthimpl);
                                 }
                                 if (z12) {
-                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z112 ? m7422getWidthimpl : -m7422getWidthimpl);
+                                    draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z112 ? m7435getWidthimpl : -m7435getWidthimpl);
                                 }
                             }
                         }), SwipeToDismissBoxState.this.getTargetValue());
@@ -583,15 +583,15 @@ public final class SwipeToDismissBoxKt {
                 startRestartGroup.startReusableNode();
                 if (!startRestartGroup.getInserting()) {
                 }
-                m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-                Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+                Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash32 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (!m3855constructorimpl3.getInserting()) {
+                if (!m3867constructorimpl3.getInserting()) {
                 }
-                m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
-                Updater.m3862setimpl(m3855constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
+                m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
+                Updater.m3874setimpl(m3867constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
                 function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i92 >> 6) & 112) | 6));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -657,15 +657,15 @@ public final class SwipeToDismissBoxKt {
             startRestartGroup.startReusableNode();
             if (!startRestartGroup.getInserting()) {
             }
-            m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap42, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap42, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash42 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3855constructorimpl.getInserting()) {
+            if (!m3867constructorimpl.getInserting()) {
             }
-            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash42);
-            Updater.m3862setimpl(m3855constructorimpl, materializeModifier42, ComposeUiNode.Companion.getSetModifier());
+            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash42);
+            Updater.m3874setimpl(m3867constructorimpl, materializeModifier42, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
             Modifier matchParentSize22 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
@@ -683,15 +683,15 @@ public final class SwipeToDismissBoxKt {
             startRestartGroup.startReusableNode();
             if (!startRestartGroup.getInserting()) {
             }
-            m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy32, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy32, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3855constructorimpl2.getInserting()) {
+            if (!m3867constructorimpl2.getInserting()) {
             }
-            m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-            m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash222);
-            Updater.m3862setimpl(m3855constructorimpl2, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
+            m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+            m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash222);
+            Updater.m3874setimpl(m3867constructorimpl2, materializeModifier222, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
             function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i822 >> 6) & 112) | 6));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -716,12 +716,12 @@ public final class SwipeToDismissBoxKt {
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                    return m2663invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
+                    return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
                 }
 
                 /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2663invokeGpV2Q24(long j, long j2) {
-                    final float m7422getWidthimpl = IntSize.m7422getWidthimpl(j);
+                public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
+                    final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
                     final boolean z1022 = z4;
                     final boolean z1122 = z7;
                     final boolean z12 = z5;
@@ -741,10 +741,10 @@ public final class SwipeToDismissBoxKt {
                         public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
                             draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
                             if (z1022) {
-                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z1122 ? -m7422getWidthimpl : m7422getWidthimpl);
+                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z1122 ? -m7435getWidthimpl : m7435getWidthimpl);
                             }
                             if (z12) {
-                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z1122 ? m7422getWidthimpl : -m7422getWidthimpl);
+                                draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z1122 ? m7435getWidthimpl : -m7435getWidthimpl);
                             }
                         }
                     }), SwipeToDismissBoxState.this.getTargetValue());
@@ -767,15 +767,15 @@ public final class SwipeToDismissBoxKt {
             startRestartGroup.startReusableNode();
             if (!startRestartGroup.getInserting()) {
             }
-            m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-            Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap322, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+            Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap322, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash322 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (!m3855constructorimpl3.getInserting()) {
+            if (!m3867constructorimpl3.getInserting()) {
             }
-            m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-            m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash322);
-            Updater.m3862setimpl(m3855constructorimpl3, materializeModifier322, ComposeUiNode.Companion.getSetModifier());
+            m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+            m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash322);
+            Updater.m3874setimpl(m3867constructorimpl3, materializeModifier322, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
             function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i922 >> 6) & 112) | 6));
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -845,15 +845,15 @@ public final class SwipeToDismissBoxKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3855constructorimpl = Updater.m3855constructorimpl(startRestartGroup);
-        Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap422, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3867constructorimpl = Updater.m3867constructorimpl(startRestartGroup);
+        Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy222, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap422, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash422 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3855constructorimpl.getInserting()) {
+        if (!m3867constructorimpl.getInserting()) {
         }
-        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash422);
-        Updater.m3862setimpl(m3855constructorimpl, materializeModifier422, ComposeUiNode.Companion.getSetModifier());
+        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash422);
+        Updater.m3874setimpl(m3867constructorimpl, materializeModifier422, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -586717200, "C235@9549L71,239@9784L652,236@9629L817:SwipeToDismissBox.kt#uh7d8r");
         Modifier matchParentSize222 = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
@@ -871,15 +871,15 @@ public final class SwipeToDismissBoxKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3855constructorimpl2 = Updater.m3855constructorimpl(startRestartGroup);
-        Updater.m3862setimpl(m3855constructorimpl2, rowMeasurePolicy322, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl2, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3867constructorimpl2 = Updater.m3867constructorimpl(startRestartGroup);
+        Updater.m3874setimpl(m3867constructorimpl2, rowMeasurePolicy322, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl2, currentCompositionLocalMap2222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3855constructorimpl2.getInserting()) {
+        if (!m3867constructorimpl2.getInserting()) {
         }
-        m3855constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-        m3855constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2222);
-        Updater.m3862setimpl(m3855constructorimpl2, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
+        m3867constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+        m3867constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2222);
+        Updater.m3874setimpl(m3867constructorimpl2, materializeModifier2222, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
         function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8222 >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -904,12 +904,12 @@ public final class SwipeToDismissBoxKt {
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Pair<? extends DraggableAnchors<SwipeToDismissBoxValue>, ? extends SwipeToDismissBoxValue> invoke(IntSize intSize, Constraints constraints) {
-                return m2663invokeGpV2Q24(intSize.m7426unboximpl(), constraints.m7210unboximpl());
+                return m2673invokeGpV2Q24(intSize.m7439unboximpl(), constraints.m7223unboximpl());
             }
 
             /* renamed from: invoke-GpV2Q24  reason: not valid java name */
-            public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2663invokeGpV2Q24(long j, long j2) {
-                final float m7422getWidthimpl = IntSize.m7422getWidthimpl(j);
+            public final Pair<DraggableAnchors<SwipeToDismissBoxValue>, SwipeToDismissBoxValue> m2673invokeGpV2Q24(long j, long j2) {
+                final float m7435getWidthimpl = IntSize.m7435getWidthimpl(j);
                 final boolean z10222 = z4;
                 final boolean z11222 = z7;
                 final boolean z12 = z5;
@@ -929,10 +929,10 @@ public final class SwipeToDismissBoxKt {
                     public final void invoke2(DraggableAnchorsConfig<SwipeToDismissBoxValue> draggableAnchorsConfig) {
                         draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
                         if (z10222) {
-                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11222 ? -m7422getWidthimpl : m7422getWidthimpl);
+                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, z11222 ? -m7435getWidthimpl : m7435getWidthimpl);
                         }
                         if (z12) {
-                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11222 ? m7422getWidthimpl : -m7422getWidthimpl);
+                            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, z11222 ? m7435getWidthimpl : -m7435getWidthimpl);
                         }
                     }
                 }), SwipeToDismissBoxState.this.getTargetValue());
@@ -955,15 +955,15 @@ public final class SwipeToDismissBoxKt {
         startRestartGroup.startReusableNode();
         if (!startRestartGroup.getInserting()) {
         }
-        m3855constructorimpl3 = Updater.m3855constructorimpl(startRestartGroup);
-        Updater.m3862setimpl(m3855constructorimpl3, rowMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl3, currentCompositionLocalMap3222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        m3867constructorimpl3 = Updater.m3867constructorimpl(startRestartGroup);
+        Updater.m3874setimpl(m3867constructorimpl3, rowMeasurePolicy2222, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl3, currentCompositionLocalMap3222, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3222 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (!m3855constructorimpl3.getInserting()) {
+        if (!m3867constructorimpl3.getInserting()) {
         }
-        m3855constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-        m3855constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3222);
-        Updater.m3862setimpl(m3855constructorimpl3, materializeModifier3222, ComposeUiNode.Companion.getSetModifier());
+        m3867constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+        m3867constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3222);
+        Updater.m3874setimpl(m3867constructorimpl3, materializeModifier3222, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407918630, "C100@5047L9:Row.kt#2w3rfo");
         function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i9222 >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

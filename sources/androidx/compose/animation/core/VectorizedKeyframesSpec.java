@@ -80,7 +80,7 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public VectorizedKeyframesSpec(Map<Integer, ? extends Pair<? extends V, ? extends Easing>> map, int i, int i2) {
-        this(r4, r0, i, i2, EasingKt.getLinearEasing(), ArcMode.Companion.m164getArcLinear9TMq4(), null);
+        this(r4, r0, i, i2, EasingKt.getLinearEasing(), ArcMode.Companion.m174getArcLinear9TMq4(), null);
         MutableIntList mutableIntList = new MutableIntList(map.size() + 2);
         for (Map.Entry<Integer, ? extends Pair<? extends V, ? extends Easing>> entry : map.entrySet()) {
             mutableIntList.add(entry.getKey().intValue());
@@ -97,7 +97,7 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
         for (Map.Entry<Integer, ? extends Pair<? extends V, ? extends Easing>> entry2 : map.entrySet()) {
             int intValue = entry2.getKey().intValue();
             Pair<? extends V, ? extends Easing> value = entry2.getValue();
-            mutableIntObjectMap.set(intValue, new VectorizedKeyframeSpecElementInfo(value.getFirst(), value.getSecond(), ArcMode.Companion.m164getArcLinear9TMq4(), null));
+            mutableIntObjectMap.set(intValue, new VectorizedKeyframeSpecElementInfo(value.getFirst(), value.getSecond(), ArcMode.Companion.m174getArcLinear9TMq4(), null));
         }
     }
 
@@ -121,11 +121,11 @@ public final class VectorizedKeyframesSpec<V extends AnimationVector> implements
             int[] iArr = new int[i3];
             for (int i4 = 0; i4 < i3; i4++) {
                 VectorizedKeyframeSpecElementInfo<V> vectorizedKeyframeSpecElementInfo = this.keyframes.get(this.timestamps.get(i4));
-                int m220getArcMode9TMq4 = vectorizedKeyframeSpecElementInfo != null ? vectorizedKeyframeSpecElementInfo.m220getArcMode9TMq4() : this.initialArcMode;
-                if (!ArcMode.m158equalsimpl0(m220getArcMode9TMq4, ArcMode.Companion.m164getArcLinear9TMq4())) {
+                int m230getArcMode9TMq4 = vectorizedKeyframeSpecElementInfo != null ? vectorizedKeyframeSpecElementInfo.m230getArcMode9TMq4() : this.initialArcMode;
+                if (!ArcMode.m168equalsimpl0(m230getArcMode9TMq4, ArcMode.Companion.m174getArcLinear9TMq4())) {
                     z = true;
                 }
-                iArr[i4] = m220getArcMode9TMq4;
+                iArr[i4] = m230getArcMode9TMq4;
             }
             this.modes = iArr;
         }

@@ -4,16 +4,16 @@ package io.appmetrica.analytics.impl;
 public final class C0155bk implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f813a;
+    public final /* synthetic */ String f814a;
     public final /* synthetic */ byte[] b;
 
     public C0155bk(String str, byte[] bArr) {
-        this.f813a = str;
+        this.f814a = str;
         this.b = bArr;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.setSessionExtra(this.f813a, this.b);
+        interfaceC0557rb.setSessionExtra(this.f814a, this.b);
     }
 }

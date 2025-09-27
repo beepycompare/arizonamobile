@@ -10,6 +10,6 @@ public final class LazyGridSpanKt {
         if (!(i > 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("The span value should be higher than 0");
         }
-        return GridItemSpan.m973constructorimpl(i);
+        return GridItemSpan.m983constructorimpl(i);
     }
 }

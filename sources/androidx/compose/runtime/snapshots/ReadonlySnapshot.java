@@ -99,20 +99,20 @@ public final class ReadonlySnapshot extends Snapshot {
             return;
         }
         ReadonlySnapshot readonlySnapshot = this;
-        mo3993nestedDeactivated$runtime(readonlySnapshot);
+        mo4005nestedDeactivated$runtime(readonlySnapshot);
         super.dispose();
         SnapshotObserverKt.dispatchObserverOnPreDispose(readonlySnapshot);
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public void mo3992nestedActivated$runtime(Snapshot snapshot) {
+    public void mo4004nestedActivated$runtime(Snapshot snapshot) {
         this.snapshots++;
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public void mo3993nestedDeactivated$runtime(Snapshot snapshot) {
+    public void mo4005nestedDeactivated$runtime(Snapshot snapshot) {
         int i = this.snapshots - 1;
         this.snapshots = i;
         if (i == 0) {
@@ -122,7 +122,7 @@ public final class ReadonlySnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public void mo3994recordModified$runtime(StateObject stateObject) {
+    public void mo4006recordModified$runtime(StateObject stateObject) {
         SnapshotKt.reportReadonlySnapshotWrite();
         throw new KotlinNothingValueException();
     }

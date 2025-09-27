@@ -12,9 +12,9 @@ public final class MutableCubic extends Cubic {
 
     private final void transformOnePoint(PointTransformer pointTransformer, int i) {
         int i2 = i + 1;
-        long mo7821transformXgqJiTY = pointTransformer.mo7821transformXgqJiTY(getPoints$graphics_shapes_release()[i], getPoints$graphics_shapes_release()[i2]);
-        getPoints$graphics_shapes_release()[i] = Float.intBitsToFloat((int) (mo7821transformXgqJiTY >> 32));
-        getPoints$graphics_shapes_release()[i2] = Float.intBitsToFloat((int) (mo7821transformXgqJiTY & 4294967295L));
+        long mo7834transformXgqJiTY = pointTransformer.mo7834transformXgqJiTY(getPoints$graphics_shapes_release()[i], getPoints$graphics_shapes_release()[i2]);
+        getPoints$graphics_shapes_release()[i] = Float.intBitsToFloat((int) (mo7834transformXgqJiTY >> 32));
+        getPoints$graphics_shapes_release()[i2] = Float.intBitsToFloat((int) (mo7834transformXgqJiTY & 4294967295L));
     }
 
     public final void transform(PointTransformer f) {

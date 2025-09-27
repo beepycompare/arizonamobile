@@ -144,10 +144,10 @@ public final class RememberEventDispatcher implements RememberManager {
         if (pausedCompositionRemembers != null) {
             ArrayList arrayList = this.nestedRemembersLists;
             if (arrayList == null) {
-                arrayList = Stack.m3839constructorimpl$default(null, 1, null);
+                arrayList = Stack.m3851constructorimpl$default(null, 1, null);
                 this.nestedRemembersLists = arrayList;
             }
-            Stack.m3849pushimpl(arrayList, this.currentRememberingList);
+            Stack.m3861pushimpl(arrayList, this.currentRememberingList);
             this.currentRememberingList = pausedCompositionRemembers.getPausedRemembers();
         }
     }
@@ -160,7 +160,7 @@ public final class RememberEventDispatcher implements RememberManager {
             return;
         }
         ArrayList<T> arrayList = this.nestedRemembersLists;
-        if (arrayList != 0 && (mutableVector = (MutableVector) Stack.m3848popimpl(arrayList)) != null) {
+        if (arrayList != 0 && (mutableVector = (MutableVector) Stack.m3860popimpl(arrayList)) != null) {
             this.currentRememberingList = mutableVector;
         }
         mutableScatterMap.remove(recomposeScopeImpl);

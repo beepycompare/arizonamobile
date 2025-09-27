@@ -11,7 +11,7 @@ import java.util.Map;
 public abstract class AbstractC0409lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f973a;
+    public static final Map f974a;
     public static final SparseArray b;
     public static final Map c;
     public static final Map d;
@@ -22,7 +22,7 @@ public abstract class AbstractC0409lg {
         hashMap.put(enumC0259fl, 0);
         EnumC0259fl enumC0259fl2 = EnumC0259fl.BACKGROUND;
         hashMap.put(enumC0259fl2, 1);
-        f973a = Collections.unmodifiableMap(hashMap);
+        f974a = Collections.unmodifiableMap(hashMap);
         SparseArray sparseArray = new SparseArray();
         sparseArray.put(0, enumC0259fl);
         sparseArray.put(1, enumC0259fl2);
@@ -99,7 +99,7 @@ public abstract class AbstractC0409lg {
         a5.b = vn;
         C0630u9 c0630u94 = new C0630u9(a5);
         C0605t9 a6 = C0630u9.a();
-        a6.f1092a = u8;
+        a6.f1093a = u8;
         C0630u9 c0630u95 = new C0630u9(a6);
         C0605t9 a7 = C0630u9.a();
         a7.b = new Ao(new C0118a9());
@@ -109,7 +109,7 @@ public abstract class AbstractC0409lg {
         a8.b = new C0357jg();
         hashMap3.put(bb3, new C0630u9(a8));
         C0605t9 a9 = C0630u9.a();
-        a9.f1092a = u8;
+        a9.f1093a = u8;
         a9.b = v8;
         a9.e = new C0654v8();
         a9.f = new C0679w8();
@@ -123,7 +123,7 @@ public abstract class AbstractC0409lg {
         hashMap3.put(bb7, c0630u93);
         hashMap3.put(bb8, c0630u93);
         C0605t9 a10 = C0630u9.a();
-        a10.f1092a = new U8();
+        a10.f1093a = new U8();
         a10.b = b3;
         hashMap3.put(bb14, new C0630u9(a10));
         Bb bb25 = Bb.EVENT_TYPE_CUSTOM_EVENT;
@@ -148,7 +148,7 @@ public abstract class AbstractC0409lg {
     public static I9 a(Long l, Long l2, Boolean bool) {
         I9 i9 = new I9();
         if (l != null) {
-            i9.f493a = l.longValue();
+            i9.f494a = l.longValue();
             i9.b = ((GregorianCalendar) Calendar.getInstance()).getTimeZone().getOffset(l.longValue() * 1000) / 1000;
         }
         if (l2 != null) {

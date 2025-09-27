@@ -69,7 +69,7 @@ public final class LazyListSnapLayoutInfoProviderKt {
                         }
                     }
                 }
-                return SnapFlingBehaviorKt.m627calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyListState.this.getDensity$foundation_release(), f), f2, f3);
+                return SnapFlingBehaviorKt.m637calculateFinalOffsetFhqu1e0(LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(LazyListState.this.getDensity$foundation_release(), f), f2, f3);
             }
         };
     }
@@ -99,13 +99,13 @@ public final class LazyListSnapLayoutInfoProviderKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyListLayoutInfo lazyListLayoutInfo) {
-        return (int) (lazyListLayoutInfo.getOrientation() == Orientation.Vertical ? lazyListLayoutInfo.mo952getViewportSizeYbymL2g() & 4294967295L : lazyListLayoutInfo.mo952getViewportSizeYbymL2g() >> 32);
+        return (int) (lazyListLayoutInfo.getOrientation() == Orientation.Vertical ? lazyListLayoutInfo.mo962getViewportSizeYbymL2g() & 4294967295L : lazyListLayoutInfo.mo962getViewportSizeYbymL2g() >> 32);
     }
 
     public static final int calculateFinalSnappingItem(Density density, float f) {
-        if (Math.abs(f) < density.mo419toPx0680j_4(SnapFlingBehaviorKt.getMinFlingVelocityDp())) {
-            return FinalSnappingItem.Companion.m622getClosestItembbeMdSM();
+        if (Math.abs(f) < density.mo429toPx0680j_4(SnapFlingBehaviorKt.getMinFlingVelocityDp())) {
+            return FinalSnappingItem.Companion.m632getClosestItembbeMdSM();
         }
-        return f > 0.0f ? FinalSnappingItem.Companion.m623getNextItembbeMdSM() : FinalSnappingItem.Companion.m624getPreviousItembbeMdSM();
+        return f > 0.0f ? FinalSnappingItem.Companion.m633getNextItembbeMdSM() : FinalSnappingItem.Companion.m634getPreviousItembbeMdSM();
     }
 }

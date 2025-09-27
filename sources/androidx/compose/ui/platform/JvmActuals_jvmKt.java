@@ -32,7 +32,7 @@ public final class JvmActuals_jvmKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "not expected to be referenced directly as the old version had to be inlined")
     /* renamed from: synchronized  reason: not valid java name */
-    public static final /* synthetic */ <R> R m6402synchronized(Object obj, Function0<? extends R> function0) {
+    public static final /* synthetic */ <R> R m6415synchronized(Object obj, Function0<? extends R> function0) {
         R invoke;
         synchronized (obj) {
             invoke = function0.invoke();

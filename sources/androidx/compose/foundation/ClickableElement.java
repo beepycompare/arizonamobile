@@ -43,7 +43,7 @@ final class ClickableElement extends ModifierNodeElement<ClickableNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(ClickableNode clickableNode) {
-        clickableNode.m313updateO2vRcR0(this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.onClickLabel, this.role, this.onClick);
+        clickableNode.m323updateO2vRcR0(this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.onClickLabel, this.role, this.onClick);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -78,6 +78,6 @@ final class ClickableElement extends ModifierNodeElement<ClickableNode> {
         String str = this.onClickLabel;
         int hashCode3 = (hashCode2 + (str != null ? str.hashCode() : 0)) * 31;
         Role role = this.role;
-        return ((hashCode3 + (role != null ? Role.m6458hashCodeimpl(role.m6460unboximpl()) : 0)) * 31) + this.onClick.hashCode();
+        return ((hashCode3 + (role != null ? Role.m6471hashCodeimpl(role.m6473unboximpl()) : 0)) * 31) + this.onClick.hashCode();
     }
 }

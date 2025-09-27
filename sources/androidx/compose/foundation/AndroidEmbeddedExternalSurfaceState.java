@@ -23,17 +23,17 @@ public final class AndroidEmbeddedExternalSurfaceState extends BaseAndroidExtern
 
     public AndroidEmbeddedExternalSurfaceState(CoroutineScope coroutineScope) {
         super(coroutineScope);
-        this.surfaceSize = IntSize.Companion.m7427getZeroYbymL2g();
+        this.surfaceSize = IntSize.Companion.m7440getZeroYbymL2g();
         this.matrix = new Matrix();
     }
 
     /* renamed from: getSurfaceSize-YbymL2g  reason: not valid java name */
-    public final long m239getSurfaceSizeYbymL2g() {
+    public final long m249getSurfaceSizeYbymL2g() {
         return this.surfaceSize;
     }
 
     /* renamed from: setSurfaceSize-ozmzZPI  reason: not valid java name */
-    public final void m240setSurfaceSizeozmzZPI(long j) {
+    public final void m250setSurfaceSizeozmzZPI(long j) {
         this.surfaceSize = j;
     }
 
@@ -43,7 +43,7 @@ public final class AndroidEmbeddedExternalSurfaceState extends BaseAndroidExtern
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        if (!IntSize.m7420equalsimpl0(this.surfaceSize, IntSize.Companion.m7427getZeroYbymL2g())) {
+        if (!IntSize.m7433equalsimpl0(this.surfaceSize, IntSize.Companion.m7440getZeroYbymL2g())) {
             long j = this.surfaceSize;
             int i3 = (int) (j >> 32);
             i2 = (int) (j & 4294967295L);
@@ -57,7 +57,7 @@ public final class AndroidEmbeddedExternalSurfaceState extends BaseAndroidExtern
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i, int i2) {
-        if (!IntSize.m7420equalsimpl0(this.surfaceSize, IntSize.Companion.m7427getZeroYbymL2g())) {
+        if (!IntSize.m7433equalsimpl0(this.surfaceSize, IntSize.Companion.m7440getZeroYbymL2g())) {
             long j = this.surfaceSize;
             int i3 = (int) (j >> 32);
             i2 = (int) (j & 4294967295L);

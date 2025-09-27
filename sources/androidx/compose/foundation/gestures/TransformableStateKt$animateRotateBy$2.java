@@ -80,7 +80,7 @@ final class TransformableStateKt$animateRotateBy$2 extends SuspendLambda impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, TransformScope transformScope, AnimationScope animationScope) {
-        TransformScope.m604transformByd4ec7I$default(transformScope, 0.0f, 0L, ((Number) animationScope.getValue()).floatValue() - floatRef.element, 3, null);
+        TransformScope.m614transformByd4ec7I$default(transformScope, 0.0f, 0L, ((Number) animationScope.getValue()).floatValue() - floatRef.element, 3, null);
         floatRef.element = ((Number) animationScope.getValue()).floatValue();
         return Unit.INSTANCE;
     }

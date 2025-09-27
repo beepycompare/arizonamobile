@@ -9,10 +9,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public final class M implements J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J f567a;
+    public final J f568a;
 
     public M(J j) {
-        this.f567a = j;
+        this.f568a = j;
     }
 
     @Override // io.appmetrica.analytics.impl.J

@@ -15,22 +15,22 @@ public final class Updater<T> {
     private final Composer composer;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Updater m3854boximpl(Composer composer) {
+    public static final /* synthetic */ Updater m3866boximpl(Composer composer) {
         return new Updater(composer);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Composer m3855constructorimpl(Composer composer) {
+    public static <T> Composer m3867constructorimpl(Composer composer) {
         return composer;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m3856equalsimpl(Composer composer, Object obj) {
-        return (obj instanceof Updater) && Intrinsics.areEqual(composer, ((Updater) obj).m3866unboximpl());
+    public static boolean m3868equalsimpl(Composer composer, Object obj) {
+        return (obj instanceof Updater) && Intrinsics.areEqual(composer, ((Updater) obj).m3878unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m3857equalsimpl0(Composer composer, Composer composer2) {
+    public static final boolean m3869equalsimpl0(Composer composer, Composer composer2) {
         return Intrinsics.areEqual(composer, composer2);
     }
 
@@ -38,29 +38,29 @@ public final class Updater<T> {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m3858hashCodeimpl(Composer composer) {
+    public static int m3870hashCodeimpl(Composer composer) {
         return composer.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m3863toStringimpl(Composer composer) {
+    public static String m3875toStringimpl(Composer composer) {
         return "Updater(composer=" + composer + ')';
     }
 
     public boolean equals(Object obj) {
-        return m3856equalsimpl(this.composer, obj);
+        return m3868equalsimpl(this.composer, obj);
     }
 
     public int hashCode() {
-        return m3858hashCodeimpl(this.composer);
+        return m3870hashCodeimpl(this.composer);
     }
 
     public String toString() {
-        return m3863toStringimpl(this.composer);
+        return m3875toStringimpl(this.composer);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Composer m3866unboximpl() {
+    public final /* synthetic */ Composer m3878unboximpl() {
         return this.composer;
     }
 
@@ -69,7 +69,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m3861setimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
+    public static final void m3873setimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
         if (composer.getInserting() || !Intrinsics.areEqual(composer.rememberedValue(), Integer.valueOf(i))) {
             composer.updateRememberedValue(Integer.valueOf(i));
             composer.apply(Integer.valueOf(i), function2);
@@ -77,7 +77,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final <V> void m3862setimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
+    public static final <V> void m3874setimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
         if (composer.getInserting() || !Intrinsics.areEqual(composer.rememberedValue(), v)) {
             composer.updateRememberedValue(v);
             composer.apply(v, function2);
@@ -85,7 +85,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    public static final void m3864updateimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
+    public static final void m3876updateimpl(Composer composer, int i, Function2<? super T, ? super Integer, Unit> function2) {
         boolean inserting = composer.getInserting();
         if (inserting || !Intrinsics.areEqual(composer.rememberedValue(), Integer.valueOf(i))) {
             composer.updateRememberedValue(Integer.valueOf(i));
@@ -97,7 +97,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    public static final <V> void m3865updateimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
+    public static final <V> void m3877updateimpl(Composer composer, V v, Function2<? super T, ? super V, Unit> function2) {
         boolean inserting = composer.getInserting();
         if (inserting || !Intrinsics.areEqual(composer.rememberedValue(), v)) {
             composer.updateRememberedValue(v);
@@ -109,7 +109,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: init-impl  reason: not valid java name */
-    public static final void m3859initimpl(Composer composer, final Function1<? super T, Unit> function1) {
+    public static final void m3871initimpl(Composer composer, final Function1<? super T, Unit> function1) {
         if (composer.getInserting()) {
             composer.apply(Unit.INSTANCE, new Function2() { // from class: androidx.compose.runtime.Updater$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
@@ -129,7 +129,7 @@ public final class Updater<T> {
     }
 
     /* renamed from: reconcile-impl  reason: not valid java name */
-    public static final void m3860reconcileimpl(Composer composer, final Function1<? super T, Unit> function1) {
+    public static final void m3872reconcileimpl(Composer composer, final Function1<? super T, Unit> function1) {
         composer.apply(Unit.INSTANCE, new Function2() { // from class: androidx.compose.runtime.Updater$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {

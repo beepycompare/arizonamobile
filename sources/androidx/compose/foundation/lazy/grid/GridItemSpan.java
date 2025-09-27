@@ -10,54 +10,54 @@ public final class GridItemSpan {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ GridItemSpan m972boximpl(long j) {
+    public static final /* synthetic */ GridItemSpan m982boximpl(long j) {
         return new GridItemSpan(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m973constructorimpl(long j) {
+    public static long m983constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m974equalsimpl(long j, Object obj) {
-        return (obj instanceof GridItemSpan) && j == ((GridItemSpan) obj).m979unboximpl();
+    public static boolean m984equalsimpl(long j, Object obj) {
+        return (obj instanceof GridItemSpan) && j == ((GridItemSpan) obj).m989unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m975equalsimpl0(long j, long j2) {
+    public static final boolean m985equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getCurrentLineSpan-impl  reason: not valid java name */
-    public static final int m976getCurrentLineSpanimpl(long j) {
+    public static final int m986getCurrentLineSpanimpl(long j) {
         return (int) j;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m977hashCodeimpl(long j) {
+    public static int m987hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m978toStringimpl(long j) {
+    public static String m988toStringimpl(long j) {
         return "GridItemSpan(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m974equalsimpl(this.packedValue, obj);
+        return m984equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m977hashCodeimpl(this.packedValue);
+        return m987hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m978toStringimpl(this.packedValue);
+        return m988toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m979unboximpl() {
+    public final /* synthetic */ long m989unboximpl() {
         return this.packedValue;
     }
 

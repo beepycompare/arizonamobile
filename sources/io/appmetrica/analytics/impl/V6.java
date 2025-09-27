@@ -25,7 +25,7 @@ public final class V6 implements Converter {
             }
             Map.Entry entry = (Map.Entry) obj;
             C0768zm c0768zm = new C0768zm();
-            c0768zm.f1195a = (String) entry.getKey();
+            c0768zm.f1196a = (String) entry.getKey();
             Object[] array = ((Collection) entry.getValue()).toArray(new String[0]);
             if (array != null) {
                 c0768zm.b = (String[]) array;
@@ -43,7 +43,7 @@ public final class V6 implements Converter {
     public final Map<String, List<String>> toModel(C0768zm[] c0768zmArr) {
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0768zmArr.length), 16));
         for (C0768zm c0768zm : c0768zmArr) {
-            Pair pair = TuplesKt.to(c0768zm.f1195a, ArraysKt.toList(c0768zm.b));
+            Pair pair = TuplesKt.to(c0768zm.f1196a, ArraysKt.toList(c0768zm.b));
             linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
         return linkedHashMap;

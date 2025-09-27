@@ -58,15 +58,15 @@ public final class ColumnKt {
         } else {
             composer.useNode();
         }
-        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer);
-        Updater.m3862setimpl(m3855constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer);
+        Updater.m3874setimpl(m3867constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
-            m3855constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
-            m3855constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
+        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(hashCode))) {
+            m3867constructorimpl.updateRememberedValue(Integer.valueOf(hashCode));
+            m3867constructorimpl.apply(Integer.valueOf(hashCode), setCompositeKeyHash);
         }
-        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
         function3.invoke(ColumnScopeInstance.INSTANCE, composer, Integer.valueOf(((i >> 6) & 112) | 6));
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -115,6 +115,6 @@ public final class ColumnKt {
         if (!z) {
             return ConstraintsKt.Constraints(i2, i4, i, i3);
         }
-        return Constraints.Companion.m7212fitPrioritizingHeightZbe2FdA(i2, i4, i, i3);
+        return Constraints.Companion.m7225fitPrioritizingHeightZbe2FdA(i2, i4, i, i3);
     }
 }

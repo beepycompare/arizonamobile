@@ -31,7 +31,7 @@ public final class ComposableSingletons$BottomSheetScaffoldKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-927355320, i, -1, "androidx.compose.material3.ComposableSingletons$BottomSheetScaffoldKt.lambda-1.<anonymous> (BottomSheetScaffold.kt:120)");
             }
-            BottomSheetDefaults.INSTANCE.m1901DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1911DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -89,17 +89,17 @@ public final class ComposableSingletons$BottomSheetScaffoldKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2068getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2078getLambda1$material3_release() {
         return f21lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function3<SnackbarHostState, Composer, Integer, Unit> m2069getLambda2$material3_release() {
+    public final Function3<SnackbarHostState, Composer, Integer, Unit> m2079getLambda2$material3_release() {
         return f22lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2070getLambda3$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2080getLambda3$material3_release() {
         return f23lambda3;
     }
 }

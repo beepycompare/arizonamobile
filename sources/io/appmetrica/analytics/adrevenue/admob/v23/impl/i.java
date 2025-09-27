@@ -15,7 +15,7 @@ public final class i extends e {
     public final boolean process(Object... objArr) {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, AdValue.class, RewardedInterstitialAd.class)) {
             RewardedInterstitialAd rewardedInterstitialAd = (RewardedInterstitialAd) objArr[1];
-            this.f209a.getClass();
+            this.f210a.getClass();
             a(b.a((AdValue) objArr[0], ModuleAdType.OTHER, "rewardedInterstitialAd", rewardedInterstitialAd.getResponseInfo(), rewardedInterstitialAd.getAdUnitId()));
             return true;
         }

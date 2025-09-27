@@ -244,7 +244,7 @@ public final class BezierKt {
             min = Math.min(min, evaluateX);
             max = Math.max(max, evaluateX);
         }
-        return FloatFloatPair.m14constructorimpl(min, max);
+        return FloatFloatPair.m24constructorimpl(min, max);
     }
 
     public static /* synthetic */ long computeVerticalBounds$default(PathSegment pathSegment, float[] fArr, int i, int i2, Object obj) {
@@ -263,7 +263,7 @@ public final class BezierKt {
             min = Math.min(min, evaluateY);
             max = Math.max(max, evaluateY);
         }
-        return FloatFloatPair.m14constructorimpl(min, max);
+        return FloatFloatPair.m24constructorimpl(min, max);
     }
 
     public static /* synthetic */ long computeCubicVerticalBounds$default(float f, float f2, float f3, float f4, float[] fArr, int i, int i2, Object obj) {
@@ -287,7 +287,7 @@ public final class BezierKt {
             min = Math.min(min, evaluateCubic);
             max = Math.max(max, evaluateCubic);
         }
-        return FloatFloatPair.m14constructorimpl(min, max);
+        return FloatFloatPair.m24constructorimpl(min, max);
     }
 
     public static final boolean closeTo(double d, double d2) {

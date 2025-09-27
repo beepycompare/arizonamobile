@@ -11,7 +11,7 @@ import java.util.Map;
 public class Di implements InterfaceC0557rb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0356jf f412a = new C0356jf();
+    public final C0356jf f413a = new C0356jf();
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0557rb, io.appmetrica.analytics.impl.InterfaceC0238f0
     public final void a(U u) {
@@ -27,7 +27,7 @@ public class Di implements InterfaceC0557rb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final IPluginReporter getPluginExtension() {
-        return this.f412a;
+        return this.f413a;
     }
 
     @Override // io.appmetrica.analytics.IReporter

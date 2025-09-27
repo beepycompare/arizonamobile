@@ -82,7 +82,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
         if (contentWidth <= containerWidth) {
             return null;
         }
-        if (MarqueeAnimationMode.m342equalsimpl0(marqueeModifierNode.m354getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m347getWhileFocusedZbEOnfQ())) {
+        if (MarqueeAnimationMode.m352equalsimpl0(marqueeModifierNode.m364getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m357getWhileFocusedZbEOnfQ())) {
             hasFocus = marqueeModifierNode.getHasFocus();
             if (!hasFocus) {
                 return null;
@@ -136,7 +136,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
             int i2;
             int i3;
             float f;
-            AnimationSpec m264createMarqueeAnimationSpecZ4HSEVQ;
+            AnimationSpec m274createMarqueeAnimationSpecZ4HSEVQ;
             Animatable animatable2;
             Float f2;
             AnimationSpec animationSpec;
@@ -164,14 +164,14 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
                     i2 = this.this$0.initialDelayMillis;
                     i3 = this.this$0.delayMillis;
                     f = this.this$0.velocity;
-                    m264createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m264createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
+                    m274createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m274createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
                     animatable2 = this.this$0.offset;
                     this.L$0 = f3;
-                    this.L$1 = m264createMarqueeAnimationSpecZ4HSEVQ;
+                    this.L$1 = m274createMarqueeAnimationSpecZ4HSEVQ;
                     this.label = 1;
                     if (animatable2.snapTo(Boxing.boxFloat(0.0f), this) != coroutine_suspended) {
                         f2 = f3;
-                        animationSpec = m264createMarqueeAnimationSpecZ4HSEVQ;
+                        animationSpec = m274createMarqueeAnimationSpecZ4HSEVQ;
                     }
                     return coroutine_suspended;
                 }

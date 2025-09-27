@@ -49,7 +49,7 @@ public final class BlockGraphicsLayerModifier extends Modifier.Node implements L
     }
 
     public final void invalidateLayerBlock() {
-        NodeCoordinator wrapped$ui_release = DelegatableNodeKt.m6099requireCoordinator64DMado(this, NodeKind.m6245constructorimpl(2)).getWrapped$ui_release();
+        NodeCoordinator wrapped$ui_release = DelegatableNodeKt.m6112requireCoordinator64DMado(this, NodeKind.m6258constructorimpl(2)).getWrapped$ui_release();
         if (wrapped$ui_release != null) {
             wrapped$ui_release.updateLayerBlock(this.layerBlock, true);
         }
@@ -57,9 +57,9 @@ public final class BlockGraphicsLayerModifier extends Modifier.Node implements L
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.graphics.BlockGraphicsLayerModifier$measure$1
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.graphics.BlockGraphicsLayerModifier$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

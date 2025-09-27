@@ -28,12 +28,12 @@ public final class ClockDialModifier extends ModifierNodeElement<ClockDialNode> 
     }
 
     /* renamed from: component3-yecRtBI  reason: not valid java name */
-    private final int m1990component3yecRtBI() {
+    private final int m2000component3yecRtBI() {
         return this.selection;
     }
 
     /* renamed from: copy-e8ubxrI$default  reason: not valid java name */
-    public static /* synthetic */ ClockDialModifier m1991copye8ubxrI$default(ClockDialModifier clockDialModifier, AnalogTimePickerState analogTimePickerState, boolean z, int i, int i2, Object obj) {
+    public static /* synthetic */ ClockDialModifier m2001copye8ubxrI$default(ClockDialModifier clockDialModifier, AnalogTimePickerState analogTimePickerState, boolean z, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             analogTimePickerState = clockDialModifier.state;
         }
@@ -43,11 +43,11 @@ public final class ClockDialModifier extends ModifierNodeElement<ClockDialNode> 
         if ((i2 & 4) != 0) {
             i = clockDialModifier.selection;
         }
-        return clockDialModifier.m1992copye8ubxrI(analogTimePickerState, z, i);
+        return clockDialModifier.m2002copye8ubxrI(analogTimePickerState, z, i);
     }
 
     /* renamed from: copy-e8ubxrI  reason: not valid java name */
-    public final ClockDialModifier m1992copye8ubxrI(AnalogTimePickerState analogTimePickerState, boolean z, int i) {
+    public final ClockDialModifier m2002copye8ubxrI(AnalogTimePickerState analogTimePickerState, boolean z, int i) {
         return new ClockDialModifier(analogTimePickerState, z, i, null);
     }
 
@@ -58,14 +58,14 @@ public final class ClockDialModifier extends ModifierNodeElement<ClockDialNode> 
         }
         if (obj instanceof ClockDialModifier) {
             ClockDialModifier clockDialModifier = (ClockDialModifier) obj;
-            return Intrinsics.areEqual(this.state, clockDialModifier.state) && this.autoSwitchToMinute == clockDialModifier.autoSwitchToMinute && TimePickerSelectionMode.m2858equalsimpl0(this.selection, clockDialModifier.selection);
+            return Intrinsics.areEqual(this.state, clockDialModifier.state) && this.autoSwitchToMinute == clockDialModifier.autoSwitchToMinute && TimePickerSelectionMode.m2868equalsimpl0(this.selection, clockDialModifier.selection);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((this.state.hashCode() * 31) + Boolean.hashCode(this.autoSwitchToMinute)) * 31) + TimePickerSelectionMode.m2859hashCodeimpl(this.selection);
+        return (((this.state.hashCode() * 31) + Boolean.hashCode(this.autoSwitchToMinute)) * 31) + TimePickerSelectionMode.m2869hashCodeimpl(this.selection);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -73,7 +73,7 @@ public final class ClockDialModifier extends ModifierNodeElement<ClockDialNode> 
     }
 
     public String toString() {
-        return "ClockDialModifier(state=" + this.state + ", autoSwitchToMinute=" + this.autoSwitchToMinute + ", selection=" + ((Object) TimePickerSelectionMode.m2860toStringimpl(this.selection)) + ')';
+        return "ClockDialModifier(state=" + this.state + ", autoSwitchToMinute=" + this.autoSwitchToMinute + ", selection=" + ((Object) TimePickerSelectionMode.m2870toStringimpl(this.selection)) + ')';
     }
 
     private ClockDialModifier(AnalogTimePickerState analogTimePickerState, boolean z, int i) {
@@ -90,6 +90,6 @@ public final class ClockDialModifier extends ModifierNodeElement<ClockDialNode> 
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(ClockDialNode clockDialNode) {
-        clockDialNode.m1993updateNodee8ubxrI(this.state, this.autoSwitchToMinute, this.selection);
+        clockDialNode.m2003updateNodee8ubxrI(this.state, this.autoSwitchToMinute, this.selection);
     }
 }

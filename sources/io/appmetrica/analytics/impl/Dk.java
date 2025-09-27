@@ -6,7 +6,7 @@ import io.appmetrica.analytics.BuildConfig;
 public final class Dk extends AbstractC0354jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Co f414a;
+    public final Co f415a;
 
     public Dk() {
         this(Na.j().B().b());
@@ -14,9 +14,9 @@ public final class Dk extends AbstractC0354jd {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
     public final void a(int i) {
-        Co co = this.f414a;
+        Co co = this.f415a;
         synchronized (co) {
-            Eo eo = co.f397a;
+            Eo eo = co.f398a;
             eo.a(eo.a().put("last_migration_api_level", i));
         }
     }
@@ -24,9 +24,9 @@ public final class Dk extends AbstractC0354jd {
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
     public final int b() {
         int optInt;
-        Co co = this.f414a;
+        Co co = this.f415a;
         synchronized (co) {
-            optInt = co.f397a.a().optInt("last_migration_api_level", -1);
+            optInt = co.f398a.a().optInt("last_migration_api_level", -1);
         }
         return optInt;
     }
@@ -34,12 +34,12 @@ public final class Dk extends AbstractC0354jd {
     @Override // io.appmetrica.analytics.impl.AbstractC0354jd
     public final SparseArray<InterfaceC0329id> c() {
         SparseArray<InterfaceC0329id> sparseArray = new SparseArray<>(1);
-        sparseArray.put(112, new Ek(this.f414a));
+        sparseArray.put(112, new Ek(this.f415a));
         sparseArray.put(BuildConfig.API_LEVEL, new Fk());
         return sparseArray;
     }
 
     public Dk(Co co) {
-        this.f414a = co;
+        this.f415a = co;
     }
 }

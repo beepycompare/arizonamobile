@@ -59,7 +59,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         if (r3 == r1) goto L52;
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x013b, code lost:
-        if (androidx.compose.ui.geometry.Offset.m4290equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m4309getZeroF1C5BW0()) == false) goto L57;
+        if (androidx.compose.ui.geometry.Offset.m4302equalsimpl0(r7, androidx.compose.ui.geometry.Offset.Companion.m4321getZeroF1C5BW0()) == false) goto L57;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v3 */
@@ -94,12 +94,12 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
         if (i6 == 0) {
             ResultKt.throwOnFailure(obj);
             AwaitPointerEventScope awaitPointerEventScope2 = (AwaitPointerEventScope) this.L$0;
-            long m4309getZeroF1C5BW0 = Offset.Companion.m4309getZeroF1C5BW0();
+            long m4321getZeroF1C5BW0 = Offset.Companion.m4321getZeroF1C5BW0();
             float touchSlop = awaitPointerEventScope2.getViewConfiguration().getTouchSlop();
             this.L$0 = awaitPointerEventScope2;
             this.F$0 = 0.0f;
             this.F$1 = 1.0f;
-            this.J$0 = m4309getZeroF1C5BW0;
+            this.J$0 = m4321getZeroF1C5BW0;
             this.I$0 = 0;
             this.F$2 = touchSlop;
             this.I$1 = 0;
@@ -108,7 +108,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                 f = 1.0f;
                 f2 = 0.0f;
                 i = 0;
-                j = m4309getZeroF1C5BW0;
+                j = m4321getZeroF1C5BW0;
                 awaitPointerEventScope = awaitPointerEventScope2;
                 f3 = touchSlop;
                 i2 = 0;
@@ -154,14 +154,14 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                     if (i == 0) {
                         f *= calculateZoom;
                         f2 += calculateRotation;
-                        j = Offset.m4298plusMKHz9U(j, calculatePan);
+                        j = Offset.m4310plusMKHz9U(j, calculatePan);
                         float calculateCentroidSize = TransformGestureDetectorKt.calculateCentroidSize(pointerEvent, z);
                         obj2 = coroutine_suspended;
                         i4 = 1;
                         float abs = Math.abs(1 - f) * calculateCentroidSize;
                         float abs2 = Math.abs(((3.1415927f * f2) * calculateCentroidSize) / 180.0f);
-                        float m4291getDistanceimpl = Offset.m4291getDistanceimpl(j);
-                        if (abs > f5 || abs2 > f5 || m4291getDistanceimpl > f5) {
+                        float m4303getDistanceimpl = Offset.m4303getDistanceimpl(j);
+                        if (abs > f5 || abs2 > f5 || m4303getDistanceimpl > f5) {
                             i2 = (!this.$panZoomLock || abs2 >= f5) ? 0 : 1;
                             i = 1;
                         }
@@ -179,7 +179,7 @@ public final class TransformGestureDetectorKt$detectTransformGestures$2 extends 
                         } else {
                             i5 = i2;
                         }
-                        this.$onGesture.invoke(Offset.m4282boximpl(calculateCentroid), Offset.m4282boximpl(calculatePan), Boxing.boxFloat(calculateZoom), Boxing.boxFloat(calculateRotation));
+                        this.$onGesture.invoke(Offset.m4294boximpl(calculateCentroid), Offset.m4294boximpl(calculatePan), Boxing.boxFloat(calculateZoom), Boxing.boxFloat(calculateRotation));
                         List<PointerInputChange> changes2 = pointerEvent.getChanges();
                         int size2 = changes2.size();
                         for (int i10 = 0; i10 < size2; i10++) {

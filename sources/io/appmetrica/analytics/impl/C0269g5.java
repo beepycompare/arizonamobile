@@ -9,7 +9,7 @@ import okhttp3.internal.connection.RealConnection;
 public final class C0269g5 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f889a = 2000;
+    public final int f890a = 2000;
     public final String b = "number";
     public final String c = "global_number";
     public final String d = "number_of_type";
@@ -39,7 +39,7 @@ public final class C0269g5 extends DatabaseScript {
         Bb bb;
         Long l2;
         Long l3;
-        Long l4 = e7.f423a;
+        Long l4 = e7.f424a;
         if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || e7.b == null || (l = e7.c) == null || l.longValue() < 0 || (bb = e7.d) == null || bb == Bb.EVENT_TYPE_UNDEFINED || (l2 = e7.e) == null || l2.longValue() < 0 || (l3 = e7.f) == null || l3.longValue() < 0) {
             return false;
         }
@@ -60,7 +60,7 @@ public final class C0269g5 extends DatabaseScript {
         try {
             sQLiteDatabase2 = sQLiteDatabase;
             try {
-                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f889a));
+                cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f890a));
                 while (cursor.moveToNext()) {
                     try {
                         E7 a2 = a(cursor);

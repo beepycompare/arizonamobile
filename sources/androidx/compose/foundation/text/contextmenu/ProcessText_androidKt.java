@@ -18,8 +18,8 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class ProcessText_androidKt {
     /* renamed from: addProcessedTextContextMenuItems-UAq72N0  reason: not valid java name */
-    public static final void m1391addProcessedTextContextMenuItemsUAq72N0(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, final boolean z, final CharSequence charSequence, final long j) {
-        if (!ComposeFoundationFlags.isSmartSelectionEnabled || TextRange.m6707getCollapsedimpl(j) || charSequence.length() == 0) {
+    public static final void m1401addProcessedTextContextMenuItemsUAq72N0(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, final boolean z, final CharSequence charSequence, final long j) {
+        if (!ComposeFoundationFlags.isSmartSelectionEnabled || TextRange.m6720getCollapsedimpl(j) || charSequence.length() == 0) {
             return;
         }
         PackageManager packageManager = context.getPackageManager();
@@ -49,7 +49,7 @@ public final class ProcessText_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit addProcessedTextContextMenuItems_UAq72N0$lambda$1$lambda$0(Context context, ResolveInfo resolveInfo, boolean z, CharSequence charSequence, long j, TextContextMenuSession textContextMenuSession) {
-        ProcessTextApi23Impl.INSTANCE.getOnClickProcessTextItem().invoke(context, resolveInfo, Boolean.valueOf(z), charSequence, TextRange.m6701boximpl(j));
+        ProcessTextApi23Impl.INSTANCE.getOnClickProcessTextItem().invoke(context, resolveInfo, Boolean.valueOf(z), charSequence, TextRange.m6714boximpl(j));
         textContextMenuSession.close();
         return Unit.INSTANCE;
     }

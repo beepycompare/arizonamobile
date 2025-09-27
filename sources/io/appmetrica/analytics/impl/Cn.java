@@ -7,7 +7,7 @@ import java.util.List;
 public final class Cn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f396a;
+    public final String f397a;
     public final int b;
     public final long c;
     public final String d;
@@ -15,7 +15,7 @@ public final class Cn {
     public final List f;
 
     public Cn(String str, int i, long j, String str2, Integer num, List list) {
-        this.f396a = str;
+        this.f397a = str;
         this.b = i;
         this.c = j;
         this.d = str2;

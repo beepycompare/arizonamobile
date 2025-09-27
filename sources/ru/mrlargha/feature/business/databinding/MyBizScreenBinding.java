@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.business.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class MyBizScreenBinding implements ViewBinding {
     public final ImageView backButton;
     public final TextView balance;

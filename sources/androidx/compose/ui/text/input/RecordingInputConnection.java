@@ -89,10 +89,10 @@ public final class RecordingInputConnection implements InputConnection {
             if (this.extractedTextMonitorMode) {
                 inputMethodManager.updateExtractedText(this.currentExtractedTextRequestToken, InputState_androidKt.toExtractedText(textFieldValue));
             }
-            TextRange m6963getCompositionMzsxiRA = textFieldValue.m6963getCompositionMzsxiRA();
-            int m6711getMinimpl = m6963getCompositionMzsxiRA != null ? TextRange.m6711getMinimpl(m6963getCompositionMzsxiRA.m6717unboximpl()) : -1;
-            TextRange m6963getCompositionMzsxiRA2 = textFieldValue.m6963getCompositionMzsxiRA();
-            inputMethodManager.updateSelection(TextRange.m6711getMinimpl(textFieldValue.m6964getSelectiond9O1mEE()), TextRange.m6710getMaximpl(textFieldValue.m6964getSelectiond9O1mEE()), m6711getMinimpl, m6963getCompositionMzsxiRA2 != null ? TextRange.m6710getMaximpl(m6963getCompositionMzsxiRA2.m6717unboximpl()) : -1);
+            TextRange m6976getCompositionMzsxiRA = textFieldValue.m6976getCompositionMzsxiRA();
+            int m6724getMinimpl = m6976getCompositionMzsxiRA != null ? TextRange.m6724getMinimpl(m6976getCompositionMzsxiRA.m6730unboximpl()) : -1;
+            TextRange m6976getCompositionMzsxiRA2 = textFieldValue.m6976getCompositionMzsxiRA();
+            inputMethodManager.updateSelection(TextRange.m6724getMinimpl(textFieldValue.m6977getSelectiond9O1mEE()), TextRange.m6723getMaximpl(textFieldValue.m6977getSelectiond9O1mEE()), m6724getMinimpl, m6976getCompositionMzsxiRA2 != null ? TextRange.m6723getMaximpl(m6976getCompositionMzsxiRA2.m6730unboximpl()) : -1);
         }
     }
 
@@ -145,7 +145,7 @@ public final class RecordingInputConnection implements InputConnection {
 
     @Override // android.view.inputmethod.InputConnection
     public CharSequence getSelectedText(int i) {
-        if (TextRange.m6707getCollapsedimpl(this.mTextFieldValue.m6964getSelectiond9O1mEE())) {
+        if (TextRange.m6720getCollapsedimpl(this.mTextFieldValue.m6977getSelectiond9O1mEE())) {
             return null;
         }
         return TextFieldValueKt.getSelectedText(this.mTextFieldValue).toString();
@@ -168,7 +168,7 @@ public final class RecordingInputConnection implements InputConnection {
 
     @Override // android.view.inputmethod.InputConnection
     public int getCursorCapsMode(int i) {
-        return TextUtils.getCapsMode(this.mTextFieldValue.getText(), TextRange.m6711getMinimpl(this.mTextFieldValue.m6964getSelectiond9O1mEE()), i);
+        return TextUtils.getCapsMode(this.mTextFieldValue.getText(), TextRange.m6724getMinimpl(this.mTextFieldValue.m6977getSelectiond9O1mEE()), i);
     }
 
     @Override // android.view.inputmethod.InputConnection
@@ -325,38 +325,38 @@ public final class RecordingInputConnection implements InputConnection {
 
     @Override // android.view.inputmethod.InputConnection
     public boolean performEditorAction(int i) {
-        int m6895getDefaulteUduSuo;
+        int m6908getDefaulteUduSuo;
         boolean z = this.isActive;
         if (z) {
             if (i == 0) {
-                m6895getDefaulteUduSuo = ImeAction.Companion.m6895getDefaulteUduSuo();
+                m6908getDefaulteUduSuo = ImeAction.Companion.m6908getDefaulteUduSuo();
             } else {
                 switch (i) {
                     case 2:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6897getGoeUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6910getGoeUduSuo();
                         break;
                     case 3:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6901getSearcheUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6914getSearcheUduSuo();
                         break;
                     case 4:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6902getSendeUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6915getSendeUduSuo();
                         break;
                     case 5:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6898getNexteUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6911getNexteUduSuo();
                         break;
                     case 6:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6896getDoneeUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6909getDoneeUduSuo();
                         break;
                     case 7:
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6900getPreviouseUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6913getPreviouseUduSuo();
                         break;
                     default:
                         Log.w("RecordingIC", "IME sends unsupported Editor Action: " + i);
-                        m6895getDefaulteUduSuo = ImeAction.Companion.m6895getDefaulteUduSuo();
+                        m6908getDefaulteUduSuo = ImeAction.Companion.m6908getDefaulteUduSuo();
                         break;
                 }
             }
-            this.eventCallback.mo6914onImeActionKlQnJC8(m6895getDefaulteUduSuo);
+            this.eventCallback.mo6927onImeActionKlQnJC8(m6908getDefaulteUduSuo);
             return true;
         }
         return z;

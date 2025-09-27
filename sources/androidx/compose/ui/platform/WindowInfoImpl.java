@@ -20,7 +20,7 @@ public final class WindowInfoImpl implements WindowInfo {
     public WindowInfoImpl() {
         MutableState<IntSize> mutableStateOf$default;
         MutableState mutableStateOf$default2;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7414boximpl(IntSize.Companion.m7427getZeroYbymL2g()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7427boximpl(IntSize.Companion.m7440getZeroYbymL2g()), null, 2, null);
         this._containerSize = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.isWindowFocused$delegate = mutableStateOf$default2;
@@ -37,24 +37,24 @@ public final class WindowInfoImpl implements WindowInfo {
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getKeyboardModifiers-k7X9c1A */
-    public int mo6408getKeyboardModifiersk7X9c1A() {
-        return GlobalKeyboardModifiers.getValue().m5893unboximpl();
+    public int mo6421getKeyboardModifiersk7X9c1A() {
+        return GlobalKeyboardModifiers.getValue().m5906unboximpl();
     }
 
     /* renamed from: setKeyboardModifiers-5xRPYO0  reason: not valid java name */
-    public void m6444setKeyboardModifiers5xRPYO0(int i) {
-        GlobalKeyboardModifiers.setValue(PointerKeyboardModifiers.m5887boximpl(i));
+    public void m6457setKeyboardModifiers5xRPYO0(int i) {
+        GlobalKeyboardModifiers.setValue(PointerKeyboardModifiers.m5900boximpl(i));
     }
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getContainerSize-YbymL2g */
-    public long mo6407getContainerSizeYbymL2g() {
-        return this._containerSize.getValue().m7426unboximpl();
+    public long mo6420getContainerSizeYbymL2g() {
+        return this._containerSize.getValue().m7439unboximpl();
     }
 
     /* renamed from: setContainerSize-ozmzZPI  reason: not valid java name */
-    public void m6443setContainerSizeozmzZPI(long j) {
-        this._containerSize.setValue(IntSize.m7414boximpl(j));
+    public void m6456setContainerSizeozmzZPI(long j) {
+        this._containerSize.setValue(IntSize.m7427boximpl(j));
     }
 
     /* compiled from: WindowInfo.kt */
@@ -75,7 +75,7 @@ public final class WindowInfoImpl implements WindowInfo {
 
     static {
         MutableState<PointerKeyboardModifiers> mutableStateOf$default;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PointerKeyboardModifiers.m5887boximpl(PointerEvent_androidKt.EmptyPointerKeyboardModifiers()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(PointerKeyboardModifiers.m5900boximpl(PointerEvent_androidKt.EmptyPointerKeyboardModifiers()), null, 2, null);
         GlobalKeyboardModifiers = mutableStateOf$default;
     }
 }

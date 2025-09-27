@@ -40,10 +40,10 @@ public abstract class FontFamily {
         Object preload(FontFamily fontFamily, Continuation<? super Unit> continuation);
 
         /* renamed from: resolve-DPcqOEQ  reason: not valid java name */
-        State<Object> mo6798resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2);
+        State<Object> mo6811resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2);
 
         /* renamed from: resolve-DPcqOEQ$default  reason: not valid java name */
-        static /* synthetic */ State m6797resolveDPcqOEQ$default(Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
+        static /* synthetic */ State m6810resolveDPcqOEQ$default(Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
             if (obj == null) {
                 if ((i3 & 1) != 0) {
                     fontFamily = null;
@@ -52,12 +52,12 @@ public abstract class FontFamily {
                     fontWeight = FontWeight.Companion.getNormal();
                 }
                 if ((i3 & 4) != 0) {
-                    i = FontStyle.Companion.m6833getNormal_LCdwA();
+                    i = FontStyle.Companion.m6846getNormal_LCdwA();
                 }
                 if ((i3 & 8) != 0) {
-                    i2 = FontSynthesis.Companion.m6843getAllGVVA2EU();
+                    i2 = FontSynthesis.Companion.m6856getAllGVVA2EU();
                 }
-                return resolver.mo6798resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
+                return resolver.mo6811resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
             }
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: resolve-DPcqOEQ");
         }

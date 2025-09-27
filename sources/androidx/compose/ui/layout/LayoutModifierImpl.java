@@ -26,8 +26,8 @@ public final class LayoutModifierImpl extends Modifier.Node implements LayoutMod
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        return this.measureBlock.invoke(measureScope, measurable, Constraints.m7191boximpl(j));
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        return this.measureBlock.invoke(measureScope, measurable, Constraints.m7204boximpl(j));
     }
 
     public String toString() {

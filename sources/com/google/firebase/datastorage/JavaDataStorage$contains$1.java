@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: JavaDataStorage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "com.google.firebase.datastorage.JavaDataStorage$contains$1", f = "JavaDataStorage.kt", i = {}, l = {111}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "com.google.firebase.datastorage.JavaDataStorage$contains$1", f = "JavaDataStorage.kt", i = {}, l = {124}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
 final class JavaDataStorage$contains$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
     final /* synthetic */ Preferences.Key<T> $key;

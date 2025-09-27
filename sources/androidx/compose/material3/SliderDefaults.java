@@ -57,8 +57,8 @@ import kotlin.ranges.RangesKt;
 public final class SliderDefaults {
     public static final int $stable = 0;
     public static final SliderDefaults INSTANCE = new SliderDefaults();
-    private static final float TrackStopIndicatorSize = SliderTokens.INSTANCE.m3610getStopIndicatorSizeD9Ej5fM();
-    private static final float TickSize = SliderTokens.INSTANCE.m3610getStopIndicatorSizeD9Ej5fM();
+    private static final float TrackStopIndicatorSize = SliderTokens.INSTANCE.m3620getStopIndicatorSizeD9Ej5fM();
+    private static final float TickSize = SliderTokens.INSTANCE.m3620getStopIndicatorSizeD9Ej5fM();
     private static final Path trackPath = AndroidPath_androidKt.Path();
 
     private SliderDefaults() {
@@ -78,33 +78,33 @@ public final class SliderDefaults {
     }
 
     /* renamed from: colors-q0g_0yA  reason: not valid java name */
-    public final SliderColors m2606colorsq0g_0yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, Composer composer, int i, int i2, int i3) {
+    public final SliderColors m2616colorsq0g_0yA(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, Composer composer, int i, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, 885588574, "C(colors)P(9:c#ui.graphics.Color,1:c#ui.graphics.Color,0:c#ui.graphics.Color,8:c#ui.graphics.Color,7:c#ui.graphics.Color,6:c#ui.graphics.Color,3:c#ui.graphics.Color,2:c#ui.graphics.Color,5:c#ui.graphics.Color,4:c#ui.graphics.Color)887@39230L11:Slider.kt#uh7d8r");
-        long m4573getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j;
-        long m4573getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j2;
-        long m4573getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j3;
-        long m4573getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j4;
-        long m4573getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j5;
-        long m4573getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j6;
-        long m4573getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j7;
-        long m4573getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j8;
-        long m4573getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j9;
-        long m4573getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m4573getUnspecified0d7_KjU() : j10;
+        long m4585getUnspecified0d7_KjU = (i3 & 1) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j;
+        long m4585getUnspecified0d7_KjU2 = (i3 & 2) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j2;
+        long m4585getUnspecified0d7_KjU3 = (i3 & 4) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j3;
+        long m4585getUnspecified0d7_KjU4 = (i3 & 8) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j4;
+        long m4585getUnspecified0d7_KjU5 = (i3 & 16) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j5;
+        long m4585getUnspecified0d7_KjU6 = (i3 & 32) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j6;
+        long m4585getUnspecified0d7_KjU7 = (i3 & 64) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j7;
+        long m4585getUnspecified0d7_KjU8 = (i3 & 128) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j8;
+        long m4585getUnspecified0d7_KjU9 = (i3 & 256) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j9;
+        long m4585getUnspecified0d7_KjU10 = (i3 & 512) != 0 ? Color.Companion.m4585getUnspecified0d7_KjU() : j10;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(885588574, i, i2, "androidx.compose.material3.SliderDefaults.colors (Slider.kt:887)");
         }
-        SliderColors m2584copyK518z4 = getDefaultSliderColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2584copyK518z4(m4573getUnspecified0d7_KjU, m4573getUnspecified0d7_KjU2, m4573getUnspecified0d7_KjU3, m4573getUnspecified0d7_KjU4, m4573getUnspecified0d7_KjU5, m4573getUnspecified0d7_KjU6, m4573getUnspecified0d7_KjU7, m4573getUnspecified0d7_KjU8, m4573getUnspecified0d7_KjU9, m4573getUnspecified0d7_KjU10);
+        SliderColors m2594copyK518z4 = getDefaultSliderColors$material3_release(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2594copyK518z4(m4585getUnspecified0d7_KjU, m4585getUnspecified0d7_KjU2, m4585getUnspecified0d7_KjU3, m4585getUnspecified0d7_KjU4, m4585getUnspecified0d7_KjU5, m4585getUnspecified0d7_KjU6, m4585getUnspecified0d7_KjU7, m4585getUnspecified0d7_KjU8, m4585getUnspecified0d7_KjU9, m4585getUnspecified0d7_KjU10);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2584copyK518z4;
+        return m2594copyK518z4;
     }
 
     public final SliderColors getDefaultSliderColors$material3_release(ColorScheme colorScheme) {
         SliderColors defaultSliderColorsCached$material3_release = colorScheme.getDefaultSliderColorsCached$material3_release();
         if (defaultSliderColorsCached$material3_release == null) {
-            SliderColors sliderColors = new SliderColors(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getHandleColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getActiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getInactiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getInactiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getActiveTrackColor()), ColorKt.m4582compositeOverOWjLjI(Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledHandleColor()), SliderTokens.INSTANCE.getDisabledHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2026getSurface0d7_KjU()), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledActiveTrackColor()), SliderTokens.INSTANCE.getDisabledActiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledInactiveTrackColor()), SliderTokens.INSTANCE.getDisabledInactiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledInactiveTrackColor()), SliderTokens.INSTANCE.getDisabledInactiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4536copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledActiveTrackColor()), SliderTokens.INSTANCE.getDisabledActiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
+            SliderColors sliderColors = new SliderColors(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getHandleColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getActiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getInactiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getInactiveTrackColor()), ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getActiveTrackColor()), ColorKt.m4594compositeOverOWjLjI(Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledHandleColor()), SliderTokens.INSTANCE.getDisabledHandleOpacity(), 0.0f, 0.0f, 0.0f, 14, null), colorScheme.m2036getSurface0d7_KjU()), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledActiveTrackColor()), SliderTokens.INSTANCE.getDisabledActiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledInactiveTrackColor()), SliderTokens.INSTANCE.getDisabledInactiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledInactiveTrackColor()), SliderTokens.INSTANCE.getDisabledInactiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), Color.m4548copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, SliderTokens.INSTANCE.getDisabledActiveTrackColor()), SliderTokens.INSTANCE.getDisabledActiveTrackOpacity(), 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultSliderColorsCached$material3_release(sliderColors);
             return sliderColors;
         }
@@ -138,7 +138,7 @@ public final class SliderDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2603Thumb9LiSoMs(final MutableInteractionSource mutableInteractionSource, Modifier modifier, SliderColors sliderColors, boolean z, long j, Composer composer, final int i, final int i2) {
+    public final void m2613Thumb9LiSoMs(final MutableInteractionSource mutableInteractionSource, Modifier modifier, SliderColors sliderColors, boolean z, long j, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         SliderColors sliderColors2;
@@ -247,9 +247,9 @@ public final class SliderDefaults {
                                     j5 = j4;
                                 } else {
                                     i6 = 2;
-                                    j5 = DpSize.m7342copyDwJknco$default(j4, Dp.m7251constructorimpl(DpSize.m7349getWidthD9Ej5fM(j4) / 2), 0.0f, 2, null);
+                                    j5 = DpSize.m7355copyDwJknco$default(j4, Dp.m7264constructorimpl(DpSize.m7362getWidthD9Ej5fM(j4) / 2), 0.0f, 2, null);
                                 }
-                                SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m885size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2595thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                                SpacerKt.Spacer(BackgroundKt.m266backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m895size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2605thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -284,7 +284,7 @@ public final class SliderDefaults {
                         EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i92);
                         if (snapshotStateList.isEmpty()) {
                         }
-                        SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m885size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2595thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                        SpacerKt.Spacer(BackgroundKt.m266backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m895size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2605thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         j6 = j4;
@@ -311,7 +311,7 @@ public final class SliderDefaults {
                             }
 
                             public final void invoke(Composer composer2, int i10) {
-                                SliderDefaults.this.m2603Thumb9LiSoMs(mutableInteractionSource, modifier2, sliderColors3, z4, j6, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                SliderDefaults.this.m2613Thumb9LiSoMs(mutableInteractionSource, modifier2, sliderColors3, z4, j6, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -357,7 +357,7 @@ public final class SliderDefaults {
                 EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i922);
                 if (snapshotStateList.isEmpty()) {
                 }
-                SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m885size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2595thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+                SpacerKt.Spacer(BackgroundKt.m266backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m895size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2605thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 j6 = j4;
@@ -410,7 +410,7 @@ public final class SliderDefaults {
             EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i9222);
             if (snapshotStateList.isEmpty()) {
             }
-            SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m885size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2595thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+            SpacerKt.Spacer(BackgroundKt.m266backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m895size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2605thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             j6 = j4;
@@ -469,7 +469,7 @@ public final class SliderDefaults {
         EffectsKt.LaunchedEffect(mutableInteractionSource, (Function2) rememberedValue2, startRestartGroup, i92222);
         if (snapshotStateList.isEmpty()) {
         }
-        SpacerKt.Spacer(BackgroundKt.m256backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m885size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2595thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
+        SpacerKt.Spacer(BackgroundKt.m266backgroundbw27NRU(HoverableKt.hoverable$default(SizeKt.m895size6HolHcs(companion, j5), mutableInteractionSource, false, i6, null), sliderColors2.m2605thumbColorvNxB06k$material3_release(z2), ShapesKt.getValue(SliderTokens.INSTANCE.getHandleShape(), startRestartGroup, 6)), startRestartGroup, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         j6 = j4;
@@ -585,15 +585,15 @@ public final class SliderDefaults {
                                 ComposerKt.traceEventStart(-1546713545, i5, -1, "androidx.compose.material3.SliderDefaults.Track (Slider.kt:999)");
                             }
                             int i8 = i5;
-                            final long m2597trackColorWaAFU9c$material3_release = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, false);
-                            final long m2597trackColorWaAFU9c$material3_release2 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, true);
+                            final long m2607trackColorWaAFU9c$material3_release = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, false);
+                            final long m2607trackColorWaAFU9c$material3_release2 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, true);
                             Modifier modifier3 = companion;
-                            final long m2596tickColorWaAFU9c$material3_release = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, false);
-                            final long m2596tickColorWaAFU9c$material3_release2 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, true);
+                            final long m2606tickColorWaAFU9c$material3_release = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, false);
+                            final long m2606tickColorWaAFU9c$material3_release2 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, true);
                             SliderColors sliderColors5 = sliderColors2;
-                            Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
+                            Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -801023075, "CC(remember):Slider.kt#9igjgp");
-                            changed = startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release) | ((i8 & 14) != 4) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2);
+                            changed = startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release) | ((i8 & 14) != 4) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2);
                             rememberedValue = startRestartGroup.rememberedValue();
                             if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
                                 z4 = z3;
@@ -616,19 +616,19 @@ public final class SliderDefaults {
                                         long j;
                                         long j2;
                                         boolean z6 = drawScope.getLayoutDirection() == LayoutDirection.Rtl;
-                                        long Offset = OffsetKt.Offset(0.0f, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-                                        long Offset2 = OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
+                                        long Offset = OffsetKt.Offset(0.0f, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+                                        long Offset2 = OffsetKt.Offset(Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
                                         long j3 = Offset;
                                         long j4 = z6 ? Offset2 : j3;
                                         if (!z6) {
                                             j3 = Offset2;
                                         }
-                                        float f = drawScope.mo419toPx0680j_4(SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM());
-                                        float f2 = drawScope.mo419toPx0680j_4(SliderKt.getTrackHeight());
-                                        DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release, j4, j3, f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                                        float f = drawScope.mo429toPx0680j_4(SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM());
+                                        float f2 = drawScope.mo429toPx0680j_4(SliderKt.getTrackHeight());
+                                        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release, j4, j3, f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                                         long j5 = j4;
                                         long j6 = j3;
-                                        DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release2, OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                                        DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release2, OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                                         float[] tickFractions = sliderPositions2.getTickFractions();
                                         SliderPositions sliderPositions3 = sliderPositions2;
                                         LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -643,20 +643,20 @@ public final class SliderDefaults {
                                             }
                                             ((List) obj3).add(Float.valueOf(f3));
                                         }
-                                        long j7 = m2596tickColorWaAFU9c$material3_release;
-                                        long j8 = m2596tickColorWaAFU9c$material3_release2;
+                                        long j7 = m2606tickColorWaAFU9c$material3_release;
+                                        long j8 = m2606tickColorWaAFU9c$material3_release2;
                                         for (Map.Entry entry : linkedHashMap.entrySet()) {
                                             boolean booleanValue = ((Boolean) entry.getKey()).booleanValue();
                                             List list = (List) entry.getValue();
                                             ArrayList arrayList2 = new ArrayList(list.size());
                                             int size = list.size();
                                             for (int i10 = 0; i10 < size; i10++) {
-                                                arrayList2.add(Offset.m4282boximpl(OffsetKt.Offset(Offset.m4293getXimpl(OffsetKt.m4316lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                                                arrayList2.add(Offset.m4294boximpl(OffsetKt.Offset(Offset.m4305getXimpl(OffsetKt.m4328lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
                                             }
                                             long j9 = j5;
                                             long j10 = j6;
                                             ArrayList arrayList3 = arrayList2;
-                                            int m4855getPointsr_lszbg = PointMode.Companion.m4855getPointsr_lszbg();
+                                            int m4867getPointsr_lszbg = PointMode.Companion.m4867getPointsr_lszbg();
                                             if (booleanValue) {
                                                 j = j8;
                                                 arrayList = arrayList3;
@@ -666,7 +666,7 @@ public final class SliderDefaults {
                                                 j = j8;
                                                 j2 = j;
                                             }
-                                            DrawScope.m5107drawPointsF8ZwMP8$default(drawScope, arrayList, m4855getPointsr_lszbg, j2, f, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                                            DrawScope.m5119drawPointsF8ZwMP8$default(drawScope, arrayList, m4867getPointsr_lszbg, j2, f, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                                             j6 = j10;
                                             j8 = j;
                                             j5 = j9;
@@ -678,7 +678,7 @@ public final class SliderDefaults {
                                 z4 = z3;
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            CanvasKt.Canvas(m870height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
+                            CanvasKt.Canvas(m880height3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -701,15 +701,15 @@ public final class SliderDefaults {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     int i82 = i5;
-                    final long m2597trackColorWaAFU9c$material3_release3 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, false);
-                    final long m2597trackColorWaAFU9c$material3_release22 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, true);
+                    final long m2607trackColorWaAFU9c$material3_release3 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, false);
+                    final long m2607trackColorWaAFU9c$material3_release22 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, true);
                     Modifier modifier32 = companion;
-                    final long m2596tickColorWaAFU9c$material3_release3 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, false);
-                    final long m2596tickColorWaAFU9c$material3_release22 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, true);
+                    final long m2606tickColorWaAFU9c$material3_release3 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, false);
+                    final long m2606tickColorWaAFU9c$material3_release22 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, true);
                     SliderColors sliderColors52 = sliderColors2;
-                    Modifier m870height3ABfNKs2 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
+                    Modifier m880height3ABfNKs2 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -801023075, "CC(remember):Slider.kt#9igjgp");
-                    changed = startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release3) | ((i82 & 14) != 4) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release22);
+                    changed = startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release3) | ((i82 & 14) != 4) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release22);
                     rememberedValue = startRestartGroup.rememberedValue();
                     if (changed) {
                     }
@@ -733,19 +733,19 @@ public final class SliderDefaults {
                             long j;
                             long j2;
                             boolean z6 = drawScope.getLayoutDirection() == LayoutDirection.Rtl;
-                            long Offset = OffsetKt.Offset(0.0f, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-                            long Offset2 = OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
+                            long Offset = OffsetKt.Offset(0.0f, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+                            long Offset2 = OffsetKt.Offset(Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
                             long j3 = Offset;
                             long j4 = z6 ? Offset2 : j3;
                             if (!z6) {
                                 j3 = Offset2;
                             }
-                            float f = drawScope.mo419toPx0680j_4(SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM());
-                            float f2 = drawScope.mo419toPx0680j_4(SliderKt.getTrackHeight());
-                            DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release3, j4, j3, f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                            float f = drawScope.mo429toPx0680j_4(SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM());
+                            float f2 = drawScope.mo429toPx0680j_4(SliderKt.getTrackHeight());
+                            DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release3, j4, j3, f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                             long j5 = j4;
                             long j6 = j3;
-                            DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release22, OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                            DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release22, OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                             float[] tickFractions = sliderPositions2.getTickFractions();
                             SliderPositions sliderPositions3 = sliderPositions2;
                             LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -760,20 +760,20 @@ public final class SliderDefaults {
                                 }
                                 ((List) obj32).add(Float.valueOf(f3));
                             }
-                            long j7 = m2596tickColorWaAFU9c$material3_release3;
-                            long j8 = m2596tickColorWaAFU9c$material3_release22;
+                            long j7 = m2606tickColorWaAFU9c$material3_release3;
+                            long j8 = m2606tickColorWaAFU9c$material3_release22;
                             for (Map.Entry entry : linkedHashMap.entrySet()) {
                                 boolean booleanValue = ((Boolean) entry.getKey()).booleanValue();
                                 List list = (List) entry.getValue();
                                 ArrayList arrayList2 = new ArrayList(list.size());
                                 int size = list.size();
                                 for (int i10 = 0; i10 < size; i10++) {
-                                    arrayList2.add(Offset.m4282boximpl(OffsetKt.Offset(Offset.m4293getXimpl(OffsetKt.m4316lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                                    arrayList2.add(Offset.m4294boximpl(OffsetKt.Offset(Offset.m4305getXimpl(OffsetKt.m4328lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
                                 }
                                 long j9 = j5;
                                 long j10 = j6;
                                 ArrayList arrayList3 = arrayList2;
-                                int m4855getPointsr_lszbg = PointMode.Companion.m4855getPointsr_lszbg();
+                                int m4867getPointsr_lszbg = PointMode.Companion.m4867getPointsr_lszbg();
                                 if (booleanValue) {
                                     j = j8;
                                     arrayList = arrayList3;
@@ -783,7 +783,7 @@ public final class SliderDefaults {
                                     j = j8;
                                     j2 = j;
                                 }
-                                DrawScope.m5107drawPointsF8ZwMP8$default(drawScope, arrayList, m4855getPointsr_lszbg, j2, f, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                                DrawScope.m5119drawPointsF8ZwMP8$default(drawScope, arrayList, m4867getPointsr_lszbg, j2, f, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                                 j6 = j10;
                                 j8 = j;
                                 j5 = j9;
@@ -792,7 +792,7 @@ public final class SliderDefaults {
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    CanvasKt.Canvas(m870height3ABfNKs2, (Function1) rememberedValue, startRestartGroup, 0);
+                    CanvasKt.Canvas(m880height3ABfNKs2, (Function1) rememberedValue, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     sliderColors3 = sliderColors52;
@@ -849,15 +849,15 @@ public final class SliderDefaults {
             if (ComposerKt.isTraceInProgress()) {
             }
             int i822 = i5;
-            final long m2597trackColorWaAFU9c$material3_release32 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, false);
-            final long m2597trackColorWaAFU9c$material3_release222 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, true);
+            final long m2607trackColorWaAFU9c$material3_release32 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, false);
+            final long m2607trackColorWaAFU9c$material3_release222 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, true);
             Modifier modifier322 = companion;
-            final long m2596tickColorWaAFU9c$material3_release32 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, false);
-            final long m2596tickColorWaAFU9c$material3_release222 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, true);
+            final long m2606tickColorWaAFU9c$material3_release32 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, false);
+            final long m2606tickColorWaAFU9c$material3_release222 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, true);
             SliderColors sliderColors522 = sliderColors2;
-            Modifier m870height3ABfNKs22 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
+            Modifier m880height3ABfNKs22 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -801023075, "CC(remember):Slider.kt#9igjgp");
-            changed = startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release32) | ((i822 & 14) != 4) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release222);
+            changed = startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release32) | ((i822 & 14) != 4) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release222);
             rememberedValue = startRestartGroup.rememberedValue();
             if (changed) {
             }
@@ -881,19 +881,19 @@ public final class SliderDefaults {
                     long j;
                     long j2;
                     boolean z6 = drawScope.getLayoutDirection() == LayoutDirection.Rtl;
-                    long Offset = OffsetKt.Offset(0.0f, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-                    long Offset2 = OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
+                    long Offset = OffsetKt.Offset(0.0f, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+                    long Offset2 = OffsetKt.Offset(Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
                     long j3 = Offset;
                     long j4 = z6 ? Offset2 : j3;
                     if (!z6) {
                         j3 = Offset2;
                     }
-                    float f = drawScope.mo419toPx0680j_4(SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM());
-                    float f2 = drawScope.mo419toPx0680j_4(SliderKt.getTrackHeight());
-                    DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release32, j4, j3, f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                    float f = drawScope.mo429toPx0680j_4(SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM());
+                    float f2 = drawScope.mo429toPx0680j_4(SliderKt.getTrackHeight());
+                    DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release32, j4, j3, f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                     long j5 = j4;
                     long j6 = j3;
-                    DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release222, OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                    DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release222, OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                     float[] tickFractions = sliderPositions2.getTickFractions();
                     SliderPositions sliderPositions3 = sliderPositions2;
                     LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -908,20 +908,20 @@ public final class SliderDefaults {
                         }
                         ((List) obj32).add(Float.valueOf(f3));
                     }
-                    long j7 = m2596tickColorWaAFU9c$material3_release32;
-                    long j8 = m2596tickColorWaAFU9c$material3_release222;
+                    long j7 = m2606tickColorWaAFU9c$material3_release32;
+                    long j8 = m2606tickColorWaAFU9c$material3_release222;
                     for (Map.Entry entry : linkedHashMap.entrySet()) {
                         boolean booleanValue = ((Boolean) entry.getKey()).booleanValue();
                         List list = (List) entry.getValue();
                         ArrayList arrayList2 = new ArrayList(list.size());
                         int size = list.size();
                         for (int i10 = 0; i10 < size; i10++) {
-                            arrayList2.add(Offset.m4282boximpl(OffsetKt.Offset(Offset.m4293getXimpl(OffsetKt.m4316lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                            arrayList2.add(Offset.m4294boximpl(OffsetKt.Offset(Offset.m4305getXimpl(OffsetKt.m4328lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
                         }
                         long j9 = j5;
                         long j10 = j6;
                         ArrayList arrayList3 = arrayList2;
-                        int m4855getPointsr_lszbg = PointMode.Companion.m4855getPointsr_lszbg();
+                        int m4867getPointsr_lszbg = PointMode.Companion.m4867getPointsr_lszbg();
                         if (booleanValue) {
                             j = j8;
                             arrayList = arrayList3;
@@ -931,7 +931,7 @@ public final class SliderDefaults {
                             j = j8;
                             j2 = j;
                         }
-                        DrawScope.m5107drawPointsF8ZwMP8$default(drawScope, arrayList, m4855getPointsr_lszbg, j2, f, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                        DrawScope.m5119drawPointsF8ZwMP8$default(drawScope, arrayList, m4867getPointsr_lszbg, j2, f, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                         j6 = j10;
                         j8 = j;
                         j5 = j9;
@@ -940,7 +940,7 @@ public final class SliderDefaults {
             };
             startRestartGroup.updateRememberedValue(rememberedValue);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CanvasKt.Canvas(m870height3ABfNKs22, (Function1) rememberedValue, startRestartGroup, 0);
+            CanvasKt.Canvas(m880height3ABfNKs22, (Function1) rememberedValue, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
             sliderColors3 = sliderColors522;
@@ -978,15 +978,15 @@ public final class SliderDefaults {
         if (ComposerKt.isTraceInProgress()) {
         }
         int i8222 = i5;
-        final long m2597trackColorWaAFU9c$material3_release322 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, false);
-        final long m2597trackColorWaAFU9c$material3_release2222 = sliderColors2.m2597trackColorWaAFU9c$material3_release(z3, true);
+        final long m2607trackColorWaAFU9c$material3_release322 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, false);
+        final long m2607trackColorWaAFU9c$material3_release2222 = sliderColors2.m2607trackColorWaAFU9c$material3_release(z3, true);
         Modifier modifier3222 = companion;
-        final long m2596tickColorWaAFU9c$material3_release322 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, false);
-        final long m2596tickColorWaAFU9c$material3_release2222 = sliderColors2.m2596tickColorWaAFU9c$material3_release(z3, true);
+        final long m2606tickColorWaAFU9c$material3_release322 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, false);
+        final long m2606tickColorWaAFU9c$material3_release2222 = sliderColors2.m2606tickColorWaAFU9c$material3_release(z3, true);
         SliderColors sliderColors5222 = sliderColors2;
-        Modifier m870height3ABfNKs222 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
+        Modifier m880height3ABfNKs222 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -801023075, "CC(remember):Slider.kt#9igjgp");
-        changed = startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release322) | ((i8222 & 14) != 4) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2222);
+        changed = startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release322) | ((i8222 & 14) != 4) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2222);
         rememberedValue = startRestartGroup.rememberedValue();
         if (changed) {
         }
@@ -1010,19 +1010,19 @@ public final class SliderDefaults {
                 long j;
                 long j2;
                 boolean z6 = drawScope.getLayoutDirection() == LayoutDirection.Rtl;
-                long Offset = OffsetKt.Offset(0.0f, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-                long Offset2 = OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
+                long Offset = OffsetKt.Offset(0.0f, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+                long Offset2 = OffsetKt.Offset(Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
                 long j3 = Offset;
                 long j4 = z6 ? Offset2 : j3;
                 if (!z6) {
                     j3 = Offset2;
                 }
-                float f = drawScope.mo419toPx0680j_4(SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM());
-                float f2 = drawScope.mo419toPx0680j_4(SliderKt.getTrackHeight());
-                DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release322, j4, j3, f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                float f = drawScope.mo429toPx0680j_4(SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM());
+                float f2 = drawScope.mo429toPx0680j_4(SliderKt.getTrackHeight());
+                DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release322, j4, j3, f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                 long j5 = j4;
                 long j6 = j3;
-                DrawScope.m5102drawLineNGM6Ib0$default(drawScope, m2597trackColorWaAFU9c$material3_release2222, OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4293getXimpl(j4) + ((Offset.m4293getXimpl(j3) - Offset.m4293getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0())), f2, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                DrawScope.m5114drawLineNGM6Ib0$default(drawScope, m2607trackColorWaAFU9c$material3_release2222, OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getStart().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), OffsetKt.Offset(Offset.m4305getXimpl(j4) + ((Offset.m4305getXimpl(j3) - Offset.m4305getXimpl(j4)) * sliderPositions2.getActiveRange().getEndInclusive().floatValue()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0())), f2, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                 float[] tickFractions = sliderPositions2.getTickFractions();
                 SliderPositions sliderPositions3 = sliderPositions2;
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -1037,20 +1037,20 @@ public final class SliderDefaults {
                     }
                     ((List) obj32).add(Float.valueOf(f3));
                 }
-                long j7 = m2596tickColorWaAFU9c$material3_release322;
-                long j8 = m2596tickColorWaAFU9c$material3_release2222;
+                long j7 = m2606tickColorWaAFU9c$material3_release322;
+                long j8 = m2606tickColorWaAFU9c$material3_release2222;
                 for (Map.Entry entry : linkedHashMap.entrySet()) {
                     boolean booleanValue = ((Boolean) entry.getKey()).booleanValue();
                     List list = (List) entry.getValue();
                     ArrayList arrayList2 = new ArrayList(list.size());
                     int size = list.size();
                     for (int i10 = 0; i10 < size; i10++) {
-                        arrayList2.add(Offset.m4282boximpl(OffsetKt.Offset(Offset.m4293getXimpl(OffsetKt.m4316lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                        arrayList2.add(Offset.m4294boximpl(OffsetKt.Offset(Offset.m4305getXimpl(OffsetKt.m4328lerpWko1d7g(j5, j6, ((Number) list.get(i10)).floatValue())), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
                     }
                     long j9 = j5;
                     long j10 = j6;
                     ArrayList arrayList3 = arrayList2;
-                    int m4855getPointsr_lszbg = PointMode.Companion.m4855getPointsr_lszbg();
+                    int m4867getPointsr_lszbg = PointMode.Companion.m4867getPointsr_lszbg();
                     if (booleanValue) {
                         j = j8;
                         arrayList = arrayList3;
@@ -1060,7 +1060,7 @@ public final class SliderDefaults {
                         j = j8;
                         j2 = j;
                     }
-                    DrawScope.m5107drawPointsF8ZwMP8$default(drawScope, arrayList, m4855getPointsr_lszbg, j2, f, StrokeCap.Companion.m4908getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
+                    DrawScope.m5119drawPointsF8ZwMP8$default(drawScope, arrayList, m4867getPointsr_lszbg, j2, f, StrokeCap.Companion.m4920getRoundKaPHkGw(), null, 0.0f, null, 0, 480, null);
                     j6 = j10;
                     j8 = j;
                     j5 = j9;
@@ -1069,7 +1069,7 @@ public final class SliderDefaults {
         };
         startRestartGroup.updateRememberedValue(rememberedValue);
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        CanvasKt.Canvas(m870height3ABfNKs222, (Function1) rememberedValue, startRestartGroup, 0);
+        CanvasKt.Canvas(m880height3ABfNKs222, (Function1) rememberedValue, startRestartGroup, 0);
         if (ComposerKt.isTraceInProgress()) {
         }
         sliderColors3 = sliderColors5222;
@@ -1180,7 +1180,7 @@ public final class SliderDefaults {
                             f2 = SliderKt.TrackInsideCornerSize;
                             Modifier modifier3 = companion;
                             sliderColors3 = sliderColors2;
-                            m2605Track4EFweAY(sliderState, modifier3, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+                            m2615Track4EFweAY(sliderState, modifier3, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1204,7 +1204,7 @@ public final class SliderDefaults {
                     f2 = SliderKt.TrackInsideCornerSize;
                     Modifier modifier32 = companion;
                     sliderColors3 = sliderColors2;
-                    m2605Track4EFweAY(sliderState, modifier32, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+                    m2615Track4EFweAY(sliderState, modifier32, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     z4 = z3;
@@ -1261,7 +1261,7 @@ public final class SliderDefaults {
             f2 = SliderKt.TrackInsideCornerSize;
             Modifier modifier322 = companion;
             sliderColors3 = sliderColors2;
-            m2605Track4EFweAY(sliderState, modifier322, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+            m2615Track4EFweAY(sliderState, modifier322, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
             if (ComposerKt.isTraceInProgress()) {
             }
             z4 = z3;
@@ -1299,7 +1299,7 @@ public final class SliderDefaults {
         f2 = SliderKt.TrackInsideCornerSize;
         Modifier modifier3222 = companion;
         sliderColors3 = sliderColors2;
-        m2605Track4EFweAY(sliderState, modifier3222, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+        m2615Track4EFweAY(sliderState, modifier3222, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
         if (ComposerKt.isTraceInProgress()) {
         }
         z4 = z3;
@@ -1355,7 +1355,7 @@ public final class SliderDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2605Track4EFweAY(final SliderState sliderState, Modifier modifier, boolean z, SliderColors sliderColors, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, float f, float f2, Composer composer, final int i, final int i2) {
+    public final void m2615Track4EFweAY(final SliderState sliderState, Modifier modifier, boolean z, SliderColors sliderColors, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -1499,13 +1499,13 @@ public final class SliderDefaults {
 
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(DrawScope drawScope, Offset offset) {
-                                            m2610invokeUv8p0NA(drawScope, offset.m4303unboximpl());
+                                            m2620invokeUv8p0NA(drawScope, offset.m4315unboximpl());
                                             return Unit.INSTANCE;
                                         }
 
                                         /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                                        public final void m2610invokeUv8p0NA(DrawScope drawScope, long j) {
-                                            SliderDefaults.INSTANCE.m2600drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2608getTrackStopIndicatorSizeD9Ej5fM(), SliderColors.this.m2597trackColorWaAFU9c$material3_release(z2, true));
+                                        public final void m2620invokeUv8p0NA(DrawScope drawScope, long j) {
+                                            SliderDefaults.INSTANCE.m2610drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2618getTrackStopIndicatorSizeD9Ej5fM(), SliderColors.this.m2607trackColorWaAFU9c$material3_release(z2, true));
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1518,13 +1518,13 @@ public final class SliderDefaults {
                                 sliderDefaults$Track$5 = new Function3<DrawScope, Offset, Color, Unit>() { // from class: androidx.compose.material3.SliderDefaults$Track$5
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ Unit invoke(DrawScope drawScope, Offset offset, Color color) {
-                                        m2611invokewPWG1Vc(drawScope, offset.m4303unboximpl(), color.m4547unboximpl());
+                                        m2621invokewPWG1Vc(drawScope, offset.m4315unboximpl(), color.m4559unboximpl());
                                         return Unit.INSTANCE;
                                     }
 
                                     /* renamed from: invoke-wPWG1Vc  reason: not valid java name */
-                                    public final void m2611invokewPWG1Vc(DrawScope drawScope, long j, long j2) {
-                                        SliderDefaults.INSTANCE.m2600drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM(), j2);
+                                    public final void m2621invokewPWG1Vc(DrawScope drawScope, long j, long j2) {
+                                        SliderDefaults.INSTANCE.m2610drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM(), j2);
                                     }
                                 };
                             }
@@ -1554,19 +1554,19 @@ public final class SliderDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(49984771, i9, -1, "androidx.compose.material3.SliderDefaults.Track (Slider.kt:1128)");
                         }
-                        final long m2597trackColorWaAFU9c$material3_release = sliderColors5.m2597trackColorWaAFU9c$material3_release(z8, false);
-                        final long m2597trackColorWaAFU9c$material3_release2 = sliderColors5.m2597trackColorWaAFU9c$material3_release(z8, true);
+                        final long m2607trackColorWaAFU9c$material3_release = sliderColors5.m2607trackColorWaAFU9c$material3_release(z8, false);
+                        final long m2607trackColorWaAFU9c$material3_release2 = sliderColors5.m2607trackColorWaAFU9c$material3_release(z8, true);
                         float f10 = f4;
                         Object obj3 = obj;
-                        final long m2596tickColorWaAFU9c$material3_release = sliderColors5.m2596tickColorWaAFU9c$material3_release(z8, false);
-                        final long m2596tickColorWaAFU9c$material3_release2 = sliderColors5.m2596tickColorWaAFU9c$material3_release(z8, true);
-                        Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
+                        final long m2606tickColorWaAFU9c$material3_release = sliderColors5.m2606tickColorWaAFU9c$material3_release(z8, false);
+                        final long m2606tickColorWaAFU9c$material3_release2 = sliderColors5.m2606tickColorWaAFU9c$material3_release(z8, true);
+                        Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                         Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier rotate = RotateKt.rotate(m870height3ABfNKs, consume != LayoutDirection.Rtl ? 180.0f : 0.0f);
+                        Modifier rotate = RotateKt.rotate(m880height3ABfNKs, consume != LayoutDirection.Rtl ? 180.0f : 0.0f);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800841850, "CC(remember):Slider.kt#9igjgp");
-                        boolean changedInstance = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2) | ((29360128 & i9) != 8388608);
+                        boolean changedInstance = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2) | ((29360128 & i9) != 8388608);
                         if (((57344 & i9) ^ 24576) <= 16384) {
                             obj2 = obj3;
                         } else {
@@ -1599,7 +1599,7 @@ public final class SliderDefaults {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(DrawScope drawScope) {
-                                        SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release, m2597trackColorWaAFU9c$material3_release2, m2596tickColorWaAFU9c$material3_release, m2596tickColorWaAFU9c$material3_release2, drawScope.mo415toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo416toDpu2uoSUM(0), drawScope.mo415toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
+                                        SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release, m2607trackColorWaAFU9c$material3_release2, m2606tickColorWaAFU9c$material3_release, m2606tickColorWaAFU9c$material3_release2, drawScope.mo425toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo426toDpu2uoSUM(0), drawScope.mo425toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
                                     }
                                 };
                                 composer2.updateRememberedValue(rememberedValue);
@@ -1648,7 +1648,7 @@ public final class SliderDefaults {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(DrawScope drawScope) {
-                                SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release, m2597trackColorWaAFU9c$material3_release2, m2596tickColorWaAFU9c$material3_release, m2596tickColorWaAFU9c$material3_release2, drawScope.mo415toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo416toDpu2uoSUM(0), drawScope.mo415toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
+                                SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release, m2607trackColorWaAFU9c$material3_release2, m2606tickColorWaAFU9c$material3_release, m2606tickColorWaAFU9c$material3_release2, drawScope.mo425toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo426toDpu2uoSUM(0), drawScope.mo425toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
                             }
                         };
                         composer2.updateRememberedValue(rememberedValue);
@@ -1688,7 +1688,7 @@ public final class SliderDefaults {
                             }
 
                             public final void invoke(Composer composer3, int i13) {
-                                SliderDefaults.this.m2605Track4EFweAY(sliderState, modifier2, z6, sliderColors4, function22, function32, f8, f11, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                SliderDefaults.this.m2615Track4EFweAY(sliderState, modifier2, z6, sliderColors4, function22, function32, f8, f11, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -1724,19 +1724,19 @@ public final class SliderDefaults {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                final long m2597trackColorWaAFU9c$material3_release3 = sliderColors52.m2597trackColorWaAFU9c$material3_release(z82, false);
-                final long m2597trackColorWaAFU9c$material3_release22 = sliderColors52.m2597trackColorWaAFU9c$material3_release(z82, true);
+                final long m2607trackColorWaAFU9c$material3_release3 = sliderColors52.m2607trackColorWaAFU9c$material3_release(z82, false);
+                final long m2607trackColorWaAFU9c$material3_release22 = sliderColors52.m2607trackColorWaAFU9c$material3_release(z82, true);
                 float f102 = f4;
                 Object obj32 = obj;
-                final long m2596tickColorWaAFU9c$material3_release3 = sliderColors52.m2596tickColorWaAFU9c$material3_release(z82, false);
-                final long m2596tickColorWaAFU9c$material3_release22 = sliderColors52.m2596tickColorWaAFU9c$material3_release(z82, true);
-                Modifier m870height3ABfNKs2 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
+                final long m2606tickColorWaAFU9c$material3_release3 = sliderColors52.m2606tickColorWaAFU9c$material3_release(z82, false);
+                final long m2606tickColorWaAFU9c$material3_release22 = sliderColors52.m2606tickColorWaAFU9c$material3_release(z82, true);
+                Modifier m880height3ABfNKs2 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                 Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier rotate2 = RotateKt.rotate(m870height3ABfNKs2, consume2 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+                Modifier rotate2 = RotateKt.rotate(m880height3ABfNKs2, consume2 != LayoutDirection.Rtl ? 180.0f : 0.0f);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800841850, "CC(remember):Slider.kt#9igjgp");
-                boolean changedInstance2 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release22) | ((29360128 & i9) != 8388608);
+                boolean changedInstance2 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release22) | ((29360128 & i9) != 8388608);
                 if (((57344 & i9) ^ 24576) <= 16384) {
                 }
                 if ((i9 & 24576) != 16384) {
@@ -1768,7 +1768,7 @@ public final class SliderDefaults {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(DrawScope drawScope) {
-                        SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release3, m2597trackColorWaAFU9c$material3_release22, m2596tickColorWaAFU9c$material3_release3, m2596tickColorWaAFU9c$material3_release22, drawScope.mo415toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo416toDpu2uoSUM(0), drawScope.mo415toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
+                        SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release3, m2607trackColorWaAFU9c$material3_release22, m2606tickColorWaAFU9c$material3_release3, m2606tickColorWaAFU9c$material3_release22, drawScope.mo425toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo426toDpu2uoSUM(0), drawScope.mo425toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue);
@@ -1831,19 +1831,19 @@ public final class SliderDefaults {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            final long m2597trackColorWaAFU9c$material3_release32 = sliderColors522.m2597trackColorWaAFU9c$material3_release(z822, false);
-            final long m2597trackColorWaAFU9c$material3_release222 = sliderColors522.m2597trackColorWaAFU9c$material3_release(z822, true);
+            final long m2607trackColorWaAFU9c$material3_release32 = sliderColors522.m2607trackColorWaAFU9c$material3_release(z822, false);
+            final long m2607trackColorWaAFU9c$material3_release222 = sliderColors522.m2607trackColorWaAFU9c$material3_release(z822, true);
             float f1022 = f4;
             Object obj322 = obj;
-            final long m2596tickColorWaAFU9c$material3_release32 = sliderColors522.m2596tickColorWaAFU9c$material3_release(z822, false);
-            final long m2596tickColorWaAFU9c$material3_release222 = sliderColors522.m2596tickColorWaAFU9c$material3_release(z822, true);
-            Modifier m870height3ABfNKs22 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
+            final long m2606tickColorWaAFU9c$material3_release32 = sliderColors522.m2606tickColorWaAFU9c$material3_release(z822, false);
+            final long m2606tickColorWaAFU9c$material3_release222 = sliderColors522.m2606tickColorWaAFU9c$material3_release(z822, true);
+            Modifier m880height3ABfNKs22 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume22 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier rotate22 = RotateKt.rotate(m870height3ABfNKs22, consume22 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+            Modifier rotate22 = RotateKt.rotate(m880height3ABfNKs22, consume22 != LayoutDirection.Rtl ? 180.0f : 0.0f);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800841850, "CC(remember):Slider.kt#9igjgp");
-            boolean changedInstance22 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release222) | ((29360128 & i9) != 8388608);
+            boolean changedInstance22 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release222) | ((29360128 & i9) != 8388608);
             if (((57344 & i9) ^ 24576) <= 16384) {
             }
             if ((i9 & 24576) != 16384) {
@@ -1875,7 +1875,7 @@ public final class SliderDefaults {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(DrawScope drawScope) {
-                    SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release32, m2597trackColorWaAFU9c$material3_release222, m2596tickColorWaAFU9c$material3_release32, m2596tickColorWaAFU9c$material3_release222, drawScope.mo415toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo416toDpu2uoSUM(0), drawScope.mo415toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
+                    SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release32, m2607trackColorWaAFU9c$material3_release222, m2606tickColorWaAFU9c$material3_release32, m2606tickColorWaAFU9c$material3_release222, drawScope.mo425toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo426toDpu2uoSUM(0), drawScope.mo425toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
                 }
             };
             composer2.updateRememberedValue(rememberedValue);
@@ -1942,19 +1942,19 @@ public final class SliderDefaults {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        final long m2597trackColorWaAFU9c$material3_release322 = sliderColors5222.m2597trackColorWaAFU9c$material3_release(z8222, false);
-        final long m2597trackColorWaAFU9c$material3_release2222 = sliderColors5222.m2597trackColorWaAFU9c$material3_release(z8222, true);
+        final long m2607trackColorWaAFU9c$material3_release322 = sliderColors5222.m2607trackColorWaAFU9c$material3_release(z8222, false);
+        final long m2607trackColorWaAFU9c$material3_release2222 = sliderColors5222.m2607trackColorWaAFU9c$material3_release(z8222, true);
         float f10222 = f4;
         Object obj3222 = obj;
-        final long m2596tickColorWaAFU9c$material3_release322 = sliderColors5222.m2596tickColorWaAFU9c$material3_release(z8222, false);
-        final long m2596tickColorWaAFU9c$material3_release2222 = sliderColors5222.m2596tickColorWaAFU9c$material3_release(z8222, true);
-        Modifier m870height3ABfNKs222 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
+        final long m2606tickColorWaAFU9c$material3_release322 = sliderColors5222.m2606tickColorWaAFU9c$material3_release(z8222, false);
+        final long m2606tickColorWaAFU9c$material3_release2222 = sliderColors5222.m2606tickColorWaAFU9c$material3_release(z8222, true);
+        Modifier m880height3ABfNKs222 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume222 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        Modifier rotate222 = RotateKt.rotate(m870height3ABfNKs222, consume222 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+        Modifier rotate222 = RotateKt.rotate(m880height3ABfNKs222, consume222 != LayoutDirection.Rtl ? 180.0f : 0.0f);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800841850, "CC(remember):Slider.kt#9igjgp");
-        boolean changedInstance222 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2222) | ((29360128 & i9) != 8388608);
+        boolean changedInstance222 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(sliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2222) | ((29360128 & i9) != 8388608);
         if (((57344 & i9) ^ 24576) <= 16384) {
         }
         if ((i9 & 24576) != 16384) {
@@ -1986,7 +1986,7 @@ public final class SliderDefaults {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(DrawScope drawScope) {
-                SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release322, m2597trackColorWaAFU9c$material3_release2222, m2596tickColorWaAFU9c$material3_release322, m2596tickColorWaAFU9c$material3_release2222, drawScope.mo415toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo416toDpu2uoSUM(0), drawScope.mo415toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
+                SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, SliderState.this.getTickFractions$material3_release(), 0.0f, SliderState.this.getCoercedValueAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release322, m2607trackColorWaAFU9c$material3_release2222, m2606tickColorWaAFU9c$material3_release322, m2606tickColorWaAFU9c$material3_release2222, drawScope.mo425toDpu2uoSUM(SliderState.this.getTrackHeight$material3_release()), drawScope.mo426toDpu2uoSUM(0), drawScope.mo425toDpu2uoSUM(SliderState.this.getThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$5, false);
             }
         };
         composer2.updateRememberedValue(rememberedValue);
@@ -2106,7 +2106,7 @@ public final class SliderDefaults {
                             f2 = SliderKt.TrackInsideCornerSize;
                             Modifier modifier3 = companion;
                             sliderColors3 = sliderColors2;
-                            m2604Track4EFweAY(rangeSliderState, modifier3, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+                            m2614Track4EFweAY(rangeSliderState, modifier3, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2130,7 +2130,7 @@ public final class SliderDefaults {
                     f2 = SliderKt.TrackInsideCornerSize;
                     Modifier modifier32 = companion;
                     sliderColors3 = sliderColors2;
-                    m2604Track4EFweAY(rangeSliderState, modifier32, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+                    m2614Track4EFweAY(rangeSliderState, modifier32, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     z4 = z3;
@@ -2187,7 +2187,7 @@ public final class SliderDefaults {
             f2 = SliderKt.TrackInsideCornerSize;
             Modifier modifier322 = companion;
             sliderColors3 = sliderColors2;
-            m2604Track4EFweAY(rangeSliderState, modifier322, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+            m2614Track4EFweAY(rangeSliderState, modifier322, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
             if (ComposerKt.isTraceInProgress()) {
             }
             z4 = z3;
@@ -2225,7 +2225,7 @@ public final class SliderDefaults {
         f2 = SliderKt.TrackInsideCornerSize;
         Modifier modifier3222 = companion;
         sliderColors3 = sliderColors2;
-        m2604Track4EFweAY(rangeSliderState, modifier3222, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
+        m2614Track4EFweAY(rangeSliderState, modifier3222, z3, sliderColors3, (Function2<? super DrawScope, ? super Offset, Unit>) null, (Function3<? super DrawScope, ? super Offset, ? super Color, Unit>) null, f, f2, startRestartGroup, (i5 & 14) | 14155776 | (i5 & 112) | ((i5 >> 3) & 896) | ((i5 << 3) & 7168) | ((i5 << 12) & 234881024), 48);
         if (ComposerKt.isTraceInProgress()) {
         }
         z4 = z3;
@@ -2281,7 +2281,7 @@ public final class SliderDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2604Track4EFweAY(final RangeSliderState rangeSliderState, Modifier modifier, boolean z, SliderColors sliderColors, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, float f, float f2, Composer composer, final int i, final int i2) {
+    public final void m2614Track4EFweAY(final RangeSliderState rangeSliderState, Modifier modifier, boolean z, SliderColors sliderColors, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, float f, float f2, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -2425,13 +2425,13 @@ public final class SliderDefaults {
 
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(DrawScope drawScope, Offset offset) {
-                                            m2612invokeUv8p0NA(drawScope, offset.m4303unboximpl());
+                                            m2622invokeUv8p0NA(drawScope, offset.m4315unboximpl());
                                             return Unit.INSTANCE;
                                         }
 
                                         /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                                        public final void m2612invokeUv8p0NA(DrawScope drawScope, long j) {
-                                            SliderDefaults.INSTANCE.m2600drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2608getTrackStopIndicatorSizeD9Ej5fM(), SliderColors.this.m2597trackColorWaAFU9c$material3_release(z2, true));
+                                        public final void m2622invokeUv8p0NA(DrawScope drawScope, long j) {
+                                            SliderDefaults.INSTANCE.m2610drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2618getTrackStopIndicatorSizeD9Ej5fM(), SliderColors.this.m2607trackColorWaAFU9c$material3_release(z2, true));
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -2444,13 +2444,13 @@ public final class SliderDefaults {
                                 sliderDefaults$Track$10 = new Function3<DrawScope, Offset, Color, Unit>() { // from class: androidx.compose.material3.SliderDefaults$Track$10
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ Unit invoke(DrawScope drawScope, Offset offset, Color color) {
-                                        m2609invokewPWG1Vc(drawScope, offset.m4303unboximpl(), color.m4547unboximpl());
+                                        m2619invokewPWG1Vc(drawScope, offset.m4315unboximpl(), color.m4559unboximpl());
                                         return Unit.INSTANCE;
                                     }
 
                                     /* renamed from: invoke-wPWG1Vc  reason: not valid java name */
-                                    public final void m2609invokewPWG1Vc(DrawScope drawScope, long j, long j2) {
-                                        SliderDefaults.INSTANCE.m2600drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2607getTickSizeD9Ej5fM(), j2);
+                                    public final void m2619invokewPWG1Vc(DrawScope drawScope, long j, long j2) {
+                                        SliderDefaults.INSTANCE.m2610drawStopIndicatorx3O1jOs(drawScope, j, SliderDefaults.INSTANCE.m2617getTickSizeD9Ej5fM(), j2);
                                     }
                                 };
                             }
@@ -2480,19 +2480,19 @@ public final class SliderDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-541824132, i9, -1, "androidx.compose.material3.SliderDefaults.Track (Slider.kt:1236)");
                         }
-                        final long m2597trackColorWaAFU9c$material3_release = sliderColors5.m2597trackColorWaAFU9c$material3_release(z8, false);
-                        final long m2597trackColorWaAFU9c$material3_release2 = sliderColors5.m2597trackColorWaAFU9c$material3_release(z8, true);
+                        final long m2607trackColorWaAFU9c$material3_release = sliderColors5.m2607trackColorWaAFU9c$material3_release(z8, false);
+                        final long m2607trackColorWaAFU9c$material3_release2 = sliderColors5.m2607trackColorWaAFU9c$material3_release(z8, true);
                         float f10 = f4;
                         Object obj3 = obj;
-                        final long m2596tickColorWaAFU9c$material3_release = sliderColors5.m2596tickColorWaAFU9c$material3_release(z8, false);
-                        final long m2596tickColorWaAFU9c$material3_release2 = sliderColors5.m2596tickColorWaAFU9c$material3_release(z8, true);
-                        Modifier m870height3ABfNKs = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
+                        final long m2606tickColorWaAFU9c$material3_release = sliderColors5.m2606tickColorWaAFU9c$material3_release(z8, false);
+                        final long m2606tickColorWaAFU9c$material3_release2 = sliderColors5.m2606tickColorWaAFU9c$material3_release(z8, true);
+                        Modifier m880height3ABfNKs = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3, 0.0f, 1, null), SliderKt.getTrackHeight());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                         Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier rotate = RotateKt.rotate(m870height3ABfNKs, consume != LayoutDirection.Rtl ? 180.0f : 0.0f);
+                        Modifier rotate = RotateKt.rotate(m880height3ABfNKs, consume != LayoutDirection.Rtl ? 180.0f : 0.0f);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800695691, "CC(remember):Slider.kt#9igjgp");
-                        boolean changedInstance = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2) | ((29360128 & i9) != 8388608);
+                        boolean changedInstance = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2) | ((29360128 & i9) != 8388608);
                         if (((57344 & i9) ^ 24576) <= 16384) {
                             obj2 = obj3;
                         } else {
@@ -2525,7 +2525,7 @@ public final class SliderDefaults {
 
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                     public final void invoke2(DrawScope drawScope) {
-                                        SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release, m2597trackColorWaAFU9c$material3_release2, m2596tickColorWaAFU9c$material3_release, m2596tickColorWaAFU9c$material3_release2, drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
+                                        SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release, m2607trackColorWaAFU9c$material3_release2, m2606tickColorWaAFU9c$material3_release, m2606tickColorWaAFU9c$material3_release2, drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
                                     }
                                 };
                                 composer2.updateRememberedValue(rememberedValue);
@@ -2574,7 +2574,7 @@ public final class SliderDefaults {
 
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(DrawScope drawScope) {
-                                SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release, m2597trackColorWaAFU9c$material3_release2, m2596tickColorWaAFU9c$material3_release, m2596tickColorWaAFU9c$material3_release2, drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
+                                SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release, m2607trackColorWaAFU9c$material3_release2, m2606tickColorWaAFU9c$material3_release, m2606tickColorWaAFU9c$material3_release2, drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
                             }
                         };
                         composer2.updateRememberedValue(rememberedValue);
@@ -2614,7 +2614,7 @@ public final class SliderDefaults {
                             }
 
                             public final void invoke(Composer composer3, int i13) {
-                                SliderDefaults.this.m2604Track4EFweAY(rangeSliderState, modifier2, z6, sliderColors4, function22, function32, f8, f11, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                SliderDefaults.this.m2614Track4EFweAY(rangeSliderState, modifier2, z6, sliderColors4, function22, function32, f8, f11, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -2650,19 +2650,19 @@ public final class SliderDefaults {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                final long m2597trackColorWaAFU9c$material3_release3 = sliderColors52.m2597trackColorWaAFU9c$material3_release(z82, false);
-                final long m2597trackColorWaAFU9c$material3_release22 = sliderColors52.m2597trackColorWaAFU9c$material3_release(z82, true);
+                final long m2607trackColorWaAFU9c$material3_release3 = sliderColors52.m2607trackColorWaAFU9c$material3_release(z82, false);
+                final long m2607trackColorWaAFU9c$material3_release22 = sliderColors52.m2607trackColorWaAFU9c$material3_release(z82, true);
                 float f102 = f4;
                 Object obj32 = obj;
-                final long m2596tickColorWaAFU9c$material3_release3 = sliderColors52.m2596tickColorWaAFU9c$material3_release(z82, false);
-                final long m2596tickColorWaAFU9c$material3_release22 = sliderColors52.m2596tickColorWaAFU9c$material3_release(z82, true);
-                Modifier m870height3ABfNKs2 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
+                final long m2606tickColorWaAFU9c$material3_release3 = sliderColors52.m2606tickColorWaAFU9c$material3_release(z82, false);
+                final long m2606tickColorWaAFU9c$material3_release22 = sliderColors52.m2606tickColorWaAFU9c$material3_release(z82, true);
+                Modifier m880height3ABfNKs2 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier32, 0.0f, 1, null), SliderKt.getTrackHeight());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                 Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier rotate2 = RotateKt.rotate(m870height3ABfNKs2, consume2 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+                Modifier rotate2 = RotateKt.rotate(m880height3ABfNKs2, consume2 != LayoutDirection.Rtl ? 180.0f : 0.0f);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800695691, "CC(remember):Slider.kt#9igjgp");
-                boolean changedInstance2 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release22) | ((29360128 & i9) != 8388608);
+                boolean changedInstance2 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release22) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release3) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release22) | ((29360128 & i9) != 8388608);
                 if (((57344 & i9) ^ 24576) <= 16384) {
                 }
                 if ((i9 & 24576) != 16384) {
@@ -2694,7 +2694,7 @@ public final class SliderDefaults {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(DrawScope drawScope) {
-                        SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release3, m2597trackColorWaAFU9c$material3_release22, m2596tickColorWaAFU9c$material3_release3, m2596tickColorWaAFU9c$material3_release22, drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
+                        SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release3, m2607trackColorWaAFU9c$material3_release22, m2606tickColorWaAFU9c$material3_release3, m2606tickColorWaAFU9c$material3_release22, drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue);
@@ -2757,19 +2757,19 @@ public final class SliderDefaults {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            final long m2597trackColorWaAFU9c$material3_release32 = sliderColors522.m2597trackColorWaAFU9c$material3_release(z822, false);
-            final long m2597trackColorWaAFU9c$material3_release222 = sliderColors522.m2597trackColorWaAFU9c$material3_release(z822, true);
+            final long m2607trackColorWaAFU9c$material3_release32 = sliderColors522.m2607trackColorWaAFU9c$material3_release(z822, false);
+            final long m2607trackColorWaAFU9c$material3_release222 = sliderColors522.m2607trackColorWaAFU9c$material3_release(z822, true);
             float f1022 = f4;
             Object obj322 = obj;
-            final long m2596tickColorWaAFU9c$material3_release32 = sliderColors522.m2596tickColorWaAFU9c$material3_release(z822, false);
-            final long m2596tickColorWaAFU9c$material3_release222 = sliderColors522.m2596tickColorWaAFU9c$material3_release(z822, true);
-            Modifier m870height3ABfNKs22 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
+            final long m2606tickColorWaAFU9c$material3_release32 = sliderColors522.m2606tickColorWaAFU9c$material3_release(z822, false);
+            final long m2606tickColorWaAFU9c$material3_release222 = sliderColors522.m2606tickColorWaAFU9c$material3_release(z822, true);
+            Modifier m880height3ABfNKs22 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier322, 0.0f, 1, null), SliderKt.getTrackHeight());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume22 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier rotate22 = RotateKt.rotate(m870height3ABfNKs22, consume22 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+            Modifier rotate22 = RotateKt.rotate(m880height3ABfNKs22, consume22 != LayoutDirection.Rtl ? 180.0f : 0.0f);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800695691, "CC(remember):Slider.kt#9igjgp");
-            boolean changedInstance22 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release222) | ((29360128 & i9) != 8388608);
+            boolean changedInstance22 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release32) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release222) | ((29360128 & i9) != 8388608);
             if (((57344 & i9) ^ 24576) <= 16384) {
             }
             if ((i9 & 24576) != 16384) {
@@ -2801,7 +2801,7 @@ public final class SliderDefaults {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(DrawScope drawScope) {
-                    SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release32, m2597trackColorWaAFU9c$material3_release222, m2596tickColorWaAFU9c$material3_release32, m2596tickColorWaAFU9c$material3_release222, drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
+                    SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release32, m2607trackColorWaAFU9c$material3_release222, m2606tickColorWaAFU9c$material3_release32, m2606tickColorWaAFU9c$material3_release222, drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
                 }
             };
             composer2.updateRememberedValue(rememberedValue);
@@ -2868,19 +2868,19 @@ public final class SliderDefaults {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        final long m2597trackColorWaAFU9c$material3_release322 = sliderColors5222.m2597trackColorWaAFU9c$material3_release(z8222, false);
-        final long m2597trackColorWaAFU9c$material3_release2222 = sliderColors5222.m2597trackColorWaAFU9c$material3_release(z8222, true);
+        final long m2607trackColorWaAFU9c$material3_release322 = sliderColors5222.m2607trackColorWaAFU9c$material3_release(z8222, false);
+        final long m2607trackColorWaAFU9c$material3_release2222 = sliderColors5222.m2607trackColorWaAFU9c$material3_release(z8222, true);
         float f10222 = f4;
         Object obj3222 = obj;
-        final long m2596tickColorWaAFU9c$material3_release322 = sliderColors5222.m2596tickColorWaAFU9c$material3_release(z8222, false);
-        final long m2596tickColorWaAFU9c$material3_release2222 = sliderColors5222.m2596tickColorWaAFU9c$material3_release(z8222, true);
-        Modifier m870height3ABfNKs222 = SizeKt.m870height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
+        final long m2606tickColorWaAFU9c$material3_release322 = sliderColors5222.m2606tickColorWaAFU9c$material3_release(z8222, false);
+        final long m2606tickColorWaAFU9c$material3_release2222 = sliderColors5222.m2606tickColorWaAFU9c$material3_release(z8222, true);
+        Modifier m880height3ABfNKs222 = SizeKt.m880height3ABfNKs(SizeKt.fillMaxWidth$default(modifier3222, 0.0f, 1, null), SliderKt.getTrackHeight());
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume222 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        Modifier rotate222 = RotateKt.rotate(m870height3ABfNKs222, consume222 != LayoutDirection.Rtl ? 180.0f : 0.0f);
+        Modifier rotate222 = RotateKt.rotate(m880height3ABfNKs222, consume222 != LayoutDirection.Rtl ? 180.0f : 0.0f);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -800695691, "CC(remember):Slider.kt#9igjgp");
-        boolean changedInstance222 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2597trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2596tickColorWaAFU9c$material3_release2222) | ((29360128 & i9) != 8388608);
+        boolean changedInstance222 = ((3670016 & i9) != 1048576) | startRestartGroup.changedInstance(rangeSliderState) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2607trackColorWaAFU9c$material3_release2222) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release322) | startRestartGroup.changed(m2606tickColorWaAFU9c$material3_release2222) | ((29360128 & i9) != 8388608);
         if (((57344 & i9) ^ 24576) <= 16384) {
         }
         if ((i9 & 24576) != 16384) {
@@ -2912,7 +2912,7 @@ public final class SliderDefaults {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(DrawScope drawScope) {
-                SliderDefaults.INSTANCE.m2601drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2597trackColorWaAFU9c$material3_release322, m2597trackColorWaAFU9c$material3_release2222, m2596tickColorWaAFU9c$material3_release322, m2596tickColorWaAFU9c$material3_release2222, drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo415toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
+                SliderDefaults.INSTANCE.m2611drawTrackngJ0SCU(drawScope, RangeSliderState.this.getTickFractions$material3_release(), RangeSliderState.this.getCoercedActiveRangeStartAsFraction$material3_release(), RangeSliderState.this.getCoercedActiveRangeEndAsFraction$material3_release(), m2607trackColorWaAFU9c$material3_release322, m2607trackColorWaAFU9c$material3_release2222, m2606tickColorWaAFU9c$material3_release322, m2606tickColorWaAFU9c$material3_release2222, drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getTrackHeight$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getStartThumbWidth$material3_release()), drawScope.mo425toDpu2uoSUM(RangeSliderState.this.getEndThumbWidth$material3_release()), f7, f4, obj, sliderDefaults$Track$10, true);
             }
         };
         composer2.updateRememberedValue(rememberedValue);
@@ -2934,66 +2934,66 @@ public final class SliderDefaults {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawTrack-ngJ0SCU  reason: not valid java name */
-    public final void m2601drawTrackngJ0SCU(DrawScope drawScope, float[] fArr, float f, float f2, long j, long j2, long j3, long j4, float f3, float f4, float f5, float f6, float f7, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, boolean z) {
+    public final void m2611drawTrackngJ0SCU(DrawScope drawScope, float[] fArr, float f, float f2, long j, long j2, long j3, long j4, float f3, float f4, float f5, float f6, float f7, Function2<? super DrawScope, ? super Offset, Unit> function2, Function3<? super DrawScope, ? super Offset, ? super Color, Unit> function3, boolean z) {
         float f8;
         float f9;
         float f10;
         int i;
         float f11;
         float f12;
-        long Offset = OffsetKt.Offset(0.0f, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-        long Offset2 = OffsetKt.Offset(Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc()), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-        float f13 = drawScope.mo419toPx0680j_4(f3);
-        long Offset3 = OffsetKt.Offset(Offset.m4293getXimpl(Offset) + ((Offset.m4293getXimpl(Offset2) - Offset.m4293getXimpl(Offset)) * f2), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-        long Offset4 = OffsetKt.Offset(Offset.m4293getXimpl(Offset) + ((Offset.m4293getXimpl(Offset2) - Offset.m4293getXimpl(Offset)) * f), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
+        long Offset = OffsetKt.Offset(0.0f, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+        long Offset2 = OffsetKt.Offset(Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc()), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+        float f13 = drawScope.mo429toPx0680j_4(f3);
+        long Offset3 = OffsetKt.Offset(Offset.m4305getXimpl(Offset) + ((Offset.m4305getXimpl(Offset2) - Offset.m4305getXimpl(Offset)) * f2), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+        long Offset4 = OffsetKt.Offset(Offset.m4305getXimpl(Offset) + ((Offset.m4305getXimpl(Offset2) - Offset.m4305getXimpl(Offset)) * f), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
         float f14 = 2;
         float f15 = f13 / f14;
-        float f16 = drawScope.mo419toPx0680j_4(f7);
-        if (Dp.m7250compareTo0680j_4(f6, Dp.m7251constructorimpl(0)) > 0) {
-            f8 = (drawScope.mo419toPx0680j_4(f4) / f14) + drawScope.mo419toPx0680j_4(f6);
-            f9 = (drawScope.mo419toPx0680j_4(f5) / f14) + drawScope.mo419toPx0680j_4(f6);
+        float f16 = drawScope.mo429toPx0680j_4(f7);
+        if (Dp.m7263compareTo0680j_4(f6, Dp.m7264constructorimpl(0)) > 0) {
+            f8 = (drawScope.mo429toPx0680j_4(f4) / f14) + drawScope.mo429toPx0680j_4(f6);
+            f9 = (drawScope.mo429toPx0680j_4(f5) / f14) + drawScope.mo429toPx0680j_4(f6);
         } else {
             f8 = 0.0f;
             f9 = 0.0f;
         }
-        if (!z || Offset.m4293getXimpl(Offset4) <= Offset.m4293getXimpl(Offset) + f8 + f15) {
+        if (!z || Offset.m4305getXimpl(Offset4) <= Offset.m4305getXimpl(Offset) + f8 + f15) {
             f10 = f13;
             i = 0;
         } else {
-            float m4293getXimpl = Offset.m4293getXimpl(Offset);
+            float m4305getXimpl = Offset.m4305getXimpl(Offset);
             f10 = f13;
             i = 0;
-            m2602drawTrackPathCx2C_VA(drawScope, Offset.Companion.m4309getZeroF1C5BW0(), androidx.compose.ui.geometry.SizeKt.Size((Offset.m4293getXimpl(Offset4) - f8) - m4293getXimpl, f13), j, f15, f16);
+            m2612drawTrackPathCx2C_VA(drawScope, Offset.Companion.m4321getZeroF1C5BW0(), androidx.compose.ui.geometry.SizeKt.Size((Offset.m4305getXimpl(Offset4) - f8) - m4305getXimpl, f13), j, f15, f16);
             if (function2 != null) {
-                function2.invoke(drawScope, Offset.m4282boximpl(OffsetKt.Offset(m4293getXimpl + f15, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                function2.invoke(drawScope, Offset.m4294boximpl(OffsetKt.Offset(m4305getXimpl + f15, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
             }
         }
-        if (Offset.m4293getXimpl(Offset3) < (Offset.m4293getXimpl(Offset2) - f9) - f15) {
-            float m4293getXimpl2 = Offset.m4293getXimpl(Offset3) + f9;
-            float m4293getXimpl3 = Offset.m4293getXimpl(Offset2);
+        if (Offset.m4305getXimpl(Offset3) < (Offset.m4305getXimpl(Offset2) - f9) - f15) {
+            float m4305getXimpl2 = Offset.m4305getXimpl(Offset3) + f9;
+            float m4305getXimpl3 = Offset.m4305getXimpl(Offset2);
             float f17 = f10;
             f12 = f17;
-            m2602drawTrackPathCx2C_VA(drawScope, OffsetKt.Offset(m4293getXimpl2, 0.0f), androidx.compose.ui.geometry.SizeKt.Size(m4293getXimpl3 - m4293getXimpl2, f17), j, f16, f15);
+            m2612drawTrackPathCx2C_VA(drawScope, OffsetKt.Offset(m4305getXimpl2, 0.0f), androidx.compose.ui.geometry.SizeKt.Size(m4305getXimpl3 - m4305getXimpl2, f17), j, f16, f15);
             f11 = f15;
             f16 = f16;
             if (function2 != null) {
-                function2.invoke(drawScope, Offset.m4282boximpl(OffsetKt.Offset(m4293getXimpl3 - f11, Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()))));
+                function2.invoke(drawScope, Offset.m4294boximpl(OffsetKt.Offset(m4305getXimpl3 - f11, Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()))));
             }
         } else {
             f11 = f15;
             f12 = f10;
         }
-        float m4293getXimpl4 = z ? Offset.m4293getXimpl(Offset4) + f8 : 0.0f;
-        float m4293getXimpl5 = Offset.m4293getXimpl(Offset3) - f9;
+        float m4305getXimpl4 = z ? Offset.m4305getXimpl(Offset4) + f8 : 0.0f;
+        float m4305getXimpl5 = Offset.m4305getXimpl(Offset3) - f9;
         float f18 = z ? f16 : f11;
-        float f19 = m4293getXimpl5 - m4293getXimpl4;
+        float f19 = m4305getXimpl5 - m4305getXimpl4;
         if (f19 > f18) {
-            m2602drawTrackPathCx2C_VA(drawScope, OffsetKt.Offset(m4293getXimpl4, 0.0f), androidx.compose.ui.geometry.SizeKt.Size(f19, f12), j2, f18, f16);
+            m2612drawTrackPathCx2C_VA(drawScope, OffsetKt.Offset(m4305getXimpl4, 0.0f), androidx.compose.ui.geometry.SizeKt.Size(f19, f12), j2, f18, f16);
         }
-        long Offset5 = OffsetKt.Offset(Offset.m4293getXimpl(Offset) + f11, Offset.m4294getYimpl(Offset));
-        long Offset6 = OffsetKt.Offset(Offset.m4293getXimpl(Offset2) - f11, Offset.m4294getYimpl(Offset2));
-        ClosedFloatingPointRange<Float> rangeTo = RangesKt.rangeTo(Offset.m4293getXimpl(Offset4) - f8, Offset.m4293getXimpl(Offset4) + f8);
-        ClosedFloatingPointRange<Float> rangeTo2 = RangesKt.rangeTo(Offset.m4293getXimpl(Offset3) - f9, Offset.m4293getXimpl(Offset3) + f9);
+        long Offset5 = OffsetKt.Offset(Offset.m4305getXimpl(Offset) + f11, Offset.m4306getYimpl(Offset));
+        long Offset6 = OffsetKt.Offset(Offset.m4305getXimpl(Offset2) - f11, Offset.m4306getYimpl(Offset2));
+        ClosedFloatingPointRange<Float> rangeTo = RangesKt.rangeTo(Offset.m4305getXimpl(Offset4) - f8, Offset.m4305getXimpl(Offset4) + f8);
+        ClosedFloatingPointRange<Float> rangeTo2 = RangesKt.rangeTo(Offset.m4305getXimpl(Offset3) - f9, Offset.m4305getXimpl(Offset3) + f9);
         int length = fArr.length;
         int i2 = i;
         int i3 = i2;
@@ -3005,9 +3005,9 @@ public final class SliderDefaults {
                 if (f20 <= f2 && f20 >= f) {
                     i5 = i;
                 }
-                long Offset7 = OffsetKt.Offset(Offset.m4293getXimpl(OffsetKt.m4316lerpWko1d7g(Offset5, Offset6, f20)), Offset.m4294getYimpl(drawScope.mo5115getCenterF1C5BW0()));
-                if ((!z || !rangeTo.contains(Float.valueOf(Offset.m4293getXimpl(Offset7)))) && !rangeTo2.contains(Float.valueOf(Offset.m4293getXimpl(Offset7)))) {
-                    function3.invoke(drawScope, Offset.m4282boximpl(Offset7), Color.m4527boximpl(i5 != 0 ? j3 : j4));
+                long Offset7 = OffsetKt.Offset(Offset.m4305getXimpl(OffsetKt.m4328lerpWko1d7g(Offset5, Offset6, f20)), Offset.m4306getYimpl(drawScope.mo5127getCenterF1C5BW0()));
+                if ((!z || !rangeTo.contains(Float.valueOf(Offset.m4305getXimpl(Offset7)))) && !rangeTo2.contains(Float.valueOf(Offset.m4305getXimpl(Offset7)))) {
+                    function3.invoke(drawScope, Offset.m4294boximpl(Offset7), Color.m4539boximpl(i5 != 0 ? j3 : j4));
                     i2++;
                     i3 = i4;
                 }
@@ -3018,29 +3018,29 @@ public final class SliderDefaults {
     }
 
     /* renamed from: drawTrackPath-Cx2C_VA  reason: not valid java name */
-    private final void m2602drawTrackPathCx2C_VA(DrawScope drawScope, long j, long j2, long j3, float f, float f2) {
+    private final void m2612drawTrackPathCx2C_VA(DrawScope drawScope, long j, long j2, long j3, float f, float f2) {
         long CornerRadius = CornerRadiusKt.CornerRadius(f, f);
         long CornerRadius2 = CornerRadiusKt.CornerRadius(f2, f2);
-        RoundRect m4345RoundRectZAM2FJo = RoundRectKt.m4345RoundRectZAM2FJo(RectKt.m4333Recttz77jQw(OffsetKt.Offset(Offset.m4293getXimpl(j), 0.0f), androidx.compose.ui.geometry.SizeKt.Size(Size.m4362getWidthimpl(j2), Size.m4359getHeightimpl(j2))), CornerRadius, CornerRadius2, CornerRadius2, CornerRadius);
+        RoundRect m4357RoundRectZAM2FJo = RoundRectKt.m4357RoundRectZAM2FJo(RectKt.m4345Recttz77jQw(OffsetKt.Offset(Offset.m4305getXimpl(j), 0.0f), androidx.compose.ui.geometry.SizeKt.Size(Size.m4374getWidthimpl(j2), Size.m4371getHeightimpl(j2))), CornerRadius, CornerRadius2, CornerRadius2, CornerRadius);
         Path path = trackPath;
-        Path.addRoundRect$default(path, m4345RoundRectZAM2FJo, null, 2, null);
-        DrawScope.m5106drawPathLG529CI$default(drawScope, path, j3, 0.0f, null, null, 0, 60, null);
+        Path.addRoundRect$default(path, m4357RoundRectZAM2FJo, null, 2, null);
+        DrawScope.m5118drawPathLG529CI$default(drawScope, path, j3, 0.0f, null, null, 0, 60, null);
         path.rewind();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawStopIndicator-x3O1jOs  reason: not valid java name */
-    public final void m2600drawStopIndicatorx3O1jOs(DrawScope drawScope, long j, float f, long j2) {
-        DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, j2, drawScope.mo419toPx0680j_4(f) / 2.0f, j, 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
+    public final void m2610drawStopIndicatorx3O1jOs(DrawScope drawScope, long j, float f, long j2) {
+        DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, j2, drawScope.mo429toPx0680j_4(f) / 2.0f, j, 0.0f, null, null, 0, MenuKt.InTransitionDuration, null);
     }
 
     /* renamed from: getTrackStopIndicatorSize-D9Ej5fM  reason: not valid java name */
-    public final float m2608getTrackStopIndicatorSizeD9Ej5fM() {
+    public final float m2618getTrackStopIndicatorSizeD9Ej5fM() {
         return TrackStopIndicatorSize;
     }
 
     /* renamed from: getTickSize-D9Ej5fM  reason: not valid java name */
-    public final float m2607getTickSizeD9Ej5fM() {
+    public final float m2617getTickSizeD9Ej5fM() {
         return TickSize;
     }
 }

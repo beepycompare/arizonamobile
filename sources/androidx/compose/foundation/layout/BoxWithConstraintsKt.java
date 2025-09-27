@@ -156,8 +156,8 @@ public final class BoxWithConstraintsKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult BoxWithConstraints$lambda$2$lambda$1(MeasurePolicy measurePolicy, final Function3 function3, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m7210unboximpl(), null);
-        return measurePolicy.mo42measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$BoxWithConstraints$1$1$measurables$1
+        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m7223unboximpl(), null);
+        return measurePolicy.mo52measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$BoxWithConstraints$1$1$measurables$1
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
                 invoke(composer, num.intValue());
@@ -178,6 +178,6 @@ public final class BoxWithConstraintsKt {
                     ComposerKt.traceEventEnd();
                 }
             }
-        })), constraints.m7210unboximpl());
+        })), constraints.m7223unboximpl());
     }
 }

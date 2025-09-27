@@ -34,7 +34,7 @@ public final class ComposableSingletons$RecomposerKt {
     });
 
     /* renamed from: getLambda$-1091980426$runtime  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m3781getLambda$1091980426$runtime() {
+    public final Function2<Composer, Integer, Unit> m3791getLambda$1091980426$runtime() {
         return f55lambda$1091980426;
     }
 }

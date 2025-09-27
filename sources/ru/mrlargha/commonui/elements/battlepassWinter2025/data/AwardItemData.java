@@ -5,17 +5,18 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AwardItemData.kt */
-@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u001c\b\u0086\b\u0018\u00002\u00020\u0001B9\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\t¢\u0006\u0004\b\u000b\u0010\fJ\u0006\u0010\u0019\u001a\u00020\tJ\t\u0010\u001a\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001b\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\tHÆ\u0003J\t\u0010\u001f\u001a\u00020\tHÆ\u0003JE\u0010 \u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\tHÆ\u0001J\u0013\u0010!\u001a\u00020\t2\b\u0010\"\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010#\u001a\u00020\u0003HÖ\u0001J\t\u0010$\u001a\u00020\u0005HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000eR\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000eR\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001a\u0010\n\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0014\"\u0004\b\u0018\u0010\u0016¨\u0006%"}, d2 = {"Lru/mrlargha/commonui/elements/battlepassWinter2025/data/AwardItemData;", "", FirebaseAnalytics.Param.LEVEL, "", "title", "", "sysName", "sellPrice", "availableToReceive", "", "wasClicked", "<init>", "(ILjava/lang/String;IIZZ)V", "getLevel", "()I", "getTitle", "()Ljava/lang/String;", "getSysName", "getSellPrice", "getAvailableToReceive", "()Z", "setAvailableToReceive", "(Z)V", "getWasClicked", "setWasClicked", "isAvailable", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "equals", "other", "hashCode", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b!\b\u0086\b\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\t\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\f\u0010\rJ\u0006\u0010\u001c\u001a\u00020\tJ\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\t\u0010 \u001a\u00020\u0003HÆ\u0003J\t\u0010!\u001a\u00020\tHÆ\u0003J\t\u0010\"\u001a\u00020\tHÆ\u0003J\u0010\u0010#\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u001aJV\u0010$\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\u00032\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\t2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u0010%J\u0013\u0010&\u001a\u00020\t2\b\u0010'\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010(\u001a\u00020\u0003HÖ\u0001J\t\u0010)\u001a\u00020\u0005HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000fR\u0011\u0010\u0007\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000fR\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\n\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0018\u0010\u0015\"\u0004\b\u0019\u0010\u0017R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\u001b\u001a\u0004\b\u000b\u0010\u001a¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/battlepassWinter2025/data/AwardItemData;", "", FirebaseAnalytics.Param.LEVEL, "", "title", "", "sysName", "sellPrice", "availableToReceive", "", "wasClicked", "isVehicle", "<init>", "(ILjava/lang/String;IIZZLjava/lang/Integer;)V", "getLevel", "()I", "getTitle", "()Ljava/lang/String;", "getSysName", "getSellPrice", "getAvailableToReceive", "()Z", "setAvailableToReceive", "(Z)V", "getWasClicked", "setWasClicked", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "isAvailable", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "(ILjava/lang/String;IIZZLjava/lang/Integer;)Lru/mrlargha/commonui/elements/battlepassWinter2025/data/AwardItemData;", "equals", "other", "hashCode", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class AwardItemData {
     private boolean availableToReceive;
+    private final Integer isVehicle;
     private final int level;
     private final int sellPrice;
     private final int sysName;
     private final String title;
     private boolean wasClicked;
 
-    public static /* synthetic */ AwardItemData copy$default(AwardItemData awardItemData, int i, String str, int i2, int i3, boolean z, boolean z2, int i4, Object obj) {
+    public static /* synthetic */ AwardItemData copy$default(AwardItemData awardItemData, int i, String str, int i2, int i3, boolean z, boolean z2, Integer num, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             i = awardItemData.level;
         }
@@ -34,9 +35,14 @@ public final class AwardItemData {
         if ((i4 & 32) != 0) {
             z2 = awardItemData.wasClicked;
         }
-        boolean z3 = z;
-        boolean z4 = z2;
-        return awardItemData.copy(i, str, i2, i3, z3, z4);
+        if ((i4 & 64) != 0) {
+            num = awardItemData.isVehicle;
+        }
+        boolean z3 = z2;
+        Integer num2 = num;
+        boolean z4 = z;
+        int i5 = i2;
+        return awardItemData.copy(i, str, i5, i3, z4, z3, num2);
     }
 
     public final int component1() {
@@ -63,9 +69,13 @@ public final class AwardItemData {
         return this.wasClicked;
     }
 
-    public final AwardItemData copy(int i, String title, int i2, int i3, boolean z, boolean z2) {
+    public final Integer component7() {
+        return this.isVehicle;
+    }
+
+    public final AwardItemData copy(int i, String title, int i2, int i3, boolean z, boolean z2, Integer num) {
         Intrinsics.checkNotNullParameter(title, "title");
-        return new AwardItemData(i, title, i2, i3, z, z2);
+        return new AwardItemData(i, title, i2, i3, z, z2, num);
     }
 
     public boolean equals(Object obj) {
@@ -74,13 +84,15 @@ public final class AwardItemData {
         }
         if (obj instanceof AwardItemData) {
             AwardItemData awardItemData = (AwardItemData) obj;
-            return this.level == awardItemData.level && Intrinsics.areEqual(this.title, awardItemData.title) && this.sysName == awardItemData.sysName && this.sellPrice == awardItemData.sellPrice && this.availableToReceive == awardItemData.availableToReceive && this.wasClicked == awardItemData.wasClicked;
+            return this.level == awardItemData.level && Intrinsics.areEqual(this.title, awardItemData.title) && this.sysName == awardItemData.sysName && this.sellPrice == awardItemData.sellPrice && this.availableToReceive == awardItemData.availableToReceive && this.wasClicked == awardItemData.wasClicked && Intrinsics.areEqual(this.isVehicle, awardItemData.isVehicle);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((Integer.hashCode(this.level) * 31) + this.title.hashCode()) * 31) + Integer.hashCode(this.sysName)) * 31) + Integer.hashCode(this.sellPrice)) * 31) + Boolean.hashCode(this.availableToReceive)) * 31) + Boolean.hashCode(this.wasClicked);
+        int hashCode = ((((((((((Integer.hashCode(this.level) * 31) + this.title.hashCode()) * 31) + Integer.hashCode(this.sysName)) * 31) + Integer.hashCode(this.sellPrice)) * 31) + Boolean.hashCode(this.availableToReceive)) * 31) + Boolean.hashCode(this.wasClicked)) * 31;
+        Integer num = this.isVehicle;
+        return hashCode + (num == null ? 0 : num.hashCode());
     }
 
     public String toString() {
@@ -89,10 +101,11 @@ public final class AwardItemData {
         int i2 = this.sysName;
         int i3 = this.sellPrice;
         boolean z = this.availableToReceive;
-        return "AwardItemData(level=" + i + ", title=" + str + ", sysName=" + i2 + ", sellPrice=" + i3 + ", availableToReceive=" + z + ", wasClicked=" + this.wasClicked + ")";
+        boolean z2 = this.wasClicked;
+        return "AwardItemData(level=" + i + ", title=" + str + ", sysName=" + i2 + ", sellPrice=" + i3 + ", availableToReceive=" + z + ", wasClicked=" + z2 + ", isVehicle=" + this.isVehicle + ")";
     }
 
-    public AwardItemData(int i, String title, int i2, int i3, boolean z, boolean z2) {
+    public AwardItemData(int i, String title, int i2, int i3, boolean z, boolean z2, Integer num) {
         Intrinsics.checkNotNullParameter(title, "title");
         this.level = i;
         this.title = title;
@@ -100,10 +113,11 @@ public final class AwardItemData {
         this.sellPrice = i3;
         this.availableToReceive = z;
         this.wasClicked = z2;
+        this.isVehicle = num;
     }
 
-    public /* synthetic */ AwardItemData(int i, String str, int i2, int i3, boolean z, boolean z2, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, str, i2, i3, z, (i4 & 32) != 0 ? false : z2);
+    public /* synthetic */ AwardItemData(int i, String str, int i2, int i3, boolean z, boolean z2, Integer num, int i4, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, str, i2, i3, z, (i4 & 32) != 0 ? false : z2, (i4 & 64) != 0 ? null : num);
     }
 
     public final int getLevel() {
@@ -136,6 +150,10 @@ public final class AwardItemData {
 
     public final void setWasClicked(boolean z) {
         this.wasClicked = z;
+    }
+
+    public final Integer isVehicle() {
+        return this.isVehicle;
     }
 
     public final boolean isAvailable() {

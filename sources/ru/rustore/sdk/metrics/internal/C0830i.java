@@ -3,11 +3,11 @@ package ru.rustore.sdk.metrics.internal;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* renamed from: ru.rustore.sdk.metrics.internal.i  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0830i extends Lambda implements Function0<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0830i f1457a = new C0830i();
+    public static final C0830i f1458a = new C0830i();
 
     public C0830i() {
         super(0);

@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function2;
 public final class ClickableTextKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ClickableText_4YKlhWE$lambda$6(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1 function1, Function1 function12, int i3, int i4, Composer composer, int i5) {
-        m1241ClickableText4YKlhWE(annotatedString, modifier, textStyle, z, i, i2, function1, function12, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+        m1251ClickableText4YKlhWE(annotatedString, modifier, textStyle, z, i, i2, function1, function12, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
@@ -58,7 +58,7 @@ public final class ClickableTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1241ClickableText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1<? super TextLayoutResult, Unit> function1, final Function1<? super Integer, Unit> function12, Composer composer, final int i3, final int i4) {
+    public static final void m1251ClickableText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1<? super TextLayoutResult, Unit> function1, final Function1<? super Integer, Unit> function12, Composer composer, final int i3, final int i4) {
         AnnotatedString annotatedString2;
         int i5;
         Modifier.Companion companion;
@@ -145,7 +145,7 @@ public final class ClickableTextKt {
                             TextStyle textStyle3 = i6 != 0 ? TextStyle.Companion.getDefault() : obj;
                             boolean z3 = i7 != 0 ? true : z;
                             if (i8 != 0) {
-                                i9 = TextOverflow.Companion.m7186getClipgIe3tQ8();
+                                i9 = TextOverflow.Companion.m7199getClipgIe3tQ8();
                             }
                             if (i10 != 0) {
                                 i14 = Integer.MAX_VALUE;
@@ -210,7 +210,7 @@ public final class ClickableTextKt {
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             composer2 = startRestartGroup;
-                            BasicTextKt.m1230BasicTextCL7eQgs(annotatedString2, then, textStyle3, (Function1) rememberedValue4, i9, z3, i14, 0, null, null, null, composer2, (58254 & i5) | (458752 & (i5 << 6)) | ((i5 << 3) & 3670016), 0, 1920);
+                            BasicTextKt.m1240BasicTextCL7eQgs(annotatedString2, then, textStyle3, (Function1) rememberedValue4, i9, z3, i14, 0, null, null, null, composer2, (58254 & i5) | (458752 & (i5 << 6)) | ((i5 << 3) & 3670016), 0, 1920);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }

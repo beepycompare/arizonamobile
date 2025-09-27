@@ -3,17 +3,19 @@ package androidx.room.coroutines;
 import kotlin.Metadata;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConnectionPoolImpl.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u0000 \f2\u00020\u0001:\u0001\fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00000\t8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\n\u0010\u000b¨\u0006\r"}, d2 = {"Landroidx/room/coroutines/ConnectionElement;", "Lkotlin/coroutines/CoroutineContext$Element;", "connectionWrapper", "Landroidx/room/coroutines/PooledConnectionImpl;", "<init>", "(Landroidx/room/coroutines/PooledConnectionImpl;)V", "getConnectionWrapper", "()Landroidx/room/coroutines/PooledConnectionImpl;", "key", "Lkotlin/coroutines/CoroutineContext$Key;", "getKey", "()Lkotlin/coroutines/CoroutineContext$Key;", "Key", "room-runtime_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0002\u0018\u00002\u00020\u0001B\u001d\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00000\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u001a\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00000\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\f"}, d2 = {"Landroidx/room/coroutines/ConnectionElement;", "Lkotlin/coroutines/CoroutineContext$Element;", "key", "Lkotlin/coroutines/CoroutineContext$Key;", "connectionWrapper", "Landroidx/room/coroutines/PooledConnectionImpl;", "<init>", "(Lkotlin/coroutines/CoroutineContext$Key;Landroidx/room/coroutines/PooledConnectionImpl;)V", "getKey", "()Lkotlin/coroutines/CoroutineContext$Key;", "getConnectionWrapper", "()Landroidx/room/coroutines/PooledConnectionImpl;", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
-final class ConnectionElement implements CoroutineContext.Element {
-    public static final Key Key = new Key(null);
+public final class ConnectionElement implements CoroutineContext.Element {
     private final PooledConnectionImpl connectionWrapper;
+    private final CoroutineContext.Key<ConnectionElement> key;
 
-    public ConnectionElement(PooledConnectionImpl connectionWrapper) {
+    public ConnectionElement(CoroutineContext.Key<ConnectionElement> key, PooledConnectionImpl connectionWrapper) {
+        Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(connectionWrapper, "connectionWrapper");
+        this.key = key;
         this.connectionWrapper = connectionWrapper;
     }
 
@@ -27,10 +29,6 @@ final class ConnectionElement implements CoroutineContext.Element {
         return (E) CoroutineContext.Element.DefaultImpls.get(this, key);
     }
 
-    public final PooledConnectionImpl getConnectionWrapper() {
-        return this.connectionWrapper;
-    }
-
     @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         return CoroutineContext.Element.DefaultImpls.minusKey(this, key);
@@ -41,20 +39,12 @@ final class ConnectionElement implements CoroutineContext.Element {
         return CoroutineContext.Element.DefaultImpls.plus(this, coroutineContext);
     }
 
-    /* compiled from: ConnectionPoolImpl.kt */
-    @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0003\u0010\u0004¨\u0006\u0005"}, d2 = {"Landroidx/room/coroutines/ConnectionElement$Key;", "Lkotlin/coroutines/CoroutineContext$Key;", "Landroidx/room/coroutines/ConnectionElement;", "<init>", "()V", "room-runtime_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes3.dex */
-    public static final class Key implements CoroutineContext.Key<ConnectionElement> {
-        public /* synthetic */ Key(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Key() {
-        }
-    }
-
     @Override // kotlin.coroutines.CoroutineContext.Element
     public CoroutineContext.Key<ConnectionElement> getKey() {
-        return Key;
+        return this.key;
+    }
+
+    public final PooledConnectionImpl getConnectionWrapper() {
+        return this.connectionWrapper;
     }
 }

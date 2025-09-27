@@ -30,12 +30,12 @@ public final class AlignmentLineOffsetDpElement extends ModifierNodeElement<Alig
     }
 
     /* renamed from: getBefore-D9Ej5fM  reason: not valid java name */
-    public final float m666getBeforeD9Ej5fM() {
+    public final float m676getBeforeD9Ej5fM() {
         return this.before;
     }
 
     /* renamed from: getAfter-D9Ej5fM  reason: not valid java name */
-    public final float m665getAfterD9Ej5fM() {
+    public final float m675getAfterD9Ej5fM() {
         return this.after;
     }
 
@@ -64,8 +64,8 @@ public final class AlignmentLineOffsetDpElement extends ModifierNodeElement<Alig
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(AlignmentLineOffsetDpNode alignmentLineOffsetDpNode) {
         alignmentLineOffsetDpNode.setAlignmentLine(this.alignmentLine);
-        alignmentLineOffsetDpNode.m670setBefore0680j_4(this.before);
-        alignmentLineOffsetDpNode.m669setAfter0680j_4(this.after);
+        alignmentLineOffsetDpNode.m680setBefore0680j_4(this.before);
+        alignmentLineOffsetDpNode.m679setAfter0680j_4(this.after);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -79,11 +79,11 @@ public final class AlignmentLineOffsetDpElement extends ModifierNodeElement<Alig
             return true;
         }
         AlignmentLineOffsetDpElement alignmentLineOffsetDpElement = obj instanceof AlignmentLineOffsetDpElement ? (AlignmentLineOffsetDpElement) obj : null;
-        return alignmentLineOffsetDpElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetDpElement.alignmentLine) && Dp.m7256equalsimpl0(this.before, alignmentLineOffsetDpElement.before) && Dp.m7256equalsimpl0(this.after, alignmentLineOffsetDpElement.after);
+        return alignmentLineOffsetDpElement != null && Intrinsics.areEqual(this.alignmentLine, alignmentLineOffsetDpElement.alignmentLine) && Dp.m7269equalsimpl0(this.before, alignmentLineOffsetDpElement.before) && Dp.m7269equalsimpl0(this.after, alignmentLineOffsetDpElement.after);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((this.alignmentLine.hashCode() * 31) + Dp.m7257hashCodeimpl(this.before)) * 31) + Dp.m7257hashCodeimpl(this.after);
+        return (((this.alignmentLine.hashCode() * 31) + Dp.m7270hashCodeimpl(this.before)) * 31) + Dp.m7270hashCodeimpl(this.after);
     }
 }

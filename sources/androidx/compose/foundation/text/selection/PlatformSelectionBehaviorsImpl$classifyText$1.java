@@ -27,10 +27,10 @@ public final class PlatformSelectionBehaviorsImpl$classifyText$1 extends Continu
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m1738classifyTextM8tDOmk;
+        Object m1748classifyTextM8tDOmk;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m1738classifyTextM8tDOmk = this.this$0.m1738classifyTextM8tDOmk(null, 0L, null, this);
-        return m1738classifyTextM8tDOmk;
+        m1748classifyTextM8tDOmk = this.this$0.m1748classifyTextM8tDOmk(null, 0L, null, this);
+        return m1748classifyTextM8tDOmk;
     }
 }

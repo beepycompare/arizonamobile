@@ -60,14 +60,14 @@ public final class CanvasDrawScope implements DrawScope {
 
         @Override // androidx.compose.ui.graphics.drawscope.DrawContext
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public long mo5037getSizeNHjbRc() {
-            return CanvasDrawScope.this.getDrawParams().m5035getSizeNHjbRc();
+        public long mo5049getSizeNHjbRc() {
+            return CanvasDrawScope.this.getDrawParams().m5047getSizeNHjbRc();
         }
 
         @Override // androidx.compose.ui.graphics.drawscope.DrawContext
         /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-        public void mo5038setSizeuvyYCjk(long j) {
-            CanvasDrawScope.this.getDrawParams().m5036setSizeuvyYCjk(j);
+        public void mo5050setSizeuvyYCjk(long j) {
+            CanvasDrawScope.this.getDrawParams().m5048setSizeuvyYCjk(j);
         }
 
         @Override // androidx.compose.ui.graphics.drawscope.DrawContext
@@ -135,147 +135,147 @@ public final class CanvasDrawScope implements DrawScope {
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawLine-1RTmtNc  reason: not valid java name */
-    public void mo5020drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
-        this.drawParams.getCanvas().mo4393drawLineWko1d7g(j, j2, m5010configureStrokePaintho4zsrM$default(this, brush, f, 4.0f, i, StrokeJoin.Companion.m4918getMiterLxFBmk8(), pathEffect, f2, colorFilter, i2, 0, 512, null));
+    public void mo5032drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
+        this.drawParams.getCanvas().mo4405drawLineWko1d7g(j, j2, m5022configureStrokePaintho4zsrM$default(this, brush, f, 4.0f, i, StrokeJoin.Companion.m4930getMiterLxFBmk8(), pathEffect, f2, colorFilter, i2, 0, 512, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawLine-NGM6Ib0  reason: not valid java name */
-    public void mo5021drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
-        this.drawParams.getCanvas().mo4393drawLineWko1d7g(j2, j3, m5008configureStrokePaintQ_0CZUI$default(this, j, f, 4.0f, i, StrokeJoin.Companion.m4918getMiterLxFBmk8(), pathEffect, f2, colorFilter, i2, 0, 512, null));
+    public void mo5033drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
+        this.drawParams.getCanvas().mo4405drawLineWko1d7g(j2, j3, m5020configureStrokePaintQ_0CZUI$default(this, j, f, 4.0f, i, StrokeJoin.Companion.m4930getMiterLxFBmk8(), pathEffect, f2, colorFilter, i2, 0, 512, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRect-AsUm42w  reason: not valid java name */
-    public void mo5028drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5040drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j >> 32);
         int i3 = (int) (j & 4294967295L);
-        this.drawParams.getCanvas().drawRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), m5006configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), m5018configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRect-n-J9OG0  reason: not valid java name */
-    public void mo5029drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5041drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j2 >> 32);
         int i3 = (int) (j2 & 4294967295L);
-        this.drawParams.getCanvas().drawRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), m5004configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), m5016configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawImage-gbVJVH8  reason: not valid java name */
-    public void mo5019drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().mo4391drawImaged4ec7I(imageBitmap, j, m5006configurePaintswdJneE$default(this, null, drawStyle, f, colorFilter, i, 0, 32, null));
+    public void mo5031drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().mo4403drawImaged4ec7I(imageBitmap, j, m5018configurePaintswdJneE$default(this, null, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Prefer usage of drawImage that consumes an optional FilterQuality parameter", replaceWith = @ReplaceWith(expression = "drawImage(image, srcOffset, srcSize, dstOffset, dstSize, alpha, style, colorFilter, blendMode, FilterQuality.Low)", imports = {"androidx.compose.ui.graphics.drawscope", "androidx.compose.ui.graphics.FilterQuality"}))
     /* renamed from: drawImage-9jGpkUE  reason: not valid java name */
-    public /* synthetic */ void mo5017drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().mo4392drawImageRectHPBpro0(imageBitmap, j, j2, j3, j4, m5006configurePaintswdJneE$default(this, null, drawStyle, f, colorFilter, i, 0, 32, null));
+    public /* synthetic */ void mo5029drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().mo4404drawImageRectHPBpro0(imageBitmap, j, j2, j3, j4, m5018configurePaintswdJneE$default(this, null, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawImage-AZ2fEMs  reason: not valid java name */
-    public void mo5018drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
-        this.drawParams.getCanvas().mo4392drawImageRectHPBpro0(imageBitmap, j, j2, j3, j4, m5005configurePaintswdJneE(null, drawStyle, f, colorFilter, i, i2));
+    public void mo5030drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
+        this.drawParams.getCanvas().mo4404drawImageRectHPBpro0(imageBitmap, j, j2, j3, j4, m5017configurePaintswdJneE(null, drawStyle, f, colorFilter, i, i2));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRoundRect-ZuiqVtQ  reason: not valid java name */
-    public void mo5030drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5042drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j >> 32);
         int i3 = (int) (j & 4294967295L);
-        this.drawParams.getCanvas().drawRoundRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat((int) (j3 & 4294967295L)), m5006configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawRoundRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat((int) (j3 & 4294967295L)), m5018configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRoundRect-u-Aw5IA  reason: not valid java name */
-    public void mo5031drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i) {
+    public void mo5043drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i) {
         int i2 = (int) (j2 >> 32);
         int i3 = (int) (j2 & 4294967295L);
-        this.drawParams.getCanvas().drawRoundRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), Float.intBitsToFloat((int) (j4 >> 32)), Float.intBitsToFloat((int) (j4 & 4294967295L)), m5004configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawRoundRect(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), Float.intBitsToFloat((int) (j4 >> 32)), Float.intBitsToFloat((int) (j4 & 4294967295L)), m5016configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawCircle-V9BoPsw  reason: not valid java name */
-    public void mo5015drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().mo4390drawCircle9KIMszo(j, f, m5006configurePaintswdJneE$default(this, brush, drawStyle, f2, colorFilter, i, 0, 32, null));
+    public void mo5027drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().mo4402drawCircle9KIMszo(j, f, m5018configurePaintswdJneE$default(this, brush, drawStyle, f2, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawCircle-VaOC9Bg  reason: not valid java name */
-    public void mo5016drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().mo4390drawCircle9KIMszo(j2, f, m5004configurePaint2qPWKa0$default(this, j, drawStyle, f2, colorFilter, i, 0, 32, null));
+    public void mo5028drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().mo4402drawCircle9KIMszo(j2, f, m5016configurePaint2qPWKa0$default(this, j, drawStyle, f2, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawOval-AsUm42w  reason: not valid java name */
-    public void mo5022drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5034drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j >> 32);
         int i3 = (int) (j & 4294967295L);
-        this.drawParams.getCanvas().drawOval(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), m5006configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawOval(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), m5018configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawOval-n-J9OG0  reason: not valid java name */
-    public void mo5023drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5035drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j2 >> 32);
         int i3 = (int) (j2 & 4294967295L);
-        this.drawParams.getCanvas().drawOval(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), m5004configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawOval(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), m5016configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawArc-illE91I  reason: not valid java name */
-    public void mo5013drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5025drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j >> 32);
         int i3 = (int) (j & 4294967295L);
-        this.drawParams.getCanvas().drawArc(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), f, f2, z, m5006configurePaintswdJneE$default(this, brush, drawStyle, f3, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawArc(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j2 & 4294967295L)), f, f2, z, m5018configurePaintswdJneE$default(this, brush, drawStyle, f3, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawArc-yD3GUKo  reason: not valid java name */
-    public void mo5014drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+    public void mo5026drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
         int i2 = (int) (j2 >> 32);
         int i3 = (int) (j2 & 4294967295L);
-        this.drawParams.getCanvas().drawArc(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), f, f2, z, m5004configurePaint2qPWKa0$default(this, j, drawStyle, f3, colorFilter, i, 0, 32, null));
+        this.drawParams.getCanvas().drawArc(Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j3 >> 32)), Float.intBitsToFloat(i3) + Float.intBitsToFloat((int) (j3 & 4294967295L)), f, f2, z, m5016configurePaint2qPWKa0$default(this, j, drawStyle, f3, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPath-LG529CI  reason: not valid java name */
-    public void mo5025drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().drawPath(path, m5004configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
+    public void mo5037drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().drawPath(path, m5016configurePaint2qPWKa0$default(this, j, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPath-GBMwjPU  reason: not valid java name */
-    public void mo5024drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.drawParams.getCanvas().drawPath(path, m5006configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
+    public void mo5036drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.drawParams.getCanvas().drawPath(path, m5018configurePaintswdJneE$default(this, brush, drawStyle, f, colorFilter, i, 0, 32, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPoints-F8ZwMP8  reason: not valid java name */
-    public void mo5026drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
-        this.drawParams.getCanvas().mo4394drawPointsO7TthRY(i, list, m5008configureStrokePaintQ_0CZUI$default(this, j, f, 4.0f, i2, StrokeJoin.Companion.m4918getMiterLxFBmk8(), pathEffect, f2, colorFilter, i3, 0, 512, null));
+    public void mo5038drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
+        this.drawParams.getCanvas().mo4406drawPointsO7TthRY(i, list, m5020configureStrokePaintQ_0CZUI$default(this, j, f, 4.0f, i2, StrokeJoin.Companion.m4930getMiterLxFBmk8(), pathEffect, f2, colorFilter, i3, 0, 512, null));
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPoints-Gsft0Ws  reason: not valid java name */
-    public void mo5027drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
-        this.drawParams.getCanvas().mo4394drawPointsO7TthRY(i, list, m5010configureStrokePaintho4zsrM$default(this, brush, f, 4.0f, i2, StrokeJoin.Companion.m4918getMiterLxFBmk8(), pathEffect, f2, colorFilter, i3, 0, 512, null));
+    public void mo5039drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
+        this.drawParams.getCanvas().mo4406drawPointsO7TthRY(i, list, m5022configureStrokePaintho4zsrM$default(this, brush, f, 4.0f, i2, StrokeJoin.Companion.m4930getMiterLxFBmk8(), pathEffect, f2, colorFilter, i3, 0, 512, null));
     }
 
     /* renamed from: draw-yzxVdVo  reason: not valid java name */
-    public final void m5012drawyzxVdVo(Density density, LayoutDirection layoutDirection, Canvas canvas, long j, Function1<? super DrawScope, Unit> function1) {
+    public final void m5024drawyzxVdVo(Density density, LayoutDirection layoutDirection, Canvas canvas, long j, Function1<? super DrawScope, Unit> function1) {
         DrawParams drawParams = getDrawParams();
         Density component1 = drawParams.component1();
         LayoutDirection component2 = drawParams.component2();
         Canvas component3 = drawParams.component3();
-        long m5033component4NHjbRc = drawParams.m5033component4NHjbRc();
+        long m5045component4NHjbRc = drawParams.m5045component4NHjbRc();
         DrawParams drawParams2 = getDrawParams();
         drawParams2.setDensity(density);
         drawParams2.setLayoutDirection(layoutDirection);
         drawParams2.setCanvas(canvas);
-        drawParams2.m5036setSizeuvyYCjk(j);
+        drawParams2.m5048setSizeuvyYCjk(j);
         canvas.save();
         function1.invoke(this);
         canvas.restore();
@@ -283,14 +283,14 @@ public final class CanvasDrawScope implements DrawScope {
         drawParams3.setDensity(component1);
         drawParams3.setLayoutDirection(component2);
         drawParams3.setCanvas(component3);
-        drawParams3.m5036setSizeuvyYCjk(m5033component4NHjbRc);
+        drawParams3.m5048setSizeuvyYCjk(m5045component4NHjbRc);
     }
 
     private final Paint obtainFillPaint() {
         Paint paint = this.fillPaint;
         if (paint == null) {
             Paint Paint = AndroidPaint_androidKt.Paint();
-            Paint.mo4418setStylek9PVt8s(PaintingStyle.Companion.m4816getFillTiuSbCo());
+            Paint.mo4430setStylek9PVt8s(PaintingStyle.Companion.m4828getFillTiuSbCo());
             this.fillPaint = Paint;
             return Paint;
         }
@@ -301,7 +301,7 @@ public final class CanvasDrawScope implements DrawScope {
         Paint paint = this.strokePaint;
         if (paint == null) {
             Paint Paint = AndroidPaint_androidKt.Paint();
-            Paint.mo4418setStylek9PVt8s(PaintingStyle.Companion.m4817getStrokeTiuSbCo());
+            Paint.mo4430setStylek9PVt8s(PaintingStyle.Companion.m4829getStrokeTiuSbCo());
             this.strokePaint = Paint;
             return Paint;
         }
@@ -320,14 +320,14 @@ public final class CanvasDrawScope implements DrawScope {
         if (obtainStrokePaint.getStrokeWidth() != stroke.getWidth()) {
             obtainStrokePaint.setStrokeWidth(stroke.getWidth());
         }
-        if (!StrokeCap.m4903equalsimpl0(obtainStrokePaint.mo4410getStrokeCapKaPHkGw(), stroke.m5185getCapKaPHkGw())) {
-            obtainStrokePaint.mo4416setStrokeCapBeK7IIE(stroke.m5185getCapKaPHkGw());
+        if (!StrokeCap.m4915equalsimpl0(obtainStrokePaint.mo4422getStrokeCapKaPHkGw(), stroke.m5197getCapKaPHkGw())) {
+            obtainStrokePaint.mo4428setStrokeCapBeK7IIE(stroke.m5197getCapKaPHkGw());
         }
         if (obtainStrokePaint.getStrokeMiterLimit() != stroke.getMiter()) {
             obtainStrokePaint.setStrokeMiterLimit(stroke.getMiter());
         }
-        if (!StrokeJoin.m4913equalsimpl0(obtainStrokePaint.mo4411getStrokeJoinLxFBmk8(), stroke.m5186getJoinLxFBmk8())) {
-            obtainStrokePaint.mo4417setStrokeJoinWw9F2mQ(stroke.m5186getJoinLxFBmk8());
+        if (!StrokeJoin.m4925equalsimpl0(obtainStrokePaint.mo4423getStrokeJoinLxFBmk8(), stroke.m5198getJoinLxFBmk8())) {
+            obtainStrokePaint.mo4429setStrokeJoinWw9F2mQ(stroke.m5198getJoinLxFBmk8());
         }
         if (!Intrinsics.areEqual(obtainStrokePaint.getPathEffect(), stroke.getPathEffect())) {
             obtainStrokePaint.setPathEffect(stroke.getPathEffect());
@@ -336,24 +336,24 @@ public final class CanvasDrawScope implements DrawScope {
     }
 
     /* renamed from: configurePaint-swdJneE$default  reason: not valid java name */
-    static /* synthetic */ Paint m5006configurePaintswdJneE$default(CanvasDrawScope canvasDrawScope, Brush brush, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
+    static /* synthetic */ Paint m5018configurePaintswdJneE$default(CanvasDrawScope canvasDrawScope, Brush brush, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
         if ((i3 & 32) != 0) {
-            i2 = DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I();
+            i2 = DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I();
         }
-        return canvasDrawScope.m5005configurePaintswdJneE(brush, drawStyle, f, colorFilter, i, i2);
+        return canvasDrawScope.m5017configurePaintswdJneE(brush, drawStyle, f, colorFilter, i, i2);
     }
 
     /* renamed from: configurePaint-swdJneE  reason: not valid java name */
-    private final Paint m5005configurePaintswdJneE(Brush brush, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2) {
+    private final Paint m5017configurePaintswdJneE(Brush brush, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2) {
         Paint selectPaint = selectPaint(drawStyle);
         if (brush != null) {
-            brush.mo4483applyToPq9zytI(mo5116getSizeNHjbRc(), selectPaint, f);
+            brush.mo4495applyToPq9zytI(mo5128getSizeNHjbRc(), selectPaint, f);
         } else {
             if (selectPaint.getShader() != null) {
                 selectPaint.setShader(null);
             }
-            if (!Color.m4538equalsimpl0(selectPaint.mo4408getColor0d7_KjU(), Color.Companion.m4563getBlack0d7_KjU())) {
-                selectPaint.mo4414setColor8_81llA(Color.Companion.m4563getBlack0d7_KjU());
+            if (!Color.m4550equalsimpl0(selectPaint.mo4420getColor0d7_KjU(), Color.Companion.m4575getBlack0d7_KjU())) {
+                selectPaint.mo4426setColor8_81llA(Color.Companion.m4575getBlack0d7_KjU());
             }
             if (selectPaint.getAlpha() != f) {
                 selectPaint.setAlpha(f);
@@ -362,26 +362,26 @@ public final class CanvasDrawScope implements DrawScope {
         if (!Intrinsics.areEqual(selectPaint.getColorFilter(), colorFilter)) {
             selectPaint.setColorFilter(colorFilter);
         }
-        if (!BlendMode.m4447equalsimpl0(selectPaint.mo4407getBlendMode0nO6VwU(), i)) {
-            selectPaint.mo4413setBlendModes9anfk8(i);
+        if (!BlendMode.m4459equalsimpl0(selectPaint.mo4419getBlendMode0nO6VwU(), i)) {
+            selectPaint.mo4425setBlendModes9anfk8(i);
         }
-        if (!FilterQuality.m4633equalsimpl0(selectPaint.mo4409getFilterQualityfv9h1I(), i2)) {
-            selectPaint.mo4415setFilterQualityvDHp3xo(i2);
+        if (!FilterQuality.m4645equalsimpl0(selectPaint.mo4421getFilterQualityfv9h1I(), i2)) {
+            selectPaint.mo4427setFilterQualityvDHp3xo(i2);
         }
         return selectPaint;
     }
 
     /* renamed from: configurePaint-2qPWKa0$default  reason: not valid java name */
-    static /* synthetic */ Paint m5004configurePaint2qPWKa0$default(CanvasDrawScope canvasDrawScope, long j, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
-        return canvasDrawScope.m5003configurePaint2qPWKa0(j, drawStyle, f, colorFilter, i, (i3 & 32) != 0 ? DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I() : i2);
+    static /* synthetic */ Paint m5016configurePaint2qPWKa0$default(CanvasDrawScope canvasDrawScope, long j, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2, int i3, Object obj) {
+        return canvasDrawScope.m5015configurePaint2qPWKa0(j, drawStyle, f, colorFilter, i, (i3 & 32) != 0 ? DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I() : i2);
     }
 
     /* renamed from: configurePaint-2qPWKa0  reason: not valid java name */
-    private final Paint m5003configurePaint2qPWKa0(long j, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2) {
+    private final Paint m5015configurePaint2qPWKa0(long j, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i, int i2) {
         Paint selectPaint = selectPaint(drawStyle);
-        long m5011modulate5vOe2sY = m5011modulate5vOe2sY(j, f);
-        if (!Color.m4538equalsimpl0(selectPaint.mo4408getColor0d7_KjU(), m5011modulate5vOe2sY)) {
-            selectPaint.mo4414setColor8_81llA(m5011modulate5vOe2sY);
+        long m5023modulate5vOe2sY = m5023modulate5vOe2sY(j, f);
+        if (!Color.m4550equalsimpl0(selectPaint.mo4420getColor0d7_KjU(), m5023modulate5vOe2sY)) {
+            selectPaint.mo4426setColor8_81llA(m5023modulate5vOe2sY);
         }
         if (selectPaint.getShader() != null) {
             selectPaint.setShader(null);
@@ -389,26 +389,26 @@ public final class CanvasDrawScope implements DrawScope {
         if (!Intrinsics.areEqual(selectPaint.getColorFilter(), colorFilter)) {
             selectPaint.setColorFilter(colorFilter);
         }
-        if (!BlendMode.m4447equalsimpl0(selectPaint.mo4407getBlendMode0nO6VwU(), i)) {
-            selectPaint.mo4413setBlendModes9anfk8(i);
+        if (!BlendMode.m4459equalsimpl0(selectPaint.mo4419getBlendMode0nO6VwU(), i)) {
+            selectPaint.mo4425setBlendModes9anfk8(i);
         }
-        if (!FilterQuality.m4633equalsimpl0(selectPaint.mo4409getFilterQualityfv9h1I(), i2)) {
-            selectPaint.mo4415setFilterQualityvDHp3xo(i2);
+        if (!FilterQuality.m4645equalsimpl0(selectPaint.mo4421getFilterQualityfv9h1I(), i2)) {
+            selectPaint.mo4427setFilterQualityvDHp3xo(i2);
         }
         return selectPaint;
     }
 
     /* renamed from: configureStrokePaint-Q_0CZUI$default  reason: not valid java name */
-    static /* synthetic */ Paint m5008configureStrokePaintQ_0CZUI$default(CanvasDrawScope canvasDrawScope, long j, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4, int i5, Object obj) {
-        return canvasDrawScope.m5007configureStrokePaintQ_0CZUI(j, f, f2, i, i2, pathEffect, f3, colorFilter, i3, (i5 & 512) != 0 ? DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I() : i4);
+    static /* synthetic */ Paint m5020configureStrokePaintQ_0CZUI$default(CanvasDrawScope canvasDrawScope, long j, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4, int i5, Object obj) {
+        return canvasDrawScope.m5019configureStrokePaintQ_0CZUI(j, f, f2, i, i2, pathEffect, f3, colorFilter, i3, (i5 & 512) != 0 ? DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I() : i4);
     }
 
     /* renamed from: configureStrokePaint-Q_0CZUI  reason: not valid java name */
-    private final Paint m5007configureStrokePaintQ_0CZUI(long j, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4) {
+    private final Paint m5019configureStrokePaintQ_0CZUI(long j, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4) {
         Paint obtainStrokePaint = obtainStrokePaint();
-        long m5011modulate5vOe2sY = m5011modulate5vOe2sY(j, f3);
-        if (!Color.m4538equalsimpl0(obtainStrokePaint.mo4408getColor0d7_KjU(), m5011modulate5vOe2sY)) {
-            obtainStrokePaint.mo4414setColor8_81llA(m5011modulate5vOe2sY);
+        long m5023modulate5vOe2sY = m5023modulate5vOe2sY(j, f3);
+        if (!Color.m4550equalsimpl0(obtainStrokePaint.mo4420getColor0d7_KjU(), m5023modulate5vOe2sY)) {
+            obtainStrokePaint.mo4426setColor8_81llA(m5023modulate5vOe2sY);
         }
         if (obtainStrokePaint.getShader() != null) {
             obtainStrokePaint.setShader(null);
@@ -416,8 +416,8 @@ public final class CanvasDrawScope implements DrawScope {
         if (!Intrinsics.areEqual(obtainStrokePaint.getColorFilter(), colorFilter)) {
             obtainStrokePaint.setColorFilter(colorFilter);
         }
-        if (!BlendMode.m4447equalsimpl0(obtainStrokePaint.mo4407getBlendMode0nO6VwU(), i3)) {
-            obtainStrokePaint.mo4413setBlendModes9anfk8(i3);
+        if (!BlendMode.m4459equalsimpl0(obtainStrokePaint.mo4419getBlendMode0nO6VwU(), i3)) {
+            obtainStrokePaint.mo4425setBlendModes9anfk8(i3);
         }
         if (obtainStrokePaint.getStrokeWidth() != f) {
             obtainStrokePaint.setStrokeWidth(f);
@@ -425,39 +425,39 @@ public final class CanvasDrawScope implements DrawScope {
         if (obtainStrokePaint.getStrokeMiterLimit() != f2) {
             obtainStrokePaint.setStrokeMiterLimit(f2);
         }
-        if (!StrokeCap.m4903equalsimpl0(obtainStrokePaint.mo4410getStrokeCapKaPHkGw(), i)) {
-            obtainStrokePaint.mo4416setStrokeCapBeK7IIE(i);
+        if (!StrokeCap.m4915equalsimpl0(obtainStrokePaint.mo4422getStrokeCapKaPHkGw(), i)) {
+            obtainStrokePaint.mo4428setStrokeCapBeK7IIE(i);
         }
-        if (!StrokeJoin.m4913equalsimpl0(obtainStrokePaint.mo4411getStrokeJoinLxFBmk8(), i2)) {
-            obtainStrokePaint.mo4417setStrokeJoinWw9F2mQ(i2);
+        if (!StrokeJoin.m4925equalsimpl0(obtainStrokePaint.mo4423getStrokeJoinLxFBmk8(), i2)) {
+            obtainStrokePaint.mo4429setStrokeJoinWw9F2mQ(i2);
         }
         if (!Intrinsics.areEqual(obtainStrokePaint.getPathEffect(), pathEffect)) {
             obtainStrokePaint.setPathEffect(pathEffect);
         }
-        if (!FilterQuality.m4633equalsimpl0(obtainStrokePaint.mo4409getFilterQualityfv9h1I(), i4)) {
-            obtainStrokePaint.mo4415setFilterQualityvDHp3xo(i4);
+        if (!FilterQuality.m4645equalsimpl0(obtainStrokePaint.mo4421getFilterQualityfv9h1I(), i4)) {
+            obtainStrokePaint.mo4427setFilterQualityvDHp3xo(i4);
         }
         return obtainStrokePaint;
     }
 
     /* renamed from: configureStrokePaint-ho4zsrM$default  reason: not valid java name */
-    static /* synthetic */ Paint m5010configureStrokePaintho4zsrM$default(CanvasDrawScope canvasDrawScope, Brush brush, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4, int i5, Object obj) {
-        return canvasDrawScope.m5009configureStrokePaintho4zsrM(brush, f, f2, i, i2, pathEffect, f3, colorFilter, i3, (i5 & 512) != 0 ? DrawScope.Companion.m5119getDefaultFilterQualityfv9h1I() : i4);
+    static /* synthetic */ Paint m5022configureStrokePaintho4zsrM$default(CanvasDrawScope canvasDrawScope, Brush brush, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4, int i5, Object obj) {
+        return canvasDrawScope.m5021configureStrokePaintho4zsrM(brush, f, f2, i, i2, pathEffect, f3, colorFilter, i3, (i5 & 512) != 0 ? DrawScope.Companion.m5131getDefaultFilterQualityfv9h1I() : i4);
     }
 
     /* renamed from: configureStrokePaint-ho4zsrM  reason: not valid java name */
-    private final Paint m5009configureStrokePaintho4zsrM(Brush brush, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4) {
+    private final Paint m5021configureStrokePaintho4zsrM(Brush brush, float f, float f2, int i, int i2, PathEffect pathEffect, float f3, ColorFilter colorFilter, int i3, int i4) {
         Paint obtainStrokePaint = obtainStrokePaint();
         if (brush != null) {
-            brush.mo4483applyToPq9zytI(mo5116getSizeNHjbRc(), obtainStrokePaint, f3);
+            brush.mo4495applyToPq9zytI(mo5128getSizeNHjbRc(), obtainStrokePaint, f3);
         } else if (obtainStrokePaint.getAlpha() != f3) {
             obtainStrokePaint.setAlpha(f3);
         }
         if (!Intrinsics.areEqual(obtainStrokePaint.getColorFilter(), colorFilter)) {
             obtainStrokePaint.setColorFilter(colorFilter);
         }
-        if (!BlendMode.m4447equalsimpl0(obtainStrokePaint.mo4407getBlendMode0nO6VwU(), i3)) {
-            obtainStrokePaint.mo4413setBlendModes9anfk8(i3);
+        if (!BlendMode.m4459equalsimpl0(obtainStrokePaint.mo4419getBlendMode0nO6VwU(), i3)) {
+            obtainStrokePaint.mo4425setBlendModes9anfk8(i3);
         }
         if (obtainStrokePaint.getStrokeWidth() != f) {
             obtainStrokePaint.setStrokeWidth(f);
@@ -465,24 +465,24 @@ public final class CanvasDrawScope implements DrawScope {
         if (obtainStrokePaint.getStrokeMiterLimit() != f2) {
             obtainStrokePaint.setStrokeMiterLimit(f2);
         }
-        if (!StrokeCap.m4903equalsimpl0(obtainStrokePaint.mo4410getStrokeCapKaPHkGw(), i)) {
-            obtainStrokePaint.mo4416setStrokeCapBeK7IIE(i);
+        if (!StrokeCap.m4915equalsimpl0(obtainStrokePaint.mo4422getStrokeCapKaPHkGw(), i)) {
+            obtainStrokePaint.mo4428setStrokeCapBeK7IIE(i);
         }
-        if (!StrokeJoin.m4913equalsimpl0(obtainStrokePaint.mo4411getStrokeJoinLxFBmk8(), i2)) {
-            obtainStrokePaint.mo4417setStrokeJoinWw9F2mQ(i2);
+        if (!StrokeJoin.m4925equalsimpl0(obtainStrokePaint.mo4423getStrokeJoinLxFBmk8(), i2)) {
+            obtainStrokePaint.mo4429setStrokeJoinWw9F2mQ(i2);
         }
         if (!Intrinsics.areEqual(obtainStrokePaint.getPathEffect(), pathEffect)) {
             obtainStrokePaint.setPathEffect(pathEffect);
         }
-        if (!FilterQuality.m4633equalsimpl0(obtainStrokePaint.mo4409getFilterQualityfv9h1I(), i4)) {
-            obtainStrokePaint.mo4415setFilterQualityvDHp3xo(i4);
+        if (!FilterQuality.m4645equalsimpl0(obtainStrokePaint.mo4421getFilterQualityfv9h1I(), i4)) {
+            obtainStrokePaint.mo4427setFilterQualityvDHp3xo(i4);
         }
         return obtainStrokePaint;
     }
 
     /* renamed from: modulate-5vOe2sY  reason: not valid java name */
-    private final long m5011modulate5vOe2sY(long j, float f) {
-        return f == 1.0f ? j : Color.m4536copywmQWz5c$default(j, Color.m4539getAlphaimpl(j) * f, 0.0f, 0.0f, 0.0f, 14, null);
+    private final long m5023modulate5vOe2sY(long j, float f) {
+        return f == 1.0f ? j : Color.m4548copywmQWz5c$default(j, Color.m4551getAlphaimpl(j) * f, 0.0f, 0.0f, 0.0f, 14, null);
     }
 
     /* compiled from: CanvasDrawScope.kt */
@@ -499,7 +499,7 @@ public final class CanvasDrawScope implements DrawScope {
         }
 
         /* renamed from: copy-Ug5Nnss$default  reason: not valid java name */
-        public static /* synthetic */ DrawParams m5032copyUg5Nnss$default(DrawParams drawParams, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, int i, Object obj) {
+        public static /* synthetic */ DrawParams m5044copyUg5Nnss$default(DrawParams drawParams, Density density, LayoutDirection layoutDirection, Canvas canvas, long j, int i, Object obj) {
             if ((i & 1) != 0) {
                 density = drawParams.density;
             }
@@ -513,7 +513,7 @@ public final class CanvasDrawScope implements DrawScope {
                 j = drawParams.size;
             }
             Canvas canvas2 = canvas;
-            return drawParams.m5034copyUg5Nnss(density, layoutDirection, canvas2, j);
+            return drawParams.m5046copyUg5Nnss(density, layoutDirection, canvas2, j);
         }
 
         public final Density component1() {
@@ -529,12 +529,12 @@ public final class CanvasDrawScope implements DrawScope {
         }
 
         /* renamed from: component4-NH-jbRc  reason: not valid java name */
-        public final long m5033component4NHjbRc() {
+        public final long m5045component4NHjbRc() {
             return this.size;
         }
 
         /* renamed from: copy-Ug5Nnss  reason: not valid java name */
-        public final DrawParams m5034copyUg5Nnss(Density density, LayoutDirection layoutDirection, Canvas canvas, long j) {
+        public final DrawParams m5046copyUg5Nnss(Density density, LayoutDirection layoutDirection, Canvas canvas, long j) {
             return new DrawParams(density, layoutDirection, canvas, j, null);
         }
 
@@ -544,17 +544,17 @@ public final class CanvasDrawScope implements DrawScope {
             }
             if (obj instanceof DrawParams) {
                 DrawParams drawParams = (DrawParams) obj;
-                return Intrinsics.areEqual(this.density, drawParams.density) && this.layoutDirection == drawParams.layoutDirection && Intrinsics.areEqual(this.canvas, drawParams.canvas) && Size.m4358equalsimpl0(this.size, drawParams.size);
+                return Intrinsics.areEqual(this.density, drawParams.density) && this.layoutDirection == drawParams.layoutDirection && Intrinsics.areEqual(this.canvas, drawParams.canvas) && Size.m4370equalsimpl0(this.size, drawParams.size);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((this.density.hashCode() * 31) + this.layoutDirection.hashCode()) * 31) + this.canvas.hashCode()) * 31) + Size.m4363hashCodeimpl(this.size);
+            return (((((this.density.hashCode() * 31) + this.layoutDirection.hashCode()) * 31) + this.canvas.hashCode()) * 31) + Size.m4375hashCodeimpl(this.size);
         }
 
         public String toString() {
-            return "DrawParams(density=" + this.density + ", layoutDirection=" + this.layoutDirection + ", canvas=" + this.canvas + ", size=" + ((Object) Size.m4366toStringimpl(this.size)) + ')';
+            return "DrawParams(density=" + this.density + ", layoutDirection=" + this.layoutDirection + ", canvas=" + this.canvas + ", size=" + ((Object) Size.m4378toStringimpl(this.size)) + ')';
         }
 
         private DrawParams(Density density, LayoutDirection layoutDirection, Canvas canvas, long j) {
@@ -565,7 +565,7 @@ public final class CanvasDrawScope implements DrawScope {
         }
 
         public /* synthetic */ DrawParams(Density density, LayoutDirection layoutDirection, EmptyCanvas emptyCanvas, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? DrawContextKt.getDefaultDensity() : density, (i & 2) != 0 ? LayoutDirection.Ltr : layoutDirection, (i & 4) != 0 ? EmptyCanvas.INSTANCE : emptyCanvas, (i & 8) != 0 ? Size.Companion.m4371getZeroNHjbRc() : j, null);
+            this((i & 1) != 0 ? DrawContextKt.getDefaultDensity() : density, (i & 2) != 0 ? LayoutDirection.Ltr : layoutDirection, (i & 4) != 0 ? EmptyCanvas.INSTANCE : emptyCanvas, (i & 8) != 0 ? Size.Companion.m4383getZeroNHjbRc() : j, null);
         }
 
         public final Density getDensity() {
@@ -593,12 +593,12 @@ public final class CanvasDrawScope implements DrawScope {
         }
 
         /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-        public final long m5035getSizeNHjbRc() {
+        public final long m5047getSizeNHjbRc() {
             return this.size;
         }
 
         /* renamed from: setSize-uvyYCjk  reason: not valid java name */
-        public final void m5036setSizeuvyYCjk(long j) {
+        public final void m5048setSizeuvyYCjk(long j) {
             this.size = j;
         }
     }

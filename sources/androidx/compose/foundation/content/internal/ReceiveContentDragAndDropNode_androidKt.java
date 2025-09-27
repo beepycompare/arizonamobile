@@ -61,6 +61,6 @@ public final class ReceiveContentDragAndDropNode_androidKt {
 
     public static final TransferableContent toTransferableContent(DragAndDropEvent dragAndDropEvent) {
         DragEvent androidDragEvent = DragAndDrop_androidKt.toAndroidDragEvent(dragAndDropEvent);
-        return new TransferableContent(AndroidClipboardManager_androidKt.toClipEntry(androidDragEvent.getClipData()), AndroidClipboardManager_androidKt.toClipMetadata(androidDragEvent.getClipDescription()), TransferableContent.Source.Companion.m372getDragAndDropkB6V9T0(), null, 8, null);
+        return new TransferableContent(AndroidClipboardManager_androidKt.toClipEntry(androidDragEvent.getClipData()), AndroidClipboardManager_androidKt.toClipMetadata(androidDragEvent.getClipDescription()), TransferableContent.Source.Companion.m382getDragAndDropkB6V9T0(), null, 8, null);
     }
 }

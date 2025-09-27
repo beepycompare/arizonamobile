@@ -22,8 +22,8 @@ public final class SpacerMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo42measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m7202getHasFixedWidthimpl(j) ? Constraints.m7204getMaxWidthimpl(j) : 0, Constraints.m7201getHasFixedHeightimpl(j) ? Constraints.m7203getMaxHeightimpl(j) : 0, null, new Function1() { // from class: androidx.compose.foundation.layout.SpacerMeasurePolicy$$ExternalSyntheticLambda0
+    public MeasureResult mo52measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7215getHasFixedWidthimpl(j) ? Constraints.m7217getMaxWidthimpl(j) : 0, Constraints.m7214getHasFixedHeightimpl(j) ? Constraints.m7216getMaxHeightimpl(j) : 0, null, new Function1() { // from class: androidx.compose.foundation.layout.SpacerMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1$lambda$0;

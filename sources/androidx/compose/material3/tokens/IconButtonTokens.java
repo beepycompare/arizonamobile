@@ -10,13 +10,13 @@ public final class IconButtonTokens {
     public static final float DisabledIconOpacity = 0.38f;
     public static final IconButtonTokens INSTANCE = new IconButtonTokens();
     private static final ColorSchemeKeyTokens DisabledIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m7251constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens SelectedFocusIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedHoverIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedIconColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens SelectedPressedIconColor = ColorSchemeKeyTokens.Primary;
     private static final ShapeKeyTokens StateLayerShape = ShapeKeyTokens.CornerFull;
-    private static final float StateLayerSize = Dp.m7251constructorimpl((float) 40.0d);
+    private static final float StateLayerSize = Dp.m7264constructorimpl((float) 40.0d);
     private static final ColorSchemeKeyTokens UnselectedFocusIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedHoverIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens UnselectedIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -30,7 +30,7 @@ public final class IconButtonTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3401getIconSizeD9Ej5fM() {
+    public final float m3411getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -55,7 +55,7 @@ public final class IconButtonTokens {
     }
 
     /* renamed from: getStateLayerSize-D9Ej5fM  reason: not valid java name */
-    public final float m3402getStateLayerSizeD9Ej5fM() {
+    public final float m3412getStateLayerSizeD9Ej5fM() {
         return StateLayerSize;
     }
 

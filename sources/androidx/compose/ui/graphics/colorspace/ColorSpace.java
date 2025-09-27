@@ -56,7 +56,7 @@ public abstract class ColorSpace {
     }
 
     /* renamed from: getModel-xdoWZVw  reason: not valid java name */
-    public final long m4971getModelxdoWZVw() {
+    public final long m4983getModelxdoWZVw() {
         return this.model;
     }
 
@@ -69,7 +69,7 @@ public abstract class ColorSpace {
     }
 
     public final int getComponentCount() {
-        return ColorModel.m4963getComponentCountimpl(this.model);
+        return ColorModel.m4975getComponentCountimpl(this.model);
     }
 
     public final float[] toXyz(float f, float f2, float f3) {
@@ -86,13 +86,13 @@ public abstract class ColorSpace {
     }
 
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics_release  reason: not valid java name */
-    public long mo4972xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo4984xyzaToColorJlNiLsg$ui_graphics_release(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         float[] fromXyz = fromXyz(f, f2, f3);
         return ColorKt.Color(fromXyz[0], fromXyz[1], fromXyz[2], f4, colorSpace);
     }
 
     public final float[] fromXyz(float f, float f2, float f3) {
-        float[] fArr = new float[ColorModel.m4963getComponentCountimpl(this.model)];
+        float[] fArr = new float[ColorModel.m4975getComponentCountimpl(this.model)];
         fArr[0] = f;
         fArr[1] = f2;
         fArr[2] = f3;
@@ -100,7 +100,7 @@ public abstract class ColorSpace {
     }
 
     public String toString() {
-        return this.name + " (id=" + this.id + ", model=" + ((Object) ColorModel.m4965toStringimpl(this.model)) + ')';
+        return this.name + " (id=" + this.id + ", model=" + ((Object) ColorModel.m4977toStringimpl(this.model)) + ')';
     }
 
     public boolean equals(Object obj) {
@@ -112,13 +112,13 @@ public abstract class ColorSpace {
         }
         ColorSpace colorSpace = (ColorSpace) obj;
         if (this.id == colorSpace.id && Intrinsics.areEqual(this.name, colorSpace.name)) {
-            return ColorModel.m4962equalsimpl0(this.model, colorSpace.model);
+            return ColorModel.m4974equalsimpl0(this.model, colorSpace.model);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.name.hashCode() * 31) + ColorModel.m4964hashCodeimpl(this.model)) * 31) + this.id;
+        return (((this.name.hashCode() * 31) + ColorModel.m4976hashCodeimpl(this.model)) * 31) + this.id;
     }
 
     /* compiled from: ColorSpace.kt */

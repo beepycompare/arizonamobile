@@ -55,7 +55,7 @@ public final class CheckboxKt {
     private static final int BoxOutDuration = 100;
     private static final int CheckAnimationDuration = 100;
     private static final float CheckboxDefaultPadding;
-    private static final float CheckboxSize = Dp.m7251constructorimpl(20);
+    private static final float CheckboxSize = Dp.m7264constructorimpl(20);
     private static final float RadiusSize;
     private static final float StrokeWidth;
 
@@ -553,7 +553,7 @@ public final class CheckboxKt {
                         ComposerKt.sourceInformation(startRestartGroup, "161@7145L161");
                         if (function0 == null) {
                             i7 = i6;
-                            companion = ToggleableKt.m1172triStateToggleableO2vRcR0(Modifier.Companion, toggleableState2, obj6, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(CheckboxTokens.INSTANCE.m3140getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z3, Role.m6454boximpl(Role.Companion.m6463getCheckboxo7Vup1c()), function0);
+                            companion = ToggleableKt.m1182triStateToggleableO2vRcR0(Modifier.Companion, toggleableState2, obj6, RippleKt.m2528rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7264constructorimpl(CheckboxTokens.INSTANCE.m3150getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z3, Role.m6467boximpl(Role.Companion.m6476getCheckboxo7Vup1c()), function0);
                             obj3 = obj6;
                             z4 = z3;
                         } else {
@@ -569,7 +569,7 @@ public final class CheckboxKt {
                             companion2 = Modifier.Companion;
                         }
                         CheckboxColors checkboxColors3 = obj5;
-                        CheckboxImpl(z4, toggleableState, PaddingKt.m832padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
+                        CheckboxImpl(z4, toggleableState, PaddingKt.m842padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -633,7 +633,7 @@ public final class CheckboxKt {
                 if (function0 == null) {
                 }
                 CheckboxColors checkboxColors32 = obj5;
-                CheckboxImpl(z4, toggleableState, PaddingKt.m832padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors32, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
+                CheckboxImpl(z4, toggleableState, PaddingKt.m842padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors32, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 checkboxColors2 = checkboxColors32;
@@ -677,7 +677,7 @@ public final class CheckboxKt {
             if (function0 == null) {
             }
             CheckboxColors checkboxColors322 = obj5;
-            CheckboxImpl(z4, toggleableState, PaddingKt.m832padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors322, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
+            CheckboxImpl(z4, toggleableState, PaddingKt.m842padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors322, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
             if (ComposerKt.isTraceInProgress()) {
             }
             checkboxColors2 = checkboxColors322;
@@ -725,7 +725,7 @@ public final class CheckboxKt {
         if (function0 == null) {
         }
         CheckboxColors checkboxColors3222 = obj5;
-        CheckboxImpl(z4, toggleableState, PaddingKt.m832padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3222, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
+        CheckboxImpl(z4, toggleableState, PaddingKt.m842padding3ABfNKs(obj4.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3222, startRestartGroup, ((i7 >> 9) & 14) | ((i7 << 3) & 112) | ((i7 >> 3) & 7168));
         if (ComposerKt.isTraceInProgress()) {
         }
         checkboxColors2 = checkboxColors3222;
@@ -958,7 +958,7 @@ public final class CheckboxKt {
                         int i12 = (i9 & 896) | (i8 & WebSocketProtocol.PAYLOAD_SHORT);
                         final State<Color> boxColor$material3_release = checkboxColors.boxColor$material3_release(z, toggleableState, startRestartGroup, i12);
                         final State<Color> borderColor$material3_release = checkboxColors.borderColor$material3_release(z, toggleableState, startRestartGroup, i12);
-                        Modifier m876requiredSize3ABfNKs = SizeKt.m876requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+                        Modifier m886requiredSize3ABfNKs = SizeKt.m886requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 974837696, "CC(remember):Checkbox.kt#9igjgp");
                         changed = startRestartGroup.changed(boxColor$material3_release) | startRestartGroup.changed(borderColor$material3_release) | startRestartGroup.changed(checkmarkColor$material3_release) | startRestartGroup.changed(createTransitionAnimation) | startRestartGroup.changed(createTransitionAnimation2);
                         rememberedValue2 = startRestartGroup.rememberedValue();
@@ -981,18 +981,18 @@ public final class CheckboxKt {
                                     float f5;
                                     float f6;
                                     f5 = CheckboxKt.StrokeWidth;
-                                    float floor = (float) Math.floor(drawScope.mo419toPx0680j_4(f5));
-                                    long m4547unboximpl = boxColor$material3_release.getValue().m4547unboximpl();
-                                    long m4547unboximpl2 = borderColor$material3_release.getValue().m4547unboximpl();
+                                    float floor = (float) Math.floor(drawScope.mo429toPx0680j_4(f5));
+                                    long m4559unboximpl = boxColor$material3_release.getValue().m4559unboximpl();
+                                    long m4559unboximpl2 = borderColor$material3_release.getValue().m4559unboximpl();
                                     f6 = CheckboxKt.RadiusSize;
-                                    CheckboxKt.m1962drawBox1wkBAMs(drawScope, m4547unboximpl, m4547unboximpl2, drawScope.mo419toPx0680j_4(f6), floor);
-                                    CheckboxKt.m1963drawCheck3IgeMak(drawScope, checkmarkColor$material3_release.getValue().m4547unboximpl(), createTransitionAnimation.getValue().floatValue(), createTransitionAnimation2.getValue().floatValue(), floor, checkDrawingCache);
+                                    CheckboxKt.m1972drawBox1wkBAMs(drawScope, m4559unboximpl, m4559unboximpl2, drawScope.mo429toPx0680j_4(f6), floor);
+                                    CheckboxKt.m1973drawCheck3IgeMak(drawScope, checkmarkColor$material3_release.getValue().m4559unboximpl(), createTransitionAnimation.getValue().floatValue(), createTransitionAnimation2.getValue().floatValue(), floor, checkDrawingCache);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        CanvasKt.Canvas(m876requiredSize3ABfNKs, (Function1) rememberedValue2, startRestartGroup, 0);
+                        CanvasKt.Canvas(m886requiredSize3ABfNKs, (Function1) rememberedValue2, startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -1072,7 +1072,7 @@ public final class CheckboxKt {
                     int i122 = (i9 & 896) | (i8 & WebSocketProtocol.PAYLOAD_SHORT);
                     final State<Color> boxColor$material3_release2 = checkboxColors.boxColor$material3_release(z, toggleableState, startRestartGroup, i122);
                     final State<Color> borderColor$material3_release2 = checkboxColors.borderColor$material3_release(z, toggleableState, startRestartGroup, i122);
-                    Modifier m876requiredSize3ABfNKs2 = SizeKt.m876requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+                    Modifier m886requiredSize3ABfNKs2 = SizeKt.m886requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 974837696, "CC(remember):Checkbox.kt#9igjgp");
                     changed = startRestartGroup.changed(boxColor$material3_release2) | startRestartGroup.changed(borderColor$material3_release2) | startRestartGroup.changed(checkmarkColor$material3_release2) | startRestartGroup.changed(createTransitionAnimation3) | startRestartGroup.changed(createTransitionAnimation22);
                     rememberedValue2 = startRestartGroup.rememberedValue();
@@ -1096,17 +1096,17 @@ public final class CheckboxKt {
                             float f5;
                             float f6;
                             f5 = CheckboxKt.StrokeWidth;
-                            float floor = (float) Math.floor(drawScope.mo419toPx0680j_4(f5));
-                            long m4547unboximpl = boxColor$material3_release2.getValue().m4547unboximpl();
-                            long m4547unboximpl2 = borderColor$material3_release2.getValue().m4547unboximpl();
+                            float floor = (float) Math.floor(drawScope.mo429toPx0680j_4(f5));
+                            long m4559unboximpl = boxColor$material3_release2.getValue().m4559unboximpl();
+                            long m4559unboximpl2 = borderColor$material3_release2.getValue().m4559unboximpl();
                             f6 = CheckboxKt.RadiusSize;
-                            CheckboxKt.m1962drawBox1wkBAMs(drawScope, m4547unboximpl, m4547unboximpl2, drawScope.mo419toPx0680j_4(f6), floor);
-                            CheckboxKt.m1963drawCheck3IgeMak(drawScope, checkmarkColor$material3_release2.getValue().m4547unboximpl(), createTransitionAnimation3.getValue().floatValue(), createTransitionAnimation22.getValue().floatValue(), floor, checkDrawingCache2);
+                            CheckboxKt.m1972drawBox1wkBAMs(drawScope, m4559unboximpl, m4559unboximpl2, drawScope.mo429toPx0680j_4(f6), floor);
+                            CheckboxKt.m1973drawCheck3IgeMak(drawScope, checkmarkColor$material3_release2.getValue().m4559unboximpl(), createTransitionAnimation3.getValue().floatValue(), createTransitionAnimation22.getValue().floatValue(), floor, checkDrawingCache2);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    CanvasKt.Canvas(m876requiredSize3ABfNKs2, (Function1) rememberedValue2, startRestartGroup, 0);
+                    CanvasKt.Canvas(m886requiredSize3ABfNKs2, (Function1) rememberedValue2, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                 } else if (i11 != 3) {
@@ -1199,7 +1199,7 @@ public final class CheckboxKt {
             int i1222 = (i9 & 896) | (i8 & WebSocketProtocol.PAYLOAD_SHORT);
             final State<Color> boxColor$material3_release22 = checkboxColors.boxColor$material3_release(z, toggleableState, startRestartGroup, i1222);
             final State<Color> borderColor$material3_release22 = checkboxColors.borderColor$material3_release(z, toggleableState, startRestartGroup, i1222);
-            Modifier m876requiredSize3ABfNKs22 = SizeKt.m876requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+            Modifier m886requiredSize3ABfNKs22 = SizeKt.m886requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 974837696, "CC(remember):Checkbox.kt#9igjgp");
             changed = startRestartGroup.changed(boxColor$material3_release22) | startRestartGroup.changed(borderColor$material3_release22) | startRestartGroup.changed(checkmarkColor$material3_release22) | startRestartGroup.changed(createTransitionAnimation32) | startRestartGroup.changed(createTransitionAnimation222);
             rememberedValue2 = startRestartGroup.rememberedValue();
@@ -1223,17 +1223,17 @@ public final class CheckboxKt {
                     float f5;
                     float f6;
                     f5 = CheckboxKt.StrokeWidth;
-                    float floor = (float) Math.floor(drawScope.mo419toPx0680j_4(f5));
-                    long m4547unboximpl = boxColor$material3_release22.getValue().m4547unboximpl();
-                    long m4547unboximpl2 = borderColor$material3_release22.getValue().m4547unboximpl();
+                    float floor = (float) Math.floor(drawScope.mo429toPx0680j_4(f5));
+                    long m4559unboximpl = boxColor$material3_release22.getValue().m4559unboximpl();
+                    long m4559unboximpl2 = borderColor$material3_release22.getValue().m4559unboximpl();
                     f6 = CheckboxKt.RadiusSize;
-                    CheckboxKt.m1962drawBox1wkBAMs(drawScope, m4547unboximpl, m4547unboximpl2, drawScope.mo419toPx0680j_4(f6), floor);
-                    CheckboxKt.m1963drawCheck3IgeMak(drawScope, checkmarkColor$material3_release22.getValue().m4547unboximpl(), createTransitionAnimation32.getValue().floatValue(), createTransitionAnimation222.getValue().floatValue(), floor, checkDrawingCache22);
+                    CheckboxKt.m1972drawBox1wkBAMs(drawScope, m4559unboximpl, m4559unboximpl2, drawScope.mo429toPx0680j_4(f6), floor);
+                    CheckboxKt.m1973drawCheck3IgeMak(drawScope, checkmarkColor$material3_release22.getValue().m4559unboximpl(), createTransitionAnimation32.getValue().floatValue(), createTransitionAnimation222.getValue().floatValue(), floor, checkDrawingCache22);
                 }
             };
             startRestartGroup.updateRememberedValue(rememberedValue2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            CanvasKt.Canvas(m876requiredSize3ABfNKs22, (Function1) rememberedValue2, startRestartGroup, 0);
+            CanvasKt.Canvas(m886requiredSize3ABfNKs22, (Function1) rememberedValue2, startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
         }
@@ -1261,43 +1261,43 @@ public final class CheckboxKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawBox-1wkBAMs  reason: not valid java name */
-    public static final void m1962drawBox1wkBAMs(DrawScope drawScope, long j, long j2, float f, float f2) {
+    public static final void m1972drawBox1wkBAMs(DrawScope drawScope, long j, long j2, float f, float f2) {
         float f3 = f2 / 2.0f;
         Stroke stroke = new Stroke(f2, 0.0f, 0, 0, null, 30, null);
-        float m4362getWidthimpl = Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc());
-        if (Color.m4538equalsimpl0(j, j2)) {
-            DrawScope.m5112drawRoundRectuAw5IA$default(drawScope, j, 0L, androidx.compose.ui.geometry.SizeKt.Size(m4362getWidthimpl, m4362getWidthimpl), CornerRadiusKt.CornerRadius$default(f, 0.0f, 2, null), Fill.INSTANCE, 0.0f, null, 0, 226, null);
+        float m4374getWidthimpl = Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc());
+        if (Color.m4550equalsimpl0(j, j2)) {
+            DrawScope.m5124drawRoundRectuAw5IA$default(drawScope, j, 0L, androidx.compose.ui.geometry.SizeKt.Size(m4374getWidthimpl, m4374getWidthimpl), CornerRadiusKt.CornerRadius$default(f, 0.0f, 2, null), Fill.INSTANCE, 0.0f, null, 0, 226, null);
             return;
         }
-        float f4 = m4362getWidthimpl - (2 * f2);
-        DrawScope.m5112drawRoundRectuAw5IA$default(drawScope, j, OffsetKt.Offset(f2, f2), androidx.compose.ui.geometry.SizeKt.Size(f4, f4), CornerRadiusKt.CornerRadius$default(Math.max(0.0f, f - f2), 0.0f, 2, null), Fill.INSTANCE, 0.0f, null, 0, 224, null);
-        float f5 = m4362getWidthimpl - f2;
-        DrawScope.m5112drawRoundRectuAw5IA$default(drawScope, j2, OffsetKt.Offset(f3, f3), androidx.compose.ui.geometry.SizeKt.Size(f5, f5), CornerRadiusKt.CornerRadius$default(f - f3, 0.0f, 2, null), stroke, 0.0f, null, 0, 224, null);
+        float f4 = m4374getWidthimpl - (2 * f2);
+        DrawScope.m5124drawRoundRectuAw5IA$default(drawScope, j, OffsetKt.Offset(f2, f2), androidx.compose.ui.geometry.SizeKt.Size(f4, f4), CornerRadiusKt.CornerRadius$default(Math.max(0.0f, f - f2), 0.0f, 2, null), Fill.INSTANCE, 0.0f, null, 0, 224, null);
+        float f5 = m4374getWidthimpl - f2;
+        DrawScope.m5124drawRoundRectuAw5IA$default(drawScope, j2, OffsetKt.Offset(f3, f3), androidx.compose.ui.geometry.SizeKt.Size(f5, f5), CornerRadiusKt.CornerRadius$default(f - f3, 0.0f, 2, null), stroke, 0.0f, null, 0, 224, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawCheck-3IgeMak  reason: not valid java name */
-    public static final void m1963drawCheck3IgeMak(DrawScope drawScope, long j, float f, float f2, float f3, CheckDrawingCache checkDrawingCache) {
-        Stroke stroke = new Stroke(f3, 0.0f, StrokeCap.Companion.m4909getSquareKaPHkGw(), 0, null, 26, null);
-        float m4362getWidthimpl = Size.m4362getWidthimpl(drawScope.mo5116getSizeNHjbRc());
+    public static final void m1973drawCheck3IgeMak(DrawScope drawScope, long j, float f, float f2, float f3, CheckDrawingCache checkDrawingCache) {
+        Stroke stroke = new Stroke(f3, 0.0f, StrokeCap.Companion.m4921getSquareKaPHkGw(), 0, null, 26, null);
+        float m4374getWidthimpl = Size.m4374getWidthimpl(drawScope.mo5128getSizeNHjbRc());
         float lerp = MathHelpersKt.lerp(0.4f, 0.5f, f2);
         float lerp2 = MathHelpersKt.lerp(0.7f, 0.5f, f2);
         float lerp3 = MathHelpersKt.lerp(0.5f, 0.5f, f2);
         float lerp4 = MathHelpersKt.lerp(0.3f, 0.5f, f2);
         checkDrawingCache.getCheckPath().reset();
-        checkDrawingCache.getCheckPath().moveTo(0.2f * m4362getWidthimpl, lerp3 * m4362getWidthimpl);
-        checkDrawingCache.getCheckPath().lineTo(lerp * m4362getWidthimpl, lerp2 * m4362getWidthimpl);
-        checkDrawingCache.getCheckPath().lineTo(0.8f * m4362getWidthimpl, m4362getWidthimpl * lerp4);
+        checkDrawingCache.getCheckPath().moveTo(0.2f * m4374getWidthimpl, lerp3 * m4374getWidthimpl);
+        checkDrawingCache.getCheckPath().lineTo(lerp * m4374getWidthimpl, lerp2 * m4374getWidthimpl);
+        checkDrawingCache.getCheckPath().lineTo(0.8f * m4374getWidthimpl, m4374getWidthimpl * lerp4);
         checkDrawingCache.getPathMeasure().setPath(checkDrawingCache.getCheckPath(), false);
         checkDrawingCache.getPathToDraw().reset();
         checkDrawingCache.getPathMeasure().getSegment(0.0f, checkDrawingCache.getPathMeasure().getLength() * f, checkDrawingCache.getPathToDraw(), true);
-        DrawScope.m5106drawPathLG529CI$default(drawScope, checkDrawingCache.getPathToDraw(), j, 0.0f, stroke, null, 0, 52, null);
+        DrawScope.m5118drawPathLG529CI$default(drawScope, checkDrawingCache.getPathToDraw(), j, 0.0f, stroke, null, 0, 52, null);
     }
 
     static {
         float f = 2;
-        CheckboxDefaultPadding = Dp.m7251constructorimpl(f);
-        StrokeWidth = Dp.m7251constructorimpl(f);
-        RadiusSize = Dp.m7251constructorimpl(f);
+        CheckboxDefaultPadding = Dp.m7264constructorimpl(f);
+        StrokeWidth = Dp.m7264constructorimpl(f);
+        RadiusSize = Dp.m7264constructorimpl(f);
     }
 }

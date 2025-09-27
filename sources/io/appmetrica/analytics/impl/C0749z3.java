@@ -6,10 +6,10 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class C0749z3 implements A3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1181a;
+    public final int f1182a;
 
     public C0749z3(int i) {
-        this.f1181a = i;
+        this.f1182a = i;
     }
 
     public static A3 a(A3... a3Arr) {
@@ -28,10 +28,10 @@ public class C0749z3 implements A3 {
 
     @Override // io.appmetrica.analytics.impl.A3
     public final int getBytesTruncated() {
-        return this.f1181a;
+        return this.f1182a;
     }
 
     public String toString() {
-        return "BytesTruncatedInfo{bytesTruncated=" + this.f1181a + AbstractJsonLexerKt.END_OBJ;
+        return "BytesTruncatedInfo{bytesTruncated=" + this.f1182a + AbstractJsonLexerKt.END_OBJ;
     }
 }

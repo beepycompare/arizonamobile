@@ -74,13 +74,13 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
     }
 
     /* renamed from: setLookaheadConstraints-BRTryo0  reason: not valid java name */
-    private final void m121setLookaheadConstraintsBRTryo0(long j) {
+    private final void m131setLookaheadConstraintsBRTryo0(long j) {
         this.lookaheadConstraints = j;
         this.lookaheadConstraintsAvailable = true;
     }
 
     /* renamed from: targetConstraints-ZezNO4M  reason: not valid java name */
-    private final long m122targetConstraintsZezNO4M(long j) {
+    private final long m132targetConstraintsZezNO4M(long j) {
         return this.lookaheadConstraintsAvailable ? this.lookaheadConstraints : j;
     }
 
@@ -98,14 +98,14 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
 
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: copy-O0kMr_c$default  reason: not valid java name */
-        public static /* synthetic */ AnimData m124copyO0kMr_c$default(AnimData animData, Animatable animatable, long j, int i, Object obj) {
+        public static /* synthetic */ AnimData m134copyO0kMr_c$default(AnimData animData, Animatable animatable, long j, int i, Object obj) {
             if ((i & 1) != 0) {
                 animatable = animData.anim;
             }
             if ((i & 2) != 0) {
                 j = animData.startSize;
             }
-            return animData.m126copyO0kMr_c(animatable, j);
+            return animData.m136copyO0kMr_c(animatable, j);
         }
 
         public final Animatable<IntSize, AnimationVector2D> component1() {
@@ -113,12 +113,12 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
         }
 
         /* renamed from: component2-YbymL2g  reason: not valid java name */
-        public final long m125component2YbymL2g() {
+        public final long m135component2YbymL2g() {
             return this.startSize;
         }
 
         /* renamed from: copy-O0kMr_c  reason: not valid java name */
-        public final AnimData m126copyO0kMr_c(Animatable<IntSize, AnimationVector2D> animatable, long j) {
+        public final AnimData m136copyO0kMr_c(Animatable<IntSize, AnimationVector2D> animatable, long j) {
             return new AnimData(animatable, j, null);
         }
 
@@ -128,17 +128,17 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
             }
             if (obj instanceof AnimData) {
                 AnimData animData = (AnimData) obj;
-                return Intrinsics.areEqual(this.anim, animData.anim) && IntSize.m7420equalsimpl0(this.startSize, animData.startSize);
+                return Intrinsics.areEqual(this.anim, animData.anim) && IntSize.m7433equalsimpl0(this.startSize, animData.startSize);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.anim.hashCode() * 31) + IntSize.m7423hashCodeimpl(this.startSize);
+            return (this.anim.hashCode() * 31) + IntSize.m7436hashCodeimpl(this.startSize);
         }
 
         public String toString() {
-            return "AnimData(anim=" + this.anim + ", startSize=" + ((Object) IntSize.m7425toStringimpl(this.startSize)) + ')';
+            return "AnimData(anim=" + this.anim + ", startSize=" + ((Object) IntSize.m7438toStringimpl(this.startSize)) + ')';
         }
 
         private AnimData(Animatable<IntSize, AnimationVector2D> animatable, long j) {
@@ -151,12 +151,12 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
         }
 
         /* renamed from: getStartSize-YbymL2g  reason: not valid java name */
-        public final long m127getStartSizeYbymL2g() {
+        public final long m137getStartSizeYbymL2g() {
             return this.startSize;
         }
 
         /* renamed from: setStartSize-ozmzZPI  reason: not valid java name */
-        public final void m128setStartSizeozmzZPI(long j) {
+        public final void m138setStartSizeozmzZPI(long j) {
             this.startSize = j;
         }
     }
@@ -184,25 +184,25 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        Placeable mo5954measureBRTryo0;
-        long m7218constrain4WqzIAM;
+    public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        Placeable mo5967measureBRTryo0;
+        long m7231constrain4WqzIAM;
         if (measureScope.isLookingAhead()) {
-            m121setLookaheadConstraintsBRTryo0(j);
-            mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+            m131setLookaheadConstraintsBRTryo0(j);
+            mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
         } else {
-            mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m122targetConstraintsZezNO4M(j));
+            mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m132targetConstraintsZezNO4M(j));
         }
-        final Placeable placeable = mo5954measureBRTryo0;
-        final long m7417constructorimpl = IntSize.m7417constructorimpl((placeable.getWidth() << 32) | (placeable.getHeight() & 4294967295L));
+        final Placeable placeable = mo5967measureBRTryo0;
+        final long m7430constructorimpl = IntSize.m7430constructorimpl((placeable.getWidth() << 32) | (placeable.getHeight() & 4294967295L));
         if (measureScope.isLookingAhead()) {
-            this.lookaheadSize = m7417constructorimpl;
-            m7218constrain4WqzIAM = m7417constructorimpl;
+            this.lookaheadSize = m7430constructorimpl;
+            m7231constrain4WqzIAM = m7430constructorimpl;
         } else {
-            m7218constrain4WqzIAM = ConstraintsKt.m7218constrain4WqzIAM(j, m123animateTomzRDjE0(AnimationModifierKt.m74isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m7417constructorimpl));
+            m7231constrain4WqzIAM = ConstraintsKt.m7231constrain4WqzIAM(j, m133animateTomzRDjE0(AnimationModifierKt.m84isValidozmzZPI(this.lookaheadSize) ? this.lookaheadSize : m7430constructorimpl));
         }
-        final int i = (int) (m7218constrain4WqzIAM >> 32);
-        final int i2 = (int) (m7218constrain4WqzIAM & 4294967295L);
+        final int i = (int) (m7231constrain4WqzIAM >> 32);
+        final int i2 = (int) (m7231constrain4WqzIAM & 4294967295L);
         return MeasureScope.layout$default(measureScope, i, i2, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SizeAnimationModifierNode$measure$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -218,26 +218,26 @@ public final class SizeAnimationModifierNode extends LayoutModifierNodeWithPassT
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Placeable.PlacementScope placementScope) {
-                Placeable.PlacementScope.m6019place70tqf50$default(placementScope, placeable, SizeAnimationModifierNode.this.getAlignment().mo4016alignKFBX0sM(m7417constructorimpl, IntSize.m7417constructorimpl((i << 32) | (i2 & 4294967295L)), measureScope.getLayoutDirection()), 0.0f, 2, null);
+                Placeable.PlacementScope.m6032place70tqf50$default(placementScope, placeable, SizeAnimationModifierNode.this.getAlignment().mo4028alignKFBX0sM(m7430constructorimpl, IntSize.m7430constructorimpl((i << 32) | (i2 & 4294967295L)), measureScope.getLayoutDirection()), 0.0f, 2, null);
             }
         }, 4, null);
     }
 
     /* renamed from: animateTo-mzRDjE0  reason: not valid java name */
-    public final long m123animateTomzRDjE0(long j) {
+    public final long m133animateTomzRDjE0(long j) {
         AnimData animData = getAnimData();
         boolean z = true;
         if (animData != null) {
-            z = (IntSize.m7420equalsimpl0(j, animData.getAnim().getValue().m7426unboximpl()) || animData.getAnim().isRunning()) ? false : false;
-            if (!IntSize.m7420equalsimpl0(j, animData.getAnim().getTargetValue().m7426unboximpl()) || z) {
-                animData.m128setStartSizeozmzZPI(animData.getAnim().getValue().m7426unboximpl());
+            z = (IntSize.m7433equalsimpl0(j, animData.getAnim().getValue().m7439unboximpl()) || animData.getAnim().isRunning()) ? false : false;
+            if (!IntSize.m7433equalsimpl0(j, animData.getAnim().getTargetValue().m7439unboximpl()) || z) {
+                animData.m138setStartSizeozmzZPI(animData.getAnim().getValue().m7439unboximpl());
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new SizeAnimationModifierNode$animateTo$data$1$1(animData, j, this, null), 3, null);
             }
         } else {
             long j2 = 1;
-            animData = new AnimData(new Animatable(IntSize.m7414boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), IntSize.m7414boximpl(IntSize.m7417constructorimpl((j2 & 4294967295L) | (j2 << 32))), null, 8, null), j, null);
+            animData = new AnimData(new Animatable(IntSize.m7427boximpl(j), VectorConvertersKt.getVectorConverter(IntSize.Companion), IntSize.m7427boximpl(IntSize.m7430constructorimpl((j2 & 4294967295L) | (j2 << 32))), null, 8, null), j, null);
         }
         setAnimData(animData);
-        return animData.getAnim().getValue().m7426unboximpl();
+        return animData.getAnim().getValue().m7439unboximpl();
     }
 }

@@ -61,13 +61,13 @@ public final class ScrollNode extends Modifier.Node implements LayoutModifierNod
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        CheckScrollableContainerConstraintsKt.m289checkScrollableContainerConstraintsK40F9xA(j, this.isVertical ? Orientation.Vertical : Orientation.Horizontal);
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, this.isVertical ? Constraints.m7204getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, this.isVertical ? Integer.MAX_VALUE : Constraints.m7203getMaxHeightimpl(j), 5, null));
-        int coerceAtMost = RangesKt.coerceAtMost(mo5954measureBRTryo0.getWidth(), Constraints.m7204getMaxWidthimpl(j));
-        int coerceAtMost2 = RangesKt.coerceAtMost(mo5954measureBRTryo0.getHeight(), Constraints.m7203getMaxHeightimpl(j));
-        final int height = mo5954measureBRTryo0.getHeight() - coerceAtMost2;
-        int width = mo5954measureBRTryo0.getWidth() - coerceAtMost;
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        CheckScrollableContainerConstraintsKt.m299checkScrollableContainerConstraintsK40F9xA(j, this.isVertical ? Orientation.Vertical : Orientation.Horizontal);
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, 0, this.isVertical ? Constraints.m7217getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, this.isVertical ? Integer.MAX_VALUE : Constraints.m7216getMaxHeightimpl(j), 5, null));
+        int coerceAtMost = RangesKt.coerceAtMost(mo5967measureBRTryo0.getWidth(), Constraints.m7217getMaxWidthimpl(j));
+        int coerceAtMost2 = RangesKt.coerceAtMost(mo5967measureBRTryo0.getHeight(), Constraints.m7216getMaxHeightimpl(j));
+        final int height = mo5967measureBRTryo0.getHeight() - coerceAtMost2;
+        int width = mo5967measureBRTryo0.getWidth() - coerceAtMost;
         if (!this.isVertical) {
             height = width;
         }
@@ -77,7 +77,7 @@ public final class ScrollNode extends Modifier.Node implements LayoutModifierNod
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = ScrollNode.measure_3p2s80s$lambda$1(ScrollNode.this, height, mo5954measureBRTryo0, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$1 = ScrollNode.measure_3p2s80s$lambda$1(ScrollNode.this, height, mo5967measureBRTryo0, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$1;
             }
         }, 4, null);

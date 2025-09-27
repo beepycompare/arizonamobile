@@ -80,7 +80,7 @@ final class TransformableStateKt$animateZoomBy$3 extends SuspendLambda implement
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, TransformScope transformScope, AnimationScope animationScope) {
-        TransformScope.m604transformByd4ec7I$default(transformScope, floatRef.element == 0.0f ? 1.0f : ((Number) animationScope.getValue()).floatValue() / floatRef.element, 0L, 0.0f, 6, null);
+        TransformScope.m614transformByd4ec7I$default(transformScope, floatRef.element == 0.0f ? 1.0f : ((Number) animationScope.getValue()).floatValue() / floatRef.element, 0L, 0.0f, 6, null);
         floatRef.element = ((Number) animationScope.getValue()).floatValue();
         return Unit.INSTANCE;
     }

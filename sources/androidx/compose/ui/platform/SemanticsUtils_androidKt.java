@@ -50,23 +50,23 @@ public final class SemanticsUtils_androidKt {
     }
 
     /* renamed from: toLegacyClassName-V4PA4sw  reason: not valid java name */
-    public static final String m6436toLegacyClassNameV4PA4sw(int i) {
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6461getButtono7Vup1c())) {
+    public static final String m6449toLegacyClassNameV4PA4sw(int i) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6474getButtono7Vup1c())) {
             return "android.widget.Button";
         }
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6463getCheckboxo7Vup1c())) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6476getCheckboxo7Vup1c())) {
             return "android.widget.CheckBox";
         }
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6466getRadioButtono7Vup1c())) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6479getRadioButtono7Vup1c())) {
             return "android.widget.RadioButton";
         }
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6465getImageo7Vup1c())) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6478getImageo7Vup1c())) {
             return "android.widget.ImageView";
         }
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6464getDropdownListo7Vup1c())) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6477getDropdownListo7Vup1c())) {
             return "android.widget.Spinner";
         }
-        if (Role.m6457equalsimpl0(i, Role.Companion.m6469getValuePickero7Vup1c())) {
+        if (Role.m6470equalsimpl0(i, Role.Companion.m6482getValuePickero7Vup1c())) {
             return "android.widget.NumberPicker";
         }
         return null;

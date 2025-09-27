@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Nj implements InterfaceC0533qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f598a;
+    public final /* synthetic */ Throwable f599a;
 
     public Nj(Throwable th) {
-        this.f598a = th;
+        this.f599a = th;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
     public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.reportUnhandledException(this.f598a);
+        interfaceC0557rb.reportUnhandledException(this.f599a);
     }
 }

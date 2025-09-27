@@ -24,13 +24,19 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: PredictiveBackHandler.kt */
-@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\u001aZ\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032A\u0010\u0004\u001a=\b\u0001\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\b\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u000f\u0012\r\u0012\t\u0012\u00070\u0001¢\u0006\u0002\b\b0\f\u0012\u0006\u0012\u0004\u0018\u00010\r0\u0005H\u0007¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006E\u0010\u0010\u001a=\b\u0001\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\b\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u000f\u0012\r\u0012\t\u0012\u00070\u0001¢\u0006\u0002\b\b0\f\u0012\u0006\u0012\u0004\u0018\u00010\r0\u0005X\u008a\u0084\u0002"}, d2 = {"PredictiveBackHandler", "", "enabled", "", "onBack", "Lkotlin/Function2;", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/activity/BackEventCompat;", "Lkotlin/jvm/JvmSuppressWildcards;", "Lkotlin/ParameterName;", "name", "progress", "Lkotlin/coroutines/Continuation;", "", "(ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "activity-compose_release", "currentOnBack"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\u001aZ\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032A\u0010\u0004\u001a=\b\u0001\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\b\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u000f\u0012\r\u0012\t\u0012\u00070\u0001¢\u0006\u0002\b\b0\f\u0012\u0006\u0012\u0004\u0018\u00010\r0\u0005H\u0007¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006E\u0010\u0010\u001a=\b\u0001\u0012\u001e\u0012\u001c\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\u0002\b\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u000f\u0012\r\u0012\t\u0012\u00070\u0001¢\u0006\u0002\b\b0\f\u0012\u0006\u0012\u0004\u0018\u00010\r0\u0005X\u008a\u0084\u0002"}, d2 = {"PredictiveBackHandler", "", "enabled", "", "onBack", "Lkotlin/Function2;", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/activity/BackEventCompat;", "Lkotlin/jvm/JvmSuppressWildcards;", "Lkotlin/ParameterName;", "name", "progress", "Lkotlin/coroutines/Continuation;", "", "(ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "activity-compose_release", "currentOnBack"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class PredictiveBackHandlerKt {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit PredictiveBackHandler$lambda$8(boolean z, Function2 function2, int i, int i2, Composer composer, int i3) {
+        PredictiveBackHandler(z, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        return Unit.INSTANCE;
+    }
+
     public static final void PredictiveBackHandler(final boolean z, final Function2<Flow<BackEventCompat>, ? super Continuation<Unit>, ? extends Object> function2, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(-642000585);
-        ComposerKt.sourceInformation(startRestartGroup, "C(PredictiveBackHandler)78@3130L28,79@3181L24,81@3230L91,86@3419L142,91@3591L38,91@3567L62,*94@3711L7,100@4006L7,102@4068L117,102@4019L166:PredictiveBackHandler.kt#q1dkbc");
+        ComposerKt.sourceInformation(startRestartGroup, "C(PredictiveBackHandler)78@3130L28,79@3181L24,81@3230L91,86@3419L142,91@3591L38,91@3567L62,94@3711L7,100@4006L7,102@4068L117,102@4019L166:PredictiveBackHandler.kt#q1dkbc");
         int i4 = i2 & 1;
         if (i4 != 0) {
             i3 = i | 6;
@@ -44,7 +50,9 @@ public final class PredictiveBackHandlerKt {
         } else if ((i & 48) == 0) {
             i3 |= startRestartGroup.changedInstance(function2) ? 32 : 16;
         }
-        if ((i3 & 19) != 18 || !startRestartGroup.getSkipping()) {
+        if ((i3 & 19) == 18 && startRestartGroup.getSkipping()) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (i4 != 0) {
                 z = true;
             }
@@ -63,7 +71,7 @@ public final class PredictiveBackHandlerKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             CoroutineScope coroutineScope = ((CompositionScopedCoroutineScopeCanceller) rememberedValue).getCoroutineScope();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1140798889, "CC(remember):PredictiveBackHandler.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1512742994, "CC(remember):PredictiveBackHandler.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
                 rememberedValue2 = new PredictiveBackHandlerCallback(z, coroutineScope, PredictiveBackHandler$lambda$0(rememberUpdatedState));
@@ -72,7 +80,7 @@ public final class PredictiveBackHandlerKt {
             final PredictiveBackHandlerCallback predictiveBackHandlerCallback = (PredictiveBackHandlerCallback) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Function2<Flow<BackEventCompat>, Continuation<Unit>, Object> PredictiveBackHandler$lambda$0 = PredictiveBackHandler$lambda$0(rememberUpdatedState);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1140804988, "CC(remember):PredictiveBackHandler.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1512749093, "CC(remember):PredictiveBackHandler.kt#9igjgp");
             boolean changed = startRestartGroup.changed(PredictiveBackHandler$lambda$0) | startRestartGroup.changed(coroutineScope);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
             if (changed || rememberedValue3 == Composer.Companion.getEmpty()) {
@@ -82,7 +90,7 @@ public final class PredictiveBackHandlerKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Boolean valueOf = Boolean.valueOf(z);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1140810388, "CC(remember):PredictiveBackHandler.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1512754493, "CC(remember):PredictiveBackHandler.kt#9igjgp");
             int i5 = i3 & 14;
             boolean changedInstance = startRestartGroup.changedInstance(predictiveBackHandlerCallback) | (i5 == 4);
             PredictiveBackHandlerKt$PredictiveBackHandler$2$1 rememberedValue4 = startRestartGroup.rememberedValue();
@@ -101,27 +109,16 @@ public final class PredictiveBackHandlerKt {
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalLifecycleOwner());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final LifecycleOwner lifecycleOwner = (LifecycleOwner) consume;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1140825731, "CC(remember):PredictiveBackHandler.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1512769836, "CC(remember):PredictiveBackHandler.kt#9igjgp");
             boolean changedInstance2 = startRestartGroup.changedInstance(onBackPressedDispatcher) | startRestartGroup.changedInstance(lifecycleOwner) | startRestartGroup.changedInstance(predictiveBackHandlerCallback);
             Object rememberedValue5 = startRestartGroup.rememberedValue();
             if (changedInstance2 || rememberedValue5 == Composer.Companion.getEmpty()) {
-                rememberedValue5 = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$PredictiveBackHandler$3$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
+                rememberedValue5 = new Function1() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public final DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
-                        OnBackPressedDispatcher.this.addCallback(lifecycleOwner, predictiveBackHandlerCallback);
-                        final PredictiveBackHandlerCallback predictiveBackHandlerCallback2 = predictiveBackHandlerCallback;
-                        return new DisposableEffectResult() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$PredictiveBackHandler$3$1$invoke$$inlined$onDispose$1
-                            @Override // androidx.compose.runtime.DisposableEffectResult
-                            public void dispose() {
-                                PredictiveBackHandlerCallback.this.remove();
-                            }
-                        };
+                    public final Object invoke(Object obj) {
+                        DisposableEffectResult PredictiveBackHandler$lambda$7$lambda$6;
+                        PredictiveBackHandler$lambda$7$lambda$6 = PredictiveBackHandlerKt.PredictiveBackHandler$lambda$7$lambda$6(OnBackPressedDispatcher.this, lifecycleOwner, predictiveBackHandlerCallback, (DisposableEffectScope) obj);
+                        return PredictiveBackHandler$lambda$7$lambda$6;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -131,30 +128,29 @@ public final class PredictiveBackHandlerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$PredictiveBackHandler$4
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i6) {
-                    PredictiveBackHandlerKt.PredictiveBackHandler(z, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit PredictiveBackHandler$lambda$8;
+                    PredictiveBackHandler$lambda$8 = PredictiveBackHandlerKt.PredictiveBackHandler$lambda$8(z, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
+                    return PredictiveBackHandler$lambda$8;
                 }
             });
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final DisposableEffectResult PredictiveBackHandler$lambda$7$lambda$6(OnBackPressedDispatcher onBackPressedDispatcher, LifecycleOwner lifecycleOwner, final PredictiveBackHandlerCallback predictiveBackHandlerCallback, DisposableEffectScope disposableEffectScope) {
+        onBackPressedDispatcher.addCallback(lifecycleOwner, predictiveBackHandlerCallback);
+        return new DisposableEffectResult() { // from class: androidx.activity.compose.PredictiveBackHandlerKt$PredictiveBackHandler$lambda$7$lambda$6$$inlined$onDispose$1
+            @Override // androidx.compose.runtime.DisposableEffectResult
+            public void dispose() {
+                PredictiveBackHandlerCallback.this.remove();
+            }
+        };
     }
 
     private static final Function2<Flow<BackEventCompat>, Continuation<Unit>, Object> PredictiveBackHandler$lambda$0(State<? extends Function2<Flow<BackEventCompat>, ? super Continuation<Unit>, ? extends Object>> state) {

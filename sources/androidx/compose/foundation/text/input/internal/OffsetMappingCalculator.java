@@ -10,7 +10,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class OffsetMappingCalculator {
     public static final int $stable = 8;
-    private int[] ops = OpArray.m1527constructorimpl(10);
+    private int[] ops = OpArray.m1537constructorimpl(10);
     private int opsSize;
 
     public final void recordEditOperation(int i, int i2, int i3) {
@@ -21,26 +21,26 @@ public final class OffsetMappingCalculator {
         int max = Math.max(min, i2) - min;
         if (max >= 2 || max != i3) {
             int i4 = this.opsSize + 1;
-            if (i4 > OpArray.m1534getSizeimpl(this.ops)) {
-                this.ops = OpArray.m1529copyOfpSmdads(this.ops, Math.max(i4 * 2, OpArray.m1534getSizeimpl(this.ops) * 2));
+            if (i4 > OpArray.m1544getSizeimpl(this.ops)) {
+                this.ops = OpArray.m1539copyOfpSmdads(this.ops, Math.max(i4 * 2, OpArray.m1544getSizeimpl(this.ops) * 2));
             }
-            OpArray.m1536setimpl(this.ops, this.opsSize, min, max, i3);
+            OpArray.m1546setimpl(this.ops, this.opsSize, min, max, i3);
             this.opsSize = i4;
         }
     }
 
     /* renamed from: mapFromSource--jx7JFs  reason: not valid java name */
-    public final long m1525mapFromSourcejx7JFs(int i) {
-        return m1522mapfzxv0v0(i, true);
+    public final long m1535mapFromSourcejx7JFs(int i) {
+        return m1532mapfzxv0v0(i, true);
     }
 
     /* renamed from: mapFromDest--jx7JFs  reason: not valid java name */
-    public final long m1524mapFromDestjx7JFs(int i) {
-        return m1522mapfzxv0v0(i, false);
+    public final long m1534mapFromDestjx7JFs(int i) {
+        return m1532mapfzxv0v0(i, false);
     }
 
     /* renamed from: map-fzxv0v0  reason: not valid java name */
-    private final long m1522mapfzxv0v0(int i, boolean z) {
+    private final long m1532mapfzxv0v0(int i, boolean z) {
         int i2;
         int i3;
         int[] iArr = this.ops;
@@ -54,10 +54,10 @@ public final class OffsetMappingCalculator {
                     int i7 = iArr[i6];
                     int i8 = iArr[i6 + 1];
                     int i9 = iArr[i6 + 2];
-                    long m1523mapStepC6uMEY = m1523mapStepC6uMEY(i3, i7, i8, i9, z);
-                    long m1523mapStepC6uMEY2 = m1523mapStepC6uMEY(i, i7, i8, i9, z);
-                    int min = Math.min(TextRange.m6713getStartimpl(m1523mapStepC6uMEY), TextRange.m6713getStartimpl(m1523mapStepC6uMEY2));
-                    int max = Math.max(TextRange.m6708getEndimpl(m1523mapStepC6uMEY), TextRange.m6708getEndimpl(m1523mapStepC6uMEY2));
+                    long m1533mapStepC6uMEY = m1533mapStepC6uMEY(i3, i7, i8, i9, z);
+                    long m1533mapStepC6uMEY2 = m1533mapStepC6uMEY(i, i7, i8, i9, z);
+                    int min = Math.min(TextRange.m6726getStartimpl(m1533mapStepC6uMEY), TextRange.m6726getStartimpl(m1533mapStepC6uMEY2));
+                    int max = Math.max(TextRange.m6721getEndimpl(m1533mapStepC6uMEY), TextRange.m6721getEndimpl(m1533mapStepC6uMEY2));
                     i5++;
                     i3 = min;
                     i = max;
@@ -71,10 +71,10 @@ public final class OffsetMappingCalculator {
                     int i13 = iArr[i11 + 1];
                     int i14 = iArr[i11 + 2];
                     boolean z2 = z;
-                    long m1523mapStepC6uMEY3 = m1523mapStepC6uMEY(i3, i12, i13, i14, z2);
-                    long m1523mapStepC6uMEY4 = m1523mapStepC6uMEY(i, i12, i13, i14, z2);
-                    i3 = Math.min(TextRange.m6713getStartimpl(m1523mapStepC6uMEY3), TextRange.m6713getStartimpl(m1523mapStepC6uMEY4));
-                    i = Math.max(TextRange.m6708getEndimpl(m1523mapStepC6uMEY3), TextRange.m6708getEndimpl(m1523mapStepC6uMEY4));
+                    long m1533mapStepC6uMEY3 = m1533mapStepC6uMEY(i3, i12, i13, i14, z2);
+                    long m1533mapStepC6uMEY4 = m1533mapStepC6uMEY(i, i12, i13, i14, z2);
+                    i3 = Math.min(TextRange.m6726getStartimpl(m1533mapStepC6uMEY3), TextRange.m6726getStartimpl(m1533mapStepC6uMEY4));
+                    i = Math.max(TextRange.m6721getEndimpl(m1533mapStepC6uMEY3), TextRange.m6721getEndimpl(m1533mapStepC6uMEY4));
                     i10--;
                     z = z2;
                 }
@@ -88,7 +88,7 @@ public final class OffsetMappingCalculator {
     }
 
     /* renamed from: mapStep-C6u-MEY  reason: not valid java name */
-    private final long m1523mapStepC6uMEY(int i, int i2, int i3, int i4, boolean z) {
+    private final long m1533mapStepC6uMEY(int i, int i2, int i3, int i4, boolean z) {
         int i5 = z ? i3 : i4;
         if (z) {
             i3 = i4;

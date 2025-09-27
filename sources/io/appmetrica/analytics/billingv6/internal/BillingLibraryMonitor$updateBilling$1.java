@@ -11,45 +11,45 @@ import kotlin.Metadata;
 public final class BillingLibraryMonitor$updateBilling$1 implements UtilsProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ BillingLibraryMonitor f236a;
+    final /* synthetic */ BillingLibraryMonitor f237a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BillingLibraryMonitor$updateBilling$1(BillingLibraryMonitor billingLibraryMonitor) {
-        this.f236a = billingLibraryMonitor;
+        this.f237a = billingLibraryMonitor;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public BillingInfoManager getBillingInfoManager() {
         BillingInfoManager billingInfoManager;
-        billingInfoManager = this.f236a.e;
+        billingInfoManager = this.f237a.e;
         return billingInfoManager;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public BillingInfoSender getBillingInfoSender() {
         BillingInfoSender billingInfoSender;
-        billingInfoSender = this.f236a.d;
+        billingInfoSender = this.f237a.d;
         return billingInfoSender;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public Executor getUiExecutor() {
         Executor executor;
-        executor = this.f236a.c;
+        executor = this.f237a.c;
         return executor;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public UpdatePolicy getUpdatePolicy() {
         UpdatePolicy updatePolicy;
-        updatePolicy = this.f236a.f;
+        updatePolicy = this.f237a.f;
         return updatePolicy;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.library.UtilsProvider
     public Executor getWorkerExecutor() {
         Executor executor;
-        executor = this.f236a.b;
+        executor = this.f237a.b;
         return executor;
     }
 }

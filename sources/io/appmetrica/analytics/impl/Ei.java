@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class Ei implements InterfaceC0336il {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Hc f429a;
+    public final /* synthetic */ Hc f430a;
 
     public Ei(Hc hc) {
-        this.f429a = hc;
+        this.f430a = hc;
     }
 
     public final boolean a() {
-        return this.f429a.b.f();
+        return this.f430a.b.f();
     }
 }

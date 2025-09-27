@@ -75,15 +75,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                 ResultKt.throwOnFailure(obj);
                 density = this.this$0.density;
                 f = MouseWheelScrollableKt.AnimationThreshold;
-                float mo419toPx0680j_4 = density.mo419toPx0680j_4(f);
+                float mo429toPx0680j_4 = density.mo429toPx0680j_4(f);
                 density2 = this.this$0.density;
                 f2 = MouseWheelScrollableKt.AnimationSpeed;
-                float mo419toPx0680j_42 = density2.mo419toPx0680j_4(f2);
+                float mo429toPx0680j_42 = density2.mo429toPx0680j_4(f2);
                 MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
                 scrollingLogic = mouseWheelScrollingLogic.scrollingLogic;
                 this.L$0 = coroutineScope2;
                 this.label = 2;
-                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo419toPx0680j_4, mo419toPx0680j_42, this);
+                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo429toPx0680j_4, mo429toPx0680j_42, this);
             } else if (i != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
@@ -102,15 +102,15 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                     obj = receive;
                     density = this.this$0.density;
                     f = MouseWheelScrollableKt.AnimationThreshold;
-                    float mo419toPx0680j_43 = density.mo419toPx0680j_4(f);
+                    float mo429toPx0680j_43 = density.mo429toPx0680j_4(f);
                     density2 = this.this$0.density;
                     f2 = MouseWheelScrollableKt.AnimationSpeed;
-                    float mo419toPx0680j_422 = density2.mo419toPx0680j_4(f2);
+                    float mo429toPx0680j_422 = density2.mo429toPx0680j_4(f2);
                     MouseWheelScrollingLogic mouseWheelScrollingLogic2 = this.this$0;
                     scrollingLogic = mouseWheelScrollingLogic2.scrollingLogic;
                     this.L$0 = coroutineScope2;
                     this.label = 2;
-                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo419toPx0680j_43, mo419toPx0680j_422, this);
+                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo429toPx0680j_43, mo429toPx0680j_422, this);
                 } else {
                     this.this$0.receivingMouseWheelEventsJob = null;
                     return Unit.INSTANCE;

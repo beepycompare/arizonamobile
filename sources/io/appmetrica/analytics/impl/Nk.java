@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Nk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0651v5 f599a;
+    public final C0651v5 f600a;
     public final C0233el b;
     public final Qk c;
     public long d;
@@ -20,7 +20,7 @@ public final class Nk {
     public final SystemTimeProvider k;
 
     public Nk(C0651v5 c0651v5, C0233el c0233el, Qk qk, SystemTimeProvider systemTimeProvider) {
-        this.f599a = c0651v5;
+        this.f600a = c0651v5;
         this.b = c0233el;
         this.c = qk;
         this.k = systemTimeProvider;

@@ -26,7 +26,7 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
     }
 
     /* renamed from: component2-ZbEOnfQ  reason: not valid java name */
-    private final int m349component2ZbEOnfQ() {
+    private final int m359component2ZbEOnfQ() {
         return this.animationMode;
     }
 
@@ -43,12 +43,12 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
     }
 
     /* renamed from: component6-D9Ej5fM  reason: not valid java name */
-    private final float m350component6D9Ej5fM() {
+    private final float m360component6D9Ej5fM() {
         return this.velocity;
     }
 
     /* renamed from: copy-lWfNwf4$default  reason: not valid java name */
-    public static /* synthetic */ MarqueeModifierElement m351copylWfNwf4$default(MarqueeModifierElement marqueeModifierElement, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f, int i5, Object obj) {
+    public static /* synthetic */ MarqueeModifierElement m361copylWfNwf4$default(MarqueeModifierElement marqueeModifierElement, int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f, int i5, Object obj) {
         if ((i5 & 1) != 0) {
             i = marqueeModifierElement.iterations;
         }
@@ -69,11 +69,11 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
         }
         MarqueeSpacing marqueeSpacing2 = marqueeSpacing;
         float f2 = f;
-        return marqueeModifierElement.m352copylWfNwf4(i, i2, i3, i4, marqueeSpacing2, f2);
+        return marqueeModifierElement.m362copylWfNwf4(i, i2, i3, i4, marqueeSpacing2, f2);
     }
 
     /* renamed from: copy-lWfNwf4  reason: not valid java name */
-    public final MarqueeModifierElement m352copylWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
+    public final MarqueeModifierElement m362copylWfNwf4(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
         return new MarqueeModifierElement(i, i2, i3, i4, marqueeSpacing, f, null);
     }
 
@@ -84,18 +84,18 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
         }
         if (obj instanceof MarqueeModifierElement) {
             MarqueeModifierElement marqueeModifierElement = (MarqueeModifierElement) obj;
-            return this.iterations == marqueeModifierElement.iterations && MarqueeAnimationMode.m342equalsimpl0(this.animationMode, marqueeModifierElement.animationMode) && this.delayMillis == marqueeModifierElement.delayMillis && this.initialDelayMillis == marqueeModifierElement.initialDelayMillis && Intrinsics.areEqual(this.spacing, marqueeModifierElement.spacing) && Dp.m7256equalsimpl0(this.velocity, marqueeModifierElement.velocity);
+            return this.iterations == marqueeModifierElement.iterations && MarqueeAnimationMode.m352equalsimpl0(this.animationMode, marqueeModifierElement.animationMode) && this.delayMillis == marqueeModifierElement.delayMillis && this.initialDelayMillis == marqueeModifierElement.initialDelayMillis && Intrinsics.areEqual(this.spacing, marqueeModifierElement.spacing) && Dp.m7269equalsimpl0(this.velocity, marqueeModifierElement.velocity);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((((Integer.hashCode(this.iterations) * 31) + MarqueeAnimationMode.m343hashCodeimpl(this.animationMode)) * 31) + Integer.hashCode(this.delayMillis)) * 31) + Integer.hashCode(this.initialDelayMillis)) * 31) + this.spacing.hashCode()) * 31) + Dp.m7257hashCodeimpl(this.velocity);
+        return (((((((((Integer.hashCode(this.iterations) * 31) + MarqueeAnimationMode.m353hashCodeimpl(this.animationMode)) * 31) + Integer.hashCode(this.delayMillis)) * 31) + Integer.hashCode(this.initialDelayMillis)) * 31) + this.spacing.hashCode()) * 31) + Dp.m7270hashCodeimpl(this.velocity);
     }
 
     public String toString() {
-        return "MarqueeModifierElement(iterations=" + this.iterations + ", animationMode=" + ((Object) MarqueeAnimationMode.m344toStringimpl(this.animationMode)) + ", delayMillis=" + this.delayMillis + ", initialDelayMillis=" + this.initialDelayMillis + ", spacing=" + this.spacing + ", velocity=" + ((Object) Dp.m7262toStringimpl(this.velocity)) + ')';
+        return "MarqueeModifierElement(iterations=" + this.iterations + ", animationMode=" + ((Object) MarqueeAnimationMode.m354toStringimpl(this.animationMode)) + ", delayMillis=" + this.delayMillis + ", initialDelayMillis=" + this.initialDelayMillis + ", spacing=" + this.spacing + ", velocity=" + ((Object) Dp.m7275toStringimpl(this.velocity)) + ')';
     }
 
     private MarqueeModifierElement(int i, int i2, int i3, int i4, MarqueeSpacing marqueeSpacing, float f) {
@@ -115,17 +115,17 @@ final class MarqueeModifierElement extends ModifierNodeElement<MarqueeModifierNo
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(MarqueeModifierNode marqueeModifierNode) {
-        marqueeModifierNode.m356updatelWfNwf4(this.iterations, this.animationMode, this.delayMillis, this.initialDelayMillis, this.spacing, this.velocity);
+        marqueeModifierNode.m366updatelWfNwf4(this.iterations, this.animationMode, this.delayMillis, this.initialDelayMillis, this.spacing, this.velocity);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void inspectableProperties(InspectorInfo inspectorInfo) {
         inspectorInfo.setName("basicMarquee");
         inspectorInfo.getProperties().set("iterations", Integer.valueOf(this.iterations));
-        inspectorInfo.getProperties().set("animationMode", MarqueeAnimationMode.m339boximpl(this.animationMode));
+        inspectorInfo.getProperties().set("animationMode", MarqueeAnimationMode.m349boximpl(this.animationMode));
         inspectorInfo.getProperties().set("delayMillis", Integer.valueOf(this.delayMillis));
         inspectorInfo.getProperties().set("initialDelayMillis", Integer.valueOf(this.initialDelayMillis));
         inspectorInfo.getProperties().set("spacing", this.spacing);
-        inspectorInfo.getProperties().set("velocity", Dp.m7249boximpl(this.velocity));
+        inspectorInfo.getProperties().set("velocity", Dp.m7262boximpl(this.velocity));
     }
 }

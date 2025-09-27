@@ -11,24 +11,24 @@ import java.io.File;
 public final class Ik implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f502a;
+    public final Context f503a;
     public final Dl b;
     public final SQLiteOpenHelper c;
 
     public Ik(Context context, Dl dl, SQLiteOpenHelper sQLiteOpenHelper) {
-        this.f502a = context;
+        this.f503a = context;
         this.b = dl;
         this.c = sQLiteOpenHelper;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppDataStorage() {
-        return FileUtils.getAppDataDir(this.f502a);
+        return FileUtils.getAppDataDir(this.f503a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppFileStorage() {
-        return FileUtils.getAppStorageDirectory(this.f502a);
+        return FileUtils.getAppStorageDirectory(this.f503a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
@@ -38,13 +38,13 @@ public final class Ik implements ServiceStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getSdkDataStorage() {
-        return FileUtils.sdkStorage(this.f502a);
+        return FileUtils.sdkStorage(this.f503a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final TempCacheStorage getTempCacheStorage() {
         C0769zn c0769zn;
-        C0728y7 a2 = C0728y7.a(this.f502a);
+        C0728y7 a2 = C0728y7.a(this.f503a);
         synchronized (a2) {
             if (a2.o == null) {
                 Context context = a2.e;

@@ -17,9 +17,9 @@ public final class TypographyTokensKt {
     }
 
     static {
-        LineHeightStyle lineHeightStyle = new LineHeightStyle(LineHeightStyle.Alignment.Companion.m7103getCenterPIaL0Z0(), LineHeightStyle.Trim.Companion.m7127getNoneEVpEnUU(), (DefaultConstructorMarker) null);
+        LineHeightStyle lineHeightStyle = new LineHeightStyle(LineHeightStyle.Alignment.Companion.m7116getCenterPIaL0Z0(), LineHeightStyle.Trim.Companion.m7140getNoneEVpEnUU(), (DefaultConstructorMarker) null);
         DefaultLineHeightStyle = lineHeightStyle;
-        DefaultTextStyle = TextStyle.m6726copyp1EtxEg$default(TextStyle.Companion.getDefault(), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, DefaultPlatformTextStyle_androidKt.defaultPlatformTextStyle(), lineHeightStyle, 0, 0, null, 15204351, null);
+        DefaultTextStyle = TextStyle.m6739copyp1EtxEg$default(TextStyle.Companion.getDefault(), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, DefaultPlatformTextStyle_androidKt.defaultPlatformTextStyle(), lineHeightStyle, 0, 0, null, 15204351, null);
     }
 
     public static final TextStyle getDefaultTextStyle() {

@@ -54,11 +54,11 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
             TwoWayConverter<Offset, AnimationVector2D> vectorConverter = VectorConvertersKt.getVectorConverter(Offset.Companion);
-            Offset m4282boximpl = Offset.m4282boximpl(Offset.Companion.m4309getZeroF1C5BW0());
-            Offset m4282boximpl2 = Offset.m4282boximpl(this.$offset);
+            Offset m4294boximpl = Offset.m4294boximpl(Offset.Companion.m4321getZeroF1C5BW0());
+            Offset m4294boximpl2 = Offset.m4294boximpl(this.$offset);
             final Ref.LongRef longRef = this.$previousValue;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(vectorConverter, m4282boximpl, m4282boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(vectorConverter, m4294boximpl, m4294boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     Unit invokeSuspend$lambda$0;
@@ -78,7 +78,7 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, NestedScrollScope nestedScrollScope, Offset offset, Offset offset2) {
-        longRef.element = Offset.m4298plusMKHz9U(longRef.element, nestedScrollScope.mo523scrollByOzD1aCk(Offset.m4297minusMKHz9U(offset.m4303unboximpl(), longRef.element), NestedScrollSource.Companion.m5719getUserInputWNlRxjI()));
+        longRef.element = Offset.m4310plusMKHz9U(longRef.element, nestedScrollScope.mo533scrollByOzD1aCk(Offset.m4309minusMKHz9U(offset.m4315unboximpl(), longRef.element), NestedScrollSource.Companion.m5732getUserInputWNlRxjI()));
         return Unit.INSTANCE;
     }
 }

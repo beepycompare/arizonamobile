@@ -9,7 +9,7 @@ public final class C0261fn extends AbstractC0164c3 {
     }
 
     public final int b() {
-        return this.f819a;
+        return this.f820a;
     }
 
     public C0261fn(int i, String str, PublicLogger publicLogger) {
@@ -20,10 +20,10 @@ public final class C0261fn extends AbstractC0164c3 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f819a;
+            int i = this.f820a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f819a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f820a));
                 return substring;
             }
         }

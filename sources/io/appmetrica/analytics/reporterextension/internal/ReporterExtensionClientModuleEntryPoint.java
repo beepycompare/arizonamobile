@@ -9,11 +9,11 @@ import kotlin.Metadata;
 public final class ReporterExtensionClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1291a = "reporter_extension";
+    private final String f1292a = "reporter_extension";
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public String getIdentifier() {
-        return this.f1291a;
+        return this.f1292a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint

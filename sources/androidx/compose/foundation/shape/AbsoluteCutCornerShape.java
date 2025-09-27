@@ -19,9 +19,9 @@ public final class AbsoluteCutCornerShape extends CornerBasedShape {
 
     @Override // androidx.compose.foundation.shape.CornerBasedShape
     /* renamed from: createOutline-LjSzlW0  reason: not valid java name */
-    public Outline mo1180createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
+    public Outline mo1190createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
         if (f + f2 + f4 + f3 == 0.0f) {
-            return new Outline.Rectangle(SizeKt.m4383toRectuvyYCjk(j));
+            return new Outline.Rectangle(SizeKt.m4395toRectuvyYCjk(j));
         }
         Path Path = AndroidPath_androidKt.Path();
         Path.moveTo(0.0f, f);

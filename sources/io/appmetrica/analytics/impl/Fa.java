@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class Fa implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final He f443a;
+    public final He f444a;
 
     public Fa() {
         this(new C0157bm());
@@ -16,16 +16,16 @@ public final class Fa implements ProtobufConverter {
     public final Bm fromModel(J4 j4) {
         Bm bm = new Bm();
         bm.b = j4.b;
-        bm.f375a = j4.f509a;
+        bm.f376a = j4.f510a;
         bm.c = j4.c;
         bm.d = j4.d;
         bm.e = j4.e;
-        bm.f = this.f443a.a(j4.f);
+        bm.f = this.f444a.a(j4.f);
         return bm;
     }
 
     public Fa(C0157bm c0157bm) {
-        this.f443a = c0157bm;
+        this.f444a = c0157bm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -35,9 +35,9 @@ public final class Fa implements ProtobufConverter {
         h4.d = bm.d;
         h4.c = bm.c;
         h4.b = bm.b;
-        h4.f471a = bm.f375a;
+        h4.f472a = bm.f376a;
         h4.e = bm.e;
-        h4.f = this.f443a.a(bm.f);
+        h4.f = this.f444a.a(bm.f);
         return new J4(h4);
     }
 }

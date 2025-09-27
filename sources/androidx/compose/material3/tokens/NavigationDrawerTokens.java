@@ -14,20 +14,20 @@ public final class NavigationDrawerTokens {
     private static final ColorSchemeKeyTokens ActiveHoverLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ActiveIndicatorHeight = Dp.m7251constructorimpl((float) 56.0d);
+    private static final float ActiveIndicatorHeight = Dp.m7264constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens ActiveIndicatorShape = ShapeKeyTokens.CornerFull;
-    private static final float ActiveIndicatorWidth = Dp.m7251constructorimpl((float) 336.0d);
+    private static final float ActiveIndicatorWidth = Dp.m7264constructorimpl((float) 336.0d);
     private static final ColorSchemeKeyTokens ActiveLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActivePressedIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ActivePressedLabelTextColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ShapeKeyTokens BottomContainerShape = ShapeKeyTokens.CornerLargeTop;
     private static final float ContainerHeightPercent = 100.0f;
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerLargeEnd;
-    private static final float ContainerWidth = Dp.m7251constructorimpl((float) 360.0d);
+    private static final float ContainerWidth = Dp.m7264constructorimpl((float) 360.0d);
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.TitleSmall;
-    private static final float IconSize = Dp.m7251constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7264constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens InactiveFocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveFocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveHoverIconColor = ColorSchemeKeyTokens.OnSurface;
@@ -40,9 +40,9 @@ public final class NavigationDrawerTokens {
     private static final ColorSchemeKeyTokens LargeBadgeLabelColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens LargeBadgeLabelFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens ModalContainerColor = ColorSchemeKeyTokens.SurfaceContainerLow;
-    private static final float ModalContainerElevation = ElevationTokens.INSTANCE.m3285getLevel1D9Ej5fM();
+    private static final float ModalContainerElevation = ElevationTokens.INSTANCE.m3295getLevel1D9Ej5fM();
     private static final ColorSchemeKeyTokens StandardContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float StandardContainerElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
+    private static final float StandardContainerElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
 
     private NavigationDrawerTokens() {
     }
@@ -72,7 +72,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getActiveIndicatorHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3434getActiveIndicatorHeightD9Ej5fM() {
+    public final float m3444getActiveIndicatorHeightD9Ej5fM() {
         return ActiveIndicatorHeight;
     }
 
@@ -81,7 +81,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getActiveIndicatorWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3435getActiveIndicatorWidthD9Ej5fM() {
+    public final float m3445getActiveIndicatorWidthD9Ej5fM() {
         return ActiveIndicatorWidth;
     }
 
@@ -110,7 +110,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3436getContainerWidthD9Ej5fM() {
+    public final float m3446getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
@@ -127,7 +127,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3437getIconSizeD9Ej5fM() {
+    public final float m3447getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -180,7 +180,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getModalContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3438getModalContainerElevationD9Ej5fM() {
+    public final float m3448getModalContainerElevationD9Ej5fM() {
         return ModalContainerElevation;
     }
 
@@ -189,7 +189,7 @@ public final class NavigationDrawerTokens {
     }
 
     /* renamed from: getStandardContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3439getStandardContainerElevationD9Ej5fM() {
+    public final float m3449getStandardContainerElevationD9Ej5fM() {
         return StandardContainerElevation;
     }
 }

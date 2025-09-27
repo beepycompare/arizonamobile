@@ -160,15 +160,15 @@ final class BasicTooltip_androidKt$handleGestures$2 extends SuspendLambda implem
                     r5 = 0
                     java.lang.Object r4 = r4.get(r5)
                     androidx.compose.ui.input.pointer.PointerInputChange r4 = (androidx.compose.ui.input.pointer.PointerInputChange) r4
-                    int r4 = r4.m5829getTypeT8wyACA()
+                    int r4 = r4.m5842getTypeT8wyACA()
                     androidx.compose.ui.input.pointer.PointerType$Companion r5 = androidx.compose.ui.input.pointer.PointerType.Companion
-                    int r5 = r5.m5902getMouseT8wyACA()
-                    boolean r4 = androidx.compose.ui.input.pointer.PointerType.m5897equalsimpl0(r4, r5)
+                    int r5 = r5.m5915getMouseT8wyACA()
+                    boolean r4 = androidx.compose.ui.input.pointer.PointerType.m5910equalsimpl0(r4, r5)
                     if (r4 == 0) goto L29
-                    int r12 = r12.m5768getType7fucELk()
+                    int r12 = r12.m5781getType7fucELk()
                     androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                    int r4 = r4.m5779getEnter7fucELk()
-                    boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m5775equalsimpl0(r12, r4)
+                    int r4 = r4.m5792getEnter7fucELk()
+                    boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m5788equalsimpl0(r12, r4)
                     if (r4 == 0) goto L7a
                     kotlinx.coroutines.CoroutineScope r5 = r11.$$this$coroutineScope
                     androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$2$1$1$1 r12 = new androidx.compose.material3.internal.BasicTooltip_androidKt$handleGestures$2$1$1$1
@@ -184,8 +184,8 @@ final class BasicTooltip_androidKt$handleGestures$2 extends SuspendLambda implem
                     goto L29
                 L7a:
                     androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                    int r4 = r4.m5780getExit7fucELk()
-                    boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m5775equalsimpl0(r12, r4)
+                    int r4 = r4.m5793getExit7fucELk()
+                    boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m5788equalsimpl0(r12, r4)
                     if (r12 == 0) goto L29
                     androidx.compose.material3.TooltipState r12 = r11.$state
                     r12.dismiss()

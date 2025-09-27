@@ -205,7 +205,7 @@ public final class ContextualFlowLayoutKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1677845586, i22, -1, "androidx.compose.foundation.layout.ContextualFlowRow.<anonymous> (ContextualFlowLayout.kt:98)");
                                     }
-                                    function4.invoke(new ContextualFlowRowScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m757getMaxMainAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m756getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
+                                    function4.invoke(new ContextualFlowRowScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m767getMaxMainAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m766getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -509,7 +509,7 @@ public final class ContextualFlowLayoutKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(620176540, i22, -1, "androidx.compose.foundation.layout.ContextualFlowColumn.<anonymous> (ContextualFlowLayout.kt:173)");
                                     }
-                                    function4.invoke(new ContextualFlowColumnScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m756getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m757getMaxMainAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
+                                    function4.invoke(new ContextualFlowColumnScopeImpl(flowLineInfo.getLineIndex$foundation_layout(), flowLineInfo.getPositionInLine$foundation_layout(), flowLineInfo.m766getMaxCrossAxisSizeD9Ej5fM$foundation_layout(), flowLineInfo.m767getMaxMainAxisSizeD9Ej5fM$foundation_layout(), null), Integer.valueOf(i21), composer2, Integer.valueOf((i22 << 3) & 112));
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -669,7 +669,7 @@ public final class ContextualFlowLayoutKt {
         if (r3 != androidx.compose.runtime.Composer.Companion.getEmpty()) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x00e7, code lost:
-        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(true, r21, r22, r21.mo698getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.vertical$foundation_layout(r23), r22.mo698getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
+        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(true, r21, r22, r21.mo708getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.vertical$foundation_layout(r23), r22.mo708getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
         r30.updateRememberedValue(r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x010c, code lost:
@@ -743,7 +743,7 @@ public final class ContextualFlowLayoutKt {
         if (r3 != androidx.compose.runtime.Composer.Companion.getEmpty()) goto L43;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x00e7, code lost:
-        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(false, r22, r21, r21.mo698getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.horizontal$foundation_layout(r23), r22.mo698getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
+        r3 = new androidx.compose.foundation.layout.FlowMeasureLazyPolicy(false, r22, r21, r21.mo708getSpacingD9Ej5fM(), androidx.compose.foundation.layout.CrossAxisAlignment.Companion.horizontal$foundation_layout(r23), r22.mo708getSpacingD9Ej5fM(), r27, r25, r4, r26, r28, r29, null).getMeasurePolicy();
         r30.updateRememberedValue(r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x010c, code lost:

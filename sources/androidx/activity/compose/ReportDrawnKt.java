@@ -16,9 +16,44 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: ReportDrawn.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0002\u001a+\u0010\u0003\u001a\u00020\u00012\u001c\u0010\u0004\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00070\u0005H\u0007¢\u0006\u0002\u0010\b\u001a\u001b\u0010\t\u001a\u00020\u00012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bH\u0007¢\u0006\u0002\u0010\r¨\u0006\u000e"}, d2 = {"ReportDrawn", "", "(Landroidx/compose/runtime/Composer;I)V", "ReportDrawnAfter", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "ReportDrawnWhen", "predicate", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "activity-compose_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\u001a\u001b\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003H\u0007¢\u0006\u0002\u0010\u0005\u001a\r\u0010\u0006\u001a\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0007\u001a+\u0010\b\u001a\u00020\u00012\u001c\u0010\t\u001a\u0018\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00010\u000b\u0012\u0006\u0012\u0004\u0018\u00010\f0\nH\u0007¢\u0006\u0002\u0010\r¨\u0006\u000e"}, d2 = {"ReportDrawnWhen", "", "predicate", "Lkotlin/Function0;", "", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "ReportDrawn", "(Landroidx/compose/runtime/Composer;I)V", "ReportDrawnAfter", "block", "Lkotlin/Function1;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "activity-compose_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ReportDrawnKt {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final boolean ReportDrawn$lambda$7$lambda$6() {
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ReportDrawn$lambda$8(int i, Composer composer, int i2) {
+        ReportDrawn(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ReportDrawnAfter$lambda$11(Function1 function1, int i, Composer composer, int i2) {
+        ReportDrawnAfter(function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ReportDrawnAfter$lambda$9(Function1 function1, int i, Composer composer, int i2) {
+        ReportDrawnAfter(function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ReportDrawnWhen$lambda$0(Function0 function0, int i, Composer composer, int i2) {
+        ReportDrawnWhen(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ReportDrawnWhen$lambda$5(Function0 function0, int i, Composer composer, int i2) {
+        ReportDrawnWhen(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        return Unit.INSTANCE;
+    }
+
     public static final void ReportDrawnWhen(final Function0<Boolean> function0, Composer composer, final int i) {
         int i2;
         final FullyDrawnReporter fullyDrawnReporter;
@@ -29,7 +64,9 @@ public final class ReportDrawnKt {
         } else {
             i2 = i;
         }
-        if ((i2 & 3) != 2 || !startRestartGroup.getSkipping()) {
+        if ((i2 & 3) == 2 && startRestartGroup.getSkipping()) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-2047119994, i2, -1, "androidx.activity.compose.ReportDrawnWhen (ReportDrawn.kt:116)");
             }
@@ -40,54 +77,28 @@ public final class ReportDrawnKt {
                 }
                 ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
-                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$fullyDrawnReporter$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        {
-                            super(2);
-                        }
-
+                    endRestartGroup.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                            invoke(composer2, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer2, int i3) {
-                            ReportDrawnKt.ReportDrawnWhen(function0, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                        public final Object invoke(Object obj, Object obj2) {
+                            Unit ReportDrawnWhen$lambda$0;
+                            ReportDrawnWhen$lambda$0 = ReportDrawnKt.ReportDrawnWhen$lambda$0(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                            return ReportDrawnWhen$lambda$0;
                         }
                     });
                     return;
                 }
                 return;
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 530578081, "CC(remember):ReportDrawn.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -187285747, "CC(remember):ReportDrawn.kt#9igjgp");
             boolean changedInstance = ((i2 & 14) == 4) | startRestartGroup.changedInstance(fullyDrawnReporter);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = (Function1) new Function1<DisposableEffectScope, DisposableEffectResult>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$1$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    {
-                        super(1);
-                    }
-
+                rememberedValue = new Function1() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
-                    public final DisposableEffectResult invoke(DisposableEffectScope disposableEffectScope) {
-                        if (!FullyDrawnReporter.this.isFullyDrawnReported()) {
-                            final ReportDrawnComposition reportDrawnComposition = new ReportDrawnComposition(FullyDrawnReporter.this, function0);
-                            return new DisposableEffectResult() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$1$1$invoke$$inlined$onDispose$2
-                                @Override // androidx.compose.runtime.DisposableEffectResult
-                                public void dispose() {
-                                    ReportDrawnComposition.this.removeReporter();
-                                }
-                            };
-                        }
-                        return new DisposableEffectResult() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$1$1$invoke$$inlined$onDispose$1
-                            @Override // androidx.compose.runtime.DisposableEffectResult
-                            public void dispose() {
-                            }
-                        };
+                    public final Object invoke(Object obj) {
+                        DisposableEffectResult ReportDrawnWhen$lambda$4$lambda$3;
+                        ReportDrawnWhen$lambda$4$lambda$3 = ReportDrawnKt.ReportDrawnWhen$lambda$4$lambda$3(FullyDrawnReporter.this, function0, (DisposableEffectScope) obj);
+                        return ReportDrawnWhen$lambda$4$lambda$3;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -97,68 +108,74 @@ public final class ReportDrawnKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup2 = startRestartGroup.endRestartGroup();
         if (endRestartGroup2 != null) {
-            endRestartGroup2.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
+            endRestartGroup2.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    ReportDrawnKt.ReportDrawnWhen(function0, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ReportDrawnWhen$lambda$5;
+                    ReportDrawnWhen$lambda$5 = ReportDrawnKt.ReportDrawnWhen$lambda$5(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ReportDrawnWhen$lambda$5;
                 }
             });
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final DisposableEffectResult ReportDrawnWhen$lambda$4$lambda$3(FullyDrawnReporter fullyDrawnReporter, Function0 function0, DisposableEffectScope disposableEffectScope) {
+        if (!fullyDrawnReporter.isFullyDrawnReported()) {
+            final ReportDrawnComposition reportDrawnComposition = new ReportDrawnComposition(fullyDrawnReporter, function0);
+            return new DisposableEffectResult() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$lambda$4$lambda$3$$inlined$onDispose$2
+                @Override // androidx.compose.runtime.DisposableEffectResult
+                public void dispose() {
+                    ReportDrawnComposition.this.removeReporter();
+                }
+            };
+        }
+        return new DisposableEffectResult() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnWhen$lambda$4$lambda$3$$inlined$onDispose$1
+            @Override // androidx.compose.runtime.DisposableEffectResult
+            public void dispose() {
+            }
+        };
+    }
+
     public static final void ReportDrawn(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(-1357012904);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawn)135@4981L24:ReportDrawn.kt#q1dkbc");
+        ComposerKt.sourceInformation(startRestartGroup, "C(ReportDrawn)135@4997L8,135@4981L24:ReportDrawn.kt#q1dkbc");
         if (i == 0 && startRestartGroup.getSkipping()) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1357012904, i, -1, "androidx.activity.compose.ReportDrawn (ReportDrawn.kt:135)");
             }
-            ReportDrawnWhen(new Function0<Boolean>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawn$1
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // kotlin.jvm.functions.Function0
-                public final Boolean invoke() {
-                    return true;
-                }
-            }, startRestartGroup, 6);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1580658784, "CC(remember):ReportDrawn.kt#9igjgp");
+            Object rememberedValue = startRestartGroup.rememberedValue();
+            if (rememberedValue == Composer.Companion.getEmpty()) {
+                rememberedValue = new Function0() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda3
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        boolean ReportDrawn$lambda$7$lambda$6;
+                        ReportDrawn$lambda$7$lambda$6 = ReportDrawnKt.ReportDrawn$lambda$7$lambda$6();
+                        return Boolean.valueOf(ReportDrawn$lambda$7$lambda$6);
+                    }
+                };
+                startRestartGroup.updateRememberedValue(rememberedValue);
+            }
+            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+            ReportDrawnWhen((Function0) rememberedValue, startRestartGroup, 6);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
-            endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawn$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2);
-                }
-
+            endRestartGroup.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i2) {
-                    ReportDrawnKt.ReportDrawn(composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ReportDrawn$lambda$8;
+                    ReportDrawn$lambda$8 = ReportDrawnKt.ReportDrawn$lambda$8(i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ReportDrawn$lambda$8;
                 }
             });
         }
@@ -174,7 +191,9 @@ public final class ReportDrawnKt {
         } else {
             i2 = i;
         }
-        if ((i2 & 3) != 2 || !startRestartGroup.getSkipping()) {
+        if ((i2 & 3) == 2 && startRestartGroup.getSkipping()) {
+            startRestartGroup.skipToGroupEnd();
+        } else {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(945311272, i2, -1, "androidx.activity.compose.ReportDrawnAfter (ReportDrawn.kt:148)");
             }
@@ -185,29 +204,19 @@ public final class ReportDrawnKt {
                 }
                 ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
-                    endRestartGroup.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnAfter$fullyDrawnReporter$1
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                        /* JADX WARN: Multi-variable type inference failed */
-                        {
-                            super(2);
-                        }
-
+                    endRestartGroup.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function2
-                        public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                            invoke(composer2, num.intValue());
-                            return Unit.INSTANCE;
-                        }
-
-                        public final void invoke(Composer composer2, int i3) {
-                            ReportDrawnKt.ReportDrawnAfter(function1, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                        public final Object invoke(Object obj, Object obj2) {
+                            Unit ReportDrawnAfter$lambda$9;
+                            ReportDrawnAfter$lambda$9 = ReportDrawnKt.ReportDrawnAfter$lambda$9(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                            return ReportDrawnAfter$lambda$9;
                         }
                     });
                     return;
                 }
                 return;
             }
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1169985900, "CC(remember):ReportDrawn.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2088927784, "CC(remember):ReportDrawn.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(fullyDrawnReporter) | startRestartGroup.changedInstance(function1);
             ReportDrawnKt$ReportDrawnAfter$1$1 rememberedValue = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
@@ -219,27 +228,15 @@ public final class ReportDrawnKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
-        } else {
-            startRestartGroup.skipToGroupEnd();
         }
         ScopeUpdateScope endRestartGroup2 = startRestartGroup.endRestartGroup();
         if (endRestartGroup2 != null) {
-            endRestartGroup2.updateScope(new Function2<Composer, Integer, Unit>() { // from class: androidx.activity.compose.ReportDrawnKt$ReportDrawnAfter$2
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                /* JADX WARN: Multi-variable type inference failed */
-                {
-                    super(2);
-                }
-
+            endRestartGroup2.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
-                    invoke(composer2, num.intValue());
-                    return Unit.INSTANCE;
-                }
-
-                public final void invoke(Composer composer2, int i3) {
-                    ReportDrawnKt.ReportDrawnAfter(function1, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                public final Object invoke(Object obj, Object obj2) {
+                    Unit ReportDrawnAfter$lambda$11;
+                    ReportDrawnAfter$lambda$11 = ReportDrawnKt.ReportDrawnAfter$lambda$11(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
+                    return ReportDrawnAfter$lambda$11;
                 }
             });
         }

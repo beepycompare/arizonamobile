@@ -24,13 +24,13 @@ public final class C0357jg implements zo {
                 if (decode != null && decode.length != 0) {
                     jg = new Jg(decode);
                     C0562rg c0562rg = new C0562rg();
-                    str = jg.f519a;
+                    str = jg.f520a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    c0562rg.f1067a = bytes;
+                    c0562rg.f1068a = bytes;
                     c0562rg.c = jg.b;
                     c0562rg.b = jg.c;
                     ordinal = jg.d.ordinal();
@@ -46,10 +46,10 @@ public final class C0357jg implements zo {
                 }
                 jg = null;
                 C0562rg c0562rg2 = new C0562rg();
-                str = jg.f519a;
+                str = jg.f520a;
                 if (str != null) {
                 }
-                c0562rg2.f1067a = bytes;
+                c0562rg2.f1068a = bytes;
                 c0562rg2.c = jg.b;
                 c0562rg2.b = jg.c;
                 ordinal = jg.d.ordinal();

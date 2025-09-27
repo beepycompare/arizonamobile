@@ -21,7 +21,7 @@ public abstract class CornerBasedShape implements Shape {
     public abstract CornerBasedShape copy(CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4);
 
     /* renamed from: createOutline-LjSzlW0 */
-    public abstract Outline mo1180createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
+    public abstract Outline mo1190createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
 
     public CornerBasedShape(CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4) {
         this.topStart = cornerSize;
@@ -48,28 +48,28 @@ public abstract class CornerBasedShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public final Outline mo321createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-        float mo1188toPxTmRCtEA = this.topStart.mo1188toPxTmRCtEA(j, density);
-        float mo1188toPxTmRCtEA2 = this.topEnd.mo1188toPxTmRCtEA(j, density);
-        float mo1188toPxTmRCtEA3 = this.bottomEnd.mo1188toPxTmRCtEA(j, density);
-        float mo1188toPxTmRCtEA4 = this.bottomStart.mo1188toPxTmRCtEA(j, density);
-        float m4361getMinDimensionimpl = Size.m4361getMinDimensionimpl(j);
-        float f = mo1188toPxTmRCtEA + mo1188toPxTmRCtEA4;
-        if (f > m4361getMinDimensionimpl) {
-            float f2 = m4361getMinDimensionimpl / f;
-            mo1188toPxTmRCtEA *= f2;
-            mo1188toPxTmRCtEA4 *= f2;
+    public final Outline mo331createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+        float mo1198toPxTmRCtEA = this.topStart.mo1198toPxTmRCtEA(j, density);
+        float mo1198toPxTmRCtEA2 = this.topEnd.mo1198toPxTmRCtEA(j, density);
+        float mo1198toPxTmRCtEA3 = this.bottomEnd.mo1198toPxTmRCtEA(j, density);
+        float mo1198toPxTmRCtEA4 = this.bottomStart.mo1198toPxTmRCtEA(j, density);
+        float m4373getMinDimensionimpl = Size.m4373getMinDimensionimpl(j);
+        float f = mo1198toPxTmRCtEA + mo1198toPxTmRCtEA4;
+        if (f > m4373getMinDimensionimpl) {
+            float f2 = m4373getMinDimensionimpl / f;
+            mo1198toPxTmRCtEA *= f2;
+            mo1198toPxTmRCtEA4 *= f2;
         }
-        float f3 = mo1188toPxTmRCtEA2 + mo1188toPxTmRCtEA3;
-        if (f3 > m4361getMinDimensionimpl) {
-            float f4 = m4361getMinDimensionimpl / f3;
-            mo1188toPxTmRCtEA2 *= f4;
-            mo1188toPxTmRCtEA3 *= f4;
+        float f3 = mo1198toPxTmRCtEA2 + mo1198toPxTmRCtEA3;
+        if (f3 > m4373getMinDimensionimpl) {
+            float f4 = m4373getMinDimensionimpl / f3;
+            mo1198toPxTmRCtEA2 *= f4;
+            mo1198toPxTmRCtEA3 *= f4;
         }
-        if (!(mo1188toPxTmRCtEA >= 0.0f && mo1188toPxTmRCtEA2 >= 0.0f && mo1188toPxTmRCtEA3 >= 0.0f && mo1188toPxTmRCtEA4 >= 0.0f)) {
-            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1188toPxTmRCtEA + ", topEnd = " + mo1188toPxTmRCtEA2 + ", bottomEnd = " + mo1188toPxTmRCtEA3 + ", bottomStart = " + mo1188toPxTmRCtEA4 + ")!");
+        if (!(mo1198toPxTmRCtEA >= 0.0f && mo1198toPxTmRCtEA2 >= 0.0f && mo1198toPxTmRCtEA3 >= 0.0f && mo1198toPxTmRCtEA4 >= 0.0f)) {
+            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1198toPxTmRCtEA + ", topEnd = " + mo1198toPxTmRCtEA2 + ", bottomEnd = " + mo1198toPxTmRCtEA3 + ", bottomStart = " + mo1198toPxTmRCtEA4 + ")!");
         }
-        return mo1180createOutlineLjSzlW0(j, mo1188toPxTmRCtEA, mo1188toPxTmRCtEA2, mo1188toPxTmRCtEA3, mo1188toPxTmRCtEA4, layoutDirection);
+        return mo1190createOutlineLjSzlW0(j, mo1198toPxTmRCtEA, mo1198toPxTmRCtEA2, mo1198toPxTmRCtEA3, mo1198toPxTmRCtEA4, layoutDirection);
     }
 
     public static /* synthetic */ CornerBasedShape copy$default(CornerBasedShape cornerBasedShape, CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4, int i, Object obj) {

@@ -7,7 +7,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 public final class d0 implements P {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1317a;
+    public final ClientContext f1318a;
     public final Q b;
     public final Handler c;
     public volatile boolean d;
@@ -15,7 +15,7 @@ public final class d0 implements P {
     public final a0 f = new a0(this);
 
     public d0(ClientContext clientContext, Q q) {
-        this.f1317a = clientContext;
+        this.f1318a = clientContext;
         this.b = q;
         this.c = clientContext.getClientExecutorProvider().getDefaultExecutor().getHandler();
     }
@@ -31,6 +31,6 @@ public final class d0 implements P {
 
     @Override // io.appmetrica.analytics.screenshot.impl.P
     public final void a() {
-        this.f1317a.getActivityLifecycleRegistry().registerListener(new c0(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+        this.f1318a.getActivityLifecycleRegistry().registerListener(new c0(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
     }
 }

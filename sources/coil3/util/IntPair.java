@@ -10,59 +10,59 @@ public final class IntPair {
     private final long value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ IntPair m8409boximpl(long j) {
+    public static final /* synthetic */ IntPair m8421boximpl(long j) {
         return new IntPair(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m8411constructorimpl(long j) {
+    private static long m8423constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8412equalsimpl(long j, Object obj) {
-        return (obj instanceof IntPair) && j == ((IntPair) obj).m8418unboximpl();
+    public static boolean m8424equalsimpl(long j, Object obj) {
+        return (obj instanceof IntPair) && j == ((IntPair) obj).m8430unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8413equalsimpl0(long j, long j2) {
+    public static final boolean m8425equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getFirst-impl  reason: not valid java name */
-    public static final int m8414getFirstimpl(long j) {
+    public static final int m8426getFirstimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: getSecond-impl  reason: not valid java name */
-    public static final int m8415getSecondimpl(long j) {
+    public static final int m8427getSecondimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8416hashCodeimpl(long j) {
+    public static int m8428hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8417toStringimpl(long j) {
+    public static String m8429toStringimpl(long j) {
         return "IntPair(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8412equalsimpl(this.value, obj);
+        return m8424equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m8416hashCodeimpl(this.value);
+        return m8428hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m8417toStringimpl(this.value);
+        return m8429toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m8418unboximpl() {
+    public final /* synthetic */ long m8430unboximpl() {
         return this.value;
     }
 
@@ -71,7 +71,7 @@ public final class IntPair {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m8410constructorimpl(int i, int i2) {
-        return m8411constructorimpl((i2 & 4294967295L) | (i << 32));
+    public static long m8422constructorimpl(int i, int i2) {
+        return m8423constructorimpl((i2 & 4294967295L) | (i << 32));
     }
 }

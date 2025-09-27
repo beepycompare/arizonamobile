@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class VertexMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Triangles = m4948constructorimpl(0);
-    private static final int TriangleStrip = m4948constructorimpl(1);
-    private static final int TriangleFan = m4948constructorimpl(2);
+    private static final int Triangles = m4960constructorimpl(0);
+    private static final int TriangleStrip = m4960constructorimpl(1);
+    private static final int TriangleFan = m4960constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ VertexMode m4947boximpl(int i) {
+    public static final /* synthetic */ VertexMode m4959boximpl(int i) {
         return new VertexMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4948constructorimpl(int i) {
+    public static int m4960constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4949equalsimpl(int i, Object obj) {
-        return (obj instanceof VertexMode) && i == ((VertexMode) obj).m4953unboximpl();
+    public static boolean m4961equalsimpl(int i, Object obj) {
+        return (obj instanceof VertexMode) && i == ((VertexMode) obj).m4965unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4950equalsimpl0(int i, int i2) {
+    public static final boolean m4962equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4951hashCodeimpl(int i) {
+    public static int m4963hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4949equalsimpl(this.value, obj);
+        return m4961equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4951hashCodeimpl(this.value);
+        return m4963hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4953unboximpl() {
+    public final /* synthetic */ int m4965unboximpl() {
         return this.value;
     }
 
@@ -69,27 +69,27 @@ public final class VertexMode {
         }
 
         /* renamed from: getTriangles-c2xauaI  reason: not valid java name */
-        public final int m4956getTrianglesc2xauaI() {
+        public final int m4968getTrianglesc2xauaI() {
             return VertexMode.Triangles;
         }
 
         /* renamed from: getTriangleStrip-c2xauaI  reason: not valid java name */
-        public final int m4955getTriangleStripc2xauaI() {
+        public final int m4967getTriangleStripc2xauaI() {
             return VertexMode.TriangleStrip;
         }
 
         /* renamed from: getTriangleFan-c2xauaI  reason: not valid java name */
-        public final int m4954getTriangleFanc2xauaI() {
+        public final int m4966getTriangleFanc2xauaI() {
             return VertexMode.TriangleFan;
         }
     }
 
     public String toString() {
-        return m4952toStringimpl(this.value);
+        return m4964toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4952toStringimpl(int i) {
-        return m4950equalsimpl0(i, Triangles) ? "Triangles" : m4950equalsimpl0(i, TriangleStrip) ? "TriangleStrip" : m4950equalsimpl0(i, TriangleFan) ? "TriangleFan" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m4964toStringimpl(int i) {
+        return m4962equalsimpl0(i, Triangles) ? "Triangles" : m4962equalsimpl0(i, TriangleStrip) ? "TriangleStrip" : m4962equalsimpl0(i, TriangleFan) ? "TriangleFan" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

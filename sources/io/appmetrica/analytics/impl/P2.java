@@ -4,7 +4,7 @@ public final class P2 {
     public final Kn A;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0315i f618a;
+    public final C0315i f619a;
     public final Kn b = new Kn(new C0685we("Config"));
     public final Kn c = new Kn(new C0685we("Activity"));
     public final Kn d = new Kn(new C0685we("Intent"));
@@ -32,7 +32,7 @@ public final class P2 {
     public final Kn z;
 
     public P2(C0671w0 c0671w0) {
-        this.f618a = new C0315i(c0671w0);
+        this.f619a = new C0315i(c0671w0);
         new Kn(new C0685we("Unhandled exception"));
         this.v = new Kn(new C0685we("Throwable"));
         this.w = new Kn(new C0685we("User profile"));

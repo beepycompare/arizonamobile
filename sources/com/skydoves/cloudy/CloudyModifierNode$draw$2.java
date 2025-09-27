@@ -97,7 +97,7 @@ final class CloudyModifierNode$draw$2 extends SuspendLambda implements Function2
                     ResultKt.throwOnFailure(obj);
                     Bitmap bitmap = (Bitmap) obj;
                     if (bitmap != null) {
-                        DrawScope.m5100drawImagegbVJVH8$default(this.$this_draw, AndroidImageBitmap_androidKt.asImageBitmap(bitmap), 0L, 0.0f, null, null, 0, 62, null);
+                        DrawScope.m5112drawImagegbVJVH8$default(this.$this_draw, AndroidImageBitmap_androidKt.asImageBitmap(bitmap), 0L, 0.0f, null, null, 0, 62, null);
                         function12 = this.this$0.onStateChanged;
                         function12.invoke(new CloudyState.Success(bitmap));
                         DelegatableNodeKt.requireGraphicsContext(this.this$0).releaseGraphicsLayer(this.$graphicsLayer);

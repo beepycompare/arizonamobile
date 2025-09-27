@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class FirstExecutionConditionServiceImpl implements FirstExecutionConditionService {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList f291a = new ArrayList();
+    private final ArrayList f292a = new ArrayList();
     private UtilityServiceConfiguration b;
     final UtilityServiceProvider c;
 
@@ -19,7 +19,7 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
     public static class FirstExecutionConditionChecker {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f292a = false;
+        private boolean f293a = false;
         private long b;
         private long c;
         private long d;
@@ -39,14 +39,14 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
         }
 
         final boolean b() {
-            if (this.f292a) {
+            if (this.f293a) {
                 return true;
             }
             return this.e.delaySinceFirstStartupWasPassed(this.c, this.b, this.d);
         }
 
         final void a() {
-            this.f292a = true;
+            this.f293a = true;
         }
 
         final void a(UtilityServiceConfiguration utilityServiceConfiguration) {
@@ -66,7 +66,7 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
     public static class FirstExecutionHandler implements FirstExecutionDelayedTask {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FirstExecutionConditionChecker f293a;
+        private final FirstExecutionConditionChecker f294a;
         private final WaitForActivationDelayBarrier.ActivationBarrierHelper b;
         private final ICommonExecutor c;
 
@@ -75,35 +75,35 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
         }
 
         public boolean canExecute() {
-            boolean b = this.f293a.b();
+            boolean b = this.f294a.b();
             if (b) {
-                this.f293a.a();
+                this.f294a.a();
             }
             return b;
         }
 
         @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.FirstExecutionDelayedTask
         public void setInitialDelaySeconds(long j) {
-            this.f293a.a(j);
+            this.f294a.a(j);
         }
 
         @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.FirstExecutionDelayedTask
         public boolean tryExecute(long j) {
-            if (this.f293a.b()) {
+            if (this.f294a.b()) {
                 this.b.subscribeIfNeeded(TimeUnit.SECONDS.toMillis(j), this.c);
-                this.f293a.a();
+                this.f294a.a();
                 return true;
             }
             return false;
         }
 
         public void updateConfig(UtilityServiceConfiguration utilityServiceConfiguration) {
-            this.f293a.a(utilityServiceConfiguration);
+            this.f294a.a(utilityServiceConfiguration);
         }
 
         private FirstExecutionHandler(ICommonExecutor iCommonExecutor, WaitForActivationDelayBarrier.ActivationBarrierHelper activationBarrierHelper, FirstExecutionConditionChecker firstExecutionConditionChecker) {
             this.b = activationBarrierHelper;
-            this.f293a = firstExecutionConditionChecker;
+            this.f294a = firstExecutionConditionChecker;
             this.c = iCommonExecutor;
         }
     }
@@ -115,7 +115,7 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
     final synchronized FirstExecutionHandler a(ICommonExecutor iCommonExecutor, WaitForActivationDelayBarrier.ActivationBarrierHelper activationBarrierHelper, FirstExecutionConditionChecker firstExecutionConditionChecker) {
         FirstExecutionHandler firstExecutionHandler;
         firstExecutionHandler = new FirstExecutionHandler(iCommonExecutor, activationBarrierHelper, firstExecutionConditionChecker, 0);
-        this.f291a.add(firstExecutionHandler);
+        this.f292a.add(firstExecutionHandler);
         return firstExecutionHandler;
     }
 
@@ -128,7 +128,7 @@ public class FirstExecutionConditionServiceImpl implements FirstExecutionConditi
         ArrayList arrayList;
         synchronized (this) {
             this.b = utilityServiceConfiguration;
-            arrayList = new ArrayList(this.f291a);
+            arrayList = new ArrayList(this.f292a);
         }
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {

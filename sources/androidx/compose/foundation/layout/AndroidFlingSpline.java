@@ -79,7 +79,7 @@ final class AndroidFlingSpline {
     }
 
     /* renamed from: flingPosition-LfoxSSI  reason: not valid java name */
-    public final long m677flingPositionLfoxSSI(float f) {
+    public final long m687flingPositionLfoxSSI(float f) {
         float f2;
         float f3;
         float f4 = 100;
@@ -96,7 +96,7 @@ final class AndroidFlingSpline {
             f2 = 1.0f;
             f3 = 0.0f;
         }
-        return FlingResult.m679constructorimpl((Float.floatToRawIntBits(f3) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
+        return FlingResult.m689constructorimpl((Float.floatToRawIntBits(f3) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32));
     }
 
     public final double deceleration(float f, float f2) {
@@ -111,49 +111,49 @@ final class AndroidFlingSpline {
         private final long packedValue;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ FlingResult m678boximpl(long j) {
+        public static final /* synthetic */ FlingResult m688boximpl(long j) {
             return new FlingResult(j);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static long m679constructorimpl(long j) {
+        public static long m689constructorimpl(long j) {
             return j;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m680equalsimpl(long j, Object obj) {
-            return (obj instanceof FlingResult) && j == ((FlingResult) obj).m686unboximpl();
+        public static boolean m690equalsimpl(long j, Object obj) {
+            return (obj instanceof FlingResult) && j == ((FlingResult) obj).m696unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m681equalsimpl0(long j, long j2) {
+        public static final boolean m691equalsimpl0(long j, long j2) {
             return j == j2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m684hashCodeimpl(long j) {
+        public static int m694hashCodeimpl(long j) {
             return Long.hashCode(j);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m685toStringimpl(long j) {
+        public static String m695toStringimpl(long j) {
             return "FlingResult(packedValue=" + j + ')';
         }
 
         public boolean equals(Object obj) {
-            return m680equalsimpl(this.packedValue, obj);
+            return m690equalsimpl(this.packedValue, obj);
         }
 
         public int hashCode() {
-            return m684hashCodeimpl(this.packedValue);
+            return m694hashCodeimpl(this.packedValue);
         }
 
         public String toString() {
-            return m685toStringimpl(this.packedValue);
+            return m695toStringimpl(this.packedValue);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ long m686unboximpl() {
+        public final /* synthetic */ long m696unboximpl() {
             return this.packedValue;
         }
 
@@ -162,12 +162,12 @@ final class AndroidFlingSpline {
         }
 
         /* renamed from: getDistanceCoefficient-impl  reason: not valid java name */
-        public static final float m682getDistanceCoefficientimpl(long j) {
+        public static final float m692getDistanceCoefficientimpl(long j) {
             return Float.intBitsToFloat((int) (j >> 32));
         }
 
         /* renamed from: getVelocityCoefficient-impl  reason: not valid java name */
-        public static final float m683getVelocityCoefficientimpl(long j) {
+        public static final float m693getVelocityCoefficientimpl(long j) {
             return Float.intBitsToFloat((int) (j & 4294967295L));
         }
     }

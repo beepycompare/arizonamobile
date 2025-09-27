@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int moduleName = 0x7f040487;
+        public static int moduleName = 0x7f040461;
 
         private attr() {
         }
@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int dfn_progress_fragment = 0x7f0a03d0;
-        public static int installation_progress = 0x7f0a06b6;
-        public static int progress_action = 0x7f0a0a46;
-        public static int progress_icon = 0x7f0a0a4d;
-        public static int progress_title = 0x7f0a0a51;
+        public static int dfn_progress_fragment = 0x7f0a03dc;
+        public static int installation_progress = 0x7f0a06ca;
+        public static int progress_action = 0x7f0a0a62;
+        public static int progress_icon = 0x7f0a0a69;
+        public static int progress_title = 0x7f0a0a6d;
 
         private id() {
         }
@@ -24,7 +24,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int dynamic_feature_install_fragment = 0x7f0d00a8;
+        public static int dynamic_feature_install_fragment = 0x7f0d00ab;
 
         private layout() {
         }
@@ -37,7 +37,7 @@ public final class R {
         public static int installing_module = 0x7f1300ec;
         public static int ok = 0x7f1301ba;
         public static int progress = 0x7f1301d0;
-        public static int retry = 0x7f1301e7;
+        public static int retry = 0x7f1301e8;
 
         private string() {
         }

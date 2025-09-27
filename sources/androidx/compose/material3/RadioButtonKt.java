@@ -33,7 +33,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes.dex */
 public final class RadioButtonKt {
     private static final int RadioAnimationDuration = 100;
-    private static final float RadioButtonDotSize = Dp.m7251constructorimpl(12);
+    private static final float RadioButtonDotSize = Dp.m7264constructorimpl(12);
     private static final float RadioButtonPadding;
     private static final float RadioStrokeWidth;
 
@@ -78,7 +78,7 @@ public final class RadioButtonKt {
         int i6;
         boolean z4;
         RadioButtonColors radioButtonColors3;
-        float m7251constructorimpl;
+        float m7264constructorimpl;
         ?? r11;
         Modifier modifier2;
         State<Dp> state;
@@ -159,27 +159,27 @@ public final class RadioButtonKt {
                                     ComposerKt.traceEventStart(408580840, i6, -1, "androidx.compose.material3.RadioButton (RadioButton.kt:82)");
                                 }
                                 if (!z) {
-                                    m7251constructorimpl = Dp.m7251constructorimpl(RadioButtonDotSize / 2);
+                                    m7264constructorimpl = Dp.m7264constructorimpl(RadioButtonDotSize / 2);
                                 } else {
-                                    m7251constructorimpl = Dp.m7251constructorimpl(0);
+                                    m7264constructorimpl = Dp.m7264constructorimpl(0);
                                 }
-                                State<Dp> m140animateDpAsStateAjpBEmI = AnimateAsStateKt.m140animateDpAsStateAjpBEmI(m7251constructorimpl, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
+                                State<Dp> m150animateDpAsStateAjpBEmI = AnimateAsStateKt.m150animateDpAsStateAjpBEmI(m7264constructorimpl, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
                                 State<Color> radioColor$material3_release = radioButtonColors3.radioColor$material3_release(z4, z, startRestartGroup, ((i6 >> 6) & 896) | ((i6 >> 9) & 14) | ((i6 << 3) & 112));
                                 startRestartGroup.startReplaceGroup(1327106656);
                                 ComposerKt.sourceInformation(startRestartGroup, "98@4448L164");
                                 if (function0 == null) {
-                                    state = m140animateDpAsStateAjpBEmI;
+                                    state = m150animateDpAsStateAjpBEmI;
                                     radioButtonColors2 = radioButtonColors3;
                                     r11 = 0;
                                     modifier2 = companion;
                                     z5 = z4;
                                     state2 = radioColor$material3_release;
-                                    companion2 = SelectableKt.m1159selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, RippleKt.m2518rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7251constructorimpl(RadioButtonTokens.INSTANCE.m3581getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z5, Role.m6454boximpl(Role.Companion.m6466getRadioButtono7Vup1c()), function0);
+                                    companion2 = SelectableKt.m1169selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource2, RippleKt.m2528rippleOrFallbackImplementation9IZ8Weo(false, Dp.m7264constructorimpl(RadioButtonTokens.INSTANCE.m3591getStateLayerSizeD9Ej5fM() / 2), 0L, startRestartGroup, 54, 4), z5, Role.m6467boximpl(Role.Companion.m6479getRadioButtono7Vup1c()), function0);
                                 } else {
                                     r11 = 0;
                                     modifier2 = companion;
                                     radioButtonColors2 = radioButtonColors3;
-                                    state = m140animateDpAsStateAjpBEmI;
+                                    state = m150animateDpAsStateAjpBEmI;
                                     z5 = z4;
                                     state2 = radioColor$material3_release;
                                     companion2 = Modifier.Companion;
@@ -190,7 +190,7 @@ public final class RadioButtonKt {
                                 } else {
                                     companion3 = Modifier.Companion;
                                 }
-                                Modifier m876requiredSize3ABfNKs = SizeKt.m876requiredSize3ABfNKs(PaddingKt.m832padding3ABfNKs(SizeKt.wrapContentSize$default(modifier2.then(companion3).then(companion2), Alignment.Companion.getCenter(), r11, 2, null), RadioButtonPadding), RadioButtonTokens.INSTANCE.m3580getIconSizeD9Ej5fM());
+                                Modifier m886requiredSize3ABfNKs = SizeKt.m886requiredSize3ABfNKs(PaddingKt.m842padding3ABfNKs(SizeKt.wrapContentSize$default(modifier2.then(companion3).then(companion2), Alignment.Companion.getCenter(), r11, 2, null), RadioButtonPadding), RadioButtonTokens.INSTANCE.m3590getIconSizeD9Ej5fM());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1327137161, "CC(remember):RadioButton.kt#9igjgp");
                                 final State<Dp> state3 = state;
                                 changed = startRestartGroup.changed(state2) | startRestartGroup.changed(state3);
@@ -213,19 +213,19 @@ public final class RadioButtonKt {
                                         public final void invoke2(DrawScope drawScope) {
                                             float f;
                                             f = RadioButtonKt.RadioStrokeWidth;
-                                            float f2 = drawScope.mo419toPx0680j_4(f);
+                                            float f2 = drawScope.mo429toPx0680j_4(f);
                                             float f3 = 2;
                                             float f4 = f2 / f3;
-                                            DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4547unboximpl(), drawScope.mo419toPx0680j_4(Dp.m7251constructorimpl(RadioButtonTokens.INSTANCE.m3580getIconSizeD9Ej5fM() / f3)) - f4, 0L, 0.0f, new Stroke(f2, 0.0f, 0, 0, null, 30, null), null, 0, 108, null);
-                                            if (Dp.m7250compareTo0680j_4(state3.getValue().m7265unboximpl(), Dp.m7251constructorimpl(0)) > 0) {
-                                                DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4547unboximpl(), drawScope.mo419toPx0680j_4(state3.getValue().m7265unboximpl()) - f4, 0L, 0.0f, Fill.INSTANCE, null, 0, 108, null);
+                                            DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4559unboximpl(), drawScope.mo429toPx0680j_4(Dp.m7264constructorimpl(RadioButtonTokens.INSTANCE.m3590getIconSizeD9Ej5fM() / f3)) - f4, 0L, 0.0f, new Stroke(f2, 0.0f, 0, 0, null, 30, null), null, 0, 108, null);
+                                            if (Dp.m7263compareTo0680j_4(state3.getValue().m7278unboximpl(), Dp.m7264constructorimpl(0)) > 0) {
+                                                DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4559unboximpl(), drawScope.mo429toPx0680j_4(state3.getValue().m7278unboximpl()) - f4, 0L, 0.0f, Fill.INSTANCE, null, 0, 108, null);
                                             }
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                CanvasKt.Canvas(m876requiredSize3ABfNKs, (Function1) rememberedValue, startRestartGroup, r11);
+                                CanvasKt.Canvas(m886requiredSize3ABfNKs, (Function1) rememberedValue, startRestartGroup, r11);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -251,7 +251,7 @@ public final class RadioButtonKt {
                         }
                         if (!z) {
                         }
-                        State<Dp> m140animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m140animateDpAsStateAjpBEmI(m7251constructorimpl, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
+                        State<Dp> m150animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m150animateDpAsStateAjpBEmI(m7264constructorimpl, AnimationSpecKt.tween$default(100, 0, null, 6, null), null, null, startRestartGroup, 48, 12);
                         State<Color> radioColor$material3_release2 = radioButtonColors3.radioColor$material3_release(z4, z, startRestartGroup, ((i6 >> 6) & 896) | ((i6 >> 9) & 14) | ((i6 << 3) & 112));
                         startRestartGroup.startReplaceGroup(1327106656);
                         ComposerKt.sourceInformation(startRestartGroup, "98@4448L164");
@@ -260,7 +260,7 @@ public final class RadioButtonKt {
                         startRestartGroup.endReplaceGroup();
                         if (function0 == null) {
                         }
-                        Modifier m876requiredSize3ABfNKs2 = SizeKt.m876requiredSize3ABfNKs(PaddingKt.m832padding3ABfNKs(SizeKt.wrapContentSize$default(modifier2.then(companion3).then(companion2), Alignment.Companion.getCenter(), r11, 2, null), RadioButtonPadding), RadioButtonTokens.INSTANCE.m3580getIconSizeD9Ej5fM());
+                        Modifier m886requiredSize3ABfNKs2 = SizeKt.m886requiredSize3ABfNKs(PaddingKt.m842padding3ABfNKs(SizeKt.wrapContentSize$default(modifier2.then(companion3).then(companion2), Alignment.Companion.getCenter(), r11, 2, null), RadioButtonPadding), RadioButtonTokens.INSTANCE.m3590getIconSizeD9Ej5fM());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1327137161, "CC(remember):RadioButton.kt#9igjgp");
                         final State<Dp> state32 = state;
                         changed = startRestartGroup.changed(state2) | startRestartGroup.changed(state32);
@@ -284,18 +284,18 @@ public final class RadioButtonKt {
                             public final void invoke2(DrawScope drawScope) {
                                 float f;
                                 f = RadioButtonKt.RadioStrokeWidth;
-                                float f2 = drawScope.mo419toPx0680j_4(f);
+                                float f2 = drawScope.mo429toPx0680j_4(f);
                                 float f3 = 2;
                                 float f4 = f2 / f3;
-                                DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4547unboximpl(), drawScope.mo419toPx0680j_4(Dp.m7251constructorimpl(RadioButtonTokens.INSTANCE.m3580getIconSizeD9Ej5fM() / f3)) - f4, 0L, 0.0f, new Stroke(f2, 0.0f, 0, 0, null, 30, null), null, 0, 108, null);
-                                if (Dp.m7250compareTo0680j_4(state32.getValue().m7265unboximpl(), Dp.m7251constructorimpl(0)) > 0) {
-                                    DrawScope.m5097drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4547unboximpl(), drawScope.mo419toPx0680j_4(state32.getValue().m7265unboximpl()) - f4, 0L, 0.0f, Fill.INSTANCE, null, 0, 108, null);
+                                DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4559unboximpl(), drawScope.mo429toPx0680j_4(Dp.m7264constructorimpl(RadioButtonTokens.INSTANCE.m3590getIconSizeD9Ej5fM() / f3)) - f4, 0L, 0.0f, new Stroke(f2, 0.0f, 0, 0, null, 30, null), null, 0, 108, null);
+                                if (Dp.m7263compareTo0680j_4(state32.getValue().m7278unboximpl(), Dp.m7264constructorimpl(0)) > 0) {
+                                    DrawScope.m5109drawCircleVaOC9Bg$default(drawScope, state2.getValue().m4559unboximpl(), drawScope.mo429toPx0680j_4(state32.getValue().m7278unboximpl()) - f4, 0L, 0.0f, Fill.INSTANCE, null, 0, 108, null);
                                 }
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        CanvasKt.Canvas(m876requiredSize3ABfNKs2, (Function1) rememberedValue, startRestartGroup, r11);
+                        CanvasKt.Canvas(m886requiredSize3ABfNKs2, (Function1) rememberedValue, startRestartGroup, r11);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         mutableInteractionSource3 = mutableInteractionSource2;
@@ -394,7 +394,7 @@ public final class RadioButtonKt {
 
     static {
         float f = 2;
-        RadioButtonPadding = Dp.m7251constructorimpl(f);
-        RadioStrokeWidth = Dp.m7251constructorimpl(f);
+        RadioButtonPadding = Dp.m7264constructorimpl(f);
+        RadioStrokeWidth = Dp.m7264constructorimpl(f);
     }
 }

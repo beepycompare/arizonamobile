@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class S7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Long f667a;
+    public final Long f668a;
     public final EnumC0259fl b;
     public final String c;
     public final R7 d;
 
     public S7(Long l, EnumC0259fl enumC0259fl, String str, R7 r7) {
-        this.f667a = l;
+        this.f668a = l;
         this.b = enumC0259fl;
         this.c = str;
         this.d = r7;

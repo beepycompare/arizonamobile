@@ -4,6 +4,6 @@ package io.appmetrica.analytics.screenshot.impl;
 public abstract class AbstractC0783n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f1329a = new O().f1303a;
+    public static final boolean f1330a = new O().f1304a;
     public static final String[] b = {"_display_name", "_data"};
 }

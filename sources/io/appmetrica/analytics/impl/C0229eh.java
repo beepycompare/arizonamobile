@@ -7,15 +7,15 @@ import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 public final class C0229eh implements Tl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Km f863a;
+    public final Km f864a;
 
     public C0229eh(Km km) {
-        this.f863a = km;
+        this.f864a = km;
     }
 
     @Override // io.appmetrica.analytics.impl.Tl
     public final void a() {
-        NetworkTask c = this.f863a.c();
+        NetworkTask c = this.f864a.c();
         if (c != null) {
             Na.F.getClass();
             NetworkServiceLocator.getInstance().getNetworkCore().startTask(c);

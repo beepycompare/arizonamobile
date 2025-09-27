@@ -6,14 +6,14 @@ import io.appmetrica.analytics.impl.C0547r1;
 public class AppMetricaInitializerJsInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0547r1 f1202a;
+    private final C0547r1 f1203a;
 
     public AppMetricaInitializerJsInterface(C0547r1 c0547r1) {
-        this.f1202a = c0547r1;
+        this.f1203a = c0547r1;
     }
 
     @JavascriptInterface
     public void init(String str) {
-        this.f1202a.c(str);
+        this.f1203a.c(str);
     }
 }

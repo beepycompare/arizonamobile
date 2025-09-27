@@ -43,7 +43,7 @@ public final class Scrollable2DNode$setScrollSemanticsActions$1$1 extends Suspen
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ScrollingLogic2D scrollingLogic2D;
-        Object m560semanticsScrollByd4ec7I;
+        Object m570semanticsScrollByd4ec7I;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -53,8 +53,8 @@ public final class Scrollable2DNode$setScrollSemanticsActions$1$1 extends Suspen
             float f2 = this.$y;
             long floatToRawIntBits = Float.floatToRawIntBits(f);
             this.label = 1;
-            m560semanticsScrollByd4ec7I = Scrollable2DKt.m560semanticsScrollByd4ec7I(scrollingLogic2D, Offset.m4285constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
-            if (m560semanticsScrollByd4ec7I == coroutine_suspended) {
+            m570semanticsScrollByd4ec7I = Scrollable2DKt.m570semanticsScrollByd4ec7I(scrollingLogic2D, Offset.m4297constructorimpl((floatToRawIntBits << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), this);
+            if (m570semanticsScrollByd4ec7I == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

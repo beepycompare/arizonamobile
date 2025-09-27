@@ -46,7 +46,7 @@ final class AndroidViewHolder$onNestedPreFling$1 extends SuspendLambda implement
             ResultKt.throwOnFailure(obj);
             nestedScrollDispatcher = this.this$0.dispatcher;
             this.label = 1;
-            if (nestedScrollDispatcher.m5702dispatchPreFlingQWom1Mo(this.$toBeConsumed, this) == coroutine_suspended) {
+            if (nestedScrollDispatcher.m5715dispatchPreFlingQWom1Mo(this.$toBeConsumed, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

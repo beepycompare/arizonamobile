@@ -27,7 +27,7 @@ public final class ModifierLocalModifierNodeKt {
 
     public static final <T> ModifierLocalMap modifierLocalMapOf(Pair<? extends ModifierLocal<T>, ? extends T> pair) {
         SingleLocalMap singleLocalMap = new SingleLocalMap(pair.getFirst());
-        singleLocalMap.mo6082set$ui_release(pair.getFirst(), pair.getSecond());
+        singleLocalMap.mo6095set$ui_release(pair.getFirst(), pair.getSecond());
         return singleLocalMap;
     }
 

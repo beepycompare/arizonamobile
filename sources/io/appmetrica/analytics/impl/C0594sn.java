@@ -9,12 +9,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class C0594sn implements Bk, V9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0223eb f1085a;
+    public final InterfaceC0223eb f1086a;
     public final Tl b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
     public C0594sn(InterfaceC0223eb interfaceC0223eb, Tl tl) {
-        this.f1085a = interfaceC0223eb;
+        this.f1086a = interfaceC0223eb;
         this.b = tl;
         Objects.toString(interfaceC0223eb.b());
     }
@@ -38,7 +38,7 @@ public class C0594sn implements Bk, V9 {
     }
 
     public final InterfaceC0223eb d() {
-        return this.f1085a;
+        return this.f1086a;
     }
 
     public final boolean e() {

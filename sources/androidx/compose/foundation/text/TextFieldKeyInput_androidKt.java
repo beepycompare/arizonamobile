@@ -7,7 +7,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextFieldKeyInput_androidKt {
     /* renamed from: isTypedEvent-ZmokQxo  reason: not valid java name */
-    public static final boolean m1365isTypedEventZmokQxo(KeyEvent keyEvent) {
+    public static final boolean m1375isTypedEventZmokQxo(KeyEvent keyEvent) {
         return keyEvent.getAction() == 0 && !Character.isISOControl(keyEvent.getUnicodeChar());
     }
 }

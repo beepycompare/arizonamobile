@@ -36,7 +36,7 @@ public final class C0537qf extends Td implements Ho {
 
     public final C0537qf a(C0290h0 c0290h0) {
         synchronized (this) {
-            b(j.b, c0290h0.f902a);
+            b(j.b, c0290h0.f903a);
             b(k.b, c0290h0.b);
         }
         return this;
@@ -48,25 +48,25 @@ public final class C0537qf extends Td implements Ho {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0561rf
     public final Set<String> c() {
-        return this.f1066a.a();
+        return this.f1067a.a();
     }
 
     public final C0290h0 d() {
         C0290h0 c0290h0;
         synchronized (this) {
-            c0290h0 = new C0290h0(this.f1066a.getString(j.b, "{}"), this.f1066a.getLong(k.b, 0L));
+            c0290h0 = new C0290h0(this.f1067a.getString(j.b, "{}"), this.f1067a.getLong(k.b, 0L));
         }
         return c0290h0;
     }
 
     public final String e() {
-        return this.f1066a.getString(m.b, "");
+        return this.f1067a.getString(m.b, "");
     }
 
     public final Map<String, Long> f() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f1066a.getString(q.b, null);
+            String string = this.f1067a.getString(q.b, null);
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -84,7 +84,7 @@ public final class C0537qf extends Td implements Ho {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f1066a.getString(str, null);
+        String string = this.f1067a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -102,21 +102,21 @@ public final class C0537qf extends Td implements Ho {
     }
 
     public final int h() {
-        return this.f1066a.getInt(l.b, -1);
+        return this.f1067a.getInt(l.b, -1);
     }
 
     public final long i() {
-        return this.f1066a.getLong(h.b, 0L);
+        return this.f1067a.getLong(h.b, 0L);
     }
 
     public final String j() {
-        return this.f1066a.getString(i.b, null);
+        return this.f1067a.getString(i.b, null);
     }
 
     public final Map<Integer, String> k() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f1066a.getString(p.b, null);
+            String string = this.f1067a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -142,7 +142,7 @@ public final class C0537qf extends Td implements Ho {
     }
 
     public final String h(String str) {
-        return this.f1066a.getString(new C0586sf(r, str).b, "");
+        return this.f1067a.getString(new C0586sf(r, str).b, "");
     }
 
     public final C0537qf i(String str) {
@@ -175,12 +175,12 @@ public final class C0537qf extends Td implements Ho {
     }
 
     public final boolean a(boolean z) {
-        return this.f1066a.getBoolean(s.b, z);
+        return this.f1067a.getBoolean(s.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.Ho
     public final String a() {
-        return this.f1066a.getString(o.b, null);
+        return this.f1067a.getString(o.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.Ho

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.feature.documents.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DocumentsHealthBarItemBinding implements ViewBinding {
     public final View bar;
     private final View rootView;

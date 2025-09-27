@@ -8,7 +8,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface SizeTransform {
     /* renamed from: createAnimationSpec-TemP2vQ  reason: not valid java name */
-    FiniteAnimationSpec<IntSize> mo129createAnimationSpecTemP2vQ(long j, long j2);
+    FiniteAnimationSpec<IntSize> mo139createAnimationSpecTemP2vQ(long j, long j2);
 
     boolean getClip();
 }

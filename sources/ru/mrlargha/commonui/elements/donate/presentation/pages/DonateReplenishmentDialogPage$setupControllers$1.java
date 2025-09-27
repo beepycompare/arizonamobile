@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateReplenishmentDialogPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {278}, m = "invokeSuspend", n = {}, s = {}, v = 1)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class DonateReplenishmentDialogPage$setupControllers$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ DonateBoostModelUi $model;
     int label;
@@ -66,7 +66,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
                 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                 /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1  reason: invalid class name and collision with other inner class name */
-                /* loaded from: classes5.dex */
+                /* loaded from: classes6.dex */
                 public static final class C00961 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                     final /* synthetic */ Pair<Long, Integer> $it;
                     final /* synthetic */ DonateBoostModelUi $model;
@@ -76,7 +76,7 @@ public final class DonateReplenishmentDialogPage$setupControllers$1 extends Susp
                     /* compiled from: DonateReplenishmentDialogPage.kt */
                     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
                     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupControllers$1$1$1$WhenMappings */
-                    /* loaded from: classes5.dex */
+                    /* loaded from: classes6.dex */
                     public static final /* synthetic */ class WhenMappings {
                         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

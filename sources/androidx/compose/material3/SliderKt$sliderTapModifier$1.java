@@ -58,12 +58,12 @@ public final class SliderKt$sliderTapModifier$1 extends SuspendLambda implements
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m2624invokek4lQ0M(offset.m4303unboximpl());
+                    m2634invokek4lQ0M(offset.m4315unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m2624invokek4lQ0M(long j) {
+                public final void m2634invokek4lQ0M(long j) {
                     SliderState.this.dispatchRawDelta(0.0f);
                     SliderState.this.getGestureEndAction$material3_release().invoke();
                 }
@@ -97,11 +97,11 @@ public final class SliderKt$sliderTapModifier$1 extends SuspendLambda implements
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m2623invoked4ec7I(pressGestureScope, offset.m4303unboximpl(), continuation);
+            return m2633invoked4ec7I(pressGestureScope, offset.m4315unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m2623invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m2633invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$state, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);
@@ -112,7 +112,7 @@ public final class SliderKt$sliderTapModifier$1 extends SuspendLambda implements
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
                 ResultKt.throwOnFailure(obj);
-                this.$state.m2636onPressk4lQ0M$material3_release(this.J$0);
+                this.$state.m2646onPressk4lQ0M$material3_release(this.J$0);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

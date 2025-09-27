@@ -1873,9 +1873,9 @@ public class ExifInterface {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00e9 A[Catch: all -> 0x0112, Exception -> 0x0115, TryCatch #19 {Exception -> 0x0115, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:131:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00f2 A[Catch: all -> 0x0112, Exception -> 0x0115, TryCatch #19 {Exception -> 0x0115, all -> 0x0112, blocks: (B:64:0x00e5, B:66:0x00e9, B:69:0x0101, B:68:0x00f2), top: B:131:0x00e5 }] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00eb A[Catch: all -> 0x0114, Exception -> 0x0117, TryCatch #19 {Exception -> 0x0117, all -> 0x0114, blocks: (B:64:0x00e7, B:66:0x00eb, B:69:0x0103, B:68:0x00f4), top: B:131:0x00e7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00f4 A[Catch: all -> 0x0114, Exception -> 0x0117, TryCatch #19 {Exception -> 0x0117, all -> 0x0114, blocks: (B:64:0x00e7, B:66:0x00eb, B:69:0x0103, B:68:0x00f4), top: B:131:0x00e7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x014a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

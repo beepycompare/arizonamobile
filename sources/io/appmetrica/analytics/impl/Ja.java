@@ -10,7 +10,7 @@ public final class Ja implements InterfaceC0658vc {
         if ((i7 != null ? i7.b : null) != null && i7.c != null) {
             c0755z9 = new C0755z9();
             c0755z9.b = i7.b.doubleValue();
-            c0755z9.f1186a = i7.c.doubleValue();
+            c0755z9.f1187a = i7.c.doubleValue();
             Integer num = i7.d;
             if (num != null) {
                 c0755z9.g = num.intValue();

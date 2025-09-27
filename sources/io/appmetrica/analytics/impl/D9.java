@@ -12,7 +12,7 @@ public final class D9 extends MessageNano {
     public static volatile D9[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f406a;
+    public int f407a;
     public String b;
 
     public D9() {
@@ -31,7 +31,7 @@ public final class D9 extends MessageNano {
     }
 
     public final D9 a() {
-        this.f406a = 2;
+        this.f407a = 2;
         this.b = "";
         this.cachedSize = -1;
         return this;
@@ -40,7 +40,7 @@ public final class D9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f406a;
+        int i = this.f407a;
         if (i != 2) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(3, i);
         }
@@ -49,7 +49,7 @@ public final class D9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f406a;
+        int i = this.f407a;
         if (i != 2) {
             codedOutputByteBufferNano.writeInt32(3, i);
         }
@@ -81,7 +81,7 @@ public final class D9 extends MessageNano {
                         case 10:
                         case 11:
                         case 12:
-                            this.f406a = readInt32;
+                            this.f407a = readInt32;
                             continue;
                     }
                 } else if (readTag != 34) {

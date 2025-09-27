@@ -19,8 +19,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InvalidationTracker.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", "", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1", f = "InvalidationTracker.kt", i = {0, 1}, l = {233, 233, 237}, m = "invokeSuspend", n = {"$this$flow", "$this$flow"}, s = {"L$0", "L$0"})
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00040\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", "", ""}, k = 3, mv = {2, 1, 0}, xi = 48)
+@DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1", f = "InvalidationTracker.kt", i = {0, 1}, l = {238, 238, 242}, m = "invokeSuspend", n = {"$this$flow", "$this$flow"}, s = {"L$0", "L$0"})
 /* loaded from: classes3.dex */
 public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendLambda implements Function2<FlowCollector<? super Set<? extends String>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ boolean $emitInitialState;
@@ -81,7 +81,7 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
                 ResultKt.throwOnFailure(obj);
                 FlowCollector flowCollector3 = (FlowCollector) this.L$0;
                 observedTableStates2 = this.this$0.observedTableStates;
-                if (observedTableStates2.onObserverAdded$room_runtime_release(this.$tableIds)) {
+                if (observedTableStates2.onObserverAdded$room_runtime(this.$tableIds)) {
                     roomDatabase = this.this$0.database;
                     this.L$0 = flowCollector3;
                     this.label = 1;
@@ -119,15 +119,15 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
             this.label = 2;
         } catch (Throwable th) {
             observedTableStates = this.this$0.observedTableStates;
-            observedTableStates.onObserverRemoved$room_runtime_release(this.$tableIds);
+            observedTableStates.onObserverRemoved$room_runtime(this.$tableIds);
             throw th;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: InvalidationTracker.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1$1", f = "InvalidationTracker.kt", i = {}, l = {233}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.room.TriggerBasedInvalidationTracker$createFlow$1$1", f = "InvalidationTracker.kt", i = {}, l = {238}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.room.TriggerBasedInvalidationTracker$createFlow$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -157,7 +157,7 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (this.this$0.syncTriggers$room_runtime_release(this) == coroutine_suspended) {
+                if (this.this$0.syncTriggers$room_runtime(this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -171,7 +171,7 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: InvalidationTracker.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* renamed from: androidx.room.TriggerBasedInvalidationTracker$createFlow$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2<T> implements FlowCollector {
@@ -195,25 +195,24 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
             return emit((int[]) obj, (Continuation<? super Unit>) continuation);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x005e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0058, code lost:
             if (r14.emit(r2, r0) == r1) goto L22;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:36:0x00b5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x00ad, code lost:
             if (r14.emit(r2, r0) == r1) goto L22;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:37:0x00b7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x00af, code lost:
             return r1;
          */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x003b  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object emit(int[] iArr, Continuation<? super Unit> continuation) {
             TriggerBasedInvalidationTracker$createFlow$1$2$emit$1 triggerBasedInvalidationTracker$createFlow$1$2$emit$1;
             int i;
-            AnonymousClass2<T> anonymousClass2;
             int[] iArr2;
             if (continuation instanceof TriggerBasedInvalidationTracker$createFlow$1$2$emit$1) {
                 triggerBasedInvalidationTracker$createFlow$1$2$emit$1 = (TriggerBasedInvalidationTracker$createFlow$1$2$emit$1) continuation;
@@ -225,15 +224,14 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         if (this.$currentVersions.element == null) {
+                            iArr2 = iArr;
                             if (this.$emitInitialState) {
                                 FlowCollector<Set<String>> flowCollector = this.$$this$flow;
                                 Set<String> set = ArraysKt.toSet(this.$resolvedTableNames);
-                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0 = this;
-                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$1 = iArr;
+                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0 = iArr;
                                 triggerBasedInvalidationTracker$createFlow$1$2$emit$1.label = 1;
+                                iArr2 = iArr;
                             }
-                            anonymousClass2 = this;
-                            iArr2 = iArr;
                         } else {
                             String[] strArr = this.$resolvedTableNames;
                             Ref.ObjectRef<int[]> objectRef = this.$currentVersions;
@@ -257,24 +255,22 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
                                 i3 = i4;
                             }
                             ArrayList arrayList2 = arrayList;
+                            iArr2 = iArr;
                             if (!arrayList2.isEmpty()) {
                                 FlowCollector<Set<String>> flowCollector2 = this.$$this$flow;
                                 Set<String> set2 = CollectionsKt.toSet(arrayList2);
-                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0 = this;
-                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$1 = iArr;
+                                triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0 = iArr;
                                 triggerBasedInvalidationTracker$createFlow$1$2$emit$1.label = 2;
+                                iArr2 = iArr;
                             }
-                            anonymousClass2 = this;
-                            iArr2 = iArr;
                         }
                     } else if (i != 1 && i != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        anonymousClass2 = (AnonymousClass2) triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        iArr2 = (T) ((int[]) triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$1);
+                        iArr2 = (T) ((int[]) triggerBasedInvalidationTracker$createFlow$1$2$emit$1.L$0);
                     }
-                    anonymousClass2.$currentVersions.element = (T) iArr2;
+                    this.$currentVersions.element = (T) iArr2;
                     return Unit.INSTANCE;
                 }
             }
@@ -284,7 +280,7 @@ public final class TriggerBasedInvalidationTracker$createFlow$1 extends SuspendL
             i = triggerBasedInvalidationTracker$createFlow$1$2$emit$1.label;
             if (i != 0) {
             }
-            anonymousClass2.$currentVersions.element = (T) iArr2;
+            this.$currentVersions.element = (T) iArr2;
             return Unit.INSTANCE;
         }
     }

@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0203dg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f845a;
+    public final String f846a;
     public final String b;
     public final List c;
     public final Map d;
@@ -23,11 +23,11 @@ public final class C0203dg {
     }
 
     public final String toString() {
-        return "ProductWrapper{sku='" + this.f845a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
+        return "ProductWrapper{sku='" + this.f846a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0203dg(String str, String str2, List list, Map map, Tf tf, Tf tf2, List list2) {
-        this.f845a = str;
+        this.f846a = str;
         this.b = str2;
         this.c = list;
         this.d = map;

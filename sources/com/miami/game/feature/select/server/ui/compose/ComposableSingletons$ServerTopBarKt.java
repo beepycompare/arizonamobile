@@ -34,7 +34,7 @@ public final class ComposableSingletons$ServerTopBarKt {
     });
 
     /* renamed from: getLambda$-1484463318$select_server_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9019getLambda$1484463318$select_server_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9031getLambda$1484463318$select_server_release() {
         return f78lambda$1484463318;
     }
 
@@ -48,7 +48,7 @@ public final class ComposableSingletons$ServerTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1484463318, i, -1, "com.miami.game.feature.select.server.ui.compose.ComposableSingletons$ServerTopBarKt.lambda$-1484463318.<anonymous> (ServerTopBar.kt:51)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m870height3ABfNKs(Modifier.Companion, Dp.m7251constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m880height3ABfNKs(Modifier.Companion, Dp.m7264constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

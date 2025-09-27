@@ -65,20 +65,18 @@ public final class GsonTypes {
             return (Class) type;
         }
         if (type instanceof ParameterizedType) {
-            Type rawType = ((ParameterizedType) type).getRawType();
-            GsonPreconditions.checkArgument(rawType instanceof Class);
-            return (Class) rawType;
-        } else if (type instanceof GenericArrayType) {
-            return Array.newInstance(getRawType(((GenericArrayType) type).getGenericComponentType()), 0).getClass();
-        } else {
-            if (type instanceof TypeVariable) {
-                return Object.class;
-            }
-            if (type instanceof WildcardType) {
-                return getRawType(((WildcardType) type).getUpperBounds()[0]);
-            }
-            throw new IllegalArgumentException("Expected a Class, ParameterizedType, or GenericArrayType, but <" + type + "> is of type " + (type == null ? AbstractJsonLexerKt.NULL : type.getClass().getName()));
+            return (Class) ((ParameterizedType) type).getRawType();
         }
+        if (type instanceof GenericArrayType) {
+            return Array.newInstance(getRawType(((GenericArrayType) type).getGenericComponentType()), 0).getClass();
+        }
+        if (type instanceof TypeVariable) {
+            return Object.class;
+        }
+        if (type instanceof WildcardType) {
+            return getRawType(((WildcardType) type).getUpperBounds()[0]);
+        }
+        throw new IllegalArgumentException("Expected a Class, ParameterizedType, or GenericArrayType, but <" + type + "> is of type " + (type == null ? AbstractJsonLexerKt.NULL : type.getClass().getName()));
     }
 
     private static boolean equal(Object obj, Object obj2) {
@@ -160,7 +158,9 @@ public final class GsonTypes {
         if (type instanceof WildcardType) {
             type = ((WildcardType) type).getUpperBounds()[0];
         }
-        GsonPreconditions.checkArgument(cls2.isAssignableFrom(cls));
+        if (!cls2.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException(cls + " is not the same as or a subtype of " + cls2);
+        }
         return resolve(type, cls, getGenericSupertype(type, cls, cls2));
     }
 
@@ -332,7 +332,9 @@ public final class GsonTypes {
     }
 
     static void checkNotPrimitive(Type type) {
-        GsonPreconditions.checkArgument(((type instanceof Class) && ((Class) type).isPrimitive()) ? false : true);
+        if ((type instanceof Class) && ((Class) type).isPrimitive()) {
+            throw new IllegalArgumentException("Primitive type is not allowed");
+        }
     }
 
     public static boolean requiresOwnerType(Type type) {
@@ -353,7 +355,7 @@ public final class GsonTypes {
         private final Type rawType;
         private final Type[] typeArguments;
 
-        public ParameterizedTypeImpl(Type type, Class<?> cls, Type... typeArr) {
+        ParameterizedTypeImpl(Type type, Class<?> cls, Type... typeArr) {
             Objects.requireNonNull(cls);
             if (type == null && GsonTypes.requiresOwnerType(cls)) {
                 throw new IllegalArgumentException("Must specify owner type for " + cls);
@@ -421,7 +423,7 @@ public final class GsonTypes {
         private static final long serialVersionUID = 0;
         private final Type componentType;
 
-        public GenericArrayTypeImpl(Type type) {
+        GenericArrayTypeImpl(Type type) {
             Objects.requireNonNull(type);
             this.componentType = GsonTypes.canonicalize(type);
         }
@@ -451,13 +453,19 @@ public final class GsonTypes {
         private final Type lowerBound;
         private final Type upperBound;
 
-        public WildcardTypeImpl(Type[] typeArr, Type[] typeArr2) {
-            GsonPreconditions.checkArgument(typeArr2.length <= 1);
-            GsonPreconditions.checkArgument(typeArr.length == 1);
+        WildcardTypeImpl(Type[] typeArr, Type[] typeArr2) {
+            if (typeArr2.length > 1) {
+                throw new IllegalArgumentException("At most one lower bound is supported");
+            }
+            if (typeArr.length != 1) {
+                throw new IllegalArgumentException("Exactly one upper bound must be specified");
+            }
             if (typeArr2.length == 1) {
                 Objects.requireNonNull(typeArr2[0]);
                 GsonTypes.checkNotPrimitive(typeArr2[0]);
-                GsonPreconditions.checkArgument(typeArr[0] == Object.class);
+                if (typeArr[0] != Object.class) {
+                    throw new IllegalArgumentException("When lower bound is specified, upper bound must be Object");
+                }
                 this.lowerBound = GsonTypes.canonicalize(typeArr2[0]);
                 this.upperBound = Object.class;
                 return;

@@ -38,9 +38,9 @@ public final class ImageBitmapKt {
     }
 
     /* renamed from: ImageBitmap-x__-hDU$default */
-    public static /* synthetic */ ImageBitmap m4774ImageBitmapx__hDU$default(int i, int i2, int i3, boolean z, ColorSpace colorSpace, int i4, Object obj) {
+    public static /* synthetic */ ImageBitmap m4786ImageBitmapx__hDU$default(int i, int i2, int i3, boolean z, ColorSpace colorSpace, int i4, Object obj) {
         if ((i4 & 4) != 0) {
-            i3 = ImageBitmapConfig.Companion.m4769getArgb8888_sVssgQ();
+            i3 = ImageBitmapConfig.Companion.m4781getArgb8888_sVssgQ();
         }
         if ((i4 & 8) != 0) {
             z = true;
@@ -48,12 +48,12 @@ public final class ImageBitmapKt {
         if ((i4 & 16) != 0) {
             colorSpace = ColorSpaces.INSTANCE.getSrgb();
         }
-        return m4773ImageBitmapx__hDU(i, i2, i3, z, colorSpace);
+        return m4785ImageBitmapx__hDU(i, i2, i3, z, colorSpace);
     }
 
     /* renamed from: ImageBitmap-x__-hDU */
-    public static final ImageBitmap m4773ImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
-        return AndroidImageBitmap_androidKt.m4403ActualImageBitmapx__hDU(i, i2, i3, z, colorSpace);
+    public static final ImageBitmap m4785ImageBitmapx__hDU(int i, int i2, int i3, boolean z, ColorSpace colorSpace) {
+        return AndroidImageBitmap_androidKt.m4415ActualImageBitmapx__hDU(i, i2, i3, z, colorSpace);
     }
 
     public static final ImageBitmap decodeToImageBitmap(byte[] bArr) {

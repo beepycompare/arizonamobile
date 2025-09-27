@@ -93,7 +93,7 @@ public final class ModifierLocalManager {
     /* JADX WARN: Multi-variable type inference failed */
     private final void invalidateConsumersOfNodeForKey(Modifier.Node node, ModifierLocal<?> modifierLocal, Set<BackwardsCompatNode> set) {
         Modifier.Node node2 = node;
-        int m6245constructorimpl = NodeKind.m6245constructorimpl(32);
+        int m6258constructorimpl = NodeKind.m6258constructorimpl(32);
         if (!node2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -106,9 +106,9 @@ public final class ModifierLocalManager {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node3 = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node3.getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
+            if ((node3.getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
                 for (Modifier.Node node4 = node3; node4 != null; node4 = node4.getChild$ui_release()) {
-                    if ((node4.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                    if ((node4.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                         Modifier.Node node5 = node4;
                         MutableVector mutableVector2 = null;
                         while (node5 != null) {
@@ -123,10 +123,10 @@ public final class ModifierLocalManager {
                                 if (modifierLocalModifierNode.getProvidedValues().contains$ui_release(modifierLocal)) {
                                     break;
                                 }
-                            } else if ((node5.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node5 instanceof DelegatingNode)) {
+                            } else if ((node5.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node5 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node5).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node5 = delegate$ui_release;

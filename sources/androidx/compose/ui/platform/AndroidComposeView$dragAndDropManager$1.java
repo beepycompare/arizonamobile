@@ -20,13 +20,13 @@ public /* synthetic */ class AndroidComposeView$dragAndDropManager$1 extends Fun
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Boolean invoke(DragAndDropTransferData dragAndDropTransferData, Size size, Function1<? super DrawScope, ? extends Unit> function1) {
-        return m6356invoke12SF9DM(dragAndDropTransferData, size.m4367unboximpl(), function1);
+        return m6369invoke12SF9DM(dragAndDropTransferData, size.m4379unboximpl(), function1);
     }
 
     /* renamed from: invoke-12SF9DM  reason: not valid java name */
-    public final Boolean m6356invoke12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
-        boolean m6353startDrag12SF9DM;
-        m6353startDrag12SF9DM = ((AndroidComposeView) this.receiver).m6353startDrag12SF9DM(dragAndDropTransferData, j, function1);
-        return Boolean.valueOf(m6353startDrag12SF9DM);
+    public final Boolean m6369invoke12SF9DM(DragAndDropTransferData dragAndDropTransferData, long j, Function1<? super DrawScope, Unit> function1) {
+        boolean m6366startDrag12SF9DM;
+        m6366startDrag12SF9DM = ((AndroidComposeView) this.receiver).m6366startDrag12SF9DM(dragAndDropTransferData, j, function1);
+        return Boolean.valueOf(m6366startDrag12SF9DM);
     }
 }

@@ -8,7 +8,7 @@ import java.io.File;
 public final class RunnableC0513pg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f1034a;
+    public final File f1035a;
     public final Function b;
     public final Consumer c;
     public final Consumer d;
@@ -16,7 +16,7 @@ public final class RunnableC0513pg implements Runnable {
     public final InterfaceC0362jl f;
 
     public RunnableC0513pg(File file, Function function, Consumer consumer, Consumer consumer2, C0756za c0756za, InterfaceC0362jl interfaceC0362jl) {
-        this.f1034a = file;
+        this.f1035a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
@@ -29,25 +29,25 @@ public final class RunnableC0513pg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f1034a.exists()) {
-            X9 b = this.e.b(this.f1034a.getName());
+        if (this.f1035a.exists()) {
+            X9 b = this.e.b(this.f1035a.getName());
             Consumer consumer = this.c;
             try {
-                b.f739a.lock();
+                b.f740a.lock();
                 b.b.a();
             } catch (Throwable unused) {
             }
-            if (!this.f1034a.exists()) {
-                consumer.consume(this.f1034a);
+            if (!this.f1035a.exists()) {
+                consumer.consume(this.f1035a);
                 b.c();
                 C0756za c0756za = this.e;
-                String name = this.f1034a.getName();
+                String name = this.f1035a.getName();
                 synchronized (c0756za) {
                     c0756za.b.remove(name);
                 }
                 return;
             }
-            Object apply = this.b.apply(this.f1034a);
+            Object apply = this.b.apply(this.f1035a);
             if (apply != null) {
                 if (this.f.a(apply)) {
                     this.d.consume(apply);
@@ -60,9 +60,9 @@ public final class RunnableC0513pg implements Runnable {
                     };
                 }
             }
-            consumer.consume(this.f1034a);
+            consumer.consume(this.f1035a);
             b.c();
-            this.e.a(this.f1034a.getName());
+            this.e.a(this.f1035a.getName());
         }
     }
 }

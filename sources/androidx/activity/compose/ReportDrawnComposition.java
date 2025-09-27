@@ -7,10 +7,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Ref;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ReportDrawn.kt */
-@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001¢\u0006\u0002\u0010\u0007J\t\u0010\f\u001a\u00020\u0002H\u0096\u0002J\u0016\u0010\r\u001a\u00020\u00022\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001H\u0002J\u0006\u0010\u000e\u001a\u00020\u0002R \u0010\b\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0001\u0012\u0004\u0012\u00020\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Landroidx/activity/compose/ReportDrawnComposition;", "Lkotlin/Function0;", "", "fullyDrawnReporter", "Landroidx/activity/FullyDrawnReporter;", "predicate", "", "(Landroidx/activity/FullyDrawnReporter;Lkotlin/jvm/functions/Function0;)V", "checkReporter", "Lkotlin/Function1;", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "invoke", "observeReporter", "removeReporter", "activity-compose_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001d\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\r\u001a\u00020\u0002H\u0096\u0002J\u0006\u0010\u000e\u001a\u00020\u0002J\u0016\u0010\u000f\u001a\u00020\u00022\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001H\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00060\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u000b\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0001\u0012\u0004\u0012\u00020\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Landroidx/activity/compose/ReportDrawnComposition;", "Lkotlin/Function0;", "", "fullyDrawnReporter", "Landroidx/activity/FullyDrawnReporter;", "predicate", "", "<init>", "(Landroidx/activity/FullyDrawnReporter;Lkotlin/jvm/functions/Function0;)V", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "checkReporter", "Lkotlin/Function1;", "invoke", "removeReporter", "observeReporter", "activity-compose_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-final class ReportDrawnComposition implements Function0<Unit> {
+public final class ReportDrawnComposition implements Function0<Unit> {
     private final Function1<Function0<Boolean>, Unit> checkReporter;
     private final FullyDrawnReporter fullyDrawnReporter;
     private final Function0<Boolean> predicate;
@@ -19,16 +20,12 @@ final class ReportDrawnComposition implements Function0<Unit> {
     public ReportDrawnComposition(FullyDrawnReporter fullyDrawnReporter, Function0<Boolean> function0) {
         this.fullyDrawnReporter = fullyDrawnReporter;
         this.predicate = function0;
-        SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1<Function0<? extends Unit>, Unit>() { // from class: androidx.activity.compose.ReportDrawnComposition$snapshotStateObserver$1
+        SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1() { // from class: androidx.activity.compose.ReportDrawnComposition$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Function0<? extends Unit> function02) {
-                invoke2((Function0<Unit>) function02);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(Function0<Unit> function02) {
-                function02.invoke();
+            public final Object invoke(Object obj) {
+                Unit snapshotStateObserver$lambda$0;
+                snapshotStateObserver$lambda$0 = ReportDrawnComposition.snapshotStateObserver$lambda$0((Function0) obj);
+                return snapshotStateObserver$lambda$0;
             }
         });
         snapshotStateObserver.start();
@@ -45,6 +42,12 @@ final class ReportDrawnComposition implements Function0<Unit> {
     @Override // kotlin.jvm.functions.Function0
     public /* bridge */ /* synthetic */ Unit invoke() {
         invoke2();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit snapshotStateObserver$lambda$0(Function0 function0) {
+        function0.invoke();
         return Unit.INSTANCE;
     }
 
@@ -65,26 +68,22 @@ final class ReportDrawnComposition implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: private */
     public final void observeReporter(final Function0<Boolean> function0) {
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        this.snapshotStateObserver.observeReads(function0, this.checkReporter, new Function0<Unit>() { // from class: androidx.activity.compose.ReportDrawnComposition$observeReporter$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(0);
-            }
-
+        this.snapshotStateObserver.observeReads(function0, this.checkReporter, new Function0() { // from class: androidx.activity.compose.ReportDrawnComposition$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public /* bridge */ /* synthetic */ Unit invoke() {
-                invoke2();
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2() {
-                Ref.BooleanRef.this.element = function0.invoke().booleanValue();
+            public final Object invoke() {
+                Unit observeReporter$lambda$2;
+                observeReporter$lambda$2 = ReportDrawnComposition.observeReporter$lambda$2(Ref.BooleanRef.this, function0);
+                return observeReporter$lambda$2;
             }
         });
         if (booleanRef.element) {
             removeReporter();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit observeReporter$lambda$2(Ref.BooleanRef booleanRef, Function0 function0) {
+        booleanRef.element = ((Boolean) function0.invoke()).booleanValue();
+        return Unit.INSTANCE;
     }
 }

@@ -39,7 +39,7 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
         this.state = analogTimePickerState;
         this.autoSwitchToMinute = z;
         this.selection = i;
-        this.center = IntOffset.Companion.m7390getZeronOccac();
+        this.center = IntOffset.Companion.m7403getZeronOccac();
         this.pointerInputTapNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new ClockDialNode$pointerInputTapNode$1(this, null)));
         this.pointerInputDragNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new ClockDialNode$pointerInputDragNode$1(this, null)));
     }
@@ -49,20 +49,20 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
         float f;
         Density requireDensity = DelegatableNodeKt.requireDensity(this);
         f = TimePickerKt.MaxDistance;
-        return requireDensity.mo419toPx0680j_4(f);
+        return requireDensity.mo429toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo408onRemeasuredozmzZPI(long j) {
-        this.center = IntSizeKt.m7428getCenterozmzZPI(j);
+    public void mo418onRemeasuredozmzZPI(long j) {
+        this.center = IntSizeKt.m7441getCenterozmzZPI(j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputTapNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
-        this.pointerInputDragNode.mo227onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputTapNode.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        this.pointerInputDragNode.mo237onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -72,10 +72,10 @@ public final class ClockDialNode extends DelegatingNode implements PointerInputM
     }
 
     /* renamed from: updateNode-e8ubxrI  reason: not valid java name */
-    public final void m1993updateNodee8ubxrI(AnalogTimePickerState analogTimePickerState, boolean z, int i) {
+    public final void m2003updateNodee8ubxrI(AnalogTimePickerState analogTimePickerState, boolean z, int i) {
         this.state = analogTimePickerState;
         this.autoSwitchToMinute = z;
-        if (TimePickerSelectionMode.m2858equalsimpl0(this.selection, i)) {
+        if (TimePickerSelectionMode.m2868equalsimpl0(this.selection, i)) {
             return;
         }
         this.selection = i;

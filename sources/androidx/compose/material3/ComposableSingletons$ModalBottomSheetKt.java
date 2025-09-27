@@ -30,7 +30,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1524796689, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda-1.<anonymous> (ModalBottomSheet.kt:128)");
             }
-            BottomSheetDefaults.INSTANCE.m1901DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1911DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -54,7 +54,7 @@ public final class ComposableSingletons$ModalBottomSheetKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2066864887, i, -1, "androidx.compose.material3.ComposableSingletons$ModalBottomSheetKt.lambda-2.<anonymous> (ModalBottomSheet.kt:211)");
             }
-            BottomSheetDefaults.INSTANCE.m1901DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
+            BottomSheetDefaults.INSTANCE.m1911DragHandlelgZ2HuY(null, 0.0f, 0.0f, null, 0L, composer, ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 31);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -62,12 +62,12 @@ public final class ComposableSingletons$ModalBottomSheetKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2080getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2090getLambda1$material3_release() {
         return f33lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2081getLambda2$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2091getLambda2$material3_release() {
         return f34lambda2;
     }
 }

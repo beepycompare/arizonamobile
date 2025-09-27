@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.conveyor_game;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,8 +15,8 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConveyorGameScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.conveyor_game.ConveyorGameScreen$onBoxClick$1", f = "ConveyorGameScreen.kt", i = {}, l = {315}, m = "invokeSuspend", n = {}, s = {}, v = 1)
-/* loaded from: classes5.dex */
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.conveyor_game.ConveyorGameScreen$onBoxClick$1", f = "ConveyorGameScreen.kt", i = {}, l = {TypedValues.AttributesType.TYPE_PATH_ROTATE}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+/* loaded from: classes6.dex */
 public final class ConveyorGameScreen$onBoxClick$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ ConveyorGameScreen this$0;

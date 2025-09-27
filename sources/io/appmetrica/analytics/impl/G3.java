@@ -10,7 +10,7 @@ public final class G3 extends ECommerceEvent {
     public static final int e = 5;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f454a;
+    public final int f455a;
     public final J3 b;
     public final A8 c;
 
@@ -24,7 +24,7 @@ public final class G3 extends ECommerceEvent {
 
     @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
     public final String getPublicDescription() {
-        int i = this.f454a;
+        int i = this.f455a;
         if (i != 4) {
             if (i != 5) {
                 return "unknown cart action info";
@@ -40,11 +40,11 @@ public final class G3 extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "CartActionInfoEvent{eventType=" + this.f454a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "CartActionInfoEvent{eventType=" + this.f455a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public G3(int i, J3 j3, A8 a8) {
-        this.f454a = i;
+        this.f455a = i;
         this.b = j3;
         this.c = a8;
     }

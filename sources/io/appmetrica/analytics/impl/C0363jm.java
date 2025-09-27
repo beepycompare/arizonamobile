@@ -17,11 +17,11 @@ public final class C0363jm extends AbstractC0399l6 {
     /* renamed from: b */
     public final C0389km load(C0373k6 c0373k6) {
         C0389km c0389km = (C0389km) super.load(c0373k6);
-        C0493om c0493om = c0373k6.f949a;
+        C0493om c0493om = c0373k6.f950a;
         c0389km.d = c0493om.f;
         c0389km.e = c0493om.g;
         C0337im c0337im = (C0337im) c0373k6.componentArguments;
-        String str = c0337im.f927a;
+        String str = c0337im.f928a;
         if (str != null) {
             c0389km.f = str;
             c0389km.g = c0337im.b;
@@ -32,7 +32,7 @@ public final class C0363jm extends AbstractC0399l6 {
         C0337im c0337im2 = (C0337im) c0373k6.componentArguments;
         c0389km.k = c0337im2.d;
         c0389km.j = c0337im2.e;
-        C0493om c0493om2 = c0373k6.f949a;
+        C0493om c0493om2 = c0373k6.f950a;
         c0389km.l = c0493om2.p;
         c0389km.m = c0493om2.r;
         long j = c0493om2.v;

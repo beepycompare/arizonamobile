@@ -5,18 +5,18 @@ import android.content.Context;
 public abstract class Yi {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f759a;
+    protected final Context f760a;
     public final String b;
     public final String c;
 
     public Yi(Context context, String str, String str2) {
-        this.f759a = context;
+        this.f760a = context;
         this.b = str;
         this.c = str2;
     }
 
     public final Object a() {
-        int identifier = this.f759a.getResources().getIdentifier(this.b, this.c, this.f759a.getPackageName());
+        int identifier = this.f760a.getResources().getIdentifier(this.b, this.c, this.f760a.getPackageName());
         if (identifier != 0) {
             try {
                 return a(identifier);

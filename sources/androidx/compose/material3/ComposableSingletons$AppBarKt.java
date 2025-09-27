@@ -429,92 +429,92 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2050getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2060getLambda1$material3_release() {
         return f3lambda1;
     }
 
     /* renamed from: getLambda-10$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2051getLambda10$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2061getLambda10$material3_release() {
         return f4lambda10;
     }
 
     /* renamed from: getLambda-11$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2052getLambda11$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2062getLambda11$material3_release() {
         return f5lambda11;
     }
 
     /* renamed from: getLambda-12$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2053getLambda12$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2063getLambda12$material3_release() {
         return f6lambda12;
     }
 
     /* renamed from: getLambda-13$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2054getLambda13$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2064getLambda13$material3_release() {
         return f7lambda13;
     }
 
     /* renamed from: getLambda-14$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2055getLambda14$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2065getLambda14$material3_release() {
         return f8lambda14;
     }
 
     /* renamed from: getLambda-15$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2056getLambda15$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2066getLambda15$material3_release() {
         return f9lambda15;
     }
 
     /* renamed from: getLambda-16$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2057getLambda16$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2067getLambda16$material3_release() {
         return f10lambda16;
     }
 
     /* renamed from: getLambda-17$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2058getLambda17$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2068getLambda17$material3_release() {
         return f11lambda17;
     }
 
     /* renamed from: getLambda-18$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2059getLambda18$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2069getLambda18$material3_release() {
         return f12lambda18;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2060getLambda2$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2070getLambda2$material3_release() {
         return f13lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2061getLambda3$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2071getLambda3$material3_release() {
         return f14lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2062getLambda4$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2072getLambda4$material3_release() {
         return f15lambda4;
     }
 
     /* renamed from: getLambda-5$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2063getLambda5$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2073getLambda5$material3_release() {
         return f16lambda5;
     }
 
     /* renamed from: getLambda-6$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2064getLambda6$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2074getLambda6$material3_release() {
         return f17lambda6;
     }
 
     /* renamed from: getLambda-7$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2065getLambda7$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2075getLambda7$material3_release() {
         return f18lambda7;
     }
 
     /* renamed from: getLambda-8$material3_release  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2066getLambda8$material3_release() {
+    public final Function3<RowScope, Composer, Integer, Unit> m2076getLambda8$material3_release() {
         return f19lambda8;
     }
 
     /* renamed from: getLambda-9$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2067getLambda9$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2077getLambda9$material3_release() {
         return f20lambda9;
     }
 }

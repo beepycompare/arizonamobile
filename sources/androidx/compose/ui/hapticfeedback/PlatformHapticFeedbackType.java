@@ -7,85 +7,85 @@ import kotlin.Metadata;
 public final class PlatformHapticFeedbackType {
     public static final int $stable = 0;
     public static final PlatformHapticFeedbackType INSTANCE = new PlatformHapticFeedbackType();
-    private static final int Confirm = HapticFeedbackType.m5312constructorimpl(16);
-    private static final int ContextClick = HapticFeedbackType.m5312constructorimpl(6);
-    private static final int GestureEnd = HapticFeedbackType.m5312constructorimpl(13);
-    private static final int GestureThresholdActivate = HapticFeedbackType.m5312constructorimpl(23);
-    private static final int KeyboardTap = HapticFeedbackType.m5312constructorimpl(3);
-    private static final int LongPress = HapticFeedbackType.m5312constructorimpl(0);
-    private static final int Reject = HapticFeedbackType.m5312constructorimpl(17);
-    private static final int SegmentFrequentTick = HapticFeedbackType.m5312constructorimpl(27);
-    private static final int SegmentTick = HapticFeedbackType.m5312constructorimpl(26);
-    private static final int TextHandleMove = HapticFeedbackType.m5312constructorimpl(9);
-    private static final int ToggleOff = HapticFeedbackType.m5312constructorimpl(22);
-    private static final int ToggleOn = HapticFeedbackType.m5312constructorimpl(21);
-    private static final int VirtualKey = HapticFeedbackType.m5312constructorimpl(1);
+    private static final int Confirm = HapticFeedbackType.m5325constructorimpl(16);
+    private static final int ContextClick = HapticFeedbackType.m5325constructorimpl(6);
+    private static final int GestureEnd = HapticFeedbackType.m5325constructorimpl(13);
+    private static final int GestureThresholdActivate = HapticFeedbackType.m5325constructorimpl(23);
+    private static final int KeyboardTap = HapticFeedbackType.m5325constructorimpl(3);
+    private static final int LongPress = HapticFeedbackType.m5325constructorimpl(0);
+    private static final int Reject = HapticFeedbackType.m5325constructorimpl(17);
+    private static final int SegmentFrequentTick = HapticFeedbackType.m5325constructorimpl(27);
+    private static final int SegmentTick = HapticFeedbackType.m5325constructorimpl(26);
+    private static final int TextHandleMove = HapticFeedbackType.m5325constructorimpl(9);
+    private static final int ToggleOff = HapticFeedbackType.m5325constructorimpl(22);
+    private static final int ToggleOn = HapticFeedbackType.m5325constructorimpl(21);
+    private static final int VirtualKey = HapticFeedbackType.m5325constructorimpl(1);
 
     private PlatformHapticFeedbackType() {
     }
 
     /* renamed from: getConfirm-5zf0vsI  reason: not valid java name */
-    public final int m5331getConfirm5zf0vsI() {
+    public final int m5344getConfirm5zf0vsI() {
         return Confirm;
     }
 
     /* renamed from: getContextClick-5zf0vsI  reason: not valid java name */
-    public final int m5332getContextClick5zf0vsI() {
+    public final int m5345getContextClick5zf0vsI() {
         return ContextClick;
     }
 
     /* renamed from: getGestureEnd-5zf0vsI  reason: not valid java name */
-    public final int m5333getGestureEnd5zf0vsI() {
+    public final int m5346getGestureEnd5zf0vsI() {
         return GestureEnd;
     }
 
     /* renamed from: getGestureThresholdActivate-5zf0vsI  reason: not valid java name */
-    public final int m5334getGestureThresholdActivate5zf0vsI() {
+    public final int m5347getGestureThresholdActivate5zf0vsI() {
         return GestureThresholdActivate;
     }
 
     /* renamed from: getKeyboardTap-5zf0vsI  reason: not valid java name */
-    public final int m5335getKeyboardTap5zf0vsI() {
+    public final int m5348getKeyboardTap5zf0vsI() {
         return KeyboardTap;
     }
 
     /* renamed from: getLongPress-5zf0vsI  reason: not valid java name */
-    public final int m5336getLongPress5zf0vsI() {
+    public final int m5349getLongPress5zf0vsI() {
         return LongPress;
     }
 
     /* renamed from: getReject-5zf0vsI  reason: not valid java name */
-    public final int m5337getReject5zf0vsI() {
+    public final int m5350getReject5zf0vsI() {
         return Reject;
     }
 
     /* renamed from: getSegmentFrequentTick-5zf0vsI  reason: not valid java name */
-    public final int m5338getSegmentFrequentTick5zf0vsI() {
+    public final int m5351getSegmentFrequentTick5zf0vsI() {
         return SegmentFrequentTick;
     }
 
     /* renamed from: getSegmentTick-5zf0vsI  reason: not valid java name */
-    public final int m5339getSegmentTick5zf0vsI() {
+    public final int m5352getSegmentTick5zf0vsI() {
         return SegmentTick;
     }
 
     /* renamed from: getTextHandleMove-5zf0vsI  reason: not valid java name */
-    public final int m5340getTextHandleMove5zf0vsI() {
+    public final int m5353getTextHandleMove5zf0vsI() {
         return TextHandleMove;
     }
 
     /* renamed from: getToggleOff-5zf0vsI  reason: not valid java name */
-    public final int m5341getToggleOff5zf0vsI() {
+    public final int m5354getToggleOff5zf0vsI() {
         return ToggleOff;
     }
 
     /* renamed from: getToggleOn-5zf0vsI  reason: not valid java name */
-    public final int m5342getToggleOn5zf0vsI() {
+    public final int m5355getToggleOn5zf0vsI() {
         return ToggleOn;
     }
 
     /* renamed from: getVirtualKey-5zf0vsI  reason: not valid java name */
-    public final int m5343getVirtualKey5zf0vsI() {
+    public final int m5356getVirtualKey5zf0vsI() {
         return VirtualKey;
     }
 }

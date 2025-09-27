@@ -32,19 +32,19 @@ public final class SweepGradient extends ShaderBrush {
 
     @Override // androidx.compose.ui.graphics.ShaderBrush
     /* renamed from: createShader-uvyYCjk */
-    public Shader mo4506createShaderuvyYCjk(long j) {
-        long m4285constructorimpl;
+    public Shader mo4518createShaderuvyYCjk(long j) {
+        long m4297constructorimpl;
         long j2 = this.center;
         if ((9223372034707292159L & j2) == androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m4285constructorimpl = SizeKt.m4372getCenteruvyYCjk(j);
+            m4297constructorimpl = SizeKt.m4384getCenteruvyYCjk(j);
         } else {
             float intBitsToFloat = Float.intBitsToFloat((int) (Float.intBitsToFloat((int) (j2 >> 32)) == Float.POSITIVE_INFINITY ? j >> 32 : this.center >> 32));
             if (Float.intBitsToFloat((int) (this.center & 4294967295L)) != Float.POSITIVE_INFINITY) {
                 j = this.center;
             }
-            m4285constructorimpl = Offset.m4285constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+            m4297constructorimpl = Offset.m4297constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
         }
-        return ShaderKt.m4871SweepGradientShader9KIMszo(m4285constructorimpl, this.colors, this.stops);
+        return ShaderKt.m4883SweepGradientShader9KIMszo(m4297constructorimpl, this.colors, this.stops);
     }
 
     public boolean equals(Object obj) {
@@ -53,18 +53,18 @@ public final class SweepGradient extends ShaderBrush {
         }
         if (obj instanceof SweepGradient) {
             SweepGradient sweepGradient = (SweepGradient) obj;
-            return Offset.m4290equalsimpl0(this.center, sweepGradient.center) && Intrinsics.areEqual(this.colors, sweepGradient.colors) && Intrinsics.areEqual(this.stops, sweepGradient.stops);
+            return Offset.m4302equalsimpl0(this.center, sweepGradient.center) && Intrinsics.areEqual(this.colors, sweepGradient.colors) && Intrinsics.areEqual(this.stops, sweepGradient.stops);
         }
         return false;
     }
 
     public int hashCode() {
-        int m4295hashCodeimpl = ((Offset.m4295hashCodeimpl(this.center) * 31) + this.colors.hashCode()) * 31;
+        int m4307hashCodeimpl = ((Offset.m4307hashCodeimpl(this.center) * 31) + this.colors.hashCode()) * 31;
         List<Float> list = this.stops;
-        return m4295hashCodeimpl + (list != null ? list.hashCode() : 0);
+        return m4307hashCodeimpl + (list != null ? list.hashCode() : 0);
     }
 
     public String toString() {
-        return "SweepGradient(" + ((this.center & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? "center=" + ((Object) Offset.m4301toStringimpl(this.center)) + ", " : "") + "colors=" + this.colors + ", stops=" + this.stops + ')';
+        return "SweepGradient(" + ((this.center & 9223372034707292159L) != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats ? "center=" + ((Object) Offset.m4313toStringimpl(this.center)) + ", " : "") + "colors=" + this.colors + ", stops=" + this.stops + ')';
     }
 }

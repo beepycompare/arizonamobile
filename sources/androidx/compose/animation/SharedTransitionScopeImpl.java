@@ -90,8 +90,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
     @Override // androidx.compose.ui.layout.LookaheadScope
     /* renamed from: localLookaheadPositionOf-au-aQtc  reason: not valid java name */
-    public long mo115localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-        return this.$$delegate_0.mo115localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
+    public long mo125localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+        return this.$$delegate_0.mo125localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j, z);
     }
 
     @Override // androidx.compose.ui.layout.LookaheadScope
@@ -562,8 +562,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                     ComposerKt.traceEventStart(-1843478929, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.sharedBoundsImpl.<anonymous> (SharedTransitionScope.kt:915)");
                 }
                 Object key = SharedTransitionScope.SharedContentState.this.getKey();
-                composer.startMovableGroup(-2056719732, key);
-                ComposerKt.sourceInformation(composer, "918@51094L35,949@52743L559");
+                composer.startMovableGroup(-2056718552, key);
+                ComposerKt.sourceInformation(composer, "918@51094L35,966@53923L559");
                 ComposerKt.sourceInformationMarkerStart(composer, -2056720462, "CC(remember):SharedTransitionScope.kt#9igjgp");
                 SharedTransitionScopeImpl sharedTransitionScopeImpl = this;
                 Object rememberedValue = composer.rememberedValue();
@@ -573,8 +573,9 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                 }
                 SharedElement sharedElement = (SharedElement) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                composer.startMovableGroup(-2056715920, transition);
-                ComposerKt.sourceInformation(composer, "939@52256L363");
+                composer.startMovableGroup(-2056714740, transition);
+                ComposerKt.sourceInformation(composer, "956@53436L363");
+                boolean z3 = false;
                 if (transition != null) {
                     composer.startReplaceGroup(666402505);
                     ComposerKt.sourceInformation(composer, "924@51369L121");
@@ -620,15 +621,20 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                     ComposerKt.sourceInformationMarkerEnd(composer);
                     composer.endReplaceGroup();
                 } else {
-                    composer.startReplaceGroup(666617645);
-                    ComposerKt.sourceInformation(composer, "931@51772L63,933@51947L35");
+                    composer.startReplaceGroup(666654225);
+                    ComposerKt.sourceInformation(composer, "931@51772L1243,950@53127L35");
                     Function function = function1;
                     Intrinsics.checkNotNull(function, "null cannot be cast to non-null type kotlin.Function1<kotlin.Unit, kotlin.Boolean>");
                     boolean booleanValue3 = ((Boolean) ((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function, 1)).invoke(Unit.INSTANCE)).booleanValue();
-                    ComposerKt.sourceInformationMarkerStart(composer, -2056698738, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                    ComposerKt.sourceInformationMarkerStart(composer, -2056697558, "CC(remember):SharedTransitionScope.kt#9igjgp");
                     Object rememberedValue3 = composer.rememberedValue();
                     if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                        rememberedValue3 = new MutableTransitionState(Boolean.valueOf(booleanValue3));
+                        if (sharedElement.getStates().isEmpty()) {
+                            z3 = booleanValue3;
+                        } else if (!booleanValue3) {
+                            z3 = true;
+                        }
+                        rememberedValue3 = new MutableTransitionState(Boolean.valueOf(z3));
                         composer.updateRememberedValue(rememberedValue3);
                     }
                     MutableTransitionState mutableTransitionState = (MutableTransitionState) rememberedValue3;
@@ -637,11 +643,11 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
                     rememberTransition = androidx.compose.animation.core.TransitionKt.rememberTransition(mutableTransitionState, null, composer, MutableTransitionState.$stable, 2);
                     composer.endReplaceGroup();
                 }
-                composer.startMovableGroup(-2056688763, Boolean.valueOf(this.isTransitionActive()));
-                ComposerKt.sourceInformation(composer, "937@52156L45");
+                composer.startMovableGroup(-2056651003, Boolean.valueOf(this.isTransitionActive()));
+                ComposerKt.sourceInformation(composer, "954@53336L45");
                 Transition<Boolean>.DeferredAnimation<Rect, AnimationVector4D> createDeferredAnimation = androidx.compose.animation.core.TransitionKt.createDeferredAnimation(rememberTransition, VectorConvertersKt.getVectorConverter(Rect.Companion), null, composer2, 0, 2);
                 composer.endMovableGroup();
-                ComposerKt.sourceInformationMarkerStart(composer, -2056682950, "CC(remember):SharedTransitionScope.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, -2056645190, "CC(remember):SharedTransitionScope.kt#9igjgp");
                 boolean changed2 = composer.changed(rememberTransition);
                 SharedTransitionScopeImpl sharedTransitionScopeImpl2 = this;
                 BoundsTransform boundsTransform2 = boundsTransform;
@@ -668,9 +674,9 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
 
     /* JADX INFO: Access modifiers changed from: private */
     public final SharedElementInternalState rememberSharedElementState(SharedElement sharedElement, BoundsAnimation boundsAnimation, SharedTransitionScope.PlaceHolderSize placeHolderSize, boolean z, SharedTransitionScope.SharedContentState sharedContentState, SharedTransitionScope.OverlayClip overlayClip, float f, boolean z2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 2066772852, "C(rememberSharedElementState)P(6!1,2,4,5!1,7)975@53835L512:SharedTransitionScope.kt#xbi5r1");
+        ComposerKt.sourceInformationMarkerStart(composer, 2066772852, "C(rememberSharedElementState)P(6!1,2,4,5!1,7)992@55015L512:SharedTransitionScope.kt#xbi5r1");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(2066772852, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.rememberSharedElementState (SharedTransitionScope.kt:975)");
+            ComposerKt.traceEventStart(2066772852, i, -1, "androidx.compose.animation.SharedTransitionScopeImpl.rememberSharedElementState (SharedTransitionScope.kt:992)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 1893834740, "CC(remember):SharedTransitionScope.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
@@ -850,8 +856,8 @@ public final class SharedTransitionScopeImpl implements SharedTransitionScope, L
         @Override // androidx.compose.animation.SharedTransitionScope.OverlayClip
         public Path getClipPath(SharedTransitionScope.SharedContentState sharedContentState, Rect rect, LayoutDirection layoutDirection, Density density) {
             this.path.reset();
-            OutlineKt.addOutline(this.path, this.clipShape.mo321createOutlinePq9zytI(rect.m4326getSizeNHjbRc(), layoutDirection, density));
-            this.path.mo4430translatek4lQ0M(rect.m4328getTopLeftF1C5BW0());
+            OutlineKt.addOutline(this.path, this.clipShape.mo331createOutlinePq9zytI(rect.m4338getSizeNHjbRc(), layoutDirection, density));
+            this.path.mo4442translatek4lQ0M(rect.m4340getTopLeftF1C5BW0());
             return this.path;
         }
     }

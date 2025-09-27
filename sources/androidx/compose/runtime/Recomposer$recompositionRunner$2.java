@@ -29,7 +29,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Recomposer.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2", f = "Recomposer.kt", i = {0, 0}, l = {1160}, m = "invokeSuspend", n = {"callingJob", "unregisterApplyObserver"}, s = {"L$0", "L$1"})
+@DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2", f = "Recomposer.kt", i = {0, 0}, l = {1159}, m = "invokeSuspend", n = {"callingJob", "unregisterApplyObserver"}, s = {"L$0", "L$1"})
 /* loaded from: classes.dex */
 public final class Recomposer$recompositionRunner$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<CoroutineScope, MonotonicFrameClock, Continuation<? super Unit>, Object> $block;
@@ -182,7 +182,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                                         Object obj = objArr[(i << 3) + i3];
                                         if (obj instanceof StateObjectImpl) {
                                             ReaderKind.Companion companion = ReaderKind.Companion;
-                                            if (!((StateObjectImpl) obj).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(1))) {
+                                            if (!((StateObjectImpl) obj).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(1))) {
                                             }
                                         }
                                         mutableScatterSet.add(obj);
@@ -203,7 +203,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                     for (Object obj2 : set) {
                         if (obj2 instanceof StateObjectImpl) {
                             ReaderKind.Companion companion2 = ReaderKind.Companion;
-                            if (!((StateObjectImpl) obj2).m4013isReadInh_f27i8$runtime(ReaderKind.m3996constructorimpl(1))) {
+                            if (!((StateObjectImpl) obj2).m4025isReadInh_f27i8$runtime(ReaderKind.m4008constructorimpl(1))) {
                             }
                         }
                         mutableScatterSet.add(obj2);
@@ -216,7 +216,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
         }
         if (cancellableContinuation != null) {
             Result.Companion companion3 = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -224,7 +224,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Recomposer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2$2", f = "Recomposer.kt", i = {}, l = {1160}, m = "invokeSuspend", n = {}, s = {})
+    @DebugMetadata(c = "androidx.compose.runtime.Recomposer$recompositionRunner$2$2", f = "Recomposer.kt", i = {}, l = {1159}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.compose.runtime.Recomposer$recompositionRunner$2$2  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

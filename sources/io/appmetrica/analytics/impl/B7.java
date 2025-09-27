@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class B7 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ge f364a;
+    public final Ge f365a;
     public final J7 b;
 
     public B7() {
@@ -20,9 +20,9 @@ public final class B7 implements ProtobufConverter {
     /* renamed from: a */
     public final M7 fromModel(D7 d7) {
         M7 m7 = new M7();
-        Integer num = d7.f404a;
+        Integer num = d7.f405a;
         if (num != null) {
-            m7.f573a = num.intValue();
+            m7.f574a = num.intValue();
         }
         String str = d7.b;
         if (str != null) {
@@ -66,7 +66,7 @@ public final class B7 implements ProtobufConverter {
         }
         EnumC0273g9 enumC0273g9 = d7.l;
         if (enumC0273g9 != null) {
-            m7.l = enumC0273g9.f892a;
+            m7.l = enumC0273g9.f893a;
         }
         String str6 = d7.m;
         if (str6 != null) {
@@ -74,15 +74,15 @@ public final class B7 implements ProtobufConverter {
         }
         Da da = d7.n;
         if (da != null) {
-            m7.n = da.f407a;
+            m7.n = da.f408a;
         }
         M9 m9 = d7.o;
         if (m9 != null) {
-            m7.o = m9.f575a;
+            m7.o = m9.f576a;
         }
         Boolean bool = d7.p;
         if (bool != null) {
-            m7.p = this.f364a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            m7.p = this.f365a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         Integer num4 = d7.q;
         if (num4 != null) {
@@ -96,7 +96,7 @@ public final class B7 implements ProtobufConverter {
     }
 
     public B7(Ge ge, J7 j7) {
-        this.f364a = ge;
+        this.f365a = ge;
         this.b = j7;
     }
 
@@ -110,8 +110,8 @@ public final class B7 implements ProtobufConverter {
         Long l;
         M9 m9;
         M7 m72 = new M7();
-        Integer valueOf = Integer.valueOf(m7.f573a);
-        Integer num = valueOf.intValue() != m72.f573a ? valueOf : null;
+        Integer valueOf = Integer.valueOf(m7.f574a);
+        Integer num = valueOf.intValue() != m72.f574a ? valueOf : null;
         String str = m7.b;
         String str2 = !Intrinsics.areEqual(str, m72.b) ? str : null;
         String str3 = m7.c;
@@ -158,7 +158,7 @@ public final class B7 implements ProtobufConverter {
                 if (i < length) {
                     m9 = values[i];
                     l = valueOf3;
-                    if (m9.f575a == intValue) {
+                    if (m9.f576a == intValue) {
                         break;
                     }
                     i++;
@@ -173,7 +173,7 @@ public final class B7 implements ProtobufConverter {
             l = valueOf3;
             m9 = null;
         }
-        Boolean a4 = this.f364a.a(m7.p);
+        Boolean a4 = this.f365a.a(m7.p);
         Integer valueOf9 = Integer.valueOf(m7.q);
         Integer num4 = valueOf9.intValue() != m72.q ? valueOf9 : null;
         byte[] bArr = m7.r;

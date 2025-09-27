@@ -35,7 +35,7 @@ final class TimePickerStateImpl implements TimePickerState {
             throw new IllegalArgumentException("initialMinute should be in [0..59] range".toString());
         }
         this.is24hour = z;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimePickerSelectionMode.m2855boximpl(TimePickerSelectionMode.Companion.m2862getHouryecRtBI()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimePickerSelectionMode.m2865boximpl(TimePickerSelectionMode.Companion.m2872getHouryecRtBI()), null, 2, null);
         this.selection$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Boolean.valueOf(i >= 12), null, 2, null);
         this.isAfternoon$delegate = mutableStateOf$default2;
@@ -55,14 +55,14 @@ final class TimePickerStateImpl implements TimePickerState {
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: getSelection-yecRtBI */
-    public int mo1869getSelectionyecRtBI() {
-        return ((TimePickerSelectionMode) this.selection$delegate.getValue()).m2861unboximpl();
+    public int mo1879getSelectionyecRtBI() {
+        return ((TimePickerSelectionMode) this.selection$delegate.getValue()).m2871unboximpl();
     }
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: setSelection-6_8s6DQ */
-    public void mo1870setSelection6_8s6DQ(int i) {
-        this.selection$delegate.setValue(TimePickerSelectionMode.m2855boximpl(i));
+    public void mo1880setSelection6_8s6DQ(int i) {
+        this.selection$delegate.setValue(TimePickerSelectionMode.m2865boximpl(i));
     }
 
     @Override // androidx.compose.material3.TimePickerState

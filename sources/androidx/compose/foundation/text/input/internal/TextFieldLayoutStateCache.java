@@ -90,11 +90,11 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
     }
 
     public final void updateNonMeasureInputs(TransformedTextFieldState transformedTextFieldState, TextStyle textStyle, boolean z, boolean z2, KeyboardOptions keyboardOptions) {
-        setNonMeasureInputs(new NonMeasureInputs(transformedTextFieldState, textStyle, z, z2, KeyboardType.m6935equalsimpl0(keyboardOptions.m1275getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6955getPhonePjHm6EE())));
+        setNonMeasureInputs(new NonMeasureInputs(transformedTextFieldState, textStyle, z, z2, KeyboardType.m6948equalsimpl0(keyboardOptions.m1285getKeyboardTypePjHm6EE(), KeyboardType.Companion.m6968getPhonePjHm6EE())));
     }
 
     /* renamed from: layoutWithNewMeasureInputs--hBUhpc  reason: not valid java name */
-    public final TextLayoutResult m1564layoutWithNewMeasureInputshBUhpc(Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
+    public final TextLayoutResult m1574layoutWithNewMeasureInputshBUhpc(Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
         MeasureInputs measureInputs = new MeasureInputs(density, layoutDirection, resolver, j, null);
         setMeasureInputs(measureInputs);
         NonMeasureInputs nonMeasureInputs = getNonMeasureInputs();
@@ -112,7 +112,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         mergeNullableLists = TextFieldLayoutStateCacheKt.mergeNullableLists(visualText2.getComposingAnnotations(), visualText2.getOutputAnnotations());
         CacheRecord cacheRecord = (CacheRecord) SnapshotKt.current(this.record);
         TextLayoutResult layoutResult = cacheRecord.getLayoutResult();
-        if (layoutResult != null && (visualText = cacheRecord.getVisualText()) != null && StringsKt.contentEquals(visualText, visualText2) && Intrinsics.areEqual(cacheRecord.getAnnotations(), mergeNullableLists) && Intrinsics.areEqual(cacheRecord.m1565getCompositionMzsxiRA(), visualText2.m1435getCompositionMzsxiRA()) && cacheRecord.getSingleLine() == nonMeasureInputs.getSingleLine() && cacheRecord.getSoftWrap() == nonMeasureInputs.getSoftWrap() && cacheRecord.getLayoutDirection() == measureInputs.getLayoutDirection() && cacheRecord.getDensityValue() == measureInputs.getDensity().getDensity() && cacheRecord.getFontScale() == measureInputs.getDensity().getFontScale() && Constraints.m7197equalsimpl0(cacheRecord.m1566getConstraintsmsEJaDk(), measureInputs.m1569getConstraintsmsEJaDk()) && Intrinsics.areEqual(cacheRecord.getFontFamilyResolver(), measureInputs.getFontFamilyResolver()) && !layoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts()) {
+        if (layoutResult != null && (visualText = cacheRecord.getVisualText()) != null && StringsKt.contentEquals(visualText, visualText2) && Intrinsics.areEqual(cacheRecord.getAnnotations(), mergeNullableLists) && Intrinsics.areEqual(cacheRecord.m1575getCompositionMzsxiRA(), visualText2.m1445getCompositionMzsxiRA()) && cacheRecord.getSingleLine() == nonMeasureInputs.getSingleLine() && cacheRecord.getSoftWrap() == nonMeasureInputs.getSoftWrap() && cacheRecord.getLayoutDirection() == measureInputs.getLayoutDirection() && cacheRecord.getDensityValue() == measureInputs.getDensity().getDensity() && cacheRecord.getFontScale() == measureInputs.getDensity().getFontScale() && Constraints.m7210equalsimpl0(cacheRecord.m1576getConstraintsmsEJaDk(), measureInputs.m1579getConstraintsmsEJaDk()) && Intrinsics.areEqual(cacheRecord.getFontFamilyResolver(), measureInputs.getFontFamilyResolver()) && !layoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts()) {
             TextStyle textStyle = cacheRecord.getTextStyle();
             boolean hasSameLayoutAffectingAttributes = textStyle != null ? textStyle.hasSameLayoutAffectingAttributes(nonMeasureInputs.getTextStyle()) : false;
             TextStyle textStyle2 = cacheRecord.getTextStyle();
@@ -121,7 +121,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
                 return layoutResult;
             }
             if (hasSameLayoutAffectingAttributes) {
-                return TextLayoutResult.m6681copyO0kMr_c$default(layoutResult, new TextLayoutInput(layoutResult.getLayoutInput().getText(), nonMeasureInputs.getTextStyle(), layoutResult.getLayoutInput().getPlaceholders(), layoutResult.getLayoutInput().getMaxLines(), layoutResult.getLayoutInput().getSoftWrap(), layoutResult.getLayoutInput().m6680getOverflowgIe3tQ8(), layoutResult.getLayoutInput().getDensity(), layoutResult.getLayoutInput().getLayoutDirection(), layoutResult.getLayoutInput().getFontFamilyResolver(), layoutResult.getLayoutInput().m6679getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
+                return TextLayoutResult.m6694copyO0kMr_c$default(layoutResult, new TextLayoutInput(layoutResult.getLayoutInput().getText(), nonMeasureInputs.getTextStyle(), layoutResult.getLayoutInput().getPlaceholders(), layoutResult.getLayoutInput().getMaxLines(), layoutResult.getLayoutInput().getSoftWrap(), layoutResult.getLayoutInput().m6693getOverflowgIe3tQ8(), layoutResult.getLayoutInput().getDensity(), layoutResult.getLayoutInput().getLayoutDirection(), layoutResult.getLayoutInput().getFontFamilyResolver(), layoutResult.getLayoutInput().m6692getConstraintsmsEJaDk(), (DefaultConstructorMarker) null), 0L, 2, null);
             }
         }
         TextLayoutResult computeLayout = computeLayout(visualText2, mergeNullableLists, nonMeasureInputs, measureInputs);
@@ -133,14 +133,14 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
                     CacheRecord cacheRecord3 = (CacheRecord) SnapshotKt.writableRecord(cacheRecord2, this, current);
                     cacheRecord3.setVisualText(visualText2);
                     cacheRecord3.setAnnotations(mergeNullableLists);
-                    cacheRecord3.m1567setCompositionOEnZFl4(visualText2.m1435getCompositionMzsxiRA());
+                    cacheRecord3.m1577setCompositionOEnZFl4(visualText2.m1445getCompositionMzsxiRA());
                     cacheRecord3.setSingleLine(nonMeasureInputs.getSingleLine());
                     cacheRecord3.setSoftWrap(nonMeasureInputs.getSoftWrap());
                     cacheRecord3.setTextStyle(nonMeasureInputs.getTextStyle());
                     cacheRecord3.setLayoutDirection(measureInputs.getLayoutDirection());
                     cacheRecord3.setDensityValue(measureInputs.getDensityValue());
                     cacheRecord3.setFontScale(measureInputs.getFontScale());
-                    cacheRecord3.m1568setConstraintsBRTryo0(measureInputs.m1569getConstraintsmsEJaDk());
+                    cacheRecord3.m1578setConstraintsBRTryo0(measureInputs.m1579getConstraintsmsEJaDk());
                     cacheRecord3.setFontFamilyResolver(measureInputs.getFontFamilyResolver());
                     cacheRecord3.setLayoutResult(computeLayout);
                     Unit unit = Unit.INSTANCE;
@@ -187,7 +187,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         } else {
             textStyle = nonMeasureInputs.getTextStyle();
         }
-        return TextMeasurer.m6687measurexDpz5zY$default(obtainTextMeasurer, new AnnotatedString(textFieldCharSequence.toString(), list == null ? CollectionsKt.emptyList() : list), textStyle, 0, nonMeasureInputs.getSoftWrap(), nonMeasureInputs.getSingleLine() ? 1 : Integer.MAX_VALUE, null, measureInputs.m1569getConstraintsmsEJaDk(), measureInputs.getLayoutDirection(), measureInputs.getDensity(), measureInputs.getFontFamilyResolver(), false, 1060, null);
+        return TextMeasurer.m6700measurexDpz5zY$default(obtainTextMeasurer, new AnnotatedString(textFieldCharSequence.toString(), list == null ? CollectionsKt.emptyList() : list), textStyle, 0, nonMeasureInputs.getSoftWrap(), nonMeasureInputs.getSingleLine() ? 1 : Integer.MAX_VALUE, null, measureInputs.m1579getConstraintsmsEJaDk(), measureInputs.getLayoutDirection(), measureInputs.getDensity(), measureInputs.getFontFamilyResolver(), false, 1060, null);
     }
 
     @Override // androidx.compose.runtime.snapshots.StateObject
@@ -236,12 +236,12 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         }
 
         /* renamed from: getComposition-MzsxiRA  reason: not valid java name */
-        public final TextRange m1565getCompositionMzsxiRA() {
+        public final TextRange m1575getCompositionMzsxiRA() {
             return this.composition;
         }
 
         /* renamed from: setComposition-OEnZFl4  reason: not valid java name */
-        public final void m1567setCompositionOEnZFl4(TextRange textRange) {
+        public final void m1577setCompositionOEnZFl4(TextRange textRange) {
             this.composition = textRange;
         }
 
@@ -302,12 +302,12 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         }
 
         /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-        public final long m1566getConstraintsmsEJaDk() {
+        public final long m1576getConstraintsmsEJaDk() {
             return this.constraints;
         }
 
         /* renamed from: setConstraints-BRTryo0  reason: not valid java name */
-        public final void m1568setConstraintsBRTryo0(long j) {
+        public final void m1578setConstraintsBRTryo0(long j) {
             this.constraints = j;
         }
 
@@ -344,7 +344,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
 
         public String toString() {
             StringBuilder sb = new StringBuilder("CacheRecord(visualText=");
-            sb.append((Object) this.visualText).append(", annotations=").append(this.annotations).append(", composition=").append(this.composition).append(", textStyle=").append(this.textStyle).append(", singleLine=").append(this.singleLine).append(", softWrap=").append(this.softWrap).append(", densityValue=").append(this.densityValue).append(", fontScale=").append(this.fontScale).append(", layoutDirection=").append(this.layoutDirection).append(", fontFamilyResolver=").append(this.fontFamilyResolver).append(", constraints=").append((Object) Constraints.m7209toStringimpl(this.constraints)).append(", layoutResult=");
+            sb.append((Object) this.visualText).append(", annotations=").append(this.annotations).append(", composition=").append(this.composition).append(", textStyle=").append(this.textStyle).append(", singleLine=").append(this.singleLine).append(", softWrap=").append(this.softWrap).append(", densityValue=").append(this.densityValue).append(", fontScale=").append(this.fontScale).append(", layoutDirection=").append(this.layoutDirection).append(", fontFamilyResolver=").append(this.fontFamilyResolver).append(", constraints=").append((Object) Constraints.m7222toStringimpl(this.constraints)).append(", layoutResult=");
             sb.append(this.layoutResult).append(')');
             return sb.toString();
         }
@@ -432,7 +432,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
                 if (measureInputs == null || measureInputs2 == null) {
                     return !((measureInputs == null) ^ (measureInputs2 == null));
                 }
-                return measureInputs.getDensityValue() == measureInputs2.getDensityValue() && measureInputs.getFontScale() == measureInputs2.getFontScale() && measureInputs.getLayoutDirection() == measureInputs2.getLayoutDirection() && Intrinsics.areEqual(measureInputs.getFontFamilyResolver(), measureInputs2.getFontFamilyResolver()) && Constraints.m7197equalsimpl0(measureInputs.m1569getConstraintsmsEJaDk(), measureInputs2.m1569getConstraintsmsEJaDk());
+                return measureInputs.getDensityValue() == measureInputs2.getDensityValue() && measureInputs.getFontScale() == measureInputs2.getFontScale() && measureInputs.getLayoutDirection() == measureInputs2.getLayoutDirection() && Intrinsics.areEqual(measureInputs.getFontFamilyResolver(), measureInputs2.getFontFamilyResolver()) && Constraints.m7210equalsimpl0(measureInputs.m1579getConstraintsmsEJaDk(), measureInputs2.m1579getConstraintsmsEJaDk());
             }
         };
         private final long constraints;
@@ -468,7 +468,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         }
 
         /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-        public final long m1569getConstraintsmsEJaDk() {
+        public final long m1579getConstraintsmsEJaDk() {
             return this.constraints;
         }
 
@@ -481,7 +481,7 @@ public final class TextFieldLayoutStateCache implements State<TextLayoutResult>,
         }
 
         public String toString() {
-            return "MeasureInputs(density=" + this.density + ", densityValue=" + this.densityValue + ", fontScale=" + this.fontScale + ", layoutDirection=" + this.layoutDirection + ", fontFamilyResolver=" + this.fontFamilyResolver + ", constraints=" + ((Object) Constraints.m7209toStringimpl(this.constraints)) + ')';
+            return "MeasureInputs(density=" + this.density + ", densityValue=" + this.densityValue + ", fontScale=" + this.fontScale + ", layoutDirection=" + this.layoutDirection + ", fontFamilyResolver=" + this.fontFamilyResolver + ", constraints=" + ((Object) Constraints.m7222toStringimpl(this.constraints)) + ')';
         }
 
         /* compiled from: TextFieldLayoutStateCache.kt */

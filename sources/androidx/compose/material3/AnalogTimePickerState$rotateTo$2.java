@@ -69,7 +69,7 @@ public final class AnalogTimePickerState$rotateTo$2 extends SuspendLambda implem
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (TimePickerSelectionMode.m2858equalsimpl0(this.this$0.mo1869getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2862getHouryecRtBI())) {
+            if (TimePickerSelectionMode.m2868equalsimpl0(this.this$0.mo1879getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2872getHouryecRtBI())) {
                 AnalogTimePickerState analogTimePickerState = this.this$0;
                 hour = analogTimePickerState.toHour(this.$angle);
                 analogTimePickerState.hourAngle = (hour % 12) * 0.5235988f;

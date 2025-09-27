@@ -2,7 +2,7 @@ package androidx.room.util;
 
 import androidx.sqlite.SQLiteStatement;
 import kotlin.Metadata;
-@Metadata(d1 = {"androidx/room/util/SQLiteStatementUtil__StatementUtilKt", "androidx/room/util/SQLiteStatementUtil__StatementUtil_androidKt"}, k = 4, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"androidx/room/util/SQLiteStatementUtil__StatementUtilKt", "androidx/room/util/SQLiteStatementUtil__StatementUtil_androidKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class SQLiteStatementUtil {
     public static final int columnIndexOf(SQLiteStatement sQLiteStatement, String str) {

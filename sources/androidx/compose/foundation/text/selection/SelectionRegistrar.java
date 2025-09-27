@@ -19,14 +19,14 @@ public interface SelectionRegistrar {
     void notifySelectableChange(long j);
 
     /* renamed from: notifySelectionUpdate-njBpvok  reason: not valid java name */
-    boolean mo1801notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2);
+    boolean mo1811notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2);
 
     void notifySelectionUpdateEnd();
 
     void notifySelectionUpdateSelectAll(long j, boolean z);
 
     /* renamed from: notifySelectionUpdateStart-ubNVwUQ  reason: not valid java name */
-    void mo1802notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z);
+    void mo1812notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z);
 
     Selectable subscribe(Selectable selectable);
 

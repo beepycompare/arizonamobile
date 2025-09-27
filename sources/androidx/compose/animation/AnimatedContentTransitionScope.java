@@ -22,10 +22,10 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
     Alignment getContentAlignment();
 
     /* renamed from: slideIntoContainer-mOhB8PU  reason: not valid java name */
-    EnterTransition mo45slideIntoContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, Function1<? super Integer, Integer> function1);
+    EnterTransition mo55slideIntoContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, Function1<? super Integer, Integer> function1);
 
     /* renamed from: slideOutOfContainer-mOhB8PU  reason: not valid java name */
-    ExitTransition mo46slideOutOfContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, Function1<? super Integer, Integer> function1);
+    ExitTransition mo56slideOutOfContainermOhB8PU(int i, FiniteAnimationSpec<IntOffset> finiteAnimationSpec, Function1<? super Integer, Integer> function1);
 
     ContentTransform using(ContentTransform contentTransform, SizeTransform sizeTransform);
 
@@ -36,48 +36,48 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
     public static final class SlideDirection {
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int Left = m48constructorimpl(0);
-        private static final int Right = m48constructorimpl(1);
-        private static final int Up = m48constructorimpl(2);
-        private static final int Down = m48constructorimpl(3);
-        private static final int Start = m48constructorimpl(4);
-        private static final int End = m48constructorimpl(5);
+        private static final int Left = m58constructorimpl(0);
+        private static final int Right = m58constructorimpl(1);
+        private static final int Up = m58constructorimpl(2);
+        private static final int Down = m58constructorimpl(3);
+        private static final int Start = m58constructorimpl(4);
+        private static final int End = m58constructorimpl(5);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ SlideDirection m47boximpl(int i) {
+        public static final /* synthetic */ SlideDirection m57boximpl(int i) {
             return new SlideDirection(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m48constructorimpl(int i) {
+        public static int m58constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m49equalsimpl(int i, Object obj) {
-            return (obj instanceof SlideDirection) && i == ((SlideDirection) obj).m53unboximpl();
+        public static boolean m59equalsimpl(int i, Object obj) {
+            return (obj instanceof SlideDirection) && i == ((SlideDirection) obj).m63unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m50equalsimpl0(int i, int i2) {
+        public static final boolean m60equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m51hashCodeimpl(int i) {
+        public static int m61hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m49equalsimpl(this.value, obj);
+            return m59equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m51hashCodeimpl(this.value);
+            return m61hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m53unboximpl() {
+        public final /* synthetic */ int m63unboximpl() {
             return this.value;
         }
 
@@ -93,32 +93,32 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
             }
 
             /* renamed from: getLeft-DKzdypw  reason: not valid java name */
-            public final int m56getLeftDKzdypw() {
+            public final int m66getLeftDKzdypw() {
                 return SlideDirection.Left;
             }
 
             /* renamed from: getRight-DKzdypw  reason: not valid java name */
-            public final int m57getRightDKzdypw() {
+            public final int m67getRightDKzdypw() {
                 return SlideDirection.Right;
             }
 
             /* renamed from: getUp-DKzdypw  reason: not valid java name */
-            public final int m59getUpDKzdypw() {
+            public final int m69getUpDKzdypw() {
                 return SlideDirection.Up;
             }
 
             /* renamed from: getDown-DKzdypw  reason: not valid java name */
-            public final int m54getDownDKzdypw() {
+            public final int m64getDownDKzdypw() {
                 return SlideDirection.Down;
             }
 
             /* renamed from: getStart-DKzdypw  reason: not valid java name */
-            public final int m58getStartDKzdypw() {
+            public final int m68getStartDKzdypw() {
                 return SlideDirection.Start;
             }
 
             /* renamed from: getEnd-DKzdypw  reason: not valid java name */
-            public final int m55getEndDKzdypw() {
+            public final int m65getEndDKzdypw() {
                 return SlideDirection.End;
             }
         }
@@ -128,21 +128,21 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
         }
 
         public String toString() {
-            return m52toStringimpl(this.value);
+            return m62toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m52toStringimpl(int i) {
-            return m50equalsimpl0(i, Left) ? "Left" : m50equalsimpl0(i, Right) ? "Right" : m50equalsimpl0(i, Up) ? "Up" : m50equalsimpl0(i, Down) ? "Down" : m50equalsimpl0(i, Start) ? "Start" : m50equalsimpl0(i, End) ? "End" : "Invalid";
+        public static String m62toStringimpl(int i) {
+            return m60equalsimpl0(i, Left) ? "Left" : m60equalsimpl0(i, Right) ? "Right" : m60equalsimpl0(i, Up) ? "Up" : m60equalsimpl0(i, Down) ? "Down" : m60equalsimpl0(i, Start) ? "Start" : m60equalsimpl0(i, End) ? "End" : "Invalid";
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: slideIntoContainer-mOhB8PU$default  reason: not valid java name */
-    static /* synthetic */ EnterTransition m43slideIntoContainermOhB8PU$default(AnimatedContentTransitionScope animatedContentTransitionScope, int i, FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i2, Object obj) {
+    static /* synthetic */ EnterTransition m53slideIntoContainermOhB8PU$default(AnimatedContentTransitionScope animatedContentTransitionScope, int i, FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
-                finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7370boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
+                finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7383boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
             }
             if ((i2 & 4) != 0) {
                 function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScope$slideIntoContainer$1
@@ -156,17 +156,17 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
                     }
                 };
             }
-            return animatedContentTransitionScope.mo45slideIntoContainermOhB8PU(i, finiteAnimationSpec, function1);
+            return animatedContentTransitionScope.mo55slideIntoContainermOhB8PU(i, finiteAnimationSpec, function1);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: slideIntoContainer-mOhB8PU");
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: slideOutOfContainer-mOhB8PU$default  reason: not valid java name */
-    static /* synthetic */ ExitTransition m44slideOutOfContainermOhB8PU$default(AnimatedContentTransitionScope animatedContentTransitionScope, int i, FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i2, Object obj) {
+    static /* synthetic */ ExitTransition m54slideOutOfContainermOhB8PU$default(AnimatedContentTransitionScope animatedContentTransitionScope, int i, FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
-                finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7370boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
+                finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7383boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 3, null);
             }
             if ((i2 & 4) != 0) {
                 function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.AnimatedContentTransitionScope$slideOutOfContainer$1
@@ -180,7 +180,7 @@ public interface AnimatedContentTransitionScope<S> extends Transition.Segment<S>
                     }
                 };
             }
-            return animatedContentTransitionScope.mo46slideOutOfContainermOhB8PU(i, finiteAnimationSpec, function1);
+            return animatedContentTransitionScope.mo56slideOutOfContainermOhB8PU(i, finiteAnimationSpec, function1);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: slideOutOfContainer-mOhB8PU");
     }

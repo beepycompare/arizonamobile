@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FrameRateCategory {
     private final float value;
     public static final Companion Companion = new Companion(null);
-    private static final float Default = m4018constructorimpl(Float.NaN);
-    private static final float Normal = m4018constructorimpl(-3.0f);
-    private static final float High = m4018constructorimpl(-4.0f);
+    private static final float Default = m4030constructorimpl(Float.NaN);
+    private static final float Normal = m4030constructorimpl(-3.0f);
+    private static final float High = m4030constructorimpl(-4.0f);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FrameRateCategory m4017boximpl(float f) {
+    public static final /* synthetic */ FrameRateCategory m4029boximpl(float f) {
         return new FrameRateCategory(f);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static float m4018constructorimpl(float f) {
+    private static float m4030constructorimpl(float f) {
         return f;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4019equalsimpl(float f, Object obj) {
-        return (obj instanceof FrameRateCategory) && Float.compare(f, ((FrameRateCategory) obj).m4023unboximpl()) == 0;
+    public static boolean m4031equalsimpl(float f, Object obj) {
+        return (obj instanceof FrameRateCategory) && Float.compare(f, ((FrameRateCategory) obj).m4035unboximpl()) == 0;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4020equalsimpl0(float f, float f2) {
+    public static final boolean m4032equalsimpl0(float f, float f2) {
         return Float.compare(f, f2) == 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4021hashCodeimpl(float f) {
+    public static int m4033hashCodeimpl(float f) {
         return Float.hashCode(f);
     }
 
     public boolean equals(Object obj) {
-        return m4019equalsimpl(this.value, obj);
+        return m4031equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4021hashCodeimpl(this.value);
+        return m4033hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float m4023unboximpl() {
+    public final /* synthetic */ float m4035unboximpl() {
         return this.value;
     }
 
@@ -64,17 +64,17 @@ public final class FrameRateCategory {
         }
 
         /* renamed from: getDefault-NSsRyOo  reason: not valid java name */
-        public final float m4024getDefaultNSsRyOo() {
+        public final float m4036getDefaultNSsRyOo() {
             return FrameRateCategory.Default;
         }
 
         /* renamed from: getNormal-NSsRyOo  reason: not valid java name */
-        public final float m4026getNormalNSsRyOo() {
+        public final float m4038getNormalNSsRyOo() {
             return FrameRateCategory.Normal;
         }
 
         /* renamed from: getHigh-NSsRyOo  reason: not valid java name */
-        public final float m4025getHighNSsRyOo() {
+        public final float m4037getHighNSsRyOo() {
             return FrameRateCategory.High;
         }
     }
@@ -84,11 +84,11 @@ public final class FrameRateCategory {
     }
 
     public String toString() {
-        return m4022toStringimpl(this.value);
+        return m4034toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4022toStringimpl(float f) {
+    public static String m4034toStringimpl(float f) {
         if (f == -3.0f) {
             return "Normal";
         }

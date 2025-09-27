@@ -28,17 +28,17 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = i;
-        this.last = UProgressionUtilKt.m10318getProgressionLastElementNkh28Cs(i, i2, i3);
+        this.last = UProgressionUtilKt.m10333getProgressionLastElementNkh28Cs(i, i2, i3);
         this.step = i3;
     }
 
     /* renamed from: getFirst-pVg5ArA  reason: not valid java name */
-    public final int m10333getFirstpVg5ArA() {
+    public final int m10348getFirstpVg5ArA() {
         return this.first;
     }
 
     /* renamed from: getLast-pVg5ArA  reason: not valid java name */
-    public final int m10334getLastpVg5ArA() {
+    public final int m10349getLastpVg5ArA() {
         return this.last;
     }
 
@@ -84,10 +84,10 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         StringBuilder append;
         int i;
         if (this.step > 0) {
-            append = new StringBuilder().append((Object) UInt.m9237toStringimpl(this.first)).append("..").append((Object) UInt.m9237toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m9252toStringimpl(this.first)).append("..").append((Object) UInt.m9252toStringimpl(this.last)).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append((Object) UInt.m9237toStringimpl(this.first)).append(" downTo ").append((Object) UInt.m9237toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m9252toStringimpl(this.first)).append(" downTo ").append((Object) UInt.m9252toStringimpl(this.last)).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();
@@ -105,7 +105,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         }
 
         /* renamed from: fromClosedRange-Nkh28Cs  reason: not valid java name */
-        public final UIntProgression m10335fromClosedRangeNkh28Cs(int i, int i2, int i3) {
+        public final UIntProgression m10350fromClosedRangeNkh28Cs(int i, int i2, int i3) {
             return new UIntProgression(i, i2, i3, null);
         }
     }

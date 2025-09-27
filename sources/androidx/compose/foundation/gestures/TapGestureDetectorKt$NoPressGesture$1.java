@@ -23,11 +23,11 @@ final class TapGestureDetectorKt$NoPressGesture$1 extends SuspendLambda implemen
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-        return m596invoked4ec7I(pressGestureScope, offset.m4303unboximpl(), continuation);
+        return m606invoked4ec7I(pressGestureScope, offset.m4315unboximpl(), continuation);
     }
 
     /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-    public final Object m596invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+    public final Object m606invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
         return new TapGestureDetectorKt$NoPressGesture$1(continuation).invokeSuspend(Unit.INSTANCE);
     }
 

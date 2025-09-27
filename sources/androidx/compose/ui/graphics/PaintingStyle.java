@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class PaintingStyle {
     public static final Companion Companion = new Companion(null);
-    private static final int Fill = m4810constructorimpl(0);
-    private static final int Stroke = m4810constructorimpl(1);
+    private static final int Fill = m4822constructorimpl(0);
+    private static final int Stroke = m4822constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PaintingStyle m4809boximpl(int i) {
+    public static final /* synthetic */ PaintingStyle m4821boximpl(int i) {
         return new PaintingStyle(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4810constructorimpl(int i) {
+    public static int m4822constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4811equalsimpl(int i, Object obj) {
-        return (obj instanceof PaintingStyle) && i == ((PaintingStyle) obj).m4815unboximpl();
+    public static boolean m4823equalsimpl(int i, Object obj) {
+        return (obj instanceof PaintingStyle) && i == ((PaintingStyle) obj).m4827unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4812equalsimpl0(int i, int i2) {
+    public static final boolean m4824equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4813hashCodeimpl(int i) {
+    public static int m4825hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4811equalsimpl(this.value, obj);
+        return m4823equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4813hashCodeimpl(this.value);
+        return m4825hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4815unboximpl() {
+    public final /* synthetic */ int m4827unboximpl() {
         return this.value;
     }
 
@@ -68,22 +68,22 @@ public final class PaintingStyle {
         }
 
         /* renamed from: getFill-TiuSbCo  reason: not valid java name */
-        public final int m4816getFillTiuSbCo() {
+        public final int m4828getFillTiuSbCo() {
             return PaintingStyle.Fill;
         }
 
         /* renamed from: getStroke-TiuSbCo  reason: not valid java name */
-        public final int m4817getStrokeTiuSbCo() {
+        public final int m4829getStrokeTiuSbCo() {
             return PaintingStyle.Stroke;
         }
     }
 
     public String toString() {
-        return m4814toStringimpl(this.value);
+        return m4826toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4814toStringimpl(int i) {
-        return m4812equalsimpl0(i, Fill) ? "Fill" : m4812equalsimpl0(i, Stroke) ? "Stroke" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m4826toStringimpl(int i) {
+        return m4824equalsimpl0(i, Fill) ? "Fill" : m4824equalsimpl0(i, Stroke) ? "Stroke" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

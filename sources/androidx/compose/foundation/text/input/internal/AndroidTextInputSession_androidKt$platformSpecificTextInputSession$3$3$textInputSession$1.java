@@ -46,14 +46,14 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapFromTransformed-GEjPoXI  reason: not valid java name */
-    public long mo1468mapFromTransformedGEjPoXI(long j) {
-        return this.$$delegate_0.mo1468mapFromTransformedGEjPoXI(j);
+    public long mo1478mapFromTransformedGEjPoXI(long j) {
+        return this.$$delegate_0.mo1478mapFromTransformedGEjPoXI(j);
     }
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapToTransformed-GEjPoXI  reason: not valid java name */
-    public long mo1469mapToTransformedGEjPoXI(long j) {
-        return this.$$delegate_0.mo1469mapToTransformedGEjPoXI(j);
+    public long mo1479mapToTransformedGEjPoXI(long j) {
+        return this.$$delegate_0.mo1479mapToTransformedGEjPoXI(j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -82,10 +82,10 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
 
     @Override // androidx.compose.foundation.text.input.internal.TextInputSession
     /* renamed from: onImeAction-KlQnJC8  reason: not valid java name */
-    public void mo1470onImeActionKlQnJC8(int i) {
+    public void mo1480onImeActionKlQnJC8(int i) {
         Function1<ImeAction, Unit> function1 = this.$onImeAction;
         if (function1 != null) {
-            function1.invoke(ImeAction.m6879boximpl(i));
+            function1.invoke(ImeAction.m6892boximpl(i));
         }
     }
 

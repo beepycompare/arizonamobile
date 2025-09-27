@@ -7,7 +7,7 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-@Metadata(d1 = {"androidx/room/util/RelationUtil__RelationUtilKt", "androidx/room/util/RelationUtil__RelationUtil_androidKt"}, k = 4, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"androidx/room/util/RelationUtil__RelationUtilKt", "androidx/room/util/RelationUtil__RelationUtil_androidKt"}, k = 4, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class RelationUtil {
     public static final int MAX_BIND_PARAMETER_CNT = 999;

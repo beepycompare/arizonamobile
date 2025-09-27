@@ -28,6 +28,6 @@ public final class DragGestureDetectorKt$drag$2 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m485dragVnAYq1g(null, 0L, null, null, null, this);
+        return DragGestureDetectorKt.m495dragVnAYq1g(null, 0L, null, null, null, this);
     }
 }

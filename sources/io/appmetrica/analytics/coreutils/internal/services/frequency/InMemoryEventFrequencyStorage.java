@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class InMemoryEventFrequencyStorage implements EventFrequencyStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap f304a = new LinkedHashMap();
+    private final LinkedHashMap f305a = new LinkedHashMap();
     private final LinkedHashMap b = new LinkedHashMap();
 
     @Override // io.appmetrica.analytics.coreutils.internal.services.frequency.EventFrequencyStorage
@@ -17,7 +17,7 @@ public final class InMemoryEventFrequencyStorage implements EventFrequencyStorag
 
     @Override // io.appmetrica.analytics.coreutils.internal.services.frequency.EventFrequencyStorage
     public Long getWindowStart(String str) {
-        return (Long) this.f304a.get(str);
+        return (Long) this.f305a.get(str);
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.services.frequency.EventFrequencyStorage
@@ -27,6 +27,6 @@ public final class InMemoryEventFrequencyStorage implements EventFrequencyStorag
 
     @Override // io.appmetrica.analytics.coreutils.internal.services.frequency.EventFrequencyStorage
     public void putWindowStart(String str, long j) {
-        this.f304a.put(str, Long.valueOf(j));
+        this.f305a.put(str, Long.valueOf(j));
     }
 }

@@ -20,13 +20,13 @@ final class CallEnqueueObservable<T> extends Observable<Response<T>> {
 
     @Override // io.reactivex.Observable
     protected void subscribeActual(Observer<? super Response<T>> observer) {
-        Call<T> mo8939clone = this.originalCall.mo8939clone();
-        CallCallback callCallback = new CallCallback(mo8939clone, observer);
+        Call<T> mo8951clone = this.originalCall.mo8951clone();
+        CallCallback callCallback = new CallCallback(mo8951clone, observer);
         observer.onSubscribe(callCallback);
         if (callCallback.isDisposed()) {
             return;
         }
-        mo8939clone.enqueue(callCallback);
+        mo8951clone.enqueue(callCallback);
     }
 
     /* loaded from: classes5.dex */

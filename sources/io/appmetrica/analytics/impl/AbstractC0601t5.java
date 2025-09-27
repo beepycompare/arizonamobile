@@ -4,10 +4,10 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0601t5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Km f1090a;
+    public final Km f1091a;
 
     public AbstractC0601t5(Km km) {
-        this.f1090a = km;
+        this.f1091a = km;
     }
 
     public abstract Tl a();

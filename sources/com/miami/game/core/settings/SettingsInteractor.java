@@ -1,6 +1,7 @@
 package com.miami.game.core.settings;
 
 import android.content.Intent;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -23,7 +24,7 @@ import kotlinx.coroutines.flow.StateFlowKt;
 /* loaded from: classes4.dex */
 public final class SettingsInteractor {
     public static final Companion Companion = new Companion(null);
-    private static final String SettingsKey = "SETTINGS";
+    public static final String SettingsKey = "SETTINGS";
     private final StateFlow<SettingState> interactorStateFlow;
     private final LocalRepository localRepository;
     private final CoroutineScope scope;
@@ -34,7 +35,7 @@ public final class SettingsInteractor {
         Intrinsics.checkNotNullParameter(localRepository, "localRepository");
         this.localRepository = localRepository;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)));
-        MutableStateFlow<SettingState> MutableStateFlow = StateFlowKt.MutableStateFlow(new SettingState(0.0f, 0, false, false, false, false, false, false, null, 511, null));
+        MutableStateFlow<SettingState> MutableStateFlow = StateFlowKt.MutableStateFlow(new SettingState(0.0f, 0, false, false, false, false, false, false, false, null, AnalyticsListener.EVENT_DRM_KEYS_LOADED, null));
         this.stateStore = MutableStateFlow;
         this.interactorStateFlow = FlowKt.asStateFlow(MutableStateFlow);
         getSettings();
@@ -65,7 +66,7 @@ public final class SettingsInteractor {
     }
 
     /* compiled from: SettingsInteractor.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/settings/SettingsInteractor$Companion;", "", "<init>", "()V", "SettingsKey", "", "getSettingsKey", "()Ljava/lang/String;", "settings_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/miami/game/core/settings/SettingsInteractor$Companion;", "", "<init>", "()V", "SettingsKey", "", "settings_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -73,10 +74,6 @@ public final class SettingsInteractor {
         }
 
         private Companion() {
-        }
-
-        public final String getSettingsKey() {
-            return SettingsInteractor.SettingsKey;
         }
     }
 }

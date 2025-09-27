@@ -9,7 +9,7 @@ public final class C0786q implements Converter {
     /* renamed from: a */
     public final L fromModel(C0784o c0784o) {
         L l = new L();
-        l.f1300a = c0784o.f1330a;
+        l.f1301a = c0784o.f1331a;
         Object[] array = c0784o.b.toArray(new String[0]);
         if (array != null) {
             l.c = (String[]) array;
@@ -22,6 +22,6 @@ public final class C0786q implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0784o toModel(L l) {
-        return new C0784o(l.f1300a, ArraysKt.toList(l.c), l.b);
+        return new C0784o(l.f1301a, ArraysKt.toList(l.c), l.b);
     }
 }

@@ -14,42 +14,42 @@ import ru.rustore.sdk.activitylauncher.OnReceiveResultCallback;
 import ru.rustore.sdk.appupdate.errors.RuStoreInstallException;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 import ru.rustore.sdk.reactive.single.SingleEmitter;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class E extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0813r f1353a;
+    public final /* synthetic */ C0813r f1354a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public E(C0813r c0813r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1353a = c0813r;
+        this.f1354a = c0813r;
         this.b = appUpdateInfo;
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
-        Object m9091constructorimpl;
+        Object m9106constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0813r c0813r = this.f1353a;
+        C0813r c0813r = this.f1354a;
         AppUpdateInfo appUpdateInfo = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            ContextExtensionKt.openActivityForResult(c0813r.f1409a, new Intent("ru.vk.store.AnyAppForceUpdateActivity"), new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.E$$ExternalSyntheticLambda0
+            ContextExtensionKt.openActivityForResult(c0813r.f1410a, new Intent("ru.vk.store.AnyAppForceUpdateActivity"), new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.E$$ExternalSyntheticLambda0
                 @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
                 public final void onReceiveResult(ActivityLauncherResult activityLauncherResult, Bundle bundle) {
                     E.a(SingleEmitter.this, activityLauncherResult, bundle);
                 }
             });
             appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-            m9091constructorimpl = Result.m9091constructorimpl(Unit.INSTANCE);
+            m9106constructorimpl = Result.m9106constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
+            m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9094exceptionOrNullimpl = Result.m9094exceptionOrNullimpl(m9091constructorimpl);
-        if (m9094exceptionOrNullimpl != null) {
-            emitter.error(m9094exceptionOrNullimpl);
+        Throwable m9109exceptionOrNullimpl = Result.m9109exceptionOrNullimpl(m9106constructorimpl);
+        if (m9109exceptionOrNullimpl != null) {
+            emitter.error(m9109exceptionOrNullimpl);
         }
     }
 

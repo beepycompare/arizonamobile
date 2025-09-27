@@ -18,13 +18,13 @@ public final class W extends ContentObserver {
     public static final String d = MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString();
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1308a;
+    public final ClientContext f1309a;
     public final Function0 b;
     public volatile C0779j c;
 
     public W(ClientContext clientContext, r rVar) {
         super(clientContext.getClientExecutorProvider().getDefaultExecutor().getHandler());
-        this.f1308a = clientContext;
+        this.f1309a = clientContext;
         this.b = rVar;
     }
 
@@ -37,7 +37,7 @@ public final class W extends ContentObserver {
         }
         try {
             String[] strArr = (String[]) ArraysKt.plus((Object[]) new String[]{"date_added"}, (Collection) c0779j.b);
-            Cursor query = this.f1308a.getContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, strArr, "date_added >= ?", new String[]{String.valueOf(new SystemTimeProvider().currentTimeSeconds() - c0779j.c)}, "date_added DESC");
+            Cursor query = this.f1309a.getContext().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, strArr, "date_added >= ?", new String[]{String.valueOf(new SystemTimeProvider().currentTimeSeconds() - c0779j.c)}, "date_added DESC");
             if (query != null && query.moveToFirst()) {
                 for (String str : strArr) {
                 }

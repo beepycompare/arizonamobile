@@ -9,54 +9,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class StartOffsetType {
     public static final Companion Companion = new Companion(null);
-    private static final int Delay = m195constructorimpl(-1);
-    private static final int FastForward = m195constructorimpl(1);
+    private static final int Delay = m205constructorimpl(-1);
+    private static final int FastForward = m205constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StartOffsetType m194boximpl(int i) {
+    public static final /* synthetic */ StartOffsetType m204boximpl(int i) {
         return new StartOffsetType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m195constructorimpl(int i) {
+    private static int m205constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m196equalsimpl(int i, Object obj) {
-        return (obj instanceof StartOffsetType) && i == ((StartOffsetType) obj).m200unboximpl();
+    public static boolean m206equalsimpl(int i, Object obj) {
+        return (obj instanceof StartOffsetType) && i == ((StartOffsetType) obj).m210unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m197equalsimpl0(int i, int i2) {
+    public static final boolean m207equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m198hashCodeimpl(int i) {
+    public static int m208hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m199toStringimpl(int i) {
+    public static String m209toStringimpl(int i) {
         return "StartOffsetType(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m196equalsimpl(this.value, obj);
+        return m206equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m198hashCodeimpl(this.value);
+        return m208hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m199toStringimpl(this.value);
+        return m209toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m200unboximpl() {
+    public final /* synthetic */ int m210unboximpl() {
         return this.value;
     }
 
@@ -72,12 +72,12 @@ public final class StartOffsetType {
         }
 
         /* renamed from: getDelay-Eo1U57Q  reason: not valid java name */
-        public final int m201getDelayEo1U57Q() {
+        public final int m211getDelayEo1U57Q() {
             return StartOffsetType.Delay;
         }
 
         /* renamed from: getFastForward-Eo1U57Q  reason: not valid java name */
-        public final int m202getFastForwardEo1U57Q() {
+        public final int m212getFastForwardEo1U57Q() {
             return StartOffsetType.FastForward;
         }
     }

@@ -10,49 +10,49 @@ public final class Motion {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Motion m171boximpl(long j) {
+    public static final /* synthetic */ Motion m181boximpl(long j) {
         return new Motion(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m172constructorimpl(long j) {
+    public static long m182constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m173equalsimpl(long j, Object obj) {
-        return (obj instanceof Motion) && j == ((Motion) obj).m179unboximpl();
+    public static boolean m183equalsimpl(long j, Object obj) {
+        return (obj instanceof Motion) && j == ((Motion) obj).m189unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m174equalsimpl0(long j, long j2) {
+    public static final boolean m184equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m177hashCodeimpl(long j) {
+    public static int m187hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m178toStringimpl(long j) {
+    public static String m188toStringimpl(long j) {
         return "Motion(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m173equalsimpl(this.packedValue, obj);
+        return m183equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m177hashCodeimpl(this.packedValue);
+        return m187hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m178toStringimpl(this.packedValue);
+        return m188toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m179unboximpl() {
+    public final /* synthetic */ long m189unboximpl() {
         return this.packedValue;
     }
 
@@ -65,12 +65,12 @@ public final class Motion {
     }
 
     /* renamed from: getValue-impl  reason: not valid java name */
-    public static final float m175getValueimpl(long j) {
+    public static final float m185getValueimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getVelocity-impl  reason: not valid java name */
-    public static final float m176getVelocityimpl(long j) {
+    public static final float m186getVelocityimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

@@ -39,7 +39,7 @@ public final class ComposableSingletons$SnackbarHostKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(818736383, i2, -1, "androidx.compose.material3.ComposableSingletons$SnackbarHostKt.lambda-1.<anonymous> (SnackbarHost.kt:220)");
             }
-            SnackbarKt.m2640SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
+            SnackbarKt.m2650SnackbarsDKtq54(snackbarData2, null, false, null, 0L, 0L, 0L, 0L, 0L, composer, i2 & 14, TypedValues.PositionType.TYPE_POSITION_TYPE);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -47,7 +47,7 @@ public final class ComposableSingletons$SnackbarHostKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function3<SnackbarData, Composer, Integer, Unit> m2091getLambda1$material3_release() {
+    public final Function3<SnackbarData, Composer, Integer, Unit> m2101getLambda1$material3_release() {
         return f44lambda1;
     }
 }

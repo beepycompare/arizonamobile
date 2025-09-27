@@ -34,20 +34,20 @@ final class InterceptedKeyInputNode extends Modifier.Node implements SoftKeyboar
 
     @Override // androidx.compose.ui.input.key.SoftKeyboardInterceptionModifierNode
     /* renamed from: onInterceptKeyBeforeSoftKeyboard-ZmokQxo  reason: not valid java name */
-    public boolean mo5369onInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent) {
+    public boolean mo5382onInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent) {
         Function1<? super KeyEvent, Boolean> function1 = this.onEvent;
         if (function1 != null) {
-            return function1.invoke(KeyEvent.m5665boximpl(keyEvent)).booleanValue();
+            return function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue();
         }
         return false;
     }
 
     @Override // androidx.compose.ui.input.key.SoftKeyboardInterceptionModifierNode
     /* renamed from: onPreInterceptKeyBeforeSoftKeyboard-ZmokQxo  reason: not valid java name */
-    public boolean mo5370onPreInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent) {
+    public boolean mo5383onPreInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent) {
         Function1<? super KeyEvent, Boolean> function1 = this.onPreEvent;
         if (function1 != null) {
-            return function1.invoke(KeyEvent.m5665boximpl(keyEvent)).booleanValue();
+            return function1.invoke(KeyEvent.m5678boximpl(keyEvent)).booleanValue();
         }
         return false;
     }

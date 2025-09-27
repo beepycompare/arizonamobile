@@ -58,7 +58,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000`\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0016\u001a\u0094\u0001\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\b\b\u0002\u0010\u0012\u001a\u00020\u00012\u001e\b\u0002\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001b\u0010\u001c\u001a\u0080\u0001\u0010\u001d\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\u001e\b\u0002\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b\u001e\u0010\u001f\u001a\u009a\u0001\u0010 \u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\b\b\u0002\u0010\u0012\u001a\u00020\u00012.\b\u0002\u0010\u0013\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\"0!¢\u0006\f\b#\u0012\b\b$\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u00162\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b&\u0010'\u001a\u0086\u0001\u0010(\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\u001c\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0003ø\u0001\u0000¢\u0006\u0004\b)\u0010*\u001a \u0001\u0010+\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2,\u0010\u0013\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\"0!¢\u0006\f\b#\u0012\b\b$\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u00162\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\b\b\u0002\u0010\u0012\u001a\u00020\u00012\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0006\u0010\r\u001a\u00020\u000eH\u0003ø\u0001\u0000¢\u0006\u0004\b,\u0010-\u001a\u0094\u0001\u0010.\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\b\b\u0002\u0010\u0012\u001a\u00020\u00012\u001e\b\u0002\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b/\u0010\u001c\u001a\u0080\u0001\u00100\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102\u001e\b\u0002\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b1\u0010\u001f\u001a\u0090\u0001\u00102\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\u000f\u001a\u00020\u00102\b\b\u0002\u0010\u0011\u001a\u00020\u00102.\b\u0002\u0010\u0013\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\"0!¢\u0006\f\b#\u0012\b\b$\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u00162\u0013\b\u0002\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0007ø\u0001\u0000¢\u0006\u0004\b3\u0010\u001f\u001an\u00104\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102\u001c\u0010\u0013\u001a\u0018\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u0016¢\u0006\u0002\b\u00172\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0003ø\u0001\u0000¢\u0006\u0004\b5\u00106\u001a~\u00107\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00102,\u0010\u0013\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020\"0!¢\u0006\f\b#\u0012\b\b$\u0012\u0004\b\b(%\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\u0002\b\u00162\u0011\u0010\u0018\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u00162\u0011\u0010\u001a\u001a\r\u0012\u0004\u0012\u00020\b0\u0019¢\u0006\u0002\b\u0016H\u0003ø\u0001\u0000¢\u0006\u0004\b8\u00106\"\u0010\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0002\"\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\"\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u00069"}, d2 = {"ScrollableTabRowMinimumTabWidth", "Landroidx/compose/ui/unit/Dp;", "F", "ScrollableTabRowScrollSpec", "Landroidx/compose/animation/core/AnimationSpec;", "", "TabRowIndicatorSpec", "PrimaryScrollableTabRow", "", "selectedTabIndex", "", "modifier", "Landroidx/compose/ui/Modifier;", "scrollState", "Landroidx/compose/foundation/ScrollState;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "edgePadding", "indicator", "Lkotlin/Function1;", "Landroidx/compose/material3/TabIndicatorScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "divider", "Lkotlin/Function0;", "tabs", "PrimaryScrollableTabRow-qhFBPw4", "(ILandroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;JJFLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "PrimaryTabRow", "PrimaryTabRow-pAZo6Ak", "(ILandroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ScrollableTabRow", "", "Landroidx/compose/material3/TabPosition;", "Lkotlin/ParameterName;", "name", "tabPositions", "ScrollableTabRow-sKfQg0A", "(ILandroidx/compose/ui/Modifier;JJFLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ScrollableTabRowImpl", "ScrollableTabRowImpl-sKfQg0A", "(ILandroidx/compose/ui/Modifier;JJFLandroidx/compose/foundation/ScrollState;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ScrollableTabRowWithSubcomposeImpl", "ScrollableTabRowWithSubcomposeImpl-qhFBPw4", "(ILkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;JJFLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/ScrollState;Landroidx/compose/runtime/Composer;II)V", "SecondaryScrollableTabRow", "SecondaryScrollableTabRow-qhFBPw4", "SecondaryTabRow", "SecondaryTabRow-pAZo6Ak", "TabRow", "TabRow-pAZo6Ak", "TabRowImpl", "TabRowImpl-DTcfvLk", "(Landroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "TabRowWithSubcomposeImpl", "TabRowWithSubcomposeImpl-DTcfvLk", "material3_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TabRowKt {
-    private static final float ScrollableTabRowMinimumTabWidth = Dp.m7251constructorimpl(90);
+    private static final float ScrollableTabRowMinimumTabWidth = Dp.m7264constructorimpl(90);
     private static final AnimationSpec<Float> ScrollableTabRowScrollSpec = AnimationSpecKt.tween$default(ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, 0, EasingKt.getFastOutSlowInEasing(), 2, null);
     private static final AnimationSpec<Dp> TabRowIndicatorSpec = AnimationSpecKt.tween$default(ItemTouchHelper.Callback.DEFAULT_SWIPE_ANIMATION_DURATION, 0, EasingKt.getFastOutSlowInEasing(), 2, null);
 
@@ -91,7 +91,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2703PrimaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2713PrimaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -100,7 +100,7 @@ public final class TabRowKt {
         ComposableLambda composableLambda;
         int i6;
         Object obj;
-        Function2<Composer, Integer, Unit> m2093getLambda1$material3_release;
+        Function2<Composer, Integer, Unit> m2103getLambda1$material3_release;
         Modifier modifier2;
         long j5;
         Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function32;
@@ -216,7 +216,7 @@ public final class TabRowKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(-2021049253, i12, -1, "androidx.compose.material3.PrimaryTabRow.<anonymous> (TabRow.kt:158)");
                                                 }
-                                                TabRowDefaults.INSTANCE.m2698PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7271getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer3, 196656, 28);
+                                                TabRowDefaults.INSTANCE.m2708PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7284getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer3, 196656, 28);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                     return;
@@ -228,7 +228,7 @@ public final class TabRowKt {
                                     }, startRestartGroup, 54);
                                 }
                                 if (i6 != 0) {
-                                    m2093getLambda1$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2093getLambda1$material3_release();
+                                    m2103getLambda1$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2103getLambda1$material3_release();
                                     modifier2 = companion;
                                     j5 = j4;
                                     function32 = composableLambda;
@@ -239,7 +239,7 @@ public final class TabRowKt {
                                         ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.PrimaryTabRow (TabRow.kt:165)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                                    m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -247,7 +247,7 @@ public final class TabRowKt {
                                     j7 = j6;
                                     j8 = j5;
                                     function33 = function32;
-                                    function23 = m2093getLambda1$material3_release;
+                                    function23 = m2103getLambda1$material3_release;
                                 }
                             } else {
                                 startRestartGroup.skipToGroupEnd();
@@ -260,7 +260,7 @@ public final class TabRowKt {
                             }
                             modifier2 = companion;
                             function32 = composableLambda;
-                            m2093getLambda1$material3_release = obj;
+                            m2103getLambda1$material3_release = obj;
                             i7 = -1884787284;
                             j6 = j3;
                             j5 = j4;
@@ -268,14 +268,14 @@ public final class TabRowKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer2 = startRestartGroup;
-                            m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                            m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier3 = modifier2;
                             j7 = j6;
                             j8 = j5;
                             function33 = function32;
-                            function23 = m2093getLambda1$material3_release;
+                            function23 = m2103getLambda1$material3_release;
                         } else {
                             startRestartGroup.skipToGroupEnd();
                             composer2 = startRestartGroup;
@@ -302,7 +302,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i11) {
-                                    TabRowKt.m2703PrimaryTabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2713PrimaryTabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -326,7 +326,7 @@ public final class TabRowKt {
                     }
                     modifier2 = companion;
                     function32 = composableLambda;
-                    m2093getLambda1$material3_release = obj;
+                    m2103getLambda1$material3_release = obj;
                     i7 = -1884787284;
                     j6 = j3;
                     j5 = j4;
@@ -334,14 +334,14 @@ public final class TabRowKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
-                    m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                    m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier3 = modifier2;
                     j7 = j6;
                     j8 = j5;
                     function33 = function32;
-                    function23 = m2093getLambda1$material3_release;
+                    function23 = m2103getLambda1$material3_release;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -366,7 +366,7 @@ public final class TabRowKt {
                 }
                 modifier2 = companion;
                 function32 = composableLambda;
-                m2093getLambda1$material3_release = obj;
+                m2103getLambda1$material3_release = obj;
                 i7 = -1884787284;
                 j6 = j3;
                 j5 = j4;
@@ -374,14 +374,14 @@ public final class TabRowKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
-                m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
                 j7 = j6;
                 j8 = j5;
                 function33 = function32;
-                function23 = m2093getLambda1$material3_release;
+                function23 = m2103getLambda1$material3_release;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -410,7 +410,7 @@ public final class TabRowKt {
             }
             modifier2 = companion;
             function32 = composableLambda;
-            m2093getLambda1$material3_release = obj;
+            m2103getLambda1$material3_release = obj;
             i7 = -1884787284;
             j6 = j3;
             j5 = j4;
@@ -418,14 +418,14 @@ public final class TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
-            m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+            m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
             j7 = j6;
             j8 = j5;
             function33 = function32;
-            function23 = m2093getLambda1$material3_release;
+            function23 = m2103getLambda1$material3_release;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -462,7 +462,7 @@ public final class TabRowKt {
         }
         modifier2 = companion;
         function32 = composableLambda;
-        m2093getLambda1$material3_release = obj;
+        m2103getLambda1$material3_release = obj;
         i7 = -1884787284;
         j6 = j3;
         j5 = j4;
@@ -470,14 +470,14 @@ public final class TabRowKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
-        m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2093getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
+        m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2103getLambda1$material3_release, function22, composer2, (i4 >> 3) & 524286);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
         j7 = j6;
         j8 = j5;
         function33 = function32;
-        function23 = m2093getLambda1$material3_release;
+        function23 = m2103getLambda1$material3_release;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
@@ -508,7 +508,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2708SecondaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2718SecondaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -517,7 +517,7 @@ public final class TabRowKt {
         ComposableLambda composableLambda;
         int i6;
         Object obj;
-        Function2<Composer, Integer, Unit> m2094getLambda2$material3_release;
+        Function2<Composer, Integer, Unit> m2104getLambda2$material3_release;
         Modifier modifier2;
         long j5;
         Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function32;
@@ -630,7 +630,7 @@ public final class TabRowKt {
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventStart(286693261, i11, -1, "androidx.compose.material3.SecondaryTabRow.<anonymous> (TabRow.kt:213)");
                                                 }
-                                                TabRowDefaults.INSTANCE.m2699SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer3, 3072, 6);
+                                                TabRowDefaults.INSTANCE.m2709SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer3, 3072, 6);
                                                 if (ComposerKt.isTraceInProgress()) {
                                                     ComposerKt.traceEventEnd();
                                                     return;
@@ -642,7 +642,7 @@ public final class TabRowKt {
                                     }, startRestartGroup, 54);
                                 }
                                 if (i6 != 0) {
-                                    m2094getLambda2$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2094getLambda2$material3_release();
+                                    m2104getLambda2$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2104getLambda2$material3_release();
                                     modifier2 = companion;
                                     j5 = j4;
                                     function32 = composableLambda;
@@ -653,7 +653,7 @@ public final class TabRowKt {
                                         ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.SecondaryTabRow (TabRow.kt:219)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                                    m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -661,7 +661,7 @@ public final class TabRowKt {
                                     j7 = j6;
                                     j8 = j5;
                                     function33 = function32;
-                                    function23 = m2094getLambda2$material3_release;
+                                    function23 = m2104getLambda2$material3_release;
                                 }
                             } else {
                                 startRestartGroup.skipToGroupEnd();
@@ -674,7 +674,7 @@ public final class TabRowKt {
                             }
                             modifier2 = companion;
                             function32 = composableLambda;
-                            m2094getLambda2$material3_release = obj;
+                            m2104getLambda2$material3_release = obj;
                             i7 = -1909540706;
                             j6 = j3;
                             j5 = j4;
@@ -682,14 +682,14 @@ public final class TabRowKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer2 = startRestartGroup;
-                            m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                            m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier3 = modifier2;
                             j7 = j6;
                             j8 = j5;
                             function33 = function32;
-                            function23 = m2094getLambda2$material3_release;
+                            function23 = m2104getLambda2$material3_release;
                         } else {
                             startRestartGroup.skipToGroupEnd();
                             composer2 = startRestartGroup;
@@ -716,7 +716,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i11) {
-                                    TabRowKt.m2708SecondaryTabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2718SecondaryTabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -740,7 +740,7 @@ public final class TabRowKt {
                     }
                     modifier2 = companion;
                     function32 = composableLambda;
-                    m2094getLambda2$material3_release = obj;
+                    m2104getLambda2$material3_release = obj;
                     i7 = -1909540706;
                     j6 = j3;
                     j5 = j4;
@@ -748,14 +748,14 @@ public final class TabRowKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
-                    m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                    m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier3 = modifier2;
                     j7 = j6;
                     j8 = j5;
                     function33 = function32;
-                    function23 = m2094getLambda2$material3_release;
+                    function23 = m2104getLambda2$material3_release;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -780,7 +780,7 @@ public final class TabRowKt {
                 }
                 modifier2 = companion;
                 function32 = composableLambda;
-                m2094getLambda2$material3_release = obj;
+                m2104getLambda2$material3_release = obj;
                 i7 = -1909540706;
                 j6 = j3;
                 j5 = j4;
@@ -788,14 +788,14 @@ public final class TabRowKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
-                m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
                 j7 = j6;
                 j8 = j5;
                 function33 = function32;
-                function23 = m2094getLambda2$material3_release;
+                function23 = m2104getLambda2$material3_release;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -824,7 +824,7 @@ public final class TabRowKt {
             }
             modifier2 = companion;
             function32 = composableLambda;
-            m2094getLambda2$material3_release = obj;
+            m2104getLambda2$material3_release = obj;
             i7 = -1909540706;
             j6 = j3;
             j5 = j4;
@@ -832,14 +832,14 @@ public final class TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
-            m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+            m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
             j7 = j6;
             j8 = j5;
             function33 = function32;
-            function23 = m2094getLambda2$material3_release;
+            function23 = m2104getLambda2$material3_release;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -876,7 +876,7 @@ public final class TabRowKt {
         }
         modifier2 = companion;
         function32 = composableLambda;
-        m2094getLambda2$material3_release = obj;
+        m2104getLambda2$material3_release = obj;
         i7 = -1909540706;
         j6 = j3;
         j5 = j4;
@@ -884,14 +884,14 @@ public final class TabRowKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
-        m2710TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2094getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
+        m2720TabRowImplDTcfvLk(modifier2, j6, j5, function32, m2104getLambda2$material3_release, function22, composer2, (i4 >> 3) & 524286);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
         j7 = j6;
         j8 = j5;
         function33 = function32;
-        function23 = m2094getLambda2$material3_release;
+        function23 = m2104getLambda2$material3_release;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
@@ -922,7 +922,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2709TabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2719TabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -931,7 +931,7 @@ public final class TabRowKt {
         ComposableLambda composableLambda;
         int i6;
         Object obj;
-        Function2<Composer, Integer, Unit> m2095getLambda3$material3_release;
+        Function2<Composer, Integer, Unit> m2105getLambda3$material3_release;
         Modifier modifier2;
         long j5;
         Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function32;
@@ -1041,7 +1041,7 @@ public final class TabRowKt {
                                                 ComposerKt.traceEventStart(-2052073983, i11, -1, "androidx.compose.material3.TabRow.<anonymous> (TabRow.kt:307)");
                                             }
                                             if (i < list.size()) {
-                                                TabRowDefaults.INSTANCE.m2699SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer3, 3072, 6);
+                                                TabRowDefaults.INSTANCE.m2709SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer3, 3072, 6);
                                             }
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
@@ -1050,7 +1050,7 @@ public final class TabRowKt {
                                     }, startRestartGroup, 54);
                                 }
                                 if (i6 != 0) {
-                                    m2095getLambda3$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2095getLambda3$material3_release();
+                                    m2105getLambda3$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2105getLambda3$material3_release();
                                     modifier2 = companion;
                                     j5 = j4;
                                     function32 = composableLambda;
@@ -1061,7 +1061,7 @@ public final class TabRowKt {
                                         ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.TabRow (TabRow.kt:315)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                                    m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -1069,7 +1069,7 @@ public final class TabRowKt {
                                     j7 = j6;
                                     j8 = j5;
                                     function33 = function32;
-                                    function23 = m2095getLambda3$material3_release;
+                                    function23 = m2105getLambda3$material3_release;
                                 }
                             } else {
                                 startRestartGroup.skipToGroupEnd();
@@ -1082,7 +1082,7 @@ public final class TabRowKt {
                             }
                             modifier2 = companion;
                             function32 = composableLambda;
-                            m2095getLambda3$material3_release = obj;
+                            m2105getLambda3$material3_release = obj;
                             i7 = -1199178586;
                             j6 = j3;
                             j5 = j4;
@@ -1090,14 +1090,14 @@ public final class TabRowKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer2 = startRestartGroup;
-                            m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                            m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier3 = modifier2;
                             j7 = j6;
                             j8 = j5;
                             function33 = function32;
-                            function23 = m2095getLambda3$material3_release;
+                            function23 = m2105getLambda3$material3_release;
                         } else {
                             startRestartGroup.skipToGroupEnd();
                             composer2 = startRestartGroup;
@@ -1124,7 +1124,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer3, int i11) {
-                                    TabRowKt.m2709TabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2719TabRowpAZo6Ak(i, modifier3, j7, j8, function33, function23, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -1148,7 +1148,7 @@ public final class TabRowKt {
                     }
                     modifier2 = companion;
                     function32 = composableLambda;
-                    m2095getLambda3$material3_release = obj;
+                    m2105getLambda3$material3_release = obj;
                     i7 = -1199178586;
                     j6 = j3;
                     j5 = j4;
@@ -1156,14 +1156,14 @@ public final class TabRowKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
-                    m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                    m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier3 = modifier2;
                     j7 = j6;
                     j8 = j5;
                     function33 = function32;
-                    function23 = m2095getLambda3$material3_release;
+                    function23 = m2105getLambda3$material3_release;
                     endRestartGroup = composer2.endRestartGroup();
                     if (endRestartGroup != null) {
                     }
@@ -1188,7 +1188,7 @@ public final class TabRowKt {
                 }
                 modifier2 = companion;
                 function32 = composableLambda;
-                m2095getLambda3$material3_release = obj;
+                m2105getLambda3$material3_release = obj;
                 i7 = -1199178586;
                 j6 = j3;
                 j5 = j4;
@@ -1196,14 +1196,14 @@ public final class TabRowKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 composer2 = startRestartGroup;
-                m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+                m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier3 = modifier2;
                 j7 = j6;
                 j8 = j5;
                 function33 = function32;
-                function23 = m2095getLambda3$material3_release;
+                function23 = m2105getLambda3$material3_release;
                 endRestartGroup = composer2.endRestartGroup();
                 if (endRestartGroup != null) {
                 }
@@ -1232,7 +1232,7 @@ public final class TabRowKt {
             }
             modifier2 = companion;
             function32 = composableLambda;
-            m2095getLambda3$material3_release = obj;
+            m2105getLambda3$material3_release = obj;
             i7 = -1199178586;
             j6 = j3;
             j5 = j4;
@@ -1240,14 +1240,14 @@ public final class TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             composer2 = startRestartGroup;
-            m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+            m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
             if (ComposerKt.isTraceInProgress()) {
             }
             modifier3 = modifier2;
             j7 = j6;
             j8 = j5;
             function33 = function32;
-            function23 = m2095getLambda3$material3_release;
+            function23 = m2105getLambda3$material3_release;
             endRestartGroup = composer2.endRestartGroup();
             if (endRestartGroup != null) {
             }
@@ -1284,7 +1284,7 @@ public final class TabRowKt {
         }
         modifier2 = companion;
         function32 = composableLambda;
-        m2095getLambda3$material3_release = obj;
+        m2105getLambda3$material3_release = obj;
         i7 = -1199178586;
         j6 = j3;
         j5 = j4;
@@ -1292,14 +1292,14 @@ public final class TabRowKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         composer2 = startRestartGroup;
-        m2711TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2095getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
+        m2721TabRowWithSubcomposeImplDTcfvLk(modifier2, j6, j5, function32, m2105getLambda3$material3_release, function22, composer2, (i4 >> 3) & 524286);
         if (ComposerKt.isTraceInProgress()) {
         }
         modifier3 = modifier2;
         j7 = j6;
         j8 = j5;
         function33 = function32;
-        function23 = m2095getLambda3$material3_release;
+        function23 = m2105getLambda3$material3_release;
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup != null) {
         }
@@ -1338,7 +1338,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2702PrimaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2712PrimaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         Object obj;
@@ -1470,7 +1470,7 @@ public final class TabRowKt {
                                     i4 &= -57345;
                                 }
                                 if (i5 != 0) {
-                                    f2 = TabRowDefaults.INSTANCE.m2700getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                    f2 = TabRowDefaults.INSTANCE.m2710getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                 }
                                 ComposableLambda rememberComposableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(1601820568, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$PrimaryScrollableTabRow$1
                                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1497,7 +1497,7 @@ public final class TabRowKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(1601820568, i15, -1, "androidx.compose.material3.PrimaryScrollableTabRow.<anonymous> (TabRow.kt:364)");
                                             }
-                                            TabRowDefaults.INSTANCE.m2698PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7271getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
+                                            TabRowDefaults.INSTANCE.m2708PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7284getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                                 return;
@@ -1511,7 +1511,7 @@ public final class TabRowKt {
                                     i9 = i4;
                                     j6 = j4;
                                     function32 = rememberComposableLambda;
-                                    function23 = ComposableSingletons$TabRowKt.INSTANCE.m2096getLambda4$material3_release();
+                                    function23 = ComposableSingletons$TabRowKt.INSTANCE.m2106getLambda4$material3_release();
                                     modifier2 = companion;
                                     j5 = j3;
                                     f3 = f2;
@@ -1552,7 +1552,7 @@ public final class TabRowKt {
                                 ComposerKt.traceEventStart(-1763241113, i9, -1, "androidx.compose.material3.PrimaryScrollableTabRow (TabRow.kt:371)");
                             }
                             int i14 = i9 >> 3;
-                            m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14 & 896) | (i14 & 7168) | (i14 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                            m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14 & 896) | (i14 & 7168) | (i14 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1591,7 +1591,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer2, int i15) {
-                                    TabRowKt.m2702PrimaryScrollableTabRowqhFBPw4(i, modifier3, scrollState3, j9, j8, f4, function33, function24, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2712PrimaryScrollableTabRowqhFBPw4(i, modifier3, scrollState3, j9, j8, f4, function33, function24, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -1622,7 +1622,7 @@ public final class TabRowKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     int i142 = i9 >> 3;
-                    m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142 & 896) | (i142 & 7168) | (i142 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                    m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142 & 896) | (i142 & 7168) | (i142 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     function24 = function23;
@@ -1664,7 +1664,7 @@ public final class TabRowKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 int i1422 = i9 >> 3;
-                m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i1422 & 896) | (i1422 & 7168) | (i1422 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i1422 & 896) | (i1422 & 7168) | (i1422 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 function24 = function23;
@@ -1713,7 +1713,7 @@ public final class TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             int i14222 = i9 >> 3;
-            m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14222 & 896) | (i14222 & 7168) | (i14222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+            m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14222 & 896) | (i14222 & 7168) | (i14222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
             if (ComposerKt.isTraceInProgress()) {
             }
             function24 = function23;
@@ -1772,7 +1772,7 @@ public final class TabRowKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         int i142222 = i9 >> 3;
-        m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142222 & 896) | (i142222 & 7168) | (i142222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+        m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142222 & 896) | (i142222 & 7168) | (i142222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
         if (ComposerKt.isTraceInProgress()) {
         }
         function24 = function23;
@@ -1821,7 +1821,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2707SecondaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2717SecondaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         Object obj;
@@ -1953,7 +1953,7 @@ public final class TabRowKt {
                                     i4 &= -57345;
                                 }
                                 if (i5 != 0) {
-                                    f2 = TabRowDefaults.INSTANCE.m2700getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                    f2 = TabRowDefaults.INSTANCE.m2710getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                 }
                                 ComposableLambda rememberComposableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(1535842470, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$SecondaryScrollableTabRow$1
                                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1977,7 +1977,7 @@ public final class TabRowKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(1535842470, i14, -1, "androidx.compose.material3.SecondaryScrollableTabRow.<anonymous> (TabRow.kt:434)");
                                             }
-                                            TabRowDefaults.INSTANCE.m2699SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
+                                            TabRowDefaults.INSTANCE.m2709SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                                 return;
@@ -1991,7 +1991,7 @@ public final class TabRowKt {
                                     i9 = i4;
                                     j6 = j4;
                                     function32 = rememberComposableLambda;
-                                    function23 = ComposableSingletons$TabRowKt.INSTANCE.m2097getLambda5$material3_release();
+                                    function23 = ComposableSingletons$TabRowKt.INSTANCE.m2107getLambda5$material3_release();
                                     modifier2 = companion;
                                     j5 = j3;
                                     f3 = f2;
@@ -2032,7 +2032,7 @@ public final class TabRowKt {
                                 ComposerKt.traceEventStart(1821940917, i9, -1, "androidx.compose.material3.SecondaryScrollableTabRow (TabRow.kt:440)");
                             }
                             int i14 = i9 >> 3;
-                            m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14 & 896) | (i14 & 7168) | (i14 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                            m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14 & 896) | (i14 & 7168) | (i14 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2071,7 +2071,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer2, int i15) {
-                                    TabRowKt.m2707SecondaryScrollableTabRowqhFBPw4(i, modifier3, scrollState3, j9, j8, f4, function33, function24, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2717SecondaryScrollableTabRowqhFBPw4(i, modifier3, scrollState3, j9, j8, f4, function33, function24, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -2102,7 +2102,7 @@ public final class TabRowKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     int i142 = i9 >> 3;
-                    m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142 & 896) | (i142 & 7168) | (i142 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                    m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142 & 896) | (i142 & 7168) | (i142 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     function24 = function23;
@@ -2144,7 +2144,7 @@ public final class TabRowKt {
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 int i1422 = i9 >> 3;
-                m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i1422 & 896) | (i1422 & 7168) | (i1422 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+                m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i1422 & 896) | (i1422 & 7168) | (i1422 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 function24 = function23;
@@ -2193,7 +2193,7 @@ public final class TabRowKt {
             if (ComposerKt.isTraceInProgress()) {
             }
             int i14222 = i9 >> 3;
-            m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14222 & 896) | (i14222 & 7168) | (i14222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+            m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i14222 & 896) | (i14222 & 7168) | (i14222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
             if (ComposerKt.isTraceInProgress()) {
             }
             function24 = function23;
@@ -2252,7 +2252,7 @@ public final class TabRowKt {
         if (ComposerKt.isTraceInProgress()) {
         }
         int i142222 = i9 >> 3;
-        m2705ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142222 & 896) | (i142222 & 7168) | (i142222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
+        m2715ScrollableTabRowImplsKfQg0A(i, modifier2, j5, j7, f3, scrollState2, function32, function23, function22, startRestartGroup, (i9 & WebSocketProtocol.PAYLOAD_SHORT) | (i142222 & 896) | (i142222 & 7168) | (i142222 & 57344) | ((i9 << 9) & 458752) | (3670016 & i9) | (29360128 & i9) | (i9 & 234881024));
         if (ComposerKt.isTraceInProgress()) {
         }
         function24 = function23;
@@ -2296,7 +2296,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2704ScrollableTabRowsKfQg0A(final int i, Modifier modifier, long j, long j2, float f, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2714ScrollableTabRowsKfQg0A(final int i, Modifier modifier, long j, long j2, float f, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -2311,7 +2311,7 @@ public final class TabRowKt {
         final long j5;
         final long j6;
         final float f3;
-        Function2<Composer, Integer, Unit> m2098getLambda6$material3_release;
+        Function2<Composer, Integer, Unit> m2108getLambda6$material3_release;
         Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function32;
         final Function2<? super Composer, ? super Integer, Unit> function23;
         final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function33;
@@ -2400,7 +2400,7 @@ public final class TabRowKt {
                                     i4 &= -7169;
                                 }
                                 if (i5 != 0) {
-                                    f2 = TabRowDefaults.INSTANCE.m2700getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                    f2 = TabRowDefaults.INSTANCE.m2710getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                 }
                                 if (i6 != 0) {
                                     composableLambda = ComposableLambdaKt.rememberComposableLambda(-913748678, true, new Function3<List<? extends TabPosition>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRow$1
@@ -2421,7 +2421,7 @@ public final class TabRowKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(-913748678, i12, -1, "androidx.compose.material3.ScrollableTabRow.<anonymous> (TabRow.kt:501)");
                                             }
-                                            TabRowDefaults.INSTANCE.m2699SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer2, 3072, 6);
+                                            TabRowDefaults.INSTANCE.m2709SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer2, 3072, 6);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
@@ -2434,18 +2434,18 @@ public final class TabRowKt {
                                     j5 = j3;
                                     j6 = j4;
                                     f3 = f2;
-                                    m2098getLambda6$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2098getLambda6$material3_release();
+                                    m2108getLambda6$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2108getLambda6$material3_release();
                                     function32 = composableLambda;
                                     startRestartGroup.endDefaults();
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-497821003, i8, -1, "androidx.compose.material3.ScrollableTabRow (TabRow.kt:507)");
                                     }
                                     int i12 = i8 << 3;
-                                    m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i12 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i12 & 7168) | (57344 & i12) | (458752 & i12) | (3670016 & i8) | (i8 & 29360128), 0);
+                                    m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i12 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i12 & 7168) | (57344 & i12) | (458752 & i12) | (3670016 & i8) | (i8 & 29360128), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    function23 = m2098getLambda6$material3_release;
+                                    function23 = m2108getLambda6$material3_release;
                                     function33 = function32;
                                 }
                             } else {
@@ -2463,15 +2463,15 @@ public final class TabRowKt {
                             j6 = j4;
                             f3 = f2;
                             function32 = composableLambda;
-                            m2098getLambda6$material3_release = function2;
+                            m2108getLambda6$material3_release = function2;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             int i122 = i8 << 3;
-                            m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i122 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i122 & 7168) | (57344 & i122) | (458752 & i122) | (3670016 & i8) | (i8 & 29360128), 0);
+                            m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i122 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i122 & 7168) | (57344 & i122) | (458752 & i122) | (3670016 & i8) | (i8 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
-                            function23 = m2098getLambda6$material3_release;
+                            function23 = m2108getLambda6$material3_release;
                             function33 = function32;
                         } else {
                             startRestartGroup.skipToGroupEnd();
@@ -2499,7 +2499,7 @@ public final class TabRowKt {
                                 }
 
                                 public final void invoke(Composer composer2, int i13) {
-                                    TabRowKt.m2704ScrollableTabRowsKfQg0A(i, modifier2, j5, j6, f3, function33, function23, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                    TabRowKt.m2714ScrollableTabRowsKfQg0A(i, modifier2, j5, j6, f3, function33, function23, function22, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                 }
                             });
                             return;
@@ -2529,15 +2529,15 @@ public final class TabRowKt {
                     j6 = j4;
                     f3 = f2;
                     function32 = composableLambda;
-                    m2098getLambda6$material3_release = function2;
+                    m2108getLambda6$material3_release = function2;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     int i1222 = i8 << 3;
-                    m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i1222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i1222 & 7168) | (57344 & i1222) | (458752 & i1222) | (3670016 & i8) | (i8 & 29360128), 0);
+                    m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i1222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i1222 & 7168) | (57344 & i1222) | (458752 & i1222) | (3670016 & i8) | (i8 & 29360128), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
-                    function23 = m2098getLambda6$material3_release;
+                    function23 = m2108getLambda6$material3_release;
                     function33 = function32;
                     endRestartGroup = startRestartGroup.endRestartGroup();
                     if (endRestartGroup != null) {
@@ -2572,15 +2572,15 @@ public final class TabRowKt {
                 j6 = j4;
                 f3 = f2;
                 function32 = composableLambda;
-                m2098getLambda6$material3_release = function2;
+                m2108getLambda6$material3_release = function2;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 int i12222 = i8 << 3;
-                m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i12222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i12222 & 7168) | (57344 & i12222) | (458752 & i12222) | (3670016 & i8) | (i8 & 29360128), 0);
+                m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i12222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i12222 & 7168) | (57344 & i12222) | (458752 & i12222) | (3670016 & i8) | (i8 & 29360128), 0);
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                function23 = m2098getLambda6$material3_release;
+                function23 = m2108getLambda6$material3_release;
                 function33 = function32;
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
@@ -2619,15 +2619,15 @@ public final class TabRowKt {
             j6 = j4;
             f3 = f2;
             function32 = composableLambda;
-            m2098getLambda6$material3_release = function2;
+            m2108getLambda6$material3_release = function2;
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
             int i122222 = i8 << 3;
-            m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i122222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i122222 & 7168) | (57344 & i122222) | (458752 & i122222) | (3670016 & i8) | (i8 & 29360128), 0);
+            m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i122222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i122222 & 7168) | (57344 & i122222) | (458752 & i122222) | (3670016 & i8) | (i8 & 29360128), 0);
             if (ComposerKt.isTraceInProgress()) {
             }
-            function23 = m2098getLambda6$material3_release;
+            function23 = m2108getLambda6$material3_release;
             function33 = function32;
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup != null) {
@@ -2674,15 +2674,15 @@ public final class TabRowKt {
         j6 = j4;
         f3 = f2;
         function32 = composableLambda;
-        m2098getLambda6$material3_release = function2;
+        m2108getLambda6$material3_release = function2;
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
         int i1222222 = i8 << 3;
-        m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2098getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i1222222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i1222222 & 7168) | (57344 & i1222222) | (458752 & i1222222) | (3670016 & i8) | (i8 & 29360128), 0);
+        m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function32, modifier2, j5, j6, f3, m2108getLambda6$material3_release, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i1222222 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i1222222 & 7168) | (57344 & i1222222) | (458752 & i1222222) | (3670016 & i8) | (i8 & 29360128), 0);
         if (ComposerKt.isTraceInProgress()) {
         }
-        function23 = m2098getLambda6$material3_release;
+        function23 = m2108getLambda6$material3_release;
         function33 = function32;
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
@@ -2690,7 +2690,7 @@ public final class TabRowKt {
     }
 
     /* renamed from: TabRowImpl-DTcfvLk */
-    public static final void m2710TabRowImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
+    public static final void m2720TabRowImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
         Modifier modifier2;
         int i2;
         Composer composer2;
@@ -2724,7 +2724,7 @@ public final class TabRowKt {
             }
             int i3 = i2 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-65106680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1
+            SurfaceKt.m2664SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-65106680, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -2788,17 +2788,17 @@ public final class TabRowKt {
                             rememberedValue2 = new MultiContentMeasurePolicy() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1$2$1
                                 @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
                                 /* renamed from: measure-3p2s80s */
-                                public final MeasureResult mo770measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j3) {
+                                public final MeasureResult mo780measure3p2s80s(MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j3) {
                                     MeasureScope measureScope2 = measureScope;
                                     List<? extends Measurable> list2 = list.get(0);
                                     List<? extends Measurable> list3 = list.get(1);
                                     int i5 = 2;
                                     List<? extends Measurable> list4 = list.get(2);
-                                    int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j3);
+                                    int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j3);
                                     int size = list2.size();
                                     final Ref.IntRef intRef = new Ref.IntRef();
                                     if (size > 0) {
-                                        intRef.element = m7204getMaxWidthimpl / size;
+                                        intRef.element = m7217getMaxWidthimpl / size;
                                     }
                                     int i6 = 0;
                                     int size2 = list2.size();
@@ -2810,7 +2810,7 @@ public final class TabRowKt {
                                     ArrayList arrayList = new ArrayList(size);
                                     int i8 = 0;
                                     while (i8 < size) {
-                                        arrayList.add(new TabPosition(Dp.m7251constructorimpl(measureScope2.mo416toDpu2uoSUM(intRef.element) * i8), measureScope2.mo416toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7249boximpl(Dp.m7251constructorimpl(measureScope2.mo416toDpu2uoSUM(Math.min(list2.get(i8).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * i5))), Dp.m7249boximpl(Dp.m7251constructorimpl(24)))).m7265unboximpl(), null));
+                                        arrayList.add(new TabPosition(Dp.m7264constructorimpl(measureScope2.mo426toDpu2uoSUM(intRef.element) * i8), measureScope2.mo426toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7262boximpl(Dp.m7264constructorimpl(measureScope2.mo426toDpu2uoSUM(Math.min(list2.get(i8).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * i5))), Dp.m7262boximpl(Dp.m7264constructorimpl(24)))).m7278unboximpl(), null));
                                         i8++;
                                         measureScope2 = measureScope;
                                         i5 = 2;
@@ -2821,13 +2821,13 @@ public final class TabRowKt {
                                     for (int i9 = 0; i9 < size3; i9++) {
                                         int i10 = intValue;
                                         intValue = i10;
-                                        arrayList2.add(list2.get(i9).mo5954measureBRTryo0(Constraints.m7193copyZbe2FdA(j3, intRef.element, intRef.element, i10, intValue)));
+                                        arrayList2.add(list2.get(i9).mo5967measureBRTryo0(Constraints.m7206copyZbe2FdA(j3, intRef.element, intRef.element, i10, intValue)));
                                     }
                                     final ArrayList arrayList3 = arrayList2;
                                     ArrayList arrayList4 = new ArrayList(list3.size());
                                     int size4 = list3.size();
                                     for (int i11 = 0; i11 < size4; i11++) {
-                                        arrayList4.add(list3.get(i11).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j3, 0, 0, 0, 0, 11, null)));
+                                        arrayList4.add(list3.get(i11).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j3, 0, 0, 0, 0, 11, null)));
                                     }
                                     final ArrayList arrayList5 = arrayList4;
                                     ArrayList arrayList6 = new ArrayList(list4.size());
@@ -2836,13 +2836,13 @@ public final class TabRowKt {
                                     while (i12 < size5) {
                                         int i13 = intValue;
                                         intValue = i13;
-                                        arrayList6.add(list4.get(i12).mo5954measureBRTryo0(Constraints.m7193copyZbe2FdA(j3, intRef.element, intRef.element, 0, i13)));
+                                        arrayList6.add(list4.get(i12).mo5967measureBRTryo0(Constraints.m7206copyZbe2FdA(j3, intRef.element, intRef.element, 0, i13)));
                                         i12++;
                                         list4 = list4;
                                         arrayList6 = arrayList6;
                                     }
                                     final ArrayList arrayList7 = arrayList6;
-                                    return MeasureScope.layout$default(measureScope, m7204getMaxWidthimpl, intValue, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1$2$1.2
+                                    return MeasureScope.layout$default(measureScope, m7217getMaxWidthimpl, intValue, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1$2$1.2
                                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                         /* JADX WARN: Multi-variable type inference failed */
                                         {
@@ -2910,15 +2910,15 @@ public final class TabRowKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         combineAsVirtualLayouts.invoke(composer3, 0);
                         composer3.endNode();
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -2958,14 +2958,14 @@ public final class TabRowKt {
                 }
 
                 public final void invoke(Composer composer3, int i4) {
-                    TabRowKt.m2710TabRowImplDTcfvLk(Modifier.this, j, j2, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    TabRowKt.m2720TabRowImplDTcfvLk(Modifier.this, j, j2, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }
     }
 
     /* renamed from: ScrollableTabRowImpl-sKfQg0A */
-    public static final void m2705ScrollableTabRowImplsKfQg0A(final int i, final Modifier modifier, final long j, final long j2, final float f, final ScrollState scrollState, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2) {
+    public static final void m2715ScrollableTabRowImplsKfQg0A(final int i, final Modifier modifier, final long j, final long j2, final float f, final ScrollState scrollState, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2) {
         int i3;
         float f2;
         Object obj;
@@ -3023,7 +3023,7 @@ public final class TabRowKt {
             final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function32 = obj2;
             final float f3 = f2;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(ClipKt.clipToBounds(SelectableGroupKt.selectableGroup(ScrollKt.horizontalScroll$default(SizeKt.wrapContentSize$default(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Alignment.Companion.getCenterStart(), false, 2, null), obj, false, null, false, 14, null))), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1556158104, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1
+            SurfaceKt.m2664SurfaceT9BRK9s(ClipKt.clipToBounds(SelectableGroupKt.selectableGroup(ScrollKt.horizontalScroll$default(SizeKt.wrapContentSize$default(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Alignment.Companion.getCenterStart(), false, 2, null), obj, false, null, false, 14, null))), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1556158104, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -3110,17 +3110,17 @@ public final class TabRowKt {
                             rememberedValue4 = (MultiContentMeasurePolicy) new MultiContentMeasurePolicy() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1$2$1
                                 @Override // androidx.compose.ui.layout.MultiContentMeasurePolicy
                                 /* renamed from: measure-3p2s80s */
-                                public final MeasureResult mo770measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j3) {
+                                public final MeasureResult mo780measure3p2s80s(final MeasureScope measureScope, List<? extends List<? extends Measurable>> list, long j3) {
                                     float f5;
                                     float f6;
                                     MeasureScope measureScope2 = measureScope;
                                     List<? extends Measurable> list2 = list.get(0);
                                     List<? extends Measurable> list3 = list.get(1);
                                     List<? extends Measurable> list4 = list.get(2);
-                                    final int i6 = measureScope2.mo413roundToPx0680j_4(f4);
+                                    final int i6 = measureScope2.mo423roundToPx0680j_4(f4);
                                     int size = list2.size();
                                     f5 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                    int i7 = measureScope2.mo413roundToPx0680j_4(f5);
+                                    int i7 = measureScope2.mo423roundToPx0680j_4(f5);
                                     int i8 = 0;
                                     int size2 = list2.size();
                                     for (int i9 = 0; i9 < size2; i9++) {
@@ -3128,23 +3128,23 @@ public final class TabRowKt {
                                     }
                                     int intValue = i8.intValue();
                                     int i10 = i6 * 2;
-                                    long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j3, i7, 0, intValue, intValue, 2, null);
+                                    long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j3, i7, 0, intValue, intValue, 2, null);
                                     final Ref.FloatRef floatRef = new Ref.FloatRef();
                                     floatRef.element = f4;
                                     ArrayList arrayList = new ArrayList(list2.size());
                                     int size3 = list2.size();
                                     for (int i11 = 0; i11 < size3; i11++) {
-                                        arrayList.add(list2.get(i11).mo5954measureBRTryo0(m7194copyZbe2FdA$default));
+                                        arrayList.add(list2.get(i11).mo5967measureBRTryo0(m7207copyZbe2FdA$default));
                                     }
                                     ArrayList arrayList2 = arrayList;
                                     ArrayList arrayList3 = new ArrayList(size);
                                     int i12 = 0;
                                     while (i12 < size) {
                                         f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                        float m7265unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m7249boximpl(f6), Dp.m7249boximpl(measureScope2.mo416toDpu2uoSUM(((Placeable) arrayList2.get(i12)).getWidth())))).m7265unboximpl();
-                                        i10 += measureScope2.mo413roundToPx0680j_4(m7265unboximpl);
-                                        TabPosition tabPosition = new TabPosition(floatRef.element, m7265unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m7249boximpl(Dp.m7251constructorimpl(m7265unboximpl - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7249boximpl(Dp.m7251constructorimpl(24)))).m7265unboximpl(), null);
-                                        floatRef.element = Dp.m7251constructorimpl(floatRef.element + m7265unboximpl);
+                                        float m7278unboximpl = ((Dp) ComparisonsKt.maxOf(Dp.m7262boximpl(f6), Dp.m7262boximpl(measureScope2.mo426toDpu2uoSUM(((Placeable) arrayList2.get(i12)).getWidth())))).m7278unboximpl();
+                                        i10 += measureScope2.mo423roundToPx0680j_4(m7278unboximpl);
+                                        TabPosition tabPosition = new TabPosition(floatRef.element, m7278unboximpl, ((Dp) ComparisonsKt.maxOf(Dp.m7262boximpl(Dp.m7264constructorimpl(m7278unboximpl - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7262boximpl(Dp.m7264constructorimpl(24)))).m7278unboximpl(), null);
+                                        floatRef.element = Dp.m7264constructorimpl(floatRef.element + m7278unboximpl);
                                         arrayList3.add(tabPosition);
                                         i12++;
                                         arrayList2 = arrayList2;
@@ -3157,7 +3157,7 @@ public final class TabRowKt {
                                     int i13 = 0;
                                     while (i13 < size4) {
                                         int i14 = i10;
-                                        arrayList6.add(list3.get(i13).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j3, i14, i10, 0, 0, 8, null)));
+                                        arrayList6.add(list3.get(i13).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j3, i14, i10, 0, 0, 8, null)));
                                         i13++;
                                         list3 = list3;
                                         arrayList6 = arrayList6;
@@ -3172,7 +3172,7 @@ public final class TabRowKt {
                                     while (i17 < size5) {
                                         int i18 = intValue;
                                         intValue = i18;
-                                        arrayList8.add(list4.get(i17).mo5954measureBRTryo0(Constraints.m7193copyZbe2FdA(j3, 0, measureScope2.mo413roundToPx0680j_4(((TabPosition) arrayList5.get(i16)).m2696getWidthD9Ej5fM()), 0, i18)));
+                                        arrayList8.add(list4.get(i17).mo5967measureBRTryo0(Constraints.m7206copyZbe2FdA(j3, 0, measureScope2.mo423roundToPx0680j_4(((TabPosition) arrayList5.get(i16)).m2706getWidthD9Ej5fM()), 0, i18)));
                                         i17++;
                                         measureScope2 = measureScope;
                                         list4 = list4;
@@ -3204,8 +3204,8 @@ public final class TabRowKt {
                                             List<TabPosition> list6 = arrayList5;
                                             int size6 = list5.size();
                                             for (int i21 = 0; i21 < size6; i21++) {
-                                                Placeable.PlacementScope.placeRelative$default(placementScope, list5.get(i21), measureScope3.mo413roundToPx0680j_4(floatRef2.element), 0, 0.0f, 4, null);
-                                                floatRef2.element = Dp.m7251constructorimpl(floatRef2.element + list6.get(i21).m2696getWidthD9Ej5fM());
+                                                Placeable.PlacementScope.placeRelative$default(placementScope, list5.get(i21), measureScope3.mo423roundToPx0680j_4(floatRef2.element), 0, 0.0f, 4, null);
+                                                floatRef2.element = Dp.m7264constructorimpl(floatRef2.element + list6.get(i21).m2706getWidthD9Ej5fM());
                                             }
                                             List<Placeable> list7 = arrayList7;
                                             int i22 = i20;
@@ -3222,7 +3222,7 @@ public final class TabRowKt {
                                             int size8 = list8.size();
                                             for (int i26 = 0; i26 < size8; i26++) {
                                                 Placeable placeable2 = list8.get(i26);
-                                                Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, Math.max(0, (measureScope4.mo413roundToPx0680j_4(list9.get(i24).m2696getWidthD9Ej5fM()) - placeable2.getWidth()) / 2), i25 - placeable2.getHeight(), 0.0f, 4, null);
+                                                Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, Math.max(0, (measureScope4.mo423roundToPx0680j_4(list9.get(i24).m2706getWidthD9Ej5fM()) - placeable2.getWidth()) / 2), i25 - placeable2.getHeight(), 0.0f, 4, null);
                                             }
                                             scrollableTabData2.onLaidOut(measureScope, i6, arrayList5, i19);
                                         }
@@ -3260,15 +3260,15 @@ public final class TabRowKt {
                         } else {
                             composer3.useNode();
                         }
-                        Composer m3855constructorimpl = Updater.m3855constructorimpl(composer3);
-                        Updater.m3862setimpl(m3855constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m3867constructorimpl = Updater.m3867constructorimpl(composer3);
+                        Updater.m3874setimpl(m3867constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         combineAsVirtualLayouts.invoke(composer3, 0);
                         composer3.endNode();
                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -3307,14 +3307,14 @@ public final class TabRowKt {
                 }
 
                 public final void invoke(Composer composer3, int i4) {
-                    TabRowKt.m2705ScrollableTabRowImplsKfQg0A(i, modifier, j, j2, f, scrollState, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    TabRowKt.m2715ScrollableTabRowImplsKfQg0A(i, modifier, j, j2, f, scrollState, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
     }
 
     /* renamed from: TabRowWithSubcomposeImpl-DTcfvLk */
-    public static final void m2711TabRowWithSubcomposeImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
+    public static final void m2721TabRowWithSubcomposeImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
         Modifier modifier2;
         int i2;
         Composer composer2;
@@ -3348,7 +3348,7 @@ public final class TabRowKt {
             }
             int i3 = i2 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1617702432, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1
+            SurfaceKt.m2664SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1617702432, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowWithSubcomposeImpl$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -3389,17 +3389,17 @@ public final class TabRowKt {
 
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                return m2719invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                return m2729invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                             }
 
                             /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                            public final MeasureResult m2719invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j3) {
-                                int m7204getMaxWidthimpl = Constraints.m7204getMaxWidthimpl(j3);
+                            public final MeasureResult m2729invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j3) {
+                                int m7217getMaxWidthimpl = Constraints.m7217getMaxWidthimpl(j3);
                                 List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function23);
                                 int size = subcompose.size();
                                 final Ref.IntRef intRef = new Ref.IntRef();
                                 if (size > 0) {
-                                    intRef.element = m7204getMaxWidthimpl / size;
+                                    intRef.element = m7217getMaxWidthimpl / size;
                                 }
                                 int i5 = 0;
                                 int size2 = subcompose.size();
@@ -3411,15 +3411,15 @@ public final class TabRowKt {
                                 int size3 = subcompose.size();
                                 int i7 = 0;
                                 while (i7 < size3) {
-                                    arrayList.add(subcompose.get(i7).mo5954measureBRTryo0(Constraints.m7193copyZbe2FdA(j3, intRef.element, intRef.element, intValue, intValue)));
+                                    arrayList.add(subcompose.get(i7).mo5967measureBRTryo0(Constraints.m7206copyZbe2FdA(j3, intRef.element, intRef.element, intValue, intValue)));
                                     i7++;
-                                    m7204getMaxWidthimpl = m7204getMaxWidthimpl;
+                                    m7217getMaxWidthimpl = m7217getMaxWidthimpl;
                                 }
-                                final int i8 = m7204getMaxWidthimpl;
+                                final int i8 = m7217getMaxWidthimpl;
                                 final ArrayList arrayList2 = arrayList;
                                 ArrayList arrayList3 = new ArrayList(size);
                                 for (int i9 = 0; i9 < size; i9++) {
-                                    arrayList3.add(new TabPosition(Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(intRef.element) * i9), subcomposeMeasureScope.mo416toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7249boximpl(Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(subcompose.get(i9).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7249boximpl(Dp.m7251constructorimpl(24)))).m7265unboximpl(), null));
+                                    arrayList3.add(new TabPosition(Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(intRef.element) * i9), subcomposeMeasureScope.mo426toDpu2uoSUM(intRef.element), ((Dp) ComparisonsKt.maxOf(Dp.m7262boximpl(Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(subcompose.get(i9).maxIntrinsicWidth(intValue), intRef.element)) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2))), Dp.m7262boximpl(Dp.m7264constructorimpl(24)))).m7278unboximpl(), null));
                                 }
                                 final ArrayList arrayList4 = arrayList3;
                                 final Function2<Composer, Integer, Unit> function25 = function24;
@@ -3450,8 +3450,8 @@ public final class TabRowKt {
                                         int i11 = intValue;
                                         int size5 = subcompose2.size();
                                         for (int i12 = 0; i12 < size5; i12++) {
-                                            Placeable mo5954measureBRTryo0 = subcompose2.get(i12).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j4, 0, 0, 0, 0, 11, null));
-                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo0, 0, i11 - mo5954measureBRTryo0.getHeight(), 0.0f, 4, null);
+                                            Placeable mo5967measureBRTryo0 = subcompose2.get(i12).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j4, 0, 0, 0, 0, 11, null));
+                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo0, 0, i11 - mo5967measureBRTryo0.getHeight(), 0.0f, 4, null);
                                         }
                                         SubcomposeMeasureScope subcomposeMeasureScope2 = subcomposeMeasureScope;
                                         TabSlots tabSlots = TabSlots.Indicator;
@@ -3489,7 +3489,7 @@ public final class TabRowKt {
                                         int i14 = intValue;
                                         int size6 = subcompose3.size();
                                         for (int i15 = 0; i15 < size6; i15++) {
-                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i15).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i13, i14)), 0, 0, 0.0f, 4, null);
+                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i15).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i13, i14)), 0, 0, 0.0f, 4, null);
                                         }
                                     }
                                 }, 4, null);
@@ -3529,7 +3529,7 @@ public final class TabRowKt {
                 }
 
                 public final void invoke(Composer composer3, int i4) {
-                    TabRowKt.m2711TabRowWithSubcomposeImplDTcfvLk(Modifier.this, j, j2, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+                    TabRowKt.m2721TabRowWithSubcomposeImplDTcfvLk(Modifier.this, j, j2, function3, function2, function22, composer3, RecomposeScopeImplKt.updateChangedFlags(i | 1));
                 }
             });
         }
@@ -3564,7 +3564,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(final int i, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, long j, long j2, float f, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final ScrollState scrollState, Composer composer, final int i2, final int i3) {
+    public static final void m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(final int i, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, long j, long j2, float f, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final ScrollState scrollState, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -3574,7 +3574,7 @@ public final class TabRowKt {
         int i6;
         float f2;
         int i7;
-        Function2<Composer, Integer, Unit> m2099getLambda7$material3_release;
+        Function2<Composer, Integer, Unit> m2109getLambda7$material3_release;
         Composer composer2;
         final float f3;
         final Function2<? super Composer, ? super Integer, Unit> function23;
@@ -3669,10 +3669,10 @@ public final class TabRowKt {
                                         i4 &= -57345;
                                     }
                                     if (i6 != 0) {
-                                        f2 = TabRowDefaults.INSTANCE.m2700getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                        f2 = TabRowDefaults.INSTANCE.m2710getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                     }
                                     if (i7 != 0) {
-                                        m2099getLambda7$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2099getLambda7$material3_release();
+                                        m2109getLambda7$material3_release = ComposableSingletons$TabRowKt.INSTANCE.m2109getLambda7$material3_release();
                                         long j7 = j4;
                                         final float f4 = f2;
                                         Modifier modifier3 = companion;
@@ -3681,11 +3681,11 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-955409947, i4, -1, "androidx.compose.material3.ScrollableTabRowWithSubcomposeImpl (TabRow.kt:1020)");
                                         }
-                                        final Function2<? super Composer, ? super Integer, Unit> function24 = m2099getLambda7$material3_release;
+                                        final Function2<? super Composer, ? super Integer, Unit> function24 = m2109getLambda7$material3_release;
                                         final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function32 = obj;
                                         int i10 = i4 >> 3;
                                         composer2 = startRestartGroup;
-                                        SurfaceKt.m2654SurfaceT9BRK9s(modifier3, null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+                                        SurfaceKt.m2664SurfaceT9BRK9s(modifier3, null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                                             /* JADX INFO: Access modifiers changed from: package-private */
                                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                             /* JADX WARN: Multi-variable type inference failed */
@@ -3749,15 +3749,15 @@ public final class TabRowKt {
 
                                                             @Override // kotlin.jvm.functions.Function2
                                                             public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                                                return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                                                return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                                             }
 
                                                             /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                                            public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                                            public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                                                 float f6;
                                                                 f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                                                int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                                                final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                                                int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                                                final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                                                 List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                                                 int i15 = 0;
                                                                 int size = subcompose.size();
@@ -3765,16 +3765,16 @@ public final class TabRowKt {
                                                                     i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                                                 }
                                                                 final int intValue = i15.intValue();
-                                                                long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                                                long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                                                 final ArrayList arrayList = new ArrayList();
                                                                 final ArrayList arrayList2 = new ArrayList();
                                                                 int size2 = subcompose.size();
                                                                 for (int i17 = 0; i17 < size2; i17++) {
                                                                     Measurable measurable = subcompose.get(i17);
-                                                                    Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                                                    float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                                                    arrayList.add(mo5954measureBRTryo0);
-                                                                    arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                                                    Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                                                    float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                                                    arrayList.add(mo5967measureBRTryo0);
+                                                                    arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                                                 }
                                                                 Integer valueOf = Integer.valueOf(i14 * 2);
                                                                 int size3 = arrayList.size();
@@ -3811,7 +3811,7 @@ public final class TabRowKt {
                                                                         for (int i22 = 0; i22 < size4; i22++) {
                                                                             Placeable placeable = list.get(i22);
                                                                             Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                                             i21 += placeable.getWidth();
                                                                         }
                                                                         List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -3820,8 +3820,8 @@ public final class TabRowKt {
                                                                         int i24 = intValue;
                                                                         int size5 = subcompose2.size();
                                                                         for (int i25 = 0; i25 < size5; i25++) {
-                                                                            Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                                            Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                                                         }
                                                                         SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                                                         TabSlots tabSlots = TabSlots.Indicator;
@@ -3858,7 +3858,7 @@ public final class TabRowKt {
                                                                         int i27 = intValue;
                                                                         int size6 = subcompose3.size();
                                                                         for (int i28 = 0; i28 < size6; i28++) {
-                                                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                                                         }
                                                                         scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                                                     }
@@ -3896,7 +3896,7 @@ public final class TabRowKt {
                                         i4 &= -57345;
                                     }
                                 }
-                                m2099getLambda7$material3_release = function2;
+                                m2109getLambda7$material3_release = function2;
                                 long j72 = j4;
                                 final float f42 = f2;
                                 Modifier modifier32 = companion;
@@ -3904,11 +3904,11 @@ public final class TabRowKt {
                                 startRestartGroup.endDefaults();
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
-                                final Function2<? super Composer, ? super Integer, Unit> function242 = m2099getLambda7$material3_release;
+                                final Function2<? super Composer, ? super Integer, Unit> function242 = m2109getLambda7$material3_release;
                                 final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function322 = obj;
                                 int i102 = i4 >> 3;
                                 composer2 = startRestartGroup;
-                                SurfaceKt.m2654SurfaceT9BRK9s(modifier32, null, j82, j72, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+                                SurfaceKt.m2664SurfaceT9BRK9s(modifier32, null, j82, j72, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                                     /* JADX INFO: Access modifiers changed from: package-private */
                                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                                     /* JADX WARN: Multi-variable type inference failed */
@@ -3972,15 +3972,15 @@ public final class TabRowKt {
 
                                                     @Override // kotlin.jvm.functions.Function2
                                                     public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                                        return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                                        return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                                     }
 
                                                     /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                                    public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                                    public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                                         float f6;
                                                         f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                                        int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                                        final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                                        int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                                        final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                                         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                                         int i15 = 0;
                                                         int size = subcompose.size();
@@ -3988,16 +3988,16 @@ public final class TabRowKt {
                                                             i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                                         }
                                                         final int intValue = i15.intValue();
-                                                        long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                                        long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                                         final List<Placeable> arrayList = new ArrayList();
                                                         final List<Dp> arrayList2 = new ArrayList();
                                                         int size2 = subcompose.size();
                                                         for (int i17 = 0; i17 < size2; i17++) {
                                                             Measurable measurable = subcompose.get(i17);
-                                                            Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                                            float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                                            arrayList.add(mo5954measureBRTryo0);
-                                                            arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                                            Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                                            float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                                            arrayList.add(mo5967measureBRTryo0);
+                                                            arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                                         }
                                                         Integer valueOf = Integer.valueOf(i14 * 2);
                                                         int size3 = arrayList.size();
@@ -4034,7 +4034,7 @@ public final class TabRowKt {
                                                                 for (int i22 = 0; i22 < size4; i22++) {
                                                                     Placeable placeable = list.get(i22);
                                                                     Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                                    arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                                    arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                                     i21 += placeable.getWidth();
                                                                 }
                                                                 List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -4043,8 +4043,8 @@ public final class TabRowKt {
                                                                 int i24 = intValue;
                                                                 int size5 = subcompose2.size();
                                                                 for (int i25 = 0; i25 < size5; i25++) {
-                                                                    Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                                    Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                                                 }
                                                                 SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                                                 TabSlots tabSlots = TabSlots.Indicator;
@@ -4081,7 +4081,7 @@ public final class TabRowKt {
                                                                 int i27 = intValue;
                                                                 int size6 = subcompose3.size();
                                                                 for (int i28 = 0; i28 < size6; i28++) {
-                                                                    Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                                    Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                                                 }
                                                                 scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                                             }
@@ -4134,7 +4134,7 @@ public final class TabRowKt {
                                     }
 
                                     public final void invoke(Composer composer3, int i11) {
-                                        TabRowKt.m2706ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function3, modifier2, j5, j6, f3, function23, function22, scrollState, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                                        TabRowKt.m2716ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function3, modifier2, j5, j6, f3, function23, function22, scrollState, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                                     }
                                 });
                                 return;
@@ -4156,7 +4156,7 @@ public final class TabRowKt {
                         }
                         if (i7 != 0) {
                         }
-                        m2099getLambda7$material3_release = function2;
+                        m2109getLambda7$material3_release = function2;
                         long j722 = j4;
                         final float f422 = f2;
                         Modifier modifier322 = companion;
@@ -4164,11 +4164,11 @@ public final class TabRowKt {
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                         }
-                        final Function2<? super Composer, ? super Integer, Unit> function2422 = m2099getLambda7$material3_release;
+                        final Function2<? super Composer, ? super Integer, Unit> function2422 = m2109getLambda7$material3_release;
                         final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3222 = obj;
                         int i1022 = i4 >> 3;
                         composer2 = startRestartGroup;
-                        SurfaceKt.m2654SurfaceT9BRK9s(modifier322, null, j822, j722, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+                        SurfaceKt.m2664SurfaceT9BRK9s(modifier322, null, j822, j722, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                             /* JADX WARN: Multi-variable type inference failed */
@@ -4232,15 +4232,15 @@ public final class TabRowKt {
 
                                             @Override // kotlin.jvm.functions.Function2
                                             public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                                return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                                return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                             }
 
                                             /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                            public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                            public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                                 float f6;
                                                 f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                                int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                                final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                                int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                                final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                                 List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                                 int i15 = 0;
                                                 int size = subcompose.size();
@@ -4248,16 +4248,16 @@ public final class TabRowKt {
                                                     i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                                 }
                                                 final int intValue = i15.intValue();
-                                                long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                                long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                                 final List<Placeable> arrayList = new ArrayList();
                                                 final List<Dp> arrayList2 = new ArrayList();
                                                 int size2 = subcompose.size();
                                                 for (int i17 = 0; i17 < size2; i17++) {
                                                     Measurable measurable = subcompose.get(i17);
-                                                    Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                                    float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                                    arrayList.add(mo5954measureBRTryo0);
-                                                    arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                                    Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                                    float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                                    arrayList.add(mo5967measureBRTryo0);
+                                                    arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                                 }
                                                 Integer valueOf = Integer.valueOf(i14 * 2);
                                                 int size3 = arrayList.size();
@@ -4294,7 +4294,7 @@ public final class TabRowKt {
                                                         for (int i22 = 0; i22 < size4; i22++) {
                                                             Placeable placeable = list.get(i22);
                                                             Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                             i21 += placeable.getWidth();
                                                         }
                                                         List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -4303,8 +4303,8 @@ public final class TabRowKt {
                                                         int i24 = intValue;
                                                         int size5 = subcompose2.size();
                                                         for (int i25 = 0; i25 < size5; i25++) {
-                                                            Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                            Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                                         }
                                                         SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                                         TabSlots tabSlots = TabSlots.Indicator;
@@ -4341,7 +4341,7 @@ public final class TabRowKt {
                                                         int i27 = intValue;
                                                         int size6 = subcompose3.size();
                                                         for (int i28 = 0; i28 < size6; i28++) {
-                                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                                         }
                                                         scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                                     }
@@ -4389,7 +4389,7 @@ public final class TabRowKt {
                     }
                     if (i7 != 0) {
                     }
-                    m2099getLambda7$material3_release = function2;
+                    m2109getLambda7$material3_release = function2;
                     long j7222 = j4;
                     final float f4222 = f2;
                     Modifier modifier3222 = companion;
@@ -4397,11 +4397,11 @@ public final class TabRowKt {
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
                     }
-                    final Function2<? super Composer, ? super Integer, Unit> function24222 = m2099getLambda7$material3_release;
+                    final Function2<? super Composer, ? super Integer, Unit> function24222 = m2109getLambda7$material3_release;
                     final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function32222 = obj;
                     int i10222 = i4 >> 3;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m2654SurfaceT9BRK9s(modifier3222, null, j8222, j7222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+                    SurfaceKt.m2664SurfaceT9BRK9s(modifier3222, null, j8222, j7222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         /* JADX WARN: Multi-variable type inference failed */
@@ -4465,15 +4465,15 @@ public final class TabRowKt {
 
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                            return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                            return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                         }
 
                                         /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                        public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                        public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                             float f6;
                                             f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                            int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                            final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                            int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                            final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                             List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                             int i15 = 0;
                                             int size = subcompose.size();
@@ -4481,16 +4481,16 @@ public final class TabRowKt {
                                                 i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                             }
                                             final int intValue = i15.intValue();
-                                            long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                            long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                             final List<Placeable> arrayList = new ArrayList();
                                             final List<Dp> arrayList2 = new ArrayList();
                                             int size2 = subcompose.size();
                                             for (int i17 = 0; i17 < size2; i17++) {
                                                 Measurable measurable = subcompose.get(i17);
-                                                Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                                float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                                arrayList.add(mo5954measureBRTryo0);
-                                                arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                                Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                                float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                                arrayList.add(mo5967measureBRTryo0);
+                                                arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                             }
                                             Integer valueOf = Integer.valueOf(i14 * 2);
                                             int size3 = arrayList.size();
@@ -4527,7 +4527,7 @@ public final class TabRowKt {
                                                     for (int i22 = 0; i22 < size4; i22++) {
                                                         Placeable placeable = list.get(i22);
                                                         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                        arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                        arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                         i21 += placeable.getWidth();
                                                     }
                                                     List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -4536,8 +4536,8 @@ public final class TabRowKt {
                                                     int i24 = intValue;
                                                     int size5 = subcompose2.size();
                                                     for (int i25 = 0; i25 < size5; i25++) {
-                                                        Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                        Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                        Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                                     }
                                                     SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                                     TabSlots tabSlots = TabSlots.Indicator;
@@ -4574,7 +4574,7 @@ public final class TabRowKt {
                                                     int i27 = intValue;
                                                     int size6 = subcompose3.size();
                                                     for (int i28 = 0; i28 < size6; i28++) {
-                                                        Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                        Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                                     }
                                                     scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                                 }
@@ -4628,7 +4628,7 @@ public final class TabRowKt {
                 }
                 if (i7 != 0) {
                 }
-                m2099getLambda7$material3_release = function2;
+                m2109getLambda7$material3_release = function2;
                 long j72222 = j4;
                 final float f42222 = f2;
                 Modifier modifier32222 = companion;
@@ -4636,11 +4636,11 @@ public final class TabRowKt {
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
-                final Function2<? super Composer, ? super Integer, Unit> function242222 = m2099getLambda7$material3_release;
+                final Function2<? super Composer, ? super Integer, Unit> function242222 = m2109getLambda7$material3_release;
                 final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function322222 = obj;
                 int i102222 = i4 >> 3;
                 composer2 = startRestartGroup;
-                SurfaceKt.m2654SurfaceT9BRK9s(modifier32222, null, j82222, j72222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+                SurfaceKt.m2664SurfaceT9BRK9s(modifier32222, null, j82222, j72222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     /* JADX WARN: Multi-variable type inference failed */
@@ -4704,15 +4704,15 @@ public final class TabRowKt {
 
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                        return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                        return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                     }
 
                                     /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                    public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                    public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                         float f6;
                                         f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                        int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                        final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                        int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                        final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                         List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                         int i15 = 0;
                                         int size = subcompose.size();
@@ -4720,16 +4720,16 @@ public final class TabRowKt {
                                             i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                         }
                                         final int intValue = i15.intValue();
-                                        long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                        long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                         final List<Placeable> arrayList = new ArrayList();
                                         final List<Dp> arrayList2 = new ArrayList();
                                         int size2 = subcompose.size();
                                         for (int i17 = 0; i17 < size2; i17++) {
                                             Measurable measurable = subcompose.get(i17);
-                                            Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                            float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                            arrayList.add(mo5954measureBRTryo0);
-                                            arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                            Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                            float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                            arrayList.add(mo5967measureBRTryo0);
+                                            arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                         }
                                         Integer valueOf = Integer.valueOf(i14 * 2);
                                         int size3 = arrayList.size();
@@ -4766,7 +4766,7 @@ public final class TabRowKt {
                                                 for (int i22 = 0; i22 < size4; i22++) {
                                                     Placeable placeable = list.get(i22);
                                                     Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                    arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                    arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                     i21 += placeable.getWidth();
                                                 }
                                                 List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -4775,8 +4775,8 @@ public final class TabRowKt {
                                                 int i24 = intValue;
                                                 int size5 = subcompose2.size();
                                                 for (int i25 = 0; i25 < size5; i25++) {
-                                                    Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                    Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                    Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                                 }
                                                 SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                                 TabSlots tabSlots = TabSlots.Indicator;
@@ -4813,7 +4813,7 @@ public final class TabRowKt {
                                                 int i27 = intValue;
                                                 int size6 = subcompose3.size();
                                                 for (int i28 = 0; i28 < size6; i28++) {
-                                                    Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                    Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                                 }
                                                 scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                             }
@@ -4875,7 +4875,7 @@ public final class TabRowKt {
             }
             if (i7 != 0) {
             }
-            m2099getLambda7$material3_release = function2;
+            m2109getLambda7$material3_release = function2;
             long j722222 = j4;
             final float f422222 = f2;
             Modifier modifier322222 = companion;
@@ -4883,11 +4883,11 @@ public final class TabRowKt {
             startRestartGroup.endDefaults();
             if (ComposerKt.isTraceInProgress()) {
             }
-            final Function2<? super Composer, ? super Integer, Unit> function2422222 = m2099getLambda7$material3_release;
+            final Function2<? super Composer, ? super Integer, Unit> function2422222 = m2109getLambda7$material3_release;
             final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3222222 = obj;
             int i1022222 = i4 >> 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m2654SurfaceT9BRK9s(modifier322222, null, j822222, j722222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+            SurfaceKt.m2664SurfaceT9BRK9s(modifier322222, null, j822222, j722222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
@@ -4951,15 +4951,15 @@ public final class TabRowKt {
 
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                    return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                    return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                                 }
 
                                 /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                                public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                                public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                     float f6;
                                     f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                    int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                    final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                    int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                    final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                     List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                     int i15 = 0;
                                     int size = subcompose.size();
@@ -4967,16 +4967,16 @@ public final class TabRowKt {
                                         i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                     }
                                     final int intValue = i15.intValue();
-                                    long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                    long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                     final List<Placeable> arrayList = new ArrayList();
                                     final List<Dp> arrayList2 = new ArrayList();
                                     int size2 = subcompose.size();
                                     for (int i17 = 0; i17 < size2; i17++) {
                                         Measurable measurable = subcompose.get(i17);
-                                        Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                        float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                        arrayList.add(mo5954measureBRTryo0);
-                                        arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                        Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                        float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                        arrayList.add(mo5967measureBRTryo0);
+                                        arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                     }
                                     Integer valueOf = Integer.valueOf(i14 * 2);
                                     int size3 = arrayList.size();
@@ -5013,7 +5013,7 @@ public final class TabRowKt {
                                             for (int i22 = 0; i22 < size4; i22++) {
                                                 Placeable placeable = list.get(i22);
                                                 Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                                arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                                arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                                 i21 += placeable.getWidth();
                                             }
                                             List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -5022,8 +5022,8 @@ public final class TabRowKt {
                                             int i24 = intValue;
                                             int size5 = subcompose2.size();
                                             for (int i25 = 0; i25 < size5; i25++) {
-                                                Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                                Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                                Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                                Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                             }
                                             SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                             TabSlots tabSlots = TabSlots.Indicator;
@@ -5060,7 +5060,7 @@ public final class TabRowKt {
                                             int i27 = intValue;
                                             int size6 = subcompose3.size();
                                             for (int i28 = 0; i28 < size6; i28++) {
-                                                Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                                Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                             }
                                             scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                         }
@@ -5126,7 +5126,7 @@ public final class TabRowKt {
         }
         if (i7 != 0) {
         }
-        m2099getLambda7$material3_release = function2;
+        m2109getLambda7$material3_release = function2;
         long j7222222 = j4;
         final float f4222222 = f2;
         Modifier modifier3222222 = companion;
@@ -5134,11 +5134,11 @@ public final class TabRowKt {
         startRestartGroup.endDefaults();
         if (ComposerKt.isTraceInProgress()) {
         }
-        final Function2<? super Composer, ? super Integer, Unit> function24222222 = m2099getLambda7$material3_release;
+        final Function2<? super Composer, ? super Integer, Unit> function24222222 = m2109getLambda7$material3_release;
         final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function32222222 = obj;
         int i10222222 = i4 >> 3;
         composer2 = startRestartGroup;
-        SurfaceKt.m2654SurfaceT9BRK9s(modifier3222222, null, j8222222, j7222222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
+        SurfaceKt.m2664SurfaceT9BRK9s(modifier3222222, null, j8222222, j7222222, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1572959552, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowWithSubcomposeImpl$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -5202,15 +5202,15 @@ public final class TabRowKt {
 
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ MeasureResult invoke(SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-                                return m2717invoke0kLqBqw(subcomposeMeasureScope, constraints.m7210unboximpl());
+                                return m2727invoke0kLqBqw(subcomposeMeasureScope, constraints.m7223unboximpl());
                             }
 
                             /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-                            public final MeasureResult m2717invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
+                            public final MeasureResult m2727invoke0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, final long j9) {
                                 float f6;
                                 f6 = TabRowKt.ScrollableTabRowMinimumTabWidth;
-                                int i13 = subcomposeMeasureScope.mo413roundToPx0680j_4(f6);
-                                final int i14 = subcomposeMeasureScope.mo413roundToPx0680j_4(f5);
+                                int i13 = subcomposeMeasureScope.mo423roundToPx0680j_4(f6);
+                                final int i14 = subcomposeMeasureScope.mo423roundToPx0680j_4(f5);
                                 List<Measurable> subcompose = subcomposeMeasureScope.subcompose(TabSlots.Tabs, function25);
                                 int i15 = 0;
                                 int size = subcompose.size();
@@ -5218,16 +5218,16 @@ public final class TabRowKt {
                                     i15 = Integer.valueOf(Math.max(i15.intValue(), subcompose.get(i16).maxIntrinsicHeight(Integer.MAX_VALUE)));
                                 }
                                 final int intValue = i15.intValue();
-                                long m7194copyZbe2FdA$default = Constraints.m7194copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
+                                long m7207copyZbe2FdA$default = Constraints.m7207copyZbe2FdA$default(j9, i13, 0, intValue, intValue, 2, null);
                                 final List<Placeable> arrayList = new ArrayList();
                                 final List<Dp> arrayList2 = new ArrayList();
                                 int size2 = subcompose.size();
                                 for (int i17 = 0; i17 < size2; i17++) {
                                     Measurable measurable = subcompose.get(i17);
-                                    Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(m7194copyZbe2FdA$default);
-                                    float m7251constructorimpl = Dp.m7251constructorimpl(subcomposeMeasureScope.mo416toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5954measureBRTryo0.getHeight()), mo5954measureBRTryo0.getWidth())) - Dp.m7251constructorimpl(TabKt.getHorizontalTextPadding() * 2));
-                                    arrayList.add(mo5954measureBRTryo0);
-                                    arrayList2.add(Dp.m7249boximpl(m7251constructorimpl));
+                                    Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(m7207copyZbe2FdA$default);
+                                    float m7264constructorimpl = Dp.m7264constructorimpl(subcomposeMeasureScope.mo426toDpu2uoSUM(Math.min(measurable.maxIntrinsicWidth(mo5967measureBRTryo0.getHeight()), mo5967measureBRTryo0.getWidth())) - Dp.m7264constructorimpl(TabKt.getHorizontalTextPadding() * 2));
+                                    arrayList.add(mo5967measureBRTryo0);
+                                    arrayList2.add(Dp.m7262boximpl(m7264constructorimpl));
                                 }
                                 Integer valueOf = Integer.valueOf(i14 * 2);
                                 int size3 = arrayList.size();
@@ -5264,7 +5264,7 @@ public final class TabRowKt {
                                         for (int i22 = 0; i22 < size4; i22++) {
                                             Placeable placeable = list.get(i22);
                                             Placeable.PlacementScope.placeRelative$default(placementScope, placeable, i21, 0, 0.0f, 4, null);
-                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo416toDpu2uoSUM(i21), subcomposeMeasureScope2.mo416toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7265unboximpl(), null));
+                                            arrayList3.add(new TabPosition(subcomposeMeasureScope2.mo426toDpu2uoSUM(i21), subcomposeMeasureScope2.mo426toDpu2uoSUM(placeable.getWidth()), list2.get(i22).m7278unboximpl(), null));
                                             i21 += placeable.getWidth();
                                         }
                                         List<Measurable> subcompose2 = subcomposeMeasureScope.subcompose(TabSlots.Divider, function27);
@@ -5273,8 +5273,8 @@ public final class TabRowKt {
                                         int i24 = intValue;
                                         int size5 = subcompose2.size();
                                         for (int i25 = 0; i25 < size5; i25++) {
-                                            Placeable mo5954measureBRTryo02 = subcompose2.get(i25).mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
-                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5954measureBRTryo02, 0, i24 - mo5954measureBRTryo02.getHeight(), 0.0f, 4, null);
+                                            Placeable mo5967measureBRTryo02 = subcompose2.get(i25).mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j10, i23, i23, 0, 0, 8, null));
+                                            Placeable.PlacementScope.placeRelative$default(placementScope, mo5967measureBRTryo02, 0, i24 - mo5967measureBRTryo02.getHeight(), 0.0f, 4, null);
                                         }
                                         SubcomposeMeasureScope subcomposeMeasureScope3 = subcomposeMeasureScope;
                                         TabSlots tabSlots = TabSlots.Indicator;
@@ -5311,7 +5311,7 @@ public final class TabRowKt {
                                         int i27 = intValue;
                                         int size6 = subcompose3.size();
                                         for (int i28 = 0; i28 < size6; i28++) {
-                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5954measureBRTryo0(Constraints.Companion.m7214fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
+                                            Placeable.PlacementScope.placeRelative$default(placementScope, subcompose3.get(i28).mo5967measureBRTryo0(Constraints.Companion.m7227fixedJhjzzOo(i26, i27)), 0, 0, 0.0f, 4, null);
                                         }
                                         scrollableTabData2.onLaidOut(subcomposeMeasureScope, i14, arrayList3, i19);
                                     }

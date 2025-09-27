@@ -18,7 +18,7 @@ public final class AnimationData {
     }
 
     /* renamed from: copy-d-4ec7I$default  reason: not valid java name */
-    public static /* synthetic */ AnimationData m448copyd4ec7I$default(AnimationData animationData, float f, long j, float f2, int i, Object obj) {
+    public static /* synthetic */ AnimationData m458copyd4ec7I$default(AnimationData animationData, float f, long j, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
             f = animationData.zoom;
         }
@@ -28,7 +28,7 @@ public final class AnimationData {
         if ((i & 4) != 0) {
             f2 = animationData.degrees;
         }
-        return animationData.m450copyd4ec7I(f, j, f2);
+        return animationData.m460copyd4ec7I(f, j, f2);
     }
 
     public final float component1() {
@@ -36,7 +36,7 @@ public final class AnimationData {
     }
 
     /* renamed from: component2-F1C5BW0  reason: not valid java name */
-    public final long m449component2F1C5BW0() {
+    public final long m459component2F1C5BW0() {
         return this.offset;
     }
 
@@ -45,7 +45,7 @@ public final class AnimationData {
     }
 
     /* renamed from: copy-d-4ec7I  reason: not valid java name */
-    public final AnimationData m450copyd4ec7I(float f, long j, float f2) {
+    public final AnimationData m460copyd4ec7I(float f, long j, float f2) {
         return new AnimationData(f, j, f2, null);
     }
 
@@ -55,17 +55,17 @@ public final class AnimationData {
         }
         if (obj instanceof AnimationData) {
             AnimationData animationData = (AnimationData) obj;
-            return Float.compare(this.zoom, animationData.zoom) == 0 && Offset.m4290equalsimpl0(this.offset, animationData.offset) && Float.compare(this.degrees, animationData.degrees) == 0;
+            return Float.compare(this.zoom, animationData.zoom) == 0 && Offset.m4302equalsimpl0(this.offset, animationData.offset) && Float.compare(this.degrees, animationData.degrees) == 0;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Float.hashCode(this.zoom) * 31) + Offset.m4295hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.degrees);
+        return (((Float.hashCode(this.zoom) * 31) + Offset.m4307hashCodeimpl(this.offset)) * 31) + Float.hashCode(this.degrees);
     }
 
     public String toString() {
-        return "AnimationData(zoom=" + this.zoom + ", offset=" + ((Object) Offset.m4301toStringimpl(this.offset)) + ", degrees=" + this.degrees + ')';
+        return "AnimationData(zoom=" + this.zoom + ", offset=" + ((Object) Offset.m4313toStringimpl(this.offset)) + ", degrees=" + this.degrees + ')';
     }
 
     private AnimationData(float f, long j, float f2) {
@@ -79,7 +79,7 @@ public final class AnimationData {
     }
 
     /* renamed from: getOffset-F1C5BW0  reason: not valid java name */
-    public final long m451getOffsetF1C5BW0() {
+    public final long m461getOffsetF1C5BW0() {
         return this.offset;
     }
 

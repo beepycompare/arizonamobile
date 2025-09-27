@@ -8,21 +8,21 @@ import kotlin.io.FilesKt;
 public final class Ba implements Ho {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f367a;
+    public final Context f368a;
     public final String b;
 
     public Ba(Context context, String str) {
-        this.f367a = context;
+        this.f368a = context;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Ho
     public final String a() {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f367a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f368a, this.b);
             if (fileFromSdkStorage != null) {
                 fileFromSdkStorage.exists();
-                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f367a, this.b);
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f368a, this.b);
                 if (fileFromAppStorage != null) {
                     FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
                 }
@@ -37,7 +37,7 @@ public final class Ba implements Ho {
     @Override // io.appmetrica.analytics.impl.Ho
     public final void a(String str) {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f367a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f368a, this.b);
             if (fileFromSdkStorage != null) {
                 FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
             }

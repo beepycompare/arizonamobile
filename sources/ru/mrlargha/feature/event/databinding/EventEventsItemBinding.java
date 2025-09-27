@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.event.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class EventEventsItemBinding implements ViewBinding {
     public final LinearLayout attempsContainer;
     public final TextView btnJoin;

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 public final class I3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0125ag f487a;
+    public final C0125ag f488a;
     public final V7 b;
     public final Rf c;
     public final Cg d;
@@ -19,15 +19,15 @@ public final class I3 implements Converter {
     public final Zi fromModel(J3 j3) {
         Zi zi;
         D8 d8 = new D8();
-        Zi fromModel = this.f487a.fromModel(j3.f508a);
-        d8.f405a = (M8) fromModel.f776a;
+        Zi fromModel = this.f488a.fromModel(j3.f509a);
+        d8.f406a = (M8) fromModel.f777a;
         d8.c = this.b.fromModel(j3.b);
         Zi fromModel2 = this.c.fromModel(j3.c);
-        d8.d = (L8) fromModel2.f776a;
+        d8.d = (L8) fromModel2.f777a;
         Tg tg = j3.d;
         if (tg != null) {
             zi = this.d.fromModel(tg);
-            d8.b = (O8) zi.f776a;
+            d8.b = (O8) zi.f777a;
         } else {
             zi = null;
         }
@@ -41,7 +41,7 @@ public final class I3 implements Converter {
     }
 
     public I3(C0125ag c0125ag, V7 v7, Rf rf, Cg cg) {
-        this.f487a = c0125ag;
+        this.f488a = c0125ag;
         this.b = v7;
         this.c = rf;
         this.d = cg;

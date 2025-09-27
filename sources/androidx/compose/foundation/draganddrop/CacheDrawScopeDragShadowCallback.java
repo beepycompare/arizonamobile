@@ -33,7 +33,7 @@ public final class CacheDrawScopeDragShadowCallback {
 
     public final DrawResult cachePicture(CacheDrawScope cacheDrawScope) {
         GraphicsLayer obtainGraphicsLayer = cacheDrawScope.obtainGraphicsLayer();
-        CacheDrawScope.m4076recordTdoYBX4$default(cacheDrawScope, obtainGraphicsLayer, null, null, 0L, new Function1() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$$ExternalSyntheticLambda0
+        CacheDrawScope.m4088recordTdoYBX4$default(cacheDrawScope, obtainGraphicsLayer, null, null, 0L, new Function1() { // from class: androidx.compose.foundation.draganddrop.CacheDrawScopeDragShadowCallback$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit cachePicture$lambda$4$lambda$2$lambda$1;

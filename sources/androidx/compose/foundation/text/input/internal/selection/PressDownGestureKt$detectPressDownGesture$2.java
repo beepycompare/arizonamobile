@@ -79,7 +79,7 @@ final class PressDownGestureKt$detectPressDownGesture$2 extends RestrictedSuspen
                 int size = changes.size();
                 for (int i2 = 0; i2 < size; i2++) {
                     PointerInputChange pointerInputChange2 = changes.get(i2);
-                    if (PointerId.m5808equalsimpl0(pointerInputChange2.m5824getIdJ3iCeTQ(), pointerInputChange.m5824getIdJ3iCeTQ()) && pointerInputChange2.getPressed()) {
+                    if (PointerId.m5821equalsimpl0(pointerInputChange2.m5837getIdJ3iCeTQ(), pointerInputChange.m5837getIdJ3iCeTQ()) && pointerInputChange2.getPressed()) {
                         this.L$0 = awaitPointerEventScope2;
                         this.L$1 = pointerInputChange;
                         this.label = 2;
@@ -95,7 +95,7 @@ final class PressDownGestureKt$detectPressDownGesture$2 extends RestrictedSuspen
             ResultKt.throwOnFailure(obj);
         }
         PointerInputChange pointerInputChange3 = (PointerInputChange) obj;
-        this.$onDown.mo1615onEventk4lQ0M(pointerInputChange3.m5826getPositionF1C5BW0());
+        this.$onDown.mo1625onEventk4lQ0M(pointerInputChange3.m5839getPositionF1C5BW0());
         if (this.$onUp != null) {
             awaitPointerEventScope2 = awaitPointerEventScope;
             pointerInputChange = pointerInputChange3;

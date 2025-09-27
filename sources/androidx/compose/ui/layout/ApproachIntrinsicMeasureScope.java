@@ -6,8 +6,8 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface ApproachIntrinsicMeasureScope extends IntrinsicMeasureScope {
     /* renamed from: getLookaheadConstraints-msEJaDk  reason: not valid java name */
-    long mo5931getLookaheadConstraintsmsEJaDk();
+    long mo5944getLookaheadConstraintsmsEJaDk();
 
     /* renamed from: getLookaheadSize-YbymL2g  reason: not valid java name */
-    long mo5932getLookaheadSizeYbymL2g();
+    long mo5945getLookaheadSizeYbymL2g();
 }

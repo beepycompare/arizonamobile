@@ -9,6 +9,6 @@ public final class Wi extends Z2 {
     public final C0417lo a(C0365jo c0365jo, C0417lo c0417lo, InterfaceC0524q2 interfaceC0524q2) {
         C0417lo a2 = ((Vd) interfaceC0524q2).a();
         a2.c.b = true;
-        return this.f767a.a(c0365jo, a2);
+        return this.f768a.a(c0365jo, a2);
     }
 }

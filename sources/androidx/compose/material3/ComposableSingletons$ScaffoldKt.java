@@ -105,22 +105,22 @@ public final class ComposableSingletons$ScaffoldKt {
     });
 
     /* renamed from: getLambda-1$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2084getLambda1$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2094getLambda1$material3_release() {
         return f37lambda1;
     }
 
     /* renamed from: getLambda-2$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2085getLambda2$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2095getLambda2$material3_release() {
         return f38lambda2;
     }
 
     /* renamed from: getLambda-3$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2086getLambda3$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2096getLambda3$material3_release() {
         return f39lambda3;
     }
 
     /* renamed from: getLambda-4$material3_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2087getLambda4$material3_release() {
+    public final Function2<Composer, Integer, Unit> m2097getLambda4$material3_release() {
         return f40lambda4;
     }
 }

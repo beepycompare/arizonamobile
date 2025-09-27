@@ -23,7 +23,7 @@ import kotlinx.coroutines.GlobalScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: RunBlockingUninterruptible.android.kt */
-@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "androidx.room.coroutines.RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1", f = "RunBlockingUninterruptible.android.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes3.dex */
 public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1<T> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super T>, Object> {
@@ -78,7 +78,7 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RunBlockingUninterruptible.android.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.room.coroutines.RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1$1", f = "RunBlockingUninterruptible.android.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.room.coroutines.RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
@@ -111,7 +111,7 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             CompletableDeferred<T> completableDeferred;
-            Object m9091constructorimpl;
+            Object m9106constructorimpl;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
@@ -132,8 +132,8 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
                     th = th;
                     completableDeferred = completableDeferred2;
                     Result.Companion companion2 = Result.Companion;
-                    m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
-                    CompletableDeferredKt.completeWith(completableDeferred, m9091constructorimpl);
+                    m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
+                    CompletableDeferredKt.completeWith(completableDeferred, m9106constructorimpl);
                     return Unit.INSTANCE;
                 }
             } else if (i != 1) {
@@ -145,20 +145,20 @@ public final class RunBlockingUninterruptible_androidKt$runBlockingUninterruptib
                 } catch (Throwable th2) {
                     th = th2;
                     Result.Companion companion22 = Result.Companion;
-                    m9091constructorimpl = Result.m9091constructorimpl(ResultKt.createFailure(th));
-                    CompletableDeferredKt.completeWith(completableDeferred, m9091constructorimpl);
+                    m9106constructorimpl = Result.m9106constructorimpl(ResultKt.createFailure(th));
+                    CompletableDeferredKt.completeWith(completableDeferred, m9106constructorimpl);
                     return Unit.INSTANCE;
                 }
             }
-            m9091constructorimpl = Result.m9091constructorimpl(obj);
-            CompletableDeferredKt.completeWith(completableDeferred, m9091constructorimpl);
+            m9106constructorimpl = Result.m9106constructorimpl(obj);
+            CompletableDeferredKt.completeWith(completableDeferred, m9106constructorimpl);
             return Unit.INSTANCE;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RunBlockingUninterruptible.android.kt */
-    @Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "androidx.room.coroutines.RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1$2", f = "RunBlockingUninterruptible.android.kt", i = {}, l = {58}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: androidx.room.coroutines.RunBlockingUninterruptible_androidKt$runBlockingUninterruptible$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */

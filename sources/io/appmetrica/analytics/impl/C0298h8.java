@@ -7,17 +7,17 @@ import java.util.Map;
 public final class C0298h8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f908a;
+    public final Map f909a;
     public final String b;
     public final String c;
 
     public C0298h8(String str, HashMap hashMap, String str2) {
         this.b = str;
-        this.f908a = hashMap;
+        this.f909a = hashMap;
         this.c = str2;
     }
 
     public final String toString() {
-        return "DeferredDeeplinkState{mParameters=" + this.f908a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
+        return "DeferredDeeplinkState{mParameters=" + this.f909a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
     }
 }

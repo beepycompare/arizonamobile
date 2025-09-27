@@ -24,7 +24,7 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
     }
 
     /* renamed from: copy-8Feqmps$default  reason: not valid java name */
-    public static /* synthetic */ BorderModifierNodeElement m280copy8Feqmps$default(BorderModifierNodeElement borderModifierNodeElement, float f, Brush brush, Shape shape, int i, Object obj) {
+    public static /* synthetic */ BorderModifierNodeElement m290copy8Feqmps$default(BorderModifierNodeElement borderModifierNodeElement, float f, Brush brush, Shape shape, int i, Object obj) {
         if ((i & 1) != 0) {
             f = borderModifierNodeElement.width;
         }
@@ -34,11 +34,11 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
         if ((i & 4) != 0) {
             shape = borderModifierNodeElement.shape;
         }
-        return borderModifierNodeElement.m282copy8Feqmps(f, brush, shape);
+        return borderModifierNodeElement.m292copy8Feqmps(f, brush, shape);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m281component1D9Ej5fM() {
+    public final float m291component1D9Ej5fM() {
         return this.width;
     }
 
@@ -51,7 +51,7 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
     }
 
     /* renamed from: copy-8Feqmps  reason: not valid java name */
-    public final BorderModifierNodeElement m282copy8Feqmps(float f, Brush brush, Shape shape) {
+    public final BorderModifierNodeElement m292copy8Feqmps(float f, Brush brush, Shape shape) {
         return new BorderModifierNodeElement(f, brush, shape, null);
     }
 
@@ -62,18 +62,18 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
         }
         if (obj instanceof BorderModifierNodeElement) {
             BorderModifierNodeElement borderModifierNodeElement = (BorderModifierNodeElement) obj;
-            return Dp.m7256equalsimpl0(this.width, borderModifierNodeElement.width) && Intrinsics.areEqual(this.brush, borderModifierNodeElement.brush) && Intrinsics.areEqual(this.shape, borderModifierNodeElement.shape);
+            return Dp.m7269equalsimpl0(this.width, borderModifierNodeElement.width) && Intrinsics.areEqual(this.brush, borderModifierNodeElement.brush) && Intrinsics.areEqual(this.shape, borderModifierNodeElement.shape);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((Dp.m7257hashCodeimpl(this.width) * 31) + this.brush.hashCode()) * 31) + this.shape.hashCode();
+        return (((Dp.m7270hashCodeimpl(this.width) * 31) + this.brush.hashCode()) * 31) + this.shape.hashCode();
     }
 
     public String toString() {
-        return "BorderModifierNodeElement(width=" + ((Object) Dp.m7262toStringimpl(this.width)) + ", brush=" + this.brush + ", shape=" + this.shape + ')';
+        return "BorderModifierNodeElement(width=" + ((Object) Dp.m7275toStringimpl(this.width)) + ", brush=" + this.brush + ", shape=" + this.shape + ')';
     }
 
     public final Brush getBrush() {
@@ -85,7 +85,7 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
     }
 
     /* renamed from: getWidth-D9Ej5fM  reason: not valid java name */
-    public final float m283getWidthD9Ej5fM() {
+    public final float m293getWidthD9Ej5fM() {
         return this.width;
     }
 
@@ -103,7 +103,7 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(BorderModifierNode borderModifierNode) {
-        borderModifierNode.m279setWidth0680j_4(this.width);
+        borderModifierNode.m289setWidth0680j_4(this.width);
         borderModifierNode.setBrush(this.brush);
         borderModifierNode.setShape(this.shape);
     }
@@ -111,10 +111,10 @@ public final class BorderModifierNodeElement extends ModifierNodeElement<BorderM
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void inspectableProperties(InspectorInfo inspectorInfo) {
         inspectorInfo.setName("border");
-        inspectorInfo.getProperties().set("width", Dp.m7249boximpl(this.width));
+        inspectorInfo.getProperties().set("width", Dp.m7262boximpl(this.width));
         if (this.brush instanceof SolidColor) {
-            inspectorInfo.getProperties().set("color", Color.m4527boximpl(((SolidColor) this.brush).m4889getValue0d7_KjU()));
-            inspectorInfo.setValue(Color.m4527boximpl(((SolidColor) this.brush).m4889getValue0d7_KjU()));
+            inspectorInfo.getProperties().set("color", Color.m4539boximpl(((SolidColor) this.brush).m4901getValue0d7_KjU()));
+            inspectorInfo.setValue(Color.m4539boximpl(((SolidColor) this.brush).m4901getValue0d7_KjU()));
         } else {
             inspectorInfo.getProperties().set("brush", this.brush);
         }

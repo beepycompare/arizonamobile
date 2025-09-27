@@ -50,13 +50,13 @@ public final class AndroidParagraphHelper_androidKt {
         PlatformParagraphStyle paragraphStyle;
         if (z && EmojiCompat.isConfigured()) {
             PlatformTextStyle platformStyle = textStyle.getPlatformStyle();
-            EmojiSupportMatch m6540boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m6540boximpl(paragraphStyle.m6622getEmojiSupportMatch_3YsG6Y());
-            str2 = EmojiCompat.get().process(str, 0, str.length(), Integer.MAX_VALUE, m6540boximpl == null ? 0 : EmojiSupportMatch.m6543equalsimpl0(m6540boximpl.m6546unboximpl(), EmojiSupportMatch.Companion.m6547getAll_3YsG6Y()));
+            EmojiSupportMatch m6553boximpl = (platformStyle == null || (paragraphStyle = platformStyle.getParagraphStyle()) == null) ? null : EmojiSupportMatch.m6553boximpl(paragraphStyle.m6635getEmojiSupportMatch_3YsG6Y());
+            str2 = EmojiCompat.get().process(str, 0, str.length(), Integer.MAX_VALUE, m6553boximpl == null ? 0 : EmojiSupportMatch.m6556equalsimpl0(m6553boximpl.m6559unboximpl(), EmojiSupportMatch.Companion.m6560getAll_3YsG6Y()));
             Intrinsics.checkNotNull(str2);
         } else {
             str2 = str;
         }
-        if (list.isEmpty() && list2.isEmpty() && Intrinsics.areEqual(textStyle.getTextIndent(), TextIndent.Companion.getNone()) && TextUnit.m7443getRawTypeimpl(textStyle.m6752getLineHeightXSAIIZE()) == 0) {
+        if (list.isEmpty() && list2.isEmpty() && Intrinsics.areEqual(textStyle.getTextIndent(), TextIndent.Companion.getNone()) && TextUnit.m7456getRawTypeimpl(textStyle.m6765getLineHeightXSAIIZE()) == 0) {
             return str2;
         }
         if (str2 instanceof Spannable) {
@@ -69,7 +69,7 @@ public final class AndroidParagraphHelper_androidKt {
             SpannableExtensions_androidKt.setSpan(spannable, NoopSpan, 0, str.length());
         }
         if (isIncludeFontPaddingEnabled(textStyle) && textStyle.getLineHeightStyle() == null) {
-            SpannableExtensions_androidKt.m6999setLineHeightr9BaKPg(spannable, textStyle.m6752getLineHeightXSAIIZE(), f, density);
+            SpannableExtensions_androidKt.m7012setLineHeightr9BaKPg(spannable, textStyle.m6765getLineHeightXSAIIZE(), f, density);
             f2 = f;
             density2 = density;
         } else {
@@ -79,7 +79,7 @@ public final class AndroidParagraphHelper_androidKt {
             }
             f2 = f;
             density2 = density;
-            SpannableExtensions_androidKt.m6998setLineHeightKmRG4DE(spannable, textStyle.m6752getLineHeightXSAIIZE(), f2, density2, lineHeightStyle);
+            SpannableExtensions_androidKt.m7011setLineHeightKmRG4DE(spannable, textStyle.m6765getLineHeightXSAIIZE(), f2, density2, lineHeightStyle);
         }
         SpannableExtensions_androidKt.setTextIndent(spannable, textStyle.getTextIndent(), f2, density2);
         SpannableExtensions_androidKt.setSpanStyles(spannable, textStyle, list, density2, function4);

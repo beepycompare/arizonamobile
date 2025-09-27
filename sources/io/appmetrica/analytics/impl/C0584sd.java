@@ -9,11 +9,11 @@ import kotlin.collections.CollectionsKt;
 public final class C0584sd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedHashSet f1081a = new LinkedHashSet();
+    public final LinkedHashSet f1082a = new LinkedHashSet();
 
     public final synchronized Set a() {
         ArrayList arrayList;
-        LinkedHashSet<InterfaceC0559rd> linkedHashSet = this.f1081a;
+        LinkedHashSet<InterfaceC0559rd> linkedHashSet = this.f1082a;
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(linkedHashSet, 10));
         for (InterfaceC0559rd interfaceC0559rd : linkedHashSet) {
             arrayList2.add(interfaceC0559rd.a());
@@ -28,6 +28,6 @@ public final class C0584sd {
     }
 
     public final synchronized void a(InterfaceC0559rd... interfaceC0559rdArr) {
-        CollectionsKt.addAll(this.f1081a, interfaceC0559rdArr);
+        CollectionsKt.addAll(this.f1082a, interfaceC0559rdArr);
     }
 }

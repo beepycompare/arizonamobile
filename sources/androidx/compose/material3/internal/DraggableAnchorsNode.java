@@ -65,14 +65,14 @@ public final class DraggableAnchorsNode<T> extends Modifier.Node implements Layo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
+    public MeasureResult mo80measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
         if (!measureScope.isLookingAhead() || !this.didLookahead) {
-            Pair<? extends DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m7414boximpl(IntSizeKt.IntSize(mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight())), Constraints.m7191boximpl(j));
+            Pair<? extends DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m7427boximpl(IntSizeKt.IntSize(mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight())), Constraints.m7204boximpl(j));
             this.state.updateAnchors(invoke.getFirst(), invoke.getSecond());
         }
         this.didLookahead = measureScope.isLookingAhead() || this.didLookahead;
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.internal.DraggableAnchorsNode$measure$1
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.material3.internal.DraggableAnchorsNode$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -97,7 +97,7 @@ public final class DraggableAnchorsNode<T> extends Modifier.Node implements Layo
                 if (this.getOrientation() != Orientation.Vertical) {
                     requireOffset = 0.0f;
                 }
-                Placeable.PlacementScope.place$default(placementScope, mo5954measureBRTryo0, MathKt.roundToInt(f), MathKt.roundToInt(requireOffset), 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, mo5967measureBRTryo0, MathKt.roundToInt(f), MathKt.roundToInt(requireOffset), 0.0f, 4, null);
             }
         }, 4, null);
     }

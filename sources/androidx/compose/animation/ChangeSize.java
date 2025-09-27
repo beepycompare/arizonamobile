@@ -89,13 +89,13 @@ public final class ChangeSize {
         this(alignment, (i & 2) != 0 ? new Function1<IntSize, IntSize>() { // from class: androidx.compose.animation.ChangeSize.1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                return IntSize.m7414boximpl(m82invokemzRDjE0(intSize.m7426unboximpl()));
+                return IntSize.m7427boximpl(m92invokemzRDjE0(intSize.m7439unboximpl()));
             }
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-            public final long m82invokemzRDjE0(long j) {
+            public final long m92invokemzRDjE0(long j) {
                 long j2 = 0;
-                return IntSize.m7417constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                return IntSize.m7430constructorimpl((j2 & 4294967295L) | (j2 << 32));
             }
         } : anonymousClass1, finiteAnimationSpec, (i & 8) != 0 ? true : z);
     }

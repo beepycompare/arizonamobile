@@ -106,23 +106,23 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
             if (RenderInTransitionOverlayNode.this.getRenderInOverlay().invoke().booleanValue()) {
                 RenderInTransitionOverlayNode renderInTransitionOverlayNode = RenderInTransitionOverlayNode.this;
                 RenderInTransitionOverlayNode renderInTransitionOverlayNode2 = renderInTransitionOverlayNode;
-                long mo5963localPositionOfR5De75A = renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo5963localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode2), Offset.Companion.m4309getZeroF1C5BW0());
-                float intBitsToFloat = Float.intBitsToFloat((int) (mo5963localPositionOfR5De75A >> 32));
-                float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5963localPositionOfR5De75A & 4294967295L));
+                long mo5976localPositionOfR5De75A = renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo5976localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode2), Offset.Companion.m4321getZeroF1C5BW0());
+                float intBitsToFloat = Float.intBitsToFloat((int) (mo5976localPositionOfR5De75A >> 32));
+                float intBitsToFloat2 = Float.intBitsToFloat((int) (mo5976localPositionOfR5De75A & 4294967295L));
                 Path invoke = renderInTransitionOverlayNode.getClipInOverlay().invoke(drawScope.getLayoutDirection(), DelegatableNodeKt.requireDensity(renderInTransitionOverlayNode2));
                 if (invoke != null) {
-                    int m4526getIntersectrtfAjoo = ClipOp.Companion.m4526getIntersectrtfAjoo();
+                    int m4538getIntersectrtfAjoo = ClipOp.Companion.m4538getIntersectrtfAjoo();
                     DrawContext drawContext = drawScope.getDrawContext();
-                    long mo5037getSizeNHjbRc = drawContext.mo5037getSizeNHjbRc();
+                    long mo5049getSizeNHjbRc = drawContext.mo5049getSizeNHjbRc();
                     drawContext.getCanvas().save();
                     try {
-                        drawContext.getTransform().mo5039clipPathmtrdDE(invoke, m4526getIntersectrtfAjoo);
+                        drawContext.getTransform().mo5051clipPathmtrdDE(invoke, m4538getIntersectrtfAjoo);
                         drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
                         GraphicsLayerKt.drawLayer(drawScope, this.layer);
                         return;
                     } finally {
                         drawContext.getCanvas().restore();
-                        drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                        drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                     }
                 }
                 drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
@@ -142,7 +142,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
             throw new IllegalArgumentException("Error: layer never initialized".toString());
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5114recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
+        DrawScope.m5126recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

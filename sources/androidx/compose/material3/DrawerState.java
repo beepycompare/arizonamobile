@@ -65,7 +65,7 @@ public final class DrawerState {
                 float f;
                 requireDensity = DrawerState.this.requireDensity();
                 f = NavigationDrawerKt.DrawerVelocityThreshold;
-                return Float.valueOf(requireDensity.mo419toPx0680j_4(f));
+                return Float.valueOf(requireDensity.mo429toPx0680j_4(f));
             }
         }, tweenSpec, function1);
         this.offset = new State<Float>() { // from class: androidx.compose.material3.DrawerState$offset$1

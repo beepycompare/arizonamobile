@@ -27,6 +27,7 @@ public class PackageBuilder {
     String installVersion;
     ActivityHandler.InternalState internalState;
     Boolean isClick;
+    LicenseData licenseData;
     String preinstallLocation;
     String preinstallPayload;
     String rawReferrer;
@@ -43,7 +44,7 @@ public class PackageBuilder {
     public static class ActivityStateCopy {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f152a;
+        public final int f153a;
         public final int b;
         public final int c;
         public final long d;
@@ -52,7 +53,7 @@ public class PackageBuilder {
         public final String g;
 
         public ActivityStateCopy(ActivityState activityState) {
-            this.f152a = -1;
+            this.f153a = -1;
             this.b = -1;
             this.c = -1;
             this.d = -1L;
@@ -62,7 +63,7 @@ public class PackageBuilder {
             if (activityState == null) {
                 return;
             }
-            this.f152a = activityState.eventCount;
+            this.f153a = activityState.eventCount;
             this.b = activityState.sessionCount;
             this.c = activityState.subsessionCount;
             this.d = activityState.timeSpent;
@@ -236,7 +237,7 @@ public class PackageBuilder {
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
         addString(hashMap, "hardware_name", this.deviceInfo.hardwareName);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);
@@ -386,7 +387,7 @@ public class PackageBuilder {
         addDateInSeconds(hashMap, "install_begin_time", this.installBeginTimeInSeconds);
         addDateInSeconds(hashMap, "install_begin_time_server", this.installBeginTimeServerInSeconds);
         addString(hashMap, "install_version", this.installVersion);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);
@@ -413,6 +414,12 @@ public class PackageBuilder {
         addString(hashMap, "updated_at", this.deviceInfo.appUpdateTime);
         addString(hashMap, "payload", this.preinstallPayload);
         addString(hashMap, "found_location", this.preinstallLocation);
+        LicenseData licenseData = this.licenseData;
+        if (licenseData != null) {
+            addInteger(hashMap, "lvl_response_code", Integer.valueOf(licenseData.getResponseCode()));
+            addString(hashMap, "lvl_signed_data", this.licenseData.getSignedData());
+            addString(hashMap, "lvl_signature", this.licenseData.getSignature());
+        }
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
         }
@@ -634,7 +641,7 @@ public class PackageBuilder {
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
         addString(hashMap, "hardware_name", this.deviceInfo.hardwareName);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);
@@ -711,7 +718,7 @@ public class PackageBuilder {
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
         addString(hashMap, "hardware_name", this.deviceInfo.hardwareName);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);
@@ -848,7 +855,7 @@ public class PackageBuilder {
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
         addString(hashMap, "hardware_name", this.deviceInfo.hardwareName);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);
@@ -908,6 +915,8 @@ public class PackageBuilder {
             addString(map, "store_app_id_from_client", this.deviceInfo.storeInfoFromClient.storeAppId);
         }
         addString(map, "store_name_from_system", this.deviceInfo.storeIdFromSystem);
+        addString(map, "initiating_package_name", this.deviceInfo.initiatingPackageName);
+        addString(map, "originating_package_name", this.deviceInfo.originatingPackageName);
     }
 
     public ActivityPackage buildAdRevenuePackage(AdjustAdRevenue adjustAdRevenue) {
@@ -1068,7 +1077,7 @@ public class PackageBuilder {
         addString(hashMap, "display_width", this.deviceInfo.displayWidth);
         addString(hashMap, "environment", this.adjustConfig.environment);
         addString(hashMap, "event_callback_id", adjustEvent.callbackId);
-        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f152a);
+        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f153a);
         addString(hashMap, "event_token", adjustEvent.eventToken);
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
@@ -1166,7 +1175,7 @@ public class PackageBuilder {
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
         addString(hashMap, "hardware_name", this.deviceInfo.hardwareName);
-        addString(hashMap, "installed_at", this.deviceInfo.appInstallTime);
+        addDateInMilliseconds(hashMap, "installed_at", this.deviceInfo.appInstallTime);
         addString(hashMap, "language", this.deviceInfo.language);
         addString(hashMap, "mcc", this.deviceInfo.mcc);
         addString(hashMap, "mnc", this.deviceInfo.mnc);

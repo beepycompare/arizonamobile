@@ -20,14 +20,14 @@ public final class TransformShader {
     }
 
     /* renamed from: transform-Q8lPUPs  reason: not valid java name */
-    public final void m4946transformQ8lPUPs(float[] fArr) {
+    public final void m4958transformQ8lPUPs(float[] fArr) {
         android.graphics.Matrix matrix;
         if (fArr == null) {
             matrix = null;
             this.aMatrix = null;
         } else {
             android.graphics.Matrix obtainMatrix = obtainMatrix();
-            AndroidMatrixConversions_androidKt.m4405setFromEL8BTi8(obtainMatrix, fArr);
+            AndroidMatrixConversions_androidKt.m4417setFromEL8BTi8(obtainMatrix, fArr);
             matrix = obtainMatrix;
         }
         Shader shader = this.shader;

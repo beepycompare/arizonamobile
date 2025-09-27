@@ -7,19 +7,19 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0721y0 implements Wc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0746z0 f1162a;
+    public final /* synthetic */ C0746z0 f1163a;
     public final /* synthetic */ AppMetricaConfig b;
     public final /* synthetic */ PublicLogger c;
 
     public C0721y0(C0746z0 c0746z0, AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
-        this.f1162a = c0746z0;
+        this.f1163a = c0746z0;
         this.b = appMetricaConfig;
         this.c = publicLogger;
     }
 
     @Override // io.appmetrica.analytics.impl.Wc
     public final Hc a() {
-        C0746z0 c0746z0 = this.f1162a;
+        C0746z0 c0746z0 = this.f1163a;
         Fi fi = c0746z0.g;
         AppMetricaConfig appMetricaConfig = this.b;
         PublicLogger publicLogger = this.c;

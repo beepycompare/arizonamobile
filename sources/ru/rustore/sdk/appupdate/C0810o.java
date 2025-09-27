@@ -9,17 +9,17 @@ import kotlin.ranges.RangesKt;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 import ru.rustore.sdk.core.util.PrimitivesExtensionKt;
 /* renamed from: ru.rustore.sdk.appupdate.o  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0810o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AppUpdateInfo.Factory f1406a;
+    public final AppUpdateInfo.Factory f1407a;
     public final i0 b;
 
     public C0810o(AppUpdateInfo.Factory appUpdateInfoFactory, i0 timeProvider) {
         Intrinsics.checkNotNullParameter(appUpdateInfoFactory, "appUpdateInfoFactory");
         Intrinsics.checkNotNullParameter(timeProvider, "timeProvider");
-        this.f1406a = appUpdateInfoFactory;
+        this.f1407a = appUpdateInfoFactory;
         this.b = timeProvider;
     }
 
@@ -31,7 +31,7 @@ public final class C0810o {
         long j2;
         int i;
         Intrinsics.checkNotNullParameter(bundle, "bundle");
-        AppUpdateInfo.Factory factory = this.f1406a;
+        AppUpdateInfo.Factory factory = this.f1407a;
         long j3 = bundle.getLong("APPLICATION_ID", 0L);
         String string = bundle.getString("APP_NAME");
         if (string == null) {
@@ -55,7 +55,7 @@ public final class C0810o {
         String str4 = string;
         int i3 = bundle.getInt("UPDATE_AVAILABILITY", 0);
         int coerceIn = RangesKt.coerceIn(bundle.getInt("UPDATE_PRIORITY", 0), (ClosedRange<Integer>) new IntRange(0, 5));
-        Date time = this.b.f1399a.getTime();
+        Date time = this.b.f1400a.getTime();
         Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
         String string5 = bundle.getString("UPDATED_AT", time.toString());
         Intrinsics.checkNotNullExpressionValue(string5, "bundle.getString(\n      …w().toString(),\n        )");

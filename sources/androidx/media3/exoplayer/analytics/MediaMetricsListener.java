@@ -273,7 +273,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m7928xdf4bfb0e(build);
+                MediaMetricsListener.this.m7941xdf4bfb0e(build);
             }
         });
         this.reportedEventsForCurrentSession = true;
@@ -282,7 +282,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackError$0$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7928xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
+    public /* synthetic */ void m7941xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
         this.playbackSession.reportPlaybackErrorEvent(playbackErrorEvent);
     }
 
@@ -331,7 +331,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7927xe45a00bc(build);
+                    MediaMetricsListener.this.m7940xe45a00bc(build);
                 }
             });
         }
@@ -339,7 +339,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportNetworkChange$1$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7927xe45a00bc(NetworkEvent networkEvent) {
+    public /* synthetic */ void m7940xe45a00bc(NetworkEvent networkEvent) {
         this.playbackSession.reportNetworkEvent(networkEvent);
     }
 
@@ -360,7 +360,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7929x6c41e093(build);
+                    MediaMetricsListener.this.m7942x6c41e093(build);
                 }
             });
         }
@@ -368,7 +368,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackStateChange$2$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7929x6c41e093(PlaybackStateEvent playbackStateEvent) {
+    public /* synthetic */ void m7942x6c41e093(PlaybackStateEvent playbackStateEvent) {
         this.playbackSession.reportPlaybackStateEvent(playbackStateEvent);
     }
 
@@ -484,14 +484,14 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m7930x86fc0269(build);
+                MediaMetricsListener.this.m7943x86fc0269(build);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$reportTrackChangeEvent$3$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7930x86fc0269(TrackChangeEvent trackChangeEvent) {
+    public /* synthetic */ void m7943x86fc0269(TrackChangeEvent trackChangeEvent) {
         this.playbackSession.reportTrackChangeEvent(trackChangeEvent);
     }
 
@@ -527,7 +527,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m7926x9548dab(build);
+                    MediaMetricsListener.this.m7939x9548dab(build);
                 }
             });
         }
@@ -544,7 +544,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$finishCurrentSession$4$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m7926x9548dab(PlaybackMetrics playbackMetrics) {
+    public /* synthetic */ void m7939x9548dab(PlaybackMetrics playbackMetrics) {
         this.playbackSession.reportPlaybackMetrics(playbackMetrics);
     }
 

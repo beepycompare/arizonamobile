@@ -129,7 +129,9 @@ public final class HistoryManager {
             Collection<MobileController> values = HistoryManager.page.values();
             Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
             for (MobileController mobileController : values) {
-                mobileController.removePage();
+                if (!(mobileController instanceof MobilePhone)) {
+                    mobileController.removePage();
+                }
             }
         }
 

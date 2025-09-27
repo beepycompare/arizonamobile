@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class C0131am implements NetworkResponseHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0312hm f798a;
+    public final C0312hm f799a;
     public final C0624u3 b;
 
     public C0131am() {
@@ -34,7 +34,7 @@ public final class C0131am implements NetworkResponseHandler {
                 responseData = this.b.a(responseDataHolder.getResponseData());
             }
             if (responseData != null) {
-                C0312hm c0312hm = this.f798a;
+                C0312hm c0312hm = this.f799a;
                 c0312hm.getClass();
                 C0441mm c0441mm = new C0441mm();
                 try {
@@ -51,12 +51,12 @@ public final class C0131am implements NetworkResponseHandler {
                     c0441mm.h = str2;
                     c0441mm.i = str;
                     c0312hm.a(c0441mm, fb);
-                    c0441mm.f995a = TextUtils.isEmpty(c0441mm.i) ? 1 : 2;
+                    c0441mm.f996a = TextUtils.isEmpty(c0441mm.i) ? 1 : 2;
                 } catch (Throwable unused) {
                     c0441mm = new C0441mm();
-                    c0441mm.f995a = 1;
+                    c0441mm.f996a = 1;
                 }
-                if (2 == c0441mm.f995a) {
+                if (2 == c0441mm.f996a) {
                     return c0441mm;
                 }
             }
@@ -65,7 +65,7 @@ public final class C0131am implements NetworkResponseHandler {
     }
 
     public C0131am(C0312hm c0312hm, C0624u3 c0624u3) {
-        this.f798a = c0312hm;
+        this.f799a = c0312hm;
         this.b = c0624u3;
     }
 }

@@ -16,77 +16,77 @@ public final class MenuItemsAvailability {
     private static final int SELECT_ALL = 8;
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m1314constructorimpl(0);
+    private static final int None = m1324constructorimpl(0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ MenuItemsAvailability m1313boximpl(int i) {
+    public static final /* synthetic */ MenuItemsAvailability m1323boximpl(int i) {
         return new MenuItemsAvailability(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m1314constructorimpl(int i) {
+    private static int m1324constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1316equalsimpl(int i, Object obj) {
-        return (obj instanceof MenuItemsAvailability) && i == ((MenuItemsAvailability) obj).m1325unboximpl();
+    public static boolean m1326equalsimpl(int i, Object obj) {
+        return (obj instanceof MenuItemsAvailability) && i == ((MenuItemsAvailability) obj).m1335unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1317equalsimpl0(int i, int i2) {
+    public static final boolean m1327equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: getCanAutofill-impl  reason: not valid java name */
-    public static final boolean m1318getCanAutofillimpl(int i) {
+    public static final boolean m1328getCanAutofillimpl(int i) {
         return (i & 16) == 16;
     }
 
     /* renamed from: getCanCopy-impl  reason: not valid java name */
-    public static final boolean m1319getCanCopyimpl(int i) {
+    public static final boolean m1329getCanCopyimpl(int i) {
         return (i & 1) == 1;
     }
 
     /* renamed from: getCanCut-impl  reason: not valid java name */
-    public static final boolean m1320getCanCutimpl(int i) {
+    public static final boolean m1330getCanCutimpl(int i) {
         return (i & 4) == 4;
     }
 
     /* renamed from: getCanPaste-impl  reason: not valid java name */
-    public static final boolean m1321getCanPasteimpl(int i) {
+    public static final boolean m1331getCanPasteimpl(int i) {
         return (i & 2) == 2;
     }
 
     /* renamed from: getCanSelectAll-impl  reason: not valid java name */
-    public static final boolean m1322getCanSelectAllimpl(int i) {
+    public static final boolean m1332getCanSelectAllimpl(int i) {
         return (i & 8) == 8;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1323hashCodeimpl(int i) {
+    public static int m1333hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1324toStringimpl(int i) {
+    public static String m1334toStringimpl(int i) {
         return "MenuItemsAvailability(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1316equalsimpl(this.value, obj);
+        return m1326equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1323hashCodeimpl(this.value);
+        return m1333hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1324toStringimpl(this.value);
+        return m1334toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1325unboximpl() {
+    public final /* synthetic */ int m1335unboximpl() {
         return this.value;
     }
 
@@ -99,8 +99,8 @@ public final class MenuItemsAvailability {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1315constructorimpl(boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        return m1314constructorimpl((z ? 1 : 0) | (z2 ? 2 : 0) | (z3 ? 4 : 0) | (z4 ? 8 : 0) | (z5 ? 16 : 0));
+    public static int m1325constructorimpl(boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
+        return m1324constructorimpl((z ? 1 : 0) | (z2 ? 2 : 0) | (z3 ? 4 : 0) | (z4 ? 8 : 0) | (z5 ? 16 : 0));
     }
 
     /* compiled from: ContextMenu.android.kt */
@@ -115,7 +115,7 @@ public final class MenuItemsAvailability {
         }
 
         /* renamed from: getNone-JKCFgKw  reason: not valid java name */
-        public final int m1326getNoneJKCFgKw() {
+        public final int m1336getNoneJKCFgKw() {
             return MenuItemsAvailability.None;
         }
     }

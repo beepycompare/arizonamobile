@@ -27,7 +27,7 @@ public interface Path {
     void addOval(Rect rect, Direction direction);
 
     /* renamed from: addPath-Uv8p0NA */
-    void mo4425addPathUv8p0NA(Path path, long j);
+    void mo4437addPathUv8p0NA(Path path, long j);
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Prefer usage of addRect() with a winding direction", replaceWith = @ReplaceWith(expression = "addRect(rect)", imports = {}))
     /* synthetic */ void addRect(Rect rect);
@@ -48,7 +48,7 @@ public interface Path {
     Rect getBounds();
 
     /* renamed from: getFillType-Rg-k1Os */
-    int mo4426getFillTypeRgk1Os();
+    int mo4438getFillTypeRgk1Os();
 
     boolean isConvex();
 
@@ -59,7 +59,7 @@ public interface Path {
     void moveTo(float f, float f2);
 
     /* renamed from: op-N5in7k0 */
-    boolean mo4427opN5in7k0(Path path, Path path2, int i);
+    boolean mo4439opN5in7k0(Path path, Path path2, int i);
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use quadraticTo() for consistency with cubicTo()", replaceWith = @ReplaceWith(expression = "quadraticTo(x1, y1, x2, y2)", imports = {}))
     void quadraticBezierTo(float f, float f2, float f3, float f4);
@@ -76,14 +76,14 @@ public interface Path {
     void reset();
 
     /* renamed from: setFillType-oQ8Xj4U */
-    void mo4428setFillTypeoQ8Xj4U(int i);
+    void mo4440setFillTypeoQ8Xj4U(int i);
 
     /* renamed from: transform-58bKbWc */
-    default void mo4429transform58bKbWc(float[] fArr) {
+    default void mo4441transform58bKbWc(float[] fArr) {
     }
 
     /* renamed from: translate-k-4lQ0M */
-    void mo4430translatek4lQ0M(long j);
+    void mo4442translatek4lQ0M(long j);
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -148,8 +148,8 @@ public interface Path {
 
         @Deprecated
         /* renamed from: transform-58bKbWc  reason: not valid java name */
-        public static void m4822transform58bKbWc(Path path, float[] fArr) {
-            Path.super.mo4429transform58bKbWc(fArr);
+        public static void m4834transform58bKbWc(Path path, float[] fArr) {
+            Path.super.mo4441transform58bKbWc(fArr);
         }
 
         @Deprecated
@@ -231,14 +231,14 @@ public interface Path {
     }
 
     /* renamed from: addPath-Uv8p0NA$default  reason: not valid java name */
-    static /* synthetic */ void m4819addPathUv8p0NA$default(Path path, Path path2, long j, int i, Object obj) {
+    static /* synthetic */ void m4831addPathUv8p0NA$default(Path path, Path path2, long j, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: addPath-Uv8p0NA");
         }
         if ((i & 2) != 0) {
-            j = Offset.Companion.m4309getZeroF1C5BW0();
+            j = Offset.Companion.m4321getZeroF1C5BW0();
         }
-        path.mo4425addPathUv8p0NA(path2, j);
+        path.mo4437addPathUv8p0NA(path2, j);
     }
 
     default void rewind() {
@@ -265,13 +265,13 @@ public interface Path {
 
     default Path plus(Path path) {
         Path Path = AndroidPath_androidKt.Path();
-        Path.mo4427opN5in7k0(this, path, PathOperation.Companion.m4844getUnionb3I0S0c());
+        Path.mo4439opN5in7k0(this, path, PathOperation.Companion.m4856getUnionb3I0S0c());
         return Path;
     }
 
     default Path minus(Path path) {
         Path Path = AndroidPath_androidKt.Path();
-        Path.mo4427opN5in7k0(this, path, PathOperation.Companion.m4841getDifferenceb3I0S0c());
+        Path.mo4439opN5in7k0(this, path, PathOperation.Companion.m4853getDifferenceb3I0S0c());
         return Path;
     }
 
@@ -281,13 +281,13 @@ public interface Path {
 
     default Path and(Path path) {
         Path Path = AndroidPath_androidKt.Path();
-        Path.mo4427opN5in7k0(this, path, PathOperation.Companion.m4842getIntersectb3I0S0c());
+        Path.mo4439opN5in7k0(this, path, PathOperation.Companion.m4854getIntersectb3I0S0c());
         return Path;
     }
 
     default Path xor(Path path) {
         Path Path = AndroidPath_androidKt.Path();
-        Path.mo4427opN5in7k0(this, path, PathOperation.Companion.m4845getXorb3I0S0c());
+        Path.mo4439opN5in7k0(this, path, PathOperation.Companion.m4857getXorb3I0S0c());
         return Path;
     }
 
@@ -301,9 +301,9 @@ public interface Path {
         }
 
         /* renamed from: combine-xh6zSI8  reason: not valid java name */
-        public final Path m4820combinexh6zSI8(int i, Path path, Path path2) {
+        public final Path m4832combinexh6zSI8(int i, Path path, Path path2) {
             Path Path = AndroidPath_androidKt.Path();
-            if (Path.mo4427opN5in7k0(path, path2, i)) {
+            if (Path.mo4439opN5in7k0(path, path2, i)) {
                 return Path;
             }
             throw new IllegalArgumentException("Path.combine() failed.  This may be due an invalid path; in particular, check for NaN values.");

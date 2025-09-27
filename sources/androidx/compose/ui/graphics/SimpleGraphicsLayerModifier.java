@@ -136,12 +136,12 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
     }
 
     /* renamed from: getTransformOrigin-SzJe1aQ  reason: not valid java name */
-    public final long m4883getTransformOriginSzJe1aQ() {
+    public final long m4895getTransformOriginSzJe1aQ() {
         return this.transformOrigin;
     }
 
     /* renamed from: setTransformOrigin-__ExYCQ  reason: not valid java name */
-    public final void m4888setTransformOrigin__ExYCQ(long j) {
+    public final void m4900setTransformOrigin__ExYCQ(long j) {
         this.transformOrigin = j;
     }
 
@@ -170,46 +170,46 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
     }
 
     /* renamed from: getAmbientShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m4879getAmbientShadowColor0d7_KjU() {
+    public final long m4891getAmbientShadowColor0d7_KjU() {
         return this.ambientShadowColor;
     }
 
     /* renamed from: setAmbientShadowColor-8_81llA  reason: not valid java name */
-    public final void m4884setAmbientShadowColor8_81llA(long j) {
+    public final void m4896setAmbientShadowColor8_81llA(long j) {
         this.ambientShadowColor = j;
     }
 
     /* renamed from: getSpotShadowColor-0d7_KjU  reason: not valid java name */
-    public final long m4882getSpotShadowColor0d7_KjU() {
+    public final long m4894getSpotShadowColor0d7_KjU() {
         return this.spotShadowColor;
     }
 
     /* renamed from: setSpotShadowColor-8_81llA  reason: not valid java name */
-    public final void m4887setSpotShadowColor8_81llA(long j) {
+    public final void m4899setSpotShadowColor8_81llA(long j) {
         this.spotShadowColor = j;
     }
 
     public /* synthetic */ SimpleGraphicsLayerModifier(float f, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9, float f10, long j, Shape shape, boolean z, RenderEffect renderEffect, long j2, long j3, int i, int i2, ColorFilter colorFilter, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(f, f2, f3, f4, f5, f6, f7, f8, f9, f10, j, shape, z, renderEffect, j2, j3, (i3 & 65536) != 0 ? CompositingStrategy.Companion.m4627getAutoNrFUSI() : i, (i3 & 131072) != 0 ? BlendMode.Companion.m4478getSrcOver0nO6VwU() : i2, (i3 & 262144) != 0 ? null : colorFilter, null);
+        this(f, f2, f3, f4, f5, f6, f7, f8, f9, f10, j, shape, z, renderEffect, j2, j3, (i3 & 65536) != 0 ? CompositingStrategy.Companion.m4639getAutoNrFUSI() : i, (i3 & 131072) != 0 ? BlendMode.Companion.m4490getSrcOver0nO6VwU() : i2, (i3 & 262144) != 0 ? null : colorFilter, null);
     }
 
     /* renamed from: getCompositingStrategy--NrFUSI  reason: not valid java name */
-    public final int m4881getCompositingStrategyNrFUSI() {
+    public final int m4893getCompositingStrategyNrFUSI() {
         return this.compositingStrategy;
     }
 
     /* renamed from: setCompositingStrategy-aDBOjCE  reason: not valid java name */
-    public final void m4886setCompositingStrategyaDBOjCE(int i) {
+    public final void m4898setCompositingStrategyaDBOjCE(int i) {
         this.compositingStrategy = i;
     }
 
     /* renamed from: getBlendMode-0nO6VwU  reason: not valid java name */
-    public final int m4880getBlendMode0nO6VwU() {
+    public final int m4892getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     /* renamed from: setBlendMode-s9anfk8  reason: not valid java name */
-    public final void m4885setBlendModes9anfk8(int i) {
+    public final void m4897setBlendModes9anfk8(int i) {
         this.blendMode = i;
     }
 
@@ -265,14 +265,14 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
                 graphicsLayerScope.setRotationY(SimpleGraphicsLayerModifier.this.getRotationY());
                 graphicsLayerScope.setRotationZ(SimpleGraphicsLayerModifier.this.getRotationZ());
                 graphicsLayerScope.setCameraDistance(SimpleGraphicsLayerModifier.this.getCameraDistance());
-                graphicsLayerScope.mo4739setTransformOrigin__ExYCQ(SimpleGraphicsLayerModifier.this.m4883getTransformOriginSzJe1aQ());
+                graphicsLayerScope.mo4751setTransformOrigin__ExYCQ(SimpleGraphicsLayerModifier.this.m4895getTransformOriginSzJe1aQ());
                 graphicsLayerScope.setShape(SimpleGraphicsLayerModifier.this.getShape());
                 graphicsLayerScope.setClip(SimpleGraphicsLayerModifier.this.getClip());
                 graphicsLayerScope.setRenderEffect(SimpleGraphicsLayerModifier.this.getRenderEffect());
-                graphicsLayerScope.mo4735setAmbientShadowColor8_81llA(SimpleGraphicsLayerModifier.this.m4879getAmbientShadowColor0d7_KjU());
-                graphicsLayerScope.mo4738setSpotShadowColor8_81llA(SimpleGraphicsLayerModifier.this.m4882getSpotShadowColor0d7_KjU());
-                graphicsLayerScope.mo4737setCompositingStrategyaDBOjCE(SimpleGraphicsLayerModifier.this.m4881getCompositingStrategyNrFUSI());
-                graphicsLayerScope.mo4736setBlendModes9anfk8(SimpleGraphicsLayerModifier.this.m4880getBlendMode0nO6VwU());
+                graphicsLayerScope.mo4747setAmbientShadowColor8_81llA(SimpleGraphicsLayerModifier.this.m4891getAmbientShadowColor0d7_KjU());
+                graphicsLayerScope.mo4750setSpotShadowColor8_81llA(SimpleGraphicsLayerModifier.this.m4894getSpotShadowColor0d7_KjU());
+                graphicsLayerScope.mo4749setCompositingStrategyaDBOjCE(SimpleGraphicsLayerModifier.this.m4893getCompositingStrategyNrFUSI());
+                graphicsLayerScope.mo4748setBlendModes9anfk8(SimpleGraphicsLayerModifier.this.m4892getBlendMode0nO6VwU());
                 graphicsLayerScope.setColorFilter(SimpleGraphicsLayerModifier.this.getColorFilter());
             }
         };
@@ -284,7 +284,7 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
     }
 
     public final void invalidateLayerBlock() {
-        NodeCoordinator wrapped$ui_release = DelegatableNodeKt.m6099requireCoordinator64DMado(this, NodeKind.m6245constructorimpl(2)).getWrapped$ui_release();
+        NodeCoordinator wrapped$ui_release = DelegatableNodeKt.m6112requireCoordinator64DMado(this, NodeKind.m6258constructorimpl(2)).getWrapped$ui_release();
         if (wrapped$ui_release != null) {
             wrapped$ui_release.updateLayerBlock(this.layerBlock, true);
         }
@@ -292,9 +292,9 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.graphics.SimpleGraphicsLayerModifier$measure$1
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.graphics.SimpleGraphicsLayerModifier$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -319,8 +319,8 @@ public final class SimpleGraphicsLayerModifier extends Modifier.Node implements 
 
     public String toString() {
         StringBuilder sb = new StringBuilder("SimpleGraphicsLayerModifier(scaleX=");
-        sb.append(this.scaleX).append(", scaleY=").append(this.scaleY).append(", alpha = ").append(this.alpha).append(", translationX=").append(this.translationX).append(", translationY=").append(this.translationY).append(", shadowElevation=").append(this.shadowElevation).append(", rotationX=").append(this.rotationX).append(", rotationY=").append(this.rotationY).append(", rotationZ=").append(this.rotationZ).append(", cameraDistance=").append(this.cameraDistance).append(", transformOrigin=").append((Object) TransformOrigin.m4943toStringimpl(this.transformOrigin)).append(", shape=");
-        sb.append(this.shape).append(", clip=").append(this.clip).append(", renderEffect=").append(this.renderEffect).append(", ambientShadowColor=").append((Object) Color.m4545toStringimpl(this.ambientShadowColor)).append(", spotShadowColor=").append((Object) Color.m4545toStringimpl(this.spotShadowColor)).append(", compositingStrategy=").append((Object) CompositingStrategy.m4625toStringimpl(this.compositingStrategy)).append(", blendMode=").append((Object) BlendMode.m4449toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(')');
+        sb.append(this.scaleX).append(", scaleY=").append(this.scaleY).append(", alpha = ").append(this.alpha).append(", translationX=").append(this.translationX).append(", translationY=").append(this.translationY).append(", shadowElevation=").append(this.shadowElevation).append(", rotationX=").append(this.rotationX).append(", rotationY=").append(this.rotationY).append(", rotationZ=").append(this.rotationZ).append(", cameraDistance=").append(this.cameraDistance).append(", transformOrigin=").append((Object) TransformOrigin.m4955toStringimpl(this.transformOrigin)).append(", shape=");
+        sb.append(this.shape).append(", clip=").append(this.clip).append(", renderEffect=").append(this.renderEffect).append(", ambientShadowColor=").append((Object) Color.m4557toStringimpl(this.ambientShadowColor)).append(", spotShadowColor=").append((Object) Color.m4557toStringimpl(this.spotShadowColor)).append(", compositingStrategy=").append((Object) CompositingStrategy.m4637toStringimpl(this.compositingStrategy)).append(", blendMode=").append((Object) BlendMode.m4461toStringimpl(this.blendMode)).append(", colorFilter=").append(this.colorFilter).append(')');
         return sb.toString();
     }
 }

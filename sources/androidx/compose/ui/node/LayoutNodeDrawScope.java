@@ -47,123 +47,123 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawArc-illE91I */
-    public void mo5013drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5013drawArcillE91I(brush, f, f2, z, j, j2, f3, drawStyle, colorFilter, i);
+    public void mo5025drawArcillE91I(Brush brush, float f, float f2, boolean z, long j, long j2, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5025drawArcillE91I(brush, f, f2, z, j, j2, f3, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawArc-yD3GUKo */
-    public void mo5014drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5014drawArcyD3GUKo(j, f, f2, z, j2, j3, f3, drawStyle, colorFilter, i);
+    public void mo5026drawArcyD3GUKo(long j, float f, float f2, boolean z, long j2, long j3, float f3, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5026drawArcyD3GUKo(j, f, f2, z, j2, j3, f3, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawCircle-V9BoPsw */
-    public void mo5015drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5015drawCircleV9BoPsw(brush, f, j, f2, drawStyle, colorFilter, i);
+    public void mo5027drawCircleV9BoPsw(Brush brush, float f, long j, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5027drawCircleV9BoPsw(brush, f, j, f2, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawCircle-VaOC9Bg */
-    public void mo5016drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5016drawCircleVaOC9Bg(j, f, j2, f2, drawStyle, colorFilter, i);
+    public void mo5028drawCircleVaOC9Bg(long j, float f, long j2, float f2, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5028drawCircleVaOC9Bg(j, f, j2, f2, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Prefer usage of drawImage that consumes an optional FilterQuality parameter", replaceWith = @ReplaceWith(expression = "drawImage(image, srcOffset, srcSize, dstOffset, dstSize, alpha, style, colorFilter, blendMode, FilterQuality.Low)", imports = {"androidx.compose.ui.graphics.drawscope", "androidx.compose.ui.graphics.FilterQuality"}))
     /* renamed from: drawImage-9jGpkUE */
-    public /* synthetic */ void mo5017drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5017drawImage9jGpkUE(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i);
+    public /* synthetic */ void mo5029drawImage9jGpkUE(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5029drawImage9jGpkUE(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawImage-AZ2fEMs */
-    public void mo5018drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
-        this.canvasDrawScope.mo5018drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
+    public void mo5030drawImageAZ2fEMs(ImageBitmap imageBitmap, long j, long j2, long j3, long j4, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i, int i2) {
+        this.canvasDrawScope.mo5030drawImageAZ2fEMs(imageBitmap, j, j2, j3, j4, f, drawStyle, colorFilter, i, i2);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawImage-gbVJVH8 */
-    public void mo5019drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5019drawImagegbVJVH8(imageBitmap, j, f, drawStyle, colorFilter, i);
+    public void mo5031drawImagegbVJVH8(ImageBitmap imageBitmap, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5031drawImagegbVJVH8(imageBitmap, j, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawLine-1RTmtNc */
-    public void mo5020drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
-        this.canvasDrawScope.mo5020drawLine1RTmtNc(brush, j, j2, f, i, pathEffect, f2, colorFilter, i2);
+    public void mo5032drawLine1RTmtNc(Brush brush, long j, long j2, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
+        this.canvasDrawScope.mo5032drawLine1RTmtNc(brush, j, j2, f, i, pathEffect, f2, colorFilter, i2);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawLine-NGM6Ib0 */
-    public void mo5021drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
-        this.canvasDrawScope.mo5021drawLineNGM6Ib0(j, j2, j3, f, i, pathEffect, f2, colorFilter, i2);
+    public void mo5033drawLineNGM6Ib0(long j, long j2, long j3, float f, int i, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i2) {
+        this.canvasDrawScope.mo5033drawLineNGM6Ib0(j, j2, j3, f, i, pathEffect, f2, colorFilter, i2);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawOval-AsUm42w */
-    public void mo5022drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5022drawOvalAsUm42w(brush, j, j2, f, drawStyle, colorFilter, i);
+    public void mo5034drawOvalAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5034drawOvalAsUm42w(brush, j, j2, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawOval-n-J9OG0 */
-    public void mo5023drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5023drawOvalnJ9OG0(j, j2, j3, f, drawStyle, colorFilter, i);
+    public void mo5035drawOvalnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5035drawOvalnJ9OG0(j, j2, j3, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPath-GBMwjPU */
-    public void mo5024drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5024drawPathGBMwjPU(path, brush, f, drawStyle, colorFilter, i);
+    public void mo5036drawPathGBMwjPU(Path path, Brush brush, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5036drawPathGBMwjPU(path, brush, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPath-LG529CI */
-    public void mo5025drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5025drawPathLG529CI(path, j, f, drawStyle, colorFilter, i);
+    public void mo5037drawPathLG529CI(Path path, long j, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5037drawPathLG529CI(path, j, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPoints-F8ZwMP8 */
-    public void mo5026drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
-        this.canvasDrawScope.mo5026drawPointsF8ZwMP8(list, i, j, f, i2, pathEffect, f2, colorFilter, i3);
+    public void mo5038drawPointsF8ZwMP8(List<Offset> list, int i, long j, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
+        this.canvasDrawScope.mo5038drawPointsF8ZwMP8(list, i, j, f, i2, pathEffect, f2, colorFilter, i3);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawPoints-Gsft0Ws */
-    public void mo5027drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
-        this.canvasDrawScope.mo5027drawPointsGsft0Ws(list, i, brush, f, i2, pathEffect, f2, colorFilter, i3);
+    public void mo5039drawPointsGsft0Ws(List<Offset> list, int i, Brush brush, float f, int i2, PathEffect pathEffect, float f2, ColorFilter colorFilter, int i3) {
+        this.canvasDrawScope.mo5039drawPointsGsft0Ws(list, i, brush, f, i2, pathEffect, f2, colorFilter, i3);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRect-AsUm42w */
-    public void mo5028drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5028drawRectAsUm42w(brush, j, j2, f, drawStyle, colorFilter, i);
+    public void mo5040drawRectAsUm42w(Brush brush, long j, long j2, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5040drawRectAsUm42w(brush, j, j2, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRect-n-J9OG0 */
-    public void mo5029drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5029drawRectnJ9OG0(j, j2, j3, f, drawStyle, colorFilter, i);
+    public void mo5041drawRectnJ9OG0(long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5041drawRectnJ9OG0(j, j2, j3, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRoundRect-ZuiqVtQ */
-    public void mo5030drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5030drawRoundRectZuiqVtQ(brush, j, j2, j3, f, drawStyle, colorFilter, i);
+    public void mo5042drawRoundRectZuiqVtQ(Brush brush, long j, long j2, long j3, float f, DrawStyle drawStyle, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5042drawRoundRectZuiqVtQ(brush, j, j2, j3, f, drawStyle, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: drawRoundRect-u-Aw5IA */
-    public void mo5031drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i) {
-        this.canvasDrawScope.mo5031drawRoundRectuAw5IA(j, j2, j3, j4, drawStyle, f, colorFilter, i);
+    public void mo5043drawRoundRectuAw5IA(long j, long j2, long j3, long j4, DrawStyle drawStyle, float f, ColorFilter colorFilter, int i) {
+        this.canvasDrawScope.mo5043drawRoundRectuAw5IA(j, j2, j3, j4, drawStyle, f, colorFilter, i);
     }
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: getCenter-F1C5BW0 */
-    public long mo5115getCenterF1C5BW0() {
-        return this.canvasDrawScope.mo5115getCenterF1C5BW0();
+    public long mo5127getCenterF1C5BW0() {
+        return this.canvasDrawScope.mo5127getCenterF1C5BW0();
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -188,56 +188,56 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: getSize-NH-jbRc */
-    public long mo5116getSizeNHjbRc() {
-        return this.canvasDrawScope.mo5116getSizeNHjbRc();
+    public long mo5128getSizeNHjbRc() {
+        return this.canvasDrawScope.mo5128getSizeNHjbRc();
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx--R2X_6o */
-    public int mo412roundToPxR2X_6o(long j) {
-        return this.canvasDrawScope.mo412roundToPxR2X_6o(j);
+    public int mo422roundToPxR2X_6o(long j) {
+        return this.canvasDrawScope.mo422roundToPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx-0680j_4 */
-    public int mo413roundToPx0680j_4(float f) {
-        return this.canvasDrawScope.mo413roundToPx0680j_4(f);
+    public int mo423roundToPx0680j_4(float f) {
+        return this.canvasDrawScope.mo423roundToPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo414toDpGaN1DYA(long j) {
-        return this.canvasDrawScope.mo414toDpGaN1DYA(j);
+    public float mo424toDpGaN1DYA(long j) {
+        return this.canvasDrawScope.mo424toDpGaN1DYA(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo415toDpu2uoSUM(float f) {
-        return this.canvasDrawScope.mo415toDpu2uoSUM(f);
+    public float mo425toDpu2uoSUM(float f) {
+        return this.canvasDrawScope.mo425toDpu2uoSUM(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo416toDpu2uoSUM(int i) {
-        return this.canvasDrawScope.mo416toDpu2uoSUM(i);
+    public float mo426toDpu2uoSUM(int i) {
+        return this.canvasDrawScope.mo426toDpu2uoSUM(i);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDpSize-k-rfVVM */
-    public long mo417toDpSizekrfVVM(long j) {
-        return this.canvasDrawScope.mo417toDpSizekrfVVM(j);
+    public long mo427toDpSizekrfVVM(long j) {
+        return this.canvasDrawScope.mo427toDpSizekrfVVM(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx--R2X_6o */
-    public float mo418toPxR2X_6o(long j) {
-        return this.canvasDrawScope.mo418toPxR2X_6o(j);
+    public float mo428toPxR2X_6o(long j) {
+        return this.canvasDrawScope.mo428toPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx-0680j_4 */
-    public float mo419toPx0680j_4(float f) {
-        return this.canvasDrawScope.mo419toPx0680j_4(f);
+    public float mo429toPx0680j_4(float f) {
+        return this.canvasDrawScope.mo429toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -247,26 +247,26 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSize-XkaWNTQ */
-    public long mo420toSizeXkaWNTQ(long j) {
-        return this.canvasDrawScope.mo420toSizeXkaWNTQ(j);
+    public long mo430toSizeXkaWNTQ(long j) {
+        return this.canvasDrawScope.mo430toSizeXkaWNTQ(j);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo421toSp0xMU5do(float f) {
-        return this.canvasDrawScope.mo421toSp0xMU5do(f);
+    public long mo431toSp0xMU5do(float f) {
+        return this.canvasDrawScope.mo431toSp0xMU5do(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo422toSpkPz2Gy4(float f) {
-        return this.canvasDrawScope.mo422toSpkPz2Gy4(f);
+    public long mo432toSpkPz2Gy4(float f) {
+        return this.canvasDrawScope.mo432toSpkPz2Gy4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo423toSpkPz2Gy4(int i) {
-        return this.canvasDrawScope.mo423toSpkPz2Gy4(i);
+    public long mo433toSpkPz2Gy4(int i) {
+        return this.canvasDrawScope.mo433toSpkPz2Gy4(i);
     }
 
     public LayoutNodeDrawScope(CanvasDrawScope canvasDrawScope) {
@@ -290,23 +290,23 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
             DrawModifierNode drawModifierNode2 = drawModifierNode;
             nextDrawNode = LayoutNodeDrawScopeKt.nextDrawNode(drawModifierNode2);
             if (nextDrawNode == null) {
-                NodeCoordinator m6099requireCoordinator64DMado = DelegatableNodeKt.m6099requireCoordinator64DMado(drawModifierNode2, NodeKind.m6245constructorimpl(4));
-                if (m6099requireCoordinator64DMado.getTail() == drawModifierNode.getNode()) {
-                    m6099requireCoordinator64DMado = m6099requireCoordinator64DMado.getWrapped$ui_release();
-                    Intrinsics.checkNotNull(m6099requireCoordinator64DMado);
+                NodeCoordinator m6112requireCoordinator64DMado = DelegatableNodeKt.m6112requireCoordinator64DMado(drawModifierNode2, NodeKind.m6258constructorimpl(4));
+                if (m6112requireCoordinator64DMado.getTail() == drawModifierNode.getNode()) {
+                    m6112requireCoordinator64DMado = m6112requireCoordinator64DMado.getWrapped$ui_release();
+                    Intrinsics.checkNotNull(m6112requireCoordinator64DMado);
                 }
-                m6099requireCoordinator64DMado.performDraw(canvas, getDrawContext().getGraphicsLayer());
+                m6112requireCoordinator64DMado.performDraw(canvas, getDrawContext().getGraphicsLayer());
                 return;
             }
-            int m6245constructorimpl = NodeKind.m6245constructorimpl(4);
+            int m6258constructorimpl = NodeKind.m6258constructorimpl(4);
             MutableVector mutableVector = null;
             while (nextDrawNode != null) {
                 if (nextDrawNode instanceof DrawModifierNode) {
                     performDraw((DrawModifierNode) nextDrawNode, canvas, getDrawContext().getGraphicsLayer());
-                } else if ((nextDrawNode.getKindSet$ui_release() & m6245constructorimpl) != 0 && (nextDrawNode instanceof DelegatingNode)) {
+                } else if ((nextDrawNode.getKindSet$ui_release() & m6258constructorimpl) != 0 && (nextDrawNode instanceof DelegatingNode)) {
                     int i = 0;
                     for (Modifier.Node delegate$ui_release = ((DelegatingNode) nextDrawNode).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                        if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                        if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                             i++;
                             if (i == 1) {
                                 nextDrawNode = delegate$ui_release;
@@ -339,9 +339,9 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
 
     @Override // androidx.compose.ui.graphics.drawscope.DrawScope
     /* renamed from: record-JVtK1S4 */
-    public void mo5117recordJVtK1S4(GraphicsLayer graphicsLayer, long j, final Function1<? super DrawScope, Unit> function1) {
+    public void mo5129recordJVtK1S4(GraphicsLayer graphicsLayer, long j, final Function1<? super DrawScope, Unit> function1) {
         final DrawModifierNode drawModifierNode = this.drawNode;
-        graphicsLayer.m5210recordmLhObY(this, getLayoutDirection(), j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.node.LayoutNodeDrawScope$record$1
+        graphicsLayer.m5222recordmLhObY(this, getLayoutDirection(), j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.node.LayoutNodeDrawScope$record$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -368,13 +368,13 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
                 Density density;
                 LayoutDirection layoutDirection;
                 Canvas canvas;
-                long mo5037getSizeNHjbRc;
+                long mo5049getSizeNHjbRc;
                 GraphicsLayer graphicsLayer2;
                 Function1<DrawScope, Unit> function12;
                 Density density2;
                 LayoutDirection layoutDirection2;
                 Canvas canvas2;
-                long mo5037getSizeNHjbRc2;
+                long mo5049getSizeNHjbRc2;
                 GraphicsLayer graphicsLayer3;
                 r2 = LayoutNodeDrawScope.this.drawNode;
                 LayoutNodeDrawScope.this.drawNode = drawModifierNode;
@@ -383,13 +383,13 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
                     density = drawScope.getDrawContext().getDensity();
                     layoutDirection = drawScope.getDrawContext().getLayoutDirection();
                     canvas = drawScope.getDrawContext().getCanvas();
-                    mo5037getSizeNHjbRc = drawScope.getDrawContext().mo5037getSizeNHjbRc();
+                    mo5049getSizeNHjbRc = drawScope.getDrawContext().mo5049getSizeNHjbRc();
                     graphicsLayer2 = drawScope.getDrawContext().getGraphicsLayer();
                     function12 = function1;
                     density2 = layoutNodeDrawScope.getDrawContext().getDensity();
                     layoutDirection2 = layoutNodeDrawScope.getDrawContext().getLayoutDirection();
                     canvas2 = layoutNodeDrawScope.getDrawContext().getCanvas();
-                    mo5037getSizeNHjbRc2 = layoutNodeDrawScope.getDrawContext().mo5037getSizeNHjbRc();
+                    mo5049getSizeNHjbRc2 = layoutNodeDrawScope.getDrawContext().mo5049getSizeNHjbRc();
                     graphicsLayer3 = layoutNodeDrawScope.getDrawContext().getGraphicsLayer();
                 } catch (Throwable th) {
                     th = th;
@@ -399,7 +399,7 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
                     r2.setDensity(density);
                     r2.setLayoutDirection(layoutDirection);
                     r2.setCanvas(canvas);
-                    r2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+                    r2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
                     r2.setGraphicsLayer(graphicsLayer2);
                     canvas.save();
                     function12.invoke(layoutNodeDrawScope);
@@ -408,7 +408,7 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
                     drawContext.setDensity(density2);
                     drawContext.setLayoutDirection(layoutDirection2);
                     drawContext.setCanvas(canvas2);
-                    drawContext.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc2);
+                    drawContext.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc2);
                     drawContext.setGraphicsLayer(graphicsLayer3);
                     LayoutNodeDrawScope.this.drawNode = r2;
                 } catch (Throwable th2) {
@@ -422,12 +422,12 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
     }
 
     public final void performDraw(DrawModifierNode drawModifierNode, Canvas canvas, GraphicsLayer graphicsLayer) {
-        NodeCoordinator m6099requireCoordinator64DMado = DelegatableNodeKt.m6099requireCoordinator64DMado(drawModifierNode, NodeKind.m6245constructorimpl(4));
-        m6099requireCoordinator64DMado.getLayoutNode().getMDrawScope$ui_release().m6168drawDirecteZhPAX0$ui_release(canvas, IntSizeKt.m7434toSizeozmzZPI(m6099requireCoordinator64DMado.mo5962getSizeYbymL2g()), m6099requireCoordinator64DMado, drawModifierNode, graphicsLayer);
+        NodeCoordinator m6112requireCoordinator64DMado = DelegatableNodeKt.m6112requireCoordinator64DMado(drawModifierNode, NodeKind.m6258constructorimpl(4));
+        m6112requireCoordinator64DMado.getLayoutNode().getMDrawScope$ui_release().m6181drawDirecteZhPAX0$ui_release(canvas, IntSizeKt.m7447toSizeozmzZPI(m6112requireCoordinator64DMado.mo5975getSizeYbymL2g()), m6112requireCoordinator64DMado, drawModifierNode, graphicsLayer);
     }
 
     /* renamed from: drawDirect-eZhPAX0$ui_release  reason: not valid java name */
-    public final void m6168drawDirecteZhPAX0$ui_release(Canvas canvas, long j, NodeCoordinator nodeCoordinator, DrawModifierNode drawModifierNode, GraphicsLayer graphicsLayer) {
+    public final void m6181drawDirecteZhPAX0$ui_release(Canvas canvas, long j, NodeCoordinator nodeCoordinator, DrawModifierNode drawModifierNode, GraphicsLayer graphicsLayer) {
         DrawModifierNode drawModifierNode2 = this.drawNode;
         this.drawNode = drawModifierNode;
         CanvasDrawScope canvasDrawScope = this.canvasDrawScope;
@@ -435,13 +435,13 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
         Density density = canvasDrawScope.getDrawContext().getDensity();
         LayoutDirection layoutDirection2 = canvasDrawScope.getDrawContext().getLayoutDirection();
         Canvas canvas2 = canvasDrawScope.getDrawContext().getCanvas();
-        long mo5037getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5037getSizeNHjbRc();
+        long mo5049getSizeNHjbRc = canvasDrawScope.getDrawContext().mo5049getSizeNHjbRc();
         GraphicsLayer graphicsLayer2 = canvasDrawScope.getDrawContext().getGraphicsLayer();
         DrawContext drawContext = canvasDrawScope.getDrawContext();
         drawContext.setDensity(nodeCoordinator);
         drawContext.setLayoutDirection(layoutDirection);
         drawContext.setCanvas(canvas);
-        drawContext.mo5038setSizeuvyYCjk(j);
+        drawContext.mo5050setSizeuvyYCjk(j);
         drawContext.setGraphicsLayer(graphicsLayer);
         canvas.save();
         try {
@@ -451,7 +451,7 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
             drawContext2.setDensity(density);
             drawContext2.setLayoutDirection(layoutDirection2);
             drawContext2.setCanvas(canvas2);
-            drawContext2.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext2.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             drawContext2.setGraphicsLayer(graphicsLayer2);
             this.drawNode = drawModifierNode2;
         } catch (Throwable th) {
@@ -460,24 +460,24 @@ public final class LayoutNodeDrawScope implements DrawScope, ContentDrawScope {
             drawContext3.setDensity(density);
             drawContext3.setLayoutDirection(layoutDirection2);
             drawContext3.setCanvas(canvas2);
-            drawContext3.mo5038setSizeuvyYCjk(mo5037getSizeNHjbRc);
+            drawContext3.mo5050setSizeuvyYCjk(mo5049getSizeNHjbRc);
             drawContext3.setGraphicsLayer(graphicsLayer2);
             throw th;
         }
     }
 
     /* renamed from: draw-eZhPAX0$ui_release  reason: not valid java name */
-    public final void m6167draweZhPAX0$ui_release(Canvas canvas, long j, NodeCoordinator nodeCoordinator, Modifier.Node node, GraphicsLayer graphicsLayer) {
-        int m6245constructorimpl = NodeKind.m6245constructorimpl(4);
+    public final void m6180draweZhPAX0$ui_release(Canvas canvas, long j, NodeCoordinator nodeCoordinator, Modifier.Node node, GraphicsLayer graphicsLayer) {
+        int m6258constructorimpl = NodeKind.m6258constructorimpl(4);
         Modifier.Node node2 = node;
         MutableVector mutableVector = null;
         while (node2 != null) {
             if (node2 instanceof DrawModifierNode) {
-                m6168drawDirecteZhPAX0$ui_release(canvas, j, nodeCoordinator, (DrawModifierNode) node2, graphicsLayer);
-            } else if ((node2.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                m6181drawDirecteZhPAX0$ui_release(canvas, j, nodeCoordinator, (DrawModifierNode) node2, graphicsLayer);
+            } else if ((node2.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node2).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node2 = delegate$ui_release;

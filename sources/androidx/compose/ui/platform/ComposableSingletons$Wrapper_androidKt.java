@@ -36,7 +36,7 @@ public final class ComposableSingletons$Wrapper_androidKt {
     });
 
     /* renamed from: getLambda$-1759434350$ui_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m6373getLambda$1759434350$ui_release() {
+    public final Function2<Composer, Integer, Unit> m6386getLambda$1759434350$ui_release() {
         return f56lambda$1759434350;
     }
 }

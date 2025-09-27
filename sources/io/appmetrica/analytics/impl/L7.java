@@ -7,7 +7,7 @@ import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 public final class L7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f554a;
+    public final String f555a;
     public final String b;
     public final String c;
     public final String d;
@@ -23,7 +23,7 @@ public final class L7 {
     public final String n;
 
     public L7(Fb fb) {
-        this.f554a = fb.b("dId");
+        this.f555a = fb.b("dId");
         this.b = fb.b("uId");
         this.c = fb.b("analyticsSdkVersionName");
         this.d = fb.b("kitBuildNumber");
@@ -42,11 +42,11 @@ public final class L7 {
     }
 
     public final String toString() {
-        return "DbNetworkTaskConfig{deviceId='" + this.f554a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
+        return "DbNetworkTaskConfig{deviceId='" + this.f555a + "', uuid='" + this.b + "', analyticsSdkVersionName='" + this.c + "', kitBuildNumber='" + this.d + "', kitBuildType='" + this.e + "', appVersion='" + this.f + "', appDebuggable='" + this.g + "', appBuildNumber='" + this.h + "', osVersion='" + this.i + "', osApiLevel='" + this.j + "', locale='" + this.k + "', deviceRootStatus='" + this.l + "', appFramework='" + this.m + "', attributionId='" + this.n + "'}";
     }
 
     public L7() {
-        this.f554a = null;
+        this.f555a = null;
         this.b = null;
         this.c = null;
         this.d = null;

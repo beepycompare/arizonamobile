@@ -101,7 +101,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         }
         Modifier.Element element = this.element;
         BackwardsCompatNode backwardsCompatNode = this;
-        if ((NodeKind.m6245constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof ModifierLocalProvider) {
                 DelegatableNodeKt.requireOwner(this).getModifierLocalManager().removedProvider(this, ((ModifierLocalProvider) element).getKey());
             }
@@ -109,7 +109,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 ((ModifierLocalConsumer) element).onModifierLocalsUpdated(BackwardsCompatNodeKt.access$getDetachedModifierLocalReadScope$p());
             }
         }
-        if ((backwardsCompatNode.getKindSet$ui_release() & NodeKind.m6245constructorimpl(8)) != 0) {
+        if ((backwardsCompatNode.getKindSet$ui_release() & NodeKind.m6258constructorimpl(8)) != 0) {
             DelegatableNodeKt.requireOwner(this).onSemanticsChange();
         }
         if (element instanceof FocusRequesterModifier) {
@@ -123,7 +123,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         }
         Modifier.Element element = this.element;
         BackwardsCompatNode backwardsCompatNode = this;
-        if ((NodeKind.m6245constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(32) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof ModifierLocalConsumer) {
                 sideEffect(new Function0<Unit>() { // from class: androidx.compose.ui.node.BackwardsCompatNode$initializeModifier$2
                     /* JADX INFO: Access modifiers changed from: package-private */
@@ -147,7 +147,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 updateModifierLocalProvider((ModifierLocalProvider) element);
             }
         }
-        if ((NodeKind.m6245constructorimpl(4) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(4) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (element instanceof DrawCacheModifier) {
                 this.invalidateCache = true;
             }
@@ -155,7 +155,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                 LayoutModifierNodeKt.invalidateLayer(this);
             }
         }
-        if ((NodeKind.m6245constructorimpl(2) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(2) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if (BackwardsCompatNodeKt.access$isChainUpdate(this)) {
                 NodeCoordinator coordinator$ui_release = getCoordinator$ui_release();
                 Intrinsics.checkNotNull(coordinator$ui_release);
@@ -170,7 +170,7 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         if (element instanceof RemeasurementModifier) {
             ((RemeasurementModifier) element).onRemeasurementAvailable(DelegatableNodeKt.requireLayoutNode(this));
         }
-        if ((NodeKind.m6245constructorimpl(128) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(128) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             if ((element instanceof OnRemeasuredModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
                 DelegatableNodeKt.requireLayoutNode(this).invalidateMeasurements$ui_release();
             }
@@ -184,23 +184,23 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                             layoutCoordinates = BackwardsCompatNode.this.lastOnPlacedCoordinates;
                             if (layoutCoordinates == null) {
                                 BackwardsCompatNode backwardsCompatNode2 = BackwardsCompatNode.this;
-                                backwardsCompatNode2.onPlaced(DelegatableNodeKt.m6099requireCoordinator64DMado(backwardsCompatNode2, NodeKind.m6245constructorimpl(128)));
+                                backwardsCompatNode2.onPlaced(DelegatableNodeKt.m6112requireCoordinator64DMado(backwardsCompatNode2, NodeKind.m6258constructorimpl(128)));
                             }
                         }
                     });
                 }
             }
         }
-        if ((NodeKind.m6245constructorimpl(256) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof OnGloballyPositionedModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
+        if ((NodeKind.m6258constructorimpl(256) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof OnGloballyPositionedModifier) && BackwardsCompatNodeKt.access$isChainUpdate(this)) {
             DelegatableNodeKt.requireLayoutNode(this).invalidateMeasurements$ui_release();
         }
         if (element instanceof FocusRequesterModifier) {
             ((FocusRequesterModifier) element).getFocusRequester().getFocusRequesterNodes$ui_release().add(this);
         }
-        if ((NodeKind.m6245constructorimpl(16) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof PointerInputModifier)) {
+        if ((NodeKind.m6258constructorimpl(16) & backwardsCompatNode.getKindSet$ui_release()) != 0 && (element instanceof PointerInputModifier)) {
             ((PointerInputModifier) element).getPointerInputFilter().setLayoutCoordinates$ui_release(getCoordinator$ui_release());
         }
-        if ((NodeKind.m6245constructorimpl(8) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
+        if ((NodeKind.m6258constructorimpl(8) & backwardsCompatNode.getKindSet$ui_release()) != 0) {
             DelegatableNodeKt.requireOwner(this).onSemanticsChange();
         }
     }
@@ -217,8 +217,8 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.draw.BuildDrawCacheParams
     /* renamed from: getSize-NH-jbRc */
-    public long mo4075getSizeNHjbRc() {
-        return IntSizeKt.m7434toSizeozmzZPI(DelegatableNodeKt.m6099requireCoordinator64DMado(this, NodeKind.m6245constructorimpl(128)).mo5962getSizeYbymL2g());
+    public long mo4087getSizeNHjbRc() {
+        return IntSizeKt.m7447toSizeozmzZPI(DelegatableNodeKt.m6112requireCoordinator64DMado(this, NodeKind.m6258constructorimpl(128)).mo5975getSizeYbymL2g());
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -276,16 +276,16 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
         NodeChain nodes$ui_release;
         this.readValues.add(modifierLocal);
         BackwardsCompatNode backwardsCompatNode = this;
-        int m6245constructorimpl = NodeKind.m6245constructorimpl(32);
+        int m6258constructorimpl = NodeKind.m6258constructorimpl(32);
         if (!backwardsCompatNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui_release = backwardsCompatNode.getNode().getParent$ui_release();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(backwardsCompatNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6245constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui_release().getHead$ui_release().getAggregateChildKindSet$ui_release() & m6258constructorimpl) != 0) {
                 while (parent$ui_release != null) {
-                    if ((parent$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                    if ((parent$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                         Modifier.Node node = parent$ui_release;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -294,10 +294,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
                                 if (modifierLocalModifierNode.getProvidedValues().contains$ui_release(modifierLocal)) {
                                     return (T) modifierLocalModifierNode.getProvidedValues().get$ui_release(modifierLocal);
                                 }
-                            } else if ((node.getKindSet$ui_release() & m6245constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui_release() & m6258constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui_release = ((DelegatingNode) node).getDelegate$ui_release(); delegate$ui_release != null; delegate$ui_release = delegate$ui_release.getChild$ui_release()) {
-                                    if ((delegate$ui_release.getKindSet$ui_release() & m6245constructorimpl) != 0) {
+                                    if ((delegate$ui_release.getKindSet$ui_release() & m6258constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui_release;
@@ -378,10 +378,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         Modifier.Element element = this.element;
         Intrinsics.checkNotNull(element, "null cannot be cast to non-null type androidx.compose.ui.layout.LayoutModifier");
-        return ((LayoutModifier) element).mo738measure3p2s80s(measureScope, measurable, j);
+        return ((LayoutModifier) element).mo748measure3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
@@ -434,10 +434,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         Modifier.Element element = this.element;
         Intrinsics.checkNotNull(element, "null cannot be cast to non-null type androidx.compose.ui.input.pointer.PointerInputModifier");
-        ((PointerInputModifier) element).getPointerInputFilter().mo5849onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+        ((PointerInputModifier) element).getPointerInputFilter().mo5862onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.DelegatableNode, androidx.compose.ui.node.PointerInputModifierNode
@@ -484,10 +484,10 @@ public final class BackwardsCompatNode extends Modifier.Node implements LayoutMo
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo408onRemeasuredozmzZPI(long j) {
+    public void mo418onRemeasuredozmzZPI(long j) {
         Modifier.Element element = this.element;
         if (element instanceof OnRemeasuredModifier) {
-            ((OnRemeasuredModifier) element).m6009onRemeasuredozmzZPI(j);
+            ((OnRemeasuredModifier) element).m6022onRemeasuredozmzZPI(j);
         }
     }
 

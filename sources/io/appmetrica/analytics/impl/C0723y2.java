@@ -4,13 +4,13 @@ package io.appmetrica.analytics.impl;
 public final class C0723y2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0698x2 f1163a;
+    public final C0698x2 f1164a;
 
     public C0723y2() {
         this(new C0698x2());
     }
 
     public C0723y2(C0698x2 c0698x2) {
-        this.f1163a = c0698x2;
+        this.f1164a = c0698x2;
     }
 }

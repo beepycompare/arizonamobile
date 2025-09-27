@@ -76,9 +76,9 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$$ExternalSyntheticLambda0
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
@@ -113,12 +113,12 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     @Override // androidx.compose.ui.layout.BeyondBoundsLayout
     /* renamed from: layout-o7g1Pn8  reason: not valid java name */
-    public <T> T mo1015layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
+    public <T> T mo1025layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
         int firstPlacedIndex;
         if (this.state.getItemCount() <= 0 || !this.state.getHasVisibleItems() || !isAttached()) {
             return function1.invoke(emptyBeyondBoundsScope);
         }
-        if (m1013isForward4vf7U8o(i)) {
+        if (m1023isForward4vf7U8o(i)) {
             firstPlacedIndex = this.state.getLastPlacedIndex();
         } else {
             firstPlacedIndex = this.state.getFirstPlacedIndex();
@@ -128,17 +128,17 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
         int coerceAtMost = RangesKt.coerceAtMost(this.state.itemsPerViewport() * 2, this.state.getItemCount());
         T t = null;
         int i2 = 0;
-        while (t == null && m1012hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
+        while (t == null && m1022hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
             this.beyondBoundsInfo.removeInterval((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element);
-            objectRef.element = (T) m1011addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
+            objectRef.element = (T) m1021addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
             i2++;
             LayoutModifierNodeKt.remeasureSync(this);
             t = function1.invoke(new BeyondBoundsLayout.BeyondBoundsScope() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsModifierNode$layout$2
                 @Override // androidx.compose.ui.layout.BeyondBoundsLayout.BeyondBoundsScope
                 public boolean getHasMoreContent() {
-                    boolean m1012hasMoreContentFR3nfPY;
-                    m1012hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsModifierNode.this.m1012hasMoreContentFR3nfPY(objectRef.element, i);
-                    return m1012hasMoreContentFR3nfPY;
+                    boolean m1022hasMoreContentFR3nfPY;
+                    m1022hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsModifierNode.this.m1022hasMoreContentFR3nfPY(objectRef.element, i);
+                    return m1022hasMoreContentFR3nfPY;
                 }
             });
         }
@@ -148,19 +148,19 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     }
 
     /* renamed from: isForward-4vf7U8o  reason: not valid java name */
-    private final boolean m1013isForward4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5943getBeforehoxUOeE())) {
+    private final boolean m1023isForward4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5956getBeforehoxUOeE())) {
             return false;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5942getAfterhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5955getAfterhoxUOeE())) {
             return true;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5941getAbovehoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5954getAbovehoxUOeE())) {
             return this.reverseLayout;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5944getBelowhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5957getBelowhoxUOeE())) {
             return !this.reverseLayout;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5945getLefthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5958getLefthoxUOeE())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
             if (i2 != 1) {
                 if (i2 == 2) {
@@ -169,7 +169,7 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
                 throw new NoWhenBranchMatchedException();
             }
             return this.reverseLayout;
-        } else if (!BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5946getRighthoxUOeE())) {
+        } else if (!BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5959getRighthoxUOeE())) {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
             throw new KotlinNothingValueException();
         } else {
@@ -185,10 +185,10 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
     }
 
     /* renamed from: addNextInterval-FR3nfPY  reason: not valid java name */
-    private final LazyLayoutBeyondBoundsInfo.Interval m1011addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+    private final LazyLayoutBeyondBoundsInfo.Interval m1021addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
         int start = interval.getStart();
         int end = interval.getEnd();
-        if (m1013isForward4vf7U8o(i)) {
+        if (m1023isForward4vf7U8o(i)) {
             end++;
         } else {
             start--;
@@ -198,20 +198,20 @@ public final class LazyLayoutBeyondBoundsModifierNode extends Modifier.Node impl
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: hasMoreContent-FR3nfPY  reason: not valid java name */
-    public final boolean m1012hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
-        if (m1014isOppositeToOrientation4vf7U8o(i)) {
+    public final boolean m1022hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+        if (m1024isOppositeToOrientation4vf7U8o(i)) {
             return false;
         }
-        return m1013isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
+        return m1023isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
     }
 
     /* renamed from: isOppositeToOrientation-4vf7U8o  reason: not valid java name */
-    private final boolean m1014isOppositeToOrientation4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5941getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5944getBelowhoxUOeE())) {
+    private final boolean m1024isOppositeToOrientation4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5954getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5957getBelowhoxUOeE())) {
             return this.orientation == Orientation.Horizontal;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5945getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5946getRighthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5958getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5959getRighthoxUOeE())) {
             return this.orientation == Orientation.Vertical;
-        } else if (BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5943getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5937equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5942getAfterhoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5956getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m5950equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m5955getAfterhoxUOeE())) {
             return false;
         } else {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();

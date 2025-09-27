@@ -179,9 +179,9 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             z = contentInViewNode.reverseDirection;
             float f2 = z ? 1.0f : -1.0f;
             scrollingLogic = contentInViewNode.scrollingLogic;
-            float m583toFloatk4lQ0M = f2 * scrollingLogic.m583toFloatk4lQ0M(scrollingLogic.m581reverseIfNeededMKHz9U(nestedScrollScope.mo523scrollByOzD1aCk(scrollingLogic.m581reverseIfNeededMKHz9U(scrollingLogic.m584toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m5719getUserInputWNlRxjI())));
-            if (Math.abs(m583toFloatk4lQ0M) < Math.abs(f)) {
-                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m583toFloatk4lQ0M + " < " + f + ')', null, 2, null);
+            float m593toFloatk4lQ0M = f2 * scrollingLogic.m593toFloatk4lQ0M(scrollingLogic.m591reverseIfNeededMKHz9U(nestedScrollScope.mo533scrollByOzD1aCk(scrollingLogic.m591reverseIfNeededMKHz9U(scrollingLogic.m594toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m5732getUserInputWNlRxjI())));
+            if (Math.abs(m593toFloatk4lQ0M) < Math.abs(f)) {
+                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m593toFloatk4lQ0M + " < " + f + ')', null, 2, null);
             }
             return Unit.INSTANCE;
         }
@@ -193,7 +193,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             boolean z2;
             float calculateScrollDelta;
             Rect focusedChildBounds;
-            boolean m456isMaxVisibleO0kMr_c$default;
+            boolean m466isMaxVisibleO0kMr_c$default;
             BringIntoViewRequestPriorityQueue bringIntoViewRequestPriorityQueue = contentInViewNode.bringIntoViewRequests;
             while (true) {
                 z = true;
@@ -204,23 +204,23 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 Rect invoke = ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.last()).getCurrentBounds().invoke();
                 if (invoke == null) {
                     contentInViewNode2 = contentInViewNode;
-                    m456isMaxVisibleO0kMr_c$default = true;
+                    m466isMaxVisibleO0kMr_c$default = true;
                 } else {
                     contentInViewNode2 = contentInViewNode;
-                    m456isMaxVisibleO0kMr_c$default = ContentInViewNode.m456isMaxVisibleO0kMr_c$default(contentInViewNode2, invoke, 0L, 1, null);
+                    m466isMaxVisibleO0kMr_c$default = ContentInViewNode.m466isMaxVisibleO0kMr_c$default(contentInViewNode2, invoke, 0L, 1, null);
                 }
-                if (!m456isMaxVisibleO0kMr_c$default) {
+                if (!m466isMaxVisibleO0kMr_c$default) {
                     break;
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9091constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9106constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
             z2 = contentInViewNode2.trackingFocusedChild;
             if (z2) {
                 focusedChildBounds = contentInViewNode2.getFocusedChildBounds();
-                if (focusedChildBounds == null || !ContentInViewNode.m456isMaxVisibleO0kMr_c$default(contentInViewNode2, focusedChildBounds, 0L, 1, null)) {
+                if (focusedChildBounds == null || !ContentInViewNode.m466isMaxVisibleO0kMr_c$default(contentInViewNode2, focusedChildBounds, 0L, 1, null)) {
                     z = false;
                 }
                 if (z) {

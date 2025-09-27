@@ -10,55 +10,55 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class LayoutCacheOperation {
     private final long flag;
     public static final Companion Companion = new Companion(null);
-    private static final long MarkDirtyStyle = m1676constructorimpl(0);
-    private static final long MarkDirtyDensity = m1676constructorimpl(1);
-    private static final long MarkDirtyNode = m1676constructorimpl(2);
-    private static final long LayoutWithConstraints = m1676constructorimpl(3);
+    private static final long MarkDirtyStyle = m1686constructorimpl(0);
+    private static final long MarkDirtyDensity = m1686constructorimpl(1);
+    private static final long MarkDirtyNode = m1686constructorimpl(2);
+    private static final long LayoutWithConstraints = m1686constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ LayoutCacheOperation m1675boximpl(long j) {
+    public static final /* synthetic */ LayoutCacheOperation m1685boximpl(long j) {
         return new LayoutCacheOperation(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m1676constructorimpl(long j) {
+    private static long m1686constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1677equalsimpl(long j, Object obj) {
-        return (obj instanceof LayoutCacheOperation) && j == ((LayoutCacheOperation) obj).m1681unboximpl();
+    public static boolean m1687equalsimpl(long j, Object obj) {
+        return (obj instanceof LayoutCacheOperation) && j == ((LayoutCacheOperation) obj).m1691unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1678equalsimpl0(long j, long j2) {
+    public static final boolean m1688equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1679hashCodeimpl(long j) {
+    public static int m1689hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1680toStringimpl(long j) {
+    public static String m1690toStringimpl(long j) {
         return "LayoutCacheOperation(flag=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1677equalsimpl(this.flag, obj);
+        return m1687equalsimpl(this.flag, obj);
     }
 
     public int hashCode() {
-        return m1679hashCodeimpl(this.flag);
+        return m1689hashCodeimpl(this.flag);
     }
 
     public String toString() {
-        return m1680toStringimpl(this.flag);
+        return m1690toStringimpl(this.flag);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m1681unboximpl() {
+    public final /* synthetic */ long m1691unboximpl() {
         return this.flag;
     }
 
@@ -74,22 +74,22 @@ public final class LayoutCacheOperation {
         }
 
         /* renamed from: getMarkDirtyStyle-DEKiAbY  reason: not valid java name */
-        public final long m1685getMarkDirtyStyleDEKiAbY() {
+        public final long m1695getMarkDirtyStyleDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyStyle;
         }
 
         /* renamed from: getMarkDirtyDensity-DEKiAbY  reason: not valid java name */
-        public final long m1683getMarkDirtyDensityDEKiAbY() {
+        public final long m1693getMarkDirtyDensityDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyDensity;
         }
 
         /* renamed from: getMarkDirtyNode-DEKiAbY  reason: not valid java name */
-        public final long m1684getMarkDirtyNodeDEKiAbY() {
+        public final long m1694getMarkDirtyNodeDEKiAbY() {
             return LayoutCacheOperation.MarkDirtyNode;
         }
 
         /* renamed from: getLayoutWithConstraints-DEKiAbY  reason: not valid java name */
-        public final long m1682getLayoutWithConstraintsDEKiAbY() {
+        public final long m1692getLayoutWithConstraintsDEKiAbY() {
             return LayoutCacheOperation.LayoutWithConstraints;
         }
     }

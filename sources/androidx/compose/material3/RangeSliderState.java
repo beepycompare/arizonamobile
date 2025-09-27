@@ -233,16 +233,16 @@ public final class RangeSliderState {
             float rawOffsetStart$material3_release = getRawOffsetStart$material3_release();
             SliderRange = SliderKt.SliderRange(rawOffsetStart$material3_release, SliderKt.access$snapValueToTick(RangesKt.coerceIn(getRawOffsetEnd$material3_release(), rawOffsetStart$material3_release, getMaxPx()), this.tickFractions, getMinPx(), getMaxPx()));
         }
-        long m2506scaleToUserValueowVgs5E = m2506scaleToUserValueowVgs5E(getMinPx(), getMaxPx(), SliderRange);
-        if (SliderRange.m2628equalsimpl0(m2506scaleToUserValueowVgs5E, SliderKt.SliderRange(getActiveRangeStart(), getActiveRangeEnd()))) {
+        long m2516scaleToUserValueowVgs5E = m2516scaleToUserValueowVgs5E(getMinPx(), getMaxPx(), SliderRange);
+        if (SliderRange.m2638equalsimpl0(m2516scaleToUserValueowVgs5E, SliderKt.SliderRange(getActiveRangeStart(), getActiveRangeEnd()))) {
             return;
         }
         Function1<? super SliderRange, Unit> function1 = this.onValueChange;
         if (function1 == null) {
-            setActiveRangeStart(SliderRange.m2630getStartimpl(m2506scaleToUserValueowVgs5E));
-            setActiveRangeEnd(SliderRange.m2629getEndInclusiveimpl(m2506scaleToUserValueowVgs5E));
+            setActiveRangeStart(SliderRange.m2640getStartimpl(m2516scaleToUserValueowVgs5E));
+            setActiveRangeEnd(SliderRange.m2639getEndInclusiveimpl(m2516scaleToUserValueowVgs5E));
         } else if (function1 != null) {
-            function1.invoke(SliderRange.m2625boximpl(m2506scaleToUserValueowVgs5E));
+            function1.invoke(SliderRange.m2635boximpl(m2516scaleToUserValueowVgs5E));
         }
     }
 
@@ -263,8 +263,8 @@ public final class RangeSliderState {
     }
 
     /* renamed from: scaleToUserValue-owVgs5E  reason: not valid java name */
-    private final long m2506scaleToUserValueowVgs5E(float f, float f2, long j) {
-        return SliderKt.m2614access$scaleziovWd0(f, f2, j, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
+    private final long m2516scaleToUserValueowVgs5E(float f, float f2, long j) {
+        return SliderKt.m2624access$scaleziovWd0(f, f2, j, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
     }
 
     private final float scaleToOffset(float f, float f2, float f3) {

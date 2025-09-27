@@ -10,45 +10,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class ClipOp {
     public static final Companion Companion = new Companion(null);
-    private static final int Difference = m4519constructorimpl(0);
-    private static final int Intersect = m4519constructorimpl(1);
+    private static final int Difference = m4531constructorimpl(0);
+    private static final int Intersect = m4531constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ClipOp m4518boximpl(int i) {
+    public static final /* synthetic */ ClipOp m4530boximpl(int i) {
         return new ClipOp(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4519constructorimpl(int i) {
+    public static int m4531constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4520equalsimpl(int i, Object obj) {
-        return (obj instanceof ClipOp) && i == ((ClipOp) obj).m4524unboximpl();
+    public static boolean m4532equalsimpl(int i, Object obj) {
+        return (obj instanceof ClipOp) && i == ((ClipOp) obj).m4536unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4521equalsimpl0(int i, int i2) {
+    public static final boolean m4533equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4522hashCodeimpl(int i) {
+    public static int m4534hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m4520equalsimpl(this.value, obj);
+        return m4532equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4522hashCodeimpl(this.value);
+        return m4534hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4524unboximpl() {
+    public final /* synthetic */ int m4536unboximpl() {
         return this.value;
     }
 
@@ -64,12 +64,12 @@ public final class ClipOp {
         }
 
         /* renamed from: getDifference-rtfAjoo  reason: not valid java name */
-        public final int m4525getDifferencertfAjoo() {
+        public final int m4537getDifferencertfAjoo() {
             return ClipOp.Difference;
         }
 
         /* renamed from: getIntersect-rtfAjoo  reason: not valid java name */
-        public final int m4526getIntersectrtfAjoo() {
+        public final int m4538getIntersectrtfAjoo() {
             return ClipOp.Intersect;
         }
     }
@@ -79,11 +79,11 @@ public final class ClipOp {
     }
 
     public String toString() {
-        return m4523toStringimpl(this.value);
+        return m4535toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4523toStringimpl(int i) {
-        return m4521equalsimpl0(i, Difference) ? "Difference" : m4521equalsimpl0(i, Intersect) ? "Intersect" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m4535toStringimpl(int i) {
+        return m4533equalsimpl0(i, Difference) ? "Difference" : m4533equalsimpl0(i, Intersect) ? "Intersect" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

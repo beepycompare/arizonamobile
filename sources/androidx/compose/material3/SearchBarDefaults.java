@@ -99,37 +99,37 @@ public final class SearchBarDefaults {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Renamed to TonalElevation. Not to be confused with ShadowElevation.", replaceWith = @ReplaceWith(expression = "TonalElevation", imports = {}))
     /* renamed from: getElevation-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m2525getElevationD9Ej5fM$annotations() {
+    public static /* synthetic */ void m2535getElevationD9Ej5fM$annotations() {
     }
 
     private SearchBarDefaults() {
     }
 
     static {
-        float m3284getLevel0D9Ej5fM = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
-        TonalElevation = m3284getLevel0D9Ej5fM;
-        ShadowElevation = ElevationTokens.INSTANCE.m3284getLevel0D9Ej5fM();
-        Elevation = m3284getLevel0D9Ej5fM;
-        InputFieldHeight = SearchBarTokens.INSTANCE.m3585getContainerHeightD9Ej5fM();
+        float m3294getLevel0D9Ej5fM = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+        TonalElevation = m3294getLevel0D9Ej5fM;
+        ShadowElevation = ElevationTokens.INSTANCE.m3294getLevel0D9Ej5fM();
+        Elevation = m3294getLevel0D9Ej5fM;
+        InputFieldHeight = SearchBarTokens.INSTANCE.m3595getContainerHeightD9Ej5fM();
     }
 
     /* renamed from: getTonalElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2531getTonalElevationD9Ej5fM() {
+    public final float m2541getTonalElevationD9Ej5fM() {
         return TonalElevation;
     }
 
     /* renamed from: getShadowElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2530getShadowElevationD9Ej5fM() {
+    public final float m2540getShadowElevationD9Ej5fM() {
         return ShadowElevation;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2528getElevationD9Ej5fM() {
+    public final float m2538getElevationD9Ej5fM() {
         return Elevation;
     }
 
     /* renamed from: getInputFieldHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2529getInputFieldHeightD9Ej5fM() {
+    public final float m2539getInputFieldHeightD9Ej5fM() {
         return InputFieldHeight;
     }
 
@@ -186,14 +186,14 @@ public final class SearchBarDefaults {
     }
 
     /* renamed from: colors-dgg9oW8  reason: not valid java name */
-    public final SearchBarColors m2527colorsdgg9oW8(long j, long j2, Composer composer, int i, int i2) {
+    public final SearchBarColors m2537colorsdgg9oW8(long j, long j2, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -1507037523, "C(colors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color)375@16778L5,376@16845L5,381@17019L18:SearchBar.android.kt#uh7d8r");
         long value = (i2 & 1) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getContainerColor(), composer, 6) : j;
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(SearchViewTokens.INSTANCE.getDividerColor(), composer, 6) : j2;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1507037523, i, -1, "androidx.compose.material3.SearchBarDefaults.colors (SearchBar.android.kt:378)");
         }
-        SearchBarColors searchBarColors = new SearchBarColors(value, value2, m2533inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, 0, (i << 6) & 57344, 16383), null);
+        SearchBarColors searchBarColors = new SearchBarColors(value, value2, m2543inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, 0, (i << 6) & 57344, 16383), null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -202,12 +202,12 @@ public final class SearchBarDefaults {
     }
 
     /* renamed from: inputFieldColors-ITpI4ow  reason: not valid java name */
-    public final TextFieldColors m2533inputFieldColorsITpI4ow(long j, long j2, long j3, long j4, TextSelectionColors textSelectionColors, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, Composer composer, int i, int i2, int i3) {
+    public final TextFieldColors m2543inputFieldColorsITpI4ow(long j, long j2, long j3, long j4, TextSelectionColors textSelectionColors, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, Composer composer, int i, int i2, int i3) {
         TextSelectionColors textSelectionColors2;
         ComposerKt.sourceInformationMarkerStart(composer, -602148837, "C(inputFieldColors)P(7:c#ui.graphics.Color,12:c#ui.graphics.Color,3:c#ui.graphics.Color,0:c#ui.graphics.Color,9,5:c#ui.graphics.Color,10:c#ui.graphics.Color,1:c#ui.graphics.Color,8:c#ui.graphics.Color,13:c#ui.graphics.Color,4:c#ui.graphics.Color,6:c#ui.graphics.Color,11:c#ui.graphics.Color,2:c#ui.graphics.Color)410@18829L5,411@18903L5,413@18998L5,416@19154L5,417@19233L7,418@19316L5,419@19399L5,421@19507L5,424@19683L5,425@19768L5,427@19878L5,430@20056L5,431@20142L5,433@20244L5,437@20389L847:SearchBar.android.kt#uh7d8r");
         long value = (i3 & 1) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getInputTextColor(), composer, 6) : j;
         long value2 = (i3 & 2) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getInputTextColor(), composer, 6) : j2;
-        long m4536copywmQWz5c$default = (i3 & 4) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
+        long m4548copywmQWz5c$default = (i3 & 4) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j3;
         long value3 = (i3 & 8) != 0 ? ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getCaretColor(), composer, 6) : j4;
         if ((i3 & 16) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
@@ -219,23 +219,23 @@ public final class SearchBarDefaults {
         }
         long value4 = (i3 & 32) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getLeadingIconColor(), composer, 6) : j5;
         long value5 = (i3 & 64) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getLeadingIconColor(), composer, 6) : j6;
-        long m4536copywmQWz5c$default2 = (i3 & 128) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j7;
+        long m4548copywmQWz5c$default2 = (i3 & 128) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j7;
         long value6 = (i3 & 256) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getTrailingIconColor(), composer, 6) : j8;
         long value7 = (i3 & 512) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getTrailingIconColor(), composer, 6) : j9;
-        long m4536copywmQWz5c$default3 = (i3 & 1024) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j10;
+        long m4548copywmQWz5c$default3 = (i3 & 1024) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j10;
         long value8 = (i3 & 2048) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getSupportingTextColor(), composer, 6) : j11;
         long value9 = (i3 & 4096) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getSupportingTextColor(), composer, 6) : j12;
-        long m4536copywmQWz5c$default4 = (i3 & 8192) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
+        long m4548copywmQWz5c$default4 = (i3 & 8192) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j13;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-602148837, i, i2, "androidx.compose.material3.SearchBarDefaults.inputFieldColors (SearchBar.android.kt:437)");
         }
         int i4 = i2 << 18;
-        TextFieldColors m2785colors0hiis_0 = TextFieldDefaults.INSTANCE.m2785colors0hiis_0(value, value2, m4536copywmQWz5c$default, 0L, 0L, 0L, 0L, 0L, value3, 0L, textSelectionColors2, 0L, 0L, 0L, 0L, value4, value5, m4536copywmQWz5c$default2, 0L, value6, value7, m4536copywmQWz5c$default3, 0L, 0L, 0L, 0L, 0L, value8, value9, m4536copywmQWz5c$default4, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, (i & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i << 15) & 234881024), ((i >> 12) & 14) | (458752 & i) | (3670016 & i) | (i & 29360128) | ((i << 3) & 1879048192), ((i >> 27) & 14) | ((i2 << 3) & 112) | (i4 & 29360128) | (i4 & 234881024) | (i4 & 1879048192), 0, 3072, 1204058872, 4095);
+        TextFieldColors m2795colors0hiis_0 = TextFieldDefaults.INSTANCE.m2795colors0hiis_0(value, value2, m4548copywmQWz5c$default, 0L, 0L, 0L, 0L, 0L, value3, 0L, textSelectionColors2, 0L, 0L, 0L, 0L, value4, value5, m4548copywmQWz5c$default2, 0L, value6, value7, m4548copywmQWz5c$default3, 0L, 0L, 0L, 0L, 0L, value8, value9, m4548copywmQWz5c$default4, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, (i & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED) | ((i << 15) & 234881024), ((i >> 12) & 14) | (458752 & i) | (3670016 & i) | (i & 29360128) | ((i << 3) & 1879048192), ((i >> 27) & 14) | ((i2 << 3) & 112) | (i4 & 29360128) | (i4 & 234881024) | (i4 & 1879048192), 0, 3072, 1204058872, 4095);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2785colors0hiis_0;
+        return m2795colors0hiis_0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -331,7 +331,7 @@ public final class SearchBarDefaults {
         MutableInteractionSource mutableInteractionSource2;
         MutableInteractionSource mutableInteractionSource3;
         Object rememberedValue;
-        long m6743getColor0d7_KjU;
+        long m6756getColor0d7_KjU;
         float f;
         boolean z4;
         Object rememberedValue2;
@@ -470,7 +470,7 @@ public final class SearchBarDefaults {
                             if ((i3 & 1024) == 0) {
                                 i17 = i14;
                                 i16 = i12;
-                                textFieldColors2 = m2533inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 0, (i20 << 6) & 57344, 16383);
+                                textFieldColors2 = m2543inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 0, (i20 << 6) & 57344, 16383);
                                 startRestartGroup = startRestartGroup;
                                 i18 = i20 & (-15);
                             } else {
@@ -542,21 +542,21 @@ public final class SearchBarDefaults {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         FocusManager focusManager = (FocusManager) consume;
                         Strings.Companion companion2 = Strings.Companion;
-                        final String m3086getString2EP1pXo = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
+                        final String m3096getString2EP1pXo = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
                         Strings.Companion companion3 = Strings.Companion;
-                        final String m3086getString2EP1pXo2 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
+                        final String m3096getString2EP1pXo2 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
                         final MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource3;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                         Object consume2 = startRestartGroup.consume(TextKt.getLocalTextStyle());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        m6743getColor0d7_KjU = ((TextStyle) consume2).m6743getColor0d7_KjU();
-                        if (m6743getColor0d7_KjU == 16) {
-                            m6743getColor0d7_KjU = textFieldColors2.m2773textColorXeAY9LY$material3_release(z3, false, booleanValue);
+                        m6756getColor0d7_KjU = ((TextStyle) consume2).m6756getColor0d7_KjU();
+                        if (m6756getColor0d7_KjU == 16) {
+                            m6756getColor0d7_KjU = textFieldColors2.m2783textColorXeAY9LY$material3_release(z3, false, booleanValue);
                         }
-                        long j = m6743getColor0d7_KjU;
+                        long j = m6756getColor0d7_KjU;
                         float searchBarMinWidth = SearchBar_androidKt.getSearchBarMinWidth();
                         f = SearchBar_androidKt.SearchBarMaxWidth;
-                        Modifier focusRequester2 = FocusRequesterModifierKt.focusRequester(SizeKt.m888sizeInqDBjuR0$default(modifier3, searchBarMinWidth, InputFieldHeight, f, 0.0f, 8, null), focusRequester);
+                        Modifier focusRequester2 = FocusRequesterModifierKt.focusRequester(SizeKt.m898sizeInqDBjuR0$default(modifier3, searchBarMinWidth, InputFieldHeight, f, 0.0f, 8, null), focusRequester);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320411280, "CC(remember):SearchBar.android.kt#9igjgp");
                         final boolean z9 = z3;
                         z4 = (57344 & i16) != 16384;
@@ -588,7 +588,7 @@ public final class SearchBarDefaults {
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         Modifier onFocusChanged = FocusChangedModifierKt.onFocusChanged(focusRequester2, (Function1) rememberedValue2);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320408514, "CC(remember):SearchBar.android.kt#9igjgp");
-                        changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3086getString2EP1pXo) | startRestartGroup.changed(m3086getString2EP1pXo2);
+                        changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3096getString2EP1pXo) | startRestartGroup.changed(m3096getString2EP1pXo2);
                         rememberedValue3 = startRestartGroup.rememberedValue();
                         if (!changed || rememberedValue3 == Composer.Companion.getEmpty()) {
                             rememberedValue3 = (Function1) new Function1<SemanticsPropertyReceiver, Unit>() { // from class: androidx.compose.material3.SearchBarDefaults$InputField$2$1
@@ -606,9 +606,9 @@ public final class SearchBarDefaults {
 
                                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo);
+                                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo);
                                     if (z) {
-                                        SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3086getString2EP1pXo2);
+                                        SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3096getString2EP1pXo2);
                                     }
                                     final FocusRequester focusRequester3 = focusRequester;
                                     SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.material3.SearchBarDefaults$InputField$2$1.1
@@ -633,8 +633,8 @@ public final class SearchBarDefaults {
                         Object consume3 = startRestartGroup.consume(TextKt.getLocalTextStyle());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         TextStyle merge = ((TextStyle) consume3).merge(new TextStyle(j, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
-                        SolidColor solidColor = new SolidColor(textFieldColors2.m2723cursorColorvNxB06k$material3_release(false), null);
-                        KeyboardOptions keyboardOptions = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6901getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
+                        SolidColor solidColor = new SolidColor(textFieldColors2.m2733cursorColorvNxB06k$material3_release(false), null);
+                        KeyboardOptions keyboardOptions = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6914getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320385353, "CC(remember):SearchBar.android.kt#9igjgp");
                         int i21 = i16 & 14;
                         z5 = ((i16 & 896) != 256) | (i21 != 4);
@@ -729,14 +729,14 @@ public final class SearchBarDefaults {
                                                 ComposerKt.traceEventStart(-1401341985, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:551)");
                                             }
                                             f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                            Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
+                                            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
                                             Function2<Composer, Integer, Unit> function216 = function215;
                                             ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                             ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                             CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer5.getApplier() instanceof Applier)) {
@@ -748,15 +748,15 @@ public final class SearchBarDefaults {
                                             } else {
                                                 composer5.useNode();
                                             }
-                                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer5, -127763558, "C551@26247L9:SearchBar.android.kt#uh7d8r");
@@ -801,14 +801,14 @@ public final class SearchBarDefaults {
                                                 ComposerKt.traceEventStart(907752083, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:555)");
                                             }
                                             f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                            Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, Dp.m7251constructorimpl(-f2), 0.0f, 2, null);
+                                            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7264constructorimpl(-f2), 0.0f, 2, null);
                                             Function2<Composer, Integer, Unit> function217 = function216;
                                             ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                             ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                             CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                             ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                             if (!(composer5.getApplier() instanceof Applier)) {
@@ -820,15 +820,15 @@ public final class SearchBarDefaults {
                                             } else {
                                                 composer5.useNode();
                                             }
-                                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                             }
-                                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                             ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                             ComposerKt.sourceInformationMarkerStart(composer5, -127537351, "C555@26475L10:SearchBar.android.kt#uh7d8r");
@@ -845,7 +845,7 @@ public final class SearchBarDefaults {
                                         }
                                     }, composer4, 54) : null;
                                     composer4.endReplaceGroup();
-                                    textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors4, TextFieldDefaults.m2776contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2088getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
+                                    textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors4, TextFieldDefaults.m2786contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2098getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                         return;
@@ -953,20 +953,20 @@ public final class SearchBarDefaults {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 FocusManager focusManager2 = (FocusManager) consume4;
                 Strings.Companion companion22 = Strings.Companion;
-                final String m3086getString2EP1pXo3 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
+                final String m3096getString2EP1pXo3 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
                 Strings.Companion companion32 = Strings.Companion;
-                final String m3086getString2EP1pXo22 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
+                final String m3096getString2EP1pXo22 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
                 final MutableInteractionSource mutableInteractionSource52 = mutableInteractionSource3;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
                 Object consume22 = startRestartGroup.consume(TextKt.getLocalTextStyle());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                m6743getColor0d7_KjU = ((TextStyle) consume22).m6743getColor0d7_KjU();
-                if (m6743getColor0d7_KjU == 16) {
+                m6756getColor0d7_KjU = ((TextStyle) consume22).m6756getColor0d7_KjU();
+                if (m6756getColor0d7_KjU == 16) {
                 }
-                long j2 = m6743getColor0d7_KjU;
+                long j2 = m6756getColor0d7_KjU;
                 float searchBarMinWidth2 = SearchBar_androidKt.getSearchBarMinWidth();
                 f = SearchBar_androidKt.SearchBarMaxWidth;
-                Modifier focusRequester22 = FocusRequesterModifierKt.focusRequester(SizeKt.m888sizeInqDBjuR0$default(modifier32, searchBarMinWidth2, InputFieldHeight, f, 0.0f, 8, null), focusRequester3);
+                Modifier focusRequester22 = FocusRequesterModifierKt.focusRequester(SizeKt.m898sizeInqDBjuR0$default(modifier32, searchBarMinWidth2, InputFieldHeight, f, 0.0f, 8, null), focusRequester3);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320411280, "CC(remember):SearchBar.android.kt#9igjgp");
                 final boolean z92 = z3;
                 if ((57344 & i16) != 16384) {
@@ -999,7 +999,7 @@ public final class SearchBarDefaults {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier onFocusChanged2 = FocusChangedModifierKt.onFocusChanged(focusRequester22, (Function1) rememberedValue2);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320408514, "CC(remember):SearchBar.android.kt#9igjgp");
-                changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3086getString2EP1pXo3) | startRestartGroup.changed(m3086getString2EP1pXo22);
+                changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3096getString2EP1pXo3) | startRestartGroup.changed(m3096getString2EP1pXo22);
                 rememberedValue3 = startRestartGroup.rememberedValue();
                 if (!changed) {
                 }
@@ -1018,9 +1018,9 @@ public final class SearchBarDefaults {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo3);
+                        SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo3);
                         if (z) {
-                            SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3086getString2EP1pXo22);
+                            SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3096getString2EP1pXo22);
                         }
                         final FocusRequester focusRequester32 = focusRequester3;
                         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.material3.SearchBarDefaults$InputField$2$1.1
@@ -1044,8 +1044,8 @@ public final class SearchBarDefaults {
                 Object consume32 = startRestartGroup.consume(TextKt.getLocalTextStyle());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 TextStyle merge2 = ((TextStyle) consume32).merge(new TextStyle(j2, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
-                SolidColor solidColor2 = new SolidColor(textFieldColors2.m2723cursorColorvNxB06k$material3_release(false), null);
-                KeyboardOptions keyboardOptions2 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6901getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
+                SolidColor solidColor2 = new SolidColor(textFieldColors2.m2733cursorColorvNxB06k$material3_release(false), null);
+                KeyboardOptions keyboardOptions2 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6914getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320385353, "CC(remember):SearchBar.android.kt#9igjgp");
                 int i212 = i16 & 14;
                 z5 = ((i16 & 896) != 256) | (i212 != 4);
@@ -1140,14 +1140,14 @@ public final class SearchBarDefaults {
                                         ComposerKt.traceEventStart(-1401341985, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:551)");
                                     }
                                     f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                    Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
+                                    Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
                                     Function2<Composer, Integer, Unit> function216 = function215;
                                     ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                     ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer5.getApplier() instanceof Applier)) {
@@ -1159,15 +1159,15 @@ public final class SearchBarDefaults {
                                     } else {
                                         composer5.useNode();
                                     }
-                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer5, -127763558, "C551@26247L9:SearchBar.android.kt#uh7d8r");
@@ -1212,14 +1212,14 @@ public final class SearchBarDefaults {
                                         ComposerKt.traceEventStart(907752083, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:555)");
                                     }
                                     f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                    Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, Dp.m7251constructorimpl(-f2), 0.0f, 2, null);
+                                    Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7264constructorimpl(-f2), 0.0f, 2, null);
                                     Function2<Composer, Integer, Unit> function217 = function216;
                                     ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                     ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                     if (!(composer5.getApplier() instanceof Applier)) {
@@ -1231,15 +1231,15 @@ public final class SearchBarDefaults {
                                     } else {
                                         composer5.useNode();
                                     }
-                                    Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                    Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                    Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer5, -127537351, "C555@26475L10:SearchBar.android.kt#uh7d8r");
@@ -1256,7 +1256,7 @@ public final class SearchBarDefaults {
                                 }
                             }, composer4, 54) : null;
                             composer4.endReplaceGroup();
-                            textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors42, TextFieldDefaults.m2776contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2088getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
+                            textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors42, TextFieldDefaults.m2786contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2098getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                                 return;
@@ -1342,20 +1342,20 @@ public final class SearchBarDefaults {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             FocusManager focusManager22 = (FocusManager) consume42;
             Strings.Companion companion222 = Strings.Companion;
-            final String m3086getString2EP1pXo32 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
+            final String m3096getString2EP1pXo32 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
             Strings.Companion companion322 = Strings.Companion;
-            final String m3086getString2EP1pXo222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
+            final String m3096getString2EP1pXo222 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
             final MutableInteractionSource mutableInteractionSource522 = mutableInteractionSource3;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
             Object consume222 = startRestartGroup.consume(TextKt.getLocalTextStyle());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            m6743getColor0d7_KjU = ((TextStyle) consume222).m6743getColor0d7_KjU();
-            if (m6743getColor0d7_KjU == 16) {
+            m6756getColor0d7_KjU = ((TextStyle) consume222).m6756getColor0d7_KjU();
+            if (m6756getColor0d7_KjU == 16) {
             }
-            long j22 = m6743getColor0d7_KjU;
+            long j22 = m6756getColor0d7_KjU;
             float searchBarMinWidth22 = SearchBar_androidKt.getSearchBarMinWidth();
             f = SearchBar_androidKt.SearchBarMaxWidth;
-            Modifier focusRequester222 = FocusRequesterModifierKt.focusRequester(SizeKt.m888sizeInqDBjuR0$default(modifier322, searchBarMinWidth22, InputFieldHeight, f, 0.0f, 8, null), focusRequester32);
+            Modifier focusRequester222 = FocusRequesterModifierKt.focusRequester(SizeKt.m898sizeInqDBjuR0$default(modifier322, searchBarMinWidth22, InputFieldHeight, f, 0.0f, 8, null), focusRequester32);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320411280, "CC(remember):SearchBar.android.kt#9igjgp");
             final boolean z922 = z3;
             if ((57344 & i16) != 16384) {
@@ -1388,7 +1388,7 @@ public final class SearchBarDefaults {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Modifier onFocusChanged22 = FocusChangedModifierKt.onFocusChanged(focusRequester222, (Function1) rememberedValue2);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320408514, "CC(remember):SearchBar.android.kt#9igjgp");
-            changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3086getString2EP1pXo32) | startRestartGroup.changed(m3086getString2EP1pXo222);
+            changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3096getString2EP1pXo32) | startRestartGroup.changed(m3096getString2EP1pXo222);
             rememberedValue3 = startRestartGroup.rememberedValue();
             if (!changed) {
             }
@@ -1407,9 +1407,9 @@ public final class SearchBarDefaults {
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo32);
+                    SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo32);
                     if (z) {
-                        SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3086getString2EP1pXo222);
+                        SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3096getString2EP1pXo222);
                     }
                     final FocusRequester focusRequester322 = focusRequester32;
                     SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.material3.SearchBarDefaults$InputField$2$1.1
@@ -1433,8 +1433,8 @@ public final class SearchBarDefaults {
             Object consume322 = startRestartGroup.consume(TextKt.getLocalTextStyle());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             TextStyle merge22 = ((TextStyle) consume322).merge(new TextStyle(j22, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
-            SolidColor solidColor22 = new SolidColor(textFieldColors2.m2723cursorColorvNxB06k$material3_release(false), null);
-            KeyboardOptions keyboardOptions22 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6901getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
+            SolidColor solidColor22 = new SolidColor(textFieldColors2.m2733cursorColorvNxB06k$material3_release(false), null);
+            KeyboardOptions keyboardOptions22 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6914getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320385353, "CC(remember):SearchBar.android.kt#9igjgp");
             int i2122 = i16 & 14;
             z5 = ((i16 & 896) != 256) | (i2122 != 4);
@@ -1529,14 +1529,14 @@ public final class SearchBarDefaults {
                                     ComposerKt.traceEventStart(-1401341985, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:551)");
                                 }
                                 f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
+                                Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
                                 Function2<Composer, Integer, Unit> function216 = function215;
                                 ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                 ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer5.getApplier() instanceof Applier)) {
@@ -1548,15 +1548,15 @@ public final class SearchBarDefaults {
                                 } else {
                                     composer5.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer5, -127763558, "C551@26247L9:SearchBar.android.kt#uh7d8r");
@@ -1601,14 +1601,14 @@ public final class SearchBarDefaults {
                                     ComposerKt.traceEventStart(907752083, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:555)");
                                 }
                                 f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                                Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, Dp.m7251constructorimpl(-f2), 0.0f, 2, null);
+                                Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7264constructorimpl(-f2), 0.0f, 2, null);
                                 Function2<Composer, Integer, Unit> function217 = function216;
                                 ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                 ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                                 CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                                 if (!(composer5.getApplier() instanceof Applier)) {
@@ -1620,15 +1620,15 @@ public final class SearchBarDefaults {
                                 } else {
                                     composer5.useNode();
                                 }
-                                Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                                Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                                Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer5, -127537351, "C555@26475L10:SearchBar.android.kt#uh7d8r");
@@ -1645,7 +1645,7 @@ public final class SearchBarDefaults {
                             }
                         }, composer4, 54) : null;
                         composer4.endReplaceGroup();
-                        textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors422, TextFieldDefaults.m2776contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2088getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
+                        textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors422, TextFieldDefaults.m2786contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2098getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                             return;
@@ -1752,20 +1752,20 @@ public final class SearchBarDefaults {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         FocusManager focusManager222 = (FocusManager) consume422;
         Strings.Companion companion2222 = Strings.Companion;
-        final String m3086getString2EP1pXo322 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
+        final String m3096getString2EP1pXo322 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_search_bar_search), startRestartGroup, 0);
         Strings.Companion companion3222 = Strings.Companion;
-        final String m3086getString2EP1pXo2222 = Strings_androidKt.m3086getString2EP1pXo(Strings.m3016constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
+        final String m3096getString2EP1pXo2222 = Strings_androidKt.m3096getString2EP1pXo(Strings.m3026constructorimpl(R.string.m3c_suggestions_available), startRestartGroup, 0);
         final MutableInteractionSource mutableInteractionSource5222 = mutableInteractionSource3;
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC:CompositionLocal.kt#9igjgp");
         Object consume2222 = startRestartGroup.consume(TextKt.getLocalTextStyle());
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-        m6743getColor0d7_KjU = ((TextStyle) consume2222).m6743getColor0d7_KjU();
-        if (m6743getColor0d7_KjU == 16) {
+        m6756getColor0d7_KjU = ((TextStyle) consume2222).m6756getColor0d7_KjU();
+        if (m6756getColor0d7_KjU == 16) {
         }
-        long j222 = m6743getColor0d7_KjU;
+        long j222 = m6756getColor0d7_KjU;
         float searchBarMinWidth222 = SearchBar_androidKt.getSearchBarMinWidth();
         f = SearchBar_androidKt.SearchBarMaxWidth;
-        Modifier focusRequester2222 = FocusRequesterModifierKt.focusRequester(SizeKt.m888sizeInqDBjuR0$default(modifier3222, searchBarMinWidth222, InputFieldHeight, f, 0.0f, 8, null), focusRequester322);
+        Modifier focusRequester2222 = FocusRequesterModifierKt.focusRequester(SizeKt.m898sizeInqDBjuR0$default(modifier3222, searchBarMinWidth222, InputFieldHeight, f, 0.0f, 8, null), focusRequester322);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320411280, "CC(remember):SearchBar.android.kt#9igjgp");
         final boolean z9222 = z3;
         if ((57344 & i16) != 16384) {
@@ -1798,7 +1798,7 @@ public final class SearchBarDefaults {
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         Modifier onFocusChanged222 = FocusChangedModifierKt.onFocusChanged(focusRequester2222, (Function1) rememberedValue2);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320408514, "CC(remember):SearchBar.android.kt#9igjgp");
-        changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3086getString2EP1pXo322) | startRestartGroup.changed(m3086getString2EP1pXo2222);
+        changed = ((i16 & 7168) != 2048) | startRestartGroup.changed(m3096getString2EP1pXo322) | startRestartGroup.changed(m3096getString2EP1pXo2222);
         rememberedValue3 = startRestartGroup.rememberedValue();
         if (!changed) {
         }
@@ -1817,9 +1817,9 @@ public final class SearchBarDefaults {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3086getString2EP1pXo322);
+                SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, m3096getString2EP1pXo322);
                 if (z) {
-                    SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3086getString2EP1pXo2222);
+                    SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, m3096getString2EP1pXo2222);
                 }
                 final FocusRequester focusRequester3222 = focusRequester322;
                 SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0<Boolean>() { // from class: androidx.compose.material3.SearchBarDefaults$InputField$2$1.1
@@ -1843,8 +1843,8 @@ public final class SearchBarDefaults {
         Object consume3222 = startRestartGroup.consume(TextKt.getLocalTextStyle());
         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
         TextStyle merge222 = ((TextStyle) consume3222).merge(new TextStyle(j222, 0L, (FontWeight) null, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, 0, 0, 0L, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16777214, (DefaultConstructorMarker) null));
-        SolidColor solidColor222 = new SolidColor(textFieldColors2.m2723cursorColorvNxB06k$material3_release(false), null);
-        KeyboardOptions keyboardOptions222 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6901getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
+        SolidColor solidColor222 = new SolidColor(textFieldColors2.m2733cursorColorvNxB06k$material3_release(false), null);
+        KeyboardOptions keyboardOptions222 = new KeyboardOptions(0, (Boolean) null, 0, ImeAction.Companion.m6914getSearcheUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 119, (DefaultConstructorMarker) null);
         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -320385353, "CC(remember):SearchBar.android.kt#9igjgp");
         int i21222 = i16 & 14;
         z5 = ((i16 & 896) != 256) | (i21222 != 4);
@@ -1939,14 +1939,14 @@ public final class SearchBarDefaults {
                                 ComposerKt.traceEventStart(-1401341985, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:551)");
                             }
                             f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                            Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
+                            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, f2, 0.0f, 2, null);
                             Function2<Composer, Integer, Unit> function216 = function215;
                             ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                             ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer5.getApplier() instanceof Applier)) {
@@ -1958,15 +1958,15 @@ public final class SearchBarDefaults {
                             } else {
                                 composer5.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer5, -127763558, "C551@26247L9:SearchBar.android.kt#uh7d8r");
@@ -2011,14 +2011,14 @@ public final class SearchBarDefaults {
                                 ComposerKt.traceEventStart(907752083, i26, -1, "androidx.compose.material3.SearchBarDefaults.InputField.<anonymous>.<anonymous>.<anonymous> (SearchBar.android.kt:555)");
                             }
                             f2 = SearchBar_androidKt.SearchBarIconOffsetX;
-                            Modifier m787offsetVpY3zN4$default = OffsetKt.m787offsetVpY3zN4$default(Modifier.Companion, Dp.m7251constructorimpl(-f2), 0.0f, 2, null);
+                            Modifier m797offsetVpY3zN4$default = OffsetKt.m797offsetVpY3zN4$default(Modifier.Companion, Dp.m7264constructorimpl(-f2), 0.0f, 2, null);
                             Function2<Composer, Integer, Unit> function217 = function216;
                             ComposerKt.sourceInformationMarkerStart(composer5, 733328855, "CC(Box)P(2,1,3)72@3384L130:Box.kt#2w3rfo");
                             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                             ComposerKt.sourceInformationMarkerStart(composer5, -1323940314, "CC(Layout)P(!1,2)78@3182L23,81@3333L411:Layout.kt#80mrfh");
                             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer5, 0);
                             CompositionLocalMap currentCompositionLocalMap = composer5.getCurrentCompositionLocalMap();
-                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m787offsetVpY3zN4$default);
+                            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer5, m797offsetVpY3zN4$default);
                             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                             ComposerKt.sourceInformationMarkerStart(composer5, -692256719, "CC(ReusableComposeNode)P(1,2)376@14062L9:Composables.kt#9igjgp");
                             if (!(composer5.getApplier() instanceof Applier)) {
@@ -2030,15 +2030,15 @@ public final class SearchBarDefaults {
                             } else {
                                 composer5.useNode();
                             }
-                            Composer m3855constructorimpl = Updater.m3855constructorimpl(composer5);
-                            Updater.m3862setimpl(m3855constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m3862setimpl(m3855constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m3867constructorimpl = Updater.m3867constructorimpl(composer5);
+                            Updater.m3874setimpl(m3867constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m3874setimpl(m3867constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m3855constructorimpl.getInserting() || !Intrinsics.areEqual(m3855constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m3855constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m3855constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m3867constructorimpl.getInserting() || !Intrinsics.areEqual(m3867constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m3867constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m3867constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m3862setimpl(m3855constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m3874setimpl(m3867constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(composer5, -2146769399, "C73@3429L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(composer5, -127537351, "C555@26475L10:SearchBar.android.kt#uh7d8r");
@@ -2055,7 +2055,7 @@ public final class SearchBarDefaults {
                         }
                     }, composer4, 54) : null;
                     composer4.endReplaceGroup();
-                    textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors4222, TextFieldDefaults.m2776contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2088getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
+                    textFieldDefaults.DecorationBox(str2, function213, z10, true, none, mutableInteractionSource6, false, null, function214, rememberComposableLambda, rememberComposableLambda2, null, null, null, SearchBarDefaults.INSTANCE.getInputFieldShape(composer4, 6), textFieldColors4222, TextFieldDefaults.m2786contentPaddingWithoutLabela9UjIt4$default(TextFieldDefaults.INSTANCE, 0.0f, 0.0f, 0.0f, 0.0f, 15, null), ComposableSingletons$SearchBar_androidKt.INSTANCE.m2098getLambda1$material3_release(), composer4, ((i25 << 3) & 112) | 27648, 113246208, 14528);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                         return;
@@ -2094,7 +2094,7 @@ public final class SearchBarDefaults {
 
     @Deprecated(message = "Search bars now take the input field as a parameter. `inputFieldColors` should be passed explicitly to the input field. This parameter will be removed in a future version of the library.", replaceWith = @ReplaceWith(expression = "colors(containerColor, dividerColor)", imports = {}))
     /* renamed from: colors-Klgx-Pg  reason: not valid java name */
-    public final SearchBarColors m2526colorsKlgxPg(long j, long j2, TextFieldColors textFieldColors, Composer composer, int i, int i2) {
+    public final SearchBarColors m2536colorsKlgxPg(long j, long j2, TextFieldColors textFieldColors, Composer composer, int i, int i2) {
         int i3;
         TextFieldColors textFieldColors2;
         ComposerKt.sourceInformationMarkerStart(composer, -1216168196, "C(colors)P(0:c#ui.graphics.Color,1:c#ui.graphics.Color)586@27706L5,587@27773L5,588@27824L18:SearchBar.android.kt#uh7d8r");
@@ -2102,7 +2102,7 @@ public final class SearchBarDefaults {
         long value2 = (i2 & 2) != 0 ? ColorSchemeKt.getValue(SearchViewTokens.INSTANCE.getDividerColor(), composer, 6) : j2;
         if ((i2 & 4) != 0) {
             i3 = i;
-            textFieldColors2 = m2533inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, 0, (i << 3) & 57344, 16383);
+            textFieldColors2 = m2543inputFieldColorsITpI4ow(0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, composer, 0, (i << 3) & 57344, 16383);
         } else {
             i3 = i;
             textFieldColors2 = textFieldColors;
@@ -2120,11 +2120,11 @@ public final class SearchBarDefaults {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: inputFieldColors--u-KgnY  reason: not valid java name */
-    public final /* synthetic */ TextFieldColors m2532inputFieldColorsuKgnY(long j, long j2, long j3, TextSelectionColors textSelectionColors, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, Composer composer, int i, int i2, int i3) {
+    public final /* synthetic */ TextFieldColors m2542inputFieldColorsuKgnY(long j, long j2, long j3, TextSelectionColors textSelectionColors, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, Composer composer, int i, int i2, int i3) {
         TextSelectionColors textSelectionColors2;
         ComposerKt.sourceInformationMarkerStart(composer, 355927049, "C(inputFieldColors)P(9:c#ui.graphics.Color,3:c#ui.graphics.Color,0:c#ui.graphics.Color,8,5:c#ui.graphics.Color,10:c#ui.graphics.Color,1:c#ui.graphics.Color,6:c#ui.graphics.Color,11:c#ui.graphics.Color,4:c#ui.graphics.Color,7:c#ui.graphics.Color,2:c#ui.graphics.Color)599@28228L5,601@28323L5,604@28479L5,605@28558L7,606@28641L5,607@28724L5,609@28832L5,612@29008L5,613@29093L5,615@29203L5,618@29374L5,620@29476L5,624@29586L825:SearchBar.android.kt#uh7d8r");
         long value = (i3 & 1) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getInputTextColor(), composer, 6) : j;
-        long m4536copywmQWz5c$default = (i3 & 2) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
+        long m4548copywmQWz5c$default = (i3 & 2) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j2;
         long value2 = (i3 & 4) != 0 ? ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getCaretColor(), composer, 6) : j3;
         if ((i3 & 8) != 0) {
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC:CompositionLocal.kt#9igjgp");
@@ -2136,12 +2136,12 @@ public final class SearchBarDefaults {
         }
         long value3 = (i3 & 16) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getLeadingIconColor(), composer, 6) : j4;
         long value4 = (i3 & 32) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getLeadingIconColor(), composer, 6) : j5;
-        long m4536copywmQWz5c$default2 = (i3 & 64) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j6;
+        long m4548copywmQWz5c$default2 = (i3 & 64) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledLeadingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j6;
         long value5 = (i3 & 128) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getTrailingIconColor(), composer, 6) : j7;
         long value6 = (i3 & 256) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getTrailingIconColor(), composer, 6) : j8;
-        long m4536copywmQWz5c$default3 = (i3 & 512) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j9;
+        long m4548copywmQWz5c$default3 = (i3 & 512) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledTrailingIconOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j9;
         long value7 = (i3 & 1024) != 0 ? ColorSchemeKt.getValue(SearchBarTokens.INSTANCE.getSupportingTextColor(), composer, 6) : j10;
-        long m4536copywmQWz5c$default4 = (i3 & 2048) != 0 ? Color.m4536copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
+        long m4548copywmQWz5c$default4 = (i3 & 2048) != 0 ? Color.m4548copywmQWz5c$default(ColorSchemeKt.getValue(FilledTextFieldTokens.INSTANCE.getDisabledInputColor(), composer, 6), FilledTextFieldTokens.INSTANCE.getDisabledInputOpacity(), 0.0f, 0.0f, 0.0f, 14, null) : j11;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(355927049, i, i2, "androidx.compose.material3.SearchBarDefaults.inputFieldColors (SearchBar.android.kt:624)");
         }
@@ -2152,14 +2152,14 @@ public final class SearchBarDefaults {
         long j13 = value2;
         long j14 = value3;
         long j15 = value4;
-        long j16 = m4536copywmQWz5c$default2;
+        long j16 = m4548copywmQWz5c$default2;
         long j17 = value6;
         long j18 = value7;
-        TextFieldColors m2533inputFieldColorsITpI4ow = m2533inputFieldColorsITpI4ow(j12, j12, m4536copywmQWz5c$default, j13, textSelectionColors2, j14, j15, j16, value5, j17, m4536copywmQWz5c$default3, j18, j18, m4536copywmQWz5c$default4, composer, (i & 14) | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i4 & 57344) | (i4 & 458752) | (i4 & 3670016) | (i4 & 29360128) | (i4 & 234881024) | (i4 & 1879048192), i6, 0);
+        TextFieldColors m2543inputFieldColorsITpI4ow = m2543inputFieldColorsITpI4ow(j12, j12, m4548copywmQWz5c$default, j13, textSelectionColors2, j14, j15, j16, value5, j17, m4548copywmQWz5c$default3, j18, j18, m4548copywmQWz5c$default4, composer, (i & 14) | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i4 & 57344) | (i4 & 458752) | (i4 & 3670016) | (i4 & 29360128) | (i4 & 234881024) | (i4 & 1879048192), i6, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2533inputFieldColorsITpI4ow;
+        return m2543inputFieldColorsITpI4ow;
     }
 }

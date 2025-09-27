@@ -74,32 +74,32 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         getSavedStateRegistry().registerSavedStateProvider(LIFECYCLE_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda0
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                return FragmentActivity.this.m7784lambda$init$0$androidxfragmentappFragmentActivity();
+                return FragmentActivity.this.m7797lambda$init$0$androidxfragmentappFragmentActivity();
             }
         });
         addOnConfigurationChangedListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda1
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
-                FragmentActivity.this.m7785lambda$init$1$androidxfragmentappFragmentActivity((Configuration) obj);
+                FragmentActivity.this.m7798lambda$init$1$androidxfragmentappFragmentActivity((Configuration) obj);
             }
         });
         addOnNewIntentListener(new Consumer() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda2
             @Override // androidx.core.util.Consumer
             public final void accept(Object obj) {
-                FragmentActivity.this.m7786lambda$init$2$androidxfragmentappFragmentActivity((Intent) obj);
+                FragmentActivity.this.m7799lambda$init$2$androidxfragmentappFragmentActivity((Intent) obj);
             }
         });
         addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.fragment.app.FragmentActivity$$ExternalSyntheticLambda3
             @Override // androidx.activity.contextaware.OnContextAvailableListener
             public final void onContextAvailable(Context context) {
-                FragmentActivity.this.m7787lambda$init$3$androidxfragmentappFragmentActivity(context);
+                FragmentActivity.this.m7800lambda$init$3$androidxfragmentappFragmentActivity(context);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$0$androidx-fragment-app-FragmentActivity  reason: not valid java name */
-    public /* synthetic */ Bundle m7784lambda$init$0$androidxfragmentappFragmentActivity() {
+    public /* synthetic */ Bundle m7797lambda$init$0$androidxfragmentappFragmentActivity() {
         markFragmentsCreated();
         this.mFragmentLifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
         return new Bundle();
@@ -107,19 +107,19 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$1$androidx-fragment-app-FragmentActivity  reason: not valid java name */
-    public /* synthetic */ void m7785lambda$init$1$androidxfragmentappFragmentActivity(Configuration configuration) {
+    public /* synthetic */ void m7798lambda$init$1$androidxfragmentappFragmentActivity(Configuration configuration) {
         this.mFragments.noteStateNotSaved();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$2$androidx-fragment-app-FragmentActivity  reason: not valid java name */
-    public /* synthetic */ void m7786lambda$init$2$androidxfragmentappFragmentActivity(Intent intent) {
+    public /* synthetic */ void m7799lambda$init$2$androidxfragmentappFragmentActivity(Intent intent) {
         this.mFragments.noteStateNotSaved();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$3$androidx-fragment-app-FragmentActivity  reason: not valid java name */
-    public /* synthetic */ void m7787lambda$init$3$androidxfragmentappFragmentActivity(Context context) {
+    public /* synthetic */ void m7800lambda$init$3$androidxfragmentappFragmentActivity(Context context) {
         this.mFragments.attachHost(null);
     }
 

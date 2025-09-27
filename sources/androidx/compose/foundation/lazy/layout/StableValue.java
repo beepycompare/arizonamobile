@@ -12,27 +12,27 @@ final class StableValue<T> {
     private final T value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ StableValue m1074boximpl(Object obj) {
+    public static final /* synthetic */ StableValue m1084boximpl(Object obj) {
         return new StableValue(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1075constructorimpl(T t) {
+    public static <T> Object m1085constructorimpl(T t) {
         return t;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1076equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof StableValue) && Intrinsics.areEqual(obj, ((StableValue) obj2).m1080unboximpl());
+    public static boolean m1086equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof StableValue) && Intrinsics.areEqual(obj, ((StableValue) obj2).m1090unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1077equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m1087equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1078hashCodeimpl(Object obj) {
+    public static int m1088hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -40,24 +40,24 @@ final class StableValue<T> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1079toStringimpl(Object obj) {
+    public static String m1089toStringimpl(Object obj) {
         return "StableValue(value=" + obj + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1076equalsimpl(this.value, obj);
+        return m1086equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1078hashCodeimpl(this.value);
+        return m1088hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1079toStringimpl(this.value);
+        return m1089toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m1080unboximpl() {
+    public final /* synthetic */ Object m1090unboximpl() {
         return this.value;
     }
 

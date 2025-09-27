@@ -1,11 +1,16 @@
 package com.google.firebase.datastorage;
 
 import android.content.Context;
+import android.os.Process;
+import android.util.Log;
+import androidx.datastore.core.CorruptionException;
 import androidx.datastore.core.DataStore;
+import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler;
 import androidx.datastore.preferences.PreferenceDataStoreDelegateKt;
 import androidx.datastore.preferences.SharedPreferencesMigrationKt;
 import androidx.datastore.preferences.core.MutablePreferences;
 import androidx.datastore.preferences.core.Preferences;
+import androidx.datastore.preferences.core.PreferencesFactory;
 import androidx.exifinterface.media.ExifInterface;
 import java.util.List;
 import java.util.Map;
@@ -36,14 +41,21 @@ public final class JavaDataStorage {
         this.context = context;
         this.name = name;
         this.editLock = new ThreadLocal<>();
-        this.dataStore$delegate = PreferenceDataStoreDelegateKt.preferencesDataStore$default(name, null, new Function1() { // from class: com.google.firebase.datastorage.JavaDataStorage$$ExternalSyntheticLambda0
+        this.dataStore$delegate = PreferenceDataStoreDelegateKt.preferencesDataStore$default(name, new ReplaceFileCorruptionHandler(new Function1() { // from class: com.google.firebase.datastorage.JavaDataStorage$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List dataStore_delegate$lambda$0;
-                dataStore_delegate$lambda$0 = JavaDataStorage.dataStore_delegate$lambda$0(JavaDataStorage.this, (Context) obj);
+                Preferences dataStore_delegate$lambda$0;
+                dataStore_delegate$lambda$0 = JavaDataStorage.dataStore_delegate$lambda$0(JavaDataStorage.this, (CorruptionException) obj);
                 return dataStore_delegate$lambda$0;
             }
-        }, null, 10, null);
+        }), new Function1() { // from class: com.google.firebase.datastorage.JavaDataStorage$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                List dataStore_delegate$lambda$1;
+                dataStore_delegate$lambda$1 = JavaDataStorage.dataStore_delegate$lambda$1(JavaDataStorage.this, (Context) obj);
+                return dataStore_delegate$lambda$1;
+            }
+        }, null, 8, null);
         this.dataStore = getDataStore(context);
     }
 
@@ -60,9 +72,16 @@ public final class JavaDataStorage {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final List dataStore_delegate$lambda$0(JavaDataStorage javaDataStorage, Context it) {
+    public static final List dataStore_delegate$lambda$1(JavaDataStorage javaDataStorage, Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return CollectionsKt.listOf(SharedPreferencesMigrationKt.SharedPreferencesMigration$default(it, javaDataStorage.name, null, 4, null));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Preferences dataStore_delegate$lambda$0(JavaDataStorage javaDataStorage, CorruptionException ex) {
+        Intrinsics.checkNotNullParameter(ex, "ex");
+        Log.w(Reflection.getOrCreateKotlinClass(JavaDataStorage.class).getSimpleName(), "CorruptionException in " + javaDataStorage.name + " DataStore running in process " + Process.myPid(), ex);
+        return PreferencesFactory.createEmpty();
     }
 
     public final <T> T getSync(Preferences.Key<T> key, T t) {

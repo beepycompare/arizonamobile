@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.documents.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public final class DocumentsArmyBinding implements ViewBinding {
     public final ImageView alertNot;
     public final TextView armyOnline;

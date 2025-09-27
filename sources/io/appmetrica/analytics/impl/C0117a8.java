@@ -7,10 +7,10 @@ import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrate
 public final class C0117a8 implements AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0560re f788a = new C0560re();
+    public final C0560re f789a = new C0560re();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
     public final PermissionStrategy getAskForPermissionStrategy() {
-        return this.f788a;
+        return this.f789a;
     }
 }

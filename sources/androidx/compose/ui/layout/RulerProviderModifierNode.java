@@ -45,10 +45,10 @@ public final class RulerProviderModifierNode extends Modifier.Node implements La
                 RulerProviderModifierNode rulerProviderModifierNode = RulerProviderModifierNode.this;
                 rulerProviderModifierNode.setPreviousGeneration(rulerProviderModifierNode.getGeneration().getIntValue());
                 if (RulerProviderModifierNode.this.getPreviousGeneration() > 0) {
-                    long mo5962getSizeYbymL2g = rulerScope.getCoordinates().mo5962getSizeYbymL2g();
+                    long mo5975getSizeYbymL2g = rulerScope.getCoordinates().mo5975getSizeYbymL2g();
                     ScatterMap<Object, WindowWindowInsetsAnimationValues> insetsValues = insetsListener.getInsetsValues();
-                    int i = (int) (mo5962getSizeYbymL2g >> 32);
-                    int i2 = (int) (mo5962getSizeYbymL2g & 4294967295L);
+                    int i = (int) (mo5975getSizeYbymL2g >> 32);
+                    int i2 = (int) (mo5975getSizeYbymL2g & 4294967295L);
                     windowInsetsRulersArr = WindowInsetsRulers_androidKt.AnimatableInsetsRulers;
                     int length = windowInsetsRulersArr.length;
                     int i3 = 0;
@@ -58,12 +58,12 @@ public final class RulerProviderModifierNode extends Modifier.Node implements La
                         Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);
                         WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues2 = windowWindowInsetsAnimationValues;
                         RulerScope rulerScope2 = rulerScope;
-                        WindowInsetsRulers_androidKt.m6073provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getCurrent(), windowWindowInsetsAnimationValues2.m6074getCurrenthdzbrEE(), i, i2);
+                        WindowInsetsRulers_androidKt.m6086provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getCurrent(), windowWindowInsetsAnimationValues2.m6087getCurrenthdzbrEE(), i, i2);
                         if (windowWindowInsetsAnimationValues2.isAnimating()) {
-                            WindowInsetsRulers_androidKt.m6073provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getSource(), windowWindowInsetsAnimationValues2.m6076getSourceValueInsetshdzbrEE(), i, i2);
-                            WindowInsetsRulers_androidKt.m6073provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getTarget(), windowWindowInsetsAnimationValues2.m6077getTargetValueInsetshdzbrEE(), i, i2);
+                            WindowInsetsRulers_androidKt.m6086provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getSource(), windowWindowInsetsAnimationValues2.m6089getSourceValueInsetshdzbrEE(), i, i2);
+                            WindowInsetsRulers_androidKt.m6086provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getTarget(), windowWindowInsetsAnimationValues2.m6090getTargetValueInsetshdzbrEE(), i, i2);
                         }
-                        WindowInsetsRulers_androidKt.m6073provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getMaximum(), windowWindowInsetsAnimationValues2.m6075getMaximumhdzbrEE(), i, i2);
+                        WindowInsetsRulers_androidKt.m6086provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getMaximum(), windowWindowInsetsAnimationValues2.m6088getMaximumhdzbrEE(), i, i2);
                         i3++;
                         rulerScope = rulerScope2;
                     }
@@ -128,9 +128,9 @@ public final class RulerProviderModifierNode extends Modifier.Node implements La
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo70measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), mo5954measureBRTryo0.getHeight(), null, this.rulerLambda, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RulerProviderModifierNode$measure$1
+    public MeasureResult mo80measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), mo5967measureBRTryo0.getHeight(), null, this.rulerLambda, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.layout.RulerProviderModifierNode$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

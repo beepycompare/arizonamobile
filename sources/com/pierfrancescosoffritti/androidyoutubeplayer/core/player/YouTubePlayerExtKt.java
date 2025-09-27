@@ -7,7 +7,7 @@ import kotlin.coroutines.SafeContinuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 /* compiled from: YouTubePlayerExt.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086@ø\u0001\u0000¢\u0006\u0002\u0010\u0003\u0082\u0002\u0004\n\u0002\b\u0019¨\u0006\u0004"}, d2 = {"isMuted", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "(Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "core_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0012\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086@¢\u0006\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"isMuted", "", "Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;", "(Lcom/pierfrancescosoffritti/androidyoutubeplayer/core/player/YouTubePlayer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "core_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class YouTubePlayerExtKt {
     public static final Object isMuted(YouTubePlayer youTubePlayer, Continuation<? super Boolean> continuation) {
@@ -19,7 +19,7 @@ public final class YouTubePlayerExtKt {
                 Boolean valueOf = Boolean.valueOf(z);
                 Continuation<Boolean> continuation2 = safeContinuation2;
                 Result.Companion companion = Result.Companion;
-                continuation2.resumeWith(Result.m9091constructorimpl(valueOf));
+                continuation2.resumeWith(Result.m9106constructorimpl(valueOf));
             }
         });
         Object orThrow = safeContinuation.getOrThrow();

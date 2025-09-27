@@ -25,7 +25,7 @@ public final class BottomAppBarDefaults {
     public static final int $stable = 0;
     private static final PaddingValues ContentPadding;
     public static final BottomAppBarDefaults INSTANCE = new BottomAppBarDefaults();
-    private static final float ContainerElevation = Dp.m7251constructorimpl(0);
+    private static final float ContainerElevation = Dp.m7264constructorimpl(0);
 
     private BottomAppBarDefaults() {
     }
@@ -44,7 +44,7 @@ public final class BottomAppBarDefaults {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m1900getContainerElevationD9Ej5fM() {
+    public final float m1910getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -57,12 +57,12 @@ public final class BottomAppBarDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(688896409, i, -1, "androidx.compose.material3.BottomAppBarDefaults.<get-windowInsets> (AppBar.kt:1553)");
         }
-        WindowInsets m912onlybOOhFvg = WindowInsetsKt.m912onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m926plusgK_yJZ4(WindowInsetsSides.Companion.m936getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m934getBottomJoeWqyM()));
+        WindowInsets m922onlybOOhFvg = WindowInsetsKt.m922onlybOOhFvg(SystemBarsDefaultInsets_androidKt.getSystemBarsForVisualComponents(WindowInsets.Companion, composer, 6), WindowInsetsSides.m936plusgK_yJZ4(WindowInsetsSides.Companion.m946getHorizontalJoeWqyM(), WindowInsetsSides.Companion.m944getBottomJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m912onlybOOhFvg;
+        return m922onlybOOhFvg;
     }
 
     public final long getBottomAppBarFabColor(Composer composer, int i) {
@@ -119,6 +119,6 @@ public final class BottomAppBarDefaults {
         f = AppBarKt.BottomAppBarHorizontalPadding;
         float bottomAppBarVerticalPadding = AppBarKt.getBottomAppBarVerticalPadding();
         f2 = AppBarKt.BottomAppBarHorizontalPadding;
-        ContentPadding = PaddingKt.m829PaddingValuesa9UjIt4$default(f, bottomAppBarVerticalPadding, f2, 0.0f, 8, null);
+        ContentPadding = PaddingKt.m839PaddingValuesa9UjIt4$default(f, bottomAppBarVerticalPadding, f2, 0.0f, 8, null);
     }
 }

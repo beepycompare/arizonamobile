@@ -8,6 +8,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class RotateKt {
     public static final Modifier rotate(Modifier modifier, float f) {
-        return f == 0.0f ? modifier : GraphicsLayerModifierKt.m4703graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524031, null);
+        return f == 0.0f ? modifier : GraphicsLayerModifierKt.m4715graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, f, 0.0f, 0L, null, false, null, 0L, 0L, 0, 0, null, 524031, null);
     }
 }

@@ -9,21 +9,21 @@ import java.util.EnumSet;
 public final class N5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f589a;
+    public final Context f590a;
     public final O5 b = new O5();
     public final EnumSet c = EnumSet.of(Ze.OFFLINE);
     public final String d = "connection based";
 
     public N5(Context context) {
-        this.f589a = context;
+        this.f590a = context;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
     public final boolean canBeExecuted() {
         O5 o5 = this.b;
-        Context context = this.f589a;
+        Context context = this.f590a;
         o5.getClass();
-        Ve ve = AbstractC0124af.f793a;
+        Ve ve = AbstractC0124af.f794a;
         return !this.c.contains((Ze) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", Ze.UNDEFINED, new Ye()));
     }
 

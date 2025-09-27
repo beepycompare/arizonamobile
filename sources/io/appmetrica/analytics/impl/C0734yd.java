@@ -9,12 +9,12 @@ import org.json.JSONObject;
 public final class C0734yd implements JsonParser, Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RemoteConfigExtensionConfiguration f1170a;
+    public final RemoteConfigExtensionConfiguration f1171a;
     public final /* synthetic */ JsonParser b;
     public final /* synthetic */ Converter c;
 
     public C0734yd(RemoteConfigExtensionConfiguration<Object> remoteConfigExtensionConfiguration) {
-        this.f1170a = remoteConfigExtensionConfiguration;
+        this.f1171a = remoteConfigExtensionConfiguration;
         this.b = remoteConfigExtensionConfiguration.getJsonParser();
         this.c = remoteConfigExtensionConfiguration.getProtobufConverter();
     }
@@ -56,6 +56,6 @@ public final class C0734yd implements JsonParser, Converter {
     }
 
     public final RemoteConfigExtensionConfiguration<Object> a() {
-        return this.f1170a;
+        return this.f1171a;
     }
 }

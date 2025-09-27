@@ -1,11 +1,11 @@
 package ru.rustore.sdk.metrics.internal;
 
 import kotlin.jvm.internal.Intrinsics;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class S {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b0 f1438a;
+    public final b0 f1439a;
     public final C b;
     public final O c;
     public final e0 d;
@@ -15,7 +15,7 @@ public final class S {
         Intrinsics.checkNotNullParameter(packageNameDataSource, "packageNameDataSource");
         Intrinsics.checkNotNullParameter(remoteMetricsEventDataSource, "remoteMetricsEventDataSource");
         Intrinsics.checkNotNullParameter(versionNameDataSource, "versionNameDataSource");
-        this.f1438a = userIdDataSource;
+        this.f1439a = userIdDataSource;
         this.b = packageNameDataSource;
         this.c = remoteMetricsEventDataSource;
         this.d = versionNameDataSource;

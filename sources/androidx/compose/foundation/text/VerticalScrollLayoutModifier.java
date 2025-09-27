@@ -105,14 +105,14 @@ public final class VerticalScrollLayoutModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo738measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo5954measureBRTryo0 = measurable.mo5954measureBRTryo0(Constraints.m7194copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
-        final int min = Math.min(mo5954measureBRTryo0.getHeight(), Constraints.m7203getMaxHeightimpl(j));
-        return MeasureScope.layout$default(measureScope, mo5954measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.VerticalScrollLayoutModifier$$ExternalSyntheticLambda0
+    public MeasureResult mo748measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo5967measureBRTryo0 = measurable.mo5967measureBRTryo0(Constraints.m7207copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
+        final int min = Math.min(mo5967measureBRTryo0.getHeight(), Constraints.m7216getMaxHeightimpl(j));
+        return MeasureScope.layout$default(measureScope, mo5967measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.VerticalScrollLayoutModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = VerticalScrollLayoutModifier.measure_3p2s80s$lambda$0(VerticalScrollLayoutModifier.this, mo5954measureBRTryo0, min, (Placeable.PlacementScope) obj);
+                measure_3p2s80s$lambda$0 = VerticalScrollLayoutModifier.measure_3p2s80s$lambda$0(VerticalScrollLayoutModifier.this, mo5967measureBRTryo0, min, (Placeable.PlacementScope) obj);
                 return measure_3p2s80s$lambda$0;
             }
         }, 4, null);

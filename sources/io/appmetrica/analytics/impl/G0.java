@@ -6,20 +6,20 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class G0 implements AppMetricaPlugins {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I0 f451a;
+    public final I0 f452a;
 
     public G0(I0 i0) {
-        this.f451a = i0;
+        this.f452a = i0;
     }
 
     @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
     public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        this.f451a.a(pluginErrorDetails, str);
+        this.f452a.a(pluginErrorDetails, str);
     }
 
     @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        this.f451a.a(pluginErrorDetails);
+        this.f452a.a(pluginErrorDetails);
     }
 
     public G0() {
@@ -28,6 +28,6 @@ public final class G0 implements AppMetricaPlugins {
 
     @Override // io.appmetrica.analytics.plugins.AppMetricaPlugins
     public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f451a.a(str, str2, pluginErrorDetails);
+        this.f452a.a(str, str2, pluginErrorDetails);
     }
 }

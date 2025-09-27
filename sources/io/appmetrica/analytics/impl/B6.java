@@ -29,7 +29,7 @@ public final class B6 extends C0410lh {
             return;
         }
         this.c = true;
-        String a2 = this.h.f636a.a();
+        String a2 = this.h.f637a.a();
         T1 t1 = this.i;
         Context context = this.f;
         t1.getClass();
@@ -37,7 +37,7 @@ public final class B6 extends C0410lh {
         if (Intrinsics.areEqual(a2, serviceInfo != null ? serviceInfo.processName : null)) {
             this.j.a(this.g);
         } else {
-            this.f687a.c();
+            this.f688a.c();
             this.c = false;
             super.a();
         }

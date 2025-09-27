@@ -37,17 +37,17 @@ final class IntrinsicHeightNode extends IntrinsicSizeModifier {
 
     @Override // androidx.compose.foundation.layout.IntrinsicSizeModifier
     /* renamed from: calculateContentConstraints-l58MMJ0  reason: not valid java name */
-    public long mo779calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j) {
+    public long mo789calculateContentConstraintsl58MMJ0(MeasureScope measureScope, Measurable measurable, long j) {
         int maxIntrinsicHeight;
         if (this.height == IntrinsicSize.Min) {
-            maxIntrinsicHeight = measurable.minIntrinsicHeight(Constraints.m7204getMaxWidthimpl(j));
+            maxIntrinsicHeight = measurable.minIntrinsicHeight(Constraints.m7217getMaxWidthimpl(j));
         } else {
-            maxIntrinsicHeight = measurable.maxIntrinsicHeight(Constraints.m7204getMaxWidthimpl(j));
+            maxIntrinsicHeight = measurable.maxIntrinsicHeight(Constraints.m7217getMaxWidthimpl(j));
         }
         if (maxIntrinsicHeight < 0) {
             maxIntrinsicHeight = 0;
         }
-        return Constraints.Companion.m7215fixedHeightOenEA2s(maxIntrinsicHeight);
+        return Constraints.Companion.m7228fixedHeightOenEA2s(maxIntrinsicHeight);
     }
 
     @Override // androidx.compose.foundation.layout.IntrinsicSizeModifier, androidx.compose.ui.node.LayoutModifierNode

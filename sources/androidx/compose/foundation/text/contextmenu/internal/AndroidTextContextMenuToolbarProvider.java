@@ -184,7 +184,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
     /* JADX INFO: Access modifiers changed from: private */
     public final Rect calculateBoundsInRoot(TextContextMenuDataProvider textContextMenuDataProvider) {
         LayoutCoordinates invoke = this.coordinatesProvider.invoke();
-        return textContextMenuDataProvider.contentBounds(invoke).m4330translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(invoke));
+        return textContextMenuDataProvider.contentBounds(invoke).m4342translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(invoke));
     }
 
     private final <T, S> T observeReadsAndGet(S s, Function1<? super S, Unit> function1, final Function0<? extends T> function0) {
@@ -309,7 +309,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
 
         @Override // androidx.compose.foundation.text.contextmenu.data.TextContextMenuSession
         public void close() {
-            this.channel.mo8127trySendJP2dKIU(Unit.INSTANCE);
+            this.channel.mo8140trySendJP2dKIU(Unit.INSTANCE);
         }
 
         public final Object awaitClose(Continuation<? super Unit> continuation) {

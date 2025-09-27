@@ -4,21 +4,21 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* renamed from: ru.rustore.sdk.metrics.internal.h  reason: case insensitive filesystem */
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class C0829h extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0835n f1456a;
+    public final /* synthetic */ C0835n f1457a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0829h(C0835n c0835n) {
         super(0);
-        this.f1456a = c0835n;
+        this.f1457a = c0835n;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        this.f1456a.f1462a.a();
+        this.f1457a.f1463a.a();
         return Unit.INSTANCE;
     }
 }

@@ -168,15 +168,15 @@ public final class SubcomposeLayoutState {
         }
 
         /* renamed from: premeasure-0kLqBqw */
-        default void mo5981premeasure0kLqBqw(int i, long j) {
+        default void mo5994premeasure0kLqBqw(int i, long j) {
         }
 
         default void traverseDescendants(Object obj, Function1<? super TraversableNode, ? extends TraversableNode.Companion.TraverseDescendantsAction> function1) {
         }
 
         /* renamed from: getSize-YEO4UFw */
-        default long mo5980getSizeYEO4UFw(int i) {
-            return IntSize.Companion.m7427getZeroYbymL2g();
+        default long mo5993getSizeYEO4UFw(int i) {
+            return IntSize.Companion.m7440getZeroYbymL2g();
         }
     }
 }

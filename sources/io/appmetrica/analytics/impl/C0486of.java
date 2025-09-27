@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0486of implements InterfaceC0559rd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1020a;
+    public final Context f1021a;
     public final String b;
     public final String c;
 
     public C0486of(Context context, String str, String str2) {
-        this.f1020a = context;
+        this.f1021a = context;
         this.b = str;
         this.c = str2;
     }
@@ -27,23 +27,23 @@ public final class C0486of implements InterfaceC0559rd {
         }
         if (obj instanceof C0486of) {
             C0486of c0486of = (C0486of) obj;
-            return Intrinsics.areEqual(this.f1020a, c0486of.f1020a) && Intrinsics.areEqual(this.b, c0486of.b) && Intrinsics.areEqual(this.c, c0486of.c);
+            return Intrinsics.areEqual(this.f1021a, c0486of.f1021a) && Intrinsics.areEqual(this.b, c0486of.b) && Intrinsics.areEqual(this.c, c0486of.c);
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return this.c.hashCode() + ((hashCode + (this.f1020a.hashCode() * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (this.f1021a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "PreferencesBasedModuleEntryPoint(context=" + this.f1020a + ", prefName=" + this.b + ", prefValueName=" + this.c + ')';
+        return "PreferencesBasedModuleEntryPoint(context=" + this.f1021a + ", prefName=" + this.b + ", prefValueName=" + this.c + ')';
     }
 
     public static C0486of a(C0486of c0486of, Context context, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            context = c0486of.f1020a;
+            context = c0486of.f1021a;
         }
         if ((i & 2) != 0) {
             str = c0486of.b;
@@ -57,7 +57,7 @@ public final class C0486of implements InterfaceC0559rd {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0559rd
     public final String a() {
-        String string = this.f1020a.getSharedPreferences(this.b, 0).getString(this.c, "");
+        String string = this.f1021a.getSharedPreferences(this.b, 0).getString(this.c, "");
         return string == null ? "" : string;
     }
 }

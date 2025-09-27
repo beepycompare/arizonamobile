@@ -147,11 +147,11 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         if (toggleableState != null) {
             int i = WhenMappings.$EnumSwitchMapping$0[toggleableState.ordinal()];
             if (i == 1) {
-                if ((role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6467getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m6470equalsimpl0(role.m6473unboximpl(), Role.Companion.m6480getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_on);
                 }
             } else if (i == 2) {
-                if ((role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6467getSwitcho7Vup1c())) && orNull == null) {
+                if ((role == null ? false : Role.m6470equalsimpl0(role.m6473unboximpl(), Role.Companion.m6480getSwitcho7Vup1c())) && orNull == null) {
                     orNull = resources.getString(R.string.state_off);
                 }
             } else if (i != 3) {
@@ -165,7 +165,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             boolean booleanValue = bool.booleanValue();
-            if (!(role == null ? false : Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c())) && orNull == null) {
+            if (!(role == null ? false : Role.m6470equalsimpl0(role.m6473unboximpl(), Role.Companion.m6481getTabo7Vup1c())) && orNull == null) {
                 if (booleanValue) {
                     orNull = resources.getString(R.string.selected);
                 } else {
@@ -225,7 +225,7 @@ public final class AndroidComposeViewAccessibilityDelegateCompat_androidKt {
         Boolean bool = (Boolean) SemanticsConfigurationKt.getOrNull(semanticsNode.getUnmergedConfig$ui_release(), SemanticsProperties.INSTANCE.getSelected());
         if (bool != null) {
             bool.booleanValue();
-            if (!(role != null ? Role.m6457equalsimpl0(role.m6460unboximpl(), Role.Companion.m6468getTabo7Vup1c()) : false)) {
+            if (!(role != null ? Role.m6470equalsimpl0(role.m6473unboximpl(), Role.Companion.m6481getTabo7Vup1c()) : false)) {
                 return true;
             }
         }

@@ -23,14 +23,14 @@ public final class BrushPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo5236getIntrinsicSizeNHjbRc() {
-        return this.brush.mo4484getIntrinsicSizeNHjbRc();
+    public long mo5248getIntrinsicSizeNHjbRc() {
+        return this.brush.mo4496getIntrinsicSizeNHjbRc();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.graphics.painter.Painter
     public void onDraw(DrawScope drawScope) {
-        DrawScope.m5109drawRectAsUm42w$default(drawScope, this.brush, 0L, 0L, this.alpha, null, this.colorFilter, 0, 86, null);
+        DrawScope.m5121drawRectAsUm42w$default(drawScope, this.brush, 0L, 0L, this.alpha, null, this.colorFilter, 0, 86, null);
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter

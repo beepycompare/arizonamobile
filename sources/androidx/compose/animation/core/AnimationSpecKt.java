@@ -74,18 +74,18 @@ public final class AnimationSpecKt {
     }
 
     /* renamed from: repeatable-91I0pcU$default  reason: not valid java name */
-    public static /* synthetic */ RepeatableSpec m153repeatable91I0pcU$default(int i, DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode, long j, int i2, Object obj) {
+    public static /* synthetic */ RepeatableSpec m163repeatable91I0pcU$default(int i, DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode, long j, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             repeatMode = RepeatMode.Restart;
         }
         if ((i2 & 8) != 0) {
-            j = StartOffset.m186constructorimpl$default(0, 0, 2, null);
+            j = StartOffset.m196constructorimpl$default(0, 0, 2, null);
         }
-        return m152repeatable91I0pcU(i, durationBasedAnimationSpec, repeatMode, j);
+        return m162repeatable91I0pcU(i, durationBasedAnimationSpec, repeatMode, j);
     }
 
     /* renamed from: repeatable-91I0pcU  reason: not valid java name */
-    public static final <T> RepeatableSpec<T> m152repeatable91I0pcU(int i, DurationBasedAnimationSpec<T> durationBasedAnimationSpec, RepeatMode repeatMode, long j) {
+    public static final <T> RepeatableSpec<T> m162repeatable91I0pcU(int i, DurationBasedAnimationSpec<T> durationBasedAnimationSpec, RepeatMode repeatMode, long j) {
         return new RepeatableSpec<>(i, durationBasedAnimationSpec, repeatMode, j, (DefaultConstructorMarker) null);
     }
 
@@ -98,22 +98,22 @@ public final class AnimationSpecKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This method has been deprecated in favor of the repeatable function that accepts start offset.")
     public static final /* synthetic */ RepeatableSpec repeatable(int i, DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode) {
-        return new RepeatableSpec(i, durationBasedAnimationSpec, repeatMode, StartOffset.m186constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
+        return new RepeatableSpec(i, durationBasedAnimationSpec, repeatMode, StartOffset.m196constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
     }
 
     /* renamed from: infiniteRepeatable-9IiC70o$default  reason: not valid java name */
-    public static /* synthetic */ InfiniteRepeatableSpec m151infiniteRepeatable9IiC70o$default(DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode, long j, int i, Object obj) {
+    public static /* synthetic */ InfiniteRepeatableSpec m161infiniteRepeatable9IiC70o$default(DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode, long j, int i, Object obj) {
         if ((i & 2) != 0) {
             repeatMode = RepeatMode.Restart;
         }
         if ((i & 4) != 0) {
-            j = StartOffset.m186constructorimpl$default(0, 0, 2, null);
+            j = StartOffset.m196constructorimpl$default(0, 0, 2, null);
         }
-        return m150infiniteRepeatable9IiC70o(durationBasedAnimationSpec, repeatMode, j);
+        return m160infiniteRepeatable9IiC70o(durationBasedAnimationSpec, repeatMode, j);
     }
 
     /* renamed from: infiniteRepeatable-9IiC70o  reason: not valid java name */
-    public static final <T> InfiniteRepeatableSpec<T> m150infiniteRepeatable9IiC70o(DurationBasedAnimationSpec<T> durationBasedAnimationSpec, RepeatMode repeatMode, long j) {
+    public static final <T> InfiniteRepeatableSpec<T> m160infiniteRepeatable9IiC70o(DurationBasedAnimationSpec<T> durationBasedAnimationSpec, RepeatMode repeatMode, long j) {
         return new InfiniteRepeatableSpec<>(durationBasedAnimationSpec, repeatMode, j, (DefaultConstructorMarker) null);
     }
 
@@ -126,7 +126,7 @@ public final class AnimationSpecKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This method has been deprecated in favor of the infinite repeatable function that accepts start offset.")
     public static final /* synthetic */ InfiniteRepeatableSpec infiniteRepeatable(DurationBasedAnimationSpec durationBasedAnimationSpec, RepeatMode repeatMode) {
-        return new InfiniteRepeatableSpec(durationBasedAnimationSpec, repeatMode, StartOffset.m186constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
+        return new InfiniteRepeatableSpec(durationBasedAnimationSpec, repeatMode, StartOffset.m196constructorimpl$default(0, 0, 2, null), (DefaultConstructorMarker) null);
     }
 
     public static final <T> SnapSpec<T> snap(int i) {

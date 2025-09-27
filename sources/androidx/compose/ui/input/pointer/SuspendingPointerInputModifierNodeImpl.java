@@ -101,7 +101,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
         this.pointerHandlers = mutableVector;
         this.pointerHandlersLock = mutableVector;
         this.dispatchingPointerHandlers = new MutableVector<>(new PointerEventHandlerCoroutine[16], 0);
-        this.boundsSize = IntSize.Companion.m7427getZeroYbymL2g();
+        this.boundsSize = IntSize.Companion.m7440getZeroYbymL2g();
     }
 
     @Deprecated(message = "Exists to maintain compatibility with previous API shape")
@@ -156,16 +156,16 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
     /* renamed from: getSize-YbymL2g */
-    public long mo410getSizeYbymL2g() {
+    public long mo420getSizeYbymL2g() {
         return this.boundsSize;
     }
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
     /* renamed from: getExtendedTouchPadding-NH-jbRc */
-    public long mo409getExtendedTouchPaddingNHjbRc() {
-        long j = mo420toSizeXkaWNTQ(getViewConfiguration().mo6161getMinimumTouchTargetSizeMYxV2XQ());
-        long mo410getSizeYbymL2g = mo410getSizeYbymL2g();
-        return Size.m4353constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - ((int) (mo410getSizeYbymL2g >> 32))) / 2.0f) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - ((int) (mo410getSizeYbymL2g & 4294967295L))) / 2.0f) & 4294967295L));
+    public long mo419getExtendedTouchPaddingNHjbRc() {
+        long j = mo430toSizeXkaWNTQ(getViewConfiguration().mo6174getMinimumTouchTargetSizeMYxV2XQ());
+        long mo420getSizeYbymL2g = mo420getSizeYbymL2g();
+        return Size.m4365constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - ((int) (mo420getSizeYbymL2g >> 32))) / 2.0f) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - ((int) (mo420getSizeYbymL2g & 4294967295L))) / 2.0f) & 4294967295L));
     }
 
     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -261,7 +261,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo227onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo237onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         Job launch$default;
         this.boundsSize = j;
         if (pointerEventPass == PointerEventPass.Initial) {
@@ -307,9 +307,9 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                 int size2 = changes2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
                     PointerInputChange pointerInputChange = changes2.get(i2);
-                    long m5824getIdJ3iCeTQ = pointerInputChange.m5824getIdJ3iCeTQ();
-                    long m5826getPositionF1C5BW0 = pointerInputChange.m5826getPositionF1C5BW0();
-                    arrayList.add(new PointerInputChange(m5824getIdJ3iCeTQ, pointerInputChange.getUptimeMillis(), m5826getPositionF1C5BW0, false, pointerInputChange.getPressure(), pointerInputChange.getUptimeMillis(), pointerInputChange.m5826getPositionF1C5BW0(), pointerInputChange.getPressed(), pointerInputChange.getPressed(), pointerInputChange.m5829getTypeT8wyACA(), 0L, 1024, (DefaultConstructorMarker) null));
+                    long m5837getIdJ3iCeTQ = pointerInputChange.m5837getIdJ3iCeTQ();
+                    long m5839getPositionF1C5BW0 = pointerInputChange.m5839getPositionF1C5BW0();
+                    arrayList.add(new PointerInputChange(m5837getIdJ3iCeTQ, pointerInputChange.getUptimeMillis(), m5839getPositionF1C5BW0, false, pointerInputChange.getPressure(), pointerInputChange.getUptimeMillis(), pointerInputChange.m5839getPositionF1C5BW0(), pointerInputChange.getPressed(), pointerInputChange.getPressed(), pointerInputChange.m5842getTypeT8wyACA(), 0L, 1024, (DefaultConstructorMarker) null));
                 }
                 PointerEvent pointerEvent2 = new PointerEvent(arrayList);
                 this.currentEvent = pointerEvent2;
@@ -345,50 +345,50 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx--R2X_6o */
-        public int mo412roundToPxR2X_6o(long j) {
-            return this.$$delegate_0.mo412roundToPxR2X_6o(j);
+        public int mo422roundToPxR2X_6o(long j) {
+            return this.$$delegate_0.mo422roundToPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx-0680j_4 */
-        public int mo413roundToPx0680j_4(float f) {
-            return this.$$delegate_0.mo413roundToPx0680j_4(f);
+        public int mo423roundToPx0680j_4(float f) {
+            return this.$$delegate_0.mo423roundToPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toDp-GaN1DYA */
-        public float mo414toDpGaN1DYA(long j) {
-            return this.$$delegate_0.mo414toDpGaN1DYA(j);
+        public float mo424toDpGaN1DYA(long j) {
+            return this.$$delegate_0.mo424toDpGaN1DYA(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo415toDpu2uoSUM(float f) {
-            return this.$$delegate_0.mo415toDpu2uoSUM(f);
+        public float mo425toDpu2uoSUM(float f) {
+            return this.$$delegate_0.mo425toDpu2uoSUM(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo416toDpu2uoSUM(int i) {
-            return this.$$delegate_0.mo416toDpu2uoSUM(i);
+        public float mo426toDpu2uoSUM(int i) {
+            return this.$$delegate_0.mo426toDpu2uoSUM(i);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDpSize-k-rfVVM */
-        public long mo417toDpSizekrfVVM(long j) {
-            return this.$$delegate_0.mo417toDpSizekrfVVM(j);
+        public long mo427toDpSizekrfVVM(long j) {
+            return this.$$delegate_0.mo427toDpSizekrfVVM(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx--R2X_6o */
-        public float mo418toPxR2X_6o(long j) {
-            return this.$$delegate_0.mo418toPxR2X_6o(j);
+        public float mo428toPxR2X_6o(long j) {
+            return this.$$delegate_0.mo428toPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx-0680j_4 */
-        public float mo419toPx0680j_4(float f) {
-            return this.$$delegate_0.mo419toPx0680j_4(f);
+        public float mo429toPx0680j_4(float f) {
+            return this.$$delegate_0.mo429toPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
@@ -398,26 +398,26 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSize-XkaWNTQ */
-        public long mo420toSizeXkaWNTQ(long j) {
-            return this.$$delegate_0.mo420toSizeXkaWNTQ(j);
+        public long mo430toSizeXkaWNTQ(long j) {
+            return this.$$delegate_0.mo430toSizeXkaWNTQ(j);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toSp-0xMU5do */
-        public long mo421toSp0xMU5do(float f) {
-            return this.$$delegate_0.mo421toSp0xMU5do(f);
+        public long mo431toSp0xMU5do(float f) {
+            return this.$$delegate_0.mo431toSp0xMU5do(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo422toSpkPz2Gy4(float f) {
-            return this.$$delegate_0.mo422toSpkPz2Gy4(f);
+        public long mo432toSpkPz2Gy4(float f) {
+            return this.$$delegate_0.mo432toSpkPz2Gy4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo423toSpkPz2Gy4(int i) {
-            return this.$$delegate_0.mo423toSpkPz2Gy4(i);
+        public long mo433toSpkPz2Gy4(int i) {
+            return this.$$delegate_0.mo433toSpkPz2Gy4(i);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -433,7 +433,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
         /* renamed from: getSize-YbymL2g */
-        public long mo5735getSizeYbymL2g() {
+        public long mo5748getSizeYbymL2g() {
             return SuspendingPointerInputModifierNodeImpl.this.boundsSize;
         }
 
@@ -444,8 +444,8 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
 
         @Override // androidx.compose.ui.input.pointer.AwaitPointerEventScope
         /* renamed from: getExtendedTouchPadding-NH-jbRc */
-        public long mo5734getExtendedTouchPaddingNHjbRc() {
-            return SuspendingPointerInputModifierNodeImpl.this.mo409getExtendedTouchPaddingNHjbRc();
+        public long mo5747getExtendedTouchPaddingNHjbRc() {
+            return SuspendingPointerInputModifierNodeImpl.this.mo419getExtendedTouchPaddingNHjbRc();
         }
 
         public final void offerPointerEvent(PointerEvent pointerEvent, PointerEventPass pointerEventPass) {
@@ -455,7 +455,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             }
             this.pointerAwaiter = null;
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9091constructorimpl(pointerEvent));
+            cancellableContinuation.resumeWith(Result.m9106constructorimpl(pointerEvent));
         }
 
         public final void cancel(Throwable th) {
@@ -552,7 +552,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
                             ResultKt.throwOnFailure(obj);
                             if (j <= 0 && (cancellableContinuation = this.pointerAwaiter) != null) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuation.resumeWith(Result.m9091constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
+                                cancellableContinuation.resumeWith(Result.m9106constructorimpl(ResultKt.createFailure(new PointerEventTimeoutCancellationException(j))));
                             }
                             launch$default = BuildersKt__Builders_commonKt.launch$default(SuspendingPointerInputModifierNodeImpl.this.getCoroutineScope(), null, null, new SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$job$1(j, this, null), 3, null);
                             suspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1.L$0 = launch$default;
@@ -643,7 +643,7 @@ public final class SuspendingPointerInputModifierNodeImpl extends Modifier.Node 
             this.pointerHandlers.add(pointerEventHandlerCoroutine);
             Continuation<Unit> createCoroutine = ContinuationKt.createCoroutine(function2, pointerEventHandlerCoroutine, pointerEventHandlerCoroutine);
             Result.Companion companion = Result.Companion;
-            createCoroutine.resumeWith(Result.m9091constructorimpl(Unit.INSTANCE));
+            createCoroutine.resumeWith(Result.m9106constructorimpl(Unit.INSTANCE));
             Unit unit = Unit.INSTANCE;
         }
         cancellableContinuationImpl2.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNodeImpl$awaitPointerEventScope$2$2

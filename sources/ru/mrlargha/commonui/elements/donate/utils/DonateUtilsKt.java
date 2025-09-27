@@ -41,8 +41,8 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemType;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateUtils.kt */
-@Metadata(d1 = {"\u0000p\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\u001a\u001a\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00020\u0004\u001a\u001e\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\u001e\u0010\u000b\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\u0018\u0010\f\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n\u001a\u0018\u0010\u000e\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u001a\u0018\u0010\u0011\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0012\u001a\u00020\n\u001a\u0018\u0010\u0013\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n\u001a(\u0010\u0014\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\r\u001a\u00020\n2\u0006\u0010\u0015\u001a\u00020\n2\u0006\u0010\u0016\u001a\u00020\u0017\u001aH\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001c2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010 \u001a\u00020\u001f2\b\b\u0002\u0010!\u001a\u00020\"2\u000e\b\u0002\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$\u001a\u000e\u0010&\u001a\u00020\n2\u0006\u0010'\u001a\u00020\n\u001a\u0012\u0010)\u001a\u00020%*\u00020*2\u0006\u0010+\u001a\u00020\u0017\u001a\u0012\u0010,\u001a\u00020%*\u00020*2\u0006\u0010-\u001a\u00020\u0017\u001a\u0012\u0010.\u001a\u00020%*\u00020*2\u0006\u0010+\u001a\u00020\u0017\u001a\u0012\u0010/\u001a\u00020%*\u00020*2\u0006\u0010+\u001a\u00020\u0017\u001a\u0012\u00100\u001a\u00020%*\u00020*2\u0006\u0010+\u001a\u00020\u0017\u001a\u0016\u00101\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n02*\u00020\n\u001a\u0014\u00103\u001a\u00020\u00102\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0004\u001a\f\u00104\u001a\u0004\u0018\u00010\n*\u00020\u001f\u001a\f\u00105\u001a\u0004\u0018\u00010\n*\u00020\u001f\u001a\u000e\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u001f\"\u000e\u0010(\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u00108\u001a\u00020\nX\u0086T¢\u0006\u0002\n\u0000\"\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\n0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010:\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010;\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010<\u001a\u00020\u001fX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010=\u001a\u00020\nX\u0086T¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"sortForLines", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "input", "", "getButtonsGradientDrawable", "Landroid/graphics/drawable/Drawable;", "context", "Landroid/content/Context;", "colorList", "", "getDialogButtonGradient", "getItemEffectDrawable", "color", "getGradientBorderDrawable", "colors", "", "getTransfusionDrawable", "centerColor", "getSelectCategoryDrawable", "getDialogItemDrawable", "borderColor", "borderWith", "", "setTranslateAnimation", "Landroid/animation/ObjectAnimator;", "Landroid/view/View;", "from", "", TypedValues.TransitionType.S_TO, "startDelay", "", TypedValues.TransitionType.S_DURATION, "isRepeat", "", "onStart", "Lkotlin/Function0;", "", "decodeEmoji", "emojiCode", "defaultImageInt", "setImageSdn", "Landroid/widget/ImageView;", "imageId", "setGifSdn", "gifId", "setImageItemBgSdn", "setImageCategorySdn", "setBackgroundCategorySdn", "splitOnPart", "Lkotlin/Pair;", "convertColorList", "getTimeHM", "getTimeHMS", "formatWithSpaces", "number", "TRANSPARENT_COLOR", "colorsDefault", "ANIMATION_PROPERTY_NAME", "ITEM_FOLDER_NAME", "ANIMATION_DURATION", DonateUtilsKt.DONATE_TAG, "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000r\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u0015\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0002\u001a\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007\u001a\u001e\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\u0007\u001a\u001e\u0010\u000e\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\u0007\u001a\u0018\u0010\u000f\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\r\u001a\u0018\u0010\u0011\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\u0012\u001a\u00020\u0013\u001a\u0018\u0010\u0014\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\r\u001a\u0018\u0010\u0016\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\r\u001a(\u0010\u0017\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0018\u001a\u00020\r2\u0006\u0010\u0019\u001a\u00020\u0001\u001aH\u0010\u001a\u001a\u00020\u001b*\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u001e2\b\b\u0002\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020!2\b\b\u0002\u0010#\u001a\u00020$2\u000e\b\u0002\u0010%\u001a\b\u0012\u0004\u0012\u00020'0&\u001a\u000e\u0010(\u001a\u00020\r2\u0006\u0010)\u001a\u00020\r\u001a\u0012\u0010+\u001a\u00020'*\u00020,2\u0006\u0010-\u001a\u00020\u0001\u001a\u0012\u0010.\u001a\u00020'*\u00020,2\u0006\u0010/\u001a\u00020\u0001\u001a\u0012\u00100\u001a\u00020'*\u00020,2\u0006\u0010-\u001a\u00020\u0001\u001a\u0012\u00101\u001a\u00020'*\u00020,2\u0006\u0010-\u001a\u00020\u0001\u001a\u0012\u00102\u001a\u00020'*\u00020,2\u0006\u0010-\u001a\u00020\u0001\u001a\u0016\u00103\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\r04*\u00020\r\u001a\u0014\u00105\u001a\u00020\u00132\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\u0007\u001a\f\u00106\u001a\u0004\u0018\u00010\r*\u00020!\u001a\f\u00107\u001a\u0004\u0018\u00010\r*\u00020!\u001a\u000e\u00108\u001a\u00020\r2\u0006\u00109\u001a\u00020!\u001a\n\u00108\u001a\u00020\r*\u00020\u0001\"\u000e\u0010*\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010:\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000\"\u0014\u0010;\u001a\b\u0012\u0004\u0012\u00020\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010<\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010=\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010>\u001a\u00020!X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010?\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"widthOf", "", "item", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "sortForLinesStable", "", "input", "", "getButtonsGradientDrawable", "Landroid/graphics/drawable/Drawable;", "context", "Landroid/content/Context;", "colorList", "", "getDialogButtonGradient", "getItemEffectDrawable", "color", "getGradientBorderDrawable", "colors", "", "getTransfusionDrawable", "centerColor", "getSelectCategoryDrawable", "getDialogItemDrawable", "borderColor", "borderWith", "setTranslateAnimation", "Landroid/animation/ObjectAnimator;", "Landroid/view/View;", "from", "", TypedValues.TransitionType.S_TO, "startDelay", "", TypedValues.TransitionType.S_DURATION, "isRepeat", "", "onStart", "Lkotlin/Function0;", "", "decodeEmoji", "emojiCode", "defaultImageInt", "setImageSdn", "Landroid/widget/ImageView;", "imageId", "setGifSdn", "gifId", "setImageItemBgSdn", "setImageCategorySdn", "setBackgroundCategorySdn", "splitOnPart", "Lkotlin/Pair;", "convertColorList", "getTimeHM", "getTimeHMS", "formatWithSpaces", "number", "TRANSPARENT_COLOR", "colorsDefault", "ANIMATION_PROPERTY_NAME", "ITEM_FOLDER_NAME", "ANIMATION_DURATION", DonateUtilsKt.DONATE_TAG, "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+/* loaded from: classes6.dex */
 public final class DonateUtilsKt {
     public static final long ANIMATION_DURATION = 6000;
     private static final String ANIMATION_PROPERTY_NAME = "translationX";
@@ -52,41 +52,69 @@ public final class DonateUtilsKt {
     public static final String TRANSPARENT_COLOR = "#00000000";
     private static final List<String> colorsDefault = CollectionsKt.listOf((Object[]) new String[]{TRANSPARENT_COLOR, TRANSPARENT_COLOR});
 
-    public static final List<DonateItemModelUi> sortForLines(List<DonateItemModelUi> input) {
+    private static final int widthOf(DonateItemModelUi donateItemModelUi) {
+        return donateItemModelUi.getType() == DonateItemType.BIG.getType() ? 2 : 1;
+    }
+
+    public static final List<DonateItemModelUi> sortForLinesStable(List<DonateItemModelUi> input) {
         Intrinsics.checkNotNullParameter(input, "input");
-        List mutableList = CollectionsKt.toMutableList((Collection) input);
-        ArrayList arrayList = new ArrayList();
+        int size = input.size();
+        if (size == 0) {
+            return new ArrayList();
+        }
+        ArrayList arrayList = new ArrayList(size);
+        boolean[] zArr = new boolean[size];
+        ArrayList arrayList2 = new ArrayList();
         int i = 0;
-        int i2 = 0;
-        while (i < mutableList.size()) {
-            DonateItemModelUi donateItemModelUi = (DonateItemModelUi) mutableList.get(i);
-            int i3 = (donateItemModelUi.getType() == DonateItemType.BIG.getType() ? 2 : 1) + i2;
-            if (i3 <= 4) {
-                arrayList.add(donateItemModelUi);
-                i2 = i3 == 4 ? 0 : i3;
-                i++;
-            } else {
-                int i4 = i + 1;
-                int size = mutableList.size();
-                while (true) {
-                    if (i4 >= size) {
-                        i4 = -1;
-                        break;
-                    } else if (((DonateItemModelUi) mutableList.get(i4)).getType() != 1) {
-                        break;
-                    } else {
-                        i4++;
-                    }
-                }
-                if (i4 != -1) {
-                    mutableList.set(i, mutableList.get(i4));
-                    mutableList.set(i4, (DonateItemModelUi) mutableList.get(i));
-                } else {
-                    i2 = 0;
-                }
+        for (int i2 = 0; i2 < size; i2++) {
+            if (widthOf(input.get(i2)) == 1) {
+                arrayList2.add(Integer.valueOf(i2));
             }
         }
-        return arrayList;
+        int i3 = 0;
+        while (true) {
+            int i4 = 4;
+            while (i < size) {
+                if (!zArr[i]) {
+                    DonateItemModelUi donateItemModelUi = input.get(i);
+                    int widthOf = widthOf(donateItemModelUi);
+                    if (widthOf <= i4) {
+                        arrayList.add(donateItemModelUi);
+                        zArr[i] = true;
+                        i++;
+                        i4 -= widthOf;
+                        if (i4 == 0) {
+                            break;
+                        }
+                    } else {
+                        while (i3 < arrayList2.size()) {
+                            if (((Number) arrayList2.get(i3)).intValue() > i) {
+                                Object obj = arrayList2.get(i3);
+                                Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
+                                if (!zArr[((Number) obj).intValue()]) {
+                                    break;
+                                }
+                            }
+                            i3++;
+                        }
+                        if (i3 < arrayList2.size()) {
+                            Object obj2 = arrayList2.get(i3);
+                            Intrinsics.checkNotNullExpressionValue(obj2, "get(...)");
+                            int intValue = ((Number) obj2).intValue();
+                            arrayList.add(input.get(intValue));
+                            zArr[intValue] = true;
+                            i4--;
+                            if (i4 == 0) {
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    i++;
+                }
+            }
+            return CollectionsKt.toMutableList((Collection) arrayList);
+        }
     }
 
     public static final Drawable getButtonsGradientDrawable(Context context, List<String> colorList) {
@@ -413,6 +441,14 @@ public final class DonateUtilsKt {
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.getDefault());
         decimalFormatSymbols.setGroupingSeparator(' ');
         String format = new DecimalFormat("#,###", decimalFormatSymbols).format(j);
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
+        return format;
+    }
+
+    public static final String formatWithSpaces(int i) {
+        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.getDefault());
+        decimalFormatSymbols.setGroupingSeparator(' ');
+        String format = new DecimalFormat("#,###", decimalFormatSymbols).format(Integer.valueOf(i));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
         return format;
     }

@@ -13,13 +13,13 @@ public final class TextFieldKeyEventHandler_androidKt {
     }
 
     /* renamed from: isFromSoftKeyboard-ZmokQxo  reason: not valid java name */
-    public static final boolean m1562isFromSoftKeyboardZmokQxo(KeyEvent keyEvent) {
+    public static final boolean m1572isFromSoftKeyboardZmokQxo(KeyEvent keyEvent) {
         return (keyEvent.getFlags() & 2) == 2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isKeyCode-YhN2O0w  reason: not valid java name */
-    public static final boolean m1563isKeyCodeYhN2O0w(KeyEvent keyEvent, int i) {
-        return Key_androidKt.m5689getNativeKeyCodeYVgTNJs(KeyEvent_androidKt.m5682getKeyZmokQxo(keyEvent)) == i;
+    public static final boolean m1573isKeyCodeYhN2O0w(KeyEvent keyEvent, int i) {
+        return Key_androidKt.m5702getNativeKeyCodeYVgTNJs(KeyEvent_androidKt.m5695getKeyZmokQxo(keyEvent)) == i;
     }
 }

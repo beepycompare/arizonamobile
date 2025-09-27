@@ -51,12 +51,12 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     });
 
     /* renamed from: getLambda$-13006014$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9031getLambda$13006014$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9043getLambda$13006014$settings_release() {
         return f79lambda$13006014;
     }
 
     /* renamed from: getLambda$-473092742$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9032getLambda$473092742$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9044getLambda$473092742$settings_release() {
         return f80lambda$473092742;
     }
 
