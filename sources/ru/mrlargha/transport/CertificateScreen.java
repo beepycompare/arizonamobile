@@ -153,6 +153,12 @@ public final class CertificateScreen extends SAMPUIElement implements InterfaceC
         certificateInfoItemBinding.ic.setImageResource(R.drawable.sertificate_ic_speed);
         certificateInfoItemBinding.type.setText("Скорость");
         certificateInfoItemBinding.value.setText(((int) mainInfo.getMaxSpeed()) + " км/ч");
+        if (mainInfo.getMaxSpeedBonus() != null && mainInfo.getMaxSpeedBonus().floatValue() > 0.0f) {
+            certificateInfoItemBinding.valueBonus.setVisibility(0);
+            certificateInfoItemBinding.valueBonus.setText(" (+" + mainInfo.getMaxSpeedBonus() + "км/ч)");
+        } else {
+            certificateInfoItemBinding.valueBonus.setVisibility(8);
+        }
         CertificateInfoItemBinding certificateInfoItemBinding2 = certificateScreenBinding.info2;
         certificateInfoItemBinding2.ic.setImageResource(R.drawable.sertificate_ic_engine);
         certificateInfoItemBinding2.type.setText("Мощность");
@@ -167,10 +173,21 @@ public final class CertificateScreen extends SAMPUIElement implements InterfaceC
         certificateInfoItemLeftBinding.ic.setImageResource(R.drawable.sertificate_ic_hp);
         certificateInfoItemLeftBinding.type.setText("Очков здоровья");
         certificateInfoItemLeftBinding.value.setText(String.valueOf(mainInfo.getHp()));
+        if (mainInfo.getHpBonus() != null && mainInfo.getHpBonus().floatValue() > 0.0f) {
+            certificateInfoItemLeftBinding.valueBonus.setVisibility(0);
+            certificateInfoItemLeftBinding.valueBonus.setText(" (+" + mainInfo.getHpBonus() + "%)");
+        } else {
+            certificateInfoItemLeftBinding.valueBonus.setVisibility(8);
+        }
         CertificateInfoItemLeftBinding certificateInfoItemLeftBinding2 = certificateScreenBinding.info4;
         certificateInfoItemLeftBinding2.ic.setImageResource(R.drawable.sertificate_ic_gov);
         certificateInfoItemLeftBinding2.type.setText("Гос. цена");
+        certificateInfoItemLeftBinding2.valueBonus.setVisibility(8);
         certificateInfoItemLeftBinding2.value.setText(DonateUtilsKt.formatWithSpaces(mainInfo.getPrice()));
+        if (mainInfo.getSupportsColor() != null && mainInfo.getSupportsColor().length() > 0) {
+            certificateInfoItemLeftBinding2.type.setText("Цвет суппортов");
+            certificateInfoItemLeftBinding2.value.setText(String.valueOf(mainInfo.getSupportsColor()));
+        }
         certificateScreenBinding.buttonGet.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.transport.CertificateScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

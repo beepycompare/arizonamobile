@@ -139,7 +139,7 @@ public final class DonateBottomItemAdapter extends ListAdapter<DonateItemModelUi
                 ImageView ivItem = donateDefaultItemBinding.ivItem;
                 Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
                 DonateUtilsKt.setGifSdn(ivItem, donateItemModelUi.getImage());
-            } else {
+            } else if (donateItemModelUi.getImage() >= 0) {
                 ImageView ivItem2 = donateDefaultItemBinding.ivItem;
                 Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
                 DonateUtilsKt.setImageSdn(ivItem2, donateItemModelUi.getImage());

@@ -330,16 +330,14 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
             ImageView ivItemBg = donateDefaultItemBinding.ivItemBg;
             Intrinsics.checkNotNullExpressionValue(ivItemBg, "ivItemBg");
             DonateUtilsKt.setImageItemBgSdn(ivItemBg, donateItemModelUi.getBackground());
-            if (donateItemModelUi.getType() != DonateItemType.RATE.getType()) {
-                if (donateItemModelUi.isGif()) {
-                    ImageView ivItem = donateDefaultItemBinding.ivItem;
-                    Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
-                    DonateUtilsKt.setGifSdn(ivItem, donateItemModelUi.getImage());
-                } else {
-                    ImageView ivItem2 = donateDefaultItemBinding.ivItem;
-                    Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
-                    DonateUtilsKt.setImageSdn(ivItem2, donateItemModelUi.getImage());
-                }
+            if (donateItemModelUi.isGif()) {
+                ImageView ivItem = donateDefaultItemBinding.ivItem;
+                Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
+                DonateUtilsKt.setGifSdn(ivItem, donateItemModelUi.getImage());
+            } else if (donateItemModelUi.getImage() >= 0) {
+                ImageView ivItem2 = donateDefaultItemBinding.ivItem;
+                Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
+                DonateUtilsKt.setImageSdn(ivItem2, donateItemModelUi.getImage());
             }
             initTitle(donateItemModelUi);
             setImageInfo(donateItemModelUi);

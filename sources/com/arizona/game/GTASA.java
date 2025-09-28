@@ -78,7 +78,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     private StreamVideo streamVideo = null;
     private ArizonaSnackbar arizonaSnackbar = null;
     private String snackbarJson = "";
-    private Boolean isHudEnabled = true;
     @Deprecated
     private final ConcurrentHashMap<Integer, SAMPUIElement> uiElements = new ConcurrentHashMap<>();
 
@@ -357,8 +356,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v16.5.5\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v16.5.5", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v16.5.6\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v16.5.6", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -952,9 +951,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         } catch (IllegalStateException e) {
             Log.w(TAG, "setUIElementVisible: we couldn't find instance from crashlytics " + e);
         }
-        if (!this.isHudEnabled.booleanValue() && i == UIElementID.HUD.getId() && z) {
-            return;
-        }
         if (uIElementID.getId() == UIElementID.INVENTORY.getId() && !z) {
             if (uIElementID.getId() != UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
                 setUIElementVisible(UIElementID.INVENTORY_SECURITY_SCREEN.getId(), false);
@@ -1336,8 +1332,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void setupScene() {
         Log.d("setCarModel", "setupScene: ");
-        this.isHudEnabled = false;
-        setUIElementVisible(UIElementID.HUD.getId(), false);
         Position positionModelCentered = ListenerKt.positionModelCentered(this, 1.0f);
         Cef3DSetupScene(positionModelCentered.getX(), positionModelCentered.getY(), positionModelCentered.getW(), positionModelCentered.getH(), 60, (byte) 0, (byte) 0, (byte) 0);
     }
@@ -1359,8 +1353,6 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void closeScene() {
-        this.isHudEnabled = true;
-        setUIElementVisible(UIElementID.HUD.getId(), true);
         Cef3DRemoveModels();
     }
 

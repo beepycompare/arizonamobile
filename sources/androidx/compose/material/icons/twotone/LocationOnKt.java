@@ -1,79 +1,36 @@
 package androidx.compose.material.icons.twotone;
 
-import androidx.compose.material.icons.Icons;
-import androidx.compose.ui.graphics.Color;
-import androidx.compose.ui.graphics.SolidColor;
-import androidx.compose.ui.graphics.StrokeCap;
-import androidx.compose.ui.graphics.StrokeJoin;
 import androidx.compose.ui.graphics.vector.ImageVector;
-import androidx.compose.ui.graphics.vector.PathBuilder;
-import androidx.compose.ui.graphics.vector.VectorKt;
-import androidx.compose.ui.unit.Dp;
 import kotlin.Metadata;
-import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LocationOn.kt */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\"\u0010\u0010\u0000\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000\"\u0015\u0010\u0002\u001a\u00020\u0001*\u00020\u00038F¢\u0006\u0006\u001a\u0004\b\u0004\u0010\u0005¨\u0006\u0006"}, d2 = {"_locationOn", "Landroidx/compose/ui/graphics/vector/ImageVector;", "LocationOn", "Landroidx/compose/material/icons/Icons$TwoTone;", "getLocationOn", "(Landroidx/compose/material/icons/Icons$TwoTone;)Landroidx/compose/ui/graphics/vector/ImageVector;", "material-icons-core_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LocationOnKt {
     private static ImageVector _locationOn;
 
-    public static final ImageVector getLocationOn(Icons.TwoTone twoTone) {
-        ImageVector.Builder m5286addPathoIyEayM;
-        ImageVector imageVector = _locationOn;
-        if (imageVector != null) {
-            Intrinsics.checkNotNull(imageVector);
-            return imageVector;
-        }
-        ImageVector.Builder builder = new ImageVector.Builder("TwoTone.LocationOn", Dp.m7264constructorimpl(24.0f), Dp.m7264constructorimpl(24.0f), 24.0f, 24.0f, 0L, 0, false, 96, null);
-        int defaultFillType = VectorKt.getDefaultFillType();
-        SolidColor solidColor = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
-        int m4919getButtKaPHkGw = StrokeCap.Companion.m4919getButtKaPHkGw();
-        int m4929getBevelLxFBmk8 = StrokeJoin.Companion.m4929getBevelLxFBmk8();
-        PathBuilder pathBuilder = new PathBuilder();
-        pathBuilder.moveTo(12.0f, 4.0f);
-        pathBuilder.curveTo(9.24f, 4.0f, 7.0f, 6.24f, 7.0f, 9.0f);
-        pathBuilder.curveToRelative(0.0f, 2.85f, 2.92f, 7.21f, 5.0f, 9.88f);
-        pathBuilder.curveToRelative(2.11f, -2.69f, 5.0f, -7.0f, 5.0f, -9.88f);
-        pathBuilder.curveToRelative(0.0f, -2.76f, -2.24f, -5.0f, -5.0f, -5.0f);
-        pathBuilder.close();
-        pathBuilder.moveTo(12.0f, 11.5f);
-        pathBuilder.curveToRelative(-1.38f, 0.0f, -2.5f, -1.12f, -2.5f, -2.5f);
-        pathBuilder.reflectiveCurveToRelative(1.12f, -2.5f, 2.5f, -2.5f);
-        pathBuilder.reflectiveCurveToRelative(2.5f, 1.12f, 2.5f, 2.5f);
-        pathBuilder.reflectiveCurveToRelative(-1.12f, 2.5f, -2.5f, 2.5f);
-        pathBuilder.close();
-        builder.m5286addPathoIyEayM(pathBuilder.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor, (r30 & 16) != 0 ? 1.0f : 0.3f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 0.3f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4919getButtKaPHkGw, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4929getBevelLxFBmk8, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        int defaultFillType2 = VectorKt.getDefaultFillType();
-        SolidColor solidColor2 = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
-        int m4919getButtKaPHkGw2 = StrokeCap.Companion.m4919getButtKaPHkGw();
-        int m4929getBevelLxFBmk82 = StrokeJoin.Companion.m4929getBevelLxFBmk8();
-        PathBuilder pathBuilder2 = new PathBuilder();
-        pathBuilder2.moveTo(12.0f, 2.0f);
-        pathBuilder2.curveTo(8.13f, 2.0f, 5.0f, 5.13f, 5.0f, 9.0f);
-        pathBuilder2.curveToRelative(0.0f, 5.25f, 7.0f, 13.0f, 7.0f, 13.0f);
-        pathBuilder2.reflectiveCurveToRelative(7.0f, -7.75f, 7.0f, -13.0f);
-        pathBuilder2.curveToRelative(0.0f, -3.87f, -3.13f, -7.0f, -7.0f, -7.0f);
-        pathBuilder2.close();
-        pathBuilder2.moveTo(7.0f, 9.0f);
-        pathBuilder2.curveToRelative(0.0f, -2.76f, 2.24f, -5.0f, 5.0f, -5.0f);
-        pathBuilder2.reflectiveCurveToRelative(5.0f, 2.24f, 5.0f, 5.0f);
-        pathBuilder2.curveToRelative(0.0f, 2.88f, -2.88f, 7.19f, -5.0f, 9.88f);
-        pathBuilder2.curveTo(9.92f, 16.21f, 7.0f, 11.85f, 7.0f, 9.0f);
-        pathBuilder2.close();
-        builder.m5286addPathoIyEayM(pathBuilder2.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType2, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor2, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4919getButtKaPHkGw2, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4929getBevelLxFBmk82, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        int defaultFillType3 = VectorKt.getDefaultFillType();
-        SolidColor solidColor3 = new SolidColor(Color.Companion.m4575getBlack0d7_KjU(), null);
-        int m4919getButtKaPHkGw3 = StrokeCap.Companion.m4919getButtKaPHkGw();
-        int m4929getBevelLxFBmk83 = StrokeJoin.Companion.m4929getBevelLxFBmk8();
-        PathBuilder pathBuilder3 = new PathBuilder();
-        pathBuilder3.moveTo(12.0f, 9.0f);
-        pathBuilder3.moveToRelative(-2.5f, 0.0f);
-        pathBuilder3.arcToRelative(2.5f, 2.5f, 0.0f, true, true, 5.0f, 0.0f);
-        pathBuilder3.arcToRelative(2.5f, 2.5f, 0.0f, true, true, -5.0f, 0.0f);
-        m5286addPathoIyEayM = builder.m5286addPathoIyEayM(pathBuilder3.getNodes(), (r30 & 2) != 0 ? VectorKt.getDefaultFillType() : defaultFillType3, (r30 & 4) != 0 ? "" : "", (r30 & 8) != 0 ? null : solidColor3, (r30 & 16) != 0 ? 1.0f : 1.0f, (r30 & 32) == 0 ? null : null, (r30 & 64) != 0 ? 1.0f : 1.0f, (r30 & 128) != 0 ? 0.0f : 1.0f, (r30 & 256) != 0 ? VectorKt.getDefaultStrokeLineCap() : m4919getButtKaPHkGw3, (r30 & 512) != 0 ? VectorKt.getDefaultStrokeLineJoin() : m4929getBevelLxFBmk83, (r30 & 1024) != 0 ? 4.0f : 1.0f, (r30 & 2048) != 0 ? 0.0f : 0.0f, (r30 & 4096) == 0 ? 0.0f : 1.0f, (r30 & 8192) != 0 ? 0.0f : 0.0f);
-        ImageVector build = m5286addPathoIyEayM.build();
-        _locationOn = build;
-        Intrinsics.checkNotNull(build);
-        return build;
+    /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+        jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.compose.ui.graphics.vector.ImageVector.Builder.addPath-oIyEayM$default(androidx.compose.ui.graphics.vector.ImageVector$Builder, java.util.List, int, java.lang.String, androidx.compose.ui.graphics.Brush, float, androidx.compose.ui.graphics.Brush, float, float, int, int, float, float, float, float, int, java.lang.Object):androidx.compose.ui.graphics.vector.ImageVector$Builder
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+        	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+        Caused by: java.util.ConcurrentModificationException
+        	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1685)
+        	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1660)
+        	at jadx.core.dex.instructions.args.SSAVar.removeUse(SSAVar.java:130)
+        	at jadx.core.dex.instructions.args.SSAVar.use(SSAVar.java:123)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:481)
+        	at jadx.core.dex.instructions.mods.TernaryInsn.rebindArgs(TernaryInsn.java:92)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:484)
+        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1079)
+        	at jadx.core.utils.BlockUtils.replaceInsn(BlockUtils.java:1088)
+        	at jadx.core.dex.visitors.InlineMethods.inlineMethod(InlineMethods.java:115)
+        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:74)
+        	... 1 more
+        */
+    public static final androidx.compose.ui.graphics.vector.ImageVector getLocationOn(androidx.compose.material.icons.Icons.TwoTone r20) {
+        /*
+            Method dump skipped, instructions count: 510
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: androidx.compose.material.icons.twotone.LocationOnKt.getLocationOn(androidx.compose.material.icons.Icons$TwoTone):androidx.compose.ui.graphics.vector.ImageVector");
     }
 }

@@ -33,7 +33,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
-import ru.mrlargha.commonui.utils.ui.UtilsKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.cars.R;
 import ru.mrlargha.feature.cars.databinding.CarsLayoutBinding;
 /* compiled from: CarsScreen.kt */
@@ -155,18 +155,25 @@ public final class CarsScreen extends SAMPUIElement {
                 return CarsScreen.lambda$0$2(CarsScreen.this);
             }
         }, 3, null);
-        bind.ratingBnt.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.cars.CarsScreen$$ExternalSyntheticLambda4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(CarsScreen.this, 0, 6, null, 4, null);
-            }
-        });
-        bind.ratingBnt1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.cars.CarsScreen$$ExternalSyntheticLambda5
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(CarsScreen.this, 0, 6, null, 4, null);
-            }
-        });
+        if (!UtilsKt.isArizonaType()) {
+            bind.ratingBnt.setVisibility(0);
+            bind.ratingBnt1.setVisibility(0);
+            bind.ratingBnt.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.cars.CarsScreen$$ExternalSyntheticLambda4
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SAMPUIElement.notifyClick$default(CarsScreen.this, 0, 6, null, 4, null);
+                }
+            });
+            bind.ratingBnt1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.cars.CarsScreen$$ExternalSyntheticLambda5
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SAMPUIElement.notifyClick$default(CarsScreen.this, 0, 6, null, 4, null);
+                }
+            });
+        } else {
+            bind.ratingBnt.setVisibility(8);
+            bind.ratingBnt1.setVisibility(8);
+        }
         bind.overlay.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.cars.CarsScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -221,7 +228,7 @@ public final class CarsScreen extends SAMPUIElement {
                 str = "#FFCC00";
             }
         }
-        this.binding.textBonus.setText(UtilsKt.buildSpannableList(this.bonuses, Color.parseColor("#223144"), true, Integer.valueOf(Color.parseColor(str)), true));
+        this.binding.textBonus.setText(ru.mrlargha.commonui.utils.ui.UtilsKt.buildSpannableList(this.bonuses, Color.parseColor("#223144"), true, Integer.valueOf(Color.parseColor(str)), true));
     }
 
     private final void setCarInfoList(List<CarInfoListItem> list) {
