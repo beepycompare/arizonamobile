@@ -5,8 +5,9 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-final class FakeDrag {
+public final class FakeDrag {
     private int mActualDraggedDistance;
     private long mFakeDragBeginTime;
     private int mMaximumVelocity;

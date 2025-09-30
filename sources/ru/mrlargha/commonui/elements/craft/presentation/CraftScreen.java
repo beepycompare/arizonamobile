@@ -1014,7 +1014,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         List<NeedItems> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
         for (NeedItems needItems : list2) {
-            arrayList.add(new NeedItemsUi(needItems.getItem(), needItems.getAmount(), getItemFromInventory(needItems.getItem(), 0)));
+            arrayList.add(new NeedItemsUi(needItems.getItem(), needItems.getAmount(), (this.isArizonaType || needItems.getPlayerAmount() == -1) ? getItemFromInventory(needItems.getItem(), 0) : needItems.getPlayerAmount()));
         }
         return arrayList;
     }

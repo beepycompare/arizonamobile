@@ -58,7 +58,7 @@ public final class MobilePhoneMainPage implements MobileController {
         this.phoneBinding = binding;
         Intrinsics.checkNotNull(context, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
         this.sendFrontedMessage = (IBackendNotifier) context;
-        List<MobilePhoneCarousel> listOf = CollectionsKt.listOf((Object[]) new MobilePhoneCarousel[]{new MobilePhoneCarousel(0, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Меню", R.drawable.mp_main_menu_ic), new MobilePhoneMenu("Помощь", R.drawable.mp_help_ic), new MobilePhoneMenu("Квесты", R.drawable.mp_quest_ic), new MobilePhoneMenu("Репорт", R.drawable.mp_report_ic), new MobilePhoneMenu("Spotify", R.drawable.mp_music_ic), new MobilePhoneMenu("Driver", R.drawable.mp_driver_ic), new MobilePhoneMenu("Uber", R.drawable.mp_taxi_ic), new MobilePhoneMenu("Навигатор", R.drawable.mp_navigator_ic), new MobilePhoneMenu("Настройки", R.drawable.mp_settings_ic), new MobilePhoneMenu("Звонки", R.drawable.mp_call_ic), new MobilePhoneMenu("СМС", R.drawable.mp_sms_ic), new MobilePhoneMenu("Контакты", R.drawable.mp_contact_ic)})), new MobilePhoneCarousel(1, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Достижения", R.drawable.mp_achievements_ic), new MobilePhoneMenu("Магазин", R.drawable.mp_shop_ic), new MobilePhoneMenu("Криптовалюта", R.drawable.mp_bitcoin_ic), new MobilePhoneMenu("Мед.карта", R.drawable.mp_medical_book_ic), new MobilePhoneMenu("Паспорт", R.drawable.mp_passport_ic), new MobilePhoneMenu("Анимации", R.drawable.mp_anims_ic), new MobilePhoneMenu("Моя семья", R.drawable.mp_family_ic), new MobilePhoneMenu("YouTube", R.drawable.mp_youtube_ic), new MobilePhoneMenu("Бизнесы", R.drawable.mp_business_ic), new MobilePhoneMenu("Дома", R.drawable.mp_home_ic), new MobilePhoneMenu("Банковское меню", R.drawable.mp_exchange_ic), new MobilePhoneMenu("Битва вооружений", R.drawable.mobile_catch_app_ic)})), new MobilePhoneCarousel(2, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Аренда билборда", R.drawable.mp_bilboard_ic), new MobilePhoneMenu("Галерея", R.drawable.mp_camera_ic), new MobilePhoneMenu("Звуки", R.drawable.mp_sound_settings_ic), new MobilePhoneMenu("Режим погони", R.drawable.mp_copchase_ic), new MobilePhoneMenu("Трезвый водитель", R.drawable.mp_soberdriver_ic), new MobilePhoneMenu("Ловля", R.drawable.mp_catch_ic), new MobilePhoneMenu("Селфи", R.drawable.mp_selfie_camera), new MobilePhoneMenu("Телефонный справочник", R.drawable.mp_phone_number), new MobilePhoneMenu("История ник-неймов,", R.drawable.mp_phone_nickname), new MobilePhoneMenu("Осенний календарь", R.drawable.mp_calendar_autumn), new MobilePhoneMenu("Лог продаж", R.drawable.ic_marketplace_phone), new MobilePhoneMenu("Хранилище", R.drawable.ic_storage_phone)}))});
+        List<MobilePhoneCarousel> listOf = CollectionsKt.listOf((Object[]) new MobilePhoneCarousel[]{new MobilePhoneCarousel(0, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Меню", R.drawable.mp_main_menu_ic), new MobilePhoneMenu("Помощь", R.drawable.mp_help_ic), new MobilePhoneMenu("Квесты", R.drawable.mp_quest_ic), new MobilePhoneMenu("Репорт", R.drawable.mp_report_ic), new MobilePhoneMenu("Spotify", R.drawable.mp_music_ic), new MobilePhoneMenu("Driver", R.drawable.mp_driver_ic), new MobilePhoneMenu("Uber", R.drawable.mp_taxi_ic), new MobilePhoneMenu("Навигатор", R.drawable.mp_navigator_ic), new MobilePhoneMenu("Настройки", R.drawable.mp_settings_ic), new MobilePhoneMenu("Звонки", R.drawable.mp_call_ic), new MobilePhoneMenu("СМС", R.drawable.mp_sms_ic), new MobilePhoneMenu("Контакты", R.drawable.mp_contact_ic)})), new MobilePhoneCarousel(1, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Достижения", R.drawable.mp_achievements_ic), new MobilePhoneMenu("Магазин", R.drawable.mp_shop_ic), new MobilePhoneMenu("Криптовалюта", R.drawable.mp_bitcoin_ic), new MobilePhoneMenu("Мед.карта", R.drawable.mp_medical_book_ic), new MobilePhoneMenu("Паспорт", R.drawable.mp_passport_ic), new MobilePhoneMenu("Анимации", R.drawable.mp_anims_ic), new MobilePhoneMenu("Моя семья", R.drawable.mp_family_ic), new MobilePhoneMenu("YouTube", R.drawable.mp_youtube_ic), new MobilePhoneMenu("Бизнесы", R.drawable.mp_business_ic), new MobilePhoneMenu("Дома", R.drawable.mp_home_ic), new MobilePhoneMenu("Банковское меню", R.drawable.mp_exchange_ic), new MobilePhoneMenu("Битва вооружений", R.drawable.mobile_catch_app_ic)})), new MobilePhoneCarousel(2, CollectionsKt.listOf((Object[]) new MobilePhoneMenu[]{new MobilePhoneMenu("Аренда билборда", R.drawable.mp_bilboard_ic), new MobilePhoneMenu("Галерея", R.drawable.mp_camera_ic), new MobilePhoneMenu("Звуки", R.drawable.mp_sound_settings_ic), new MobilePhoneMenu("Режим погони", R.drawable.mp_copchase_ic), new MobilePhoneMenu("Трезвый водитель", R.drawable.mp_soberdriver_ic), new MobilePhoneMenu("Ловля", R.drawable.mp_catch_ic), new MobilePhoneMenu("Селфи", R.drawable.mp_selfie_camera), new MobilePhoneMenu("Телефонный справочник", R.drawable.mp_phone_number), new MobilePhoneMenu("История ник-неймов,", R.drawable.mp_phone_nickname), new MobilePhoneMenu("Календарь", R.drawable.mp_calendar_autumn), new MobilePhoneMenu("Лог продаж", R.drawable.ic_marketplace_phone), new MobilePhoneMenu("Хранилище", R.drawable.ic_storage_phone)}))});
         this.menus = listOf;
         View inflate = context.getLayoutInflater().inflate(R.layout.mobile_phone_main_page, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
@@ -361,45 +361,45 @@ public final class MobilePhoneMainPage implements MobileController {
                             return;
                         }
                         return;
+                    case 1428041237:
+                        if (applicationName.equals("Календарь")) {
+                            iBackendNotifier29 = MobilePhoneMainPage.this.sendFrontedMessage;
+                            iBackendNotifier29.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 24, 0);
+                            return;
+                        }
+                        return;
                     case 1458889016:
                         if (applicationName.equals("Моя семья")) {
-                            iBackendNotifier29 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier29.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 12, 0);
+                            iBackendNotifier30 = MobilePhoneMainPage.this.sendFrontedMessage;
+                            iBackendNotifier30.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 12, 0);
                             return;
                         }
                         return;
                     case 1470746695:
                         if (applicationName.equals("Аренда билборда")) {
-                            iBackendNotifier30 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier30.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 24, 0);
+                            iBackendNotifier31 = MobilePhoneMainPage.this.sendFrontedMessage;
+                            iBackendNotifier31.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 24, 0);
                             return;
                         }
                         return;
                     case 1501291313:
                         if (applicationName.equals("Битва вооружений")) {
-                            iBackendNotifier31 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier31.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), 36, 0);
+                            iBackendNotifier32 = MobilePhoneMainPage.this.sendFrontedMessage;
+                            iBackendNotifier32.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), 36, 0);
                             return;
                         }
                         return;
                     case 1678367377:
                         if (applicationName.equals("Паспорт")) {
-                            iBackendNotifier32 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier32.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 12, 0);
+                            iBackendNotifier33 = MobilePhoneMainPage.this.sendFrontedMessage;
+                            iBackendNotifier33.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 12, 0);
                             return;
                         }
                         return;
                     case 1705955813:
                         if (applicationName.equals("Настройки")) {
-                            iBackendNotifier33 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier33.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 0);
-                            return;
-                        }
-                        return;
-                    case 1900781736:
-                        if (applicationName.equals("Осенний календарь")) {
                             iBackendNotifier34 = MobilePhoneMainPage.this.sendFrontedMessage;
-                            iBackendNotifier34.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i + 24, 0);
+                            iBackendNotifier34.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 0);
                             return;
                         }
                         return;

@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.feature.calendar.DailyRewardsScreen;
 import ru.mrlargha.feature.calendar.databinding.DailyRewardsRewardItemBinding;
 /* compiled from: RewardsAdapter.kt */
-@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002'(B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\rJ\u000e\u0010\u0013\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u000fJ\u0018\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0016J\u0018\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0019H\u0016J \u0010\u001e\u001a\u00020\u00112\u0006\u0010\u001f\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020!2\u0006\u0010\u001d\u001a\u00020\u0019H\u0002J\u0014\u0010\"\u001a\u00020\u00112\f\u0010#\u001a\b\u0012\u0004\u0012\u00020\t0$J\u000e\u0010%\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u000bR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082.¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Lru/mrlargha/feature/calendar/RewardsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/calendar/RewardsAdapter$ViewHolder;", "isArizona", "", "<init>", "(Z)V", "rewardsList", "", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$RewardInfo;", "updateInfo", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$UpdatePlayerInfo;", "rewardType", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "rewardItemClickListener", "Lru/mrlargha/feature/calendar/RewardsAdapter$OnRewardItemClickListener;", "setMayReward", "", "type", "setOnRewardItemClickListener", "onRewardItemClickListener", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "getItemCount", "onBindViewHolder", "holder", "position", "checkIsMayDay", CommonUrlParts.MODEL, "binding", "Lru/mrlargha/feature/calendar/databinding/DailyRewardsRewardItemBinding;", "addRewards", "routes", "", "updateRewards", "updInfo", "OnRewardItemClickListener", "ViewHolder", "calendar_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002'(B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\rJ\u000e\u0010\u0013\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u000fJ\u0018\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0016J\u0018\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u0019H\u0016J \u0010\u001e\u001a\u00020\u00112\u0006\u0010\u001f\u001a\u00020\u000b2\u0006\u0010 \u001a\u00020!2\u0006\u0010\u001d\u001a\u00020\u0019H\u0002J\u0014\u0010\"\u001a\u00020\u00112\f\u0010#\u001a\b\u0012\u0004\u0012\u00020\t0$J\u000e\u0010%\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u000bR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082.¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Lru/mrlargha/feature/calendar/RewardsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/calendar/RewardsAdapter$ViewHolder;", "isArizona", "", "<init>", "(Z)V", "rewardsList", "", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$RewardInfo;", "updateInfo", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$UpdatePlayerInfo;", "rewardType", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "rewardItemClickListener", "Lru/mrlargha/feature/calendar/RewardsAdapter$OnRewardItemClickListener;", "setTypeReward", "", "type", "setOnRewardItemClickListener", "onRewardItemClickListener", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "getItemCount", "onBindViewHolder", "holder", "position", "checkRewardType", CommonUrlParts.MODEL, "binding", "Lru/mrlargha/feature/calendar/databinding/DailyRewardsRewardItemBinding;", "addRewards", "routes", "", "updateRewards", "updInfo", "OnRewardItemClickListener", "ViewHolder", "calendar_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final boolean isArizona;
@@ -51,6 +51,10 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 iArr[DailyRewardsScreen.BackgroundType.AUTUMN_REWARD.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
+            try {
+                iArr[DailyRewardsScreen.BackgroundType.WELCOME.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -59,7 +63,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         this.isArizona = z;
     }
 
-    public final void setMayReward(DailyRewardsScreen.BackgroundType type) {
+    public final void setTypeReward(DailyRewardsScreen.BackgroundType type) {
         Intrinsics.checkNotNullParameter(type, "type");
         this.rewardType = type;
         notifyDataSetChanged();
@@ -169,7 +173,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (r0 == null) goto L51;
      */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x0331, code lost:
-        checkIsMayDay(r0, r13.getBinding(), r14);
+        checkRewardType(r0, r13.getBinding(), r14);
      */
     /* JADX WARN: Code restructure failed: missing block: B:60:0x0338, code lost:
         return;
@@ -350,7 +354,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         return Unit.INSTANCE;
     }
 
-    private final void checkIsMayDay(DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo, DailyRewardsRewardItemBinding dailyRewardsRewardItemBinding, int i) {
+    private final void checkRewardType(DailyRewardsScreen.UpdatePlayerInfo updatePlayerInfo, DailyRewardsRewardItemBinding dailyRewardsRewardItemBinding, int i) {
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.rewardType.ordinal()];
         if (i2 == 1) {
             if (updatePlayerInfo.getCurrentDay() == i + 1) {
@@ -365,8 +369,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_may_item_bg);
                 dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#3D4623"));
             }
-        } else if (i2 != 2) {
-        } else {
+        } else if (i2 == 2) {
             if (updatePlayerInfo.getCurrentDay() == i + 1) {
                 dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
                 dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
@@ -378,6 +381,20 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
                 dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_autumn_item_bg);
                 dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#876836"));
+            }
+        } else if (i2 != 3) {
+        } else {
+            if (updatePlayerInfo.getCurrentDay() == i + 1) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_item_current_day_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#CE8235"));
+                dailyRewardsRewardItemBinding.getButton.setBackgroundColor(Color.parseColor("#CE8235"));
+            } else if (updatePlayerInfo.getCurrentDay() <= i) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_welcom_item_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#201E3D"));
             }
         }
     }

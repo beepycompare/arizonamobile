@@ -641,7 +641,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v15 */
     /* JADX WARN: Type inference failed for: r1v8 */
-    /* JADX WARN: Type inference failed for: r1v9, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r1v9, types: [int, boolean] */
     private int readSample(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         ?? r1;
         int i;

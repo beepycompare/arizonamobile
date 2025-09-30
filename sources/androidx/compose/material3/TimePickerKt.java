@@ -2908,7 +2908,7 @@ public final class TimePickerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Type inference failed for: r15v2 */
-    /* JADX WARN: Type inference failed for: r15v3, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r15v3, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r15v4 */
     public static final void ClockText(final Modifier modifier, final AnalogTimePickerState analogTimePickerState, final int i, final boolean z, Composer composer, final int i2) {
         int i3;

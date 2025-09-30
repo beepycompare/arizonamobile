@@ -3133,7 +3133,7 @@ public final class DatePickerKt {
     }
 
     /* JADX WARN: Type inference failed for: r8v1 */
-    /* JADX WARN: Type inference failed for: r8v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r8v2, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r8v21 */
     public static final void WeekDays(final DatePickerColors datePickerColors, final CalendarModel calendarModel, Composer composer, final int i) {
         Composer composer2;

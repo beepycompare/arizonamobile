@@ -148,6 +148,9 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
                     case 9:
                         i2 = R.drawable.family_charter_ic_trade;
                         break;
+                    case 10:
+                        i2 = R.drawable.family_charter_ic_coffers;
+                        break;
                     default:
                         i2 = R.drawable.family_menu_ic_info;
                         break;
@@ -171,6 +174,9 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
                     case 9:
                         str = "Продать другой семье";
                         break;
+                    case 10:
+                        str = "Доступ к казне фракции";
+                        break;
                     default:
                         str = "???";
                         break;
@@ -193,6 +199,9 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
                         break;
                     case 9:
                         str3 = "Продать частную организацию другой семье";
+                        break;
+                    case 10:
+                        str3 = "Настроить доступ к взаимодействию с казной";
                         break;
                 }
                 int parseColor = Color.parseColor("#0DFFFFFF");

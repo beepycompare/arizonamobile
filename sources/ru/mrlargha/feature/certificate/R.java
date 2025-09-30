@@ -4,11 +4,11 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int certificate_ic_rubble = 0x7f080520;
-        public static int sertificate_ic_engine = 0x7f080c8b;
-        public static int sertificate_ic_gov = 0x7f080c8c;
-        public static int sertificate_ic_hp = 0x7f080c8d;
-        public static int sertificate_ic_speed = 0x7f080c8e;
+        public static int certificate_ic_rubble = 0x7f080521;
+        public static int sertificate_ic_engine = 0x7f080c90;
+        public static int sertificate_ic_gov = 0x7f080c91;
+        public static int sertificate_ic_hp = 0x7f080c92;
+        public static int sertificate_ic_speed = 0x7f080c93;
 
         private drawable() {
         }

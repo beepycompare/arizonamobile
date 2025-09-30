@@ -62,6 +62,10 @@ public final class DailyRewardsScreen extends SAMPUIElement {
                 iArr[BackgroundType.AUTUMN_REWARD.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
+            try {
+                iArr[BackgroundType.WELCOME.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -137,13 +141,17 @@ public final class DailyRewardsScreen extends SAMPUIElement {
             } else if (i == 3) {
                 dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_rewards_may_bg);
                 setVisibleDetail(false);
-                this.rewardsAdapter.setMayReward(BackgroundType.MAY_REWARD);
-            } else if (i != 4) {
-                throw new NoWhenBranchMatchedException();
-            } else {
+                this.rewardsAdapter.setTypeReward(BackgroundType.MAY_REWARD);
+            } else if (i == 4) {
                 dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.autumn_reward_bg);
                 setVisibleDetail(false);
-                this.rewardsAdapter.setMayReward(BackgroundType.AUTUMN_REWARD);
+                this.rewardsAdapter.setTypeReward(BackgroundType.AUTUMN_REWARD);
+            } else if (i != 5) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_reward_welcom_bg);
+                setVisibleDetail(false);
+                this.rewardsAdapter.setTypeReward(BackgroundType.WELCOME);
             }
         }
     }
@@ -440,7 +448,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: DailyRewardsScreen.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u0000 \f2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\fB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000b¨\u0006\r"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "Companion", "calendar_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\b\u0086\u0081\u0002\u0018\u0000 \r2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\rB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "WELCOME", "Companion", "calendar_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class BackgroundType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -451,9 +459,10 @@ public final class DailyRewardsScreen extends SAMPUIElement {
         public static final BackgroundType NEW_YEAR = new BackgroundType("NEW_YEAR", 1, 1);
         public static final BackgroundType MAY_REWARD = new BackgroundType("MAY_REWARD", 2, 2);
         public static final BackgroundType AUTUMN_REWARD = new BackgroundType("AUTUMN_REWARD", 3, 3);
+        public static final BackgroundType WELCOME = new BackgroundType("WELCOME", 4, 4);
 
         private static final /* synthetic */ BackgroundType[] $values() {
-            return new BackgroundType[]{DAILY_REWARD, NEW_YEAR, MAY_REWARD, AUTUMN_REWARD};
+            return new BackgroundType[]{DAILY_REWARD, NEW_YEAR, MAY_REWARD, AUTUMN_REWARD, WELCOME};
         }
 
         public static EnumEntries<BackgroundType> getEntries() {
