@@ -7,9 +7,9 @@ public final class R {
         public static int buttonSize = 0x7f0400b6;
         public static int circleCrop = 0x7f0400ff;
         public static int colorScheme = 0x7f040151;
-        public static int imageAspectRatio = 0x7f04030d;
-        public static int imageAspectRatioAdjust = 0x7f04030e;
-        public static int scopeUris = 0x7f04053c;
+        public static int imageAspectRatio = 0x7f04030e;
+        public static int imageAspectRatioAdjust = 0x7f04030f;
+        public static int scopeUris = 0x7f04053d;
 
         private attr() {
         }
@@ -54,8 +54,8 @@ public final class R {
         public static int common_google_signin_btn_text_light_focused = 0x7f080552;
         public static int common_google_signin_btn_text_light_normal = 0x7f080553;
         public static int common_google_signin_btn_text_light_normal_background = 0x7f080554;
-        public static int googleg_disabled_color_18 = 0x7f080872;
-        public static int googleg_standard_color_18 = 0x7f080873;
+        public static int googleg_disabled_color_18 = 0x7f080874;
+        public static int googleg_standard_color_18 = 0x7f080875;
 
         private drawable() {
         }

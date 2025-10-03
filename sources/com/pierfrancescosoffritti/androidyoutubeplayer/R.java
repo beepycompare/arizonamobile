@@ -6,8 +6,8 @@ public final class R {
     public static final class attr {
         public static int autoPlay = 0x7f04004e;
         public static int enableAutomaticInitialization = 0x7f040222;
-        public static int handleNetworkEvents = 0x7f0402e4;
-        public static int videoId = 0x7f0406c5;
+        public static int handleNetworkEvents = 0x7f0402e5;
+        public static int videoId = 0x7f0406c6;
 
         private attr() {
         }

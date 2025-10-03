@@ -7,9 +7,9 @@ public final class R {
         public static int action = 0x7f040002;
         public static int data = 0x7f0401bd;
         public static int dataPattern = 0x7f0401be;
-        public static int graph = 0x7f0402b9;
-        public static int navGraph = 0x7f040497;
-        public static int targetPackage = 0x7f0405ff;
+        public static int graph = 0x7f0402ba;
+        public static int navGraph = 0x7f040498;
+        public static int targetPackage = 0x7f040600;
 
         private attr() {
         }

@@ -10,14 +10,14 @@ public final class R {
         public static int clearTop = 0x7f040107;
         public static int finishPrimaryWithSecondary = 0x7f040278;
         public static int finishSecondaryWithPrimary = 0x7f040279;
-        public static int placeholderActivityName = 0x7f0404d5;
-        public static int primaryActivityName = 0x7f0404fb;
-        public static int secondaryActivityAction = 0x7f04054a;
-        public static int secondaryActivityName = 0x7f04054b;
-        public static int splitLayoutDirection = 0x7f04059a;
-        public static int splitMinSmallestWidth = 0x7f04059b;
-        public static int splitMinWidth = 0x7f04059c;
-        public static int splitRatio = 0x7f04059d;
+        public static int placeholderActivityName = 0x7f0404d6;
+        public static int primaryActivityName = 0x7f0404fc;
+        public static int secondaryActivityAction = 0x7f04054b;
+        public static int secondaryActivityName = 0x7f04054c;
+        public static int splitLayoutDirection = 0x7f04059b;
+        public static int splitMinSmallestWidth = 0x7f04059c;
+        public static int splitMinWidth = 0x7f04059d;
+        public static int splitRatio = 0x7f04059e;
 
         private attr() {
         }

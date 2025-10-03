@@ -9,11 +9,11 @@ public final class R {
         public static int fastScrollHorizontalTrackDrawable = 0x7f040273;
         public static int fastScrollVerticalThumbDrawable = 0x7f040274;
         public static int fastScrollVerticalTrackDrawable = 0x7f040275;
-        public static int layoutManager = 0x7f04035c;
-        public static int recyclerViewStyle = 0x7f040526;
-        public static int reverseLayout = 0x7f040533;
-        public static int spanCount = 0x7f040595;
-        public static int stackFromEnd = 0x7f0405a6;
+        public static int layoutManager = 0x7f04035d;
+        public static int recyclerViewStyle = 0x7f040527;
+        public static int reverseLayout = 0x7f040534;
+        public static int spanCount = 0x7f040596;
+        public static int stackFromEnd = 0x7f0405a7;
 
         private attr() {
         }

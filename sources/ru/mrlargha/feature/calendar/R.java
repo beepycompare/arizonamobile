@@ -27,7 +27,7 @@ public final class R {
         public static int daily_rewards_may_info_icon = 0x7f0805b5;
         public static int daily_rewards_prize_ic = 0x7f0805b6;
         public static int daily_rewards_tip_container_bg = 0x7f0805b7;
-        public static int new_year_reward_bg = 0x7f080b07;
+        public static int new_year_reward_bg = 0x7f080b09;
 
         private drawable() {
         }

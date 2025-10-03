@@ -1681,6 +1681,8 @@
     </attr>
     <attr name="gradientAngle" format="integer">
     </attr>
+    <attr name="gradientList" format="string">
+    </attr>
     <attr name="gradientType">
         <flag name="linear" value="0" />
         <flag name="radial" value="1" />

@@ -14,9 +14,9 @@ public final class R {
         public static int dotsStrokeColor = 0x7f0401fe;
         public static int dotsStrokeWidth = 0x7f0401ff;
         public static int dotsWidthFactor = 0x7f040200;
-        public static int progressMode = 0x7f040500;
-        public static int selectedDotColor = 0x7f040552;
-        public static int stiffness = 0x7f0405bf;
+        public static int progressMode = 0x7f040501;
+        public static int selectedDotColor = 0x7f040553;
+        public static int stiffness = 0x7f0405c0;
 
         private attr() {
         }
@@ -24,11 +24,11 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int dot_background = 0x7f08068d;
-        public static int spring_dot_background = 0x7f080d13;
-        public static int spring_dot_stroke_background = 0x7f080d14;
-        public static int worm_dot_background = 0x7f080d7e;
-        public static int worm_dot_stroke_background = 0x7f080d7f;
+        public static int dot_background = 0x7f08068f;
+        public static int spring_dot_background = 0x7f080d15;
+        public static int spring_dot_stroke_background = 0x7f080d16;
+        public static int worm_dot_background = 0x7f080d80;
+        public static int worm_dot_stroke_background = 0x7f080d81;
 
         private drawable() {
         }

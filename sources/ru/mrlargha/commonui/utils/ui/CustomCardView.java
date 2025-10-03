@@ -3,6 +3,7 @@ package ru.mrlargha.commonui.utils.ui;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -11,13 +12,18 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.ArrayList;
+import java.util.List;
 import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 /* compiled from: CustomCardView.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u0001:\u0001BB\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010,\u001a\u00020-2\b\b\u0001\u0010.\u001a\u00020\u0017J7\u0010,\u001a\u00020-2\b\b\u0001\u0010.\u001a\u00020\u00172\b\b\u0001\u0010/\u001a\u00020\u00172\n\b\u0002\u00100\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u000101¢\u0006\u0002\u00102J\u000e\u00103\u001a\u00020-2\u0006\u00104\u001a\u00020\u0017J\u0010\u00105\u001a\u00020-2\b\b\u0001\u0010.\u001a\u00020\u0017J+\u00105\u001a\u00020-2\b\b\u0001\u0010.\u001a\u00020\u00172\b\b\u0001\u0010/\u001a\u00020\u00172\n\b\u0002\u00100\u001a\u0004\u0018\u00010\u0017¢\u0006\u0002\u00106J\u000e\u00107\u001a\u00020-2\u0006\u00104\u001a\u00020\u0017J\u000e\u00108\u001a\u00020-2\u0006\u00109\u001a\u00020\u0011J\u0006\u0010:\u001a\u00020-J\u0010\u0010;\u001a\u00020-2\u0006\u0010<\u001a\u00020=H\u0016J\u0010\u0010>\u001a\u00020-2\u0006\u0010<\u001a\u00020=H\u0014J\b\u0010?\u001a\u00020-H\u0002J\u0010\u0010@\u001a\u00020-2\u0006\u0010A\u001a\u00020\tH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010*\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0004\n\u0002\u0010+¨\u0006C"}, d2 = {"Lru/mrlargha/commonui/utils/ui/CustomCardView;", "Landroid/widget/FrameLayout;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;)V", "paint", "Landroid/graphics/Paint;", "path", "Landroid/graphics/Path;", "radii", "", "typedArray", "Landroid/content/res/TypedArray;", "topLeft", "", "topRight", "bottomRight", "bottomLeft", "corners", "bgMainColor", "", "bgSecondColor", "gradientAngle", "bgTransparency", "gradientType", "gradientRadius", "borderWidth", "borderMainColor", "borderSecondColor", "borderGradientAngle", "borderTransparency", "hasBorderSecondColor", "", "hasSecondColor", "hasTopLeft", "hasTopRight", "hasBottomLeft", "hasBottomRight", "hasBorder", "percentWidth", "Ljava/lang/Float;", "setBackground", "", "mainColor", "secondColor", "angle", "Lru/mrlargha/commonui/utils/ui/CustomCardView$GradientType;", "(IILjava/lang/Integer;Lru/mrlargha/commonui/utils/ui/CustomCardView$GradientType;)V", "setBackgroundAlpha", "alpha", "setBorder", "(IILjava/lang/Integer;)V", "setBorderAlpha", "setPercentWidth", "percent", "resetPercentWidth", "draw", "canvas", "Landroid/graphics/Canvas;", "onDraw", "setGradient", "setBorderGradient", "borderGradient", "GradientType", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0015\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0001LB\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u00101\u001a\u000202H\u0002J\b\u00103\u001a\u00020\rH\u0002J\u0010\u00104\u001a\u0002022\b\b\u0001\u00105\u001a\u00020\u0017J7\u00104\u001a\u0002022\b\b\u0001\u00105\u001a\u00020\u00172\b\b\u0001\u00106\u001a\u00020\u00172\n\b\u0002\u00107\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u000108¢\u0006\u0002\u00109J+\u00104\u001a\u0002022\u0006\u0010:\u001a\u0002002\n\b\u0002\u00107\u001a\u0004\u0018\u00010\u00172\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u000108¢\u0006\u0002\u0010;J\u000e\u0010<\u001a\u0002022\u0006\u0010=\u001a\u00020\u0017J\u0010\u0010>\u001a\u0002022\b\b\u0001\u00105\u001a\u00020\u0017J+\u0010>\u001a\u0002022\b\b\u0001\u00105\u001a\u00020\u00172\b\b\u0001\u00106\u001a\u00020\u00172\n\b\u0002\u00107\u001a\u0004\u0018\u00010\u0017¢\u0006\u0002\u0010?J\u000e\u0010@\u001a\u0002022\u0006\u0010=\u001a\u00020\u0017J\u000e\u0010A\u001a\u0002022\u0006\u0010B\u001a\u00020\u0011J\u0006\u0010C\u001a\u000202J\u0010\u0010D\u001a\u0002022\u0006\u0010E\u001a\u00020FH\u0016J\u0010\u0010G\u001a\u0002022\u0006\u0010E\u001a\u00020FH\u0014J\b\u0010H\u001a\u000202H\u0002J\b\u0010I\u001a\u000202H\u0002J\u0010\u0010J\u001a\u0002022\u0006\u0010K\u001a\u00020\tH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010-\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u000e\u0010/\u001a\u000200X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lru/mrlargha/commonui/utils/ui/CustomCardView;", "Landroid/widget/FrameLayout;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;)V", "paint", "Landroid/graphics/Paint;", "path", "Landroid/graphics/Path;", "radii", "", "typedArray", "Landroid/content/res/TypedArray;", "topLeft", "", "topRight", "bottomRight", "bottomLeft", "corners", "bgMainColor", "", "bgSecondColor", "gradientAngle", "bgTransparency", "gradientType", "gradientRadius", "gradientList", "", "borderWidth", "borderMainColor", "borderSecondColor", "borderGradientAngle", "borderTransparency", "hasBorderSecondColor", "", "hasSecondColor", "hasGradientList", "hasTopLeft", "hasTopRight", "hasBottomLeft", "hasBottomRight", "hasBorder", "percentWidth", "Ljava/lang/Float;", "gradientColorList", "", "setGradientColorList", "", "getFloatGradient", "setBackground", "mainColor", "secondColor", "angle", "Lru/mrlargha/commonui/utils/ui/CustomCardView$GradientType;", "(IILjava/lang/Integer;Lru/mrlargha/commonui/utils/ui/CustomCardView$GradientType;)V", "colorList", "([ILjava/lang/Integer;Lru/mrlargha/commonui/utils/ui/CustomCardView$GradientType;)V", "setBackgroundAlpha", "alpha", "setBorder", "(IILjava/lang/Integer;)V", "setBorderAlpha", "setPercentWidth", "percent", "resetPercentWidth", "draw", "canvas", "Landroid/graphics/Canvas;", "onDraw", "setGradient", "setLinearGradientType", "setBorderGradient", "borderGradient", "GradientType", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CustomCardView extends FrameLayout {
     private int bgMainColor;
@@ -32,12 +38,15 @@ public final class CustomCardView extends FrameLayout {
     private final float bottomRight;
     private final float corners;
     private int gradientAngle;
+    private int[] gradientColorList;
+    private String gradientList;
     private float gradientRadius;
     private int gradientType;
     private final boolean hasBorder;
     private boolean hasBorderSecondColor;
     private final boolean hasBottomLeft;
     private final boolean hasBottomRight;
+    private boolean hasGradientList;
     private boolean hasSecondColor;
     private final boolean hasTopLeft;
     private final boolean hasTopRight;
@@ -76,6 +85,7 @@ public final class CustomCardView extends FrameLayout {
         this.bgTransparency = obtainStyledAttributes.getInteger(R.styleable.CustomCardView_backgroundTransparency, 100);
         this.gradientType = obtainStyledAttributes.getInteger(R.styleable.CustomCardView_gradientType, 0);
         this.gradientRadius = obtainStyledAttributes.getDimension(R.styleable.CustomCardView_radialGradientRadius, 0.0f);
+        this.gradientList = obtainStyledAttributes.getString(R.styleable.CustomCardView_gradientList);
         this.borderWidth = obtainStyledAttributes.getDimension(R.styleable.CustomCardView_borderWidth, 0.0f);
         this.borderMainColor = obtainStyledAttributes.getColor(R.styleable.CustomCardView_borderMainColor, 0);
         this.borderSecondColor = obtainStyledAttributes.getColor(R.styleable.CustomCardView_borderSecondColor, 0);
@@ -83,6 +93,7 @@ public final class CustomCardView extends FrameLayout {
         this.borderTransparency = obtainStyledAttributes.getInteger(R.styleable.CustomCardView_borderTransparency, 100);
         this.hasBorderSecondColor = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_borderSecondColor);
         this.hasSecondColor = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_backgroundSecondColor);
+        this.hasGradientList = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_gradientList);
         boolean hasValue = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_cornerTopLeft);
         this.hasTopLeft = hasValue;
         boolean hasValue2 = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_cornerTopRight);
@@ -92,7 +103,9 @@ public final class CustomCardView extends FrameLayout {
         boolean hasValue4 = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_cornerBottomRight);
         this.hasBottomRight = hasValue4;
         this.hasBorder = obtainStyledAttributes.hasValue(R.styleable.CustomCardView_borderWidth);
+        this.gradientColorList = new int[0];
         setWillNotDraw(false);
+        setGradientColorList();
         obtainStyledAttributes.recycle();
         fArr[0] = hasValue ? dimension : dimension5;
         fArr[1] = hasValue ? dimension : dimension5;
@@ -104,7 +117,47 @@ public final class CustomCardView extends FrameLayout {
         fArr[7] = hasValue3 ? dimension4 : dimension5;
     }
 
+    private final void setGradientColorList() {
+        List split$default;
+        if (this.hasGradientList) {
+            String str = this.gradientList;
+            int[] iArr = null;
+            String replace$default = str != null ? StringsKt.replace$default(str, " ", "", false, 4, (Object) null) : null;
+            if (replace$default != null && (split$default = StringsKt.split$default((CharSequence) replace$default, new String[]{StringUtils.COMMA}, false, 0, 6, (Object) null)) != null) {
+                List<String> list = split$default;
+                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                for (String str2 : list) {
+                    arrayList.add(Integer.valueOf(Color.parseColor(str2)));
+                }
+                iArr = CollectionsKt.toIntArray(arrayList);
+            }
+            if (iArr != null) {
+                this.gradientColorList = iArr;
+            }
+        }
+    }
+
+    private final float[] getFloatGradient() {
+        int i = 0;
+        if (this.gradientColorList.length == 0) {
+            return new float[0];
+        }
+        ArrayList arrayList = new ArrayList();
+        int[] iArr = this.gradientColorList;
+        int length = iArr.length - 1;
+        int length2 = iArr.length;
+        int i2 = 0;
+        while (i < length2) {
+            int i3 = iArr[i];
+            arrayList.add(Float.valueOf(i2 / length));
+            i++;
+            i2++;
+        }
+        return CollectionsKt.toFloatArray(arrayList);
+    }
+
     public final void setBackground(int i) {
+        this.hasGradientList = false;
         this.bgMainColor = i;
         this.hasSecondColor = false;
         invalidate();
@@ -121,8 +174,32 @@ public final class CustomCardView extends FrameLayout {
     }
 
     public final void setBackground(int i, int i2, Integer num, GradientType gradientType) {
+        this.hasGradientList = false;
         this.bgMainColor = i;
         this.bgSecondColor = i2;
+        if (num != null) {
+            this.gradientAngle = num.intValue();
+        }
+        if (gradientType != null) {
+            this.gradientType = gradientType.getValue();
+        }
+        invalidate();
+    }
+
+    public static /* synthetic */ void setBackground$default(CustomCardView customCardView, int[] iArr, Integer num, GradientType gradientType, int i, Object obj) {
+        if ((i & 2) != 0) {
+            num = null;
+        }
+        if ((i & 4) != 0) {
+            gradientType = null;
+        }
+        customCardView.setBackground(iArr, num, gradientType);
+    }
+
+    public final void setBackground(int[] colorList, Integer num, GradientType gradientType) {
+        Intrinsics.checkNotNullParameter(colorList, "colorList");
+        this.gradientColorList = colorList;
+        this.hasGradientList = true;
         if (num != null) {
             this.gradientAngle = num.intValue();
         }
@@ -223,6 +300,12 @@ public final class CustomCardView extends FrameLayout {
 
     private final void setGradient() {
         this.paint.setAlpha((this.bgTransparency * 255) / 100);
+        if (this.hasGradientList) {
+            if (!(this.gradientColorList.length == 0)) {
+                setLinearGradientType();
+                return;
+            }
+        }
         if (!this.hasSecondColor) {
             this.paint.setColor(this.bgMainColor);
             return;
@@ -246,6 +329,20 @@ public final class CustomCardView extends FrameLayout {
         float f3 = cos * abs;
         float f4 = sin * abs;
         this.paint.setShader(new LinearGradient(f - f3, f2 - f4, f + f3, f2 + f4, this.bgMainColor, this.bgSecondColor, Shader.TileMode.CLAMP));
+    }
+
+    private final void setLinearGradientType() {
+        double radians = Math.toRadians(this.gradientAngle);
+        float width = getWidth();
+        float height = getHeight();
+        float f = width / 2.0f;
+        float f2 = height / 2.0f;
+        float cos = (float) Math.cos(radians);
+        float sin = (float) Math.sin(radians);
+        float abs = (Math.abs(width * cos) + Math.abs(height * sin)) / 2.0f;
+        float f3 = cos * abs;
+        float f4 = sin * abs;
+        this.paint.setShader(new LinearGradient(f - f3, f2 - f4, f + f3, f2 + f4, this.gradientColorList, getFloatGradient(), Shader.TileMode.CLAMP));
     }
 
     private final void setBorderGradient(Paint paint) {

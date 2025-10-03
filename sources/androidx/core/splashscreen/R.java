@@ -4,12 +4,12 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
-        public static int postSplashScreenTheme = 0x7f0404e9;
-        public static int splashScreenIconSize = 0x7f040599;
-        public static int windowSplashScreenAnimatedIcon = 0x7f0406e6;
-        public static int windowSplashScreenAnimationDuration = 0x7f0406e7;
-        public static int windowSplashScreenBackground = 0x7f0406e8;
-        public static int windowSplashScreenIconBackgroundColor = 0x7f0406e9;
+        public static int postSplashScreenTheme = 0x7f0404ea;
+        public static int splashScreenIconSize = 0x7f04059a;
+        public static int windowSplashScreenAnimatedIcon = 0x7f0406e7;
+        public static int windowSplashScreenAnimationDuration = 0x7f0406e8;
+        public static int windowSplashScreenBackground = 0x7f0406e9;
+        public static int windowSplashScreenIconBackgroundColor = 0x7f0406ea;
 
         private attr() {
         }
@@ -33,7 +33,7 @@ public final class R {
     public static final class drawable {
         public static int compat_splash_screen = 0x7f080555;
         public static int compat_splash_screen_no_icon_background = 0x7f080556;
-        public static int icon_background = 0x7f0809ef;
+        public static int icon_background = 0x7f0809f1;
 
         private drawable() {
         }

@@ -16,11 +16,11 @@ public final class R {
         public static int fontStyle = 0x7f0402aa;
         public static int fontVariationSettings = 0x7f0402ab;
         public static int fontWeight = 0x7f0402ac;
-        public static int lStar = 0x7f04034e;
-        public static int nestedScrollViewStyle = 0x7f0404a0;
-        public static int queryPatterns = 0x7f040506;
-        public static int shortcutMatchRequired = 0x7f04056c;
-        public static int ttcIndex = 0x7f0406b7;
+        public static int lStar = 0x7f04034f;
+        public static int nestedScrollViewStyle = 0x7f0404a1;
+        public static int queryPatterns = 0x7f040507;
+        public static int shortcutMatchRequired = 0x7f04056d;
+        public static int ttcIndex = 0x7f0406b8;
 
         private attr() {
         }
@@ -68,18 +68,18 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int notification_action_background = 0x7f080b13;
-        public static int notification_bg = 0x7f080b14;
-        public static int notification_bg_low = 0x7f080b15;
-        public static int notification_bg_low_normal = 0x7f080b16;
-        public static int notification_bg_low_pressed = 0x7f080b17;
-        public static int notification_bg_normal = 0x7f080b18;
-        public static int notification_bg_normal_pressed = 0x7f080b19;
-        public static int notification_icon_background = 0x7f080b1b;
-        public static int notification_template_icon_bg = 0x7f080b1d;
-        public static int notification_template_icon_low_bg = 0x7f080b1e;
-        public static int notification_tile_bg = 0x7f080b20;
-        public static int notify_panel_notification_icon_bg = 0x7f080b22;
+        public static int notification_action_background = 0x7f080b15;
+        public static int notification_bg = 0x7f080b16;
+        public static int notification_bg_low = 0x7f080b17;
+        public static int notification_bg_low_normal = 0x7f080b18;
+        public static int notification_bg_low_pressed = 0x7f080b19;
+        public static int notification_bg_normal = 0x7f080b1a;
+        public static int notification_bg_normal_pressed = 0x7f080b1b;
+        public static int notification_icon_background = 0x7f080b1d;
+        public static int notification_template_icon_bg = 0x7f080b1f;
+        public static int notification_template_icon_low_bg = 0x7f080b20;
+        public static int notification_tile_bg = 0x7f080b22;
+        public static int notify_panel_notification_icon_bg = 0x7f080b24;
 
         private drawable() {
         }

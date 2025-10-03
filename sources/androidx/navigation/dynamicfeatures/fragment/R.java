@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class attr {
-        public static int moduleName = 0x7f040461;
+        public static int moduleName = 0x7f040462;
 
         private attr() {
         }

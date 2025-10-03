@@ -24,48 +24,48 @@ public final class R {
         public static int entries = 0x7f040234;
         public static int entryValues = 0x7f040235;
         public static int fragment = 0x7f0402b0;
-        public static int icon = 0x7f040300;
-        public static int iconSpaceReserved = 0x7f040306;
-        public static int initialExpandedChildrenCount = 0x7f040321;
-        public static int isPreferenceVisible = 0x7f040328;
-        public static int key = 0x7f04034a;
-        public static int layout = 0x7f040359;
-        public static int maxHeight = 0x7f040445;
-        public static int maxWidth = 0x7f04044b;
-        public static int min = 0x7f040455;
-        public static int negativeButtonText = 0x7f04049e;
-        public static int order = 0x7f0404af;
-        public static int orderingFromXml = 0x7f0404b0;
-        public static int persistent = 0x7f0404d1;
-        public static int positiveButtonText = 0x7f0404e8;
-        public static int preferenceCategoryStyle = 0x7f0404ea;
-        public static int preferenceCategoryTitleTextAppearance = 0x7f0404eb;
-        public static int preferenceCategoryTitleTextColor = 0x7f0404ec;
-        public static int preferenceFragmentCompatStyle = 0x7f0404ed;
-        public static int preferenceFragmentListStyle = 0x7f0404ee;
-        public static int preferenceFragmentStyle = 0x7f0404ef;
-        public static int preferenceInformationStyle = 0x7f0404f0;
-        public static int preferenceScreenStyle = 0x7f0404f1;
-        public static int preferenceStyle = 0x7f0404f2;
-        public static int preferenceTheme = 0x7f0404f3;
-        public static int seekBarIncrement = 0x7f04054c;
-        public static int seekBarPreferenceStyle = 0x7f04054d;
-        public static int selectable = 0x7f04054f;
-        public static int selectableItemBackground = 0x7f040550;
-        public static int shouldDisableView = 0x7f04056d;
-        public static int showSeekBarValue = 0x7f040576;
-        public static int singleLineTitle = 0x7f04058e;
-        public static int summary = 0x7f0405d5;
-        public static int summaryOff = 0x7f0405d6;
-        public static int summaryOn = 0x7f0405d7;
-        public static int switchPreferenceCompatStyle = 0x7f0405db;
-        public static int switchPreferenceStyle = 0x7f0405dc;
-        public static int switchTextOff = 0x7f0405df;
-        public static int switchTextOn = 0x7f0405e0;
-        public static int title = 0x7f040677;
-        public static int updatesContinuously = 0x7f0406ba;
-        public static int useSimpleSummaryProvider = 0x7f0406bf;
-        public static int widgetLayout = 0x7f0406da;
+        public static int icon = 0x7f040301;
+        public static int iconSpaceReserved = 0x7f040307;
+        public static int initialExpandedChildrenCount = 0x7f040322;
+        public static int isPreferenceVisible = 0x7f040329;
+        public static int key = 0x7f04034b;
+        public static int layout = 0x7f04035a;
+        public static int maxHeight = 0x7f040446;
+        public static int maxWidth = 0x7f04044c;
+        public static int min = 0x7f040456;
+        public static int negativeButtonText = 0x7f04049f;
+        public static int order = 0x7f0404b0;
+        public static int orderingFromXml = 0x7f0404b1;
+        public static int persistent = 0x7f0404d2;
+        public static int positiveButtonText = 0x7f0404e9;
+        public static int preferenceCategoryStyle = 0x7f0404eb;
+        public static int preferenceCategoryTitleTextAppearance = 0x7f0404ec;
+        public static int preferenceCategoryTitleTextColor = 0x7f0404ed;
+        public static int preferenceFragmentCompatStyle = 0x7f0404ee;
+        public static int preferenceFragmentListStyle = 0x7f0404ef;
+        public static int preferenceFragmentStyle = 0x7f0404f0;
+        public static int preferenceInformationStyle = 0x7f0404f1;
+        public static int preferenceScreenStyle = 0x7f0404f2;
+        public static int preferenceStyle = 0x7f0404f3;
+        public static int preferenceTheme = 0x7f0404f4;
+        public static int seekBarIncrement = 0x7f04054d;
+        public static int seekBarPreferenceStyle = 0x7f04054e;
+        public static int selectable = 0x7f040550;
+        public static int selectableItemBackground = 0x7f040551;
+        public static int shouldDisableView = 0x7f04056e;
+        public static int showSeekBarValue = 0x7f040577;
+        public static int singleLineTitle = 0x7f04058f;
+        public static int summary = 0x7f0405d6;
+        public static int summaryOff = 0x7f0405d7;
+        public static int summaryOn = 0x7f0405d8;
+        public static int switchPreferenceCompatStyle = 0x7f0405dc;
+        public static int switchPreferenceStyle = 0x7f0405dd;
+        public static int switchTextOff = 0x7f0405e0;
+        public static int switchTextOn = 0x7f0405e1;
+        public static int title = 0x7f040678;
+        public static int updatesContinuously = 0x7f0406bb;
+        public static int useSimpleSummaryProvider = 0x7f0406c0;
+        public static int widgetLayout = 0x7f0406db;
 
         private attr() {
         }
@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f080915;
-        public static int preference_list_divider_material = 0x7f080c07;
+        public static int ic_arrow_down_24dp = 0x7f080917;
+        public static int preference_list_divider_material = 0x7f080c09;
 
         private drawable() {
         }
