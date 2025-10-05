@@ -52,26 +52,22 @@ public final class zzhg extends zzmf implements zznn {
         return this.zzg;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzi(int i) {
         this.zzb |= 1;
         this.zzd = i;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzj(zzii zziiVar) {
         zziiVar.getClass();
         this.zze = zziiVar;
         this.zzb |= 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzk(zzii zziiVar) {
         this.zzf = zziiVar;
         this.zzb |= 4;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.gms.internal.measurement.zzmf
     public final Object zzl(int i, Object obj, Object obj2) {
         int i2 = i - 1;
@@ -93,7 +89,6 @@ public final class zzhg extends zzmf implements zznn {
         return (byte) 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ void zzm(boolean z) {
         this.zzb |= 8;
         this.zzg = z;

@@ -7,14 +7,8 @@ public final class zzhf extends zzmb implements zznn {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public /* synthetic */ zzhf(byte[] bArr) {
-        super(r1);
-        zzhg zzhgVar;
-        zzhgVar = zzhg.zzh;
+        super(zzhg.zzn());
     }
 
     public final zzhf zza(int i) {

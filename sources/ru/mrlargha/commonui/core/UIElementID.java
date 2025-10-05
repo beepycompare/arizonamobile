@@ -120,7 +120,7 @@ public final class UIElementID {
     public static final UIElementID CATALOG = new UIElementID("CATALOG", 95, 101, ProjectType.COMMON);
     public static final UIElementID NEIGHBOR_GAME_TASK = new UIElementID("NEIGHBOR_GAME_TASK", 96, 102, ProjectType.RODINA);
     public static final UIElementID NEIGHBOR_GAME = new UIElementID("NEIGHBOR_GAME", 97, 103, ProjectType.RODINA);
-    public static final UIElementID ARIZONA_DOCUMENTS = new UIElementID("ARIZONA_DOCUMENTS", 98, 104, ProjectType.ARIZONA);
+    public static final UIElementID ARIZONA_DOCUMENTS = new UIElementID("ARIZONA_DOCUMENTS", 98, 104, ProjectType.COMMON);
     public static final UIElementID GROOMING = new UIElementID("GROOMING", 99, 107, ProjectType.RODINA);
     public static final UIElementID AGREEMENT_SCREEN = new UIElementID("AGREEMENT_SCREEN", 100, 108, ProjectType.RODINA);
     public static final UIElementID FAMILY_RODINA = new UIElementID("FAMILY_RODINA", 101, 109, ProjectType.RODINA);
