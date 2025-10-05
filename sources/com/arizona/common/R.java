@@ -46,8 +46,8 @@ public final class R {
         public static int avatar_loader = 0x7f0a0139;
         public static int avatar_status = 0x7f0a013a;
         public static int back_progress = 0x7f0a0156;
-        public static int front_progress = 0x7f0a053a;
-        public static int max_progress = 0x7f0a084f;
+        public static int front_progress = 0x7f0a053b;
+        public static int max_progress = 0x7f0a0850;
 
         private id() {
         }
@@ -56,7 +56,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class layout {
         public static int avatar_view = 0x7f0d0039;
-        public static int pausable_progress = 0x7f0d01d3;
+        public static int pausable_progress = 0x7f0d01d5;
 
         private layout() {
         }

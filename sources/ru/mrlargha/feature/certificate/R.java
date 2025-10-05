@@ -20,23 +20,23 @@ public final class R {
         public static int button_get = 0x7f0a0251;
         public static int button_sell = 0x7f0a0262;
         public static int card_info = 0x7f0a0299;
-        public static int ic = 0x7f0a0666;
-        public static int image = 0x7f0a067c;
-        public static int info1 = 0x7f0a06aa;
-        public static int info2 = 0x7f0a06ac;
-        public static int info3 = 0x7f0a06ae;
-        public static int info4 = 0x7f0a06b0;
-        public static int overlay = 0x7f0a09c2;
-        public static int quality_bg = 0x7f0a0a84;
-        public static int quality_button = 0x7f0a0a85;
-        public static int quality_text = 0x7f0a0a87;
-        public static int sell_text = 0x7f0a0c13;
-        public static int text_bonus = 0x7f0a0d85;
-        public static int title = 0x7f0a0dc1;
-        public static int transport_screen = 0x7f0a0e01;
-        public static int type = 0x7f0a0ebb;
-        public static int value = 0x7f0a0ee0;
-        public static int value_bonus = 0x7f0a0ee8;
+        public static int ic = 0x7f0a0667;
+        public static int image = 0x7f0a067d;
+        public static int info1 = 0x7f0a06ab;
+        public static int info2 = 0x7f0a06ad;
+        public static int info3 = 0x7f0a06af;
+        public static int info4 = 0x7f0a06b1;
+        public static int overlay = 0x7f0a09c3;
+        public static int quality_bg = 0x7f0a0a85;
+        public static int quality_button = 0x7f0a0a86;
+        public static int quality_text = 0x7f0a0a88;
+        public static int sell_text = 0x7f0a0c14;
+        public static int text_bonus = 0x7f0a0d86;
+        public static int title = 0x7f0a0dc2;
+        public static int transport_screen = 0x7f0a0e02;
+        public static int type = 0x7f0a0ebc;
+        public static int value = 0x7f0a0ee1;
+        public static int value_bonus = 0x7f0a0ee9;
 
         private id() {
         }

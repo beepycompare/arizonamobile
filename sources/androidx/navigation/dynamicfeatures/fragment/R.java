@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int dfn_progress_fragment = 0x7f0a03dc;
-        public static int installation_progress = 0x7f0a06ca;
-        public static int progress_action = 0x7f0a0a62;
-        public static int progress_icon = 0x7f0a0a69;
-        public static int progress_title = 0x7f0a0a6d;
+        public static int dfn_progress_fragment = 0x7f0a03dd;
+        public static int installation_progress = 0x7f0a06cb;
+        public static int progress_action = 0x7f0a0a63;
+        public static int progress_icon = 0x7f0a0a6a;
+        public static int progress_title = 0x7f0a0a6e;
 
         private id() {
         }

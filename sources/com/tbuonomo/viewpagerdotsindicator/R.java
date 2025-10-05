@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int dot = 0x7f0a043b;
-        public static int spring_dot = 0x7f0a0cb4;
-        public static int worm_dot = 0x7f0a0f34;
+        public static int dot = 0x7f0a043c;
+        public static int spring_dot = 0x7f0a0cb5;
+        public static int worm_dot = 0x7f0a0f35;
 
         private id() {
         }
@@ -47,8 +47,8 @@ public final class R {
     /* loaded from: classes4.dex */
     public static final class layout {
         public static int dot_layout = 0x7f0d00aa;
-        public static int spring_dot_layout = 0x7f0d021a;
-        public static int worm_dot_layout = 0x7f0d0241;
+        public static int spring_dot_layout = 0x7f0d021b;
+        public static int worm_dot_layout = 0x7f0d0242;
 
         private layout() {
         }
