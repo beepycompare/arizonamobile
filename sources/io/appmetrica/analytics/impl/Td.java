@@ -1,8 +1,8 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public abstract class Td extends AbstractC0561rf implements Dl {
-    public Td(InterfaceC0301hb interfaceC0301hb, String str) {
-        super(interfaceC0301hb, str);
+public abstract class Td extends AbstractC0562rf implements Dl {
+    public Td(InterfaceC0302hb interfaceC0302hb, String str) {
+        super(interfaceC0302hb, str);
     }
 
     public final String c(String str, String str2) {
@@ -23,8 +23,8 @@ public abstract class Td extends AbstractC0561rf implements Dl {
         return (Dl) d(f(str));
     }
 
-    public Td(InterfaceC0301hb interfaceC0301hb) {
-        this(interfaceC0301hb, null);
+    public Td(InterfaceC0302hb interfaceC0302hb) {
+        this(interfaceC0302hb, null);
     }
 
     public final Dl d(String str, int i) {

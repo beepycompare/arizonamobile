@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -36,7 +35,7 @@ public final class NeedResourcesViewHolder extends RecyclerView.ViewHolder {
         Intrinsics.checkNotNullExpressionValue(viewCenter, "viewCenter");
         viewCenter.setVisibility(itemVal.getAmountHave() >= itemVal.getAmountNeed() ? 8 : 0);
         itemInventoryBinding.tvTitleText.setText(itemVal.getAmountHave() + "/" + itemVal.getAmountNeed());
-        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, itemVal.getItem(), null, 4, null);
+        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", itemVal.getItem(), null, 4, null);
         if (iconFromArchive$default != null) {
             ImageView ivItemImage = itemInventoryBinding.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");

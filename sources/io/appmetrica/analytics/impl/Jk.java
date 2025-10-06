@@ -16,7 +16,7 @@ public abstract class Jk {
 
     public static Intent a(Context context) {
         Bundle bundle;
-        C0715xj c0715xj;
+        C0716xj c0716xj;
         Intent addFlags = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme("appmetrica").authority(context.getPackageName()).build()).addFlags(32);
         try {
             bundle = f523a.getApplicationInfo(context, context.getPackageName(), 128).metaData;
@@ -31,13 +31,13 @@ public abstract class Jk {
         A4 l = A4.l();
         synchronized (l) {
             if (l.o == null) {
-                C0715xj c0715xj2 = new C0715xj();
-                l.o = c0715xj2;
-                l.h.a(c0715xj2);
+                C0716xj c0716xj2 = new C0716xj();
+                l.o = c0716xj2;
+                l.h.a(c0716xj2);
             }
-            c0715xj = l.o;
+            c0716xj = l.o;
         }
-        ScreenInfo a2 = c0715xj.a(context);
+        ScreenInfo a2 = c0716xj.a(context);
         putExtras.putExtra("screen_size", a2 == null ? null : Gb.a(a2));
         return putExtras.setPackage(context.getApplicationContext().getPackageName());
     }

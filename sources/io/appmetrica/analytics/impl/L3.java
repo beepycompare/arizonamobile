@@ -15,13 +15,13 @@ public final class L3 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f552a;
-    public final C0537qf b;
+    public final C0538qf b;
     public final String c;
     public final SafePackageManager d;
 
-    public L3(Context context, C0537qf c0537qf, String str, SafePackageManager safePackageManager) {
+    public L3(Context context, C0538qf c0538qf, String str, SafePackageManager safePackageManager) {
         this.f552a = context;
-        this.b = c0537qf;
+        this.b = c0538qf;
         this.c = str;
         this.d = safePackageManager;
     }

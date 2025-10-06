@@ -13,16 +13,16 @@ public final class Im implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
     public final Km f504a;
-    public C0441mm b;
+    public C0442mm b;
     public Sl c;
     public final RequestDataHolder d;
     public final ConfigProvider e;
     public final ResponseDataHolder f;
     public final FullUrlFormer g;
-    public final C0131am h;
+    public final C0132am h;
 
-    public Im(Km km, FullUrlFormer<C0389km> fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider<C0389km> configProvider) {
-        this(km, new C0131am(), fullUrlFormer, requestDataHolder, responseDataHolder, configProvider);
+    public Im(Km km, FullUrlFormer<C0390km> fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider<C0390km> configProvider) {
+        this(km, new C0132am(), fullUrlFormer, requestDataHolder, responseDataHolder, configProvider);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -47,7 +47,7 @@ public final class Im implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final RetryPolicyConfig getRetryPolicyConfig() {
-        return ((C0389km) this.e.getConfig()).getRetryPolicyConfig();
+        return ((C0390km) this.e.getConfig()).getRetryPolicyConfig();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -76,7 +76,7 @@ public final class Im implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final boolean onRequestComplete() {
-        C0441mm handle = this.h.handle(this.f);
+        C0442mm handle = this.h.handle(this.f);
         this.b = handle;
         return handle != null;
     }
@@ -96,7 +96,7 @@ public final class Im implements UnderlyingNetworkTask {
         if (this.b == null || this.f.getResponseHeaders() == null) {
             return;
         }
-        this.f504a.a(this.b, (C0389km) this.e.getConfig(), this.f.getResponseHeaders());
+        this.f504a.a(this.b, (C0390km) this.e.getConfig(), this.f.getResponseHeaders());
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -119,13 +119,13 @@ public final class Im implements UnderlyingNetworkTask {
         this.f504a.a(this.c);
     }
 
-    public Im(Km km, C0131am c0131am, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
+    public Im(Km km, C0132am c0132am, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
         this.f504a = km;
-        this.h = c0131am;
+        this.h = c0132am;
         this.d = requestDataHolder;
         this.f = responseDataHolder;
         this.e = configProvider;
         this.g = fullUrlFormer;
-        fullUrlFormer.setHosts(((C0389km) configProvider.getConfig()).k());
+        fullUrlFormer.setHosts(((C0390km) configProvider.getConfig()).k());
     }
 }

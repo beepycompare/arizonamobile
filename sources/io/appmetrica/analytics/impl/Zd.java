@@ -14,33 +14,33 @@ public final class Zd implements ProtobufConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0627u6 fromModel(C0252fe c0252fe) {
-        C0627u6 c0627u6 = new C0627u6();
-        c0627u6.f = 1;
-        C0602t6 c0602t6 = new C0602t6();
-        c0602t6.f1092a = c0252fe.f879a;
-        C0702x6 c0702x6 = new C0702x6();
-        Integer num = (Integer) b.get(c0252fe.b.f825a);
+    public final C0628u6 fromModel(C0253fe c0253fe) {
+        C0628u6 c0628u6 = new C0628u6();
+        c0628u6.f = 1;
+        C0603t6 c0603t6 = new C0603t6();
+        c0603t6.f1092a = c0253fe.f879a;
+        C0703x6 c0703x6 = new C0703x6();
+        Integer num = (Integer) b.get(c0253fe.b.f825a);
         if (num != null) {
-            c0702x6.f1151a = num.intValue();
+            c0703x6.f1151a = num.intValue();
         }
-        String str = c0252fe.b.b;
+        String str = c0253fe.b.b;
         if (str == null) {
             str = "";
         }
-        c0702x6.b = str;
-        c0602t6.b = c0702x6;
-        c0627u6.g = c0602t6;
-        return c0627u6;
+        c0703x6.b = str;
+        c0603t6.b = c0703x6;
+        c0628u6.g = c0603t6;
+        return c0628u6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0627u6 c0627u6 = (C0627u6) obj;
+        C0628u6 c0628u6 = (C0628u6) obj;
         throw new UnsupportedOperationException();
     }
 
-    public final C0252fe a(C0627u6 c0627u6) {
+    public final C0253fe a(C0628u6 c0628u6) {
         throw new UnsupportedOperationException();
     }
 }

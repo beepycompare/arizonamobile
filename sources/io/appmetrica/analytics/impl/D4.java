@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public interface D4 {
     void a();
 
-    void a(C0477o6 c0477o6, N4 n4);
+    void a(C0478o6 c0478o6, N4 n4);
 }

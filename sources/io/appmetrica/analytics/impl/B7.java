@@ -64,9 +64,9 @@ public final class B7 implements ProtobufConverter {
         if (str5 != null) {
             m7.k = str5;
         }
-        EnumC0273g9 enumC0273g9 = d7.l;
-        if (enumC0273g9 != null) {
-            m7.l = enumC0273g9.f893a;
+        EnumC0274g9 enumC0274g9 = d7.l;
+        if (enumC0274g9 != null) {
+            m7.l = enumC0274g9.f893a;
         }
         String str6 = d7.m;
         if (str6 != null) {
@@ -137,7 +137,7 @@ public final class B7 implements ProtobufConverter {
         if (valueOf6.intValue() == m72.l) {
             valueOf6 = null;
         }
-        EnumC0273g9 a2 = valueOf6 != null ? EnumC0273g9.a(Integer.valueOf(valueOf6.intValue())) : null;
+        EnumC0274g9 a2 = valueOf6 != null ? EnumC0274g9.a(Integer.valueOf(valueOf6.intValue())) : null;
         String str11 = m7.m;
         String str12 = !Intrinsics.areEqual(str11, m72.m) ? str11 : null;
         Integer valueOf7 = Integer.valueOf(m7.n);

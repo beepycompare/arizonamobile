@@ -21,7 +21,7 @@ public final class Vg implements J {
 
     @Override // io.appmetrica.analytics.impl.J
     public final AdTrackingInfoResult a(Context context) {
-        return a(context, new C0585se());
+        return a(context, new C0586se());
     }
 
     public final AdTrackingInfoResult b(Context context) {
@@ -54,11 +54,11 @@ public final class Vg implements J {
     }
 
     @Override // io.appmetrica.analytics.impl.J
-    public final AdTrackingInfoResult a(Context context, InterfaceC0180cj interfaceC0180cj) {
+    public final AdTrackingInfoResult a(Context context, InterfaceC0181cj interfaceC0181cj) {
         AdTrackingInfoResult adTrackingInfoResult;
         AdTrackingInfoResult adTrackingInfoResult2;
         if (ReflectionUtils.detectClassExists("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider")) {
-            Pn pn = (Pn) interfaceC0180cj;
+            Pn pn = (Pn) interfaceC0181cj;
             pn.c = 0;
             adTrackingInfoResult = null;
             while (pn.b()) {
@@ -68,13 +68,13 @@ public final class Vg implements J {
                     adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f714a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;
                     try {
-                        Thread.sleep(((Pn) interfaceC0180cj).b);
+                        Thread.sleep(((Pn) interfaceC0181cj).b);
                     } catch (InterruptedException unused) {
                     }
                 } catch (Throwable th) {
                     adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f714a + " adv_id: " + th.getMessage());
                     adTrackingInfoResult = adTrackingInfoResult2;
-                    Thread.sleep(((Pn) interfaceC0180cj).b);
+                    Thread.sleep(((Pn) interfaceC0181cj).b);
                 }
             }
         } else {

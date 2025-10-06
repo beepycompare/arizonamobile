@@ -22,9 +22,9 @@ public final class T7 implements Converter {
         if (l != null) {
             contentValues.put("id", Long.valueOf(l.longValue()));
         }
-        EnumC0259fl enumC0259fl = s7.b;
-        if (enumC0259fl != null) {
-            contentValues.put("type", Integer.valueOf(enumC0259fl.f884a));
+        EnumC0260fl enumC0260fl = s7.b;
+        if (enumC0260fl != null) {
+            contentValues.put("type", Integer.valueOf(enumC0260fl.f884a));
         }
         String str = s7.c;
         if (str != null) {
@@ -46,19 +46,19 @@ public final class T7 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final S7 toModel(ContentValues contentValues) {
-        EnumC0259fl enumC0259fl;
+        EnumC0260fl enumC0260fl;
         int intValue;
         Long asLong = contentValues.getAsLong("id");
         Integer asInteger = contentValues.getAsInteger("type");
         if (asInteger != null) {
             Integer valueOf = Integer.valueOf(asInteger.intValue());
-            enumC0259fl = EnumC0259fl.FOREGROUND;
+            enumC0260fl = EnumC0260fl.FOREGROUND;
             if (valueOf != null && (intValue = valueOf.intValue()) != 0 && intValue == 1) {
-                enumC0259fl = EnumC0259fl.BACKGROUND;
+                enumC0260fl = EnumC0260fl.BACKGROUND;
             }
         } else {
-            enumC0259fl = null;
+            enumC0260fl = null;
         }
-        return new S7(asLong, enumC0259fl, contentValues.getAsString("report_request_parameters"), this.f682a.toModel(contentValues.getAsByteArray("session_description")));
+        return new S7(asLong, enumC0260fl, contentValues.getAsString("report_request_parameters"), this.f682a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

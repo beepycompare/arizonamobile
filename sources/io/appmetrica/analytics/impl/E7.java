@@ -4,16 +4,16 @@ public final class E7 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Long f424a;
-    public final EnumC0259fl b;
+    public final EnumC0260fl b;
     public final Long c;
     public final Bb d;
     public final Long e;
     public final Long f;
     public final D7 g;
 
-    public E7(Long l, EnumC0259fl enumC0259fl, Long l2, Bb bb, Long l3, Long l4, D7 d7) {
+    public E7(Long l, EnumC0260fl enumC0260fl, Long l2, Bb bb, Long l3, Long l4, D7 d7) {
         this.f424a = l;
-        this.b = enumC0259fl;
+        this.b = enumC0260fl;
         this.c = l2;
         this.d = bb;
         this.e = l3;

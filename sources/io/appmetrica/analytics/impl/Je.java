@@ -12,10 +12,10 @@ public final class Je implements A8 {
     public final Me f519a;
     public final I3 b;
     public final Sa c;
-    public final C0254fg d;
+    public final C0255fg d;
 
     public Je() {
-        this(new Me(), new I3(), new Sa(100), new C0254fg());
+        this(new Me(), new I3(), new Sa(100), new C0255fg());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -41,7 +41,7 @@ public final class Je implements A8 {
         t8.f.f493a = g8;
         int i = 0;
         char c = 1;
-        C0749z3 c0749z3 = new C0749z3(C0749z3.b(a2, zi));
+        C0750z3 c0750z3 = new C0750z3(C0750z3.b(a2, zi));
         List list = ke.c;
         ArrayList arrayList = new ArrayList();
         this.d.getClass();
@@ -79,7 +79,7 @@ public final class Je implements A8 {
         g82.f458a = g83.f458a;
         g82.e = g83.e;
         g82.c = g83.c;
-        C0749z3 c0749z32 = c0749z3;
+        C0750z3 c0750z32 = c0750z3;
         int i3 = 0;
         int i4 = computeInt32Size;
         while (i3 < list.size()) {
@@ -98,7 +98,7 @@ public final class Je implements A8 {
             if (arrayList2.size() != 0 && i4 + computeRawVarint32Size > 204800) {
                 t82.f.f493a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
                 ArrayList arrayList3 = new ArrayList();
-                arrayList.add(new Zi(t82, c0749z32));
+                arrayList.add(new Zi(t82, c0750z32));
                 T8 t83 = new T8();
                 t83.f683a = t8.f683a;
                 I8 i83 = new I8();
@@ -110,16 +110,16 @@ public final class Je implements A8 {
                 g84.f458a = g85.f458a;
                 g84.e = g85.e;
                 g84.c = g85.c;
-                c0749z32 = c0749z3;
+                c0750z32 = c0750z3;
                 i4 = computeInt32Size;
                 t82 = t83;
                 arrayList2 = arrayList3;
             }
             arrayList2.add((H8) zi2.f777a);
             A3[] a3Arr = new A3[2];
-            a3Arr[i5] = c0749z32;
+            a3Arr[i5] = c0750z32;
             a3Arr[c2] = zi2.b;
-            c0749z32 = new C0749z3(C0749z3.b(a3Arr));
+            c0750z32 = new C0750z3(C0750z3.b(a3Arr));
             i4 += computeRawVarint32Size;
             i3++;
             c = c2;
@@ -127,7 +127,7 @@ public final class Je implements A8 {
             i2 = 4;
         }
         t82.f.f493a.d = (H8[]) arrayList2.toArray(new H8[arrayList2.size()]);
-        arrayList.add(new Zi(t82, c0749z32));
+        arrayList.add(new Zi(t82, c0750z32));
         return arrayList;
     }
 
@@ -137,11 +137,11 @@ public final class Je implements A8 {
         throw new UnsupportedOperationException();
     }
 
-    public Je(Me me2, I3 i3, Sa sa, C0254fg c0254fg) {
+    public Je(Me me2, I3 i3, Sa sa, C0255fg c0255fg) {
         this.f519a = me2;
         this.b = i3;
         this.c = sa;
-        this.d = c0254fg;
+        this.d = c0255fg;
     }
 
     public final Ie a(List<Zi> list) {

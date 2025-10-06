@@ -29,43 +29,43 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public abstract class Y2 implements InterfaceC0198db {
+public abstract class Y2 implements InterfaceC0199db {
     public static final HashSet n = new HashSet(Arrays.asList(1, 13));
     public static final W2 o = new W2();
 
     /* renamed from: a  reason: collision with root package name */
     protected final Context f752a;
-    protected final C0153bi b;
+    protected final C0154bi b;
     protected final PublicLogger c;
     protected final Xn d;
-    protected final C0126ah e;
+    protected final C0127ah e;
     protected final U6 f;
-    public final C0161c0 g;
+    public final C0162c0 g;
     protected final Si h;
     public Ob i;
     public final Wf j;
-    public final C0429ma k;
-    public final C0202df l;
-    public final C0468nn m;
+    public final C0430ma k;
+    public final C0203df l;
+    public final C0469nn m;
 
-    public Y2(Context context, Si si, C0153bi c0153bi, C0429ma c0429ma, Q6 q6, Xn xn, C0126ah c0126ah, U6 u6, C0161c0 c0161c0, C0202df c0202df) {
+    public Y2(Context context, Si si, C0154bi c0154bi, C0430ma c0430ma, Q6 q6, Xn xn, C0127ah c0127ah, U6 u6, C0162c0 c0162c0, C0203df c0203df) {
         Context applicationContext = context.getApplicationContext();
         this.f752a = applicationContext;
         this.h = si;
-        this.b = c0153bi;
-        this.k = c0429ma;
+        this.b = c0154bi;
+        this.k = c0430ma;
         this.d = xn;
-        this.e = c0126ah;
+        this.e = c0127ah;
         this.f = u6;
-        this.g = c0161c0;
-        this.l = c0202df;
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0153bi.b().getApiKey());
+        this.g = c0162c0;
+        this.l = c0203df;
+        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0154bi.b().getApiKey());
         this.c = orCreatePublicLogger;
-        if (AbstractC0699x3.a(c0153bi.b().isLogEnabled())) {
+        if (AbstractC0700x3.a(c0154bi.b().isLogEnabled())) {
             orCreatePublicLogger.setEnabled(true);
         }
         this.j = q6;
-        this.m = new C0468nn(applicationContext);
+        this.m = new C0469nn(applicationContext);
     }
 
     public void a(String str, String str2) {
@@ -74,10 +74,10 @@ public abstract class Y2 implements InterfaceC0198db {
             return;
         }
         this.c.info("Put error environment pair <%s, %s>", str, str2);
-        C0153bi c0153bi = this.b;
-        synchronized (c0153bi) {
-            C0144b9 c0144b9 = c0153bi.c;
-            c0144b9.b.b(c0144b9.f808a, str, str2);
+        C0154bi c0154bi = this.b;
+        synchronized (c0154bi) {
+            C0145b9 c0145b9 = c0154bi.c;
+            c0145b9.b.b(c0145b9.f808a, str, str2);
         }
     }
 
@@ -95,16 +95,16 @@ public abstract class Y2 implements InterfaceC0198db {
         String str;
         this.c.info("Clear app environment", new Object[0]);
         Si si = this.h;
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        C0477o6 n2 = C0397l4.n();
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str = c0153bi.f;
+        C0478o6 n2 = C0398l4.n();
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str = c0154bi.f;
         }
-        si.a(new Rh(n2, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+        si.a(new Rh(n2, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
     }
 
     public final void d(String str) {
@@ -119,10 +119,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4("", str, 3, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4("", str, 3, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     public final void e(String str) {
@@ -133,10 +133,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4("", str, 6400, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4("", str, 6400, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.b.e = false;
     }
 
@@ -153,13 +153,13 @@ public abstract class Y2 implements InterfaceC0198db {
         String str;
         Kf kf;
         Si si = this.h;
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        Of of = c0153bi.d;
-        synchronized (c0153bi) {
-            str = c0153bi.f;
+        Of of = c0154bi.d;
+        synchronized (c0154bi) {
+            str = c0154bi.f;
         }
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey());
+        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey());
         Set set = W9.f726a;
         JSONObject jSONObject = new JSONObject();
         if (of != null && (kf = of.f611a) != null) {
@@ -170,9 +170,9 @@ public abstract class Y2 implements InterfaceC0198db {
         }
         String jSONObject2 = jSONObject.toString();
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
-        c0397l4.c(str);
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        C0398l4 c0398l4 = new C0398l4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
+        c0398l4.c(str);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -190,16 +190,16 @@ public abstract class Y2 implements InterfaceC0198db {
         }
         this.c.info("Put app environment: <%s, %s>", str, str2);
         Si si = this.h;
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        C0477o6 b = C0397l4.b(str, str2);
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str3 = c0153bi.f;
+        C0478o6 b = C0398l4.b(str, str2);
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str3 = c0154bi.f;
         }
-        si.a(new Rh(b, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str3)));
+        si.a(new Rh(b, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str3)));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -210,13 +210,13 @@ public abstract class Y2 implements InterfaceC0198db {
     @Override // io.appmetrica.analytics.IReporter
     public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
         StackTraceElement[] stackTraceElementArr;
-        C0187d0 c0187d0 = new C0187d0(new C0212e0(this, map));
+        C0188d0 c0188d0 = new C0188d0(new C0213e0(this, map));
         La la = new La();
         Q6 q6 = A4.l().f344a;
-        Thread a2 = c0187d0.a();
+        Thread a2 = c0188d0.a();
         Map map2 = null;
         try {
-            stackTraceElementArr = c0187d0.b();
+            stackTraceElementArr = c0188d0.b();
             if (stackTraceElementArr == null) {
                 try {
                     stackTraceElementArr = a2.getStackTrace();
@@ -230,7 +230,7 @@ public abstract class Y2 implements InterfaceC0198db {
         ArrayList arrayList = new ArrayList();
         TreeMap treeMap = new TreeMap(new Hn());
         try {
-            map2 = c0187d0.c();
+            map2 = c0188d0.c();
         } catch (SecurityException unused3) {
         }
         if (map2 != null) {
@@ -250,21 +250,21 @@ public abstract class Y2 implements InterfaceC0198db {
         String str;
         this.c.info("E-commerce event received: " + eCommerceEvent.getPublicDescription(), new Object[0]);
         Si si = this.h;
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
         for (Zi zi : eCommerceEvent.toProto()) {
-            C0397l4 c0397l4 = new C0397l4(LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey()));
+            C0398l4 c0398l4 = new C0398l4(LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey()));
             Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-            c0397l4.d = 41000;
-            c0397l4.b = c0397l4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) zi.f777a)));
-            c0397l4.g = zi.b.getBytesTruncated();
-            Vf vf = new Vf(c0153bi.f889a);
-            CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-            C0144b9 c0144b9 = c0153bi.c;
-            synchronized (c0153bi) {
-                str = c0153bi.f;
+            c0398l4.d = 41000;
+            c0398l4.b = c0398l4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) zi.f777a)));
+            c0398l4.g = zi.b.getBytesTruncated();
+            Vf vf = new Vf(c0154bi.f889a);
+            CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+            C0145b9 c0145b9 = c0154bi.c;
+            synchronized (c0154bi) {
+                str = c0154bi.f;
             }
-            si.a(new Rh(c0397l4, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+            si.a(new Rh(c0398l4, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
         }
     }
 
@@ -276,10 +276,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, str, 5892, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, str, 5892, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Error received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -290,31 +290,31 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4("", str, 1, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4("", str, 1, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         String str;
-        C0360jj c0360jj = X2.f736a;
-        c0360jj.getClass();
-        wo a2 = c0360jj.a(revenue);
+        C0361jj c0361jj = X2.f736a;
+        c0361jj.getClass();
+        wo a2 = c0361jj.a(revenue);
         if (a2.f1146a) {
             Si si = this.h;
-            C0386kj c0386kj = new C0386kj(revenue, this.c);
-            C0153bi c0153bi = this.b;
+            C0387kj c0387kj = new C0387kj(revenue, this.c);
+            C0154bi c0154bi = this.b;
             si.getClass();
-            C0397l4 a3 = C0397l4.a(LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey()), c0386kj);
-            Vf vf = new Vf(c0153bi.f889a);
-            CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-            C0144b9 c0144b9 = c0153bi.c;
-            synchronized (c0153bi) {
-                str = c0153bi.f;
+            C0398l4 a3 = C0398l4.a(LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey()), c0387kj);
+            Vf vf = new Vf(c0154bi.f889a);
+            CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+            C0145b9 c0145b9 = c0154bi.c;
+            synchronized (c0154bi) {
+                str = c0154bi.f;
             }
-            si.a(new Rh(a3, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+            si.a(new Rh(a3, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
             this.c.info("Revenue received for productID: " + WrapUtils.wrapToTag(revenue.productID) + " of quantity: " + WrapUtils.wrapToTag(revenue.quantity) + " with price (in micros): " + revenue.priceMicros + " " + revenue.currency, new Object[0]);
             return;
         }
@@ -333,33 +333,33 @@ public abstract class Y2 implements InterfaceC0198db {
     public final void reportUserProfile(UserProfile userProfile) {
         wo a2;
         String str;
-        C0365jo c0365jo = new C0365jo(C0365jo.c);
-        for (UserProfileUpdate<? extends InterfaceC0391ko> userProfileUpdate : userProfile.getUserProfileUpdates()) {
-            InterfaceC0391ko userProfileUpdatePatcher = userProfileUpdate.getUserProfileUpdatePatcher();
+        C0366jo c0366jo = new C0366jo(C0366jo.c);
+        for (UserProfileUpdate<? extends InterfaceC0392ko> userProfileUpdate : userProfile.getUserProfileUpdates()) {
+            InterfaceC0392ko userProfileUpdatePatcher = userProfileUpdate.getUserProfileUpdatePatcher();
             ((Vd) userProfileUpdatePatcher).e = this.c;
-            userProfileUpdatePatcher.a(c0365jo);
+            userProfileUpdatePatcher.a(c0366jo);
         }
-        C0495oo c0495oo = new C0495oo();
+        C0496oo c0496oo = new C0496oo();
         ArrayList arrayList = new ArrayList();
-        for (int i = 0; i < c0365jo.f944a.size(); i++) {
-            SparseArray sparseArray = c0365jo.f944a;
-            for (C0417lo c0417lo : ((HashMap) sparseArray.get(sparseArray.keyAt(i))).values()) {
-                arrayList.add(c0417lo);
+        for (int i = 0; i < c0366jo.f944a.size(); i++) {
+            SparseArray sparseArray = c0366jo.f944a;
+            for (C0418lo c0418lo : ((HashMap) sparseArray.get(sparseArray.keyAt(i))).values()) {
+                arrayList.add(c0418lo);
             }
         }
-        c0495oo.f1027a = (C0417lo[]) arrayList.toArray(new C0417lo[arrayList.size()]);
-        if (o.a(c0495oo).f1146a) {
+        c0496oo.f1027a = (C0418lo[]) arrayList.toArray(new C0418lo[arrayList.size()]);
+        if (o.a(c0496oo).f1146a) {
             Si si = this.h;
-            C0153bi c0153bi = this.b;
+            C0154bi c0154bi = this.b;
             si.getClass();
-            C0477o6 a3 = C0397l4.a(c0495oo);
-            Vf vf = new Vf(c0153bi.f889a);
-            CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-            C0144b9 c0144b9 = c0153bi.c;
-            synchronized (c0153bi) {
-                str = c0153bi.f;
+            C0478o6 a3 = C0398l4.a(c0496oo);
+            Vf vf = new Vf(c0154bi.f889a);
+            CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+            C0145b9 c0145b9 = c0154bi.c;
+            synchronized (c0154bi) {
+                str = c0154bi.f;
             }
-            si.a(new Rh(a3, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+            si.a(new Rh(a3, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
             this.c.info("User profile received", new Object[0]);
             return;
         }
@@ -379,10 +379,10 @@ public abstract class Y2 implements InterfaceC0198db {
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
-        C0397l4 c0397l4 = new C0397l4("", "", 256, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4("", "", 256, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -397,34 +397,34 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4("", null, 8193, 0, publicLogger);
+        C0398l4 c0398l4 = new C0398l4("", null, 8193, 0, publicLogger);
         if (bArr == null) {
             bArr = new byte[0];
         }
-        c0397l4.p = Collections.singletonMap(str, bArr);
-        C0153bi c0153bi = this.b;
+        c0398l4.p = Collections.singletonMap(str, bArr);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void setUserProfileID(String str) {
         String str2;
         Si si = this.h;
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        C0397l4 c0397l4 = new C0397l4(LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey()));
+        C0398l4 c0398l4 = new C0398l4(LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey()));
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        c0397l4.d = 40962;
-        c0397l4.c(str);
-        c0397l4.b = c0397l4.e(str);
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str2 = c0153bi.f;
+        c0398l4.d = 40962;
+        c0398l4.c(str);
+        c0398l4.b = c0398l4.e(str);
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str2 = c0154bi.f;
         }
-        si.a(new Rh(c0397l4, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str2)));
+        si.a(new Rh(c0398l4, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str2)));
         this.c.info("Set user profile ID: " + WrapUtils.wrapToTag(str), new Object[0]);
     }
 
@@ -433,31 +433,31 @@ public abstract class Y2 implements InterfaceC0198db {
         String str;
         Si si = this.h;
         D d = new D(adRevenue, z, this.m, this.c);
-        C0153bi c0153bi = this.b;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        C0397l4 a2 = C0397l4.a(LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey()), d);
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str = c0153bi.f;
+        C0398l4 a2 = C0398l4.a(LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey()), d);
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str = c0154bi.f;
         }
-        si.a(new Rh(a2, false, 1, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+        si.a(new Rh(a2, false, 1, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
         this.c.info("AdRevenue Received: AdRevenue{adRevenue=" + adRevenue.adRevenue + ", currency='" + WrapUtils.wrapToTag(adRevenue.currency.getCurrencyCode()) + "', adType=" + WrapUtils.wrapToTag(adRevenue.adType) + ", adNetwork='" + WrapUtils.wrapToTag(adRevenue.adNetwork) + "', adUnitId='" + WrapUtils.wrapToTag(adRevenue.adUnitId) + "', adUnitName='" + WrapUtils.wrapToTag(adRevenue.adUnitName) + "', adPlacementId='" + WrapUtils.wrapToTag(adRevenue.adPlacementId) + "', adPlacementName='" + WrapUtils.wrapToTag(adRevenue.adPlacementName) + "', precision='" + WrapUtils.wrapToTag(adRevenue.precision) + "', payload=" + Gb.b(adRevenue.payload) + ", autoCollected=" + z + "}", new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0198db
+    @Override // io.appmetrica.analytics.impl.InterfaceC0199db
     public final void b(String str, String str2) {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Si si = this.h;
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(str2, str, 1, 0, publicLogger);
-        c0397l4.l = M9.JS;
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(str2, str, 1, 0, publicLogger);
+        c0398l4.l = M9.JS;
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     public final void a(Map<String, String> map) {
@@ -476,10 +476,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(str2, str, 1, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(str2, str, 1, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -511,20 +511,20 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, str2, 5896, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, str2, 5896, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Error received: id: %s, message: %s", WrapUtils.wrapToTag(str), WrapUtils.wrapToTag(str2));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0198db
+    @Override // io.appmetrica.analytics.impl.InterfaceC0199db
     public final void b(String str) {
         Si si = this.h;
-        C0477o6 a2 = C0477o6.a(str);
-        C0153bi c0153bi = this.b;
+        C0478o6 a2 = C0478o6.a(str);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(a2, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(a2, c0154bi), c0154bi, 1, null);
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
@@ -537,14 +537,14 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, str, 5891, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, str, 5891, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Crash from plugin received: %s", WrapUtils.wrapToTag(pluginErrorDetails.getMessage()));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0198db
+    @Override // io.appmetrica.analytics.impl.InterfaceC0199db
     public final boolean b() {
         return this.b.f();
     }
@@ -555,20 +555,20 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        si.a(new C0397l4("", str, 1, 0, publicLogger), this.b, 1, map);
+        si.a(new C0398l4("", str, 1, 0, publicLogger), this.b, 1, map);
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(map == null ? null : map.toString()), new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0557rb, io.appmetrica.analytics.impl.InterfaceC0632ub
+    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0633ub
     public final void a(Wn wn) {
         Si si = this.h;
         Rh a2 = si.a(wn, this.b);
-        C0153bi c0153bi = a2.e;
+        C0154bi c0154bi = a2.e;
         Yl yl = si.e;
         if (yl != null) {
-            c0153bi.b.setUuid(((Xl) yl).g());
+            c0154bi.b.setUuid(((Xl) yl).g());
         } else {
-            c0153bi.getClass();
+            c0154bi.getClass();
         }
         si.c.b(a2);
         this.c.info("Unhandled exception received: " + wn, new Object[0]);
@@ -577,11 +577,11 @@ public abstract class Y2 implements InterfaceC0198db {
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
         Wn wn;
-        C0202df c0202df = this.l;
+        C0203df c0203df = this.l;
         if (pluginErrorDetails != null) {
-            wn = c0202df.a(pluginErrorDetails);
+            wn = c0203df.a(pluginErrorDetails);
         } else {
-            c0202df.getClass();
+            c0203df.getClass();
             wn = null;
         }
         Zg zg = new Zg(str, wn);
@@ -590,10 +590,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, str, 5896, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, str, 5896, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Error from plugin received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -608,8 +608,8 @@ public abstract class Y2 implements InterfaceC0198db {
         String value = moduleEvent.getValue();
         String name = moduleEvent.getName();
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(value, name, 8192, moduleEvent.getType(), publicLogger);
-        int i = AbstractC0170c9.f823a[moduleEvent.getCategory().ordinal()];
+        C0398l4 c0398l4 = new C0398l4(value, name, 8192, moduleEvent.getType(), publicLogger);
+        int i = AbstractC0171c9.f823a[moduleEvent.getCategory().ordinal()];
         if (i == 1) {
             m9 = M9.NATIVE;
         } else if (i != 2) {
@@ -617,26 +617,26 @@ public abstract class Y2 implements InterfaceC0198db {
         } else {
             m9 = M9.SYSTEM;
         }
-        c0397l4.l = m9;
-        c0397l4.c = Gb.b(moduleEvent.getEnvironment());
+        c0398l4.l = m9;
+        c0398l4.c = Gb.b(moduleEvent.getEnvironment());
         if (moduleEvent.getExtras() != null) {
-            c0397l4.p = moduleEvent.getExtras();
+            c0398l4.p = moduleEvent.getExtras();
         }
-        this.h.a(c0397l4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
+        this.h.a(c0398l4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0557rb, io.appmetrica.analytics.impl.InterfaceC0238f0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0239f0
     public final void a(U u) {
-        C0135b0 c0135b0 = new C0135b0(u, (String) this.k.b.a(), (Boolean) this.k.c.a());
+        C0136b0 c0136b0 = new C0136b0(u, (String) this.k.b.a(), (Boolean) this.k.c.a());
         Si si = this.h;
-        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0135b0));
+        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0136b0));
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, "", 5968, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, "", 5968, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         PublicLogger publicLogger2 = this.c;
         StringBuilder sb = new StringBuilder("ANR was reported ");
         Cn cn = u.f691a;
@@ -646,11 +646,11 @@ public abstract class Y2 implements InterfaceC0198db {
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
         Wn wn;
-        C0202df c0202df = this.l;
+        C0203df c0203df = this.l;
         if (pluginErrorDetails != null) {
-            wn = c0202df.a(pluginErrorDetails);
+            wn = c0203df.a(pluginErrorDetails);
         } else {
-            c0202df.getClass();
+            c0203df.getClass();
             wn = null;
         }
         T6 t6 = new T6(new Zg(str2, wn), str);
@@ -659,10 +659,10 @@ public abstract class Y2 implements InterfaceC0198db {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(byteArray, str2, 5896, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(byteArray, str2, 5896, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Error with identifier: %s from plugin received: %s", str, WrapUtils.wrapToTag(str2));
     }
 }

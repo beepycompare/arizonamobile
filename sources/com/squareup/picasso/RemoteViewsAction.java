@@ -6,8 +6,9 @@ import android.appwidget.AppWidgetManager;
 import android.graphics.Bitmap;
 import android.widget.RemoteViews;
 import com.squareup.picasso.Picasso;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-abstract class RemoteViewsAction extends Action<RemoteViewsTarget> {
+public abstract class RemoteViewsAction extends Action<RemoteViewsTarget> {
     Callback callback;
     final RemoteViews remoteViews;
     private RemoteViewsTarget target;
@@ -99,8 +100,9 @@ abstract class RemoteViewsAction extends Action<RemoteViewsTarget> {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    static class AppWidgetAction extends RemoteViewsAction {
+    public static class AppWidgetAction extends RemoteViewsAction {
         private final int[] appWidgetIds;
 
         @Override // com.squareup.picasso.RemoteViewsAction, com.squareup.picasso.Action
@@ -120,8 +122,9 @@ abstract class RemoteViewsAction extends Action<RemoteViewsTarget> {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    static class NotificationAction extends RemoteViewsAction {
+    public static class NotificationAction extends RemoteViewsAction {
         private final Notification notification;
         private final int notificationId;
         private final String notificationTag;

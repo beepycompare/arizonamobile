@@ -21,8 +21,8 @@ public final class M implements J {
     }
 
     @Override // io.appmetrica.analytics.impl.J
-    public final AdTrackingInfoResult a(Context context, InterfaceC0180cj interfaceC0180cj) {
-        return a(new L(this, context, interfaceC0180cj));
+    public final AdTrackingInfoResult a(Context context, InterfaceC0181cj interfaceC0181cj) {
+        return a(new L(this, context, interfaceC0181cj));
     }
 
     public static AdTrackingInfoResult a(Provider provider) {

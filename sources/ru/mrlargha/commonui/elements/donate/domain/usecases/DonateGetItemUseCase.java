@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.donate.domain.usecases;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -61,7 +60,7 @@ public final class DonateGetItemUseCase {
 
     /* compiled from: DonateGetItemUseCase.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 2, 2, 2, 2, 2, 2}, l = {29, 30, 34}, m = "invokeSuspend", n = {FirebaseAnalytics.Param.ITEMS, FirebaseAnalytics.Param.ITEMS, "$this$forEach$iv", "element$iv", "updatedModel", "$i$f$forEach", "$i$a$-forEach-DonateGetItemUseCase$1$1"}, s = {"L$0", "L$0", "L$1", "L$4", "L$5", "I$0", "I$1"}, v = 1)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 2, 2, 2, 2, 2, 2}, l = {29, 30, 34}, m = "invokeSuspend", n = {"items", "items", "$this$forEach$iv", "element$iv", "updatedModel", "$i$f$forEach", "$i$a$-forEach-DonateGetItemUseCase$1$1"}, s = {"L$0", "L$0", "L$1", "L$4", "L$5", "I$0", "I$1"}, v = 1)
     /* renamed from: ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

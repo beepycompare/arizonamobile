@@ -28,11 +28,11 @@ public final class Pb implements Runnable {
             PublicLogger publicLogger = y2.c;
             Set set = W9.f726a;
             Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-            C0397l4 c0397l4 = new C0397l4("", "", 3, 0, publicLogger);
+            C0398l4 c0398l4 = new C0398l4("", "", 3, 0, publicLogger);
             Si si = y2.h;
-            C0153bi c0153bi = y2.b;
+            C0154bi c0154bi = y2.b;
             si.getClass();
-            si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+            si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         }
         if (f) {
             return;

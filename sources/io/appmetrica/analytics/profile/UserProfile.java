@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.InterfaceC0391ko;
+import io.appmetrica.analytics.impl.InterfaceC0392ko;
 import java.util.LinkedList;
 import java.util.List;
 /* loaded from: classes4.dex */
@@ -20,7 +20,7 @@ public class UserProfile {
             this();
         }
 
-        public Builder apply(UserProfileUpdate<? extends InterfaceC0391ko> userProfileUpdate) {
+        public Builder apply(UserProfileUpdate<? extends InterfaceC0392ko> userProfileUpdate) {
             this.f1283a.add(userProfileUpdate);
             return this;
         }
@@ -42,7 +42,7 @@ public class UserProfile {
         return new Builder(0);
     }
 
-    public List<UserProfileUpdate<? extends InterfaceC0391ko>> getUserProfileUpdates() {
+    public List<UserProfileUpdate<? extends InterfaceC0392ko>> getUserProfileUpdates() {
         return this.f1282a;
     }
 

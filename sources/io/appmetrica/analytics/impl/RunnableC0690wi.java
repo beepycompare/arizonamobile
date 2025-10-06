@@ -1,0 +1,20 @@
+package io.appmetrica.analytics.impl;
+/* renamed from: io.appmetrica.analytics.impl.wi  reason: case insensitive filesystem */
+/* loaded from: classes4.dex */
+public final class RunnableC0690wi implements Runnable {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final /* synthetic */ U f1142a;
+    public final /* synthetic */ Ci b;
+
+    public RunnableC0690wi(Ci ci, U u) {
+        this.b = ci;
+        this.f1142a = u;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        Ci ci = this.b;
+        Ci.a(ci.f393a, ci.d, ci.e).a(this.f1142a);
+    }
+}

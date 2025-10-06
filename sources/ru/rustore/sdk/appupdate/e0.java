@@ -27,7 +27,7 @@ public final class e0 {
     }
 
     /* loaded from: classes6.dex */
-    public static final class b extends Lambda implements Function0<C0805j> {
+    public static final class b extends Lambda implements Function0<C0806j> {
 
         /* renamed from: a  reason: collision with root package name */
         public static final b f1386a = new b();
@@ -37,32 +37,32 @@ public final class e0 {
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0805j invoke() {
-            return new C0805j();
+        public final C0806j invoke() {
+            return new C0806j();
         }
     }
 
     /* loaded from: classes6.dex */
-    public static final class c extends Lambda implements Function0<C0809n> {
+    public static final class c extends Lambda implements Function0<C0810n> {
         public c() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0809n invoke() {
-            return new C0809n((C0805j) e0.this.f.getValue(), (MetricsClient) e0.this.g.getValue());
+        public final C0810n invoke() {
+            return new C0810n((C0806j) e0.this.f.getValue(), (MetricsClient) e0.this.g.getValue());
         }
     }
 
     /* loaded from: classes6.dex */
-    public static final class d extends Lambda implements Function0<C0800e> {
+    public static final class d extends Lambda implements Function0<C0801e> {
         public d() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public final C0800e invoke() {
-            return new C0800e((C0809n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1385a);
+        public final C0801e invoke() {
+            return new C0801e((C0810n) e0.this.d.getValue(), (a0) e0.this.h.getValue(), (L) e0.this.e.getValue(), AnalyticsEventProvider.INSTANCE, e0.this.f1385a);
         }
     }
 

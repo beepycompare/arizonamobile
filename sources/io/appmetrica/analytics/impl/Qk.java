@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Qk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EnumC0259fl f644a;
+    public final EnumC0260fl f644a;
     public final Long b;
     public final Long c;
     public final Integer d;
@@ -13,15 +13,15 @@ public final class Qk {
     public final Long h;
 
     public Qk(Pk pk) {
-        EnumC0259fl enumC0259fl;
+        EnumC0260fl enumC0260fl;
         Integer num;
         Long l;
         Long l2;
         Long l3;
         Boolean bool;
         Long l4;
-        enumC0259fl = pk.b;
-        this.f644a = enumC0259fl;
+        enumC0260fl = pk.b;
+        this.f644a = enumC0260fl;
         num = pk.e;
         this.d = num;
         l = pk.c;

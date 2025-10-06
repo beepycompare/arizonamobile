@@ -18,9 +18,9 @@ public final class S4 implements D4 {
     }
 
     @Override // io.appmetrica.analytics.impl.D4
-    public final void a(C0477o6 c0477o6, N4 n4) {
+    public final void a(C0478o6 c0478o6, N4 n4) {
         this.b.a(n4.b);
-        this.b.a(c0477o6, this);
+        this.b.a(c0478o6, this);
     }
 
     public final V4 b() {
@@ -35,8 +35,8 @@ public final class S4 implements D4 {
         return this.c;
     }
 
-    public final void a(C0550r4 c0550r4) {
-        ResultReceiverC0116a7.a(this.c, c0550r4);
+    public final void a(C0551r4 c0551r4) {
+        ResultReceiverC0117a7.a(this.c, c0551r4);
     }
 
     @Override // io.appmetrica.analytics.impl.D4

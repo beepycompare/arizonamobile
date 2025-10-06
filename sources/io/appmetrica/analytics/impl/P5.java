@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class P5 implements InterfaceC0559rd {
+public final class P5 implements InterfaceC0560rd {
 
     /* renamed from: a  reason: collision with root package name */
     public final String f621a;
@@ -42,7 +42,7 @@ public final class P5 implements InterfaceC0559rd {
         return new P5(str);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0559rd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0560rd
     public final String a() {
         return this.f621a;
     }

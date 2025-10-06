@@ -4,9 +4,9 @@ import android.content.Context;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 import io.appmetrica.analytics.impl.A4;
 import io.appmetrica.analytics.impl.C0;
-import io.appmetrica.analytics.impl.C0109a0;
-import io.appmetrica.analytics.impl.C0147bc;
-import io.appmetrica.analytics.impl.C0173cc;
+import io.appmetrica.analytics.impl.C0110a0;
+import io.appmetrica.analytics.impl.C0148bc;
+import io.appmetrica.analytics.impl.C0174cc;
 import io.appmetrica.analytics.impl.Z;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* loaded from: classes4.dex */
@@ -18,9 +18,9 @@ public class AppMetricaLibraryAdapter {
     public static void activate(Context context) {
         C0 c0 = f194a;
         if (c0.f379a.f810a.a(context).f1146a) {
-            C0173cc c0173cc = c0.b;
+            C0174cc c0174cc = c0.b;
             Context applicationContext = context.getApplicationContext();
-            c0173cc.getClass();
+            c0174cc.getClass();
             A4.l().g.a(applicationContext);
             A4.l().b().a(applicationContext, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
             return;
@@ -48,11 +48,11 @@ public class AppMetricaLibraryAdapter {
         C0 c0 = f194a;
         c0.getClass();
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Subscribe for auto-collected data with api key: " + ApiKeyUtils.createPartialApiKey(str), new Object[0]);
-        C0147bc c0147bc = c0.f379a;
-        if (c0147bc.g.a(str).f1146a && c0147bc.f810a.a(context).f1146a) {
+        C0148bc c0148bc = c0.f379a;
+        if (c0148bc.g.a(str).f1146a && c0148bc.f810a.a(context).f1146a) {
             c0.b.getClass();
             A4.l().g.a(context);
-            C0109a0 b = A4.l().b();
+            C0110a0 b = A4.l().b();
             b.c.a().executeDelayed(new Z(b, context), b.d);
             ModulesFacade.subscribeForAutoCollectedData(context, str);
         }
@@ -60,11 +60,11 @@ public class AppMetricaLibraryAdapter {
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         C0 c0 = f194a;
-        C0147bc c0147bc = c0.f379a;
-        if (c0147bc.f810a.a(context).f1146a && c0147bc.b.a(appMetricaLibraryAdapterConfig).f1146a) {
-            C0173cc c0173cc = c0.b;
+        C0148bc c0148bc = c0.f379a;
+        if (c0148bc.f810a.a(context).f1146a && c0148bc.b.a(appMetricaLibraryAdapterConfig).f1146a) {
+            C0174cc c0174cc = c0.b;
             Context applicationContext = context.getApplicationContext();
-            c0173cc.getClass();
+            c0174cc.getClass();
             A4.l().g.a(applicationContext);
             A4.l().b().a(applicationContext, appMetricaLibraryAdapterConfig);
             return;

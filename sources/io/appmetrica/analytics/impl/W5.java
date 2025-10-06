@@ -7,32 +7,32 @@ import java.util.concurrent.atomic.AtomicLong;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 /* loaded from: classes4.dex */
-public final class W5 implements InterfaceC0196d9, InterfaceC0531q9 {
+public final class W5 implements InterfaceC0197d9, InterfaceC0532q9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0374k7 f723a;
+    public final C0375k7 f723a;
     public final Set b;
     public final AtomicLong c;
 
-    public W5(C0374k7 c0374k7) {
-        this.f723a = c0374k7;
+    public W5(C0375k7 c0375k7) {
+        this.f723a = c0375k7;
         Set of = SetsKt.setOf((Object[]) new Integer[]{Integer.valueOf(Bb.EVENT_CLIENT_EXTERNAL_ATTRIBUTION.a()), Integer.valueOf(Bb.EVENT_TYPE_APP_UPDATE.a()), Integer.valueOf(Bb.EVENT_TYPE_FIRST_ACTIVATION.a()), Integer.valueOf(Bb.EVENT_TYPE_INIT.a()), Integer.valueOf(Bb.EVENT_TYPE_SEND_AD_REVENUE_EVENT.a()), Integer.valueOf(Bb.EVENT_TYPE_SEND_ECOMMERCE_EVENT.a()), Integer.valueOf(Bb.EVENT_TYPE_SEND_REFERRER.a()), Integer.valueOf(Bb.EVENT_TYPE_SEND_REVENUE_EVENT.a())});
         this.b = of;
-        this.c = new AtomicLong(c0374k7.a(of));
-        c0374k7.a(this);
+        this.c = new AtomicLong(c0375k7.a(of));
+        c0375k7.a(this);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0531q9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532q9
     public final void a() {
         this.c.set(this.f723a.a(this.b));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0196d9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0197d9
     public final boolean b() {
         return this.c.get() > 0;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0531q9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532q9
     public final void b(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
@@ -45,7 +45,7 @@ public final class W5 implements InterfaceC0196d9, InterfaceC0531q9 {
         this.c.addAndGet(-i);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0531q9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0532q9
     public final void a(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {

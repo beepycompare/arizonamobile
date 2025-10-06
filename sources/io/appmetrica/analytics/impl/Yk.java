@@ -5,11 +5,11 @@ import kotlinx.datetime.internal.DateCalculationsKt;
 public final class Yk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EnumC0259fl f762a;
+    public final EnumC0260fl f762a;
     public Integer b;
 
-    public Yk(EnumC0259fl enumC0259fl) {
-        this.f762a = enumC0259fl;
+    public Yk(EnumC0260fl enumC0260fl) {
+        this.f762a = enumC0260fl;
     }
 
     public final Zk a() {

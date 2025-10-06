@@ -17,6 +17,6 @@ public final class Md extends Lambda implements Function1 {
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        return ((C0734yd) ((Map.Entry) obj).getValue()).b.parse(this.f577a);
+        return ((C0735yd) ((Map.Entry) obj).getValue()).b.parse(this.f577a);
     }
 }

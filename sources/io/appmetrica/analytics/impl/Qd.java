@@ -9,14 +9,14 @@ public final class Qd {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f640a;
-    public final InterfaceC0378kb b;
+    public final InterfaceC0379kb b;
     public final X9 c;
     public final Ue d;
     public final vo e;
     public volatile IdentifiersResult f;
 
-    public Qd(Context context, InterfaceC0378kb interfaceC0378kb) {
-        this(context, interfaceC0378kb, Rd.a(context), new Ue(context), new vo());
+    public Qd(Context context, InterfaceC0379kb interfaceC0379kb) {
+        this(context, interfaceC0379kb, Rd.a(context), new Ue(context), new vo());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
@@ -52,7 +52,7 @@ public final class Qd {
                 return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
             }
         }
-        String a2 = AbstractC0352jb.a(FileUtils.getFileFromSdkStorage(this.d.f701a, "uuid.dat"));
+        String a2 = AbstractC0353jb.a(FileUtils.getFileFromSdkStorage(this.d.f701a, "uuid.dat"));
         this.e.getClass();
         if (!vo.a(a2)) {
             a2 = this.d.a(this.b.a(this.f640a));
@@ -73,9 +73,9 @@ public final class Qd {
         }
     }
 
-    public Qd(Context context, InterfaceC0378kb interfaceC0378kb, X9 x9, Ue ue, vo voVar) {
+    public Qd(Context context, InterfaceC0379kb interfaceC0379kb, X9 x9, Ue ue, vo voVar) {
         this.f640a = context;
-        this.b = interfaceC0378kb;
+        this.b = interfaceC0379kb;
         this.c = x9;
         this.d = ue;
         this.e = voVar;

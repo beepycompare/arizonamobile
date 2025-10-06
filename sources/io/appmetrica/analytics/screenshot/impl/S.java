@@ -11,16 +11,16 @@ public final class S {
         this.f1305a = list;
     }
 
-    public final void a(C0780k c0780k) {
+    public final void a(C0781k c0781k) {
         for (P p : this.f1305a) {
-            C0781l c0781l = null;
-            if (c0780k != null) {
-                C0780k c0780k2 = Boolean.valueOf(c0780k.f1327a).booleanValue() ? c0780k : null;
-                if (c0780k2 != null) {
-                    c0781l = c0780k2.b;
+            C0782l c0782l = null;
+            if (c0781k != null) {
+                C0781k c0781k2 = Boolean.valueOf(c0781k.f1327a).booleanValue() ? c0781k : null;
+                if (c0781k2 != null) {
+                    c0782l = c0781k2.b;
                 }
             }
-            p.a(c0781l);
+            p.a(c0782l);
         }
     }
 }

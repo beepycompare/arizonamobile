@@ -461,8 +461,9 @@ public class Dispatcher {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    static class DispatcherThread extends HandlerThread {
+    public static class DispatcherThread extends HandlerThread {
         DispatcherThread() {
             super("Picasso-Dispatcher", 10);
         }

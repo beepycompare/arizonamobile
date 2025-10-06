@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.quest.presentation.adapter;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,6 +44,6 @@ final class QuestRewardViewHolder$bind$1$1$bitmap$1 extends SuspendLambda implem
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, Integer.parseInt(this.$item.getIcon()), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", Integer.parseInt(this.$item.getIcon()), null, 4, null);
     }
 }

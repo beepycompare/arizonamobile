@@ -3,26 +3,26 @@ package io.appmetrica.analytics.impl;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Q3 implements InterfaceC0554r8 {
+public final class Q3 implements InterfaceC0555r8 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Map f635a;
-    public final EnumC0530q8 b;
+    public final EnumC0531q8 b;
 
-    public Q3(Map<String, String> map, EnumC0530q8 enumC0530q8) {
+    public Q3(Map<String, String> map, EnumC0531q8 enumC0531q8) {
         this.f635a = map;
-        this.b = enumC0530q8;
+        this.b = enumC0531q8;
     }
 
-    public final Q3 a(Map<String, String> map, EnumC0530q8 enumC0530q8) {
-        return new Q3(map, enumC0530q8);
+    public final Q3 a(Map<String, String> map, EnumC0531q8 enumC0531q8) {
+        return new Q3(map, enumC0531q8);
     }
 
     public final Map<String, String> b() {
         return this.f635a;
     }
 
-    public final EnumC0530q8 c() {
+    public final EnumC0531q8 c() {
         return this.b;
     }
 
@@ -50,19 +50,19 @@ public final class Q3 implements InterfaceC0554r8 {
         return "Candidate(clids=" + this.f635a + ", source=" + this.b + ')';
     }
 
-    public static Q3 a(Q3 q3, Map map, EnumC0530q8 enumC0530q8, int i, Object obj) {
+    public static Q3 a(Q3 q3, Map map, EnumC0531q8 enumC0531q8, int i, Object obj) {
         if ((i & 1) != 0) {
             map = q3.f635a;
         }
         if ((i & 2) != 0) {
-            enumC0530q8 = q3.b;
+            enumC0531q8 = q3.b;
         }
         q3.getClass();
-        return new Q3(map, enumC0530q8);
+        return new Q3(map, enumC0531q8);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0554r8
-    public final EnumC0530q8 a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0555r8
+    public final EnumC0531q8 a() {
         return this.b;
     }
 }

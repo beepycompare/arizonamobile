@@ -5,18 +5,18 @@ import java.util.HashMap;
 public final class Rh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0477o6 f658a;
+    public final C0478o6 f658a;
     public final boolean b;
     public final int c;
     public final HashMap d;
-    public final C0153bi e;
+    public final C0154bi e;
 
-    public Rh(C0477o6 c0477o6, boolean z, int i, HashMap hashMap, C0153bi c0153bi) {
-        this.f658a = c0477o6;
+    public Rh(C0478o6 c0478o6, boolean z, int i, HashMap hashMap, C0154bi c0154bi) {
+        this.f658a = c0478o6;
         this.b = z;
         this.c = i;
         this.d = hashMap;
-        this.e = c0153bi;
+        this.e = c0154bi;
     }
 
     public final String toString() {

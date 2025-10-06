@@ -7,21 +7,21 @@ public final class D implements Parcelable {
     public static final C CREATOR = new C();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0792x f1294a;
+    public final C0793x f1294a;
     public final F b;
-    public final C0794z c;
+    public final C0795z c;
 
-    public D(C0792x c0792x, F f, C0794z c0794z) {
-        this.f1294a = c0792x;
+    public D(C0793x c0793x, F f, C0795z c0795z) {
+        this.f1294a = c0793x;
         this.b = f;
-        this.c = c0794z;
+        this.c = c0795z;
     }
 
-    public final C0792x a() {
+    public final C0793x a() {
         return this.f1294a;
     }
 
-    public final C0794z b() {
+    public final C0795z b() {
         return this.c;
     }
 
@@ -50,9 +50,9 @@ public final class D implements Parcelable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public D(h0 h0Var) {
-        this(r2, r3, r5 != null ? new C0794z(r5) : null);
+        this(r2, r3, r5 != null ? new C0795z(r5) : null);
         e0 a2 = h0Var.a();
-        C0792x c0792x = a2 != null ? new C0792x(a2) : null;
+        C0793x c0793x = a2 != null ? new C0793x(a2) : null;
         i0 c = h0Var.c();
         F f = c != null ? new F(c) : null;
         f0 b = h0Var.b();

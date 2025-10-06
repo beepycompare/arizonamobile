@@ -36,24 +36,24 @@ public abstract class S2 implements ModulePreferences {
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putBoolean(String str, boolean z) {
         Td td = (Td) this.f664a;
-        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), z))).b();
+        ((AbstractC0562rf) ((Dl) td.b(td.f(a(str)), z))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putInt(String str, int i) {
         Td td = (Td) this.f664a;
-        ((AbstractC0561rf) ((Dl) td.b(td.f(str), i))).b();
+        ((AbstractC0562rf) ((Dl) td.b(td.f(str), i))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putLong(String str, long j) {
         Td td = (Td) this.f664a;
-        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), j))).b();
+        ((AbstractC0562rf) ((Dl) td.b(td.f(a(str)), j))).b();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences
     public final void putString(String str, String str2) {
         Td td = (Td) this.f664a;
-        ((AbstractC0561rf) ((Dl) td.b(td.f(a(str)), str2))).b();
+        ((AbstractC0562rf) ((Dl) td.b(td.f(a(str)), str2))).b();
     }
 }

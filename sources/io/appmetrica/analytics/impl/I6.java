@@ -2,20 +2,20 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes4.dex */
-public abstract class I6 implements InterfaceC0249fb {
+public abstract class I6 implements InterfaceC0250fb {
 
     /* renamed from: a  reason: collision with root package name */
     public final H6 f491a;
     public final ICrashTransformer b;
-    public final C0429ma c;
+    public final C0430ma c;
 
-    public I6(H6 h6, ICrashTransformer iCrashTransformer, C0429ma c0429ma) {
+    public I6(H6 h6, ICrashTransformer iCrashTransformer, C0430ma c0430ma) {
         this.f491a = h6;
         this.b = iCrashTransformer;
-        this.c = c0429ma;
+        this.c = c0430ma;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0249fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0250fb
     public final void a(Throwable th, U u) {
         if (this.f491a.a(th)) {
             ICrashTransformer iCrashTransformer = this.b;

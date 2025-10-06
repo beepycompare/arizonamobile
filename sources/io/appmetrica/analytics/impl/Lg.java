@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public class Lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0456nb f561a;
+    public final InterfaceC0457nb f561a;
     public final Gg b;
-    public final InterfaceC0404lb c;
+    public final InterfaceC0405lb c;
 
-    public Lg(InterfaceC0456nb interfaceC0456nb, Gg gg, InterfaceC0404lb interfaceC0404lb) {
-        this.f561a = interfaceC0456nb;
+    public Lg(InterfaceC0457nb interfaceC0457nb, Gg gg, InterfaceC0405lb interfaceC0405lb) {
+        this.f561a = interfaceC0457nb;
         this.b = gg;
-        this.c = interfaceC0404lb;
+        this.c = interfaceC0405lb;
     }
 
     public final void a(Jg jg) {
@@ -24,11 +24,11 @@ public class Lg {
         return this.b;
     }
 
-    public final InterfaceC0404lb c() {
+    public final InterfaceC0405lb c() {
         return this.c;
     }
 
-    public final InterfaceC0456nb a() {
+    public final InterfaceC0457nb a() {
         return this.f561a;
     }
 }

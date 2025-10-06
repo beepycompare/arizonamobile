@@ -31,7 +31,7 @@ public final class f0 {
         return "ServiceSideContentObserverCaptorConfig(enabled=" + this.f1321a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 
-    public f0(C0784o c0784o) {
-        this(c0784o.b(), c0784o.c(), c0784o.a());
+    public f0(C0785o c0785o) {
+        this(c0785o.b(), c0785o.c(), c0785o.a());
     }
 }

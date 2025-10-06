@@ -14,24 +14,24 @@ import org.json.JSONArray;
 public final class Si {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0192d5 f673a;
+    public final C0193d5 f673a;
     public final Yn b;
     public final Ui c;
-    public final C0471o0 d;
+    public final C0472o0 d;
     public Yl e;
-    public final C0566rk f;
+    public final C0567rk f;
 
-    public Si(C0471o0 c0471o0, Yn yn, C0192d5 c0192d5, C0566rk c0566rk) {
-        this(c0471o0, yn, c0192d5, c0566rk, new Ui(c0471o0, c0566rk));
+    public Si(C0472o0 c0472o0, Yn yn, C0193d5 c0193d5, C0567rk c0567rk) {
+        this(c0472o0, yn, c0193d5, c0567rk, new Ui(c0472o0, c0567rk));
     }
 
     public final void a(Rh rh) {
-        C0153bi c0153bi = rh.e;
+        C0154bi c0154bi = rh.e;
         Yl yl = this.e;
         if (yl != null) {
-            c0153bi.b.setUuid(((Xl) yl).g());
+            c0154bi.b.setUuid(((Xl) yl).g());
         } else {
-            c0153bi.getClass();
+            c0154bi.getClass();
         }
         this.c.a(rh);
     }
@@ -43,11 +43,11 @@ public final class Si {
         }
     }
 
-    public Si(C0471o0 c0471o0, Yn yn, C0192d5 c0192d5, C0566rk c0566rk, Ui ui) {
-        this.d = c0471o0;
-        this.f673a = c0192d5;
+    public Si(C0472o0 c0472o0, Yn yn, C0193d5 c0193d5, C0567rk c0567rk, Ui ui) {
+        this.d = c0472o0;
+        this.f673a = c0193d5;
         this.b = yn;
-        this.f = c0566rk;
+        this.f = c0567rk;
         this.c = ui;
     }
 
@@ -66,33 +66,33 @@ public final class Si {
         if (ro.a(bool3)) {
             this.f673a.b.setAdvIdentifiersTracking(bool3.booleanValue());
         }
-        C0477o6 a2 = C0477o6.a();
-        C0192d5 c0192d5 = this.f673a;
-        a(a(a2, c0192d5), c0192d5, 1, null);
+        C0478o6 a2 = C0478o6.a();
+        C0193d5 c0193d5 = this.f673a;
+        a(a(a2, c0193d5), c0193d5, 1, null);
     }
 
-    public final void a(C0477o6 c0477o6, C0153bi c0153bi, int i, Map map) {
+    public final void a(C0478o6 c0478o6, C0154bi c0154bi, int i, Map map) {
         String str;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
         this.d.b();
         if (!ro.a(map)) {
-            c0477o6.setValue(Gb.b(map));
-            a(c0477o6, c0153bi);
+            c0478o6.setValue(Gb.b(map));
+            a(c0478o6, c0154bi);
         }
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str = c0153bi.f;
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str = c0154bi.f;
         }
-        a(new Rh(c0477o6, false, i, null, new C0153bi(vf, counterConfiguration, c0144b9, str)));
+        a(new Rh(c0478o6, false, i, null, new C0154bi(vf, counterConfiguration, c0145b9, str)));
     }
 
-    public static C0477o6 a(C0477o6 c0477o6, C0153bi c0153bi) {
-        if (W9.f726a.contains(Integer.valueOf(c0477o6.d))) {
-            c0477o6.c = c0153bi.d();
+    public static C0478o6 a(C0478o6 c0478o6, C0154bi c0154bi) {
+        if (W9.f726a.contains(Integer.valueOf(c0478o6.d))) {
+            c0478o6.c = c0154bi.d();
         }
-        return c0477o6;
+        return c0478o6;
     }
 
     public final void a(List list) {
@@ -116,7 +116,7 @@ public final class Si {
         }
     }
 
-    public final Rh a(Wn wn, C0153bi c0153bi) {
+    public final Rh a(Wn wn, C0154bi c0154bi) {
         String str;
         String str2;
         this.d.b();
@@ -129,18 +129,18 @@ public final class Si {
             str = (String) WrapUtils.getOrDefault(mn.f584a, "");
         }
         byte[] fromModel = yn.f764a.fromModel(wn);
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0153bi.b.getApiKey());
+        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(c0154bi.b.getApiKey());
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(fromModel, str, 5891, orCreatePublicLogger);
-        c0397l4.c = c0153bi.d();
-        HashMap hashMap = c0397l4.q;
-        Vf vf = new Vf(c0153bi.f889a);
-        CounterConfiguration counterConfiguration = new CounterConfiguration(c0153bi.b);
-        C0144b9 c0144b9 = c0153bi.c;
-        synchronized (c0153bi) {
-            str2 = c0153bi.f;
+        C0398l4 c0398l4 = new C0398l4(fromModel, str, 5891, orCreatePublicLogger);
+        c0398l4.c = c0154bi.d();
+        HashMap hashMap = c0398l4.q;
+        Vf vf = new Vf(c0154bi.f889a);
+        CounterConfiguration counterConfiguration = new CounterConfiguration(c0154bi.b);
+        C0145b9 c0145b9 = c0154bi.c;
+        synchronized (c0154bi) {
+            str2 = c0154bi.f;
         }
-        return new Rh(c0397l4, true, 1, hashMap, new C0153bi(vf, counterConfiguration, c0144b9, str2));
+        return new Rh(c0398l4, true, 1, hashMap, new C0154bi(vf, counterConfiguration, c0145b9, str2));
     }
 }

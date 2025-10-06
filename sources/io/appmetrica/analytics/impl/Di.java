@@ -8,16 +8,16 @@ import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Map;
 /* loaded from: classes4.dex */
-public class Di implements InterfaceC0557rb {
+public class Di implements InterfaceC0558rb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0356jf f413a = new C0356jf();
+    public final C0357jf f413a = new C0357jf();
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0557rb, io.appmetrica.analytics.impl.InterfaceC0238f0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0239f0
     public final void a(U u) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0557rb, io.appmetrica.analytics.impl.InterfaceC0632ub
+    @Override // io.appmetrica.analytics.impl.InterfaceC0558rb, io.appmetrica.analytics.impl.InterfaceC0633ub
     public final void a(Wn wn) {
     }
 

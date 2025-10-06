@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.trade.presentation.viewholder;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,6 +44,6 @@ final class TradeInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda imp
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, this.$itemVal.getItem().intValue(), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), null, 4, null);
     }
 }

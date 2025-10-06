@@ -13,12 +13,12 @@ import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
 public final class Zc {
-    public static final C0119aa a(Zc zc, EnumC0351ja enumC0351ja, Map map) {
+    public static final C0120aa a(Zc zc, EnumC0352ja enumC0352ja, Map map) {
         int i;
         Object value;
         zc.getClass();
-        C0119aa c0119aa = new C0119aa();
-        switch (enumC0351ja.ordinal()) {
+        C0120aa c0120aa = new C0120aa();
+        switch (enumC0352ja.ordinal()) {
             case 0:
                 i = 0;
                 break;
@@ -43,8 +43,8 @@ public final class Zc {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        c0119aa.f791a = i;
-        C0122ad.b.getClass();
+        c0120aa.f791a = i;
+        C0123ad.b.getClass();
         Set<Map.Entry> entrySet = map.entrySet();
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entrySet, 10)), 16));
         for (Map.Entry entry : entrySet) {
@@ -67,8 +67,8 @@ public final class Zc {
         }
         String jSONObject = new JSONObject(linkedHashMap).toString();
         if (jSONObject != null) {
-            c0119aa.b = jSONObject.getBytes(Charsets.UTF_8);
+            c0120aa.b = jSONObject.getBytes(Charsets.UTF_8);
         }
-        return c0119aa;
+        return c0120aa;
     }
 }

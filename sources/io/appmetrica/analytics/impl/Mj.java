@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Mj implements InterfaceC0533qb {
+public final class Mj implements InterfaceC0534qb {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ String f580a;
@@ -13,8 +13,8 @@ public final class Mj implements InterfaceC0533qb {
         this.c = th;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
-    public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.reportError(this.f580a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
+    public final void a(InterfaceC0558rb interfaceC0558rb) {
+        interfaceC0558rb.reportError(this.f580a, this.b, this.c);
     }
 }

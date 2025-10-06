@@ -29,26 +29,26 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermissionStrategyModuleProvider {
+public final class Hk implements InterfaceC0511pd, InterfaceC0619tm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
     public final String f483a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
-    public volatile AskForPermissionStrategyModuleProvider c = new C0117a8();
+    public volatile AskForPermissionStrategyModuleProvider c = new C0118a8();
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0618tm
-    public final void a(C0493om c0493om) {
-        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0493om.e(), c0493om.a(), c0493om.b());
-        C0281gh c0281gh = new C0281gh(c0493om.c(), c0493om.d());
+    @Override // io.appmetrica.analytics.impl.InterfaceC0619tm
+    public final void a(C0494om c0494om) {
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0494om.e(), c0494om.a(), c0494om.b());
+        C0282gh c0282gh = new C0282gh(c0494om.c(), c0494om.d());
         for (ModuleServiceEntryPoint moduleServiceEntryPoint : this.b) {
             RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
             if (remoteConfigExtensionConfiguration != null) {
-                remoteConfigExtensionConfiguration.getRemoteConfigUpdateListener().onRemoteConfigUpdated(new Gk(sdkIdentifiers, c0281gh, c0493om.B.get(moduleServiceEntryPoint.getIdentifier())));
+                remoteConfigExtensionConfiguration.getRemoteConfigUpdateListener().onRemoteConfigUpdated(new Gk(sdkIdentifiers, c0282gh, c0494om.B.get(moduleServiceEntryPoint.getIdentifier())));
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final List<ModuleServicesDatabase> b() {
         Object obj;
         HashSet hashSet = new HashSet();
@@ -64,10 +64,10 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
             } catch (Throwable th) {
                 hashSet.add(moduleServiceEntryPoint);
                 String identifier = moduleServiceEntryPoint.getIdentifier();
-                C0413lk c0413lk = Kj.f543a;
+                C0414lk c0414lk = Kj.f543a;
                 Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier, MapsKt.mapOf(TuplesKt.to("db", ExceptionsKt.stackTraceToString(th)))));
-                c0413lk.getClass();
-                c0413lk.a(new C0387kk("service_module_errors", mapOf));
+                c0414lk.getClass();
+                c0414lk.a(new C0388kk("service_module_errors", mapOf));
                 obj = Unit.INSTANCE;
             }
             if (obj != null) {
@@ -78,13 +78,13 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return arrayList;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
-    public final Map<String, C0734yd> c() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
+    public final Map<String, C0735yd> c() {
         CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
         ArrayList arrayList = new ArrayList();
         for (ModuleServiceEntryPoint moduleServiceEntryPoint : copyOnWriteArrayList) {
             RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
-            Pair pair = remoteConfigExtensionConfiguration != null ? TuplesKt.to(moduleServiceEntryPoint.getIdentifier(), new C0734yd(remoteConfigExtensionConfiguration)) : null;
+            Pair pair = remoteConfigExtensionConfiguration != null ? TuplesKt.to(moduleServiceEntryPoint.getIdentifier(), new C0735yd(remoteConfigExtensionConfiguration)) : null;
             if (pair != null) {
                 arrayList.add(pair);
             }
@@ -92,7 +92,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return MapsKt.toMap(arrayList);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final Map<String, Integer> d() {
         List emptyList;
         Map<String, Integer> blocks;
@@ -108,7 +108,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return MapsKt.toMap(arrayList);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final List<Consumer<Location>> e() {
         CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
         ArrayList arrayList = new ArrayList();
@@ -122,7 +122,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return arrayList;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final ModuleLocationSourcesServiceController f() {
         ModuleLocationSourcesServiceController moduleLocationSourcesServiceController;
         Iterator it = this.b.iterator();
@@ -140,7 +140,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return moduleLocationSourcesServiceController;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final Toggle g() {
         Toggle toggle;
         Iterator it = this.b.iterator();
@@ -163,7 +163,7 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         return this.c.getAskForPermissionStrategy();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0510pd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0511pd
     public final List<String> h() {
         List<String> emptyList;
         CopyOnWriteArrayList<ModuleServiceEntryPoint> copyOnWriteArrayList = this.b;
@@ -197,27 +197,27 @@ public final class Hk implements InterfaceC0510pd, InterfaceC0618tm, AskForPermi
         }
     }
 
-    public final void a(ServiceContext serviceContext, C0493om c0493om) {
+    public final void a(ServiceContext serviceContext, C0494om c0494om) {
         HashSet hashSet = new HashSet();
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new Gk(new SdkIdentifiers(c0493om.d, c0493om.f1025a, c0493om.b), new C0281gh(c0493om.v, c0493om.u), c0493om.B.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new Gk(new SdkIdentifiers(c0494om.d, c0494om.f1025a, c0494om.b), new C0282gh(c0494om.v, c0494om.u), c0494om.B.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
-                    C0634ud c0634ud = Na.F.t;
+                    C0635ud c0635ud = Na.F.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
-                    synchronized (c0634ud) {
-                        c0634ud.f1110a.put(identifier, moduleEventServiceHandlerFactory);
+                    synchronized (c0635ud) {
+                        c0635ud.f1110a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {
                 String identifier2 = moduleServiceEntryPoint.getIdentifier();
-                C0413lk c0413lk = Kj.f543a;
+                C0414lk c0414lk = Kj.f543a;
                 Map mapOf = MapsKt.mapOf(TuplesKt.to(identifier2, MapsKt.mapOf(TuplesKt.to("init", ExceptionsKt.stackTraceToString(th)))));
-                c0413lk.getClass();
-                c0413lk.a(new C0387kk("service_module_errors", mapOf));
+                c0414lk.getClass();
+                c0414lk.a(new C0388kk("service_module_errors", mapOf));
                 hashSet.add(moduleServiceEntryPoint);
             }
         }

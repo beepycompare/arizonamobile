@@ -4,10 +4,10 @@ import java.util.Map;
 import kotlin.collections.CollectionsKt;
 import kotlin.text.Charsets;
 /* loaded from: classes4.dex */
-public final class Ia implements InterfaceC0455na {
+public final class Ia implements InterfaceC0456na {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0299h9 f495a = new C0299h9();
+    public final C0300h9 f495a = new C0300h9();
 
     public final C9[] a(byte[] bArr) {
         int i = 0;

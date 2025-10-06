@@ -6,15 +6,15 @@ public final class W0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ ECommerceEvent f720a;
-    public final /* synthetic */ C0547r1 b;
+    public final /* synthetic */ C0548r1 b;
 
-    public W0(C0547r1 c0547r1, ECommerceEvent eCommerceEvent) {
-        this.b = c0547r1;
+    public W0(C0548r1 c0548r1, ECommerceEvent eCommerceEvent) {
+        this.b = c0548r1;
         this.f720a = eCommerceEvent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0547r1.a(this.b).reportECommerce(this.f720a);
+        C0548r1.a(this.b).reportECommerce(this.f720a);
     }
 }

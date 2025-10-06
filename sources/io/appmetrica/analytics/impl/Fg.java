@@ -13,13 +13,13 @@ public final class Fg implements Bg {
     /* renamed from: a  reason: collision with root package name */
     public final boolean f448a;
     public final Si b;
-    public final C0512pf c;
-    public final C0349j8 d;
+    public final C0513pf c;
+    public final C0350j8 d;
     public final Ng e;
     public final Handler f;
 
-    public Fg(Si si, C0512pf c0512pf, Handler handler) {
-        this(si, c0512pf, handler, c0512pf.s());
+    public Fg(Si si, C0513pf c0513pf, Handler handler) {
+        this(si, c0513pf, handler, c0513pf.s());
     }
 
     public final void a() {
@@ -34,21 +34,21 @@ public final class Fg implements Bg {
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
-        c0397l4.m = bundle;
-        C0192d5 c0192d5 = si.f673a;
-        si.a(Si.a(c0397l4, c0192d5), c0192d5, 1, null);
+        C0398l4 c0398l4 = new C0398l4("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
+        c0398l4.m = bundle;
+        C0193d5 c0193d5 = si.f673a;
+        si.a(Si.a(c0398l4, c0193d5), c0193d5, 1, null);
     }
 
-    public Fg(Si si, C0512pf c0512pf, Handler handler, boolean z) {
-        this(si, c0512pf, handler, z, new C0349j8(z), new Ng());
+    public Fg(Si si, C0513pf c0513pf, Handler handler, boolean z) {
+        this(si, c0513pf, handler, z, new C0350j8(z), new Ng());
     }
 
-    public Fg(Si si, C0512pf c0512pf, Handler handler, boolean z, C0349j8 c0349j8, Ng ng) {
+    public Fg(Si si, C0513pf c0513pf, Handler handler, boolean z, C0350j8 c0350j8, Ng ng) {
         this.b = si;
-        this.c = c0512pf;
+        this.c = c0513pf;
         this.f448a = z;
-        this.d = c0349j8;
+        this.d = c0350j8;
         this.e = ng;
         this.f = handler;
     }
@@ -60,31 +60,31 @@ public final class Fg implements Bg {
             return;
         }
         synchronized (this) {
-            C0349j8 c0349j8 = this.d;
+            C0350j8 c0350j8 = this.d;
             this.e.getClass();
-            c0349j8.d = Ng.a(str);
-            c0349j8.a();
+            c0350j8.d = Ng.a(str);
+            c0350j8.a();
         }
     }
 
     public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
-        C0349j8 c0349j8 = this.d;
-        c0349j8.c = deferredDeeplinkParametersListener;
-        if (c0349j8.f937a) {
-            c0349j8.a(1);
+        C0350j8 c0350j8 = this.d;
+        c0350j8.c = deferredDeeplinkParametersListener;
+        if (c0350j8.f937a) {
+            c0350j8.a(1);
         } else {
-            c0349j8.a();
+            c0350j8.a();
         }
         this.c.u();
     }
 
     public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
-        C0349j8 c0349j8 = this.d;
-        c0349j8.b = deferredDeeplinkListener;
-        if (c0349j8.f937a) {
-            c0349j8.a(1);
+        C0350j8 c0350j8 = this.d;
+        c0350j8.b = deferredDeeplinkListener;
+        if (c0350j8.f937a) {
+            c0350j8.a(1);
         } else {
-            c0349j8.a();
+            c0350j8.a();
         }
         this.c.u();
     }

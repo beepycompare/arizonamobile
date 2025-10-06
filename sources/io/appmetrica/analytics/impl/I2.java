@@ -12,8 +12,8 @@ public final class I2 extends BroadcastReceiver {
     public final BiConsumer f487a;
     public final ICommonExecutor b;
 
-    public I2(C0190d3 c0190d3, ICommonExecutor iCommonExecutor) {
-        this.f487a = c0190d3;
+    public I2(C0191d3 c0191d3, ICommonExecutor iCommonExecutor) {
+        this.f487a = c0191d3;
         this.b = iCommonExecutor;
     }
 

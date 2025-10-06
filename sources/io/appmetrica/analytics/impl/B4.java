@@ -14,6 +14,6 @@ public final class B4 implements ClientStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientStorageProvider
     public final ModulePreferences modulePreferences(String str) {
-        return new C0709xd(str, this.f363a);
+        return new C0710xd(str, this.f363a);
     }
 }

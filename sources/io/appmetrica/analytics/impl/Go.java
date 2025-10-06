@@ -15,7 +15,7 @@ public final class Go {
         this.f466a = context;
         Ba ba = new Ba(context, "appmetrica_vital.dat");
         this.c = new Co(Na.j().x(), ba);
-        this.d = new Co(new C0611tf(C0728y7.a(context).d()), ba);
+        this.d = new Co(new C0612tf(C0729y7.a(context).d()), ba);
     }
 
     public final Co a() {

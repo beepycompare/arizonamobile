@@ -8,7 +8,7 @@ public final class Qf extends Oa {
     }
 
     @Override // io.appmetrica.analytics.impl.Oa
-    public final void a(List<AbstractC0462nh> list) {
+    public final void a(List<AbstractC0463nh> list) {
         list.add(this.f608a.n);
         list.add(this.f608a.h);
         list.add(this.f608a.d);

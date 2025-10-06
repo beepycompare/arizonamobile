@@ -7,9 +7,9 @@ import android.content.res.Configuration;
 import android.os.IBinder;
 import io.appmetrica.analytics.impl.A1;
 import io.appmetrica.analytics.impl.B5;
-import io.appmetrica.analytics.impl.BinderC0697x1;
-import io.appmetrica.analytics.impl.C0666vk;
-import io.appmetrica.analytics.impl.C0672w1;
+import io.appmetrica.analytics.impl.BinderC0698x1;
+import io.appmetrica.analytics.impl.C0667vk;
+import io.appmetrica.analytics.impl.C0673w1;
 import io.appmetrica.analytics.impl.C1;
 import io.appmetrica.analytics.impl.D1;
 import io.appmetrica.analytics.impl.E1;
@@ -30,7 +30,7 @@ public class AppMetricaService extends Service {
     private static K1 c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0672w1 f1198a = new C0672w1(this);
+    private final C0673w1 f1198a = new C0673w1(this);
     private final a b = new a();
 
     @Override // android.app.Service
@@ -38,7 +38,7 @@ public class AppMetricaService extends Service {
         IBinder iBinder;
         String action = intent.getAction();
         if (action != null && action.startsWith("io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK")) {
-            iBinder = new BinderC0697x1();
+            iBinder = new BinderC0698x1();
         } else {
             iBinder = this.b;
         }
@@ -63,9 +63,9 @@ public class AppMetricaService extends Service {
         if (k1 == null) {
             Context applicationContext = getApplicationContext();
             L1 l1 = new L1(applicationContext, this.f1198a, new B5(applicationContext));
-            C0666vk c0666vk = Na.F.v;
+            C0667vk c0667vk = Na.F.v;
             O1 o1 = new O1(l1);
-            LinkedHashMap linkedHashMap = c0666vk.f1130a;
+            LinkedHashMap linkedHashMap = c0667vk.f1130a;
             Object obj = linkedHashMap.get(1);
             if (obj == null) {
                 obj = new ArrayList();

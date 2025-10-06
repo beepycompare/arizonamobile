@@ -46,12 +46,12 @@ public final class Km {
                     networkTask = this.b;
                     if (networkTask != null && !networkTask.isRemoved()) {
                     }
-                    C0389km d = d();
-                    C0536qe c0536qe = C0536qe.f1050a;
-                    C0286gm c0286gm = new C0286gm(new Be(), Na.F.o());
+                    C0390km d = d();
+                    C0537qe c0537qe = C0537qe.f1050a;
+                    C0287gm c0287gm = new C0287gm(new Be(), Na.F.o());
                     FinalConfigProvider finalConfigProvider = new FinalConfigProvider(d);
                     try {
-                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new N5(this.f545a.f565a), new AllHostsExponentialBackoffPolicy(C0536qe.f1050a.a(EnumC0485oe.STARTUP)), new Im(this, new C0131am(), new FullUrlFormer(c0286gm, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), C0536qe.c);
+                        NetworkTask networkTask2 = new NetworkTask(new SynchronizedBlockingExecutor(), new N5(this.f545a.f565a), new AllHostsExponentialBackoffPolicy(C0537qe.f1050a.a(EnumC0486oe.STARTUP)), new Im(this, new C0132am(), new FullUrlFormer(c0287gm, finalConfigProvider), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), finalConfigProvider), CollectionsKt.emptyList(), C0537qe.c);
                         this.b = networkTask2;
                         networkTask = networkTask2;
                     } catch (Throwable th) {
@@ -70,45 +70,45 @@ public final class Km {
         }
     }
 
-    public final C0389km d() {
-        return (C0389km) this.f545a.l.a();
+    public final C0390km d() {
+        return (C0390km) this.f545a.l.a();
     }
 
-    public final C0493om e() {
-        C0493om c0493om;
+    public final C0494om e() {
+        C0494om c0494om;
         Rl rl = this.f545a.l;
         synchronized (rl) {
-            c0493om = rl.c.f950a;
+            c0494om = rl.c.f950a;
         }
-        return c0493om;
+        return c0494om;
     }
 
     public final void f() {
-        C0493om c0493om;
+        C0494om c0494om;
         Rl rl = this.f545a.l;
         synchronized (rl) {
-            c0493om = rl.c.f950a;
+            c0494om = rl.c.f950a;
         }
-        C0593sm c0593sm = c0493om.c;
-        C0568rm a2 = c0593sm.a(c0593sm.m);
-        String str = c0493om.f1025a;
-        String str2 = c0493om.b;
+        C0594sm c0594sm = c0494om.c;
+        C0569rm a2 = c0594sm.a(c0594sm.m);
+        String str = c0494om.f1025a;
+        String str2 = c0494om.b;
         vo voVar = this.f545a.n;
-        String str3 = c0493om.d;
+        String str3 = c0494om.d;
         voVar.getClass();
         if (!vo.a(str3)) {
             a2.f1072a = this.f545a.m.a().id;
         }
-        String str4 = c0493om.f1025a;
+        String str4 = c0494om.f1025a;
         if (str4 == null || str4.length() == 0) {
             str = this.f545a.h.a();
             str2 = "";
         }
         List<String> list = this.f545a.c.e;
         a2.g = (list == null || list.isEmpty()) ? null : null;
-        C0493om c0493om2 = new C0493om(str, str2, new C0593sm(a2));
-        b(c0493om2);
-        a(c0493om2);
+        C0494om c0494om2 = new C0494om(str, str2, new C0594sm(a2));
+        b(c0494om2);
+        a(c0494om2);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0065, code lost:
@@ -124,22 +124,22 @@ public final class Km {
         if (Na.F.g().isRestrictedForSdk()) {
             return false;
         }
-        C0493om e = e();
-        Set set = AbstractC0415lm.f979a;
+        C0494om e = e();
+        Set set = AbstractC0416lm.f979a;
         boolean z3 = true;
         if (!e.w) {
-            if (AbstractC0415lm.b.currentTimeSeconds() <= e.o + e.A.f583a) {
+            if (AbstractC0416lm.b.currentTimeSeconds() <= e.o + e.A.f583a) {
                 z = false;
                 if (!z) {
-                    if (AbstractC0415lm.a(e.d) && AbstractC0415lm.a(e.f1025a) && AbstractC0415lm.a(e.b)) {
+                    if (AbstractC0416lm.a(e.d) && AbstractC0416lm.a(e.f1025a) && AbstractC0416lm.a(e.b)) {
                         z2 = true;
                     }
                     z = !z2;
-                    C0139b4 c0139b4 = this.f545a.k;
+                    C0140b4 c0140b4 = this.f545a.k;
                     Map map = d().h;
                     Y3 y3 = this.f545a.j;
-                    c0139b4.getClass();
-                    boolean a2 = C0139b4.a(map, e, y3);
+                    c0140b4.getClass();
+                    boolean a2 = C0140b4.a(map, e, y3);
                     if (z2) {
                     }
                 }
@@ -158,21 +158,21 @@ public final class Km {
         this.b = null;
     }
 
-    public final C0476o5 a() {
+    public final C0477o5 a() {
         return this.f545a.f;
     }
 
-    public final synchronized void b(C0493om c0493om) {
-        this.f545a.l.a(c0493om);
-        C0467nm c0467nm = this.f545a.g;
-        c0467nm.b.a(c0493om.f1025a);
-        c0467nm.b.b(c0493om.b);
-        c0467nm.f1009a.save(c0493om.c);
-        this.f545a.e.a(c0493om);
+    public final synchronized void b(C0494om c0494om) {
+        this.f545a.l.a(c0494om);
+        C0468nm c0468nm = this.f545a.g;
+        c0468nm.b.a(c0494om.f1025a);
+        c0468nm.b.b(c0494om.b);
+        c0468nm.f1009a.save(c0494om.c);
+        this.f545a.e.a(c0494om);
     }
 
     public final synchronized boolean a(List<String> list, Map<String, String> map) {
-        return !AbstractC0415lm.a(e(), list, map, new Jm(this));
+        return !AbstractC0416lm.a(e(), list, map, new Jm(this));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003a, code lost:
@@ -181,12 +181,12 @@ public final class Km {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final C0493om a(C0441mm c0441mm, C0389km c0389km, long j) {
+    public final C0494om a(C0442mm c0442mm, C0390km c0390km, long j) {
         String str;
         boolean equals;
-        String a2 = Pm.a(c0389km.h);
-        Map map = c0389km.i.f635a;
-        String str2 = c0441mm.j;
+        String a2 = Pm.a(c0390km.h);
+        Map map = c0390km.i.f635a;
+        String str2 = c0442mm.j;
         String str3 = e().k;
         if (!Pm.a(Pm.a(str2))) {
             str2 = Pm.a(Pm.a(str3)) ? str3 : null;
@@ -195,21 +195,21 @@ public final class Km {
         if (str4 != null) {
             str = StringsKt.isBlank(str4) ? null : str4;
         }
-        str = c0441mm.h;
-        C0568rm c0568rm = new C0568rm(c0441mm.b);
-        String str5 = c0441mm.i;
-        c0568rm.o = this.f545a.i.currentTimeSeconds();
-        c0568rm.f1072a = e().d;
-        c0568rm.c = c0441mm.d;
-        c0568rm.f = c0441mm.c;
-        c0568rm.g = c0389km.e;
-        c0568rm.b = c0441mm.e;
-        c0568rm.d = c0441mm.f;
-        c0568rm.e = c0441mm.g;
-        c0568rm.h = c0441mm.n;
-        c0568rm.i = c0441mm.o;
-        c0568rm.j = str2;
-        c0568rm.k = a2;
+        str = c0442mm.h;
+        C0569rm c0569rm = new C0569rm(c0442mm.b);
+        String str5 = c0442mm.i;
+        c0569rm.o = this.f545a.i.currentTimeSeconds();
+        c0569rm.f1072a = e().d;
+        c0569rm.c = c0442mm.d;
+        c0569rm.f = c0442mm.c;
+        c0569rm.g = c0390km.e;
+        c0569rm.b = c0442mm.e;
+        c0569rm.d = c0442mm.f;
+        c0569rm.e = c0442mm.g;
+        c0569rm.h = c0442mm.n;
+        c0569rm.i = c0442mm.o;
+        c0569rm.j = str2;
+        c0569rm.k = a2;
         this.f545a.k.getClass();
         HashMap a3 = Pm.a(str2);
         if (ro.a(map)) {
@@ -217,27 +217,27 @@ public final class Km {
         } else {
             equals = a3.equals(map);
         }
-        c0568rm.q = equals;
-        c0568rm.l = Pm.a(map);
-        c0568rm.r = c0441mm.m;
-        c0568rm.n = c0441mm.k;
-        c0568rm.s = c0441mm.p;
-        c0568rm.p = true;
-        c0568rm.t = j;
-        C0389km d = d();
+        c0569rm.q = equals;
+        c0569rm.l = Pm.a(map);
+        c0569rm.r = c0442mm.m;
+        c0569rm.n = c0442mm.k;
+        c0569rm.s = c0442mm.p;
+        c0569rm.p = true;
+        c0569rm.t = j;
+        C0390km d = d();
         if (d.n == 0) {
             d.n = j;
         }
-        c0568rm.u = d.n;
-        c0568rm.v = false;
-        c0568rm.w = c0441mm.q;
-        c0568rm.y = c0441mm.s;
-        c0568rm.x = c0441mm.r;
-        c0568rm.z = c0441mm.t;
-        c0568rm.A = c0441mm.u;
-        c0568rm.B = c0441mm.v;
-        c0568rm.C = c0441mm.w;
-        return new C0493om(str, str5, new C0593sm(c0568rm));
+        c0569rm.u = d.n;
+        c0569rm.v = false;
+        c0569rm.w = c0442mm.q;
+        c0569rm.y = c0442mm.s;
+        c0569rm.x = c0442mm.r;
+        c0569rm.z = c0442mm.t;
+        c0569rm.A = c0442mm.u;
+        c0569rm.B = c0442mm.v;
+        c0569rm.C = c0442mm.w;
+        return new C0494om(str, str5, new C0594sm(c0569rm));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0035 A[Catch: all -> 0x0054, TRY_ENTER, TryCatch #1 {, blocks: (B:3:0x0001, B:5:0x0007, B:12:0x0035, B:14:0x003c), top: B:24:0x0001 }] */
@@ -245,9 +245,9 @@ public final class Km {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(C0441mm c0441mm, C0389km c0389km, Map<String, ? extends List<String>> map) {
+    public final void a(C0442mm c0442mm, C0390km c0390km, Map<String, ? extends List<String>> map) {
         Long l;
-        C0493om a2;
+        C0494om a2;
         synchronized (this) {
             if (!ro.a((Map) map)) {
                 List list = (List) CollectionUtils.getFromMapIgnoreCase(map, HttpHeaders.DATE);
@@ -257,8 +257,8 @@ public final class Km {
                     } catch (Throwable unused) {
                     }
                     long longValue = l == null ? l.longValue() : 0L;
-                    AbstractC0517pk.f1038a.a(longValue, c0441mm.l);
-                    a2 = a(c0441mm, c0389km, longValue);
+                    AbstractC0518pk.f1038a.a(longValue, c0442mm.l);
+                    a2 = a(c0442mm, c0390km, longValue);
                     h();
                     b(a2);
                     Unit unit = Unit.INSTANCE;
@@ -267,8 +267,8 @@ public final class Km {
             l = null;
             if (l == null) {
             }
-            AbstractC0517pk.f1038a.a(longValue, c0441mm.l);
-            a2 = a(c0441mm, c0389km, longValue);
+            AbstractC0518pk.f1038a.a(longValue, c0442mm.l);
+            a2 = a(c0442mm, c0390km, longValue);
             h();
             b(a2);
             Unit unit2 = Unit.INSTANCE;
@@ -276,14 +276,14 @@ public final class Km {
         a(a2);
     }
 
-    public final void a(C0493om c0493om) {
+    public final void a(C0494om c0494om) {
         ArrayList arrayList;
         Lm lm = this.f545a;
         Ol ol = lm.d;
         String str = lm.b;
         synchronized (ol.f614a.b) {
             Ql ql = ol.f614a;
-            ql.c = c0493om;
+            ql.c = c0494om;
             Collection collection = (Collection) ql.f645a.f624a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
@@ -293,7 +293,7 @@ public final class Km {
         }
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            ((Zl) it.next()).a(c0493om);
+            ((Zl) it.next()).a(c0494om);
         }
     }
 
@@ -305,35 +305,35 @@ public final class Km {
         lm.d.a(lm.f.f1017a, sl, e());
     }
 
-    public final synchronized void a(C0337im c0337im) {
-        this.f545a.l.a(c0337im);
-        C0389km d = d();
+    public final synchronized void a(C0338im c0338im) {
+        this.f545a.l.a(c0338im);
+        C0390km d = d();
         if (d.k) {
             List list = d.j;
             if (list != null && !list.isEmpty()) {
                 if (!ro.a(list, d.e)) {
-                    C0493om e = e();
-                    C0593sm c0593sm = e.c;
-                    C0568rm a2 = c0593sm.a(c0593sm.m);
+                    C0494om e = e();
+                    C0594sm c0594sm = e.c;
+                    C0569rm a2 = c0594sm.a(c0594sm.m);
                     String str = e.f1025a;
                     String str2 = e.b;
                     a2.g = list;
-                    C0493om c0493om = new C0493om(str, str2, new C0593sm(a2));
-                    b(c0493om);
-                    a(c0493om);
+                    C0494om c0494om = new C0494om(str, str2, new C0594sm(a2));
+                    b(c0494om);
+                    a(c0494om);
                 }
             }
             List list2 = d.e;
             if (list2 != null && (!list2.isEmpty())) {
-                C0493om e2 = e();
-                C0593sm c0593sm2 = e2.c;
-                C0568rm a3 = c0593sm2.a(c0593sm2.m);
+                C0494om e2 = e();
+                C0594sm c0594sm2 = e2.c;
+                C0569rm a3 = c0594sm2.a(c0594sm2.m);
                 String str3 = e2.f1025a;
                 String str4 = e2.b;
                 a3.g = null;
-                C0493om c0493om2 = new C0493om(str3, str4, new C0593sm(a3));
-                b(c0493om2);
-                a(c0493om2);
+                C0494om c0494om2 = new C0494om(str3, str4, new C0594sm(a3));
+                b(c0494om2);
+                a(c0494om2);
             }
         }
     }

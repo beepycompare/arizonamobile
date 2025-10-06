@@ -19,7 +19,7 @@ public final class P1 {
         String a2;
         try {
             this.f618a.getClass();
-            a2 = AbstractC0352jb.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
+            a2 = AbstractC0353jb.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
         } catch (Throwable unused) {
         }
         return TextUtils.isEmpty(a2) ? 0L : new JSONObject(a2).optLong("delay");

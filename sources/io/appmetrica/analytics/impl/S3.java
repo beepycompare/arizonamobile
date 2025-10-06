@@ -85,7 +85,7 @@ public final class S3 implements ProtobufConverter {
 
     public static Q3 a(T3 t3) {
         LinkedHashMap linkedHashMap;
-        EnumC0530q8 enumC0530q8;
+        EnumC0531q8 enumC0531q8;
         V3 v3 = t3.f679a;
         if (v3 != null) {
             U3[] u3Arr = v3.f709a;
@@ -99,16 +99,16 @@ public final class S3 implements ProtobufConverter {
         }
         int i = t3.b;
         if (i == 0) {
-            enumC0530q8 = EnumC0530q8.b;
+            enumC0531q8 = EnumC0531q8.b;
         } else if (i == 1) {
-            enumC0530q8 = EnumC0530q8.c;
+            enumC0531q8 = EnumC0531q8.c;
         } else if (i == 2) {
-            enumC0530q8 = EnumC0530q8.d;
+            enumC0531q8 = EnumC0531q8.d;
         } else if (i != 3) {
-            enumC0530q8 = EnumC0530q8.b;
+            enumC0531q8 = EnumC0531q8.b;
         } else {
-            enumC0530q8 = EnumC0530q8.e;
+            enumC0531q8 = EnumC0531q8.e;
         }
-        return new Q3(linkedHashMap, enumC0530q8);
+        return new Q3(linkedHashMap, enumC0531q8);
     }
 }

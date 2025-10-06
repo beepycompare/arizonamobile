@@ -7,15 +7,15 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class B6 extends C0410lh {
+public final class B6 extends C0411lh {
     public final Context f;
     public final Rh g;
     public final Q6 h;
     public final T1 i;
     public final M6 j;
 
-    public B6(Context context, C0471o0 c0471o0, InterfaceC0336il interfaceC0336il, Rh rh) {
-        super(c0471o0, interfaceC0336il, rh);
+    public B6(Context context, C0472o0 c0472o0, InterfaceC0337il interfaceC0337il, Rh rh) {
+        super(c0472o0, interfaceC0337il, rh);
         this.f = context;
         this.g = rh;
         this.h = A4.l().i();

@@ -10,7 +10,7 @@ public final class Ea {
 
     /* renamed from: a  reason: collision with root package name */
     public final Od f427a = new Od();
-    public final ServiceComponentsInitializer b = AbstractC0591sk.a();
+    public final ServiceComponentsInitializer b = AbstractC0592sk.a();
     public boolean c = false;
 
     public final void a(Context context) {

@@ -3,8 +3,8 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes4.dex */
 public final class Uh extends Ch {
-    public Uh(C0194d7 c0194d7) {
-        super(c0194d7);
+    public Uh(C0195d7 c0195d7) {
+        super(c0195d7);
     }
 
     @Override // io.appmetrica.analytics.impl.Ch, io.appmetrica.analytics.impl.Dh

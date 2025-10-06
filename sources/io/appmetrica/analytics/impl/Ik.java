@@ -43,20 +43,20 @@ public final class Ik implements ServiceStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final TempCacheStorage getTempCacheStorage() {
-        C0769zn c0769zn;
-        C0728y7 a2 = C0728y7.a(this.f503a);
+        C0770zn c0770zn;
+        C0729y7 a2 = C0729y7.a(this.f503a);
         synchronized (a2) {
             if (a2.o == null) {
                 Context context = a2.e;
-                EnumC0158bn enumC0158bn = EnumC0158bn.SERVICE;
+                EnumC0159bn enumC0159bn = EnumC0159bn.SERVICE;
                 if (a2.n == null) {
-                    a2.n = new C0744yn(new C0767zl(a2.h()), "temp_cache");
+                    a2.n = new C0745yn(new C0768zl(a2.h()), "temp_cache");
                 }
-                a2.o = new C0769zn(context, enumC0158bn, a2.n);
+                a2.o = new C0770zn(context, enumC0159bn, a2.n);
             }
-            c0769zn = a2.o;
+            c0770zn = a2.o;
         }
-        return c0769zn;
+        return c0770zn;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
@@ -66,6 +66,6 @@ public final class Ik implements ServiceStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final ModulePreferences modulePreferences(String str) {
-        return new C0709xd(str, this.b);
+        return new C0710xd(str, this.b);
     }
 }

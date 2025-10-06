@@ -4,9 +4,9 @@ import android.location.Location;
 import android.text.TextUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.AbstractC0242f4;
-import io.appmetrica.analytics.impl.C0169c8;
-import io.appmetrica.analytics.impl.C0264g0;
+import io.appmetrica.analytics.impl.AbstractC0243f4;
+import io.appmetrica.analytics.impl.C0170c8;
+import io.appmetrica.analytics.impl.C0265g0;
 import io.appmetrica.analytics.impl.Gb;
 import io.appmetrica.analytics.impl.Kn;
 import io.appmetrica.analytics.impl.L5;
@@ -54,7 +54,7 @@ public class AppMetricaConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Kn D = new Kn(new C0264g0());
+        private static final Kn D = new Kn(new C0265g0());
         private Integer A;
         private List B;
         private final HashMap C;
@@ -253,7 +253,7 @@ public class AppMetricaConfig {
     public static AppMetricaConfig fromJson(String str) {
         HashMap c;
         HashMap c2;
-        new C0169c8();
+        new C0170c8();
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -266,8 +266,8 @@ public class AppMetricaConfig {
             if (jSONObject.has("session_timeout")) {
                 newConfigBuilder.withSessionTimeout(jSONObject.getInt("session_timeout"));
             }
-            newConfigBuilder.withLocation(AbstractC0242f4.a(jSONObject.optString(FirebaseAnalytics.Param.LOCATION)));
-            newConfigBuilder.withPreloadInfo(AbstractC0242f4.b(jSONObject.optString("preload_info")));
+            newConfigBuilder.withLocation(AbstractC0243f4.a(jSONObject.optString(FirebaseAnalytics.Param.LOCATION)));
+            newConfigBuilder.withPreloadInfo(AbstractC0243f4.b(jSONObject.optString("preload_info")));
             if (jSONObject.has("logs") && jSONObject.optBoolean("logs")) {
                 newConfigBuilder.withLogs();
             }
@@ -359,13 +359,13 @@ public class AppMetricaConfig {
     public String toJson() {
         String str;
         List<String> list;
-        new C0169c8();
+        new C0170c8();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
             jSONObject.put("app_version", this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
-            jSONObject.put(FirebaseAnalytics.Param.LOCATION, AbstractC0242f4.a(this.location));
+            jSONObject.put(FirebaseAnalytics.Param.LOCATION, AbstractC0243f4.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;
             JSONArray jSONArray = null;
             if (preloadInfo != null) {

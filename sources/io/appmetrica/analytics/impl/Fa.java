@@ -8,7 +8,7 @@ public final class Fa implements ProtobufConverter {
     public final He f444a;
 
     public Fa() {
-        this(new C0157bm());
+        this(new C0158bm());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -24,8 +24,8 @@ public final class Fa implements ProtobufConverter {
         return bm;
     }
 
-    public Fa(C0157bm c0157bm) {
-        this.f444a = c0157bm;
+    public Fa(C0158bm c0158bm) {
+        this.f444a = c0158bm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

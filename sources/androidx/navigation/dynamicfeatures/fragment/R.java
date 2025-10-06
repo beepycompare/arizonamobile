@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int dfn_progress_fragment = 0x7f0a03dd;
-        public static int installation_progress = 0x7f0a06cb;
-        public static int progress_action = 0x7f0a0a63;
-        public static int progress_icon = 0x7f0a0a6a;
-        public static int progress_title = 0x7f0a0a6e;
+        public static int dfn_progress_fragment = 0x7f0a03e2;
+        public static int installation_progress = 0x7f0a06d4;
+        public static int progress_action = 0x7f0a0a75;
+        public static int progress_icon = 0x7f0a0a7d;
+        public static int progress_title = 0x7f0a0a81;
 
         private id() {
         }
@@ -24,7 +24,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int dynamic_feature_install_fragment = 0x7f0d00ab;
+        public static int dynamic_feature_install_fragment = 0x7f0d00b3;
 
         private layout() {
         }

@@ -11,7 +11,7 @@ public final class d0 implements P {
     public final Q b;
     public final Handler c;
     public volatile boolean d;
-    public volatile C0782m e;
+    public volatile C0783m e;
     public final a0 f = new a0(this);
 
     public d0(ClientContext clientContext, Q q) {
@@ -21,8 +21,8 @@ public final class d0 implements P {
     }
 
     @Override // io.appmetrica.analytics.screenshot.impl.P
-    public final void a(C0781l c0781l) {
-        this.e = c0781l != null ? c0781l.b : null;
+    public final void a(C0782l c0782l) {
+        this.e = c0782l != null ? c0782l.b : null;
     }
 
     public final String b() {

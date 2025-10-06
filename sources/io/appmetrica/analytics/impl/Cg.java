@@ -6,12 +6,12 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class Cg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0640uj f391a;
+    public final C0641uj f391a;
     public final Sa b;
     public final Sa c;
 
     public Cg() {
-        this(new C0640uj(), new Sa(100), new Sa(2048));
+        this(new C0641uj(), new Sa(100), new Sa(2048));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -23,14 +23,14 @@ public final class Cg implements Converter {
         o8.f606a = StringUtils.getUTF8Bytes((String) a2.f676a);
         Sn a3 = this.c.a(tg.b);
         o8.b = StringUtils.getUTF8Bytes((String) a3.f676a);
-        C0740yj c0740yj = tg.c;
-        if (c0740yj != null) {
-            zi = this.f391a.fromModel(c0740yj);
+        C0741yj c0741yj = tg.c;
+        if (c0741yj != null) {
+            zi = this.f391a.fromModel(c0741yj);
             o8.c = (P8) zi.f777a;
         } else {
             zi = null;
         }
-        return new Zi(o8, new C0749z3(C0749z3.b(a2, a3, zi)));
+        return new Zi(o8, new C0750z3(C0750z3.b(a2, a3, zi)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -39,8 +39,8 @@ public final class Cg implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Cg(C0640uj c0640uj, Sa sa, Sa sa2) {
-        this.f391a = c0640uj;
+    public Cg(C0641uj c0641uj, Sa sa, Sa sa2) {
+        this.f391a = c0641uj;
         this.b = sa;
         this.c = sa2;
     }

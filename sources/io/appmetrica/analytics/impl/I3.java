@@ -5,13 +5,13 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 public final class I3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0125ag f488a;
+    public final C0126ag f488a;
     public final V7 b;
     public final Rf c;
     public final Cg d;
 
     public I3() {
-        this(new C0125ag(), new V7(), new Rf(), new Cg());
+        this(new C0126ag(), new V7(), new Rf(), new Cg());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -31,7 +31,7 @@ public final class I3 implements Converter {
         } else {
             zi = null;
         }
-        return new Zi(d8, new C0749z3(C0749z3.b(fromModel, fromModel2, zi)));
+        return new Zi(d8, new C0750z3(C0750z3.b(fromModel, fromModel2, zi)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -40,8 +40,8 @@ public final class I3 implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public I3(C0125ag c0125ag, V7 v7, Rf rf, Cg cg) {
-        this.f488a = c0125ag;
+    public I3(C0126ag c0126ag, V7 v7, Rf rf, Cg cg) {
+        this.f488a = c0126ag;
         this.b = v7;
         this.c = rf;
         this.d = cg;

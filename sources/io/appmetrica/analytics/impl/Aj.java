@@ -21,14 +21,14 @@ public final class Aj implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f353a;
-    public final C0328ic b = new C0328ic();
+    public final C0329ic b = new C0329ic();
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public SdkEnvironment d;
     public String e;
 
     public Aj(Context context) {
         this.f353a = context;
-        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("7.12.0", "50139596", Bj.a()), "phone", C0328ic.a(context.getResources().getConfiguration()));
+        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("7.12.0", "50139596", Bj.a()), "phone", C0329ic.a(context.getResources().getConfiguration()));
     }
 
     public final synchronized void a(ScreenInfo screenInfo) {
@@ -39,7 +39,7 @@ public final class Aj implements SdkEnvironmentProvider {
                 if (str == null) {
                     Context context = this.f353a;
                     Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
-                    SafePackageManager safePackageManager = AbstractC0401l8.f968a;
+                    SafePackageManager safePackageManager = AbstractC0402l8.f968a;
                     try {
                         f = context.getResources().getDisplayMetrics().density;
                     } catch (Throwable unused) {
@@ -48,7 +48,7 @@ public final class Aj implements SdkEnvironmentProvider {
                     if (!Float.isNaN(f) && f != 0.0f) {
                         int i = point.x;
                         int i2 = point.y;
-                        if (AbstractC0401l8.a(context)) {
+                        if (AbstractC0402l8.a(context)) {
                             str = "tv";
                         } else {
                             float f2 = 160 * f;
@@ -69,14 +69,14 @@ public final class Aj implements SdkEnvironmentProvider {
                 this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, screenInfo, null, str, null, 43, null);
                 Iterator it = this.c.iterator();
                 while (it.hasNext()) {
-                    ((M5) ((InterfaceC0765zj) it.next())).d();
+                    ((M5) ((InterfaceC0766zj) it.next())).d();
                 }
             }
         }
     }
 
-    public final void b(InterfaceC0765zj interfaceC0765zj) {
-        this.c.remove(interfaceC0765zj);
+    public final void b(InterfaceC0766zj interfaceC0766zj) {
+        this.c.remove(interfaceC0766zj);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider
@@ -97,7 +97,7 @@ public final class Aj implements SdkEnvironmentProvider {
                     this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, str, null, 47, null);
                     Iterator it = this.c.iterator();
                     while (it.hasNext()) {
-                        ((M5) ((InterfaceC0765zj) it.next())).d();
+                        ((M5) ((InterfaceC0766zj) it.next())).d();
                     }
                 }
             }
@@ -119,24 +119,24 @@ public final class Aj implements SdkEnvironmentProvider {
             this.d = SdkEnvironment.copy$default(getSdkEnvironment(), new AppVersionInfo(str, str2), null, null, null, null, null, 62, null);
             Iterator it = this.c.iterator();
             while (it.hasNext()) {
-                ((M5) ((InterfaceC0765zj) it.next())).d();
+                ((M5) ((InterfaceC0766zj) it.next())).d();
             }
         }
     }
 
     public final synchronized void a(Configuration configuration) {
         this.b.getClass();
-        List a2 = C0328ic.a(configuration);
+        List a2 = C0329ic.a(configuration);
         if (!Intrinsics.areEqual(getSdkEnvironment().getLocales(), a2)) {
             this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, null, a2, 31, null);
             Iterator it = this.c.iterator();
             while (it.hasNext()) {
-                ((M5) ((InterfaceC0765zj) it.next())).d();
+                ((M5) ((InterfaceC0766zj) it.next())).d();
             }
         }
     }
 
-    public final void a(InterfaceC0765zj interfaceC0765zj) {
-        this.c.add(interfaceC0765zj);
+    public final void a(InterfaceC0766zj interfaceC0766zj) {
+        this.c.add(interfaceC0766zj);
     }
 }

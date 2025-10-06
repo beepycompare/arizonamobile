@@ -23,8 +23,8 @@ public final class c0 implements ActivityLifecycleListener {
                     return;
                 }
             }
-            C0782m c0782m = this.f1316a.e;
-            if (c0782m == null || !c0782m.f1329a) {
+            C0783m c0783m = this.f1316a.e;
+            if (c0783m == null || !c0783m.f1329a) {
                 return;
             }
             this.f1316a.d = false;

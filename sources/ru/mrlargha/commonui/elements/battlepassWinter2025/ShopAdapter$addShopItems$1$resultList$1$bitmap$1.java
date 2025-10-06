@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.battlepassWinter2025;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,6 +44,6 @@ final class ShopAdapter$addShopItems$1$resultList$1$bitmap$1 extends SuspendLamb
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, this.$it.getItemId(), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", this.$it.getItemId(), null, 4, null);
     }
 }

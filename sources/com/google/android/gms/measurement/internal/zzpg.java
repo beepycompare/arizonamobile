@@ -291,7 +291,7 @@ public final class zzpg implements zzjg {
         zzpg zzpgVar2 = this;
         zzpg zzpgVar3 = "_ai";
         String str6 = FirebaseAnalytics.Event.PURCHASE;
-        String str7 = FirebaseAnalytics.Param.ITEMS;
+        String str7 = "items";
         zzpgVar2.zzj().zzb();
         try {
             zzpc zzpcVar4 = new zzpc(zzpgVar2, null);

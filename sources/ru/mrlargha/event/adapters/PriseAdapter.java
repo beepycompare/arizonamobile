@@ -18,6 +18,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.event.adapters.PriseAdapter;
 import ru.mrlargha.event.data.EasterItem;
+import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventPriseItemBinding;
 /* compiled from: PriseAdapter.kt */
@@ -101,7 +102,7 @@ public final class PriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder>
                     i = ru.mrlargha.commonui.R.drawable.rarity_default;
                     break;
                 case 112785:
-                    if (color.equals("red")) {
+                    if (color.equals(CasesSameCasesAdapter.NEW)) {
                         i = ru.mrlargha.commonui.R.drawable.rarity_red;
                         break;
                     }
@@ -142,7 +143,7 @@ public final class PriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder>
                     str = "#FFFFFF";
                     break;
                 case 112785:
-                    if (color2.equals("red")) {
+                    if (color2.equals(CasesSameCasesAdapter.NEW)) {
                         str = "#FF3600";
                         break;
                     }

@@ -4,7 +4,7 @@ import android.content.Context;
 import com.android.installreferrer.api.InstallReferrerClient;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes4.dex */
-public final class Eg implements InterfaceC0482ob {
+public final class Eg implements InterfaceC0483ob {
 
     /* renamed from: a  reason: collision with root package name */
     public final ICommonExecutor f429a;
@@ -19,7 +19,7 @@ public final class Eg implements InterfaceC0482ob {
         og.a(th);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0482ob
+    @Override // io.appmetrica.analytics.impl.InterfaceC0483ob
     public final void a(Og og) throws Throwable {
         this.b.startConnection(new Dg(this, og));
     }

@@ -17,7 +17,7 @@ public final class e0 {
         return "ServiceSideApiCaptorConfig(enabled=" + this.f1320a + ')';
     }
 
-    public e0(C0774e c0774e) {
-        this(c0774e.a());
+    public e0(C0775e c0775e) {
+        this(c0775e.a());
     }
 }

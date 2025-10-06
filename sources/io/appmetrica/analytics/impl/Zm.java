@@ -15,14 +15,14 @@ public final class Zm {
         Vm vm = new Vm();
         Wm wm = new Wm();
         Xm xm = new Xm();
-        hashMap.put(C0593sm.class, tm);
-        hashMap.put(C0137b2.class, um);
-        hashMap.put(C0711xf.class, vm);
-        hashMap.put(C0748z2.class, wm);
+        hashMap.put(C0594sm.class, tm);
+        hashMap.put(C0138b2.class, um);
+        hashMap.put(C0712xf.class, vm);
+        hashMap.put(C0749z2.class, wm);
         hashMap.put(R3.class, xm);
     }
 
-    public static AbstractC0132an a(Class cls) {
-        return (AbstractC0132an) Ym.f763a.f780a.get(cls);
+    public static AbstractC0133an a(Class cls) {
+        return (AbstractC0133an) Ym.f763a.f780a.get(cls);
     }
 }

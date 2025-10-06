@@ -17,7 +17,6 @@ import androidx.constraintlayout.widget.Group;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -644,7 +643,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             this.binding.mainItemField.tvTitleText.setText(inventoryItem.getText());
         }
         Integer item2 = inventoryItem.getItem();
-        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, item2 != null ? item2.intValue() : 0, null, 4, null);
+        Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", item2 != null ? item2.intValue() : 0, null, 4, null);
         if (iconFromArchive$default != null) {
             ImageView ivItemImage = this.binding.mainItemField.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
@@ -657,7 +656,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     private final void updateRightField(InventoryItem inventoryItem) {
         if (inventoryItem.getItem() != null) {
             this.rightItemIndex = inventoryItem.getSlot();
-            Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, inventoryItem.getItem().intValue(), null, 4, null);
+            Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", inventoryItem.getItem().intValue(), null, 4, null);
             if (iconFromArchive$default != null) {
                 ImageView ivItemImage = this.binding.rightItemField.ivItemImage;
                 Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
@@ -682,7 +681,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
     private final void updateLeftField(InventoryItem inventoryItem) {
         if (inventoryItem.getItem() != null) {
             this.leftItemIndex = inventoryItem.getSlot();
-            Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, inventoryItem.getItem().intValue(), null, 4, null);
+            Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", inventoryItem.getItem().intValue(), null, 4, null);
             if (iconFromArchive$default != null) {
                 ImageView ivItemImage = this.binding.leftItemField.ivItemImage;
                 Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");

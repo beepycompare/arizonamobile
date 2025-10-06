@@ -10,17 +10,17 @@ import kotlin.collections.CollectionsKt;
 public final class Kb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0447n2 f538a = new C0447n2();
+    public final C0448n2 f538a = new C0448n2();
     public final J6 b = new J6();
     public Fn c;
     public boolean d;
     public boolean e;
 
-    public final synchronized void a(Context context, AppMetricaConfig appMetricaConfig, InterfaceC0607tb interfaceC0607tb) {
+    public final synchronized void a(Context context, AppMetricaConfig appMetricaConfig, InterfaceC0608tb interfaceC0608tb) {
         if (this.e) {
             return;
         }
-        CollectionsKt.addAll(this.b.f512a, new InterfaceC0249fb[]{this.f538a.a(context, appMetricaConfig, interfaceC0607tb)});
+        CollectionsKt.addAll(this.b.f512a, new InterfaceC0250fb[]{this.f538a.a(context, appMetricaConfig, interfaceC0608tb)});
         this.e = true;
     }
 

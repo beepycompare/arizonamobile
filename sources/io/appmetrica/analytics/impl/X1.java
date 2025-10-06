@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class X1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0660ve f735a;
+    public final /* synthetic */ InterfaceC0661ve f735a;
     public final /* synthetic */ Y7 b;
 
     public X1(Z1 z1, Y7 y7) {

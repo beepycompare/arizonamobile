@@ -12,13 +12,13 @@ public abstract class Th implements Callable {
     public static final Sh d = new Sh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0471o0 f688a;
-    public final InterfaceC0336il b;
+    public final C0472o0 f688a;
+    public final InterfaceC0337il b;
     public boolean c;
 
-    public Th(C0471o0 c0471o0, InterfaceC0336il interfaceC0336il) {
-        this.f688a = c0471o0;
-        this.b = interfaceC0336il;
+    public Th(C0472o0 c0472o0, InterfaceC0337il interfaceC0337il) {
+        this.f688a = c0472o0;
+        this.b = interfaceC0337il;
     }
 
     public abstract void a(IAppMetricaService iAppMetricaService);
@@ -26,19 +26,19 @@ public abstract class Th implements Callable {
     public void a(Throwable th) {
     }
 
-    public final C0471o0 b() {
+    public final C0472o0 b() {
         return this.f688a;
     }
 
     public boolean c() {
-        C0471o0 c0471o0 = this.f688a;
-        synchronized (c0471o0) {
-            if (c0471o0.d == null) {
-                c0471o0.e = new CountDownLatch(1);
-                Intent a2 = Jk.a(c0471o0.f1013a);
+        C0472o0 c0472o0 = this.f688a;
+        synchronized (c0472o0) {
+            if (c0472o0.d == null) {
+                c0472o0.e = new CountDownLatch(1);
+                Intent a2 = Jk.a(c0472o0.f1013a);
                 try {
-                    c0471o0.g.b(c0471o0.f1013a);
-                    c0471o0.f1013a.bindService(a2, c0471o0.i, 1);
+                    c0472o0.g.b(c0472o0.f1013a);
+                    c0472o0.f1013a.bindService(a2, c0472o0.i, 1);
                 } catch (Throwable unused) {
                 }
             }
@@ -70,15 +70,15 @@ public abstract class Th implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0471o0 c0471o0 = this.f688a;
-                synchronized (c0471o0) {
-                    iAppMetricaService = c0471o0.d;
+                C0472o0 c0472o0 = this.f688a;
+                synchronized (c0472o0) {
+                    iAppMetricaService = c0472o0.d;
                 }
                 if (iAppMetricaService != null) {
                     try {
                         a(iAppMetricaService);
-                        InterfaceC0336il interfaceC0336il = this.b;
-                        if (interfaceC0336il == null || ((Ei) interfaceC0336il).a()) {
+                        InterfaceC0337il interfaceC0337il = this.b;
+                        if (interfaceC0337il == null || ((Ei) interfaceC0337il).a()) {
                             this.f688a.c();
                             return;
                         }

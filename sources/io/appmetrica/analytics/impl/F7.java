@@ -22,9 +22,9 @@ public final class F7 implements Converter {
         if (l != null) {
             contentValues.put("session_id", Long.valueOf(l.longValue()));
         }
-        EnumC0259fl enumC0259fl = e7.b;
-        if (enumC0259fl != null) {
-            contentValues.put("session_type", Integer.valueOf(enumC0259fl.f884a));
+        EnumC0260fl enumC0260fl = e7.b;
+        if (enumC0260fl != null) {
+            contentValues.put("session_type", Integer.valueOf(enumC0260fl.f884a));
         }
         Long l2 = e7.c;
         if (l2 != null) {
@@ -58,21 +58,21 @@ public final class F7 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final E7 toModel(ContentValues contentValues) {
-        EnumC0259fl enumC0259fl;
+        EnumC0260fl enumC0260fl;
         int intValue;
         Long asLong = contentValues.getAsLong("session_id");
         Integer asInteger = contentValues.getAsInteger("session_type");
         if (asInteger != null) {
             Integer valueOf = Integer.valueOf(asInteger.intValue());
-            enumC0259fl = EnumC0259fl.FOREGROUND;
+            enumC0260fl = EnumC0260fl.FOREGROUND;
             if (valueOf != null && (intValue = valueOf.intValue()) != 0 && intValue == 1) {
-                enumC0259fl = EnumC0259fl.BACKGROUND;
+                enumC0260fl = EnumC0260fl.BACKGROUND;
             }
         } else {
-            enumC0259fl = null;
+            enumC0260fl = null;
         }
         Long asLong2 = contentValues.getAsLong("number_in_session");
         Integer asInteger2 = contentValues.getAsInteger("type");
-        return new E7(asLong, enumC0259fl, asLong2, asInteger2 != null ? Bb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f441a.toModel(contentValues.getAsByteArray("event_description")));
+        return new E7(asLong, enumC0260fl, asLong2, asInteger2 != null ? Bb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f441a.toModel(contentValues.getAsByteArray("event_description")));
     }
 }

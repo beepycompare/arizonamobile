@@ -25,7 +25,7 @@ public final class r extends MessageNano {
 
     /* renamed from: a  reason: collision with root package name */
     public byte[] f1058a;
-    public C0521q b;
+    public C0522q b;
     public byte[] c;
     public int d;
     public byte[] e;
@@ -82,9 +82,9 @@ public final class r extends MessageNano {
         if (!Arrays.equals(this.f1058a, u)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1058a);
         }
-        C0521q c0521q = this.b;
-        if (c0521q != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0521q);
+        C0522q c0522q = this.b;
+        if (c0522q != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0522q);
         }
         byte[] bArr = this.c;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
@@ -121,9 +121,9 @@ public final class r extends MessageNano {
         if (!Arrays.equals(this.f1058a, u)) {
             codedOutputByteBufferNano.writeBytes(1, this.f1058a);
         }
-        C0521q c0521q = this.b;
-        if (c0521q != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0521q);
+        C0522q c0522q = this.b;
+        if (c0522q != null) {
+            codedOutputByteBufferNano.writeMessage(2, c0522q);
         }
         byte[] bArr = this.c;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
@@ -175,7 +175,7 @@ public final class r extends MessageNano {
                     break;
                 case 18:
                     if (this.b == null) {
-                        this.b = new C0521q();
+                        this.b = new C0522q();
                     }
                     codedInputByteBufferNano.readMessage(this.b);
                     break;

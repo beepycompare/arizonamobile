@@ -19,23 +19,23 @@ public final class Bc extends Lambda implements Function0 {
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        Uc c0227ef;
+        Uc c0228ef;
         Cc cc = this.f370a;
         Vc vc = cc.f;
         R9 r9 = cc.b;
-        C0436mh c0436mh = cc.f390a;
+        C0437mh c0437mh = cc.f390a;
         M4 m4 = cc.c;
-        C0537qf c0537qf = cc.d;
+        C0538qf c0538qf = cc.d;
         vc.getClass();
         if (FrameworkDetector.isNative()) {
-            C0429ma h = Na.F.h();
+            C0430ma h = Na.F.h();
             Bundle applicationMetaData = h.d.getApplicationMetaData(h.f991a);
             if (TextUtils.isEmpty(applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null)) {
-                c0227ef = new C0407le();
-                return c0227ef.a();
+                c0228ef = new C0408le();
+                return c0228ef.a();
             }
         }
-        c0227ef = new C0227ef(r9, c0436mh, m4, c0537qf);
-        return c0227ef.a();
+        c0228ef = new C0228ef(r9, c0437mh, m4, c0538qf);
+        return c0228ef.a();
     }
 }

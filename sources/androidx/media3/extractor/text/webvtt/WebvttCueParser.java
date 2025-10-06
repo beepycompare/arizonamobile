@@ -36,6 +36,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 /* loaded from: classes3.dex */
 public final class WebvttCueParser {
     private static final char CHAR_AMPERSAND = '&';
@@ -75,8 +76,8 @@ public final class WebvttCueParser {
         hashMap.put("white", Integer.valueOf(Color.rgb(255, 255, 255)));
         hashMap.put("lime", Integer.valueOf(Color.rgb(0, 255, 0)));
         hashMap.put("cyan", Integer.valueOf(Color.rgb(0, 255, 255)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(255, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(255, 255, 0)));
+        hashMap.put(CasesSameCasesAdapter.NEW, Integer.valueOf(Color.rgb(255, 0, 0)));
+        hashMap.put(CasesSameCasesAdapter.BENEFIT, Integer.valueOf(Color.rgb(255, 255, 0)));
         hashMap.put("magenta", Integer.valueOf(Color.rgb(255, 0, 255)));
         hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, 255)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));

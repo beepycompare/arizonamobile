@@ -4,10 +4,10 @@ public final class K0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ String f529a;
-    public final /* synthetic */ C0547r1 b;
+    public final /* synthetic */ C0548r1 b;
 
-    public K0(C0547r1 c0547r1, String str) {
-        this.b = c0547r1;
+    public K0(C0548r1 c0548r1, String str) {
+        this.b = c0548r1;
         this.f529a = str;
     }
 

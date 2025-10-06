@@ -3,28 +3,28 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.networktasks.internal.ArgumentsMerger;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes4.dex */
-public abstract class M5 implements InterfaceC0765zj {
+public abstract class M5 implements InterfaceC0766zj {
 
     /* renamed from: a  reason: collision with root package name */
     public BaseRequestConfig f572a;
     public final BaseRequestConfig.RequestConfigLoader b;
-    public C0373k6 c;
+    public C0374k6 c;
 
-    public M5(BaseRequestConfig.RequestConfigLoader<Object, C0373k6> requestConfigLoader, C0493om c0493om, ArgumentsMerger<Object, Object> argumentsMerger) {
+    public M5(BaseRequestConfig.RequestConfigLoader<Object, C0374k6> requestConfigLoader, C0494om c0494om, ArgumentsMerger<Object, Object> argumentsMerger) {
         this.b = requestConfigLoader;
         Na.j().u().a(this);
-        a(new C0373k6(c0493om, Na.j().u(), Na.j().r(), argumentsMerger));
+        a(new C0374k6(c0494om, Na.j().u(), Na.j().r(), argumentsMerger));
     }
 
-    public final synchronized void a(C0373k6 c0373k6) {
-        this.c = c0373k6;
+    public final synchronized void a(C0374k6 c0374k6) {
+        this.c = c0374k6;
     }
 
     public final synchronized ArgumentsMerger<Object, Object> b() {
         return (ArgumentsMerger) this.c.componentArguments;
     }
 
-    public final synchronized C0493om c() {
+    public final synchronized C0494om c() {
         return this.c.f950a;
     }
 
@@ -40,13 +40,13 @@ public abstract class M5 implements InterfaceC0765zj {
 
     public synchronized void a(Object obj) {
         if (!((ArgumentsMerger) this.c.componentArguments).compareWithOtherArguments(obj)) {
-            a(new C0373k6(c(), Na.F.u(), Na.F.r(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
+            a(new C0374k6(c(), Na.F.u(), Na.F.r(), (ArgumentsMerger) ((ArgumentsMerger) this.c.componentArguments).mergeFrom(obj)));
             e();
         }
     }
 
-    public final synchronized void a(C0493om c0493om) {
-        a(new C0373k6(c0493om, Na.F.u(), Na.F.r(), b()));
+    public final synchronized void a(C0494om c0494om) {
+        a(new C0374k6(c0494om, Na.F.u(), Na.F.r(), b()));
         e();
     }
 

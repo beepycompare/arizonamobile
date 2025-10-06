@@ -1,6 +1,5 @@
 package com.arkivanov.decompose.router.pages;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.List;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
@@ -32,7 +31,7 @@ public /* synthetic */ class Pages$$serializer<C> implements GeneratedSerializer
 
     private Pages$$serializer() {
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("com.arkivanov.decompose.router.pages.Pages", this, 2);
-        pluginGeneratedSerialDescriptor.addElement(FirebaseAnalytics.Param.ITEMS, false);
+        pluginGeneratedSerialDescriptor.addElement("items", false);
         pluginGeneratedSerialDescriptor.addElement("selectedIndex", false);
         this.descriptor = pluginGeneratedSerialDescriptor;
     }

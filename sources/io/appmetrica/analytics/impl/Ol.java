@@ -13,7 +13,7 @@ public final class Ol {
         this.f614a = ql;
     }
 
-    public final void a(String str, Sl sl, C0493om c0493om) {
+    public final void a(String str, Sl sl, C0494om c0494om) {
         ArrayList arrayList;
         synchronized (this.f614a.b) {
             Collection collection = (Collection) this.f614a.f645a.f624a.get(str);
@@ -25,7 +25,7 @@ public final class Ol {
         }
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            ((Zl) it.next()).a(sl, c0493om);
+            ((Zl) it.next()).a(sl, c0494om);
         }
     }
 }

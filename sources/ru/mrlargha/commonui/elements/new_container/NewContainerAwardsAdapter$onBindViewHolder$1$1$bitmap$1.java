@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.new_container;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,6 +44,6 @@ final class NewContainerAwardsAdapter$onBindViewHolder$1$1$bitmap$1 extends Susp
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive$default(FirebaseAnalytics.Param.ITEMS, this.$info.getSysName(), null, 4, null);
+        return UtilsKt.getIconFromArchive$default("items", this.$info.getSysName(), null, 4, null);
     }
 }

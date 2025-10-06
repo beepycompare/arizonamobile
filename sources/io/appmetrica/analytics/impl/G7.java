@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import kotlin.jvm.internal.Ref;
 /* loaded from: classes4.dex */
-public final class G7 implements InterfaceC0669vn {
+public final class G7 implements InterfaceC0670vn {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ Ref.ObjectRef f457a;
@@ -12,8 +12,8 @@ public final class G7 implements InterfaceC0669vn {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // io.appmetrica.analytics.impl.InterfaceC0669vn
-    public final void a(C0380kd c0380kd) {
-        this.f457a.element = c0380kd != null ? c0380kd.f954a : 0;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0670vn
+    public final void a(C0381kd c0381kd) {
+        this.f457a.element = c0381kd != null ? c0381kd.f954a : 0;
     }
 }

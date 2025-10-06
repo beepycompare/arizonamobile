@@ -43,8 +43,8 @@ public final class I implements JsonParser {
         K k;
         M m;
         N n;
-        boolean z = AbstractC0783n.f1330a;
-        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0783n.f1330a);
+        boolean z = AbstractC0784n.f1330a;
+        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0784n.f1330a);
         V v = this.f1298a;
         U u = this.b;
         u.getClass();
@@ -54,7 +54,7 @@ public final class I implements JsonParser {
             n.f1303a = new K();
             n.b = new M();
             L l = new L();
-            l.c = AbstractC0783n.b;
+            l.c = AbstractC0784n.b;
             n.c = l;
         } else {
             N n2 = new N();

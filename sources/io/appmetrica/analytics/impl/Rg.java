@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 /* loaded from: classes4.dex */
 public final class Rg {
-    public Rg(InterfaceC0482ob interfaceC0482ob) {
+    public Rg(InterfaceC0483ob interfaceC0483ob) {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
@@ -13,7 +13,7 @@ public final class Rg {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static InterfaceC0482ob a(Context context, IHandlerExecutor iHandlerExecutor) {
+    public static InterfaceC0483ob a(Context context, IHandlerExecutor iHandlerExecutor) {
         Eg eg;
         if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
             try {

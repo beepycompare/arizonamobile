@@ -5,15 +5,15 @@ import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
 public final class Wa implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0611tf f727a;
-    public final EnumC0485oe b;
+    public final C0612tf f727a;
+    public final EnumC0486oe b;
 
-    public Wa(C0611tf c0611tf, EnumC0485oe enumC0485oe) {
-        this.f727a = c0611tf;
-        this.b = enumC0485oe;
+    public Wa(C0612tf c0612tf, EnumC0486oe enumC0486oe) {
+        this.f727a = c0612tf;
+        this.b = enumC0486oe;
     }
 
-    public final EnumC0485oe a() {
+    public final EnumC0486oe a() {
         return this.b;
     }
 

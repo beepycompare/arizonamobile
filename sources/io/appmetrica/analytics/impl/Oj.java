@@ -1,8 +1,8 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Oj implements InterfaceC0533qb {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
-    public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.resumeSession();
+public final class Oj implements InterfaceC0534qb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
+    public final void a(InterfaceC0558rb interfaceC0558rb) {
+        interfaceC0558rb.resumeSession();
     }
 }

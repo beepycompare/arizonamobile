@@ -8,7 +8,7 @@ public final class R6 extends Oa {
     }
 
     @Override // io.appmetrica.analytics.impl.Oa
-    public final void a(List<AbstractC0462nh> list) {
+    public final void a(List<AbstractC0463nh> list) {
         list.add(this.f608a.b);
         list.add(this.f608a.f598a);
         list.add(this.f608a.d);

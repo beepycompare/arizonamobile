@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 /* loaded from: classes2.dex */
 public final class ColorParser {
     private static final Map<String, Integer> COLOR_MAP;
@@ -78,7 +79,7 @@ public final class ColorParser {
         hashMap.put("gold", -10496);
         hashMap.put("goldenrod", -2448096);
         hashMap.put("gray", -8355712);
-        hashMap.put("green", -16744448);
+        hashMap.put(CasesSameCasesAdapter.TOP, -16744448);
         hashMap.put("greenyellow", -5374161);
         hashMap.put("grey", -8355712);
         hashMap.put("honeydew", -983056);
@@ -144,7 +145,7 @@ public final class ColorParser {
         hashMap.put("powderblue", -5185306);
         hashMap.put("purple", -8388480);
         hashMap.put("rebeccapurple", -10079335);
-        hashMap.put("red", Integer.valueOf((int) SupportMenu.CATEGORY_MASK));
+        hashMap.put(CasesSameCasesAdapter.NEW, Integer.valueOf((int) SupportMenu.CATEGORY_MASK));
         hashMap.put("rosybrown", -4419697);
         hashMap.put("royalblue", -12490271);
         hashMap.put("saddlebrown", -7650029);
@@ -171,7 +172,7 @@ public final class ColorParser {
         hashMap.put("wheat", -663885);
         hashMap.put("white", -1);
         hashMap.put("whitesmoke", -657931);
-        hashMap.put("yellow", Integer.valueOf((int) InputDeviceCompat.SOURCE_ANY));
+        hashMap.put(CasesSameCasesAdapter.BENEFIT, Integer.valueOf((int) InputDeviceCompat.SOURCE_ANY));
         hashMap.put("yellowgreen", -6632142);
     }
 

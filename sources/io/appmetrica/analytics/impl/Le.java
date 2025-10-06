@@ -6,8 +6,8 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 public final class Le extends Th {
     public final Vf e;
 
-    public Le(C0471o0 c0471o0, InterfaceC0336il interfaceC0336il, Vf vf) {
-        super(c0471o0, interfaceC0336il);
+    public Le(C0472o0 c0472o0, InterfaceC0337il interfaceC0337il, Vf vf) {
+        super(c0472o0, interfaceC0337il);
         this.e = vf;
     }
 

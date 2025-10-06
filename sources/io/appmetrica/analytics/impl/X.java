@@ -20,7 +20,7 @@ public final class X implements Converter {
         b8.b = this.f733a.fromModel(y.f750a);
         Sn a2 = this.b.a(y.b);
         b8.f366a = StringUtils.getUTF8Bytes((String) a2.f676a);
-        return new Zi(b8, new C0749z3(C0749z3.b(a2)));
+        return new Zi(b8, new C0750z3(C0750z3.b(a2)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

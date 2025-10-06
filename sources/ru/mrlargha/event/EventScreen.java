@@ -62,6 +62,7 @@ import ru.mrlargha.event.data.ShopInfo;
 import ru.mrlargha.event.data.ShopItem;
 import ru.mrlargha.event.data.ShopResult;
 import ru.mrlargha.event.data.ShopTopItem;
+import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 import ru.mrlargha.feature.event.R;
 import ru.mrlargha.feature.event.databinding.EventEventsItemBinding;
 import ru.mrlargha.feature.event.databinding.EventMainResultScreenBinding;
@@ -800,7 +801,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
                 i = ru.mrlargha.commonui.R.drawable.rarity_default;
                 break;
             case 112785:
-                if (color.equals("red")) {
+                if (color.equals(CasesSameCasesAdapter.NEW)) {
                     i = ru.mrlargha.commonui.R.drawable.rarity_red;
                     break;
                 }
@@ -841,7 +842,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
                 str = "#FFFFFF";
                 break;
             case 112785:
-                if (color2.equals("red")) {
+                if (color2.equals(CasesSameCasesAdapter.NEW)) {
                     str = "#FF3600";
                     break;
                 }

@@ -17,9 +17,9 @@ public final class V {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f1442a;
-    public final C0825d b;
+    public final C0826d b;
 
-    public V(Context context, C0825d getJobRepeatIntervalUseCase) {
+    public V(Context context, C0826d getJobRepeatIntervalUseCase) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(getJobRepeatIntervalUseCase, "getJobRepeatIntervalUseCase");
         this.f1442a = context;

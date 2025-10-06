@@ -8,13 +8,13 @@ public final class S extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ T f661a;
-    public final /* synthetic */ InterfaceC0180cj b;
+    public final /* synthetic */ InterfaceC0181cj b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public S(T t, InterfaceC0180cj interfaceC0180cj) {
+    public S(T t, InterfaceC0181cj interfaceC0181cj) {
         super(0);
         this.f661a = t;
-        this.b = interfaceC0180cj;
+        this.b = interfaceC0181cj;
     }
 
     @Override // kotlin.jvm.functions.Function0
@@ -22,8 +22,8 @@ public final class S extends Lambda implements Function0 {
         T t = this.f661a;
         M m = t.h;
         Context context = t.f677a;
-        InterfaceC0180cj interfaceC0180cj = this.b;
+        InterfaceC0181cj interfaceC0181cj = this.b;
         m.getClass();
-        return M.a(new L(m, context, interfaceC0180cj));
+        return M.a(new L(m, context, interfaceC0181cj));
     }
 }

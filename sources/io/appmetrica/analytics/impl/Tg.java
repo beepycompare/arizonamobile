@@ -8,19 +8,19 @@ public final class Tg {
     /* renamed from: a  reason: collision with root package name */
     public final String f687a;
     public final String b;
-    public final C0740yj c;
+    public final C0741yj c;
 
     public Tg(ECommerceReferrer eCommerceReferrer) {
-        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0740yj(eCommerceReferrer.getScreen()));
+        this(eCommerceReferrer.getType(), eCommerceReferrer.getIdentifier(), eCommerceReferrer.getScreen() == null ? null : new C0741yj(eCommerceReferrer.getScreen()));
     }
 
     public final String toString() {
         return "ReferrerWrapper{type='" + this.f687a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Tg(String str, String str2, C0740yj c0740yj) {
+    public Tg(String str, String str2, C0741yj c0741yj) {
         this.f687a = str;
         this.b = str2;
-        this.c = c0740yj;
+        this.c = c0741yj;
     }
 }

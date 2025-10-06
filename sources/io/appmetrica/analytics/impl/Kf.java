@@ -5,25 +5,25 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
-public final class Kf implements InterfaceC0554r8 {
+public final class Kf implements InterfaceC0555r8 {
 
     /* renamed from: a  reason: collision with root package name */
     public final String f540a;
     public final JSONObject b;
     public final boolean c;
     public final boolean d;
-    public final EnumC0530q8 e;
+    public final EnumC0531q8 e;
 
-    public Kf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0530q8 enumC0530q8) {
+    public Kf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0531q8 enumC0531q8) {
         this.f540a = str;
         this.b = jSONObject;
         this.c = z;
         this.d = z2;
-        this.e = enumC0530q8;
+        this.e = enumC0531q8;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0554r8
-    public final EnumC0530q8 a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0555r8
+    public final EnumC0531q8 a() {
         return this.e;
     }
 
@@ -60,29 +60,29 @@ public final class Kf implements InterfaceC0554r8 {
     }
 
     public static Kf a(JSONObject jSONObject) {
-        EnumC0530q8 enumC0530q8;
+        EnumC0531q8 enumC0531q8;
         String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
         JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
         int i = 0;
         boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
         boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
         String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
-        EnumC0530q8[] values = EnumC0530q8.values();
+        EnumC0531q8[] values = EnumC0531q8.values();
         int length = values.length;
         while (true) {
             if (i >= length) {
-                enumC0530q8 = null;
+                enumC0531q8 = null;
                 break;
             }
-            enumC0530q8 = values[i];
-            if (Intrinsics.areEqual(enumC0530q8.f1048a, optStringOrNull2)) {
+            enumC0531q8 = values[i];
+            if (Intrinsics.areEqual(enumC0531q8.f1048a, optStringOrNull2)) {
                 break;
             }
             i++;
         }
-        if (enumC0530q8 == null) {
-            enumC0530q8 = EnumC0530q8.b;
+        if (enumC0531q8 == null) {
+            enumC0531q8 = EnumC0531q8.b;
         }
-        return new Kf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0530q8);
+        return new Kf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0531q8);
     }
 }

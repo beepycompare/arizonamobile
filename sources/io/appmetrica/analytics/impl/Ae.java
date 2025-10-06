@@ -6,7 +6,7 @@ public final class Ae extends R4 {
     }
 
     @Override // io.appmetrica.analytics.impl.R4
-    public final void a(C0417lo c0417lo) {
-        c0417lo.d.b = ((Double) this.f).doubleValue();
+    public final void a(C0418lo c0418lo) {
+        c0418lo.d.b = ((Double) this.f).doubleValue();
     }
 }

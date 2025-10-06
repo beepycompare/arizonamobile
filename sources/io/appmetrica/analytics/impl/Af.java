@@ -31,7 +31,7 @@ public final class Af implements X5 {
                     return null;
                 }
                 Bj.a("Successfully parsed preload info. Tracking id = %s, additionalParams = %s", asString, jSONObject);
-                return new Kf(asString, jSONObject, true, false, EnumC0530q8.e);
+                return new Kf(asString, jSONObject, true, false, EnumC0531q8.e);
             } catch (Throwable th) {
                 ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format("Could not parse additional parameters", new Object[0]) + "\n" + StringUtils.throwableToString(th), new Object[0]);
                 return null;

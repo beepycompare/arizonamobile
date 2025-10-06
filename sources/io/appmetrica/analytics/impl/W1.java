@@ -9,7 +9,7 @@ public final class W1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0249fb f721a;
+    public final InterfaceC0250fb f721a;
     public final Q6 b = A4.l().n();
     public final N6 c = new N6();
     public final Jn d = new Jn();
@@ -23,7 +23,7 @@ public final class W1 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            InterfaceC0249fb interfaceC0249fb = this.f721a;
+            InterfaceC0250fb interfaceC0250fb = this.f721a;
             Cn apply = this.c.apply(thread);
             Jn jn = this.d;
             Thread a2 = jn.f526a.a();
@@ -42,7 +42,7 @@ public final class W1 implements Thread.UncaughtExceptionHandler {
                 }
                 a3.add(0, (Cn) jn.b.apply(a2, stackTraceElementArr));
             }
-            interfaceC0249fb.a(th, new U(apply, a3, this.b.f637a.a()));
+            interfaceC0250fb.a(th, new U(apply, a3, this.b.f637a.a()));
         } catch (Throwable th2) {
             LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
         }

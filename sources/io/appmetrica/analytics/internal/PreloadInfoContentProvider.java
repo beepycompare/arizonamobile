@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.impl.Af;
 import io.appmetrica.analytics.impl.Bf;
 import io.appmetrica.analytics.impl.Bj;
-import io.appmetrica.analytics.impl.C0115a6;
+import io.appmetrica.analytics.impl.C0116a6;
 import io.appmetrica.analytics.impl.Ea;
 import io.appmetrica.analytics.impl.O3;
 import io.appmetrica.analytics.impl.P3;
@@ -24,18 +24,18 @@ public class PreloadInfoContentProvider extends ContentProvider {
     private boolean f1201a = false;
     private final UriMatcher b = new UriMatcher(-1);
 
-    private void a(C0115a6 c0115a6, ContentValues contentValues) {
+    private void a(C0116a6 c0116a6, ContentValues contentValues) {
         Context context = getContext();
         Context applicationContext = context == null ? null : context.getApplicationContext();
         if (applicationContext != null) {
             try {
-                Object invoke = c0115a6.f787a.invoke(contentValues);
+                Object invoke = c0116a6.f787a.invoke(contentValues);
                 if (invoke != null) {
-                    c0115a6.c.b(applicationContext);
-                    if (((Boolean) c0115a6.b.invoke(invoke)).booleanValue()) {
-                        Bj.a("Successfully saved " + c0115a6.d, new Object[0]);
+                    c0116a6.c.b(applicationContext);
+                    if (((Boolean) c0116a6.b.invoke(invoke)).booleanValue()) {
+                        Bj.a("Successfully saved " + c0116a6.d, new Object[0]);
                     } else {
-                        Bj.a("Did not save " + c0115a6.d + " because data is already present", new Object[0]);
+                        Bj.a("Did not save " + c0116a6.d + " because data is already present", new Object[0]);
                     }
                 }
             } catch (Throwable th) {
@@ -68,11 +68,11 @@ public class PreloadInfoContentProvider extends ContentProvider {
             if (contentValues != null) {
                 int match = this.b.match(uri);
                 if (match == 1) {
-                    a(new C0115a6(new Af(), new Bf(), Ea.d, "preload info"), contentValues);
+                    a(new C0116a6(new Af(), new Bf(), Ea.d, "preload info"), contentValues);
                 } else if (match != 2) {
                     Bj.a("Bad content provider uri.", new Object[0]);
                 } else {
-                    a(new C0115a6(new O3(), new P3(), Ea.d, "clids"), contentValues);
+                    a(new C0116a6(new O3(), new P3(), Ea.d, "clids"), contentValues);
                 }
             }
             CountDownLatch countDownLatch = Z5.f770a;

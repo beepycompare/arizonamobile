@@ -4,14 +4,14 @@ import android.content.Context;
 import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes4.dex */
 public final class Xh extends I6 {
-    public final AbstractC0185co d;
+    public final AbstractC0186co d;
 
-    public Xh(Context context, AbstractC0185co abstractC0185co, H6 h6, ICrashTransformer iCrashTransformer) {
-        this(abstractC0185co, h6, iCrashTransformer, new C0429ma(context));
+    public Xh(Context context, AbstractC0186co abstractC0186co, H6 h6, ICrashTransformer iCrashTransformer) {
+        this(abstractC0186co, h6, iCrashTransformer, new C0430ma(context));
     }
 
-    public Xh(AbstractC0185co abstractC0185co, H6 h6, ICrashTransformer iCrashTransformer, C0429ma c0429ma) {
-        super(h6, iCrashTransformer, c0429ma);
-        this.d = abstractC0185co;
+    public Xh(AbstractC0186co abstractC0186co, H6 h6, ICrashTransformer iCrashTransformer, C0430ma c0430ma) {
+        super(h6, iCrashTransformer, c0430ma);
+        this.d = abstractC0186co;
     }
 }

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 /* loaded from: classes4.dex */
-public final class We extends C0200dd {
+public final class We extends C0201dd {
     public We() {
         super(Ze.UNDEFINED);
         a(1, Ze.WIFI);

@@ -2,7 +2,7 @@ package io.appmetrica.analytics;
 
 import android.content.Context;
 import io.appmetrica.analytics.impl.Bd;
-import io.appmetrica.analytics.impl.C0646v0;
+import io.appmetrica.analytics.impl.C0647v0;
 import io.appmetrica.analytics.impl.Dd;
 import io.appmetrica.analytics.impl.Ed;
 import io.appmetrica.analytics.impl.Fd;
@@ -38,8 +38,8 @@ public final class ModulesFacade {
         jd.b.getClass();
         jd.c.getClass();
         jd.f518a.getClass();
-        synchronized (C0646v0.class) {
-            z = C0646v0.f;
+        synchronized (C0647v0.class) {
+            z = C0647v0.f;
         }
         return z;
     }

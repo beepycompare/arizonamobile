@@ -16,10 +16,10 @@ public final class Oc implements Gg {
         if (jg == null) {
             return;
         }
-        C0477o6 c0477o6 = new C0477o6("", "", 0);
-        c0477o6.setValueBytes(jg.a());
+        C0478o6 c0478o6 = new C0478o6("", "", 0);
+        c0478o6.setValueBytes(jg.a());
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        c0477o6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
-        this.f610a.a(c0477o6);
+        c0478o6.d = FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
+        this.f610a.a(c0478o6);
     }
 }

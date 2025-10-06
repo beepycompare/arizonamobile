@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.battlepassWinter2025.roulette;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -48,7 +47,7 @@ public final class RoulettePrisesPicasso$addPrise$1 extends SuspendLambda implem
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
             z = RoulettePrisesPicasso.isArizona;
-            Bitmap iconFromArchive = UtilsKt.getIconFromArchive(z ? FirebaseAnalytics.Param.ITEMS : "battlepass", this.$prise.getImage());
+            Bitmap iconFromArchive = UtilsKt.getIconFromArchive(z ? "items" : "battlepass", this.$prise.getImage());
             if (iconFromArchive != null) {
                 map = RoulettePrisesPicasso.imageMap;
                 map.put(this.$prise.getImage(), iconFromArchive);

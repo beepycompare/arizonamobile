@@ -19,7 +19,7 @@ public final class a0 implements Runnable {
         this.f1312a = d0Var;
     }
 
-    public static final Boolean a(d0 d0Var, a0 a0Var, C0782m c0782m, ActivityManager activityManager) {
+    public static final Boolean a(d0 d0Var, a0 a0Var, C0783m c0783m, ActivityManager activityManager) {
         Object obj;
         List<ActivityManager.RunningServiceInfo> runningServices = activityManager.getRunningServices(200);
         if (runningServices == null) {
@@ -39,15 +39,15 @@ public final class a0 implements Runnable {
             }
         }
         if (((ActivityManager.RunningServiceInfo) obj) != null) {
-            ((C0790v) d0Var.b).a("ServiceScreenshotCaptor");
+            ((C0791v) d0Var.b).a("ServiceScreenshotCaptor");
         }
-        return Boolean.valueOf(d0Var.c.postDelayed(a0Var, TimeUnit.SECONDS.toMillis(c0782m.b)));
+        return Boolean.valueOf(d0Var.c.postDelayed(a0Var, TimeUnit.SECONDS.toMillis(c0783m.b)));
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        final C0782m c0782m = this.f1312a.e;
-        if (this.f1312a.d || c0782m == null || !c0782m.f1329a) {
+        final C0783m c0783m = this.f1312a.e;
+        if (this.f1312a.d || c0783m == null || !c0783m.f1329a) {
             return;
         }
         Context context = this.f1312a.f1318a.getContext();
@@ -55,7 +55,7 @@ public final class a0 implements Runnable {
         SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "running service screenshot captor", "ActivityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.screenshot.impl.a0$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {
-                return a0.a(d0.this, this, c0782m, (ActivityManager) obj);
+                return a0.a(d0.this, this, c0783m, (ActivityManager) obj);
             }
         });
     }

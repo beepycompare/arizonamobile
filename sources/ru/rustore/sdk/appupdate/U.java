@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 /* loaded from: classes6.dex */
-public final class U extends Lambda implements Function0<C0813r> {
+public final class U extends Lambda implements Function0<C0814r> {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ Context f1371a;
@@ -17,8 +17,8 @@ public final class U extends Lambda implements Function0<C0813r> {
     }
 
     @Override // kotlin.jvm.functions.Function0
-    public final C0813r invoke() {
+    public final C0814r invoke() {
         i0 i0Var = new i0();
-        return new C0813r(this.f1371a, new C0810o(new AppUpdateInfo.Factory(i0Var), i0Var));
+        return new C0814r(this.f1371a, new C0811o(new AppUpdateInfo.Factory(i0Var), i0Var));
     }
 }

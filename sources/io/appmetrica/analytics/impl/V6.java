@@ -15,8 +15,8 @@ import kotlin.ranges.RangesKt;
 public final class V6 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0768zm[] fromModel(Map<String, ? extends List<String>> map) {
-        C0768zm[] c0768zmArr = new C0768zm[map.size()];
+    public final C0769zm[] fromModel(Map<String, ? extends List<String>> map) {
+        C0769zm[] c0769zmArr = new C0769zm[map.size()];
         int i = 0;
         for (Object obj : map.entrySet()) {
             int i2 = i + 1;
@@ -24,26 +24,26 @@ public final class V6 implements Converter {
                 CollectionsKt.throwIndexOverflow();
             }
             Map.Entry entry = (Map.Entry) obj;
-            C0768zm c0768zm = new C0768zm();
-            c0768zm.f1196a = (String) entry.getKey();
+            C0769zm c0769zm = new C0769zm();
+            c0769zm.f1196a = (String) entry.getKey();
             Object[] array = ((Collection) entry.getValue()).toArray(new String[0]);
             if (array != null) {
-                c0768zm.b = (String[]) array;
-                c0768zmArr[i] = c0768zm;
+                c0769zm.b = (String[]) array;
+                c0769zmArr[i] = c0769zm;
                 i = i2;
             } else {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
         }
-        return c0768zmArr;
+        return c0769zmArr;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Map<String, List<String>> toModel(C0768zm[] c0768zmArr) {
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0768zmArr.length), 16));
-        for (C0768zm c0768zm : c0768zmArr) {
-            Pair pair = TuplesKt.to(c0768zm.f1196a, ArraysKt.toList(c0768zm.b));
+    public final Map<String, List<String>> toModel(C0769zm[] c0769zmArr) {
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(c0769zmArr.length), 16));
+        for (C0769zm c0769zm : c0769zmArr) {
+            Pair pair = TuplesKt.to(c0769zm.f1196a, ArraysKt.toList(c0769zm.b));
             linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
         return linkedHashMap;

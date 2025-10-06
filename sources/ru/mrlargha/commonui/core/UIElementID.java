@@ -128,7 +128,7 @@ public final class UIElementID {
     public static final UIElementID BP_EVENT_CHOICE = new UIElementID("BP_EVENT_CHOICE", 103, 111, ProjectType.COMMON);
     public static final UIElementID CONVEYOR_GAME = new UIElementID("CONVEYOR_GAME", 104, 112, ProjectType.COMMON);
     public static final UIElementID IMPROVEMENT_PREMIUM_VIP = new UIElementID("IMPROVEMENT_PREMIUM_VIP", 105, 113, ProjectType.RODINA);
-    public static final UIElementID CASES = new UIElementID("CASES", 106, 114, ProjectType.RODINA);
+    public static final UIElementID CASES = new UIElementID("CASES", 106, 114, ProjectType.COMMON);
     public static final UIElementID FAMILY_ARIZONA = new UIElementID("FAMILY_ARIZONA", 107, BuildConfig.API_LEVEL, ProjectType.ARIZONA);
     public static final UIElementID STARTER_PACK_RODINA = new UIElementID("STARTER_PACK_RODINA", 108, AppInfoTableDecoder.APPLICATION_INFORMATION_TABLE_ID, ProjectType.COMMON);
     public static final UIElementID TEST = new UIElementID("TEST", 109, 117, ProjectType.COMMON);

@@ -14,7 +14,7 @@ public final class D7 {
     public final Integer i;
     public final Integer j;
     public final String k;
-    public final EnumC0273g9 l;
+    public final EnumC0274g9 l;
     public final String m;
     public final Da n;
     public final M9 o;
@@ -22,7 +22,7 @@ public final class D7 {
     public final Integer q;
     public final byte[] r;
 
-    public D7(Integer num, String str, String str2, Long l, I7 i7, String str3, String str4, Long l2, Integer num2, Integer num3, String str5, EnumC0273g9 enumC0273g9, String str6, Da da, M9 m9, Boolean bool, Integer num4, byte[] bArr) {
+    public D7(Integer num, String str, String str2, Long l, I7 i7, String str3, String str4, Long l2, Integer num2, Integer num3, String str5, EnumC0274g9 enumC0274g9, String str6, Da da, M9 m9, Boolean bool, Integer num4, byte[] bArr) {
         this.f405a = num;
         this.b = str;
         this.c = str2;
@@ -34,7 +34,7 @@ public final class D7 {
         this.i = num2;
         this.j = num3;
         this.k = str5;
-        this.l = enumC0273g9;
+        this.l = enumC0274g9;
         this.m = str6;
         this.n = da;
         this.o = m9;
@@ -59,7 +59,7 @@ public final class D7 {
         return this.f405a;
     }
 
-    public final EnumC0273g9 e() {
+    public final EnumC0274g9 e() {
         return this.l;
     }
 

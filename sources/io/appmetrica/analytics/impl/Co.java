@@ -11,8 +11,8 @@ public final class Co {
     /* renamed from: a  reason: collision with root package name */
     public final Eo f398a;
 
-    public Co(C0611tf c0611tf, Ba ba) {
-        this.f398a = new Eo(c0611tf, ba, new Fo() { // from class: io.appmetrica.analytics.impl.Co$$ExternalSyntheticLambda0
+    public Co(C0612tf c0612tf, Ba ba) {
+        this.f398a = new Eo(c0612tf, ba, new Fo() { // from class: io.appmetrica.analytics.impl.Co$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Fo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Co.a(jSONObject, jSONObject2);

@@ -1,10 +1,10 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0261fn;
-import io.appmetrica.analytics.impl.C0287gn;
-import io.appmetrica.analytics.impl.C0311hl;
-import io.appmetrica.analytics.impl.InterfaceC0391ko;
-import io.appmetrica.analytics.impl.InterfaceC0548r2;
+import io.appmetrica.analytics.impl.C0262fn;
+import io.appmetrica.analytics.impl.C0288gn;
+import io.appmetrica.analytics.impl.C0312hl;
+import io.appmetrica.analytics.impl.InterfaceC0392ko;
+import io.appmetrica.analytics.impl.InterfaceC0549r2;
 import io.appmetrica.analytics.impl.Q4;
 import io.appmetrica.analytics.impl.Rn;
 import io.appmetrica.analytics.impl.S6;
@@ -18,22 +18,22 @@ public class StringAttribute {
     private final S6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public StringAttribute(String str, C0261fn c0261fn, yo yoVar, InterfaceC0548r2 interfaceC0548r2) {
-        this.b = new S6(str, yoVar, interfaceC0548r2);
-        this.f1281a = c0261fn;
+    public StringAttribute(String str, C0262fn c0262fn, yo yoVar, InterfaceC0549r2 interfaceC0549r2) {
+        this.b = new S6(str, yoVar, interfaceC0549r2);
+        this.f1281a = c0262fn;
     }
 
-    public UserProfileUpdate<? extends InterfaceC0391ko> withValue(String str) {
+    public UserProfileUpdate<? extends InterfaceC0392ko> withValue(String str) {
         S6 s6 = this.b;
-        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1281a, s6.f667a, new Q4(s6.b)));
+        return new UserProfileUpdate<>(new C0288gn(s6.c, str, this.f1281a, s6.f667a, new Q4(s6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0391ko> withValueIfUndefined(String str) {
+    public UserProfileUpdate<? extends InterfaceC0392ko> withValueIfUndefined(String str) {
         S6 s6 = this.b;
-        return new UserProfileUpdate<>(new C0287gn(s6.c, str, this.f1281a, s6.f667a, new C0311hl(s6.b)));
+        return new UserProfileUpdate<>(new C0288gn(s6.c, str, this.f1281a, s6.f667a, new C0312hl(s6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0391ko> withValueReset() {
+    public UserProfileUpdate<? extends InterfaceC0392ko> withValueReset() {
         S6 s6 = this.b;
         return new UserProfileUpdate<>(new Xi(0, s6.c, s6.f667a, s6.b));
     }

@@ -20,12 +20,12 @@ public final class J2 {
     }
 
     @JvmStatic
-    public static final M2 a(Context context, final C0369k2 c0369k2) {
+    public static final M2 a(Context context, final C0370k2 c0370k2) {
         return new M2((L2) SystemServiceUtils.accessSystemServiceByNameSafely(context, "usagestats", "getting app standby bucket", "usageStatsManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.J2$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
             public final Object apply(Object obj) {
                 L2 a2;
-                a2 = J2.a(C0369k2.this, (UsageStatsManager) obj);
+                a2 = J2.a(C0370k2.this, (UsageStatsManager) obj);
                 return a2;
             }
         }), (Boolean) SystemServiceUtils.accessSystemServiceByNameSafely(context, "activity", "getting is background restricted", "activityManager", new FunctionWithThrowable() { // from class: io.appmetrica.analytics.impl.J2$$ExternalSyntheticLambda1
@@ -39,9 +39,9 @@ public final class J2 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final L2 a(C0369k2 c0369k2, UsageStatsManager usageStatsManager) {
+    public static final L2 a(C0370k2 c0370k2, UsageStatsManager usageStatsManager) {
         int appStandbyBucket = usageStatsManager.getAppStandbyBucket();
-        c0369k2.getClass();
+        c0370k2.getClass();
         if (AndroidUtils.isApiAchieved(28)) {
             if (AndroidUtils.isApiAchieved(30) && appStandbyBucket == 45) {
                 return L2.RESTRICTED;

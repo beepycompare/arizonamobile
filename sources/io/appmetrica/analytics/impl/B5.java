@@ -14,14 +14,14 @@ public final class B5 {
         this.c = context.getApplicationContext();
     }
 
-    public final InterfaceC0275gb a(C0476o5 c0476o5, N4 n4, InterfaceC0427m8 interfaceC0427m8, HashMap hashMap) {
-        InterfaceC0275gb interfaceC0275gb = (InterfaceC0275gb) hashMap.get(c0476o5.toString());
-        if (interfaceC0275gb == null) {
-            InterfaceC0275gb a2 = interfaceC0427m8.a(this.c, c0476o5, n4);
-            hashMap.put(c0476o5.toString(), a2);
+    public final InterfaceC0276gb a(C0477o5 c0477o5, N4 n4, InterfaceC0428m8 interfaceC0428m8, HashMap hashMap) {
+        InterfaceC0276gb interfaceC0276gb = (InterfaceC0276gb) hashMap.get(c0477o5.toString());
+        if (interfaceC0276gb == null) {
+            InterfaceC0276gb a2 = interfaceC0428m8.a(this.c, c0477o5, n4);
+            hashMap.put(c0477o5.toString(), a2);
             return a2;
         }
-        interfaceC0275gb.a(n4);
-        return interfaceC0275gb;
+        interfaceC0276gb.a(n4);
+        return interfaceC0276gb;
     }
 }

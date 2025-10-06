@@ -6,10 +6,10 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class Lb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0432md f558a;
+    public final C0433md f558a;
 
     public Lb() {
-        this(new C0432md(new Xn()));
+        this(new C0433md(new Xn()));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -24,8 +24,8 @@ public final class Lb implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Lb(C0432md c0432md) {
-        this.f558a = c0432md;
+    public Lb(C0433md c0433md) {
+        this.f558a = c0433md;
     }
 
     public final Wn a(byte[] bArr) {

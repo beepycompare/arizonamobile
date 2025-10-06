@@ -15,10 +15,10 @@ public final class M6 {
     public final Aa f573a;
     public final E6 b;
     public final Context c;
-    public final C0756za d;
+    public final C0757za d;
 
     public M6(Context context) {
-        this(context, new Aa(), new E6(), C0756za.a(context));
+        this(context, new Aa(), new E6(), C0757za.a(context));
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
@@ -35,7 +35,7 @@ public final class M6 {
         String str;
         X9 b;
         PrintWriter printWriter;
-        C0756za c0756za;
+        C0757za c0757za;
         File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
         this.b.getClass();
         if (crashesDirectory == null) {
@@ -58,9 +58,9 @@ public final class M6 {
                 printWriter.write(new Jb(rh.f658a, rh.e, rh.d).k());
                 ro.a((Closeable) printWriter);
                 b.c();
-                c0756za = this.d;
-                synchronized (c0756za) {
-                    c0756za.b.remove(str);
+                c0757za = this.d;
+                synchronized (c0757za) {
+                    c0757za.b.remove(str);
                 }
                 return;
             }
@@ -68,8 +68,8 @@ public final class M6 {
             printWriter.write(new Jb(rh.f658a, rh.e, rh.d).k());
             ro.a((Closeable) printWriter);
             b.c();
-            c0756za = this.d;
-            synchronized (c0756za) {
+            c0757za = this.d;
+            synchronized (c0757za) {
             }
         } catch (Throwable unused) {
             ro.a((Closeable) printWriter);
@@ -88,10 +88,10 @@ public final class M6 {
         printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
     }
 
-    public M6(Context context, Aa aa, E6 e6, C0756za c0756za) {
+    public M6(Context context, Aa aa, E6 e6, C0757za c0757za) {
         this.c = context;
         this.f573a = aa;
         this.b = e6;
-        this.d = c0756za;
+        this.d = c0757za;
     }
 }

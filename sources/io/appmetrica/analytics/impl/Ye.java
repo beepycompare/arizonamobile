@@ -10,11 +10,11 @@ public final class Ye implements FunctionWithThrowable {
     public final Object apply(Object obj) {
         ConnectivityManager connectivityManager = (ConnectivityManager) obj;
         if (AndroidUtils.isApiAchieved(23)) {
-            return AbstractC0124af.a(connectivityManager);
+            return AbstractC0125af.a(connectivityManager);
         }
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (Ze) AbstractC0124af.f794a.a(Integer.valueOf(activeNetworkInfo.getType()));
+            return (Ze) AbstractC0125af.f794a.a(Integer.valueOf(activeNetworkInfo.getType()));
         }
         return Ze.OFFLINE;
     }

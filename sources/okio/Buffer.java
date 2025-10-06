@@ -2110,6 +2110,6 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             i5++;
             segment2 = segment2.next;
         }
-        return new C0795SegmentedByteString(bArr, iArr);
+        return new C0796SegmentedByteString(bArr, iArr);
     }
 }

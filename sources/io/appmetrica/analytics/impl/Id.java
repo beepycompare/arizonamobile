@@ -13,9 +13,9 @@ public final class Id extends SafeRunnable {
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        C0671w0 c0671w0 = A4.l().p;
+        C0672w0 c0672w0 = A4.l().p;
         String str = this.f497a;
-        c0671w0.getClass();
-        C0646v0.c().a(str);
+        c0672w0.getClass();
+        C0647v0.c().a(str);
     }
 }

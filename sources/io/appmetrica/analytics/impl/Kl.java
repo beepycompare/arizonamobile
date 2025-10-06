@@ -10,23 +10,23 @@ public final class Kl implements ListConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0727y6[] fromModel(List<Ml> list) {
-        C0727y6[] c0727y6Arr = new C0727y6[list.size()];
+    public final C0728y6[] fromModel(List<Ml> list) {
+        C0728y6[] c0728y6Arr = new C0728y6[list.size()];
         int i = 0;
         for (Ml ml : list) {
-            c0727y6Arr[i] = this.f544a.fromModel(ml);
+            c0728y6Arr[i] = this.f544a.fromModel(ml);
             i++;
         }
-        return c0727y6Arr;
+        return c0728y6Arr;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0727y6[] c0727y6Arr = (C0727y6[]) obj;
+        C0728y6[] c0728y6Arr = (C0728y6[]) obj;
         throw new UnsupportedOperationException();
     }
 
-    public final List<Ml> a(C0727y6[] c0727y6Arr) {
+    public final List<Ml> a(C0728y6[] c0728y6Arr) {
         throw new UnsupportedOperationException();
     }
 }

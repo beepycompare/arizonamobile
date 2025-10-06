@@ -13,32 +13,32 @@ public final class V implements ProtobufConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0528q6 fromModel(U u) {
-        C0528q6 c0528q6 = new C0528q6();
+    public final C0529q6 fromModel(U u) {
+        C0529q6 c0529q6 = new C0529q6();
         Cn cn = u.f691a;
         if (cn != null) {
-            c0528q6.f1047a = this.f706a.fromModel(cn);
+            c0529q6.f1047a = this.f706a.fromModel(cn);
         }
-        c0528q6.b = new C0752z6[u.b.size()];
+        c0529q6.b = new C0753z6[u.b.size()];
         int i = 0;
         for (Cn cn2 : u.b) {
-            c0528q6.b[i] = this.f706a.fromModel(cn2);
+            c0529q6.b[i] = this.f706a.fromModel(cn2);
             i++;
         }
         String str = u.c;
         if (str != null) {
-            c0528q6.c = str;
+            c0529q6.c = str;
         }
-        return c0528q6;
+        return c0529q6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0528q6 c0528q6 = (C0528q6) obj;
+        C0529q6 c0529q6 = (C0529q6) obj;
         throw new UnsupportedOperationException();
     }
 
-    public final U a(C0528q6 c0528q6) {
+    public final U a(C0529q6 c0529q6) {
         throw new UnsupportedOperationException();
     }
 }

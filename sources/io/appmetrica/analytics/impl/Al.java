@@ -5,28 +5,28 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Al {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0174cd f355a;
-    public final C0148bd b;
+    public final C0175cd f355a;
+    public final C0149bd b;
 
     public Al(PublicLogger publicLogger, String str) {
-        this(new C0174cd(str, publicLogger), new C0148bd(str, publicLogger));
+        this(new C0175cd(str, publicLogger), new C0149bd(str, publicLogger));
     }
 
-    public final synchronized boolean a(C0251fd c0251fd, String str, String str2) {
-        int size = c0251fd.size();
+    public final synchronized boolean a(C0252fd c0252fd, String str, String str2) {
+        int size = c0252fd.size();
         int i = this.f355a.c.f532a;
-        if (size >= i && (i != c0251fd.size() || !c0251fd.containsKey(str))) {
-            C0174cd c0174cd = this.f355a;
-            c0174cd.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", c0174cd.e, Integer.valueOf(c0174cd.c.f532a), str);
+        if (size >= i && (i != c0252fd.size() || !c0252fd.containsKey(str))) {
+            C0175cd c0175cd = this.f355a;
+            c0175cd.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", c0175cd.e, Integer.valueOf(c0175cd.c.f532a), str);
             return false;
         }
         this.b.getClass();
-        int i2 = c0251fd.f878a;
+        int i2 = c0252fd.f878a;
         if (str2 != null) {
             i2 += str2.length();
         }
-        if (c0251fd.containsKey(str)) {
-            String str3 = (String) c0251fd.get(str);
+        if (c0252fd.containsKey(str)) {
+            String str3 = (String) c0252fd.get(str);
             if (str3 != null) {
                 i2 -= str3.length();
             }
@@ -34,35 +34,35 @@ public final class Al {
             i2 += str.length();
         }
         if (i2 > 4500) {
-            C0148bd c0148bd = this.b;
-            c0148bd.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", c0148bd.f811a, 4500, str);
+            C0149bd c0149bd = this.b;
+            c0149bd.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", c0149bd.f811a, 4500, str);
             return false;
         }
-        c0251fd.put(str, str2);
+        c0252fd.put(str, str2);
         return true;
     }
 
-    public final boolean b(C0251fd c0251fd, String str, String str2) {
-        if (c0251fd != null) {
+    public final boolean b(C0252fd c0252fd, String str, String str2) {
+        if (c0252fd != null) {
             String a2 = this.f355a.f824a.a(str);
             String a3 = this.f355a.b.a(str2);
-            if (!c0251fd.containsKey(a2)) {
+            if (!c0252fd.containsKey(a2)) {
                 if (a3 != null) {
-                    return a(c0251fd, a2, a3);
+                    return a(c0252fd, a2, a3);
                 }
                 return false;
             }
-            String str3 = (String) c0251fd.get(a2);
+            String str3 = (String) c0252fd.get(a2);
             if (a3 == null || !a3.equals(str3)) {
-                return a(c0251fd, a2, a3);
+                return a(c0252fd, a2, a3);
             }
             return false;
         }
         return false;
     }
 
-    public Al(C0174cd c0174cd, C0148bd c0148bd) {
-        this.f355a = c0174cd;
-        this.b = c0148bd;
+    public Al(C0175cd c0175cd, C0149bd c0149bd) {
+        this.f355a = c0175cd;
+        this.b = c0149bd;
     }
 }

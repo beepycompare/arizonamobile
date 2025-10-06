@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes4.dex */
-public final class Zj implements InterfaceC0533qb {
+public final class Zj implements InterfaceC0534qb {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ String f778a;
@@ -15,8 +15,8 @@ public final class Zj implements InterfaceC0533qb {
         this.c = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0533qb
-    public final void a(InterfaceC0557rb interfaceC0557rb) {
-        interfaceC0557rb.getPluginExtension().reportError(this.f778a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0534qb
+    public final void a(InterfaceC0558rb interfaceC0558rb) {
+        interfaceC0558rb.getPluginExtension().reportError(this.f778a, this.b, this.c);
     }
 }

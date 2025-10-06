@@ -14,10 +14,10 @@ public final class Dj implements D4 {
     }
 
     @Override // io.appmetrica.analytics.impl.D4
-    public final void a(C0477o6 c0477o6, N4 n4) {
+    public final void a(C0478o6 c0478o6, N4 n4) {
         Xg xg = this.f414a;
         if (xg != null) {
-            xg.a(c0477o6, n4);
+            xg.a(c0478o6, n4);
         }
     }
 }

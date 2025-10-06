@@ -12,35 +12,35 @@ import io.appmetrica.analytics.locationapi.internal.LocationClient;
 /* loaded from: classes4.dex */
 public final class Na {
     public static volatile Na F;
-    public volatile C0429ma C;
+    public volatile C0430ma C;
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f594a;
     public volatile Hg b;
-    public volatile C0194d7 c;
-    public volatile C0293h3 e;
+    public volatile C0195d7 c;
+    public volatile C0294h3 e;
     public volatile Ij f;
     public volatile T g;
-    public volatile C0318i2 h;
+    public volatile C0319i2 h;
     public volatile PlatformIdentifiers i;
     public volatile Nf j;
     public volatile Y3 k;
-    public volatile C0611tf l;
+    public volatile C0612tf l;
     public volatile Go m;
     public volatile Aj n;
-    public volatile C0250fc o;
+    public volatile C0251fc o;
     public Jl p;
     public volatile Hk r;
-    public volatile InterfaceC0379kc w;
-    public volatile C0644un x;
+    public volatile InterfaceC0380kc w;
+    public volatile C0645un x;
     public volatile Cl y;
     public volatile Qd z;
     public final Ma q = new Ma();
-    public final C0584sd s = new C0584sd();
-    public final C0634ud t = new C0634ud();
-    public final C0544qm u = new C0544qm();
-    public final C0666vk v = new C0666vk();
-    public final C0355je A = new C0355je();
+    public final C0585sd s = new C0585sd();
+    public final C0635ud t = new C0635ud();
+    public final C0545qm u = new C0545qm();
+    public final C0667vk v = new C0667vk();
+    public final C0356je A = new C0356je();
     public final UtilityServiceProvider B = new UtilityServiceProvider();
     public final Ck D = new Ck();
     public final ReferenceHolder E = new ReferenceHolder();
@@ -64,20 +64,20 @@ public final class Na {
         return F;
     }
 
-    public final C0644un A() {
-        C0644un c0644un;
-        C0644un c0644un2 = this.x;
-        if (c0644un2 == null) {
+    public final C0645un A() {
+        C0645un c0645un;
+        C0645un c0645un2 = this.x;
+        if (c0645un2 == null) {
             synchronized (this) {
-                c0644un = this.x;
-                if (c0644un == null) {
-                    c0644un = new C0644un(this.f594a);
-                    this.x = c0644un;
+                c0645un = this.x;
+                if (c0645un == null) {
+                    c0645un = new C0645un(this.f594a);
+                    this.x = c0645un;
                 }
             }
-            return c0644un;
+            return c0645un;
         }
-        return c0644un2;
+        return c0645un2;
     }
 
     public final synchronized Go B() {
@@ -91,11 +91,11 @@ public final class Na {
         if (this.j == null) {
             synchronized (this) {
                 if (this.j == null) {
-                    AbstractC0132an a2 = Zm.a(C0711xf.class);
+                    AbstractC0133an a2 = Zm.a(C0712xf.class);
                     Context context = this.f594a;
                     ProtobufStateStorage<Object> a3 = a2.a(context, a2.c(context));
-                    C0711xf c0711xf = (C0711xf) a3.read();
-                    this.j = new Nf(this.f594a, a3, new Ef(), new C0661vf(c0711xf), new Mf(), new Df(this.f594a), new If(j().x()), new C0736yf(), c0711xf, "[PreloadInfoStorage]");
+                    C0712xf c0712xf = (C0712xf) a3.read();
+                    this.j = new Nf(this.f594a, a3, new Ef(), new C0662vf(c0712xf), new Mf(), new Df(this.f594a), new If(j().x()), new C0737yf(), c0712xf, "[PreloadInfoStorage]");
                 }
             }
         }
@@ -118,23 +118,23 @@ public final class Na {
         return t2;
     }
 
-    public final C0318i2 c() {
-        C0318i2 c0318i2;
-        C0318i2 c0318i22 = this.h;
-        if (c0318i22 == null) {
+    public final C0319i2 c() {
+        C0319i2 c0319i2;
+        C0319i2 c0319i22 = this.h;
+        if (c0319i22 == null) {
             synchronized (this) {
-                c0318i2 = this.h;
-                if (c0318i2 == null) {
-                    c0318i2 = new C0318i2(this.f594a, AbstractC0343j2.a());
-                    this.h = c0318i2;
+                c0319i2 = this.h;
+                if (c0319i2 == null) {
+                    c0319i2 = new C0319i2(this.f594a, AbstractC0344j2.a());
+                    this.h = c0319i2;
                 }
             }
-            return c0318i2;
+            return c0319i2;
         }
-        return c0318i22;
+        return c0319i22;
     }
 
-    public final C0473o2 d() {
+    public final C0474o2 d() {
         return k().b;
     }
 
@@ -142,10 +142,10 @@ public final class Na {
         if (this.k == null) {
             synchronized (this) {
                 if (this.k == null) {
-                    AbstractC0132an a2 = Zm.a(R3.class);
+                    AbstractC0133an a2 = Zm.a(R3.class);
                     Context context = this.f594a;
                     ProtobufStateStorage<Object> a3 = a2.a(context, a2.c(context));
-                    this.k = new Y3(this.f594a, a3, new Z3(), new M3(), new C0165c4(), new C0516pj(this.f594a), new C0113a4(x()), new N3(), (R3) a3.read(), "[ClidsInfoStorage]");
+                    this.k = new Y3(this.f594a, a3, new Z3(), new M3(), new C0166c4(), new C0517pj(this.f594a), new C0114a4(x()), new N3(), (R3) a3.read(), "[ClidsInfoStorage]");
                 }
             }
         }
@@ -156,31 +156,31 @@ public final class Na {
         return this.f594a;
     }
 
-    public final C0194d7 g() {
+    public final C0195d7 g() {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.c = new C0194d7(new C0168c7(x()));
+                    this.c = new C0195d7(new C0169c7(x()));
                 }
             }
         }
         return this.c;
     }
 
-    public final C0429ma h() {
-        C0429ma c0429ma;
-        C0429ma c0429ma2 = this.C;
-        if (c0429ma2 == null) {
+    public final C0430ma h() {
+        C0430ma c0430ma;
+        C0430ma c0430ma2 = this.C;
+        if (c0430ma2 == null) {
             synchronized (this) {
-                c0429ma = this.C;
-                if (c0429ma == null) {
-                    c0429ma = new C0429ma(this.f594a);
-                    this.C = c0429ma;
+                c0430ma = this.C;
+                if (c0430ma == null) {
+                    c0430ma = new C0430ma(this.f594a);
+                    this.C = c0430ma;
                 }
             }
-            return c0429ma;
+            return c0430ma;
         }
-        return c0429ma2;
+        return c0430ma2;
     }
 
     public final PermissionExtractor i() {
@@ -199,50 +199,50 @@ public final class Na {
         }
     }
 
-    public final C0250fc k() {
-        C0250fc c0250fc;
-        C0250fc c0250fc2 = this.o;
-        if (c0250fc2 == null) {
+    public final C0251fc k() {
+        C0251fc c0251fc;
+        C0251fc c0251fc2 = this.o;
+        if (c0251fc2 == null) {
             synchronized (this) {
-                c0250fc = this.o;
-                if (c0250fc == null) {
-                    c0250fc = new C0250fc(new C0215e3(this.f594a, this.d.a()), new C0473o2());
-                    this.o = c0250fc;
+                c0251fc = this.o;
+                if (c0251fc == null) {
+                    c0251fc = new C0251fc(new C0216e3(this.f594a, this.d.a()), new C0474o2());
+                    this.o = c0251fc;
                 }
             }
-            return c0250fc;
+            return c0251fc;
         }
-        return c0250fc2;
+        return c0251fc2;
     }
 
-    public final InterfaceC0379kc l() {
-        InterfaceC0379kc interfaceC0379kc;
-        InterfaceC0379kc interfaceC0379kc2 = this.w;
-        if (interfaceC0379kc2 == null) {
+    public final InterfaceC0380kc l() {
+        InterfaceC0380kc interfaceC0380kc;
+        InterfaceC0380kc interfaceC0380kc2 = this.w;
+        if (interfaceC0380kc2 == null) {
             synchronized (this) {
-                interfaceC0379kc = this.w;
-                if (interfaceC0379kc == null) {
+                interfaceC0380kc = this.w;
+                if (interfaceC0380kc == null) {
                     Context context = this.f594a;
                     ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
                     LocationClient locationClient = (LocationClient) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.location.internal.LocationClientImpl", LocationClient.class);
                     if (locationClient == null) {
-                        interfaceC0379kc = new C0431mc();
+                        interfaceC0380kc = new C0432mc();
                     } else {
-                        interfaceC0379kc = new C0405lc(context, new C0583sc(), locationClient);
+                        interfaceC0380kc = new C0406lc(context, new C0584sc(), locationClient);
                     }
-                    this.w = interfaceC0379kc;
+                    this.w = interfaceC0380kc;
                 }
             }
-            return interfaceC0379kc;
+            return interfaceC0380kc;
         }
-        return interfaceC0379kc2;
+        return interfaceC0380kc2;
     }
 
-    public final InterfaceC0379kc m() {
+    public final InterfaceC0380kc m() {
         return l();
     }
 
-    public final C0634ud n() {
+    public final C0635ud n() {
         return this.t;
     }
 
@@ -278,7 +278,7 @@ public final class Na {
         return qd2;
     }
 
-    public final C0355je q() {
+    public final C0356je q() {
         return this.A;
     }
 
@@ -338,18 +338,18 @@ public final class Na {
         return this.d;
     }
 
-    public final C0611tf x() {
+    public final C0612tf x() {
         if (this.l == null) {
             synchronized (this) {
                 if (this.l == null) {
-                    this.l = new C0611tf(C0728y7.a(this.f594a).c());
+                    this.l = new C0612tf(C0729y7.a(this.f594a).c());
                 }
             }
         }
         return this.l;
     }
 
-    public final synchronized InterfaceC0112a3 y() {
+    public final synchronized InterfaceC0113a3 y() {
         if (this.p == null) {
             Jl jl = new Jl(this.f594a);
             this.p = jl;
@@ -358,7 +358,7 @@ public final class Na {
         return this.p;
     }
 
-    public final C0544qm z() {
+    public final C0545qm z() {
         return this.u;
     }
 

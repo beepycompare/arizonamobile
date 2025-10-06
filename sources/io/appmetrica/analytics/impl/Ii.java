@@ -15,9 +15,9 @@ public final class Ii implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0671w0 c0671w0 = this.b.b;
+        C0672w0 c0672w0 = this.b.b;
         Context context = this.f501a;
-        c0671w0.getClass();
-        C0646v0.a(context);
+        c0672w0.getClass();
+        C0647v0.a(context);
     }
 }

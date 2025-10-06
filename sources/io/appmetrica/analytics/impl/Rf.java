@@ -33,7 +33,7 @@ public final class Rf implements Converter {
                 i += fromModel2.b.getBytesTruncated();
             }
         }
-        return new Zi(l8, new C0749z3(C0749z3.b(fromModel, a2, new C0749z3(i))));
+        return new Zi(l8, new C0750z3(C0750z3.b(fromModel, a2, new C0750z3(i))));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

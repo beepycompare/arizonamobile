@@ -1,0 +1,105 @@
+package io.appmetrica.analytics.impl;
+
+import android.net.Uri;
+import android.text.TextUtils;
+import android.util.Pair;
+import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.util.HashSet;
+import org.json.JSONObject;
+/* renamed from: io.appmetrica.analytics.impl.kh  reason: case insensitive filesystem */
+/* loaded from: classes4.dex */
+public final class C0385kh extends AbstractC0463nh {
+    public C0385kh(C0652v5 c0652v5) {
+        super(c0652v5);
+    }
+
+    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
+    public final boolean a(C0478o6 c0478o6) {
+        String value = c0478o6.getValue();
+        if (TextUtils.isEmpty(value)) {
+            return false;
+        }
+        try {
+            JSONObject jSONObject = new JSONObject(value);
+            if (TtmlNode.TEXT_EMPHASIS_MARK_OPEN.equals(jSONObject.optString("type"))) {
+                Do r0 = this.f1006a.t;
+                synchronized (r0) {
+                    r0.c(r0.b() + 1);
+                }
+                if (a(jSONObject.optString("link"))) {
+                    c0478o6.n = Boolean.TRUE;
+                    b();
+                    return false;
+                }
+                return false;
+            }
+            return false;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public final void b() {
+        Do r0 = this.f1006a.t;
+        synchronized (r0) {
+            r0.a(r0.a() + 1);
+        }
+        this.f1006a.z();
+        C0377k9 c0377k9 = this.f1006a.l;
+        if (c0377k9.c == null) {
+            c0377k9.a();
+        }
+        C0429m9 c0429m9 = c0377k9.c;
+        c0429m9.getClass();
+        c0429m9.b = new HashSet();
+        c0429m9.d = 0;
+        C0429m9 c0429m92 = c0377k9.c;
+        c0429m92.f990a = true;
+        C0507p9 c0507p9 = c0377k9.b;
+        IBinaryDataHelper iBinaryDataHelper = c0507p9.c;
+        C0481o9 c0481o9 = c0507p9.b;
+        c0507p9.f1034a.getClass();
+        U9 a2 = C0455n9.a(c0429m92);
+        c0481o9.getClass();
+        iBinaryDataHelper.insert("event_hashes", MessageNano.toByteArray(a2));
+    }
+
+    public final boolean a(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            try {
+                String queryParameter = Uri.parse(str).getQueryParameter(Constants.REFERRER);
+                if (!TextUtils.isEmpty(queryParameter)) {
+                    C0599t2 c0599t2 = this.f1006a.t().z;
+                    for (String str2 : Uri.decode(queryParameter).split("&")) {
+                        String decode = Uri.decode(str2);
+                        int indexOf = decode.indexOf("=");
+                        if (indexOf >= 0 && a(Uri.decode(decode.substring(0, indexOf)), Uri.decode(decode.substring(indexOf + 1)), c0599t2)) {
+                            return true;
+                        }
+                    }
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return false;
+    }
+
+    public static boolean a(String str, String str2, C0599t2 c0599t2) {
+        Object obj;
+        if ("reattribution".equals(str) && "1".equals(str2)) {
+            return true;
+        }
+        if (c0599t2 != null) {
+            for (Pair pair : c0599t2.f1090a) {
+                if (ro.a(pair.first, str) && ((obj = pair.second) == null || ((C0574s2) obj).f1076a.equals(str2))) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+}

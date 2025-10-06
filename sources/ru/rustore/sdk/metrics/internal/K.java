@@ -8,10 +8,10 @@ import ru.rustore.sdk.metrics.MetricsEvent;
 public final class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0840t f1433a;
+    public final C0841t f1433a;
     public final c0 b;
 
-    public K(C0840t metricsEventSerializer, c0 uuidFactory) {
+    public K(C0841t metricsEventSerializer, c0 uuidFactory) {
         Intrinsics.checkNotNullParameter(metricsEventSerializer, "metricsEventSerializer");
         Intrinsics.checkNotNullParameter(uuidFactory, "uuidFactory");
         this.f1433a = metricsEventSerializer;
@@ -25,7 +25,7 @@ public final class K {
         Intrinsics.checkNotNullExpressionValue(value, "randomUUID().toString()");
         Intrinsics.checkNotNullParameter(value, "value");
         this.f1433a.getClass();
-        byte[] bytes = C0840t.a(metricsEvent).getBytes(Charsets.UTF_8);
+        byte[] bytes = C0841t.a(metricsEvent).getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
         return new J(value, bytes);
     }

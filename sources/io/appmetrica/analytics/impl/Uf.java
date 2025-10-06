@@ -9,7 +9,7 @@ import android.os.ResultReceiver;
 public final class Uf implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(ResultReceiverC0116a7.class.getClassLoader());
+        Bundle readBundle = parcel.readBundle(ResultReceiverC0117a7.class.getClassLoader());
         return new Vf((ContentValues) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT"), (ResultReceiver) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER"));
     }
 

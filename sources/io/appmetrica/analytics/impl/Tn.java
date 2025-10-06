@@ -7,8 +7,8 @@ public final class Tn extends Th {
     public final int e;
     public final Bundle f;
 
-    public Tn(C0471o0 c0471o0, InterfaceC0336il interfaceC0336il, int i, Bundle bundle) {
-        super(c0471o0, interfaceC0336il);
+    public Tn(C0472o0 c0472o0, InterfaceC0337il interfaceC0337il, int i, Bundle bundle) {
+        super(c0472o0, interfaceC0337il);
         this.e = i;
         this.f = bundle;
     }

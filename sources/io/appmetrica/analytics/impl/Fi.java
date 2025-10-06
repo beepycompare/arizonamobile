@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes4.dex */
-public final class Fi implements InterfaceC0582sb {
+public final class Fi implements InterfaceC0583sb {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f449a;
@@ -40,8 +40,8 @@ public final class Fi implements InterfaceC0582sb {
         this.i = CollectionsKt.listOf((Object[]) new String[]{"20799a27-fa80-4b36-b2db-0f8141f24180", "0e5e9c33-f8c3-4568-86c5-2e4f57523f72"});
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb, io.appmetrica.analytics.impl.InterfaceC0607tb
-    public final InterfaceC0582sb a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb, io.appmetrica.analytics.impl.InterfaceC0608tb
+    public final InterfaceC0583sb a() {
         return this;
     }
 
@@ -49,9 +49,9 @@ public final class Fi implements InterfaceC0582sb {
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb
     /* renamed from: c */
-    public final synchronized Hc b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0367k0 c0367k0) {
+    public final synchronized Hc b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0368k0 c0368k0) {
         Hc hc;
         hc = this.j;
         if (hc == null) {
@@ -60,13 +60,13 @@ public final class Fi implements InterfaceC0582sb {
             hc = new Hc(this.f);
             hc.i = new Ob(this.d, hc);
             Xl xl = this.e;
-            C0153bi c0153bi = hc.b;
+            C0154bi c0154bi = hc.b;
             if (xl != null) {
-                c0153bi.b.setUuid(xl.g());
+                c0154bi.b.setUuid(xl.g());
             } else {
-                c0153bi.getClass();
+                c0154bi.getClass();
             }
-            hc.a(appMetricaConfig, c0367k0);
+            hc.a(appMetricaConfig, c0368k0);
             hc.k();
             this.c.f.c = new Ei(hc);
             this.g.put(appMetricaConfig.apiKey, hc);
@@ -75,14 +75,14 @@ public final class Fi implements InterfaceC0582sb {
         return hc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb
     /* renamed from: d */
-    public final synchronized Hc a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0367k0 c0367k0) {
+    public final synchronized Hc a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0368k0 c0368k0) {
         Hc hc;
         hc = this.j;
         if (hc != null) {
             this.f.a(appMetricaConfig, publicLogger);
-            hc.a(appMetricaConfig, c0367k0);
+            hc.a(appMetricaConfig, c0368k0);
             A4.l().getClass();
             this.g.put(appMetricaConfig.apiKey, hc);
         } else {
@@ -91,13 +91,13 @@ public final class Fi implements InterfaceC0582sb {
             hc = new Hc(this.f);
             hc.i = new Ob(this.d, hc);
             Xl xl = this.e;
-            C0153bi c0153bi = hc.b;
+            C0154bi c0154bi = hc.b;
             if (xl != null) {
-                c0153bi.b.setUuid(xl.g());
+                c0154bi.b.setUuid(xl.g());
             } else {
-                c0153bi.getClass();
+                c0154bi.getClass();
             }
-            hc.a(appMetricaConfig, c0367k0);
+            hc.a(appMetricaConfig, c0368k0);
             hc.k();
             this.c.f.c = new Ei(hc);
             this.g.put(appMetricaConfig.apiKey, hc);
@@ -107,24 +107,24 @@ public final class Fi implements InterfaceC0582sb {
         return hc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
-    public final synchronized InterfaceC0557rb b(ReporterConfig reporterConfig) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb
+    public final synchronized InterfaceC0558rb b(ReporterConfig reporterConfig) {
         Yc yc;
-        InterfaceC0557rb interfaceC0557rb = (InterfaceC0557rb) this.g.get(reporterConfig.apiKey);
-        yc = interfaceC0557rb;
-        if (interfaceC0557rb == null) {
+        InterfaceC0558rb interfaceC0558rb = (InterfaceC0558rb) this.g.get(reporterConfig.apiKey);
+        yc = interfaceC0558rb;
+        if (interfaceC0558rb == null) {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
             Context context = this.f449a;
-            Yc yc2 = new Yc(context, this.b, reporterConfig, this.c, new C0429ma(context));
+            Yc yc2 = new Yc(context, this.b, reporterConfig, this.c, new C0430ma(context));
             yc2.i = new Ob(this.d, yc2);
             Xl xl = this.e;
-            C0153bi c0153bi = yc2.b;
+            C0154bi c0154bi = yc2.b;
             if (xl != null) {
-                c0153bi.b.setUuid(xl.g());
+                c0154bi.b.setUuid(xl.g());
             } else {
-                c0153bi.getClass();
+                c0154bi.getClass();
             }
             yc2.k();
             this.g.put(reporterConfig.apiKey, yc2);
@@ -133,7 +133,7 @@ public final class Fi implements InterfaceC0582sb {
         return yc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb
     public final synchronized void a(ReporterConfig reporterConfig) {
         if (this.g.containsKey(reporterConfig.apiKey)) {
             LoggerStorage.getOrCreatePublicLogger(reporterConfig.apiKey).warning("Reporter with apiKey=%s already exists.", ApiKeyUtils.createPartialApiKey(reporterConfig.apiKey));
@@ -143,8 +143,8 @@ public final class Fi implements InterfaceC0582sb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0582sb
-    public final synchronized InterfaceC0632ub a(AppMetricaConfig appMetricaConfig) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0583sb
+    public final synchronized InterfaceC0633ub a(AppMetricaConfig appMetricaConfig) {
         K6 k6;
         k6 = this.k;
         if (k6 != null) {

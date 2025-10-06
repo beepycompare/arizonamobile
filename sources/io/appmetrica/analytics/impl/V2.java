@@ -4,16 +4,16 @@ public abstract class V2 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Zf f708a;
-    public final InterfaceC0223eb b;
+    public final InterfaceC0224eb b;
 
-    public V2(Zf zf, InterfaceC0223eb interfaceC0223eb) {
+    public V2(Zf zf, InterfaceC0224eb interfaceC0224eb) {
         this.f708a = zf;
-        this.b = interfaceC0223eb;
+        this.b = interfaceC0224eb;
     }
 
-    public final boolean a(C0477o6 c0477o6, U2 u2) {
-        for (Object obj : ((C0655v9) this.f708a.a(c0477o6.d)).f1123a) {
-            if (u2.a(obj, c0477o6)) {
+    public final boolean a(C0478o6 c0478o6, U2 u2) {
+        for (Object obj : ((C0656v9) this.f708a.a(c0478o6.d)).f1123a) {
+            if (u2.a(obj, c0478o6)) {
                 return true;
             }
         }
@@ -24,7 +24,7 @@ public abstract class V2 {
         return this.f708a;
     }
 
-    public final InterfaceC0223eb a() {
+    public final InterfaceC0224eb a() {
         return this.b;
     }
 }

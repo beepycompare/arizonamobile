@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Ve extends C0200dd {
+public final class Ve extends C0201dd {
     public Ve() {
         super(Ze.UNDEFINED);
         a(1, Ze.WIFI);

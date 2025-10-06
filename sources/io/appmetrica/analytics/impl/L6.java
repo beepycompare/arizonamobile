@@ -8,14 +8,14 @@ public final class L6 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Si f554a;
-    public final C0153bi b;
+    public final C0154bi b;
 
-    public L6(Vf vf, C0144b9 c0144b9, Si si, AppMetricaConfig appMetricaConfig) {
+    public L6(Vf vf, C0145b9 c0145b9, Si si, AppMetricaConfig appMetricaConfig) {
         this.f554a = si;
-        this.b = new C0153bi(vf, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), c0144b9, appMetricaConfig.userProfileID);
+        this.b = new C0154bi(vf, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), c0145b9, appMetricaConfig.userProfileID);
     }
 
-    public final C0153bi a() {
+    public final C0154bi a() {
         return this.b;
     }
 }

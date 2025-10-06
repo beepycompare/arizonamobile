@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes4.dex */
 public final class Ng {
-    public static C0298h8 a(String str) {
+    public static C0299h8 a(String str) {
         HashMap hashMap;
         HashMap b = b(str);
         if (b.isEmpty()) {
@@ -22,7 +22,7 @@ public final class Ng {
                 hashMap.put(Uri.decode((String) entry.getKey()), Uri.decode((String) entry.getValue()));
             }
         }
-        return new C0298h8(decode, hashMap, str);
+        return new C0299h8(decode, hashMap, str);
     }
 
     public static HashMap b(String str) {

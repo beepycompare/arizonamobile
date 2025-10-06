@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.battlepassWinter2025.roulette;
 
 import android.graphics.Bitmap;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,6 +44,6 @@ final class OldPriseAdapter$OldPriseViewHolder$bind$1$bitmap$1 extends SuspendLa
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        return UtilsKt.getIconFromArchive(FirebaseAnalytics.Param.ITEMS, this.$prise.getImage());
+        return UtilsKt.getIconFromArchive("items", this.$prise.getImage());
     }
 }

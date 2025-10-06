@@ -20,7 +20,7 @@ public final class H3 implements A8 {
         Zi fromModel = this.f471a.fromModel(g3.b);
         t8.e.f386a = (D8) fromModel.f777a;
         t8.f683a = g3.f455a;
-        return Collections.singletonList(new Zi(t8, new C0749z3(C0749z3.b(fromModel))));
+        return Collections.singletonList(new Zi(t8, new C0750z3(C0750z3.b(fromModel))));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

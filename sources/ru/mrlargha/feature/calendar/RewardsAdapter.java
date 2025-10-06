@@ -215,7 +215,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         int i2 = i + 1;
         binding.dayTitle.setText("ДЕНЬ " + i2);
         if (this.isArizona) {
-            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/december_calendar/" + rewardInfo.getImage() + ".webp";
+            str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/arizona-rp/systems/welcome_calendar/" + rewardInfo.getImage() + ".webp";
         } else {
             str = FirebaseConfigHelper.INSTANCE.getResourceUrl() + "projects/rodina-rp/systems/battlepass/items/" + rewardInfo.getImage() + ".webp";
         }

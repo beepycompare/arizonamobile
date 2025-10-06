@@ -8,8 +8,8 @@ public final class Do {
     /* renamed from: a  reason: collision with root package name */
     public final Eo f418a;
 
-    public Do(C0537qf c0537qf, Ho ho, String str) {
-        this.f418a = new Eo(c0537qf, ho, new Fo() { // from class: io.appmetrica.analytics.impl.Do$$ExternalSyntheticLambda0
+    public Do(C0538qf c0538qf, Ho ho, String str) {
+        this.f418a = new Eo(c0538qf, ho, new Fo() { // from class: io.appmetrica.analytics.impl.Do$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Fo
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Do.a(jSONObject, jSONObject2);

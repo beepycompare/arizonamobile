@@ -7,34 +7,34 @@ public final class Hh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f481a;
-    public final C0477o6 b;
+    public final C0478o6 b;
     public final Bundle c;
-    public final C0750z4 d;
+    public final C0751z4 d;
 
-    public Hh(Context context, C0477o6 c0477o6, Bundle bundle, C0750z4 c0750z4) {
+    public Hh(Context context, C0478o6 c0478o6, Bundle bundle, C0751z4 c0751z4) {
         this.f481a = context;
-        this.b = c0477o6;
+        this.b = c0478o6;
         this.c = bundle;
-        this.d = c0750z4;
+        this.d = c0751z4;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         try {
-            C0268g4 a2 = C0268g4.a(this.f481a, this.c);
+            C0269g4 a2 = C0269g4.a(this.f481a, this.c);
             if (a2 == null) {
                 return;
             }
-            C0475o4 a3 = C0475o4.a(a2);
+            C0476o4 a3 = C0476o4.a(a2);
             Aj u = Na.F.u();
             u.a(a2.b.getAppVersion(), a2.b.getAppBuildNumber());
             u.a(a2.b.getDeviceType());
-            N4 n4 = new N4(new C0337im(a2), new M4(a2.b, Gb.c(a2.f889a.f713a.getAsString("PROCESS_CFG_CLIDS"))), a2.f889a.b);
+            N4 n4 = new N4(new C0338im(a2), new M4(a2.b, Gb.c(a2.f889a.f713a.getAsString("PROCESS_CFG_CLIDS"))), a2.f889a.b);
             this.d.a(a3, n4).a(this.b, n4);
         } catch (Throwable th) {
-            C0413lk c0413lk = Kj.f543a;
-            c0413lk.getClass();
-            c0413lk.a(new Lj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
+            C0414lk c0414lk = Kj.f543a;
+            c0414lk.getClass();
+            c0414lk.a(new Lj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
         }
     }
 }

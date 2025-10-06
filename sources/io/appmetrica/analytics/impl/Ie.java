@@ -27,7 +27,7 @@ public final class Ie extends ECommerceEvent {
         return "order info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0280gg
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0281gg
     public final List<Zi> toProto() {
         return (List) this.c.fromModel(this);
     }

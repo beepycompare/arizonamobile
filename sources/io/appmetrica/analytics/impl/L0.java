@@ -6,10 +6,10 @@ public final class L0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ Intent f549a;
-    public final /* synthetic */ C0547r1 b;
+    public final /* synthetic */ C0548r1 b;
 
-    public L0(C0547r1 c0547r1, Intent intent) {
-        this.b = c0547r1;
+    public L0(C0548r1 c0548r1, Intent intent) {
+        this.b = c0548r1;
         this.f549a = intent;
     }
 

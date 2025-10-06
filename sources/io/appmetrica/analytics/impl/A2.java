@@ -8,35 +8,35 @@ import java.util.ArrayList;
 public final class A2 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0344j3 f343a;
+    public final C0345j3 f343a;
 
     public A2() {
-        this(new C0344j3());
+        this(new C0345j3());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C2 fromModel(C0748z2 c0748z2) {
+    public final C2 fromModel(C0749z2 c0749z2) {
         C2 c2 = new C2();
-        c2.f381a = new B2[c0748z2.f1181a.size()];
+        c2.f381a = new B2[c0749z2.f1181a.size()];
         int i = 0;
-        for (BillingInfo billingInfo : c0748z2.f1181a) {
+        for (BillingInfo billingInfo : c0749z2.f1181a) {
             B2[] b2Arr = c2.f381a;
             this.f343a.getClass();
-            b2Arr[i] = C0344j3.a(billingInfo);
+            b2Arr[i] = C0345j3.a(billingInfo);
             i++;
         }
-        c2.b = c0748z2.b;
+        c2.b = c0749z2.b;
         return c2;
     }
 
-    public A2(C0344j3 c0344j3) {
-        this.f343a = c0344j3;
+    public A2(C0345j3 c0345j3) {
+        this.f343a = c0345j3;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0748z2 toModel(C2 c2) {
+    public final C0749z2 toModel(C2 c2) {
         B2[] b2Arr;
         ProductType productType;
         ArrayList arrayList = new ArrayList(c2.f381a.length);
@@ -52,6 +52,6 @@ public final class A2 implements ProtobufConverter {
             }
             arrayList.add(new BillingInfo(productType, b2.b, b2.c, b2.d, b2.e));
         }
-        return new C0748z2(arrayList, c2.b);
+        return new C0749z2(arrayList, c2.b);
     }
 }

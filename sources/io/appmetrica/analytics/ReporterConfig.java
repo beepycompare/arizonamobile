@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0264g0;
+import io.appmetrica.analytics.impl.C0265g0;
 import io.appmetrica.analytics.impl.Kn;
 import io.appmetrica.analytics.impl.L5;
 import java.util.HashMap;
@@ -21,7 +21,7 @@ public class ReporterConfig {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Kn l = new Kn(new C0264g0());
+        private static final Kn l = new Kn(new C0265g0());
 
         /* renamed from: a  reason: collision with root package name */
         private final L5 f204a;

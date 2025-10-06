@@ -1,6 +1,6 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0685we;
+import io.appmetrica.analytics.impl.C0686we;
 import io.appmetrica.analytics.impl.Kn;
 import java.util.Currency;
 /* loaded from: classes4.dex */
@@ -14,7 +14,7 @@ public class Revenue {
 
     /* loaded from: classes4.dex */
     public static class Builder {
-        private static final Kn g = new Kn(new C0685we("revenue currency"));
+        private static final Kn g = new Kn(new C0686we("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
         final long f205a;

@@ -14,7 +14,7 @@ public final class A6 extends MessageNano {
     /* renamed from: a  reason: collision with root package name */
     public String f346a;
     public String b;
-    public C0727y6[] c;
+    public C0728y6[] c;
     public A6 d;
     public A6[] e;
 
@@ -36,7 +36,7 @@ public final class A6 extends MessageNano {
     public final A6 a() {
         this.f346a = "";
         this.b = "";
-        this.c = C0727y6.b();
+        this.c = C0728y6.b();
         this.d = null;
         this.e = b();
         this.cachedSize = -1;
@@ -49,18 +49,18 @@ public final class A6 extends MessageNano {
         if (!this.b.equals("")) {
             computeStringSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
         }
-        C0727y6[] c0727y6Arr = this.c;
+        C0728y6[] c0728y6Arr = this.c;
         int i = 0;
-        if (c0727y6Arr != null && c0727y6Arr.length > 0) {
+        if (c0728y6Arr != null && c0728y6Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                C0727y6[] c0727y6Arr2 = this.c;
-                if (i2 >= c0727y6Arr2.length) {
+                C0728y6[] c0728y6Arr2 = this.c;
+                if (i2 >= c0728y6Arr2.length) {
                     break;
                 }
-                C0727y6 c0727y6 = c0727y6Arr2[i2];
-                if (c0727y6 != null) {
-                    computeStringSize += CodedOutputByteBufferNano.computeMessageSize(3, c0727y6);
+                C0728y6 c0728y6 = c0728y6Arr2[i2];
+                if (c0728y6 != null) {
+                    computeStringSize += CodedOutputByteBufferNano.computeMessageSize(3, c0728y6);
                 }
                 i2++;
             }
@@ -92,18 +92,18 @@ public final class A6 extends MessageNano {
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
         }
-        C0727y6[] c0727y6Arr = this.c;
+        C0728y6[] c0728y6Arr = this.c;
         int i = 0;
-        if (c0727y6Arr != null && c0727y6Arr.length > 0) {
+        if (c0728y6Arr != null && c0728y6Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                C0727y6[] c0727y6Arr2 = this.c;
-                if (i2 >= c0727y6Arr2.length) {
+                C0728y6[] c0728y6Arr2 = this.c;
+                if (i2 >= c0728y6Arr2.length) {
                     break;
                 }
-                C0727y6 c0727y6 = c0727y6Arr2[i2];
-                if (c0727y6 != null) {
-                    codedOutputByteBufferNano.writeMessage(3, c0727y6);
+                C0728y6 c0728y6 = c0728y6Arr2[i2];
+                if (c0728y6 != null) {
+                    codedOutputByteBufferNano.writeMessage(3, c0728y6);
                 }
                 i2++;
             }
@@ -142,24 +142,24 @@ public final class A6 extends MessageNano {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag == 26) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                C0727y6[] c0727y6Arr = this.c;
-                int length = c0727y6Arr == null ? 0 : c0727y6Arr.length;
+                C0728y6[] c0728y6Arr = this.c;
+                int length = c0728y6Arr == null ? 0 : c0728y6Arr.length;
                 int i = repeatedFieldArrayLength + length;
-                C0727y6[] c0727y6Arr2 = new C0727y6[i];
+                C0728y6[] c0728y6Arr2 = new C0728y6[i];
                 if (length != 0) {
-                    System.arraycopy(c0727y6Arr, 0, c0727y6Arr2, 0, length);
+                    System.arraycopy(c0728y6Arr, 0, c0728y6Arr2, 0, length);
                 }
                 while (length < i - 1) {
-                    C0727y6 c0727y6 = new C0727y6();
-                    c0727y6Arr2[length] = c0727y6;
-                    codedInputByteBufferNano.readMessage(c0727y6);
+                    C0728y6 c0728y6 = new C0728y6();
+                    c0728y6Arr2[length] = c0728y6;
+                    codedInputByteBufferNano.readMessage(c0728y6);
                     codedInputByteBufferNano.readTag();
                     length++;
                 }
-                C0727y6 c0727y62 = new C0727y6();
-                c0727y6Arr2[length] = c0727y62;
-                codedInputByteBufferNano.readMessage(c0727y62);
-                this.c = c0727y6Arr2;
+                C0728y6 c0728y62 = new C0728y6();
+                c0728y6Arr2[length] = c0728y62;
+                codedInputByteBufferNano.readMessage(c0728y62);
+                this.c = c0728y6Arr2;
             } else if (readTag == 34) {
                 if (this.d == null) {
                     this.d = new A6();

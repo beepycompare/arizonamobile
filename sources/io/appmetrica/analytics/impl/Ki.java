@@ -8,10 +8,10 @@ public final class Ki {
 
     /* renamed from: a  reason: collision with root package name */
     public final HashMap f542a = new HashMap();
-    public final C0671w0 b;
+    public final C0672w0 b;
 
-    public Ki(C0671w0 c0671w0) {
-        this.b = c0671w0;
+    public Ki(C0672w0 c0672w0) {
+        this.b = c0672w0;
     }
 
     public static Ki a() {
@@ -27,10 +27,10 @@ public final class Ki {
                 if (ci == null) {
                     IHandlerExecutor a2 = A4.l().c.a();
                     this.b.getClass();
-                    if (C0646v0.e == null) {
+                    if (C0647v0.e == null) {
                         ((Z9) a2).b.post(new Ii(this, context));
                     }
-                    ci = new Ci(context.getApplicationContext(), str, new C0671w0());
+                    ci = new Ci(context.getApplicationContext(), str, new C0672w0());
                     this.f542a.put(str, ci);
                     ci.d(str);
                 }

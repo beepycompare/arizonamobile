@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.util.SparseArray;
 import io.appmetrica.analytics.BuildConfig;
 /* loaded from: classes4.dex */
-public final class Dk extends AbstractC0354jd {
+public final class Dk extends AbstractC0355jd {
 
     /* renamed from: a  reason: collision with root package name */
     public final Co f415a;
@@ -12,7 +12,7 @@ public final class Dk extends AbstractC0354jd {
         this(Na.j().B().b());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0354jd
+    @Override // io.appmetrica.analytics.impl.AbstractC0355jd
     public final void a(int i) {
         Co co = this.f415a;
         synchronized (co) {
@@ -21,7 +21,7 @@ public final class Dk extends AbstractC0354jd {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0354jd
+    @Override // io.appmetrica.analytics.impl.AbstractC0355jd
     public final int b() {
         int optInt;
         Co co = this.f415a;
@@ -31,9 +31,9 @@ public final class Dk extends AbstractC0354jd {
         return optInt;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0354jd
-    public final SparseArray<InterfaceC0329id> c() {
-        SparseArray<InterfaceC0329id> sparseArray = new SparseArray<>(1);
+    @Override // io.appmetrica.analytics.impl.AbstractC0355jd
+    public final SparseArray<InterfaceC0330id> c() {
+        SparseArray<InterfaceC0330id> sparseArray = new SparseArray<>(1);
         sparseArray.put(112, new Ek(this.f415a));
         sparseArray.put(BuildConfig.API_LEVEL, new Fk());
         return sparseArray;

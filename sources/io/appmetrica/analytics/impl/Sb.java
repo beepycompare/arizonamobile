@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 /* loaded from: classes4.dex */
-public final class Sb implements InterfaceC0301hb, Closeable {
+public final class Sb implements InterfaceC0302hb, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
     public final HashMap f670a = new HashMap();
@@ -100,7 +100,7 @@ public final class Sb implements InterfaceC0301hb, Closeable {
         sb.f.a(sQLiteDatabase);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final void b() {
         synchronized (this.d) {
             this.d.notifyAll();
@@ -124,32 +124,32 @@ public final class Sb implements InterfaceC0301hb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final boolean getBoolean(String str, boolean z) {
         Object b = b(str);
         return b instanceof Boolean ? ((Boolean) b).booleanValue() : z;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final int getInt(String str, int i) {
         Object b = b(str);
         return b instanceof Integer ? ((Integer) b).intValue() : i;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final long getLong(String str, long j) {
         Object b = b(str);
         return b instanceof Long ? ((Long) b).longValue() : j;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final String getString(String str, String str2) {
         Object b = b(str);
         return b instanceof String ? (String) b : str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final InterfaceC0301hb remove(String str) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final InterfaceC0302hb remove(String str) {
         synchronized (this.f670a) {
             c();
             this.f670a.remove(str);
@@ -239,37 +239,37 @@ public final class Sb implements InterfaceC0301hb, Closeable {
         sb.f.a(sQLiteDatabase);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final synchronized InterfaceC0301hb a(String str, String str2) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final synchronized InterfaceC0302hb a(String str, String str2) {
         a(str, (Object) str2);
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final InterfaceC0301hb a(String str, long j) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final InterfaceC0302hb a(String str, long j) {
         a(str, Long.valueOf(j));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final synchronized InterfaceC0301hb a(int i, String str) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final synchronized InterfaceC0302hb a(int i, String str) {
         a(str, Integer.valueOf(i));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final InterfaceC0301hb a(String str, boolean z) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final InterfaceC0302hb a(String str, boolean z) {
         a(str, Boolean.valueOf(z));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
-    public final InterfaceC0301hb a(String str, float f) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
+    public final InterfaceC0302hb a(String str, float f) {
         a(str, Float.valueOf(f));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final boolean a(String str) {
         boolean containsKey;
         synchronized (this.f670a) {
@@ -279,7 +279,7 @@ public final class Sb implements InterfaceC0301hb, Closeable {
         return containsKey;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0301hb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0302hb
     public final Set a() {
         HashSet hashSet;
         synchronized (this.f670a) {

@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.internal.js;
 
 import android.webkit.JavascriptInterface;
-import io.appmetrica.analytics.impl.C0547r1;
+import io.appmetrica.analytics.impl.C0548r1;
 /* loaded from: classes4.dex */
 public class AppMetricaInitializerJsInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0547r1 f1203a;
+    private final C0548r1 f1203a;
 
-    public AppMetricaInitializerJsInterface(C0547r1 c0547r1) {
-        this.f1203a = c0547r1;
+    public AppMetricaInitializerJsInterface(C0548r1 c0548r1) {
+        this.f1203a = c0548r1;
     }
 
     @JavascriptInterface

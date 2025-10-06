@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
-public final class Hc extends Y2 implements InterfaceC0327ib {
+public final class Hc extends Y2 implements InterfaceC0328ib {
     public static final Long s = Long.valueOf(TimeUnit.SECONDS.toMillis(1));
     public final Kn p;
     public final Sc q;
@@ -31,17 +31,17 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
 
     public Hc(Sc sc) {
         super(sc.b(), sc.i(), sc.h(), sc.d(), sc.f(), sc.j(), sc.g(), sc.c(), sc.a(), sc.e());
-        this.p = new Kn(new C0635ue("Referral url"));
+        this.p = new Kn(new C0636ue("Referral url"));
         this.q = sc;
         this.r = new Ic(this);
         l();
     }
 
-    public final void a(AppMetricaConfig appMetricaConfig, C0367k0 c0367k0) {
-        if (c0367k0.b) {
+    public final void a(AppMetricaConfig appMetricaConfig, C0368k0 c0368k0) {
+        if (c0368k0.b) {
             clearAppEnvironment();
         }
-        List<String> list = c0367k0.f945a;
+        List<String> list = c0368k0.f945a;
         if (!CollectionUtils.isNullOrEmpty(list)) {
             this.b.b.addAutoCollectedDataSubscribers(list);
         }
@@ -85,25 +85,25 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void b(Activity activity) {
-        if (this.q.i.a(activity, EnumC0470o.PAUSED)) {
+        if (this.q.i.a(activity, EnumC0471o.PAUSED)) {
             this.c.info("Pause session", new Object[0]);
             d(activity != null ? activity.getClass().getSimpleName() : null);
-            C0421m2 c0421m2 = this.q.g;
-            synchronized (c0421m2) {
-                c0421m2.getClass();
-                for (C0395l2 c0395l2 : c0421m2.f985a) {
-                    if (!c0395l2.d) {
-                        c0395l2.d = true;
-                        c0395l2.b.executeDelayed(c0395l2.e, c0395l2.c);
+            C0422m2 c0422m2 = this.q.g;
+            synchronized (c0422m2) {
+                c0422m2.getClass();
+                for (C0396l2 c0396l2 : c0422m2.f985a) {
+                    if (!c0396l2.d) {
+                        c0396l2.d = true;
+                        c0396l2.b.executeDelayed(c0396l2.e, c0396l2.c);
                     }
                 }
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void c() {
         Ic ic = this.r;
         synchronized (ic) {
@@ -111,7 +111,7 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final List<String> f() {
         return this.b.f889a.b();
     }
@@ -130,15 +130,15 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
     public final void l() {
         Si si = this.h;
         si.c.a(this.b.f889a);
-        C0421m2 c0421m2 = this.q.g;
+        C0422m2 c0422m2 = this.q.g;
         Gc gc = new Gc(this);
         long longValue = s.longValue();
-        synchronized (c0421m2) {
-            c0421m2.a(gc, longValue);
+        synchronized (c0422m2) {
+            c0422m2.a(gc, longValue);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void c(String str) {
         this.p.a(str);
         Si si = this.h;
@@ -150,20 +150,20 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         hashMap.put("auto", Boolean.FALSE);
         String b = Gb.b(hashMap);
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(b, "", 8208, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(b, "", 8208, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
         this.c.info("Referral URL received: " + WrapUtils.wrapToTag(str), new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib, io.appmetrica.analytics.impl.InterfaceC0303hd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib, io.appmetrica.analytics.impl.InterfaceC0304hd
     public final void b(boolean z) {
         this.c.info("Set advIdentifiersTracking to %s", Boolean.valueOf(z));
         this.b.b.setAdvIdentifiersTracking(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void a(String str, boolean z) {
         this.c.info("App opened via deeplink: " + WrapUtils.wrapToTag(str), new Object[0]);
         Si si = this.h;
@@ -175,34 +175,34 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         hashMap.put("auto", Boolean.valueOf(z));
         String b = Gb.b(hashMap);
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(b, "", 8208, 0, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(b, "", 8208, 0, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
-    public final void a(EnumC0418m enumC0418m) {
-        if (enumC0418m == EnumC0418m.b) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
+    public final void a(EnumC0419m enumC0419m) {
+        if (enumC0419m == EnumC0419m.b) {
             this.c.info("Enable activity auto tracking", new Object[0]);
         } else {
-            this.c.warning("Could not enable activity auto tracking. " + enumC0418m.f982a, new Object[0]);
+            this.c.warning("Could not enable activity auto tracking. " + enumC0419m.f982a, new Object[0]);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void a(Activity activity) {
-        if (this.q.i.a(activity, EnumC0470o.RESUMED)) {
+        if (this.q.i.a(activity, EnumC0471o.RESUMED)) {
             this.c.info("Resume session", new Object[0]);
             e(activity != null ? activity.getClass().getSimpleName() : null);
-            C0421m2 c0421m2 = this.q.g;
-            synchronized (c0421m2) {
-                c0421m2.getClass();
-                for (C0395l2 c0395l2 : c0421m2.f985a) {
-                    if (c0395l2.d) {
-                        c0395l2.d = false;
-                        c0395l2.b.remove(c0395l2.e);
-                        Hc hc = c0395l2.f963a.f460a;
+            C0422m2 c0422m2 = this.q.g;
+            synchronized (c0422m2) {
+                c0422m2.getClass();
+                for (C0396l2 c0396l2 : c0422m2.f985a) {
+                    if (c0396l2.d) {
+                        c0396l2.d = false;
+                        c0396l2.b.remove(c0396l2.e);
+                        Hc hc = c0396l2.f963a.f460a;
                         hc.h.c.b(hc.b.f889a);
                     }
                 }
@@ -210,18 +210,18 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib, io.appmetrica.analytics.impl.InterfaceC0303hd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib, io.appmetrica.analytics.impl.InterfaceC0304hd
     public final void a(Location location) {
         this.b.b.setManualLocation(location);
         this.c.info("Set location: %s", location);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib, io.appmetrica.analytics.impl.InterfaceC0303hd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib, io.appmetrica.analytics.impl.InterfaceC0304hd
     public final void a(boolean z) {
         this.b.b.setLocationTracking(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void a(Mo mo) {
         PublicLogger publicLogger = this.c;
         synchronized (mo) {
@@ -234,12 +234,12 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         mo.f585a.clear();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void a(AnrListener anrListener) {
         this.r.a(anrListener);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib
     public final void a(ExternalAttribution externalAttribution) {
         this.c.info("External attribution received: %s", externalAttribution);
         Si si = this.h;
@@ -247,13 +247,13 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         PublicLogger publicLogger = this.c;
         Set set = W9.f726a;
         Bb bb = Bb.EVENT_TYPE_UNDEFINED;
-        C0397l4 c0397l4 = new C0397l4(bytes, "", 42, publicLogger);
-        C0153bi c0153bi = this.b;
+        C0398l4 c0398l4 = new C0398l4(bytes, "", 42, publicLogger);
+        C0154bi c0154bi = this.b;
         si.getClass();
-        si.a(Si.a(c0397l4, c0153bi), c0153bi, 1, null);
+        si.a(Si.a(c0398l4, c0154bi), c0154bi, 1, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.Y2, io.appmetrica.analytics.impl.InterfaceC0327ib, io.appmetrica.analytics.impl.InterfaceC0303hd
+    @Override // io.appmetrica.analytics.impl.Y2, io.appmetrica.analytics.impl.InterfaceC0328ib, io.appmetrica.analytics.impl.InterfaceC0304hd
     public final void a(String str, String str2) {
         super.a(str, str2);
         Wd wd = this.q.c;
@@ -268,7 +268,7 @@ public final class Hc extends Y2 implements InterfaceC0327ib {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0327ib, io.appmetrica.analytics.impl.InterfaceC0303hd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0328ib, io.appmetrica.analytics.impl.InterfaceC0304hd
     public final void a(String str) {
         this.c.info("Add auto collected data subscriber: %s", str);
         this.b.b.addAutoCollectedDataSubscriber(str);

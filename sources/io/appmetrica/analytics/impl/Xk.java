@@ -12,12 +12,12 @@ public final class Xk {
     public final Wk c;
     public final IBinaryDataHelper d;
 
-    public Xk(Context context, C0476o5 c0476o5) {
-        c0476o5.a();
+    public Xk(Context context, C0477o5 c0477o5) {
+        c0477o5.a();
         this.f747a = "session_extras";
         this.b = new Sk();
         this.c = new Wk();
-        this.d = C0728y7.a(context).a(c0476o5);
+        this.d = C0729y7.a(context).a(c0477o5);
     }
 
     public final Map a() {

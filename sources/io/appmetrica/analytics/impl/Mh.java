@@ -1,26 +1,26 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes4.dex */
-public final class Mh extends AbstractC0462nh {
-    public Mh(C0651v5 c0651v5) {
-        super(c0651v5);
+public final class Mh extends AbstractC0463nh {
+    public Mh(C0652v5 c0652v5) {
+        super(c0652v5);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0462nh
-    public final boolean a(C0477o6 c0477o6) {
+    @Override // io.appmetrica.analytics.impl.AbstractC0463nh
+    public final boolean a(C0478o6 c0478o6) {
         ((I5) this.f1006a.p).e();
-        C0156bl c0156bl = this.f1006a.j;
-        synchronized (c0156bl) {
-            Nk b = c0156bl.b(c0477o6);
+        C0157bl c0157bl = this.f1006a.j;
+        synchronized (c0157bl) {
+            Nk b = c0157bl.b(c0478o6);
             if (b.g) {
                 b.g = false;
-                C0233el c0233el = b.b;
-                c0233el.a(C0233el.i, Boolean.FALSE);
-                c0233el.b();
+                C0234el c0234el = b.b;
+                c0234el.a(C0234el.i, Boolean.FALSE);
+                c0234el.b();
             }
-            if (c0156bl.g != 1) {
-                c0156bl.b(c0156bl.f, c0477o6);
+            if (c0157bl.g != 1) {
+                c0157bl.b(c0157bl.f, c0478o6);
             }
-            c0156bl.g = 1;
+            c0157bl.g = 1;
         }
         return true;
     }
